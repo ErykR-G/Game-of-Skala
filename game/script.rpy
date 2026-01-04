@@ -383,6 +383,7 @@ label start:
         show luszcz siedzi right at slightright
         show screen clock
         play music "audio/music/wiatr.mp3"
+        luszcz "GitHub nie działa"
         luszcz "Ahhh… ówielbiam siedzieć na moim klifie mondrości i obserwować z niej Skałę"
         luszcz "Ohhh… jak ja kocham mojom ojczyznę Skałę."
         luszcz "Jest taka betonowa…"

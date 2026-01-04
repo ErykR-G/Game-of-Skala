@@ -1715,43 +1715,43 @@ label fight1:
                     else:
                         $ kibol2_uszy += 1
 
-                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1:
+                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
                         show uszy3 zorder 15 at head_wrog2
                         show uszy1 zorder 15 at head_wrog1
                         "{i}Kibol 1, Akane i Kibol 2 skupili się na uszach Urbana{/i}"
                     
                     else:
-                        if kibol1_uszy == 1 and akane_uszy == 1:
+                        if kibol1_uszy == 1 and akane_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1:
                             show uszy2 zorder 15 at head_wrog3
                             show uszy1 zorder 15 at head_wrog1
                             "{i}Kibol 1 i Akane skupili się na uszach Urbana{/i}"
                         
                         else:
-                            if akane_uszy == 1 and kibol2_uszy == 1:
+                            if akane_uszy == 1 and kibol2_uszy == 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
                                 show uszy2 zorder 15 at head_wrog3
                                 show uszy3 zorder 15 at head_wrog2
                                 "{i}Akane i Kibol 2 skupili się na uszach Urbana{/i}"
                                 
                             
                             else:
-                                if kibol1_uszy == 1 and kibol2_uszy == 1:
+                                if kibol1_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
                                     show uszy3 zorder 15 at head_wrog2
                                     show uszy1 zorder 15 at head_wrog1
                                     "{i}Kibol 1 i Kibol 2 skupili się na uszach Urbana{/i}"
                                 
                                 else:
-                                    if kibol1_uszy == 1:
+                                    if kibol1_uszy == 1 and kibol1_hp_now >= 1:
                                         show uszy1 zorder 15 at head_wrog1
                                         "{i}Kibol 1 skupił się na uszach Urbana{/i}"
                                     
                                     else:
-                                        if akane_uszy == 1:
+                                        if akane_uszy == 1 and akane_hp_now >= 1:
                                             show uszy2 zorder 15 at head_wrog3
                                             "{i}Akane skupił się na uszach Urbana{/i}"
 
                                         else:
-                                            if kibol2_uszy == 1:
+                                            if kibol2_uszy == 1 and kibol2_hp_now >= 1:
                                                 show uszy3 zorder 15 at head_wrog2
                                                 "{i}Kibol 2 skupił się na uszach Urbana{/i}"
 
@@ -4052,42 +4052,42 @@ label fight1:
                     else:
                         $ kibol2_uszy += 1
 
-                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1:
+                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
                         show uszy1 zorder 15 at head_wrog1
                         show uszy3 zorder 15 at head_wrog2
                         "{i}Kibol 1, Akane i Kibol 2 skupili się na uszach Urbana{/i}"
                     
                     else:
-                        if kibol1_uszy == 1 and akane_uszy == 1:
+                        if kibol1_uszy == 1 and akane_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1:
                             show uszy2 zorder 15 at head_wrog3
                             show uszy1 zorder 15 at head_wrog1
                             "{i}Kibol 1 i Akane skupili się na uszach Urbana{/i}"
                         
                         else:
-                            if akane_uszy == 1 and kibol2_uszy == 1:
+                            if akane_uszy == 1 and kibol2_uszy == 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
                                 show uszy2 zorder 15 at head_wrog3
                                 show uszy3 zorder 15 at head_wrog2
                                 "{i}Akane i Kibol 2 skupili się na uszach Urbana{/i}"
                             
                             else:
-                                if kibol1_uszy == 1 and kibol2_uszy == 1:
+                                if kibol1_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
                                     show uszy3 zorder 15 at head_wrog2
                                     show uszy1 zorder 15 at head_wrog1
                                     "{i}Kibol 1 i Kibol 2 skupili się na uszach Urbana{/i}"
                                 
                                 else:
-                                    if kibol1_uszy == 1:
+                                    if kibol1_uszy == 1 and kibol1_hp_now >= 1:
                                         show uszy1 zorder 15 at head_wrog1
                                         "{i}Kibol 1 skupił się na uszach Urbana{/i}"
                                     
                                     else:
-                                        if akane_uszy == 1:
+                                        if akane_uszy == 1 and akane_hp_now >= 1:
                                             show uszy2 zorder 15 at head_wrog3
                                             "{i}Akane skupił się na uszach Urbana{/i}"
 
                                         else:
-                                            if kibol2_uszy == 1:
+                                            if kibol2_uszy == 1 and kibol2_hp_now >= 1:
                                                 show uszy3 zorder 15 at head_wrog2
                                                 "{i}Kibol 2 skupił się na uszach Urbana{/i}"
 
@@ -6025,42 +6025,42 @@ label fight1:
                     else:
                         $ kibol2_uszy += 1
 
-                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1:
+                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
                         show uszy1 zorder 15 at head_wrog1
                         show uszy3 zorder 15 at head_wrog2
                         "{i}Kibol 1, Akane i Kibol 2 skupili się na uszach Urbana{/i}"
                     
                     else:
-                        if kibol1_uszy == 1 and akane_uszy == 1:
+                        if kibol1_uszy == 1 and akane_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1: 
                             show uszy2 zorder 15 at head_wrog3
                             show uszy1 zorder 15 at head_wrog1
                             "{i}Kibol 1 i Akane skupili się na uszach Urbana{/i}"
                         
                         else:
-                            if akane_uszy == 1 and kibol2_uszy == 1:
+                            if akane_uszy == 1 and kibol2_uszy == 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
                                 show uszy2 zorder 15 at head_wrog3
                                 show uszy3 zorder 15 at head_wrog2
                                 "{i}Akane i Kibol 2 skupili się na uszach Urbana{/i}"
                             
                             else:
-                                if kibol1_uszy == 1 and kibol2_uszy == 1:
+                                if kibol1_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
                                     show uszy1 zorder 15 at head_wrog1
                                     show uszy3 zorder 15 at head_wrog2
                                     "{i}Kibol 1 i Kibol 2 skupili się na uszach Urbana{/i}"
                                 
                                 else:
-                                    if kibol1_uszy == 1:
+                                    if kibol1_uszy == 1 and kibol1_hp_now >= 1:
                                         show uszy1 zorder 15 at head_wrog1
                                         "{i}Kibol 1 skupił się na uszach Urbana{/i}"
                                     
                                     else:
-                                        if akane_uszy == 1:
+                                        if akane_uszy == 1 and akane_hp_now >= 1:
                                             show uszy2 zorder 15 at head_wrog3
                                             "{i}Akane skupił się na uszach Urbana{/i}"
 
                                         else:
-                                            if kibol2_uszy == 1:
+                                            if kibol2_uszy == 1 and kibol2_hp_now >= 1:
                                                 show uszy3 zorder 15 at head_wrog2
                                                 "{i}Kibol 2 skupił się na uszach Urbana{/i}"
 
