@@ -1,21 +1,12 @@
 label bronie: 
-    default luszcz_gitara = 1
-    default urban_fuck = 1
-    default zyd_chanuka = 1
-    default kazuma_chunchunmaru = 1
-    default tarczownik_legendary_shield = 1
+    default gitara = 2
+    default fuck = 3
+    default chanuka = 4
+    default chunchunmaru = 5
+    default legendary_shield = 6
+    default przepychaczka = 0
+    default stop = 0
 
-    default luszcz_przepychaczka = 0
-    default urban_przepychaczka = 0
-    default zyd_przepychaczka = 0
-    default kazuma_przepychaczka = 0
-    default tarczownik_przepychaczka = 0
-
-    default luszcz_stop = 0
-    default urban_stop = 0
-    default zyd_stop = 0
-    default kazuma_stop = 0
-    default tarczownik_stop = 0
 
 label eq:
     window hide
@@ -25,53 +16,45 @@ label eq:
         "{b}Broń{/b}":
             label bron:
                 menu:
-                    "{b}Łuszcz: Gitara (ATK:1-2){/b}" if luszcz_sojusznik == 1 and luszcz_gitara == 1:
+                    "{b}Łuszcz: Gitara (ATK:1-2){/b}" if luszcz_sojusznik == 1 and gitara == 2:
                         window show
                         "{i}Gitara jest git{/i}"
                         window hide
 
-                        if luszcz_przepychaczka == 2 or luszcz_stop == 2:
+                        if przepychaczka == 1 or stop == 1:
                             menu:
-                                "{b}Gitara (ATK:1-2){/b}" if luszcz_gitara == 2:
+                                "{b}Gitara (ATK:1-2){/b}" if gitara == 1:
                                     window show
                                     "{i}Gitara jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 2
-                                    $ luszcz_gitara = 2
-                                    $ luszcz_gitara = 1
+                                    $ gitara = 1
+                                    $ gitara = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if luszcz_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 2
-                                    $ luszcz_gitara = 2
-                                    $ luszcz_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ gitara = 1
+                                    $ przepychaczka = 2
                                     $ luszcz_min_attack += 2
                                     $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if luszcz_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 2
-                                    $ luszcz_gitara = 2
-                                    $ luszcz_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ gitara = 1
+                                    $ stop = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 4
                                     jump bron
@@ -82,65 +65,45 @@ label eq:
                         else:
                             jump bron
 
-                    "{b}Łuszcz: Przepychaczka (ATK:2-2){/b}" if luszcz_sojusznik == 1 and luszcz_przepychaczka == 1:
+                    "{b}Łuszcz: Przepychaczka (ATK:2-2){/b}" if luszcz_sojusznik == 1 and przepychaczka == 2:
                         window show
                         "{i}Przepychaczka jest git{/i}"
                         window hide
 
-                        if luszcz_gitara == 2 or luszcz_stop == 2:
+                        if gitara == 1 or stop == 1:
                             menu:
-                                "{b}Gitara (ATK:1-2){/b}" if luszcz_gitara == 2:
+                                "{b}Gitara (ATK:1-2){/b}" if gitara == 1:
                                     window show
                                     "{i}Gitara jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ luszcz_gitara = 1
+                                    $ przepychaczka = 1
+                                    $ gitara = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if luszcz_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ przepychaczka = 1
+                                    $ przepychaczka = 2
                                     $ luszcz_min_attack += 2
                                     $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if luszcz_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ luszcz_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ przepychaczka = 1
+                                    $ stop = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 4
                                     jump bron
@@ -151,65 +114,45 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Łuszcz: Stop (ATK:1-4){/b}" if luszcz_sojusznik == 1 and luszcz_stop == 1:
+                    "{b}Łuszcz: Stop (ATK:1-4){/b}" if luszcz_sojusznik == 1 and stop == 2:
                         window show
                         "{i}Stop jest git{/i}"
                         window hide
 
-                        if luszcz_gitara == 2 or luszcz_przepychaczka == 2:
+                        if gitara == 1 or przepychaczka == 1:
                             menu:
-                                "{b}Gitara (ATK:1-2){/b}" if luszcz_gitara == 2:
+                                "{b}Gitara (ATK:1-2){/b}" if gitara == 1:
                                     window show
                                     "{i}Gitara jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ luszcz_gitara = 1
+                                    $ stop = 1
+                                    $ gitara = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if luszcz_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ luszcz_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ stop = 1
+                                    $ przepychaczka = 2
                                     $ luszcz_min_attack += 2
                                     $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if luszcz_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ luszcz_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ stop = 1
+                                    $ stop = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 4
                                     jump bron
@@ -225,53 +168,45 @@ label eq:
                         jump bron
 
 
-                    "{b}Jerzy Urban: Fuck (ATK:0-2){/b}" if urban_sojusznik == 1 and urban_fuck == 1:
+                    "{b}Jerzy Urban: Fuck (ATK:0-2){/b}" if urban_sojusznik == 1 and fuck == 3:
                         window show
                         "{i}Fuck jest git{/i}"
                         window hide
 
-                        if urban_przepychaczka == 2 or urban_stop == 2:
+                        if przepychaczka == 1 or stop == 1:
                             menu:
-                                "{b}Fuck (ATK:0-2){/b}" if urban_fuck == 2:
+                                "{b}Fuck (ATK:0-2){/b}" if fuck == 1:
                                     window show
                                     "{i}Fuck jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 0
                                     $ urban_max_attack -= 2
-                                    $ urban_fuck = 2
-                                    $ urban_fuck = 1
+                                    $ fuck = 1
+                                    $ fuck = 3
                                     $ urban_min_attack += 0
                                     $ urban_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if urban_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 0
                                     $ urban_max_attack -= 2
-                                    $ urban_fuck = 2
-                                    $ urban_przepychaczka = 1
-                                    $ luszcz_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ fuck = 1
+                                    $ przepychaczka = 3
                                     $ urban_min_attack += 2
                                     $ urban_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if urban_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 0
                                     $ urban_max_attack -= 2
-                                    $ urban_fuck = 2
-                                    $ urban_stop = 1
-                                    $ luszcz_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ fuck = 1
+                                    $ stop = 3
                                     $ urban_min_attack += 1
                                     $ urban_max_attack += 4
                                     jump bron
@@ -282,65 +217,45 @@ label eq:
                         else:
                             jump bron
 
-                    "{b}Jerzy Urban: Przepychaczka (ATK:2-2){/b}" if urban_sojusznik == 1 and urban_przepychaczka == 1:
+                    "{b}Jerzy Urban: Przepychaczka (ATK:2-2){/b}" if urban_sojusznik == 1 and przepychaczka == 3:
                         window show
                         "{i}Przepychaczka jest git{/i}"
                         window hide
 
-                        if urban_fuck == 2 or urban_stop == 2:
+                        if fuck == 1 or stop == 1:
                             menu:
-                                "{b}Fuck (ATK:0-2){/b}" if urban_fuck == 2:
+                                "{b}Fuck (ATK:0-2){/b}" if fuck == 1:
                                     window show
                                     "{i}Fuck jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 2
                                     $ urban_max_attack -= 2
-                                    $ urban_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ urban_fuck = 1
+                                    $ przepychaczka = 1
+                                    $ fuck = 3
                                     $ urban_min_attack += 0
                                     $ urban_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if urban_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 2
                                     $ urban_max_attack -= 2
-                                    $ urban_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ urban_przepychaczka = 1
-                                    $ luszcz_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ przepychaczka = 1
+                                    $ przepychaczka = 3
                                     $ urban_min_attack += 2
                                     $ urban_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if urban_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 2
                                     $ urban_max_attack -= 2
-                                    $ urban_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ urban_stop = 1
-                                    $ luszcz_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ przepychaczka = 1
+                                    $ stop = 3
                                     $ urban_min_attack += 1
                                     $ urban_max_attack += 4
                                     jump bron
@@ -351,65 +266,45 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Jerzy Urban: Stop (ATK:1-4){/b}" if urban_sojusznik == 1 and urban_stop == 1:
+                    "{b}Jerzy Urban: Stop (ATK:1-4){/b}" if urban_sojusznik == 1 and stop == 3:
                         window show
                         "{i}Stop jest git{/i}"
                         window hide
 
-                        if urban_fuck == 2 or urban_przepychaczka == 2:
+                        if fuck == 1 or przepychaczka == 1:
                             menu:
-                                "{b}Fuck (ATK:0-2){/b}" if urban_fuck == 2:
+                                "{b}Fuck (ATK:0-2){/b}" if fuck == 1:
                                     window show
                                     "{i}Fuck jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 4
-                                    $ luszcz_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ urban_stop = 2
-                                    $ urban_fuck = 1
+                                    $ stop = 1
+                                    $ fuck = 3
                                     $ urban_min_attack += 0
                                     $ urban_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if urban_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 4
-                                    $ luszcz_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ urban_stop = 2
-                                    $ urban_przepychaczka = 1
-                                    $ luszcz_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ stop = 1
+                                    $ przepychaczka = 3
                                     $ urban_min_attack += 2
                                     $ urban_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if urban_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 4
-                                    $ luszcz_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ urban_stop = 2
-                                    $ urban_stop = 1
-                                    $ luszcz_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ stop = 1
+                                    $ stop = 3
                                     $ urban_min_attack += 1
                                     $ urban_max_attack += 4
                                     jump bron
@@ -423,53 +318,45 @@ label eq:
                     
 
 
-                    "{b}Żyd: Chanuka (ATK:1-3){/b}" if zyd_sojusznik == 1 and zyd_chanuka == 1:
+                    "{b}Żyd: Chanuka (ATK:1-3){/b}" if zyd_sojusznik == 1 and chanuka == 4:
                         window show
                         "{i}Chanuka jest git{/i}"
                         window hide
 
-                        if zyd_przepychaczka == 2 or zyd_stop == 2:
+                        if przepychaczka == 1 or stop == 1:
                             menu:
-                                "{b}Chanuka (ATK:1-3){/b}" if zyd_chanuka == 2:
+                                "{b}Chanuka (ATK:1-3){/b}" if chanuka == 1:
                                     window show
                                     "{i}Chanuka jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 2
-                                    $ zyd_chanuka = 2
-                                    $ zyd_chanuka = 1
+                                    $ chanuka = 1
+                                    $ chanuka = 4
                                     $ zyd_min_attack += 1
                                     $ zyd_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if zyd_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 2
-                                    $ zyd_chanuka = 2
-                                    $ zyd_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ chanuka = 1
+                                    $ przepychaczka = 4
                                     $ zyd_min_attack += 2
                                     $ zyd_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if zyd_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 2
-                                    $ zyd_chanuka = 2
-                                    $ zyd_stop = 1
-                                    $ urban_stop = 3
-                                    $ luszcz_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ chanuka = 1
+                                    $ stop = 4
                                     $ zyd_min_attack += 1
                                     $ zyd_max_attack += 4
                                     jump bron
@@ -480,65 +367,45 @@ label eq:
                         else:
                             jump bron
 
-                    "{b}Żyd: Przepychaczka (ATK:2-2){/b}" if zyd_sojusznik == 1 and zyd_przepychaczka == 1:
+                    "{b}Żyd: Przepychaczka (ATK:2-2){/b}" if zyd_sojusznik == 1 and przepychaczka == 4:
                         window show
                         "{i}Przepychaczka jest git{/i}"
                         window hide
 
-                        if zyd_chanuka == 2 or zyd_stop == 2:
+                        if chanuka == 1 or stop == 1:
                             menu:
-                                "{b}Chanuka (ATK:1-3){/b}" if zyd_chanuka == 2:
+                                "{b}Chanuka (ATK:1-3){/b}" if chanuka == 1:
                                     window show
                                     "{i}Chanuka jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 2
                                     $ zyd_max_attack -= 2
-                                    $ zyd_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ zyd_chanuka = 1
+                                    $ przepychaczka = 1
+                                    $ chanuka = 4
                                     $ zyd_min_attack += 1
                                     $ zyd_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if zyd_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 2
                                     $ zyd_max_attack -= 2
-                                    $ zyd_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ zyd_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ przepychaczka = 1
+                                    $ przepychaczka = 4
                                     $ zyd_min_attack += 2
                                     $ zyd_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if zyd_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 2
                                     $ zyd_max_attack -= 2
-                                    $ zyd_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ zyd_stop = 1
-                                    $ urban_stop = 3
-                                    $ luszcz_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ przepychaczka = 1
+                                    $ stop = 4
                                     $ zyd_min_attack += 1
                                     $ zyd_max_attack += 4
                                     jump bron
@@ -549,65 +416,45 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Żyd: Stop (ATK:1-4){/b}" if zyd_sojusznik == 1 and zyd_stop == 1:
+                    "{b}Żyd: Stop (ATK:1-4){/b}" if zyd_sojusznik == 1 and stop == 4:
                         window show
                         "{i}Stop jest git{/i}"
                         window hide
 
-                        if zyd_chanuka == 2 or zyd_przepychaczka == 2:
+                        if chanuka == 1 or przepychaczka == 1:
                             menu:
-                                "{b}Chanuka (ATK:1-3){/b}" if zyd_chanuka == 2:
+                                "{b}Chanuka (ATK:1-3){/b}" if chanuka == 1:
                                     window show
                                     "{i}Chanuka jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ zyd_stop = 2
-                                    $ zyd_chanuka = 1
+                                    $ stop = 1
+                                    $ chanuka = 4
                                     $ zyd_min_attack += 1
                                     $ zyd_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if zyd_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ zyd_stop = 2
-                                    $ zyd_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ stop = 1
+                                    $ przepychaczka = 4
                                     $ zyd_min_attack += 2
                                     $ zyd_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if zyd_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ zyd_stop = 2
-                                    $ zyd_stop = 1
-                                    $ urban_stop = 3
-                                    $ luszcz_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ stop = 1
+                                    $ stop = 4
                                     $ zyd_min_attack += 1
                                     $ zyd_max_attack += 4
                                     jump bron
@@ -621,53 +468,45 @@ label eq:
 
 
 
-                    "{b}Kazuma: Chunchunmaru (ATK:0-6){/b}" if kazuma_sojusznik == 1 and kazuma_chunchunmaru == 1:
+                    "{b}Kazuma: Chunchunmaru (ATK:0-6){/b}" if kazuma_sojusznik == 1 and chunchunmaru == 5:
                         window show
                         "{i}Chunchunmaru jest git{/i}"
                         window hide
 
-                        if kazuma_przepychaczka == 2 or kazuma_stop == 2:
+                        if przepychaczka == 1 or stop == 1:
                             menu:
-                                "{b}Chunchunmaru (ATK:0-6){/b}" if kazuma_chunchunmaru == 2:
+                                "{b}Chunchunmaru (ATK:0-6){/b}" if chunchunmaru == 1:
                                     window show
                                     "{i}Chunchunmaru jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 2
-                                    $ kazuma_chunchunmaru = 2
-                                    $ kazuma_chunchunmaru = 1
+                                    $ chunchunmaru = 1
+                                    $ chunchunmaru = 5
                                     $ kazuma_min_attack += 1
                                     $ kazuma_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if kazuma_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 2
-                                    $ kazuma_chunchunmaru = 2
-                                    $ kazuma_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ chunchunmaru = 1
+                                    $ przepychaczka = 5
                                     $ kazuma_min_attack += 2
                                     $ kazuma_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if kazuma_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 2
-                                    $ kazuma_chunchunmaru = 2
-                                    $ kazuma_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ luszcz_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ chunchunmaru = 1
+                                    $ stop = 5
                                     $ kazuma_min_attack += 1
                                     $ kazuma_max_attack += 4
                                     jump bron
@@ -678,65 +517,45 @@ label eq:
                         else:
                             jump bron
 
-                    "{b}Kazuma: Przepychaczka (ATK:2-2){/b}" if kazuma_sojusznik == 1 and kazuma_przepychaczka == 1:
+                    "{b}Kazuma: Przepychaczka (ATK:2-2){/b}" if kazuma_sojusznik == 1 and przepychaczka == 5:
                         window show
                         "{i}Przepychaczka jest git{/i}"
                         window hide
 
-                        if kazuma_chunchunmaru == 2 or kazuma_stop == 2:
+                        if chunchunmaru == 1 or stop == 1:
                             menu:
-                                "{b}Chunchunmaru (ATK:0-6){/b}" if kazuma_chunchunmaru == 2:
+                                "{b}Chunchunmaru (ATK:0-6){/b}" if chunchunmaru == 1:
                                     window show
                                     "{i}Chunchunmaru jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 2
                                     $ kazuma_max_attack -= 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ kazuma_chunchunmaru = 1
+                                    $ przepychaczka = 1
+                                    $ chunchunmaru = 5
                                     $ kazuma_min_attack += 1
                                     $ kazuma_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if kazuma_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 2
                                     $ kazuma_max_attack -= 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ przepychaczka = 1
+                                    $ przepychaczka = 5
                                     $ kazuma_min_attack += 2
                                     $ kazuma_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if kazuma_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 2
                                     $ kazuma_max_attack -= 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ kazuma_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ luszcz_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ przepychaczka = 1
+                                    $ stop = 5
                                     $ kazuma_min_attack += 1
                                     $ kazuma_max_attack += 4
                                     jump bron
@@ -747,65 +566,45 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Kazuma: Stop (ATK:1-4){/b}" if kazuma_sojusznik == 1 and kazuma_stop == 1:
+                    "{b}Kazuma: Stop (ATK:1-4){/b}" if kazuma_sojusznik == 1 and stop == 5:
                         window show
                         "{i}Stop jest git{/i}"
                         window hide
 
-                        if kazuma_chunchunmaru == 2 or kazuma_przepychaczka == 2:
+                        if chunchunmaru == 1 or przepychaczka == 1:
                             menu:
-                                "{b}Chunchunmaru (ATK:0-6){/b}" if kazuma_chunchunmaru == 2:
+                                "{b}Chunchunmaru (ATK:0-6){/b}" if chunchunmaru == 1:
                                     window show
                                     "{i}Chunchunmaru jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ kazuma_chunchunmaru = 1
+                                    $ stop = 1
+                                    $ chunchunmaru = 5
                                     $ kazuma_min_attack += 1
                                     $ kazuma_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if kazuma_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ kazuma_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
-                                    $ tarczownik_przepychaczka = 3
+                                    $ stop = 1
+                                    $ przepychaczka = 5
                                     $ kazuma_min_attack += 2
                                     $ kazuma_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if kazuma_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ kazuma_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ luszcz_stop = 3
-                                    $ tarczownik_stop = 3
+                                    $ stop = 1
+                                    $ stop = 5
                                     $ kazuma_min_attack += 1
                                     $ kazuma_max_attack += 4
                                     jump bron
@@ -819,53 +618,45 @@ label eq:
 
 
 
-                    "{b}Naofumi: Legendary Shield (ATK:1-3){/b}" if tarczownik_sojusznik == 1 and tarczownik_legendary_shield == 1:
+                    "{b}Naofumi: Legendary Shield (ATK:1-3){/b}" if tarczownik_sojusznik == 1 and legendary_shield == 6:
                         window show
                         "{i}Legendary Shield jest git{/i}"
                         window hide
 
-                        if tarczownik_przepychaczka == 2 or tarczownik_stop == 2:
+                        if przepychaczka == 1 or stop == 1:
                             menu:
-                                "{b}Legendary Shield (ATK:1-3){/b}" if tarczownik_legendary_shield == 2:
+                                "{b}Legendary Shield (ATK:1-3){/b}" if legendary_shield == 1:
                                     window show
                                     "{i}Legendary Shield jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 2
-                                    $ tarczownik_legendary_shield = 2
-                                    $ tarczownik_legendary_shield = 1
+                                    $ legendary_shield = 1
+                                    $ legendary_shield = 6
                                     $ tarczownik_min_attack += 1
                                     $ tarczownik_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if tarczownik_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 2
-                                    $ tarczownik_legendary_shield = 2
-                                    $ tarczownik_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
+                                    $ legendary_shield = 1
+                                    $ przepychaczka = 6
                                     $ tarczownik_min_attack += 2
                                     $ tarczownik_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if tarczownik_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 2
-                                    $ tarczownik_legendary_shield = 2
-                                    $ tarczownik_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ luszcz_stop = 3
+                                    $ legendary_shield = 1
+                                    $ stop = 6
                                     $ tarczownik_min_attack += 1
                                     $ tarczownik_max_attack += 4
                                     jump bron
@@ -876,65 +667,45 @@ label eq:
                         else:
                             jump bron
 
-                    "{b}Naofumi: Przepychaczka (ATK:2-2){/b}" if tarczownik_sojusznik == 1 and tarczownik_przepychaczka == 1:
+                    "{b}Naofumi: Przepychaczka (ATK:2-2){/b}" if tarczownik_sojusznik == 1 and przepychaczka == 6:
                         window show
                         "{i}Przepychaczka jest git{/i}"
                         window hide
 
-                        if tarczownik_legendary_shield == 2 or tarczownik_stop == 2:
+                        if legendary_shield == 1 or stop == 1:
                             menu:
-                                "{b}Legendary Shield (ATK:1-3){/b}" if tarczownik_legendary_shield == 2:
+                                "{b}Legendary Shield (ATK:1-3){/b}" if legendary_shield == 1:
                                     window show
                                     "{i}Legendary Shield jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 2
                                     $ tarczownik_max_attack -= 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ tarczownik_legendary_shield = 1
+                                    $ przepychaczka = 1
+                                    $ legendary_shield = 6
                                     $ tarczownik_min_attack += 1
                                     $ tarczownikwnikwnik_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if tarczownik_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 2
                                     $ tarczownik_max_attack -= 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ tarczownik_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
+                                    $ przepychaczka = 1
+                                    $ przepychaczka = 6
                                     $ tarczownik_min_attack += 2
                                     $ tarczownik_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if tarczownik_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 2
                                     $ tarczownik_max_attack -= 2
-                                    $ tarczownik_przepychaczka = 2
-                                    $ urban_przepychaczka = 2
-                                    $ zyd_przepychaczka = 2
-                                    $ kazuma_przepychaczka = 2
-                                    $ luszcz_przepychaczka = 2
-                                    $ tarczownik_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ luszcz_stop = 3
+                                    $ przepychaczka = 1
+                                    $ stop = 6
                                     $ tarczownik_min_attack += 1
                                     $ tarczownik_max_attack += 4
                                     jump bron
@@ -945,65 +716,45 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Naofumi: Stop (ATK:1-4){/b}" if tarczownik_sojusznik == 1 and tarczownik_stop == 1:
+                    "{b}Naofumi: Stop (ATK:1-4){/b}" if tarczownik_sojusznik == 1 and stop == 6:
                         window show
                         "{i}Stop jest git{/i}"
                         window hide
 
-                        if tarczownik_legendary_shield == 2 or tarczownik_przepychaczka == 2:
+                        if legendary_shield == 1 or przepychaczka == 1:
                             menu:
-                                "{b}Legendary Shield (ATK:1-3){/b}" if tarczownik_legendary_shield == 2:
+                                "{b}Legendary Shield (ATK:1-3){/b}" if legendary_shield == 1:
                                     window show
                                     "{i}Legendary Shield jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ tarczownik_legendary_shield = 1
+                                    $ stop = 1
+                                    $ legendary_shield = 6
                                     $ tarczownik_min_attack += 1
                                     $ tarczownik_max_attack += 2
                                     jump bron
                                     
-                                "{b}Przepychaczka (ATK:2-2){/b}" if tarczownik_przepychaczka == 2:
+                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
                                     window show
                                     "{i}Przpychaczka jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ tarczownik_przepychaczka = 1
-                                    $ urban_przepychaczka = 3
-                                    $ zyd_przepychaczka = 3
-                                    $ kazuma_przepychaczka = 3
-                                    $ luszcz_przepychaczka = 3
+                                    $ stop = 1
+                                    $ przepychaczka = 6
                                     $ tarczownik_min_attack += 2
                                     $ tarczownik_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if tarczownik_stop == 2:
+                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
                                     window show
                                     "{i}Stop jest git{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 4
-                                    $ urban_stop = 2
-                                    $ zyd_stop = 2
-                                    $ kazuma_stop = 2
-                                    $ tarczownik_stop = 2
-                                    $ luszcz_stop = 2
-                                    $ tarczownik_stop = 1
-                                    $ urban_stop = 3
-                                    $ zyd_stop = 3
-                                    $ kazuma_stop = 3
-                                    $ luszcz_stop = 3
+                                    $ stop = 1
+                                    $ stop = 6
                                     $ tarczownik_min_attack += 1
                                     $ tarczownik_max_attack += 4
                                     jump bron

@@ -383,7 +383,6 @@ label start:
         show luszcz siedzi right at slightright
         show screen clock
         play music "audio/music/wiatr.mp3"
-        luszcz "GitHub nie działa"
         luszcz "Ahhh… ówielbiam siedzieć na moim klifie mondrości i obserwować z niej Skałę"
         luszcz "Ohhh… jak ja kocham mojom ojczyznę Skałę."
         luszcz "Jest taka betonowa…"
@@ -499,7 +498,7 @@ label start:
 
         luszcz "(mam nadzieję że ten człowiek zaraz sobie pujdzie nie daję mu grosza.)"
         luszcz "(zwłaszcza że nie mam rzadnych drobnych. Tylko pare portfeli które zostały mi z kieszonkowego)"
-        luszcz "(niestety są tak pełne że wyjęcie z nich banknota sprawi że wszystkie inne wylecą i zapełnią cały kościół dusząć wszystkich w środku.)"
+        luszcz "(niestety są tak pełne że wyjęcie z nich banknota sprawi że wszystkie inne wylecą i zapełnią cały kościół dusząc wszystkich w środku.)"
         luszcz "(a tego nikt by nie chciał.)"
 
         kosc "…"
@@ -639,31 +638,21 @@ label start:
                 $ zyd_sojusznik += 1
                 $ kazuma_sojusznik += 1
                 $ tarczownik_sojusznik += 1
-                $ luszcz_przepychaczka = 2
-                $ urban_przepychaczka = 2
-                $ zyd_przepychaczka = 2
-                $ kazuma_przepychaczka = 2
-                $ tarczownik_przepychaczka = 2
-                $ luszcz_stop = 2
-                $ urban_stop = 2
-                $ zyd_stop = 2
-                $ kazuma_stop = 2
-                $ tarczownik_stop = 2
+                $ przepychaczka = 1
+                $ stop = 1
 
             "{b}TROCHE{/b}":
                 $ liczba_sojusznikow += 2
                 $ urban_sojusznik += 1
                 $ zyd_sojusznik += 1
-                $ urban_stop = 2
-                $ zyd_stop = 2
-                $ urban_przepychaczka = 2
-                $ zyd_przepychaczka = 2
+                $ stop = 1
+                $ przepychaczka = 1
                 
             "{b}MAM{/b}":
                 $ liczba_sojusznikow += 1
                 $ urban_sojusznik += 1
-                $ urban_stop = 2
-                $ urban_przepychaczka = 2
+                $ stop = 1
+                $ przepychaczka = 1
 
                 
             "{b}CO TO?{/b}":

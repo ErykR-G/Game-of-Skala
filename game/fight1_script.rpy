@@ -841,33 +841,33 @@ label fight1:
                 "{b}Atak ([luszcz_min_attack_now]-[luszcz_max_attack_now] DMG){/b}":
                     if luszcz_weapon >= 1:
                         if luszcz_wybrany == 1:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik1  
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if luszcz_wybrany == 2:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik2  
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if luszcz_wybrany == 3:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik3 
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik3  
 
 
@@ -1553,33 +1553,33 @@ label fight1:
                 "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
                     if urban_weapon >= 1:
                         if urban_wybrany == 1:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik1  
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if urban_wybrany == 2:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik2  
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if urban_wybrany == 3:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik3 
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -1699,6 +1699,7 @@ label fight1:
                         $ ado += 1
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
+                    play sound "audio/sfx/uszy.mp3" 
 
                     if kibol1_obrona >= 1:
                         $ ado += 1
@@ -1785,33 +1786,33 @@ label fight1:
                 "{b}Atak ([zyd_min_attack_now]-[zyd_max_attack_now] DMG){/b}":
                     if zyd_weapon >= 1:
                         if zyd_wybrany == 1:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik1  
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if zyd_wybrany == 2:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik2  
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if zyd_wybrany == 3:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik3 
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -1939,6 +1940,7 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ kibol1_pager += 1
                             show pager1 zorder 15 at bok_wrog1  
@@ -1949,6 +1951,7 @@ label fight1:
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ akane_pager += 1
                             
@@ -1959,6 +1962,7 @@ label fight1:
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ kibol2_pager += 1
                             
@@ -1985,6 +1989,7 @@ label fight1:
                         $ ado += 1
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+                    play sound "audio/sfx/boom.mp3" 
 
                     if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
                         $ kibol1_hp_now -= 8
@@ -2040,10 +2045,6 @@ label fight1:
                                             else:
                                                 $ ado += 1
 
-                    if dialog_fight1 == 0:
-                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
-                        $ dialog_fight1 += 1
-
                     hide red_button
                     hide pager1
                     hide pager2
@@ -2052,6 +2053,10 @@ label fight1:
                     hide eksplozja1
                     hide eksplozja2
                     hide eksplozja3
+                    if dialog_fight1 == 0:
+                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
+                        $ dialog_fight1 += 1
+
                     jump faza12
         else:
             $ ado += 1
@@ -2078,33 +2083,33 @@ label fight1:
                 "{b}Atak ([kazuma_min_attack_now]-[kazuma_max_attack_now] DMG){/b}":
                     if kazuma_weapon >= 1:
                         if kazuma_wybrany == 1:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik1  
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if kazuma_wybrany == 2:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik2  
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if kazuma_wybrany == 3:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik3 
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -2579,33 +2584,33 @@ label fight1:
                 
                 if tarczownik_weapon >= 1:
                     if tarczownik_wybrany == 1:
-                        if tarczownik_legendary_shield == 1:
+                        if legendary_shield == 6:
                             show tarczownik_weapon zorder 15 at weapon_sojusznik1  
 
-                        if tarczownik_przepychaczka == 1:
+                        if przepychaczka == 6:
                             show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                        if tarczownik_stop == 1:
+                        if stop == 6:
                             show stop zorder 15 at weapon_sojusznik1  
 
                     if tarczownik_wybrany == 2:
-                        if tarczownik_legendary_shield == 1:
+                        if legendary_shield == 6:
                             show tarczownik_weapon zorder 15 at weapon_sojusznik2  
 
-                        if tarczownik_przepychaczka == 1:
+                        if przepychaczka == 6:
                             show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                        if tarczownik_stop == 1:
+                        if stop == 6:
                             show stop zorder 15 at weapon_sojusznik2   
 
                     if tarczownik_wybrany == 3:
-                        if tarczownik_legendary_shield == 1:
+                        if legendary_shield == 6:
                             show tarczownik_weapon zorder 15 at weapon_sojusznik3 
 
-                        if tarczownik_przepychaczka == 1:
+                        if przepychaczka == 6:
                             show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                        if tarczownik_stop == 1:
+                        if stop == 6:
                             show stop zorder 15 at weapon_sojusznik3  
 
                 else:
@@ -3180,33 +3185,33 @@ label fight1:
                 "{b}Atak ([luszcz_min_attack_now]-[luszcz_max_attack_now] DMG){/b}":
                     if luszcz_weapon >= 1:
                         if luszcz_wybrany == 1:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik1  
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if luszcz_wybrany == 2:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik2  
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if luszcz_wybrany == 3:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik3 
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -3890,33 +3895,33 @@ label fight1:
                 "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
                     if urban_weapon >= 1:
                         if urban_wybrany == 1:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik1  
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if urban_wybrany == 2:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik2  
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if urban_wybrany == 3:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik3 
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -4036,6 +4041,7 @@ label fight1:
                         $ ado += 1
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
+                    play sound "audio/sfx/uszy.mp3" 
 
                     if kibol1_obrona >= 1:
                         $ ado += 1
@@ -4121,33 +4127,33 @@ label fight1:
                 "{b}Atak ([zyd_min_attack_now]-[zyd_max_attack_now] DMG){/b}":
                     if zyd_weapon >= 1:
                         if zyd_wybrany == 1:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik1  
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if zyd_wybrany == 2:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik2  
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if zyd_wybrany == 3:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik3 
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -4274,6 +4280,7 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ kibol1_pager += 1
                             
@@ -4284,6 +4291,7 @@ label fight1:
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ akane_pager += 1
                             
@@ -4294,6 +4302,7 @@ label fight1:
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ kibol2_pager += 1
                             
@@ -4320,6 +4329,7 @@ label fight1:
                         $ ado += 1
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+                    play sound "audio/sfx/boom.mp3" 
 
                     if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
                         $ kibol1_hp_now -= 8
@@ -4374,9 +4384,6 @@ label fight1:
 
                                             else:
                                                 $ ado += 1
-                    if dialog_fight1 == 0:
-                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
-                        $ dialog_fight1 += 1
 
                     hide red_button
                     hide pager1
@@ -4386,6 +4393,9 @@ label fight1:
                     hide eksplozja1
                     hide eksplozja2
                     hide eksplozja3
+                    if dialog_fight1 == 0:
+                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
+                        $ dialog_fight1 += 1
                     jump faza13
         else:
             $ ado += 1
@@ -4412,33 +4422,33 @@ label fight1:
                 "{b}Atak ([kazuma_min_attack_now]-[kazuma_max_attack_now] DMG){/b}":
                     if kazuma_weapon >= 1:
                         if kazuma_wybrany == 1:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik1  
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if kazuma_wybrany == 2:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik2  
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if kazuma_wybrany == 3:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik3 
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -5152,33 +5162,33 @@ label fight1:
                 "{b}Atak ([luszcz_min_attack_now]-[luszcz_max_attack_now] DMG){/b}":
                     if luszcz_weapon >= 1:
                         if luszcz_wybrany == 1:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik1  
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if luszcz_wybrany == 2:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik2  
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if luszcz_wybrany == 3:
-                            if luszcz_gitara == 1:
+                            if gitara == 2:
                                 show luszcz_weapon zorder 15 at weapon_sojusznik3 
 
-                            if luszcz_przepychaczka == 1:
+                            if przepychaczka == 2:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if luszcz_stop == 1:
+                            if stop == 2:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -5863,33 +5873,33 @@ label fight1:
                 "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
                     if urban_weapon >= 1:
                         if urban_wybrany == 1:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik1  
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if urban_wybrany == 2:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik2  
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if urban_wybrany == 3:
-                            if urban_fuck == 1:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik3 
 
-                            if urban_przepychaczka == 1:
+                            if przepychaczka == 3:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if urban_stop == 1:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -6009,6 +6019,7 @@ label fight1:
                         $ ado += 1
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
+                    play sound "audio/sfx/uszy.mp3" 
 
                     if kibol1_obrona >= 1:
                         $ ado += 1
@@ -6094,33 +6105,33 @@ label fight1:
                 "{b}Atak ([zyd_min_attack_now]-[zyd_max_attack_now] DMG){/b}":
                     if zyd_weapon >= 1:
                         if zyd_wybrany == 1:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik1  
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if zyd_wybrany == 2:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik2  
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if zyd_wybrany == 3:
-                            if zyd_chanuka == 1:
+                            if chanuka == 4:
                                 show zyd_weapon zorder 15 at weapon_sojusznik3 
 
-                            if zyd_przepychaczka == 1:
+                            if przepychaczka == 4:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if zyd_stop == 1:
+                            if stop == 4:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
@@ -6247,6 +6258,7 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ kibol1_pager += 1
                             
@@ -6257,6 +6269,7 @@ label fight1:
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ akane_pager += 1
                             
@@ -6267,6 +6280,7 @@ label fight1:
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ kibol2_pager += 1
                             
@@ -6293,6 +6307,7 @@ label fight1:
                         $ ado += 1
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+                    play sound "audio/sfx/boom.mp3" 
 
                     if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
                         $ kibol1_hp_now -= 8
@@ -6347,9 +6362,6 @@ label fight1:
 
                                             else:
                                                 $ ado += 1
-                    if dialog_fight1 == 0:
-                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
-                        $ dialog_fight1 += 1
                     
                     hide red_button
                     hide pager1
@@ -6359,6 +6371,9 @@ label fight1:
                     hide eksplozja1
                     hide eksplozja2
                     hide eksplozja3
+                    if dialog_fight1 == 0:
+                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
+                        $ dialog_fight1 += 1
                     jump faza14
         else:
             $ ado += 1
@@ -6385,33 +6400,33 @@ label fight1:
                 "{b}Atak ([kazuma_min_attack_now]-[kazuma_max_attack_now] DMG){/b}":
                     if kazuma_weapon >= 1:
                         if kazuma_wybrany == 1:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik1  
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik1  
 
                         if kazuma_wybrany == 2:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik2  
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik2 
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik2   
 
                         if kazuma_wybrany == 3:
-                            if kazuma_chunchunmaru == 1:
+                            if chunchunmaru == 5:
                                 show kazuma_weapon zorder 15 at weapon_sojusznik3 
 
-                            if kazuma_przepychaczka == 1:
+                            if przepychaczka == 5:
                                 show przepychaczka zorder 15 at weapon_sojusznik3 
 
-                            if kazuma_stop == 1:
+                            if stop == 5:
                                 show stop zorder 15 at weapon_sojusznik3  
 
                     else:
