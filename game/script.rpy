@@ -21,6 +21,7 @@ label postacie:
     define kazuma = Character("Kazuma", color="#dbf01f")
     define tarczownik = Character("Naofumi", color="#0a570a")
     
+    define burmistrz = Character("Burmistrz", color="#f8bf44")
 
     define ksiadz = Character("Ksiądz", color="#8607b8")
 
@@ -617,9 +618,31 @@ label start:
             ksiadz "Jednakże mały poranny ptaszek wyśpiewał mi że jeden z parafian postanowił wstrzymać się od dania ofiary mimo posiadania portfeli pełnych pieniędzy."
 
         ksiadz "Z tego właśnie powodu przechodząc do ogłoszeń związanych z polityką chciałbym zacząć od nowej ustawy która mianuje płacenie portfelami jako jedyną legalną fizyczną formę płatności."
+        ksiadz "Burmistrz był w stanie wprowadzić tę zmianę natychmiastowo"
+
+        burmistrz "to prawda.."
+
+        ksiadz "Przechodząc do ustawy po którą nas tu zwołałem, pomijając Mszę Świętą."
+        ksiadz "Jak już wszyscy wiecie, Kraków od wielu lat prowadzi owocną dla wspólnoty chrześcijańskiej ekspansję."
+        ksiadz "Jeszcze przed chwilą wydawał się tak odległy, a dziś stoi u naszej granicy i ubiega się o włączenie Skały w swój obszar."
+        ksiadz "Jako, iż Kraków zawsze nam dobrze służył, nie widzę w tym żadnego problemu, a nawet uważam, że przyniesie to nam same zyski."
+        ksiadz "Dużo zysków."
+        ksiadz "Już dziś wyjeżdżam do Krakowa na tydzień aby spotkać się z wodzem sektora rozwojowego Krakowa Bartuchem Przeździuchem i obgadać sprawę w detalach."
+        ksiadz "Po moim powrocie w następną niedzielę msza odbędzie się tylko o 21:37. Będziemy na niej przeprowadzać głosowanie w którym jednoznacznie przyjmiemy ofertę krakowską i włączymy się do nowej potęgi."
+        ksiadz "Życzę wszystkim miłego dnia. Bóg z wami."
 
         $ timer += 10
         stop music
+
+        scene bg przed_kosciol
+        show luszcz siedzi at center
+
+        luszcz "Myślę, że ksiądz sobie przeskrobał."
+        luszcz "Już widzę jak Bartóch wjeżdrza tu w swoim czołgu i wytyka palcem co zbórzyć i gdzie postawić wierzowce."
+        luszcz "Zresztą to oczywiste że ksiądz został przekupiony. Pewnie przez ten tydzień będzie kąpał się w chajsiwie i polewał swoje ciało olejem dziecięcym."
+        luszcz "Okej. Mam tydzień aby przekonać mieszkańców Skały do przeciwstawienia się księdzu."
+        luszcz "To trochę jak w Personie."
+        luszcz "Gdzie by się najpierw wybrać?"
 
         
 
