@@ -1,0 +1,9217 @@
+label fight1_stats:
+    default kibol1_sex = 0
+    default kibol2_sex = 0
+    default akane_sex = 1
+
+    default kibol1_hp = 15
+    default kibol2_hp = 15
+    default akane_hp = 30
+
+    default kibol1_uszy = 0
+    default akane_uszy = 0
+    default kibol2_uszy = 0
+
+    default kibol1_pager = 0
+    default kibol2_pager = 0
+    default akane_pager = 0
+
+    default kibol1_slime = 0
+    default kibol2_slime = 0
+    default akane_slime = 0
+
+    default kibol1_weapon = 1
+    default kibol2_weapon = 1
+    default akane_weapon = 1
+
+    default kibol1_hp_now = kibol1_hp
+    default kibol2_hp_now = kibol2_hp
+    default akane_hp_now = akane_hp
+
+    default kibol1_min_attack = 1
+    default kibol2_min_attack = 1
+    default akane_min_attack = 3
+
+    default kibol1_max_attack = 4
+    default kibol2_max_attack = 4
+    default akane_max_attack = 8
+
+    default kibol1_max_attack_now = kibol1_max_attack
+    default kibol2_max_attack_now = kibol2_max_attack
+    default akane_max_attack_now = akane_max_attack
+
+    default kibol1_min_attack_now = kibol1_min_attack
+    default kibol2_min_attack_now = kibol2_min_attack
+    default akane_min_attack_now = akane_min_attack
+
+    default kibol1_max_attack_now_true = kibol1_max_attack
+    default kibol2_max_attack_now_true = kibol2_max_attack
+    default akane_max_attack_now_true = akane_max_attack
+
+    default kibol1_min_attack_now_true = kibol1_min_attack
+    default kibol2_min_attack_now_true = kibol2_min_attack
+    default akane_min_attack_now_true = akane_min_attack
+
+    default kibol1_attack = 0
+    default kibol2_attack = 0
+    default akane_attack = 0
+
+    default kibol1_obrona = 0
+    default kibol2_obrona = 0
+    default akane_obrona = 0
+
+    default kibol1_umarty = 0
+    default kibol2_umarty = 0
+    default akane_umarty = 0
+
+label fight1:
+    label fight_wybor1:
+        scene bg korytarz
+
+        "{i}O bogowie walka{/i}"
+        $ ile_wrogow += 3
+        show kibol1 fight zorder 10 at wrog1
+        show screen kibol1_stats
+        show akane fight zorder 10 at wrog3
+        show screen akane_stats
+        show kibol2 fight zorder 10 at wrog2
+        show screen kibol2_stats
+        $ kibol1_hp_now = kibol1_hp
+        $ kibol1_min_attack_now = kibol1_min_attack
+        $ kibol1_max_attack_now = kibol1_max_attack
+        $ kibol1_min_attack_now_true = kibol1_min_attack
+        $ kibol1_max_attack_now_true = kibol1_max_attack
+        $ kibol2_hp_now = kibol2_hp
+        $ kibol2_min_attack_now = kibol2_min_attack
+        $ kibol2_max_attack_now = kibol2_max_attack
+        $ kibol2_min_attack_now_true = kibol2_min_attack
+        $ kibol2_max_attack_now_true = kibol2_max_attack
+        $ akane_hp_now = akane_hp
+        $ akane_min_attack_now = akane_min_attack
+        $ akane_max_attack_now = akane_max_attack
+        $ akane_min_attack_now_true = akane_min_attack
+        $ akane_max_attack_now_true = akane_max_attack
+
+        label team1:
+            $ fight_on = 1
+            if liczba_sojusznikow >= 3:
+                $ ile_sojusznikow += 3
+                menu:
+                    "{b}Kogo wystawić do walki?{/b}"
+
+                    "{b}Maciej Łuszcz (HP:[luszcz_hp], ATK:[luszcz_min_attack]-[luszcz_max_attack]){/b}" if luszcz_sojusznik >= 1 and luszcz_wybrany == 0:
+                        $ luszcz_wybrany += 1
+                        $ luszcz_fighter += 1
+                        $ luszcz_hp_now = luszcz_hp
+                        $ luszcz_min_attack_now = luszcz_min_attack
+                        $ luszcz_max_attack_now = luszcz_max_attack
+                        $ luszcz_min_attack_now_true = luszcz_min_attack
+                        $ luszcz_max_attack_now_true = luszcz_max_attack
+                        show luszcz fight zorder 10 at sojusznik1
+                        show screen luszcz1_stats
+                        luszcz "Gotowy do boju"
+                    
+                    "{b}Shadow (HP:[eminem_hp], ATK:[eminem_min_attack]-[eminem_max_attack]){/b}" if eminem_sojusznik >= 1 and eminem_wybrany == 0:
+                        $ eminem_wybrany += 1
+                        $ eminem_fighter += 1
+                        $ eminem_hp_now = eminem_hp
+                        $ eminem_min_attack_now = eminem_min_attack
+                        $ eminem_max_attack_now = eminem_max_attack
+                        $ eminem_min_attack_now_true = eminem_min_attack
+                        $ eminem_max_attack_now_true = eminem_max_attack
+                        show eminem fight zorder 10 at sojusznik1
+                        show screen eminem1_stats
+                        eminem "Gotowy do boju"
+
+                    "{b}Jerzy Urban (HP:[urban_hp], ATK:[urban_min_attack]-[urban_max_attack]){/b}" if urban_sojusznik >= 1 and urban_wybrany == 0:
+                        $ urban_wybrany += 1
+                        $ urban_fighter += 1
+                        $ urban_hp_now = urban_hp
+                        $ urban_min_attack_now = urban_min_attack
+                        $ urban_max_attack_now = urban_max_attack
+                        $ urban_min_attack_now_true = urban_min_attack
+                        $ urban_max_attack_now_true = urban_max_attack
+                        show urban fight zorder 10 at sojusznik1
+                        show screen urban1_stats
+                        urban "Gotowy do boju"
+
+                    "{b}Żyd (HP:[zyd_hp], ATK:[zyd_min_attack]-[zyd_max_attack]){/b}" if zyd_sojusznik >= 1 and zyd_wybrany == 0:
+                        $ zyd_wybrany += 1
+                        $ zyd_fighter += 1
+                        $ zyd_hp_now = zyd_hp
+                        $ zyd_min_attack_now = zyd_min_attack
+                        $ zyd_max_attack_now = zyd_max_attack
+                        $ zyd_min_attack_now_true = zyd_min_attack
+                        $ zyd_max_attack_now_true = zyd_max_attack
+                        show zyd fight zorder 10 at sojusznik1
+                        show screen zyd1_stats
+                        zyd "Gotowy do boju"
+
+                    "{b}Kazuma (HP:[kazuma_hp], ATK:[kazuma_min_attack]-[kazuma_max_attack]){/b}" if kazuma_sojusznik >= 1 and kazuma_wybrany == 0:
+                        $ kazuma_wybrany += 1
+                        $ kazuma_fighter += 1
+                        $ kazuma_hp_now = kazuma_hp
+                        $ kazuma_min_attack_now = kazuma_min_attack
+                        $ kazuma_max_attack_now = kazuma_max_attack
+                        $ kazuma_min_attack_now_true = kazuma_min_attack
+                        $ kazuma_max_attack_now_true = kazuma_max_attack
+                        show kazuma fight zorder 10 at sojusznik1
+                        show screen kazuma1_stats
+                        kazuma "Gotowy do boju"
+                    
+                    "{b}Naofumi (HP:[tarczownik_hp], ATK:[tarczownik_min_attack]-[tarczownik_max_attack]){/b}" if tarczownik_sojusznik >= 1 and tarczownik_wybrany == 0:
+                        $ tarczownik_wybrany += 1
+                        $ tarczownik_fighter += 1
+                        $ tarczownik_hp_now = tarczownik_hp
+                        $ tarczownik_min_attack_now = tarczownik_min_attack
+                        $ tarczownik_max_attack_now = tarczownik_max_attack
+                        $ tarczownik_min_attack_now_true = tarczownik_min_attack
+                        $ tarczownik_max_attack_now_true = tarczownik_max_attack
+                        show tarczownik fight zorder 10 at sojusznik1
+                        show screen tarczownik1_stats
+                        tarczownik "Gotowy do boju"
+
+                menu:
+                    "{b}Kogo wystawić do walki?{/b}"
+
+                    "{b}Maciej Łuszcz (HP:[luszcz_hp], ATK:[luszcz_min_attack]-[luszcz_max_attack]){/b}" if luszcz_sojusznik >= 1 and luszcz_wybrany == 0:
+                        $ luszcz_wybrany += 3
+                        $ luszcz_fighter += 2
+                        $ luszcz_hp_now = luszcz_hp
+                        $ luszcz_min_attack_now = luszcz_min_attack
+                        $ luszcz_max_attack_now = luszcz_max_attack
+                        $ luszcz_min_attack_now_true = luszcz_min_attack
+                        $ luszcz_max_attack_now_true = luszcz_max_attack
+                        show luszcz fight zorder 10 at sojusznik3
+                        show screen luszcz3_stats
+                        luszcz "Gotowy do boju"
+                    
+                    "{b}Shadow (HP:[eminem_hp], ATK:[eminem_min_attack]-[eminem_max_attack]){/b}" if eminem_sojusznik >= 1 and eminem_wybrany == 0:
+                        $ eminem_wybrany += 3
+                        $ eminem_fighter += 2
+                        $ eminem_hp_now = eminem_hp
+                        $ eminem_min_attack_now = eminem_min_attack
+                        $ eminem_max_attack_now = eminem_max_attack
+                        $ eminem_min_attack_now_true = eminem_min_attack
+                        $ eminem_max_attack_now_true = eminem_max_attack
+                        show eminem fight zorder 10 at sojusznik3
+                        show screen eminem3_stats
+                        eminem "Gotowy do boju"
+
+                    "{b}Jerzy Urban (HP:[urban_hp], ATK:[urban_min_attack]-[urban_max_attack]){/b}" if urban_sojusznik >= 1 and urban_wybrany == 0:
+                        $ urban_wybrany += 3
+                        $ urban_fighter += 2
+                        $ urban_hp_now = urban_hp
+                        $ urban_min_attack_now = urban_min_attack
+                        $ urban_max_attack_now = urban_max_attack
+                        $ urban_min_attack_now_true = urban_min_attack
+                        $ urban_max_attack_now_true = urban_max_attack
+                        show urban fight zorder 10 at sojusznik3
+                        show screen urban3_stats
+                        urban "Gotowy do boju"
+
+                    "{b}Żyd (HP:[zyd_hp], ATK:[zyd_min_attack]-[zyd_max_attack]){/b}" if zyd_sojusznik >= 1 and zyd_wybrany == 0:
+                        $ zyd_wybrany += 3
+                        $ zyd_fighter += 2
+                        $ zyd_hp_now = zyd_hp
+                        $ zyd_min_attack_now = zyd_min_attack
+                        $ zyd_max_attack_now = zyd_max_attack
+                        $ zyd_min_attack_now_true = zyd_min_attack
+                        $ zyd_max_attack_now_true = zyd_max_attack
+                        show zyd fight zorder 10 at sojusznik3
+                        show screen zyd3_stats
+                        zyd "Gotowy do boju"
+
+                    "{b}Kazuma (HP:[kazuma_hp], ATK:[kazuma_min_attack]-[kazuma_max_attack]){/b}" if kazuma_sojusznik >= 1 and kazuma_wybrany == 0:
+                        $ kazuma_wybrany += 3
+                        $ kazuma_fighter += 2
+                        $ kazuma_hp_now = kazuma_hp
+                        $ kazuma_min_attack_now = kazuma_min_attack
+                        $ kazuma_max_attack_now = kazuma_max_attack
+                        $ kazuma_min_attack_now_true = kazuma_min_attack
+                        $ kazuma_max_attack_now_true = kazuma_max_attack
+                        show kazuma fight zorder 10 at sojusznik3
+                        show screen kazuma3_stats
+                        kazuma "Gotowy do boju"
+                    
+                    "{b}Naofumi (HP:[tarczownik_hp], ATK:[tarczownik_min_attack]-[tarczownik_max_attack]){/b}" if tarczownik_sojusznik >= 1 and tarczownik_wybrany == 0:
+                        $ tarczownik_wybrany += 3
+                        $ tarczownik_fighter += 1
+    
+                        if luszcz_fighter == 1:
+                            $ luszcz_fighter += 1
+                        else:
+                            $ ado += 1
+
+                        if eminem_fighter == 1:
+                            $ eminem_fighter += 1
+                        else:
+                            $ ado += 1
+
+                        if urban_fighter == 1:
+                            $ urban_fighter += 1
+                        else:
+                            $ ado += 1
+
+                        if zyd_fighter == 1:
+                            $ zyd_fighter += 1
+                        else:
+                            $ ado += 1
+
+                        if kazuma_fighter == 1:
+                            $ kazuma_fighter += 1
+                        else:
+                            $ ado += 1
+
+                        $ tarczownik_hp_now = tarczownik_hp
+                        $ tarczownik_min_attack_now = tarczownik_min_attack
+                        $ tarczownik_max_attack_now = tarczownik_max_attack
+                        $ tarczownik_min_attack_now_true = tarczownik_min_attack
+                        $ tarczownik_max_attack_now_true = tarczownik_max_attack
+                        show tarczownik fight zorder 10 at sojusznik3
+                        show screen tarczownik3_stats
+                        tarczownik "Gotowy do boju"
+
+                menu:
+                    "{b}Kogo wystawić do walki?{/b}"
+
+                    "{b}Maciej Łuszcz (HP:[luszcz_hp], ATK:[luszcz_min_attack]-[luszcz_max_attack]){/b}" if luszcz_sojusznik >= 1 and luszcz_wybrany == 0:
+                        $ luszcz_wybrany += 2
+                        $ luszcz_fighter += 3
+                        $ luszcz_hp_now = luszcz_hp
+                        $ luszcz_min_attack_now = luszcz_min_attack
+                        $ luszcz_max_attack_now = luszcz_max_attack
+                        $ luszcz_min_attack_now_true = luszcz_min_attack
+                        $ luszcz_max_attack_now_true = luszcz_max_attack
+                        show luszcz fight zorder 10 at sojusznik2
+                        show screen luszcz2_stats
+                        luszcz "Gotowy do boju"
+
+                    "{b}Shadow (HP:[eminem_hp], ATK:[eminem_min_attack]-[eminem_max_attack]){/b}" if eminem_sojusznik >= 1 and eminem_wybrany == 0:
+                        $ eminem_wybrany += 2
+                        $ eminem_fighter += 3
+                        $ eminem_hp_now = eminem_hp
+                        $ eminem_min_attack_now = eminem_min_attack
+                        $ eminem_max_attack_now = eminem_max_attack
+                        $ eminem_min_attack_now_true = eminem_min_attack
+                        $ eminem_max_attack_now_true = eminem_max_attack
+                        show eminem fight zorder 10 at sojusznik2
+                        show screen eminem2_stats
+                        eminem "Gotowy do boju"
+
+                    "{b}Jerzy Urban (HP:[urban_hp], ATK:[urban_min_attack]-[urban_max_attack]){/b}" if urban_sojusznik >= 1 and urban_wybrany == 0:
+                        $ urban_wybrany += 2
+                        $ urban_fighter += 3
+                        $ urban_hp_now = urban_hp
+                        $ urban_min_attack_now = urban_min_attack
+                        $ urban_max_attack_now = urban_max_attack
+                        $ urban_min_attack_now_true = urban_min_attack
+                        $ urban_max_attack_now_true = urban_max_attack
+                        show urban fight zorder 10 at sojusznik2
+                        show screen urban2_stats
+                        urban "Gotowy do boju"
+
+                    "{b}Żyd (HP:[zyd_hp], ATK:[zyd_min_attack]-[zyd_max_attack]){/b}" if zyd_sojusznik >= 1 and zyd_wybrany == 0:
+                        $ zyd_wybrany += 2
+                        $ zyd_fighter += 3
+                        $ zyd_hp_now = zyd_hp
+                        $ zyd_min_attack_now = zyd_min_attack
+                        $ zyd_max_attack_now = zyd_max_attack
+                        $ zyd_min_attack_now_true = zyd_min_attack
+                        $ zyd_max_attack_now_true = zyd_max_attack
+                        show zyd fight zorder 10 at sojusznik2
+                        show screen zyd2_stats
+                        zyd "Gotowy do boju"
+
+                    "{b}Kazuma (HP:[kazuma_hp], ATK:[kazuma_min_attack]-[kazuma_max_attack]){/b}" if kazuma_sojusznik >= 1 and kazuma_wybrany == 0:
+                        $ kazuma_wybrany += 2
+                        $ kazuma_fighter += 3
+                        $ kazuma_hp_now = kazuma_hp
+                        $ kazuma_min_attack_now = kazuma_min_attack
+                        $ kazuma_max_attack_now = kazuma_max_attack
+                        $ kazuma_min_attack_now_true = kazuma_min_attack
+                        $ kazuma_max_attack_now_true = kazuma_max_attack
+                        show kazuma fight zorder 10 at sojusznik2
+                        show screen kazuma2_stats
+                        kazuma "Gotowy do boju"
+                    
+                    "{b}Naofumi (HP:[tarczownik_hp], ATK:[tarczownik_min_attack]-[tarczownik_max_attack]){/b}" if tarczownik_sojusznik >= 1 and tarczownik_wybrany == 0:
+                        $ tarczownik_wybrany += 2
+                        $ tarczownik_fighter += 1
+    
+                        if luszcz_fighter == 1:
+                            $ luszcz_fighter += 1
+                        else:
+                            if luszcz_fighter == 2:
+                                $ luszcz_fighter += 1
+                            else:
+                                $ ado += 1
+
+                        if eminem_fighter == 1:
+                            $ eminem_fighter += 1
+                        else:
+                            if eminem_fighter == 2:
+                                $ eminem_fighter += 1
+                            else:
+                                $ ado += 1
+
+                        if urban_fighter == 1:
+                            $ urban_fighter += 1
+                        else:
+                            if urban_fighter == 2:
+                                $ urban_fighter += 1
+                            else:
+                                $ ado += 1
+
+                        if zyd_fighter == 1:
+                            $ zyd_fighter += 1
+                        else:
+                            if zyd_fighter == 2:
+                                $ zyd_fighter += 1
+                            else:
+                                $ ado += 1
+
+                        if kazuma_fighter == 1:
+                            $ kazuma_fighter += 1
+                        else:
+                            if kazuma_fighter == 2:
+                                $ kazuma_fighter += 1
+                            else:
+                                $ ado += 1
+
+                        $ tarczownik_hp_now = tarczownik_hp
+                        $ tarczownik_min_attack_now = tarczownik_min_attack
+                        $ tarczownik_max_attack_now = tarczownik_max_attack
+                        $ tarczownik_min_attack_now_true = tarczownik_min_attack
+                        $ tarczownik_max_attack_now_true = tarczownik_max_attack
+                        show tarczownik fight zorder 10 at sojusznik2
+                        show screen tarczownik2_stats
+                        tarczownik "Gotowy do boju"
+
+                jump start_fight1
+                
+            else:
+                if liczba_sojusznikow == 2:
+                    $ ile_sojusznikow += 2
+                    menu:
+                        "{b}Kogo wystawić do walki?{/b}"
+
+                        "{b}Maciej Łuszcz (HP:[luszcz_hp], ATK:[luszcz_min_attack]-[luszcz_max_attack]){/b}" if luszcz_sojusznik >= 1 and luszcz_wybrany == 0:
+                            $ luszcz_wybrany += 1
+                            $ luszcz_fighter += 1
+                            $ luszcz_hp_now = luszcz_hp
+                            $ luszcz_min_attack_now = luszcz_min_attack
+                            $ luszcz_max_attack_now = luszcz_max_attack
+                            $ luszcz_min_attack_now_true = luszcz_min_attack
+                            $ luszcz_max_attack_now_true = luszcz_max_attack
+                            show screen luszcz1_stats
+                            show luszcz fight zorder 10 at sojusznik1
+                            luszcz "Gotowy do boju"
+
+                        "{b}Shadow (HP:[eminem_hp], ATK:[eminem_min_attack]-[eminem_max_attack]){/b}" if eminem_sojusznik >= 1 and eminem_wybrany == 0:
+                            $ eminem_wybrany += 1
+                            $ eminem_fighter += 1
+                            $ eminem_hp_now = eminem_hp
+                            $ eminem_min_attack_now = eminem_min_attack
+                            $ eminem_max_attack_now = eminem_max_attack
+                            $ eminem_min_attack_now_true = eminem_min_attack
+                            $ eminem_max_attack_now_true = eminem_max_attack
+                            show eminem fight zorder 10 at sojusznik1
+                            show screen eminem1_stats
+                            eminem "Gotowy do boju"
+
+                        "{b}Jerzy Urban (HP:[urban_hp], ATK:[urban_min_attack]-[urban_max_attack]){/b}" if urban_sojusznik >= 1 and urban_wybrany == 0:
+                            $ urban_wybrany += 1
+                            $ urban_fighter += 1
+                            $ urban_hp_now = urban_hp
+                            $ urban_min_attack_now = urban_min_attack
+                            $ urban_max_attack_now = urban_max_attack
+                            $ urban_min_attack_now_true = urban_min_attack
+                            $ urban_max_attack_now_true = urban_max_attack
+                            show screen urban1_stats
+                            show urban fight zorder 10 at sojusznik1
+                            urban "Gotowy do boju"
+
+                        "{b}Żyd (HP:[zyd_hp], ATK:[zyd_min_attack]-[zyd_max_attack]){/b}" if zyd_sojusznik >= 1 and zyd_wybrany == 0:
+                            $ zyd_wybrany += 1
+                            $ zyd_fighter += 1
+                            $ zyd_hp_now = zyd_hp
+                            $ zyd_min_attack_now = zyd_min_attack
+                            $ zyd_max_attack_now = zyd_max_attack
+                            $ zyd_min_attack_now_true = zyd_min_attack
+                            $ zyd_max_attack_now_true = zyd_max_attack
+                            show screen zyd1_stats
+                            show zyd fight zorder 10 at sojusznik1
+                            zyd "Gotowy do boju"
+
+                        "{b}Kazuma (HP:[kazuma_hp], ATK:[kazuma_min_attack]-[kazuma_max_attack]){/b}" if kazuma_sojusznik >= 1 and kazuma_wybrany == 0:
+                            $ kazuma_wybrany += 1
+                            $ kazuma_fighter += 1
+                            $ kazuma_hp_now = kazuma_hp
+                            $ kazuma_min_attack_now = kazuma_min_attack
+                            $ kazuma_max_attack_now = kazuma_max_attack
+                            $ kazuma_min_attack_now_true = kazuma_min_attack
+                            $ kazuma_max_attack_now_true = kazuma_max_attack
+                            show screen kazuma1_stats
+                            show kazuma fight zorder 10 at sojusznik1
+                            kazuma "Gotowy do boju"
+                        
+                        "{b}Naofumi (HP:[tarczownik_hp], ATK:[tarczownik_min_attack]-[tarczownik_max_attack]){/b}" if tarczownik_sojusznik >= 1 and tarczownik_wybrany == 0:
+                            $ tarczownik_wybrany += 1
+                            $ tarczownik_fighter += 1
+                            $ tarczownik_hp_now = tarczownik_hp
+                            $ tarczownik_min_attack_now = tarczownik_min_attack
+                            $ tarczownik_max_attack_now = tarczownik_max_attack 
+                            $ tarczownik_min_attack_now_true = tarczownik_min_attack
+                            $ tarczownik_max_attack_now_true = tarczownik_max_attack 
+                            show tarczownik fight zorder 10 at sojusznik1
+                            show screen tarczownik1_stats
+                            tarczownik "Gotowy do boju"
+
+                    menu:
+                        "{b}Kogo wystawić do walki?{/b}"
+
+                        "{b}Maciej Łuszcz (HP:[luszcz_hp], ATK:[luszcz_min_attack]-[luszcz_max_attack]){/b}" if luszcz_sojusznik >= 1 and luszcz_wybrany == 0:
+                            $ luszcz_wybrany += 2
+                            $ luszcz_fighter += 2
+                            $ luszcz_hp_now = luszcz_hp
+                            $ luszcz_min_attack_now = luszcz_min_attack
+                            $ luszcz_max_attack_now = luszcz_max_attack
+                            $ luszcz_min_attack_now_true = luszcz_min_attack
+                            $ luszcz_max_attack_now_true = luszcz_max_attack
+                            show screen luszcz2_stats
+                            show luszcz fight zorder 10 at sojusznik2
+                            luszcz "Gotowy do boju"
+                        
+                        "{b}Shadow (HP:[eminem_hp], ATK:[eminem_min_attack]-[eminem_max_attack]){/b}" if eminem_sojusznik >= 1 and eminem_wybrany == 0:
+                            $ eminem_wybrany += 2
+                            $ eminem_fighter += 2
+                            $ eminem_hp_now = eminem_hp
+                            $ eminem_min_attack_now = eminem_min_attack
+                            $ eminem_max_attack_now = eminem_max_attack
+                            $ eminem_min_attack_now_true = eminem_min_attack
+                            $ eminem_max_attack_now_true = eminem_max_attack
+                            show eminem fight zorder 10 at sojusznik2
+                            show screen eminem2_stats
+                            eminem "Gotowy do boju"
+
+                        "{b}Jerzy Urban (HP:[urban_hp], ATK:[urban_min_attack]-[urban_max_attack]){/b}" if urban_sojusznik >= 1 and urban_wybrany == 0:
+                            $ urban_wybrany += 2
+                            $ urban_fighter += 2
+                            $ urban_hp_now = urban_hp
+                            $ urban_min_attack_now = urban_min_attack
+                            $ urban_max_attack_now = urban_max_attack
+                            $ urban_min_attack_now_true = urban_min_attack
+                            $ urban_max_attack_now_true = urban_max_attack
+                            show urban fight zorder 10 at sojusznik2
+                            show screen urban2_stats
+                            urban "Gotowy do boju"
+
+                        "{b}Żyd (HP:[zyd_hp], ATK:[zyd_min_attack]-[zyd_max_attack]){/b}" if zyd_sojusznik >= 1 and zyd_wybrany == 0:
+                            $ zyd_wybrany += 2
+                            $ zyd_fighter += 2
+                            $ zyd_hp_now = zyd_hp
+                            $ zyd_min_attack_now = zyd_min_attack
+                            $ zyd_max_attack_now = zyd_max_attack
+                            $ zyd_min_attack_now_true = zyd_min_attack
+                            $ zyd_max_attack_now_true = zyd_max_attack
+                            show zyd fight zorder 10 at sojusznik2
+                            show screen zyd2_stats
+                            zyd "Gotowy do boju"
+
+                        "{b}Kazuma (HP:[kazuma_hp], ATK:[kazuma_min_attack]-[kazuma_max_attack]){/b}" if kazuma_sojusznik >= 1 and kazuma_wybrany == 0:
+                            $ kazuma_wybrany += 2
+                            $ kazuma_fighter += 2
+                            $ kazuma_hp_now = kazuma_hp
+                            $ kazuma_min_attack_now = kazuma_min_attack
+                            $ kazuma_max_attack_now = kazuma_max_attack
+                            $ kazuma_min_attack_now_true = kazuma_min_attack
+                            $ kazuma_max_attack_now_true = kazuma_max_attack
+                            show kazuma fight zorder 10 at sojusznik2
+                            show screen kazuma2_stats
+                            kazuma "Gotowy do boju"
+                        
+                        "{b}Naofumi (HP:[tarczownik_hp], ATK:[tarczownik_min_attack]-[tarczownik_max_attack]){/b}" if tarczownik_sojusznik >= 1 and tarczownik_wybrany == 0:
+                            $ tarczownik_wybrany += 2
+                            $ tarczownik_fighter += 1
+        
+                            if luszcz_fighter == 1:
+                                $ luszcz_fighter += 1
+                            else:
+                                $ ado += 1
+
+                            if eminem_fighter == 1:
+                                $ eminem_fighter += 1
+                            else:
+                                $ ado += 1
+
+                            if urban_fighter == 1:
+                                $ urban_fighter += 1
+                            else:
+                                $ ado += 1
+
+                            if zyd_fighter == 1:
+                                $ zyd_fighter += 1
+                            else:
+                                $ ado += 1
+
+                            if kazuma_fighter == 1:
+                                $ kazuma_fighter += 1
+                            else:
+                                $ ado += 1
+
+                            $ tarczownik_hp_now = tarczownik_hp
+                            $ tarczownik_min_attack_now = tarczownik_min_attack
+                            $ tarczownik_max_attack_now = tarczownik_max_attack
+                            $ tarczownik_min_attack_now_true = tarczownik_min_attack
+                            $ tarczownik_max_attack_now_true = tarczownik_max_attack
+                            show tarczownik fight zorder 10 at sojusznik2
+                            show screen tarczownik2_stats
+                            tarczownik "Gotowy do boju"
+                        
+                    jump start_fight1
+
+                else:
+                    $ ile_sojusznikow += 1
+                    $ luszcz_wybrany += 3
+                    $ luszcz_fighter += 1
+                    $ luszcz_hp_now = luszcz_hp
+                    $ luszcz_min_attack_now = luszcz_min_attack
+                    $ luszcz_max_attack_now = luszcz_max_attack
+                    $ luszcz_min_attack_now_true = luszcz_min_attack
+                    $ luszcz_max_attack_now_true = luszcz_max_attack
+                    show luszcz fight zorder 10 at sojusznik3
+                    show screen luszcz3_stats
+                    luszcz "Gotowy do boju"
+
+                    jump start_fight1
+    
+    label start_fight1:
+        hide air_strike_shield1
+        hide air_strike_shield2
+        hide air_strike_shield3
+        hide shield_prison
+        hide uszy1
+        hide uszy2
+        hide uszy3
+        hide slime
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+        hide ruch
+        hide tarcza1
+        hide tarcza2
+        hide tarcza3
+        hide tarcza4
+        hide tarcza5
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+
+            if akane_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        else:
+            $ ado += 1
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        else:
+            $ ado += 1
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        else:
+            $ ado += 1
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide ekdplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        else:
+            $ ado += 1
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        else:
+            $ ado += 1
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+            else:
+                $ ado += 1
+
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        else:
+            $ ado += 1
+
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
+        else:
+            $ ado += 1
+        
+        $ kibol1_uszy = 0
+        $ akane_uszy = 0
+        $ kibol2_uszy = 0
+
+        $ luszcz_obrona = 0
+        $ eminem_obrona = 0
+        $ urban_obrona = 0
+        $ zyd_obrona = 0
+        $ kazuma_obrona = 0
+        $ tarczownik_obrona = 0
+
+        $ tarczownik_air_strike_shield = 0
+
+        $ kibol1_min_attack_now = kibol1_min_attack_now_true
+        $ kibol1_max_attack_now = kibol1_max_attack_now_true
+        $ kibol2_min_attack_now = kibol2_min_attack_now_true
+        $ kibol2_max_attack_now = kibol2_max_attack_now_true
+        $ akane_min_attack_now = akane_min_attack_now_true
+        $ akane_max_attack_now = akane_max_attack_now_true
+
+        if luszcz_fighter == 1:
+            if luszcz_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if luszcz_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if luszcz_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([luszcz_min_attack_now]-[luszcz_max_attack_now] DMG){/b}":
+                    if luszcz_weapon >= 1:
+                        if luszcz_wybrany == 1:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik1  
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if luszcz_wybrany == 2:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik2  
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if luszcz_wybrany == 3:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik3 
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+
+                    else:
+                        if luszcz_wybrany == 1:
+                            show reka1 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if luszcz_wybrany == 2:
+                            show reka1 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if luszcz_wybrany == 3:
+                            show reka1 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= luszcz_attack
+                            
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= luszcz_attack
+                            
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= luszcz_attack
+
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza12
+                    
+                "{b}Obrona{/b}" if luszcz_obrona == 0:
+                    if luszcz_wybrany == 1:
+                        show tarcza1 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show tarcza1 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show tarcza1 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+                    $ luszcz_obrona += 1
+                    luszcz "Chłopaki, bronię się!"
+                    jump faza12
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if luszcz_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    luszcz "Używam itemku!"
+                    jump items11
+
+                "{b}Zaparz Herbatę{/b}":
+                    if luszcz_wybrany == 1:
+                        show herbaty zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show herbaty zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show herbaty zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Ale jaką?{/b}"
+
+                        "{b}Wiśnia z Rumem (+5HP){/b}":
+                            hide herbaty
+                            if luszcz_wybrany == 1:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 2:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 3:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                            else:
+                                $ ado += 1
+
+                            menu:
+                                "{b}Dla Kogo?{/b}"
+
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                            
+                            hide wisnia_w_rumie
+                            jump faza12
+                            
+                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            hide herbaty
+                            if luszcz_wybrany == 1:
+                                show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 2:
+                                show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 3:
+                                show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                            else:
+                                $ ado += 1
+
+                            if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                if luszcz_hp_now + 2 > luszcz_hp:
+                                    $ luszcz_hp_now = luszcz_hp
+                                else:
+                                    $ luszcz_hp_now += 2
+                            
+                            if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                if eminem_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if eminem_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if eminem_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if eminem_hp_now + 2 > eminem_hp:
+                                    $ eminem_hp_now = eminem_hp
+                                else:
+                                    $ eminem_hp_now += 2
+
+                            if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                if urban_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if urban_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if urban_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if urban_hp_now + 2 > urban_hp:
+                                    $ urban_hp_now = urban_hp
+                                else:
+                                    $ urban_hp_now += 2
+
+                            if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                if zyd_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if zyd_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if zyd_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if zyd_hp_now + 2 > zyd_hp:
+                                    $ zyd_hp_now = zyd_hp
+                                else:
+                                    $ zyd_hp_now += 2
+
+                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                if kazuma_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_hp_now + 2 > kazuma_hp:
+                                    $ kazuma_hp_now = kazuma_hp
+                                else:
+                                    $ kazuma_hp_now += 2
+                            
+                            if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                if tarczownik_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_hp_now + 2 > tarczownik_hp:
+                                    $ tarczownik_hp_now = tarczownik_hp
+                                else:
+                                    $ tarczownik_hp_now += 2
+
+                            "{i}Wszyscy sojusznicy odzyskali po 2 punkty życia{/i}"
+                            hide hiszpanska_mandarynka1
+                            hide hiszpanska_mandarynka2
+                            hide hiszpanska_mandarynka3
+                            jump faza12
+        else:
+            $ ado += 1
+        
+        if eminem_fighter == 1:
+            if eminem_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if eminem_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if eminem_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([eminem_min_attack_now]-[eminem_max_attack_now] DMG){/b}":
+                    if eminem_weapon >= 1:
+                        if eminem_wybrany == 1:
+                            show eminem_weapon zorder 15 at weapon_sojusznik1  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 2:
+                            show eminem_weapon zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 3:
+                            show eminem_weapon zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    else:
+                        if eminem_wybrany == 1:
+                            show reka2 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 2:
+                            show reka2 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 3:
+                            show reka2 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= eminem_attack
+                            
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= eminem_attack
+                            
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= eminem_attack
+
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza12
+                    
+                "{b}Obrona{/b}" if eminem_obrona == 0:
+                    eminem "I am ..."
+                    if eminem_wybrany == 1:
+                        show tarcza2 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show tarcza2 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show tarcza2 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ eminem_obrona += 1
+                    eminem "... rzymskim legionistą"
+                    jump faza12
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if eminem_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    eminem "Czas zabawy się skończył"
+                    jump items11
+
+                "{b}Rzut Szlamem{/b}":
+                    if eminem_wybrany == 1:
+                        show slime zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show slime zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show slime zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if kibol1_obrona >= 1:
+                                hide slime
+                                "{i}Kibol 1 obronił się przed szlamem{/i}"
+                                jump faza12
+                            else:
+                                if kibol1_min_attack_now >= 2:
+                                    $ kibol1_min_attack_now -= 2
+                                    if kibol1_max_attack_now >= 6:
+                                        $ kibol1_max_attack_now -= 3
+                                    else:
+                                        $ kibol1_max_attack_now -= 2
+                                    
+                                else:
+                                    $ kibol1_min_attack_now = 0
+
+                                    if kibol1_max_attack_now >= 2:
+                                        if kibol1_max_attack_now >= 6:
+                                            $ kibol1_max_attack_now -= 3
+                                        else:
+                                            $ kibol1_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ kibol1_max_attack_now = 0
+                                
+                                $ kibol1_slime += 1
+                                show slime zorder 15 at center_wrog1 
+                                "{i}Statystyki Kibol 1 zostały osłabione{/i}"
+                                jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if akane_obrona >= 1:
+                                hide slime
+                                "{i}Akane obronił się przed szlamem{/i}"
+                                jump faza12
+                            else:
+                                if akane_min_attack_now >= 2:
+                                    $ akane_min_attack_now -= 2
+                                    if akane_max_attack_now >= 6:
+                                        $ akane_max_attack_now -= 3
+                                    else:
+                                        $ akane_max_attack_now -= 2
+                        
+                                else:
+                                    $ akane_min_attack_now = 0
+
+                                    if akane_max_attack_now >= 2:
+                                        if akane_max_attack_now >= 6:
+                                            $ akane_max_attack_now -= 3
+                                        else:
+                                            $ akane_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ akane_max_attack_now = 0
+                                
+                                $ akane_slime += 1
+                                show slime zorder 15 at center_wrog3
+                                "{i}Statystyki Akane zostały osłabione{/i}"
+                                jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if kibol2_obrona >= 1:
+                                hide slime
+                                "{i}Kibol 2 obronił się przed szlamem{/i}"
+                                jump faza12
+                            else:
+                                if kibol2_min_attack_now >= 2:
+                                    $ kibol2_min_attack_now -= 2
+                                    if kibol2_max_attack_now >= 6:
+                                        $ kibol2_max_attack_now -= 3
+                                    else:
+                                        $ kibol2_max_attack_now -= 2
+                        
+                                else:
+                                    $ kibol2_min_attack_now = 0
+
+                                    if kibol2_max_attack_now >= 2:
+                                        if kibol2_max_attack_now >= 6:
+                                            $ kibol2_max_attack_now -= 3
+                                        else:
+                                            $ kibol2_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ kibol2_max_attack_now = 0
+                                
+                                $ kibol2_slime += 1
+                                show slime zorder 15 at center_wrog2
+                                "{i}Statystyki Kibol 2 zostały osłabione{/i}"
+                                jump faza12
+
+        else:
+            $ ado += 1
+
+        if urban_fighter == 1:
+            if urban_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if urban_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if urban_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
+                    if urban_weapon >= 1:
+                        if urban_wybrany == 1:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik1  
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if urban_wybrany == 2:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik2  
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if urban_wybrany == 3:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik3 
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if urban_wybrany == 1:
+                            show reka3 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if urban_wybrany == 2:
+                            show reka3 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if urban_wybrany == 3:
+                            show reka3 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= urban_attack
+                            
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= urban_attack
+                            
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= urban_attack
+
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza12
+                    
+                "{b}Obrona{/b}" if urban_obrona == 0:
+                    if urban_wybrany == 1:
+                        show tarcza3 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show tarcza3 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show tarcza3 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ urban_obrona += 1
+                    urban "A ja mam to w dupie"
+                    jump faza12
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if urban_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    urban "No tak było, nie zmyślam"
+                    jump items11
+
+                "{b}Zatrzepocz Uszami{/b}":
+                    if urban_wybrany == 1:
+                        show uszy zorder 15 at head_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show uszy zorder 15 at head_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show uszy zorder 15 at head_sojusznik3 
+                    else:
+                        $ ado += 1
+                    
+                    urban "Hhyyy pfff hhyyy pffff hhyyy"
+
+                    if kibol1_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ kibol1_uszy += 1
+                    
+                    if akane_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ akane_uszy += 1
+                    
+                    if kibol2_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ kibol2_uszy += 1
+
+                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1:
+                        show uszy2 zorder 15 at head_wrog3
+                        show uszy3 zorder 15 at head_wrog2
+                        show uszy1 zorder 15 at head_wrog1
+                        "{i}Kibol 1, Akane i Kibol 2 skupili się na uszach Urbana{/i}"
+                    
+                    else:
+                        if kibol1_uszy == 1 and akane_uszy == 1:
+                            show uszy2 zorder 15 at head_wrog3
+                            show uszy1 zorder 15 at head_wrog1
+                            "{i}Kibol 1 i Akane skupili się na uszach Urbana{/i}"
+                        
+                        else:
+                            if akane_uszy == 1 and kibol2_uszy == 1:
+                                show uszy2 zorder 15 at head_wrog3
+                                show uszy3 zorder 15 at head_wrog2
+                                "{i}Akane i Kibol 2 skupili się na uszach Urbana{/i}"
+                                
+                            
+                            else:
+                                if kibol1_uszy == 1 and kibol2_uszy == 1:
+                                    show uszy3 zorder 15 at head_wrog2
+                                    show uszy1 zorder 15 at head_wrog1
+                                    "{i}Kibol 1 i Kibol 2 skupili się na uszach Urbana{/i}"
+                                
+                                else:
+                                    if kibol1_uszy == 1:
+                                        show uszy1 zorder 15 at head_wrog1
+                                        "{i}Kibol 1 skupił się na uszach Urbana{/i}"
+                                    
+                                    else:
+                                        if akane_uszy == 1:
+                                            show uszy2 zorder 15 at head_wrog3
+                                            "{i}Akane skupił się na uszach Urbana{/i}"
+
+                                        else:
+                                            if kibol2_uszy == 1:
+                                                show uszy3 zorder 15 at head_wrog2
+                                                "{i}Kibol 2 skupił się na uszach Urbana{/i}"
+
+                                            else:
+                                                "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
+
+                    hide uszy
+                    jump faza12   
+        else:
+            $ ado += 1
+
+        if zyd_fighter == 1:
+            if zyd_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if zyd_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if zyd_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([zyd_min_attack_now]-[zyd_max_attack_now] DMG){/b}":
+                    if zyd_weapon >= 1:
+                        if zyd_wybrany == 1:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik1  
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if zyd_wybrany == 2:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik2  
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if zyd_wybrany == 3:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik3 
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if zyd_wybrany == 1:
+                            show reka4 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if zyd_wybrany == 2:
+                            show reka4 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if zyd_wybrany == 3:
+                            show reka4 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= zyd_attack
+                            
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+
+                            jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= zyd_attack
+                            
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= zyd_attack
+
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza12
+                    
+                "{b}Obrona{/b}" if zyd_obrona == 0:
+                    if zyd_wybrany == 1:
+                        show tarcza4 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show tarcza4 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show tarcza4 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ zyd_obrona += 1
+                    zyd "Nie interesuje mnie polska polityka"
+                    jump faza12
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if zyd_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
+                    jump items11
+
+                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and kibol1_pager == 0 and kibol1_hp_now >= 1 or pager_boom == 0 and akane_pager == 0 and akane_hp_now >= 1 or pager_boom == 0 and kibol2_pager == 0 and kibol2_hp_now >= 1:
+                    if zyd_wybrany == 1:
+                        show pager zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show pager zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show pager zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Komu?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ kibol1_pager += 1
+                            show pager1 zorder 15 at bok_wrog1  
+                            
+                            "{i}Kibol 1 kupił pager od Żyda{/i}"
+
+                            jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ akane_pager += 1
+                            
+                            show pager2 zorder 15 at bok_wrog3
+                            "{i}Akane kupił pager od Żyda{/i}"
+
+                            jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ kibol2_pager += 1
+                            
+                            show pager3 zorder 15 at bok_wrog2
+                            "{i}Kibol 2 kupił pager od Żyda{/i}"
+
+                            jump faza12
+                
+                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0:
+                    $ pager_boom += 1
+                    if zyd_wybrany == 1:
+                        show red_button zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show red_button zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show red_button zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+
+                    if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
+                        $ kibol1_hp_now -= 8
+                        $ kibol2_hp_now -= 8
+                        $ akane_hp_now -= 8
+                        show eksplozja1 zorder 16 at bok_wrog1
+                        show eksplozja3 zorder 16 at bok_wrog2
+                        show eksplozja2 zorder 16 at bok_wrog3
+                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                            
+                    else:
+                        if kibol1_pager == 1 and akane_pager == 1:
+                            $ kibol1_hp_now -= 8
+                            $ akane_hp_now -= 8
+                            show eksplozja1 zorder 16 at bok_wrog1
+                            show eksplozja2 zorder 16 at bok_wrog3
+                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                
+                        else:
+                            if akane_pager == 1 and kibol2_pager == 1:
+                                $ kibol2_hp_now -= 8
+                                $ akane_hp_now -= 8
+                                show eksplozja3 zorder 16 at bok_wrog2
+                                show eksplozja2 zorder 16 at bok_wrog3
+                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                    
+                            else:
+                                if kibol1_pager == 1 and kibol2_pager == 1:
+                                    $ kibol1_hp_now -= 8
+                                    $ kibol2_hp_now -= 8
+                                    show eksplozja1 zorder 16 at bok_wrog1
+                                    show eksplozja3 zorder 16 at bok_wrog2
+                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                        
+                                else:
+                                    if kibol1_pager == 1:
+                                        $ kibol1_hp_now -= 8
+                                        show eksplozja1 zorder 16 at bok_wrog1
+                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                            
+                                    else:
+                                        if akane_pager == 1:
+                                            $ akane_hp_now -= 8
+                                            show eksplozja2 zorder 16 at bok_wrog3
+                                            "{i}Akane w wyniku ekspolzji Pageru stracił 8HP{/i}"
+
+                                        else:
+                                            if kibol2_pager == 1:
+                                                $ kibol2_hp_now -= 8
+                                                show eksplozja3 zorder 16 at bok_wrog2
+                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+
+                                            else:
+                                                $ ado += 1
+
+                    if dialog_fight1 == 0:
+                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
+                        $ dialog_fight1 += 1
+
+                    hide red_button
+                    hide pager1
+                    hide pager2
+                    hide pager3
+                    hide pager
+                    hide eksplozja1
+                    hide eksplozja2
+                    hide eksplozja3
+                    jump faza12
+        else:
+            $ ado += 1
+
+        if kazuma_fighter == 1:
+            if kazuma_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if kazuma_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if kazuma_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([kazuma_min_attack_now]-[kazuma_max_attack_now] DMG){/b}":
+                    if kazuma_weapon >= 1:
+                        if kazuma_wybrany == 1:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik1  
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if kazuma_wybrany == 2:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik2  
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if kazuma_wybrany == 3:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik3 
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if kazuma_wybrany == 1:
+                            show reka5 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if kazuma_wybrany == 2:
+                            show reka5 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if kazuma_wybrany == 3:
+                            show reka5 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza12
+    
+                    
+                "{b}Obrona{/b}" if kazuma_obrona == 0:
+                    if kazuma_wybrany == 1:
+                        show tarcza5 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show tarcza5 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show tarcza5 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ kazuma_obrona += 1
+                    kazuma "Chłopaki, bronię się!"
+                    jump faza12
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if kazuma_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    kazuma "Używam itemku!"
+                    jump items11
+
+                "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
+                    if kazuma_wybrany == 1:
+                        show chwyta zorder 16 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show chwyta zorder 16 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show chwyta zorder 16 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    kazuma "Steal!"
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
+                            if kibol1_obrona >= 1:
+                                "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza12
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if kibol1_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if kibol1_max_attack_now < kibol1_max_attack:
+                                            $ kibol1_max_attack_now_true = 2
+                                            $ kibol1_min_attack_now_true = 0
+                                            $ kibol1_min_attack_now = kibol1_min_attack_now_true
+                                            $ kibol1_max_attack_now = kibol1_max_attack_now_true
+                                            $ kibol1_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ kibol1_max_attack_now_true = 2
+                                            $ kibol1_min_attack_now_true = 0
+                                            $ kibol1_min_attack_now = kibol1_min_attack_now_true
+                                            $ kibol1_max_attack_now = kibol1_max_attack_now_true
+                                        
+                                        $ kibol1_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
+                                        hide kiboli1_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 1{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        kibol1 "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Kibol 1.  \nKibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ kibol1_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 1{/i}"
+                                        hide chwyta
+                                        
+                                jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
+                            if akane_obrona >= 1:
+                                "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza12
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if akane_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if akane_max_attack_now < akane_max_attack:
+                                            $ akane_max_attack_now_true = 2
+                                            $ akane_min_attack_now_true = 0
+                                            $ akane_min_attack_now = akane_min_attack_now_true
+                                            $ akane_max_attack_now = akane_max_attack_now_true
+                                            $ akane_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ akane_max_attack_now_true = 2
+                                            $ akane_min_attack_now_true = 0
+                                            $ akane_min_attack_now = akane_min_attack_now_true
+                                            $ akane_max_attack_now = akane_max_attack_now_true
+                                        
+                                        $ akane_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show akane_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show akane_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show akane_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
+                                        hide kiboli2_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Akane{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        akane "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Akane.  \nAkane poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ akane_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Akane{/i}"
+                                        hide chwyta
+                                        
+                                jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
+                            if kibol2_obrona >= 1:
+                                "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza12
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if kibol2_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if kibol2_max_attack_now < kibol2_max_attack:
+                                            $ kibol2_max_attack_now_true = 2
+                                            $ kibol2_min_attack_now_true = 0
+                                            $ kibol2_min_attack_now = kibol2_min_attack_now_true
+                                            $ kibol2_max_attack_now = kibol2_max_attack_now_true
+                                            $ kibol2_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ kibol2_max_attack_now_true = 2
+                                            $ kibol2_min_attack_now_true = 0
+                                            $ kibol2_min_attack_now = kibol2_min_attack_now_true
+                                            $ kibol2_max_attack_now = kibol2_max_attack_now_true
+                                        
+                                        $ kibol2_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
+                                        hide akane_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 2{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        kibol2 "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Kibol 2.  \nKibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ kibol2_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 2{/i}"
+                                        hide chwyta
+                                        
+                                jump faza12
+        else:
+            $ ado += 1
+
+        if tarczownik_fighter == 1:
+            if tarczownik_hp_now >= 1:
+                if tarczownik_wybrany == 1:
+                    show ruch zorder 0 at tlo_sojusznik1  
+                else:
+                    $ ado += 1
+
+                if tarczownik_wybrany == 2:
+                    show ruch zorder 0 at tlo_sojusznik2  
+                else:
+                    $ ado += 1
+
+                if tarczownik_wybrany == 3:
+                    show ruch zorder 0 at tlo_sojusznik3 
+                else:
+                    $ ado += 1
+
+                if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if kostka >= 4:
+                        $ luszcz_obrona += 1
+                        $ eminem_obrona += 1
+                        $ urban_obrona += 1
+                        $ zyd_obrona += 1
+                        $ kazuma_obrona += 1
+                        $ tarczownik_obrona += 1
+
+                        if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
+                            show air_strike_shield1 zorder 18 at tarcza_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if luszcz_wybrany == 2 and luszcz_hp_now >= 1 or eminem_wybrany == 2 and eminem_hp_now >= 1 or urban_wybrany == 2 and urban_hp_now >= 1 or zyd_wybrany == 2 and zyd_hp_now >= 1 or kazuma_wybrany == 2 and kazuma_hp_now >= 1 or tarczownik_wybrany == 2 and tarczownik_hp_now >= 1:
+                            show air_strike_shield2 zorder 18 at tarcza_sojusznik2 
+                        else:
+                            $ ado += 1
+                        
+                        if luszcz_wybrany == 3 and luszcz_hp_now >= 1 or eminem_wybrany == 3 and eminem_hp_now >= 1 or urban_wybrany == 3 and urban_hp_now >= 1 or zyd_wybrany == 3 and zyd_hp_now >= 1 or kazuma_wybrany == 3 and kazuma_hp_now >= 1 or tarczownik_wybrany == 3 and tarczownik_hp_now >= 1:
+                            show air_strike_shield3 zorder 18 at tarcza_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                        tarczownik "Air Strike Shield!l"
+
+                        jump faza12
+                    
+                    else:
+                        $ ado += 1
+                else:
+                    $ ado += 1
+                
+                if tarczownik_hp_now <= 5:
+                    $ kostka = renpy.random.randint(1, 2)
+
+                    if kostka == 1:
+                        $ tarczownik_obrona += 2
+                        if tarczownik_wybrany == 1:
+                            show shield_prison zorder 18 at prison_sojusznik1
+                        else:
+                            $ ado += 1
+
+                        if tarczownik_wybrany == 2:
+                            show shield_prison zorder 18 at prison_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if tarczownik_wybrany == 3:
+                            show shield_prison zorder 18 at prison_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                        tarczownik "Shield Prison!"
+
+                        jump faza12
+                        
+                    else:
+                        $ ado += 1
+                
+                $ kostka = renpy.random.randint(1, 10)
+
+                if kostka == 10:
+                    $ luszcz_obrona += 1
+                    $ eminem_obrona += 1
+                    $ urban_obrona += 1
+                    $ zyd_obrona += 1
+                    $ kazuma_obrona += 1
+                    $ tarczownik_obrona += 1
+
+                    if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
+                        show air_strike_shield1 zorder 18 at tarcza_sojusznik1 
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2 and luszcz_hp_now >= 1 or eminem_wybrany == 2 and eminem_hp_now >= 1 or urban_wybrany == 2 and urban_hp_now >= 1 or zyd_wybrany == 2 and zyd_hp_now >= 1 or kazuma_wybrany == 2 and kazuma_hp_now >= 1 or tarczownik_wybrany == 2 and tarczownik_hp_now >= 1:
+                        show air_strike_shield2 zorder 18 at tarcza_sojusznik2 
+                    else:
+                        $ ado += 1
+                        
+                    if luszcz_wybrany == 3 and luszcz_hp_now >= 1 or eminem_wybrany == 3 and eminem_hp_now >= 1 or urban_wybrany == 3 and urban_hp_now >= 1 or zyd_wybrany == 3 and zyd_hp_now >= 1 or kazuma_wybrany == 3 and kazuma_hp_now >= 1 or tarczownik_wybrany == 3 and tarczownik_hp_now >= 1:
+                        show air_strike_shield3 zorder 18 at tarcza_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    tarczownik "Air Strike Shield!"
+
+                    jump faza12
+                    
+                else:
+                    $ ado += 1
+
+                
+                if tarczownik_weapon >= 1:
+                    if tarczownik_wybrany == 1:
+                        if tarczownik_legendary_shield == 1:
+                            show tarczownik_weapon zorder 15 at weapon_sojusznik1  
+
+                        if tarczownik_przepychaczka == 1:
+                            show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if tarczownik_stop == 1:
+                            show stop zorder 15 at weapon_sojusznik1  
+
+                    if tarczownik_wybrany == 2:
+                        if tarczownik_legendary_shield == 1:
+                            show tarczownik_weapon zorder 15 at weapon_sojusznik2  
+
+                        if tarczownik_przepychaczka == 1:
+                            show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                        if tarczownik_stop == 1:
+                            show stop zorder 15 at weapon_sojusznik2   
+
+                    if tarczownik_wybrany == 3:
+                        if tarczownik_legendary_shield == 1:
+                            show tarczownik_weapon zorder 15 at weapon_sojusznik3 
+
+                        if tarczownik_przepychaczka == 1:
+                            show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                        if tarczownik_stop == 1:
+                            show stop zorder 15 at weapon_sojusznik3  
+
+                else:
+                    if tarczownik_wybrany == 1:
+                        show reka9 zorder 15 at weapon_sojusznik1 
+                    else:
+                        $ ado += 1
+
+                    if tarczownik_wybrany == 2:
+                        show reka9 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if tarczownik_wybrany == 3:
+                        show reka9 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                tarczownik "Aaaaaaaaagh!"
+
+                label losowanko_tarczownik1:
+                    $ kostka = renpy.random.randint(1, 3)
+                    if kostka == 1:
+                        if kibol1_hp_now >= 1:
+                            if kibol1_hp_now <= 3:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 2:
+                                    $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                    if kibol1_obrona >= 1:
+                                        $ kibol1_hp_now -= int(tarczownik_attack / 2)
+
+                                        $ dmg = int(tarczownik_attack / 2)
+                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                    else:
+                                        $ kibol1_hp_now -= tarczownik_attack
+
+                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+
+                                    jump faza12
+                                else:
+                                    jump losowanko_tarczownik1
+
+                            else:
+                                if kibol1_hp_now <= 10:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 3:
+                                        $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                        if kibol1_obrona >= 1:
+                                            $ kibol1_hp_now -= int(tarczownik_attack / 2)
+
+                                            $ dmg = int(tarczownik_attack / 2)
+                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                        else:
+                                            $ kibol1_hp_now -= tarczownik_attack
+
+                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+
+                                        jump faza12
+                                    else:
+                                        jump losowanko_tarczownik1
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 5:
+                                        $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                        if kibol1_obrona >= 1:
+                                            $ kibol1_hp_now -= int(tarczownik_attack / 2)
+
+                                            $ dmg = int(tarczownik_attack / 2)
+                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                        else:
+                                            $ kibol1_hp_now -= tarczownik_attack
+
+                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+
+                                        jump faza12
+                                    else:
+                                        jump losowanko_tarczownik1
+
+                        else:
+                            jump losowanko_tarczownik1
+                    else:
+                        if kostka == 2:
+                            if akane_hp_now >= 1:
+                                if akane_hp_now <= 3:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 2:
+                                        $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                        if akane_obrona >= 1:
+                                            $ akane_hp_now -= int(tarczownik_attack / 2)
+
+                                            $ dmg = int(tarczownik_attack / 2)
+                                            "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                        else:
+                                            $ akane_hp_now -= tarczownik_attack
+
+                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+
+                                        jump faza12
+                                    else:
+                                        jump losowanko_tarczownik1
+
+                                else:
+                                    if akane_hp_now <= 10:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 3:
+                                            $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                            if akane_obrona >= 1:
+                                                $ akane_hp_now -= int(tarczownik_attack / 2)
+
+                                                $ dmg = int(tarczownik_attack / 2)
+                                                "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                            else:
+                                                $ akane_hp_now -= tarczownik_attack
+
+                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+
+                                            jump faza12
+                                        else:
+                                            jump losowanko_tarczownik1
+                                    
+                                    else:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 5:
+                                            $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                            if akane_obrona >= 1:
+                                                $ akane_hp_now -= int(tarczownik_attack / 2)
+
+                                                $ dmg = int(tarczownik_attack / 2)
+                                                "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                            else:
+                                                $ akane_hp_now -= tarczownik_attack
+
+                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+
+                                            jump faza12
+                                        else:
+                                            jump losowanko_tarczownik1
+
+                            else:
+                                jump losowanko_tarczownik1
+                        else:
+                            if kostka == 3:
+                                if kibol1_hp_now >= 1:
+                                    if kibol1_hp_now <= 3:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 2:
+                                            $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                            if kibol1_obrona >= 1:
+                                                $ kibol1_hp_now -= int(tarczownik_attack / 2)
+
+                                                $ dmg = int(tarczownik_attack / 2)
+                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                            else:
+                                                $ kibol1_hp_now -= tarczownik_attack
+
+                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+
+                                            jump faza12
+                                        else:
+                                            jump losowanko_tarczownik1
+
+                                    else:
+                                        if kibol1_hp_now <= 10:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 3:
+                                                $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                                if kibol1_obrona >= 1:
+                                                    $ kibol1_hp_now -= int(tarczownik_attack / 2)
+
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                else:
+                                                    $ kibol1_hp_now -= tarczownik_attack
+
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+
+                                                jump faza12
+                                            else:
+                                                jump losowanko_tarczownik1
+                                        
+                                        else:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 5:
+                                                $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                                if kibol1_obrona >= 1:
+                                                    $ kibol1_hp_now -= int(tarczownik_attack / 2)
+
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                else:
+                                                    $ kibol1_hp_now -= tarczownik_attack
+
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+
+                                                jump faza12
+                                            else:
+                                                jump losowanko_tarczownik1
+
+                                else:
+                                    jump losowanko_tarczownik1
+                            else:
+                                jump losowanko_tarczownik1
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1 
+
+        jump faza12
+        label items11:
+            menu:
+                "{b}Co użyć?{/b}"
+
+                "{b}Bandaż (+5HP){/b}" if bandaz >= 1:
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if luszcz_hp_now + 5 > luszcz_hp:
+                                $ luszcz_hp_now = luszcz_hp
+                                "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                            else:
+                                $ luszcz_hp_now += 5
+                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza12
+                        
+                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if eminem_hp_now + 5 > eminem_hp:
+                                $ eminem_hp_now = eminem_hp
+                                "{i}Shadow odzyskał cały pasek życia{/i}"
+                            else:
+                                $ eminem_hp_now += 5
+                                "{i}Shadow odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza12
+
+                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if urban_hp_now + 5 > urban_hp:
+                                $ urban_hp_now = urban_hp
+                                "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                            else:
+                                $ urban_hp_now += 5
+                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza12
+
+                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if zyd_hp_now + 5 > zyd_hp:
+                                $ zyd_hp_now = zyd_hp
+                                "{i}Żyd odzyskał cały pasek życia{/i}"
+                            else:
+                                $ zyd_hp_now += 5
+                                "{i}Żyd odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza12
+
+                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if kazuma_hp_now + 5 > kazuma_hp:
+                                $ kazuma_hp_now = kazuma_hp
+                                "{i}Kazuma odzyskał cały pasek życia{/i}"
+                            else:
+                                $ kazuma_hp_now += 5
+                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza12
+                        
+                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if tarczownik_hp_now + 5 > tarczownik_hp:
+                                $ tarczownik_hp_now = tarczownik_hp
+                                "{i}Naofumi odzyskał cały pasek życia{/i}"
+                            else:
+                                $ tarczownik_hp_now += 5
+                                "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza12
+                
+                "{b}Granat (8 DMG){/b}" if granat >= 1:
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= 4
+
+                                "{i}Kibol 1 traci 4 punkty życia{/i}"
+                            else:
+                                $ kibol1_hp_now -= 8
+
+                                "{i}Kibol 1 traci 8 punktów życia{/i}"
+
+                            hide chest
+                            jump faza12
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= 4
+
+                                "{i}Akane traci 4 punkty życia{/i}"
+                            else:
+                                $ akane_hp_now -= 8
+
+                                "{i}Akane traci 8 punktów życia{/i}"
+                            hide chest
+                            jump faza12
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= 4
+
+                                "{i}Kibol 2 traci 4 punkty życia{/i}"
+                            else:
+                                $ kibol2_hp_now -= 8
+
+                                "{i}Kibol 2 traci 8 punktów życia{/i}"
+                            
+                            hide chest
+                            jump faza12
+
+    label faza12:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+        hide ruch
+
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+
+            if akane_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        else:
+            $ ado += 1
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        else:
+            $ ado += 1
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        else:
+            $ ado += 1
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        else:
+            $ ado += 1
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        else:
+            $ ado += 1
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+            else:
+                $ ado += 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        else:
+            $ ado += 1
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_fighter == 2:
+            if luszcz_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if luszcz_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if luszcz_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([luszcz_min_attack_now]-[luszcz_max_attack_now] DMG){/b}":
+                    if luszcz_weapon >= 1:
+                        if luszcz_wybrany == 1:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik1  
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if luszcz_wybrany == 2:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik2  
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if luszcz_wybrany == 3:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik3 
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if luszcz_wybrany == 1:
+                            show reka1 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if luszcz_wybrany == 2:
+                            show reka1 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if luszcz_wybrany == 3:
+                            show reka1 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= luszcz_attack
+                            
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= luszcz_attack
+                            
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= luszcz_attack
+
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza13
+                    
+                "{b}Obrona{/b}" if luszcz_obrona == 0:
+                    if luszcz_wybrany == 1:
+                        show tarcza1 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show tarcza1 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show tarcza1 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+                    $ luszcz_obrona += 1
+                    luszcz "Chłopaki, bronię się!"
+                    jump faza13
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if luszcz_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    luszcz "Używam itemku!"
+                    jump items12
+
+                "{b}Zaparz Herbatę{/b}":
+                    if luszcz_wybrany == 1:
+                        show herbaty zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show herbaty zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show herbaty zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Ale jaką?{/b}"
+
+                        "{b}Wiśnia z Rumem (+5HP){/b}":
+                            hide herbaty
+                            if luszcz_wybrany == 1:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 2:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 3:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                            else:
+                                $ ado += 1
+
+                            menu:
+                                "{b}Dla Kogo?{/b}"
+
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                            
+                            hide wisnia_w_rumie
+                            jump faza13
+                            
+                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            hide herbaty
+                            if luszcz_wybrany == 1:
+                                show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 2:
+                                show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 3:
+                                show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                            else:
+                                $ ado += 1
+
+                            if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                if luszcz_hp_now + 2 > luszcz_hp:
+                                    $ luszcz_hp_now = luszcz_hp
+                                else:
+                                    $ luszcz_hp_now += 2
+                            
+                            if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                if eminem_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if eminem_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if eminem_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if eminem_hp_now + 2 > eminem_hp:
+                                    $ eminem_hp_now = eminem_hp
+                                else:
+                                    $ eminem_hp_now += 2
+
+                            if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                if urban_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if urban_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if urban_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if urban_hp_now + 2 > urban_hp:
+                                    $ urban_hp_now = urban_hp
+                                else:
+                                    $ urban_hp_now += 2
+
+                            if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                if zyd_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if zyd_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if zyd_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if zyd_hp_now + 2 > zyd_hp:
+                                    $ zyd_hp_now = zyd_hp
+                                else:
+                                    $ zyd_hp_now += 2
+
+                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                if kazuma_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_hp_now + 2 > kazuma_hp:
+                                    $ kazuma_hp_now = kazuma_hp
+                                else:
+                                    $ kazuma_hp_now += 2
+                            
+                            if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                if tarczownik_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_hp_now + 2 > tarczownik_hp:
+                                    $ tarczownik_hp_now = tarczownik_hp
+                                else:
+                                    $ tarczownik_hp_now += 2
+
+                            "{i}Wszyscy sojusznicy odzyskali po 2 punkty życia{/i}"
+                            hide hiszpanska_mandarynka1
+                            hide hiszpanska_mandarynka2
+                            hide hiszpanska_mandarynka3
+                            jump faza13
+        else:
+            $ ado += 1
+        
+        if eminem_fighter == 2:
+            if eminem_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if eminem_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if eminem_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([eminem_min_attack_now]-[eminem_max_attack_now] DMG){/b}":
+                    if eminem_weapon >= 1:
+                        if eminem_wybrany == 1:
+                            show eminem_weapon zorder 15 at weapon_sojusznik1  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 2:
+                            show eminem_weapon zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 3:
+                            show eminem_weapon zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    else:
+                        if eminem_wybrany == 1:
+                            show reka2 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 2:
+                            show reka2 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 3:
+                            show reka2 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= eminem_attack
+                            
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= eminem_attack
+                            
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= eminem_attack
+
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza13
+                    
+                "{b}Obrona{/b}" if eminem_obrona == 0:
+                    eminem "I am ..."
+                    if eminem_wybrany == 1:
+                        show tarcza2 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show tarcza2 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show tarcza2 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ eminem_obrona += 1
+                    eminem "... rzymskim legionistą"
+                    jump faza13
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if eminem_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    eminem "Czas zabawy się skończył"
+                    jump items12
+
+                "{b}Rzut Szlamem{/b}":
+                    if eminem_wybrany == 1:
+                        show slime zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show slime zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show slime zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+                    
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if kibol1_obrona >= 1:
+                                hide slime
+                                "{i}Kibol 1 obronił się przed szlamem{/i}"
+                                jump faza13
+                            else:
+                                if kibol1_min_attack_now >= 2:
+                                    $ kibol1_min_attack_now -= 2
+                                    if kibol1_max_attack_now >= 6:
+                                        $ kibol1_max_attack_now -= 3
+                                    else:
+                                        $ kibol1_max_attack_now -= 2
+                        
+                                else:
+                                    $ kibol1_min_attack_now = 0
+
+                                    if kibol1_max_attack_now >= 2:
+                                        if kibol1_max_attack_now >= 6:
+                                            $ kibol1_max_attack_now -= 3
+                                        else:
+                                            $ kibol1_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ kibol1_max_attack_now = 0
+                                
+                                $ kibol1_slime += 1
+                                show slime zorder 15 at center_wrog1 
+                                "{i}Statystyki Kibol 1 zostały osłabione{/i}"
+                                jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if akane_obrona >= 1:
+                                hide slime
+                                "{i}Akane obronił się przed szlamem{/i}"
+                                jump faza13
+                            else:
+                                if akane_min_attack_now >= 2:
+                                    $ akane_min_attack_now -= 2
+                                    if akane_max_attack_now >= 6:
+                                        $ akane_max_attack_now -= 3
+                                    else:
+                                        $ akane_max_attack_now -= 2
+                        
+                                else:
+                                    $ akane_min_attack_now = 0
+
+                                    if akane_max_attack_now >= 2:
+                                        if akane_max_attack_now >= 6:
+                                            $ akane_max_attack_now -= 3
+                                        else:
+                                            $ akane_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ akane_max_attack_now = 0
+
+                                $ akane_slime += 1
+                                show slime zorder 15 at center_wrog3 
+                                "{i}Statystyki Akane zostały osłabione{/i}"
+                                jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if kibol2_obrona >= 1:
+                                hide slime
+                                "{i}Kibol 2 obronił się przed szlamem{/i}"
+                                jump faza13
+                            else:
+                                if kibol2_min_attack_now >= 2:
+                                    $ kibol2_min_attack_now -= 2
+                                    if kibol2_max_attack_now >= 6:
+                                        $ kibol2_max_attack_now -= 3
+                                    else:
+                                        $ kibol2_max_attack_now -= 2
+                        
+                                else:
+                                    $ kibol2_min_attack_now = 0
+
+                                    if kibol2_max_attack_now >= 2:
+                                        if kibol2_max_attack_now >= 6:
+                                            $ kibol2_max_attack_now -= 3
+                                        else:
+                                            $ kibol2_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ kibol2_max_attack_now = 0
+                                
+                                $ kibol2_slime += 1
+                                show slime zorder 15 at center_wrog2
+                                "{i}Statystyki Kibol 2 zostały osłabione{/i}"
+                                jump faza13
+        else:
+            $ ado += 1
+
+        if urban_fighter == 2:
+            if urban_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if urban_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if urban_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
+                    if urban_weapon >= 1:
+                        if urban_wybrany == 1:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik1  
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if urban_wybrany == 2:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik2  
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if urban_wybrany == 3:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik3 
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if urban_wybrany == 1:
+                            show reka3 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if urban_wybrany == 2:
+                            show reka3 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if urban_wybrany == 3:
+                            show reka3 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= urban_attack
+                            
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= urban_attack
+                            
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= urban_attack
+
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza13
+                    
+                "{b}Obrona{/b}" if urban_obrona == 0:
+                    if urban_wybrany == 1:
+                        show tarcza3 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show tarcza3 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show tarcza3 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ urban_obrona += 1
+                    urban "A ja mam to w dupie"
+                    jump faza13
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if urban_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    urban "No tak było, nie zmyślam"
+                    jump items12
+
+                "{b}Zatrzepocz Uszami{/b}":
+                    if urban_wybrany == 1:
+                        show uszy zorder 15 at head_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show uszy zorder 15 at head_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show uszy zorder 15 at head_sojusznik3 
+                    else:
+                        $ ado += 1
+                    
+                    urban "Hhyyy pfff hhyyy pffff hhyyy"
+
+                    if kibol1_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ kibol1_uszy += 1
+                    
+                    if akane_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ akane_uszy += 1
+                    
+                    if kibol2_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ kibol2_uszy += 1
+
+                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1:
+                        show uszy2 zorder 15 at head_wrog3
+                        show uszy1 zorder 15 at head_wrog1
+                        show uszy3 zorder 15 at head_wrog2
+                        "{i}Kibol 1, Akane i Kibol 2 skupili się na uszach Urbana{/i}"
+                    
+                    else:
+                        if kibol1_uszy == 1 and akane_uszy == 1:
+                            show uszy2 zorder 15 at head_wrog3
+                            show uszy1 zorder 15 at head_wrog1
+                            "{i}Kibol 1 i Akane skupili się na uszach Urbana{/i}"
+                        
+                        else:
+                            if akane_uszy == 1 and kibol2_uszy == 1:
+                                show uszy2 zorder 15 at head_wrog3
+                                show uszy3 zorder 15 at head_wrog2
+                                "{i}Akane i Kibol 2 skupili się na uszach Urbana{/i}"
+                            
+                            else:
+                                if kibol1_uszy == 1 and kibol2_uszy == 1:
+                                    show uszy3 zorder 15 at head_wrog2
+                                    show uszy1 zorder 15 at head_wrog1
+                                    "{i}Kibol 1 i Kibol 2 skupili się na uszach Urbana{/i}"
+                                
+                                else:
+                                    if kibol1_uszy == 1:
+                                        show uszy1 zorder 15 at head_wrog1
+                                        "{i}Kibol 1 skupił się na uszach Urbana{/i}"
+                                    
+                                    else:
+                                        if akane_uszy == 1:
+                                            show uszy2 zorder 15 at head_wrog3
+                                            "{i}Akane skupił się na uszach Urbana{/i}"
+
+                                        else:
+                                            if kibol2_uszy == 1:
+                                                show uszy3 zorder 15 at head_wrog2
+                                                "{i}Kibol 2 skupił się na uszach Urbana{/i}"
+
+                                            else:
+                                                "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
+
+                    hide uszy
+                    jump faza13  
+        else:
+            $ ado += 1
+
+        if zyd_fighter == 2:
+            if zyd_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if zyd_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if zyd_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([zyd_min_attack_now]-[zyd_max_attack_now] DMG){/b}":
+                    if zyd_weapon >= 1:
+                        if zyd_wybrany == 1:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik1  
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if zyd_wybrany == 2:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik2  
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if zyd_wybrany == 3:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik3 
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if zyd_wybrany == 1:
+                            show reka4 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if zyd_wybrany == 2:
+                            show reka4 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if zyd_wybrany == 3:
+                            show reka4 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= zyd_attack
+                            
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= zyd_attack
+                            
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= zyd_attack
+
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza13
+                    
+                "{b}Obrona{/b}" if zyd_obrona == 0:
+                    if zyd_wybrany == 1:
+                        show tarcza4 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show tarcza4 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show tarcza4 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ zyd_obrona += 1
+                    zyd "Nie interesuje mnie polska polityka"
+                    jump faza13
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if zyd_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
+                    jump items12
+
+                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and kibol1_pager == 0 and kibol1_hp_now >= 1 or pager_boom == 0 and akane_pager == 0 and akane_hp_now >= 1 or pager_boom == 0 and kibol2_pager == 0 and kibol2_hp_now >= 1:
+                    if zyd_wybrany == 1:
+                        show pager zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show pager zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show pager zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Komu?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ kibol1_pager += 1
+                            
+                            show pager1 zorder 15 at bok_wrog1
+                            "{i}Kibol 1 kupił pager od Żyda{/i}"
+
+                            jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ akane_pager += 1
+                            
+                            show pager2 zorder 15 at bok_wrog3
+                            "{i}Akane kupił pager od Żyda{/i}"
+
+                            jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ kibol2_pager += 1
+                            
+                            show pager3 zorder 15 at bok_wrog2
+                            "{i}Kibol 2 kupił pager od Żyda{/i}"
+
+                            jump faza13
+                
+                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0:
+                    $ pager_boom += 1
+                    if zyd_wybrany == 1:
+                        show red_button zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show red_button zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show red_button zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+
+                    if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
+                        $ kibol1_hp_now -= 8
+                        $ kibol2_hp_now -= 8
+                        $ akane_hp_now -= 8
+                        show eksplozja1 zorder 16 at bok_wrog1
+                        show eksplozja3 zorder 16 at bok_wrog2
+                        show eksplozja2 zorder 16 at bok_wrog3
+                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                            
+                    else:
+                        if kibol1_pager == 1 and akane_pager == 1:
+                            $ kibol1_hp_now -= 8
+                            $ akane_hp_now -= 8
+                            show eksplozja1 zorder 16 at bok_wrog1
+                            show eksplozja2 zorder 16 at bok_wrog3
+                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                
+                        else:
+                            if akane_pager == 1 and kibol2_pager == 1:
+                                $ kibol2_hp_now -= 8
+                                $ akane_hp_now -= 8
+                                show eksplozja3 zorder 16 at bok_wrog2
+                                show eksplozja2 zorder 16 at bok_wrog3
+                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                    
+                            else:
+                                if kibol1_pager == 1 and kibol2_pager == 1:
+                                    $ kibol1_hp_now -= 8
+                                    $ kibol2_hp_now -= 8
+                                    show eksplozja1 zorder 16 at bok_wrog1
+                                    show eksplozja3 zorder 16 at bok_wrog2
+                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                        
+                                else:
+                                    if kibol1_pager == 1:
+                                        $ kibol1_hp_now -= 8
+                                        show eksplozja1 zorder 16 at bok_wrog1
+                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                            
+                                    else:
+                                        if akane_pager == 1:
+                                            $ akane_hp_now -= 8
+                                            show eksplozja2 zorder 16 at bok_wrog3
+                                            "{i}Akane w wyniku ekspolzji Pageru stracił 8HP{/i}"
+
+                                        else:
+                                            if kibol2_pager == 1:
+                                                $ kibol2_hp_now -= 8
+                                                show eksplozja3 zorder 16 at bok_wrog2
+                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+
+                                            else:
+                                                $ ado += 1
+                    if dialog_fight1 == 0:
+                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
+                        $ dialog_fight1 += 1
+
+                    hide red_button
+                    hide pager1
+                    hide pager2
+                    hide pager3
+                    hide pager
+                    hide eksplozja1
+                    hide eksplozja2
+                    hide eksplozja3
+                    jump faza13
+        else:
+            $ ado += 1
+
+        if kazuma_fighter == 2:
+            if kazuma_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if kazuma_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if kazuma_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([kazuma_min_attack_now]-[kazuma_max_attack_now] DMG){/b}":
+                    if kazuma_weapon >= 1:
+                        if kazuma_wybrany == 1:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik1  
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if kazuma_wybrany == 2:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik2  
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if kazuma_wybrany == 3:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik3 
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if kazuma_wybrany == 1:
+                            show reka5 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if kazuma_wybrany == 2:
+                            show reka5 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if kazuma_wybrany == 3:
+                            show reka5 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza13
+                    
+                "{b}Obrona{/b}" if kazuma_obrona == 0:
+                    if kazuma_wybrany == 1:
+                        show tarcza5 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show tarcza5 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show tarcza5 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ kazuma_obrona += 1
+                    kazuma "Chłopaki, bronię się!"
+                    jump faza13
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if kazuma_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    kazuma "Używam itemku!"
+                    jump items12
+
+                "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
+                    if kazuma_wybrany == 1:
+                        show chwyta zorder 16 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show chwyta zorder 16 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show chwyta zorder 16 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    kazuma "Steal!"
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
+                            if kibol1_obrona >= 1:
+                                "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza13
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if kibol1_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if kibol1_max_attack_now < kibol1_max_attack:
+                                            $ kibol1_max_attack_now_true = 2
+                                            $ kibol1_min_attack_now_true = 0
+                                            $ kibol1_min_attack_now = kibol1_min_attack_now_true
+                                            $ kibol1_max_attack_now = kibol1_max_attack_now_true
+                                            $ kibol1_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ kibol1_max_attack_now_true = 2
+                                            $ kibol1_min_attack_now_true = 0
+                                            $ kibol1_min_attack_now = kibol1_min_attack_now_true
+                                            $ kibol1_max_attack_now = kibol1_max_attack_now_true
+
+                                        $ kibol1_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
+                                        hide kiboli1_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 1{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        kibol1 "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Kibol 1.  \nKibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ kibol1_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 1{/i}"
+                                        hide chwyta
+                                        
+                                jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
+                            if akane_obrona >= 1:
+                                "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza13
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if akane_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if akane_max_attack_now < akane_max_attack:
+                                            $ akane_max_attack_now_true = 2
+                                            $ akane_min_attack_now_true = 0
+                                            $ akane_min_attack_now = akane_min_attack_now_true
+                                            $ akane_max_attack_now = akane_max_attack_now_true
+                                            $ akane_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ akane_max_attack_now_true = 2
+                                            $ akane_min_attack_now_true = 0
+                                            $ akane_min_attack_now = akane_min_attack_now_true
+                                            $ akane_max_attack_now = akane_max_attack_now_true
+                                        
+                                        $ akane_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show akane_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show akane_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show akane_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
+                                        hide akane_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Akane{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        akane "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Akane.  \nAkane poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ akane_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Akane{/i}"
+                                        hide chwyta
+                                        
+                                jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
+                            if kibol2_obrona >= 1:
+                                "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza13
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if kibol2_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if kibol2_max_attack_now < kibol2_max_attack:
+                                            $ kibol2_max_attack_now_true = 2
+                                            $ kibol2_min_attack_now_true = 0
+                                            $ kibol2_min_attack_now = kibol2_min_attack_now_true
+                                            $ kibol2_max_attack_now = kibol2_max_attack_now_true
+                                            $ kibol2_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ kibol2_max_attack_now_true = 2
+                                            $ kibol2_min_attack_now_true = 0
+                                            $ kibol2_min_attack_now = kibol2_min_attack_now_true
+                                            $ kibol2_max_attack_now = kibol2_max_attack_now_true
+                                        
+                                        $ kibol2_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
+                                        hide kiboli2_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 2{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        kibol2 "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Kibol 2.  \nKibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ kibol2_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 2{/i}"
+                                        hide chwyta
+                                        
+                                jump faza13
+        else:
+            $ ado += 1
+
+        jump faza13
+        label items12:
+            menu:
+                "{b}Co użyć?{/b}"
+
+                "{b}Bandaż (+5HP){/b}" if bandaz >= 1:
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if luszcz_hp_now + 5 > luszcz_hp:
+                                $ luszcz_hp_now = luszcz_hp
+                                "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                            else:
+                                $ luszcz_hp_now += 5
+                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+                        
+                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if eminem_hp_now + 5 > eminem_hp:
+                                $ eminem_hp_now = eminem_hp
+                                "{i}Shadow odzyskał cały pasek życia{/i}"
+                            else:
+                                $ eminem_hp_now += 5
+                                "{i}Shadow odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+
+                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if urban_hp_now + 5 > urban_hp:
+                                $ urban_hp_now = urban_hp
+                                "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                            else:
+                                $ urban_hp_now += 5
+                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+
+                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if zyd_hp_now + 5 > zyd_hp:
+                                $ zyd_hp_now = zyd_hp
+                                "{i}Żyd odzyskał cały pasek życia{/i}"
+                            else:
+                                $ zyd_hp_now += 5
+                                "{i}Żyd odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+
+                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if kazuma_hp_now + 5 > kazuma_hp:
+                                $ kazuma_hp_now = kazuma_hp
+                                "{i}Kazuma odzyskał cały pasek życia{/i}"
+                            else:
+                                $ kazuma_hp_now += 5
+                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+                        
+                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if tarczownik_hp_now + 5 > tarczownik_hp:
+                                $ tarczownik_hp_now = tarczownik_hp
+                                "{i}Naofumi odzyskał cały pasek życia{/i}"
+                            else:
+                                $ tarczownik_hp_now += 5
+                                "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+                
+                "{b}Granat (8 DMG){/b}" if granat >= 1:
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= 4
+
+                                "{i}Kibol 1 traci 4 punkty życia{/i}"
+                            else:
+                                $ kibol1_hp_now -= 8
+
+                                "{i}Kibol 1 traci 8 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= 4
+
+                                "{i}Akane traci 4 punkty życia{/i}"
+                            else:
+                                $ akane_hp_now -= 8
+
+                                "{i}Akane traci 8 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= 4
+
+                                "{i}Kibol 2 traci 4 punkty życia{/i}"
+                            else:
+                                $ kibol2_hp_now -= 8
+
+                                "{i}Kibol 2 traci 8 punktów życia{/i}"
+                            hide chest
+                            jump faza13
+
+    label faza13:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+        hide ruch
+
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+
+            if akane_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        else:
+            $ ado += 1
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        else:
+            $ ado += 1
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        else:
+            $ ado += 1
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        else:
+            $ ado += 1
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        else:
+            $ ado += 1
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+            else:
+                $ ado += 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        else:
+            $ ado += 1
+
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_fighter == 3:
+            if luszcz_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if luszcz_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if luszcz_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([luszcz_min_attack_now]-[luszcz_max_attack_now] DMG){/b}":
+                    if luszcz_weapon >= 1:
+                        if luszcz_wybrany == 1:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik1  
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if luszcz_wybrany == 2:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik2  
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if luszcz_wybrany == 3:
+                            if luszcz_gitara == 1:
+                                show luszcz_weapon zorder 15 at weapon_sojusznik3 
+
+                            if luszcz_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if luszcz_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if luszcz_wybrany == 1:
+                            show reka1 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if luszcz_wybrany == 2:
+                            show reka1 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if luszcz_wybrany == 3:
+                            show reka1 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= luszcz_attack
+                            
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= luszcz_attack
+                            
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(luszcz_attack / 2)
+
+                                $ dmg = int(luszcz_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= luszcz_attack
+
+                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            jump faza14
+                    
+                "{b}Obrona{/b}" if luszcz_obrona == 0:
+                    if luszcz_wybrany == 1:
+                        show tarcza1 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show tarcza1 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show tarcza1 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+                    $ luszcz_obrona += 1
+                    luszcz "Chłopaki, bronię się!"
+                    jump faza14
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if luszcz_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    luszcz "Używam itemku!"
+                    jump items13
+
+                "{b}Zaparz Herbatę{/b}":
+                    if luszcz_wybrany == 1:
+                        show herbaty zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 2:
+                        show herbaty zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if luszcz_wybrany == 3:
+                        show herbaty zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Ale jaką?{/b}"
+
+                        "{b}Wiśnia z Rumem (+5HP){/b}":
+                            hide herbaty
+                            if luszcz_wybrany == 1:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 2:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 3:
+                                show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                            else:
+                                $ ado += 1
+
+                            menu:
+                                "{b}Dla Kogo?{/b}"
+
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+                                    else:
+                                        $ ado += 1
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                            
+                            hide wisnia_w_rumie
+                            jump faza14
+                            
+                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            hide herbaty
+                            if luszcz_wybrany == 1:
+                                show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 2:
+                                show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                            else:
+                                $ ado += 1
+
+                            if luszcz_wybrany == 3:
+                                show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                            else:
+                                $ ado += 1
+
+                            if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                if luszcz_hp_now + 2 > luszcz_hp:
+                                    $ luszcz_hp_now = luszcz_hp
+                                else:
+                                    $ luszcz_hp_now += 2
+                            
+                            if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                if eminem_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if eminem_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if eminem_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if eminem_hp_now + 2 > eminem_hp:
+                                    $ eminem_hp_now = eminem_hp
+                                else:
+                                    $ eminem_hp_now += 2
+
+                            if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                if urban_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if urban_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if urban_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if urban_hp_now + 2 > urban_hp:
+                                    $ urban_hp_now = urban_hp
+                                else:
+                                    $ urban_hp_now += 2
+
+                            if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                if zyd_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if zyd_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if zyd_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if zyd_hp_now + 2 > zyd_hp:
+                                    $ zyd_hp_now = zyd_hp
+                                else:
+                                    $ zyd_hp_now += 2
+
+                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                if kazuma_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if kazuma_hp_now + 2 > kazuma_hp:
+                                    $ kazuma_hp_now = kazuma_hp
+                                else:
+                                    $ kazuma_hp_now += 2
+                            
+                            if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                if tarczownik_wybrany == 1:
+                                    show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_wybrany == 2:
+                                    show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_wybrany == 3:
+                                    show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
+                                else:
+                                    $ ado += 1
+
+                                if tarczownik_hp_now + 2 > tarczownik_hp:
+                                    $ tarczownik_hp_now = tarczownik_hp
+                                else:
+                                    $ tarczownik_hp_now += 2
+
+                            "{i}Wszyscy sojusznicy odzyskali po 2 punkty życia{/i}"
+                            hide hiszpanska_mandarynka1
+                            hide hiszpanska_mandarynka2
+                            hide hiszpanska_mandarynka3
+                            jump faza14
+        else:
+            $ ado += 1
+        
+        if eminem_fighter == 3:
+            if eminem_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if eminem_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if eminem_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([eminem_min_attack_now]-[eminem_max_attack_now] DMG){/b}":
+                    if eminem_weapon >= 1:
+                        if eminem_wybrany == 1:
+                            show eminem_weapon zorder 15 at weapon_sojusznik1  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 2:
+                            show eminem_weapon zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 3:
+                            show eminem_weapon zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    else:
+                        if eminem_wybrany == 1:
+                            show reka2 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 2:
+                            show reka2 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if eminem_wybrany == 3:
+                            show reka2 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+                    
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= eminem_attack
+                            
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= eminem_attack
+                            
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(eminem_attack / 2)
+
+                                $ dmg = int(eminem_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= eminem_attack
+
+                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            jump faza14
+                    
+                "{b}Obrona{/b}" if eminem_obrona == 0:
+                    eminem "I am ..."
+                    if eminem_wybrany == 1:
+                        show tarcza2 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show tarcza2 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show tarcza2 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ eminem_obrona += 1
+                    eminem "... rzymskim legionistą"
+                    jump faza14
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if eminem_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    eminem "Czas zabawy się skończył"
+                    jump items13
+
+                "{b}Rzut Szlamem{/b}":
+
+                    if eminem_wybrany == 1:
+                        show slime zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 2:
+                        show slime zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if eminem_wybrany == 3:
+                        show slime zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if kibol1_obrona >= 1:
+                                hide slime
+                                "{i}Kibol 1 obronił się przed szlamem{/i}"
+                                jump faza14
+                            else:
+                                if kibol1_min_attack_now >= 2:
+                                    $ kibol1_min_attack_now -= 2
+                                    if kibol1_max_attack_now >= 6:
+                                        $ kibol1_max_attack_now -= 3
+                                    else:
+                                        $ kibol1_max_attack_now -= 2
+                        
+                                else:
+                                    $ kibol1_min_attack_now = 0
+
+                                    if kibol1_max_attack_now >= 2:
+                                        if kibol1_max_attack_now >= 6:
+                                            $ kibol1_max_attack_now -= 3
+                                        else:
+                                            $ kibol1_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ kibol1_max_attack_now = 0
+                                
+                                $ kibol1_slime += 1
+                                show slime zorder 15 at center_wrog1 
+                                "{i}Statystyki Kibol 1 zostały osłabione{/i}"
+                                jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if akane_obrona >= 1:
+                                hide slime
+                                "{i}Akane obronił się przed szlamem{/i}"
+                                jump faza14
+                            else:
+                                if akane_min_attack_now >= 2:
+                                    $ akane_min_attack_now -= 2
+                                    if akane_max_attack_now >= 6:
+                                        $ akane_max_attack_now -= 3
+                                    else:
+                                        $ akane_max_attack_now -= 2
+                        
+                                else:
+                                    $ akane_min_attack_now = 0
+
+                                    if akane_max_attack_now >= 2:
+                                        if akane_max_attack_now >= 6:
+                                            $ akane_max_attack_now -= 3
+                                        else:
+                                            $ akane_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ akane_max_attack_now = 0
+                                
+                                $ akane_slime += 1
+                                show slime zorder 15 at center_wrog3
+                                "{i}Statystyki Akane zostały osłabione{/i}"
+                                jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            eminem "Godzina przebudzenia nadeszła!"
+                            if kibol2_obrona >= 1:
+                                hide slime
+                                "{i}Kibol 2 obronił się przed szlamem{/i}"
+                                jump faza14
+                            else:
+                                if kibol2_min_attack_now >= 2:
+                                    $ kibol2_min_attack_now -= 2
+                                    if kibol2_max_attack_now >= 6:
+                                        $ kibol2_max_attack_now -= 3
+                                    else:
+                                        $ kibol2_max_attack_now -= 2
+                        
+                                else:
+                                    $ kibol2_min_attack_now = 0
+
+                                    if kibol2_max_attack_now >= 2:
+                                        if kibol2_max_attack_now >= 6:
+                                            $ kibol2_max_attack_now -= 3
+                                        else:
+                                            $ kibol2_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ kibol2_max_attack_now = 0
+                                
+                                $ kibol2_slime += 1
+                                show slime zorder 15 at center_wrog2
+                                "{i}Statystyki Kibol 2 zostały osłabione{/i}"
+                                jump faza14
+        else:
+            $ ado += 1
+
+        if urban_fighter == 3:
+            if urban_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if urban_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if urban_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
+                    if urban_weapon >= 1:
+                        if urban_wybrany == 1:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik1  
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if urban_wybrany == 2:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik2  
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if urban_wybrany == 3:
+                            if urban_fuck == 1:
+                                show urban_weapon zorder 15 at weapon_sojusznik3 
+
+                            if urban_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if urban_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if urban_wybrany == 1:
+                            show reka3 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if urban_wybrany == 2:
+                            show reka3 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if urban_wybrany == 3:
+                            show reka3 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= urban_attack
+                            
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= urban_attack
+                            
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(urban_attack / 2)
+
+                                $ dmg = int(urban_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= urban_attack
+
+                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                            jump faza14
+                    
+                "{b}Obrona{/b}" if urban_obrona == 0:
+                    if urban_wybrany == 1:
+                        show tarcza3 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show tarcza3 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show tarcza3 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ urban_obrona += 1
+                    urban "A ja mam to w dupie"
+                    jump faza14
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if urban_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    urban "No tak było, nie zmyślam"
+                    jump items13
+
+                "{b}Zatrzepocz Uszami{/b}":
+                    if urban_wybrany == 1:
+                        show uszy zorder 15 at head_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 2:
+                        show uszy zorder 15 at head_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if urban_wybrany == 3:
+                        show uszy zorder 15 at head_sojusznik3 
+                    else:
+                        $ ado += 1
+                    
+                    urban "Hhyyy pfff hhyyy pffff hhyyy"
+
+                    if kibol1_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ kibol1_uszy += 1
+                    
+                    if akane_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ akane_uszy += 1
+                    
+                    if kibol2_obrona >= 1:
+                        $ ado += 1
+                    else:
+                        $ kibol2_uszy += 1
+
+                    if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1:
+                        show uszy2 zorder 15 at head_wrog3
+                        show uszy1 zorder 15 at head_wrog1
+                        show uszy3 zorder 15 at head_wrog2
+                        "{i}Kibol 1, Akane i Kibol 2 skupili się na uszach Urbana{/i}"
+                    
+                    else:
+                        if kibol1_uszy == 1 and akane_uszy == 1:
+                            show uszy2 zorder 15 at head_wrog3
+                            show uszy1 zorder 15 at head_wrog1
+                            "{i}Kibol 1 i Akane skupili się na uszach Urbana{/i}"
+                        
+                        else:
+                            if akane_uszy == 1 and kibol2_uszy == 1:
+                                show uszy2 zorder 15 at head_wrog3
+                                show uszy3 zorder 15 at head_wrog2
+                                "{i}Akane i Kibol 2 skupili się na uszach Urbana{/i}"
+                            
+                            else:
+                                if kibol1_uszy == 1 and kibol2_uszy == 1:
+                                    show uszy1 zorder 15 at head_wrog1
+                                    show uszy3 zorder 15 at head_wrog2
+                                    "{i}Kibol 1 i Kibol 2 skupili się na uszach Urbana{/i}"
+                                
+                                else:
+                                    if kibol1_uszy == 1:
+                                        show uszy1 zorder 15 at head_wrog1
+                                        "{i}Kibol 1 skupił się na uszach Urbana{/i}"
+                                    
+                                    else:
+                                        if akane_uszy == 1:
+                                            show uszy2 zorder 15 at head_wrog3
+                                            "{i}Akane skupił się na uszach Urbana{/i}"
+
+                                        else:
+                                            if kibol2_uszy == 1:
+                                                show uszy3 zorder 15 at head_wrog2
+                                                "{i}Kibol 2 skupił się na uszach Urbana{/i}"
+
+                                            else:
+                                                "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
+                    
+                    hide uszy
+                    jump faza14
+        else:
+            $ ado += 1
+
+        if zyd_fighter == 3:
+            if zyd_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if zyd_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if zyd_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([zyd_min_attack_now]-[zyd_max_attack_now] DMG){/b}":
+                    if zyd_weapon >= 1:
+                        if zyd_wybrany == 1:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik1  
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if zyd_wybrany == 2:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik2  
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if zyd_wybrany == 3:
+                            if zyd_chanuka == 1:
+                                show zyd_weapon zorder 15 at weapon_sojusznik3 
+
+                            if zyd_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if zyd_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if zyd_wybrany == 1:
+                            show reka4 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if zyd_wybrany == 2:
+                            show reka4 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if zyd_wybrany == 3:
+                            show reka4 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= zyd_attack
+                            
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= zyd_attack
+                            
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            zyd "Proszę pana, oni są zakałą tej ziemi!"
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(zyd_attack / 2)
+
+                                $ dmg = int(zyd_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= zyd_attack
+
+                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            jump faza14
+                    
+                "{b}Obrona{/b}" if zyd_obrona == 0:
+                    if zyd_wybrany == 1:
+                        show tarcza4 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show tarcza4 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show tarcza4 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ zyd_obrona += 1
+                    zyd "Nie interesuje mnie polska polityka"
+                    jump faza14
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if zyd_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
+                    jump items13
+
+                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and kibol1_pager == 0 and kibol1_hp_now >= 1 or pager_boom == 0 and akane_pager == 0 and akane_hp_now >= 1 or pager_boom == 0 and kibol2_pager == 0 and kibol2_hp_now >= 1:
+                    if zyd_wybrany == 1:
+                        show pager zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show pager zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show pager zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    menu:
+                        "{b}Komu?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ kibol1_pager += 1
+                            
+                            show pager1 zorder 15 at bok_wrog1
+                            "{i}Kibol 1 kupił pager od Żyda{/i}"
+
+                            jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ akane_pager += 1
+                            
+                            show pager2 zorder 15 at bok_wrog3
+                            "{i}Akane kupił pager od Żyda{/i}"
+
+                            jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
+                            zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            hide pager
+                            $ kibol2_pager += 1
+                            
+                            show pager3 zorder 15 at bok_wrog2
+                            "{i}Kibol 2 kupił pager od Żyda{/i}"
+
+                            jump faza14
+                
+                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0:
+                    $ pager_boom += 1
+                    if zyd_wybrany == 1:
+                        show red_button zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 2:
+                        show red_button zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if zyd_wybrany == 3:
+                        show red_button zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+
+                    if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
+                        $ kibol1_hp_now -= 8
+                        $ kibol2_hp_now -= 8
+                        $ akane_hp_now -= 8
+                        show eksplozja1 zorder 16 at bok_wrog1
+                        show eksplozja3 zorder 16 at bok_wrog2
+                        show eksplozja2 zorder 16 at bok_wrog3
+                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                            
+                    else:
+                        if kibol1_pager == 1 and akane_pager == 1:
+                            $ kibol1_hp_now -= 8
+                            $ akane_hp_now -= 8
+                            show eksplozja1 zorder 16 at bok_wrog1
+                            show eksplozja2 zorder 16 at bok_wrog3
+                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                
+                        else:
+                            if akane_pager == 1 and kibol2_pager == 1:
+                                $ kibol2_hp_now -= 8
+                                $ akane_hp_now -= 8
+                                show eksplozja3 zorder 16 at bok_wrog2
+                                show eksplozja2 zorder 16 at bok_wrog3
+                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                    
+                            else:
+                                if kibol1_pager == 1 and kibol2_pager == 1:
+                                    $ kibol1_hp_now -= 8
+                                    $ kibol2_hp_now -= 8
+                                    show eksplozja1 zorder 16 at bok_wrog1
+                                    show eksplozja3 zorder 16 at bok_wrog2
+                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                        
+                                else:
+                                    if kibol1_pager == 1:
+                                        $ kibol1_hp_now -= 8
+                                        show eksplozja1 zorder 16 at bok_wrog1
+                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                            
+                                    else:
+                                        if akane_pager == 1:
+                                            $ akane_hp_now -= 8
+                                            show eksplozja2 zorder 16 at bok_wrog3
+                                            "{i}Akane w wyniku ekspolzji Pageru stracił 8HP{/i}"
+
+                                        else:
+                                            if kibol2_pager == 1:
+                                                $ kibol2_hp_now -= 8
+                                                show eksplozja3 zorder 16 at bok_wrog2
+                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+
+                                            else:
+                                                $ ado += 1
+                    if dialog_fight1 == 0:
+                        luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
+                        $ dialog_fight1 += 1
+                    
+                    hide red_button
+                    hide pager1
+                    hide pager2
+                    hide pager3
+                    hide pager
+                    hide eksplozja1
+                    hide eksplozja2
+                    hide eksplozja3
+                    jump faza14
+        else:
+            $ ado += 1
+
+        if kazuma_fighter == 3:
+            if kazuma_wybrany == 1:
+                show ruch zorder 0 at tlo_sojusznik1  
+            else:
+                $ ado += 1
+
+            if kazuma_wybrany == 2:
+                show ruch zorder 0 at tlo_sojusznik2  
+            else:
+                $ ado += 1
+
+            if kazuma_wybrany == 3:
+                show ruch zorder 0 at tlo_sojusznik3 
+            else:
+                $ ado += 1
+                
+            menu:
+                "{b}Co zrobić{/b}"
+
+                "{b}Atak ([kazuma_min_attack_now]-[kazuma_max_attack_now] DMG){/b}":
+                    if kazuma_weapon >= 1:
+                        if kazuma_wybrany == 1:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik1  
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik1  
+
+                        if kazuma_wybrany == 2:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik2  
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik2 
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik2   
+
+                        if kazuma_wybrany == 3:
+                            if kazuma_chunchunmaru == 1:
+                                show kazuma_weapon zorder 15 at weapon_sojusznik3 
+
+                            if kazuma_przepychaczka == 1:
+                                show przepychaczka zorder 15 at weapon_sojusznik3 
+
+                            if kazuma_stop == 1:
+                                show stop zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if kazuma_wybrany == 1:
+                            show reka5 zorder 15 at weapon_sojusznik1 
+                        else:
+                            $ ado += 1
+
+                        if kazuma_wybrany == 2:
+                            show reka5 zorder 15 at weapon_sojusznik2  
+                        else:
+                            $ ado += 1
+
+                        if kazuma_wybrany == 3:
+                            show reka5 zorder 15 at weapon_sojusznik3 
+                        else:
+                            $ ado += 1
+
+                    menu:
+                        "{b}Kogo zaatakować?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol1_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ akane_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= int(kazuma_attack / 2)
+
+                                $ dmg = int(kazuma_attack / 2)
+                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            else:
+                                $ kibol2_hp_now -= kazuma_attack
+                            
+                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                            jump faza14
+                    
+                "{b}Obrona{/b}" if kazuma_obrona == 0:
+                    if kazuma_wybrany == 1:
+                        show tarcza5 zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show tarcza5 zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show tarcza5 zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    $ kazuma_obrona += 1
+                    kazuma "Chłopaki, bronię się!"
+                    jump faza14
+                
+                "{b}Item{/b}" if ile_item >= 1:
+                    if kazuma_wybrany == 1:
+                        show chest zorder 15 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show chest zorder 15 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show chest zorder 15 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+
+                    kazuma "Używam itemku!"
+                    jump items13
+
+                "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
+                    if kazuma_wybrany == 1:
+                        show chwyta zorder 16 at weapon_sojusznik1  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 2:
+                        show chwyta zorder 16 at weapon_sojusznik2  
+                    else:
+                        $ ado += 1
+
+                    if kazuma_wybrany == 3:
+                        show chwyta zorder 16 at weapon_sojusznik3 
+                    else:
+                        $ ado += 1
+                    
+                    kazuma "Steal!"
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
+                            if kibol1_obrona >= 1:
+                                "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza14
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if kibol1_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if kibol1_max_attack_now < kibol1_max_attack:
+                                            $ kibol1_max_attack_now_true = 2
+                                            $ kibol1_min_attack_now_true = 0
+                                            $ kibol1_min_attack_now = kibol1_min_attack_now_true
+                                            $ kibol1_max_attack_now = kibol1_max_attack_now_true
+                                            $ kibol1_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ kibol1_max_attack_now_true = 2
+                                            $ kibol1_min_attack_now_true = 0
+                                            $ kibol1_min_attack_now = kibol1_min_attack_now_true
+                                            $ kibol1_max_attack_now = kibol1_max_attack_now_true
+                                        
+                                        $ kibol1_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show kibol1_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
+                                        hide kiboli1_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 1{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        kibol1 "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Kibol 1.  \nKibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ kibol1_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 1{/i}"
+                                        hide chwyta
+                                        
+                                jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
+                            if akane_obrona >= 1:
+                                "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza14
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if akane_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if akane_max_attack_now < akane_max_attack:
+                                            $ akane_max_attack_now_true = 2
+                                            $ akane_min_attack_now_true = 0
+                                            $ akane_min_attack_now = akane_min_attack_now_true
+                                            $ akane_max_attack_now = akane_max_attack_now_true
+                                            $ akane_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ akane_max_attack_now_true = 2
+                                            $ akane_min_attack_now_true = 0
+                                            $ akane_min_attack_now = akane_min_attack_now_true
+                                            $ akane_max_attack_now = akane_max_attack_now_true
+                                        
+                                        $ akane_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show akane_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show akane_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show akane_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
+                                        hide akane_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Akane{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        akane "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Akane.  \nAkane poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ akane_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Akane{/i}"
+                                        hide chwyta
+                                        
+                                jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
+                            if kibol2_obrona >= 1:
+                                "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
+                                jump faza14
+                            else:
+                                $ kostka = renpy.random.randint(1, 11)
+                                if kibol2_sex == 0:
+                                    
+                                    if kostka >= 9:
+                                        if kibol2_max_attack_now < kibol2_max_attack:
+                                            $ kibol2_max_attack_now_true = 2
+                                            $ kibol2_min_attack_now_true = 0
+                                            $ kibol2_min_attack_now = kibol2_min_attack_now_true
+                                            $ kibol2_max_attack_now = kibol2_max_attack_now_true
+                                            $ kibol2_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ kibol2_max_attack_now_true = 2
+                                            $ kibol2_min_attack_now_true = 0
+                                            $ kibol2_min_attack_now = kibol2_min_attack_now_true
+                                            $ kibol2_max_attack_now = kibol2_max_attack_now_true
+                                        
+                                        $ kibol2_weapon -= 1
+
+                                        if kazuma_wybrany == 1:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show kibol2_weapon zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
+                                        hide kiboli2_weapon
+                                        hide chwyta
+                                    
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 2{/i}"
+                                        hide chwyta
+                        
+                                else:
+                                    if kostka >= 6:
+                                        if kazuma_wybrany == 1:
+                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 2:
+                                            show majtki zorder 15 at weapon_sojusznik2  
+                                        else:
+                                            $ ado += 1
+
+                                        if kazuma_wybrany == 3:
+                                            show majtki zorder 15 at weapon_sojusznik3 
+                                        else:
+                                            $ ado += 1
+
+                                        kazuma "Trafiłem jackpota!"
+                                        kibol2 "Nie! Oddaj mi moje majtki!"
+                                        kazuma "Uuuoohohoho!"
+                                        "{i}Udało sie ukraść bieliznę Kibol 2.  \nKibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ kibol2_hp_now = 0
+                                        hide majtki
+                                        hide chwyta
+                                        
+                                    else:
+                                        "{i}Nie udało sie ukraść broni Kibol 2{/i}"
+                                        hide chwyta
+                                        
+                                jump faza14
+        else:
+            $ ado += 1
+
+        jump faza14
+        label items13:
+            menu:
+                "{b}Co użyć?{/b}"
+
+                "{b}Bandaż (+5HP){/b}" if bandaz >= 1:
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if luszcz_hp_now + 5 > luszcz_hp:
+                                $ luszcz_hp_now = luszcz_hp
+                                "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                            else:
+                                $ luszcz_hp_now += 5
+                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+                        
+                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if eminem_hp_now + 5 > eminem_hp:
+                                $ eminem_hp_now = eminem_hp
+                                "{i}Shadow odzyskał cały pasek życia{/i}"
+                            else:
+                                $ eminem_hp_now += 5
+                                "{i}Shadow odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+
+                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if urban_hp_now + 5 > urban_hp:
+                                $ urban_hp_now = urban_hp
+                                "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                            else:
+                                $ urban_hp_now += 5
+                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+
+                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if zyd_hp_now + 5 > zyd_hp:
+                                $ zyd_hp_now = zyd_hp
+                                "{i}Żyd odzyskał cały pasek życia{/i}"
+                            else:
+                                $ zyd_hp_now += 5
+                                "{i}Żyd odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+
+                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if kazuma_hp_now + 5 > kazuma_hp:
+                                $ kazuma_hp_now = kazuma_hp
+                                "{i}Kazuma odzyskał cały pasek życia{/i}"
+                            else:
+                                $ kazuma_hp_now += 5
+                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+                        
+                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                            $ bandaz -= 1
+                            $ ile_item -= 1
+                            if tarczownik_hp_now + 5 > tarczownik_hp:
+                                $ tarczownik_hp_now = tarczownik_hp
+                                "{i}Naofumi odzyskał cały pasek życia{/i}"
+                            else:
+                                $ tarczownik_hp_now += 5
+                                "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+                
+                "{b}Granat (8 DMG){/b}" if granat >= 1:
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if kibol1_obrona >= 1:
+                                $ kibol1_hp_now -= 4
+
+                                "{i}Kibol 1 traci 4 punkty życia{/i}"
+                            else:
+                                $ kibol1_hp_now -= 8
+
+                                "{i}Kibol 1 traci 8 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+
+                        "{b}Akane{/b}" if akane_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if akane_obrona >= 1:
+                                $ akane_hp_now -= 4
+
+                                "{i}Akane traci 4 punkty życia{/i}"
+                            else:
+                                $ akane_hp_now -= 8
+
+                                "{i}Akane traci 8 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+
+                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            $ granat -= 1
+                            $ ile_item -= 1
+
+                            if kibol2_obrona >= 1:
+                                $ kibol2_hp_now -= 4
+
+                                "{i}Kibol 2 traci 4 punkty życia{/i}"
+                            else:
+                                $ kibol2_hp_now -= 8
+
+                                "{i}Kibol 2 traci 8 punktów życia{/i}"
+                            hide chest
+                            jump faza14
+
+    label faza14:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+        hide tarcza6
+        hide tarcza7
+        hide tarcza8
+        hide ruch
+
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+
+            if akane_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        else:
+            $ ado += 1
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        else:
+            $ ado += 1
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        else:
+            $ ado += 1
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        else:
+            $ ado += 1
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        else:
+            $ ado += 1
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
+        else:
+            $ ado += 1
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+            else:
+                $ ado += 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        else:
+            $ ado += 1
+            
+
+        $ kibol1_obrona = 0
+        $ akane_obrona = 0
+        $ kibol2_obrona = 0
+        $ luszcz_min_attack_now = luszcz_min_attack_now_true
+        $ luszcz_max_attack_now = luszcz_max_attack_now_true
+        $ eminem_min_attack_now = eminem_min_attack_now_true
+        $ eminem_max_attack_now = eminem_max_attack_now_true
+        $ urban_min_attack_now = urban_min_attack_now_true
+        $ urban_max_attack_now = urban_max_attack_now_true
+        $ zyd_min_attack_now = zyd_min_attack_now_true
+        $ zyd_max_attack_now = zyd_max_attack_now_true
+        $ kazuma_min_attack_now = kazuma_min_attack_now_true
+        $ kazuma_max_attack_now = kazuma_max_attack_now_true
+        $ tarczownik_min_attack_now = tarczownik_min_attack_now_true
+        $ tarczownik_max_attack_now = tarczownik_max_attack_now_true       
+
+        show ruch zorder 0 at tlo_wrog1  
+
+        if kibol1_uszy >= 1 and urban_hp_now >= 1:
+            if kibol1_weapon >= 1:
+                show kibol1_weapon zorder 15 at weapon_wrog1  
+            else:
+                show reka6 zorder 15 at weapon_wrog1
+
+            $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+            if urban_obrona >= 1:
+                $ urban_hp_now -= int(kibol1_attack / 2)
+
+                $ dmg = int(kibol1_attack / 2)
+                "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+
+                jump faza15
+            else:
+                $ urban_hp_now -= kibol1_attack
+
+                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                jump faza15
+        
+        else:
+            $ ado += 1
+        
+        if kibol1_max_attack_now <= 0 and kibol1_obrona == 0:
+            show tarcza6 zorder 15 at weapon_wrog1  
+            "{i}Kibol 1 broni się{/i}"
+            $ kibol1_obrona += 1
+            jump faza15
+                
+        else:
+            $ ado += 1
+
+        if kibol1_hp_now >= 1 and kibol1_obrona == 0:
+            if kibol1_hp_now <= 3:
+                $ kostka = renpy.random.randint(1, 4)
+
+                if kostka >= 2:
+                    show tarcza6 zorder 15 at weapon_wrog1  
+                    "{i}Kibol 1 broni się{/i}"
+                    $ kibol1_obrona += 1
+                    jump faza15
+                
+                else:
+                    jump losowanko14
+            
+            else:
+                jump losowanko14
+        
+        else:
+            jump faza15
+                    
+        label losowanko14:   
+            if kibol1_weapon >= 1:
+                show kibol1_weapon zorder 15 at weapon_wrog1  
+            else:
+                show reka6 zorder 15 at weapon_wrog1    
+            $ kostka = renpy.random.randint(1, 6)
+            if kostka == 1:
+                if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                    if luszcz_hp_now <= 3:
+                        $ kostka = renpy.random.randint(1, 5)
+                        if kostka >= 2:
+                            $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                            if luszcz_obrona >= 1:
+                                $ luszcz_hp_now -= int(kibol1_attack / 2)
+
+                                $ dmg = int(kibol1_attack / 2)
+                                "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                            else:
+                                $ luszcz_hp_now -= kibol1_attack
+
+                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
+
+                            jump faza15
+                        else:
+                            jump losowanko14
+
+                    else:
+                        if luszcz_hp_now <= 10:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 3:
+                                $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                if luszcz_obrona >= 1:
+                                    $ luszcz_hp_now -= int(kibol1_attack / 2)
+
+                                    $ dmg = int(kibol1_attack / 2)
+                                    "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= kibol1_attack
+
+                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
+
+                                jump faza15
+                            else:
+                                jump losowanko14
+                        
+                        else:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 5:
+                                $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                if luszcz_obrona >= 1:
+                                    $ luszcz_hp_now -= int(kibol1_attack / 2)
+
+                                    $ dmg = int(kibol1_attack / 2)
+                                    "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= kibol1_attack
+
+                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
+
+                                jump faza15
+                            else:
+                                jump losowanko14
+
+                else:
+                    jump losowanko14
+            else:
+                if kostka == 2:
+                    if urban_hp_now >= 1 and urban_wybrany >= 1:
+                        if urban_hp_now <= 3:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 2:
+                                $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                if urban_obrona >= 1:
+                                    $ urban_hp_now -= int(kibol1_attack / 2)
+
+                                    $ dmg = int(kibol1_attack / 2)
+                                    "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                else:
+                                    $ urban_hp_now -= kibol1_attack
+
+                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                jump faza15
+                            else:
+                                jump losowanko14
+
+                        else:
+                            if urban_hp_now <= 10:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 3:
+                                    $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                    if urban_obrona >= 1:
+                                        $ urban_hp_now -= int(kibol1_attack / 2)
+
+                                        $ dmg = int(kibol1_attack / 2)
+                                        "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= kibol1_attack
+
+                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                    jump faza15
+                                else:
+                                    jump losowanko14
+                            
+                            else:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 5:
+                                    $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                    if urban_obrona >= 1:
+                                        $ urban_hp_now -= int(kibol1_attack / 2)
+
+                                        $ dmg = int(kibol1_attack / 2)
+                                        "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= kibol1_attack
+
+                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                    jump faza15
+                                else:
+                                    jump losowanko14
+
+                    else:
+                        jump losowanko14
+                else:
+                    if kostka == 3:
+                        if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            if zyd_hp_now <= 3:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 2:
+                                    $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                    if zyd_obrona >= 1:
+                                        $ zyd_hp_now -= int(kibol1_attack / 2)
+
+                                        $ dmg = int(kibol1_attack / 2)
+                                        "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
+                                    else:
+                                        $ zyd_hp_now -= kibol1_attack
+
+                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
+
+                                    jump faza15
+                                else:
+                                    jump losowanko14
+
+                            else:
+                                if zyd_hp_now <= 10:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 3:
+                                        $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                        if zyd_obrona >= 1:
+                                            $ zyd_hp_now -= int(kibol1_attack / 2)
+
+                                            $ dmg = int(kibol1_attack / 2)
+                                            "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= kibol1_attack
+
+                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
+
+                                        jump faza15
+                                    else:
+                                        jump losowanko14
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 5:
+                                        $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                        if zyd_obrona >= 1:
+                                            $ zyd_hp_now -= int(kibol1_attack / 2)
+
+                                            $ dmg = int(kibol1_attack / 2)
+                                            "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= kibol1_attack
+
+                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
+
+                                        jump faza15
+                                    else:
+                                        jump losowanko14
+
+                        else:
+                            jump losowanko14
+                    else:
+                        if kostka == 4:
+                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                if kazuma_hp_now <= 3:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 2:
+                                        $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                        if kazuma_obrona >= 1:
+                                            $ kazuma_hp_now -= int(kibol1_attack / 2)
+
+                                            $ dmg = int(kibol1_attack / 2)
+                                            "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                        else:
+                                            $ kazuma_hp_now -= kibol1_attack
+
+                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
+
+                                        jump faza15
+                                    else:
+                                        jump losowanko14
+
+                                else:
+                                    if kazuma_hp_now <= 10:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 3:
+                                            $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                            if kazuma_obrona >= 1:
+                                                $ kazuma_hp_now -= int(kibol1_attack / 2)
+
+                                                $ dmg = int(kibol1_attack / 2)
+                                                "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= kibol1_attack
+
+                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
+
+                                            jump faza15
+                                        else:
+                                            jump losowanko14
+                                    
+                                    else:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 5:
+                                            $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                            if kazuma_obrona >= 1:
+                                                $ kazuma_hp_now -= int(kibol1_attack / 2)
+
+                                                $ dmg = int(kibol1_attack / 2)
+                                                "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= kibol1_attack
+
+                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
+
+                                            jump faza15
+                                        else:
+                                            jump losowanko14
+
+                            else:
+                                jump losowanko14
+                        else:
+                            if kostka == 5:
+                                if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    if eminem_hp_now <= 3:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 2:
+                                            $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                            if eminem_obrona >= 1:
+                                                $ eminem_hp_now -= int(kibol1_attack / 2)
+
+                                                $ dmg = int(kibol1_attack / 2)
+                                                "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                            else:
+                                                $ eminem_hp_now -= kibol1_attack
+
+                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
+
+                                            jump faza15
+                                        else:
+                                            jump losowanko14
+
+                                    else:
+                                        if eminem_hp_now <= 10:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 3:
+                                                $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                                if eminem_obrona >= 1:
+                                                    $ eminem_hp_now -= int(kibol1_attack / 2)
+
+                                                    $ dmg = int(kibol1_attack / 2)
+                                                    "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= kibol1_attack
+
+                                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
+
+                                                jump faza15
+                                            else:
+                                                jump losowanko14
+                                        
+                                        else:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 5:
+                                                $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                                if eminem_obrona >= 1:
+                                                    $ eminem_hp_now -= int(kibol1_attack / 2)
+
+                                                    $ dmg = int(kibol1_attack / 2)
+                                                    "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= kibol1_attack
+
+                                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
+
+                                                jump faza15
+                                            else:
+                                                jump losowanko14
+
+                                else:
+                                    jump losowanko14
+                            else:
+                                if kostka == 6:
+                                    if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                        if tarczownik_hp_now <= 3:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 2:
+                                                $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                                if tarczownik_obrona >= 2:
+                                                    "{i}Kibol 1 został zablokowany przez Shield Prison{/i}"
+                                                    $ tarczownik_obrona -= 1
+                                                
+                                                else:
+                                                    if tarczownik_obrona == 1:
+                                                        $ tarczownik_hp_now -= int(kibol1_attack / 2)
+
+                                                        $ dmg = int(kibol1_attack / 2)
+                                                        "{i}Kibol 1 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                    else:
+                                                        $ tarczownik_hp_now -= kibol1_attack
+
+                                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Naofumiemu{/i}"
+
+                                                jump faza15
+                                            else:
+                                                jump losowanko14
+
+                                        else:
+                                            if tarczownik_hp_now <= 10:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 3:
+                                                    $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                                    if tarczownik_obrona >= 2:
+                                                        "{i}Kibol 1 został zablokowany przez Shield Prison{/i}"
+                                                        $ tarczownik_obrona -= 1
+                                                
+                                                    else:
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(kibol1_attack / 2)
+
+                                                            $ dmg = int(kibol1_attack / 2)
+                                                            "{i}Kibol 1 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= kibol1_attack
+
+                                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Naofumiemu{/i}"
+
+                                                    jump faza15
+                                                else:
+                                                    jump losowanko14
+                                            
+                                            else:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 5:
+                                                    $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                                    if tarczownik_obrona >= 2:
+                                                        "{i}Kibol 1 został zablokowany przez Shield Prison{/i}"
+                                                        $ tarczownik_obrona -= 1
+                                                
+                                                    else:
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(kibol1_attack / 2)
+
+                                                            $ dmg = int(kibol1_attack / 2)
+                                                            "{i}Kibol 1 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= kibol1_attack
+
+                                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Naofumiemu{/i}"
+
+                                                    jump faza15
+                                                else:
+                                                    jump losowanko14
+
+                                    else:
+                                        jump losowanko14
+                                else:
+                                    jump losowanko14
+                
+                
+    label faza15:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+        hide ruch
+
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+
+            if akane_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        else:
+            $ ado += 1
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        else:
+            $ ado += 1
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        else:
+            $ ado += 1
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        else:
+            $ ado += 1
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        else:
+            $ ado += 1
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+            else:
+                $ ado += 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        else:
+            $ ado += 1
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
+        else:
+            $ ado += 1                
+        
+        show ruch zorder 0 at tlo_wrog3 
+
+        if akane_uszy >= 1 and urban_hp_now >= 1:
+            if akane_weapon >= 1:
+                show akane_weapon zorder 15 at weapon_wrog3 
+            else:
+                show reka7 zorder 15 at weapon_wrog3
+            $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+            if akane_obrona >= 1:
+                $ akane_hp_now -= int(akane_attack / 2)
+
+                $ dmg = int(akane_attack / 2)
+                "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+
+                jump faza16
+            else:
+                $ urban_hp_now -= akane_attack
+
+                "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                jump faza16
+        
+        else:
+            $ ado += 1
+
+        if akane_max_attack_now <= 0 and akane_obrona == 0:
+            show tarcza7 zorder 15 at weapon_wrog3  
+            "{i}Akane broni się{/i}"
+            $ akane_obrona += 1
+            jump faza16
+                
+        else:
+            $ ado += 1
+
+        if akane_hp_now >= 1 and akane_obrona == 0:
+            if akane_hp_now <= 3:
+                $ kostka = renpy.random.randint(1, 4)
+
+                if kostka >= 2:
+                    show tarcza7 zorder 15 at weapon_wrog3  
+                    "{i}Akane broni się{/i}"
+                    $ akane_obrona += 1
+                    jump faza16
+                
+                else:
+                    jump losowanko15
+            
+            else:
+                jump losowanko15
+        
+        else:
+            jump faza16
+                    
+        label losowanko15:
+            if akane_weapon >= 1:
+                show akane_weapon zorder 15 at weapon_wrog3 
+            else:
+                show reka7 zorder 15 at weapon_wrog3
+
+            $ kostka = renpy.random.randint(1, 6)
+            if kostka == 1:
+                if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                    if luszcz_hp_now <= 3:
+                        $ kostka = renpy.random.randint(1, 5)
+                        if kostka >= 2:
+                            $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                            if luszcz_obrona >= 1:
+                                $ luszcz_hp_now -= int(akane_attack / 2)
+
+                                $ dmg = int(akane_attack / 2)
+                                "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                            else:
+                                $ luszcz_hp_now -= akane_attack
+
+                                "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
+
+                            jump faza16
+                        else:
+                            jump losowanko15
+
+                    else:
+                        if luszcz_hp_now <= 10:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 3:
+                                $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                if luszcz_obrona >= 1:
+                                    $ luszcz_hp_now -= int(akane_attack / 2)
+
+                                    $ dmg = int(akane_attack / 2)
+                                    "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= akane_attack
+
+                                    "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
+
+                                jump faza16
+                            else:
+                                jump losowanko15
+                        
+                        else:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 5:
+                                $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                if luszcz_obrona >= 1:
+                                    $ luszcz_hp_now -= int(akane_attack / 2)
+
+                                    $ dmg = int(akane_attack / 2)
+                                    "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= akane_attack
+
+                                    "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
+
+                                jump faza16
+                            else:
+                                jump losowanko15
+
+                else:
+                    jump losowanko15
+            else:
+                if kostka == 2:
+                    if urban_hp_now >= 1 and urban_wybrany >= 1:
+                        if urban_hp_now <= 3:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 2:
+                                $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                if urban_obrona >= 1:
+                                    $ urban_hp_now -= int(akane_attack / 2)
+
+                                    $ dmg = int(akane_attack / 2)
+                                    "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                else:
+                                    $ urban_hp_now -= akane_attack
+
+                                    "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                jump faza16
+                            else:
+                                jump losowanko15
+
+                        else:
+                            if urban_hp_now <= 10:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 3:
+                                    $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                    if urban_obrona >= 1:
+                                        $ urban_hp_now -= int(akane_attack / 2)
+
+                                        $ dmg = int(akane_attack / 2)
+                                        "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= akane_attack
+
+                                        "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                    jump faza16
+                                else:
+                                    jump losowanko15
+                            
+                            else:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 5:
+                                    $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                    if urban_obrona >= 1:
+                                        $ urban_hp_now -= int(akane_attack / 2)
+
+                                        $ dmg = int(akane_attack / 2)
+                                        "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= akane_attack
+
+                                        "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                    jump faza16
+                                else:
+                                    jump losowanko15
+
+                    else:
+                        jump losowanko15
+                else:
+                    if kostka == 3:
+                        if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            if zyd_hp_now <= 3:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 2:
+                                    $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                    if zyd_obrona >= 1:
+                                        $ zyd_hp_now -= int(akane_attack / 2)
+
+                                        $ dmg = int(akane_attack / 2)
+                                        "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
+                                    else:
+                                        $ zyd_hp_now -= akane_attack
+
+                                        "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
+
+                                    jump faza16
+                                else:
+                                    jump losowanko15
+
+                            else:
+                                if zyd_hp_now <= 10:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 3:
+                                        $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                        if zyd_obrona >= 1:
+                                            $ zyd_hp_now -= int(akane_attack / 2)
+
+                                            $ dmg = int(akane_attack / 2)
+                                            "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= akane_attack
+
+                                            "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
+
+                                        jump faza16
+                                    else:
+                                        jump losowanko15
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 5:
+                                        $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                        if zyd_obrona >= 1:
+                                            $ zyd_hp_now -= int(akane_attack / 2)
+
+                                            $ dmg = int(akane_attack / 2)
+                                            "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= akane_attack
+
+                                            "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
+
+                                        jump faza16
+                                    else:
+                                        jump losowanko15
+
+                        else:
+                            jump losowanko15
+                    else:
+                        if kostka == 4:
+                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                if kazuma_hp_now <= 3:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 2:
+                                        $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                        if kazuma_obrona >= 1:
+                                            $ kazuma_hp_now -= int(akane_attack / 2)
+
+                                            $ dmg = int(akane_attack / 2)
+                                            "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                        else:
+                                            $ kazuma_hp_now -= akane_attack
+
+                                            "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
+
+                                        jump faza16
+                                    else:
+                                        jump losowanko15
+
+                                else:
+                                    if kazuma_hp_now <= 10:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 3:
+                                            $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                            if kazuma_obrona >= 1:
+                                                $ kazuma_hp_now -= int(akane_attack / 2)
+
+                                                $ dmg = int(akane_attack / 2)
+                                                "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= akane_attack
+
+                                                "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
+
+                                            jump faza16
+                                        else:
+                                            jump losowanko15
+                                    
+                                    else:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 5:
+                                            $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                            if kazuma_obrona >= 1:
+                                                $ kazuma_hp_now -= int(akane_attack / 2)
+
+                                                $ dmg = int(akane_attack / 2)
+                                                "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= akane_attack
+
+                                                "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
+
+                                            jump faza16
+                                        else:
+                                            jump losowanko15
+
+                            else:
+                                jump losowanko15
+                        else:
+                            if kostka == 5:
+                                if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    if eminem_hp_now <= 3:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 2:
+                                            $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                            if eminem_obrona >= 1:
+                                                $ eminem_hp_now -= int(akane_attack / 2)
+
+                                                $ dmg = int(akane_attack / 2)
+                                                "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                            else:
+                                                $ eminem_hp_now -= akane_attack
+
+                                                "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
+
+                                            jump faza16
+                                        else:
+                                            jump losowanko15
+
+                                    else:
+                                        if eminem_hp_now <= 10:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 3:
+                                                $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                                if eminem_obrona >= 1:
+                                                    $ eminem_hp_now -= int(akane_attack / 2)
+
+                                                    $ dmg = int(akane_attack / 2)
+                                                    "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= akane_attack
+
+                                                    "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
+
+                                                jump faza16
+                                            else:
+                                                jump losowanko15
+                                        
+                                        else:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 5:
+                                                $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                                if eminem_obrona >= 1:
+                                                    $ eminem_hp_now -= int(akane_attack / 2)
+
+                                                    $ dmg = int(akane_attack / 2)
+                                                    "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= akane_attack
+
+                                                    "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
+
+                                                jump faza16
+                                            else:
+                                                jump losowanko15
+
+                                else:
+                                    jump losowanko15
+                            else:
+                                if kostka == 6:
+                                    if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                        if tarczownik_hp_now <= 3:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 2:
+                                                $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                                if tarczownik_obrona >= 2:
+                                                    "{i}Akane został zablokowany przez Shield Prison{/i}"
+                                                    $ tarczownik_obrona -= 1
+                                                
+                                                else:
+                                                    if tarczownik_obrona == 1:
+                                                        $ tarczownik_hp_now -= int(akane_attack / 2)
+
+                                                        $ dmg = int(akane_attack / 2)
+                                                        "{i}Akane zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                    else:
+                                                        $ tarczownik_hp_now -= akane_attack
+
+                                                        "{i}Akane zadaje [akane_attack] obrażeń Naofumiemu{/i}"
+
+                                                jump faza16
+                                            else:
+                                                jump losowanko15
+
+                                        else:
+                                            if tarczownik_hp_now <= 10:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 3:
+                                                    $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                                    if tarczownik_obrona >= 2:
+                                                        "{i}Akane został zablokowany przez Shield Prison{/i}"
+                                                        $ tarczownik_obrona -= 1
+                                                
+                                                    else:
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(akane_attack / 2)
+
+                                                            $ dmg = int(akane_attack / 2)
+                                                            "{i}Akane zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= akane_attack
+
+                                                            "{i}Akane zadaje [akane_attack] obrażeń Naofumiemu{/i}"
+
+                                                    jump faza16
+                                                else:
+                                                    jump losowanko15
+                                            
+                                            else:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 5:
+                                                    $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                                    if tarczownik_obrona >= 2:
+                                                        "{i}Akane został zablokowany przez Shield Prison{/i}"
+                                                        $ tarczownik_obrona -= 1
+                                                
+                                                    else:
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(akane_attack / 2)
+
+                                                            $ dmg = int(akane_attack / 2)
+                                                            "{i}Akane zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= akane_attack
+
+                                                            "{i}Akane zadaje [akane_attack] obrażeń Naofumiemu{/i}"
+
+                                                    jump faza16
+                                                else:
+                                                    jump losowanko15
+
+                                    else:
+                                        jump losowanko15
+                                else:
+                                    jump losowanko15
+
+
+    label faza16:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+        hide ruch
+
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+
+            if akane_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+            else:
+                $ ado += 1
+
+        else:
+            $ ado += 1
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+        else:
+            $ ado += 1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        else:
+            $ ado += 1
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        else:
+            $ ado += 1
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        else:
+            $ ado += 1
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        else:
+            $ ado += 1
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        else:
+            $ ado += 1
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+            else:
+                $ ado += 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        else:
+            $ ado += 1
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
+        else:
+            $ ado += 1                
+        
+        show ruch zorder 0 at tlo_wrog2
+
+        if kibol2_uszy >= 1 and urban_hp_now >= 1:
+            if kibol2_weapon >= 1:
+                show kibol2_weapon zorder 15 at weapon_wrog2 
+            else:
+                show reka8 zorder 15 at weapon_wrog2
+            $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+            if urban_obrona >= 1:
+                $ urban_hp_now -= int(kibol2_attack / 2)
+
+                $ dmg = int(kibol2_attack / 2)
+                "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+
+                jump start_fight1
+            else:
+                $ urban_hp_now -= kibol2_attack
+
+                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                jump start_fight1
+        
+        else:
+            $ ado += 1
+
+        if kibol2_max_attack_now <= 0 and kibol2_obrona == 0:
+            show tarcza8 zorder 15 at weapon_wrog2  
+            "{i}Kibol 2 broni się{/i}"
+            $ kibol2_obrona += 1
+            jump start_fight1
+                
+        else:
+            $ ado += 1
+
+        if kibol2_hp_now >= 1 and kibol2_obrona == 0:
+            if kibol2_hp_now <= 3:
+                $ kostka = renpy.random.randint(1, 4)
+
+                if kostka >= 2:
+                    show tarcza8 zorder 15 at weapon_wrog2  
+                    "{i}Kibol 2 broni się{/i}"
+                    $ kibol2_obrona += 1
+                    jump start_fight1
+                
+                else:
+                    jump losowanko16
+            
+            else:
+                jump losowanko16
+        
+        else:
+            jump start_fight1
+                    
+        label losowanko16:    
+            if kibol2_weapon >= 1:
+                show kibol2_weapon zorder 15 at weapon_wrog2 
+            else:
+                show reka8 zorder 15 at weapon_wrog2     
+            $ kostka = renpy.random.randint(1, 6)
+            if kostka == 1:
+                if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                    if luszcz_hp_now <= 3:
+                        $ kostka = renpy.random.randint(1, 5)
+                        if kostka >= 2:
+                            $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                            if luszcz_obrona >= 1:
+                                $ luszcz_hp_now -= int(kibol2_attack / 2)
+
+                                $ dmg = int(kibol2_attack / 2)
+                                "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                            else:
+                                $ luszcz_hp_now -= kibol2_attack
+
+                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
+
+                            jump start_fight1
+                        else:
+                            jump losowanko16
+
+                    else:
+                        if luszcz_hp_now <= 10:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 3:
+                                $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                if luszcz_obrona >= 1:
+                                    $ luszcz_hp_now -= int(kibol2_attack / 2)
+
+                                    $ dmg = int(kibol2_attack / 2)
+                                    "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= kibol2_attack
+
+                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
+
+                                jump start_fight1
+                            else:
+                                jump losowanko16
+                        
+                        else:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 5:
+                                $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                if luszcz_obrona >= 1:
+                                    $ luszcz_hp_now -= int(kibol2_attack / 2)
+
+                                    $ dmg = int(kibol2_attack / 2)
+                                    "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= kibol2_attack
+
+                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
+
+                                jump start_fight1
+                            else:
+                                jump losowanko16
+
+                else:
+                    jump losowanko16
+            else:
+                if kostka == 2:
+                    if urban_hp_now >= 1 and urban_wybrany >= 1:
+                        if urban_hp_now <= 3:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 2:
+                                $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                if urban_obrona >= 1:
+                                    $ urban_hp_now -= int(kibol2_attack / 2)
+
+                                    $ dmg = int(kibol2_attack / 2)
+                                    "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                else:
+                                    $ urban_hp_now -= kibol2_attack
+
+                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                jump start_fight1
+                            else:
+                                jump losowanko16
+
+                        else:
+                            if urban_hp_now <= 10:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 3:
+                                    $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                    if urban_obrona >= 1:
+                                        $ urban_hp_now -= int(kibol2_attack / 2)
+
+                                        $ dmg = int(kibol2_attack / 2)
+                                        "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= kibol2_attack
+
+                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                    jump start_fight1
+                                else:
+                                    jump losowanko16
+                            
+                            else:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 5:
+                                    $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                    if urban_obrona >= 1:
+                                        $ urban_hp_now -= int(kibol2_attack / 2)
+
+                                        $ dmg = int(kibol2_attack / 2)
+                                        "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= kibol2_attack
+
+                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                    jump start_fight1
+                                else:
+                                    jump losowanko16
+
+                    else:
+                        jump losowanko16
+                else:
+                    if kostka == 3:
+                        if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            if zyd_hp_now <= 3:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 2:
+                                    $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                    if zyd_obrona >= 1:
+                                        $ zyd_hp_now -= int(kibol2_attack / 2)
+
+                                        $ dmg = int(kibol2_attack / 2)
+                                        "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                    else:
+                                        $ zyd_hp_now -= kibol2_attack
+
+                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
+
+                                    jump start_fight1
+                                else:
+                                    jump losowanko16
+
+                            else:
+                                if zyd_hp_now <= 10:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 3:
+                                        $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                        if zyd_obrona >= 1:
+                                            $ zyd_hp_now -= int(kibol2_attack / 2)
+
+                                            $ dmg = int(kibol2_attack / 2)
+                                            "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= kibol2_attack
+
+                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
+
+                                        jump start_fight1
+                                    else:
+                                        jump losowanko16
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 5:
+                                        $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                        if zyd_obrona >= 1:
+                                            $ zyd_hp_now -= int(kibol2_attack / 2)
+
+                                            $ dmg = int(kibol2_attack / 2)
+                                            "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= kibol2_attack
+
+                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
+
+                                        jump start_fight1
+                                    else:
+                                        jump losowanko16
+
+                        else:
+                            jump losowanko16
+                    else:
+                        if kostka == 4:
+                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                if kazuma_hp_now <= 3:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 2:
+                                        $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                        if kazuma_obrona >= 1:
+                                            $ kazuma_hp_now -= int(kibol2_attack / 2)
+
+                                            $ dmg = int(kibol2_attack / 2)
+                                            "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                        else:
+                                            $ kazuma_hp_now -= kibol2_attack
+
+                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
+
+                                        jump start_fight1
+                                    else:
+                                        jump losowanko16
+
+                                else:
+                                    if kazuma_hp_now <= 10:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 3:
+                                            $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                            if kazuma_obrona >= 1:
+                                                $ kazuma_hp_now -= int(kibol2_attack / 2)
+
+                                                $ dmg = int(kibol2_attack / 2)
+                                                "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= kibol2_attack
+
+                                                "{i}Kibol 1 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
+
+                                            jump start_fight1
+                                        else:
+                                            jump losowanko16
+                                    
+                                    else:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 5:
+                                            $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                            if kazuma_obrona >= 1:
+                                                $ kazuma_hp_now -= int(kibol2_attack / 2)
+
+                                                $ dmg = int(kibol2_attack / 2)
+                                                "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= kibol2_attack
+
+                                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
+
+                                            jump start_fight1
+                                        else:
+                                            jump losowanko16
+
+                            else:
+                                jump losowanko16
+                        else:
+                            if kostka == 5:
+                                if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    if eminem_hp_now <= 3:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 2:
+                                            $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                            if eminem_obrona >= 1:
+                                                $ eminem_hp_now -= int(kibol2_attack / 2)
+
+                                                $ dmg = int(kibol2_attack / 2)
+                                                "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                            else:
+                                                $ eminem_hp_now -= kibol2_attack
+
+                                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
+
+                                            jump start_fight1
+                                        else:
+                                            jump losowanko16
+
+                                    else:
+                                        if eminem_hp_now <= 10:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 3:
+                                                $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                                if eminem_obrona >= 1:
+                                                    $ eminem_hp_now -= int(kibol2_attack / 2)
+
+                                                    $ dmg = int(kibol2_attack / 2)
+                                                    "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= kibol2_attack
+
+                                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
+
+                                                jump start_fight1
+                                            else:
+                                                jump losowanko16
+                                        
+                                        else:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 5:
+                                                $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                                if eminem_obrona >= 1:
+                                                    $ eminem_hp_now -= int(kibol2_attack / 2)
+
+                                                    $ dmg = int(kibol2_attack / 2)
+                                                    "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= kibol2_attack
+
+                                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
+
+                                                jump start_fight1
+                                            else:
+                                                jump losowanko16
+
+                                else:
+                                    jump losowanko16
+                            else:
+                                if kostka == 6:
+                                    if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                        if tarczownik_hp_now <= 3:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 2:
+                                                $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                                if tarczownik_obrona >= 2:
+                                                    "{i}Kibol 2 został zablokowany przez Shield Prison{/i}"
+                                                    $ tarczownik_obrona -= 1
+                                                
+                                                else:
+                                                    if tarczownik_obrona == 1:
+                                                        $ tarczownik_hp_now -= int(kibol2_attack / 2)
+
+                                                        $ dmg = int(kibol2_attack / 2)
+                                                        "{i}Kibol 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                    else:
+                                                        $ tarczownik_hp_now -= kibol2_attack
+
+                                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Naofumiemu{/i}"
+
+                                                jump start_fight1
+                                            else:
+                                                jump losowanko16
+
+                                        else:
+                                            if tarczownik_hp_now <= 10:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 3:
+                                                    $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                                    if tarczownik_obrona >= 2:
+                                                        "{i}Kibol 2 został zablokowany przez Shield Prison{/i}"
+                                                        $ tarczownik_obrona -= 1
+                                                
+                                                    else:
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(kibol2_attack / 2)
+
+                                                            $ dmg = int(kibol2_attack / 2)
+                                                            "{i}Kibol 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= kibol2_attack
+
+                                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Naofumiemu{/i}"
+
+                                                    jump start_fight1
+                                                else:
+                                                    jump losowanko16
+                                            
+                                            else:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 5:
+                                                    $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                                    if tarczownik_obrona >= 2:
+                                                        "{i}Kibol 2 został zablokowany przez Shield Prison{/i}"
+                                                        $ tarczownik_obrona -= 1
+                                                
+                                                    else:
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(kibol2_attack / 2)
+
+                                                            $ dmg = int(kibol2_attack / 2)
+                                                            "{i}Kibol 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= kibol2_attack
+
+                                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Naofumiemu{/i}"
+
+                                                    jump start_fight1
+                                                else:
+                                                    jump losowanko16
+
+                                    else:
+                                        jump losowanko16
+                                else: 
+                                    jump losowanko16                
+
+    label przegranko_fight1:
+        scene bg dead
+        hide air_strike_shield1
+        hide air_strike_shield2
+        hide air_strike_shield3
+        hide shield_prison
+        hide red_button
+        hide pager1
+        hide pager2
+        hide pager3
+        hide pager
+        hide eksplozja1
+        hide eksplozja2
+        hide eksplozja3
+        hide uszy1
+        hide uszy2
+        hide uszy3
+        hide slime
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+        hide screen kibol1_stats
+        hide screen akane_stats
+        hide screen kibol2_stats
+        window hide
+        menu:
+            "{b}Powtórz Walkę{/b}":
+                window show
+                $ fight_on = 0
+                $ timer += 5
+
+                $ ile_sojusznikow = 0
+                $ ile_wrogow = 0
+
+                $ luszcz_fighter = 0
+                $ eminem_fighter = 0
+                $ urban_fighter = 0
+                $ zyd_fighter = 0
+                $ kazuma_fighter = 0
+                $ tarczownik_fighter = 0
+
+                $ luszcz_wybrany = 0
+                $ eminem_wybrany = 0
+                $ urban_wybrany = 0
+                $ zyd_wybrany = 0
+                $ kazuma_wybrany = 0
+                $ tarczownik_wybrany = 0
+
+                $ luszcz_weapon = 1
+                $ eminem_weapon = 1
+                $ urban_weapon = 1
+                $ zyd_weapon = 1
+                $ kazuma_weapon = 1
+                $ tarczownik_weapon = 1
+
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+
+                $ luszcz_hp_now = luszcz_hp
+                $ luszcz_min_attack_now = luszcz_min_attack
+                $ luszcz_max_attack_now = luszcz_max_attack
+                $ luszcz_min_attack_now_true = luszcz_min_attack
+                $ luszcz_max_attack_now_true = luszcz_max_attack
+                $ eminem_hp_now = eminem_hp
+                $ eminem_min_attack_now = eminem_min_attack
+                $ eminem_max_attack_now = eminem_max_attack
+                $ eminem_min_attack_now_true = eminem_min_attack
+                $ eminem_max_attack_now_true = eminem_max_attack
+                $ urban_hp_now = urban_hp
+                $ urban_min_attack_now = urban_min_attack
+                $ urban_max_attack_now = urban_max_attack
+                $ urban_min_attack_now_true = urban_min_attack
+                $ urban_max_attack_now_true = urban_max_attack
+                $ zyd_hp_now = zyd_hp
+                $ zyd_min_attack_now = zyd_min_attack
+                $ zyd_max_attack_now = zyd_max_attack
+                $ zyd_min_attack_now_true = zyd_min_attack
+                $ zyd_max_attack_now_true = zyd_max_attack
+                $ kazuma_hp_now = kazuma_hp
+                $ kazuma_min_attack_now = kazuma_min_attack
+                $ kazuma_max_attack_now = kazuma_max_attack
+                $ kazuma_min_attack_now_true = kazuma_min_attack
+                $ kazuma_max_attack_now_true = kazuma_max_attack
+                $ tarczownik_hp_now = tarczownik_hp
+                $ tarczownik_min_attack_now = tarczownik_min_attack
+                $ tarczownik_max_attack_now = tarczownik_max_attack
+                $ tarczownik_min_attack_now_true = tarczownik_min_attack
+                $ tarczownik_max_attack_now_true = tarczownik_max_attack
+
+                $ kibol1_hp_now = kibol1_hp
+                $ kibol1_min_attack_now = kibol1_min_attack
+                $ kibol1_max_attack_now = kibol1_max_attack
+                $ kibol1_min_attack_now_true = kibol1_min_attack
+                $ kibol1_max_attack_now_true = kibol1_max_attack
+                $ kibol2_hp_now = kibol2_hp
+                $ kibol2_min_attack_now = kibol2_min_attack
+                $ kibol2_max_attack_now = kibol2_max_attack
+                $ kibol2_min_attack_now_true = kibol2_min_attack
+                $ kibol2_max_attack_now_true = kibol2_max_attack
+                $ akane_hp_now = akane_hp
+                $ akane_min_attack_now = akane_min_attack
+                $ akane_max_attack_now = akane_max_attack
+                $ akane_min_attack_now_true = akane_min_attack
+                $ akane_max_attack_now_true = akane_max_attack
+
+                $ kibol1_pager = 0
+                $ kibol2_pager = 0
+                $ akane_pager = 0
+                $ pager_boom = 0
+                
+                $ kibol1_uszy = 0
+                $ kibol2_uszy = 0
+                $ akane_uszy = 0
+
+                $ kibol1_slime = 0
+                $ kibol2_slime = 0
+                $ akane_slime = 0
+
+                $ kibol1_weapon = 1
+                $ akane_weapon = 1
+                $ kibol2_weapon = 1
+
+                $ kibol1_obrona = 0
+                $ kibol2_obrona = 0
+                $ akane_obrona = 0
+
+                $ kibol1_umarty = 0
+                $ kibol2_umarty = 0
+                $ akane_umarty = 0
+                jump fight1
+
+
+    label wygranko_fight1:
+        hide air_strike_shield1
+        hide air_strike_shield2
+        hide air_strike_shield3
+        hide shield_prison
+        hide red_button
+        hide pager1
+        hide pager2
+        hide pager3
+        hide pager
+        hide eksplozja1
+        hide eksplozja2
+        hide eksplozja3
+        hide uszy1
+        hide uszy2
+        hide uszy3
+        hide slime
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide stop
+        hide przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide kibol1_weapon
+        hide akane_weapon
+        hide kibol2_weapon
+
+        hide screen luszcz1_stats
+        hide screen luszcz2_stats
+        hide screen luszcz3_stats
+
+        hide screen eminem1_stats
+        hide screen eminem2_stats
+        hide screen eminem3_stats
+
+        hide screen urban1_stats
+        hide screen urban2_stats
+        hide screen urban3_stats
+
+        hide screen zyd1_stats
+        hide screen zyd2_stats
+        hide screen zyd3_stats
+
+        hide screen kazuma1_stats
+        hide screen kazuma2_stats
+        hide screen kazuma3_stats
+
+        hide screen tarczownik1_stats
+        hide screen tarczownik2_stats
+        hide screen tarczownik3_stats
+
+        $ fight_on = 0
+
+        $ ile_sojusznikow = 0
+        $ ile_wrogow = 0
+
+        $ luszcz_fighter = 0
+        $ eminem_fighter = 0
+        $ urban_fighter = 0
+        $ zyd_fighter = 0
+        $ kazuma_fighter = 0
+        $ tarczownik_fighter = 0
+
+        $ luszcz_wybrany = 0
+        $ eminem_wybrany = 0
+        $ urban_wybrany = 0
+        $ zyd_wybrany = 0
+        $ kazuma_wybrany = 0
+        $ tarczownik_wybrany = 0
+
+        $ luszcz_weapon = 1
+        $ eminem_weapon = 1
+        $ urban_weapon = 1
+        $ zyd_weapon = 1
+        $ kazuma_weapon = 1
+        $ tarczownik_weapon = 1
+
+        $ luszcz_obrona = 0
+        $ eminem_obrona = 0
+        $ urban_obrona = 0
+        $ zyd_obrona = 0
+        $ kazuma_obrona = 0
+        $ tarczownik_obrona = 0
+
+        $ luszcz_hp_now = luszcz_hp
+        $ luszcz_min_attack_now = luszcz_min_attack
+        $ luszcz_max_attack_now = luszcz_max_attack
+        $ luszcz_min_attack_now_true = luszcz_min_attack
+        $ luszcz_max_attack_now_true = luszcz_max_attack
+        $ eminem_hp_now = eminem_hp
+        $ eminem_min_attack_now = eminem_min_attack
+        $ eminem_max_attack_now = eminem_max_attack
+        $ eminem_min_attack_now_true = eminem_min_attack
+        $ eminem_max_attack_now_true = eminem_max_attack
+        $ urban_hp_now = urban_hp
+        $ urban_min_attack_now = urban_min_attack
+        $ urban_max_attack_now = urban_max_attack
+        $ urban_min_attack_now_true = urban_min_attack
+        $ urban_max_attack_now_true = urban_max_attack
+        $ zyd_hp_now = zyd_hp
+        $ zyd_min_attack_now = zyd_min_attack
+        $ zyd_max_attack_now = zyd_max_attack
+        $ zyd_min_attack_now_true = zyd_min_attack
+        $ zyd_max_attack_now_true = zyd_max_attack
+        $ kazuma_hp_now = kazuma_hp
+        $ kazuma_min_attack_now = kazuma_min_attack
+        $ kazuma_max_attack_now = kazuma_max_attack
+        $ kazuma_min_attack_now_true = kazuma_min_attack
+        $ kazuma_max_attack_now_true = kazuma_max_attack
+        $ tarczownik_hp_now = tarczownik_hp
+        $ tarczownik_min_attack_now = tarczownik_min_attack
+        $ tarczownik_max_attack_now = tarczownik_max_attack
+        $ tarczownik_min_attack_now_true = tarczownik_min_attack
+        $ tarczownik_max_attack_now_true = tarczownik_max_attack
+
+        $ kibol1_hp_now = kibol1_hp
+        $ kibol1_min_attack_now = kibol1_min_attack
+        $ kibol1_max_attack_now = kibol1_max_attack
+        $ kibol1_min_attack_now_true = kibol1_min_attack
+        $ kibol1_max_attack_now_true = kibol1_max_attack
+        $ kibol2_hp_now = kibol2_hp
+        $ kibol2_min_attack_now = kibol2_min_attack
+        $ kibol2_max_attack_now = kibol2_max_attack
+        $ kibol2_min_attack_now_true = kibol2_min_attack
+        $ kibol2_max_attack_now_true = kibol2_max_attack
+        $ akane_hp_now = akane_hp
+        $ akane_min_attack_now = akane_min_attack
+        $ akane_max_attack_now = akane_max_attack
+        $ akane_min_attack_now_true = akane_min_attack
+        $ akane_max_attack_now_true = akane_max_attack
+
+        $ kibol1_pager = 0
+        $ kibol2_pager = 0
+        $ akane_pager = 0
+        $ pager_boom = 0
+
+        $ kibol1_uszy = 0
+        $ kibol2_uszy = 0
+        $ akane_uszy = 0
+
+        $ kibol1_slime = 0
+        $ kibol2_slime = 0
+        $ akane_slime = 0
+
+        $ kibol1_weapon = 1
+        $ akane_weapon = 1
+        $ kibol2_weapon = 1
+
+        $ kibol1_obrona = 0
+        $ kibol2_obrona = 0
+        $ akane_obrona = 0
+
+        $ kibol1_umarty = 0
+        $ kibol2_umarty = 0
+        $ akane_umarty = 0
+
+        jump after_fight1
