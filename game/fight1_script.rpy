@@ -1009,6 +1009,7 @@ label fight1:
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if luszcz_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -1028,6 +1029,7 @@ label fight1:
                     jump items11
 
                 "{b}Zaparz Herbatę{/b}":
+                    play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
                     else:
@@ -1067,6 +1069,7 @@ label fight1:
                                 "{b}Dla Kogo?{/b}"
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
                                         "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -1075,6 +1078,7 @@ label fight1:
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -1099,6 +1103,7 @@ label fight1:
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -1123,6 +1128,7 @@ label fight1:
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -1147,6 +1153,7 @@ label fight1:
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -1171,6 +1178,7 @@ label fight1:
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -1198,6 +1206,7 @@ label fight1:
                             jump faza12
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
@@ -1397,7 +1406,8 @@ label fight1:
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 $ kibol1_obrona = 1
                                                                
-                            else:               
+                            else:  
+                                play sound "audio/sfx/reka.mp3"             
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(eminem_attack / 2)
 
@@ -1418,7 +1428,8 @@ label fight1:
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 $ akane_obrona = 1
                                                                
-                            else:                           
+                            else: 
+                                play sound "audio/sfx/reka.mp3"                          
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(eminem_attack / 2)
 
@@ -1440,6 +1451,7 @@ label fight1:
                                 $ kibol2_obrona = 1
                                                                
                             else:
+                                play sound "audio/sfx/reka.mp3"
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(eminem_attack / 2)
 
@@ -1474,6 +1486,7 @@ label fight1:
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if eminem_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -1514,10 +1527,12 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if kibol1_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 1 obronił się przed szlamem{/i}"
                                 jump faza12
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if kibol1_min_attack_now >= 2:
                                     $ kibol1_min_attack_now -= 2
                                     if kibol1_max_attack_now >= 6:
@@ -1545,10 +1560,12 @@ label fight1:
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if akane_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
                                 jump faza12
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if akane_min_attack_now >= 2:
                                     $ akane_min_attack_now -= 2
                                     if akane_max_attack_now >= 6:
@@ -1576,10 +1593,12 @@ label fight1:
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if kibol2_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 2 obronił się przed szlamem{/i}"
                                 jump faza12
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if kibol2_min_attack_now >= 2:
                                     $ kibol2_min_attack_now -= 2
                                     if kibol2_max_attack_now >= 6:
@@ -1678,6 +1697,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -1686,6 +1706,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:  
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(urban_attack / 2)
 
@@ -1698,6 +1731,7 @@ label fight1:
                             jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -1706,6 +1740,19 @@ label fight1:
                                 $ akane_obrona = 1
                                                                
                             else:
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(urban_attack / 2)
 
@@ -1718,6 +1765,7 @@ label fight1:
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -1725,7 +1773,20 @@ label fight1:
                                 "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                 $ kibol2_obrona = 1
                                                                
-                            else:                        
+                            else:     
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(urban_attack / 2)
 
@@ -1759,6 +1820,7 @@ label fight1:
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if urban_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -1939,6 +2001,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
@@ -1960,7 +2035,20 @@ label fight1:
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 $ akane_obrona = 1
                                                                
-                            else:                            
+                            else: 
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
@@ -1981,7 +2069,20 @@ label fight1:
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 $ kibol2_obrona = 1
                                                                
-                            else:                   
+                            else:  
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
@@ -2015,6 +2116,7 @@ label fight1:
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if zyd_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -2254,6 +2356,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
@@ -2274,6 +2389,19 @@ label fight1:
                                 $ akane_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
@@ -2294,6 +2422,19 @@ label fight1:
                                 $ kibol2_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
@@ -2328,6 +2469,7 @@ label fight1:
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if kazuma_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -2369,6 +2511,7 @@ label fight1:
                             kazuma "Steal!"
 
                             if kibol1_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza12
                             else:
@@ -2405,12 +2548,15 @@ label fight1:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
-                                        hide kiboli1_weapon
+                                        hide kibol1_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                         
@@ -2430,6 +2576,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         kibol1 "Nie! Oddaj mi moje majtki!"
@@ -2440,6 +2588,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                                         
@@ -2448,6 +2597,7 @@ label fight1:
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
                             kazuma "Steal!"
                             if akane_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza12
                             else:
@@ -2484,12 +2634,15 @@ label fight1:
                                             show akane_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
-                                        hide kiboli2_weapon
+                                        hide kibol2_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                         
@@ -2509,6 +2662,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         akane "Nie! Oddaj mi moje majtki!"
@@ -2519,6 +2674,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
@@ -2527,6 +2683,7 @@ label fight1:
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
                             kazuma "Steal!"
                             if kibol2_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza12
                             else:
@@ -2563,12 +2720,15 @@ label fight1:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
                                         hide akane_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                         
@@ -2588,6 +2748,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         kibol2 "Nie! Oddaj mi moje majtki!"
@@ -2598,6 +2760,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                                         
@@ -2605,7 +2768,7 @@ label fight1:
         else:
             $ ado += 1
 
-        if tarczownik_fighter == 1:
+        if tarczownik_fighter == 1 and tarczownik_weapon >= 1:
             if tarczownik_hp_now >= 1:
                 if tarczownik_wybrany == 1:
                     show ruch zorder 0 at tlo_sojusznik1  
@@ -2632,6 +2795,7 @@ label fight1:
                         $ zyd_obrona += 1
                         $ kazuma_obrona += 1
                         $ tarczownik_obrona += 1
+                        play sound "audio/sfx/air_strike_shield.mp3"
 
                         if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
                             show air_strike_shield1 zorder 18 at tarcza_sojusznik1 
@@ -2683,11 +2847,12 @@ label fight1:
                 else:
                     $ ado += 1
                 
-                if tarczownik_hp_now <= 5:
+                if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1:
                     $ kostka = renpy.random.randint(1, 2)
 
                     if kostka == 1:
                         $ tarczownik_obrona += 2
+                        play sound "audio/sfx/shield_prison.mp3"
                         if tarczownik_wybrany == 1:
                             show shield_prison zorder 18 at prison_sojusznik1
                         else:
@@ -2738,13 +2903,14 @@ label fight1:
                 
                 $ kostka = renpy.random.randint(1, 10)
 
-                if kostka == 10:
+                if kostka == 10 and tarczownik_weapon >= 1:
                     $ luszcz_obrona += 1
                     $ eminem_obrona += 1
                     $ urban_obrona += 1
                     $ zyd_obrona += 1
                     $ kazuma_obrona += 1
                     $ tarczownik_obrona += 1
+                    play sound "audio/sfx/air_strike_shield.mp3"
 
                     if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
                         show air_strike_shield1 zorder 18 at tarcza_sojusznik1 
@@ -2858,6 +3024,19 @@ label fight1:
                                         $ kibol1_obrona = 1
                                                             
                                     else:
+                                        if tarczownik_weapon >= 1:
+                                            if legendary_shield == 6:
+                                                play sound "audio/sfx/legendary_shield.mp3" 
+
+                                            if przepychaczka == 6: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
+
+                                            if stop == 6:
+                                                play sound "audio/sfx/stop.mp3" 
+
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
                                         if kibol1_obrona == 1:
                                             $ kibol1_hp_now -= int(tarczownik_attack / 2)
 
@@ -2909,6 +3088,18 @@ label fight1:
                                             $ kibol1_obrona = 1
                                                                 
                                         else:
+                                            if tarczownik_weapon >= 1:
+                                                if legendary_shield == 6:
+                                                    play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                if przepychaczka == 6: 
+                                                    play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                if stop == 6:
+                                                    play sound "audio/sfx/stop.mp3" 
+
+                                            else:
+                                                play sound "audio/sfx/reka.mp3" 
                                             if kibol1_obrona == 1:
                                                 $ kibol1_hp_now -= int(tarczownik_attack / 2)
 
@@ -2958,6 +3149,18 @@ label fight1:
                                             $ kibol1_obrona = 1
                                                                 
                                         else:
+                                            if tarczownik_weapon >= 1:
+                                                if legendary_shield == 6:
+                                                    play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                if przepychaczka == 6: 
+                                                    play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                if stop == 6:
+                                                    play sound "audio/sfx/stop.mp3" 
+
+                                            else:
+                                                play sound "audio/sfx/reka.mp3" 
                                             if kibol1_obrona == 1:
                                                 $ kibol1_hp_now -= int(tarczownik_attack / 2)
 
@@ -3012,6 +3215,18 @@ label fight1:
                                             $ akane_obrona = 1
                                                                     
                                         else:
+                                            if tarczownik_weapon >= 1:
+                                                if legendary_shield == 6:
+                                                    play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                if przepychaczka == 6: 
+                                                    play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                if stop == 6:
+                                                    play sound "audio/sfx/stop.mp3" 
+
+                                            else:
+                                                play sound "audio/sfx/reka.mp3" 
                                             if akane_obrona == 1:
                                                 $ akane_hp_now -= int(tarczownik_attack / 2)
 
@@ -3062,6 +3277,19 @@ label fight1:
                                                 $ akane_obrona = 1
                                                                         
                                             else:
+                                                if tarczownik_weapon >= 1:
+                                                    if legendary_shield == 6:
+                                                        play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                    if przepychaczka == 6: 
+                                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                    if stop == 6:
+                                                        play sound "audio/sfx/stop.mp3" 
+
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3" 
+
                                                 if akane_obrona == 1:
                                                     $ akane_hp_now -= int(tarczownik_attack / 2)
 
@@ -3111,6 +3339,19 @@ label fight1:
                                                 $ akane_obrona = 1
                                                                         
                                             else:
+                                                if tarczownik_weapon >= 1:
+                                                    if legendary_shield == 6:
+                                                        play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                    if przepychaczka == 6: 
+                                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                    if stop == 6:
+                                                        play sound "audio/sfx/stop.mp3" 
+
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3" 
+
                                                 if akane_obrona == 1:
                                                     $ akane_hp_now -= int(tarczownik_attack / 2)
 
@@ -3166,6 +3407,19 @@ label fight1:
                                                 $ kibol2_obrona = 1
                                                                     
                                             else:
+                                                if tarczownik_weapon >= 1:
+                                                    if legendary_shield == 6:
+                                                        play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                    if przepychaczka == 6: 
+                                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                    if stop == 6:
+                                                        play sound "audio/sfx/stop.mp3" 
+
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3" 
+
                                                 if kibol2_obrona == 1:
                                                     $ kibol2_hp_now -= int(tarczownik_attack / 2)
 
@@ -3216,6 +3470,19 @@ label fight1:
                                                     $ kibol2_obrona = 1
                                                                         
                                                 else:
+                                                    if tarczownik_weapon >= 1:
+                                                        if legendary_shield == 6:
+                                                            play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                        if przepychaczka == 6: 
+                                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                        if stop == 6:
+                                                            play sound "audio/sfx/stop.mp3" 
+
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3" 
+
                                                     if kibol2_obrona == 1:
                                                         $ kibol2_hp_now -= int(tarczownik_attack / 2)
 
@@ -3265,6 +3532,19 @@ label fight1:
                                                     $ kibol2_obrona = 1
                                                                         
                                                 else:
+                                                    if tarczownik_weapon >= 1:
+                                                        if legendary_shield == 6:
+                                                            play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                        if przepychaczka == 6: 
+                                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                        if stop == 6:
+                                                            play sound "audio/sfx/stop.mp3" 
+
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3" 
+
                                                     if kibol2_obrona == 1:
                                                         $ kibol2_hp_now -= int(tarczownik_attack / 2)
 
@@ -3856,6 +4136,7 @@ label fight1:
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if luszcz_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -3875,6 +4156,7 @@ label fight1:
                     jump items12
 
                 "{b}Zaparz Herbatę{/b}":
+                    play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
                     else:
@@ -3914,6 +4196,7 @@ label fight1:
                                 "{b}Dla Kogo?{/b}"
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
                                         "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -3922,6 +4205,7 @@ label fight1:
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -3946,6 +4230,7 @@ label fight1:
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -3970,6 +4255,7 @@ label fight1:
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -3994,6 +4280,7 @@ label fight1:
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -4018,6 +4305,7 @@ label fight1:
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -4045,6 +4333,7 @@ label fight1:
                             jump faza13
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
@@ -4244,7 +4533,8 @@ label fight1:
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 $ kibol1_obrona = 1
                                                                
-                            else:                              
+                            else: 
+                                play sound "audio/sfx/reka.mp3"                             
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(eminem_attack / 2)
 
@@ -4265,7 +4555,8 @@ label fight1:
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 $ akane_obrona = 1
                                                                
-                            else:                            
+                            else:  
+                                play sound "audio/sfx/reka.mp3"                          
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(eminem_attack / 2)
 
@@ -4287,6 +4578,7 @@ label fight1:
                                 $ kibol2_obrona = 1
                                                                
                             else:
+                                play sound "audio/sfx/reka.mp3"
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(eminem_attack / 2)
 
@@ -4321,6 +4613,7 @@ label fight1:
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if eminem_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -4361,10 +4654,12 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if kibol1_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 1 obronił się przed szlamem{/i}"
                                 jump faza13
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if kibol1_min_attack_now >= 2:
                                     $ kibol1_min_attack_now -= 2
                                     if kibol1_max_attack_now >= 6:
@@ -4392,10 +4687,12 @@ label fight1:
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if akane_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
                                 jump faza13
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if akane_min_attack_now >= 2:
                                     $ akane_min_attack_now -= 2
                                     if akane_max_attack_now >= 6:
@@ -4423,10 +4720,12 @@ label fight1:
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if kibol2_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 2 obronił się przed szlamem{/i}"
                                 jump faza13
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if kibol2_min_attack_now >= 2:
                                     $ kibol2_min_attack_now -= 2
                                     if kibol2_max_attack_now >= 6:
@@ -4524,6 +4823,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -4532,6 +4832,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(urban_attack / 2)
 
@@ -4544,6 +4857,7 @@ label fight1:
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -4552,6 +4866,19 @@ label fight1:
                                 $ akane_obrona = 1
                                                                
                             else:
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(urban_attack / 2)
 
@@ -4564,6 +4891,7 @@ label fight1:
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -4571,7 +4899,20 @@ label fight1:
                                 "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                 $ kibol2_obrona = 1
                                                                
-                            else:                    
+                            else:  
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(urban_attack / 2)
 
@@ -4605,6 +4946,7 @@ label fight1:
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if urban_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -4784,6 +5126,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
@@ -4804,7 +5159,20 @@ label fight1:
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 $ akane_obrona = 1
                                                                
-                            else:                      
+                            else: 
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
@@ -4825,7 +5193,20 @@ label fight1:
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 $ kibol2_obrona = 1
                                                                
-                            else:                  
+                            else:  
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
@@ -4859,6 +5240,7 @@ label fight1:
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if zyd_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -5097,6 +5479,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
@@ -5117,6 +5512,19 @@ label fight1:
                                 $ akane_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
@@ -5137,6 +5545,19 @@ label fight1:
                                 $ kibol2_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
@@ -5170,6 +5591,7 @@ label fight1:
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if kazuma_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -5210,6 +5632,7 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
                             kazuma "Steal!"
                             if kibol1_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza13
                             else:
@@ -5246,12 +5669,15 @@ label fight1:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
-                                        hide kiboli1_weapon
+                                        hide kibol1_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                         
@@ -5271,6 +5697,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         kibol1 "Nie! Oddaj mi moje majtki!"
@@ -5281,6 +5709,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                                         
@@ -5289,6 +5718,7 @@ label fight1:
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
                             kazuma "Steal!"
                             if akane_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza13
                             else:
@@ -5325,12 +5755,15 @@ label fight1:
                                             show akane_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
                                         hide akane_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                         
@@ -5350,6 +5783,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         akane "Nie! Oddaj mi moje majtki!"
@@ -5360,6 +5795,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
@@ -5368,6 +5804,7 @@ label fight1:
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
                             kazuma "Steal!"
                             if kibol2_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza13
                             else:
@@ -5404,12 +5841,15 @@ label fight1:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
-                                        hide kiboli2_weapon
+                                        hide kibol2_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                         
@@ -5429,6 +5869,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         kibol2 "Nie! Oddaj mi moje majtki!"
@@ -5439,6 +5881,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                                         
@@ -5986,6 +6429,7 @@ label fight1:
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if luszcz_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -6005,6 +6449,7 @@ label fight1:
                     jump items13
 
                 "{b}Zaparz Herbatę{/b}":
+                    play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
                     else:
@@ -6044,6 +6489,7 @@ label fight1:
                                 "{b}Dla Kogo?{/b}"
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
                                         "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -6052,6 +6498,7 @@ label fight1:
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -6076,6 +6523,7 @@ label fight1:
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -6100,6 +6548,7 @@ label fight1:
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -6124,6 +6573,7 @@ label fight1:
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -6148,6 +6598,7 @@ label fight1:
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -6175,6 +6626,7 @@ label fight1:
                             jump faza14
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
@@ -6374,7 +6826,8 @@ label fight1:
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 $ kibol1_obrona = 1
                                                                
-                            else:       
+                            else:  
+                                play sound "audio/sfx/reka.mp3"     
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(eminem_attack / 2)
 
@@ -6395,7 +6848,8 @@ label fight1:
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 $ akane_obrona = 1
                                                                
-                            else:                           
+                            else:   
+                                play sound "audio/sfx/reka.mp3"                        
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(eminem_attack / 2)
 
@@ -6417,6 +6871,7 @@ label fight1:
                                 $ kibol2_obrona = 1
                                                                
                             else:
+                                play sound "audio/sfx/reka.mp3"
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(eminem_attack / 2)
 
@@ -6451,6 +6906,7 @@ label fight1:
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if eminem_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -6492,10 +6948,12 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if kibol1_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 1 obronił się przed szlamem{/i}"
                                 jump faza14
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if kibol1_min_attack_now >= 2:
                                     $ kibol1_min_attack_now -= 2
                                     if kibol1_max_attack_now >= 6:
@@ -6523,10 +6981,12 @@ label fight1:
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if akane_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
                                 jump faza14
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if akane_min_attack_now >= 2:
                                     $ akane_min_attack_now -= 2
                                     if akane_max_attack_now >= 6:
@@ -6554,10 +7014,12 @@ label fight1:
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
                             if kibol2_obrona >= 1:
+                                play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 2 obronił się przed szlamem{/i}"
                                 jump faza14
                             else:
+                                play sound "audio/sfx/slime.mp3"
                                 if kibol2_min_attack_now >= 2:
                                     $ kibol2_min_attack_now -= 2
                                     if kibol2_max_attack_now >= 6:
@@ -6655,6 +7117,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -6663,6 +7126,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(urban_attack / 2)
 
@@ -6675,6 +7151,7 @@ label fight1:
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -6683,6 +7160,19 @@ label fight1:
                                 $ akane_obrona = 1
                                                                
                             else:
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(urban_attack / 2)
 
@@ -6695,6 +7185,7 @@ label fight1:
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            urban "i Ci kutasa obetnie"
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -6702,7 +7193,20 @@ label fight1:
                                 "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                 $ kibol2_obrona = 1
                                                                
-                            else:                 
+                            else:
+                                if urban_weapon >= 1:
+                                    if fuck == 3:
+                                        play sound "audio/sfx/fuck.mp3" 
+
+                                    if przepychaczka == 3: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 3:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(urban_attack / 2)
 
@@ -6736,6 +7240,7 @@ label fight1:
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if urban_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -6915,6 +7420,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
@@ -6936,6 +7454,19 @@ label fight1:
                                 $ akane_obrona = 1
                                                                
                             else:   
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
@@ -6956,7 +7487,20 @@ label fight1:
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 $ kibol2_obrona = 1
                                                                
-                            else:       
+                            else:   
+                                if zyd_weapon >= 1:
+                                    if chanuka == 4:
+                                        play sound "audio/sfx/chanuka.mp3" 
+
+                                    if przepychaczka == 4: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 4:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
@@ -6990,6 +7534,7 @@ label fight1:
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if zyd_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -7228,6 +7773,19 @@ label fight1:
                                 $ kibol1_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol1_obrona == 1:
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
@@ -7248,6 +7806,19 @@ label fight1:
                                 $ akane_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if akane_obrona == 1:
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
@@ -7268,6 +7839,19 @@ label fight1:
                                 $ kibol2_obrona = 1
                                                                
                             else:
+                                if kazuma_weapon >= 1:
+                                    if chunchunmaru == 5:
+                                        play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                    if przepychaczka == 5: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 5:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
                                 if kibol2_obrona == 1:
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
@@ -7301,6 +7885,7 @@ label fight1:
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
+                    play sound "audio/sfx/chest.mp3"
                     if kazuma_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
                     else:
@@ -7341,6 +7926,7 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
                             kazuma "Steal!"
                             if kibol1_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza14
                             else:
@@ -7378,11 +7964,14 @@ label fight1:
                                         else:
                                             $ ado += 1
 
+                                        play sound "audio/sfx/steal.mp3"
+
                                         "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
-                                        hide kiboli1_weapon
+                                        hide kibol1_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                         
@@ -7402,6 +7991,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         kibol1 "Nie! Oddaj mi moje majtki!"
@@ -7412,6 +8003,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                                         
@@ -7420,6 +8012,7 @@ label fight1:
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
                             kazuma "Steal!"
                             if akane_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza14
                             else:
@@ -7456,12 +8049,15 @@ label fight1:
                                             show akane_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
                                         hide akane_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                         
@@ -7481,6 +8077,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         akane "Nie! Oddaj mi moje majtki!"
@@ -7491,6 +8089,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
@@ -7499,6 +8098,7 @@ label fight1:
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
                             kazuma "Steal!"
                             if kibol2_obrona >= 1:
+                                play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza14
                             else:
@@ -7535,12 +8135,15 @@ label fight1:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
-                                        hide kiboli2_weapon
+                                        hide kibol2_weapon
                                         hide chwyta
                                     
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                         
@@ -7560,6 +8163,8 @@ label fight1:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         else:
                                             $ ado += 1
+                                        
+                                        play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
                                         kibol2 "Nie! Oddaj mi moje majtki!"
@@ -7570,6 +8175,7 @@ label fight1:
                                         hide chwyta
                                         
                                     else:
+                                        play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                                         
@@ -7960,19 +8566,26 @@ label fight1:
                 show reka6 zorder 15 at weapon_wrog1
 
             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
-            if urban_obrona >= 1:
-                $ urban_hp_now -= int(kibol1_attack / 2)
-
-                $ dmg = int(kibol1_attack / 2)
-                "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-
-                jump faza15
+            if urban_obrona >= 2:
+                play sound "audio/sfx/obrona.mp3"
+                "{i}Atak Kibol 1 został zablokowany{/i}"
+                $ urban_obrona = 1
+                                                
             else:
-                $ urban_hp_now -= kibol1_attack
+                play sound "audio/sfx/kibol1_weapon.mp3"
+                if urban_obrona == 1:
+                    $ urban_hp_now -= int(kibol1_attack / 2)
 
-                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                    $ dmg = int(kibol1_attack / 2)
+                    "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                jump faza15
+                    jump faza15
+                else:
+                    $ urban_hp_now -= kibol1_attack
+
+                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                    jump faza15
         
         else:
             $ ado += 1
@@ -8023,6 +8636,12 @@ label fight1:
                                 $ luszcz_obrona = 1
                                                 
                             else:
+                                if kibol1_weapon >= 1:
+                                    play sound "audio/sfx/kibol1_weapon.mp3"
+                                
+                                else:
+                                    play sound "audio/sfx/reka.mp3"
+
                                 if luszcz_obrona == 1:
                                     $ luszcz_hp_now -= int(kibol1_attack / 2)
 
@@ -8049,6 +8668,12 @@ label fight1:
                                     $ luszcz_obrona = 1
                                                     
                                 else:
+                                    if kibol1_weapon >= 1:
+                                        play sound "audio/sfx/kibol1_weapon.mp3"
+                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(kibol1_attack / 2)
 
@@ -8074,6 +8699,12 @@ label fight1:
                                     $ luszcz_obrona = 1
                                                     
                                 else:
+                                    if kibol1_weapon >= 1:
+                                        play sound "audio/sfx/kibol1_weapon.mp3"
+                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(kibol1_attack / 2)
 
@@ -8104,6 +8735,12 @@ label fight1:
                                     $ urban_obrona = 1
 
                                 else:
+                                    if kibol1_weapon >= 1:
+                                        play sound "audio/sfx/kibol1_weapon.mp3"
+                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if urban_obrona == 1:
                                         $ urban_hp_now -= int(kibol1_attack / 2)
 
@@ -8130,6 +8767,12 @@ label fight1:
                                         $ urban_obrona = 1
 
                                     else:
+                                        if kibol1_weapon >= 1:
+                                            play sound "audio/sfx/kibol1_weapon.mp3"
+                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(kibol1_attack / 2)
 
@@ -8155,6 +8798,12 @@ label fight1:
                                         $ urban_obrona = 1
 
                                     else:
+                                        if kibol1_weapon >= 1:
+                                            play sound "audio/sfx/kibol1_weapon.mp3"
+                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+                                    
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(kibol1_attack / 2)
 
@@ -8185,6 +8834,12 @@ label fight1:
                                         $ zyd_obrona = 1
                                         
                                     else:
+                                        if kibol1_weapon >= 1:
+                                            play sound "audio/sfx/kibol1_weapon.mp3"
+                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if zyd_obrona == 1:
                                             $ zyd_hp_now -= int(kibol1_attack / 2)
 
@@ -8211,6 +8866,12 @@ label fight1:
                                             $ zyd_obrona = 1
 
                                         else:
+                                            if kibol1_weapon >= 1:
+                                                play sound "audio/sfx/kibol1_weapon.mp3"
+                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(kibol1_attack / 2)
 
@@ -8236,6 +8897,12 @@ label fight1:
                                             $ zyd_obrona = 1
 
                                         else:
+                                            if kibol1_weapon >= 1:
+                                                play sound "audio/sfx/kibol1_weapon.mp3"
+                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(kibol1_attack / 2)
 
@@ -8266,6 +8933,12 @@ label fight1:
                                             $ kazuma_obrona = 1
                                         
                                         else:
+                                            if kibol1_weapon >= 1:
+                                                play sound "audio/sfx/kibol1_weapon.mp3"
+                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if kazuma_obrona == 1:
                                                 $ kazuma_hp_now -= int(kibol1_attack / 2)
 
@@ -8292,6 +8965,12 @@ label fight1:
                                                 $ kazuma_obrona = 1
                                             
                                             else:
+                                                if kibol1_weapon >= 1:
+                                                    play sound "audio/sfx/kibol1_weapon.mp3"
+                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(kibol1_attack / 2)
 
@@ -8317,6 +8996,12 @@ label fight1:
                                                 $ kazuma_obrona = 1
                                             
                                             else:
+                                                if kibol1_weapon >= 1:
+                                                    play sound "audio/sfx/kibol1_weapon.mp3"
+                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(kibol1_attack / 2)
 
@@ -8347,6 +9032,12 @@ label fight1:
                                                 $ eminem_obrona = 1
                                             
                                             else:
+                                                if kibol1_weapon >= 1:
+                                                    play sound "audio/sfx/kibol1_weapon.mp3"
+                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if eminem_obrona == 1:
                                                     $ eminem_hp_now -= int(kibol1_attack / 2)
 
@@ -8373,6 +9064,12 @@ label fight1:
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
+                                                    if kibol1_weapon >= 1:
+                                                        play sound "audio/sfx/kibol1_weapon.mp3"
+                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(kibol1_attack / 2)
 
@@ -8381,7 +9078,7 @@ label fight1:
                                                     else:
                                                         $ eminem_hp_now -= kibol1_attack
 
-                                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
+                                                        "{i} [kibol1_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza15
                                             else:
@@ -8398,6 +9095,12 @@ label fight1:
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
+                                                    if kibol1_weapon >= 1:
+                                                        play sound "audio/sfx/kibol1_weapon.mp3"
+                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(kibol1_attack / 2)
 
@@ -8428,6 +9131,12 @@ label fight1:
                                                     $ tarczownik_obrona = 1
                                                 
                                                 else:
+                                                    if kibol1_weapon >= 1:
+                                                        play sound "audio/sfx/kibol1_weapon.mp3"
+                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if tarczownik_obrona == 1:
                                                         $ tarczownik_hp_now -= int(kibol1_attack / 2)
 
@@ -8454,6 +9163,12 @@ label fight1:
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
+                                                        if kibol1_weapon >= 1:
+                                                            play sound "audio/sfx/kibol1_weapon.mp3"
+                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(kibol1_attack / 2)
 
@@ -8479,6 +9194,12 @@ label fight1:
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
+                                                        if kibol1_weapon >= 1:
+                                                            play sound "audio/sfx/kibol1_weapon.mp3"
+                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(kibol1_attack / 2)
 
@@ -8712,17 +9433,30 @@ label fight1:
             else:
                 show reka7 zorder 15 at weapon_wrog3
             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
-            if akane_obrona == 1:
-                $ akane_hp_now -= int(akane_attack / 2)
 
-                $ dmg = int(akane_attack / 2)
-                "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-
-                jump faza16
+            if urban_obrona >= 2:
+                play sound "audio/sfx/obrona.mp3"
+                "{i}Atak Akane został zablokowany{/i}"
+                $ urban_obrona = 1
+                                                
             else:
-                $ urban_hp_now -= akane_attack
+                if akane_weapon >= 1:
+                    play sound "audio/sfx/akane_weapon.mp3"
+                                
+                else:
+                    play sound "audio/sfx/reka.mp3"
 
-                "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+                if akane_obrona == 1:
+                    $ akane_hp_now -= int(akane_attack / 2)
+
+                    $ dmg = int(akane_attack / 2)
+                    "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+
+                    jump faza16
+                else:
+                    $ urban_hp_now -= akane_attack
+
+                    "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                 jump faza16
         
@@ -8776,6 +9510,12 @@ label fight1:
                                 $ luszcz_obrona = 1
                                                     
                             else:
+                                if akane_weapon >= 1:
+                                    play sound "audio/sfx/akane_weapon.mp3"
+                                                
+                                else:
+                                    play sound "audio/sfx/reka.mp3"
+
                                 if luszcz_obrona == 1:
                                     $ luszcz_hp_now -= int(akane_attack / 2)
 
@@ -8802,6 +9542,12 @@ label fight1:
                                     $ luszcz_obrona = 1
                                                         
                                 else:
+                                    if akane_weapon >= 1:
+                                        play sound "audio/sfx/akane_weapon.mp3"
+                                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(akane_attack / 2)
 
@@ -8827,6 +9573,12 @@ label fight1:
                                     $ luszcz_obrona = 1
                                                         
                                 else:
+                                    if akane_weapon >= 1:
+                                        play sound "audio/sfx/akane_weapon.mp3"
+                                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(akane_attack / 2)
 
@@ -8857,6 +9609,12 @@ label fight1:
                                     $ urban_obrona = 1
 
                                 else:
+                                    if akane_weapon >= 1:
+                                        play sound "audio/sfx/akane_weapon.mp3"
+                                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if urban_obrona == 1:
                                         $ urban_hp_now -= int(akane_attack / 2)
 
@@ -8883,6 +9641,12 @@ label fight1:
                                         $ urban_obrona = 1
 
                                     else:
+                                        if akane_weapon >= 1:
+                                            play sound "audio/sfx/akane_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(akane_attack / 2)
 
@@ -8908,6 +9672,12 @@ label fight1:
                                         $ urban_obrona = 1
 
                                     else:
+                                        if akane_weapon >= 1:
+                                            play sound "audio/sfx/akane_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(akane_attack / 2)
 
@@ -8938,6 +9708,12 @@ label fight1:
                                         $ zyd_obrona = 1
 
                                     else:
+                                        if akane_weapon >= 1:
+                                            play sound "audio/sfx/akane_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if zyd_obrona == 1:
                                             $ zyd_hp_now -= int(akane_attack / 2)
 
@@ -8964,6 +9740,12 @@ label fight1:
                                             $ zyd_obrona = 1
 
                                         else:
+                                            if akane_weapon >= 1:
+                                                play sound "audio/sfx/akane_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(akane_attack / 2)
 
@@ -8989,6 +9771,12 @@ label fight1:
                                             $ zyd_obrona = 1
 
                                         else:
+                                            if akane_weapon >= 1:
+                                                play sound "audio/sfx/akane_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(akane_attack / 2)
 
@@ -9019,6 +9807,12 @@ label fight1:
                                             $ kazuma_obrona = 1
                                         
                                         else:
+                                            if akane_weapon >= 1:
+                                                play sound "audio/sfx/akane_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if kazuma_obrona == 1:
                                                 $ kazuma_hp_now -= int(akane_attack / 2)
 
@@ -9045,6 +9839,12 @@ label fight1:
                                                 $ kazuma_obrona = 1
                                             
                                             else:
+                                                if akane_weapon >= 1:
+                                                    play sound "audio/sfx/akane_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(akane_attack / 2)
 
@@ -9070,6 +9870,12 @@ label fight1:
                                                 $ kazuma_obrona = 1
                                             
                                             else:
+                                                if akane_weapon >= 1:
+                                                    play sound "audio/sfx/akane_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(akane_attack / 2)
 
@@ -9100,6 +9906,12 @@ label fight1:
                                                 $ eminem_obrona = 1
                                                 
                                             else:
+                                                if akane_weapon >= 1:
+                                                    play sound "audio/sfx/akane_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if eminem_obrona == 1:
                                                     $ eminem_hp_now -= int(akane_attack / 2)
 
@@ -9126,6 +9938,12 @@ label fight1:
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
+                                                    if akane_weapon >= 1:
+                                                        play sound "audio/sfx/akane_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(akane_attack / 2)
 
@@ -9151,6 +9969,12 @@ label fight1:
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
+                                                    if akane_weapon >= 1:
+                                                        play sound "audio/sfx/akane_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(akane_attack / 2)
 
@@ -9181,6 +10005,12 @@ label fight1:
                                                     $ tarczownik_obrona = 1
                                                 
                                                 else:
+                                                    if akane_weapon >= 1:
+                                                        play sound "audio/sfx/akane_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if tarczownik_obrona == 1:
                                                         $ tarczownik_hp_now -= int(akane_attack / 2)
 
@@ -9207,6 +10037,12 @@ label fight1:
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
+                                                        if akane_weapon >= 1:
+                                                            play sound "audio/sfx/akane_weapon.mp3"
+                                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(akane_attack / 2)
 
@@ -9232,6 +10068,12 @@ label fight1:
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
+                                                        if akane_weapon >= 1:
+                                                            play sound "audio/sfx/akane_weapon.mp3"
+                                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(akane_attack / 2)
 
@@ -9466,17 +10308,29 @@ label fight1:
                 show reka8 zorder 15 at weapon_wrog2
             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-            if urban_obrona >= 1:
-                $ urban_hp_now -= int(kibol2_attack / 2)
-
-                $ dmg = int(kibol2_attack / 2)
-                "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-
-                jump start_fight1
+            if urban_obrona >= 2:
+                play sound "audio/sfx/obrona.mp3"
+                "{i}Atak Kibol 2 został zablokowany{/i}"
+                $ urban_obrona = 1
+                                                
             else:
-                $ urban_hp_now -= kibol2_attack
+                if kibol2_weapon >= 1:
+                    play sound "audio/sfx/kibol2_weapon.mp3"
+                                
+                else:
+                    play sound "audio/sfx/reka.mp3"
 
-                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+                if urban_obrona >= 1:
+                    $ urban_hp_now -= int(kibol2_attack / 2)
+
+                    $ dmg = int(kibol2_attack / 2)
+                    "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+
+                    jump start_fight1
+                else:
+                    $ urban_hp_now -= kibol2_attack
+
+                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                 jump start_fight1
         
@@ -9529,6 +10383,12 @@ label fight1:
                                 $ luszcz_obrona = 1
                                                     
                             else:
+                                if kibol2_weapon >= 1:
+                                    play sound "audio/sfx/kibol2_weapon.mp3"
+                                                
+                                else:
+                                    play sound "audio/sfx/reka.mp3"
+
                                 if luszcz_obrona == 1:
                                     $ luszcz_hp_now -= int(kibol2_attack / 2)
 
@@ -9555,6 +10415,12 @@ label fight1:
                                     $ luszcz_obrona = 1
                                                     
                                 else:
+                                    if kibol2_weapon >= 1:
+                                        play sound "audio/sfx/kibol2_weapon.mp3"
+                                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(kibol2_attack / 2)
 
@@ -9580,6 +10446,12 @@ label fight1:
                                     $ luszcz_obrona = 1
                                                     
                                 else:
+                                    if kibol2_weapon >= 1:
+                                        play sound "audio/sfx/kibol2_weapon.mp3"
+                                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(kibol2_attack / 2)
 
@@ -9610,6 +10482,12 @@ label fight1:
                                     $ urban_obrona = 1
 
                                 else:
+                                    if kibol2_weapon >= 1:
+                                        play sound "audio/sfx/kibol2_weapon.mp3"
+                                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
                                     if urban_obrona == 1:
                                         $ urban_hp_now -= int(kibol2_attack / 2)
 
@@ -9636,6 +10514,12 @@ label fight1:
                                         $ urban_obrona = 1
 
                                     else:
+                                        if kibol2_weapon >= 1:
+                                            play sound "audio/sfx/kibol2_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(kibol2_attack / 2)
 
@@ -9661,6 +10545,12 @@ label fight1:
                                         $ urban_obrona = 1
                                     
                                     else:
+                                        if kibol2_weapon >= 1:
+                                            play sound "audio/sfx/kibol2_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(kibol2_attack / 2)
 
@@ -9691,6 +10581,12 @@ label fight1:
                                         $ zyd_obrona = 1
                                     
                                     else:
+                                        if kibol2_weapon >= 1:
+                                            play sound "audio/sfx/kibol2_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
                                         if zyd_obrona == 1:
                                             $ zyd_hp_now -= int(kibol2_attack / 2)
 
@@ -9717,6 +10613,12 @@ label fight1:
                                             $ zyd_obrona = 1
                                         
                                         else:
+                                            if kibol2_weapon >= 1:
+                                                play sound "audio/sfx/kibol2_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(kibol2_attack / 2)
 
@@ -9742,6 +10644,12 @@ label fight1:
                                             $ zyd_obrona = 1
                                         
                                         else:
+                                            if kibol2_weapon >= 1:
+                                                play sound "audio/sfx/kibol2_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(kibol2_attack / 2)
 
@@ -9772,6 +10680,12 @@ label fight1:
                                             $ kazuma_obrona = 1
                                         
                                         else:
+                                            if kibol2_weapon >= 1:
+                                                play sound "audio/sfx/kibol2_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
                                             if kazuma_obrona == 1:
                                                 $ kazuma_hp_now -= int(kibol2_attack / 2)
 
@@ -9798,6 +10712,12 @@ label fight1:
                                                 $ kazuma_obrona = 1
                                             
                                             else:
+                                                if kibol2_weapon >= 1:
+                                                    play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(kibol2_attack / 2)
 
@@ -9823,6 +10743,12 @@ label fight1:
                                                 $ kazuma_obrona = 1
                                             
                                             else:
+                                                if kibol2_weapon >= 1:
+                                                    play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(kibol2_attack / 2)
 
@@ -9853,6 +10779,12 @@ label fight1:
                                                 $ eminem_obrona = 1  
                                             
                                             else:
+                                                if kibol2_weapon >= 1:
+                                                    play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
                                                 if eminem_obrona == 1:
                                                     $ eminem_hp_now -= int(kibol2_attack / 2)
 
@@ -9879,6 +10811,12 @@ label fight1:
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
+                                                    if kibol2_weapon >= 1:
+                                                        play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(kibol2_attack / 2)
 
@@ -9904,6 +10842,12 @@ label fight1:
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
+                                                    if kibol2_weapon >= 1:
+                                                        play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(kibol2_attack / 2)
 
@@ -9934,6 +10878,12 @@ label fight1:
                                                     $ tarczownik_obrona = 1
                                                 
                                                 else:
+                                                    if kibol2_weapon >= 1:
+                                                        play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
                                                     if tarczownik_obrona == 1:
                                                         $ tarczownik_hp_now -= int(kibol2_attack / 2)
 
@@ -9960,6 +10910,12 @@ label fight1:
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
+                                                        if kibol2_weapon >= 1:
+                                                            play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(kibol2_attack / 2)
 
@@ -9985,6 +10941,12 @@ label fight1:
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
+                                                        if kibol2_weapon >= 1:
+                                                            play sound "audio/sfx/kibol2_weapon.mp3"
+                                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(kibol2_attack / 2)
 
