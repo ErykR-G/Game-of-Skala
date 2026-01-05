@@ -258,8 +258,6 @@ screen quick_menu():
             textbutton _("Pomiń") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Zapis") action ShowMenu('save')
-            textbutton _("S.Zapis") action QuickSave()
-            textbutton _("S.Wczytaj") action QuickLoad()
             textbutton _("Opcje") action ShowMenu('preferences')
 
 
@@ -608,17 +606,17 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Strona {}"), auto=_("Automatyczny zapis"), quick=_("Szybki zapis"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Sekcja {}"))
 
     use game_menu(title):
 
         fixed:
 
-            ## Opcja zapewnie wejście zdarzeniu wprowadzającemu, zanim to zrobi
-            ## którykolwiek z przycisków.
+            ## This ensures the input will get the enter event before any of
+            ## the buttons do.
             order_reverse True
 
-            ## Nazwa strony, którą można edytować, klikając przycisk.
+            ## The page name, which can be edited by clicking on a button.
             button:
                 style "page_label"
 
@@ -630,7 +628,7 @@ screen file_slots(title):
                     style "page_label_text"
                     value page_name_value
 
-            ## Siatka plików zapisów (file slots).
+            ## The grid of file slots.
             grid gui.file_slot_cols gui.file_slot_rows:
                 style_prefix "slot"
 
@@ -650,7 +648,7 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("Puste miejsce")):
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("Pusty slot")):
                             style "slot_time_text"
 
                         text FileSaveName(slot):
@@ -658,7 +656,7 @@ screen file_slots(title):
 
                         key "save_delete" action FileDelete(slot)
 
-            ## Przyciski dostępu do innych stron.
+            ## Buttons to access other pages.
             vbox:
                 style_prefix "page"
 
@@ -670,31 +668,10 @@ screen file_slots(title):
 
                     spacing gui.page_spacing
 
-                    textbutton _("<") action FilePagePrevious()
-                    key "save_page_prev" action FilePagePrevious()
 
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
-
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                    ## range(1, 10), zasięg zwraca liczby od 1 do 9.
+                    ## range(1, 10) gives the numbers from 1 to 9.
                     for page in range(1, 10):
                         textbutton "[page]" action FilePage(page)
-
-                    textbutton _(">") action FilePageNext()
-                    key "save_page_next" action FilePageNext()
-
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Synchronizacja wysyłania"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Pobierz Sync"):
-                            action DownloadSync()
-                            xalign 0.5
 
 
 style page_label is gui_label

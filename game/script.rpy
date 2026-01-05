@@ -5,8 +5,10 @@ init python:
         minute = timer % 60
         return day, hour, minute
 
-label prolog_decyzje:
-    define ofiara = 0
+default ado = 0
+default kostka = 0
+default timer = 537
+default money = 3
 
 label postacie:
     define all = Character("Wszyscy", color="#6a6a6e")
@@ -33,239 +35,225 @@ label postacie:
     define kibol1 = Character("Kibol 1", color="#ffffff")
     define kibol2 = Character("Kibol 2", color="#ffffff")
 
-    
-
-    
-
-image ruch = "fight/ruch.png"
-
-
 
 label pozycje:
-    transform slightleft:
-        xalign 0.25
-        yalign 1.0
+    label pozycje_wojownikow:
+        transform slightleft:
+            xalign 0.25
+            yalign 1.0
+        
+        transform slightright:
+            xalign 0.75
+            yalign 1.0
+
+        transform time:
+            xalign 0.97
+            yalign 0.03
+
+        transform sojusznik1:
+            xalign 0.20
+            yalign 0.10
+
+        transform sojusznik2:
+            xalign 0.20
+            yalign 0.90
+
+        transform sojusznik3:
+            xalign 0.05
+            yalign 0.50
+
+        transform wrog1:
+            xalign 0.80
+            yalign 0.10
+
+        transform wrog2:
+            xalign 0.80
+            yalign 0.90
+
+        transform wrog3:
+            xalign 0.95
+            yalign 0.50
+
+    label pozycje_center:
+        transform center_sojusznik1:
+            xalign 0.22
+            yalign 0.18
+
+        transform center_sojusznik2:
+            xalign 0.22
+            yalign 0.75
+
+        transform center_sojusznik3:
+            xalign 0.085
+            yalign 0.47
+
+        transform center_wrog1:
+            xalign 0.78
+            yalign 0.18
+
+        transform center_wrog2:
+            xalign 0.78
+            yalign 0.75
+
+        transform center_wrog3:
+            xalign 0.915
+            yalign 0.47
+
+    label pozycje_prison:
+        transform prison_sojusznik1:
+            xalign 0.165
+            yalign 0.075
+
+        transform prison_sojusznik2:
+            xalign 0.165
+            yalign 0.925
+
+        transform prison_sojusznik3:
+            xalign 0
+            yalign 0.50
+
+        transform prison_wrog1:
+            xalign 0.835
+            yalign 0.075
+
+        transform prison_wrog2:
+            xalign 0.835
+            yalign 0.925
+
+        transform prison_wrog3:
+            xalign 100
+            yalign 0.50
+
+    label pozycje_head:
+        transform head_sojusznik1:
+            xalign 0.228
+            yalign 0.10
+
+        transform head_sojusznik2:
+            xalign 0.228
+            yalign 0.66
+
+        transform head_sojusznik3:
+            xalign 0.09
+            yalign 0.38
+
+        transform head_wrog1:
+            xalign 0.772
+            yalign 0.075
+
+        transform head_wrog2:
+            xalign 0.772
+            yalign 0.63
+
+        transform head_wrog3:
+            xalign 0.91
+            yalign 0.35
+
+    label pozycje_bok:
+        transform bok_sojusznik1:
+            xalign 0.19
+            yalign 0.24
+
+        transform bok_sojusznik2:
+            xalign 0.19
+            yalign 0.80
+
+        transform bok_sojusznik3:
+            xalign 0.057
+            yalign 0.51
+
+        transform bok_wrog1:
+            xalign 0.81
+            yalign 0.24
+
+        transform bok_wrog2:
+            xalign 0.81
+            yalign 0.80
+
+        transform bok_wrog3:
+            xalign 0.943
+            yalign 0.51
     
-    transform slightright:
-        xalign 0.75
-        yalign 1.0
+    label pozycje_weapon:
+        transform weapon_sojusznik1:
+            xalign 0.265
+            yalign 0.18
 
-    transform time:
-        xalign 0.97
-        yalign 0.03
+        transform weapon_sojusznik2:
+            xalign 0.265
+            yalign 0.73
 
-    transform sojusznik1:
-        xalign 0.20
-        yalign 0.10
+        transform weapon_sojusznik3:
+            xalign 0.13
+            yalign 0.45
 
-    transform sojusznik2:
-        xalign 0.20
-        yalign 0.90
+        transform weapon_wrog1:
+            xalign 0.735
+            yalign 0.18
 
-    transform sojusznik3:
-        xalign 0.05
-        yalign 0.50
+        transform weapon_wrog2:
+            xalign 0.735
+            yalign 0.73
 
-    transform wrog1:
-        xalign 0.80
-        yalign 0.10
-
-    transform wrog2:
-        xalign 0.80
-        yalign 0.90
-
-    transform wrog3:
-        xalign 0.95
-        yalign 0.50
-
-label pozycje_center:
-    transform center_sojusznik1:
-        xalign 0.22
-        yalign 0.18
-
-    transform center_sojusznik2:
-        xalign 0.22
-        yalign 0.75
-
-    transform center_sojusznik3:
-        xalign 0.085
-        yalign 0.47
-
-    transform center_wrog1:
-        xalign 0.78
-        yalign 0.18
-
-    transform center_wrog2:
-        xalign 0.78
-        yalign 0.75
-
-    transform center_wrog3:
-        xalign 0.915
-        yalign 0.47
-
-label pozycje_prison:
-    transform prison_sojusznik1:
-        xalign 0.165
-        yalign 0.075
-
-    transform prison_sojusznik2:
-        xalign 0.165
-        yalign 0.925
-
-    transform prison_sojusznik3:
-        xalign 0
-        yalign 0.50
-
-    transform prison_wrog1:
-        xalign 0.835
-        yalign 0.075
-
-    transform prison_wrog2:
-        xalign 0.835
-        yalign 0.925
-
-    transform prison_wrog3:
-        xalign 100
-        yalign 0.50
-
-label pozycje_head:
-    transform head_sojusznik1:
-        xalign 0.228
-        yalign 0.10
-
-    transform head_sojusznik2:
-        xalign 0.228
-        yalign 0.66
-
-    transform head_sojusznik3:
-        xalign 0.09
-        yalign 0.38
-
-    transform head_wrog1:
-        xalign 0.772
-        yalign 0.075
-
-    transform head_wrog2:
-        xalign 0.772
-        yalign 0.63
-
-    transform head_wrog3:
-        xalign 0.91
-        yalign 0.35
-
-label pozycje_bok:
-    transform bok_sojusznik1:
-        xalign 0.19
-        yalign 0.24
-
-    transform bok_sojusznik2:
-        xalign 0.19
-        yalign 0.80
-
-    transform bok_sojusznik3:
-        xalign 0.057
-        yalign 0.51
-
-    transform bok_wrog1:
-        xalign 0.81
-        yalign 0.24
-
-    transform bok_wrog2:
-        xalign 0.81
-        yalign 0.80
-
-    transform bok_wrog3:
-        xalign 0.943
-        yalign 0.51
+        transform weapon_wrog3:
+            xalign 0.87
+            yalign 0.45
     
-label pozycje_weapon:
-    transform weapon_sojusznik1:
-        xalign 0.265
-        yalign 0.18
+    label pozycje_tarcza:
+        transform tarcza_sojusznik1:
+            xalign 0.365
+            yalign 0.18
 
-    transform weapon_sojusznik2:
-        xalign 0.265
-        yalign 0.73
+        transform tarcza_sojusznik2:
+            xalign 0.365
+            yalign 0.82
 
-    transform weapon_sojusznik3:
-        xalign 0.13
-        yalign 0.45
+        transform tarcza_sojusznik3:
+            xalign 0.365
+            yalign 0.50
 
-    transform weapon_wrog1:
-        xalign 0.735
-        yalign 0.18
+        transform tarcza_wrog1:
+            xalign 0.635
+            yalign 0.18
 
-    transform weapon_wrog2:
-        xalign 0.735
-        yalign 0.73
+        transform tarcza_wrog2:
+            xalign 0.635
+            yalign 0.82
 
-    transform weapon_wrog3:
-        xalign 0.87
-        yalign 0.45
-    
-label pozycje_tarcza:
-    transform tarcza_sojusznik1:
-        xalign 0.365
-        yalign 0.18
+        transform tarcza_wrog3:
+            xalign 0.635
+            yalign 0.50
 
-    transform tarcza_sojusznik2:
-        xalign 0.365
-        yalign 0.82
+    label pozycje_tla:
+        transform tlo_sojusznik1:
+            xalign 0.193
+            yalign 0.075
 
-    transform tarcza_sojusznik3:
-        xalign 0.365
-        yalign 0.50
+        transform tlo_sojusznik2:
+            xalign 0.193
+            yalign 0.925
 
-    transform tarcza_wrog1:
-        xalign 0.635
-        yalign 0.18
+        transform tlo_sojusznik3:
+            xalign 0.04
+            yalign 0.50
 
-    transform tarcza_wrog2:
-        xalign 0.635
-        yalign 0.82
+        transform tlo_wrog1:
+            xalign 0.807
+            yalign 0.075
 
-    transform tarcza_wrog3:
-        xalign 0.635
-        yalign 0.50
+        transform tlo_wrog2:
+            xalign 0.807
+            yalign 0.925
 
-label pozycje_tla:
-    transform tlo_sojusznik1:
-        xalign 0.193
-        yalign 0.075
+        transform tlo_wrog3:
+            xalign 0.96
+            yalign 0.50
 
-    transform tlo_sojusznik2:
-        xalign 0.193
-        yalign 0.925
-
-    transform tlo_sojusznik3:
-        xalign 0.04
-        yalign 0.50
-
-    transform tlo_wrog1:
-        xalign 0.807
-        yalign 0.075
-
-    transform tlo_wrog2:
-        xalign 0.807
-        yalign 0.925
-
-    transform tlo_wrog3:
-        xalign 0.96
-        yalign 0.50
-
-default dialog_fight1 = 0
-
-default ado = 0
-default kostka = 0
-default timer = 537
-default money = 3
-
-label items:
-    default ile_item = 2
-    default bandaz = 1
-    default granat = 1
 
 label fight_stats:
+    default dialog_fight1 = 0
+    default dialog_fight2 = 0
+
     default liczba_sojusznikow = 1
     default ile_sojusznikow = 0
     default ile_wrogow = 0
@@ -376,6 +364,12 @@ label fight_stats:
     default tarczownik_attack = 0
 
     default pager_boom = 0
+
+
+label prolog_decyzje:
+    define ofiara = 0
+
+
 
 label start:
     label prolog:
@@ -632,7 +626,6 @@ label start:
         ksiadz "Życzę wszystkim miłego dnia. Bóg z wami."
 
         $ timer += 10
-        stop music
 
         scene bg przed_kosciol
         show luszcz siedzi at center
@@ -680,6 +673,8 @@ label start:
                 
             "{b}CO TO?{/b}":
                 $ ado += 1
+
+        "{i}O bogowie walka{/i}"
         
         jump fight1
     label after_fight1:

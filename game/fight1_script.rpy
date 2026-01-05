@@ -65,9 +65,8 @@ label fight1_stats:
 
 label fight1:
     label fight_wybor1:
+        play music "audio/music/fight.mp3"
         scene bg korytarz
-
-        "{i}O bogowie walka{/i}"
         $ ile_wrogow += 3
         show kibol1 fight zorder 10 at wrog1
         show screen kibol1_stats
@@ -892,47 +891,105 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol1_hp_now -= luszcz_attack
-                            
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
-                            jump faza12
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
+                            else:  
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
+
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= luszcz_attack
+                                
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= luszcz_attack
-                            
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
+
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= luszcz_attack
+                                
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= luszcz_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:     
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
 
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= luszcz_attack
+
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza12
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if luszcz_wybrany == 1:
                         show tarcza1 zorder 15 at weapon_sojusznik1  
                     else:
@@ -948,7 +1005,7 @@ label fight1:
                     else:
                         $ ado += 1
                     $ luszcz_obrona += 1
-                    luszcz "Chłopaki, bronię się!"
+                    luszcz "Hłopaki, bronie siem!"
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -967,7 +1024,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    luszcz "Używam itemku!"
+                    luszcz "Órzywam itękó!"
                     jump items11
 
                 "{b}Zaparz Herbatę{/b}":
@@ -1334,50 +1391,69 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol1_hp_now -= eminem_attack
-                            
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
+                            else:               
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(eminem_attack / 2)
+
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= eminem_attack
+                                
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ akane_hp_now -= eminem_attack
-                            
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
+                            else:                           
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(eminem_attack / 2)
+
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= eminem_attack
+                                
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= eminem_attack
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(eminem_attack / 2)
 
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= eminem_attack
+
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza12
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
+                    play sound "audio/sfx/shield.mp3"
                     if eminem_wybrany == 1:
                         show tarcza2 zorder 15 at weapon_sojusznik1  
                     else:
@@ -1604,46 +1680,65 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(urban_attack / 2)
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
+                            else:  
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(urban_attack / 2)
 
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol1_hp_now -= urban_attack
-                            
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= urban_attack
+                                
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(urban_attack / 2)
-
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= urban_attack
-                            
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= urban_attack
+                                
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(urban_attack / 2)
 
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= urban_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:                        
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(urban_attack / 2)
 
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= urban_attack
+
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza12
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if urban_wybrany == 1:
                         show tarcza3 zorder 15 at weapon_sojusznik1  
                     else:
@@ -1838,49 +1933,68 @@ label fight1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(zyd_attack / 2)
-
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= zyd_attack
-                            
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= zyd_attack
+                                
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
 
                             jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(zyd_attack / 2)
 
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ akane_hp_now -= zyd_attack
-                            
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
+                            else:                            
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= zyd_attack
+                                
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(zyd_attack / 2)
 
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= zyd_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:                   
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(zyd_attack / 2)
 
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= zyd_attack
+
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza12
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if zyd_wybrany == 1:
                         show tarcza4 zorder 15 at weapon_sojusznik1  
                     else:
@@ -1971,7 +2085,7 @@ label fight1:
 
                             jump faza12
                 
-                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0:
+                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or akane_pager >= 1 and pager_boom == 0 or kibol2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
@@ -2134,47 +2248,66 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza12
     
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if kazuma_wybrany == 1:
                         show tarcza5 zorder 15 at weapon_sojusznik1  
                     else:
@@ -2229,12 +2362,12 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    kazuma "Steal!"
-
                     menu:
                         "{b}Na kim użyć?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
+                            kazuma "Steal!"
+
                             if kibol1_obrona >= 1:
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza12
@@ -2313,6 +2446,7 @@ label fight1:
                                 jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
+                            kazuma "Steal!"
                             if akane_obrona >= 1:
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza12
@@ -2391,6 +2525,7 @@ label fight1:
                                 jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
+                            kazuma "Steal!"
                             if kibol2_obrona >= 1:
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza12
@@ -2515,6 +2650,32 @@ label fight1:
 
                         tarczownik "Air Strike Shield!l"
 
+                        if dialog_fight2 == 0:
+                            $ dialog_fight2 += 1
+
+                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                            luszcz "..."
+                        
+                        else:
+                            if dialog_fight2 == 1:
+                                $ dialog_fight2 += 1
+                                luszcz "Ja jebie co za debil"
+                            
+                            else:
+                                if dialog_fight2 == 2:
+                                    $ dialog_fight2 += 1
+                                    luszcz "Zajębię tego huja zaraz"
+                            
+                                else:
+                                    if dialog_fight2 >= 3:
+                                        $ dialog_fight2 += 1
+                                        luszcz "..."
+
+
+
                         jump faza12
                     
                     else:
@@ -2543,6 +2704,32 @@ label fight1:
                             $ ado += 1
 
                         tarczownik "Shield Prison!"
+
+                        if dialog_fight2 == 0:
+                            $ dialog_fight2 += 1
+
+                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                            luszcz "..."
+                        
+                        else:
+                            if dialog_fight2 == 1:
+                                $ dialog_fight2 += 1
+                                luszcz "Ja jebie co za debil"
+                            
+                            else:
+                                if dialog_fight2 == 2:
+                                    $ dialog_fight2 += 1
+                                    luszcz "Zajębię tego huja zaraz"
+                            
+                                else:
+                                    if dialog_fight2 >= 3:
+                                        $ dialog_fight2 += 1
+                                        luszcz "..."
+
+
 
                         jump faza12
                         
@@ -2575,6 +2762,31 @@ label fight1:
                         $ ado += 1
 
                     tarczownik "Air Strike Shield!"
+
+                    if dialog_fight2 == 0:
+                            $ dialog_fight2 += 1
+
+                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                            luszcz "..."
+                    
+                    else:
+                        if dialog_fight2 == 1:
+                            $ dialog_fight2 += 1
+                            luszcz "Ja jebie co za debil"
+                            
+                        else:
+                            if dialog_fight2 == 2:
+                                $ dialog_fight2 += 1
+                                luszcz "Zajębię tego huja zaraz"
+                            
+                            else:
+                                if dialog_fight2 >= 3:
+                                    $ dialog_fight2 += 1
+                                    luszcz "..."
+
 
                     jump faza12
                     
@@ -2640,15 +2852,46 @@ label fight1:
                                 if kostka >= 2:
                                     $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                    if kibol1_obrona >= 1:
-                                        $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                        $ dmg = int(tarczownik_attack / 2)
-                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                    if kibol1_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Naofumiego został zablokowany{/i}"
+                                        $ kibol1_obrona = 1
+                                                            
                                     else:
-                                        $ kibol1_hp_now -= tarczownik_attack
+                                        if kibol1_obrona == 1:
+                                            $ kibol1_hp_now -= int(tarczownik_attack / 2)
 
-                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                            $ dmg = int(tarczownik_attack / 2)
+                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                        else:
+                                            $ kibol1_hp_now -= tarczownik_attack
+
+                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+
+                                    
+                                    if dialog_fight2 == 0:
+                                        $ dialog_fight2 += 1
+
+                                        luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                        tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                        tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                        luszcz "..."
+                                    
+                                    else:
+                                        if dialog_fight2 == 1:
+                                            $ dialog_fight2 += 1
+                                            luszcz "Ja jebie co za debil"
+                                        
+                                        else:
+                                            if dialog_fight2 == 2:
+                                                $ dialog_fight2 += 1
+                                                luszcz "Zajębię tego huja zaraz"
+                                        
+                                            else:
+                                                if dialog_fight2 >= 3:
+                                                    $ dialog_fight2 += 1
+                                                    luszcz "..."
 
                                     jump faza12
                                 else:
@@ -2660,15 +2903,45 @@ label fight1:
                                     if kostka >= 3:
                                         $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                        if kibol1_obrona >= 1:
-                                            $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                            $ dmg = int(tarczownik_attack / 2)
-                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                        if kibol1_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Naofumiego został zablokowany{/i}"
+                                            $ kibol1_obrona = 1
+                                                                
                                         else:
-                                            $ kibol1_hp_now -= tarczownik_attack
+                                            if kibol1_obrona == 1:
+                                                $ kibol1_hp_now -= int(tarczownik_attack / 2)
 
-                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                $ dmg = int(tarczownik_attack / 2)
+                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                            else:
+                                                $ kibol1_hp_now -= tarczownik_attack
+
+                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                        
+                                        if dialog_fight2 == 0:
+                                            $ dialog_fight2 += 1
+
+                                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                            luszcz "..."
+                                        
+                                        else:
+                                            if dialog_fight2 == 1:
+                                                $ dialog_fight2 += 1
+                                                luszcz "Ja jebie co za debil"
+                                            
+                                            else:
+                                                if dialog_fight2 == 2:
+                                                    $ dialog_fight2 += 1
+                                                    luszcz "Zajębię tego huja zaraz"
+                                            
+                                                else:
+                                                    if dialog_fight2 >= 3:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "..."
 
                                         jump faza12
                                     else:
@@ -2679,15 +2952,45 @@ label fight1:
                                     if kostka >= 5:
                                         $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                        if kibol1_obrona >= 1:
-                                            $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                            $ dmg = int(tarczownik_attack / 2)
-                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                        if kibol1_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Naofumiego został zablokowany{/i}"
+                                            $ kibol1_obrona = 1
+                                                                
                                         else:
-                                            $ kibol1_hp_now -= tarczownik_attack
+                                            if kibol1_obrona == 1:
+                                                $ kibol1_hp_now -= int(tarczownik_attack / 2)
 
-                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                $ dmg = int(tarczownik_attack / 2)
+                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                            else:
+                                                $ kibol1_hp_now -= tarczownik_attack
+
+                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                        
+                                        if dialog_fight2 == 0:
+                                            $ dialog_fight2 += 1
+
+                                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                            luszcz "..."
+                                        
+                                        else:
+                                            if dialog_fight2 == 1:
+                                                $ dialog_fight2 += 1
+                                                luszcz "Ja jebie co za debil"
+                                            
+                                            else:
+                                                if dialog_fight2 == 2:
+                                                    $ dialog_fight2 += 1
+                                                    luszcz "Zajębię tego huja zaraz"
+                                            
+                                                else:
+                                                    if dialog_fight2 >= 3:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "..."
 
                                         jump faza12
                                     else:
@@ -2703,15 +3006,45 @@ label fight1:
                                     if kostka >= 2:
                                         $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                        if akane_obrona >= 1:
-                                            $ akane_hp_now -= int(tarczownik_attack / 2)
-
-                                            $ dmg = int(tarczownik_attack / 2)
-                                            "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                        if akane_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Naofumiego został zablokowany{/i}"
+                                            $ akane_obrona = 1
+                                                                    
                                         else:
-                                            $ akane_hp_now -= tarczownik_attack
+                                            if akane_obrona == 1:
+                                                $ akane_hp_now -= int(tarczownik_attack / 2)
 
-                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                $ dmg = int(tarczownik_attack / 2)
+                                                "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                            else:
+                                                $ akane_hp_now -= tarczownik_attack
+
+                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                        
+                                        if dialog_fight2 == 0:
+                                            $ dialog_fight2 += 1
+
+                                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                            luszcz "..."
+                                        
+                                        else:
+                                            if dialog_fight2 == 1:
+                                                $ dialog_fight2 += 1
+                                                luszcz "Ja jebie co za debil"
+                                            
+                                            else:
+                                                if dialog_fight2 == 2:
+                                                    $ dialog_fight2 += 1
+                                                    luszcz "Zajębię tego huja zaraz"
+                                            
+                                                else:
+                                                    if dialog_fight2 >= 3:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "..."
 
                                         jump faza12
                                     else:
@@ -2723,15 +3056,45 @@ label fight1:
                                         if kostka >= 3:
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                            if akane_obrona >= 1:
-                                                $ akane_hp_now -= int(tarczownik_attack / 2)
-
-                                                $ dmg = int(tarczownik_attack / 2)
-                                                "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                            if akane_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Naofumiego został zablokowany{/i}"
+                                                $ akane_obrona = 1
+                                                                        
                                             else:
-                                                $ akane_hp_now -= tarczownik_attack
+                                                if akane_obrona == 1:
+                                                    $ akane_hp_now -= int(tarczownik_attack / 2)
 
-                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                else:
+                                                    $ akane_hp_now -= tarczownik_attack
+
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                            
+                                            if dialog_fight2 == 0:
+                                                $ dialog_fight2 += 1
+
+                                                luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                                tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                                tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                                luszcz "..."
+                                            
+                                            else:
+                                                if dialog_fight2 == 1:
+                                                    $ dialog_fight2 += 1
+                                                    luszcz "Ja jebie co za debil"
+                                                
+                                                else:
+                                                    if dialog_fight2 == 2:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "Zajębię tego huja zaraz"
+                                                
+                                                    else:
+                                                        if dialog_fight2 >= 3:
+                                                            $ dialog_fight2 += 1
+                                                            luszcz "..."
 
                                             jump faza12
                                         else:
@@ -2742,15 +3105,46 @@ label fight1:
                                         if kostka >= 5:
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                            if akane_obrona >= 1:
-                                                $ akane_hp_now -= int(tarczownik_attack / 2)
-
-                                                $ dmg = int(tarczownik_attack / 2)
-                                                "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                            if akane_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Naofumiego został zablokowany{/i}"
+                                                $ akane_obrona = 1
+                                                                        
                                             else:
-                                                $ akane_hp_now -= tarczownik_attack
+                                                if akane_obrona == 1:
+                                                    $ akane_hp_now -= int(tarczownik_attack / 2)
 
-                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                else:
+                                                    $ akane_hp_now -= tarczownik_attack
+
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                            
+
+                                            if dialog_fight2 == 0:
+                                                $ dialog_fight2 += 1
+
+                                                luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                                tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                                tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                                luszcz "..."
+                                            
+                                            else:
+                                                if dialog_fight2 == 1:
+                                                    $ dialog_fight2 += 1
+                                                    luszcz "Ja jebie co za debil"
+                                                
+                                                else:
+                                                    if dialog_fight2 == 2:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "Zajębię tego huja zaraz"
+                                                
+                                                    else:
+                                                        if dialog_fight2 >= 3:
+                                                            $ dialog_fight2 += 1
+                                                            luszcz "..."
 
                                             jump faza12
                                         else:
@@ -2760,41 +3154,101 @@ label fight1:
                                 jump losowanko_tarczownik1
                         else:
                             if kostka == 3:
-                                if kibol1_hp_now >= 1:
-                                    if kibol1_hp_now <= 3:
+                                if kibol2_hp_now >= 1:
+                                    if kibol2_hp_now <= 3:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 2:
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                            if kibol1_obrona >= 1:
-                                                $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                                $ dmg = int(tarczownik_attack / 2)
-                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                            if kibol2_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Naofumiego został zablokowany{/i}"
+                                                $ kibol2_obrona = 1
+                                                                    
                                             else:
-                                                $ kibol1_hp_now -= tarczownik_attack
+                                                if kibol2_obrona == 1:
+                                                    $ kibol2_hp_now -= int(tarczownik_attack / 2)
 
-                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                else:
+                                                    $ kibol2_hp_now -= tarczownik_attack
+
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                            
+                                            if dialog_fight2 == 0:
+                                                $ dialog_fight2 += 1
+
+                                                luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                                tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                                tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                                luszcz "..."
+                                            
+                                            else:
+                                                if dialog_fight2 == 1:
+                                                    $ dialog_fight2 += 1
+                                                    luszcz "Ja jebie co za debil"
+                                                
+                                                else:
+                                                    if dialog_fight2 == 2:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "Zajębię tego huja zaraz"
+                                                
+                                                    else:
+                                                        if dialog_fight2 >= 3:
+                                                            $ dialog_fight2 += 1
+                                                            luszcz "..."
 
                                             jump faza12
                                         else:
                                             jump losowanko_tarczownik1
 
                                     else:
-                                        if kibol1_hp_now <= 10:
+                                        if kibol2_hp_now <= 10:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 3:
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                                if kibol1_obrona >= 1:
-                                                    $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                                    $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                if kibol2_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Naofumiego został zablokowany{/i}"
+                                                    $ kibol2_obrona = 1
+                                                                        
                                                 else:
-                                                    $ kibol1_hp_now -= tarczownik_attack
+                                                    if kibol2_obrona == 1:
+                                                        $ kibol2_hp_now -= int(tarczownik_attack / 2)
 
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                    else:
+                                                        $ kibol2_hp_now -= tarczownik_attack
+
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                
+                                                if dialog_fight2 == 0:
+                                                    $ dialog_fight2 += 1
+
+                                                    luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                                    tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                                    tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                                    luszcz "..."
+                                                
+                                                else:
+                                                    if dialog_fight2 == 1:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "Ja jebie co za debil"
+                                                    
+                                                    else:
+                                                        if dialog_fight2 == 2:
+                                                            $ dialog_fight2 += 1
+                                                            luszcz "Zajębię tego huja zaraz"
+                                                    
+                                                        else:
+                                                            if dialog_fight2 >= 3:
+                                                                $ dialog_fight2 += 1
+                                                                luszcz "..."
 
                                                 jump faza12
                                             else:
@@ -2805,15 +3259,46 @@ label fight1:
                                             if kostka >= 5:
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                                if kibol1_obrona >= 1:
-                                                    $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                                    $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                if kibol2_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Naofumiego został zablokowany{/i}"
+                                                    $ kibol2_obrona = 1
+                                                                        
                                                 else:
-                                                    $ kibol1_hp_now -= tarczownik_attack
+                                                    if kibol2_obrona == 1:
+                                                        $ kibol2_hp_now -= int(tarczownik_attack / 2)
 
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                    else:
+                                                        $ kibol2_hp_now -= tarczownik_attack
+
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                
+
+                                                if dialog_fight2 == 0:
+                                                    $ dialog_fight2 += 1
+
+                                                    luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                                    tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                                    tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                                    luszcz "..."
+                                                
+                                                else:
+                                                    if dialog_fight2 == 1:
+                                                        $ dialog_fight2 += 1
+                                                        luszcz "Ja jebie co za debil"
+                                                    
+                                                    else:
+                                                        if dialog_fight2 == 2:
+                                                            $ dialog_fight2 += 1
+                                                            luszcz "Zajębię tego huja zaraz"
+                                                    
+                                                        else:
+                                                            if dialog_fight2 >= 3:
+                                                                $ dialog_fight2 += 1
+                                                                luszcz "..."
 
                                                 jump faza12
                                             else:
@@ -2918,14 +3403,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= 4
-
-                                "{i}Kibol 1 traci 4 punkty życia{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= 8
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= 4
 
-                                "{i}Kibol 1 traci 8 punktów życia{/i}"
+                                    "{i}Kibol 1 traci 4 punkty życia{/i}"
+                                else:
+                                    $ kibol1_hp_now -= 8
+
+                                    "{i}Kibol 1 traci 8 punktów życia{/i}"
 
                             hide chest
                             jump faza12
@@ -2934,14 +3425,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= 4
-
-                                "{i}Akane traci 4 punkty życia{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= 8
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= 4
 
-                                "{i}Akane traci 8 punktów życia{/i}"
+                                    "{i}Akane traci 4 punkty życia{/i}"
+                                else:
+                                    $ akane_hp_now -= 8
+
+                                    "{i}Akane traci 8 punktów życia{/i}"
                             hide chest
                             jump faza12
 
@@ -2949,14 +3446,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= 4
-
-                                "{i}Kibol 2 traci 4 punkty życia{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= 8
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= 4
 
-                                "{i}Kibol 2 traci 8 punktów życia{/i}"
+                                    "{i}Kibol 2 traci 4 punkty życia{/i}"
+                                else:
+                                    $ kibol2_hp_now -= 8
+
+                                    "{i}Kibol 2 traci 8 punktów życia{/i}"
                             
                             hide chest
                             jump faza12
@@ -3235,47 +3738,105 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol1_hp_now -= luszcz_attack
-                            
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
+                            else:  
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
+
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= luszcz_attack
+                                
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= luszcz_attack
-                            
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
+
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= luszcz_attack
+                                
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= luszcz_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:  
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
 
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= luszcz_attack
+
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza13
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if luszcz_wybrany == 1:
                         show tarcza1 zorder 15 at weapon_sojusznik1  
                     else:
@@ -3291,7 +3852,7 @@ label fight1:
                     else:
                         $ ado += 1
                     $ luszcz_obrona += 1
-                    luszcz "Chłopaki, bronię się!"
+                    luszcz "Hłopaki, bronie siem!"
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -3310,7 +3871,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    luszcz "Używam itemku!"
+                    luszcz "Órzywam itękó!"
                     jump items12
 
                 "{b}Zaparz Herbatę{/b}":
@@ -3677,50 +4238,69 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol1_hp_now -= eminem_attack
-                            
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
+                            else:                              
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(eminem_attack / 2)
+
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= eminem_attack
+                                
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ akane_hp_now -= eminem_attack
-                            
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
+                            else:                            
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(eminem_attack / 2)
+
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= eminem_attack
+                                
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= eminem_attack
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(eminem_attack / 2)
 
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= eminem_attack
+
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza13
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
+                    play sound "audio/sfx/shield.mp3"
                     if eminem_wybrany == 1:
                         show tarcza2 zorder 15 at weapon_sojusznik1  
                     else:
@@ -3946,46 +4526,65 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(urban_attack / 2)
-
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= urban_attack
-                            
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= urban_attack
+                                
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(urban_attack / 2)
-
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= urban_attack
-                            
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= urban_attack
+                                
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(urban_attack / 2)
 
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= urban_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:                    
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(urban_attack / 2)
 
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= urban_attack
+
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza13
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if urban_wybrany == 1:
                         show tarcza3 zorder 15 at weapon_sojusznik1  
                     else:
@@ -4179,48 +4778,67 @@ label fight1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(zyd_attack / 2)
-
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= zyd_attack
-                            
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= zyd_attack
+                                
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(zyd_attack / 2)
 
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ akane_hp_now -= zyd_attack
-                            
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
+                            else:                      
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= zyd_attack
+                                
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(zyd_attack / 2)
 
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= zyd_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:                  
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(zyd_attack / 2)
 
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= zyd_attack
+
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza13
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if zyd_wybrany == 1:
                         show tarcza4 zorder 15 at weapon_sojusznik1  
                     else:
@@ -4311,7 +4929,7 @@ label fight1:
 
                             jump faza13
                 
-                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0:
+                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or akane_pager >= 1 and pager_boom == 0 or kibol2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
@@ -4473,46 +5091,65 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza13
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if kazuma_wybrany == 1:
                         show tarcza5 zorder 15 at weapon_sojusznik1  
                     else:
@@ -4567,12 +5204,11 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    kazuma "Steal!"
-
                     menu:
                         "{b}Na kim użyć?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
+                            kazuma "Steal!"
                             if kibol1_obrona >= 1:
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza13
@@ -4651,6 +5287,7 @@ label fight1:
                                 jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
+                            kazuma "Steal!"
                             if akane_obrona >= 1:
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza13
@@ -4729,6 +5366,7 @@ label fight1:
                                 jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
+                            kazuma "Steal!"
                             if kibol2_obrona >= 1:
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza13
@@ -4897,14 +5535,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= 4
-
-                                "{i}Kibol 1 traci 4 punkty życia{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= 8
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= 4
 
-                                "{i}Kibol 1 traci 8 punktów życia{/i}"
+                                    "{i}Kibol 1 traci 4 punkty życia{/i}"
+                                else:
+                                    $ kibol1_hp_now -= 8
+
+                                    "{i}Kibol 1 traci 8 punktów życia{/i}"
                             hide chest
                             jump faza13
 
@@ -4912,14 +5556,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= 4
-
-                                "{i}Akane traci 4 punkty życia{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= 8
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= 4
 
-                                "{i}Akane traci 8 punktów życia{/i}"
+                                    "{i}Akane traci 4 punkty życia{/i}"
+                                else:
+                                    $ akane_hp_now -= 8
+
+                                    "{i}Akane traci 8 punktów życia{/i}"
                             hide chest
                             jump faza13
 
@@ -4927,14 +5577,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= 4
-
-                                "{i}Kibol 2 traci 4 punkty życia{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= 8
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= 4
 
-                                "{i}Kibol 2 traci 8 punktów życia{/i}"
+                                    "{i}Kibol 2 traci 4 punkty życia{/i}"
+                                else:
+                                    $ kibol2_hp_now -= 8
+
+                                    "{i}Kibol 2 traci 8 punktów życia{/i}"
                             hide chest
                             jump faza13
 
@@ -5212,47 +5868,105 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol1_hp_now -= luszcz_attack
-                            
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
+                            else:  
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
+
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= luszcz_attack
+                                
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= luszcz_attack
-                            
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
+
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= luszcz_attack
+                                
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(luszcz_attack / 2)
 
-                                $ dmg = int(luszcz_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= luszcz_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:  
+                                if luszcz_weapon >= 1:
+                                    if gitara == 2:
+                                        play sound "audio/sfx/gitara.mp3" 
 
-                                "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                    if przepychaczka == 2: 
+                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                    if stop == 2:
+                                        play sound "audio/sfx/stop.mp3" 
+
+                                else:
+                                    play sound "audio/sfx/reka.mp3" 
+
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= luszcz_attack
+
+                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza14
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if luszcz_wybrany == 1:
                         show tarcza1 zorder 15 at weapon_sojusznik1  
                     else:
@@ -5268,7 +5982,7 @@ label fight1:
                     else:
                         $ ado += 1
                     $ luszcz_obrona += 1
-                    luszcz "Chłopaki, bronię się!"
+                    luszcz "Hłopaki, bronie siem!"
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -5287,7 +6001,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    luszcz "Używam itemku!"
+                    luszcz "Órzywam itękó!"
                     jump items13
 
                 "{b}Zaparz Herbatę{/b}":
@@ -5654,50 +6368,69 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol1_hp_now -= eminem_attack
-                            
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
+                            else:       
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(eminem_attack / 2)
+
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= eminem_attack
+                                
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ akane_hp_now -= eminem_attack
-                            
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
+                            else:                           
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(eminem_attack / 2)
+
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= eminem_attack
+                                
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(eminem_attack / 2)
 
-                                $ dmg = int(eminem_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= eminem_attack
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(eminem_attack / 2)
 
-                                "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                                    $ dmg = int(eminem_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= eminem_attack
+
+                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                             jump faza14
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
+                    play sound "audio/sfx/shield.mp3"
                     if eminem_wybrany == 1:
                         show tarcza2 zorder 15 at weapon_sojusznik1  
                     else:
@@ -5924,46 +6657,65 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(urban_attack / 2)
-
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= urban_attack
-                            
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= urban_attack
+                                
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(urban_attack / 2)
-
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= urban_attack
-                            
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= urban_attack
+                                
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(urban_attack / 2)
 
-                                $ dmg = int(urban_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= urban_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:                 
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(urban_attack / 2)
 
-                                "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                    $ dmg = int(urban_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= urban_attack
+
+                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
                             jump faza14
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if urban_wybrany == 1:
                         show tarcza3 zorder 15 at weapon_sojusznik1  
                     else:
@@ -6157,48 +6909,67 @@ label fight1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(zyd_attack / 2)
-
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= zyd_attack
-                            
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= zyd_attack
+                                
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
-                            
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(zyd_attack / 2)
 
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ akane_hp_now -= zyd_attack
-                            
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
+                            else:   
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= zyd_attack
+                                
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
-                            
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(zyd_attack / 2)
 
-                                $ dmg = int(zyd_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
-                            else:
-                                $ kibol2_hp_now -= zyd_attack
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
+                            else:       
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(zyd_attack / 2)
 
-                                "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                    $ dmg = int(zyd_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= zyd_attack
+
+                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza14
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if zyd_wybrany == 1:
                         show tarcza4 zorder 15 at weapon_sojusznik1  
                     else:
@@ -6289,7 +7060,7 @@ label fight1:
 
                             jump faza14
                 
-                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0 or kibol1_pager >= 1 and pager_boom == 0:
+                "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or akane_pager >= 1 and pager_boom == 0 or kibol2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
@@ -6451,46 +7222,65 @@ label fight1:
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol1_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ akane_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= int(kazuma_attack / 2)
-
-                                $ dmg = int(kazuma_attack / 2)
-                                "{i}Atak zadał [dmg] obrażeń{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= kazuma_attack
-                            
-                                "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kazuma_attack / 2)
+
+                                    $ dmg = int(kazuma_attack / 2)
+                                    "{i}Atak zadał [dmg] obrażeń{/i}"
+                                else:
+                                    $ kibol2_hp_now -= kazuma_attack
+                                
+                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza14
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
+                    play sound "audio/sfx/shield.mp3"
                     if kazuma_wybrany == 1:
                         show tarcza5 zorder 15 at weapon_sojusznik1  
                     else:
@@ -6544,13 +7334,12 @@ label fight1:
                         show chwyta zorder 16 at weapon_sojusznik3 
                     else:
                         $ ado += 1
-                    
-                    kazuma "Steal!"
 
                     menu:
                         "{b}Na kim użyć?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1 and kibol1_weapon > 0:
+                            kazuma "Steal!"
                             if kibol1_obrona >= 1:
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza14
@@ -6629,6 +7418,7 @@ label fight1:
                                 jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
+                            kazuma "Steal!"
                             if akane_obrona >= 1:
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza14
@@ -6707,6 +7497,7 @@ label fight1:
                                 jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
+                            kazuma "Steal!"
                             if kibol2_obrona >= 1:
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza14
@@ -6875,14 +7666,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if kibol1_obrona >= 1:
-                                $ kibol1_hp_now -= 4
-
-                                "{i}Kibol 1 traci 4 punkty życia{/i}"
+                            if kibol1_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ kibol1_obrona = 1
+                                                               
                             else:
-                                $ kibol1_hp_now -= 8
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= 4
 
-                                "{i}Kibol 1 traci 8 punktów życia{/i}"
+                                    "{i}Kibol 1 traci 4 punkty życia{/i}"
+                                else:
+                                    $ kibol1_hp_now -= 8
+
+                                    "{i}Kibol 1 traci 8 punktów życia{/i}"
                             hide chest
                             jump faza14
 
@@ -6890,14 +7687,21 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if akane_obrona >= 1:
-                                $ akane_hp_now -= 4
-
-                                "{i}Akane traci 4 punkty życia{/i}"
+                            if akane_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ akane_obrona = 1
+                                                               
                             else:
-                                $ akane_hp_now -= 8
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= 4
 
-                                "{i}Akane traci 8 punktów życia{/i}"
+                                    "{i}Akane traci 4 punkty życia{/i}"
+                                else:
+                                    $ akane_hp_now -= 8
+
+                                    "{i}Akane traci 8 punktów życia{/i}"
+
                             hide chest
                             jump faza14
 
@@ -6905,14 +7709,20 @@ label fight1:
                             $ granat -= 1
                             $ ile_item -= 1
 
-                            if kibol2_obrona >= 1:
-                                $ kibol2_hp_now -= 4
-
-                                "{i}Kibol 2 traci 4 punkty życia{/i}"
+                            if kibol2_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Granat został zablokowany{/i}"
+                                $ kibol2_obrona = 1
+                                                               
                             else:
-                                $ kibol2_hp_now -= 8
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= 4
 
-                                "{i}Kibol 2 traci 8 punktów życia{/i}"
+                                    "{i}Kibol 2 traci 4 punkty życia{/i}"
+                                else:
+                                    $ kibol2_hp_now -= 8
+
+                                    "{i}Kibol 2 traci 8 punktów życia{/i}"
                             hide chest
                             jump faza14
 
@@ -7136,7 +7946,10 @@ label fight1:
         $ kazuma_min_attack_now = kazuma_min_attack_now_true
         $ kazuma_max_attack_now = kazuma_max_attack_now_true
         $ tarczownik_min_attack_now = tarczownik_min_attack_now_true
-        $ tarczownik_max_attack_now = tarczownik_max_attack_now_true       
+        $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
+
+        if kibol1_hp_now <= 0:
+            jump faza15     
 
         show ruch zorder 0 at tlo_wrog1  
 
@@ -7166,6 +7979,7 @@ label fight1:
         
         if kibol1_max_attack_now <= 0 and kibol1_obrona == 0:
             show tarcza6 zorder 15 at weapon_wrog1  
+            play sound "audio/sfx/shield.mp3"
             "{i}Kibol 1 broni się{/i}"
             $ kibol1_obrona += 1
             jump faza15
@@ -7179,6 +7993,7 @@ label fight1:
 
                 if kostka >= 2:
                     show tarcza6 zorder 15 at weapon_wrog1  
+                    play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 1 broni się{/i}"
                     $ kibol1_obrona += 1
                     jump faza15
@@ -7188,9 +8003,6 @@ label fight1:
             
             else:
                 jump losowanko14
-        
-        else:
-            jump faza15
                     
         label losowanko14:   
             if kibol1_weapon >= 1:
@@ -7205,15 +8017,21 @@ label fight1:
                         if kostka >= 2:
                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                            if luszcz_obrona >= 1:
-                                $ luszcz_hp_now -= int(kibol1_attack / 2)
-
-                                $ dmg = int(kibol1_attack / 2)
-                                "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                            if luszcz_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kibol 1 został zablokowany{/i}"
+                                $ luszcz_obrona = 1
+                                                
                             else:
-                                $ luszcz_hp_now -= kibol1_attack
+                                if luszcz_obrona == 1:
+                                    $ luszcz_hp_now -= int(kibol1_attack / 2)
 
-                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
+                                    $ dmg = int(kibol1_attack / 2)
+                                    "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= kibol1_attack
+
+                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
 
                             jump faza15
                         else:
@@ -7225,15 +8043,21 @@ label fight1:
                             if kostka >= 3:
                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                if luszcz_obrona >= 1:
-                                    $ luszcz_hp_now -= int(kibol1_attack / 2)
-
-                                    $ dmg = int(kibol1_attack / 2)
-                                    "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 1 został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
+                                                    
                                 else:
-                                    $ luszcz_hp_now -= kibol1_attack
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(kibol1_attack / 2)
 
-                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(kibol1_attack / 2)
+                                        "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= kibol1_attack
+
+                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
 
                                 jump faza15
                             else:
@@ -7243,16 +8067,22 @@ label fight1:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
-
-                                if luszcz_obrona >= 1:
-                                    $ luszcz_hp_now -= int(kibol1_attack / 2)
-
-                                    $ dmg = int(kibol1_attack / 2)
-                                    "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                            
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 1 został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
+                                                    
                                 else:
-                                    $ luszcz_hp_now -= kibol1_attack
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(kibol1_attack / 2)
 
-                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(kibol1_attack / 2)
+                                        "{i}Kibol 1 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= kibol1_attack
+
+                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
 
                                 jump faza15
                             else:
@@ -7268,15 +8098,21 @@ label fight1:
                             if kostka >= 2:
                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                if urban_obrona >= 1:
-                                    $ urban_hp_now -= int(kibol1_attack / 2)
+                                if urban_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 1 został zablokowany{/i}"
+                                    $ urban_obrona = 1
 
-                                    $ dmg = int(kibol1_attack / 2)
-                                    "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                 else:
-                                    $ urban_hp_now -= kibol1_attack
+                                    if urban_obrona == 1:
+                                        $ urban_hp_now -= int(kibol1_attack / 2)
 
-                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                        $ dmg = int(kibol1_attack / 2)
+                                        "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= kibol1_attack
+
+                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                 jump faza15
                             else:
@@ -7288,15 +8124,21 @@ label fight1:
                                 if kostka >= 3:
                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                    if urban_obrona >= 1:
-                                        $ urban_hp_now -= int(kibol1_attack / 2)
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 1 został zablokowany{/i}"
+                                        $ urban_obrona = 1
 
-                                        $ dmg = int(kibol1_attack / 2)
-                                        "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
-                                        $ urban_hp_now -= kibol1_attack
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(kibol1_attack / 2)
 
-                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(kibol1_attack / 2)
+                                            "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= kibol1_attack
+
+                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza15
                                 else:
@@ -7307,15 +8149,21 @@ label fight1:
                                 if kostka >= 5:
                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                    if urban_obrona >= 1:
-                                        $ urban_hp_now -= int(kibol1_attack / 2)
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 1 został zablokowany{/i}"
+                                        $ urban_obrona = 1
 
-                                        $ dmg = int(kibol1_attack / 2)
-                                        "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
-                                        $ urban_hp_now -= kibol1_attack
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(kibol1_attack / 2)
 
-                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(kibol1_attack / 2)
+                                            "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= kibol1_attack
+
+                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza15
                                 else:
@@ -7331,15 +8179,21 @@ label fight1:
                                 if kostka >= 2:
                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                    if zyd_obrona >= 1:
-                                        $ zyd_hp_now -= int(kibol1_attack / 2)
-
-                                        $ dmg = int(kibol1_attack / 2)
-                                        "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
+                                    if zyd_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 1 został zablokowany{/i}"
+                                        $ zyd_obrona = 1
+                                        
                                     else:
-                                        $ zyd_hp_now -= kibol1_attack
+                                        if zyd_obrona == 1:
+                                            $ zyd_hp_now -= int(kibol1_attack / 2)
 
-                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
+                                            $ dmg = int(kibol1_attack / 2)
+                                            "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= kibol1_attack
+
+                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
 
                                     jump faza15
                                 else:
@@ -7351,15 +8205,21 @@ label fight1:
                                     if kostka >= 3:
                                         $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                        if zyd_obrona >= 1:
-                                            $ zyd_hp_now -= int(kibol1_attack / 2)
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 1 został zablokowany{/i}"
+                                            $ zyd_obrona = 1
 
-                                            $ dmg = int(kibol1_attack / 2)
-                                            "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
-                                            $ zyd_hp_now -= kibol1_attack
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(kibol1_attack / 2)
 
-                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
+                                                $ dmg = int(kibol1_attack / 2)
+                                                "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= kibol1_attack
+
+                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
 
                                         jump faza15
                                     else:
@@ -7369,16 +8229,22 @@ label fight1:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 5:
                                         $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+                                        
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 1 został zablokowany{/i}"
+                                            $ zyd_obrona = 1
 
-                                        if zyd_obrona >= 1:
-                                            $ zyd_hp_now -= int(kibol1_attack / 2)
-
-                                            $ dmg = int(kibol1_attack / 2)
-                                            "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
-                                            $ zyd_hp_now -= kibol1_attack
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(kibol1_attack / 2)
 
-                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
+                                                $ dmg = int(kibol1_attack / 2)
+                                                "{i}Kibol 1 zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= kibol1_attack
+
+                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
 
                                         jump faza15
                                     else:
@@ -7394,15 +8260,21 @@ label fight1:
                                     if kostka >= 2:
                                         $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                        if kazuma_obrona >= 1:
-                                            $ kazuma_hp_now -= int(kibol1_attack / 2)
-
-                                            $ dmg = int(kibol1_attack / 2)
-                                            "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                        if kazuma_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 1 został zablokowany{/i}"
+                                            $ kazuma_obrona = 1
+                                        
                                         else:
-                                            $ kazuma_hp_now -= kibol1_attack
+                                            if kazuma_obrona == 1:
+                                                $ kazuma_hp_now -= int(kibol1_attack / 2)
 
-                                            "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
+                                                $ dmg = int(kibol1_attack / 2)
+                                                "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= kibol1_attack
+
+                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
 
                                         jump faza15
                                     else:
@@ -7414,15 +8286,21 @@ label fight1:
                                         if kostka >= 3:
                                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                            if kazuma_obrona >= 1:
-                                                $ kazuma_hp_now -= int(kibol1_attack / 2)
-
-                                                $ dmg = int(kibol1_attack / 2)
-                                                "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
                                             else:
-                                                $ kazuma_hp_now -= kibol1_attack
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(kibol1_attack / 2)
 
-                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(kibol1_attack / 2)
+                                                    "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= kibol1_attack
+
+                                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
 
                                             jump faza15
                                         else:
@@ -7433,15 +8311,21 @@ label fight1:
                                         if kostka >= 5:
                                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                            if kazuma_obrona >= 1:
-                                                $ kazuma_hp_now -= int(kibol1_attack / 2)
-
-                                                $ dmg = int(kibol1_attack / 2)
-                                                "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
                                             else:
-                                                $ kazuma_hp_now -= kibol1_attack
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(kibol1_attack / 2)
 
-                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(kibol1_attack / 2)
+                                                    "{i}Kibol 1 zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= kibol1_attack
+
+                                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
 
                                             jump faza15
                                         else:
@@ -7457,15 +8341,21 @@ label fight1:
                                         if kostka >= 2:
                                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                            if eminem_obrona >= 1:
-                                                $ eminem_hp_now -= int(kibol1_attack / 2)
-
-                                                $ dmg = int(kibol1_attack / 2)
-                                                "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                            if eminem_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                $ eminem_obrona = 1
+                                            
                                             else:
-                                                $ eminem_hp_now -= kibol1_attack
+                                                if eminem_obrona == 1:
+                                                    $ eminem_hp_now -= int(kibol1_attack / 2)
 
-                                                "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
+                                                    $ dmg = int(kibol1_attack / 2)
+                                                    "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= kibol1_attack
+
+                                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
 
                                             jump faza15
                                         else:
@@ -7477,15 +8367,21 @@ label fight1:
                                             if kostka >= 3:
                                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                                if eminem_obrona >= 1:
-                                                    $ eminem_hp_now -= int(kibol1_attack / 2)
-
-                                                    $ dmg = int(kibol1_attack / 2)
-                                                    "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
                                                 else:
-                                                    $ eminem_hp_now -= kibol1_attack
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(kibol1_attack / 2)
 
-                                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(kibol1_attack / 2)
+                                                        "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= kibol1_attack
+
+                                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza15
                                             else:
@@ -7496,15 +8392,21 @@ label fight1:
                                             if kostka >= 5:
                                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
-                                                if eminem_obrona >= 1:
-                                                    $ eminem_hp_now -= int(kibol1_attack / 2)
-
-                                                    $ dmg = int(kibol1_attack / 2)
-                                                    "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
                                                 else:
-                                                    $ eminem_hp_now -= kibol1_attack
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(kibol1_attack / 2)
 
-                                                    "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(kibol1_attack / 2)
+                                                        "{i}Kibol 1 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= kibol1_attack
+
+                                                        "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza15
                                             else:
@@ -7521,8 +8423,9 @@ label fight1:
                                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
                                                 if tarczownik_obrona >= 2:
-                                                    "{i}Kibol 1 został zablokowany przez Shield Prison{/i}"
-                                                    $ tarczownik_obrona -= 1
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                    $ tarczownik_obrona = 1
                                                 
                                                 else:
                                                     if tarczownik_obrona == 1:
@@ -7546,8 +8449,9 @@ label fight1:
                                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        "{i}Kibol 1 został zablokowany przez Shield Prison{/i}"
-                                                        $ tarczownik_obrona -= 1
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
                                                 
                                                     else:
                                                         if tarczownik_obrona == 1:
@@ -7570,8 +8474,9 @@ label fight1:
                                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        "{i}Kibol 1 został zablokowany przez Shield Prison{/i}"
-                                                        $ tarczownik_obrona -= 1
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 1 został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
                                                 
                                                     else:
                                                         if tarczownik_obrona == 1:
@@ -7794,7 +8699,10 @@ label fight1:
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
         else:
-            $ ado += 1                
+            $ ado += 1  
+
+        if akane_hp_now <= 0:
+            jump faza16                
         
         show ruch zorder 0 at tlo_wrog3 
 
@@ -7804,7 +8712,7 @@ label fight1:
             else:
                 show reka7 zorder 15 at weapon_wrog3
             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
-            if akane_obrona >= 1:
+            if akane_obrona == 1:
                 $ akane_hp_now -= int(akane_attack / 2)
 
                 $ dmg = int(akane_attack / 2)
@@ -7823,6 +8731,7 @@ label fight1:
 
         if akane_max_attack_now <= 0 and akane_obrona == 0:
             show tarcza7 zorder 15 at weapon_wrog3  
+            play sound "audio/sfx/shield.mp3"
             "{i}Akane broni się{/i}"
             $ akane_obrona += 1
             jump faza16
@@ -7836,6 +8745,7 @@ label fight1:
 
                 if kostka >= 2:
                     show tarcza7 zorder 15 at weapon_wrog3  
+                    play sound "audio/sfx/shield.mp3"
                     "{i}Akane broni się{/i}"
                     $ akane_obrona += 1
                     jump faza16
@@ -7845,9 +8755,6 @@ label fight1:
             
             else:
                 jump losowanko15
-        
-        else:
-            jump faza16
                     
         label losowanko15:
             if akane_weapon >= 1:
@@ -7863,15 +8770,21 @@ label fight1:
                         if kostka >= 2:
                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                            if luszcz_obrona >= 1:
-                                $ luszcz_hp_now -= int(akane_attack / 2)
-
-                                $ dmg = int(akane_attack / 2)
-                                "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                            if luszcz_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Akane został zablokowany{/i}"
+                                $ luszcz_obrona = 1
+                                                    
                             else:
-                                $ luszcz_hp_now -= akane_attack
+                                if luszcz_obrona == 1:
+                                    $ luszcz_hp_now -= int(akane_attack / 2)
 
-                                "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
+                                    $ dmg = int(akane_attack / 2)
+                                    "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= akane_attack
+
+                                    "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
 
                             jump faza16
                         else:
@@ -7883,15 +8796,21 @@ label fight1:
                             if kostka >= 3:
                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                if luszcz_obrona >= 1:
-                                    $ luszcz_hp_now -= int(akane_attack / 2)
-
-                                    $ dmg = int(akane_attack / 2)
-                                    "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Akane został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
+                                                        
                                 else:
-                                    $ luszcz_hp_now -= akane_attack
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(akane_attack / 2)
 
-                                    "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(akane_attack / 2)
+                                        "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= akane_attack
+
+                                        "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
 
                                 jump faza16
                             else:
@@ -7902,15 +8821,21 @@ label fight1:
                             if kostka >= 5:
                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                if luszcz_obrona >= 1:
-                                    $ luszcz_hp_now -= int(akane_attack / 2)
-
-                                    $ dmg = int(akane_attack / 2)
-                                    "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Akane został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
+                                                        
                                 else:
-                                    $ luszcz_hp_now -= akane_attack
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(akane_attack / 2)
 
-                                    "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(akane_attack / 2)
+                                        "{i}Akane zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= akane_attack
+
+                                        "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
 
                                 jump faza16
                             else:
@@ -7926,15 +8851,21 @@ label fight1:
                             if kostka >= 2:
                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                if urban_obrona >= 1:
-                                    $ urban_hp_now -= int(akane_attack / 2)
+                                if urban_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Akane został zablokowany{/i}"
+                                    $ urban_obrona = 1
 
-                                    $ dmg = int(akane_attack / 2)
-                                    "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                 else:
-                                    $ urban_hp_now -= akane_attack
+                                    if urban_obrona == 1:
+                                        $ urban_hp_now -= int(akane_attack / 2)
 
-                                    "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                        $ dmg = int(akane_attack / 2)
+                                        "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= akane_attack
+
+                                        "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                 jump faza16
                             else:
@@ -7946,15 +8877,21 @@ label fight1:
                                 if kostka >= 3:
                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                    if urban_obrona >= 1:
-                                        $ urban_hp_now -= int(akane_attack / 2)
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Akane został zablokowany{/i}"
+                                        $ urban_obrona = 1
 
-                                        $ dmg = int(akane_attack / 2)
-                                        "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
-                                        $ urban_hp_now -= akane_attack
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(akane_attack / 2)
 
-                                        "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(akane_attack / 2)
+                                            "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= akane_attack
+
+                                            "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza16
                                 else:
@@ -7965,15 +8902,21 @@ label fight1:
                                 if kostka >= 5:
                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                    if urban_obrona >= 1:
-                                        $ urban_hp_now -= int(akane_attack / 2)
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Akane został zablokowany{/i}"
+                                        $ urban_obrona = 1
 
-                                        $ dmg = int(akane_attack / 2)
-                                        "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
-                                        $ urban_hp_now -= akane_attack
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(akane_attack / 2)
 
-                                        "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(akane_attack / 2)
+                                            "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= akane_attack
+
+                                            "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza16
                                 else:
@@ -7989,15 +8932,21 @@ label fight1:
                                 if kostka >= 2:
                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                    if zyd_obrona >= 1:
-                                        $ zyd_hp_now -= int(akane_attack / 2)
+                                    if zyd_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Akane został zablokowany{/i}"
+                                        $ zyd_obrona = 1
 
-                                        $ dmg = int(akane_attack / 2)
-                                        "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
                                     else:
-                                        $ zyd_hp_now -= akane_attack
+                                        if zyd_obrona == 1:
+                                            $ zyd_hp_now -= int(akane_attack / 2)
 
-                                        "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
+                                            $ dmg = int(akane_attack / 2)
+                                            "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= akane_attack
+
+                                            "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
 
                                     jump faza16
                                 else:
@@ -8009,15 +8958,21 @@ label fight1:
                                     if kostka >= 3:
                                         $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                        if zyd_obrona >= 1:
-                                            $ zyd_hp_now -= int(akane_attack / 2)
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Akane został zablokowany{/i}"
+                                            $ zyd_obrona = 1
 
-                                            $ dmg = int(akane_attack / 2)
-                                            "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
-                                            $ zyd_hp_now -= akane_attack
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(akane_attack / 2)
 
-                                            "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
+                                                $ dmg = int(akane_attack / 2)
+                                                "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= akane_attack
+
+                                                "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
 
                                         jump faza16
                                     else:
@@ -8028,15 +8983,21 @@ label fight1:
                                     if kostka >= 5:
                                         $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                        if zyd_obrona >= 1:
-                                            $ zyd_hp_now -= int(akane_attack / 2)
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Akane został zablokowany{/i}"
+                                            $ zyd_obrona = 1
 
-                                            $ dmg = int(akane_attack / 2)
-                                            "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
-                                            $ zyd_hp_now -= akane_attack
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(akane_attack / 2)
 
-                                            "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
+                                                $ dmg = int(akane_attack / 2)
+                                                "{i}Akane zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= akane_attack
+
+                                                "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
 
                                         jump faza16
                                     else:
@@ -8052,15 +9013,21 @@ label fight1:
                                     if kostka >= 2:
                                         $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                        if kazuma_obrona >= 1:
-                                            $ kazuma_hp_now -= int(akane_attack / 2)
-
-                                            $ dmg = int(akane_attack / 2)
-                                            "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                        if kazuma_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Akane został zablokowany{/i}"
+                                            $ kazuma_obrona = 1
+                                        
                                         else:
-                                            $ kazuma_hp_now -= akane_attack
+                                            if kazuma_obrona == 1:
+                                                $ kazuma_hp_now -= int(akane_attack / 2)
 
-                                            "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
+                                                $ dmg = int(akane_attack / 2)
+                                                "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= akane_attack
+
+                                                "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
 
                                         jump faza16
                                     else:
@@ -8072,15 +9039,21 @@ label fight1:
                                         if kostka >= 3:
                                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                            if kazuma_obrona >= 1:
-                                                $ kazuma_hp_now -= int(akane_attack / 2)
-
-                                                $ dmg = int(akane_attack / 2)
-                                                "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Akane został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
                                             else:
-                                                $ kazuma_hp_now -= akane_attack
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(akane_attack / 2)
 
-                                                "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(akane_attack / 2)
+                                                    "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= akane_attack
+
+                                                    "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
 
                                             jump faza16
                                         else:
@@ -8091,15 +9064,21 @@ label fight1:
                                         if kostka >= 5:
                                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                            if kazuma_obrona >= 1:
-                                                $ kazuma_hp_now -= int(akane_attack / 2)
-
-                                                $ dmg = int(akane_attack / 2)
-                                                "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Akane został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
                                             else:
-                                                $ kazuma_hp_now -= akane_attack
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(akane_attack / 2)
 
-                                                "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(akane_attack / 2)
+                                                    "{i}Akane zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= akane_attack
+
+                                                    "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
 
                                             jump faza16
                                         else:
@@ -8115,15 +9094,21 @@ label fight1:
                                         if kostka >= 2:
                                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                            if eminem_obrona >= 1:
-                                                $ eminem_hp_now -= int(akane_attack / 2)
-
-                                                $ dmg = int(akane_attack / 2)
-                                                "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                            if eminem_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Akane został zablokowany{/i}"
+                                                $ eminem_obrona = 1
+                                                
                                             else:
-                                                $ eminem_hp_now -= akane_attack
+                                                if eminem_obrona == 1:
+                                                    $ eminem_hp_now -= int(akane_attack / 2)
 
-                                                "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
+                                                    $ dmg = int(akane_attack / 2)
+                                                    "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= akane_attack
+
+                                                    "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
 
                                             jump faza16
                                         else:
@@ -8135,15 +9120,21 @@ label fight1:
                                             if kostka >= 3:
                                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                                if eminem_obrona >= 1:
-                                                    $ eminem_hp_now -= int(akane_attack / 2)
-
-                                                    $ dmg = int(akane_attack / 2)
-                                                    "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Akane został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
                                                 else:
-                                                    $ eminem_hp_now -= akane_attack
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(akane_attack / 2)
 
-                                                    "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(akane_attack / 2)
+                                                        "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= akane_attack
+
+                                                        "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza16
                                             else:
@@ -8154,15 +9145,21 @@ label fight1:
                                             if kostka >= 5:
                                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
-                                                if eminem_obrona >= 1:
-                                                    $ eminem_hp_now -= int(akane_attack / 2)
-
-                                                    $ dmg = int(akane_attack / 2)
-                                                    "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Akane został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
                                                 else:
-                                                    $ eminem_hp_now -= akane_attack
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(akane_attack / 2)
 
-                                                    "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(akane_attack / 2)
+                                                        "{i}Akane zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= akane_attack
+
+                                                        "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza16
                                             else:
@@ -8179,8 +9176,9 @@ label fight1:
                                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
                                                 if tarczownik_obrona >= 2:
-                                                    "{i}Akane został zablokowany przez Shield Prison{/i}"
-                                                    $ tarczownik_obrona -= 1
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Akane został zablokowany{/i}"
+                                                    $ tarczownik_obrona = 1
                                                 
                                                 else:
                                                     if tarczownik_obrona == 1:
@@ -8204,8 +9202,9 @@ label fight1:
                                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        "{i}Akane został zablokowany przez Shield Prison{/i}"
-                                                        $ tarczownik_obrona -= 1
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Akane został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
                                                 
                                                     else:
                                                         if tarczownik_obrona == 1:
@@ -8228,8 +9227,9 @@ label fight1:
                                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        "{i}Akane został zablokowany przez Shield Prison{/i}"
-                                                        $ tarczownik_obrona -= 1
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Akane został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
                                                 
                                                     else:
                                                         if tarczownik_obrona == 1:
@@ -8452,7 +9452,10 @@ label fight1:
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
         else:
-            $ ado += 1                
+            $ ado += 1    
+
+        if kibol2_hp_now <= 0:
+            jump start_fight1              
         
         show ruch zorder 0 at tlo_wrog2
 
@@ -8482,6 +9485,7 @@ label fight1:
 
         if kibol2_max_attack_now <= 0 and kibol2_obrona == 0:
             show tarcza8 zorder 15 at weapon_wrog2  
+            play sound "audio/sfx/shield.mp3"
             "{i}Kibol 2 broni się{/i}"
             $ kibol2_obrona += 1
             jump start_fight1
@@ -8495,6 +9499,7 @@ label fight1:
 
                 if kostka >= 2:
                     show tarcza8 zorder 15 at weapon_wrog2  
+                    play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 2 broni się{/i}"
                     $ kibol2_obrona += 1
                     jump start_fight1
@@ -8504,9 +9509,6 @@ label fight1:
             
             else:
                 jump losowanko16
-        
-        else:
-            jump start_fight1
                     
         label losowanko16:    
             if kibol2_weapon >= 1:
@@ -8521,15 +9523,21 @@ label fight1:
                         if kostka >= 2:
                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                            if luszcz_obrona >= 1:
-                                $ luszcz_hp_now -= int(kibol2_attack / 2)
-
-                                $ dmg = int(kibol2_attack / 2)
-                                "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                            if luszcz_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kibol 2 został zablokowany{/i}"
+                                $ luszcz_obrona = 1
+                                                    
                             else:
-                                $ luszcz_hp_now -= kibol2_attack
+                                if luszcz_obrona == 1:
+                                    $ luszcz_hp_now -= int(kibol2_attack / 2)
 
-                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
+                                    $ dmg = int(kibol2_attack / 2)
+                                    "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= kibol2_attack
+
+                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
 
                             jump start_fight1
                         else:
@@ -8541,15 +9549,21 @@ label fight1:
                             if kostka >= 3:
                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                if luszcz_obrona >= 1:
-                                    $ luszcz_hp_now -= int(kibol2_attack / 2)
-
-                                    $ dmg = int(kibol2_attack / 2)
-                                    "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 2 został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
+                                                    
                                 else:
-                                    $ luszcz_hp_now -= kibol2_attack
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(kibol2_attack / 2)
 
-                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(kibol2_attack / 2)
+                                        "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= kibol2_attack
+
+                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
 
                                 jump start_fight1
                             else:
@@ -8560,15 +9574,21 @@ label fight1:
                             if kostka >= 5:
                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                if luszcz_obrona >= 1:
-                                    $ luszcz_hp_now -= int(kibol2_attack / 2)
-
-                                    $ dmg = int(kibol2_attack / 2)
-                                    "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 2 został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
+                                                    
                                 else:
-                                    $ luszcz_hp_now -= kibol2_attack
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(kibol2_attack / 2)
 
-                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(kibol2_attack / 2)
+                                        "{i}Kibol 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= kibol2_attack
+
+                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
 
                                 jump start_fight1
                             else:
@@ -8584,15 +9604,21 @@ label fight1:
                             if kostka >= 2:
                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                if urban_obrona >= 1:
-                                    $ urban_hp_now -= int(kibol2_attack / 2)
+                                if urban_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 2 został zablokowany{/i}"
+                                    $ urban_obrona = 1
 
-                                    $ dmg = int(kibol2_attack / 2)
-                                    "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                 else:
-                                    $ urban_hp_now -= kibol2_attack
+                                    if urban_obrona == 1:
+                                        $ urban_hp_now -= int(kibol2_attack / 2)
 
-                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                        $ dmg = int(kibol2_attack / 2)
+                                        "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= kibol2_attack
+
+                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                 jump start_fight1
                             else:
@@ -8604,15 +9630,21 @@ label fight1:
                                 if kostka >= 3:
                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                    if urban_obrona >= 1:
-                                        $ urban_hp_now -= int(kibol2_attack / 2)
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 2 został zablokowany{/i}"
+                                        $ urban_obrona = 1
 
-                                        $ dmg = int(kibol2_attack / 2)
-                                        "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
-                                        $ urban_hp_now -= kibol2_attack
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(kibol2_attack / 2)
 
-                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(kibol2_attack / 2)
+                                            "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= kibol2_attack
+
+                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump start_fight1
                                 else:
@@ -8623,15 +9655,21 @@ label fight1:
                                 if kostka >= 5:
                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                    if urban_obrona >= 1:
-                                        $ urban_hp_now -= int(kibol2_attack / 2)
-
-                                        $ dmg = int(kibol2_attack / 2)
-                                        "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 2 został zablokowany{/i}"
+                                        $ urban_obrona = 1
+                                    
                                     else:
-                                        $ urban_hp_now -= kibol2_attack
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(kibol2_attack / 2)
 
-                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(kibol2_attack / 2)
+                                            "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= kibol2_attack
+
+                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump start_fight1
                                 else:
@@ -8647,15 +9685,21 @@ label fight1:
                                 if kostka >= 2:
                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                    if zyd_obrona >= 1:
-                                        $ zyd_hp_now -= int(kibol2_attack / 2)
-
-                                        $ dmg = int(kibol2_attack / 2)
-                                        "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                    if zyd_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 2 został zablokowany{/i}"
+                                        $ zyd_obrona = 1
+                                    
                                     else:
-                                        $ zyd_hp_now -= kibol2_attack
+                                        if zyd_obrona == 1:
+                                            $ zyd_hp_now -= int(kibol2_attack / 2)
 
-                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
+                                            $ dmg = int(kibol2_attack / 2)
+                                            "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= kibol2_attack
+
+                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
 
                                     jump start_fight1
                                 else:
@@ -8667,15 +9711,21 @@ label fight1:
                                     if kostka >= 3:
                                         $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                        if zyd_obrona >= 1:
-                                            $ zyd_hp_now -= int(kibol2_attack / 2)
-
-                                            $ dmg = int(kibol2_attack / 2)
-                                            "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 2 został zablokowany{/i}"
+                                            $ zyd_obrona = 1
+                                        
                                         else:
-                                            $ zyd_hp_now -= kibol2_attack
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(kibol2_attack / 2)
 
-                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
+                                                $ dmg = int(kibol2_attack / 2)
+                                                "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= kibol2_attack
+
+                                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
 
                                         jump start_fight1
                                     else:
@@ -8686,15 +9736,21 @@ label fight1:
                                     if kostka >= 5:
                                         $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                        if zyd_obrona >= 1:
-                                            $ zyd_hp_now -= int(kibol2_attack / 2)
-
-                                            $ dmg = int(kibol2_attack / 2)
-                                            "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 2 został zablokowany{/i}"
+                                            $ zyd_obrona = 1
+                                        
                                         else:
-                                            $ zyd_hp_now -= kibol2_attack
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(kibol2_attack / 2)
 
-                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
+                                                $ dmg = int(kibol2_attack / 2)
+                                                "{i}Kibol 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= kibol2_attack
+
+                                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
 
                                         jump start_fight1
                                     else:
@@ -8710,15 +9766,21 @@ label fight1:
                                     if kostka >= 2:
                                         $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                        if kazuma_obrona >= 1:
-                                            $ kazuma_hp_now -= int(kibol2_attack / 2)
-
-                                            $ dmg = int(kibol2_attack / 2)
-                                            "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                        if kazuma_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 2 został zablokowany{/i}"
+                                            $ kazuma_obrona = 1
+                                        
                                         else:
-                                            $ kazuma_hp_now -= kibol2_attack
+                                            if kazuma_obrona == 1:
+                                                $ kazuma_hp_now -= int(kibol2_attack / 2)
 
-                                            "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
+                                                $ dmg = int(kibol2_attack / 2)
+                                                "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= kibol2_attack
+
+                                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
 
                                         jump start_fight1
                                     else:
@@ -8730,15 +9792,21 @@ label fight1:
                                         if kostka >= 3:
                                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                            if kazuma_obrona >= 1:
-                                                $ kazuma_hp_now -= int(kibol2_attack / 2)
-
-                                                $ dmg = int(kibol2_attack / 2)
-                                                "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
                                             else:
-                                                $ kazuma_hp_now -= kibol2_attack
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(kibol2_attack / 2)
 
-                                                "{i}Kibol 1 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(kibol2_attack / 2)
+                                                    "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= kibol2_attack
+
+                                                    "{i}Kibol 1 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
 
                                             jump start_fight1
                                         else:
@@ -8749,15 +9817,21 @@ label fight1:
                                         if kostka >= 5:
                                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                            if kazuma_obrona >= 1:
-                                                $ kazuma_hp_now -= int(kibol2_attack / 2)
-
-                                                $ dmg = int(kibol2_attack / 2)
-                                                "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
                                             else:
-                                                $ kazuma_hp_now -= kibol2_attack
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(kibol2_attack / 2)
 
-                                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(kibol2_attack / 2)
+                                                    "{i}Kibol 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= kibol2_attack
+
+                                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
 
                                             jump start_fight1
                                         else:
@@ -8773,15 +9847,21 @@ label fight1:
                                         if kostka >= 2:
                                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                            if eminem_obrona >= 1:
-                                                $ eminem_hp_now -= int(kibol2_attack / 2)
-
-                                                $ dmg = int(kibol2_attack / 2)
-                                                "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                            if eminem_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                $ eminem_obrona = 1  
+                                            
                                             else:
-                                                $ eminem_hp_now -= kibol2_attack
+                                                if eminem_obrona == 1:
+                                                    $ eminem_hp_now -= int(kibol2_attack / 2)
 
-                                                "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
+                                                    $ dmg = int(kibol2_attack / 2)
+                                                    "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= kibol2_attack
+
+                                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
 
                                             jump start_fight1
                                         else:
@@ -8793,15 +9873,21 @@ label fight1:
                                             if kostka >= 3:
                                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                                if eminem_obrona >= 1:
-                                                    $ eminem_hp_now -= int(kibol2_attack / 2)
-
-                                                    $ dmg = int(kibol2_attack / 2)
-                                                    "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
                                                 else:
-                                                    $ eminem_hp_now -= kibol2_attack
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(kibol2_attack / 2)
 
-                                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(kibol2_attack / 2)
+                                                        "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= kibol2_attack
+
+                                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
 
                                                 jump start_fight1
                                             else:
@@ -8812,15 +9898,21 @@ label fight1:
                                             if kostka >= 5:
                                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
-                                                if eminem_obrona >= 1:
-                                                    $ eminem_hp_now -= int(kibol2_attack / 2)
-
-                                                    $ dmg = int(kibol2_attack / 2)
-                                                    "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
                                                 else:
-                                                    $ eminem_hp_now -= kibol2_attack
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(kibol2_attack / 2)
 
-                                                    "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(kibol2_attack / 2)
+                                                        "{i}Kibol 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= kibol2_attack
+
+                                                        "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
 
                                                 jump start_fight1
                                             else:
@@ -8837,8 +9929,9 @@ label fight1:
                                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
                                                 if tarczownik_obrona >= 2:
-                                                    "{i}Kibol 2 został zablokowany przez Shield Prison{/i}"
-                                                    $ tarczownik_obrona -= 1
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                    $ tarczownik_obrona = 1
                                                 
                                                 else:
                                                     if tarczownik_obrona == 1:
@@ -8862,8 +9955,9 @@ label fight1:
                                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        "{i}Kibol 2 został zablokowany przez Shield Prison{/i}"
-                                                        $ tarczownik_obrona -= 1
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
                                                 
                                                     else:
                                                         if tarczownik_obrona == 1:
@@ -8886,8 +9980,9 @@ label fight1:
                                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        "{i}Kibol 2 został zablokowany przez Shield Prison{/i}"
-                                                        $ tarczownik_obrona -= 1
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 2 został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
                                                 
                                                     else:
                                                         if tarczownik_obrona == 1:
@@ -8911,6 +10006,8 @@ label fight1:
 
     label przegranko_fight1:
         scene bg dead
+        play music "audio/music/losing.mp3" 
+        queue music "audio/music/dead.mp3" 
         hide air_strike_shield1
         hide air_strike_shield2
         hide air_strike_shield3

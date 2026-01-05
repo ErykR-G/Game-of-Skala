@@ -6,6 +6,11 @@ label bronie:
     default legendary_shield = 6
     default przepychaczka = 0
     default stop = 0
+    
+label items:
+    default ile_item = 2
+    default bandaz = 1
+    default granat = 1
 
 
 label eq:
