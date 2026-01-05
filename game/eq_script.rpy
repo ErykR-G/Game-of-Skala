@@ -3206,6 +3206,798 @@ label eq:
 
                         else:
                             jump bron
+                    
+
+
+                    "{b}Naofumi: Legendary Shield (ATK:1-5){/b}" if tarczownik_sojusznik == 1 and legendary_shield == 6:
+                        window show
+                        "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                        window hide
+
+                        if przepychaczka_liczba >= 1 or stop == 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ legendary_shield = 1
+                                    $ tarczownik_przepychaczka = 6
+                                    $ przepychaczka_liczba -= 1
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ legendary_shield = 1
+                                    $ stop = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ legendary_shield = 1
+                                    $ miecz_swietlny = 6
+                                    $ tarczownik_min_attack += 3
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ legendary_shield = 1
+                                    $ ostrza_chaosu = 6
+                                    $ tarczownik_min_attack += 0
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ legendary_shield = 1
+                                    $ patyk = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ legendary_shield = 1
+                                    $ bazooka = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ legendary_shield = 1
+                                    $ miecz3d = 6
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+                    
+                    "{b}Naofumi: Przepychaczka (ATK:2-4){/b}" if tarczownik_sojusznik == 1 and tarczownik_przepychaczka == 6:
+                        window show
+                        "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                        window hide
+
+                        if legendary_shield == 1 or stop == 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Legendary Shield (ATK:1-5){/b}" if legendary_shield == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 2
+                                    $ tarczownik_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ legendary_shield = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 2
+                                    $ tarczownik_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ stop = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 2
+                                    $ tarczownik_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ miecz_swietlny = 6
+                                    $ tarczownik_min_attack += 3
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 2
+                                    $ tarczownik_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ ostrza_chaosu = 6
+                                    $ tarczownik_min_attack += 0
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 2
+                                    $ tarczownik_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ patyk = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 2
+                                    $ tarczownik_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ bazooka = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 2
+                                    $ tarczownik_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ miecz3d = 6
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+
+                    "{b}Naofumi: Znak Drogowy (ATK:1-6){/b}" if tarczownik_sojusznik == 1 and stop == 6:
+                        window show
+                        "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                        window hide
+
+                        if legendary_shield == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Legendary Shield (ATK:1-5){/b}" if legendary_shield == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 4
+                                    $ stop = 1
+                                    $ legendary_shield = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 4
+                                    $ stop = 1
+                                    $ tarczownik_przepychaczka = 6
+                                    $ przepychaczka_liczba -= 1
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 4
+                                    $ stop = 1
+                                    $ miecz_swietlny = 6
+                                    $ tarczownik_min_attack += 3
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 4
+                                    $ stop = 1
+                                    $ ostrza_chaosu = 6
+                                    $ tarczownik_min_attack += 0
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 4
+                                    $ stop = 1
+                                    $ patyk = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 4
+                                    $ stop = 1
+                                    $ bazooka = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 4
+                                    $ stop = 1
+                                    $ miecz3d = 6
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+                    
+                    "{b}Miecz Świetlny (ATK:3-4){/b}" if tarczownik_sojusznik == 1 and miecz_swietlny == 6:
+                        window show
+                        "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                        window hide
+
+                        if legendary_shield == 1 or przepychaczka_liczba >= 1 or stop == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Legendary Shield (ATK:1-5){/b}" if legendary_shield == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 3
+                                    $ tarczownik_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ legendary_shield = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 3
+                                    $ tarczownik_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ tarczownik_przepychaczka = 6
+                                    $ przepychaczka_liczba -= 1
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 3
+                                    $ tarczownik_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ stop = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 3
+                                    $ tarczownik_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ ostrza_chaosu = 6
+                                    $ tarczownik_min_attack += 0
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 3
+                                    $ tarczownik_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ patyk = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 3
+                                    $ tarczownik_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ bazooka = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 3
+                                    $ tarczownik_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ miecz3d = 6
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+                    
+                    "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if tarczownik_sojusznik == 1 and ostrza_chaosu == 6:
+                        window show
+                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                        window hide
+
+                        if legendary_shield == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or stop == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Legendary Shield (ATK:1-5){/b}" if legendary_shield == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 0
+                                    $ tarczownik_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ legendary_shield = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 0
+                                    $ tarczownik_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ tarczownik_przepychaczka = 6
+                                    $ przepychaczka_liczba -= 1
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 0
+                                    $ tarczownik_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ stop = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 0
+                                    $ tarczownik_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ miecz_swietlny = 6
+                                    $ tarczownik_min_attack += 3
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 0
+                                    $ tarczownik_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ patyk = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 0
+                                    $ tarczownik_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ bazooka = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 0
+                                    $ tarczownik_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ miecz3d = 6
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+                    
+                    "{b}Naofumii: Fajny Patyk (ATK:1-5){/b}" if tarczownik_sojusznik == 1 and patyk == 6:
+                        window show
+                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                        window hide
+
+                        if legendary_shield == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or stop == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Legendary Shield (ATK:1-5){/b}" if legendary_shield == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ patyk = 1
+                                    $ legendary_shield = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ patyk = 1
+                                    $ tarczownik_przepychaczka = 6
+                                    $ przepychaczka_liczba -= 1
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ patyk = 1
+                                    $ stop = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ patyk = 1
+                                    $ miecz_swietlny = 6
+                                    $ tarczownik_min_attack += 3
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ patyk = 1
+                                    $ ostrza_chaosu = 6
+                                    $ tarczownik_min_attack += 0
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ patyk = 1
+                                    $ bazooka = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 3
+                                    $ patyk = 1
+                                    $ miecz3d = 6
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+
+                    "{b}Naofumi: Wężowa Bazooka (ATK:1-3){/b}" if tarczownik_sojusznik == 1 and bazooka == 6:
+                        window show
+                        "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                        window hide
+
+                        if legendary_shield == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or stop == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Legendary Shield (ATK:1-5){/b}" if legendary_shield == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ legendary_shield = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ tarczownik_przepychaczka = 6
+                                    $ przepychaczka_liczba -= 1
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ stop = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ miecz_swietlny = 6
+                                    $ tarczownik_min_attack += 3
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ ostrza_chaosu = 6
+                                    $ tarczownik_min_attack += 0
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ patyk = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 1
+                                    $ tarczownik_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ miecz3d = 6
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+                    
+                    "{b}Naofumi: Wydrukowany Miecz (ATK:2-5){/b}" if tarczownik_sojusznik == 1 and miecz3d == 6:
+                        window show
+                        "{b}(ATK:2-5){/b}\n{i}Zrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50%% hp{/i}"
+                        window hide
+
+                        if legendary_shield == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or stop == 1:
+                            menu:         
+                                "{b}Legendary Shield (ATK:1-5){/b}" if legendary_shield == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Niekonsekwentna anime tarcza{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ legendary_shield = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{b}(ATK:2-4){/b}\n{i}Idealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ tarczownik_przepychaczka = 6
+                                    $ przepychaczka_liczba -= 1
+                                    $ tarczownik_min_attack += 2
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{b}(ATK:1-6){/b}\n{i}Ma na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ stop = 6
+                                    $ tarczownikwnik_min_attack += 1
+                                    $ tarczownik_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ miecz_swietlny = 6
+                                    $ tarczownik_min_attack += 3
+                                    $ tarczownik_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ ostrza_chaosu = 6
+                                    $ tarczownik_min_attack += 0
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ patyk = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{b}(ATK:1-3){/b}\n{i}Jak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ tarczownik_min_attack -= 2
+                                    $ tarczownik_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ bazooka = 6
+                                    $ tarczownik_min_attack += 1
+                                    $ tarczownik_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
 
 
 
