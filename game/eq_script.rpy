@@ -4,8 +4,18 @@ label bronie:
     default chanuka = 4
     default chunchunmaru = 5
     default legendary_shield = 6
-    default przepychaczka = 0
     default stop = 0
+    default miecz_swietlny = 0
+    default miecz3d = 0
+    default ostrza_chaosu = 0
+    default patyk = 0
+    default przepychaczka_liczba = 0
+    default luszcz_przepychaczka = 0
+    default urban_przepychaczka = 0
+    default zyd_przepychaczka = 0
+    default kazuma_przepychaczka = 0
+    default tarczownik_przepychaczka = 0
+
     
 label items:
     default ile_item = 2
@@ -21,40 +31,29 @@ label eq:
         "{b}Broń{/b}":
             label bron:
                 menu:
-                    "{b}Łuszcz: Gitara (ATK:1-2){/b}" if luszcz_sojusznik == 1 and gitara == 2:
+                    "{b}Łuszcz: Gitara (ATK:1-4){/b}" if luszcz_sojusznik == 1 and gitara == 2:
                         window show
-                        "{i}Gitara jest git{/i}"
+                        "{i}(ATK:1-4)\nGitara siema{/i}"
                         window hide
 
-                        if przepychaczka == 1 or stop == 1:
-                            menu:
-                                "{b}Gitara (ATK:1-2){/b}" if gitara == 1:
+                        if przepychaczka_liczba >= 1 or stop == 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
                                     window show
-                                    "{i}Gitara jest git{/i}"
+                                    "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 2
                                     $ gitara = 1
-                                    $ gitara = 2
-                                    $ luszcz_min_attack += 1
-                                    $ luszcz_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ luszcz_min_attack -= 1
-                                    $ luszcz_max_attack -= 2
-                                    $ gitara = 1
-                                    $ przepychaczka = 2
+                                    $ luszcz_przepychaczka = 2
+                                    $ przepychaczka_liczba -= 1
                                     $ luszcz_min_attack += 2
                                     $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
                                     window show
-                                    "{i}Stop jest git{/i}"
+                                    "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 2
@@ -64,71 +63,186 @@ label eq:
                                     $ luszcz_max_attack += 4
                                     jump bron
                                 
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 2
+                                    $ gitara = 1
+                                    $ miecz_swietlny = 2
+                                    $ luszcz_min_attack += 3
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 2
+                                    $ gitara = 1
+                                    $ ostrza_chaosu = 2
+                                    $ luszcz_min_attack += 0
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 2
+                                    $ gitara = 1
+                                    $ patyk = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 2
+                                    $ gitara = 1
+                                    $ bazooka = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 2
+                                    $ gitara = 1
+                                    $ miecz3d = 2
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
                                 "{b}Powrót":
                                     jump bron
 
                         else:
                             jump bron
-
-                    "{b}Łuszcz: Przepychaczka (ATK:2-2){/b}" if luszcz_sojusznik == 1 and przepychaczka == 2:
+                    
+                    "{b}Łuszcz: Przepychaczka (ATK:2-4){/b}" if luszcz_sojusznik == 1 and luszcz_przepychaczka == 2:
                         window show
-                        "{i}Przepychaczka jest git{/i}"
+                        "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
                         window hide
 
-                        if gitara == 1 or stop == 1:
-                            menu:
-                                "{b}Gitara (ATK:1-2){/b}" if gitara == 1:
+                        if gitara == 1 or stop == 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Gitara (ATK:1-4){/b}" if gitara == 1:
                                     window show
-                                    "{i}Gitara jest git{/i}"
+                                    "{i}(ATK:1-4)\nGitara siema{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 2
-                                    $ przepychaczka = 1
+                                    $ luszcz_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
                                     $ gitara = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 2
                                     jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ luszcz_min_attack -= 2
-                                    $ luszcz_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ przepychaczka = 2
-                                    $ luszcz_min_attack += 2
-                                    $ luszcz_max_attack += 2
-                                    jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
                                     window show
-                                    "{i}Stop jest git{/i}"
+                                    "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 2
-                                    $ przepychaczka = 1
+                                    $ luszcz_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
                                     $ stop = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 4
                                     jump bron
                                 
-                                "{b}Powrót{/b}":
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 2
+                                    $ luszcz_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ miecz_swietlny = 2
+                                    $ luszcz_min_attack += 3
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 2
+                                    $ luszcz_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ ostrza_chaosu = 2
+                                    $ luszcz_min_attack += 0
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 2
+                                    $ luszcz_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ patyk = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 2
+                                    $ luszcz_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ bazooka = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 2
+                                    $ luszcz_przepychaczka = 1
+                                    $ przepychaczka_liczba += 1
+                                    $ miecz3d = 2
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
                                     jump bron
 
                         else:
                             jump bron
-                    
-                    "{b}Łuszcz: Stop (ATK:1-4){/b}" if luszcz_sojusznik == 1 and stop == 2:
+
+                    "{b}Łuszcz: Znak Drogowy (ATK:1-6){/b}" if luszcz_sojusznik == 1 and stop == 2:
                         window show
-                        "{i}Stop jest git{/i}"
+                        "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
                         window hide
 
-                        if gitara == 1 or przepychaczka == 1:
-                            menu:
-                                "{b}Gitara (ATK:1-2){/b}" if gitara == 1:
+                        if gitara == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Gitara (ATK:1-4){/b}" if gitara == 1:
                                     window show
-                                    "{i}Gitara jest git{/i}"
+                                    "{i}(ATK:1-4)\nGitara siema{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
@@ -137,83 +251,372 @@ label eq:
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 2
                                     jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
                                     window show
-                                    "{i}Przpychaczka jest git{/i}"
+                                    "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
                                     $ stop = 1
-                                    $ przepychaczka = 2
+                                    $ luszcz_przepychaczka = 2
+                                    $ przepychaczka_liczba -= 1
                                     $ luszcz_min_attack += 2
                                     $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
                                     window show
-                                    "{i}Stop jest git{/i}"
+                                    "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
                                     $ stop = 1
+                                    $ miecz_swietlny = 2
+                                    $ luszcz_min_attack += 3
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 4
+                                    $ stop = 1
+                                    $ ostrza_chaosu = 2
+                                    $ luszcz_min_attack += 0
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 4
+                                    $ stop = 1
+                                    $ patyk = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 4
+                                    $ stop = 1
+                                    $ bazooka = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 4
+                                    $ stop = 1
+                                    $ miecz3d = 2
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+                    
+                    "{b}Miecz Świetlny (ATK:3-4){/b}" if luszcz_sojusznik == 1 and miecz_swietlny == 2:
+                        window show
+                        "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
+                        window hide
+
+                        if gitara == 1 or przepychaczka_liczba >= 1 or stop == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Gitara (ATK:1-4){/b}" if gitara == 1:
+                                    window show
+                                    "{i}(ATK:1-4)\nGitara siema{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 3
+                                    $ luszcz_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ gitara = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 3
+                                    $ luszcz_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ luszcz_przepychaczka = 2
+                                    $ przepychaczka_liczba -= 1
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 3
+                                    $ luszcz_max_attack -= 2
+                                    $ miecz_swietlny = 1
                                     $ stop = 2
                                     $ luszcz_min_attack += 1
                                     $ luszcz_max_attack += 4
                                     jump bron
                                 
-                                "{b}Powrót{/b}":
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 3
+                                    $ luszcz_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ ostrza_chaosu = 2
+                                    $ luszcz_min_attack += 0
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 3
+                                    $ luszcz_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ patyk = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 3
+                                    $ luszcz_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ bazooka = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 3
+                                    $ luszcz_max_attack -= 2
+                                    $ miecz_swietlny = 1
+                                    $ miecz3d = 2
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
                                     jump bron
 
                         else:
                             jump bron
                     
-
-                    "{b}Shadow: Ręka (ATK:2-3){/b}" if eminem_sojusznik == 1:
-                        jump bron
-
-
-                    "{b}Jerzy Urban: Fuck (ATK:0-2){/b}" if urban_sojusznik == 1 and fuck == 3:
+                    "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if luszcz_sojusznik == 1 and ostrza_chaosu == 2:
                         window show
-                        "{i}Fuck jest git{/i}"
+                        "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
                         window hide
 
-                        if przepychaczka == 1 or stop == 1:
-                            menu:
-                                "{b}Fuck (ATK:0-2){/b}" if fuck == 1:
+                        if gitara == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or stop == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Gitara (ATK:1-4){/b}" if gitara == 1:
                                     window show
-                                    "{i}Fuck jest git{/i}"
+                                    "{i}(ATK:1-4)\nGitara siema{/i}"
                                     window hide
-                                    $ urban_min_attack -= 0
-                                    $ urban_max_attack -= 2
-                                    $ fuck = 1
-                                    $ fuck = 3
-                                    $ urban_min_attack += 0
-                                    $ urban_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ urban_min_attack -= 0
-                                    $ urban_max_attack -= 2
-                                    $ fuck = 1
-                                    $ przepychaczka = 3
-                                    $ urban_min_attack += 2
-                                    $ urban_max_attack += 2
+                                    $ luszcz_min_attack -= 0
+                                    $ luszcz_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ gitara = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
                                     window show
-                                    "{i}Stop jest git{/i}"
+                                    "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
                                     window hide
-                                    $ urban_min_attack -= 0
-                                    $ urban_max_attack -= 2
-                                    $ fuck = 1
-                                    $ stop = 3
-                                    $ urban_min_attack += 1
-                                    $ urban_max_attack += 4
+                                    $ luszcz_min_attack -= 0
+                                    $ luszcz_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ luszcz_przepychaczka = 2
+                                    $ przepychaczka_liczba -= 1
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 0
+                                    $ luszcz_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ stop = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 0
+                                    $ luszcz_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ miecz_swietlny = 2
+                                    $ luszcz_min_attack += 3
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 0
+                                    $ luszcz_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ patyk = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 0
+                                    $ luszcz_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ bazooka = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 0
+                                    $ luszcz_max_attack -= 1
+                                    $ ostrza_chaosu = 1
+                                    $ miecz3d = 2
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
+                                    jump bron
+
+                        else:
+                            jump bron
+                    
+                    "{b}Łuszcz: Fajny Patyk (ATK:1-5){/b}" if luszcz_sojusznik == 1 and patyk == 2:
+                        window show
+                        "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                        window hide
+
+                        if gitara == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or stop == 1 or bazooka == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Gitara (ATK:1-4){/b}" if gitara == 1:
+                                    window show
+                                    "{i}(ATK:1-4)\nGitara siema{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 3
+                                    $ patyk = 1
+                                    $ gitara = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
+                                    window show
+                                    "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 3
+                                    $ patyk = 1
+                                    $ luszcz_przepychaczka = 2
+                                    $ przepychaczka_liczba -= 1
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 3
+                                    $ patyk = 1
+                                    $ stop = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 3
+                                    $ patyk = 1
+                                    $ miecz_swietlny = 2
+                                    $ luszcz_min_attack += 3
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 3
+                                    $ patyk = 1
+                                    $ ostrza_chaosu = 2
+                                    $ luszcz_min_attack += 0
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 3
+                                    $ patyk = 1
+                                    $ bazooka = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 3
+                                    $ patyk = 1
+                                    $ miecz3d = 2
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 3
                                     jump bron
                                 
                                 "{b}Powrót":
@@ -222,148 +625,194 @@ label eq:
                         else:
                             jump bron
 
-                    "{b}Jerzy Urban: Przepychaczka (ATK:2-2){/b}" if urban_sojusznik == 1 and przepychaczka == 3:
+                    "{b}Łuszcz: Wężowa Bazooka (ATK:1-3){/b}" if luszcz_sojusznik == 1 and bazooka == 2:
                         window show
-                        "{i}Przepychaczka jest git{/i}"
+                        "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
                         window hide
 
-                        if fuck == 1 or stop == 1:
-                            menu:
-                                "{b}Fuck (ATK:0-2){/b}" if fuck == 1:
+                        if gitara == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or stop == 1 or miecz3d == 1:
+                            menu:         
+                                "{b}Gitara (ATK:1-4){/b}" if gitara == 1:
                                     window show
-                                    "{i}Fuck jest git{/i}"
+                                    "{i}(ATK:1-4)\nGitara siema{/i}"
                                     window hide
-                                    $ urban_min_attack -= 2
-                                    $ urban_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ fuck = 3
-                                    $ urban_min_attack += 0
-                                    $ urban_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ urban_min_attack -= 2
-                                    $ urban_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ przepychaczka = 3
-                                    $ urban_min_attack += 2
-                                    $ urban_max_attack += 2
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ gitara = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
                                     window show
-                                    "{i}Stop jest git{/i}"
+                                    "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
                                     window hide
-                                    $ urban_min_attack -= 2
-                                    $ urban_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ stop = 3
-                                    $ urban_min_attack += 1
-                                    $ urban_max_attack += 4
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ luszcz_przepychaczka = 2
+                                    $ przepychaczka_liczba -= 1
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Powrót{/b}":
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
+                                    window show
+                                    "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ stop = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 4
+                                    jump bron
+                                
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
+                                    window show
+                                    "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ miecz_swietlny = 2
+                                    $ luszcz_min_attack += 3
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ ostrza_chaosu = 2
+                                    $ luszcz_min_attack += 0
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ patyk = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wydrukowany Miecz (ATK:2-5){/b}" if miecz3d == 1:
+                                    window show
+                                    "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 1
+                                    $ luszcz_max_attack -= 1
+                                    $ bazooka = 1
+                                    $ miecz3d = 2
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Powrót":
                                     jump bron
 
                         else:
                             jump bron
                     
-                    "{b}Jerzy Urban: Stop (ATK:1-4){/b}" if urban_sojusznik == 1 and stop == 3:
+                    "{b}Łuszcz: Wydrukowany Miecz (ATK:2-5){/b}" if luszcz_sojusznik == 1 and miecz3d == 2:
                         window show
-                        "{i}Stop jest git{/i}"
+                        "{i}(ATK:2-5)\nZrobiony w jedynej kuźni w Skale. Zwiększa dmg do (ATK:3-7), gdy nosiciel ma poniżej 50% hp{/i}"
                         window hide
 
-                        if fuck == 1 or przepychaczka == 1:
-                            menu:
-                                "{b}Fuck (ATK:0-2){/b}" if fuck == 1:
+                        if gitara == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or patyk == 1 or bazooka == 1 or stop == 1:
+                            menu:         
+                                "{b}Gitara (ATK:1-4){/b}" if gitara == 1:
                                     window show
-                                    "{i}Fuck jest git{/i}"
+                                    "{i}(ATK:1-4)\nGitara siema{/i}"
                                     window hide
-                                    $ urban_min_attack -= 1
-                                    $ urban_max_attack -= 4
-                                    $ stop = 1
-                                    $ fuck = 3
-                                    $ urban_min_attack += 0
-                                    $ urban_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ urban_min_attack -= 1
-                                    $ urban_max_attack -= 4
-                                    $ stop = 1
-                                    $ przepychaczka = 3
-                                    $ urban_min_attack += 2
-                                    $ urban_max_attack += 2
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ gitara = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
+                                "{b}Przepychaczka (ATK:2-4){/b}" if przepychaczka_liczba >= 1:
                                     window show
-                                    "{i}Stop jest git{/i}"
+                                    "{i}(ATK:2-4)\nIdealny prezent. Szansa na zestunnowanie wroga na turę{/i}"
                                     window hide
-                                    $ urban_min_attack -= 1
-                                    $ urban_max_attack -= 4
-                                    $ stop = 1
-                                    $ stop = 3
-                                    $ urban_min_attack += 1
-                                    $ urban_max_attack += 4
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ luszcz_przepychaczka = 2
+                                    $ przepychaczka_liczba -= 1
+                                    $ luszcz_min_attack += 2
+                                    $ luszcz_max_attack += 2
                                     jump bron
                                 
-                                "{b}Powrót{/b}":
-                                    jump bron
-
-                        else:
-                            jump bron
-
-                    
-
-
-                    "{b}Żyd: Chanuka (ATK:1-3){/b}" if zyd_sojusznik == 1 and chanuka == 4:
-                        window show
-                        "{i}Chanuka jest git{/i}"
-                        window hide
-
-                        if przepychaczka == 1 or stop == 1:
-                            menu:
-                                "{b}Chanuka (ATK:1-3){/b}" if chanuka == 1:
+                                "{b}Znak Drogowy (ATK:1-6){/b}" if stop == 1:
                                     window show
-                                    "{i}Chanuka jest git{/i}"
+                                    "{i}(ATK:1-6)\nMa na sobie duży napis NIE{/i}"
                                     window hide
-                                    $ zyd_min_attack -= 1
-                                    $ zyd_max_attack -= 2
-                                    $ chanuka = 1
-                                    $ chanuka = 4
-                                    $ zyd_min_attack += 1
-                                    $ zyd_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ zyd_min_attack -= 1
-                                    $ zyd_max_attack -= 2
-                                    $ chanuka = 1
-                                    $ przepychaczka = 4
-                                    $ zyd_min_attack += 2
-                                    $ zyd_max_attack += 2
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ stop = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 4
                                     jump bron
                                 
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
+                                "{b}Miecz Świetlny (ATK:3-4){/b}" if miecz_swietlny == 1:
                                     window show
-                                    "{i}Stop jest git{/i}"
+                                    "{i}(ATK:3-4)\nŚwieci w kolorze fioletowym{/i}"
                                     window hide
-                                    $ zyd_min_attack -= 1
-                                    $ zyd_max_attack -= 2
-                                    $ chanuka = 1
-                                    $ stop = 4
-                                    $ zyd_min_attack += 1
-                                    $ zyd_max_attack += 4
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ miecz_swietlny = 2
+                                    $ luszcz_min_attack += 3
+                                    $ luszcz_max_attack += 2
+                                    jump bron
+                                
+                                "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
+                                    window show
+                                    "{i}(ATK:0-3 FOR ALL)\nO bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ ostrza_chaosu = 2
+                                    $ luszcz_min_attack += 0
+                                    $ luszcz_max_attack += 1
+                                    jump bron
+
+                                "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
+                                    window show
+                                    "{i}(ATK:1-5)\nPrzeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ patyk = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 3
+                                    jump bron
+                                
+                                "{b}Wężowa Bazooka (ATK:1-3){/b}" if bazooka == 1:
+                                    window show
+                                    "{i}(ATK:1-3)\nJak się robi więcej dzieci? Zatruwa zaatakowanego wroga na 3 tury.{/i}"
+                                    window hide
+                                    $ luszcz_min_attack -= 2
+                                    $ luszcz_max_attack -= 3
+                                    $ miecz3d = 1
+                                    $ bazooka = 2
+                                    $ luszcz_min_attack += 1
+                                    $ luszcz_max_attack += 1
                                     jump bron
                                 
                                 "{b}Powrót":
@@ -372,407 +821,7 @@ label eq:
                         else:
                             jump bron
 
-                    "{b}Żyd: Przepychaczka (ATK:2-2){/b}" if zyd_sojusznik == 1 and przepychaczka == 4:
-                        window show
-                        "{i}Przepychaczka jest git{/i}"
-                        window hide
-
-                        if chanuka == 1 or stop == 1:
-                            menu:
-                                "{b}Chanuka (ATK:1-3){/b}" if chanuka == 1:
-                                    window show
-                                    "{i}Chanuka jest git{/i}"
-                                    window hide
-                                    $ zyd_min_attack -= 2
-                                    $ zyd_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ chanuka = 4
-                                    $ zyd_min_attack += 1
-                                    $ zyd_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ zyd_min_attack -= 2
-                                    $ zyd_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ przepychaczka = 4
-                                    $ zyd_min_attack += 2
-                                    $ zyd_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ zyd_min_attack -= 2
-                                    $ zyd_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ stop = 4
-                                    $ zyd_min_attack += 1
-                                    $ zyd_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót{/b}":
-                                    jump bron
-
-                        else:
-                            jump bron
-                    
-                    "{b}Żyd: Stop (ATK:1-4){/b}" if zyd_sojusznik == 1 and stop == 4:
-                        window show
-                        "{i}Stop jest git{/i}"
-                        window hide
-
-                        if chanuka == 1 or przepychaczka == 1:
-                            menu:
-                                "{b}Chanuka (ATK:1-3){/b}" if chanuka == 1:
-                                    window show
-                                    "{i}Chanuka jest git{/i}"
-                                    window hide
-                                    $ zyd_min_attack -= 1
-                                    $ zyd_max_attack -= 4
-                                    $ stop = 1
-                                    $ chanuka = 4
-                                    $ zyd_min_attack += 1
-                                    $ zyd_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ zyd_min_attack -= 1
-                                    $ zyd_max_attack -= 4
-                                    $ stop = 1
-                                    $ przepychaczka = 4
-                                    $ zyd_min_attack += 2
-                                    $ zyd_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ zyd_min_attack -= 1
-                                    $ zyd_max_attack -= 4
-                                    $ stop = 1
-                                    $ stop = 4
-                                    $ zyd_min_attack += 1
-                                    $ zyd_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót{/b}":
-                                    jump bron
-
-                        else:
-                            jump bron
-                    
-
-
-
-                    "{b}Kazuma: Chunchunmaru (ATK:0-6){/b}" if kazuma_sojusznik == 1 and chunchunmaru == 5:
-                        window show
-                        "{i}Chunchunmaru jest git{/i}"
-                        window hide
-
-                        if przepychaczka == 1 or stop == 1:
-                            menu:
-                                "{b}Chunchunmaru (ATK:0-6){/b}" if chunchunmaru == 1:
-                                    window show
-                                    "{i}Chunchunmaru jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 1
-                                    $ kazuma_max_attack -= 2
-                                    $ chunchunmaru = 1
-                                    $ chunchunmaru = 5
-                                    $ kazuma_min_attack += 1
-                                    $ kazuma_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 1
-                                    $ kazuma_max_attack -= 2
-                                    $ chunchunmaru = 1
-                                    $ przepychaczka = 5
-                                    $ kazuma_min_attack += 2
-                                    $ kazuma_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 1
-                                    $ kazuma_max_attack -= 2
-                                    $ chunchunmaru = 1
-                                    $ stop = 5
-                                    $ kazuma_min_attack += 1
-                                    $ kazuma_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót":
-                                    jump bron
-
-                        else:
-                            jump bron
-
-                    "{b}Kazuma: Przepychaczka (ATK:2-2){/b}" if kazuma_sojusznik == 1 and przepychaczka == 5:
-                        window show
-                        "{i}Przepychaczka jest git{/i}"
-                        window hide
-
-                        if chunchunmaru == 1 or stop == 1:
-                            menu:
-                                "{b}Chunchunmaru (ATK:0-6){/b}" if chunchunmaru == 1:
-                                    window show
-                                    "{i}Chunchunmaru jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 2
-                                    $ kazuma_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ chunchunmaru = 5
-                                    $ kazuma_min_attack += 1
-                                    $ kazuma_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 2
-                                    $ kazuma_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ przepychaczka = 5
-                                    $ kazuma_min_attack += 2
-                                    $ kazuma_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 2
-                                    $ kazuma_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ stop = 5
-                                    $ kazuma_min_attack += 1
-                                    $ kazuma_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót{/b}":
-                                    jump bron
-
-                        else:
-                            jump bron
-                    
-                    "{b}Kazuma: Stop (ATK:1-4){/b}" if kazuma_sojusznik == 1 and stop == 5:
-                        window show
-                        "{i}Stop jest git{/i}"
-                        window hide
-
-                        if chunchunmaru == 1 or przepychaczka == 1:
-                            menu:
-                                "{b}Chunchunmaru (ATK:0-6){/b}" if chunchunmaru == 1:
-                                    window show
-                                    "{i}Chunchunmaru jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 1
-                                    $ kazuma_max_attack -= 4
-                                    $ stop = 1
-                                    $ chunchunmaru = 5
-                                    $ kazuma_min_attack += 1
-                                    $ kazuma_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 1
-                                    $ kazuma_max_attack -= 4
-                                    $ stop = 1
-                                    $ przepychaczka = 5
-                                    $ kazuma_min_attack += 2
-                                    $ kazuma_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ kazuma_min_attack -= 1
-                                    $ kazuma_max_attack -= 4
-                                    $ stop = 1
-                                    $ stop = 5
-                                    $ kazuma_min_attack += 1
-                                    $ kazuma_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót{/b}":
-                                    jump bron
-
-                        else:
-                            jump bron
-                    
-
-
-
-                    "{b}Naofumi: Legendary Shield (ATK:1-3){/b}" if tarczownik_sojusznik == 1 and legendary_shield == 6:
-                        window show
-                        "{i}Legendary Shield jest git{/i}"
-                        window hide
-
-                        if przepychaczka == 1 or stop == 1:
-                            menu:
-                                "{b}Legendary Shield (ATK:1-3){/b}" if legendary_shield == 1:
-                                    window show
-                                    "{i}Legendary Shield jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 1
-                                    $ tarczownik_max_attack -= 2
-                                    $ legendary_shield = 1
-                                    $ legendary_shield = 6
-                                    $ tarczownik_min_attack += 1
-                                    $ tarczownik_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 1
-                                    $ tarczownik_max_attack -= 2
-                                    $ legendary_shield = 1
-                                    $ przepychaczka = 6
-                                    $ tarczownik_min_attack += 2
-                                    $ tarczownik_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 1
-                                    $ tarczownik_max_attack -= 2
-                                    $ legendary_shield = 1
-                                    $ stop = 6
-                                    $ tarczownik_min_attack += 1
-                                    $ tarczownik_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót":
-                                    jump bron
-
-                        else:
-                            jump bron
-
-                    "{b}Naofumi: Przepychaczka (ATK:2-2){/b}" if tarczownik_sojusznik == 1 and przepychaczka == 6:
-                        window show
-                        "{i}Przepychaczka jest git{/i}"
-                        window hide
-
-                        if legendary_shield == 1 or stop == 1:
-                            menu:
-                                "{b}Legendary Shield (ATK:1-3){/b}" if legendary_shield == 1:
-                                    window show
-                                    "{i}Legendary Shield jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 2
-                                    $ tarczownik_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ legendary_shield = 6
-                                    $ tarczownik_min_attack += 1
-                                    $ tarczownikwnikwnik_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 2
-                                    $ tarczownik_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ przepychaczka = 6
-                                    $ tarczownik_min_attack += 2
-                                    $ tarczownik_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 2
-                                    $ tarczownik_max_attack -= 2
-                                    $ przepychaczka = 1
-                                    $ stop = 6
-                                    $ tarczownik_min_attack += 1
-                                    $ tarczownik_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót{/b}":
-                                    jump bron
-
-                        else:
-                            jump bron
-                    
-                    "{b}Naofumi: Stop (ATK:1-4){/b}" if tarczownik_sojusznik == 1 and stop == 6:
-                        window show
-                        "{i}Stop jest git{/i}"
-                        window hide
-
-                        if legendary_shield == 1 or przepychaczka == 1:
-                            menu:
-                                "{b}Legendary Shield (ATK:1-3){/b}" if legendary_shield == 1:
-                                    window show
-                                    "{i}Legendary Shield jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 1
-                                    $ tarczownik_max_attack -= 4
-                                    $ stop = 1
-                                    $ legendary_shield = 6
-                                    $ tarczownik_min_attack += 1
-                                    $ tarczownik_max_attack += 2
-                                    jump bron
-                                    
-                                "{b}Przepychaczka (ATK:2-2){/b}" if przepychaczka == 1:
-                                    window show
-                                    "{i}Przpychaczka jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 1
-                                    $ tarczownik_max_attack -= 4
-                                    $ stop = 1
-                                    $ przepychaczka = 6
-                                    $ tarczownik_min_attack += 2
-                                    $ tarczownik_max_attack += 2
-                                    jump bron
-                                
-                                "{b}Stop (ATK:1-4){/b}" if stop == 1:
-                                    window show
-                                    "{i}Stop jest git{/i}"
-                                    window hide
-                                    $ tarczownik_min_attack -= 1
-                                    $ tarczownik_max_attack -= 4
-                                    $ stop = 1
-                                    $ stop = 6
-                                    $ tarczownik_min_attack += 1
-                                    $ tarczownik_max_attack += 4
-                                    jump bron
-                                
-                                "{b}Powrót{/b}":
-                                    jump bron
-
-                        else:
-                            jump bron
-                    
-
-                        
-                        
+                   
                     
                     "{b}Powrót":
                         jump eq

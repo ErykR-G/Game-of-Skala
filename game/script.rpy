@@ -12,6 +12,7 @@ default money = 3
 
 label postacie:
     define all = Character("Wszyscy", color="#6a6a6e")
+    define nikt = Character("???", color="#6a6a6e")
 
     define luszcz = Character("Łuszcz", color="#1d0cbb")
     image luszcz siedzi right = Transform("luszcz siedzi", xzoom=-1) 
@@ -485,7 +486,7 @@ label start:
         show kosc neutral left at center
 
         kosc "A niech cię, nigdy wcześniej nie widziałem cię w kościele."
-        kosc "A uwież mi, pamiętam każdą twarz, co do jednej!"
+        kosc "A uwierz mi, pamiętam każdą twarz, co do jednej!"
 
         luszcz "Erm… to dlatego że jestem tu pierwrzy raz"
 
@@ -637,6 +638,14 @@ label start:
         luszcz "To trochę jak w Personie."
         luszcz "Gdzie by się najpierw wybrać?"
 
+        show eminem cien at slightright 
+
+        "{i}*szturch*{/i}"
+
+        hide eminem
+
+        show luszcz angry at center
+
         
 
 
@@ -654,22 +663,42 @@ label start:
                 $ zyd_sojusznik += 1
                 $ kazuma_sojusznik += 1
                 $ tarczownik_sojusznik += 1
-                $ przepychaczka = 1
                 $ stop = 1
+                $ miecz_swietlny = 1
+                $ miecz3d = 1
+                $ ostrza_chaosu = 1
+                $ patyk = 1
+                $ przepychaczka_liczba = 3
+                $ luszcz_przepychaczka = 1
+                $ urban_przepychaczka = 1
+                $ zyd_przepychaczka = 1
+                $ kazuma_przepychaczka = 1
+                $ tarczownik_przepychaczka = 1
 
             "{b}TROCHE{/b}":
                 $ liczba_sojusznikow += 2
                 $ urban_sojusznik += 1
                 $ zyd_sojusznik += 1
                 $ stop = 1
-                $ przepychaczka = 1
-                
+                $ miecz_swietlny = 1
+                $ miecz3d = 1
+                $ ostrza_chaosu = 1
+                $ patyk = 1
+                $ przepychaczka_liczba = 3
+                $ luszcz_przepychaczka = 1
+                $ urban_przepychaczka = 1
+                $ zyd_przepychaczka = 1
+
             "{b}MAM{/b}":
                 $ liczba_sojusznikow += 1
                 $ urban_sojusznik += 1
                 $ stop = 1
-                $ przepychaczka = 1
-
+                $ miecz_swietlny = 1
+                $ miecz3d = 1
+                $ ostrza_chaosu = 1
+                $ patyk = 1
+                $ przepychaczka_liczba = 3
+                $ luszcz_przepychaczka = 1
                 
             "{b}CO TO?{/b}":
                 $ ado += 1

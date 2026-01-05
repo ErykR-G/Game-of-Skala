@@ -890,6 +890,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -923,6 +924,7 @@ label fight1:
                                 jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -956,6 +958,7 @@ label fight1:
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -1005,7 +1008,7 @@ label fight1:
                     else:
                         $ ado += 1
                     $ luszcz_obrona += 1
-                    luszcz "Hłopaki, bronie siem!"
+                    luszcz "I want sex"
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -1025,7 +1028,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    luszcz "Órzywam itękó!"
+                    luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items11
 
                 "{b}Zaparz Herbatę{/b}":
@@ -1069,6 +1072,7 @@ label fight1:
                                 "{b}Dla Kogo?{/b}"
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -1078,6 +1082,7 @@ label fight1:
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -1103,6 +1108,7 @@ label fight1:
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -1128,6 +1134,7 @@ label fight1:
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -1153,6 +1160,7 @@ label fight1:
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -1178,6 +1186,7 @@ label fight1:
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -1206,6 +1215,7 @@ label fight1:
                             jump faza12
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
                             play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
@@ -2348,6 +2358,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -2381,6 +2392,7 @@ label fight1:
                             jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -2414,6 +2426,7 @@ label fight1:
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -2465,7 +2478,7 @@ label fight1:
                         $ ado += 1
 
                     $ kazuma_obrona += 1
-                    kazuma "Chłopaki, bronię się!"
+                    kazuma "Nic na to nie można poradzić!"
                     jump faza12
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -2485,7 +2498,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    kazuma "Używam itemku!"
+                    kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items11
 
                 "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
@@ -4017,6 +4030,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -4050,6 +4064,7 @@ label fight1:
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -4083,6 +4098,7 @@ label fight1:
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -4132,7 +4148,7 @@ label fight1:
                     else:
                         $ ado += 1
                     $ luszcz_obrona += 1
-                    luszcz "Hłopaki, bronie siem!"
+                    luszcz "I want sex"
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -4152,7 +4168,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    luszcz "Órzywam itękó!"
+                    luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items12
 
                 "{b}Zaparz Herbatę{/b}":
@@ -4196,6 +4212,7 @@ label fight1:
                                 "{b}Dla Kogo?{/b}"
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -4205,6 +4222,7 @@ label fight1:
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -4230,6 +4248,7 @@ label fight1:
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -4255,6 +4274,7 @@ label fight1:
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -4280,6 +4300,7 @@ label fight1:
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -4305,6 +4326,7 @@ label fight1:
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -4333,6 +4355,7 @@ label fight1:
                             jump faza13
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
                             play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
@@ -5471,6 +5494,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -5504,6 +5528,7 @@ label fight1:
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -5537,6 +5562,7 @@ label fight1:
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -5587,7 +5613,7 @@ label fight1:
                         $ ado += 1
 
                     $ kazuma_obrona += 1
-                    kazuma "Chłopaki, bronię się!"
+                    kazuma "Nic na to nie można poradzić!"
                     jump faza13
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -5607,7 +5633,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    kazuma "Używam itemku!"
+                    kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items12
 
                 "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
@@ -6310,6 +6336,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -6343,6 +6370,7 @@ label fight1:
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -6376,6 +6404,7 @@ label fight1:
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -6425,7 +6454,7 @@ label fight1:
                     else:
                         $ ado += 1
                     $ luszcz_obrona += 1
-                    luszcz "Hłopaki, bronie siem!"
+                    luszcz "I want sex"
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -6445,7 +6474,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    luszcz "Órzywam itękó!"
+                    luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items13
 
                 "{b}Zaparz Herbatę{/b}":
@@ -6489,6 +6518,7 @@ label fight1:
                                 "{b}Dla Kogo?{/b}"
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -6498,6 +6528,7 @@ label fight1:
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -6523,6 +6554,7 @@ label fight1:
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -6548,6 +6580,7 @@ label fight1:
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -6573,6 +6606,7 @@ label fight1:
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -6598,6 +6632,7 @@ label fight1:
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -6626,6 +6661,7 @@ label fight1:
                             jump faza14
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                            luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
                             play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
@@ -7765,6 +7801,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -7798,6 +7835,7 @@ label fight1:
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -7831,6 +7869,7 @@ label fight1:
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
+                            kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -7881,7 +7920,7 @@ label fight1:
                         $ ado += 1
 
                     $ kazuma_obrona += 1
-                    kazuma "Chłopaki, bronię się!"
+                    kazuma "Nic na to nie można poradzić!"
                     jump faza14
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -7901,7 +7940,7 @@ label fight1:
                     else:
                         $ ado += 1
 
-                    kazuma "Używam itemku!"
+                    kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items13
 
                 "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
