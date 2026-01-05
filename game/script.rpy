@@ -665,9 +665,10 @@ label start:
                 $ tarczownik_sojusznik += 1
                 $ stop = 1
                 $ miecz_swietlny = 1
-                $ miecz3d = 1
                 $ ostrza_chaosu = 1
                 $ patyk = 1
+                $ bazooka = 1
+                $ miecz3d = 1
                 $ przepychaczka_liczba = 3
                 $ luszcz_przepychaczka = 1
                 $ urban_przepychaczka = 1
@@ -681,24 +682,33 @@ label start:
                 $ zyd_sojusznik += 1
                 $ stop = 1
                 $ miecz_swietlny = 1
-                $ miecz3d = 1
                 $ ostrza_chaosu = 1
                 $ patyk = 1
+                $ bazooka = 1
+                $ miecz3d = 1
                 $ przepychaczka_liczba = 3
                 $ luszcz_przepychaczka = 1
                 $ urban_przepychaczka = 1
                 $ zyd_przepychaczka = 1
+                $ kazuma_przepychaczka = 1
+                $ tarczownik_przepychaczka = 1
 
             "{b}MAM{/b}":
                 $ liczba_sojusznikow += 1
                 $ urban_sojusznik += 1
                 $ stop = 1
                 $ miecz_swietlny = 1
-                $ miecz3d = 1
                 $ ostrza_chaosu = 1
                 $ patyk = 1
+                $ bazooka = 1
+                $ miecz3d = 1
                 $ przepychaczka_liczba = 3
                 $ luszcz_przepychaczka = 1
+                $ urban_przepychaczka = 1
+                $ zyd_przepychaczka = 1
+                $ kazuma_przepychaczka = 1
+                $ tarczownik_przepychaczka = 1
+
                 
             "{b}CO TO?{/b}":
                 $ ado += 1

@@ -1408,7 +1408,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -1430,7 +1430,7 @@ label fight1:
                             jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -1452,7 +1452,7 @@ label fight1:
                             jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -2564,7 +2564,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Kibol 1.  {/b}\n{i}Statystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
                                         hide kibol1_weapon
                                         hide chwyta
                                     
@@ -2595,7 +2595,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         kibol1 "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Kibol 1.  \nKibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Kibol 1.  {/b}\n{i}Kibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ kibol1_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -2650,7 +2650,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Akane.  {/b}\n{i}Statystyki Akane zostały stale drastycznie osłabione.{/i}"
                                         hide kibol2_weapon
                                         hide chwyta
                                     
@@ -2681,7 +2681,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         akane "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Akane.  \nAkane poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Akane.  {/b}\n{i}Akane poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ akane_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -2736,7 +2736,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Kibol 2.  {/b}\n{i}Statystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
                                         hide akane_weapon
                                         hide chwyta
                                     
@@ -2767,7 +2767,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         kibol2 "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Kibol 2.  \nKibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Kibol 2.  {/b}\n{i}Kibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ kibol2_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -4548,7 +4548,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -4570,7 +4570,7 @@ label fight1:
                             jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -4592,7 +4592,7 @@ label fight1:
                             jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -5698,7 +5698,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Kibol 1.  {/b}\n{i}Statystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
                                         hide kibol1_weapon
                                         hide chwyta
                                     
@@ -5729,7 +5729,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         kibol1 "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Kibol 1.  \nKibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Kibol 1.  {/b}\n{i}Kibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ kibol1_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -5784,7 +5784,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Akane.  {/b}\n{i}Statystyki Akane zostały stale drastycznie osłabione.{/i}"
                                         hide akane_weapon
                                         hide chwyta
                                     
@@ -5815,7 +5815,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         akane "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Akane.  \nAkane poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Akane.  {/b}\n{i}Akane poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ akane_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -5870,7 +5870,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Kibol 2.  {/b}\n{i}Statystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
                                         hide kibol2_weapon
                                         hide chwyta
                                     
@@ -5901,7 +5901,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         kibol2 "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Kibol 2.  \nKibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Kibol 2.  {/b}\n{i}Kibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ kibol2_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -6854,7 +6854,7 @@ label fight1:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if kibol1_obrona >= 2:
@@ -6876,7 +6876,7 @@ label fight1:
                             jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if akane_obrona >= 2:
@@ -6898,7 +6898,7 @@ label fight1:
                             jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
-                            eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+                            eminem "Moje imię to Cień. {/b}\n{i}Ten, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if kibol2_obrona >= 2:
@@ -8005,7 +8005,7 @@ label fight1:
 
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Kibol 1.  \nStatystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Kibol 1.  {/b}\n{i}Statystyki Kibol 1 zostały stale drastycznie osłabione.{/i}"
                                         hide kibol1_weapon
                                         hide chwyta
                                     
@@ -8036,7 +8036,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         kibol1 "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Kibol 1.  \nKibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Kibol 1.  {/b}\n{i}Kibol 1 poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ kibol1_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -8091,7 +8091,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Akane.  \nStatystyki Akane zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Akane.  {/b}\n{i}Statystyki Akane zostały stale drastycznie osłabione.{/i}"
                                         hide akane_weapon
                                         hide chwyta
                                     
@@ -8122,7 +8122,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         akane "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Akane.  \nAkane poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Akane.  {/b}\n{i}Akane poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ akane_hp_now = 0
                                         hide majtki
                                         hide chwyta
@@ -8177,7 +8177,7 @@ label fight1:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
+                                        "{i}Udało sie ukraść broń Kibol 2.  {/b}\n{i}Statystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
                                         hide kibol2_weapon
                                         hide chwyta
                                     
@@ -8208,7 +8208,7 @@ label fight1:
                                         kazuma "Trafiłem jackpota!"
                                         kibol2 "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Kibol 2.  \nKibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        "{i}Udało sie ukraść bieliznę Kibol 2.  {/b}\n{i}Kibol 2 poddaje sie wzamian za jej zwrócenie.{/i}"
                                         $ kibol2_hp_now = 0
                                         hide majtki
                                         hide chwyta

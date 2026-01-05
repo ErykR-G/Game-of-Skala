@@ -506,16 +506,16 @@ translate None strings:
     new "Czy na pewno chcesz nadpisać twój zapis?"
 
     # renpy/common/00gui.rpy:451
-    old "Loading will lose unsaved progress.\nAre you sure you want to do this?"
-    new "Wczytywanie spowoduje utratę niezapisanego progresu.\nCzy na pewno chcesz to zrobić?"
+    old "Loading will lose unsaved progress.{/b}\n{i}Are you sure you want to do this?"
+    new "Wczytywanie spowoduje utratę niezapisanego progresu.{/b}\n{i}Czy na pewno chcesz to zrobić?"
 
     # renpy/common/00gui.rpy:452
     old "Are you sure you want to quit?"
     new "Czy na pewno chcesz wyjść?"
 
     # renpy/common/00gui.rpy:453
-    old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
-    new "Czy na pewno chcesz wrócić do menu głównego?\nSpowoduje to utratę niezapisanych postępów."
+    old "Are you sure you want to return to the main menu?{/b}\n{i}This will lose unsaved progress."
+    new "Czy na pewno chcesz wrócić do menu głównego?{/b}\n{i}Spowoduje to utratę niezapisanych postępów."
 
     # renpy/common/00gui.rpy:454
     old "Are you sure you want to continue where you left off?"
@@ -846,8 +846,8 @@ translate None strings:
     new "Serwer Ren'Py Sync nie ma kopii tej synchronizacji. Identyfikator synchronizacji może być nieprawidłowy lub upłynął czas jej trwania."
 
     # renpy/common/00sync.rpy:305
-    old "Please enter the sync ID you generated.\nNever enter a sync ID you didn't create yourself."
-    new "Proszę wprowadzić wygenerowany identyfikator synchronizacji.\nNigdy nie wprowadzaj identyfikatora synchronizacji, którego sam nie stworzyłeś."
+    old "Please enter the sync ID you generated.{/b}\n{i}Never enter a sync ID you didn't create yourself."
+    new "Proszę wprowadzić wygenerowany identyfikator synchronizacji.{/b}\n{i}Nigdy nie wprowadzaj identyfikatora synchronizacji, którego sam nie stworzyłeś."
 
     # renpy/common/00sync.rpy:324
     old "The sync ID is not in the correct format."
@@ -866,8 +866,8 @@ translate None strings:
     new "Synchronizacja zawiera plik o nieprawidłowej nazwie."
 
     # renpy/common/00sync.rpy:425
-    old "This will upload your saves to the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.\nDo you want to continue?"
-    new "Spowoduje to przesłanie twoich zapisów na serwer {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.\nCzy chcesz kontynuować?"
+    old "This will upload your saves to the {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.{/b}\n{i}Do you want to continue?"
+    new "Spowoduje to przesłanie twoich zapisów na serwer {a=https://sync.renpy.org}Ren'Py Sync Server{/a}.{/b}\n{i}Czy chcesz kontynuować?"
 
     # renpy/common/00sync.rpy:433
     old "Yes"
@@ -894,8 +894,8 @@ translate None strings:
     new "Sync ID to:"
 
     # renpy/common/00sync.rpy:507
-    old "You can use this ID to download your save on another device.\nThis sync will expire in an hour.\nRen'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren'Py's Sponsors{/a}."
-    new "Możesz użyć tego identyfikatora, aby pobrać swój save na inne urządzenie.\nTa synchronizacja wygaśnie za godzinę.\nRen'Py Sync jest wspierany przez {a=https://www.renpy.org/sponsors.html}Sponsorów Ren'Py{/a}."
+    old "You can use this ID to download your save on another device.{/b}\n{i}This sync will expire in an hour.{/b}\n{i}Ren'Py Sync is supported by {a=https://www.renpy.org/sponsors.html}Ren'Py's Sponsors{/a}."
+    new "Możesz użyć tego identyfikatora, aby pobrać swój save na inne urządzenie.{/b}\n{i}Ta synchronizacja wygaśnie za godzinę.{/b}\n{i}Ren'Py Sync jest wspierany przez {a=https://www.renpy.org/sponsors.html}Sponsorów Ren'Py{/a}."
 
     # renpy/common/00sync.rpy:511
     old "Continue"
@@ -914,12 +914,12 @@ translate None strings:
     new " translates [tl.filename]:[tl.linenumber]"
 
     # renpy/common/00translation.rpy:101
-    old "\n{color=#fff}Copied to clipboard.{/color}"
-    new "\n{color=#fff}Copied to clipboard.{/color}"
+    old "{/b}\n{i}{color=#fff}Copied to clipboard.{/color}"
+    new "{/b}\n{i}{color=#fff}Copied to clipboard.{/color}"
 
     # renpy/common/00iap.rpy:231
-    old "Contacting App Store\nPlease Wait..."
-    new "Kontakt z App Store\nProszę czekać..."
+    old "Contacting App Store{/b}\n{i}Please Wait..."
+    new "Kontakt z App Store{/b}\n{i}Proszę czekać..."
 
     # renpy/common/00updater.rpy:415
     old "No update methods found."
@@ -1398,8 +1398,8 @@ translate None strings:
     new "✘ "
 
     # renpy/common/_developer/developer.rpym:578
-    old "\n{color=#cfc}✔ predicted image (good){/color}\n{color=#fcc}✘ unpredicted image (bad){/color}\n{color=#fff}Drag to move.{/color}"
-    new "\n{color=#cfc}✔ przewidywany obraz (good){/color}\n{color=#fcc}✘ nieprzewidziany obraz (bad){/color}\n{color=#fff}Przeciągnij, aby przenieść."
+    old "{/b}\n{i}{color=#cfc}✔ predicted image (good){/color}{/b}\n{i}{color=#fcc}✘ unpredicted image (bad){/color}{/b}\n{i}{color=#fff}Drag to move.{/color}"
+    new "{/b}\n{i}{color=#cfc}✔ przewidywany obraz (good){/color}{/b}\n{i}{color=#fcc}✘ nieprzewidziany obraz (bad){/color}{/b}\n{i}{color=#fff}Przeciągnij, aby przenieść."
 
     # renpy/common/_developer/developer.rpym:628
     old "Click to open in editor."
@@ -1442,7 +1442,7 @@ translate None strings:
     new "<repr() failed>"
 
     # renpy/common/00console.rpy:552
-    old "Press <esc> to exit console. Type help for help.\n"
+    old "Press <esc> to exit console. Type help for help.{/b}\n{i}"
     new "Naciśnij <esc> aby wyjść z konsoli. Wpisz 'help', aby wyświetlić pomoc."
 
     # renpy/common/00console.rpy:556
@@ -1458,20 +1458,20 @@ translate None strings:
     new "The console is using short representations. To disable this, type 'long', and to re-enable, type 'short'"
 
     # renpy/common/00console.rpy:813
-    old "help: show this help\n help <expr>: show signature and documentation of <expr>"
-    new "help: pokaż tę pomoc\n help <expr>: pokaż podpis i dokumentację <expr>"
+    old "help: show this help{/b}\n{i} help <expr>: show signature and documentation of <expr>"
+    new "help: pokaż tę pomoc{/b}\n{i} help <expr>: pokaż podpis i dokumentację <expr>"
 
     # renpy/common/00console.rpy:837
-    old "Help may display undocumented functions. Please check that the function or\nclass you want to use is documented.\n\n"
-    new "Pomoc może wyświetlać nieudokumentowane funkcje. Proszę sprawdzić, czy funkcja lub\nklasa, której chcesz użyć, jest udokumentowana.\n\n"
+    old "Help may display undocumented functions. Please check that the function or{/b}\n{i}class you want to use is documented.{/b}\n{i}{/b}\n{i}"
+    new "Pomoc może wyświetlać nieudokumentowane funkcje. Proszę sprawdzić, czy funkcja lub{/b}\n{i}klasa, której chcesz użyć, jest udokumentowana.{/b}\n{i}{/b}\n{i}"
 
     # renpy/common/00console.rpy:846
-    old "commands:\n"
-    new "polecenia:\n"
+    old "commands:{/b}\n{i}"
+    new "polecenia:{/b}\n{i}"
 
     # renpy/common/00console.rpy:856
-    old " <renpy script statement>: run the statement\n"
-    new " <renpy script statement>: uruchomienie twierdzenia\n"
+    old " <renpy script statement>: run the statement{/b}\n{i}"
+    new " <renpy script statement>: uruchomienie twierdzenia{/b}\n{i}"
 
     # renpy/common/00console.rpy:858
     old " <python expression or statement>: run the expression or statement"
@@ -1502,8 +1502,8 @@ translate None strings:
     new "reload: ponownie ładuje grę, odświeżenie skryptów"
 
     # renpy/common/00console.rpy:932
-    old "watch <expression>: watch a python expression\n watch short: makes the representation of traced expressions short (default)\n watch long: makes the representation of traced expressions as is"
-    new "watch <expression>: obejżyj wyrażenie Pythona\n watch short: reprezentacja wyrażeń jest krótka (domyślnie)\n watch long: reprezentacja wyrażeń jest taka jaka jest"
+    old "watch <expression>: watch a python expression{/b}\n{i} watch short: makes the representation of traced expressions short (default){/b}\n{i} watch long: makes the representation of traced expressions as is"
+    new "watch <expression>: obejżyj wyrażenie Pythona{/b}\n{i} watch short: reprezentacja wyrażeń jest krótka (domyślnie){/b}\n{i} watch long: reprezentacja wyrażeń jest taka jaka jest"
 
     # renpy/common/00console.rpy:969
     old "unwatch <expression>: stop watching an expression"
