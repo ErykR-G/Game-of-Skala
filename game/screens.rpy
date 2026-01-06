@@ -564,13 +564,13 @@ screen about():
         vbox:
 
             label "[config.name!t]"
-            text _("Wersja [config.version!t]{/b}\n{i}")
+            text _("Wersja [config.version!t]\n")
 
             ## gui.about zazwyczaj jest ustawiony w options.rpy.
             if gui.about:
-                text "[gui.about!t]{/b}\n{i}"
+                text "[gui.about!t]\n"
 
-            text _("Wykonano przy pomocy {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].{/b}\n{i}{/b}\n{i}[renpy.license!t]")
+            text _("Wykonano przy pomocy {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
@@ -1069,11 +1069,11 @@ screen mouse_help():
 screen gamepad_help():
 
     hbox:
-        label _("Prawy spust{/b}\n{i}A/dolny przycisk")
+        label _("Prawy spust\nA/dolny przycisk")
         text _("Rozwija dialog i aktywuje interfejs")
 
     hbox:
-        label _("Lewy spust{/b}\n{i}Lewe ramię (L)")
+        label _("Lewy spust\nLewe ramię (L)")
         text _("Wraca do wcześniejszego dialogu.")
 
     hbox:

@@ -332,7 +332,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Miecz Świetlny (ATK:3-4){/b}" if luszcz_sojusznik == 1 and miecz_swietlny == 2:
+                    "{b}Łuszcz: Miecz Świetlny (ATK:3-4){/b}" if luszcz_sojusznik == 1 and miecz_swietlny == 2:
                         window show
                         "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
                         window hide
@@ -430,7 +430,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if luszcz_sojusznik == 1 and ostrza_chaosu == 2:
+                    "{b}Łuszcz: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if luszcz_sojusznik == 1 and ostrza_chaosu == 2:
                         window show
                         "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
                         window hide
@@ -1133,7 +1133,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Miecz Świetlny (ATK:3-4){/b}" if urban_sojusznik == 1 and miecz_swietlny == 3:
+                    "{b}Jerzy Urban: Miecz Świetlny (ATK:3-4){/b}" if urban_sojusznik == 1 and miecz_swietlny == 3:
                         window show
                         "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
                         window hide
@@ -1231,7 +1231,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if urban_sojusznik == 1 and ostrza_chaosu == 3:
+                    "{b}Jerzy Urban: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if urban_sojusznik == 1 and ostrza_chaosu == 3:
                         window show
                         "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
                         window hide
@@ -1925,7 +1925,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Miecz Świetlny (ATK:3-4){/b}" if zyd_sojusznik == 1 and miecz_swietlny == 4:
+                    "{b}Żyd: Miecz Świetlny (ATK:3-4){/b}" if zyd_sojusznik == 1 and miecz_swietlny == 4:
                         window show
                         "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
                         window hide
@@ -2023,7 +2023,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if zyd_sojusznik == 1 and ostrza_chaosu == 4:
+                    "{b}Żyd: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if zyd_sojusznik == 1 and ostrza_chaosu == 4:
                         window show
                         "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
                         window hide
@@ -2717,7 +2717,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Miecz Świetlny (ATK:3-4){/b}" if kazuma_sojusznik == 1 and miecz_swietlny == 5:
+                    "{b}Kazuma: Miecz Świetlny (ATK:3-4){/b}" if kazuma_sojusznik == 1 and miecz_swietlny == 5:
                         window show
                         "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
                         window hide
@@ -2815,7 +2815,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if kazuma_sojusznik == 1 and ostrza_chaosu == 5:
+                    "{b}Kazuma: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if kazuma_sojusznik == 1 and ostrza_chaosu == 5:
                         window show
                         "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
                         window hide
@@ -3509,7 +3509,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Miecz Świetlny (ATK:3-4){/b}" if tarczownik_sojusznik == 1 and miecz_swietlny == 6:
+                    "{b}Naofumi: Miecz Świetlny (ATK:3-4){/b}" if tarczownik_sojusznik == 1 and miecz_swietlny == 6:
                         window show
                         "{b}(ATK:3-4){/b}\n{i}Świeci w kolorze fioletowym{/i}"
                         window hide
@@ -3607,7 +3607,7 @@ label eq:
                         else:
                             jump bron
                     
-                    "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if tarczownik_sojusznik == 1 and ostrza_chaosu == 6:
+                    "{b}Naofumi: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if tarczownik_sojusznik == 1 and ostrza_chaosu == 6:
                         window show
                         "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
                         window hide
