@@ -63,6 +63,10 @@ label fight1_stats:
     default kibol2_umarty = 0
     default akane_umarty = 0
 
+    default kibol1_poison = 0
+    default kibol2_poison = 0
+    default akane_poison = 0
+
 label fight1:
     label fight_wybor1:
         play music "audio/music/fight.mp3"
@@ -628,7 +632,114 @@ label fight1:
         hide tarcza3
         hide tarcza4
         hide tarcza5
+
+        if kibol1_poison >= 3 and kibol1_hp_now >= 1:
+            $ kibol1_hp_now -= 1
+        
+        else:
+            if kibol1_poison == 2:
+                $ kibol1_hp_now -= 1
+            
+            else:
+                if kibol1_poison == 1:
+                    $ kibol1_hp_now -= 1
+        
+        if akane_poison >= 3 and akane_hp_now >= 1:
+            $ akane_hp_now -= 1
+        
+        else:
+            if akane_poison == 2:
+                $ akane_hp_now -= 1
+            
+            else:
+                if akane_poison == 1:
+                    $ akane_hp_now -= 1
+        
+        if kibol2_poison >= 3 and kibol2_hp_now >= 1:
+            $ kibol2_hp_now -= 1
+        
+        else:
+            if kibol2_poison == 2:
+                $ kibol2_hp_now -= 1
+            
+            else:
+                if kibol2_poison == 1:
+                    $ kibol2_hp_now -= 1
+                
+        if kibol1_poison >= 1 and akane_poison >= 1 and kibol2_poison >= 1 and kibol1_hp_now >= 0 and akane_hp_now >= 0 and kibol2_hp_now >= 0:
+            "{i}Kibol 1, Akane i Kibol 2 stracili po 1HP z powodu ukąszenia przez węża{/i}"
+                    
+        else:
+            if kibol1_poison >= 1 and akane_poison >= 1 and kibol1_hp_now >= 0 and akane_hp_now >= 0:
+                "{i}Kibol 1 i Akane stracili po 1HP z powodu ukąszenia przez węża{/i}"
+                        
+            else:
+                if akane_poison >= 1 and kibol2_poison >= 1 and akane_hp_now >= 0 and kibol2_hp_now >= 0:
+                    "{i}Akane i Kibol 2 stracili po 1HP z powodu ukąszenia przez węża{/i}"
+                                
+                            
+                else:
+                    if kibol1_poison >= 1 and kibol2_poison >= 1 and kibol1_hp_now >= 0 and kibol2_hp_now >= 0:
+                        "{i}Kibol 1 i Kibol 2 stracili po 1HP z powodu ukąszenia przez węża{/i}"
+                                
+                    else:
+                        if kibol1_poison >= 1 and kibol1_hp_now >= 0:
+                            "{i}Kibol 1 stracił 1HP z powodu ukąszenia przez węża{/i}"
+                                    
+                        else:
+                            if akane_poison >= 1 and akane_hp_now >= 0:
+                                "{i}Akane stracił 1HP z powodu ukąszenia przez węża{/i}"
+
+                            else:
+                                if kibol2_poison >= 1 and kibol2_hp_now >= 0:
+                                    "{i}Kibol 2 stracił 1HP z powodu ukąszenia przez węża{/i}"
+        
+        if kibol1_poison == 1 and kibol1_hp_now >= 1:
+            $ kibol1_poison -= 1
+            hide snake11
+        
+        if kibol1_poison == 2 and kibol1_hp_now >= 1:
+            $ kibol1_poison -= 1
+            hide snake21
+            show snake11 zorder 15 at center_wrog1
+
+        if kibol1_poison == 3 and kibol1_hp_now >= 1:
+            $ kibol1_poison -= 1
+            hide snake31
+            show snake21 zorder 15 at center_wrog1
+        
+        if akane_poison == 1 and akane_hp_now >= 1:
+            $ akane_poison -= 1
+            hide snake12
+        
+        if akane_poison == 2 and akane_hp_now >= 1:
+            $ akane_poison -= 1
+            hide snake22
+            show snake12 zorder 15 at center_wrog3
+        
+        if akane_poison == 3 and akane_hp_now >= 1:
+            $ akane_poison -= 1
+            hide snake32
+            show snake22 zorder 15 at center_wrog3
+
+        if kibol2_poison == 1 and kibol2_hp_now >= 1:
+            $ kibol2_poison -= 1
+            hide snake13    
+
+        if kibol2_poison == 2 and kibol2_hp_now >= 1:
+            $ kibol2_poison -= 1
+            hide snake23
+            show snake13 zorder 15 at center_wrog2 
+        
+        if kibol2_poison == 3 and kibol2_hp_now >= 1:
+            $ kibol2_poison -= 1
+            hide snake33
+            show snake23 zorder 15 at center_wrog2
+
         if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
             hide pager1
             hide uszy1
             hide kibol1
@@ -649,6 +760,9 @@ label fight1:
             $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
             hide pager2
             hide uszy2
             hide akane
@@ -669,6 +783,9 @@ label fight1:
             $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
             hide pager3
             hide uszy3
             hide kibol2
@@ -1068,6 +1185,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= luszcz_attack
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -1114,6 +1235,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= luszcz_attack
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -1160,6 +1285,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= luszcz_attack
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -2030,6 +2159,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= urban_attack
                                 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -2076,6 +2209,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= urban_attack
                                 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -2090,7 +2227,7 @@ label fight1:
                                 "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                 $ kibol2_obrona = 1
                                                                
-                            else:     
+                            else: 
                                 if urban_weapon >= 1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
@@ -2122,6 +2259,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= urban_attack
 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -2470,6 +2611,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= zyd_attack
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -2517,6 +2662,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= zyd_attack
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -2563,6 +2712,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= zyd_attack
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -2971,6 +3124,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -3017,6 +3174,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -3063,6 +3224,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -3785,6 +3950,10 @@ label fight1:
                                             $ dmg = int(tarczownik_attack / 2)
                                             "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
                                         else:
+                                            if bazooka == 6:
+                                                $ kibol1_poison = 3
+                                                show snake31 zorder 15 at center_wrog1
+
                                             $ kibol1_hp_now -= tarczownik_attack
 
                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
@@ -3860,6 +4029,10 @@ label fight1:
                                                 $ dmg = int(tarczownik_attack / 2)
                                                 "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
                                             else:
+                                                if bazooka == 6:
+                                                    $ kibol1_poison = 3
+                                                    show snake31 zorder 15 at center_wrog1
+
                                                 $ kibol1_hp_now -= tarczownik_attack
 
                                                 "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
@@ -3933,6 +4106,10 @@ label fight1:
                                                 $ dmg = int(tarczownik_attack / 2)
                                                 "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
                                             else:
+                                                if bazooka == 6:
+                                                    $ kibol1_poison = 3
+                                                    show snake31 zorder 15 at center_wrog1
+
                                                 $ kibol1_hp_now -= tarczownik_attack
 
                                                 "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
@@ -4011,6 +4188,10 @@ label fight1:
                                                 $ dmg = int(tarczownik_attack / 2)
                                                 "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
                                             else:
+                                                if bazooka == 6:
+                                                    $ akane_poison = 3
+                                                    show snake32 zorder 15 at center_wrog3
+
                                                 $ akane_hp_now -= tarczownik_attack
 
                                                 "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
@@ -4086,6 +4267,10 @@ label fight1:
                                                     $ dmg = int(tarczownik_attack / 2)
                                                     "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
                                                 else:
+                                                    if bazooka == 6:
+                                                        $ akane_poison = 3
+                                                        show snake32 zorder 15 at center_wrog3
+
                                                     $ akane_hp_now -= tarczownik_attack
 
                                                     "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
@@ -4160,6 +4345,10 @@ label fight1:
                                                     $ dmg = int(tarczownik_attack / 2)
                                                     "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
                                                 else:
+                                                    if bazooka == 6:
+                                                        $ akane_poison = 3
+                                                        show snake32 zorder 15 at center_wrog3
+
                                                     $ akane_hp_now -= tarczownik_attack
 
                                                     "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
@@ -4240,6 +4429,10 @@ label fight1:
                                                     $ dmg = int(tarczownik_attack / 2)
                                                     "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
                                                 else:
+                                                    if bazooka == 6:
+                                                        $ kibol2_poison = 3
+                                                        show snake33 zorder 15 at center_wrog2
+
                                                     $ kibol2_hp_now -= tarczownik_attack
 
                                                     "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
@@ -4315,6 +4508,10 @@ label fight1:
                                                         $ dmg = int(tarczownik_attack / 2)
                                                         "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
                                                     else:
+                                                        if bazooka == 6:
+                                                            $ kibol2_poison = 3
+                                                            show snake33 zorder 15 at center_wrog2
+
                                                         $ kibol2_hp_now -= tarczownik_attack
 
                                                         "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
@@ -4389,6 +4586,10 @@ label fight1:
                                                         $ dmg = int(tarczownik_attack / 2)
                                                         "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
                                                     else:
+                                                        if bazooka == 6:
+                                                            $ kibol2_poison = 3
+                                                            show snake33 zorder 15 at center_wrog2
+
                                                         $ kibol2_hp_now -= tarczownik_attack
 
                                                         "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
@@ -4615,6 +4816,9 @@ label fight1:
         hide ruch
 
         if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
             hide pager1
             hide uszy1
             hide kibol1
@@ -4635,6 +4839,9 @@ label fight1:
             $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
             hide pager2
             hide uszy2
             hide akane
@@ -4655,6 +4862,9 @@ label fight1:
             $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
             hide pager3
             hide uszy3
             hide kibol2
@@ -5033,6 +5243,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= luszcz_attack
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -5079,6 +5293,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= luszcz_attack
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -5125,6 +5343,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= luszcz_attack
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -5994,6 +6216,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= urban_attack
                                 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -6040,6 +6266,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= urban_attack
                                 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -6086,6 +6316,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= urban_attack
 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -6433,6 +6667,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= zyd_attack
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -6479,6 +6717,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= zyd_attack
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -6525,6 +6767,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= zyd_attack
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -6932,6 +7178,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -6978,6 +7228,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -7024,6 +7278,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -7530,6 +7788,9 @@ label fight1:
         hide ruch
 
         if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
             hide pager1
             hide uszy1
             hide kibol1
@@ -7550,6 +7811,9 @@ label fight1:
             $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
             hide pager2
             hide uszy2
             hide akane
@@ -7570,6 +7834,9 @@ label fight1:
             $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
             hide pager3
             hide uszy3
             hide kibol2
@@ -7948,6 +8215,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= luszcz_attack
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -7994,6 +8265,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= luszcz_attack
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -8040,6 +8315,10 @@ label fight1:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 2:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= luszcz_attack
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
@@ -8910,6 +9189,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= urban_attack
                                 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -8956,6 +9239,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= urban_attack
                                 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -9002,6 +9289,10 @@ label fight1:
                                     $ dmg = int(urban_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 3:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= urban_attack
 
                                     "{i}Atak zadał [urban_attack] obrażeń{/i}"
@@ -9349,6 +9640,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= zyd_attack
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -9395,6 +9690,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= zyd_attack
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -9441,6 +9740,10 @@ label fight1:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 4:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= zyd_attack
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
@@ -9848,6 +10151,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ kibol1_poison = 3
+                                        show snake31 zorder 15 at center_wrog1
+
                                     $ kibol1_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -9894,6 +10201,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ akane_poison = 3
+                                        show snake32 zorder 15 at center_wrog3
+
                                     $ akane_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -9940,6 +10251,10 @@ label fight1:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                 else:
+                                    if bazooka == 5:
+                                        $ kibol2_poison = 3
+                                        show snake33 zorder 15 at center_wrog2
+
                                     $ kibol2_hp_now -= kazuma_attack
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
@@ -10450,6 +10765,9 @@ label fight1:
         hide ruch
 
         if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
             hide pager1
             hide uszy1
             hide kibol1
@@ -10470,6 +10788,9 @@ label fight1:
             $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
             hide pager2
             hide uszy2
             hide akane
@@ -10490,6 +10811,9 @@ label fight1:
             $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
             hide pager3
             hide uszy3
             hide kibol2
@@ -11344,6 +11668,9 @@ label fight1:
         hide ruch
 
         if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
             hide pager1
             hide uszy1
             hide kibol1
@@ -11364,6 +11691,9 @@ label fight1:
             $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
             hide pager2
             hide uszy2
             hide akane
@@ -11384,6 +11714,9 @@ label fight1:
             $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
             hide pager3
             hide uszy3
             hide kibol2
@@ -12227,6 +12560,9 @@ label fight1:
         hide ruch
 
         if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
             hide pager1
             hide uszy1
             hide kibol1
@@ -12247,6 +12583,9 @@ label fight1:
             $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
             hide pager2
             hide uszy2
             hide akane
@@ -12267,6 +12606,9 @@ label fight1:
             $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
             hide pager3
             hide uszy3
             hide kibol2
@@ -13079,6 +13421,15 @@ label fight1:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        hide snake33
+        hide snake23
+        hide snake13
+        hide snake32
+        hide snake22
+        hide snake12
+        hide snake31
+        hide snake21
+        hide snake11
         hide air_strike_shield1
         hide air_strike_shield2
         hide air_strike_shield3
@@ -13240,6 +13591,15 @@ label fight1:
 
 
     label wygranko_fight1:
+        hide snake33
+        hide snake23
+        hide snake13
+        hide snake32
+        hide snake22
+        hide snake12
+        hide snake31
+        hide snake21
+        hide snake11
         hide air_strike_shield1
         hide air_strike_shield2
         hide air_strike_shield3
