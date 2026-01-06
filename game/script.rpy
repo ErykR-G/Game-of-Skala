@@ -711,7 +711,7 @@ label start:
 
                 
             "{b}CO TO?{/b}":
-                $ ado += 1
+                pass
 
         "{i}O bogowie walka{/i}"
         

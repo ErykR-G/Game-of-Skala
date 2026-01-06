@@ -67,6 +67,10 @@ label fight1_stats:
     default kibol2_poison = 0
     default akane_poison = 0
 
+    default kibol1_stun = 0
+    default kibol2_stun = 0
+    default akane_stun = 0
+
 label fight1:
     label fight_wybor1:
         play music "audio/music/fight.mp3"
@@ -242,28 +246,18 @@ label fight1:
     
                         if luszcz_fighter == 1:
                             $ luszcz_fighter += 1
-                        else:
-                            $ ado += 1
 
                         if eminem_fighter == 1:
                             $ eminem_fighter += 1
-                        else:
-                            $ ado += 1
 
                         if urban_fighter == 1:
                             $ urban_fighter += 1
-                        else:
-                            $ ado += 1
 
                         if zyd_fighter == 1:
                             $ zyd_fighter += 1
-                        else:
-                            $ ado += 1
 
                         if kazuma_fighter == 1:
                             $ kazuma_fighter += 1
-                        else:
-                            $ ado += 1
 
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_min_attack_now = tarczownik_min_attack
@@ -346,40 +340,30 @@ label fight1:
                         else:
                             if luszcz_fighter == 2:
                                 $ luszcz_fighter += 1
-                            else:
-                                $ ado += 1
 
                         if eminem_fighter == 1:
                             $ eminem_fighter += 1
                         else:
                             if eminem_fighter == 2:
                                 $ eminem_fighter += 1
-                            else:
-                                $ ado += 1
 
                         if urban_fighter == 1:
                             $ urban_fighter += 1
                         else:
                             if urban_fighter == 2:
                                 $ urban_fighter += 1
-                            else:
-                                $ ado += 1
 
                         if zyd_fighter == 1:
                             $ zyd_fighter += 1
                         else:
                             if zyd_fighter == 2:
                                 $ zyd_fighter += 1
-                            else:
-                                $ ado += 1
 
                         if kazuma_fighter == 1:
                             $ kazuma_fighter += 1
                         else:
                             if kazuma_fighter == 2:
                                 $ kazuma_fighter += 1
-                            else:
-                                $ ado += 1
 
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_min_attack_now = tarczownik_min_attack
@@ -539,28 +523,18 @@ label fight1:
         
                             if luszcz_fighter == 1:
                                 $ luszcz_fighter += 1
-                            else:
-                                $ ado += 1
 
                             if eminem_fighter == 1:
                                 $ eminem_fighter += 1
-                            else:
-                                $ ado += 1
 
                             if urban_fighter == 1:
                                 $ urban_fighter += 1
-                            else:
-                                $ ado += 1
 
                             if zyd_fighter == 1:
                                 $ zyd_fighter += 1
-                            else:
-                                $ ado += 1
 
                             if kazuma_fighter == 1:
                                 $ kazuma_fighter += 1
-                            else:
-                                $ ado += 1
 
                             $ tarczownik_hp_now = tarczownik_hp
                             $ tarczownik_min_attack_now = tarczownik_min_attack
@@ -632,6 +606,170 @@ label fight1:
         hide tarcza3
         hide tarcza4
         hide tarcza5
+        hide stun1
+        hide stun2
+        hide stun3
+
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
+
+            if akane_slime >= 1:
+                hide slime
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide ekdplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
 
         if kibol1_poison >= 3 and kibol1_hp_now >= 1:
             $ kibol1_hp_now -= 1
@@ -667,31 +805,38 @@ label fight1:
                     $ kibol2_hp_now -= 1
                 
         if kibol1_poison >= 1 and akane_poison >= 1 and kibol2_poison >= 1 and kibol1_hp_now >= 0 and akane_hp_now >= 0 and kibol2_hp_now >= 0:
+            play sound "audio/sfx/snake.mp3"
             "{i}Kibol 1, Akane i Kibol 2 stracili po 1HP z powodu ukąszenia przez węża{/i}"
                     
         else:
             if kibol1_poison >= 1 and akane_poison >= 1 and kibol1_hp_now >= 0 and akane_hp_now >= 0:
+                play sound "audio/sfx/snake.mp3"
                 "{i}Kibol 1 i Akane stracili po 1HP z powodu ukąszenia przez węża{/i}"
                         
             else:
                 if akane_poison >= 1 and kibol2_poison >= 1 and akane_hp_now >= 0 and kibol2_hp_now >= 0:
+                    play sound "audio/sfx/snake.mp3"
                     "{i}Akane i Kibol 2 stracili po 1HP z powodu ukąszenia przez węża{/i}"
                                 
                             
                 else:
                     if kibol1_poison >= 1 and kibol2_poison >= 1 and kibol1_hp_now >= 0 and kibol2_hp_now >= 0:
+                        play sound "audio/sfx/snake.mp3"
                         "{i}Kibol 1 i Kibol 2 stracili po 1HP z powodu ukąszenia przez węża{/i}"
                                 
                     else:
                         if kibol1_poison >= 1 and kibol1_hp_now >= 0:
+                            play sound "audio/sfx/snake.mp3"
                             "{i}Kibol 1 stracił 1HP z powodu ukąszenia przez węża{/i}"
                                     
                         else:
                             if akane_poison >= 1 and akane_hp_now >= 0:
+                                play sound "audio/sfx/snake.mp3"
                                 "{i}Akane stracił 1HP z powodu ukąszenia przez węża{/i}"
 
                             else:
                                 if kibol2_poison >= 1 and kibol2_hp_now >= 0:
+                                    play sound "audio/sfx/snake.mp3"
                                     "{i}Kibol 2 stracił 1HP z powodu ukąszenia przez węża{/i}"
         
         if kibol1_poison == 1 and kibol1_hp_now >= 1:
@@ -750,14 +895,11 @@ label fight1:
             $ kibol1_obrona = 0
             $ kibol1_weapon = 0
             $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
 
             if kibol1_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
             hide snake32
@@ -773,14 +915,11 @@ label fight1:
             $ akane_obrona = 0
             $ akane_weapon = 0
             $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
 
             if akane_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
             hide snake33
@@ -796,19 +935,14 @@ label fight1:
             $ kibol2_obrona = 0
             $ kibol2_weapon = 0
             $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
 
             if kibol2_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
-        else:
-            $ ado += 1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz
@@ -821,8 +955,6 @@ label fight1:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
-        else:
-            $ ado += 1
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide eminem
@@ -835,9 +967,6 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
-        else:
-            $ ado += 1
-
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide uszy1
             hide uszy2
@@ -852,8 +981,6 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
-        else:
-            $ ado += 1
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide red_button
@@ -874,8 +1001,6 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
-        else:
-            $ ado += 1
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide kazuma
@@ -888,8 +1013,6 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
-        else:
-            $ ado += 1
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide air_strike_shield1
@@ -905,8 +1028,6 @@ label fight1:
                 $ zyd_obrona = 0
                 $ kazuma_obrona = 0
                 $ tarczownik_obrona = 0
-            else:
-                $ ado += 1
 
             hide screen tarczownik1_stats
             hide screen tarczownik2_stats
@@ -916,17 +1037,17 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
-        else:
-            $ ado += 1
 
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
-        else:
-            $ ado += 1
         
         $ kibol1_uszy = 0
         $ akane_uszy = 0
         $ kibol2_uszy = 0
+
+        $ akane_stun = 0
+        $ kibol1_stun = 0
+        $ kibol2_stun = 0
 
         $ luszcz_obrona = 0
         $ eminem_obrona = 0
@@ -968,18 +1089,12 @@ label fight1:
         if luszcz_fighter == 1:
             if luszcz_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if luszcz_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -1068,18 +1183,12 @@ label fight1:
                     else:
                         if luszcz_wybrany == 1:
                             show reka1 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if luszcz_wybrany == 2:
                             show reka1 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if luszcz_wybrany == 3:
                             show reka1 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -1190,8 +1299,17 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= luszcz_attack
+
+                                    if luszcz_przepychaczka == 2 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+
                                 jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
@@ -1240,6 +1358,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= luszcz_attack
+
+                                    if luszcz_przepychaczka == 2 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza12
@@ -1291,6 +1417,14 @@ label fight1:
 
                                     $ kibol2_hp_now -= luszcz_attack
 
+                                    if luszcz_przepychaczka == 2 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
+
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza12
                     
@@ -1298,18 +1432,13 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if luszcz_wybrany == 1:
                         show tarcza1 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show tarcza1 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show tarcza1 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
+
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
                     jump faza12
@@ -1318,18 +1447,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if luszcz_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items11
@@ -1338,18 +1461,12 @@ label fight1:
                     play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show herbaty zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show herbaty zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Ale jaką?{/b}"
@@ -1358,18 +1475,12 @@ label fight1:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 2:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 3:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                            else:
-                                $ ado += 1
 
                             menu:
                                 "{b}Dla Kogo?{/b}"
@@ -1390,18 +1501,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_hp_now + 5 > eminem_hp:
                                         $ eminem_hp_now = eminem_hp
@@ -1416,18 +1521,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if urban_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if urban_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if urban_hp_now + 5 > urban_hp:
                                         $ urban_hp_now = urban_hp
@@ -1442,18 +1541,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_hp_now + 5 > zyd_hp:
                                         $ zyd_hp_now = zyd_hp
@@ -1468,18 +1561,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_hp_now + 5 > kazuma_hp:
                                         $ kazuma_hp_now = kazuma_hp
@@ -1494,18 +1581,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_hp_now + 5 > tarczownik_hp:
                                         $ tarczownik_hp_now = tarczownik_hp
@@ -1523,18 +1604,12 @@ label fight1:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 2:
                                 show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 3:
                                 show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                            else:
-                                $ ado += 1
 
                             if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
                                 if luszcz_hp_now + 2 > luszcz_hp:
@@ -1545,18 +1620,12 @@ label fight1:
                             if eminem_hp_now >= 1 and eminem_wybrany >= 1:
                                 if eminem_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if eminem_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if eminem_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if eminem_hp_now + 2 > eminem_hp:
                                     $ eminem_hp_now = eminem_hp
@@ -1566,18 +1635,12 @@ label fight1:
                             if urban_hp_now >= 1 and urban_wybrany >= 1:
                                 if urban_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if urban_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if urban_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if urban_hp_now + 2 > urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -1587,18 +1650,12 @@ label fight1:
                             if zyd_hp_now >= 1 and zyd_wybrany >= 1:
                                 if zyd_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if zyd_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if zyd_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if zyd_hp_now + 2 > zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -1608,18 +1665,12 @@ label fight1:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
                                 if kazuma_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_hp_now + 2 > kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -1629,18 +1680,12 @@ label fight1:
                             if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
                                 if tarczownik_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_hp_now + 2 > tarczownik_hp:
                                     $ tarczownik_hp_now = tarczownik_hp
@@ -1652,24 +1697,16 @@ label fight1:
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
                             jump faza12
-        else:
-            $ ado += 1
         
         if eminem_fighter == 1:
             if eminem_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if eminem_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -1678,34 +1715,22 @@ label fight1:
                     if eminem_weapon >= 1:
                         if eminem_wybrany == 1:
                             show eminem_weapon zorder 15 at weapon_sojusznik1  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 2:
                             show eminem_weapon zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 3:
                             show eminem_weapon zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
 
                     else:
                         if eminem_wybrany == 1:
                             show reka2 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 2:
                             show reka2 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 3:
                             show reka2 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -1781,18 +1806,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if eminem_wybrany == 1:
                         show tarcza2 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show tarcza2 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show tarcza2 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
@@ -1802,18 +1821,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if eminem_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     eminem "Czas zabawy się skończył"
                     jump items11
@@ -1821,18 +1834,12 @@ label fight1:
                 "{b}Rzut Szlamem{/b}":
                     if eminem_wybrany == 1:
                         show slime zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show slime zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show slime zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Na kim użyć?{/b}"
@@ -1936,24 +1943,15 @@ label fight1:
                                 "{i}Statystyki Kibol 2 zostały osłabione{/i}"
                                 jump faza12
 
-        else:
-            $ ado += 1
-
         if urban_fighter == 1:
             if urban_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if urban_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
 
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -2042,18 +2040,12 @@ label fight1:
                     else:
                         if urban_wybrany == 1:
                             show reka3 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if urban_wybrany == 2:
                             show reka3 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if urban_wybrany == 3:
                             show reka3 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 3 and urban_weapon >= 1:
                         urban "i Ci kutasa obetnie"
@@ -2120,170 +2112,209 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban1:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol1_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ kibol1_obrona = 1
-                                                               
-                            else:  
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                if kibol1_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ kibol1_obrona = 1
+                                                                
+                                else:  
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol1_obrona == 1 and stop == 3 or urban_attack == 2 and kibol1_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban1
                                     
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                if kibol1_obrona == 1:
-                                    $ kibol1_hp_now -= int(urban_attack / 2)
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ kibol1_poison = 3
-                                        show snake31 zorder 15 at center_wrog1
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
 
-                                    $ kibol1_hp_now -= urban_attack
-                                
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza12
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
+                                        if kibol1_obrona == 1:
+                                            $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ kibol1_poison = 3
+                                                show snake31 zorder 15 at center_wrog1
+
+                                            $ kibol1_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and kibol1_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun1 zorder 15 at head_wrog1
+                                                    $ kibol1_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza12
+                                        
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban2:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if akane_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ akane_obrona = 1
-                                                               
-                            else:
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
-                                    
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
+                                if akane_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ akane_obrona = 1
+                                                                
                                 else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and akane_obrona == 1 and stop == 3 or urban_attack == 2 and akane_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban2
+                                    
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                if akane_obrona == 1:
-                                    $ akane_hp_now -= int(urban_attack / 2)
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ akane_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ akane_hp_now -= urban_attack
-                                
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza12
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
+
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
+                                        if akane_obrona == 1:
+                                            $ akane_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ akane_poison = 3
+                                                show snake32 zorder 15 at center_wrog3
+
+                                            $ akane_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and akane_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun2 zorder 15 at head_wrog3
+                                                    $ akane_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza12
+                                        
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban3:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol2_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ kibol2_obrona = 1
-                                                               
-                            else: 
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                if kibol2_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ kibol2_obrona = 1
+                                                                
+                                else: 
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol2_obrona == 1 and stop == 3 or urban_attack == 2 and kibol2_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban3
                                     
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                if kibol2_obrona == 1:
-                                    $ kibol2_hp_now -= int(urban_attack / 2)
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ kibol2_poison = 3
-                                        show snake33 zorder 15 at center_wrog2
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
 
-                                    $ kibol2_hp_now -= urban_attack
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
 
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza12
+                                        if kibol2_obrona == 1:
+                                            $ kibol2_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ kibol2_poison = 3
+                                                show snake33 zorder 15 at center_wrog2
+
+                                            $ kibol2_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and kibol2_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun3 zorder 15 at head_wrog2
+                                                    $ kibol2_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza12
+
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza12
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
                     if urban_wybrany == 1:
                         show tarcza3 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show tarcza3 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show tarcza3 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
@@ -2293,18 +2324,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if urban_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     urban "No tak było, nie zmyślam"
                     jump items11
@@ -2312,35 +2337,23 @@ label fight1:
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show uszy zorder 15 at head_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show uszy zorder 15 at head_sojusznik3 
-                    else:
-                        $ ado += 1
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kibol1_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if kibol1_obrona <= 0:
                         $ kibol1_uszy += 1
                     
-                    if akane_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if akane_obrona <= 0:
                         $ akane_uszy += 1
                     
-                    if kibol2_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if kibol2_obrona <= 0:
                         $ kibol2_uszy += 1
 
                     if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -2388,24 +2401,15 @@ label fight1:
 
                     hide uszy
                     jump faza12   
-        else:
-            $ ado += 1
-
         if zyd_fighter == 1:
             if zyd_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if zyd_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -2494,18 +2498,12 @@ label fight1:
                     else:
                         if zyd_wybrany == 1:
                             show reka4 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if zyd_wybrany == 2:
                             show reka4 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if zyd_wybrany == 3:
                             show reka4 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:    
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -2616,6 +2614,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= zyd_attack
+
+                                    if zyd_przepychaczka == 4 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
 
@@ -2667,6 +2673,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= zyd_attack
+
+                                    if zyd_przepychaczka == 4 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza12
@@ -2718,6 +2732,14 @@ label fight1:
 
                                     $ kibol2_hp_now -= zyd_attack
 
+                                    if zyd_przepychaczka == 4 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
+
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza12
                     
@@ -2725,18 +2747,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if zyd_wybrany == 1:
                         show tarcza4 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show tarcza4 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show tarcza4 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
@@ -2746,18 +2762,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if zyd_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items11
@@ -2765,18 +2775,12 @@ label fight1:
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and kibol1_pager == 0 and kibol1_hp_now >= 1 or pager_boom == 0 and akane_pager == 0 and akane_hp_now >= 1 or pager_boom == 0 and kibol2_pager == 0 and kibol2_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show pager zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show pager zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Komu?{/b}"
@@ -2818,18 +2822,12 @@ label fight1:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show red_button zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show red_button zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
                     play sound "audio/sfx/boom.mp3" 
@@ -2885,9 +2883,6 @@ label fight1:
                                                 show eksplozja3 zorder 16 at bok_wrog2
                                                 "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
 
-                                            else:
-                                                $ ado += 1
-
                     hide red_button
                     hide pager1
                     hide pager2
@@ -2901,24 +2896,16 @@ label fight1:
                         $ dialog_fight1 += 1
 
                     jump faza12
-        else:
-            $ ado += 1
 
         if kazuma_fighter == 1:
             if kazuma_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if kazuma_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -3007,18 +2994,12 @@ label fight1:
                     else:
                         if kazuma_wybrany == 1:
                             show reka5 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if kazuma_wybrany == 2:
                             show reka5 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if kazuma_wybrany == 3:
                             show reka5 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:   
                         kazuma "Tak, jestem Kazuma"
@@ -3129,6 +3110,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza12
@@ -3179,6 +3168,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza12
@@ -3229,6 +3226,14 @@ label fight1:
                                         show snake33 zorder 15 at center_wrog2
 
                                     $ kibol2_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza12
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza12
@@ -3238,18 +3243,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if kazuma_wybrany == 1:
                         show tarcza5 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show tarcza5 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show tarcza5 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
@@ -3259,18 +3258,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if kazuma_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items11
@@ -3278,18 +3271,12 @@ label fight1:
                 "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show chwyta zorder 16 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show chwyta zorder 16 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Na kim użyć?{/b}"
@@ -3323,18 +3310,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -3351,18 +3332,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -3409,18 +3384,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show akane_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show akane_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show akane_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -3437,18 +3406,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -3495,18 +3458,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -3523,18 +3480,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -3552,25 +3503,17 @@ label fight1:
                                         hide chwyta
                                         
                                 jump faza12
-        else:
-            $ ado += 1
 
         if tarczownik_fighter == 1 and tarczownik_weapon >= 1:
             if tarczownik_hp_now >= 1:
                 if tarczownik_wybrany == 1:
                     show ruch zorder 0 at tlo_sojusznik1  
-                else:
-                    $ ado += 1
 
                 if tarczownik_wybrany == 2:
                     show ruch zorder 0 at tlo_sojusznik2  
-                else:
-                    $ ado += 1
 
                 if tarczownik_wybrany == 3:
                     show ruch zorder 0 at tlo_sojusznik3 
-                else:
-                    $ ado += 1
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -3586,18 +3529,12 @@ label fight1:
 
                         if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
                             show air_strike_shield1 zorder 18 at tarcza_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if luszcz_wybrany == 2 and luszcz_hp_now >= 1 or eminem_wybrany == 2 and eminem_hp_now >= 1 or urban_wybrany == 2 and urban_hp_now >= 1 or zyd_wybrany == 2 and zyd_hp_now >= 1 or kazuma_wybrany == 2 and kazuma_hp_now >= 1 or tarczownik_wybrany == 2 and tarczownik_hp_now >= 1:
                             show air_strike_shield2 zorder 18 at tarcza_sojusznik2 
-                        else:
-                            $ ado += 1
                         
                         if luszcz_wybrany == 3 and luszcz_hp_now >= 1 or eminem_wybrany == 3 and eminem_hp_now >= 1 or urban_wybrany == 3 and urban_hp_now >= 1 or zyd_wybrany == 3 and zyd_hp_now >= 1 or kazuma_wybrany == 3 and kazuma_hp_now >= 1 or tarczownik_wybrany == 3 and tarczownik_hp_now >= 1:
                             show air_strike_shield3 zorder 18 at tarcza_sojusznik3 
-                        else:
-                            $ ado += 1
 
                         tarczownik "Air Strike Shield!l"
 
@@ -3628,11 +3565,6 @@ label fight1:
 
 
                         jump faza12
-                    
-                    else:
-                        $ ado += 1
-                else:
-                    $ ado += 1
                 
                 if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1:
                     $ kostka = renpy.random.randint(1, 2)
@@ -3642,18 +3574,12 @@ label fight1:
                         play sound "audio/sfx/shield_prison.mp3"
                         if tarczownik_wybrany == 1:
                             show shield_prison zorder 18 at prison_sojusznik1
-                        else:
-                            $ ado += 1
 
                         if tarczownik_wybrany == 2:
                             show shield_prison zorder 18 at prison_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if tarczownik_wybrany == 3:
                             show shield_prison zorder 18 at prison_sojusznik3 
-                        else:
-                            $ ado += 1
 
                         tarczownik "Shield Prison!"
 
@@ -3684,9 +3610,6 @@ label fight1:
 
 
                         jump faza12
-                        
-                    else:
-                        $ ado += 1
                 
                 $ kostka = renpy.random.randint(1, 10)
 
@@ -3701,18 +3624,12 @@ label fight1:
 
                     if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
                         show air_strike_shield1 zorder 18 at tarcza_sojusznik1 
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2 and luszcz_hp_now >= 1 or eminem_wybrany == 2 and eminem_hp_now >= 1 or urban_wybrany == 2 and urban_hp_now >= 1 or zyd_wybrany == 2 and zyd_hp_now >= 1 or kazuma_wybrany == 2 and kazuma_hp_now >= 1 or tarczownik_wybrany == 2 and tarczownik_hp_now >= 1:
                         show air_strike_shield2 zorder 18 at tarcza_sojusznik2 
-                    else:
-                        $ ado += 1
                         
                     if luszcz_wybrany == 3 and luszcz_hp_now >= 1 or eminem_wybrany == 3 and eminem_hp_now >= 1 or urban_wybrany == 3 and urban_hp_now >= 1 or zyd_wybrany == 3 and zyd_hp_now >= 1 or kazuma_wybrany == 3 and kazuma_hp_now >= 1 or tarczownik_wybrany == 3 and tarczownik_hp_now >= 1:
                         show air_strike_shield3 zorder 18 at tarcza_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     tarczownik "Air Strike Shield!"
 
@@ -3742,10 +3659,6 @@ label fight1:
 
 
                     jump faza12
-                    
-                else:
-                    $ ado += 1
-
                 
                 if tarczownik_weapon >= 1:
                     if tarczownik_wybrany == 1:
@@ -3826,18 +3739,12 @@ label fight1:
                 else:
                     if tarczownik_wybrany == 1:
                         show reka9 zorder 15 at weapon_sojusznik1 
-                    else:
-                        $ ado += 1
 
                     if tarczownik_wybrany == 2:
                         show reka9 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if tarczownik_wybrany == 3:
                         show reka9 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                 if ostrza_chaosu == 6 and tarczownik_weapon >= 1:
                     if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -3956,7 +3863,18 @@ label fight1:
 
                                             $ kibol1_hp_now -= tarczownik_attack
 
-                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                            if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun1 zorder 15 at head_wrog1
+                                                    $ kibol1_stun = 1
+                                                    "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                
+                                                else:
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                            
+                                            else:
+                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
 
                                     
                                     if dialog_fight2 == 0:
@@ -4035,7 +3953,18 @@ label fight1:
 
                                                 $ kibol1_hp_now -= tarczownik_attack
 
-                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        show stun1 zorder 15 at head_wrog1
+                                                        $ kibol1_stun = 1
+                                                        "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    
+                                                    else:
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                
+                                                else:
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
                                         
                                         if dialog_fight2 == 0:
                                             $ dialog_fight2 += 1
@@ -4112,7 +4041,18 @@ label fight1:
 
                                                 $ kibol1_hp_now -= tarczownik_attack
 
-                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        show stun1 zorder 15 at head_wrog1
+                                                        $ kibol1_stun = 1
+                                                        "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    
+                                                    else:
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                
+                                                else:
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
                                         
                                         if dialog_fight2 == 0:
                                             $ dialog_fight2 += 1
@@ -4194,8 +4134,19 @@ label fight1:
 
                                                 $ akane_hp_now -= tarczownik_attack
 
-                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
-                                        
+                                                if tarczownik_przepychaczka == 6 and akane_stun == 0:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        show stun2 zorder 15 at head_wrog3
+                                                        $ akane_stun = 1
+                                                        "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    
+                                                    else:
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                
+                                                else:
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                            
                                         if dialog_fight2 == 0:
                                             $ dialog_fight2 += 1
 
@@ -4273,7 +4224,18 @@ label fight1:
 
                                                     $ akane_hp_now -= tarczownik_attack
 
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                    if tarczownik_przepychaczka == 6 and akane_stun == 0:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            show stun2 zorder 15 at head_wrog3
+                                                            $ akane_stun = 1
+                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                    
+                                                    else:
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
                                             
                                             if dialog_fight2 == 0:
                                                 $ dialog_fight2 += 1
@@ -4351,8 +4313,19 @@ label fight1:
 
                                                     $ akane_hp_now -= tarczownik_attack
 
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
-                                            
+                                                    if tarczownik_przepychaczka == 6 and akane_stun == 0:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            show stun2 zorder 15 at head_wrog3
+                                                            $ akane_stun = 1
+                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                    
+                                                    else:
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                
 
                                             if dialog_fight2 == 0:
                                                 $ dialog_fight2 += 1
@@ -4435,7 +4408,18 @@ label fight1:
 
                                                     $ kibol2_hp_now -= tarczownik_attack
 
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                    if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            show stun3 zorder 15 at head_wrog2
+                                                            $ kibol2_stun = 1
+                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                    
+                                                    else:
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                             
                                             if dialog_fight2 == 0:
                                                 $ dialog_fight2 += 1
@@ -4514,7 +4498,18 @@ label fight1:
 
                                                         $ kibol2_hp_now -= tarczownik_attack
 
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if kostka <= 3:
+                                                                show stun3 zorder 15 at head_wrog2
+                                                                $ kibol2_stun = 1
+                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                            
+                                                            else:
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                                 
                                                 if dialog_fight2 == 0:
                                                     $ dialog_fight2 += 1
@@ -4592,7 +4587,18 @@ label fight1:
 
                                                         $ kibol2_hp_now -= tarczownik_attack
 
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if kostka <= 3:
+                                                                show stun3 zorder 15 at head_wrog2
+                                                                $ kibol2_stun = 1
+                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                            
+                                                            else:
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                                 
 
                                                 if dialog_fight2 == 0:
@@ -4627,11 +4633,6 @@ label fight1:
                                     jump losowanko_tarczownik1
                             else:
                                 jump losowanko_tarczownik1
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1 
 
         jump faza12
         label items11:
@@ -4829,14 +4830,11 @@ label fight1:
             $ kibol1_obrona = 0
             $ kibol1_weapon = 0
             $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
 
             if kibol1_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
             hide snake32
@@ -4852,14 +4850,11 @@ label fight1:
             $ akane_obrona = 0
             $ akane_weapon = 0
             $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
 
             if akane_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
             hide snake33
@@ -4875,19 +4870,14 @@ label fight1:
             $ kibol2_obrona = 0
             $ kibol2_weapon = 0
             $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
 
             if kibol2_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
-        else:
-            $ ado += 1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz
@@ -4900,8 +4890,6 @@ label fight1:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
-        else:
-            $ ado += 1
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide eminem
@@ -4914,8 +4902,6 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
-        else:
-            $ ado += 1
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide uszy1
@@ -4931,8 +4917,6 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
-        else:
-            $ ado += 1
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide red_button
@@ -4953,8 +4937,6 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
-        else:
-            $ ado += 1
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide kazuma
@@ -4967,8 +4949,6 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
-        else:
-            $ ado += 1
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide air_strike_shield1
@@ -4983,8 +4963,6 @@ label fight1:
                 $ zyd_obrona = 0
                 $ kazuma_obrona = 0
                 $ tarczownik_obrona = 0
-            else:
-                $ ado += 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -4995,13 +4973,9 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
-        else:
-            $ ado += 1
         
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
-        else:
-            $ ado += 1
         
         if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 2:
             $ luszcz_min_attack_now += 1
@@ -5026,18 +5000,12 @@ label fight1:
         if luszcz_fighter == 2:
             if luszcz_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if luszcz_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -5126,18 +5094,12 @@ label fight1:
                     else:
                         if luszcz_wybrany == 1:
                             show reka1 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if luszcz_wybrany == 2:
                             show reka1 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if luszcz_wybrany == 3:
                             show reka1 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -5248,6 +5210,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= luszcz_attack
+
+                                    if luszcz_przepychaczka == 2 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza13
@@ -5298,6 +5268,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= luszcz_attack
+
+                                    if luszcz_przepychaczka == 2 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza13
@@ -5349,6 +5327,14 @@ label fight1:
 
                                     $ kibol2_hp_now -= luszcz_attack
 
+                                    if luszcz_przepychaczka == 2 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
+
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza13
                     
@@ -5356,18 +5342,13 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if luszcz_wybrany == 1:
                         show tarcza1 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show tarcza1 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show tarcza1 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
+
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
                     jump faza13
@@ -5376,18 +5357,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if luszcz_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items12
@@ -5396,18 +5371,12 @@ label fight1:
                     play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show herbaty zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show herbaty zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Ale jaką?{/b}"
@@ -5416,18 +5385,12 @@ label fight1:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 2:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 3:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                            else:
-                                $ ado += 1
 
                             menu:
                                 "{b}Dla Kogo?{/b}"
@@ -5448,18 +5411,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_hp_now + 5 > eminem_hp:
                                         $ eminem_hp_now = eminem_hp
@@ -5474,18 +5431,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if urban_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if urban_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if urban_hp_now + 5 > urban_hp:
                                         $ urban_hp_now = urban_hp
@@ -5500,18 +5451,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_hp_now + 5 > zyd_hp:
                                         $ zyd_hp_now = zyd_hp
@@ -5526,18 +5471,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_hp_now + 5 > kazuma_hp:
                                         $ kazuma_hp_now = kazuma_hp
@@ -5552,18 +5491,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_hp_now + 5 > tarczownik_hp:
                                         $ tarczownik_hp_now = tarczownik_hp
@@ -5581,18 +5514,12 @@ label fight1:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 2:
                                 show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 3:
                                 show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                            else:
-                                $ ado += 1
 
                             if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
                                 if luszcz_hp_now + 2 > luszcz_hp:
@@ -5603,18 +5530,12 @@ label fight1:
                             if eminem_hp_now >= 1 and eminem_wybrany >= 1:
                                 if eminem_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if eminem_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if eminem_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if eminem_hp_now + 2 > eminem_hp:
                                     $ eminem_hp_now = eminem_hp
@@ -5624,18 +5545,12 @@ label fight1:
                             if urban_hp_now >= 1 and urban_wybrany >= 1:
                                 if urban_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if urban_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if urban_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if urban_hp_now + 2 > urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -5645,18 +5560,12 @@ label fight1:
                             if zyd_hp_now >= 1 and zyd_wybrany >= 1:
                                 if zyd_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if zyd_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if zyd_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if zyd_hp_now + 2 > zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -5666,18 +5575,12 @@ label fight1:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
                                 if kazuma_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_hp_now + 2 > kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -5687,18 +5590,12 @@ label fight1:
                             if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
                                 if tarczownik_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_hp_now + 2 > tarczownik_hp:
                                     $ tarczownik_hp_now = tarczownik_hp
@@ -5710,24 +5607,16 @@ label fight1:
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
                             jump faza13
-        else:
-            $ ado += 1
         
         if eminem_fighter == 2:
             if eminem_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if eminem_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -5736,34 +5625,22 @@ label fight1:
                     if eminem_weapon >= 1:
                         if eminem_wybrany == 1:
                             show eminem_weapon zorder 15 at weapon_sojusznik1  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 2:
                             show eminem_weapon zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 3:
                             show eminem_weapon zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
 
                     else:
                         if eminem_wybrany == 1:
                             show reka2 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 2:
                             show reka2 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 3:
                             show reka2 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -5839,18 +5716,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if eminem_wybrany == 1:
                         show tarcza2 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show tarcza2 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show tarcza2 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
@@ -5860,18 +5731,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if eminem_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     eminem "Czas zabawy się skończył"
                     jump items12
@@ -5879,18 +5744,12 @@ label fight1:
                 "{b}Rzut Szlamem{/b}":
                     if eminem_wybrany == 1:
                         show slime zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show slime zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show slime zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
                     
                     menu:
                         "{b}Na kim użyć?{/b}"
@@ -5993,24 +5852,16 @@ label fight1:
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Kibol 2 zostały osłabione{/i}"
                                 jump faza13
-        else:
-            $ ado += 1
 
         if urban_fighter == 2:
             if urban_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if urban_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -6099,18 +5950,12 @@ label fight1:
                     else:
                         if urban_wybrany == 1:
                             show reka3 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if urban_wybrany == 2:
                             show reka3 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if urban_wybrany == 3:
                             show reka3 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 3 and urban_weapon >= 1:                  
                         urban "i Ci kutasa obetnie"
@@ -6177,170 +6022,209 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban4:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol1_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ kibol1_obrona = 1
-                                                               
-                            else:
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
-                                    
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
+                                if kibol1_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ kibol1_obrona = 1
+                                                                
                                 else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol1_obrona == 1 and stop == 3 or urban_attack == 2 and kibol1_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban4
+                                    
+                                    else:  
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                if kibol1_obrona == 1:
-                                    $ kibol1_hp_now -= int(urban_attack / 2)
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ kibol1_poison = 3
-                                        show snake31 zorder 15 at center_wrog1
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ kibol1_hp_now -= urban_attack
-                                
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza13
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
+
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
+                                        if kibol1_obrona == 1:
+                                            $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ kibol1_poison = 3
+                                                show snake31 zorder 15 at center_wrog1
+
+                                            $ kibol1_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and kibol1_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun1 zorder 15 at head_wrog1
+                                                    $ kibol1_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza13
+                                        
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban5:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if akane_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ akane_obrona = 1
-                                                               
-                            else:
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
-                                    
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
+                                if akane_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ akane_obrona = 1
+                                                                
                                 else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and akane_obrona == 1 and stop == 3 or urban_attack == 2 and akane_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban5
+                                    
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                if akane_obrona == 1:
-                                    $ akane_hp_now -= int(urban_attack / 2)
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ akane_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ akane_hp_now -= urban_attack
-                                
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza13
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
+
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
+                                        if akane_obrona == 1:
+                                            $ akane_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ akane_poison = 3
+                                                show snake32 zorder 15 at center_wrog3
+
+                                            $ akane_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and akane_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun2 zorder 15 at head_wrog3
+                                                    $ akane_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza13
+                                        
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban6:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol2_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ kibol2_obrona = 1
-                                                               
-                            else:  
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                if kibol2_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ kibol2_obrona = 1
+                                                                
+                                else:  
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol2_obrona == 1 and stop == 3 or urban_attack == 2 and kibol2_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban6
                                     
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                if kibol2_obrona == 1:
-                                    $ kibol2_hp_now -= int(urban_attack / 2)
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ kibol2_poison = 3
-                                        show snake33 zorder 15 at center_wrog2
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
 
-                                    $ kibol2_hp_now -= urban_attack
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
 
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza13
+                                        if kibol2_obrona == 1:
+                                            $ kibol2_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ kibol2_poison = 3
+                                                show snake33 zorder 15 at center_wrog2
+
+                                            $ kibol2_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and kibol2_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun3 zorder 15 at head_wrog2
+                                                    $ kibol2_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza13
+
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza13
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
                     if urban_wybrany == 1:
                         show tarcza3 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show tarcza3 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show tarcza3 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
@@ -6350,18 +6234,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if urban_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     urban "No tak było, nie zmyślam"
                     jump items12
@@ -6369,35 +6247,23 @@ label fight1:
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show uszy zorder 15 at head_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show uszy zorder 15 at head_sojusznik3 
-                    else:
-                        $ ado += 1
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kibol1_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if kibol1_obrona <= 0:
                         $ kibol1_uszy += 1
                     
-                    if akane_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if akane_obrona <= 0:
                         $ akane_uszy += 1
                     
-                    if kibol2_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if kibol2_obrona <= 0:
                         $ kibol2_uszy += 1
 
                     if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -6444,24 +6310,16 @@ label fight1:
 
                     hide uszy
                     jump faza13  
-        else:
-            $ ado += 1
 
         if zyd_fighter == 2:
             if zyd_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if zyd_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
 
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -6550,18 +6408,12 @@ label fight1:
                     else:
                         if zyd_wybrany == 1:
                             show reka4 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if zyd_wybrany == 2:
                             show reka4 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if zyd_wybrany == 3:
                             show reka4 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -6672,6 +6524,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= zyd_attack
+
+                                    if zyd_przepychaczka == 4 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza13
@@ -6722,6 +6582,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= zyd_attack
+
+                                    if zyd_przepychaczka == 4 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza13
@@ -6773,6 +6641,14 @@ label fight1:
 
                                     $ kibol2_hp_now -= zyd_attack
 
+                                    if zyd_przepychaczka == 4 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
+
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza13
                     
@@ -6780,18 +6656,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if zyd_wybrany == 1:
                         show tarcza4 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show tarcza4 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show tarcza4 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
@@ -6801,18 +6671,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if zyd_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items12
@@ -6820,18 +6684,12 @@ label fight1:
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and kibol1_pager == 0 and kibol1_hp_now >= 1 or pager_boom == 0 and akane_pager == 0 and akane_hp_now >= 1 or pager_boom == 0 and kibol2_pager == 0 and kibol2_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show pager zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show pager zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Komu?{/b}"
@@ -6873,18 +6731,12 @@ label fight1:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show red_button zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show red_button zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
                     play sound "audio/sfx/boom.mp3" 
@@ -6940,9 +6792,6 @@ label fight1:
                                                 show eksplozja3 zorder 16 at bok_wrog2
                                                 "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
 
-                                            else:
-                                                $ ado += 1
-
                     hide red_button
                     hide pager1
                     hide pager2
@@ -6955,24 +6804,16 @@ label fight1:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
                     jump faza13
-        else:
-            $ ado += 1
 
         if kazuma_fighter == 2:
             if kazuma_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if kazuma_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -7061,18 +6902,12 @@ label fight1:
                     else:
                         if kazuma_wybrany == 1:
                             show reka5 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if kazuma_wybrany == 2:
                             show reka5 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if kazuma_wybrany == 3:
                             show reka5 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                         kazuma "Tak, jestem Kazuma"
@@ -7183,6 +7018,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza13
@@ -7233,6 +7076,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza13
@@ -7283,6 +7134,14 @@ label fight1:
                                         show snake33 zorder 15 at center_wrog2
 
                                     $ kibol2_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza13
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza13
@@ -7291,18 +7150,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if kazuma_wybrany == 1:
                         show tarcza5 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show tarcza5 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show tarcza5 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
@@ -7312,18 +7165,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if kazuma_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items12
@@ -7331,18 +7178,12 @@ label fight1:
                 "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show chwyta zorder 16 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show chwyta zorder 16 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Na kim użyć?{/b}"
@@ -7375,18 +7216,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -7403,18 +7238,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -7461,18 +7290,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show akane_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show akane_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show akane_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -7489,18 +7312,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -7547,18 +7364,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -7575,18 +7386,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -7604,8 +7409,6 @@ label fight1:
                                         hide chwyta
                                         
                                 jump faza13
-        else:
-            $ ado += 1
 
         jump faza13
         label items12:
@@ -7801,14 +7604,11 @@ label fight1:
             $ kibol1_obrona = 0
             $ kibol1_weapon = 0
             $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
 
             if kibol1_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
             hide snake32
@@ -7824,14 +7624,11 @@ label fight1:
             $ akane_obrona = 0
             $ akane_weapon = 0
             $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
 
             if akane_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
             hide snake33
@@ -7847,19 +7644,14 @@ label fight1:
             $ kibol2_obrona = 0
             $ kibol2_weapon = 0
             $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
 
             if kibol2_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
-        else:
-            $ ado += 1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz
@@ -7872,8 +7664,6 @@ label fight1:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
-        else:
-            $ ado += 1
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide eminem
@@ -7886,8 +7676,6 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
-        else:
-            $ ado += 1
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide uszy1
@@ -7903,8 +7691,6 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
-        else:
-            $ ado += 1
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide red_button
@@ -7925,8 +7711,6 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
-        else:
-            $ ado += 1
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide kazuma
@@ -7939,8 +7723,6 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
-        else:
-            $ ado += 1
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide air_strike_shield1
@@ -7955,8 +7737,6 @@ label fight1:
                 $ zyd_obrona = 0
                 $ kazuma_obrona = 0
                 $ tarczownik_obrona = 0
-            else:
-                $ ado += 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -7967,13 +7747,9 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
-        else:
-            $ ado += 1
 
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
-        else:
-            $ ado += 1
         
         if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 3:
             $ luszcz_min_attack_now += 1
@@ -7998,18 +7774,12 @@ label fight1:
         if luszcz_fighter == 3:
             if luszcz_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if luszcz_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -8098,18 +7868,12 @@ label fight1:
                     else:
                         if luszcz_wybrany == 1:
                             show reka1 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if luszcz_wybrany == 2:
                             show reka1 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if luszcz_wybrany == 3:
                             show reka1 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -8220,6 +7984,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= luszcz_attack
+
+                                    if luszcz_przepychaczka == 2 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza14
@@ -8270,6 +8042,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= luszcz_attack
+
+                                    if luszcz_przepychaczka == 2 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza14
@@ -8321,6 +8101,14 @@ label fight1:
 
                                     $ kibol2_hp_now -= luszcz_attack
 
+                                    if luszcz_przepychaczka == 2 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
+
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                             jump faza14
                     
@@ -8328,18 +8116,13 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if luszcz_wybrany == 1:
                         show tarcza1 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show tarcza1 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show tarcza1 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
+
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
                     jump faza14
@@ -8348,18 +8131,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if luszcz_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items13
@@ -8368,18 +8145,12 @@ label fight1:
                     play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 2:
                         show herbaty zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if luszcz_wybrany == 3:
                         show herbaty zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Ale jaką?{/b}"
@@ -8388,18 +8159,12 @@ label fight1:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 2:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 3:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                            else:
-                                $ ado += 1
 
                             menu:
                                 "{b}Dla Kogo?{/b}"
@@ -8420,18 +8185,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if eminem_hp_now + 5 > eminem_hp:
                                         $ eminem_hp_now = eminem_hp
@@ -8446,18 +8205,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if urban_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if urban_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if urban_hp_now + 5 > urban_hp:
                                         $ urban_hp_now = urban_hp
@@ -8472,18 +8225,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if zyd_hp_now + 5 > zyd_hp:
                                         $ zyd_hp_now = zyd_hp
@@ -8498,18 +8245,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if kazuma_hp_now + 5 > kazuma_hp:
                                         $ kazuma_hp_now = kazuma_hp
@@ -8524,18 +8265,12 @@ label fight1:
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_wybrany == 2:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_wybrany == 3:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
-                                    else:
-                                        $ ado += 1
 
                                     if tarczownik_hp_now + 5 > tarczownik_hp:
                                         $ tarczownik_hp_now = tarczownik_hp
@@ -8553,18 +8288,12 @@ label fight1:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 2:
                                 show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                            else:
-                                $ ado += 1
 
                             if luszcz_wybrany == 3:
                                 show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                            else:
-                                $ ado += 1
 
                             if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
                                 if luszcz_hp_now + 2 > luszcz_hp:
@@ -8575,18 +8304,12 @@ label fight1:
                             if eminem_hp_now >= 1 and eminem_wybrany >= 1:
                                 if eminem_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if eminem_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if eminem_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if eminem_hp_now + 2 > eminem_hp:
                                     $ eminem_hp_now = eminem_hp
@@ -8596,18 +8319,12 @@ label fight1:
                             if urban_hp_now >= 1 and urban_wybrany >= 1:
                                 if urban_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if urban_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if urban_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if urban_hp_now + 2 > urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -8617,18 +8334,12 @@ label fight1:
                             if zyd_hp_now >= 1 and zyd_wybrany >= 1:
                                 if zyd_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if zyd_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if zyd_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if zyd_hp_now + 2 > zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -8638,18 +8349,12 @@ label fight1:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
                                 if kazuma_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if kazuma_hp_now + 2 > kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -8659,18 +8364,12 @@ label fight1:
                             if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
                                 if tarczownik_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_wybrany == 2:
                                     show hiszpanska_mandarynka2 zorder 15 at weapon_sojusznik2  
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_wybrany == 3:
                                     show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
-                                else:
-                                    $ ado += 1
 
                                 if tarczownik_hp_now + 2 > tarczownik_hp:
                                     $ tarczownik_hp_now = tarczownik_hp
@@ -8682,24 +8381,16 @@ label fight1:
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
                             jump faza14
-        else:
-            $ ado += 1
         
         if eminem_fighter == 3:
             if eminem_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if eminem_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -8708,34 +8399,22 @@ label fight1:
                     if eminem_weapon >= 1:
                         if eminem_wybrany == 1:
                             show eminem_weapon zorder 15 at weapon_sojusznik1  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 2:
                             show eminem_weapon zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 3:
                             show eminem_weapon zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
 
                     else:
                         if eminem_wybrany == 1:
                             show reka2 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 2:
                             show reka2 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if eminem_wybrany == 3:
                             show reka2 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -8811,18 +8490,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if eminem_wybrany == 1:
                         show tarcza2 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show tarcza2 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show tarcza2 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
@@ -8832,18 +8505,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if eminem_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     eminem "Czas zabawy się skończył"
                     jump items13
@@ -8852,18 +8519,12 @@ label fight1:
 
                     if eminem_wybrany == 1:
                         show slime zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 2:
                         show slime zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if eminem_wybrany == 3:
                         show slime zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Na kim użyć?{/b}"
@@ -8966,24 +8627,16 @@ label fight1:
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Kibol 2 zostały osłabione{/i}"
                                 jump faza14
-        else:
-            $ ado += 1
 
         if urban_fighter == 3:
             if urban_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if urban_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -9072,18 +8725,12 @@ label fight1:
                     else:
                         if urban_wybrany == 1:
                             show reka3 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if urban_wybrany == 2:
                             show reka3 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if urban_wybrany == 3:
                             show reka3 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 3 and urban_weapon >= 1:                    
                         urban "i Ci kutasa obetnie"
@@ -9150,170 +8797,209 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban7:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol1_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ kibol1_obrona = 1
-                                                               
-                            else:
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
-                                    
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3"  
-
+                                if kibol1_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ kibol1_obrona = 1
+                                                                
                                 else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol1_obrona == 1 and stop == 3 or urban_attack == 2 and kibol1_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban7
+                                    
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                if kibol1_obrona == 1:
-                                    $ kibol1_hp_now -= int(urban_attack / 2)
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ kibol1_poison = 3
-                                        show snake31 zorder 15 at center_wrog1
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ kibol1_hp_now -= urban_attack
-                                
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza14
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3"  
+
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
+                                        if kibol1_obrona == 1:
+                                            $ kibol1_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ kibol1_poison = 3
+                                                show snake31 zorder 15 at center_wrog1
+
+                                            $ kibol1_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and kibol1_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun1 zorder 15 at head_wrog1
+                                                    $ kibol1_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza14
+                                        
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban8:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if akane_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ akane_obrona = 1
-                                                               
-                            else:
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
-                                    
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
+                                if akane_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ akane_obrona = 1
+                                                                
                                 else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and akane_obrona == 1 and stop == 3 or urban_attack == 2 and akane_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban8
+                                    
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                if akane_obrona == 1:
-                                    $ akane_hp_now -= int(urban_attack / 2)
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ akane_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ akane_hp_now -= urban_attack
-                                
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza14
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
+
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
+                                        if akane_obrona == 1:
+                                            $ akane_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ akane_poison = 3
+                                                show snake32 zorder 15 at center_wrog3
+
+                                            $ akane_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and akane_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun2 zorder 15 at head_wrog3
+                                                    $ akane_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza14
+                                        
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
+                            label urban9:
+                                $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                            if kibol2_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                $ kibol2_obrona = 1
-                                                               
-                            else:
-                                if urban_weapon >= 1:
-                                    if fuck == 3:
-                                        play sound "audio/sfx/fuck.mp3" 
-
-                                    if urban_przepychaczka == 3: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
-
-                                    if stop == 3:
-                                        play sound "audio/sfx/stop.mp3" 
-
-                                    if miecz_swietlny == 3:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
-                                    
-                                    if patyk == 3:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 3:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 3:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
+                                if kibol2_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    $ kibol2_obrona = 1
+                                                                
                                 else:
-                                    play sound "audio/sfx/reka.mp3" 
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol2_obrona == 1 and stop == 3 or urban_attack == 2 and kibol2_obrona == 1 and stop == 3:
+                                        play sound "audio/sfx/nie.mp3"
+                                        "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
+                                        jump urban9
+                                    
+                                    else:
+                                        if urban_weapon >= 1:
+                                            if fuck == 3:
+                                                play sound "audio/sfx/fuck.mp3" 
 
-                                if kibol2_obrona == 1:
-                                    $ kibol2_hp_now -= int(urban_attack / 2)
+                                            if urban_przepychaczka == 3: 
+                                                play sound "audio/sfx/przepychaczka.mp3" 
 
-                                    $ dmg = int(urban_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                else:
-                                    if bazooka == 3:
-                                        $ kibol2_poison = 3
-                                        show snake33 zorder 15 at center_wrog2
+                                            if stop == 3:
+                                                play sound "audio/sfx/stop.mp3" 
 
-                                    $ kibol2_hp_now -= urban_attack
+                                            if miecz_swietlny == 3:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 3:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 3:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 3:
+                                                play sound "audio/sfx/miecz3d.mp3" 
 
-                                    "{i}Atak zadał [urban_attack] obrażeń{/i}"
-                            jump faza14
+                                        else:
+                                            play sound "audio/sfx/reka.mp3" 
+
+                                        if kibol2_obrona == 1:
+                                            $ kibol2_hp_now -= int(urban_attack / 2)
+
+                                            $ dmg = int(urban_attack / 2)
+                                            "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        else:
+                                            if bazooka == 3:
+                                                $ kibol2_poison = 3
+                                                show snake33 zorder 15 at center_wrog2
+
+                                            $ kibol2_hp_now -= urban_attack
+
+                                            if urban_przepychaczka == 3 and kibol2_stun == 0:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    show stun3 zorder 15 at head_wrog2
+                                                    $ kibol2_stun = 1
+                                                    "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    jump faza14
+
+                                            "{i}Atak zadał [urban_attack] obrażeń{/i}"
+                                jump faza14
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
                     if urban_wybrany == 1:
                         show tarcza3 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show tarcza3 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show tarcza3 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
@@ -9323,18 +9009,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if urban_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     urban "No tak było, nie zmyślam"
                     jump items13
@@ -9342,35 +9022,23 @@ label fight1:
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 2:
                         show uszy zorder 15 at head_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if urban_wybrany == 3:
                         show uszy zorder 15 at head_sojusznik3 
-                    else:
-                        $ ado += 1
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kibol1_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if kibol1_obrona <= 0:
                         $ kibol1_uszy += 1
                     
-                    if akane_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if akane_obrona <= 0:
                         $ akane_uszy += 1
                     
-                    if kibol2_obrona >= 1:
-                        $ ado += 1
-                    else:
+                    if kibol2_obrona <= 0:
                         $ kibol2_uszy += 1
 
                     if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -9417,24 +9085,16 @@ label fight1:
                     
                     hide uszy
                     jump faza14
-        else:
-            $ ado += 1
 
         if zyd_fighter == 3:
             if zyd_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if zyd_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -9523,18 +9183,12 @@ label fight1:
                     else:
                         if zyd_wybrany == 1:
                             show reka4 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if zyd_wybrany == 2:
                             show reka4 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if zyd_wybrany == 3:
                             show reka4 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -9645,6 +9299,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= zyd_attack
+
+                                    if zyd_przepychaczka == 4 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza14
@@ -9695,6 +9357,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= zyd_attack
+
+                                    if zyd_przepychaczka == 4 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza14
@@ -9746,6 +9416,14 @@ label fight1:
 
                                     $ kibol2_hp_now -= zyd_attack
 
+                                    if zyd_przepychaczka == 4 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
+
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                             jump faza14
                     
@@ -9753,18 +9431,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if zyd_wybrany == 1:
                         show tarcza4 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show tarcza4 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show tarcza4 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
@@ -9774,18 +9446,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if zyd_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items13
@@ -9793,18 +9459,12 @@ label fight1:
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and kibol1_pager == 0 and kibol1_hp_now >= 1 or pager_boom == 0 and akane_pager == 0 and akane_hp_now >= 1 or pager_boom == 0 and kibol2_pager == 0 and kibol2_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show pager zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show pager zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Komu?{/b}"
@@ -9846,18 +9506,12 @@ label fight1:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 2:
                         show red_button zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if zyd_wybrany == 3:
                         show red_button zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
                     play sound "audio/sfx/boom.mp3" 
@@ -9912,9 +9566,6 @@ label fight1:
                                                 $ kibol2_hp_now -= 8
                                                 show eksplozja3 zorder 16 at bok_wrog2
                                                 "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
-
-                                            else:
-                                                $ ado += 1
                     
                     hide red_button
                     hide pager1
@@ -9928,24 +9579,16 @@ label fight1:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
                     jump faza14
-        else:
-            $ ado += 1
 
         if kazuma_fighter == 3:
             if kazuma_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
-            else:
-                $ ado += 1
 
             if kazuma_wybrany == 2:
                 show ruch zorder 0 at tlo_sojusznik2  
-            else:
-                $ ado += 1
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
-            else:
-                $ ado += 1
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -10034,18 +9677,12 @@ label fight1:
                     else:
                         if kazuma_wybrany == 1:
                             show reka5 zorder 15 at weapon_sojusznik1 
-                        else:
-                            $ ado += 1
 
                         if kazuma_wybrany == 2:
                             show reka5 zorder 15 at weapon_sojusznik2  
-                        else:
-                            $ ado += 1
 
                         if kazuma_wybrany == 3:
                             show reka5 zorder 15 at weapon_sojusznik3 
-                        else:
-                            $ ado += 1
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                         kazuma "Tak, jestem Kazuma"
@@ -10156,6 +9793,14 @@ label fight1:
                                         show snake31 zorder 15 at center_wrog1
 
                                     $ kibol1_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and kibol1_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun1 zorder 15 at head_wrog1
+                                            $ kibol1_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza14
@@ -10206,6 +9851,14 @@ label fight1:
                                         show snake32 zorder 15 at center_wrog3
 
                                     $ akane_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and akane_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun2 zorder 15 at head_wrog3
+                                            $ akane_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza14
@@ -10256,6 +9909,14 @@ label fight1:
                                         show snake33 zorder 15 at center_wrog2
 
                                     $ kibol2_hp_now -= kazuma_attack
+
+                                    if kazuma_przepychaczka == 5 and kibol2_stun == 0:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            show stun3 zorder 15 at head_wrog2
+                                            $ kibol2_stun = 1
+                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            jump faza14
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                             jump faza14
@@ -10264,18 +9925,12 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     if kazuma_wybrany == 1:
                         show tarcza5 zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show tarcza5 zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show tarcza5 zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
@@ -10285,18 +9940,12 @@ label fight1:
                     play sound "audio/sfx/chest.mp3"
                     if kazuma_wybrany == 1:
                         show chest zorder 15 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show chest zorder 15 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show chest zorder 15 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items13
@@ -10304,18 +9953,12 @@ label fight1:
                 "{b}Steal{/b}" if kibol1_weapon >= 1 or akane_weapon >= 1 or kibol2_weapon >= 1:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 2:
                         show chwyta zorder 16 at weapon_sojusznik2  
-                    else:
-                        $ ado += 1
 
                     if kazuma_wybrany == 3:
                         show chwyta zorder 16 at weapon_sojusznik3 
-                    else:
-                        $ ado += 1
 
                     menu:
                         "{b}Na kim użyć?{/b}"
@@ -10348,18 +9991,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show kibol1_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
 
                                         play sound "audio/sfx/steal.mp3"
 
@@ -10376,18 +10013,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -10434,18 +10065,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show akane_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show akane_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show akane_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -10462,18 +10087,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -10520,18 +10139,12 @@ label fight1:
 
                                         if kazuma_wybrany == 1:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show kibol2_weapon zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -10548,18 +10161,12 @@ label fight1:
                                     if kostka >= 6:
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 2:
                                             show majtki zorder 15 at weapon_sojusznik2  
-                                        else:
-                                            $ ado += 1
 
                                         if kazuma_wybrany == 3:
                                             show majtki zorder 15 at weapon_sojusznik3 
-                                        else:
-                                            $ ado += 1
                                         
                                         play sound "audio/sfx/steal.mp3"
 
@@ -10577,8 +10184,6 @@ label fight1:
                                         hide chwyta
                                         
                                 jump faza14
-        else:
-            $ ado += 1
 
         jump faza14
         label items13:
@@ -10778,14 +10383,11 @@ label fight1:
             $ kibol1_obrona = 0
             $ kibol1_weapon = 0
             $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
 
             if kibol1_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
             hide snake32
@@ -10801,14 +10403,11 @@ label fight1:
             $ akane_obrona = 0
             $ akane_weapon = 0
             $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
 
             if akane_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
             hide snake33
@@ -10824,19 +10423,14 @@ label fight1:
             $ kibol2_obrona = 0
             $ kibol2_weapon = 0
             $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
 
             if kibol2_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
-        else:
-            $ ado += 1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz
@@ -10849,8 +10443,6 @@ label fight1:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
-        else:
-            $ ado += 1
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide eminem
@@ -10863,8 +10455,6 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
-        else:
-            $ ado += 1
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide uszy1
@@ -10880,8 +10470,6 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
-        else:
-            $ ado += 1
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide red_button
@@ -10902,8 +10490,6 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
-        else:
-            $ ado += 1
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide kazuma
@@ -10916,13 +10502,9 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
-        else:
-            $ ado += 1
         
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
-        else:
-            $ ado += 1
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide air_strike_shield1
@@ -10937,8 +10519,6 @@ label fight1:
                 $ zyd_obrona = 0
                 $ kazuma_obrona = 0
                 $ tarczownik_obrona = 0
-            else:
-                $ ado += 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -10949,8 +10529,6 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
-        else:
-            $ ado += 1
             
 
         $ kibol1_obrona = 0
@@ -10970,9 +10548,13 @@ label fight1:
         $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
 
         if kibol1_hp_now <= 0:
-            jump faza15     
+            jump faza15    
 
         show ruch zorder 0 at tlo_wrog1  
+    
+        if kibol1_stun == 1:
+            "{i}Kibol 1 jest zestunnowany{/i}"
+            jump faza15  
 
         if kibol1_uszy >= 1 and urban_hp_now >= 1:
             if kibol1_weapon >= 1:
@@ -11002,18 +10584,12 @@ label fight1:
 
                     jump faza15
         
-        else:
-            $ ado += 1
-        
         if kibol1_max_attack_now <= 0 and kibol1_obrona == 0:
             show tarcza6 zorder 15 at weapon_wrog1  
             play sound "audio/sfx/shield.mp3"
             "{i}Kibol 1 broni się{/i}"
             $ kibol1_obrona += 1
             jump faza15
-                
-        else:
-            $ ado += 1
 
         if kibol1_hp_now >= 1 and kibol1_obrona == 0:
             if kibol1_hp_now <= 3:
@@ -11681,14 +11257,11 @@ label fight1:
             $ kibol1_obrona = 0
             $ kibol1_weapon = 0
             $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
 
             if kibol1_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
             hide snake32
@@ -11704,14 +11277,11 @@ label fight1:
             $ akane_obrona = 0
             $ akane_weapon = 0
             $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
 
             if akane_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
             hide snake33
@@ -11727,19 +11297,14 @@ label fight1:
             $ kibol2_obrona = 0
             $ kibol2_weapon = 0
             $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
 
             if kibol2_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
-        else:
-            $ ado += 1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz
@@ -11752,8 +11317,6 @@ label fight1:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
-        else:
-            $ ado += 1
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide eminem
@@ -11766,8 +11329,6 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
-        else:
-            $ ado += 1
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide uszy1
@@ -11783,8 +11344,6 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
-        else:
-            $ ado += 1
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide red_button
@@ -11805,8 +11364,6 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
-        else:
-            $ ado += 1
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide kazuma
@@ -11819,8 +11376,6 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
-        else:
-            $ ado += 1
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide air_strike_shield1
@@ -11835,8 +11390,6 @@ label fight1:
                 $ zyd_obrona = 0
                 $ kazuma_obrona = 0
                 $ tarczownik_obrona = 0
-            else:
-                $ ado += 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -11847,8 +11400,6 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
-        else:
-            $ ado += 1
         
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
@@ -11856,9 +11407,13 @@ label fight1:
             $ ado += 1  
 
         if akane_hp_now <= 0:
-            jump faza16                
-        
+            jump faza16      
+
         show ruch zorder 0 at tlo_wrog3 
+
+        if akane_stun == 1:
+            "{i}Akane jest zestunnowany{/i}"
+            jump faza16 
 
         if akane_uszy >= 1 and urban_hp_now >= 1:
             if akane_weapon >= 1:
@@ -11892,9 +11447,6 @@ label fight1:
                     "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                 jump faza16
-        
-        else:
-            $ ado += 1
 
         if akane_max_attack_now <= 0 and akane_obrona == 0:
             show tarcza7 zorder 15 at weapon_wrog3  
@@ -11902,9 +11454,6 @@ label fight1:
             "{i}Akane broni się{/i}"
             $ akane_obrona += 1
             jump faza16
-                
-        else:
-            $ ado += 1
 
         if akane_hp_now >= 1 and akane_obrona == 0:
             if akane_hp_now <= 3:
@@ -12573,14 +12122,11 @@ label fight1:
             $ kibol1_obrona = 0
             $ kibol1_weapon = 0
             $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
 
             if kibol1_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
 
         if akane_hp_now <= 0 and akane_umarty == 0:
             hide snake32
@@ -12596,14 +12142,11 @@ label fight1:
             $ akane_obrona = 0
             $ akane_weapon = 0
             $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
 
             if akane_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if kibol2_hp_now <= 0 and kibol2_umarty == 0:
             hide snake33
@@ -12619,19 +12162,14 @@ label fight1:
             $ kibol2_obrona = 0
             $ kibol2_weapon = 0
             $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
 
             if kibol2_slime >= 1:
                 hide slime
-            else:
-                $ ado += 1
-
-        else:
-            $ ado += 1
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
-        else:
-            $ ado += 1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz
@@ -12644,8 +12182,6 @@ label fight1:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
-        else:
-            $ ado += 1
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide eminem
@@ -12658,8 +12194,6 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
-        else:
-            $ ado += 1
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide uszy1
@@ -12675,8 +12209,6 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
-        else:
-            $ ado += 1
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide red_button
@@ -12697,8 +12229,6 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
-        else:
-            $ ado += 1
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide kazuma
@@ -12711,8 +12241,6 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
-        else:
-            $ ado += 1
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide air_strike_shield1
@@ -12727,8 +12255,6 @@ label fight1:
                 $ zyd_obrona = 0
                 $ kazuma_obrona = 0
                 $ tarczownik_obrona = 0
-            else:
-                $ ado += 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -12739,8 +12265,6 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
-        else:
-            $ ado += 1
         
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
@@ -12748,9 +12272,13 @@ label fight1:
             $ ado += 1    
 
         if kibol2_hp_now <= 0:
-            jump start_fight1              
-        
+            jump start_fight1  
+
         show ruch zorder 0 at tlo_wrog2
+
+        if kibol2_stun == 1:
+            "{i}Kibol 2 jest zestunnowany{/i}"
+            jump start_fight1  
 
         if kibol2_uszy >= 1 and urban_hp_now >= 1:
             if kibol2_weapon >= 1:
@@ -12784,9 +12312,6 @@ label fight1:
                     "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                 jump start_fight1
-        
-        else:
-            $ ado += 1
 
         if kibol2_max_attack_now <= 0 and kibol2_obrona == 0:
             show tarcza8 zorder 15 at weapon_wrog2  
@@ -12794,9 +12319,6 @@ label fight1:
             "{i}Kibol 2 broni się{/i}"
             $ kibol2_obrona += 1
             jump start_fight1
-                
-        else:
-            $ ado += 1
 
         if kibol2_hp_now >= 1 and kibol2_obrona == 0:
             if kibol2_hp_now <= 3:
@@ -13587,6 +13109,13 @@ label fight1:
                 $ kibol1_umarty = 0
                 $ kibol2_umarty = 0
                 $ akane_umarty = 0
+
+                $ kibol1_poison = 0
+                $ kibol1_stun = 0
+                $ kibol2_poison = 0
+                $ kibol2_stun = 0
+                $ akane_poison = 0
+                $ akane_stun = 0
                 jump fight1
 
 
@@ -13774,5 +13303,12 @@ label fight1:
         $ kibol1_umarty = 0
         $ kibol2_umarty = 0
         $ akane_umarty = 0
+
+        $ kibol1_poison = 0
+        $ kibol1_stun = 0
+        $ kibol2_poison = 0
+        $ kibol2_stun = 0
+        $ akane_poison = 0
+        $ akane_stun = 0
 
         jump after_fight1
