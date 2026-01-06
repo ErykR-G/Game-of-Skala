@@ -2455,7 +2455,7 @@ label eq:
                                     window hide
                                     $ kazuma_min_attack -= 0
                                     $ kazuma_max_attack -= 6
-                                    $ chunchunmaruunmaru = 1
+                                    $ chunchunmaru = 1
                                     $ miecz_swietlny = 5
                                     $ kazuma_min_attack += 3
                                     $ kazuma_max_attack += 2
@@ -2467,7 +2467,7 @@ label eq:
                                     window hide
                                     $ kazuma_min_attack -= 0
                                     $ kazuma_max_attack -= 6
-                                    $ chunchunmaruunmaru = 1
+                                    $ chunchunmaru = 1
                                     $ ostrza_chaosu = 5
                                     $ kazuma_min_attack += 0
                                     $ kazuma_max_attack += 1

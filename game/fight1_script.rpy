@@ -602,8 +602,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
@@ -818,6 +827,27 @@ label fight1:
         $ akane_min_attack_now = akane_min_attack_now_true
         $ akane_max_attack_now = akane_max_attack_now_true
 
+        if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 1:
+            $ luszcz_min_attack_now += 1
+            $ luszcz_max_attack_now += 2
+        
+        if miecz3d == 3 and urban_hp_now <= urban_hp / 2 and urban_fighter == 1:
+            $ urban_min_attack_now += 1
+            $ urban_max_attack_now += 2
+        
+        if miecz3d == 4 and zyd_hp_now <= zyd_hp / 2 and zyd_fighter == 1:
+            $ zyd_min_attack_now += 1
+            $ zyd_max_attack_now += 2
+        
+        if miecz3d == 5 and kazuma_hp_now <= kazuma_hp / 2 and kazuma_fighter == 1:
+            $ kazuma_min_attack_now += 1
+            $ kazuma_max_attack_now += 2
+        
+        if miecz3d == 6 and tarczownik_hp_now <= tarczownik_hp / 2 and tarczownik_fighter == 1:
+            $ tarczownik_min_attack_now += 1
+            $ tarczownik_max_attack_now += 2
+
+
         if luszcz_fighter == 1:
             if luszcz_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
@@ -833,6 +863,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 2 and luszcz_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ luszcz_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -930,10 +964,7 @@ label fight1:
                         else:
                             $ ado += 1
                     
-                    if ostrza_chaosu == 2 and luszcz_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ luszcz_min_attack_now += 1
-                        
+                    if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
@@ -984,6 +1015,7 @@ label fight1:
                                     $ kibol2_hp_now -= luszcz_attack
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
+                            play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwniką{/i}"
                         
                         else:
@@ -1009,11 +1041,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -1043,11 +1087,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -1077,11 +1133,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3"  
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -1758,6 +1826,10 @@ label fight1:
             else:
                 $ ado += 1
 
+            if ostrza_chaosu == 3 and urban_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ urban_min_attack_now += 1
+
             menu:
                 "{b}Co zrobić{/b}"
 
@@ -1855,9 +1927,6 @@ label fight1:
                             $ ado += 1
                     
                     if ostrza_chaosu == 3 and urban_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ urban_min_attack_now += 1
-                        
                         urban "i Ci kutasa obetnie"
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
@@ -1934,11 +2003,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -1968,11 +2049,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -2002,11 +2095,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -2160,6 +2265,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 4 and zyd_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ zyd_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -2257,10 +2366,7 @@ label fight1:
                         else:
                             $ ado += 1
                     
-                    if ostrza_chaosu == 4 and zyd_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ zyd_min_attack_now += 1
-                        
+                    if ostrza_chaosu == 4 and zyd_weapon >= 1:    
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
@@ -2337,11 +2443,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -2372,11 +2490,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -2406,11 +2536,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -2624,6 +2766,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 5 and kazuma_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ kazuma_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -2721,10 +2867,7 @@ label fight1:
                         else:
                             $ ado += 1
                     
-                    if ostrza_chaosu == 5 and kazuma_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ kazuma_min_attack_now += 1
-                        
+                    if ostrza_chaosu == 5 and kazuma_weapon >= 1:   
                         kazuma "Tak, jestem Kazuma"
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
@@ -2801,11 +2944,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -2835,11 +2990,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -2869,11 +3036,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -3429,55 +3608,55 @@ label fight1:
                         if miecz3d == 6:
                             show miecz3d zorder 15 at weapon_sojusznik1  
 
-                        if tarczownik_wybrany == 2:
-                            if legendary_shield == 6:
-                                show tarczownik_weapon zorder 15 at weapon_sojusznik2  
+                    if tarczownik_wybrany == 2:
+                        if legendary_shield == 6:
+                            show tarczownik_weapon zorder 15 at weapon_sojusznik2  
 
-                            if tarczownik_przepychaczka == 6:
-                                show tarczownik_przepychaczka zorder 15 at weapon_sojusznik2  
+                        if tarczownik_przepychaczka == 6:
+                            show tarczownik_przepychaczka zorder 15 at weapon_sojusznik2  
 
-                            if stop == 6:
-                                show stop zorder 15 at weapon_sojusznik2 
+                        if stop == 6:
+                            show stop zorder 15 at weapon_sojusznik2 
                             
-                            if miecz_swietlny == 6:
-                                show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        if miecz_swietlny == 6:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
                             
-                            if ostrza_chaosu == 6:
-                                show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+                        if ostrza_chaosu == 6:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
 
-                            if patyk == 6:
-                                show patyk zorder 15 at weapon_sojusznik2  
+                        if patyk == 6:
+                            show patyk zorder 15 at weapon_sojusznik2  
 
-                            if bazooka == 6:
-                                show bazooka zorder 15 at weapon_sojusznik2  
+                        if bazooka == 6:
+                            show bazooka zorder 15 at weapon_sojusznik2  
                             
-                            if miecz3d == 6:
-                                show miecz3d zorder 15 at weapon_sojusznik2   
+                        if miecz3d == 6:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
 
-                        if tarczownik_wybrany == 3:
-                            if legendary_shield == 6:
-                                show tarczownik_weapon zorder 15 at weapon_sojusznik3 
+                    if tarczownik_wybrany == 3:
+                        if legendary_shield == 6:
+                            show tarczownik_weapon zorder 15 at weapon_sojusznik3 
 
-                            if tarczownik_przepychaczka == 6:
-                                show tarczownik_przepychaczka zorder 15 at weapon_sojusznik3  
+                        if tarczownik_przepychaczka == 6:
+                            show tarczownik_przepychaczka zorder 15 at weapon_sojusznik3  
 
-                            if stop == 6:
-                                show stop zorder 15 at weapon_sojusznik3  
+                        if stop == 6:
+                            show stop zorder 15 at weapon_sojusznik3  
                             
-                            if miecz_swietlny == 6:
-                                show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        if miecz_swietlny == 6:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
                             
-                            if ostrza_chaosu == 6:
-                                show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+                        if ostrza_chaosu == 6:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
 
-                            if patyk == 6:
-                                show patyk zorder 15 at weapon_sojusznik3  
+                        if patyk == 6:
+                            show patyk zorder 15 at weapon_sojusznik3  
 
-                            if bazooka == 6:
-                                show bazooka zorder 15 at weapon_sojusznik3  
+                        if bazooka == 6:
+                            show bazooka zorder 15 at weapon_sojusznik3  
                             
-                            if miecz3d == 6:
-                                show miecz3d zorder 15 at weapon_sojusznik3  
+                        if miecz3d == 6:
+                            show miecz3d zorder 15 at weapon_sojusznik3  
 
                 else:
                     if tarczownik_wybrany == 1:
@@ -3549,6 +3728,7 @@ label fight1:
                                 $ kibol2_hp_now -= tarczownik_attack
                         
                     if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
+                        play sound "audio/sfx/ostrza_chaosu.mp3"
                         "{i}Atak zadał [tarczownik_attack] obrażeń wszystkim przeciwniką{/i}"
                         
                     else:
@@ -3578,11 +3758,23 @@ label fight1:
                                             if legendary_shield == 6:
                                                 play sound "audio/sfx/legendary_shield.mp3" 
 
-                                            if przepychaczka == 6: 
+                                            if tarczownik_przepychaczka == 6: 
                                                 play sound "audio/sfx/przepychaczka.mp3" 
 
                                             if stop == 6:
                                                 play sound "audio/sfx/stop.mp3" 
+
+                                            if miecz_swietlny == 6:
+                                                play sound "audio/sfx/miecz_swietlny.mp3" 
+                                            
+                                            if patyk == 6:
+                                                play sound "audio/sfx/patyk.mp3" 
+                                            
+                                            if bazooka == 6:
+                                                play sound "audio/sfx/bazooka.mp3" 
+                                            
+                                            if miecz3d == 6:
+                                                play sound "audio/sfx/miecz3d.mp3" 
 
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
@@ -3642,11 +3834,23 @@ label fight1:
                                                 if legendary_shield == 6:
                                                     play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                if przepychaczka == 6: 
+                                                if tarczownik_przepychaczka == 6: 
                                                     play sound "audio/sfx/przepychaczka.mp3" 
 
                                                 if stop == 6:
                                                     play sound "audio/sfx/stop.mp3" 
+
+                                                if miecz_swietlny == 6:
+                                                    play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                
+                                                if patyk == 6:
+                                                    play sound "audio/sfx/patyk.mp3" 
+                                                
+                                                if bazooka == 6:
+                                                    play sound "audio/sfx/bazooka.mp3" 
+                                                
+                                                if miecz3d == 6:
+                                                    play sound "audio/sfx/miecz3d.mp3" 
 
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
@@ -3703,11 +3907,23 @@ label fight1:
                                                 if legendary_shield == 6:
                                                     play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                if przepychaczka == 6: 
+                                                if tarczownik_przepychaczka == 6: 
                                                     play sound "audio/sfx/przepychaczka.mp3" 
 
                                                 if stop == 6:
                                                     play sound "audio/sfx/stop.mp3" 
+
+                                                if miecz_swietlny == 6:
+                                                    play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                
+                                                if patyk == 6:
+                                                    play sound "audio/sfx/patyk.mp3" 
+                                                
+                                                if bazooka == 6:
+                                                    play sound "audio/sfx/bazooka.mp3" 
+                                                
+                                                if miecz3d == 6:
+                                                    play sound "audio/sfx/miecz3d.mp3" 
 
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
@@ -3769,11 +3985,23 @@ label fight1:
                                                 if legendary_shield == 6:
                                                     play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                if przepychaczka == 6: 
+                                                if tarczownik_przepychaczka == 6: 
                                                     play sound "audio/sfx/przepychaczka.mp3" 
 
                                                 if stop == 6:
                                                     play sound "audio/sfx/stop.mp3" 
+
+                                                if miecz_swietlny == 6:
+                                                    play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                
+                                                if patyk == 6:
+                                                    play sound "audio/sfx/patyk.mp3" 
+                                                
+                                                if bazooka == 6:
+                                                    play sound "audio/sfx/bazooka.mp3" 
+                                                
+                                                if miecz3d == 6:
+                                                    play sound "audio/sfx/miecz3d.mp3" 
 
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
@@ -3831,11 +4059,23 @@ label fight1:
                                                     if legendary_shield == 6:
                                                         play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                    if przepychaczka == 6: 
+                                                    if tarczownik_przepychaczka == 6: 
                                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                                     if stop == 6:
                                                         play sound "audio/sfx/stop.mp3" 
+
+                                                    if miecz_swietlny == 6:
+                                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                    
+                                                    if patyk == 6:
+                                                        play sound "audio/sfx/patyk.mp3" 
+                                                    
+                                                    if bazooka == 6:
+                                                        play sound "audio/sfx/bazooka.mp3" 
+                                                    
+                                                    if miecz3d == 6:
+                                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3" 
@@ -3893,11 +4133,23 @@ label fight1:
                                                     if legendary_shield == 6:
                                                         play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                    if przepychaczka == 6: 
+                                                    if tarczownik_przepychaczka == 6: 
                                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                                     if stop == 6:
                                                         play sound "audio/sfx/stop.mp3" 
+
+                                                    if miecz_swietlny == 6:
+                                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                    
+                                                    if patyk == 6:
+                                                        play sound "audio/sfx/patyk.mp3" 
+                                                    
+                                                    if bazooka == 6:
+                                                        play sound "audio/sfx/bazooka.mp3" 
+                                                    
+                                                    if miecz3d == 6:
+                                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3" 
@@ -3961,11 +4213,23 @@ label fight1:
                                                     if legendary_shield == 6:
                                                         play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                    if przepychaczka == 6: 
+                                                    if tarczownik_przepychaczka == 6: 
                                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                                     if stop == 6:
                                                         play sound "audio/sfx/stop.mp3" 
+
+                                                    if miecz_swietlny == 6:
+                                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                    
+                                                    if patyk == 6:
+                                                        play sound "audio/sfx/patyk.mp3" 
+                                                    
+                                                    if bazooka == 6:
+                                                        play sound "audio/sfx/bazooka.mp3" 
+                                                    
+                                                    if miecz3d == 6:
+                                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3" 
@@ -4024,11 +4288,23 @@ label fight1:
                                                         if legendary_shield == 6:
                                                             play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                        if przepychaczka == 6: 
+                                                        if tarczownik_przepychaczka == 6: 
                                                             play sound "audio/sfx/przepychaczka.mp3" 
 
                                                         if stop == 6:
                                                             play sound "audio/sfx/stop.mp3" 
+
+                                                        if miecz_swietlny == 6:
+                                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                        
+                                                        if patyk == 6:
+                                                            play sound "audio/sfx/patyk.mp3" 
+                                                        
+                                                        if bazooka == 6:
+                                                            play sound "audio/sfx/bazooka.mp3" 
+                                                        
+                                                        if miecz3d == 6:
+                                                            play sound "audio/sfx/miecz3d.mp3" 
 
                                                     else:
                                                         play sound "audio/sfx/reka.mp3" 
@@ -4086,11 +4362,23 @@ label fight1:
                                                         if legendary_shield == 6:
                                                             play sound "audio/sfx/legendary_shield.mp3" 
 
-                                                        if przepychaczka == 6: 
+                                                        if tarczownik_przepychaczka == 6: 
                                                             play sound "audio/sfx/przepychaczka.mp3" 
 
                                                         if stop == 6:
                                                             play sound "audio/sfx/stop.mp3" 
+
+                                                        if miecz_swietlny == 6:
+                                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                        
+                                                        if patyk == 6:
+                                                            play sound "audio/sfx/patyk.mp3" 
+                                                        
+                                                        if bazooka == 6:
+                                                            play sound "audio/sfx/bazooka.mp3" 
+                                                        
+                                                        if miecz3d == 6:
+                                                            play sound "audio/sfx/miecz3d.mp3" 
 
                                                     else:
                                                         play sound "audio/sfx/reka.mp3" 
@@ -4304,8 +4592,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
@@ -4495,6 +4792,26 @@ label fight1:
             jump przegranko_fight1
         else:
             $ ado += 1
+        
+        if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 2:
+            $ luszcz_min_attack_now += 1
+            $ luszcz_max_attack_now += 2
+        
+        if miecz3d == 3 and urban_hp_now <= urban_hp / 2 and urban_fighter == 2:
+            $ urban_min_attack_now += 1
+            $ urban_max_attack_now += 2
+        
+        if miecz3d == 4 and zyd_hp_now <= zyd_hp / 2 and zyd_fighter == 2:
+            $ zyd_min_attack_now += 1
+            $ zyd_max_attack_now += 2
+        
+        if miecz3d == 5 and kazuma_hp_now <= kazuma_hp / 2 and kazuma_fighter == 2:
+            $ kazuma_min_attack_now += 1
+            $ kazuma_max_attack_now += 2
+        
+        if miecz3d == 6 and tarczownik_hp_now <= tarczownik_hp / 2 and tarczownik_fighter == 2:
+            $ tarczownik_min_attack_now += 1
+            $ tarczownik_max_attack_now += 2
 
         if luszcz_fighter == 2:
             if luszcz_wybrany == 1:
@@ -4512,7 +4829,9 @@ label fight1:
             else:
                 $ ado += 1
             
-            
+            if ostrza_chaosu == 2 and luszcz_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ luszcz_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -4611,9 +4930,6 @@ label fight1:
                             $ ado += 1
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ luszcz_min_attack_now += 1
-                        
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
@@ -4690,11 +5006,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -4724,11 +5052,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -4758,11 +5098,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -5437,6 +5789,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 3 and urban_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ urban_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -5444,78 +5800,78 @@ label fight1:
                 "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
                     if urban_weapon >= 1:
                         if urban_wybrany == 1:
-                            if fuck == 2:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik1  
 
-                            if urban_przepychaczka == 2:
+                            if urban_przepychaczka == 3:
                                 show urban_przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if stop == 2:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik1  
                             
-                            if miecz_swietlny == 2:
+                            if miecz_swietlny == 3:
                                 show miecz_swietlny zorder 15 at weapon_sojusznik1  
                             
-                            if ostrza_chaosu == 2:
+                            if ostrza_chaosu == 3:
                                 show ostrza_chaosu zorder 15 at weapon_sojusznik1  
 
-                            if patyk == 2:
+                            if patyk == 3:
                                 show patyk zorder 15 at weapon_sojusznik1  
 
-                            if bazooka == 2:
+                            if bazooka == 3:
                                 show bazooka zorder 15 at weapon_sojusznik1  
                             
-                            if miecz3d == 2:
+                            if miecz3d == 3:
                                 show miecz3d zorder 15 at weapon_sojusznik1  
 
                         if urban_wybrany == 2:
-                            if fuck == 2:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik2  
 
-                            if urban_przepychaczka == 2:
+                            if urban_przepychaczka == 3:
                                 show urban_przepychaczka zorder 15 at weapon_sojusznik2  
 
-                            if stop == 2:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik2 
                             
-                            if miecz_swietlny == 2:
+                            if miecz_swietlny == 3:
                                 show miecz_swietlny zorder 15 at weapon_sojusznik2 
                             
-                            if ostrza_chaosu == 2:
+                            if ostrza_chaosu == 3:
                                 show ostrza_chaosu zorder 15 at weapon_sojusznik2 
 
-                            if patyk == 2:
+                            if patyk == 3:
                                 show patyk zorder 15 at weapon_sojusznik2  
 
-                            if bazooka == 2:
+                            if bazooka == 3:
                                 show bazooka zorder 15 at weapon_sojusznik2  
                             
-                            if miecz3d == 2:
+                            if miecz3d == 3:
                                 show miecz3d zorder 15 at weapon_sojusznik2   
 
                         if urban_wybrany == 3:
-                            if fuck == 2:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik3 
 
-                            if urban_przepychaczka == 2:
+                            if urban_przepychaczka == 3:
                                 show urban_przepychaczka zorder 15 at weapon_sojusznik3  
 
-                            if stop == 2:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik3  
                             
-                            if miecz_swietlny == 2:
+                            if miecz_swietlny == 3:
                                 show miecz_swietlny zorder 15 at weapon_sojusznik3 
                             
-                            if ostrza_chaosu == 2:
+                            if ostrza_chaosu == 3:
                                 show ostrza_chaosu zorder 15 at weapon_sojusznik3  
 
-                            if patyk == 2:
+                            if patyk == 3:
                                 show patyk zorder 15 at weapon_sojusznik3  
 
-                            if bazooka == 2:
+                            if bazooka == 3:
                                 show bazooka zorder 15 at weapon_sojusznik3  
                             
-                            if miecz3d == 2:
+                            if miecz3d == 3:
                                 show miecz3d zorder 15 at weapon_sojusznik3 
 
                     else:
@@ -5534,10 +5890,7 @@ label fight1:
                         else:
                             $ ado += 1
                     
-                    if ostrza_chaosu == 3 and urban_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ urban_min_attack_now += 1
-                        
+                    if ostrza_chaosu == 3 and urban_weapon >= 1:                  
                         urban "i Ci kutasa obetnie"
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
@@ -5614,11 +5967,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -5648,11 +6013,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -5682,11 +6059,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -5840,6 +6229,10 @@ label fight1:
             else:
                 $ ado += 1
 
+            if ostrza_chaosu == 4 and zyd_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ zyd_min_attack_now += 1
+
             menu:
                 "{b}Co zrobić{/b}"
 
@@ -5937,9 +6330,6 @@ label fight1:
                             $ ado += 1
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ zyd_min_attack_now += 1
-                        
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
@@ -6016,11 +6406,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -6050,11 +6452,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -6084,11 +6498,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -6301,6 +6727,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 5 and kazuma_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ kazuma_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -6399,9 +6829,6 @@ label fight1:
                             $ ado += 1
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ kazuma_min_attack_now += 1
-                        
                         kazuma "Tak, jestem Kazuma"
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
@@ -6478,11 +6905,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -6512,11 +6951,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -6546,11 +6997,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -7044,8 +7507,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
@@ -7235,6 +7707,26 @@ label fight1:
             jump przegranko_fight1
         else:
             $ ado += 1
+        
+        if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 3:
+            $ luszcz_min_attack_now += 1
+            $ luszcz_max_attack_now += 2
+        
+        if miecz3d == 3 and urban_hp_now <= urban_hp / 2 and urban_fighter == 3:
+            $ urban_min_attack_now += 1
+            $ urban_max_attack_now += 2
+        
+        if miecz3d == 4 and zyd_hp_now <= zyd_hp / 2 and zyd_fighter == 3:
+            $ zyd_min_attack_now += 1
+            $ zyd_max_attack_now += 2
+        
+        if miecz3d == 5 and kazuma_hp_now <= kazuma_hp / 2 and kazuma_fighter == 3:
+            $ kazuma_min_attack_now += 1
+            $ kazuma_max_attack_now += 2
+        
+        if miecz3d == 6 and tarczownik_hp_now <= tarczownik_hp / 2 and tarczownik_fighter == 3:
+            $ tarczownik_min_attack_now += 1
+            $ tarczownik_max_attack_now += 2
 
         if luszcz_fighter == 3:
             if luszcz_wybrany == 1:
@@ -7251,6 +7743,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 2 and luszcz_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ luszcz_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -7348,10 +7844,7 @@ label fight1:
                         else:
                             $ ado += 1
                     
-                    if ostrza_chaosu == 2 and luszcz_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ luszcz_min_attack_now += 1
-                        
+                    if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
@@ -7428,11 +7921,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -7462,11 +7967,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -7496,11 +8013,23 @@ label fight1:
                                     if gitara == 2:
                                         play sound "audio/sfx/gitara.mp3" 
 
-                                    if przepychaczka == 2: 
+                                    if luszcz_przepychaczka == 2: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 2:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 2:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 2:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 2:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 2:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -8176,6 +8705,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 3 and urban_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ urban_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -8183,78 +8716,78 @@ label fight1:
                 "{b}Atak ([urban_min_attack_now]-[urban_max_attack_now] DMG){/b}":
                     if urban_weapon >= 1:
                         if urban_wybrany == 1:
-                            if fuck == 2:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik1  
 
-                            if urban_przepychaczka == 2:
+                            if urban_przepychaczka == 3:
                                 show urban_przepychaczka zorder 15 at weapon_sojusznik1  
 
-                            if stop == 2:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik1  
                             
-                            if miecz_swietlny == 2:
+                            if miecz_swietlny == 3:
                                 show miecz_swietlny zorder 15 at weapon_sojusznik1  
                             
-                            if ostrza_chaosu == 2:
+                            if ostrza_chaosu == 3:
                                 show ostrza_chaosu zorder 15 at weapon_sojusznik1  
 
-                            if patyk == 2:
+                            if patyk == 3:
                                 show patyk zorder 15 at weapon_sojusznik1  
 
-                            if bazooka == 2:
+                            if bazooka == 3:
                                 show bazooka zorder 15 at weapon_sojusznik1  
                             
-                            if miecz3d == 2:
+                            if miecz3d == 3:
                                 show miecz3d zorder 15 at weapon_sojusznik1  
 
                         if urban_wybrany == 2:
-                            if fuck == 2:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik2  
 
-                            if urban_przepychaczka == 2:
+                            if urban_przepychaczka == 3:
                                 show urban_przepychaczka zorder 15 at weapon_sojusznik2  
 
-                            if stop == 2:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik2 
                             
-                            if miecz_swietlny == 2:
+                            if miecz_swietlny == 3:
                                 show miecz_swietlny zorder 15 at weapon_sojusznik2 
                             
-                            if ostrza_chaosu == 2:
+                            if ostrza_chaosu == 3:
                                 show ostrza_chaosu zorder 15 at weapon_sojusznik2 
 
-                            if patyk == 2:
+                            if patyk == 3:
                                 show patyk zorder 15 at weapon_sojusznik2  
 
-                            if bazooka == 2:
+                            if bazooka == 3:
                                 show bazooka zorder 15 at weapon_sojusznik2  
                             
-                            if miecz3d == 2:
+                            if miecz3d == 3:
                                 show miecz3d zorder 15 at weapon_sojusznik2   
 
                         if urban_wybrany == 3:
-                            if fuck == 2:
+                            if fuck == 3:
                                 show urban_weapon zorder 15 at weapon_sojusznik3 
 
-                            if urban_przepychaczka == 2:
+                            if urban_przepychaczka == 3:
                                 show urban_przepychaczka zorder 15 at weapon_sojusznik3  
 
-                            if stop == 2:
+                            if stop == 3:
                                 show stop zorder 15 at weapon_sojusznik3  
                             
-                            if miecz_swietlny == 2:
+                            if miecz_swietlny == 3:
                                 show miecz_swietlny zorder 15 at weapon_sojusznik3 
                             
-                            if ostrza_chaosu == 2:
+                            if ostrza_chaosu == 3:
                                 show ostrza_chaosu zorder 15 at weapon_sojusznik3  
 
-                            if patyk == 2:
+                            if patyk == 3:
                                 show patyk zorder 15 at weapon_sojusznik3  
 
-                            if bazooka == 2:
+                            if bazooka == 3:
                                 show bazooka zorder 15 at weapon_sojusznik3  
                             
-                            if miecz3d == 2:
+                            if miecz3d == 3:
                                 show miecz3d zorder 15 at weapon_sojusznik3 
 
                     else:
@@ -8273,10 +8806,7 @@ label fight1:
                         else:
                             $ ado += 1
                     
-                    if ostrza_chaosu == 3 and urban_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ urban_min_attack_now += 1
-                        
+                    if ostrza_chaosu == 3 and urban_weapon >= 1:                    
                         urban "i Ci kutasa obetnie"
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
@@ -8353,11 +8883,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3"  
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -8387,11 +8929,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -8421,11 +8975,23 @@ label fight1:
                                     if fuck == 3:
                                         play sound "audio/sfx/fuck.mp3" 
 
-                                    if przepychaczka == 3: 
+                                    if urban_przepychaczka == 3: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 3:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 3:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 3:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 3:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 3:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -8578,6 +9144,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 4 and zyd_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ zyd_min_attack_now += 1
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -8676,9 +9246,6 @@ label fight1:
                             $ ado += 1
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ zyd_min_attack_now += 1
-                        
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
@@ -8755,11 +9322,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -8789,11 +9368,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -8823,11 +9414,23 @@ label fight1:
                                     if chanuka == 4:
                                         play sound "audio/sfx/chanuka.mp3" 
 
-                                    if przepychaczka == 4: 
+                                    if zyd_przepychaczka == 4: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 4:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 4:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 4:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 4:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 4:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -9040,6 +9643,10 @@ label fight1:
                 show ruch zorder 0 at tlo_sojusznik3 
             else:
                 $ ado += 1
+            
+            if ostrza_chaosu == 5 and kazuma_weapon >= 1:
+                if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
+                    $ kazuma_min_attack_now += 1
                 
             menu:
                 "{b}Co zrobić{/b}"
@@ -9138,9 +9745,6 @@ label fight1:
                             $ ado += 1
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
-                        if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
-                            $ kazuma_min_attack_now += 1
-                        
                         kazuma "Tak, jestem Kazuma"
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
@@ -9217,11 +9821,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -9251,11 +9867,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3" 
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -9285,11 +9913,23 @@ label fight1:
                                     if chunchunmaru == 5:
                                         play sound "audio/sfx/chunchunmaru.mp3" 
 
-                                    if przepychaczka == 5: 
+                                    if kazuma_przepychaczka == 5: 
                                         play sound "audio/sfx/przepychaczka.mp3" 
 
                                     if stop == 5:
                                         play sound "audio/sfx/stop.mp3" 
+
+                                    if miecz_swietlny == 5:
+                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                    
+                                    if patyk == 5:
+                                        play sound "audio/sfx/patyk.mp3" 
+                                    
+                                    if bazooka == 5:
+                                        play sound "audio/sfx/bazooka.mp3" 
+                                    
+                                    if miecz3d == 5:
+                                        play sound "audio/sfx/miecz3d.mp3"  
 
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
@@ -9784,8 +10424,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
@@ -10672,8 +11321,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
@@ -11546,8 +12204,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
@@ -12437,8 +13104,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
@@ -12589,8 +13265,17 @@ label fight1:
         hide reka7
         hide reka8
         hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
         hide stop
-        hide przepychaczka
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
         hide luszcz_weapon
         hide eminem_weapon
         hide urban_weapon
