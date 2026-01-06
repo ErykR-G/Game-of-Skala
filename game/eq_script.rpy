@@ -90,7 +90,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 2
@@ -191,7 +191,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 2
@@ -292,7 +292,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
@@ -390,7 +390,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 3
                                     $ luszcz_max_attack -= 2
@@ -488,7 +488,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 0
                                     $ luszcz_max_attack -= 1
@@ -530,7 +530,7 @@ label eq:
                     
                     "{b}Łuszcz: Fajny Patyk (ATK:1-5){/b}" if luszcz_sojusznik == 1 and patyk == 2:
                         window show
-                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                         window hide
 
                         if gitara == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or stop == 1 or bazooka == 1 or miecz3d == 1:
@@ -696,7 +696,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 1
@@ -794,7 +794,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 3
@@ -891,7 +891,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ urban_min_attack -= 0
                                     $ urban_max_attack -= 2
@@ -992,7 +992,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ urban_min_attack -= 2
                                     $ urban_max_attack -= 2
@@ -1093,7 +1093,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 4
@@ -1191,7 +1191,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ urban_min_attack -= 3
                                     $ urban_max_attack -= 2
@@ -1289,7 +1289,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ urban_min_attack -= 0
                                     $ urban_max_attack -= 1
@@ -1331,7 +1331,7 @@ label eq:
                     
                     "{b}Jerzy Urban: Fajny Patyk (ATK:1-5){/b}" if urban_sojusznik == 1 and patyk == 3:
                         window show
-                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                         window hide
 
                         if fuck == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or stop == 1 or bazooka == 1 or miecz3d == 1:
@@ -1497,7 +1497,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 1
@@ -1595,7 +1595,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ urban_min_attack -= 2
                                     $ urban_max_attack -= 3
@@ -1683,7 +1683,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 3
@@ -1784,7 +1784,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 2
                                     $ zyd_max_attack -= 2
@@ -1885,7 +1885,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 4
@@ -1983,7 +1983,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 3
                                     $ zyd_max_attack -= 2
@@ -2081,7 +2081,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 0
                                     $ zyd_max_attack -= 1
@@ -2123,7 +2123,7 @@ label eq:
                     
                     "{b}Żyd: Fajny Patyk (ATK:1-5){/b}" if zyd_sojusznik == 1 and patyk == 4:
                         window show
-                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                         window hide
 
                         if chanuka == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or stop == 1 or bazooka == 1 or miecz3d == 1:
@@ -2289,7 +2289,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 1
@@ -2387,7 +2387,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 2
                                     $ zyd_max_attack -= 3
@@ -2475,7 +2475,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 0
                                     $ kazuma_max_attack -= 6
@@ -2576,7 +2576,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 2
                                     $ kazuma_max_attack -= 2
@@ -2677,7 +2677,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 4
@@ -2775,7 +2775,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 3
                                     $ kazuma_max_attack -= 2
@@ -2873,7 +2873,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 0
                                     $ kazuma_max_attack -= 1
@@ -2915,7 +2915,7 @@ label eq:
                     
                     "{b}Kazuma: Fajny Patyk (ATK:1-5){/b}" if kazuma_sojusznik == 1 and patyk == 5:
                         window show
-                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                         window hide
 
                         if chunchunmaru == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or stop == 1 or bazooka == 1 or miecz3d == 1:
@@ -3081,7 +3081,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 1
@@ -3179,7 +3179,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 2
                                     $ kazuma_max_attack -= 3
@@ -3267,7 +3267,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 3
@@ -3368,7 +3368,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 2
                                     $ tarczownik_max_attack -= 2
@@ -3469,7 +3469,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 4
@@ -3567,7 +3567,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 3
                                     $ tarczownik_max_attack -= 2
@@ -3665,7 +3665,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 0
                                     $ tarczownik_max_attack -= 1
@@ -3707,7 +3707,7 @@ label eq:
                     
                     "{b}Naofumii: Fajny Patyk (ATK:1-5){/b}" if tarczownik_sojusznik == 1 and patyk == 6:
                         window show
-                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                        "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                         window hide
 
                         if legendary_shield == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or ostrza_chaosu == 1 or stop == 1 or bazooka == 1 or miecz3d == 1:
@@ -3873,7 +3873,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 1
@@ -3971,7 +3971,7 @@ label eq:
 
                                 "{b}Fajny Patyk (ATK:1-5){/b}" if patyk == 1:
                                     window show
-                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. Mała szansa na podwojenie obrażeń.{/i}"
+                                    "{b}(ATK:1-5){/b}\n{i}Przeepicki badyl. 33%% na podwojenie obrażeń.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 2
                                     $ tarczownik_max_attack -= 3

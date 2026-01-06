@@ -1289,6 +1289,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ kibol1_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -1297,6 +1304,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ kibol1_hp_now -= luszcz_attack
 
@@ -1307,7 +1321,7 @@ label fight1:
                                             $ kibol1_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             jump faza12
-                                
+
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
 
                                 jump faza12
@@ -1348,6 +1362,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ akane_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -1356,6 +1377,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ akane_hp_now -= luszcz_attack
 
@@ -1406,6 +1434,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ kibol2_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -1414,6 +1449,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ kibol2_hp_now -= luszcz_attack
 
@@ -2153,6 +2195,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if kibol1_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza12
+
                                             $ kibol1_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -2161,6 +2210,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ kibol1_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza12
 
                                             $ kibol1_hp_now -= urban_attack
 
@@ -2218,6 +2274,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if akane_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ akane_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza12
+
                                             $ akane_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -2226,6 +2289,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ akane_poison = 3
                                                 show snake32 zorder 15 at center_wrog3
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ akane_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza12
 
                                             $ akane_hp_now -= urban_attack
 
@@ -2283,6 +2353,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if kibol2_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol2_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza12
+
                                             $ kibol2_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -2291,6 +2368,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ kibol2_poison = 3
                                                 show snake33 zorder 15 at center_wrog2
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol2_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza12
 
                                             $ kibol2_hp_now -= urban_attack
 
@@ -2604,6 +2688,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -2612,6 +2703,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ kibol1_hp_now -= zyd_attack
 
@@ -2663,6 +2761,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -2671,6 +2776,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ akane_hp_now -= zyd_attack
 
@@ -2721,6 +2833,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -2729,6 +2848,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ kibol2_hp_now -= zyd_attack
 
@@ -3100,6 +3226,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -3108,6 +3241,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ kibol1_hp_now -= kazuma_attack
 
@@ -3158,6 +3298,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -3166,6 +3313,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ akane_hp_now -= kazuma_attack
 
@@ -3216,6 +3370,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza12
+
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -3224,6 +3385,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza12
 
                                     $ kibol2_hp_now -= kazuma_attack
 
@@ -3852,29 +4020,49 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if kibol1_obrona == 1:
-                                            $ kibol1_hp_now -= int(tarczownik_attack / 2)
+                                            if patyk == 6:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= tarczownik_attack
+                                                    "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                
+                                                else:
+                                                    $ kibol1_hp_now -= int(tarczownik_attack / 2)
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                            else:
+                                                $ kibol1_hp_now -= int(tarczownik_attack / 2)
+                                                $ dmg = int(tarczownik_attack / 2)
+                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
 
-                                            $ dmg = int(tarczownik_attack / 2)
-                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
                                         else:
                                             if bazooka == 6:
                                                 $ kibol1_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
-
-                                            $ kibol1_hp_now -= tarczownik_attack
-
-                                            if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    show stun1 zorder 15 at head_wrog1
-                                                    $ kibol1_stun = 1
-                                                    "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                            
+                                            if patyk == 6:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= tarczownik_attack * 2
+                                                    "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                
+                                                else:
+                                                    $ kibol1_hp_now -= tarczownik_attack
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                            else:
+                                                $ kibol1_hp_now -= tarczownik_attack
+                                                if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        show stun1 zorder 15 at head_wrog1
+                                                        $ kibol1_stun = 1
+                                                        "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    
+                                                    else:
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
                                                 
                                                 else:
                                                     "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
-                                            
-                                            else:
-                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
 
                                     
                                     if dialog_fight2 == 0:
@@ -3942,29 +4130,47 @@ label fight1:
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
                                             if kibol1_obrona == 1:
-                                                $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                                $ dmg = int(tarczownik_attack / 2)
-                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                                if patyk == 6:
+                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    if kostka == 3:
+                                                        $ kibol1_hp_now -= tarczownik_attack
+                                                        "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                    
+                                                    else:
+                                                        $ kibol1_hp_now -= int(tarczownik_attack / 2)
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                                else:
+                                                    $ kibol1_hp_now -= int(tarczownik_attack / 2)
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
                                             else:
                                                 if bazooka == 6:
                                                     $ kibol1_poison = 3
                                                     show snake31 zorder 15 at center_wrog1
-
-                                                $ kibol1_hp_now -= tarczownik_attack
-
-                                                if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        show stun1 zorder 15 at head_wrog1
-                                                        $ kibol1_stun = 1
-                                                        "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if patyk == 6:
+                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    if kostka == 3:
+                                                        $ kibol1_hp_now -= tarczownik_attack * 2
+                                                        "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                    
+                                                    else:
+                                                        $ kibol1_hp_now -= tarczownik_attack
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                else:
+                                                    $ kibol1_hp_now -= tarczownik_attack
+                                                    if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            show stun1 zorder 15 at head_wrog1
+                                                            $ kibol1_stun = 1
+                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
                                                     
                                                     else:
                                                         "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
-                                                
-                                                else:
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
                                         
                                         if dialog_fight2 == 0:
                                             $ dialog_fight2 += 1
@@ -4030,29 +4236,48 @@ label fight1:
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
                                             if kibol1_obrona == 1:
-                                                $ kibol1_hp_now -= int(tarczownik_attack / 2)
-
-                                                $ dmg = int(tarczownik_attack / 2)
-                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                                if patyk == 6:
+                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    if kostka == 3:
+                                                        $ kibol1_hp_now -= tarczownik_attack
+                                                        "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                    
+                                                    else:
+                                                        $ kibol1_hp_now -= int(tarczownik_attack / 2)
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
+                                                else:
+                                                    $ kibol1_hp_now -= int(tarczownik_attack / 2)
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 1{/i}"
                                             else:
                                                 if bazooka == 6:
                                                     $ kibol1_poison = 3
                                                     show snake31 zorder 15 at center_wrog1
 
-                                                $ kibol1_hp_now -= tarczownik_attack
-
-                                                if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        show stun1 zorder 15 at head_wrog1
-                                                        $ kibol1_stun = 1
-                                                        "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if patyk == 6:
+                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    if kostka == 3:
+                                                        $ kibol1_hp_now -= tarczownik_attack * 2
+                                                        "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                    
+                                                    else:
+                                                        $ kibol1_hp_now -= tarczownik_attack
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
+                                                else:
+                                                    $ kibol1_hp_now -= tarczownik_attack
+                                                    if tarczownik_przepychaczka == 6 and kibol1_stun == 0:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            show stun1 zorder 15 at head_wrog1
+                                                            $ kibol1_stun = 1
+                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
                                                     
                                                     else:
                                                         "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
-                                                
-                                                else:
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 1{/i}"
                                         
                                         if dialog_fight2 == 0:
                                             $ dialog_fight2 += 1
@@ -4123,29 +4348,48 @@ label fight1:
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
                                             if akane_obrona == 1:
-                                                $ akane_hp_now -= int(tarczownik_attack / 2)
-
-                                                $ dmg = int(tarczownik_attack / 2)
-                                                "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                if patyk == 6:
+                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    if kostka == 3:
+                                                        $ akane_hp_now -= tarczownik_attack
+                                                        "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                        
+                                                    else:
+                                                        $ akane_hp_now -= int(tarczownik_attack / 2)
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                else:
+                                                    $ akane_hp_now -= int(tarczownik_attack / 2)
+                                                    $ dmg = int(tarczownik_attack / 2)
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
                                             else:
                                                 if bazooka == 6:
                                                     $ akane_poison = 3
                                                     show snake32 zorder 15 at center_wrog3
 
-                                                $ akane_hp_now -= tarczownik_attack
-
-                                                if tarczownik_przepychaczka == 6 and akane_stun == 0:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        show stun2 zorder 15 at head_wrog3
-                                                        $ akane_stun = 1
-                                                        "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if patyk == 6:
+                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    if kostka == 3:
+                                                        $ akane_hp_now -= tarczownik_attack * 2
+                                                        "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                    
+                                                    else:
+                                                        $ akane_hp_now -= tarczownik_attack
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                else:
+                                                    $ akane_hp_now -= tarczownik_attack
+                                                    if tarczownik_przepychaczka == 6 and akane_stun == 0:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            show stun2 zorder 15 at head_wrog3
+                                                            $ akane_stun = 1
+                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        
+                                                        else:
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
                                                     
                                                     else:
                                                         "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
-                                                
-                                                else:
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
                                             
                                         if dialog_fight2 == 0:
                                             $ dialog_fight2 += 1
@@ -4213,29 +4457,48 @@ label fight1:
                                                     play sound "audio/sfx/reka.mp3" 
 
                                                 if akane_obrona == 1:
-                                                    $ akane_hp_now -= int(tarczownik_attack / 2)
-
-                                                    $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ akane_hp_now -= tarczownik_attack
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                        
+                                                        else:
+                                                            $ akane_hp_now -= int(tarczownik_attack / 2)
+                                                            $ dmg = int(tarczownik_attack / 2)
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                    else:
+                                                        $ akane_hp_now -= int(tarczownik_attack / 2)
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
                                                 else:
                                                     if bazooka == 6:
                                                         $ akane_poison = 3
                                                         show snake32 zorder 15 at center_wrog3
 
-                                                    $ akane_hp_now -= tarczownik_attack
-
-                                                    if tarczownik_przepychaczka == 6 and akane_stun == 0:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            show stun2 zorder 15 at head_wrog3
-                                                            $ akane_stun = 1
-                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ akane_hp_now -= tarczownik_attack * 2
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                        
+                                                        else:
+                                                            $ akane_hp_now -= tarczownik_attack
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                    else:
+                                                        $ akane_hp_now -= tarczownik_attack
+                                                        if tarczownik_przepychaczka == 6 and akane_stun == 0:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if kostka <= 3:
+                                                                show stun2 zorder 15 at head_wrog3
+                                                                $ akane_stun = 1
+                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                            
+                                                            else:
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
                                                         
                                                         else:
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
-                                                    
-                                                    else:
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
                                             
                                             if dialog_fight2 == 0:
                                                 $ dialog_fight2 += 1
@@ -4302,29 +4565,48 @@ label fight1:
                                                     play sound "audio/sfx/reka.mp3" 
 
                                                 if akane_obrona == 1:
-                                                    $ akane_hp_now -= int(tarczownik_attack / 2)
-
-                                                    $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ akane_hp_now -= tarczownik_attack
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                        
+                                                        else:
+                                                            $ akane_hp_now -= int(tarczownik_attack / 2)
+                                                            $ dmg = int(tarczownik_attack / 2)
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
+                                                    else:
+                                                        $ akane_hp_now -= int(tarczownik_attack / 2)
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Akane{/i}"
                                                 else:
                                                     if bazooka == 6:
                                                         $ akane_poison = 3
                                                         show snake32 zorder 15 at center_wrog3
 
-                                                    $ akane_hp_now -= tarczownik_attack
-
-                                                    if tarczownik_przepychaczka == 6 and akane_stun == 0:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            show stun2 zorder 15 at head_wrog3
-                                                            $ akane_stun = 1
-                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ akane_hp_now -= tarczownik_attack * 2
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                        
+                                                        else:
+                                                            $ akane_hp_now -= tarczownik_attack
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
+                                                    else:
+                                                        $ akane_hp_now -= tarczownik_attack
+                                                        if tarczownik_przepychaczka == 6 and akane_stun == 0:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if kostka <= 3:
+                                                                show stun2 zorder 15 at head_wrog3
+                                                                $ akane_stun = 1
+                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                            
+                                                            else:
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
                                                         
                                                         else:
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
-                                                    
-                                                    else:
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Akane{/i}"
                                                 
 
                                             if dialog_fight2 == 0:
@@ -4397,29 +4679,48 @@ label fight1:
                                                     play sound "audio/sfx/reka.mp3" 
 
                                                 if kibol2_obrona == 1:
-                                                    $ kibol2_hp_now -= int(tarczownik_attack / 2)
-
-                                                    $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ kibol2_hp_now -= tarczownik_attack
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                        
+                                                        else:
+                                                            $ kibol2_hp_now -= int(tarczownik_attack / 2)
+                                                            $ dmg = int(tarczownik_attack / 2)
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                    else:
+                                                        $ kibol2_hp_now -= int(tarczownik_attack / 2)
+                                                        $ dmg = int(tarczownik_attack / 2)
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
                                                 else:
                                                     if bazooka == 6:
                                                         $ kibol2_poison = 3
                                                         show snake33 zorder 15 at center_wrog2
 
-                                                    $ kibol2_hp_now -= tarczownik_attack
-
-                                                    if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            show stun3 zorder 15 at head_wrog2
-                                                            $ kibol2_stun = 1
-                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ kibol2_hp_now -= tarczownik_attack * 2
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                        
+                                                        else:
+                                                            $ kibol2_hp_now -= tarczownik_attack
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                    else:
+                                                        $ kibol2_hp_now -= tarczownik_attack
+                                                        if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if kostka <= 3:
+                                                                show stun3 zorder 15 at head_wrog2
+                                                                $ kibol2_stun = 1
+                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                            
+                                                            else:
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                                         
                                                         else:
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
-                                                    
-                                                    else:
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                             
                                             if dialog_fight2 == 0:
                                                 $ dialog_fight2 += 1
@@ -4487,29 +4788,48 @@ label fight1:
                                                         play sound "audio/sfx/reka.mp3" 
 
                                                     if kibol2_obrona == 1:
-                                                        $ kibol2_hp_now -= int(tarczownik_attack / 2)
-
-                                                        $ dmg = int(tarczownik_attack / 2)
-                                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                        if patyk == 6:
+                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            if kostka == 3:
+                                                                $ kibol2_hp_now -= tarczownik_attack
+                                                                "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                            
+                                                            else:
+                                                                $ kibol2_hp_now -= int(tarczownik_attack / 2)
+                                                                $ dmg = int(tarczownik_attack / 2)
+                                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                        else:
+                                                            $ kibol2_hp_now -= int(tarczownik_attack / 2)
+                                                            $ dmg = int(tarczownik_attack / 2)
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
                                                     else:
                                                         if bazooka == 6:
                                                             $ kibol2_poison = 3
                                                             show snake33 zorder 15 at center_wrog2
 
-                                                        $ kibol2_hp_now -= tarczownik_attack
-
-                                                        if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
-                                                            $ kostka = renpy.random.randint(1, 20)
-                                                            if kostka <= 3:
-                                                                show stun3 zorder 15 at head_wrog2
-                                                                $ kibol2_stun = 1
-                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        if patyk == 6:
+                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            if kostka == 3:
+                                                                $ kibol2_hp_now -= tarczownik_attack * 2
+                                                                "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                            
+                                                            else:
+                                                                $ kibol2_hp_now -= tarczownik_attack
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        else:
+                                                            $ kibol2_hp_now -= tarczownik_attack
+                                                            if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
+                                                                $ kostka = renpy.random.randint(1, 20)
+                                                                if kostka <= 3:
+                                                                    show stun3 zorder 15 at head_wrog2
+                                                                    $ kibol2_stun = 1
+                                                                    "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                                
+                                                                else:
+                                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                                             
                                                             else:
                                                                 "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
-                                                        
-                                                        else:
-                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                                 
                                                 if dialog_fight2 == 0:
                                                     $ dialog_fight2 += 1
@@ -4576,29 +4896,48 @@ label fight1:
                                                         play sound "audio/sfx/reka.mp3" 
 
                                                     if kibol2_obrona == 1:
-                                                        $ kibol2_hp_now -= int(tarczownik_attack / 2)
-
-                                                        $ dmg = int(tarczownik_attack / 2)
-                                                        "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                        if patyk == 6:
+                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            if kostka == 3:
+                                                                $ kibol2_hp_now -= tarczownik_attack
+                                                                "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                            
+                                                            else:
+                                                                $ kibol2_hp_now -= int(tarczownik_attack / 2)
+                                                                $ dmg = int(tarczownik_attack / 2)
+                                                                "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
+                                                        else:
+                                                            $ kibol2_hp_now -= int(tarczownik_attack / 2)
+                                                            $ dmg = int(tarczownik_attack / 2)
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Kibol 2{/i}"
                                                     else:
                                                         if bazooka == 6:
                                                             $ kibol2_poison = 3
                                                             show snake33 zorder 15 at center_wrog2
 
-                                                        $ kibol2_hp_now -= tarczownik_attack
-
-                                                        if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
-                                                            $ kostka = renpy.random.randint(1, 20)
-                                                            if kostka <= 3:
-                                                                show stun3 zorder 15 at head_wrog2
-                                                                $ kibol2_stun = 1
-                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                        if patyk == 6:
+                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            if kostka == 3:
+                                                                $ kibol2_hp_now -= tarczownik_attack * 2
+                                                                "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
+                                                            
+                                                            else:
+                                                                $ kibol2_hp_now -= tarczownik_attack
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
+                                                        else:
+                                                            $ kibol2_hp_now -= tarczownik_attack
+                                                            if tarczownik_przepychaczka == 6 and kibol2_stun == 0:
+                                                                $ kostka = renpy.random.randint(1, 20)
+                                                                if kostka <= 3:
+                                                                    show stun3 zorder 15 at head_wrog2
+                                                                    $ kibol2_stun = 1
+                                                                    "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                                
+                                                                else:
+                                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                                             
                                                             else:
                                                                 "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
-                                                        
-                                                        else:
-                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Kibol 2{/i}"
                                                 
 
                                                 if dialog_fight2 == 0:
@@ -5200,6 +5539,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ kibol1_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -5208,6 +5554,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ kibol1_hp_now -= luszcz_attack
 
@@ -5258,6 +5611,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ akane_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -5266,6 +5626,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ akane_hp_now -= luszcz_attack
 
@@ -5316,6 +5683,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ kibol2_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -5324,6 +5698,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ kibol2_hp_now -= luszcz_attack
 
@@ -6063,6 +6444,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if kibol1_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza13
+
                                             $ kibol1_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -6071,6 +6459,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ kibol1_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza13
 
                                             $ kibol1_hp_now -= urban_attack
 
@@ -6128,6 +6523,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if akane_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ akane_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza13
+
                                             $ akane_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -6136,6 +6538,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ akane_poison = 3
                                                 show snake32 zorder 15 at center_wrog3
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ akane_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza13
 
                                             $ akane_hp_now -= urban_attack
 
@@ -6193,6 +6602,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if kibol2_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol2_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza13
+
                                             $ kibol2_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -6201,6 +6617,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ kibol2_poison = 3
                                                 show snake33 zorder 15 at center_wrog2
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol2_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza13
 
                                             $ kibol2_hp_now -= urban_attack
 
@@ -6514,6 +6937,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -6522,6 +6952,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ kibol1_hp_now -= zyd_attack
 
@@ -6572,6 +7009,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -6580,6 +7024,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ akane_hp_now -= zyd_attack
 
@@ -6630,6 +7081,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -6638,6 +7096,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ kibol2_hp_now -= zyd_attack
 
@@ -7008,6 +7473,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -7016,6 +7488,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ kibol1_hp_now -= kazuma_attack
 
@@ -7066,6 +7545,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -7074,6 +7560,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ akane_hp_now -= kazuma_attack
 
@@ -7124,6 +7617,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza13
+
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -7132,6 +7632,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza13
 
                                     $ kibol2_hp_now -= kazuma_attack
 
@@ -7974,6 +8481,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ kibol1_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -7982,6 +8496,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ kibol1_hp_now -= luszcz_attack
 
@@ -8032,6 +8553,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ akane_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -8040,6 +8568,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ akane_hp_now -= luszcz_attack
 
@@ -8090,6 +8625,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= luszcz_attack
+                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ kibol2_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
@@ -8098,6 +8640,13 @@ label fight1:
                                     if bazooka == 2:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 2:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= luszcz_attack * 2
+                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ kibol2_hp_now -= luszcz_attack
 
@@ -8838,6 +9387,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if kibol1_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza14
+
                                             $ kibol1_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -8846,6 +9402,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ kibol1_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol1_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza14
 
                                             $ kibol1_hp_now -= urban_attack
 
@@ -8903,6 +9466,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if akane_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ akane_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza14
+
                                             $ akane_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -8911,6 +9481,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ akane_poison = 3
                                                 show snake32 zorder 15 at center_wrog3
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ akane_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza14
 
                                             $ akane_hp_now -= urban_attack
 
@@ -8968,6 +9545,13 @@ label fight1:
                                             play sound "audio/sfx/reka.mp3" 
 
                                         if kibol2_obrona == 1:
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol2_hp_now -= urban_attack
+                                                    "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
+                                                    jump faza14
+
                                             $ kibol2_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
@@ -8976,6 +9560,13 @@ label fight1:
                                             if bazooka == 3:
                                                 $ kibol2_poison = 3
                                                 show snake33 zorder 15 at center_wrog2
+                                            
+                                            if patyk == 3:
+                                                $ kostka = renpy.random.randint(1, 3)
+                                                if kostka == 3:
+                                                    $ kibol2_hp_now -= urban_attack * 2
+                                                    "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
+                                                    jump faza14
 
                                             $ kibol2_hp_now -= urban_attack
 
@@ -9289,6 +9880,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -9297,6 +9895,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ kibol1_hp_now -= zyd_attack
 
@@ -9347,6 +9952,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -9355,6 +9967,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ akane_hp_now -= zyd_attack
 
@@ -9405,6 +10024,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= zyd_attack
+                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
@@ -9413,6 +10039,13 @@ label fight1:
                                     if bazooka == 4:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 4:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= zyd_attack * 2
+                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ kibol2_hp_now -= zyd_attack
 
@@ -9783,6 +10416,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol1_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -9791,6 +10431,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ kibol1_poison = 3
                                         show snake31 zorder 15 at center_wrog1
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol1_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ kibol1_hp_now -= kazuma_attack
 
@@ -9841,6 +10488,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if akane_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -9849,6 +10503,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ akane_poison = 3
                                         show snake32 zorder 15 at center_wrog3
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ akane_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ akane_hp_now -= kazuma_attack
 
@@ -9899,6 +10560,13 @@ label fight1:
                                     play sound "audio/sfx/reka.mp3" 
 
                                 if kibol2_obrona == 1:
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= kazuma_attack
+                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                            jump faza14
+
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
@@ -9907,6 +10575,13 @@ label fight1:
                                     if bazooka == 5:
                                         $ kibol2_poison = 3
                                         show snake33 zorder 15 at center_wrog2
+                                    
+                                    if patyk == 5:
+                                        $ kostka = renpy.random.randint(1, 3)
+                                        if kostka == 3:
+                                            $ kibol2_hp_now -= kazuma_attack * 2
+                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                            jump faza14
 
                                     $ kibol2_hp_now -= kazuma_attack
 

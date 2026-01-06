@@ -374,6 +374,7 @@ label prolog_decyzje:
 
 label start:
     label prolog:
+        hide screen global_eq_key
         show screen global_eq_key
         show bg start
         show luszcz siedzi right at slightright
