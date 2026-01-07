@@ -19,9 +19,39 @@ label bronie:
 
     
 label items:
-    default ile_item = 2
-    default bandaz = 1
-    default granat = 1
+    default ile_item = 13
+
+    default strona1 = 0   
+    default strona2 = 0
+    default piknikx = 0
+    default cakex = 0
+    default pillsx = 0
+    default wodax = 0
+    default ostryx = 0
+    default lagodnyx = 0
+    default drpepperx = 0
+    default jabolex = 0
+    default royalx = 0
+    default warzywox = 0
+    default bananyx = 0
+    default skalkax = 0
+    default granatx = 0
+
+    default piknik = 1
+    default cake = 1
+    default pills = 20
+    default woda = 1
+    default ostry = 3
+    default lagodny = 3
+    default drpepper = 4
+    default jabole = 5
+    default royal = 6
+    default warzywo = 7
+    default banany = 3
+    default skalka = 2
+    default granat = 4
+
+    
 
 
 label eq:
@@ -4015,22 +4045,206 @@ label eq:
             jump eq
 
         
-        "{b}Itemy do Walki{/b}":
+        "{b}Itemy do Walki{/b}" if ile_item > 0: 
+            $ strona1 = 0   
+            $ strona2 = 0
+            $ piknikx = 0
+            $ cakex = 0
+            $ pillsx = 0
+            $ wodax = 0
+            $ ostryx = 0
+            $ lagodnyx = 0
+            $ drpepperx = 0
+            $ jabolex = 0
+            $ royalx = 0
+            $ warzywox = 0
+            $ bananyx = 0
+            $ skalkax = 0
+            $ granatx = 0
+
+            if piknik >= 1:
+                $ strona1 += 1
+                $ piknikx += 1
+                
+            if cake >= 1:
+                $ strona1 += 1
+                $ cakex += 1
+                
+            if pills >= 1:
+                $ strona1 += 1
+                $ pillsx += 1
+
+            if woda >= 1:
+                $ strona1 += 1
+                $ wodax += 1
+
+            if ostry >= 1:
+                $ strona1 += 1
+                $ ostryx += 1
+                
+            if lagodny >= 1:
+                $ strona1 += 1
+                $ lagodnyx += 1
+                
+            if drpepper >= 1 and strona1 < 6:
+                $ strona1 += 1
+                $ drpepperx += 1
+
+            else:
+                if drpepper >= 1:
+                    $ drpepperx += 2
+                    $ strona2 += 1
+                
+            if jabole >= 1 and strona1 < 6:
+                $ strona1 += 1
+                $ jabolex += 1
+
+            else:
+                if jabole >= 1:
+                    $ jabolex += 2
+                    $ strona2 += 1
+                
+            if royal >= 1 and strona1 < 6:
+                $ strona1 += 1
+                $ royalx += 1
+
+            else:
+                if royal >= 1:
+                    $ royalx += 2
+                    $ strona2 += 1
+                
+            if warzywo >= 1 and strona1 < 6:
+                $ strona1 += 1
+                $ warzywox += 1
+
+            else:
+                if warzywo >= 1:
+                    $ warzywox += 2
+                    $ strona2 += 1
+                
+            if banany >= 1 and strona1 < 6:
+                $ strona1 += 1
+                $ bananyx += 1
+
+            else:
+                if banany >= 1:
+                    $ bananyx += 2
+                    $ strona2 += 1
+                
+            if skalka >= 1 and strona1 < 6:
+                $ strona1 += 1
+                $ skalkax += 1
+
+            else: 
+                if skalka >= 1:
+                    $ skalkax += 2
+                    $ strona2 += 1
+                
+            if granat >= 1 and strona1 < 6:
+                $ strona1 += 1
+                $ granatx += 1
+
+            else:
+                if granat >= 1:
+                    $ granatx += 2
+                    $ strona2 += 1
+
             label itemy_do_walki:
                 menu:
-                    "{b}Bandaż (+5HP){/b}" if bandaz >= 1:
+                    "{b}Piknik (+FULL HP FOR ALL){/b}" if piknikx == 1:
                         window show
-                        "{i}Bandaż jest git{/i}"
+                        "{i}Nie pamiętam kiedy ostatnio miałem piknik. Leczy całą drużynę do pełni życia{/i}"
                         window hide
 
                         jump itemy_do_walki
 
-                    "{b}Granat (8 DMG){/b}" if granat >= 1:
+                    "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL){/b}" if cakex == 1:
                         window show
-                        "{i}Granat jest git{/i}"
+                        "{i}Ciasto truskawkowe, które upiekłeś z Lilith. Leczy +15HP jedenej osbie lub wszystkich po +5HP{/i}"
                         window hide
 
                         jump itemy_do_walki
+
+                    "{b}Słoik z Pigułkami (+3HP){/b}" if pillsx >= 1:
+                        window show
+                        "{i}Słoik z Pigułkami, którym Lilith prawie Ciebie zabiła. Leczy +3HP od pigułki{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Tutorialowa Woda Święcona (+6HP){/b}" if wodax == 1:
+                        window show
+                        "{i}leczy. +6HP{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Kebab Ostry (+3HP i +1 MAX DMG){/b}" if ostryx == 1:
+                        window show
+                        "{i}Na cienkim, bardzo ostry. +3HP oraz +1 MAX DMG do konca walki{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS){/b}" if lagodnyx == 1:
+                        window show
+                        "{i}Pod grubym, trochę łagodny. +4HP oraz +1HP przez 3 tury{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK){/b}" if drpepperx == 1:
+                        window show
+                        "{i}Ulubiony napój Eryka R-G. +2HP oraz następny atak zadaje możliwie najwięcej obrażeń{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Jabole (+6HP){/b}" if jabolex == 1:
+                        window show
+                        "{i}Tylko anioły nie płaczą na dniu cebuli (TheMontaże). +6hp oraz następny atak zadaje możliwie najmniej obrażeń{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Royal Cola (+9HP){/b}" if royalx == 1:
+                        window show
+                        "{i}Ulubiony napój Macieja Ł. +9HP{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Warzywo skalne (+(4-7)HP){/b}" if warzywox == 1:
+                        window show
+                        "{i}warzywko rosnące tylko w Skale. +4-7HP{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Kiść bananów (+3HP FOR ALL){/b}" if bananyx == 1:
+                        window show
+                        "{i}Uuuu uuu aaaaaa aa aaaaaaa uu u u aaaa. +3HP dla całej drużyny{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Ostra Skałka (5-8 DMG){/b}" if skalkax == 1:
+                        window show
+                        "{i}Prosto ze skały ze skały. Zadaje 5-8 DMG{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{b}Granat (4 DMG FOR ALL){/b}" if granatx == 1:
+                        window show
+                        "{i}Owoc. Zadaje wszystkim przeciwnikom po 4 DMG{/i}"
+                        window hide
+
+                        jump itemy_do_walki
+                    
+                    "{i}Strona 1/2 --->{/i}" if strona2 > 0:
+                        jump itemy_do_walki2
+
 
                     "{b}Powrót{/b}":
                         jump eq
@@ -4042,3 +4256,57 @@ label eq:
             pass
 
     return
+
+label itemy_do_walki2:
+    menu:
+        "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK){/b}" if drpepperx == 2:
+            window show
+            "{i}Ulubiony napój Eryka R-G. +2HP oraz następny atak zadaje możliwie najwięcej obrażeń{/i}"
+            window hide
+
+            jump itemy_do_walki2
+                    
+        "{b}Jabole (+6HP){/b}" if jabolex == 2:
+            window show
+            "{i}Tylko anioły nie płaczą na dniu cebuli (TheMontaże). +6HP oraz następny atak zadaje możliwie najmniej obrażeń{/i}"
+            window hide
+
+            jump itemy_do_walki2
+                    
+        "{b}Royal Cola (+9HP){/b}" if royalx == 2:
+            window show
+            "{i}Ulubiony napój Macieja Ł. +9HP{/i}"
+            window hide
+
+            jump itemy_do_walki2
+                    
+        "{b}Warzywo skalne (+(4-7)HP){/b}" if warzywox == 2:
+            window show
+            "{i}warzywko rosnące tylko w Skale. +4-7HP{/i}"
+            window hide
+
+            jump itemy_do_walki2
+                    
+        "{b}Kiść bananów (+3HP FOR ALL){/b}" if bananyx == 2:
+            window show
+            "{i}Uuuu uuu aaaaaa aa aaaaaaa uu u u aaaa. +3HP dla całej drużyny{/i}"
+            window hide
+
+            jump itemy_do_walki2
+                    
+        "{b}Ostra Skałka (5-8 DMG){/b}" if skalkax == 2:
+            window show
+            "{i}Prosto ze skały ze skały. Zadaje 5-8 DMG{/i}"
+            window hide
+
+            jump itemy_do_walki2
+                    
+        "{b}Granat (4 DMG FOR ALL){/b}" if granatx == 2:
+            window show
+            "{i}Owoc. Zadaje wszystkim przeciwnikom po 4 DMG{/i}"
+            window hide
+
+            jump itemy_do_walki2
+        
+        "{i}<--- Strona 2/2{/i}":
+            jump itemy_do_walki

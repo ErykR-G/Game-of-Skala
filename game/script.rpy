@@ -366,6 +366,12 @@ label fight_stats:
 
     default pager_boom = 0
 
+    default luszcz_piguly = 0
+    default eminem_piguly = 0
+    default urban_piguly = 0
+    default zyd_piguly = 0
+    default kazuma_piguly = 0
+
 
 label prolog_decyzje:
     define ofiara = 0
