@@ -38,6 +38,10 @@ label postacie:
 
 
 label pozycje:
+    transform granatz:
+        xalign 0.83
+        yalign 0.50
+
     label pozycje_wojownikow:
         transform slightleft:
             xalign 0.25
