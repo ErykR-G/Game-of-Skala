@@ -5178,8 +5178,6 @@ label fight1:
                             else:
                                 jump losowanko_tarczownik1
 
-        jump faza12
-
     label faza12:
         hide reka1
         hide reka2
@@ -7979,154 +7977,6 @@ label fight1:
                                         hide chwyta
                                         
                                 jump faza13
-
-        jump faza13
-        label items12:
-            menu:
-                "{b}Co użyć?{/b}"
-
-                "{b}Bandaż (+5HP){/b}" if bandaz >= 1:
-                    menu:
-                        "{b}Na kim użyć?{/b}"
-
-                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if luszcz_hp_now + 5 > luszcz_hp:
-                                $ luszcz_hp_now = luszcz_hp
-                                "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                            else:
-                                $ luszcz_hp_now += 5
-                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-                        
-                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if eminem_hp_now + 5 > eminem_hp:
-                                $ eminem_hp_now = eminem_hp
-                                "{i}Shadow odzyskał cały pasek życia{/i}"
-                            else:
-                                $ eminem_hp_now += 5
-                                "{i}Shadow odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-
-                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if urban_hp_now + 5 > urban_hp:
-                                $ urban_hp_now = urban_hp
-                                "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                            else:
-                                $ urban_hp_now += 5
-                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-
-                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if zyd_hp_now + 5 > zyd_hp:
-                                $ zyd_hp_now = zyd_hp
-                                "{i}Żyd odzyskał cały pasek życia{/i}"
-                            else:
-                                $ zyd_hp_now += 5
-                                "{i}Żyd odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-
-                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if kazuma_hp_now + 5 > kazuma_hp:
-                                $ kazuma_hp_now = kazuma_hp
-                                "{i}Kazuma odzyskał cały pasek życia{/i}"
-                            else:
-                                $ kazuma_hp_now += 5
-                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-                        
-                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if tarczownik_hp_now + 5 > tarczownik_hp:
-                                $ tarczownik_hp_now = tarczownik_hp
-                                "{i}Naofumi odzyskał cały pasek życia{/i}"
-                            else:
-                                $ tarczownik_hp_now += 5
-                                "{i}Naofumi odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-                
-                "{b}Granat (8 DMG){/b}" if granat >= 1:
-                    menu:
-                        "{b}Na kim użyć?{/b}"
-
-                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
-                            $ granat -= 1
-                            $ ile_item -= 1
-
-                            if kibol1_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Granat został zablokowany{/i}"
-                                $ kibol1_obrona = 1
-                                                               
-                            else:
-                                if kibol1_obrona == 1:
-                                    $ kibol1_hp_now -= 4
-
-                                    "{i}Kibol 1 traci 4 punkty życia{/i}"
-                                else:
-                                    $ kibol1_hp_now -= 8
-
-                                    "{i}Kibol 1 traci 8 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-
-                        "{b}Akane{/b}" if akane_hp_now >= 1:
-                            $ granat -= 1
-                            $ ile_item -= 1
-
-                            if akane_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Granat został zablokowany{/i}"
-                                $ akane_obrona = 1
-                                                               
-                            else:
-                                if akane_obrona == 1:
-                                    $ akane_hp_now -= 4
-
-                                    "{i}Akane traci 4 punkty życia{/i}"
-                                else:
-                                    $ akane_hp_now -= 8
-
-                                    "{i}Akane traci 8 punktów życia{/i}"
-                            hide chest
-                            jump faza13
-
-                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
-                            $ granat -= 1
-                            $ ile_item -= 1
-
-                            if kibol2_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Granat został zablokowany{/i}"
-                                $ kibol2_obrona = 1
-                                                               
-                            else:
-                                if kibol2_obrona == 1:
-                                    $ kibol2_hp_now -= 4
-
-                                    "{i}Kibol 2 traci 4 punkty życia{/i}"
-                                else:
-                                    $ kibol2_hp_now -= 8
-
-                                    "{i}Kibol 2 traci 8 punktów życia{/i}"
-                            hide chest
-                            jump faza13
 
     label faza13:
         hide reka1
@@ -10929,155 +10779,6 @@ label fight1:
                                         
                                 jump faza14
 
-        jump faza14
-        label items13:
-            menu:
-                "{b}Co użyć?{/b}"
-
-                "{b}Bandaż (+5HP){/b}" if bandaz >= 1:
-                    menu:
-                        "{b}Na kim użyć?{/b}"
-
-                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if luszcz_hp_now + 5 > luszcz_hp:
-                                $ luszcz_hp_now = luszcz_hp
-                                "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                            else:
-                                $ luszcz_hp_now += 5
-                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-                        
-                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if eminem_hp_now + 5 > eminem_hp:
-                                $ eminem_hp_now = eminem_hp
-                                "{i}Shadow odzyskał cały pasek życia{/i}"
-                            else:
-                                $ eminem_hp_now += 5
-                                "{i}Shadow odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-
-                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if urban_hp_now + 5 > urban_hp:
-                                $ urban_hp_now = urban_hp
-                                "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                            else:
-                                $ urban_hp_now += 5
-                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-
-                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if zyd_hp_now + 5 > zyd_hp:
-                                $ zyd_hp_now = zyd_hp
-                                "{i}Żyd odzyskał cały pasek życia{/i}"
-                            else:
-                                $ zyd_hp_now += 5
-                                "{i}Żyd odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-
-                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if kazuma_hp_now + 5 > kazuma_hp:
-                                $ kazuma_hp_now = kazuma_hp
-                                "{i}Kazuma odzyskał cały pasek życia{/i}"
-                            else:
-                                $ kazuma_hp_now += 5
-                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-                        
-                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
-                            $ bandaz -= 1
-                            $ ile_item -= 1
-                            if tarczownik_hp_now + 5 > tarczownik_hp:
-                                $ tarczownik_hp_now = tarczownik_hp
-                                "{i}Naofumi odzyskał cały pasek życia{/i}"
-                            else:
-                                $ tarczownik_hp_now += 5
-                                "{i}Naofumi odzyskał 5 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-                
-                "{b}Granat (8 DMG){/b}" if granat >= 1:
-                    menu:
-                        "{b}Na kim użyć?{/b}"
-
-                        "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
-                            $ granat -= 1
-                            $ ile_item -= 1
-
-                            if kibol1_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Granat został zablokowany{/i}"
-                                $ kibol1_obrona = 1
-                                                               
-                            else:
-                                if kibol1_obrona == 1:
-                                    $ kibol1_hp_now -= 4
-
-                                    "{i}Kibol 1 traci 4 punkty życia{/i}"
-                                else:
-                                    $ kibol1_hp_now -= 8
-
-                                    "{i}Kibol 1 traci 8 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-
-                        "{b}Akane{/b}" if akane_hp_now >= 1:
-                            $ granat -= 1
-                            $ ile_item -= 1
-
-                            if akane_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Granat został zablokowany{/i}"
-                                $ akane_obrona = 1
-                                                               
-                            else:
-                                if akane_obrona == 1:
-                                    $ akane_hp_now -= 4
-
-                                    "{i}Akane traci 4 punkty życia{/i}"
-                                else:
-                                    $ akane_hp_now -= 8
-
-                                    "{i}Akane traci 8 punktów życia{/i}"
-
-                            hide chest
-                            jump faza14
-
-                        "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
-                            $ granat -= 1
-                            $ ile_item -= 1
-
-                            if kibol2_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Granat został zablokowany{/i}"
-                                $ kibol2_obrona = 1
-                                                               
-                            else:
-                                if kibol2_obrona == 1:
-                                    $ kibol2_hp_now -= 4
-
-                                    "{i}Kibol 2 traci 4 punkty życia{/i}"
-                                else:
-                                    $ kibol2_hp_now -= 8
-
-                                    "{i}Kibol 2 traci 8 punktów życia{/i}"
-                            hide chest
-                            jump faza14
-
     label faza14:
         hide reka1
         hide reka2
@@ -13799,6 +13500,20 @@ label fight1:
                 $ kazuma_weapon = 1
                 $ tarczownik_weapon = 1
 
+                $ luszcz_lagodny = 0
+                $ eminem_lagodny = 0
+                $ urban_lagodny = 0
+                $ zyd_lagodny = 0
+                $ kazuma_lagodny = 0
+                $ tarczownik_lagodny = 0
+
+                $ luszcz_drpepper = 0
+                $ eminem_drpepper = 0
+                $ urban_drpepper = 0
+                $ zyd_drpepper = 0
+                $ kazuma_drpepper = 0
+                $ tarczownik_drpepper = 0
+
                 $ luszcz_obrona = 0
                 $ eminem_obrona = 0
                 $ urban_obrona = 0
@@ -14005,6 +13720,20 @@ label fight1:
         $ zyd_obrona = 0
         $ kazuma_obrona = 0
         $ tarczownik_obrona = 0
+
+        $ luszcz_lagodny = 0
+        $ eminem_lagodny = 0
+        $ urban_lagodny = 0
+        $ zyd_lagodny = 0
+        $ kazuma_lagodny = 0
+        $ tarczownik_lagodny = 0
+
+        $ luszcz_drpepper = 0
+        $ eminem_drpepper = 0
+        $ urban_drpepper = 0
+        $ zyd_drpepper = 0
+        $ kazuma_drpepper = 0
+        $ tarczownik_drpepper = 0
 
         $ luszcz_hp_now = luszcz_hp
         $ luszcz_min_attack_now = luszcz_min_attack

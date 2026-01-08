@@ -19,7 +19,7 @@ label bronie:
 
     
 label items:
-    default ile_item = 12
+    default ile_item = 13
 
     default strona1 = 0   
     default strona2 = 0
@@ -42,8 +42,8 @@ label items:
     default pills = 20
     default woda = 2
     default ostry = 2
-    default lagodny = 0
-    default drpepper = 20
+    default lagodny = 3
+    default drpepper = 5
     default jabole = 5
     default royal = 4
     default warzywo = 3
