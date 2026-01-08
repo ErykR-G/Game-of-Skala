@@ -17,6 +17,26 @@ label bronie:
     default kazuma_przepychaczka = 0
     default tarczownik_przepychaczka = 0
 
+    default luszcz_nic = 2
+    default urban_nic = 3
+    default zyd_nic = 4
+    default kazuma_nic = 5
+    default tarczownik_nic = 6
+    default eminem_nic = 7
+    default klata_liczba = 2
+    default luszcz_klata = 1
+    default urban_klata = 1
+    default zyd_klata = 1
+    default kazuma_klata = 1
+    default tarczownik_klata = 1
+    default eminem_klata = 1
+    default ring = 1
+    default vr = 1
+    default memy = 1
+    default ziemia = 1
+    default nogi = 1
+    default zloty = 1
+
     
 label items:
     default ile_item = 13
@@ -3971,7 +3991,7 @@ label eq:
                                     $ tarczownik_max_attack -= 3
                                     $ miecz3d = 1
                                     $ stop = 6
-                                    $ tarczownikwnik_min_attack += 1
+                                    $ tarczownik_min_attack += 1
                                     $ tarczownik_max_attack += 4
                                     jump bron
                                 
@@ -4029,19 +4049,3438 @@ label eq:
                         else:
                             jump bron
 
-
-
                     "{b}Powrót":
                         jump eq
                     
 
 
         "{b}Zbroja{/b}":
-            "Kiedyś będą"
+            label zbroja:
+                menu:
+                    "{b}Łuszcz (HP:20){/b}" if luszcz_sojusznik == 1 and luszcz_nic == 2:
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ luszcz_nic = 1
+                                    $ luszcz_klata = 2
+                                    $ klata_liczba -= 1
+                                    $ luszcz_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ luszcz_nic = 1
+                                    $ ring = 2
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ luszcz_nic = 1
+                                    $ vr = 2
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ luszcz_nic = 1
+                                    $ memy = 2
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ luszcz_nic = 1
+                                    $ ziemia = 2
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ luszcz_nic = 1
+                                    $ nogi = 2
+                                    $ luszcz_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ luszcz_nic = 1
+                                    $ zloty = 2
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Łuszcz (HP:25): Diamentowa Klata{/b}" if luszcz_sojusznik == 1 and luszcz_klata == 2:
+                        window show
+                        "{i}Moje klejnoty. +5HP{/i}"
+                        window hide
+                        if luszcz_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ luszcz_klata = 1
+                                    $ ring = 2
+                                    $ klata_liczba += 1
+                                    $ luszcz_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ luszcz_klata = 1
+                                    $ vr = 2
+                                    $ klata_liczba += 1
+                                    $ luszcz_hp -= 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ luszcz_klata = 1
+                                    $ memy = 2
+                                    $ klata_liczba += 1
+                                    $ luszcz_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ luszcz_klata = 1
+                                    $ ziemia = 2
+                                    $ klata_liczba += 1
+                                    $ luszcz_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ luszcz_klata = 1
+                                    $ nogi = 2
+                                    $ klata_liczba += 1
+                                    $ luszcz_hp -= 5
+                                    $ luszcz_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ luszcz_klata = 1
+                                    $ zloty = 2
+                                    $ klata_liczba += 1
+                                    $ luszcz_hp -= 5
+                                    jump zbroja
+
+                                "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
+                                    $ luszcz_klata = 1
+                                    $ luszcz_nic = 2
+                                    $ klata_liczba += 1
+                                    $ luszcz_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Łuszcz (HP:20): Pierścień z Władców Pierścieni{/b}" if luszcz_sojusznik == 1 and ring == 2:
+                        window show
+                        "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                        window hide
+                        if klata_liczba >= 1 or luszcz_nic == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ luszcz_klata = 2
+                                    $ klata_liczba -= 1
+                                    $ luszcz_hp += 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ vr = 2
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ memy = 2
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ ziemia = 2
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ nogi = 2
+                                    $ luszcz_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ zloty = 2
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
+                                    $ ring = 1
+                                    $ luszcz_nic = 2
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Łuszcz (HP:20): VR Headset{/b}" if luszcz_sojusznik == 1 and vr == 2:
+                        window show
+                        "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or luszcz_nic == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ luszcz_klata = 2
+                                    $ klata_liczba -= 1
+                                    $ luszcz_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                                    window hide
+                                    $ vr = 1
+                                    $ ring = 2
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ memy = 2
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ ziemia = 2
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ nogi = 2
+                                    $ luszcz_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ zloty = 2
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
+                                    $ vr = 1
+                                    $ luszcz_nic = 2
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Łuszcz (HP:20): Szalik z Memów{/b}" if luszcz_sojusznik == 1 and memy == 2:
+                        window show
+                        "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or luszcz_nic == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ luszcz_klata = 2
+                                    $ klata_liczba -= 1
+                                    $ luszcz_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ring = 2
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ vr = 2
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ziemia = 2
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ nogi = 2
+                                    $ luszcz_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ zloty = 2
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
+                                    $ memy = 1
+                                    $ luszcz_nic = 2
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Łuszcz (HP:20): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if luszcz_sojusznik == 1 and ziemia == 2:
+                        window show
+                        "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or luszcz_nic == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ luszcz_klata = 2
+                                    $ klata_liczba -= 1
+                                    $ luszcz_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ ring = 2
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ vr = 2
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ memy = 2
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ nogi = 2
+                                    $ luszcz_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ zloty = 2
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
+                                    $ ziemia = 1
+                                    $ luszcz_nic = 2
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Łuszcz (HP:30): Długie Nogi{/b}" if luszcz_sojusznik == 1 and nogi == 2:
+                        window show
+                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or luszcz_nic == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ luszcz_klata = 2
+                                    $ klata_liczba -= 1
+                                    $ luszcz_hp -= 10
+                                    $ luszcz_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ring = 2
+                                    $ luszcz_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ vr = 2
+                                    $ luszcz_hp -= 10
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ memy = 2
+                                    $ luszcz_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ziemia = 2
+                                    $ luszcz_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ zloty = 2
+                                    $ luszcz_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
+                                    $ nogi = 1
+                                    $ luszcz_nic = 2
+                                    $ luszcz_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Łuszcz (HP:20): Złoty Człowiek{/b}" if luszcz_sojusznik == 1 and zloty == 2:
+                        window show
+                        "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or luszcz_nic == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ luszcz_klata = 2
+                                    $ klata_liczba -= 1
+                                    $ luszcz_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ring = 2
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ vr = 2
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ memy = 2
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ziemia = 2
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ nogi = 2
+                                    $ luszcz_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
+                                    $ zloty = 1
+                                    $ luszcz_nic = 2
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+
+                    
+
+
+
+
+
+                    "{b}Shadow (HP:15){/b}" if eminem_sojusznik == 1 and eminem_nic == 7:
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ eminem_nic = 1
+                                    $ eminem_klata = 7
+                                    $ klata_liczba -= 1
+                                    $ eminem_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ eminem_nic = 1
+                                    $ ring = 7
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ eminem_nic = 1
+                                    $ vr = 7
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ eminem_nic = 1
+                                    $ memy = 7
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ eminem_nic = 1
+                                    $ ziemia = 7
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ eminem_nic = 1
+                                    $ nogi = 7
+                                    $ eminem_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ eminem_nic = 1
+                                    $ zloty = 7
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Shadow (HP:20): Diamentowa Klata{/b}" if eminem_sojusznik == 1 and eminem_klata == 7:
+                        window show
+                        "{i}Moje klejnoty. +5HP{/i}"
+                        window hide
+                        if eminem_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ eminem_klata = 1
+                                    $ ring = 7
+                                    $ klata_liczba += 1
+                                    $ eminem_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ eminem_klata = 1
+                                    $ vr = 7
+                                    $ klata_liczba += 1
+                                    $ eminem_hp -= 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ eminem_klata = 1
+                                    $ memy = 7
+                                    $ klata_liczba += 1
+                                    $ eminem_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ eminem_klata = 1
+                                    $ ziemia = 7
+                                    $ klata_liczba += 1
+                                    $ eminem_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ eminem_klata = 1
+                                    $ nogi = 7
+                                    $ klata_liczba += 1
+                                    $ eminem_hp -= 5
+                                    $ eminem_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ eminem_klata = 1
+                                    $ zloty = 7
+                                    $ klata_liczba += 1
+                                    $ eminem_hp -= 5
+                                    jump zbroja
+
+                                "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
+                                    $ eminem_klata = 1
+                                    $ eminem_nic = 7
+                                    $ klata_liczba += 1
+                                    $ eminem_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Shadow (HP:15): Pierścień z Władców Pierścieni{/b}" if eminem_sojusznik == 1 and ring == 7:
+                        window show
+                        "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                        window hide
+                        if klata_liczba >= 1 or eminem_nic == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ eminem_klata = 7
+                                    $ klata_liczba -= 1
+                                    $ eminem_hp += 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ vr = 7
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ memy = 7
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ ziemia = 7
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ nogi = 7
+                                    $ eminem_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ zloty = 7
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
+                                    $ ring = 1
+                                    $ eminem_nic = 7
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Shadow (HP:15): VR Headset{/b}" if eminem_sojusznik == 1 and vr == 7:
+                        window show
+                        "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or eminem_nic == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ eminem_klata = 7
+                                    $ klata_liczba -= 1
+                                    $ eminem_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                                    window hide
+                                    $ vr = 1
+                                    $ ring = 7
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ memy = 7
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ ziemia = 7
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ nogi = 7
+                                    $ eminem_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ zloty = 7
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
+                                    $ vr = 1
+                                    $ eminem_nic = 7
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Shadow (HP:15): Szalik z Memów{/b}" if eminem_sojusznik == 1 and memy == 7:
+                        window show
+                        "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or eminem_nic == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ eminem_klata = 7
+                                    $ klata_liczba -= 1
+                                    $ eminem_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ring = 7
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ vr = 7
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ziemia = 7
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ nogi = 7
+                                    $ eminem_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ zloty = 7
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
+                                    $ memy = 1
+                                    $ eminem_nic = 7
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Shadow (HP:15): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if eminem_sojusznik == 1 and ziemia == 7:
+                        window show
+                        "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or eminem_nic == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ eminem_klata = 7
+                                    $ klata_liczba -= 1
+                                    $ eminem_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ ring = 7
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ vr = 7
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ memy = 7
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ nogi = 7
+                                    $ eminem_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ zloty = 7
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
+                                    $ ziemia = 1
+                                    $ eminem_nic = 7
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Shadow (HP:25): Długie Nogi{/b}" if eminem_sojusznik == 1 and nogi == 7:
+                        window show
+                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or eminem_nic == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ eminem_klata = 7
+                                    $ klata_liczba -= 1
+                                    $ eminem_hp -= 10
+                                    $ eminem_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ring = 7
+                                    $ eminem_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ vr = 7
+                                    $ eminem_hp -= 10
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ memy = 7
+                                    $ eminem_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ziemia = 7
+                                    $ eminem_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ zloty = 7
+                                    $ eminem_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
+                                    $ nogi = 1
+                                    $ eminem_nic = 7
+                                    $ eminem_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Shadow (HP:15): Złoty Człowiek{/b}" if eminem_sojusznik == 1 and zloty == 7:
+                        window show
+                        "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or eminem_nic == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ eminem_klata = 7
+                                    $ klata_liczba -= 1
+                                    $ eminem_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ring = 7
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ vr = 7
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ memy = 7
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ziemia = 7
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ nogi = 7
+                                    $ eminem_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
+                                    $ zloty = 1
+                                    $ eminem_nic = 7
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+
+
+
+
+
+
+
+                    "{b}Jerzy Urban (HP:20){/b}" if urban_sojusznik == 1 and urban_nic == 3:
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ urban_nic = 1
+                                    $ urban_klata = 3
+                                    $ klata_liczba -= 1
+                                    $ urban_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ urban_nic = 1
+                                    $ ring = 3
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ urban_nic = 1
+                                    $ vr = 3
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ urban_nic = 1
+                                    $ memy = 3
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ urban_nic = 1
+                                    $ ziemia = 3
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ urban_nic = 1
+                                    $ nogi = 3
+                                    $ urban_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ urban_nic = 1
+                                    $ zloty = 3
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Jerzy Urban (HP:25): Diamentowa Klata{/b}" if urban_sojusznik == 1 and urban_klata == 3:
+                        window show
+                        "{i}Moje klejnoty. +5HP{/i}"
+                        window hide
+                        if urban_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ urban_klata = 1
+                                    $ ring = 3
+                                    $ klata_liczba += 1
+                                    $ urban_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ urban_klata = 1
+                                    $ vr = 3
+                                    $ klata_liczba += 1
+                                    $ urban_hp -= 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ urban_klata = 1
+                                    $ memy = 3
+                                    $ klata_liczba += 1
+                                    $ urban_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ urban_klata = 1
+                                    $ ziemia = 3
+                                    $ klata_liczba += 1
+                                    $ urban_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ urban_klata = 1
+                                    $ nogi = 3
+                                    $ klata_liczba += 1
+                                    $ urban_hp -= 5
+                                    $ urban_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ urban_klata = 1
+                                    $ zloty = 3
+                                    $ klata_liczba += 1
+                                    $ urban_hp -= 5
+                                    jump zbroja
+
+                                "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
+                                    $ urban_klata = 1
+                                    $ urban_nic = 3
+                                    $ klata_liczba += 1
+                                    $ urban_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Jerzy Urban (HP:20): Pierścień z Władców Pierścieni{/b}" if urban_sojusznik == 1 and ring == 3:
+                        window show
+                        "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                        window hide
+                        if klata_liczba >= 1 or urban_nic == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ urban_klata = 3
+                                    $ klata_liczba -= 1
+                                    $ urban_hp += 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ vr = 3
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ memy = 3
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ ziemia = 3
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ nogi = 3
+                                    $ urban_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ zloty = 3
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
+                                    $ ring = 1
+                                    $ urban_nic = 3
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Jerzy Urban (HP:20): VR Headset{/b}" if urban_sojusznik == 1 and vr == 3:
+                        window show
+                        "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or urban_nic == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ urban_klata = 3
+                                    $ klata_liczba -= 1
+                                    $ urban_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                                    window hide
+                                    $ vr = 1
+                                    $ ring = 3
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ memy = 3
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ ziemia = 3
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ nogi = 3
+                                    $ urban_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ zloty = 3
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
+                                    $ vr = 1
+                                    $ urban_nic = 3
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Jerzy Urban (HP:20): Szalik z Memów{/b}" if urban_sojusznik == 1 and memy == 3:
+                        window show
+                        "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or urban_nic == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ urban_klata = 3
+                                    $ klata_liczba -= 1
+                                    $ urban_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ring = 3
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ vr = 3
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ziemia = 3
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ nogi = 3
+                                    $ urban_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ zloty = 3
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
+                                    $ memy = 1
+                                    $ urban_nic = 3
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Jerzy Urban (HP:20): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if urban_sojusznik == 1 and ziemia == 3:
+                        window show
+                        "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or urban_nic == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ urban_klata = 3
+                                    $ klata_liczba -= 1
+                                    $ urban_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ ring = 3
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ vr = 3
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ memy = 3
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ nogi = 3
+                                    $ urban_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ zloty = 3
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
+                                    $ ziemia = 1
+                                    $ urban_nic = 3
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Jerzy Urban (HP:30): Długie Nogi{/b}" if urban_sojusznik == 1 and nogi == 3:
+                        window show
+                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or urban_nic == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ urban_klata = 3
+                                    $ klata_liczba -= 1
+                                    $ urban_hp -= 10
+                                    $ urban_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ring = 3
+                                    $ urban_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ vr = 3
+                                    $ urban_hp -= 10
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ memy = 3
+                                    $ urban_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ziemia = 3
+                                    $ urban_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ zloty = 3
+                                    $ urban_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
+                                    $ nogi = 1
+                                    $ urban_nic = 3
+                                    $ urban_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Jerzy Urban (HP:20): Złoty Człowiek{/b}" if urban_sojusznik == 1 and zloty == 3:
+                        window show
+                        "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or urban_nic == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ urban_klata = 3
+                                    $ klata_liczba -= 1
+                                    $ urban_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ring = 3
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ vr = 3
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ memy = 3
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ziemia = 3
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ nogi = 3
+                                    $ urban_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
+                                    $ zloty = 1
+                                    $ urban_nic = 3
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+
+
+
+
+
+
+
+
+                    "{b}Żyd (HP:10){/b}" if zyd_sojusznik == 1 and zyd_nic == 4:
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ zyd_nic = 1
+                                    $ zyd_klata = 4
+                                    $ klata_liczba -= 1
+                                    $ zyd_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zyd_nic = 1
+                                    $ ring = 4
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zyd_nic = 1
+                                    $ vr = 4
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zyd_nic = 1
+                                    $ memy = 4
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zyd_nic = 1
+                                    $ ziemia = 4
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zyd_nic = 1
+                                    $ nogi = 4
+                                    $ zyd_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ zyd_nic = 1
+                                    $ zloty = 4
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Żyd (HP:15): Diamentowa Klata{/b}" if zyd_sojusznik == 1 and zyd_klata == 4:
+                        window show
+                        "{i}Moje klejnoty. +5HP{/i}"
+                        window hide
+                        if zyd_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zyd_klata = 1
+                                    $ ring = 4
+                                    $ klata_liczba += 1
+                                    $ zyd_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zyd_klata = 1
+                                    $ vr = 4
+                                    $ klata_liczba += 1
+                                    $ zyd_hp -= 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zyd_klata = 1
+                                    $ memy = 4
+                                    $ klata_liczba += 1
+                                    $ zyd_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zyd_klata = 1
+                                    $ ziemia = 4
+                                    $ klata_liczba += 1
+                                    $ zyd_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zyd_klata = 1
+                                    $ nogi = 4
+                                    $ klata_liczba += 1
+                                    $ zyd_hp -= 5
+                                    $ zyd_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ zyd_klata = 1
+                                    $ zloty = 4
+                                    $ klata_liczba += 1
+                                    $ zyd_hp -= 5
+                                    jump zbroja
+
+                                "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
+                                    $ zyd_klata = 1
+                                    $ zyd_nic = 4
+                                    $ klata_liczba += 1
+                                    $ zyd_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Żyd (HP:10): Pierścień z Władców Pierścieni{/b}" if zyd_sojusznik == 1 and ring == 4:
+                        window show
+                        "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                        window hide
+                        if klata_liczba >= 1 or zyd == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ zyd_klata = 4
+                                    $ klata_liczba -= 1
+                                    $ zyd_hp += 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ vr = 4
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ memy = 4
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ ziemia = 4
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ nogi = 4
+                                    $ zyd_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ zloty = 4
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
+                                    $ ring = 1
+                                    $ zyd_nic = 4
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Żyd (HP:10): VR Headset{/b}" if zyd_sojusznik == 1 and vr == 4:
+                        window show
+                        "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or zyd_nic == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ zyd_klata = 4
+                                    $ klata_liczba -= 1
+                                    $ zyd_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                                    window hide
+                                    $ vr = 1
+                                    $ ring = 4
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ memy = 4
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ ziemia = 4
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ nogi = 4
+                                    $ zyd_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ zloty = 4
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
+                                    $ vr = 1
+                                    $ zyd_nic = 4
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Żyd (HP:10): Szalik z Memów{/b}" if zyd_sojusznik == 1 and memy == 4:
+                        window show
+                        "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or zyd_nic == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ zyd_klata = 4
+                                    $ klata_liczba -= 1
+                                    $ zyd_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ring = 4
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ vr = 4
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ziemia = 4
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ nogi = 4
+                                    $ zyd_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ zloty = 4
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
+                                    $ memy = 1
+                                    $ zyd_nic = 4
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Żyd (HP:10): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if zyd_sojusznik == 1 and ziemia == 4:
+                        window show
+                        "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or zyd_nic == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ zyd_klata = 4
+                                    $ klata_liczba -= 1
+                                    $ zyd_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ ring = 4
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ vr = 4
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ memy = 4
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ nogi = 4
+                                    $ zyd_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ zloty = 4
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
+                                    $ ziemia = 1
+                                    $ zyd_nic = 4
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Żyd (HP:20): Długie Nogi{/b}" if zyd_sojusznik == 1 and nogi == 4:
+                        window show
+                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or zyd_nic == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ zyd_klata = 4
+                                    $ klata_liczba -= 1
+                                    $ zyd_hp -= 10
+                                    $ zyd_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ring = 4
+                                    $ zyd_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ vr = 4
+                                    $ zyd_hp -= 10
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ memy = 4
+                                    $ zyd_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ziemia = 4
+                                    $ zyd_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ zloty = 4
+                                    $ zyd_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
+                                    $ nogi = 1
+                                    $ zyd_nic = 4
+                                    $ zyd_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Żyd (HP:10): Złoty Człowiek{/b}" if zyd_sojusznik == 1 and zloty == 4:
+                        window show
+                        "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zyd_nic == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ zyd_klata = 4
+                                    $ klata_liczba -= 1
+                                    $ zyd_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ring = 4
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ vr = 4
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ memy = 4
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ziemia = 4
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ nogi = 4
+                                    $ zyd_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
+                                    $ zloty = 1
+                                    $ zyd_nic = 4
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+
+
+
+
+
+                    "{b}Kazuma (HP:10){/b}" if kazuma_sojusznik == 1 and kazuma_nic == 5:
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ kazuma_nic = 1
+                                    $ kazuma_klata = 5
+                                    $ klata_liczba -= 1
+                                    $ kazuma_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ kazuma_nic = 1
+                                    $ ring = 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ kazuma_nic = 1
+                                    $ vr = 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ kazuma_nic = 1
+                                    $ memy = 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ kazuma_nic = 1
+                                    $ ziemia = 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ kazuma_nic = 1
+                                    $ nogi = 5
+                                    $ kazuma_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ kazuma_nic = 1
+                                    $ zloty = 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Kazuma (HP:15): Diamentowa Klata{/b}" if kazuma_sojusznik == 1 and kazuma_klata == 5:
+                        window show
+                        "{i}Moje klejnoty. +5HP{/i}"
+                        window hide
+                        if kazuma_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ kazuma_klata = 1
+                                    $ ring = 5
+                                    $ klata_liczba += 1
+                                    $ kazuma_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ kazuma_klata = 1
+                                    $ vr = 5
+                                    $ klata_liczba += 1
+                                    $ kazuma_hp -= 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ kazuma_klata = 1
+                                    $ memy = 5
+                                    $ klata_liczba += 1
+                                    $ kazuma_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ kazuma_klata = 1
+                                    $ ziemia = 5
+                                    $ klata_liczba += 1
+                                    $ kazuma_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ kazuma_klata = 1
+                                    $ nogi = 5
+                                    $ klata_liczba += 1
+                                    $ kazuma_hp -= 5
+                                    $ kazuma_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ kazuma_klata = 1
+                                    $ zloty = 5
+                                    $ klata_liczba += 1
+                                    $ kazuma_hp -= 5
+                                    jump zbroja
+
+                                "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
+                                    $ kazuma_klata = 1
+                                    $ kazuma_nic = 5
+                                    $ klata_liczba += 1
+                                    $ kazuma_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Kazuma (HP:10): Pierścień z Władców Pierścieni{/b}" if kazuma_sojusznik == 1 and ring == 5:
+                        window show
+                        "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                        window hide
+                        if klata_liczba >= 1 or kazuma_nic == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ kazuma_klata = 5
+                                    $ klata_liczba -= 1
+                                    $ kazuma_hp += 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ vr = 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ memy = 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ ziemia = 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ nogi = 5
+                                    $ kazuma_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ zloty = 5
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
+                                    $ ring = 1
+                                    $ kazuma_nic = 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Kazuma (HP:10): VR Headset{/b}" if kazuma_sojusznik == 1 and vr == 5:
+                        window show
+                        "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or kazuma_nic == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ kazuma_klata = 5
+                                    $ klata_liczba -= 1
+                                    $ kazuma_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                                    window hide
+                                    $ vr = 1
+                                    $ ring = 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ memy = 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ ziemia = 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ nogi = 5
+                                    $ kazuma_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ zloty = 5
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
+                                    $ vr = 1
+                                    $ kazuma_nic = 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Kazuma (HP:10): Szalik z Memów{/b}" if kazuma_sojusznik == 1 and memy == 5:
+                        window show
+                        "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or kazuma_nic == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ kazuma_klata = 5
+                                    $ klata_liczba -= 1
+                                    $ kazuma_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ring = 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ vr = 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ziemia = 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ nogi = 5
+                                    $ kazuma_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ zloty = 5
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
+                                    $ memy = 1
+                                    $ kazuma_nic = 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Kazuma (HP:10): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if kazuma_sojusznik == 1 and ziemia == 5:
+                        window show
+                        "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or kazuma_nic == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ kazuma_klata = 5
+                                    $ klata_liczba -= 1
+                                    $ kazuma_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ ring = 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ vr = 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ memy = 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ nogi = 5
+                                    $ kazuma_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ zloty = 5
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
+                                    $ ziemia = 1
+                                    $ kazuma_nic = 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Kazuma (HP:20): Długie Nogi{/b}" if kazuma_sojusznik == 1 and nogi == 5:
+                        window show
+                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or kazuma_nic == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ kazuma_klata = 5
+                                    $ klata_liczba -= 1
+                                    $ kazuma_hp -= 10
+                                    $ kazuma_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ring = 5
+                                    $ kazuma_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ vr = 5
+                                    $ kazuma_hp -= 10
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ memy = 5
+                                    $ kazuma_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ziemia = 5
+                                    $ kazuma_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ zloty = 5
+                                    $ kazuma_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
+                                    $ nogi = 1
+                                    $ kazuma_nic = 5
+                                    $ kazuma_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Kazuma (HP:10): Złoty Człowiek{/b}" if kazuma_sojusznik == 1 and zloty == 5:
+                        window show
+                        "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or kazuma_nic == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ kazuma_klata = 5
+                                    $ klata_liczba -= 1
+                                    $ kazuma_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ring = 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ vr = 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ memy = 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ziemia = 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ nogi = 5
+                                    $ kazuma_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
+                                    $ zloty = 1
+                                    $ kazuma_nic = 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+
+
+
+
+
+
+                    "{b}Naofumi (HP:15){/b}" if tarczownik_sojusznik == 1 and tarczownik_nic == 6:
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ tarczownik_nic = 1
+                                    $ tarczownik_klata = 6
+                                    $ klata_liczba -= 1
+                                    $ tarczownik_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ tarczownik_nic = 1
+                                    $ ring = 6
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ tarczownik_nic = 1
+                                    $ vr = 6
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ tarczownik_nic = 1
+                                    $ memy = 6
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ tarczownik_nic = 1
+                                    $ ziemia = 6
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ tarczownik_nic = 1
+                                    $ nogi = 6
+                                    $ tarczownik_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ tarczownik_nic = 1
+                                    $ zloty = 6
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Naofumi (HP:20): Diamentowa Klata{/b}" if tarczownik_sojusznik == 1 and tarczownik_klata == 6:
+                        window show
+                        "{i}Moje klejnoty. +5HP{/i}"
+                        window hide
+                        if tarczownik_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ tarczownik_klata = 1
+                                    $ ring = 6
+                                    $ klata_liczba += 1
+                                    $ tarczownik_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ tarczownik_klata = 1
+                                    $ vr = 6
+                                    $ klata_liczba += 1
+                                    $ tarczownik_hp -= 5
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ tarczownik_klata = 1
+                                    $ memy = 6
+                                    $ klata_liczba += 1
+                                    $ tarczownik_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ tarczownik_klata = 1
+                                    $ ziemia = 6
+                                    $ klata_liczba += 1
+                                    $ tarczownik_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ tarczownik_klata = 1
+                                    $ nogi = 6
+                                    $ klata_liczba += 1
+                                    $ tarczownik_hp -= 5
+                                    $ tarczownik_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ tarczownik_klata = 1
+                                    $ zloty = 6
+                                    $ klata_liczba += 1
+                                    $ tarczownik_hp -= 5
+                                    jump zbroja
+
+                                "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
+                                    $ tarczownik_klata = 1
+                                    $ tarczownik_nic = 6
+                                    $ klata_liczba += 1
+                                    $ tarczownik_hp -= 5
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Naofumi (HP:15): Pierścień z Władców Pierścieni{/b}" if tarczownik_sojusznik == 1 and ring == 6:
+                        window show
+                        "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                        window hide
+                        if klata_liczba >= 1 or tarczownik_nic == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ tarczownik_klata = 6
+                                    $ klata_liczba -= 1
+                                    $ tarczownik_hp += 5
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ vr = 6
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ memy = 6
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ ziemia = 6
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ nogi = 6
+                                    $ tarczownik_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ring = 1
+                                    $ zloty = 6
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
+                                    $ ring = 1
+                                    $ tarczownik_nic = 6
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Naofumi (HP:15): VR Headset{/b}" if tarczownik_sojusznik == 1 and vr == 6:
+                        window show
+                        "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or tarczownik_nic == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ tarczownik_klata = 6
+                                    $ klata_liczba -= 1
+                                    $ tarczownik_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
+                                    window hide
+                                    $ vr = 1
+                                    $ ring = 6
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ memy = 6
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ ziemia = 6
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ nogi = 6
+                                    $ tarczownik_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ vr = 1
+                                    $ zloty = 6
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
+                                    $ vr = 1
+                                    $ tarczownik_nic = 6
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Naofumi (HP:15): Szalik z Memów{/b}" if tarczownik_sojusznik == 1 and memy == 6:
+                        window show
+                        "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or tarczownik_nic == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ tarczownik_klata = 6
+                                    $ klata_liczba -= 1
+                                    $ tarczownik_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ring = 6
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ vr = 6
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ ziemia = 6
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ nogi = 6
+                                    $ tarczownik_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ memy = 1
+                                    $ zloty = 6
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
+                                    $ memy = 1
+                                    $ tarczownik_nic = 6
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Naofumi (HP:15): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if tarczownik_sojusznik == 1 and ziemia == 6:
+                        window show
+                        "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or tarczownik_nic == 1 or nogi == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ tarczownik_klata = 6
+                                    $ klata_liczba -= 1
+                                    $ tarczownik_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ ring = 6
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ vr = 6
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ memy = 6
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ nogi = 6
+                                    $ tarczownik_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ ziemia = 1
+                                    $ zloty = 6
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
+                                    $ ziemia = 1
+                                    $ tarczownik_nic = 6
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Naofumi (HP:25): Długie Nogi{/b}" if tarczownik_sojusznik == 1 and nogi == 6:
+                        window show
+                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or tarczownik_nic == 1 or zloty == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ tarczownik_klata = 6
+                                    $ klata_liczba -= 1
+                                    $ tarczownik_hp -= 10
+                                    $ tarczownik_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ring = 6
+                                    $ tarczownik_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ vr = 6
+                                    $ tarczownik_hp -= 10
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ memy = 6
+                                    $ tarczownik_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ ziemia = 6
+                                    $ tarczownik_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Złoty Człowiek{/b}" if zloty == 1:
+                                    window show
+                                    "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                                    window hide
+                                    $ nogi = 1
+                                    $ zloty = 6
+                                    $ tarczownik_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
+                                    $ nogi = 1
+                                    $ tarczownik_nic = 6
+                                    $ tarczownik_hp -= 10
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+                    
+                    "{b}Naofumi (HP:15): Złoty Człowiek{/b}" if tarczownik_sojusznik == 1 and zloty == 6:
+                        window show
+                        "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
+                        window hide
+                        if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or tarczownik_nic == 1:
+                            menu:         
+                                "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
+                                    window show
+                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ tarczownik_klata = 6
+                                    $ klata_liczba -= 1
+                                    $ tarczownik_hp += 5
+                                    jump zbroja
+                                
+                                "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
+                                    window show
+                                    "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ring = 6
+                                    jump zbroja
+                                
+                                "{b}VR Headset{/b}" if vr == 1:
+                                    window show
+                                    "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ vr = 6
+                                    jump zbroja
+
+                                "{b}Szalik z Memów{/b}" if memy == 1:
+                                    window show
+                                    "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ memy = 6
+                                    jump zbroja
+                                
+                                "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
+                                    window show
+                                    "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ ziemia = 6
+                                    jump zbroja
+                                
+                                "{b}Długie Nogi{/b}" if nogi == 1:
+                                    window show
+                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    window hide
+                                    $ zloty = 1
+                                    $ nogi = 6
+                                    $ tarczownik_hp += 10
+                                    jump zbroja
+                                
+                                "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
+                                    $ zloty = 1
+                                    $ tarczownik_nic = 6
+                                    jump zbroja
+                                
+                                "{b}Powrót":
+                                    jump zbroja
+
+                        else:
+                            jump zbroja
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    "{b}Powrót":
+                        jump eq
             jump eq
             
         "{b}Itemy Fabularne{/b}":
-            "Kiedyś będą"
+            "{i}Kiedyś będą{/i}"
             jump eq
 
         

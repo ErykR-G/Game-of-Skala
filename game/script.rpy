@@ -7,6 +7,7 @@ init python:
 
 default ado = 0
 default kostka = 0
+default kostka2 = 0
 default timer = 537
 default money = 3
 
@@ -41,6 +42,46 @@ label pozycje:
     transform granatz:
         xalign 0.83
         yalign 0.50
+
+
+    label vr:
+        transform gorasojusznik1:
+            xalign 0.32
+            yalign 0.09
+
+        transform dolsojusznik1:
+            xalign 0.32
+            yalign 0.22
+
+        transform gorasojusznik2:
+            xalign 0.32
+            yalign 0.64
+
+        transform dolsojusznik2:
+            xalign 0.32
+            yalign 0.78
+
+        transform gorasojusznik3:
+            xalign 0.18
+            yalign 0.37
+
+        transform dolsojusznik3:
+            xalign 0.18
+            yalign 0.50
+
+        transform rzygi_sojusznik1:
+            xalign 0.27
+            yalign 0.16
+
+        transform rzygi_sojusznik2:
+            xalign 0.27
+            yalign 0.83
+
+        transform rzygi_sojusznik3:
+            xalign 0.115
+            yalign 0.50
+            
+
 
     label pozycje_wojownikow:
         transform slightleft:

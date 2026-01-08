@@ -10980,7 +10980,1921 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
+    
+        if vr == 2 and miecz_swietlny == 2 and luszcz_weapon >= 1 and luszcz_obrona == 0 and luszcz_hp_now > 0 and luszcz_wybrany > 0:
+            if luszcz_wybrany == 1:
+                show kostka1 zorder 15 at gorasojusznik1
+                show kostka2 zorder 15 at dolsojusznik1
+                show miecz_swietlny zorder 15 at weapon_sojusznik1
             
+            if luszcz_wybrany == 2:
+                show kostka1 zorder 15 at gorasojusznik2
+                show kostka2 zorder 15 at dolsojusznik2
+                show miecz_swietlny zorder 15 at weapon_sojusznik2
+            
+            if luszcz_wybrany == 3:
+                show kostka1 zorder 15 at gorasojusznik3
+                show kostka2 zorder 15 at dolsojusznik3
+                show miecz_swietlny zorder 15 at weapon_sojusznik3
+
+            play sound "audio/sfx/megalovania.mp3"
+            "{i}Łuszcz odpala Beat Sabera{/i}"
+
+            label losowanko_luszcz_vr1:
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_luszcz_vr1
+                    
+                    if kostka2 == 2:
+                        if kibol1_hp_now >= 1 and akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if akane_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Akane{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_luszcz_vr1
+
+                    if kostka2 == 3:
+                        if akane_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if akane_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 2:
+                                    hide kostka1
+
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Akane i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_luszcz_vr1
+
+                else:
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol1_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog1
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                    
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog1 
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_luszcz_vr1
+                    
+                    if kostka2 == 2:
+                        if akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_luszcz_vr1
+
+                    if kostka2 == 3:
+                        if kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:   
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog2
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog2  
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_luszcz_vr1
+
+        else:
+            if vr == 2 and luszcz_obrona == 0 and luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                label losowanko_luszcz_rzygi1:
+                if luszcz_wybrany == 1:
+                    show rzyg zorder 15 at rzygi_sojusznik1
+                
+                if luszcz_wybrany == 2:
+                    show rzyg zorder 15 at rzygi_sojusznik2
+                
+                if luszcz_wybrany == 3:
+                    show rzyg zorder 15 at rzygi_sojusznik3
+
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kostka2 == 1:
+                    if kibol1_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol1_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if kibol1_obrona == 1:
+                                $ kibol1_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Łuszcz zrzygał się na Kibol 1 zadając [int(kostka / 2)] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol1_obrona == 0:
+                                $ kibol1_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Łuszcz zrzygał się na Kibol 1 zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_luszcz_rzygi1
+                
+                if kostka2 == 2:
+                    if akane_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if akane_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if akane_obrona == 1:
+                                $ akane_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Łuszcz zrzygał się na Akane zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if akane_obrona == 0:
+                                $ akane_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Łuszcz zrzygał się na Akane zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_luszcz_rzygi1
+
+                if kostka2 == 3:
+                    if kibol2_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol2_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:   
+                            if kibol2_obrona == 1:
+                                $ kibol2_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Łuszcz zrzygał się na Kibol 2 zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol2_obrona == 0:
+                                $ kibol2_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Łuszcz zrzygał się na Kibol 2 zadając [kostka] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_luszcz_rzygi1
+
+        if vr == 7 and eminem_obrona == 0 and eminem_hp_now > 0 and eminem_wybrany > 0:
+            label losowanko_eminem_rzygi1:
+            if eminem_wybrany == 1:
+                show rzyg zorder 15 at rzygi_sojusznik1
+            
+            if eminem_wybrany == 2:
+                show rzyg zorder 15 at rzygi_sojusznik2
+            
+            if eminem_wybrany == 3:
+                show rzyg zorder 15 at rzygi_sojusznik3
+
+            $ kostka2 = renpy.random.randint(1, 3)
+            if kostka2 == 1:
+                if kibol1_hp_now >= 1:
+                    $ kostka = renpy.random.randint(1, 2)
+                    if kibol1_obrona == 2:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Rzygi zostały zablokowane{/i}"
+                        hide rzyg
+                    else:
+                        if kibol1_obrona == 1:
+                            $ kibol1_hp_now -= int(kostka / 2)
+                            show rzygowina zorder 15 at center_wrog1
+                            play sound "audio/sfx/rzygi.mp3"
+                            "{i}Shadow zrzygał się na Kibol 1 zadając [int(kostka / 2)] obrażeń{/i}"
+                            hide rzygowina
+                            hide rzyg
+                        
+                        if kibol1_obrona == 0:
+                            $ kibol1_hp_now -= kostka
+                            show rzygowina zorder 15 at center_wrog1
+                            play sound "audio/sfx/rzygi.mp3"
+                            "{i}Shadow zrzygał się na Kibol 1 zadając [kostka] obrażeń{/i}"
+                            hide rzygowina
+                            hide rzyg
+                else:
+                    jump losowanko_eminem_rzygi1
+            
+            if kostka2 == 2:
+                if akane_hp_now >= 1:
+                    $ kostka = renpy.random.randint(1, 2)
+                    if akane_obrona == 2:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Rzygi zostały zablokowane{/i}"
+                        hide rzyg
+                    else:
+                        if akane_obrona == 1:
+                            $ akane_hp_now -= int(kostka / 2)
+                            show rzygowina zorder 15 at center_wrog3
+                            play sound "audio/sfx/rzygi.mp3"
+                            "{i}Shadow zrzygał się na Akane zadając [int(kostka / 2)] obrażeń"
+                            hide rzygowina
+                            hide rzyg
+                        
+                        if akane_obrona == 0:
+                            $ akane_hp_now -= kostka
+                            show rzygowina zorder 15 at center_wrog3
+                            play sound "audio/sfx/rzygi.mp3"
+                            "{i}Shadow zrzygał się na Akane zadając [kostka] obrażeń{/i}"
+                            hide rzygowina
+                            hide rzyg
+                else:
+                    jump losowanko_eminem_rzygi1
+
+            if kostka2 == 3:
+                if kibol2_hp_now >= 1:
+                    $ kostka = renpy.random.randint(1, 2)
+                    if kibol2_obrona == 2:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Rzygi zostały zablokowane{/i}"
+                        hide rzyg
+                    else:   
+                        if kibol2_obrona == 1:
+                            $ kibol2_hp_now -= int(kostka / 2)
+                            show rzygowina zorder 15 at center_wrog2
+                            play sound "audio/sfx/rzygi.mp3"
+                            "{i}Shadow zrzygał się na Kibol 2 zadając [int(kostka / 2)] obrażeń"
+                            hide rzygowina
+                            hide rzyg
+                        
+                        if kibol2_obrona == 0:
+                            $ kibol2_hp_now -= kostka
+                            show rzygowina zorder 15 at center_wrog2
+                            play sound "audio/sfx/rzygi.mp3"
+                            "{i}Shadow zrzygał się na Kibol 2 zadając [kostka] obrażeń"
+                            hide rzygowina
+                            hide rzyg
+                else:
+                    jump losowanko_eminem_rzygi1
+
+
+        
+        if vr == 3 and miecz_swietlny == 3 and urban_weapon >= 1 and urban_obrona == 0 and urban_hp_now > 0 and urban_wybrany > 0:
+            if urban_wybrany == 1:
+                show kostka1 zorder 15 at gorasojusznik1
+                show kostka2 zorder 15 at dolsojusznik1
+                show miecz_swietlny zorder 15 at weapon_sojusznik1
+            
+            if urban_wybrany == 2:
+                show kostka1 zorder 15 at gorasojusznik2
+                show kostka2 zorder 15 at dolsojusznik2
+                show miecz_swietlny zorder 15 at weapon_sojusznik2
+            
+            if urban_wybrany == 3:
+                show kostka1 zorder 15 at gorasojusznik3
+                show kostka2 zorder 15 at dolsojusznik3
+                show miecz_swietlny zorder 15 at weapon_sojusznik3
+
+            play sound "audio/sfx/megalovania.mp3"
+            "{i}Jerzy Urban odpala Beat Sabera{/i}"
+
+            label losowanko_urban_vr1:
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_urban_vr1
+                    
+                    if kostka2 == 2:
+                        if kibol1_hp_now >= 1 and akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if akane_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Akane{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_urban_vr1
+
+                    if kostka2 == 3:
+                        if akane_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if akane_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 2:
+                                    hide kostka1
+
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Akane i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_urban_vr1
+
+                else:
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol1_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog1
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                    
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog1 
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_urban_vr1
+                    
+                    if kostka2 == 2:
+                        if akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_urban_vr1
+
+                    if kostka2 == 3:
+                        if kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:   
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog2
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog2  
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_urban_vr1
+
+        else:
+            if vr == 3 and urban_obrona == 0 and urban_hp_now > 0 and urban_wybrany > 0:
+                label losowanko_urban_rzygi1:
+                if urban_wybrany == 1:
+                    show rzyg zorder 15 at rzygi_sojusznik1
+                
+                if urban_wybrany == 2:
+                    show rzyg zorder 15 at rzygi_sojusznik2
+                
+                if urban_wybrany == 3:
+                    show rzyg zorder 15 at rzygi_sojusznik3
+
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kostka2 == 1:
+                    if kibol1_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol1_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if kibol1_obrona == 1:
+                                $ kibol1_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Jerzy Urban zrzygał się na Kibol 1 zadając [int(kostka / 2)] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol1_obrona == 0:
+                                $ kibol1_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Jerzy Urban zrzygał się na Kibol 1 zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_urban_rzygi1
+                
+                if kostka2 == 2:
+                    if akane_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if akane_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if akane_obrona == 1:
+                                $ akane_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Jerzy Urban zrzygał się na Akane zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if akane_obrona == 0:
+                                $ akane_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Jerzy Urban zrzygał się na Akane zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_urban_rzygi1
+
+                if kostka2 == 3:
+                    if kibol2_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol2_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:   
+                            if kibol2_obrona == 1:
+                                $ kibol2_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Jerzy Urban zrzygał się na Kibol 2 zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol2_obrona == 0:
+                                $ kibol2_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Jerzy Urban zrzygał się na Kibol 2 zadając [kostka] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_urban_rzygi1
+        
+
+
+        if vr == 4 and miecz_swietlny == 4 and zyd_weapon >= 1 and zyd_obrona == 0 and zyd_hp_now > 0 and zyd_wybrany > 0:
+            if zyd_wybrany == 1:
+                show kostka1 zorder 15 at gorasojusznik1
+                show kostka2 zorder 15 at dolsojusznik1
+                show miecz_swietlny zorder 15 at weapon_sojusznik1
+            
+            if zyd_wybrany == 2:
+                show kostka1 zorder 15 at gorasojusznik2
+                show kostka2 zorder 15 at dolsojusznik2
+                show miecz_swietlny zorder 15 at weapon_sojusznik2
+            
+            if zyd_wybrany == 3:
+                show kostka1 zorder 15 at gorasojusznik3
+                show kostka2 zorder 15 at dolsojusznik3
+                show miecz_swietlny zorder 15 at weapon_sojusznik3
+
+            play sound "audio/sfx/megalovania.mp3"
+            "{i}Żyd odpala Beat Sabera{/i}"
+
+            label losowanko_zyd_vr1:
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_zyd_vr1
+                    
+                    if kostka2 == 2:
+                        if kibol1_hp_now >= 1 and akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if akane_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Akane{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_zyd_vr1
+
+                    if kostka2 == 3:
+                        if akane_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if akane_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 2:
+                                    hide kostka1
+
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Akane i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_zyd_vr1
+
+                else:
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol1_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog1
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                    
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog1 
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_zyd_vr1
+                    
+                    if kostka2 == 2:
+                        if akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_zyd_vr1
+
+                    if kostka2 == 3:
+                        if kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:   
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog2
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog2  
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_zyd_vr1
+
+        else:
+            if vr == 4 and zyd_obrona == 0 and zyd_hp_now > 0 and zyd_wybrany > 0:
+                label losowanko_zyd_rzygi1:
+                if zyd_wybrany == 1:
+                    show rzyg zorder 15 at rzygi_sojusznik1
+                
+                if zyd_wybrany == 2:
+                    show rzyg zorder 15 at rzygi_sojusznik2
+                
+                if zyd_wybrany == 3:
+                    show rzyg zorder 15 at rzygi_sojusznik3
+
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kostka2 == 1:
+                    if kibol1_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol1_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if kibol1_obrona == 1:
+                                $ kibol1_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Żyd zrzygał się na Kibol 1 zadając [int(kostka / 2)] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol1_obrona == 0:
+                                $ kibol1_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Żyd zrzygał się na Kibol 1 zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_zyd_rzygi1
+                
+                if kostka2 == 2:
+                    if akane_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if akane_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if akane_obrona == 1:
+                                $ akane_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Żyd zrzygał się na Akane zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if akane_obrona == 0:
+                                $ akane_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Żyd zrzygał się na Akane zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_zyd_rzygi1
+
+                if kostka2 == 3:
+                    if kibol2_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol2_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:   
+                            if kibol2_obrona == 1:
+                                $ kibol2_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Żyd zrzygał się na Kibol 2 zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol2_obrona == 0:
+                                $ kibol2_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Żyd zrzygał się na Kibol 2 zadając [kostka] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_zyd_rzygi1
+
+
+        
+        if vr == 5 and miecz_swietlny == 5 and kazuma_weapon >= 1 and kazuma_obrona == 0 and kazuma_hp_now > 0 and kazuma_wybrany > 0:
+            if kazuma_wybrany == 1:
+                show kostka1 zorder 15 at gorasojusznik1
+                show kostka2 zorder 15 at dolsojusznik1
+                show miecz_swietlny zorder 15 at weapon_sojusznik1
+            
+            if kazuma_wybrany == 2:
+                show kostka1 zorder 15 at gorasojusznik2
+                show kostka2 zorder 15 at dolsojusznik2
+                show miecz_swietlny zorder 15 at weapon_sojusznik2
+            
+            if kazuma_wybrany == 3:
+                show kostka1 zorder 15 at gorasojusznik3
+                show kostka2 zorder 15 at dolsojusznik3
+                show miecz_swietlny zorder 15 at weapon_sojusznik3
+
+            play sound "audio/sfx/megalovania.mp3"
+            "{i}Kazuma odpala Beat Sabera{/i}"
+
+            label losowanko_kazuma_vr1:
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_kazuma_vr1
+                    
+                    if kostka2 == 2:
+                        if kibol1_hp_now >= 1 and akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if akane_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Akane{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_kazuma_vr1
+
+                    if kostka2 == 3:
+                        if akane_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if akane_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 2:
+                                    hide kostka1
+
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Akane i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_kazuma_vr1
+
+                else:
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol1_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog1
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                    
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog1 
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_kazuma_vr1
+                    
+                    if kostka2 == 2:
+                        if akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_kazuma_vr1
+
+                    if kostka2 == 3:
+                        if kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:   
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog2
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog2  
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_kazuma_vr1
+
+        else:
+            if vr == 5 and kazuma_obrona == 0 and kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                label losowanko_kazuma_rzygi1:
+                if kazuma_wybrany == 1:
+                    show rzyg zorder 15 at rzygi_sojusznik1
+                
+                if kazuma_wybrany == 2:
+                    show rzyg zorder 15 at rzygi_sojusznik2
+                
+                if kazuma_wybrany == 3:
+                    show rzyg zorder 15 at rzygi_sojusznik3
+
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kostka2 == 1:
+                    if kibol1_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol1_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if kibol1_obrona == 1:
+                                $ kibol1_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Kazuma zrzygał się na Kibol 1 zadając [int(kostka / 2)] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol1_obrona == 0:
+                                $ kibol1_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Kazuma zrzygał się na Kibol 1 zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_kazuma_rzygi1
+                
+                if kostka2 == 2:
+                    if akane_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if akane_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if akane_obrona == 1:
+                                $ akane_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Kazuma zrzygał się na Akane zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if akane_obrona == 0:
+                                $ akane_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Kazuma zrzygał się na Akane zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_kazuma_rzygi1
+
+                if kostka2 == 3:
+                    if kibol2_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol2_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:   
+                            if kibol2_obrona == 1:
+                                $ kibol2_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Kazuma zrzygał się na Kibol 2 zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol2_obrona == 0:
+                                $ kibol2_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Kazuma zrzygał się na Kibol 2 zadając [kostka] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_kazuma_rzygi1
+
+
+        
+        if vr == 6 and miecz_swietlny == 6 and tarczownik_weapon >= 1 and tarczownik_obrona == 0 and tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+            if tarczownik_wybrany == 1:
+                show kostka1 zorder 15 at gorasojusznik1
+                show kostka2 zorder 15 at dolsojusznik1
+                show miecz_swietlny zorder 15 at weapon_sojusznik1
+            
+            if tarczownik_wybrany == 2:
+                show kostka1 zorder 15 at gorasojusznik2
+                show kostka2 zorder 15 at dolsojusznik2
+                show miecz_swietlny zorder 15 at weapon_sojusznik2
+            
+            if tarczownik_wybrany == 3:
+                show kostka1 zorder 15 at gorasojusznik3
+                show kostka2 zorder 15 at dolsojusznik3
+                show miecz_swietlny zorder 15 at weapon_sojusznik3
+
+            play sound "audio/sfx/megalovania.mp3"
+            "{i}Naofumi odpala Beat Sabera{/i}"
+
+            label losowanko_tarczownik_vr1:
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_tarczownik_vr1
+                    
+                    if kostka2 == 2:
+                        if kibol1_hp_now >= 1 and akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kibol1_obrona == 2 and akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 2:
+                                    hide kostka1
+                                
+                                if akane_obrona == 2:
+                                    hide kostka2
+
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog3
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Kibol 1 i Akane{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_tarczownik_vr1
+
+                    if kostka2 == 3:
+                        if akane_hp_now >= 1 and kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if akane_obrona == 2 and kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 2:
+                                    hide kostka1
+
+                                if kibol2_obrona == 2:
+                                    hide kostka2
+
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= kostka / 2
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog3
+                                
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                play sound "audio/sfx/atak.mp3"
+                                "{i}Atak zadał [kostka] obrażeń Akane i Kibol 2{/i}"
+                                hide kostka1
+                                hide kostka2
+                                hide miecz_swietlny
+                        else:
+                            jump losowanko_tarczownik_vr1
+
+                else:
+                    if kostka2 == 1:
+                        if kibol1_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol1_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if kibol1_obrona == 1:
+                                    $ kibol1_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog1
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                    
+                                if kibol1_obrona == 0:
+                                    $ kibol1_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog1 
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 1{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_tarczownik_vr1
+                    
+                    if kostka2 == 2:
+                        if akane_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if akane_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:
+                                if akane_obrona == 1:
+                                    $ akane_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if akane_obrona == 0:
+                                    $ akane_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog3
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Akane{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_tarczownik_vr1
+
+                    if kostka2 == 3:
+                        if kibol2_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kibol2_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                hide kostka1
+                                hide kostka2
+                                "{i}Atak został zablokowany{/i}"
+                                hide miecz_swietlny
+                            else:   
+                                if kibol2_obrona == 1:
+                                    $ kibol2_hp_now -= int(kostka / 2)
+                                    hide kostka2
+                                    show kostka1 zorder 15 at center_wrog2
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                                
+                                if kibol2_obrona == 0:
+                                    $ kibol2_hp_now -= kostka
+                                    hide kostka1
+                                    show kostka2 zorder 15 at center_wrog2  
+                                    play sound "audio/sfx/atak.mp3"
+                                    "{i}Atak zadał [kostka] obrażeń Kibol 2{/i}"
+                                    hide kostka1
+                                    hide kostka2
+                                    hide miecz_swietlny
+                        else:
+                            jump losowanko_tarczownik_vr1
+
+        else:
+            if vr == 2 and tarczownik_obrona == 0 and tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                label losowanko_tarczownik_rzygi1:
+                if tarczownik_wybrany == 1:
+                    show rzyg zorder 15 at rzygi_sojusznik1
+                
+                if tarczownik_wybrany == 2:
+                    show rzyg zorder 15 at rzygi_sojusznik2
+                
+                if tarczownik_wybrany == 3:
+                    show rzyg zorder 15 at rzygi_sojusznik3
+
+                $ kostka2 = renpy.random.randint(1, 3)
+                if kostka2 == 1:
+                    if kibol1_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol1_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if kibol1_obrona == 1:
+                                $ kibol1_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Naofumi zrzygał się na Kibol 1 zadając [int(kostka / 2)] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol1_obrona == 0:
+                                $ kibol1_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog1
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Naofumi zrzygał się na Kibol 1 zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_tarczownik_rzygi1
+                
+                if kostka2 == 2:
+                    if akane_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if akane_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:
+                            if akane_obrona == 1:
+                                $ akane_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Naofumi zrzygał się na Akane zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if akane_obrona == 0:
+                                $ akane_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog3
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Naofumi zrzygał się na Akane zadając [kostka] obrażeń{/i}"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_tarczownik_rzygi1
+
+                if kostka2 == 3:
+                    if kibol2_hp_now >= 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kibol2_obrona == 2:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Rzygi zostały zablokowane{/i}"
+                            hide rzyg
+                        else:   
+                            if kibol2_obrona == 1:
+                                $ kibol2_hp_now -= int(kostka / 2)
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Naofumi zrzygał się na Kibol 2 zadając [int(kostka / 2)] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                            
+                            if kibol2_obrona == 0:
+                                $ kibol2_hp_now -= kostka
+                                show rzygowina zorder 15 at center_wrog2
+                                play sound "audio/sfx/rzygi.mp3"
+                                "{i}Naofumi zrzygał się na Kibol 2 zadając [kostka] obrażeń"
+                                hide rzygowina
+                                hide rzyg
+                    else:
+                        jump losowanko_tarczownik_rzygi1
+
+        if kibol1_hp_now <= 0 and kibol1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide kibol1
+            hide tarcza6
+            hide screen kibol1_stats
+            $ kibol1_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol1_obrona = 0
+            $ kibol1_weapon = 0
+            $ kibol1_pager = 0
+            $ kibol1_poison = 0
+            $ kibol1_stun = 0
+
+            if kibol1_slime >= 1:
+                hide slime
+
+        if akane_hp_now <= 0 and akane_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide akane
+            hide tarcza7
+            hide screen akane_stats
+            $ akane_umarty = 1
+            $ ile_wrogow -= 1
+            $ akane_obrona = 0
+            $ akane_weapon = 0
+            $ akane_pager = 0
+            $ akane_poison = 0
+            $ akane_stun = 0
+
+            if akane_slime >= 1:
+                hide slime
+        
+        if kibol2_hp_now <= 0 and kibol2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide kibol2
+            hide tarcza8
+            hide screen kibol2_stats
+            $ kibol2_umarty = 1
+            $ ile_wrogow -= 1
+            $ kibol2_obrona = 0
+            $ kibol2_weapon = 0
+            $ kibol2_pager = 0
+            $ kibol2_poison = 0
+            $ kibol2_stun = 0
+
+            if kibol2_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight1
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
+            hide eminem
+            hide tarcza2
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
+            hide kazuma
+            hide tarcza5
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+
+            if tarczownik_air_strike_shield >= 1:
+                $ luszcz_obrona = 0
+                $ eminem_obrona = 0
+                $ urban_obrona = 0
+                $ zyd_obrona = 0
+                $ kazuma_obrona = 0
+                $ tarczownik_obrona = 0
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
 
         $ kibol1_obrona = 0
         $ akane_obrona = 0
