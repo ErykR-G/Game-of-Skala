@@ -376,6 +376,13 @@ label fight_stats:
     default zyd_piguly = 0
     default kazuma_piguly = 0
 
+    default luszcz_lagodny = 0
+    default eminem_lagodny = 0
+    default urban_lagodny = 0
+    default zyd_lagodny = 0
+    default kazuma_lagodny = 0
+    default tarczownik_lagodny = 0
+
 
 label prolog_decyzje:
     define ofiara = 0

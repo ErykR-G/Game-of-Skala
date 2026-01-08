@@ -1032,10 +1032,448 @@ label eff:
                             jump faza12
                     
                 "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
-                    ""
+                    hide chest
+                    if luszcz_fighter == 1:
+                        if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik1
+                        if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik2
+                        if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik3
+                                
+                    if eminem_fighter == 1:
+                        if eminem_wybrany == 1 and eminem_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik1
+                        if eminem_wybrany == 2 and eminem_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik2
+                        if eminem_wybrany == 3 and eminem_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik3
+                                
+                    if urban_fighter == 1:
+                        if urban_wybrany == 1 and urban_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik1
+                        if urban_wybrany == 2 and urban_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik2
+                        if urban_wybrany == 3 and urban_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik3
+                                
+                    if zyd_fighter == 1:
+                        if zyd_wybrany == 1 and zyd_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik1
+                        if zyd_wybrany == 2 and zyd_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik2
+                        if zyd_wybrany == 3 and zyd_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik3
+                                    
+                    if kazuma_fighter == 1:
+                        if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik1
+                        if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik2
+                        if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                            show ostry zorder 15 at weapon_sojusznik3
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                            if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik1
+                            if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik2
+                            if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik3
+
+                            if luszcz_hp_now + 3 >= luszcz_hp:
+                                $ luszcz_hp_now = luszcz_hp
+                                $ luszcz_max_attack_now_true += 1
+                                $ luszcz_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
+                            else:
+                                $ luszcz_hp_now += 3
+                                $ luszcz_max_attack_now_true += 1
+                                $ luszcz_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+
+                            $ ostry -= 1
+                            if ostry == 0:
+                                $ ile_item -= 1
+                            hide ostry
+                            jump faza12
+                        
+                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                            if eminem_wybrany == 1 and eminem_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik1
+                            if eminem_wybrany == 2 and eminem_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik2
+                            if eminem_wybrany == 3 and eminem_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik3
+
+                            if eminem_hp_now + 3 >= eminem_hp:
+                                $ eminem_hp_now = eminem_hp
+                                $ eminem_max_attack_now_true += 1
+                                $ eminem_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
+                            else:
+                                $ eminem_hp_now += 3
+                                $ eminem_max_attack_now_true += 1
+                                $ eminem_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+
+                            $ ostry -= 1
+                            if ostry == 0:
+                                $ ile_item -= 1
+                            hide ostry
+                            jump faza12
+
+                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                            if urban_wybrany == 1 and urban_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik1
+                            if urban_wybrany == 2 and urban_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik2
+                            if urban_wybrany == 3 and urban_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik3
+
+                            if urban_hp_now + 3 >= urban_hp:
+                                $ urban_hp_now = urban_hp
+                                $ urban_max_attack_now_true += 1
+                                $ urban_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
+                            else:
+                                $ urban_hp_now += 3
+                                $ urban_max_attack_now_true += 1
+                                $ urban_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+
+                            $ ostry -= 1
+                            if ostry == 0:
+                                $ ile_item -= 1
+                            hide ostry
+                            jump faza12
+
+                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            if zyd_wybrany == 1 and zyd_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik1
+                            if zyd_wybrany == 2 and zyd_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik2
+                            if zyd_wybrany == 3 and zyd_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik3
+
+                            if zyd_hp_now + 3 >= zyd_hp:
+                                $ zyd_hp_now = zyd_hp
+                                $ zyd_max_attack_now_true += 1
+                                $ zyd_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
+                            else:
+                                $ zyd_hp_now += 3
+                                $ zyd_max_attack_now_true += 1
+                                $ zyd_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+
+                            $ ostry -= 1
+                            if ostry == 0:
+                                $ ile_item -= 1
+                            hide ostry
+                            jump faza12
+
+                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                            if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik1
+                            if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik2
+                            if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik3
+
+                            if kazuma_hp_now + 3 >= kazuma_hp:
+                                $ kazuma_hp_now = kazuma_hp
+                                $ kazuma_max_attack_now_true += 1
+                                $ kazuma_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
+                            else:
+                                $ kazuma_hp_now += 3
+                                $ kazuma_max_attack_now_true += 1
+                                $ kazuma_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+
+                            $ ostry -= 1
+                            if ostry == 0:
+                                $ ile_item -= 1
+                            hide ostry
+                            jump faza12
+                        
+                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                            if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik1
+                            if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik2
+                            if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
+                                show ostry zorder 15 at weapon_sojusznik3
+                                
+                            if tarczownik_hp_now + 3 >= tarczownik_hp:
+                                $ tarczownik_hp_now = tarczownik_hp
+                                $ tarczownik_max_attack_now_true += 1
+                                $ tarczownik_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
+                            else:
+                                $ tarczownik_hp_now += 3
+                                $ tarczownik_max_attack_now_true += 1
+                                $ tarczownik_max_attack_now += 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+
+                            $ ostry -= 1
+                            if ostry == 0:
+                                $ ile_item -= 1
+                            hide ostry
+                            jump faza12
                     
                 "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS) x [lagodny]{/b}" if lagodnyx == 1:
-                    ""
+                    hide chest
+                    if luszcz_fighter == 1:
+                        if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik1
+                        if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik2
+                        if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik3
+                                
+                    if eminem_fighter == 1:
+                        if eminem_wybrany == 1 and eminem_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik1
+                        if eminem_wybrany == 2 and eminem_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik2
+                        if eminem_wybrany == 3 and eminem_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik3
+                                
+                    if urban_fighter == 1:
+                        if urban_wybrany == 1 and urban_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik1
+                        if urban_wybrany == 2 and urban_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik2
+                        if urban_wybrany == 3 and urban_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik3
+                                
+                    if zyd_fighter == 1:
+                        if zyd_wybrany == 1 and zyd_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik1
+                        if zyd_wybrany == 2 and zyd_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik2
+                        if zyd_wybrany == 3 and zyd_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik3
+                                    
+                    if kazuma_fighter == 1:
+                        if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik1
+                        if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik2
+                        if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                            show lagodny zorder 15 at weapon_sojusznik3
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                            if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik1
+                            if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik2
+                            if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik3
+
+                            if luszcz_hp_now + 4 >= luszcz_hp:
+                                $ luszcz_hp_now = luszcz_hp
+                                $ luszcz_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Łuszcz odzyskał cały pasek życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            else:
+                                $ luszcz_hp_now += 4
+                                $ luszcz_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Łuszcz odzyskał 4 punkty życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            
+                            if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                                show plamka1 zorder 15 at center_sojusznik1
+                            if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                                show plamka1 zorder 15 at center_sojusznik2
+                            if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                                show plamka1 zorder 15 at center_sojusznik3
+
+                            $ lagodny -= 1
+                            if lagodny == 0:
+                                $ ile_item -= 1
+                            hide lagodny
+                            jump faza12
+                        
+                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                            if eminem_wybrany == 1 and eminem_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik1
+                            if eminem_wybrany == 2 and eminem_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik2
+                            if eminem_wybrany == 3 and eminem_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik3
+
+                            if eminem_hp_now + 4 >= eminem_hp:
+                                $ eminem_hp_now = eminem_hp
+                                $ eminem_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Shadow odzyskał cały pasek życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            else:
+                                $ eminem_hp_now += 4
+                                $ eminem_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Shadow odzyskał 4 punkty życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            
+                            if eminem_wybrany == 1 and eminem_hp_now > 0:
+                                show plamka2 zorder 15 at center_sojusznik1
+                            if eminem_wybrany == 2 and eminem_hp_now > 0:
+                                show plamka2 zorder 15 at center_sojusznik2
+                            if eminem_wybrany == 3 and eminem_hp_now > 0:
+                                show plamka2 zorder 15 at center_sojusznik3
+
+                            $ lagodny -= 1
+                            if lagodny == 0:
+                                $ ile_item -= 1
+                            hide lagodny
+                            jump faza12
+
+                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                            if urban_wybrany == 1 and urban_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik1
+                            if urban_wybrany == 2 and urban_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik2
+                            if urban_wybrany == 3 and urban_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik3
+
+                            if urban_hp_now + 4 >= urban_hp:
+                                $ urban_hp_now = urban_hp
+                                $ urban_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Jerzy Urban odzyskał cały pasek życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            else:
+                                $ urban_hp_now += 4
+                                $ urban_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Jerzy Urban odzyskał 4 punkty życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+
+                            if urban_wybrany == 1 and urban_hp_now > 0:
+                                show plamka3 zorder 15 at center_sojusznik1
+                            if urban_wybrany == 2 and urban_hp_now > 0:
+                                show plamka3 zorder 15 at center_sojusznik2
+                            if urban_wybrany == 3 and urban_hp_now > 0:
+                                show plamka3 zorder 15 at center_sojusznik3
+
+                            $ lagodny -= 1
+                            if lagodny == 0:
+                                $ ile_item -= 1
+                            hide lagodny
+                            jump faza12
+
+                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            if zyd_wybrany == 1 and zyd_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik1
+                            if zyd_wybrany == 2 and zyd_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik2
+                            if zyd_wybrany == 3 and zyd_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik3
+
+                            if zyd_hp_now + 4 >= zyd_hp:
+                                $ zyd_hp_now = zyd_hp
+                                $ zyd_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Żyd odzyskał cały pasek życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            else:
+                                $ zyd_hp_now += 4
+                                $ zyd_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Żyd odzyskał 4 punkty życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+
+                            if zyd_wybrany == 1 and zyd_hp_now > 0:
+                                show plamka4 zorder 15 at center_sojusznik1
+                            if zyd_wybrany == 2 and zyd_hp_now > 0:
+                                show plamka4 zorder 15 at center_sojusznik2
+                            if zyd_wybrany == 3 and zyd_hp_now > 0:
+                                show plamka4 zorder 15 at center_sojusznik3
+
+                            $ lagodny -= 1
+                            if lagodny == 0:
+                                $ ile_item -= 1
+                            hide lagodny
+                            jump faza12
+
+                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                            if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik1
+                            if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik2
+                            if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik3
+
+                            if kazuma_hp_now + 4 >= kazuma_hp:
+                                $ kazuma_hp_now = kazuma_hp
+                                $ kazuma_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Kazuma odzyskał cały pasek życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            else:
+                                $ kazuma_hp_now += 4
+                                $ kazuma_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Kazuma odzyskał 4 punkty życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            
+                            if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                                show plamka5 zorder 15 at center_sojusznik1
+                            if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                                show plamka5 zorder 15 at center_sojusznik2
+                            if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                                show plamka5 zorder 15 at center_sojusznik3
+
+                            $ lagodny -= 1
+                            if lagodny == 0:
+                                $ ile_item -= 1
+                            hide lagodny
+                            jump faza12
+                        
+                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                            if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik1
+                            if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik2
+                            if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
+                                show lagodny zorder 15 at weapon_sojusznik3
+                                
+                            if tarczownik_hp_now + 4 >= tarczownik_hp:
+                                $ tarczownik_hp_now = tarczownik_hp
+                                $ tarczownik_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Naofumi odzyskał cały pasek życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            else:
+                                $ tarczownik_hp_now += 4
+                                $ tarczownik_lagodny = 3
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Naofumi odzyskał 4 punkty życia i będzie dostawał 1 punkt życia przez 3 tury{/i}"
+                            
+                            if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
+                                show plamka6 zorder 15 at center_sojusznik1
+                            if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
+                                show plamka6 zorder 15 at center_sojusznik2
+                            if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
+                                show plamka6 zorder 15 at center_sojusznik3
+
+                            $ lagodny -= 1
+                            if lagodny == 0:
+                                $ ile_item -= 1
+                            hide lagodny
+                            jump faza12
                     
                 "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 1:
                     ""

@@ -674,6 +674,7 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
             hide luszcz
             hide tarcza1
             hide screen luszcz1_stats
@@ -686,6 +687,7 @@ label fight1:
             $ luszcz_weapon = 0
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
             hide eminem
             hide tarcza2
             hide screen eminem1_stats
@@ -698,6 +700,7 @@ label fight1:
             $ eminem_weapon = 0
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
             hide uszy1
             hide uszy2
             hide uszy3
@@ -713,6 +716,7 @@ label fight1:
             $ urban_weapon = 0
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
             hide red_button
             hide pager1
             hide pager2
@@ -733,6 +737,7 @@ label fight1:
             $ zyd_weapon = 0
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
             hide kazuma
             hide tarcza5
             hide screen kazuma1_stats
@@ -745,6 +750,7 @@ label fight1:
             $ kazuma_weapon = 0
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
             hide air_strike_shield3
@@ -945,6 +951,7 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
             hide luszcz
             hide tarcza1
             hide screen luszcz1_stats
@@ -957,6 +964,7 @@ label fight1:
             $ luszcz_weapon = 0
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
             hide eminem
             hide tarcza2
             hide screen eminem1_stats
@@ -967,7 +975,9 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
             hide uszy1
             hide uszy2
             hide uszy3
@@ -983,6 +993,7 @@ label fight1:
             $ urban_weapon = 0
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
             hide red_button
             hide pager1
             hide pager2
@@ -1003,6 +1014,7 @@ label fight1:
             $ zyd_weapon = 0
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
             hide kazuma
             hide tarcza5
             hide screen kazuma1_stats
@@ -1015,6 +1027,7 @@ label fight1:
             $ kazuma_weapon = 0
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
             hide air_strike_shield3
@@ -1040,6 +1053,156 @@ label fight1:
 
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
+
+        if luszcz_lagodny == 1:
+            if luszcz_hp_now + 1 < luszcz_hp:
+                $ luszcz_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ luszcz_lagodny -= 1
+            hide plamka1
+
+        if luszcz_lagodny == 2:
+            if luszcz_hp_now + 1 < luszcz_hp:
+                $ luszcz_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ luszcz_lagodny -= 1
+
+        if luszcz_lagodny == 3:
+            if luszcz_hp_now + 1 < luszcz_hp:
+                $ luszcz_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ luszcz_lagodny -= 1
+
+        if eminem_lagodny == 1:
+            if eminem_hp_now + 1 < eminem_hp:
+                $ eminem_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ eminem_lagodny -= 1
+            hide plamka2
+
+        if eminem_lagodny == 2:
+            if eminem_hp_now + 1 < eminem_hp:
+                $ eminem_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ eminem_lagodny -= 1
+
+        if eminem_lagodny == 3:
+            if eminem_hp_now + 1 < eminem_hp:
+                $ eminem_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ eminem_lagodny -= 1
+        
+        if urban_lagodny == 1:
+            if urban_hp_now + 1 < urban_hp:
+                $ urban_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ urban_lagodny -= 1
+            hide plamka3
+
+        if urban_lagodny == 2:
+            if urban_hp_now + 1 < urban_hp:
+                $ urban_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ urban_lagodny -= 1
+
+        if urban_lagodny == 3:
+            if urban_hp_now + 1 < urban_hp:
+                $ urban_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ urban_lagodny -= 1
+        
+        if zyd_lagodny == 1:
+            if zyd_hp_now + 1 < zyd_hp:
+                $ zyd_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ zyd_lagodny -= 1
+            hide plamka4
+
+        if zyd_lagodny == 2:
+            if zyd_hp_now + 1 < zyd_hp:
+                $ zyd_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ zyd_lagodny -= 1
+
+        if zyd_lagodny == 3:
+            if zyd_hp_now + 1 < zyd_hp:
+                $ zyd_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ zyd_lagodny -= 1
+    
+        if kazuma_lagodny == 1:
+            if kazuma_hp_now + 1 < kazuma_hp:
+                $ kazuma_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ kazuma_lagodny -= 1
+            hide plamka5
+
+        if kazuma_lagodny == 2:
+            if kazuma_hp_now + 1 < kazuma_hp:
+                $ kazuma_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ kazuma_lagodny -= 1
+
+        if kazuma_lagodny == 3:
+            if kazuma_hp_now + 1 < kazuma_hp:
+                $ kazuma_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ kazuma_lagodny -= 1
+        
+        if tarczownik_lagodny == 1:
+            if tarczownik_hp_now + 1 >= tarczownik_hp:
+                $ tarczownik_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ tarczownik_lagodny -= 1
+            hide plamka6
+
+        if tarczownik_lagodny == 2:
+            if tarczownik_hp_now + 1 < tarczownik_hp:
+                $ tarczownik_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ tarczownik_lagodny -= 1
+
+        if tarczownik_lagodny == 3:
+            if tarczownik_hp_now + 1 < tarczownik_hp:
+                $ tarczownik_hp_now += 1
+                play sound "audio/sfx/heal.mp3"
+                "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+
+            $ tarczownik_lagodny -= 1
         
         $ kibol1_uszy = 0
         $ akane_uszy = 0
@@ -4974,7 +5137,7 @@ label fight1:
                                 jump losowanko_tarczownik1
 
         jump faza12
-        
+
     label faza12:
         hide reka1
         hide reka2
@@ -5071,6 +5234,7 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
             hide luszcz
             hide tarcza1
             hide screen luszcz1_stats
@@ -5083,6 +5247,7 @@ label fight1:
             $ luszcz_weapon = 0
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
             hide eminem
             hide tarcza2
             hide screen eminem1_stats
@@ -5095,6 +5260,7 @@ label fight1:
             $ eminem_weapon = 0
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
             hide uszy1
             hide uszy2
             hide uszy3
@@ -5110,6 +5276,7 @@ label fight1:
             $ urban_weapon = 0
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
             hide red_button
             hide pager1
             hide pager2
@@ -5130,6 +5297,7 @@ label fight1:
             $ zyd_weapon = 0
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
             hide kazuma
             hide tarcza5
             hide screen kazuma1_stats
@@ -5142,6 +5310,7 @@ label fight1:
             $ kazuma_weapon = 0
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
             hide air_strike_shield3
@@ -8013,6 +8182,7 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
             hide luszcz
             hide tarcza1
             hide screen luszcz1_stats
@@ -8025,6 +8195,7 @@ label fight1:
             $ luszcz_weapon = 0
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
             hide eminem
             hide tarcza2
             hide screen eminem1_stats
@@ -8037,6 +8208,7 @@ label fight1:
             $ eminem_weapon = 0
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
             hide uszy1
             hide uszy2
             hide uszy3
@@ -8052,6 +8224,7 @@ label fight1:
             $ urban_weapon = 0
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
             hide red_button
             hide pager1
             hide pager2
@@ -8072,6 +8245,7 @@ label fight1:
             $ zyd_weapon = 0
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
             hide kazuma
             hide tarcza5
             hide screen kazuma1_stats
@@ -8084,6 +8258,7 @@ label fight1:
             $ kazuma_weapon = 0
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
             hide air_strike_shield3
@@ -10960,6 +11135,7 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
             hide luszcz
             hide tarcza1
             hide screen luszcz1_stats
@@ -10972,6 +11148,7 @@ label fight1:
             $ luszcz_weapon = 0
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
             hide eminem
             hide tarcza2
             hide screen eminem1_stats
@@ -10984,6 +11161,7 @@ label fight1:
             $ eminem_weapon = 0
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
             hide uszy1
             hide uszy2
             hide uszy3
@@ -10999,6 +11177,7 @@ label fight1:
             $ urban_weapon = 0
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
             hide red_button
             hide pager1
             hide pager2
@@ -11019,6 +11198,7 @@ label fight1:
             $ zyd_weapon = 0
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
             hide kazuma
             hide tarcza5
             hide screen kazuma1_stats
@@ -11034,6 +11214,7 @@ label fight1:
             jump przegranko_fight1
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
             hide air_strike_shield3
@@ -11834,6 +12015,7 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
             hide luszcz
             hide tarcza1
             hide screen luszcz1_stats
@@ -11846,6 +12028,7 @@ label fight1:
             $ luszcz_weapon = 0
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
             hide eminem
             hide tarcza2
             hide screen eminem1_stats
@@ -11858,6 +12041,7 @@ label fight1:
             $ eminem_weapon = 0
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
             hide uszy1
             hide uszy2
             hide uszy3
@@ -11873,6 +12057,7 @@ label fight1:
             $ urban_weapon = 0
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
             hide red_button
             hide pager1
             hide pager2
@@ -11893,6 +12078,7 @@ label fight1:
             $ zyd_weapon = 0
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
             hide kazuma
             hide tarcza5
             hide screen kazuma1_stats
@@ -11905,6 +12091,7 @@ label fight1:
             $ kazuma_weapon = 0
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
             hide air_strike_shield3
@@ -12699,6 +12886,7 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide plamka1
             hide luszcz
             hide tarcza1
             hide screen luszcz1_stats
@@ -12711,6 +12899,7 @@ label fight1:
             $ luszcz_weapon = 0
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide plamka2
             hide eminem
             hide tarcza2
             hide screen eminem1_stats
@@ -12723,6 +12912,7 @@ label fight1:
             $ eminem_weapon = 0
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide plamka3
             hide uszy1
             hide uszy2
             hide uszy3
@@ -12738,6 +12928,7 @@ label fight1:
             $ urban_weapon = 0
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide plamka4
             hide red_button
             hide pager1
             hide pager2
@@ -12758,6 +12949,7 @@ label fight1:
             $ zyd_weapon = 0
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide plamka5
             hide kazuma
             hide tarcza5
             hide screen kazuma1_stats
@@ -12770,6 +12962,7 @@ label fight1:
             $ kazuma_weapon = 0
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
             hide air_strike_shield3
@@ -13470,6 +13663,12 @@ label fight1:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        hide plamka1
+        hide plamka2
+        hide plamka3
+        hide plamka4
+        hide plamka5
+        hide plamka6
         hide snake33
         hide snake23
         hide snake13
@@ -13647,6 +13846,12 @@ label fight1:
 
 
     label wygranko_fight1:
+        hide plamka1
+        hide plamka2
+        hide plamka3
+        hide plamka4
+        hide plamka5
+        hide plamka6
         hide snake33
         hide snake23
         hide snake13
