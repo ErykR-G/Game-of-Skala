@@ -1476,7 +1476,241 @@ label eff:
                             jump faza12
                     
                 "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 1:
-                    ""
+                    hide chest
+                    if luszcz_fighter == 1:
+                        if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik1
+                        if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik2
+                        if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik3
+                                
+                    if eminem_fighter == 1:
+                        if eminem_wybrany == 1 and eminem_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik1
+                        if eminem_wybrany == 2 and eminem_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik2
+                        if eminem_wybrany == 3 and eminem_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik3
+                                
+                    if urban_fighter == 1:
+                        if urban_wybrany == 1 and urban_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik1
+                        if urban_wybrany == 2 and urban_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik2
+                        if urban_wybrany == 3 and urban_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik3
+                                
+                    if zyd_fighter == 1:
+                        if zyd_wybrany == 1 and zyd_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik1
+                        if zyd_wybrany == 2 and zyd_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik2
+                        if zyd_wybrany == 3 and zyd_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik3
+                                    
+                    if kazuma_fighter == 1:
+                        if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik1
+                        if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik2
+                        if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                            show drpepper zorder 15 at weapon_sojusznik3
+
+                    menu:
+                        "{b}Na kim użyć?{/b}"
+
+                        "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                            if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik1
+                            if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik2
+                            if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik3
+
+                            if luszcz_hp_now + 2 >= luszcz_hp:
+                                $ luszcz_hp_now = luszcz_hp
+                                $ luszcz_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Łuszcz odzyskał cały pasek życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            else:
+                                $ luszcz_hp_now += 2
+                                $ luszcz_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Łuszcz odzyskał 2 punkty życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            
+                            if luszcz_wybrany == 1 and luszcz_hp_now > 0:
+                                show okabe1 zorder 5 at nadhead_sojusznik1
+                            if luszcz_wybrany == 2 and luszcz_hp_now > 0:
+                                show okabe1 zorder 5 at nadhead_sojusznik2
+                            if luszcz_wybrany == 3 and luszcz_hp_now > 0:
+                                show okabe1 zorder 5 at nadhead_sojusznik3
+
+                            $ drpepper -= 1
+                            if drpepper == 0:
+                                $ ile_item -= 1
+                            hide drpepper
+                            jump faza12
+                        
+                        "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                            if eminem_wybrany == 1 and eminem_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik1
+                            if eminem_wybrany == 2 and eminem_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik2
+                            if eminem_wybrany == 3 and eminem_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik3
+
+                            if eminem_hp_now + 2 >= eminem_hp:
+                                $ eminem_hp_now = eminem_hp
+                                $ eminem_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Shadow odzyskał cały pasek życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            else:
+                                $ eminem_hp_now += 2
+                                $ eminem_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Shadow odzyskał 2 punkty życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            
+                            if eminem_wybrany == 1 and eminem_hp_now > 0:
+                                show okabe2 zorder 5 at nadhead_sojusznik1
+                            if eminem_wybrany == 2 and eminem_hp_now > 0:
+                                show okabe2 zorder 5 at nadhead_sojusznik2
+                            if eminem_wybrany == 3 and eminem_hp_now > 0:
+                                show okabe2 zorder 5 at nadhead_sojusznik3
+
+                            $ drpepper -= 1
+                            if drpepper == 0:
+                                $ ile_item -= 1
+                            hide drpepper
+                            jump faza12
+
+                        "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                            if urban_wybrany == 1 and urban_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik1
+                            if urban_wybrany == 2 and urban_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik2
+                            if urban_wybrany == 3 and urban_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik3
+
+                            if urban_hp_now + 2 >= urban_hp:
+                                $ urban_hp_now = urban_hp
+                                $ urban_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Jerzy Urban odzyskał cały pasek życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            else:
+                                $ urban_hp_now += 2
+                                $ urban_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Jerzy Urban odzyskał 2 punkty życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+
+                            if urban_wybrany == 1 and urban_hp_now > 0:
+                                show okabe3 zorder 5 at nadheadsojusznik1
+                            if urban_wybrany == 2 and urban_hp_now > 0:
+                                show okabe3 zorder 5 at nadhead_sojusznik2
+                            if urban_wybrany == 3 and urban_hp_now > 0:
+                                show okabe3 zorder 5 at nadhead_sojusznik3
+
+                            $ drpepper -= 1
+                            if drpepper == 0:
+                                $ ile_item -= 1
+                            hide drpepper
+                            jump faza12
+
+                        "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            if zyd_wybrany == 1 and zyd_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik1
+                            if zyd_wybrany == 2 and zyd_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik2
+                            if zyd_wybrany == 3 and zyd_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik3
+
+                            if zyd_hp_now + 2 >= zyd_hp:
+                                $ zyd_hp_now = zyd_hp
+                                $ zyd_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Żyd odzyskał cały pasek życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            else:
+                                $ zyd_hp_now += 2
+                                $ zyd_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Żyd odzyskał 2 punkty życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+
+                            if zyd_wybrany == 1 and zyd_hp_now > 0:
+                                show okabe4 zorder 5 at nadhead_sojusznik1
+                            if zyd_wybrany == 2 and zyd_hp_now > 0:
+                                show okabe4 zorder 5 at nadhead_sojusznik2
+                            if zyd_wybrany == 3 and zyd_hp_now > 0:
+                                show okabe4 zorder 5 at nadhead_sojusznik3
+
+                            $ drpepper -= 1
+                            if drpepper == 0:
+                                $ ile_item -= 1
+                            hide drpepper
+                            jump faza12
+
+                        "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                            if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik1
+                            if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik2
+                            if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik3
+
+                            if kazuma_hp_now + 2 >= kazuma_hp:
+                                $ kazuma_hp_now = kazuma_hp
+                                $ kazuma_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Kazuma odzyskał cały pasek życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            else:
+                                $ kazuma_hp_now += 2
+                                $ kazuma_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Kazuma odzyskał 2 punkty życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            
+                            if kazuma_wybrany == 1 and kazuma_hp_now > 0:
+                                show okabe5 zorder 5 at nadhead_sojusznik1
+                            if kazuma_wybrany == 2 and kazuma_hp_now > 0:
+                                show okabe5 zorder 5 at nadhead_sojusznik2
+                            if kazuma_wybrany == 3 and kazuma_hp_now > 0:
+                                show okabe5 zorder 5 at nadhead_sojusznik3
+
+                            $ drpepper -= 1
+                            if drpepper == 0:
+                                $ ile_item -= 1
+                            hide drpepper
+                            jump faza12
+                        
+                        "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                            if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik1
+                            if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik2
+                            if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
+                                show drpepper zorder 15 at weapon_sojusznik3
+                                
+                            if tarczownik_hp_now + 2 >= tarczownik_hp:
+                                $ tarczownik_hp_now = tarczownik_hp
+                                $ tarczownik_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Naofumi odzyskał cały pasek życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            else:
+                                $ tarczownik_hp_now += 2
+                                $ tarczownik_drpepper = 1
+                                play sound "audio/sfx/heal.mp3"
+                                "{i}Naofumi odzyskał 2 punkty życia i jego atak w następnej turze zada maksymalne obrażenia{/i}"
+                            
+                            if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
+                                show okabe6 zorder 5 at nadhead_sojusznik1
+                            if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
+                                show okabe6 zorder 5 at nadhead_sojusznik2
+                            if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
+                                show okabe6 zorder 5 at nadhead_sojusznik3
+
+                            $ drpepper -= 1
+                            if drpepper == 0:
+                                $ ile_item -= 1
+                            hide drpepper
+                            jump faza12
                     
                 "{b}Jabole (+6HP){/b} x [jabole]" if jabolex == 1:
                     hide chest

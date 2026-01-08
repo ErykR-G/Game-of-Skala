@@ -42,8 +42,8 @@ label items:
     default pills = 20
     default woda = 2
     default ostry = 2
-    default lagodny = 4
-    default drpepper = 0
+    default lagodny = 0
+    default drpepper = 20
     default jabole = 5
     default royal = 4
     default warzywo = 3

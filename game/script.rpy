@@ -154,6 +154,31 @@ label pozycje:
             xalign 0.91
             yalign 0.35
 
+    label pozycje_nadhead:
+        transform nadhead_sojusznik1:
+            xalign 0.228
+            yalign 0.005
+
+        transform nadhead_sojusznik2:
+            xalign 0.228
+            yalign 0.54
+
+        transform nadhead_sojusznik3:
+            xalign 0.09
+            yalign 0.28
+
+        transform nadhead_wrog1:
+            xalign 0.772
+            yalign 0.005
+
+        transform nadhead_wrog2:
+            xalign 0.772
+            yalign 0.54
+
+        transform nadhead_wrog3:
+            xalign 0.91
+            yalign 0.28
+
     label pozycje_bok:
         transform bok_sojusznik1:
             xalign 0.19
@@ -382,6 +407,13 @@ label fight_stats:
     default zyd_lagodny = 0
     default kazuma_lagodny = 0
     default tarczownik_lagodny = 0
+
+    default luszcz_drpepper = 0
+    default eminem_drpepper = 0
+    default urban_drpepper = 0
+    default zyd_drpepper = 0
+    default kazuma_drpepper = 0
+    default tarczownik_drpepper = 0
 
 
 label prolog_decyzje:

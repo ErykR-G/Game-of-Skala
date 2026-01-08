@@ -1247,6 +1247,48 @@ label fight1:
         if miecz3d == 6 and tarczownik_hp_now <= tarczownik_hp / 2 and tarczownik_fighter == 1:
             $ tarczownik_min_attack_now += 1
             $ tarczownik_max_attack_now += 2
+        
+        if luszcz_drpepper == 0:
+            hide okabe1
+        
+        if luszcz_drpepper == 1:
+            $ luszcz_drpepper -= 1
+            $ luszcz_min_attack_now = luszcz_max_attack_now
+    
+        if eminem_drpepper == 0:
+            hide okabe2
+        
+        if eminem_drpepper == 1:
+            $ eminem_drpepper -= 1
+            $ eminem_min_attack_now = eminem_max_attack_now
+        
+        if urban_drpepper == 0:
+            hide okabe3
+        
+        if urban_drpepper == 1:
+            $ urban_drpepper -= 1
+            $ urban_min_attack_now = urban_max_attack_now
+        
+        if zyd_drpepper == 0:
+            hide okabe4
+        
+        if zyd_drpepper == 1:
+            $ zyd_drpepper -= 1
+            $ zyd_min_attack_now = zyd_max_attack_now
+        
+        if kazuma_drpepper == 0:
+            hide okabe5
+        
+        if kazuma_drpepper == 1:
+            $ kazuma_drpepper -= 1
+            $ kazuma_min_attack_now = kazuma_max_attack_now
+        
+        if tarczownik_drpepper == 0:
+            hide okabe6
+        
+        if tarczownik_drpepper == 1:
+            $ tarczownik_drpepper -= 1
+            $ tarczownik_min_attack_now = tarczownik_max_attack_now
 
 
         if luszcz_fighter == 1:
