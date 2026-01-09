@@ -1225,6 +1225,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -1244,6 +1250,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -1267,6 +1279,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -1295,6 +1313,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -1315,6 +1339,12 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6
@@ -1550,6 +1580,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -1569,6 +1605,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -1592,6 +1634,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -1620,6 +1668,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -1640,6 +1694,12 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6
@@ -5921,6 +5981,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -5940,6 +6006,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -5963,6 +6035,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -5991,6 +6069,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -6011,6 +6095,12 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6
@@ -8769,6 +8859,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -8788,6 +8884,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -8811,6 +8913,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -8839,6 +8947,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -8859,6 +8973,12 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6
@@ -11621,6 +11741,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -11640,6 +11766,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -11663,6 +11795,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -11691,6 +11829,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -11712,8 +11856,11 @@ label fight1:
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
         
-        if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6
@@ -11746,6 +11893,9 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
+
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
     
         if vr == 2 and miecz_swietlny == 2 and luszcz_weapon >= 1 and luszcz_obrona == 0 and luszcz_hp_now > 0 and luszcz_wybrany > 0:
             if luszcz_wybrany == 1:
@@ -13584,6 +13734,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -13603,6 +13759,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -13626,6 +13788,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -13654,6 +13822,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -13675,8 +13849,11 @@ label fight1:
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
         
-        if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6
@@ -13709,6 +13886,9 @@ label fight1:
             $ tarczownik_obrona = 0
             $ tarczownik_wybrany = 0
             $ tarczownik_weapon = 0
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight1
 
         $ kibol1_obrona = 0
         $ akane_obrona = 0
@@ -14664,6 +14844,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -14683,6 +14869,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -14706,6 +14898,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -14734,6 +14932,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -14754,6 +14958,12 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6
@@ -15735,6 +15945,12 @@ label fight1:
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
         
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
             hide plamka2
             hide eminem
@@ -15754,6 +15970,12 @@ label fight1:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
             hide plamka3
@@ -15777,6 +15999,12 @@ label fight1:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
             hide plamka4
@@ -15805,6 +16033,12 @@ label fight1:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
             hide plamka5
@@ -15825,6 +16059,12 @@ label fight1:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
             hide plamka6

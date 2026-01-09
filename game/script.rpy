@@ -813,6 +813,6 @@ label start:
 
         "{i}O bogowie walka{/i}"
         jump fight1
-        
+
     label after_fight1:
         "{i}Gratulacje wygrałeś{/i}"
