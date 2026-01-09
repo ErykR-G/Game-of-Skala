@@ -113,6 +113,22 @@ label fight1:
                         $ luszcz_max_attack_now = luszcz_max_attack
                         $ luszcz_min_attack_now_true = luszcz_min_attack
                         $ luszcz_max_attack_now_true = luszcz_max_attack
+
+                        if luszcz_klata == 2:
+                            show luszcz_klata zorder 11 at sojusznik1
+                        if ring == 2:
+                            show luszcz_ring zorder 11 at sojusznik1
+                        if zloty == 2:
+                            show luszcz_zloty zorder 11 at sojusznik1
+                        if memy == 2:
+                            show luszcz_memy zorder 11 at sojusznik1
+                        if vr == 2:
+                            show luszcz_vr zorder 11 at sojusznik1
+                        if ziemia == 2:
+                            show luszcz_ziemia zorder 11 at sojusznik1
+                        if nogi == 2:
+                            show luszcz_nogi zorder 11 at sojusznik1
+
                         show luszcz fight zorder 10 at sojusznik1
                         show screen luszcz1_stats
                         luszcz "Gotowy do boju"
@@ -125,6 +141,22 @@ label fight1:
                         $ eminem_max_attack_now = eminem_max_attack
                         $ eminem_min_attack_now_true = eminem_min_attack
                         $ eminem_max_attack_now_true = eminem_max_attack
+
+                        if eminem_klata == 7:
+                            show eminem_klata zorder 11 at sojusznik1
+                        if ring == 7:
+                            show eminem_ring zorder 11 at sojusznik1
+                        if zloty == 7:
+                            show eminem_zloty zorder 11 at sojusznik1
+                        if memy == 7:
+                            show eminem_memy zorder 11 at sojusznik1
+                        if vr == 7:
+                            show eminem_vr zorder 11 at sojusznik1
+                        if ziemia == 7:
+                            show eminem_ziemia zorder 11 at sojusznik1
+                        if nogi == 7:
+                            show eminem_nogi zorder 11 at sojusznik1
+
                         show eminem fight zorder 10 at sojusznik1
                         show screen eminem1_stats
                         eminem "Gotowy do boju"
@@ -137,6 +169,22 @@ label fight1:
                         $ urban_max_attack_now = urban_max_attack
                         $ urban_min_attack_now_true = urban_min_attack
                         $ urban_max_attack_now_true = urban_max_attack
+
+                        if urban_klata == 3:
+                            show urban_klata zorder 11 at sojusznik1
+                        if ring == 3:
+                            show urban_ring zorder 11 at sojusznik1
+                        if zloty == 3:
+                            show urban_zloty zorder 11 at sojusznik1
+                        if memy == 3:
+                            show urban_memy zorder 11 at sojusznik1
+                        if vr == 3:
+                            show urban_vr zorder 11 at sojusznik1
+                        if ziemia == 3:
+                            show urban_ziemia zorder 11 at sojusznik1
+                        if nogi == 3:
+                            show urban_nogi zorder 11 at sojusznik1
+
                         show urban fight zorder 10 at sojusznik1
                         show screen urban1_stats
                         urban "Gotowy do boju"
@@ -149,6 +197,22 @@ label fight1:
                         $ zyd_max_attack_now = zyd_max_attack
                         $ zyd_min_attack_now_true = zyd_min_attack
                         $ zyd_max_attack_now_true = zyd_max_attack
+
+                        if zyd_klata == 4:
+                            show zyd_klata zorder 11 at sojusznik1
+                        if ring == 4:
+                            show zyd_ring zorder 11 at sojusznik1
+                        if zloty == 4:
+                            show zyd_zloty zorder 11 at sojusznik1
+                        if memy == 4:
+                            show zyd_memy zorder 11 at sojusznik1
+                        if vr == 4:
+                            show zyd_vr zorder 11 at sojusznik1
+                        if ziemia == 4:
+                            show zyd_ziemia zorder 11 at sojusznik1
+                        if nogi == 4:
+                            show zyd_nogi zorder 11 at sojusznik1
+
                         show zyd fight zorder 10 at sojusznik1
                         show screen zyd1_stats
                         zyd "Gotowy do boju"
@@ -161,6 +225,22 @@ label fight1:
                         $ kazuma_max_attack_now = kazuma_max_attack
                         $ kazuma_min_attack_now_true = kazuma_min_attack
                         $ kazuma_max_attack_now_true = kazuma_max_attack
+
+                        if kazuma_klata == 5:
+                            show kazuma_klata zorder 11 at sojusznik1
+                        if ring == 5:
+                            show kazuma_ring zorder 11 at sojusznik1
+                        if zloty == 5:
+                            show kazuma_zloty zorder 11 at sojusznik1
+                        if memy == 5:
+                            show kazuma_memy zorder 11 at sojusznik1
+                        if vr == 5:
+                            show kazuma_vr zorder 11 at sojusznik1
+                        if ziemia == 5:
+                            show kazuma_ziemia zorder 11 at sojusznik1
+                        if nogi == 5:
+                            show kazuma_nogi zorder 11 at sojusznik1
+
                         show kazuma fight zorder 10 at sojusznik1
                         show screen kazuma1_stats
                         kazuma "Gotowy do boju"
@@ -173,6 +253,22 @@ label fight1:
                         $ tarczownik_max_attack_now = tarczownik_max_attack
                         $ tarczownik_min_attack_now_true = tarczownik_min_attack
                         $ tarczownik_max_attack_now_true = tarczownik_max_attack
+
+                        if tarczownik_klata == 6:
+                            show tarczownik_klata zorder 11 at sojusznik1
+                        if ring == 6:
+                            show tarczownik_ring zorder 11 at sojusznik1
+                        if zloty == 6:
+                            show tarczownik_zloty zorder 11 at sojusznik1
+                        if memy == 6:
+                            show tarczownik_memy zorder 11 at sojusznik1
+                        if vr == 6:
+                            show tarczownik_vr zorder 11 at sojusznik1
+                        if ziemia == 6:
+                            show tarczownik_ziemia zorder 11 at sojusznik1
+                        if nogi == 6:
+                            show tarczownik_nogi zorder 11 at sojusznik1
+
                         show tarczownik fight zorder 10 at sojusznik1
                         show screen tarczownik1_stats
                         tarczownik "Gotowy do boju"
@@ -188,6 +284,22 @@ label fight1:
                         $ luszcz_max_attack_now = luszcz_max_attack
                         $ luszcz_min_attack_now_true = luszcz_min_attack
                         $ luszcz_max_attack_now_true = luszcz_max_attack
+
+                        if luszcz_klata == 2:
+                            show luszcz_klata zorder 11 at sojusznik3
+                        if ring == 2:
+                            show luszcz_ring zorder 11 at sojusznik3
+                        if zloty == 2:
+                            show luszcz_zloty zorder 11 at sojusznik3
+                        if memy == 2:
+                            show luszcz_memy zorder 11 at sojusznik3
+                        if vr == 2:
+                            show luszcz_vr zorder 11 at sojusznik3
+                        if ziemia == 2:
+                            show luszcz_ziemia zorder 11 at sojusznik3
+                        if nogi == 2:
+                            show luszcz_nogi zorder 11 at sojusznik3
+
                         show luszcz fight zorder 10 at sojusznik3
                         show screen luszcz3_stats
                         luszcz "Gotowy do boju"
@@ -200,6 +312,22 @@ label fight1:
                         $ eminem_max_attack_now = eminem_max_attack
                         $ eminem_min_attack_now_true = eminem_min_attack
                         $ eminem_max_attack_now_true = eminem_max_attack
+
+                        if eminem_klata == 7:
+                            show eminem_klata zorder 11 at sojusznik3
+                        if ring == 7:
+                            show eminem_ring zorder 11 at sojusznik3
+                        if zloty == 7:
+                            show eminem_zloty zorder 11 at sojusznik3
+                        if memy == 7:
+                            show eminem_memy zorder 11 at sojusznik3
+                        if vr == 7:
+                            show eminem_vr zorder 11 at sojusznik3
+                        if ziemia == 7:
+                            show eminem_ziemia zorder 11 at sojusznik3
+                        if nogi == 7:
+                            show eminem_nogi zorder 11 at sojusznik3
+
                         show eminem fight zorder 10 at sojusznik3
                         show screen eminem3_stats
                         eminem "Gotowy do boju"
@@ -212,6 +340,22 @@ label fight1:
                         $ urban_max_attack_now = urban_max_attack
                         $ urban_min_attack_now_true = urban_min_attack
                         $ urban_max_attack_now_true = urban_max_attack
+
+                        if urban_klata == 3:
+                            show urban_klata zorder 11 at sojusznik3
+                        if ring == 3:
+                            show urban_ring zorder 11 at sojusznik3
+                        if zloty == 3:
+                            show urban_zloty zorder 11 at sojusznik3
+                        if memy == 3:
+                            show urban_memy zorder 11 at sojusznik3
+                        if vr == 3:
+                            show urban_vr zorder 11 at sojusznik3
+                        if ziemia == 3:
+                            show urban_ziemia zorder 11 at sojusznik3
+                        if nogi == 3:
+                            show urban_nogi zorder 11 at sojusznik3
+
                         show urban fight zorder 10 at sojusznik3
                         show screen urban3_stats
                         urban "Gotowy do boju"
@@ -224,6 +368,22 @@ label fight1:
                         $ zyd_max_attack_now = zyd_max_attack
                         $ zyd_min_attack_now_true = zyd_min_attack
                         $ zyd_max_attack_now_true = zyd_max_attack
+
+                        if zyd_klata == 4:
+                            show zyd_klata zorder 11 at sojusznik3
+                        if ring == 4:
+                            show zyd_ring zorder 11 at sojusznik3
+                        if zloty == 4:
+                            show zyd_zloty zorder 11 at sojusznik3
+                        if memy == 4:
+                            show zyd_memy zorder 11 at sojusznik3
+                        if vr == 4:
+                            show zyd_vr zorder 11 at sojusznik3
+                        if ziemia == 4:
+                            show zyd_ziemia zorder 11 at sojusznik3
+                        if nogi == 4:
+                            show zyd_nogi zorder 11 at sojusznik3
+
                         show zyd fight zorder 10 at sojusznik3
                         show screen zyd3_stats
                         zyd "Gotowy do boju"
@@ -236,6 +396,22 @@ label fight1:
                         $ kazuma_max_attack_now = kazuma_max_attack
                         $ kazuma_min_attack_now_true = kazuma_min_attack
                         $ kazuma_max_attack_now_true = kazuma_max_attack
+
+                        if kazuma_klata == 5:
+                            show kazuma_klata zorder 11 at sojusznik3
+                        if ring == 5:
+                            show kazuma_ring zorder 11 at sojusznik3
+                        if zloty == 5:
+                            show kazuma_zloty zorder 11 at sojusznik3
+                        if memy == 5:
+                            show kazuma_memy zorder 11 at sojusznik3
+                        if vr == 5:
+                            show kazuma_vr zorder 11 at sojusznik3
+                        if ziemia == 5:
+                            show kazuma_ziemia zorder 11 at sojusznik3
+                        if nogi == 5:
+                            show kazuma_nogi zorder 11 at sojusznik3
+
                         show kazuma fight zorder 10 at sojusznik3
                         show screen kazuma3_stats
                         kazuma "Gotowy do boju"
@@ -264,6 +440,22 @@ label fight1:
                         $ tarczownik_max_attack_now = tarczownik_max_attack
                         $ tarczownik_min_attack_now_true = tarczownik_min_attack
                         $ tarczownik_max_attack_now_true = tarczownik_max_attack
+
+                        if tarczownik_klata == 6:
+                            show tarczownik_klata zorder 11 at sojusznik3
+                        if ring == 6:
+                            show tarczownik_ring zorder 11 at sojusznik3
+                        if zloty == 6:
+                            show tarczownik_zloty zorder 11 at sojusznik3
+                        if memy == 6:
+                            show tarczownik_memy zorder 11 at sojusznik3
+                        if vr == 6:
+                            show tarczownik_vr zorder 11 at sojusznik3
+                        if ziemia == 6:
+                            show tarczownik_ziemia zorder 11 at sojusznik3
+                        if nogi == 6:
+                            show tarczownik_nogi zorder 11 at sojusznik3
+
                         show tarczownik fight zorder 10 at sojusznik3
                         show screen tarczownik3_stats
                         tarczownik "Gotowy do boju"
@@ -279,6 +471,21 @@ label fight1:
                         $ luszcz_max_attack_now = luszcz_max_attack
                         $ luszcz_min_attack_now_true = luszcz_min_attack
                         $ luszcz_max_attack_now_true = luszcz_max_attack
+                        if luszcz_klata == 2:
+                            show luszcz_klata zorder 11 at sojusznik2
+                        if ring == 2:
+                            show luszcz_ring zorder 11 at sojusznik2
+                        if zloty == 2:
+                            show luszcz_zloty zorder 11 at sojusznik2
+                        if memy == 2:
+                            show luszcz_memy zorder 11 at sojusznik2
+                        if vr == 2:
+                            show luszcz_vr zorder 11 at sojusznik2
+                        if ziemia == 2:
+                            show luszcz_ziemia zorder 11 at sojusznik2
+                        if nogi == 2:
+                            show luszcz_nogi zorder 11 at sojusznik2
+
                         show luszcz fight zorder 10 at sojusznik2
                         show screen luszcz2_stats
                         luszcz "Gotowy do boju"
@@ -291,6 +498,22 @@ label fight1:
                         $ eminem_max_attack_now = eminem_max_attack
                         $ eminem_min_attack_now_true = eminem_min_attack
                         $ eminem_max_attack_now_true = eminem_max_attack
+
+                        if eminem_klata == 7:
+                            show eminem_klata zorder 11 at sojusznik2
+                        if ring == 7:
+                            show eminem_ring zorder 11 at sojusznik2
+                        if zloty == 7:
+                            show eminem_zloty zorder 11 at sojusznik2
+                        if memy == 7:
+                            show eminem_memy zorder 11 at sojusznik2
+                        if vr == 7:
+                            show eminem_vr zorder 11 at sojusznik2
+                        if ziemia == 7:
+                            show eminem_ziemia zorder 11 at sojusznik2
+                        if nogi == 7:
+                            show eminem_nogi zorder 11 at sojusznik2
+
                         show eminem fight zorder 10 at sojusznik2
                         show screen eminem2_stats
                         eminem "Gotowy do boju"
@@ -303,6 +526,22 @@ label fight1:
                         $ urban_max_attack_now = urban_max_attack
                         $ urban_min_attack_now_true = urban_min_attack
                         $ urban_max_attack_now_true = urban_max_attack
+
+                        if urban_klata == 3:
+                            show urban_klata zorder 11 at sojusznik2
+                        if ring == 3:
+                            show urban_ring zorder 11 at sojusznik2
+                        if zloty == 3:
+                            show urban_zloty zorder 11 at sojusznik2
+                        if memy == 3:
+                            show urban_memy zorder 11 at sojusznik2
+                        if vr == 3:
+                            show urban_vr zorder 11 at sojusznik2
+                        if ziemia == 3:
+                            show urban_ziemia zorder 11 at sojusznik2
+                        if nogi == 3:
+                            show urban_nogi zorder 11 at sojusznik2
+
                         show urban fight zorder 10 at sojusznik2
                         show screen urban2_stats
                         urban "Gotowy do boju"
@@ -315,6 +554,22 @@ label fight1:
                         $ zyd_max_attack_now = zyd_max_attack
                         $ zyd_min_attack_now_true = zyd_min_attack
                         $ zyd_max_attack_now_true = zyd_max_attack
+
+                        if zyd_klata == 4:
+                            show zyd_klata zorder 11 at sojusznik2
+                        if ring == 4:
+                            show zyd_ring zorder 11 at sojusznik2
+                        if zloty == 4:
+                            show zyd_zloty zorder 11 at sojusznik2
+                        if memy == 4:
+                            show zyd_memy zorder 11 at sojusznik2
+                        if vr == 4:
+                            show zyd_vr zorder 11 at sojusznik2
+                        if ziemia == 4:
+                            show zyd_ziemia zorder 11 at sojusznik2
+                        if nogi == 4:
+                            show zyd_nogi zorder 11 at sojusznik2
+
                         show zyd fight zorder 10 at sojusznik2
                         show screen zyd2_stats
                         zyd "Gotowy do boju"
@@ -327,6 +582,22 @@ label fight1:
                         $ kazuma_max_attack_now = kazuma_max_attack
                         $ kazuma_min_attack_now_true = kazuma_min_attack
                         $ kazuma_max_attack_now_true = kazuma_max_attack
+
+                        if kazuma_klata == 5:
+                            show kazuma_klata zorder 11 at sojusznik2
+                        if ring == 5:
+                            show kazuma_ring zorder 11 at sojusznik2
+                        if zloty == 5:
+                            show kazuma_zloty zorder 11 at sojusznik2
+                        if memy == 5:
+                            show kazuma_memy zorder 11 at sojusznik2
+                        if vr == 5:
+                            show kazuma_vr zorder 11 at sojusznik2
+                        if ziemia == 5:
+                            show kazuma_ziemia zorder 11 at sojusznik2
+                        if nogi == 5:
+                            show kazuma_nogi zorder 11 at sojusznik2
+
                         show kazuma fight zorder 10 at sojusznik2
                         show screen kazuma2_stats
                         kazuma "Gotowy do boju"
@@ -370,6 +641,22 @@ label fight1:
                         $ tarczownik_max_attack_now = tarczownik_max_attack
                         $ tarczownik_min_attack_now_true = tarczownik_min_attack
                         $ tarczownik_max_attack_now_true = tarczownik_max_attack
+
+                        if tarczownik_klata == 6:
+                            show tarczownik_klata zorder 11 at sojusznik2
+                        if ring == 6:
+                            show tarczownik_ring zorder 11 at sojusznik2
+                        if zloty == 6:
+                            show tarczownik_zloty zorder 11 at sojusznik2
+                        if memy == 6:
+                            show tarczownik_memy zorder 11 at sojusznik2
+                        if vr == 6:
+                            show tarczownik_vr zorder 11 at sojusznik2
+                        if ziemia == 6:
+                            show tarczownik_ziemia zorder 11 at sojusznik2
+                        if nogi == 6:
+                            show tarczownik_nogi zorder 11 at sojusznik2
+
                         show tarczownik fight zorder 10 at sojusznik2
                         show screen tarczownik2_stats
                         tarczownik "Gotowy do boju"
@@ -391,6 +678,22 @@ label fight1:
                             $ luszcz_min_attack_now_true = luszcz_min_attack
                             $ luszcz_max_attack_now_true = luszcz_max_attack
                             show screen luszcz1_stats
+
+                            if luszcz_klata == 2:
+                                show luszcz_klata zorder 11 at sojusznik1
+                            if ring == 2:
+                                show luszcz_ring zorder 11 at sojusznik1
+                            if zloty == 2:
+                                show luszcz_zloty zorder 11 at sojusznik1
+                            if memy == 2:
+                                show luszcz_memy zorder 11 at sojusznik1
+                            if vr == 2:
+                                show luszcz_vr zorder 11 at sojusznik1
+                            if ziemia == 2:
+                                show luszcz_ziemia zorder 11 at sojusznik1
+                            if nogi == 2:
+                                show luszcz_nogi zorder 11 at sojusznik1
+                                
                             show luszcz fight zorder 10 at sojusznik1
                             luszcz "Gotowy do boju"
 
@@ -402,6 +705,22 @@ label fight1:
                             $ eminem_max_attack_now = eminem_max_attack
                             $ eminem_min_attack_now_true = eminem_min_attack
                             $ eminem_max_attack_now_true = eminem_max_attack
+
+                            if eminem_klata == 7:
+                                show eminem_klata zorder 11 at sojusznik1
+                            if ring == 7:
+                                show eminem_ring zorder 11 at sojusznik1
+                            if zloty == 7:
+                                show eminem_zloty zorder 11 at sojusznik1
+                            if memy == 7:
+                                show eminem_memy zorder 11 at sojusznik1
+                            if vr == 7:
+                                show eminem_vr zorder 11 at sojusznik1
+                            if ziemia == 7:
+                                show eminem_ziemia zorder 11 at sojusznik1
+                            if nogi == 7:
+                                show eminem_nogi zorder 11 at sojusznik1
+
                             show eminem fight zorder 10 at sojusznik1
                             show screen eminem1_stats
                             eminem "Gotowy do boju"
@@ -415,6 +734,22 @@ label fight1:
                             $ urban_min_attack_now_true = urban_min_attack
                             $ urban_max_attack_now_true = urban_max_attack
                             show screen urban1_stats
+
+                            if urban_klata == 3:
+                                show urban_klata zorder 11 at sojusznik1
+                            if ring == 3:
+                                show urban_ring zorder 11 at sojusznik1
+                            if zloty == 3:
+                                show urban_zloty zorder 11 at sojusznik1
+                            if memy == 3:
+                                show urban_memy zorder 11 at sojusznik1
+                            if vr == 3:
+                                show urban_vr zorder 11 at sojusznik1
+                            if ziemia == 3:
+                                show urban_ziemia zorder 11 at sojusznik1
+                            if nogi == 3:
+                                show urban_nogi zorder 11 at sojusznik1
+
                             show urban fight zorder 10 at sojusznik1
                             urban "Gotowy do boju"
 
@@ -426,6 +761,22 @@ label fight1:
                             $ zyd_max_attack_now = zyd_max_attack
                             $ zyd_min_attack_now_true = zyd_min_attack
                             $ zyd_max_attack_now_true = zyd_max_attack
+
+                            if zyd_klata == 4:
+                                show zyd_klata zorder 11 at sojusznik1
+                            if ring == 4:
+                                show zyd_ring zorder 11 at sojusznik1
+                            if zloty == 4:
+                                show zyd_zloty zorder 11 at sojusznik1
+                            if memy == 4:
+                                show zyd_memy zorder 11 at sojusznik1
+                            if vr == 4:
+                                show zyd_vr zorder 11 at sojusznik1
+                            if ziemia == 4:
+                                show zyd_ziemia zorder 11 at sojusznik1
+                            if nogi == 4:
+                                show zyd_nogi zorder 11 at sojusznik1
+
                             show screen zyd1_stats
                             show zyd fight zorder 10 at sojusznik1
                             zyd "Gotowy do boju"
@@ -438,6 +789,22 @@ label fight1:
                             $ kazuma_max_attack_now = kazuma_max_attack
                             $ kazuma_min_attack_now_true = kazuma_min_attack
                             $ kazuma_max_attack_now_true = kazuma_max_attack
+
+                            if kazuma_klata == 5:
+                                show kazuma_klata zorder 11 at sojusznik1
+                            if ring == 5:
+                                show kazuma_ring zorder 11 at sojusznik1
+                            if zloty == 5:
+                                show kazuma_zloty zorder 11 at sojusznik1
+                            if memy == 5:
+                                show kazuma_memy zorder 11 at sojusznik1
+                            if vr == 5:
+                                show kazuma_vr zorder 11 at sojusznik1
+                            if ziemia == 5:
+                                show kazuma_ziemia zorder 11 at sojusznik1
+                            if nogi == 5:
+                                show kazuma_nogi zorder 11 at sojusznik1
+                                
                             show screen kazuma1_stats
                             show kazuma fight zorder 10 at sojusznik1
                             kazuma "Gotowy do boju"
@@ -450,6 +817,22 @@ label fight1:
                             $ tarczownik_max_attack_now = tarczownik_max_attack 
                             $ tarczownik_min_attack_now_true = tarczownik_min_attack
                             $ tarczownik_max_attack_now_true = tarczownik_max_attack 
+
+                            if tarczownik_klata == 6:
+                                show tarczownik_klata zorder 11 at sojusznik1
+                            if ring == 6:
+                                show tarczownik_ring zorder 11 at sojusznik1
+                            if zloty == 6:
+                                show tarczownik_zloty zorder 11 at sojusznik1
+                            if memy == 6:
+                                show tarczownik_memy zorder 11 at sojusznik1
+                            if vr == 6:
+                                show tarczownik_vr zorder 11 at sojusznik1
+                            if ziemia == 6:
+                                show tarczownik_ziemia zorder 11 at sojusznik1
+                            if nogi == 6:
+                                show tarczownik_nogi zorder 11 at sojusznik1
+                                
                             show tarczownik fight zorder 10 at sojusznik1
                             show screen tarczownik1_stats
                             tarczownik "Gotowy do boju"
@@ -466,6 +849,22 @@ label fight1:
                             $ luszcz_min_attack_now_true = luszcz_min_attack
                             $ luszcz_max_attack_now_true = luszcz_max_attack
                             show screen luszcz2_stats
+
+                            if luszcz_klata == 2:
+                                show luszcz_klata zorder 11 at sojusznik2
+                            if ring == 2:
+                                show luszcz_ring zorder 11 at sojusznik2
+                            if zloty == 2:
+                                show luszcz_zloty zorder 11 at sojusznik2
+                            if memy == 2:
+                                show luszcz_memy zorder 11 at sojusznik2
+                            if vr == 2:
+                                show luszcz_vr zorder 11 at sojusznik2
+                            if ziemia == 2:
+                                show luszcz_ziemia zorder 11 at sojusznik2
+                            if nogi == 2:
+                                show luszcz_nogi zorder 11 at sojusznik2
+                                
                             show luszcz fight zorder 10 at sojusznik2
                             luszcz "Gotowy do boju"
                         
@@ -477,6 +876,22 @@ label fight1:
                             $ eminem_max_attack_now = eminem_max_attack
                             $ eminem_min_attack_now_true = eminem_min_attack
                             $ eminem_max_attack_now_true = eminem_max_attack
+
+                            if eminem_klata == 7:
+                                show eminem_klata zorder 11 at sojusznik2
+                            if ring == 7:
+                                show eminem_ring zorder 11 at sojusznik2
+                            if zloty == 7:
+                                show eminem_zloty zorder 11 at sojusznik2
+                            if memy == 7:
+                                show eminem_memy zorder 11 at sojusznik2
+                            if vr == 7:
+                                show eminem_vr zorder 11 at sojusznik2
+                            if ziemia == 7:
+                                show eminem_ziemia zorder 11 at sojusznik2
+                            if nogi == 7:
+                                show eminem_nogi zorder 11 at sojusznik2
+
                             show eminem fight zorder 10 at sojusznik2
                             show screen eminem2_stats
                             eminem "Gotowy do boju"
@@ -489,6 +904,22 @@ label fight1:
                             $ urban_max_attack_now = urban_max_attack
                             $ urban_min_attack_now_true = urban_min_attack
                             $ urban_max_attack_now_true = urban_max_attack
+
+                            if urban_klata == 3:
+                                show urban_klata zorder 11 at sojusznik2
+                            if ring == 3:
+                                show urban_ring zorder 11 at sojusznik2
+                            if zloty == 3:
+                                show urban_zloty zorder 11 at sojusznik2
+                            if memy == 3:
+                                show urban_memy zorder 11 at sojusznik2
+                            if vr == 3:
+                                show urban_vr zorder 11 at sojusznik2
+                            if ziemia == 3:
+                                show urban_ziemia zorder 11 at sojusznik2
+                            if nogi == 3:
+                                show urban_nogi zorder 11 at sojusznik2
+
                             show urban fight zorder 10 at sojusznik2
                             show screen urban2_stats
                             urban "Gotowy do boju"
@@ -501,6 +932,22 @@ label fight1:
                             $ zyd_max_attack_now = zyd_max_attack
                             $ zyd_min_attack_now_true = zyd_min_attack
                             $ zyd_max_attack_now_true = zyd_max_attack
+
+                            if zyd_klata == 4:
+                                show zyd_klata zorder 11 at sojusznik2
+                            if ring == 4:
+                                show zyd_ring zorder 11 at sojusznik2
+                            if zloty == 4:
+                                show zyd_zloty zorder 11 at sojusznik2
+                            if memy == 4:
+                                show zyd_memy zorder 11 at sojusznik2
+                            if vr == 4:
+                                show zyd_vr zorder 11 at sojusznik2
+                            if ziemia == 4:
+                                show zyd_ziemia zorder 11 at sojusznik2
+                            if nogi == 4:
+                                show zyd_nogi zorder 11 at sojusznik2
+
                             show zyd fight zorder 10 at sojusznik2
                             show screen zyd2_stats
                             zyd "Gotowy do boju"
@@ -513,6 +960,22 @@ label fight1:
                             $ kazuma_max_attack_now = kazuma_max_attack
                             $ kazuma_min_attack_now_true = kazuma_min_attack
                             $ kazuma_max_attack_now_true = kazuma_max_attack
+
+                            if kazuma_klata == 5:
+                                show kazuma_klata zorder 11 at sojusznik2
+                            if ring == 5:
+                                show kazuma_ring zorder 11 at sojusznik2
+                            if zloty == 5:
+                                show kazuma_zloty zorder 11 at sojusznik2
+                            if memy == 5:
+                                show kazuma_memy zorder 11 at sojusznik2
+                            if vr == 5:
+                                show kazuma_vr zorder 11 at sojusznik2
+                            if ziemia == 5:
+                                show kazuma_ziemia zorder 11 at sojusznik2
+                            if nogi == 5:
+                                show kazuma_nogi zorder 11 at sojusznik2
+                                
                             show kazuma fight zorder 10 at sojusznik2
                             show screen kazuma2_stats
                             kazuma "Gotowy do boju"
@@ -541,6 +1004,22 @@ label fight1:
                             $ tarczownik_max_attack_now = tarczownik_max_attack
                             $ tarczownik_min_attack_now_true = tarczownik_min_attack
                             $ tarczownik_max_attack_now_true = tarczownik_max_attack
+
+                            if tarczownik_klata == 6:
+                                show tarczownik_klata zorder 11 at sojusznik2
+                            if ring == 6:
+                                show tarczownik_ring zorder 11 at sojusznik2
+                            if zloty == 6:
+                                show tarczownik_zloty zorder 11 at sojusznik2
+                            if memy == 6:
+                                show tarczownik_memy zorder 11 at sojusznik2
+                            if vr == 6:
+                                show tarczownik_vr zorder 11 at sojusznik2
+                            if ziemia == 6:
+                                show tarczownik_ziemia zorder 11 at sojusznik2
+                            if nogi == 6:
+                                show tarczownik_nogi zorder 11 at sojusznik2
+                                
                             show tarczownik fight zorder 10 at sojusznik2
                             show screen tarczownik2_stats
                             tarczownik "Gotowy do boju"
@@ -556,6 +1035,22 @@ label fight1:
                     $ luszcz_max_attack_now = luszcz_max_attack
                     $ luszcz_min_attack_now_true = luszcz_min_attack
                     $ luszcz_max_attack_now_true = luszcz_max_attack
+
+                    if luszcz_klata == 2:
+                        show luszcz_klata zorder 11 at sojusznik3
+                    if ring == 2:
+                        show luszcz_ring zorder 11 at sojusznik3
+                    if zloty == 2:
+                        show luszcz_zloty zorder 11 at sojusznik3
+                    if memy == 2:
+                        show luszcz_memy zorder 11 at sojusznik3
+                    if vr == 2:
+                        show luszcz_vr zorder 11 at sojusznik3
+                    if ziemia == 2:
+                        show luszcz_ziemia zorder 11 at sojusznik3
+                    if nogi == 2:
+                        show luszcz_nogi zorder 11 at sojusznik3
+
                     show luszcz fight zorder 10 at sojusznik3
                     show screen luszcz3_stats
                     luszcz "Gotowy do boju"
@@ -674,6 +1169,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -690,6 +1192,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -706,6 +1215,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -727,6 +1243,13 @@ label fight1:
             hide ekdplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -740,6 +1263,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -756,6 +1286,13 @@ label fight1:
             hide air_strike_shield3
             hide shield_prison
             hide tarczownik
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -951,6 +1488,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -967,6 +1511,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -983,6 +1534,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -1004,6 +1562,13 @@ label fight1:
             hide ekdplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -1017,6 +1582,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -1033,6 +1605,13 @@ label fight1:
             hide air_strike_shield3
             hide shield_prison
             hide tarczownik
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -5274,6 +5853,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -5290,6 +5876,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -5306,6 +5899,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -5327,6 +5927,13 @@ label fight1:
             hide eksplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -5340,6 +5947,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -5355,6 +5969,13 @@ label fight1:
             hide air_strike_shield2
             hide air_strike_shield3
             hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -8074,6 +8695,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -8090,6 +8718,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -8106,6 +8741,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -8127,6 +8769,13 @@ label fight1:
             hide eksplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -8140,6 +8789,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -8155,6 +8811,13 @@ label fight1:
             hide air_strike_shield2
             hide air_strike_shield3
             hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -10878,6 +11541,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -10894,6 +11564,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -10910,6 +11587,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -10931,6 +11615,13 @@ label fight1:
             hide eksplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -10944,6 +11635,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -10962,6 +11660,13 @@ label fight1:
             hide air_strike_shield2
             hide air_strike_shield3
             hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -12793,6 +13498,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -12809,6 +13521,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -12825,6 +13544,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -12846,6 +13572,13 @@ label fight1:
             hide eksplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -12859,6 +13592,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -12877,6 +13617,13 @@ label fight1:
             hide air_strike_shield2
             hide air_strike_shield3
             hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -13672,6 +14419,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -13688,6 +14442,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -13704,6 +14465,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -13725,6 +14493,13 @@ label fight1:
             hide eksplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -13738,6 +14513,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -13753,6 +14535,13 @@ label fight1:
             hide air_strike_shield2
             hide air_strike_shield3
             hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -14543,6 +15332,13 @@ label fight1:
             jump wygranko_fight1
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
             hide plamka1
             hide luszcz
             hide tarcza1
@@ -14559,6 +15355,13 @@ label fight1:
             hide plamka2
             hide eminem
             hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
@@ -14575,6 +15378,13 @@ label fight1:
             hide uszy3
             hide urban
             hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
             hide screen urban1_stats
             hide screen urban2_stats
             hide screen urban3_stats
@@ -14596,6 +15406,13 @@ label fight1:
             hide eksplozja3
             hide zyd
             hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
             hide screen zyd1_stats
             hide screen zyd2_stats
             hide screen zyd3_stats
@@ -14609,6 +15426,13 @@ label fight1:
             hide plamka5
             hide kazuma
             hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
             hide screen kazuma1_stats
             hide screen kazuma2_stats
             hide screen kazuma3_stats
@@ -14624,6 +15448,13 @@ label fight1:
             hide air_strike_shield2
             hide air_strike_shield3
             hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
                 $ luszcz_obrona = 0
@@ -15380,6 +16211,48 @@ label fight1:
         hide kibol1_weapon
         hide akane_weapon
         hide kibol2_weapon
+        hide luszcz_vr
+        hide luszcz_klata
+        hide luszcz_memy
+        hide luszcz_ring
+        hide luszcz_ziemia
+        hide luszcz_nogi
+        hide luszcz_zloty
+        hide eminem_vr
+        hide eminem_klata
+        hide eminem_memy
+        hide eminem_ring
+        hide eminem_ziemia
+        hide eminem_nogi
+        hide eminem_zloty
+        hide urban_vr
+        hide urban_klata
+        hide urban_memy
+        hide urban_ring
+        hide urban_ziemia
+        hide urban_nogi
+        hide urban_zloty
+        hide zyd_vr
+        hide zyd_klata
+        hide zyd_memy
+        hide zyd_ring
+        hide zyd_ziemia
+        hide zyd_nogi
+        hide zyd_zloty
+        hide kazuma_vr
+        hide kazuma_klata
+        hide kazuma_memy
+        hide kazuma_ring
+        hide kazuma_ziemia
+        hide kazuma_nogi
+        hide kazuma_zloty
+        hide tarczownik_vr
+        hide tarczownik_klata
+        hide tarczownik_memy
+        hide tarczownik_ring
+        hide tarczownik_ziemia
+        hide tarczownik_nogi
+        hide tarczownik_zloty
         hide screen kibol1_stats
         hide screen akane_stats
         hide screen kibol2_stats
@@ -15577,6 +16450,48 @@ label fight1:
         hide kibol1_weapon
         hide akane_weapon
         hide kibol2_weapon
+        hide luszcz_vr
+        hide luszcz_klata
+        hide luszcz_memy
+        hide luszcz_ring
+        hide luszcz_ziemia
+        hide luszcz_nogi
+        hide luszcz_zloty
+        hide eminem_vr
+        hide eminem_klata
+        hide eminem_memy
+        hide eminem_ring
+        hide eminem_ziemia
+        hide eminem_nogi
+        hide eminem_zloty
+        hide urban_vr
+        hide urban_klata
+        hide urban_memy
+        hide urban_ring
+        hide urban_ziemia
+        hide urban_nogi
+        hide urban_zloty
+        hide zyd_vr
+        hide zyd_klata
+        hide zyd_memy
+        hide zyd_ring
+        hide zyd_ziemia
+        hide zyd_nogi
+        hide zyd_zloty
+        hide kazuma_vr
+        hide kazuma_klata
+        hide kazuma_memy
+        hide kazuma_ring
+        hide kazuma_ziemia
+        hide kazuma_nogi
+        hide kazuma_zloty
+        hide tarczownik_vr
+        hide tarczownik_klata
+        hide tarczownik_memy
+        hide tarczownik_ring
+        hide tarczownik_ziemia
+        hide tarczownik_nogi
+        hide tarczownik_zloty
 
         hide screen luszcz1_stats
         hide screen luszcz2_stats
