@@ -1089,6 +1089,12 @@ label fight1:
                     jump start_fight1
     
     label start_fight1:
+        hide eminem_pierscien
+        hide luszcz_pierscien
+        hide urban_pierscien
+        hide zyd_pierscien
+        hide kazuma_pierscien
+        hide tarczownik_pierscien
         hide air_strike_shield1
         hide air_strike_shield2
         hide air_strike_shield3
@@ -1206,6 +1212,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -1232,6 +1239,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -1258,6 +1266,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -1287,6 +1296,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -1321,6 +1331,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -1347,6 +1358,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -1561,6 +1573,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -1587,6 +1600,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -1613,6 +1627,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -1642,6 +1657,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -1676,6 +1692,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -1702,6 +1719,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -5962,6 +5980,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -5988,6 +6007,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -6014,6 +6034,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -6043,6 +6064,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -6077,6 +6099,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -6103,6 +6126,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -8840,6 +8864,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -8866,6 +8891,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -8892,6 +8918,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -8921,6 +8948,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -8955,6 +8983,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -8981,6 +9010,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -11722,6 +11752,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -11748,6 +11779,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -11774,6 +11806,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -11803,6 +11836,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -11837,6 +11871,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -11863,6 +11898,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -11896,6 +11932,109 @@ label fight1:
 
         if ile_sojusznikow <= 0:
             jump przegranko_fight1
+
+        if ring == 2 and luszcz_wybrany > 0 and luszcz_hp_now > 0:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                $ luszcz_obrona = 2
+                if luszcz_wybrany == 1:
+                    show luszcz_pierscien zorder 12 at sojusznik1
+            
+                if luszcz_wybrany == 2:
+                    show luszcz_pierscien zorder 12 at sojusznik2
+            
+                if luszcz_wybrany == 3:
+                    show luszcz_pierscien zorder 12 at sojusznik3
+                
+                play sound "audio/sfx/gandalf.mp3"
+
+                "{i}Pierścień z Władcy Pierścieni się uaktywnił i zapewnił swojemu posiadaczowi obronę{/i}"
+        
+        if ring == 7 and eminem_wybrany > 0 and eminem_hp_now > 0:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                $ eminem_obrona = 2
+                if eminem_wybrany == 1:
+                    show eminem_pierscien zorder 12 at sojusznik1
+            
+                if eminem_wybrany == 2:
+                    show eminem_pierscien zorder 12 at sojusznik2
+            
+                if eminem_wybrany == 3:
+                    show eminem_pierscien zorder 12 at sojusznik3
+                
+                play sound "audio/sfx/gandalf.mp3"
+
+                "{i}Pierścień z Władcy Pierścieni się uaktywnił i zapewnił swojemu posiadaczowi obronę{/i}"
+        
+        if ring == 3 and urban_wybrany > 0 and urban_hp_now > 0:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                $ urban_obrona = 2
+                if urban_wybrany == 1:
+                    show urban_pierscien zorder 12 at sojusznik1
+            
+                if urban_wybrany == 2:
+                    show urban_pierscien zorder 12 at sojusznik2
+            
+                if urban_wybrany == 3:
+                    show urban_pierscien zorder 12 at sojusznik3
+                
+                play sound "audio/sfx/gandalf.mp3"
+
+                "{i}Pierścień z Władcy Pierścieni się uaktywnił i zapewnił swojemu posiadaczowi obronę{/i}"
+        
+        if ring == 4 and zyd_wybrany > 0 and zyd_hp_now > 0:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                $ zyd_obrona = 2
+                if zyd_wybrany == 1:
+                    show zyd_pierscien zorder 12 at sojusznik1
+            
+                if zyd_wybrany == 2:
+                    show zyd_pierscien zorder 12 at sojusznik2
+            
+                if zyd_wybrany == 3:
+                    show zyd_pierscien zorder 12 at sojusznik3
+                
+                play sound "audio/sfx/gandalf.mp3"
+
+                "{i}Pierścień z Władcy Pierścieni się uaktywnił i zapewnił swojemu posiadaczowi obronę{/i}"
+        
+        if ring == 5 and kazuma_wybrany > 0 and kazuma_hp_now > 0:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                $ kazuma_obrona = 2
+                if kazuma_wybrany == 1:
+                    show kazuma_pierscien zorder 12 at sojusznik1
+            
+                if kazuma_wybrany == 2:
+                    show kazuma_pierscien zorder 12 at sojusznik2
+            
+                if kazuma_wybrany == 3:
+                    show kazuma_pierscien zorder 12 at sojusznik3
+                
+                play sound "audio/sfx/gandalf.mp3"
+
+                "{i}Pierścień z Władcy Pierścieni się uaktywnił i zapewnił swojemu posiadaczowi obronę{/i}"
+        
+        if ring == 6 and tarczownik_wybrany > 0 and tarczownik_hp_now > 0:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                $ tarczownik_obrona = 2
+                if tarczownik_wybrany == 1:
+                    show tarczownik_pierscien zorder 12 at sojusznik1
+            
+                if tarczownik_wybrany == 2:
+                    show tarczownik_pierscien zorder 12 at sojusznik2
+            
+                if tarczownik_wybrany == 3:
+                    show tarczownik_pierscien zorder 12 at sojusznik3
+                
+                play sound "audio/sfx/gandalf.mp3"
+
+                "{i}Pierścień z Władcy Pierścieni się uaktywnił i zapewnił swojemu posiadaczowi obronę{/i}"
+
     
         if vr == 2 and miecz_swietlny == 2 and luszcz_weapon >= 1 and luszcz_obrona == 0 and luszcz_hp_now > 0 and luszcz_wybrany > 0:
             if luszcz_wybrany == 1:
@@ -13715,6 +13854,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -13741,6 +13881,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -13767,6 +13908,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -13796,6 +13938,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -13830,6 +13973,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -13856,6 +14000,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -14825,6 +14970,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -14851,6 +14997,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -14877,6 +15024,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -14906,6 +15054,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -14940,6 +15089,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -14966,6 +15116,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -15926,6 +16077,7 @@ label fight1:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
             hide luszcz_memy
@@ -15952,6 +16104,7 @@ label fight1:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide eminem_pierscien
             hide plamka2
             hide eminem
             hide tarcza2
@@ -15978,6 +16131,7 @@ label fight1:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide urban_pierscien
             hide plamka3
             hide uszy1
             hide uszy2
@@ -16007,6 +16161,7 @@ label fight1:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide zyd_pierscien
             hide plamka4
             hide red_button
             hide pager1
@@ -16041,6 +16196,7 @@ label fight1:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -16067,6 +16223,7 @@ label fight1:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
             hide air_strike_shield2
@@ -16927,6 +17084,12 @@ label fight1:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        hide eminem_pierscien
+        hide luszcz_pierscien
+        hide urban_pierscien
+        hide zyd_pierscien
+        hide kazuma_pierscien
+        hide tarczownik_pierscien
         hide plamka1
         hide plamka2
         hide plamka3
@@ -17173,6 +17336,12 @@ label fight1:
 
 
     label wygranko_fight1:
+        hide eminem_pierscien
+        hide luszcz_pierscien
+        hide urban_pierscien
+        hide zyd_pierscien
+        hide kazuma_pierscien
+        hide tarczownik_pierscien
         hide plamka1
         hide plamka2
         hide plamka3
