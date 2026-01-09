@@ -456,6 +456,13 @@ label fight_stats:
     default kazuma_drpepper = 0
     default tarczownik_drpepper = 0
 
+    default luszcz_zloty_czlowiek = 0
+    default eminem_zloty_czlowiek = 0
+    default urban_zloty_czlowiek = 0
+    default zyd_zloty_czlowiek = 0
+    default kazuma_zloty_czlowiek = 0
+    default tarczownik_zloty_czlowiek = 0
+
 
 label prolog_decyzje:
     define ofiara = 0
@@ -805,7 +812,7 @@ label start:
                 pass
 
         "{i}O bogowie walka{/i}"
-        
         jump fight1
+        
     label after_fight1:
         "{i}Gratulacje wygrałeś{/i}"

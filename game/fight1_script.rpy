@@ -120,6 +120,7 @@ label fight1:
                             show luszcz_ring zorder 11 at sojusznik1
                         if zloty == 2:
                             show luszcz_zloty zorder 11 at sojusznik1
+                            $ luszcz_zloty_czlowiek = 1
                         if memy == 2:
                             show luszcz_memy zorder 11 at sojusznik1
                         if vr == 2:
@@ -148,6 +149,7 @@ label fight1:
                             show eminem_ring zorder 11 at sojusznik1
                         if zloty == 7:
                             show eminem_zloty zorder 11 at sojusznik1
+                            $ eminem_zloty_czlowiek = 1
                         if memy == 7:
                             show eminem_memy zorder 11 at sojusznik1
                         if vr == 7:
@@ -176,6 +178,7 @@ label fight1:
                             show urban_ring zorder 11 at sojusznik1
                         if zloty == 3:
                             show urban_zloty zorder 11 at sojusznik1
+                            $ urban_zloty_czlowiek = 1
                         if memy == 3:
                             show urban_memy zorder 11 at sojusznik1
                         if vr == 3:
@@ -204,6 +207,7 @@ label fight1:
                             show zyd_ring zorder 11 at sojusznik1
                         if zloty == 4:
                             show zyd_zloty zorder 11 at sojusznik1
+                            $ zyd_zloty_czlowiek = 1
                         if memy == 4:
                             show zyd_memy zorder 11 at sojusznik1
                         if vr == 4:
@@ -232,6 +236,7 @@ label fight1:
                             show kazuma_ring zorder 11 at sojusznik1
                         if zloty == 5:
                             show kazuma_zloty zorder 11 at sojusznik1
+                            $ kazuma_zloty_czlowiek = 1
                         if memy == 5:
                             show kazuma_memy zorder 11 at sojusznik1
                         if vr == 5:
@@ -260,6 +265,7 @@ label fight1:
                             show tarczownik_ring zorder 11 at sojusznik1
                         if zloty == 6:
                             show tarczownik_zloty zorder 11 at sojusznik1
+                            $ tarczownik_zloty_czlowiek = 1
                         if memy == 6:
                             show tarczownik_memy zorder 11 at sojusznik1
                         if vr == 6:
@@ -291,6 +297,7 @@ label fight1:
                             show luszcz_ring zorder 11 at sojusznik3
                         if zloty == 2:
                             show luszcz_zloty zorder 11 at sojusznik3
+                            $ luszcz_zloty_czlowiek = 1
                         if memy == 2:
                             show luszcz_memy zorder 11 at sojusznik3
                         if vr == 2:
@@ -319,6 +326,7 @@ label fight1:
                             show eminem_ring zorder 11 at sojusznik3
                         if zloty == 7:
                             show eminem_zloty zorder 11 at sojusznik3
+                            $ eminem_zloty_czlowiek = 1
                         if memy == 7:
                             show eminem_memy zorder 11 at sojusznik3
                         if vr == 7:
@@ -347,6 +355,7 @@ label fight1:
                             show urban_ring zorder 11 at sojusznik3
                         if zloty == 3:
                             show urban_zloty zorder 11 at sojusznik3
+                            $ urban_zloty_czlowiek = 1
                         if memy == 3:
                             show urban_memy zorder 11 at sojusznik3
                         if vr == 3:
@@ -375,6 +384,7 @@ label fight1:
                             show zyd_ring zorder 11 at sojusznik3
                         if zloty == 4:
                             show zyd_zloty zorder 11 at sojusznik3
+                            $ zyd_zloty_czlowiek = 1
                         if memy == 4:
                             show zyd_memy zorder 11 at sojusznik3
                         if vr == 4:
@@ -403,6 +413,7 @@ label fight1:
                             show kazuma_ring zorder 11 at sojusznik3
                         if zloty == 5:
                             show kazuma_zloty zorder 11 at sojusznik3
+                            $ kazuma_zloty_czlowiek = 1
                         if memy == 5:
                             show kazuma_memy zorder 11 at sojusznik3
                         if vr == 5:
@@ -447,6 +458,7 @@ label fight1:
                             show tarczownik_ring zorder 11 at sojusznik3
                         if zloty == 6:
                             show tarczownik_zloty zorder 11 at sojusznik3
+                            $ tarczownik_zloty_czlowiek = 1
                         if memy == 6:
                             show tarczownik_memy zorder 11 at sojusznik3
                         if vr == 6:
@@ -477,6 +489,7 @@ label fight1:
                             show luszcz_ring zorder 11 at sojusznik2
                         if zloty == 2:
                             show luszcz_zloty zorder 11 at sojusznik2
+                            $ luszcz_zloty_czlowiek = 1
                         if memy == 2:
                             show luszcz_memy zorder 11 at sojusznik2
                         if vr == 2:
@@ -505,6 +518,7 @@ label fight1:
                             show eminem_ring zorder 11 at sojusznik2
                         if zloty == 7:
                             show eminem_zloty zorder 11 at sojusznik2
+                            $ eminem_zloty_czlowiek = 1
                         if memy == 7:
                             show eminem_memy zorder 11 at sojusznik2
                         if vr == 7:
@@ -533,6 +547,7 @@ label fight1:
                             show urban_ring zorder 11 at sojusznik2
                         if zloty == 3:
                             show urban_zloty zorder 11 at sojusznik2
+                            $ urban_zloty_czlowiek = 1
                         if memy == 3:
                             show urban_memy zorder 11 at sojusznik2
                         if vr == 3:
@@ -561,6 +576,7 @@ label fight1:
                             show zyd_ring zorder 11 at sojusznik2
                         if zloty == 4:
                             show zyd_zloty zorder 11 at sojusznik2
+                            $ zyd_zloty_czlowiek = 1
                         if memy == 4:
                             show zyd_memy zorder 11 at sojusznik2
                         if vr == 4:
@@ -589,6 +605,7 @@ label fight1:
                             show kazuma_ring zorder 11 at sojusznik2
                         if zloty == 5:
                             show kazuma_zloty zorder 11 at sojusznik2
+                            $ kazuma_zloty_czlowiek = 1
                         if memy == 5:
                             show kazuma_memy zorder 11 at sojusznik2
                         if vr == 5:
@@ -648,6 +665,7 @@ label fight1:
                             show tarczownik_ring zorder 11 at sojusznik2
                         if zloty == 6:
                             show tarczownik_zloty zorder 11 at sojusznik2
+                            $ tarczownik_zloty_czlowiek = 1
                         if memy == 6:
                             show tarczownik_memy zorder 11 at sojusznik2
                         if vr == 6:
@@ -685,6 +703,7 @@ label fight1:
                                 show luszcz_ring zorder 11 at sojusznik1
                             if zloty == 2:
                                 show luszcz_zloty zorder 11 at sojusznik1
+                                $ luszcz_zloty_czlowiek = 1
                             if memy == 2:
                                 show luszcz_memy zorder 11 at sojusznik1
                             if vr == 2:
@@ -712,6 +731,7 @@ label fight1:
                                 show eminem_ring zorder 11 at sojusznik1
                             if zloty == 7:
                                 show eminem_zloty zorder 11 at sojusznik1
+                                $ eminem_zloty_czlowiek = 1
                             if memy == 7:
                                 show eminem_memy zorder 11 at sojusznik1
                             if vr == 7:
@@ -741,6 +761,7 @@ label fight1:
                                 show urban_ring zorder 11 at sojusznik1
                             if zloty == 3:
                                 show urban_zloty zorder 11 at sojusznik1
+                                $ urban_zloty_czlowiek = 1
                             if memy == 3:
                                 show urban_memy zorder 11 at sojusznik1
                             if vr == 3:
@@ -768,6 +789,7 @@ label fight1:
                                 show zyd_ring zorder 11 at sojusznik1
                             if zloty == 4:
                                 show zyd_zloty zorder 11 at sojusznik1
+                                $ zyd_zloty_czlowiek = 1
                             if memy == 4:
                                 show zyd_memy zorder 11 at sojusznik1
                             if vr == 4:
@@ -796,6 +818,7 @@ label fight1:
                                 show kazuma_ring zorder 11 at sojusznik1
                             if zloty == 5:
                                 show kazuma_zloty zorder 11 at sojusznik1
+                                $ kazuma_zloty_czlowiek = 1
                             if memy == 5:
                                 show kazuma_memy zorder 11 at sojusznik1
                             if vr == 5:
@@ -824,6 +847,7 @@ label fight1:
                                 show tarczownik_ring zorder 11 at sojusznik1
                             if zloty == 6:
                                 show tarczownik_zloty zorder 11 at sojusznik1
+                                $ tarczownik_zloty_czlowiek = 1
                             if memy == 6:
                                 show tarczownik_memy zorder 11 at sojusznik1
                             if vr == 6:
@@ -856,6 +880,7 @@ label fight1:
                                 show luszcz_ring zorder 11 at sojusznik2
                             if zloty == 2:
                                 show luszcz_zloty zorder 11 at sojusznik2
+                                $ luszcz_zloty_czlowiek = 1
                             if memy == 2:
                                 show luszcz_memy zorder 11 at sojusznik2
                             if vr == 2:
@@ -883,6 +908,7 @@ label fight1:
                                 show eminem_ring zorder 11 at sojusznik2
                             if zloty == 7:
                                 show eminem_zloty zorder 11 at sojusznik2
+                                $ eminem_zloty_czlowiek = 1
                             if memy == 7:
                                 show eminem_memy zorder 11 at sojusznik2
                             if vr == 7:
@@ -911,6 +937,7 @@ label fight1:
                                 show urban_ring zorder 11 at sojusznik2
                             if zloty == 3:
                                 show urban_zloty zorder 11 at sojusznik2
+                                $ urban_zloty_czlowiek = 1
                             if memy == 3:
                                 show urban_memy zorder 11 at sojusznik2
                             if vr == 3:
@@ -939,6 +966,7 @@ label fight1:
                                 show zyd_ring zorder 11 at sojusznik2
                             if zloty == 4:
                                 show zyd_zloty zorder 11 at sojusznik2
+                                $ zyd_zloty_czlowiek = 1
                             if memy == 4:
                                 show zyd_memy zorder 11 at sojusznik2
                             if vr == 4:
@@ -967,6 +995,7 @@ label fight1:
                                 show kazuma_ring zorder 11 at sojusznik2
                             if zloty == 5:
                                 show kazuma_zloty zorder 11 at sojusznik2
+                                $ kazuma_zloty_czlowiek = 1
                             if memy == 5:
                                 show kazuma_memy zorder 11 at sojusznik2
                             if vr == 5:
@@ -1011,6 +1040,7 @@ label fight1:
                                 show tarczownik_ring zorder 11 at sojusznik2
                             if zloty == 6:
                                 show tarczownik_zloty zorder 11 at sojusznik2
+                                $ tarczownik_zloty_czlowiek = 1
                             if memy == 6:
                                 show tarczownik_memy zorder 11 at sojusznik2
                             if vr == 6:
@@ -1042,6 +1072,7 @@ label fight1:
                         show luszcz_ring zorder 11 at sojusznik3
                     if zloty == 2:
                         show luszcz_zloty zorder 11 at sojusznik3
+                        $ luszcz_zloty_czlowiek = 1
                     if memy == 2:
                         show luszcz_memy zorder 11 at sojusznik3
                     if vr == 2:
@@ -1167,6 +1198,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -1486,6 +1523,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -5851,6 +5894,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -8693,6 +8742,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -11539,6 +11594,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -13496,6 +13557,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -13673,8 +13740,17 @@ label fight1:
                 show kibol1_weapon zorder 15 at weapon_wrog1  
             else:
                 show reka6 zorder 15 at weapon_wrog1
-
+            
             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+            if memy == 3:
+                $ kostka = renpy.random.randint(1, 20)
+                if kostka <= 3:
+                    $ kibol1_hp_now -= kibol1_attack
+                    play sound "audio/sfx/obrona.mp3"
+                    "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                    jump faza15
+
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -13733,6 +13809,14 @@ label fight1:
                         if kostka >= 2:
                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                            if memy == 2:
+                                $ kostka = renpy.random.randint(1, 20)
+                                if kostka <= 3:
+                                    $ kibol1_hp_now -= kibol1_attack
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                    jump faza15
+
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -13765,6 +13849,14 @@ label fight1:
                             if kostka >= 3:
                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ kibol1_hp_now -= kibol1_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                        jump faza15
+
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -13795,6 +13887,14 @@ label fight1:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ kibol1_hp_now -= kibol1_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                        jump faza15
                             
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -13832,6 +13932,14 @@ label fight1:
                             if kostka >= 2:
                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                if memy == 3:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ kibol1_hp_now -= kibol1_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                        jump faza15
+
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -13864,6 +13972,14 @@ label fight1:
                                 if kostka >= 3:
                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ kibol1_hp_now -= kibol1_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                            jump faza15
+
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -13894,6 +14010,14 @@ label fight1:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 5:
                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ kibol1_hp_now -= kibol1_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                            jump faza15
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -13931,6 +14055,14 @@ label fight1:
                                 if kostka >= 2:
                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                    if memy == 4:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ kibol1_hp_now -= kibol1_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                            jump faza15
+
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -13963,6 +14095,14 @@ label fight1:
                                     if kostka >= 3:
                                         $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ kibol1_hp_now -= kibol1_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                jump faza15
+
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -13993,6 +14133,14 @@ label fight1:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 5:
                                         $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ kibol1_hp_now -= kibol1_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                jump faza15
                                         
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -14030,6 +14178,14 @@ label fight1:
                                     if kostka >= 2:
                                         $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                        if memy == 5:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ kibol1_hp_now -= kibol1_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                jump faza15
+
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -14062,6 +14218,14 @@ label fight1:
                                         if kostka >= 3:
                                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ kibol1_hp_now -= kibol1_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                    jump faza15
+
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -14092,6 +14256,14 @@ label fight1:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 5:
                                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ kibol1_hp_now -= kibol1_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                    jump faza15
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -14129,6 +14301,14 @@ label fight1:
                                         if kostka >= 2:
                                             $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                            if memy == 7:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ kibol1_hp_now -= kibol1_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                    jump faza15
+
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -14161,6 +14341,14 @@ label fight1:
                                             if kostka >= 3:
                                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ kibol1_hp_now -= kibol1_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                        jump faza15
+
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -14191,6 +14379,14 @@ label fight1:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 5:
                                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ kibol1_hp_now -= kibol1_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                        jump faza15
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -14228,6 +14424,14 @@ label fight1:
                                             if kostka >= 2:
                                                 $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                                if memy == 6:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ kibol1_hp_now -= kibol1_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                        jump faza15
+
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -14260,6 +14464,14 @@ label fight1:
                                                 if kostka >= 3:
                                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
 
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ kibol1_hp_now -= kibol1_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                            jump faza15
+
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 1 został zablokowany{/i}"
@@ -14290,6 +14502,14 @@ label fight1:
                                                 $ kostka = renpy.random.randint(1, 5)
                                                 if kostka >= 5:
                                                     $ kibol1_attack = renpy.random.randint(kibol1_min_attack_now, kibol1_max_attack_now)
+
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ kibol1_hp_now -= kibol1_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
+                                                            jump faza15
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -14417,6 +14637,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -14582,6 +14808,14 @@ label fight1:
                 show reka7 zorder 15 at weapon_wrog3
             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+            if memy == 3:
+                $ kostka = renpy.random.randint(1, 20)
+                if kostka <= 3:
+                    $ akane_hp_now -= akane_attack
+                    play sound "audio/sfx/obrona.mp3"
+                    "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                    jump faza16
+
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Akane został zablokowany{/i}"
@@ -14646,6 +14880,14 @@ label fight1:
                         if kostka >= 2:
                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                            if memy == 2:
+                                $ kostka = renpy.random.randint(1, 20)
+                                if kostka <= 3:
+                                    $ akane_hp_now -= akane_attack
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                    jump faza16
+
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Akane został zablokowany{/i}"
@@ -14678,6 +14920,14 @@ label fight1:
                             if kostka >= 3:
                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ akane_hp_now -= akane_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                        jump faza16
+
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Akane został zablokowany{/i}"
@@ -14708,6 +14958,14 @@ label fight1:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ akane_hp_now -= akane_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                        jump faza16
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -14745,6 +15003,14 @@ label fight1:
                             if kostka >= 2:
                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                if memy == 3:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ akane_hp_now -= akane_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                        jump faza16
+
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Akane został zablokowany{/i}"
@@ -14777,6 +15043,14 @@ label fight1:
                                 if kostka >= 3:
                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ akane_hp_now -= akane_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                            jump faza16
+
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Akane został zablokowany{/i}"
@@ -14807,6 +15081,14 @@ label fight1:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 5:
                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ akane_hp_now -= akane_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                            jump faza16
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -14844,6 +15126,14 @@ label fight1:
                                 if kostka >= 2:
                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                    if memy == 4:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ akane_hp_now -= akane_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                            jump faza16
+
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Akane został zablokowany{/i}"
@@ -14876,6 +15166,14 @@ label fight1:
                                     if kostka >= 3:
                                         $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ akane_hp_now -= akane_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                jump faza16
+
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Akane został zablokowany{/i}"
@@ -14906,6 +15204,14 @@ label fight1:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 5:
                                         $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ akane_hp_now -= akane_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                jump faza16
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -14943,6 +15249,14 @@ label fight1:
                                     if kostka >= 2:
                                         $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                        if memy == 5:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ akane_hp_now -= akane_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                jump faza16
+
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Akane został zablokowany{/i}"
@@ -14975,6 +15289,14 @@ label fight1:
                                         if kostka >= 3:
                                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ akane_hp_now -= akane_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                    jump faza16
+
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Akane został zablokowany{/i}"
@@ -15005,6 +15327,14 @@ label fight1:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 5:
                                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ akane_hp_now -= akane_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                    jump faza16
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -15042,6 +15372,14 @@ label fight1:
                                         if kostka >= 2:
                                             $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                            if memy == 7:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ akane_hp_now -= akane_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                    jump faza16
+
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Akane został zablokowany{/i}"
@@ -15074,6 +15412,14 @@ label fight1:
                                             if kostka >= 3:
                                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ akane_hp_now -= akane_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                        jump faza16
+
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Akane został zablokowany{/i}"
@@ -15104,6 +15450,14 @@ label fight1:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 5:
                                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ akane_hp_now -= akane_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                        jump faza16
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -15141,6 +15495,14 @@ label fight1:
                                             if kostka >= 2:
                                                 $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                                if memy == 6:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ akane_hp_now -= akane_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                        jump faza16
+
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Akane został zablokowany{/i}"
@@ -15173,6 +15535,14 @@ label fight1:
                                                 if kostka >= 3:
                                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
 
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ akane_hp_now -= akane_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                            jump faza16
+
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Akane został zablokowany{/i}"
@@ -15203,6 +15573,14 @@ label fight1:
                                                 $ kostka = renpy.random.randint(1, 5)
                                                 if kostka >= 5:
                                                     $ akane_attack = renpy.random.randint(akane_min_attack_now, akane_max_attack_now)
+
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ akane_hp_now -= akane_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
+                                                            jump faza16
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -15330,6 +15708,12 @@ label fight1:
         
         if ile_wrogow <= 0:
             jump wygranko_fight1
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
             hide luszcz_vr
@@ -15495,6 +15879,14 @@ label fight1:
                 show reka8 zorder 15 at weapon_wrog2
             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+            if memy == 3:
+                $ kostka = renpy.random.randint(1, 20)
+                if kostka <= 3:
+                    $ kibol2_hp_now -= kibol2_attack
+                    play sound "audio/sfx/obrona.mp3"
+                    "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                    jump start_fight1
+
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15558,6 +15950,14 @@ label fight1:
                         if kostka >= 2:
                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                            if memy == 2:
+                                $ kostka = renpy.random.randint(1, 20)
+                                if kostka <= 3:
+                                    $ kibol2_hp_now -= kibol2_attack
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                    jump start_fight1
+
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15590,6 +15990,14 @@ label fight1:
                             if kostka >= 3:
                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ kibol2_hp_now -= kibol2_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                        jump start_fight1
+
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15620,6 +16028,14 @@ label fight1:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ kibol2_hp_now -= kibol2_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                        jump start_fight1
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -15657,6 +16073,14 @@ label fight1:
                             if kostka >= 2:
                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                if memy == 3:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ kibol2_hp_now -= kibol2_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                        jump start_fight1
+
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15689,6 +16113,14 @@ label fight1:
                                 if kostka >= 3:
                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ kibol2_hp_now -= kibol2_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                            jump start_fight1
+
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15719,6 +16151,14 @@ label fight1:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 5:
                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ kibol2_hp_now -= kibol2_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                            jump start_fight1
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -15756,6 +16196,14 @@ label fight1:
                                 if kostka >= 2:
                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                    if memy == 4:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ kibol2_hp_now -= kibol2_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                            jump start_fight1
+
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15788,6 +16236,14 @@ label fight1:
                                     if kostka >= 3:
                                         $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ kibol2_hp_now -= kibol2_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                jump start_fight1
+
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15818,6 +16274,14 @@ label fight1:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 5:
                                         $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ kibol2_hp_now -= kibol2_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                jump start_fight1
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -15855,6 +16319,14 @@ label fight1:
                                     if kostka >= 2:
                                         $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                        if memy == 5:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ kibol2_hp_now -= kibol2_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                jump start_fight1
+
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15887,6 +16359,14 @@ label fight1:
                                         if kostka >= 3:
                                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ kibol2_hp_now -= kibol2_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                    jump start_fight1
+
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15917,6 +16397,14 @@ label fight1:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 5:
                                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ kibol2_hp_now -= kibol2_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                    jump start_fight1
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -15954,6 +16442,14 @@ label fight1:
                                         if kostka >= 2:
                                             $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                            if memy == 7:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ kibol2_hp_now -= kibol2_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                    jump start_fight1
+
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -15986,6 +16482,14 @@ label fight1:
                                             if kostka >= 3:
                                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ kibol2_hp_now -= kibol2_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                        jump start_fight1
+
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -16016,6 +16520,14 @@ label fight1:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 5:
                                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ kibol2_hp_now -= kibol2_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                        jump start_fight1
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -16053,6 +16565,14 @@ label fight1:
                                             if kostka >= 2:
                                                 $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                                if memy == 6:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ kibol2_hp_now -= kibol2_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                        jump start_fight1
+
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -16085,6 +16605,14 @@ label fight1:
                                                 if kostka >= 3:
                                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
 
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ kibol2_hp_now -= kibol2_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                            jump start_fight1
+
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 2 został zablokowany{/i}"
@@ -16115,6 +16643,14 @@ label fight1:
                                                 $ kostka = renpy.random.randint(1, 5)
                                                 if kostka >= 5:
                                                     $ kibol2_attack = renpy.random.randint(kibol2_min_attack_now, kibol2_max_attack_now)
+
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ kibol2_hp_now -= kibol2_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
+                                                            jump start_fight1
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -16307,6 +16843,13 @@ label fight1:
                 $ zyd_obrona = 0
                 $ kazuma_obrona = 0
                 $ tarczownik_obrona = 0
+
+                $ luszcz_zloty_czlowiek = 0
+                $ eminem_zloty_czlowiek = 0
+                $ urban_zloty_czlowiek = 0
+                $ zyd_zloty_czlowiek = 0
+                $ kazuma_zloty_czlowiek = 0
+                $ tarczownik_zloty_czlowiek = 0
 
                 $ luszcz_hp_now = luszcz_hp
                 $ luszcz_min_attack_now = luszcz_min_attack
@@ -16528,6 +17071,13 @@ label fight1:
         $ zyd_fighter = 0
         $ kazuma_fighter = 0
         $ tarczownik_fighter = 0
+
+        $ luszcz_zloty_czlowiek = 0
+        $ eminem_zloty_czlowiek = 0
+        $ urban_zloty_czlowiek = 0
+        $ zyd_zloty_czlowiek = 0
+        $ kazuma_zloty_czlowiek = 0
+        $ tarczownik_zloty_czlowiek = 0
 
         $ luszcz_wybrany = 0
         $ eminem_wybrany = 0
