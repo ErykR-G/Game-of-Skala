@@ -21226,6 +21226,14 @@ label fight1:
 
 
     label wygranko_fight1:
+        stop sound 
+        stop music
+        hide luszcz
+        hide eminem
+        hide kazuma
+        hide urban
+        hide tarczownik
+        hide zyd
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien

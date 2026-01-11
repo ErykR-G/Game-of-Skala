@@ -816,3 +816,4 @@ label start:
 
     label after_fight1:
         "{i}Gratulacje wygrałeś{/i}"
+        jump rynek
