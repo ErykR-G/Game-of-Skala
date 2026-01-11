@@ -4738,7 +4738,7 @@ label items11:
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
                 play sound "audio/sfx/atak.mp3"
-                "{i}Atak zadał 4 obrażenia wszystkim przeciwniką{/i}"
+                "{i}Atak zadał 4 obrażenia wszystkim przeciwnikom{/i}"
                 hide eksplozja1
                         
             else:
@@ -7062,7 +7062,7 @@ label items112:
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
                 play sound "audio/sfx/atak.mp3"
-                "{i}Atak zadał 4 obrażenia wszystkim przeciwniką{/i}"
+                "{i}Atak zadał 4 obrażenia wszystkim przeciwnikom{/i}"
                 hide eksplozja1
                         
             else:
@@ -11829,7 +11829,7 @@ label items12:
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
                 play sound "audio/sfx/atak.mp3"
-                "{i}Atak zadał 4 obrażenia wszystkim przeciwniką{/i}"
+                "{i}Atak zadał 4 obrażenia wszystkim przeciwnikom{/i}"
                 hide eksplozja1
                         
             else:
@@ -14153,7 +14153,7 @@ label items122:
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
                 play sound "audio/sfx/atak.mp3"
-                "{i}Atak zadał 4 obrażenia wszystkim przeciwniką{/i}"
+                "{i}Atak zadał 4 obrażenia wszystkim przeciwnikom{/i}"
                 hide eksplozja1
                         
             else:
@@ -18919,7 +18919,7 @@ label items13:
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
                 play sound "audio/sfx/atak.mp3"
-                "{i}Atak zadał 4 obrażenia wszystkim przeciwniką{/i}"
+                "{i}Atak zadał 4 obrażenia wszystkim przeciwnikom{/i}"
                 hide eksplozja1
                         
             else:
@@ -21243,7 +21243,7 @@ label items132:
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
                 play sound "audio/sfx/atak.mp3"
-                "{i}Atak zadał 4 obrażenia wszystkim przeciwniką{/i}"
+                "{i}Atak zadał 4 obrażenia wszystkim przeciwnikom{/i}"
                 hide eksplozja1
                         
             else:

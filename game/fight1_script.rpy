@@ -2177,7 +2177,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
@@ -3396,7 +3396,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
@@ -4126,7 +4126,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
@@ -4894,7 +4894,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
@@ -5914,7 +5914,7 @@ label fight1:
                         
                     if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                         play sound "audio/sfx/ostrza_chaosu.mp3"
-                        "{i}Atak zadał [tarczownik_attack] obrażeń wszystkim przeciwniką{/i}"
+                        "{i}Atak zadał [tarczownik_attack] obrażeń wszystkim przeciwnikom{/i}"
                         if ziemia == 6:
                             $ kostka = renpy.random.randint(1, 2)
                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -8237,7 +8237,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
@@ -9455,7 +9455,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
@@ -10185,7 +10185,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
@@ -10951,7 +10951,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
@@ -12131,7 +12131,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
@@ -13350,7 +13350,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
@@ -14080,7 +14080,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
@@ -14846,7 +14846,7 @@ label fight1:
                         
                         if kibol1_hp_now >= 1 and kibol1_obrona <= 1 or akane_hp_now >= 1 and akane_obrona <= 1 or kibol2_hp_now >= 1 and kibol2_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwniką{/i}"
+                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
