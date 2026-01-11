@@ -727,7 +727,7 @@ label start:
         $ timer += 10
 
         scene bg przed_kosciol
-        show luszcz siedzi at center
+        show luszcz neutral at center
 
         luszcz "Myślę, że ksiądz sobie przeskrobał."
         luszcz "Już widzę jak Bartóch wjeżdrza tu w swoim czołgu i wytyka palcem co zbórzyć i gdzie postawić wierzowce."
@@ -742,7 +742,12 @@ label start:
 
         hide eminem
 
-        show luszcz angry at center
+        show luszcz zly at center
+
+        luszcz "Co to ma być"
+        luszcz "Nie będzie mnie random sztórchał bez przeprosin"
+        luszcz "Oczekuję satysfakcji"
+        luszcz "Mószę go dopaść!"
 
         
 
