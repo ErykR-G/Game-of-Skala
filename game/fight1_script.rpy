@@ -3429,7 +3429,7 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban1:
+                            label urban_fight11:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if kibol1_obrona >= 2:
@@ -3451,7 +3451,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol1_obrona == 1 and stop == 3 or urban_attack == 2 and kibol1_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban1
+                                        jump urban_fight11
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -3568,7 +3568,7 @@ label fight1:
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban2:
+                            label urban_fight12:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if akane_obrona >= 2:
@@ -3590,7 +3590,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and akane_obrona == 1 and stop == 3 or urban_attack == 2 and akane_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban2
+                                        jump urban_fight12
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -3707,7 +3707,7 @@ label fight1:
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban3:
+                            label urban_fight13:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if kibol2_obrona >= 2:
@@ -3729,7 +3729,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol2_obrona == 1 and stop == 3 or urban_attack == 2 and kibol2_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban3
+                                        jump urban_fight13
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -5944,7 +5944,7 @@ label fight1:
                 
                 tarczownik "Aaaaaaaaagh!"
 
-                label losowanko_tarczownik1:
+                label losowanko_tarczownik_fight11:
                     $ kostka = renpy.random.randint(1, 3)
                     if kostka == 1:
                         if kibol1_hp_now >= 1:
@@ -6146,7 +6146,7 @@ label fight1:
 
                                     jump faza12
                                 else:
-                                    jump losowanko_tarczownik1
+                                    jump losowanko_tarczownik_fight11
 
                             else:
                                 if kibol1_hp_now <= 10:
@@ -6343,7 +6343,7 @@ label fight1:
 
                                         jump faza12
                                     else:
-                                        jump losowanko_tarczownik1
+                                        jump losowanko_tarczownik_fight11
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -6540,10 +6540,10 @@ label fight1:
 
                                         jump faza12
                                     else:
-                                        jump losowanko_tarczownik1
+                                        jump losowanko_tarczownik_fight11
 
                         else:
-                            jump losowanko_tarczownik1
+                            jump losowanko_tarczownik_fight11
                     else:
                         if kostka == 2:
                             if akane_hp_now >= 1:
@@ -6742,7 +6742,7 @@ label fight1:
 
                                         jump faza12
                                     else:
-                                        jump losowanko_tarczownik1
+                                        jump losowanko_tarczownik_fight11
 
                                 else:
                                     if akane_hp_now <= 10:
@@ -6941,7 +6941,7 @@ label fight1:
 
                                             jump faza12
                                         else:
-                                            jump losowanko_tarczownik1
+                                            jump losowanko_tarczownik_fight11
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -7140,10 +7140,10 @@ label fight1:
 
                                             jump faza12
                                         else:
-                                            jump losowanko_tarczownik1
+                                            jump losowanko_tarczownik_fight11
 
                             else:
-                                jump losowanko_tarczownik1
+                                jump losowanko_tarczownik_fight11
                         else:
                             if kostka == 3:
                                 if kibol2_hp_now >= 1:
@@ -7343,7 +7343,7 @@ label fight1:
 
                                             jump faza12
                                         else:
-                                            jump losowanko_tarczownik1
+                                            jump losowanko_tarczownik_fight11
 
                                     else:
                                         if kibol2_hp_now <= 10:
@@ -7542,7 +7542,7 @@ label fight1:
 
                                                 jump faza12
                                             else:
-                                                jump losowanko_tarczownik1
+                                                jump losowanko_tarczownik_fight11
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -7741,12 +7741,12 @@ label fight1:
 
                                                 jump faza12
                                             else:
-                                                jump losowanko_tarczownik1
+                                                jump losowanko_tarczownik_fight11
 
                                 else:
-                                    jump losowanko_tarczownik1
+                                    jump losowanko_tarczownik_fight11
                             else:
-                                jump losowanko_tarczownik1
+                                jump losowanko_tarczownik_fight11
 
     label faza12:
         hide reka1
@@ -9488,7 +9488,7 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban4:
+                            label urban_fight14:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if kibol1_obrona >= 2:
@@ -9510,7 +9510,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol1_obrona == 1 and stop == 3 or urban_attack == 2 and kibol1_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban4
+                                        jump urban_fight14
                                     
                                     else:  
                                         if urban_weapon >= 1:
@@ -9627,7 +9627,7 @@ label fight1:
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban5:
+                            label urban_fight15:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if akane_obrona >= 2:
@@ -9649,7 +9649,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and akane_obrona == 1 and stop == 3 or urban_attack == 2 and akane_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban5
+                                        jump urban_fight15
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -9766,7 +9766,7 @@ label fight1:
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban6:
+                            label urban_fight16:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if kibol2_obrona >= 2:
@@ -9788,7 +9788,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol2_obrona == 1 and stop == 3 or urban_attack == 2 and kibol2_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban6
+                                        jump urban_fight16
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -13383,7 +13383,7 @@ label fight1:
 
                         "{b}Kibol 1{/b}" if kibol1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban7:
+                            label urban_fight17:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if kibol1_obrona >= 2:
@@ -13405,7 +13405,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol1_obrona == 1 and stop == 3 or urban_attack == 2 and kibol1_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban7
+                                        jump urban_fight17
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -13522,7 +13522,7 @@ label fight1:
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban8:
+                            label urban_fight18:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if akane_obrona >= 2:
@@ -13544,7 +13544,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and akane_obrona == 1 and stop == 3 or urban_attack == 2 and akane_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban8
+                                        jump urban_fight18
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -13661,7 +13661,7 @@ label fight1:
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban9:
+                            label urban_fight19:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if kibol2_obrona >= 2:
@@ -13683,7 +13683,7 @@ label fight1:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and kibol2_obrona == 1 and stop == 3 or urban_attack == 2 and kibol2_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban9
+                                        jump urban_fight19
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -15945,7 +15945,7 @@ label fight1:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Łuszcz odpala Beat Sabera{/i}"
 
-            label losowanko_luszcz_vr1:
+            label losowanko_luszcz_vr_fight11:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
                     if kostka2 == 1:
@@ -15986,7 +15986,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr1
+                            jump losowanko_luszcz_vr_fight11
                     
                     if kostka2 == 2:
                         if kibol1_hp_now >= 1 and akane_hp_now >= 1:
@@ -16026,7 +16026,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr1
+                            jump losowanko_luszcz_vr_fight11
 
                     if kostka2 == 3:
                         if akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -16066,7 +16066,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr1
+                            jump losowanko_luszcz_vr_fight11
 
                 else:
                     if kostka2 == 1:
@@ -16099,7 +16099,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr1
+                            jump losowanko_luszcz_vr_fight11
                     
                     if kostka2 == 2:
                         if akane_hp_now >= 1:
@@ -16131,7 +16131,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr1
+                            jump losowanko_luszcz_vr_fight11
 
                     if kostka2 == 3:
                         if kibol2_hp_now >= 1:
@@ -16163,11 +16163,11 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr1
+                            jump losowanko_luszcz_vr_fight11
 
         else:
             if vr == 2 and luszcz_obrona == 0 and luszcz_hp_now > 0 and luszcz_wybrany > 0:
-                label losowanko_luszcz_rzygi1:
+                label losowanko_luszcz_rzygi_fight11:
                 if luszcz_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -16202,7 +16202,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi1
+                        jump losowanko_luszcz_rzygi_fight11
                 
                 if kostka2 == 2:
                     if akane_hp_now >= 1:
@@ -16228,7 +16228,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi1
+                        jump losowanko_luszcz_rzygi_fight11
 
                 if kostka2 == 3:
                     if kibol2_hp_now >= 1:
@@ -16254,10 +16254,10 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi1
+                        jump losowanko_luszcz_rzygi_fight11
 
         if vr == 7 and eminem_obrona == 0 and eminem_hp_now > 0 and eminem_wybrany > 0:
-            label losowanko_eminem_rzygi1:
+            label losowanko_eminem_rzygi_fight11:
             if eminem_wybrany == 1:
                 show rzyg zorder 15 at rzygi_sojusznik1
             
@@ -16292,7 +16292,7 @@ label fight1:
                             hide rzygowina
                             hide rzyg
                 else:
-                    jump losowanko_eminem_rzygi1
+                    jump losowanko_eminem_rzygi_fight11
             
             if kostka2 == 2:
                 if akane_hp_now >= 1:
@@ -16318,7 +16318,7 @@ label fight1:
                             hide rzygowina
                             hide rzyg
                 else:
-                    jump losowanko_eminem_rzygi1
+                    jump losowanko_eminem_rzygi_fight11
 
             if kostka2 == 3:
                 if kibol2_hp_now >= 1:
@@ -16344,7 +16344,7 @@ label fight1:
                             hide rzygowina
                             hide rzyg
                 else:
-                    jump losowanko_eminem_rzygi1
+                    jump losowanko_eminem_rzygi_fight11
 
 
         
@@ -16367,7 +16367,7 @@ label fight1:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Jerzy Urban odpala Beat Sabera{/i}"
 
-            label losowanko_urban_vr1:
+            label losowanko_urban_vr_fight11:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
                     if kostka2 == 1:
@@ -16408,7 +16408,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr1
+                            jump losowanko_urban_vr_fight11
                     
                     if kostka2 == 2:
                         if kibol1_hp_now >= 1 and akane_hp_now >= 1:
@@ -16448,7 +16448,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr1
+                            jump losowanko_urban_vr_fight11
 
                     if kostka2 == 3:
                         if akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -16488,7 +16488,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr1
+                            jump losowanko_urban_vr_fight11
 
                 else:
                     if kostka2 == 1:
@@ -16521,7 +16521,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr1
+                            jump losowanko_urban_vr_fight11
                     
                     if kostka2 == 2:
                         if akane_hp_now >= 1:
@@ -16553,7 +16553,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr1
+                            jump losowanko_urban_vr_fight11
 
                     if kostka2 == 3:
                         if kibol2_hp_now >= 1:
@@ -16585,11 +16585,11 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr1
+                            jump losowanko_urban_vr_fight11
 
         else:
             if vr == 3 and urban_obrona == 0 and urban_hp_now > 0 and urban_wybrany > 0:
-                label losowanko_urban_rzygi1:
+                label losowanko_urban_rzygi_fight11:
                 if urban_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -16624,7 +16624,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_urban_rzygi1
+                        jump losowanko_urban_rzygi_fight11
                 
                 if kostka2 == 2:
                     if akane_hp_now >= 1:
@@ -16650,7 +16650,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_urban_rzygi1
+                        jump losowanko_urban_rzygi_fight11
 
                 if kostka2 == 3:
                     if kibol2_hp_now >= 1:
@@ -16676,7 +16676,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_urban_rzygi1
+                        jump losowanko_urban_rzygi_fight11
         
 
 
@@ -16699,7 +16699,7 @@ label fight1:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Żyd odpala Beat Sabera{/i}"
 
-            label losowanko_zyd_vr1:
+            label losowanko_zyd_vr_fight11:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
                     if kostka2 == 1:
@@ -16740,7 +16740,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr1
+                            jump losowanko_zyd_vr_fight11
                     
                     if kostka2 == 2:
                         if kibol1_hp_now >= 1 and akane_hp_now >= 1:
@@ -16780,7 +16780,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr1
+                            jump losowanko_zyd_vr_fight11
 
                     if kostka2 == 3:
                         if akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -16820,7 +16820,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr1
+                            jump losowanko_zyd_vr_fight11
 
                 else:
                     if kostka2 == 1:
@@ -16853,7 +16853,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr1
+                            jump losowanko_zyd_vr_fight11
                     
                     if kostka2 == 2:
                         if akane_hp_now >= 1:
@@ -16885,7 +16885,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr1
+                            jump losowanko_zyd_vr_fight11
 
                     if kostka2 == 3:
                         if kibol2_hp_now >= 1:
@@ -16917,11 +16917,11 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr1
+                            jump losowanko_zyd_vr_fight11
 
         else:
             if vr == 4 and zyd_obrona == 0 and zyd_hp_now > 0 and zyd_wybrany > 0:
-                label losowanko_zyd_rzygi1:
+                label losowanko_zyd_rzygi_fight11:
                 if zyd_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -16956,7 +16956,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_zyd_rzygi1
+                        jump losowanko_zyd_rzygi_fight11
                 
                 if kostka2 == 2:
                     if akane_hp_now >= 1:
@@ -16982,7 +16982,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_zyd_rzygi1
+                        jump losowanko_zyd_rzygi_fight11
 
                 if kostka2 == 3:
                     if kibol2_hp_now >= 1:
@@ -17008,7 +17008,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_zyd_rzygi1
+                        jump losowanko_zyd_rzygi_fight11
 
 
         
@@ -17031,7 +17031,7 @@ label fight1:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Kazuma odpala Beat Sabera{/i}"
 
-            label losowanko_kazuma_vr1:
+            label losowanko_kazuma_vr_fight11:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
                     if kostka2 == 1:
@@ -17072,7 +17072,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr1
+                            jump losowanko_kazuma_vr_fight11
                     
                     if kostka2 == 2:
                         if kibol1_hp_now >= 1 and akane_hp_now >= 1:
@@ -17112,7 +17112,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr1
+                            jump losowanko_kazuma_vr_fight11
 
                     if kostka2 == 3:
                         if akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -17152,7 +17152,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr1
+                            jump losowanko_kazuma_vr_fight11
 
                 else:
                     if kostka2 == 1:
@@ -17185,7 +17185,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr1
+                            jump losowanko_kazuma_vr_fight11
                     
                     if kostka2 == 2:
                         if akane_hp_now >= 1:
@@ -17217,7 +17217,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr1
+                            jump losowanko_kazuma_vr_fight11
 
                     if kostka2 == 3:
                         if kibol2_hp_now >= 1:
@@ -17249,11 +17249,11 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr1
+                            jump losowanko_kazuma_vr_fight11
 
         else:
             if vr == 5 and kazuma_obrona == 0 and kazuma_hp_now > 0 and kazuma_wybrany > 0:
-                label losowanko_kazuma_rzygi1:
+                label losowanko_kazuma_rzygi_fight11:
                 if kazuma_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -17288,7 +17288,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_kazuma_rzygi1
+                        jump losowanko_kazuma_rzygi_fight11
                 
                 if kostka2 == 2:
                     if akane_hp_now >= 1:
@@ -17314,7 +17314,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_kazuma_rzygi1
+                        jump losowanko_kazuma_rzygi_fight11
 
                 if kostka2 == 3:
                     if kibol2_hp_now >= 1:
@@ -17340,7 +17340,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_kazuma_rzygi1
+                        jump losowanko_kazuma_rzygi_fight11
 
 
         
@@ -17363,7 +17363,7 @@ label fight1:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Naofumi odpala Beat Sabera{/i}"
 
-            label losowanko_tarczownik_vr1:
+            label losowanko_tarczownik_vr_fight11:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kibol1_hp_now >= 1 and kibol2_hp_now >= 1 or akane_hp_now >= 1 and kibol2_hp_now >= 1 or kibol1_hp_now >= 1 and akane_hp_now >= 1: 
                     if kostka2 == 1:
@@ -17404,7 +17404,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr1
+                            jump losowanko_tarczownik_vr_fight11
                     
                     if kostka2 == 2:
                         if kibol1_hp_now >= 1 and akane_hp_now >= 1:
@@ -17444,7 +17444,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr1
+                            jump losowanko_tarczownik_vr_fight11
 
                     if kostka2 == 3:
                         if akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -17484,7 +17484,7 @@ label fight1:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr1
+                            jump losowanko_tarczownik_vr_fight11
 
                 else:
                     if kostka2 == 1:
@@ -17517,7 +17517,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr1
+                            jump losowanko_tarczownik_vr_fight11
                     
                     if kostka2 == 2:
                         if akane_hp_now >= 1:
@@ -17549,7 +17549,7 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr1
+                            jump losowanko_tarczownik_vr_fight11
 
                     if kostka2 == 3:
                         if kibol2_hp_now >= 1:
@@ -17581,11 +17581,11 @@ label fight1:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr1
+                            jump losowanko_tarczownik_vr_fight11
 
         else:
             if vr == 2 and tarczownik_obrona == 0 and tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
-                label losowanko_tarczownik_rzygi1:
+                label losowanko_tarczownik_rzygi_fight11:
                 if tarczownik_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -17620,7 +17620,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_tarczownik_rzygi1
+                        jump losowanko_tarczownik_rzygi_fight11
                 
                 if kostka2 == 2:
                     if akane_hp_now >= 1:
@@ -17646,7 +17646,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_tarczownik_rzygi1
+                        jump losowanko_tarczownik_rzygi_fight11
 
                 if kostka2 == 3:
                     if kibol2_hp_now >= 1:
@@ -17672,7 +17672,7 @@ label fight1:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_tarczownik_rzygi1
+                        jump losowanko_tarczownik_rzygi_fight11
 
         if kibol1_hp_now <= 0 and kibol1_umarty == 0:
             hide snake31
@@ -17996,7 +17996,7 @@ label fight1:
 
         if kibol1_hp_now >= 1 and kibol1_obrona == 0:
             if kibol1_hp_now <= 3:
-                $ kostka = renpy.random.randint(1, 4)
+                $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
                     show tarcza6 zorder 15 at weapon_wrog1  
@@ -18006,12 +18006,22 @@ label fight1:
                     jump faza15
                 
                 else:
-                    jump losowanko14
+                    jump losowanko_fight14
             
             else:
-                jump losowanko14
+                $ kostka = renpy.random.randint(1, 10)
+
+                if kostka == 10:
+                    show tarcza6 zorder 15 at weapon_wrog1  
+                    play sound "audio/sfx/shield.mp3"
+                    "{i}Kibol 1 broni się{/i}"
+                    $ kibol1_obrona += 1
+                    jump faza15
+                
+                else:
+                    jump losowanko_fight14
                     
-        label losowanko14:   
+        label losowanko_fight14:   
             if kibol1_weapon >= 1:
                 show kibol1_weapon zorder 15 at weapon_wrog1  
             else:
@@ -18056,7 +18066,7 @@ label fight1:
 
                             jump faza15
                         else:
-                            jump losowanko14
+                            jump losowanko_fight14
 
                     else:
                         if luszcz_hp_now <= 10:
@@ -18096,7 +18106,7 @@ label fight1:
 
                                 jump faza15
                             else:
-                                jump losowanko14
+                                jump losowanko_fight14
                         
                         else:
                             $ kostka = renpy.random.randint(1, 5)
@@ -18135,10 +18145,10 @@ label fight1:
 
                                 jump faza15
                             else:
-                                jump losowanko14
+                                jump losowanko_fight14
 
                 else:
-                    jump losowanko14
+                    jump losowanko_fight14
             else:
                 if kostka == 2:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
@@ -18179,7 +18189,7 @@ label fight1:
 
                                 jump faza15
                             else:
-                                jump losowanko14
+                                jump losowanko_fight14
 
                         else:
                             if urban_hp_now <= 10:
@@ -18219,7 +18229,7 @@ label fight1:
 
                                     jump faza15
                                 else:
-                                    jump losowanko14
+                                    jump losowanko_fight14
                             
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -18258,10 +18268,10 @@ label fight1:
 
                                     jump faza15
                                 else:
-                                    jump losowanko14
+                                    jump losowanko_fight14
 
                     else:
-                        jump losowanko14
+                        jump losowanko_fight14
                 else:
                     if kostka == 3:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
@@ -18302,7 +18312,7 @@ label fight1:
 
                                     jump faza15
                                 else:
-                                    jump losowanko14
+                                    jump losowanko_fight14
 
                             else:
                                 if zyd_hp_now <= 10:
@@ -18342,7 +18352,7 @@ label fight1:
 
                                         jump faza15
                                     else:
-                                        jump losowanko14
+                                        jump losowanko_fight14
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -18381,10 +18391,10 @@ label fight1:
 
                                         jump faza15
                                     else:
-                                        jump losowanko14
+                                        jump losowanko_fight14
 
                         else:
-                            jump losowanko14
+                            jump losowanko_fight14
                     else:
                         if kostka == 4:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
@@ -18425,7 +18435,7 @@ label fight1:
 
                                         jump faza15
                                     else:
-                                        jump losowanko14
+                                        jump losowanko_fight14
 
                                 else:
                                     if kazuma_hp_now <= 10:
@@ -18465,7 +18475,7 @@ label fight1:
 
                                             jump faza15
                                         else:
-                                            jump losowanko14
+                                            jump losowanko_fight14
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -18504,10 +18514,10 @@ label fight1:
 
                                             jump faza15
                                         else:
-                                            jump losowanko14
+                                            jump losowanko_fight14
 
                             else:
-                                jump losowanko14
+                                jump losowanko_fight14
                         else:
                             if kostka == 5:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
@@ -18548,7 +18558,7 @@ label fight1:
 
                                             jump faza15
                                         else:
-                                            jump losowanko14
+                                            jump losowanko_fight14
 
                                     else:
                                         if eminem_hp_now <= 10:
@@ -18588,7 +18598,7 @@ label fight1:
 
                                                 jump faza15
                                             else:
-                                                jump losowanko14
+                                                jump losowanko_fight14
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -18627,10 +18637,10 @@ label fight1:
 
                                                 jump faza15
                                             else:
-                                                jump losowanko14
+                                                jump losowanko_fight14
 
                                 else:
-                                    jump losowanko14
+                                    jump losowanko_fight14
                             else:
                                 if kostka == 6:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
@@ -18671,7 +18681,7 @@ label fight1:
 
                                                 jump faza15
                                             else:
-                                                jump losowanko14
+                                                jump losowanko_fight14
 
                                         else:
                                             if tarczownik_hp_now <= 10:
@@ -18711,7 +18721,7 @@ label fight1:
 
                                                     jump faza15
                                                 else:
-                                                    jump losowanko14
+                                                    jump losowanko_fight14
                                             
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
@@ -18750,12 +18760,12 @@ label fight1:
 
                                                     jump faza15
                                                 else:
-                                                    jump losowanko14
+                                                    jump losowanko_fight14
 
                                     else:
-                                        jump losowanko14
+                                        jump losowanko_fight14
                                 else:
-                                    jump losowanko14
+                                    jump losowanko_fight14
                 
                 
     label faza15:
@@ -19102,7 +19112,7 @@ label fight1:
 
         if akane_hp_now >= 1 and akane_obrona == 0:
             if akane_hp_now <= 3:
-                $ kostka = renpy.random.randint(1, 4)
+                $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
                     show tarcza7 zorder 15 at weapon_wrog3  
@@ -19112,12 +19122,22 @@ label fight1:
                     jump faza16
                 
                 else:
-                    jump losowanko15
+                    jump losowanko_fight15
             
             else:
-                jump losowanko15
+                $ kostka = renpy.random.randint(1, 10)
+
+                if kostka == 10:
+                    show tarcza7 zorder 15 at weapon_wrog3  
+                    play sound "audio/sfx/shield.mp3"
+                    "{i}Akane broni się{/i}"
+                    $ akane_obrona += 1
+                    jump faza16
+                
+                else:
+                    jump losowanko_fight15
                     
-        label losowanko15:
+        label losowanko_fight15:
             if akane_weapon >= 1:
                 show akane_weapon zorder 15 at weapon_wrog3 
             else:
@@ -19163,7 +19183,7 @@ label fight1:
 
                             jump faza16
                         else:
-                            jump losowanko15
+                            jump losowanko_fight15
 
                     else:
                         if luszcz_hp_now <= 10:
@@ -19203,7 +19223,7 @@ label fight1:
 
                                 jump faza16
                             else:
-                                jump losowanko15
+                                jump losowanko_fight15
                         
                         else:
                             $ kostka = renpy.random.randint(1, 5)
@@ -19242,10 +19262,10 @@ label fight1:
 
                                 jump faza16
                             else:
-                                jump losowanko15
+                                jump losowanko_fight15
 
                 else:
-                    jump losowanko15
+                    jump losowanko_fight15
             else:
                 if kostka == 2:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
@@ -19286,7 +19306,7 @@ label fight1:
 
                                 jump faza16
                             else:
-                                jump losowanko15
+                                jump losowanko_fight15
 
                         else:
                             if urban_hp_now <= 10:
@@ -19326,7 +19346,7 @@ label fight1:
 
                                     jump faza16
                                 else:
-                                    jump losowanko15
+                                    jump losowanko_fight15
                             
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -19365,10 +19385,10 @@ label fight1:
 
                                     jump faza16
                                 else:
-                                    jump losowanko15
+                                    jump losowanko_fight15
 
                     else:
-                        jump losowanko15
+                        jump losowanko_fight15
                 else:
                     if kostka == 3:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
@@ -19409,7 +19429,7 @@ label fight1:
 
                                     jump faza16
                                 else:
-                                    jump losowanko15
+                                    jump losowanko_fight15
 
                             else:
                                 if zyd_hp_now <= 10:
@@ -19449,7 +19469,7 @@ label fight1:
 
                                         jump faza16
                                     else:
-                                        jump losowanko15
+                                        jump losowanko_fight15
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -19488,10 +19508,10 @@ label fight1:
 
                                         jump faza16
                                     else:
-                                        jump losowanko15
+                                        jump losowanko_fight15
 
                         else:
-                            jump losowanko15
+                            jump losowanko_fight15
                     else:
                         if kostka == 4:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
@@ -19532,7 +19552,7 @@ label fight1:
 
                                         jump faza16
                                     else:
-                                        jump losowanko15
+                                        jump losowanko_fight15
 
                                 else:
                                     if kazuma_hp_now <= 10:
@@ -19572,7 +19592,7 @@ label fight1:
 
                                             jump faza16
                                         else:
-                                            jump losowanko15
+                                            jump losowanko_fight15
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -19611,10 +19631,10 @@ label fight1:
 
                                             jump faza16
                                         else:
-                                            jump losowanko15
+                                            jump losowanko_fight15
 
                             else:
-                                jump losowanko15
+                                jump losowanko_fight15
                         else:
                             if kostka == 5:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
@@ -19655,7 +19675,7 @@ label fight1:
 
                                             jump faza16
                                         else:
-                                            jump losowanko15
+                                            jump losowanko_fight15
 
                                     else:
                                         if eminem_hp_now <= 10:
@@ -19695,7 +19715,7 @@ label fight1:
 
                                                 jump faza16
                                             else:
-                                                jump losowanko15
+                                                jump losowanko_fight15
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -19734,10 +19754,10 @@ label fight1:
 
                                                 jump faza16
                                             else:
-                                                jump losowanko15
+                                                jump losowanko_fight15
 
                                 else:
-                                    jump losowanko15
+                                    jump losowanko_fight15
                             else:
                                 if kostka == 6:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
@@ -19778,7 +19798,7 @@ label fight1:
 
                                                 jump faza16
                                             else:
-                                                jump losowanko15
+                                                jump losowanko_fight15
 
                                         else:
                                             if tarczownik_hp_now <= 10:
@@ -19818,7 +19838,7 @@ label fight1:
 
                                                     jump faza16
                                                 else:
-                                                    jump losowanko15
+                                                    jump losowanko_fight15
                                             
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
@@ -19857,12 +19877,12 @@ label fight1:
 
                                                     jump faza16
                                                 else:
-                                                    jump losowanko15
+                                                    jump losowanko_fight15
 
                                     else:
-                                        jump losowanko15
+                                        jump losowanko_fight15
                                 else:
-                                    jump losowanko15
+                                    jump losowanko_fight15
 
 
     label faza16:
@@ -20209,7 +20229,7 @@ label fight1:
 
         if kibol2_hp_now >= 1 and kibol2_obrona == 0:
             if kibol2_hp_now <= 3:
-                $ kostka = renpy.random.randint(1, 4)
+                $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
                     show tarcza8 zorder 15 at weapon_wrog2  
@@ -20219,12 +20239,22 @@ label fight1:
                     jump start_fight1
                 
                 else:
-                    jump losowanko16
+                    jump losowanko_fight16
             
             else:
-                jump losowanko16
+                $ kostka = renpy.random.randint(1, 10)
+
+                if kostka == 10:
+                    show tarcza8 zorder 15 at weapon_wrog2  
+                    play sound "audio/sfx/shield.mp3"
+                    "{i}Kibol 2 broni się{/i}"
+                    $ kibol2_obrona += 1
+                    jump start_fight1
+                
+                else:
+                    jump losowanko_fight16
                     
-        label losowanko16:    
+        label losowanko_fight16:    
             if kibol2_weapon >= 1:
                 show kibol2_weapon zorder 15 at weapon_wrog2 
             else:
@@ -20269,7 +20299,7 @@ label fight1:
 
                             jump start_fight1
                         else:
-                            jump losowanko16
+                            jump losowanko_fight16
 
                     else:
                         if luszcz_hp_now <= 10:
@@ -20309,7 +20339,7 @@ label fight1:
 
                                 jump start_fight1
                             else:
-                                jump losowanko16
+                                jump losowanko_fight16
                         
                         else:
                             $ kostka = renpy.random.randint(1, 5)
@@ -20348,10 +20378,10 @@ label fight1:
 
                                 jump start_fight1
                             else:
-                                jump losowanko16
+                                jump losowanko_fight16
 
                 else:
-                    jump losowanko16
+                    jump losowanko_fight16
             else:
                 if kostka == 2:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
@@ -20392,7 +20422,7 @@ label fight1:
 
                                 jump start_fight1
                             else:
-                                jump losowanko16
+                                jump losowanko_fight16
 
                         else:
                             if urban_hp_now <= 10:
@@ -20432,7 +20462,7 @@ label fight1:
 
                                     jump start_fight1
                                 else:
-                                    jump losowanko16
+                                    jump losowanko_fight16
                             
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -20471,10 +20501,10 @@ label fight1:
 
                                     jump start_fight1
                                 else:
-                                    jump losowanko16
+                                    jump losowanko_fight16
 
                     else:
-                        jump losowanko16
+                        jump losowanko_fight16
                 else:
                     if kostka == 3:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
@@ -20515,7 +20545,7 @@ label fight1:
 
                                     jump start_fight1
                                 else:
-                                    jump losowanko16
+                                    jump losowanko_fight16
 
                             else:
                                 if zyd_hp_now <= 10:
@@ -20555,7 +20585,7 @@ label fight1:
 
                                         jump start_fight1
                                     else:
-                                        jump losowanko16
+                                        jump losowanko_fight16
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -20594,10 +20624,10 @@ label fight1:
 
                                         jump start_fight1
                                     else:
-                                        jump losowanko16
+                                        jump losowanko_fight16
 
                         else:
-                            jump losowanko16
+                            jump losowanko_fight16
                     else:
                         if kostka == 4:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
@@ -20638,7 +20668,7 @@ label fight1:
 
                                         jump start_fight1
                                     else:
-                                        jump losowanko16
+                                        jump losowanko_fight16
 
                                 else:
                                     if kazuma_hp_now <= 10:
@@ -20678,7 +20708,7 @@ label fight1:
 
                                             jump start_fight1
                                         else:
-                                            jump losowanko16
+                                            jump losowanko_fight16
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -20717,10 +20747,10 @@ label fight1:
 
                                             jump start_fight1
                                         else:
-                                            jump losowanko16
+                                            jump losowanko_fight16
 
                             else:
-                                jump losowanko16
+                                jump losowanko_fight16
                         else:
                             if kostka == 5:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
@@ -20761,7 +20791,7 @@ label fight1:
 
                                             jump start_fight1
                                         else:
-                                            jump losowanko16
+                                            jump losowanko_fight16
 
                                     else:
                                         if eminem_hp_now <= 10:
@@ -20801,7 +20831,7 @@ label fight1:
 
                                                 jump start_fight1
                                             else:
-                                                jump losowanko16
+                                                jump losowanko_fight16
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -20840,10 +20870,10 @@ label fight1:
 
                                                 jump start_fight1
                                             else:
-                                                jump losowanko16
+                                                jump losowanko_fight16
 
                                 else:
-                                    jump losowanko16
+                                    jump losowanko_fight16
                             else:
                                 if kostka == 6:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
@@ -20884,7 +20914,7 @@ label fight1:
 
                                                 jump start_fight1
                                             else:
-                                                jump losowanko16
+                                                jump losowanko_fight16
 
                                         else:
                                             if tarczownik_hp_now <= 10:
@@ -20924,7 +20954,7 @@ label fight1:
 
                                                     jump start_fight1
                                                 else:
-                                                    jump losowanko16
+                                                    jump losowanko_fight16
                                             
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
@@ -20963,12 +20993,12 @@ label fight1:
 
                                                     jump start_fight1
                                                 else:
-                                                    jump losowanko16
+                                                    jump losowanko_fight16
 
                                     else:
-                                        jump losowanko16
+                                        jump losowanko_fight16
                                 else: 
-                                    jump losowanko16                
+                                    jump losowanko_fight16                
 
     label przegranko_fight1:
         scene bg dead

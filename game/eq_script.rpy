@@ -23,23 +23,23 @@ label bronie:
     default kazuma_nic = 5
     default tarczownik_nic = 6
     default eminem_nic = 7
-    default klata_liczba = 2
-    default luszcz_klata = 1
-    default urban_klata = 1
-    default zyd_klata = 1
-    default kazuma_klata = 1
-    default tarczownik_klata = 1
-    default eminem_klata = 1
-    default ring = 1
-    default vr = 1
-    default memy = 1
-    default ziemia = 1
-    default nogi = 1
-    default zloty = 1
+    default klata_liczba = 0
+    default luszcz_klata = 0
+    default urban_klata = 0
+    default zyd_klata = 0
+    default kazuma_klata = 0
+    default tarczownik_klata = 0
+    default eminem_klata = 0
+    default ring = 0
+    default vr = 0
+    default memy = 0
+    default ziemia = 0
+    default nogi = 0
+    default zloty = 0
 
     
 label items:
-    default ile_item = 13
+    default ile_item = 0
 
     default strona1 = 0   
     default strona2 = 0
@@ -57,19 +57,19 @@ label items:
     default skalkax = 0
     default granatx = 0
 
-    default piknik = 1
-    default cake = 1
-    default pills = 20
-    default woda = 2
-    default ostry = 2
-    default lagodny = 3
-    default drpepper = 5
-    default jabole = 5
-    default royal = 4
-    default warzywo = 3
-    default banany = 4
-    default skalka = 2
-    default granat = 3
+    default piknik = 0
+    default cake = 0
+    default pills = 0
+    default woda = 0
+    default ostry = 0
+    default lagodny = 0
+    default drpepper = 0
+    default jabole = 0
+    default royal = 0
+    default warzywo = 0
+    default banany = 0
+    default skalka = 0
+    default granat = 0
 
     
 
@@ -7458,20 +7458,6 @@ label eq:
 
                         else:
                             jump zbroja
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -20,10 +20,16 @@ label postacie:
     image luszcz zmentzony right = Transform("luszcz zmentzony", xzoom=-1) 
 
     define eminem = Character("Shadow", color="#32313a")
+    define cid = Character("Cid", color="#32313a")
+    image eminem sad right = Transform("eminem sad", xzoom=-1) 
+    image eminem neutral reka right = Transform("eminem neutral reka", xzoom=-1) 
+
     define urban = Character("Jerzy Urban", color="#ff4040")
     define zyd = Character("Żyd", color="#25ff37")
     define kazuma = Character("Kazuma", color="#dbf01f")
     define tarczownik = Character("Naofumi", color="#0a570a")
+
+    define emina = Character("Eminem", color="#a2a571")
     
     define burmistrz = Character("Burmistrz", color="#f8bf44")
 
@@ -500,46 +506,55 @@ label start:
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "O kurde rzeczywiście. Dziś niedziela."
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Dzwon zawsze dzwoni trzy razy przed mszą rzeby przypomnieć ludziom że istnieje."
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Fajnie by było jakby wymyślili jakiś system który nie rozwala moich ószu."
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Ojej… jak bije więcej razy to coś znaczyło…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Pięć uderzeń to śmierć kościelnego…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Sześć to porzar…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Siedem ogłasza Sezon na misia…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Osiem to utoniencie człowieka w Wiśle…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
+        $ renpy.pause(0.5)
 
         luszcz "Dziewięć to ogłoszenia polityczne…"
 
@@ -749,8 +764,232 @@ label start:
         luszcz "Oczekuję satysfakcji"
         luszcz "Mószę go dopaść!"
 
-        
+        show luszcz zly:
+            linear 0.5 xalign 1.5
 
+        $ renpy.pause(0.5)
+
+        show bg rynek
+        play music "audio/music/pole.mp3"
+        $ timer += 5
+
+        show luszcz neutral at center:
+            xalign -0.5
+            yalign 1.0
+            easeout 0.6 xalign 0.5
+        
+        $ renpy.pause(0.5)
+
+        label bieg1:
+            menu:
+                "{b}Gdzie teraz?{/b}"
+
+                '{b}Idź w lewo{/b}':
+                    luszcz "{i}Muszę dopaść drania!{/i}"
+                    jump bieg1
+                    
+                '{b}Idź naprzód{/b}':
+                    luszcz "{i}Ziomo pobiegł prosto!{/i}"
+
+                '{b}Idź w prawo{/b}':
+                    luszcz "{i}Muszę dopaść drania!{/i}"
+                    jump bieg1
+
+
+        show luszcz neutral:
+            linear 0.5 xalign 1.5
+
+        $ renpy.pause(0.5)
+
+        show bg rynek2
+        $ timer += 5
+
+        show luszcz neutral at center:
+            xalign -0.5
+            yalign 1.0
+            easeout 0.6 xalign 0.5
+
+        $ renpy.pause(0.5)
+
+        label bieg2:
+            menu:
+                "{b}Gdzie teraz?{/b}"
+
+                '{b}Idź w lewo{/b}':
+                    luszcz "{i}Ziomo pobiegł w lewo!{/i}"
+                    
+                '{b}Idź naprzód{/b}':
+                    luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
+                    jump bieg2
+
+                '{b}Idź w prawo{/b}':
+                    luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
+                    jump bieg2
+        
+        show luszcz neutral:
+            linear 0.5 xalign -0.5
+
+        $ renpy.pause(0.5)
+
+        show bg alejka2
+        $ timer += 5
+
+        show luszcz neutral at center:
+            xalign 1.5
+            yalign 1.0
+            easeout 0.6 xalign 0.5
+
+        $ renpy.pause(0.5)
+
+        label bieg3:
+            menu:
+                "{b}Co zrobić?{/b}"
+
+                "{b}Zejdż do piwnicy{/b}":
+                    scene bg black with fade
+                    show bg alejka3 with fade
+                    play music "audio/music/alejka3.mp3"
+                    play music2 "audio/music/emina.mp3"
+
+                    
+                "{b}Może lepiej nie{/b}":
+                    luszcz "{i}Nie ma tak że nie{/i}"
+                    jump bieg3
+
+        show eminem cien at slightright
+
+        show luszcz neutral at left
+
+        nikt "Zostaw mnie w spokoju!! Czego ode mnie chcesz.."
+
+        luszcz "Sztórchnąłeś mnie. Ta znieawaga krwi wymaga. Oczekuję satysfakcji."
+
+        nikt "Uwierz mi… nie chciałbyś się ze mną teraz pojedynkować."
+
+        luszcz "A czm?"
+
+        scene bg black with fade
+        scene bg alejka3v2 with fade
+
+        show eminem sad at slightright
+
+        show luszcz neutral at left
+
+        cid "Nie jestem teraz w najlepszym miejscu mentalnie."
+
+        luszcz "(O boże to cid z mojej ulubionej chińskiej bajki, całe szczęście że nie chce się bić)"
+        luszcz "co się stało?"
+
+        cid "Jest taki jeden raper… i jestem jego największym fanem."
+        cid "Jego bary są takie badass"
+        cid "I udało mi się go kiedyś spotkać"
+        cid "I się zaprzyjaźniliśmy"
+        cid "I zaoferował mi żebym pisał słowa do jego piosenek w zamian za to że nikomu nie powiem… I tu sobie siedzę i piszę."
+
+        luszcz "To jak miałeś nie mówić to czemu mi to mówisz"
+
+        cid "Trudno mi w to uwierzyć… ale chyba nie jestem tu najlepiej traktowany."
+        cid "Znaczy, kocham swojego idola i zrobiłbym dla niego wszystko, ale…"
+        cid "Nie dostaję w ogóle jedzenia. Czasem zjadam myszy jak jakieś się wstawią."
+        cid "Jedyna woda jaką mam pozwolenie pić to święcona sprzed kościoła…"
+        cid "I w sumie to nigdy nie mogę opuszczać pracowni poza z wyjątkiem mszy niedzielnych."
+        cid "I mam zakaz rozmawiania z ludźmi.. musiałem się też odciąć od rodziny.. i.."
+
+        luszcz "Czemu pozwalasz się tak kontrolować"
+        luszcz "Nie jesteś przypadkiem chodzącą atomuwkom?"
+
+        cid "Nie mogę zawieść swojego idola..!"
+        cid "Tyle mu zawdzięczam i jest taki tuff… widzę że nie jestem traktowany najlepiej ale nie ma mnie na tyle żeby mu się przeciwstawiać.."
+
+        luszcz "imo"
+        luszcz "weź się w garść"
+        luszcz "nie przydupasój komuś bo wydaje się fajniejszy niż ty"
+
+        cid "hmm… noo…. moze masz racje…"
+
+        luszcz "chodź idziemy z tej ciemnicy literalnie nic cię nie trzyma"
+
+        cid "ig…"
+
+        show eminem neutral reka at slightleft
+
+        nikt "STOP!!!" with vpunch
+
+        show eminem neutral right at slightleft
+
+        nikt "Fuck you!"
+
+        show emina neutral at right
+
+        emina "You can’t let him out!! There can only be one Eminem in Shadows!! And thats Me!! Motherfucker!!"
+
+        luszcz "O kurcze emina"
+        luszcz "Kiedy on tu pszyszedł"
+
+        emina "Fuck you! I was here the whole time!"
+        emina "Im just very slim… and very shady"
+
+        cid "Jak tu byłeś cały czas to nie mamy nic do omówienia."
+        cid "Nareszcie wybiła godzina wyzwolenia!"
+
+        emina "Fuck you!! You wont get outta here alive!!"
+
+        scene bg black with fade
+        scene bg alejka3v3 with fade
+        
+        show luszcz fight at sojusznik1
+        show eminem reka fight at sojusznik2
+        show emina fight at wrog3
+
+        ""
+
+        show eminem reka fight:
+            xalign 0.35
+            yalign 0.50
+
+        eminem "Cofnij się chłopcze, ja się nim zajmę"
+
+        luszcz "Panie Shadow, ale ja panu pomogę"
+        luszcz "Ja w domu wydrukowałem sobie taki sam miecz jak pan ma i dużo trenowałem"
+        luszcz "I biegałem nago po lesie jak pan"
+        luszcz "Ja mogę pomóc zobaczy pan"
+        luszcz "Pokażę panu jak mogę być użyteczny!"
+
+        menu:
+            "{b}Zaatakuj Eminema":
+                "Łuszcz wyciągnął swoją gitarę wziął zamach i zaczął biec w kierunku Eminema"
+                "Niestety po kilku krokach jego prawa noga napotkała kamień iiii…"
+        
+        scene bg black with fade
+        scene bg alejka3v2 with fade
+
+        show luszcz wtf at left
+        show eminem bezreki at center 
+        show emina neutral at right
+        
+        play sound "audio/sfx/krzyk.mp3"
+        cid "Ała kurwa moje ręka"
+        cid "Japierdole, ale to kurwa boli"
+
+        luszcz "Jezus maria krew jest wszędzie"
+
+        cid "Jebane lata treningu dzień w dzień by stać się niepokonany po to tylko by jakiś debil przewrócił się na kamieniu i mi odjebał rękę!"
+
+        luszcz "Nie, panie Cidzie ja nie chciałem to był wypadek"
+
+        cid "Wypadek? Odrąbałeś mi rękę idioto!"
+        cid "Jak z tego wyjdziemy, żywi to będę Ci to codziennie wypominał"
+        cid "No, ale teraz mamy ważniejsze zmartwienie i skoro nie mam ręki to musisz mi pomóc"
+
+        eminem "Księżyc zrobił się krwawy"
+
+        $ eminem_sojusznik = 1
+        $ liczba_sojusznikow += 1
+                
+        jump fight0
+
+        label after_fight0:
+            ""
 
 
 
@@ -778,10 +1017,39 @@ label start:
                 $ zyd_przepychaczka = 1
                 $ kazuma_przepychaczka = 1
                 $ tarczownik_przepychaczka = 1
+                $ klata_liczba = 2
+                $ luszcz_klata = 1
+                $ urban_klata = 1
+                $ zyd_klata = 1
+                $ kazuma_klata = 1
+                $ tarczownik_klata = 1
+                $ eminem_klata = 1
+                $ ring = 1
+                $ vr = 1
+                $ memy = 1
+                $ ziemia = 1
+                $ nogi = 1
+                $ zloty = 1
+
+                $ ile_item = 13
+                $ piknik = 1
+                $ cake = 1
+                $ pills = 20
+                $ woda = 2
+                $ ostry = 2
+                $ lagodny = 3
+                $ drpepper = 5
+                $ jabole = 5
+                $ royal = 4
+                $ warzywo = 3
+                $ banany = 4
+                $ skalka = 2
+                $ granat = 3
+
 
             "{b}TROCHE{/b}":
                 $ liczba_sojusznikow += 2
-                $ urban_sojusznik += 1
+                $ eminem_sojusznik += 1
                 $ zyd_sojusznik += 1
                 $ stop = 1
                 $ miecz_swietlny = 1
@@ -791,14 +1059,36 @@ label start:
                 $ miecz3d = 1
                 $ przepychaczka_liczba = 3
                 $ luszcz_przepychaczka = 1
-                $ urban_przepychaczka = 1
                 $ zyd_przepychaczka = 1
-                $ kazuma_przepychaczka = 1
-                $ tarczownik_przepychaczka = 1
+                $ klata_liczba = 2
+                $ luszcz_klata = 1
+                $ zyd_klata = 1
+                $ eminem_klata = 1
+                $ ring = 1
+                $ vr = 1
+                $ memy = 1
+                $ ziemia = 1
+                $ nogi = 1
+                $ zloty = 1
+
+                $ ile_item = 13
+                $ piknik = 1
+                $ cake = 1
+                $ pills = 20
+                $ woda = 2
+                $ ostry = 2
+                $ lagodny = 3
+                $ drpepper = 5
+                $ jabole = 5
+                $ royal = 4
+                $ warzywo = 3
+                $ banany = 4
+                $ skalka = 2
+                $ granat = 3
 
             "{b}MAM{/b}":
                 $ liczba_sojusznikow += 1
-                $ urban_sojusznik += 1
+                $ eminem_sojusznik += 1
                 $ stop = 1
                 $ miecz_swietlny = 1
                 $ ostrza_chaosu = 1
@@ -807,10 +1097,30 @@ label start:
                 $ miecz3d = 1
                 $ przepychaczka_liczba = 3
                 $ luszcz_przepychaczka = 1
-                $ urban_przepychaczka = 1
-                $ zyd_przepychaczka = 1
-                $ kazuma_przepychaczka = 1
-                $ tarczownik_przepychaczka = 1
+                $ klata_liczba = 2
+                $ luszcz_klata = 1
+                $ eminem_klata = 1
+                $ ring = 1
+                $ vr = 1
+                $ memy = 1
+                $ ziemia = 1
+                $ nogi = 1
+                $ zloty = 1
+
+                $ ile_item = 13
+                $ piknik = 1
+                $ cake = 1
+                $ pills = 20
+                $ woda = 2
+                $ ostry = 2
+                $ lagodny = 3
+                $ drpepper = 5
+                $ jabole = 5
+                $ royal = 4
+                $ warzywo = 3
+                $ banany = 4
+                $ skalka = 2
+                $ granat = 3
 
                 
             "{b}CO TO?{/b}":
