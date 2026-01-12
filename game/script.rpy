@@ -377,12 +377,12 @@ label fight_stats:
     default kazuma_obrona = 0
     default tarczownik_obrona = 0
 
-    default luszcz_hp = 20
-    default eminem_hp = 15
-    default urban_hp = 20
-    default zyd_hp = 10
-    default kazuma_hp = 10
-    default tarczownik_hp = 15
+    default luszcz_hp = 25
+    default eminem_hp = 20
+    default urban_hp = 25
+    default zyd_hp = 15
+    default kazuma_hp = 15
+    default tarczownik_hp = 20
 
     default luszcz_hp_now = luszcz_hp
     default eminem_hp_now = eminem_hp
@@ -986,9 +986,9 @@ label start:
         $ eminem_sojusznik = 1
         $ liczba_sojusznikow += 1
                 
-        jump fight0
+        jump fight01
 
-        label after_fight0:
+        label after_fight01:
             ""
 
 
@@ -1127,8 +1127,8 @@ label start:
                 pass
 
         "{i}O bogowie walka{/i}"
-        jump fight1
+        jump fight11
 
-    label after_fight1:
+    label after_fight11:
         "{i}Gratulacje wygrałeś{/i}"
         jump rynek

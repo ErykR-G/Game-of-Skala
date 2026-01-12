@@ -1,4 +1,4 @@
-label fight1_stats:
+label fight11_stats:
     default kibol1_sex = 0
     default kibol2_sex = 0
     default akane_sex = 1
@@ -71,8 +71,8 @@ label fight1_stats:
     default kibol2_stun = 0
     default akane_stun = 0
 
-label fight1:
-    label fight_wybor1:
+label fight11:
+    label wybor_fight11:
         play music "audio/music/fight.mp3"
         scene bg korytarz
         $ ile_wrogow += 3
@@ -98,7 +98,7 @@ label fight1:
         $ akane_min_attack_now_true = akane_min_attack
         $ akane_max_attack_now_true = akane_max_attack
 
-        label team1:
+        label team_fight11:
             $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
@@ -679,7 +679,7 @@ label fight1:
                         show screen tarczownik2_stats
                         tarczownik "Gotowy do boju"
 
-                jump start_fight1
+                jump start_fight11
                 
             else:
                 if liczba_sojusznikow == 2:
@@ -1054,7 +1054,7 @@ label fight1:
                             show screen tarczownik2_stats
                             tarczownik "Gotowy do boju"
                         
-                    jump start_fight1
+                    jump start_fight11
 
                 else:
                     $ ile_sojusznikow += 1
@@ -1086,9 +1086,9 @@ label fight1:
                     show screen luszcz3_stats
                     luszcz "Gotowy do boju"
 
-                    jump start_fight1
+                    jump start_fight11
     
-    label start_fight1:
+    label start_fight11:
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien
@@ -1203,7 +1203,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -1391,7 +1391,7 @@ label fight1:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
 
         if kibol1_poison >= 3 and kibol1_hp_now >= 1:
             $ kibol1_hp_now -= 1
@@ -1564,7 +1564,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -1752,7 +1752,7 @@ label fight1:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
 
         if luszcz_lagodny == 1:
             if luszcz_hp_now + 1 < luszcz_hp:
@@ -2203,7 +2203,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza12
+                        jump faza_fight12
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -2269,7 +2269,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol1_hp_now -= int(luszcz_attack / 2)
 
@@ -2305,7 +2305,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol1_hp_now -= luszcz_attack
 
@@ -2325,7 +2325,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2339,7 +2339,7 @@ label fight1:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                                jump faza12
+                                jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2402,7 +2402,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ akane_hp_now -= int(luszcz_attack / 2)
 
@@ -2438,7 +2438,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ akane_hp_now -= luszcz_attack
 
@@ -2458,7 +2458,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2471,7 +2471,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2534,7 +2534,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol2_hp_now -= int(luszcz_attack / 2)
 
@@ -2570,7 +2570,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol2_hp_now -= luszcz_attack
 
@@ -2590,7 +2590,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2603,7 +2603,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -2618,7 +2618,7 @@ label fight1:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -2773,7 +2773,7 @@ label fight1:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza12
+                            jump faza_fight12
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -2873,7 +2873,7 @@ label fight1:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza12
+                            jump faza_fight12
         
         if eminem_fighter == 1:
             if eminem_wybrany == 1:
@@ -2962,7 +2962,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3014,7 +3014,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3066,7 +3066,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -3082,7 +3082,7 @@ label fight1:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -3117,32 +3117,75 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 1 obronił się przed szlamem{/i}"
-                                jump faza12
+                                jump faza_fight12
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if kibol1_min_attack_now >= 2:
-                                    $ kibol1_min_attack_now -= 2
-                                    if kibol1_max_attack_now >= 6:
-                                        $ kibol1_max_attack_now -= 3
-                                    else:
-                                        $ kibol1_max_attack_now -= 2
-                                    
+                                if kibol1_min_attack_now >= 28 and kibol1_min_attack_now <= 30:
+                                    $ kibol1_min_attack_now -= 10
                                 else:
-                                    $ kibol1_min_attack_now = 0
-
-                                    if kibol1_max_attack_now >= 2:
-                                        if kibol1_max_attack_now >= 6:
-                                            $ kibol1_max_attack_now -= 3
-                                        else:
-                                            $ kibol1_max_attack_now -= 2
-                                    
+                                    if kibol1_min_attack_now >= 25 and kibol1_min_attack_now <= 27:
+                                        $ kibol1_min_attack_now -= 9
                                     else:
-                                        $ kibol1_max_attack_now = 0
-                                
+                                        if kibol1_min_attack_now >= 22 and kibol1_min_attack_now <= 24:
+                                            $ kibol1_min_attack_now -= 8
+                                        else:
+                                            if kibol1_min_attack_now >= 19 and kibol1_min_attack_now <= 21:
+                                                $ kibol1_min_attack_now -= 7
+                                            else:
+                                                if kibol1_min_attack_now >= 16 and kibol1_min_attack_now <= 18:
+                                                    $ kibol1_min_attack_now -= 6
+                                                else:
+                                                    if kibol1_min_attack_now >= 13 and kibol1_min_attack_now <= 15:
+                                                        $ kibol1_min_attack_now -= 5
+                                                    else:   
+                                                        if kibol1_min_attack_now >= 10 and kibol1_min_attack_now <= 12:
+                                                            $ kibol1_min_attack_now -= 4
+                                                        else:
+                                                            if kibol1_min_attack_now >= 7 and kibol1_min_attack_now <= 9:
+                                                                $ kibol1_min_attack_now -= 3
+                                                            else:
+                                                                if kibol1_min_attack_now >= 4 and kibol1_min_attack_now <= 6:
+                                                                    $ kibol1_min_attack_now -= 2
+                                                                else:
+                                                                    if kibol1_min_attack_now >= 1 and kibol1_min_attack_now <= 3:
+                                                                        $ kibol1_min_attack_now -= 1
+
+
+                                if kibol1_max_attack_now >= 28 and kibol1_max_attack_now <= 30:
+                                    $ kibol1_max_attack_now -= 10
+                                else:
+                                    if kibol1_max_attack_now >= 25 and kibol1_max_attack_now <= 27:
+                                        $ kibol1_max_attack_now -= 9
+                                    else:
+                                        if kibol1_max_attack_now >= 22 and kibol1_max_attack_now <= 24:
+                                            $ kibol1_max_attack_now -= 8
+                                        else:
+                                            if kibol1_max_attack_now >= 19 and kibol1_max_attack_now <= 21:
+                                                $ kibol1_max_attack_now -= 7
+                                            else:
+                                                if kibol1_max_attack_now >= 16 and kibol1_max_attack_now <= 18:
+                                                    $ kibol1_max_attack_now -= 6
+                                                else:
+                                                    if kibol1_max_attack_now >= 13 and kibol1_max_attack_now <= 15:
+                                                        $ kibol1_max_attack_now -= 5
+                                                    else:
+                                                        if kibol1_max_attack_now >= 10 and kibol1_max_attack_now <= 12:
+                                                            $ kibol1_max_attack_now -= 4
+                                                        else:
+                                                            if kibol1_max_attack_now >= 7 and kibol1_max_attack_now <= 9:
+                                                                $ kibol1_max_attack_now -= 3
+                                                            else:
+                                                                if kibol1_max_attack_now >= 4 and kibol1_max_attack_now <= 6:
+                                                                    $ kibol1_max_attack_now -= 2
+                                                                else:
+                                                                    if kibol1_max_attack_now >= 1 and kibol1_max_attack_now <= 3:
+                                                                        $ kibol1_max_attack_now -= 1
+
+
                                 $ kibol1_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Kibol 1 zostały osłabione{/i}"
-                                jump faza12
+                                jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3150,32 +3193,74 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
-                                jump faza12
+                                jump faza_fight12
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if akane_min_attack_now >= 2:
-                                    $ akane_min_attack_now -= 2
-                                    if akane_max_attack_now >= 6:
-                                        $ akane_max_attack_now -= 3
-                                    else:
-                                        $ akane_max_attack_now -= 2
-                        
+                                if akane_min_attack_now >= 28 and akane_min_attack_now <= 30:
+                                    $ akane_min_attack_now -= 10
                                 else:
-                                    $ akane_min_attack_now = 0
-
-                                    if akane_max_attack_now >= 2:
-                                        if akane_max_attack_now >= 6:
-                                            $ akane_max_attack_now -= 3
-                                        else:
-                                            $ akane_max_attack_now -= 2
-                                    
+                                    if akane_min_attack_now >= 25 and akane_min_attack_now <= 27:
+                                        $ akane_min_attack_now -= 9
                                     else:
-                                        $ akane_max_attack_now = 0
+                                        if akane_min_attack_now >= 22 and akane_min_attack_now <= 24:
+                                            $ akane_min_attack_now -= 8
+                                        else:
+                                            if akane_min_attack_now >= 19 and akane_min_attack_now <= 21:
+                                                $ akane_min_attack_now -= 7
+                                            else:
+                                                if akane_min_attack_now >= 16 and akane_min_attack_now <= 18:
+                                                    $ akane_min_attack_now -= 6
+                                                else:
+                                                    if akane_min_attack_now >= 13 and akane_min_attack_now <= 15:
+                                                        $ akane_min_attack_now -= 5
+                                                    else:   
+                                                        if akane_min_attack_now >= 10 and akane_min_attack_now <= 12:
+                                                            $ akane_min_attack_now -= 4
+                                                        else:
+                                                            if akane_min_attack_now >= 7 and akane_min_attack_now <= 9:
+                                                                $ akane_min_attack_now -= 3
+                                                            else:
+                                                                if akane_min_attack_now >= 4 and akane_min_attack_now <= 6:
+                                                                    $ akane_min_attack_now -= 2
+                                                                else:
+                                                                    if akane_min_attack_now >= 1 and akane_min_attack_now <= 3:
+                                                                        $ akane_min_attack_now -= 1
+
+
+                                if akane_max_attack_now >= 28 and akane_max_attack_now <= 30:
+                                    $ akane_max_attack_now -= 10
+                                else:
+                                    if akane_max_attack_now >= 25 and akane_max_attack_now <= 27:
+                                        $ akane_max_attack_now -= 9
+                                    else:
+                                        if akane_max_attack_now >= 22 and akane_max_attack_now <= 24:
+                                            $ akane_max_attack_now -= 8
+                                        else:
+                                            if akane_max_attack_now >= 19 and akane_max_attack_now <= 21:
+                                                $ akane_max_attack_now -= 7
+                                            else:
+                                                if akane_max_attack_now >= 16 and akane_max_attack_now <= 18:
+                                                    $ akane_max_attack_now -= 6
+                                                else:
+                                                    if akane_max_attack_now >= 13 and akane_max_attack_now <= 15:
+                                                        $ akane_max_attack_now -= 5
+                                                    else:
+                                                        if akane_max_attack_now >= 10 and akane_max_attack_now <= 12:
+                                                            $ akane_max_attack_now -= 4
+                                                        else:
+                                                            if akane_max_attack_now >= 7 and akane_max_attack_now <= 9:
+                                                                $ akane_max_attack_now -= 3
+                                                            else:
+                                                                if akane_max_attack_now >= 4 and akane_max_attack_now <= 6:
+                                                                    $ akane_max_attack_now -= 2
+                                                                else:
+                                                                    if akane_max_attack_now >= 1 and akane_max_attack_now <= 3:
+                                                                        $ akane_max_attack_now -= 1
                                 
                                 $ akane_slime += 1
                                 show slime zorder 15 at center_wrog3
                                 "{i}Statystyki Akane zostały osłabione{/i}"
-                                jump faza12
+                                jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3183,32 +3268,74 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 2 obronił się przed szlamem{/i}"
-                                jump faza12
+                                jump faza_fight12
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if kibol2_min_attack_now >= 2:
-                                    $ kibol2_min_attack_now -= 2
-                                    if kibol2_max_attack_now >= 6:
-                                        $ kibol2_max_attack_now -= 3
-                                    else:
-                                        $ kibol2_max_attack_now -= 2
-                        
+                                if kibol2_min_attack_now >= 28 and kibol2_min_attack_now <= 30:
+                                    $ kibol2_min_attack_now -= 10
                                 else:
-                                    $ kibol2_min_attack_now = 0
-
-                                    if kibol2_max_attack_now >= 2:
-                                        if kibol2_max_attack_now >= 6:
-                                            $ kibol2_max_attack_now -= 3
-                                        else:
-                                            $ kibol2_max_attack_now -= 2
-                                    
+                                    if kibol2_min_attack_now >= 25 and kibol2_min_attack_now <= 27:
+                                        $ kibol2_min_attack_now -= 9
                                     else:
-                                        $ kibol2_max_attack_now = 0
+                                        if kibol2_min_attack_now >= 22 and kibol2_min_attack_now <= 24:
+                                            $ kibol2_min_attack_now -= 8
+                                        else:
+                                            if kibol2_min_attack_now >= 19 and kibol2_min_attack_now <= 21:
+                                                $ kibol2_min_attack_now -= 7
+                                            else:
+                                                if kibol2_min_attack_now >= 16 and kibol2_min_attack_now <= 18:
+                                                    $ kibol2_min_attack_now -= 6
+                                                else:
+                                                    if kibol2_min_attack_now >= 13 and kibol2_min_attack_now <= 15:
+                                                        $ kibol2_min_attack_now -= 5
+                                                    else:   
+                                                        if kibol2_min_attack_now >= 10 and kibol2_min_attack_now <= 12:
+                                                            $ kibol2_min_attack_now -= 4
+                                                        else:
+                                                            if kibol2_min_attack_now >= 7 and kibol2_min_attack_now <= 9:
+                                                                $ kibol2_min_attack_now -= 3
+                                                            else:
+                                                                if kibol2_min_attack_now >= 4 and kibol2_min_attack_now <= 6:
+                                                                    $ kibol2_min_attack_now -= 2
+                                                                else:
+                                                                    if kibol2_min_attack_now >= 1 and kibol2_min_attack_now <= 3:
+                                                                        $ kibol2_min_attack_now -= 1
+
+
+                                if kibol2_max_attack_now >= 28 and kibol2_max_attack_now <= 30:
+                                    $ kibol2_max_attack_now -= 10
+                                else:
+                                    if kibol2_max_attack_now >= 25 and kibol2_max_attack_now <= 27:
+                                        $ kibol2_max_attack_now -= 9
+                                    else:
+                                        if kibol2_max_attack_now >= 22 and kibol2_max_attack_now <= 24:
+                                            $ kibol2_max_attack_now -= 8
+                                        else:
+                                            if kibol2_max_attack_now >= 19 and kibol2_max_attack_now <= 21:
+                                                $ kibol2_max_attack_now -= 7
+                                            else:
+                                                if kibol2_max_attack_now >= 16 and kibol2_max_attack_now <= 18:
+                                                    $ kibol2_max_attack_now -= 6
+                                                else:
+                                                    if kibol2_max_attack_now >= 13 and kibol2_max_attack_now <= 15:
+                                                        $ kibol2_max_attack_now -= 5
+                                                    else:
+                                                        if kibol2_max_attack_now >= 10 and kibol2_max_attack_now <= 12:
+                                                            $ kibol2_max_attack_now -= 4
+                                                        else:
+                                                            if kibol2_max_attack_now >= 7 and kibol2_max_attack_now <= 9:
+                                                                $ kibol2_max_attack_now -= 3
+                                                            else:
+                                                                if kibol2_max_attack_now >= 4 and kibol2_max_attack_now <= 6:
+                                                                    $ kibol2_max_attack_now -= 2
+                                                                else:
+                                                                    if kibol2_max_attack_now >= 1 and kibol2_max_attack_now <= 3:
+                                                                        $ kibol2_max_attack_now -= 1
                                 
                                 $ kibol2_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Kibol 2 zostały osłabione{/i}"
-                                jump faza12
+                                jump faza_fight12
 
         if urban_fighter == 1:
             if urban_wybrany == 1:
@@ -3422,7 +3549,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza12
+                        jump faza_fight12
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -3495,7 +3622,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
 
                                             $ kibol1_hp_now -= int(urban_attack / 2)
 
@@ -3531,7 +3658,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
 
                                             $ kibol1_hp_now -= urban_attack
 
@@ -3551,7 +3678,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -3564,7 +3691,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza12
+                                jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -3634,7 +3761,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
 
                                             $ akane_hp_now -= int(urban_attack / 2)
 
@@ -3670,7 +3797,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
 
                                             $ akane_hp_now -= urban_attack
 
@@ -3690,7 +3817,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -3703,7 +3830,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza12
+                                jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -3773,7 +3900,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
 
                                             $ kibol2_hp_now -= int(urban_attack / 2)
 
@@ -3809,7 +3936,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
 
                                             $ kibol2_hp_now -= urban_attack
 
@@ -3829,7 +3956,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza12
+                                                    jump faza_fight12
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -3842,7 +3969,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza12
+                                jump faza_fight12
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -3857,7 +3984,7 @@ label fight1:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -3939,7 +4066,7 @@ label fight1:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
 
                     hide uszy
-                    jump faza12   
+                    jump faza_fight12   
         if zyd_fighter == 1:
             if zyd_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
@@ -4152,7 +4279,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza12
+                        jump faza_fight12
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4218,7 +4345,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
@@ -4254,7 +4381,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol1_hp_now -= zyd_attack
 
@@ -4274,7 +4401,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4288,7 +4415,7 @@ label fight1:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -4351,7 +4478,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
@@ -4387,7 +4514,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ akane_hp_now -= zyd_attack
 
@@ -4407,7 +4534,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4420,7 +4547,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -4483,7 +4610,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
@@ -4519,7 +4646,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol2_hp_now -= zyd_attack
 
@@ -4539,7 +4666,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4552,7 +4679,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -4567,7 +4694,7 @@ label fight1:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -4605,7 +4732,7 @@ label fight1:
                             
                             "{i}Kibol 1 kupił pager od Żyda{/i}"
 
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -4616,7 +4743,7 @@ label fight1:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Akane kupił pager od Żyda{/i}"
 
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -4627,7 +4754,7 @@ label fight1:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Kibol 2 kupił pager od Żyda{/i}"
 
-                            jump faza12
+                            jump faza_fight12
                 
                 "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or akane_pager >= 1 and pager_boom == 0 or kibol2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -4644,55 +4771,55 @@ label fight1:
                     play sound "audio/sfx/boom.mp3" 
 
                     if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
-                        $ kibol1_hp_now -= 8
-                        $ kibol2_hp_now -= 8
-                        $ akane_hp_now -= 8
+                        $ kibol1_hp_now -= 10
+                        $ kibol2_hp_now -= 10
+                        $ akane_hp_now -= 10
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
-                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                             
                     else:
                         if kibol1_pager == 1 and akane_pager == 1:
-                            $ kibol1_hp_now -= 8
-                            $ akane_hp_now -= 8
+                            $ kibol1_hp_now -= 10
+                            $ akane_hp_now -= 10
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
-                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                 
                         else:
                             if akane_pager == 1 and kibol2_pager == 1:
-                                $ kibol2_hp_now -= 8
-                                $ akane_hp_now -= 8
+                                $ kibol2_hp_now -= 10
+                                $ akane_hp_now -= 10
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
-                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                     
                             else:
                                 if kibol1_pager == 1 and kibol2_pager == 1:
-                                    $ kibol1_hp_now -= 8
-                                    $ kibol2_hp_now -= 8
+                                    $ kibol1_hp_now -= 10
+                                    $ kibol2_hp_now -= 10
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
-                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                         
                                 else:
                                     if kibol1_pager == 1:
-                                        $ kibol1_hp_now -= 8
+                                        $ kibol1_hp_now -= 10
                                         show eksplozja1 zorder 16 at bok_wrog1
-                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if akane_pager == 1:
-                                            $ akane_hp_now -= 8
+                                            $ akane_hp_now -= 10
                                             show eksplozja2 zorder 16 at bok_wrog3
-                                            "{i}Akane w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                            "{i}Akane w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
                                             if kibol2_pager == 1:
-                                                $ kibol2_hp_now -= 8
+                                                $ kibol2_hp_now -= 10
                                                 show eksplozja3 zorder 16 at bok_wrog2
-                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                     hide red_button
                     hide pager1
@@ -4706,7 +4833,7 @@ label fight1:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
 
-                    jump faza12
+                    jump faza_fight12
 
         if kazuma_fighter == 1:
             if kazuma_wybrany == 1:
@@ -4920,7 +5047,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza12
+                        jump faza_fight12
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4986,7 +5113,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
@@ -5022,7 +5149,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol1_hp_now -= kazuma_attack
 
@@ -5042,7 +5169,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5055,7 +5182,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5118,7 +5245,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
@@ -5154,7 +5281,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ akane_hp_now -= kazuma_attack
 
@@ -5174,7 +5301,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5187,7 +5314,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5250,7 +5377,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
@@ -5286,7 +5413,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
 
                                     $ kibol2_hp_now -= kazuma_attack
 
@@ -5306,7 +5433,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza12
+                                            jump faza_fight12
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5319,7 +5446,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza12
+                            jump faza_fight12
     
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
@@ -5335,7 +5462,7 @@ label fight1:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -5370,7 +5497,7 @@ label fight1:
                             if kibol1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza12
+                                jump faza_fight12
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if kibol1_sex == 0:
@@ -5437,14 +5564,14 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                                         
-                                jump faza12
+                                jump faza_fight12
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
                             kazuma "Steal!"
                             if akane_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza12
+                                jump faza_fight12
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if akane_sex == 0:
@@ -5511,14 +5638,14 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
-                                jump faza12
+                                jump faza_fight12
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
                             kazuma "Steal!"
                             if kibol2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza12
+                                jump faza_fight12
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if kibol2_sex == 0:
@@ -5585,7 +5712,7 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                                         
-                                jump faza12
+                                jump faza_fight12
 
         if tarczownik_fighter == 1 and tarczownik_weapon >= 1:
             if tarczownik_hp_now >= 1:
@@ -5647,7 +5774,7 @@ label fight1:
 
 
 
-                        jump faza12
+                        jump faza_fight12
                 
                 if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1:
                     $ kostka = renpy.random.randint(1, 2)
@@ -5692,7 +5819,7 @@ label fight1:
 
 
 
-                        jump faza12
+                        jump faza_fight12
                 
                 $ kostka = renpy.random.randint(1, 10)
 
@@ -5741,7 +5868,7 @@ label fight1:
                                     luszcz "..."
 
 
-                    jump faza12
+                    jump faza_fight12
                 
                 if tarczownik_weapon >= 1:
                     if tarczownik_wybrany == 1:
@@ -5940,7 +6067,7 @@ label fight1:
                                 queue sound "audio/sfx/heal.mp3" 
                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
 
-                    jump faza12
+                    jump faza_fight12
                 
                 tarczownik "Aaaaaaaaagh!"
 
@@ -6144,7 +6271,7 @@ label fight1:
                                                     $ dialog_fight2 += 1
                                                     luszcz "..."
 
-                                    jump faza12
+                                    jump faza_fight12
                                 else:
                                     jump losowanko_tarczownik_fight11
 
@@ -6341,7 +6468,7 @@ label fight1:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza12
+                                        jump faza_fight12
                                     else:
                                         jump losowanko_tarczownik_fight11
                                 
@@ -6538,7 +6665,7 @@ label fight1:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza12
+                                        jump faza_fight12
                                     else:
                                         jump losowanko_tarczownik_fight11
 
@@ -6740,7 +6867,7 @@ label fight1:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza12
+                                        jump faza_fight12
                                     else:
                                         jump losowanko_tarczownik_fight11
 
@@ -6939,7 +7066,7 @@ label fight1:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza12
+                                            jump faza_fight12
                                         else:
                                             jump losowanko_tarczownik_fight11
                                     
@@ -7138,7 +7265,7 @@ label fight1:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza12
+                                            jump faza_fight12
                                         else:
                                             jump losowanko_tarczownik_fight11
 
@@ -7341,7 +7468,7 @@ label fight1:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza12
+                                            jump faza_fight12
                                         else:
                                             jump losowanko_tarczownik_fight11
 
@@ -7540,7 +7667,7 @@ label fight1:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza12
+                                                jump faza_fight12
                                             else:
                                                 jump losowanko_tarczownik_fight11
                                         
@@ -7739,7 +7866,7 @@ label fight1:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza12
+                                                jump faza_fight12
                                             else:
                                                 jump losowanko_tarczownik_fight11
 
@@ -7748,7 +7875,7 @@ label fight1:
                             else:
                                 jump losowanko_tarczownik_fight11
 
-    label faza12:
+    label faza_fight12:
         hide reka1
         hide reka2
         hide reka3
@@ -7841,7 +7968,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -8029,7 +8156,7 @@ label fight1:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
         
         if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 2:
             $ luszcz_min_attack_now += 1
@@ -8263,7 +8390,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza13
+                        jump faza_fight13
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -8329,7 +8456,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol1_hp_now -= int(luszcz_attack / 2)
 
@@ -8365,7 +8492,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol1_hp_now -= luszcz_attack
 
@@ -8385,7 +8512,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8398,7 +8525,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -8461,7 +8588,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ akane_hp_now -= int(luszcz_attack / 2)
 
@@ -8497,7 +8624,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ akane_hp_now -= luszcz_attack
 
@@ -8517,7 +8644,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8530,7 +8657,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -8593,7 +8720,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol2_hp_now -= int(luszcz_attack / 2)
 
@@ -8629,7 +8756,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol2_hp_now -= luszcz_attack
 
@@ -8649,7 +8776,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8662,7 +8789,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -8677,7 +8804,7 @@ label fight1:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -8832,7 +8959,7 @@ label fight1:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza13
+                            jump faza_fight13
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -8932,7 +9059,7 @@ label fight1:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza13
+                            jump faza_fight13
         
         if eminem_fighter == 2:
             if eminem_wybrany == 1:
@@ -9021,7 +9148,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -9073,7 +9200,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -9125,7 +9252,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -9141,7 +9268,7 @@ label fight1:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -9176,32 +9303,74 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 1 obronił się przed szlamem{/i}"
-                                jump faza13
+                                jump faza_fight13
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if kibol1_min_attack_now >= 2:
-                                    $ kibol1_min_attack_now -= 2
-                                    if kibol1_max_attack_now >= 6:
-                                        $ kibol1_max_attack_now -= 3
-                                    else:
-                                        $ kibol1_max_attack_now -= 2
-                        
+                                if kibol1_min_attack_now >= 28 and kibol1_min_attack_now <= 30:
+                                    $ kibol1_min_attack_now -= 10
                                 else:
-                                    $ kibol1_min_attack_now = 0
-
-                                    if kibol1_max_attack_now >= 2:
-                                        if kibol1_max_attack_now >= 6:
-                                            $ kibol1_max_attack_now -= 3
-                                        else:
-                                            $ kibol1_max_attack_now -= 2
-                                    
+                                    if kibol1_min_attack_now >= 25 and kibol1_min_attack_now <= 27:
+                                        $ kibol1_min_attack_now -= 9
                                     else:
-                                        $ kibol1_max_attack_now = 0
+                                        if kibol1_min_attack_now >= 22 and kibol1_min_attack_now <= 24:
+                                            $ kibol1_min_attack_now -= 8
+                                        else:
+                                            if kibol1_min_attack_now >= 19 and kibol1_min_attack_now <= 21:
+                                                $ kibol1_min_attack_now -= 7
+                                            else:
+                                                if kibol1_min_attack_now >= 16 and kibol1_min_attack_now <= 18:
+                                                    $ kibol1_min_attack_now -= 6
+                                                else:
+                                                    if kibol1_min_attack_now >= 13 and kibol1_min_attack_now <= 15:
+                                                        $ kibol1_min_attack_now -= 5
+                                                    else:   
+                                                        if kibol1_min_attack_now >= 10 and kibol1_min_attack_now <= 12:
+                                                            $ kibol1_min_attack_now -= 4
+                                                        else:
+                                                            if kibol1_min_attack_now >= 7 and kibol1_min_attack_now <= 9:
+                                                                $ kibol1_min_attack_now -= 3
+                                                            else:
+                                                                if kibol1_min_attack_now >= 4 and kibol1_min_attack_now <= 6:
+                                                                    $ kibol1_min_attack_now -= 2
+                                                                else:
+                                                                    if kibol1_min_attack_now >= 1 and kibol1_min_attack_now <= 3:
+                                                                        $ kibol1_min_attack_now -= 1
+
+
+                                if kibol1_max_attack_now >= 28 and kibol1_max_attack_now <= 30:
+                                    $ kibol1_max_attack_now -= 10
+                                else:
+                                    if kibol1_max_attack_now >= 25 and kibol1_max_attack_now <= 27:
+                                        $ kibol1_max_attack_now -= 9
+                                    else:
+                                        if kibol1_max_attack_now >= 22 and kibol1_max_attack_now <= 24:
+                                            $ kibol1_max_attack_now -= 8
+                                        else:
+                                            if kibol1_max_attack_now >= 19 and kibol1_max_attack_now <= 21:
+                                                $ kibol1_max_attack_now -= 7
+                                            else:
+                                                if kibol1_max_attack_now >= 16 and kibol1_max_attack_now <= 18:
+                                                    $ kibol1_max_attack_now -= 6
+                                                else:
+                                                    if kibol1_max_attack_now >= 13 and kibol1_max_attack_now <= 15:
+                                                        $ kibol1_max_attack_now -= 5
+                                                    else:
+                                                        if kibol1_max_attack_now >= 10 and kibol1_max_attack_now <= 12:
+                                                            $ kibol1_max_attack_now -= 4
+                                                        else:
+                                                            if kibol1_max_attack_now >= 7 and kibol1_max_attack_now <= 9:
+                                                                $ kibol1_max_attack_now -= 3
+                                                            else:
+                                                                if kibol1_max_attack_now >= 4 and kibol1_max_attack_now <= 6:
+                                                                    $ kibol1_max_attack_now -= 2
+                                                                else:
+                                                                    if kibol1_max_attack_now >= 1 and kibol1_max_attack_now <= 3:
+                                                                        $ kibol1_max_attack_now -= 1
                                 
                                 $ kibol1_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Kibol 1 zostały osłabione{/i}"
-                                jump faza13
+                                jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -9209,32 +9378,73 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
-                                jump faza13
+                                jump faza_fight13
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if akane_min_attack_now >= 2:
-                                    $ akane_min_attack_now -= 2
-                                    if akane_max_attack_now >= 6:
-                                        $ akane_max_attack_now -= 3
-                                    else:
-                                        $ akane_max_attack_now -= 2
-                        
+                                if akane_min_attack_now >= 28 and akane_min_attack_now <= 30:
+                                    $ akane_min_attack_now -= 10
                                 else:
-                                    $ akane_min_attack_now = 0
-
-                                    if akane_max_attack_now >= 2:
-                                        if akane_max_attack_now >= 6:
-                                            $ akane_max_attack_now -= 3
-                                        else:
-                                            $ akane_max_attack_now -= 2
-                                    
+                                    if akane_min_attack_now >= 25 and akane_min_attack_now <= 27:
+                                        $ akane_min_attack_now -= 9
                                     else:
-                                        $ akane_max_attack_now = 0
+                                        if akane_min_attack_now >= 22 and akane_min_attack_now <= 24:
+                                            $ akane_min_attack_now -= 8
+                                        else:
+                                            if akane_min_attack_now >= 19 and akane_min_attack_now <= 21:
+                                                $ akane_min_attack_now -= 7
+                                            else:
+                                                if akane_min_attack_now >= 16 and akane_min_attack_now <= 18:
+                                                    $ akane_min_attack_now -= 6
+                                                else:
+                                                    if akane_min_attack_now >= 13 and akane_min_attack_now <= 15:
+                                                        $ akane_min_attack_now -= 5
+                                                    else:   
+                                                        if akane_min_attack_now >= 10 and akane_min_attack_now <= 12:
+                                                            $ akane_min_attack_now -= 4
+                                                        else:
+                                                            if akane_min_attack_now >= 7 and akane_min_attack_now <= 9:
+                                                                $ akane_min_attack_now -= 3
+                                                            else:
+                                                                if akane_min_attack_now >= 4 and akane_min_attack_now <= 6:
+                                                                    $ akane_min_attack_now -= 2
+                                                                else:
+                                                                    if akane_min_attack_now >= 1 and akane_min_attack_now <= 3:
+                                                                        $ akane_min_attack_now -= 1
 
+
+                                if akane_max_attack_now >= 28 and akane_max_attack_now <= 30:
+                                    $ akane_max_attack_now -= 10
+                                else:
+                                    if akane_max_attack_now >= 25 and akane_max_attack_now <= 27:
+                                        $ akane_max_attack_now -= 9
+                                    else:
+                                        if akane_max_attack_now >= 22 and akane_max_attack_now <= 24:
+                                            $ akane_max_attack_now -= 8
+                                        else:
+                                            if akane_max_attack_now >= 19 and akane_max_attack_now <= 21:
+                                                $ akane_max_attack_now -= 7
+                                            else:
+                                                if akane_max_attack_now >= 16 and akane_max_attack_now <= 18:
+                                                    $ akane_max_attack_now -= 6
+                                                else:
+                                                    if akane_max_attack_now >= 13 and akane_max_attack_now <= 15:
+                                                        $ akane_max_attack_now -= 5
+                                                    else:
+                                                        if akane_max_attack_now >= 10 and akane_max_attack_now <= 12:
+                                                            $ akane_max_attack_now -= 4
+                                                        else:
+                                                            if akane_max_attack_now >= 7 and akane_max_attack_now <= 9:
+                                                                $ akane_max_attack_now -= 3
+                                                            else:
+                                                                if akane_max_attack_now >= 4 and akane_max_attack_now <= 6:
+                                                                    $ akane_max_attack_now -= 2
+                                                                else:
+                                                                    if akane_max_attack_now >= 1 and akane_max_attack_now <= 3:
+                                                                        $ akane_max_attack_now -= 1
                                 $ akane_slime += 1
                                 show slime zorder 15 at center_wrog3 
                                 "{i}Statystyki Akane zostały osłabione{/i}"
-                                jump faza13
+                                jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -9242,32 +9452,74 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 2 obronił się przed szlamem{/i}"
-                                jump faza13
+                                jump faza_fight13
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if kibol2_min_attack_now >= 2:
-                                    $ kibol2_min_attack_now -= 2
-                                    if kibol2_max_attack_now >= 6:
-                                        $ kibol2_max_attack_now -= 3
-                                    else:
-                                        $ kibol2_max_attack_now -= 2
-                        
+                                if kibol2_min_attack_now >= 28 and kibol2_min_attack_now <= 30:
+                                    $ kibol2_min_attack_now -= 10
                                 else:
-                                    $ kibol2_min_attack_now = 0
-
-                                    if kibol2_max_attack_now >= 2:
-                                        if kibol2_max_attack_now >= 6:
-                                            $ kibol2_max_attack_now -= 3
-                                        else:
-                                            $ kibol2_max_attack_now -= 2
-                                    
+                                    if kibol2_min_attack_now >= 25 and kibol2_min_attack_now <= 27:
+                                        $ kibol2_min_attack_now -= 9
                                     else:
-                                        $ kibol2_max_attack_now = 0
+                                        if kibol2_min_attack_now >= 22 and kibol2_min_attack_now <= 24:
+                                            $ kibol2_min_attack_now -= 8
+                                        else:
+                                            if kibol2_min_attack_now >= 19 and kibol2_min_attack_now <= 21:
+                                                $ kibol2_min_attack_now -= 7
+                                            else:
+                                                if kibol2_min_attack_now >= 16 and kibol2_min_attack_now <= 18:
+                                                    $ kibol2_min_attack_now -= 6
+                                                else:
+                                                    if kibol2_min_attack_now >= 13 and kibol2_min_attack_now <= 15:
+                                                        $ kibol2_min_attack_now -= 5
+                                                    else:   
+                                                        if kibol2_min_attack_now >= 10 and kibol2_min_attack_now <= 12:
+                                                            $ kibol2_min_attack_now -= 4
+                                                        else:
+                                                            if kibol2_min_attack_now >= 7 and kibol2_min_attack_now <= 9:
+                                                                $ kibol2_min_attack_now -= 3
+                                                            else:
+                                                                if kibol2_min_attack_now >= 4 and kibol2_min_attack_now <= 6:
+                                                                    $ kibol2_min_attack_now -= 2
+                                                                else:
+                                                                    if kibol2_min_attack_now >= 1 and kibol2_min_attack_now <= 3:
+                                                                        $ kibol2_min_attack_now -= 1
+
+
+                                if kibol2_max_attack_now >= 28 and kibol2_max_attack_now <= 30:
+                                    $ kibol2_max_attack_now -= 10
+                                else:
+                                    if kibol2_max_attack_now >= 25 and kibol2_max_attack_now <= 27:
+                                        $ kibol2_max_attack_now -= 9
+                                    else:
+                                        if kibol2_max_attack_now >= 22 and kibol2_max_attack_now <= 24:
+                                            $ kibol2_max_attack_now -= 8
+                                        else:
+                                            if kibol2_max_attack_now >= 19 and kibol2_max_attack_now <= 21:
+                                                $ kibol2_max_attack_now -= 7
+                                            else:
+                                                if kibol2_max_attack_now >= 16 and kibol2_max_attack_now <= 18:
+                                                    $ kibol2_max_attack_now -= 6
+                                                else:
+                                                    if kibol2_max_attack_now >= 13 and kibol2_max_attack_now <= 15:
+                                                        $ kibol2_max_attack_now -= 5
+                                                    else:
+                                                        if kibol2_max_attack_now >= 10 and kibol2_max_attack_now <= 12:
+                                                            $ kibol2_max_attack_now -= 4
+                                                        else:
+                                                            if kibol2_max_attack_now >= 7 and kibol2_max_attack_now <= 9:
+                                                                $ kibol2_max_attack_now -= 3
+                                                            else:
+                                                                if kibol2_max_attack_now >= 4 and kibol2_max_attack_now <= 6:
+                                                                    $ kibol2_max_attack_now -= 2
+                                                                else:
+                                                                    if kibol2_max_attack_now >= 1 and kibol2_max_attack_now <= 3:
+                                                                        $ kibol2_max_attack_now -= 1
                                 
                                 $ kibol2_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Kibol 2 zostały osłabione{/i}"
-                                jump faza13
+                                jump faza_fight13
 
         if urban_fighter == 2:
             if urban_wybrany == 1:
@@ -9481,7 +9733,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza13
+                        jump faza_fight13
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -9554,7 +9806,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
 
                                             $ kibol1_hp_now -= int(urban_attack / 2)
 
@@ -9590,7 +9842,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
 
                                             $ kibol1_hp_now -= urban_attack
 
@@ -9610,7 +9862,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -9623,7 +9875,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza13
+                                jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -9693,7 +9945,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
 
                                             $ akane_hp_now -= int(urban_attack / 2)
 
@@ -9729,7 +9981,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
 
                                             $ akane_hp_now -= urban_attack
 
@@ -9749,7 +10001,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -9762,7 +10014,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza13
+                                jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -9832,7 +10084,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
 
                                             $ kibol2_hp_now -= int(urban_attack / 2)
 
@@ -9868,7 +10120,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
 
                                             $ kibol2_hp_now -= urban_attack
 
@@ -9888,7 +10140,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza13
+                                                    jump faza_fight13
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -9901,7 +10153,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza13
+                                jump faza_fight13
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -9916,7 +10168,7 @@ label fight1:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -9997,7 +10249,7 @@ label fight1:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
 
                     hide uszy
-                    jump faza13  
+                    jump faza_fight13  
 
         if zyd_fighter == 2:
             if zyd_wybrany == 1:
@@ -10211,7 +10463,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza13
+                        jump faza_fight13
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -10277,7 +10529,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
@@ -10313,7 +10565,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol1_hp_now -= zyd_attack
 
@@ -10333,7 +10585,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -10346,7 +10598,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -10409,7 +10661,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
@@ -10445,7 +10697,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ akane_hp_now -= zyd_attack
 
@@ -10465,7 +10717,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -10478,7 +10730,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -10541,7 +10793,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
@@ -10577,7 +10829,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol2_hp_now -= zyd_attack
 
@@ -10597,7 +10849,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -10610,7 +10862,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -10625,7 +10877,7 @@ label fight1:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -10663,7 +10915,7 @@ label fight1:
                             show pager1 zorder 15 at bok_wrog1
                             "{i}Kibol 1 kupił pager od Żyda{/i}"
 
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -10674,7 +10926,7 @@ label fight1:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Akane kupił pager od Żyda{/i}"
 
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -10685,7 +10937,7 @@ label fight1:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Kibol 2 kupił pager od Żyda{/i}"
 
-                            jump faza13
+                            jump faza_fight13
                 
                 "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or akane_pager >= 1 and pager_boom == 0 or kibol2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -10702,55 +10954,55 @@ label fight1:
                     play sound "audio/sfx/boom.mp3" 
 
                     if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
-                        $ kibol1_hp_now -= 8
-                        $ kibol2_hp_now -= 8
-                        $ akane_hp_now -= 8
+                        $ kibol1_hp_now -= 10
+                        $ kibol2_hp_now -= 10
+                        $ akane_hp_now -= 10
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
-                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                             
                     else:
                         if kibol1_pager == 1 and akane_pager == 1:
-                            $ kibol1_hp_now -= 8
-                            $ akane_hp_now -= 8
+                            $ kibol1_hp_now -= 10
+                            $ akane_hp_now -= 10
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
-                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                 
                         else:
                             if akane_pager == 1 and kibol2_pager == 1:
-                                $ kibol2_hp_now -= 8
-                                $ akane_hp_now -= 8
+                                $ kibol2_hp_now -= 10
+                                $ akane_hp_now -= 10
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
-                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                     
                             else:
                                 if kibol1_pager == 1 and kibol2_pager == 1:
-                                    $ kibol1_hp_now -= 8
-                                    $ kibol2_hp_now -= 8
+                                    $ kibol1_hp_now -= 10
+                                    $ kibol2_hp_now -= 10
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
-                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                         
                                 else:
                                     if kibol1_pager == 1:
-                                        $ kibol1_hp_now -= 8
+                                        $ kibol1_hp_now -= 10
                                         show eksplozja1 zorder 16 at bok_wrog1
-                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if akane_pager == 1:
-                                            $ akane_hp_now -= 8
+                                            $ akane_hp_now -= 10
                                             show eksplozja2 zorder 16 at bok_wrog3
-                                            "{i}Akane w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                            "{i}Akane w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
                                             if kibol2_pager == 1:
-                                                $ kibol2_hp_now -= 8
+                                                $ kibol2_hp_now -= 10
                                                 show eksplozja3 zorder 16 at bok_wrog2
-                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                     hide red_button
                     hide pager1
@@ -10763,7 +11015,7 @@ label fight1:
                     if dialog_fight1 == 0:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
-                    jump faza13
+                    jump faza_fight13
 
         if kazuma_fighter == 2:
             if kazuma_wybrany == 1:
@@ -10977,7 +11229,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza13
+                        jump faza_fight13
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -11043,7 +11295,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
@@ -11079,7 +11331,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol1_hp_now -= kazuma_attack
 
@@ -11099,7 +11351,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11112,7 +11364,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -11175,7 +11427,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
@@ -11211,7 +11463,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ akane_hp_now -= kazuma_attack
 
@@ -11231,7 +11483,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11244,7 +11496,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -11307,7 +11559,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
@@ -11343,7 +11595,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
 
                                     $ kibol2_hp_now -= kazuma_attack
 
@@ -11363,7 +11615,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza13
+                                            jump faza_fight13
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11376,7 +11628,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza13
+                            jump faza_fight13
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -11391,7 +11643,7 @@ label fight1:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -11425,7 +11677,7 @@ label fight1:
                             if kibol1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza13
+                                jump faza_fight13
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if kibol1_sex == 0:
@@ -11492,14 +11744,14 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                                         
-                                jump faza13
+                                jump faza_fight13
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
                             kazuma "Steal!"
                             if akane_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza13
+                                jump faza_fight13
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if akane_sex == 0:
@@ -11566,14 +11818,14 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
-                                jump faza13
+                                jump faza_fight13
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
                             kazuma "Steal!"
                             if kibol2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza13
+                                jump faza_fight13
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if kibol2_sex == 0:
@@ -11640,9 +11892,9 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                                         
-                                jump faza13
+                                jump faza_fight13
 
-    label faza13:
+    label faza_fight13:
         hide reka1
         hide reka2
         hide reka3
@@ -11735,7 +11987,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -11923,7 +12175,7 @@ label fight1:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
         
         if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 3:
             $ luszcz_min_attack_now += 1
@@ -12157,7 +12409,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza14
+                        jump faza_fight14
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -12223,7 +12475,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol1_hp_now -= int(luszcz_attack / 2)
 
@@ -12259,7 +12511,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol1_hp_now -= luszcz_attack
 
@@ -12279,7 +12531,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12292,7 +12544,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -12355,7 +12607,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ akane_hp_now -= int(luszcz_attack / 2)
 
@@ -12391,7 +12643,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ akane_hp_now -= luszcz_attack
 
@@ -12411,7 +12663,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12424,7 +12676,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -12487,7 +12739,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol2_hp_now -= int(luszcz_attack / 2)
 
@@ -12523,7 +12775,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol2_hp_now -= luszcz_attack
 
@@ -12543,7 +12795,7 @@ label fight1:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12556,7 +12808,7 @@ label fight1:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -12571,7 +12823,7 @@ label fight1:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -12726,7 +12978,7 @@ label fight1:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza14
+                            jump faza_fight14
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -12826,7 +13078,7 @@ label fight1:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza14
+                            jump faza_fight14
         
         if eminem_fighter == 3:
             if eminem_wybrany == 1:
@@ -12915,7 +13167,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -12967,7 +13219,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -13019,7 +13271,7 @@ label fight1:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -13035,7 +13287,7 @@ label fight1:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -13071,32 +13323,74 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 1 obronił się przed szlamem{/i}"
-                                jump faza14
+                                jump faza_fight14
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if kibol1_min_attack_now >= 2:
-                                    $ kibol1_min_attack_now -= 2
-                                    if kibol1_max_attack_now >= 6:
-                                        $ kibol1_max_attack_now -= 3
-                                    else:
-                                        $ kibol1_max_attack_now -= 2
-                        
+                                if kibol1_min_attack_now >= 28 and kibol1_min_attack_now <= 30:
+                                    $ kibol1_min_attack_now -= 10
                                 else:
-                                    $ kibol1_min_attack_now = 0
-
-                                    if kibol1_max_attack_now >= 2:
-                                        if kibol1_max_attack_now >= 6:
-                                            $ kibol1_max_attack_now -= 3
-                                        else:
-                                            $ kibol1_max_attack_now -= 2
-                                    
+                                    if kibol1_min_attack_now >= 25 and kibol1_min_attack_now <= 27:
+                                        $ kibol1_min_attack_now -= 9
                                     else:
-                                        $ kibol1_max_attack_now = 0
+                                        if kibol1_min_attack_now >= 22 and kibol1_min_attack_now <= 24:
+                                            $ kibol1_min_attack_now -= 8
+                                        else:
+                                            if kibol1_min_attack_now >= 19 and kibol1_min_attack_now <= 21:
+                                                $ kibol1_min_attack_now -= 7
+                                            else:
+                                                if kibol1_min_attack_now >= 16 and kibol1_min_attack_now <= 18:
+                                                    $ kibol1_min_attack_now -= 6
+                                                else:
+                                                    if kibol1_min_attack_now >= 13 and kibol1_min_attack_now <= 15:
+                                                        $ kibol1_min_attack_now -= 5
+                                                    else:   
+                                                        if kibol1_min_attack_now >= 10 and kibol1_min_attack_now <= 12:
+                                                            $ kibol1_min_attack_now -= 4
+                                                        else:
+                                                            if kibol1_min_attack_now >= 7 and kibol1_min_attack_now <= 9:
+                                                                $ kibol1_min_attack_now -= 3
+                                                            else:
+                                                                if kibol1_min_attack_now >= 4 and kibol1_min_attack_now <= 6:
+                                                                    $ kibol1_min_attack_now -= 2
+                                                                else:
+                                                                    if kibol1_min_attack_now >= 1 and kibol1_min_attack_now <= 3:
+                                                                        $ kibol1_min_attack_now -= 1
+
+
+                                if kibol1_max_attack_now >= 28 and kibol1_max_attack_now <= 30:
+                                    $ kibol1_max_attack_now -= 10
+                                else:
+                                    if kibol1_max_attack_now >= 25 and kibol1_max_attack_now <= 27:
+                                        $ kibol1_max_attack_now -= 9
+                                    else:
+                                        if kibol1_max_attack_now >= 22 and kibol1_max_attack_now <= 24:
+                                            $ kibol1_max_attack_now -= 8
+                                        else:
+                                            if kibol1_max_attack_now >= 19 and kibol1_max_attack_now <= 21:
+                                                $ kibol1_max_attack_now -= 7
+                                            else:
+                                                if kibol1_max_attack_now >= 16 and kibol1_max_attack_now <= 18:
+                                                    $ kibol1_max_attack_now -= 6
+                                                else:
+                                                    if kibol1_max_attack_now >= 13 and kibol1_max_attack_now <= 15:
+                                                        $ kibol1_max_attack_now -= 5
+                                                    else:
+                                                        if kibol1_max_attack_now >= 10 and kibol1_max_attack_now <= 12:
+                                                            $ kibol1_max_attack_now -= 4
+                                                        else:
+                                                            if kibol1_max_attack_now >= 7 and kibol1_max_attack_now <= 9:
+                                                                $ kibol1_max_attack_now -= 3
+                                                            else:
+                                                                if kibol1_max_attack_now >= 4 and kibol1_max_attack_now <= 6:
+                                                                    $ kibol1_max_attack_now -= 2
+                                                                else:
+                                                                    if kibol1_max_attack_now >= 1 and kibol1_max_attack_now <= 3:
+                                                                        $ kibol1_max_attack_now -= 1
                                 
                                 $ kibol1_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Kibol 1 zostały osłabione{/i}"
-                                jump faza14
+                                jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -13104,32 +13398,74 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
-                                jump faza14
+                                jump faza_fight14
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if akane_min_attack_now >= 2:
-                                    $ akane_min_attack_now -= 2
-                                    if akane_max_attack_now >= 6:
-                                        $ akane_max_attack_now -= 3
-                                    else:
-                                        $ akane_max_attack_now -= 2
-                        
+                                if akane_min_attack_now >= 28 and akane_min_attack_now <= 30:
+                                    $ akane_min_attack_now -= 10
                                 else:
-                                    $ akane_min_attack_now = 0
-
-                                    if akane_max_attack_now >= 2:
-                                        if akane_max_attack_now >= 6:
-                                            $ akane_max_attack_now -= 3
-                                        else:
-                                            $ akane_max_attack_now -= 2
-                                    
+                                    if akane_min_attack_now >= 25 and akane_min_attack_now <= 27:
+                                        $ akane_min_attack_now -= 9
                                     else:
-                                        $ akane_max_attack_now = 0
+                                        if akane_min_attack_now >= 22 and akane_min_attack_now <= 24:
+                                            $ akane_min_attack_now -= 8
+                                        else:
+                                            if akane_min_attack_now >= 19 and akane_min_attack_now <= 21:
+                                                $ akane_min_attack_now -= 7
+                                            else:
+                                                if akane_min_attack_now >= 16 and akane_min_attack_now <= 18:
+                                                    $ akane_min_attack_now -= 6
+                                                else:
+                                                    if akane_min_attack_now >= 13 and akane_min_attack_now <= 15:
+                                                        $ akane_min_attack_now -= 5
+                                                    else:   
+                                                        if akane_min_attack_now >= 10 and akane_min_attack_now <= 12:
+                                                            $ akane_min_attack_now -= 4
+                                                        else:
+                                                            if akane_min_attack_now >= 7 and akane_min_attack_now <= 9:
+                                                                $ akane_min_attack_now -= 3
+                                                            else:
+                                                                if akane_min_attack_now >= 4 and akane_min_attack_now <= 6:
+                                                                    $ akane_min_attack_now -= 2
+                                                                else:
+                                                                    if akane_min_attack_now >= 1 and akane_min_attack_now <= 3:
+                                                                        $ akane_min_attack_now -= 1
+
+
+                                if akane_max_attack_now >= 28 and akane_max_attack_now <= 30:
+                                    $ akane_max_attack_now -= 10
+                                else:
+                                    if akane_max_attack_now >= 25 and akane_max_attack_now <= 27:
+                                        $ akane_max_attack_now -= 9
+                                    else:
+                                        if akane_max_attack_now >= 22 and akane_max_attack_now <= 24:
+                                            $ akane_max_attack_now -= 8
+                                        else:
+                                            if akane_max_attack_now >= 19 and akane_max_attack_now <= 21:
+                                                $ akane_max_attack_now -= 7
+                                            else:
+                                                if akane_max_attack_now >= 16 and akane_max_attack_now <= 18:
+                                                    $ akane_max_attack_now -= 6
+                                                else:
+                                                    if akane_max_attack_now >= 13 and akane_max_attack_now <= 15:
+                                                        $ akane_max_attack_now -= 5
+                                                    else:
+                                                        if akane_max_attack_now >= 10 and akane_max_attack_now <= 12:
+                                                            $ akane_max_attack_now -= 4
+                                                        else:
+                                                            if akane_max_attack_now >= 7 and akane_max_attack_now <= 9:
+                                                                $ akane_max_attack_now -= 3
+                                                            else:
+                                                                if akane_max_attack_now >= 4 and akane_max_attack_now <= 6:
+                                                                    $ akane_max_attack_now -= 2
+                                                                else:
+                                                                    if akane_max_attack_now >= 1 and akane_max_attack_now <= 3:
+                                                                        $ akane_max_attack_now -= 1
                                 
                                 $ akane_slime += 1
                                 show slime zorder 15 at center_wrog3
                                 "{i}Statystyki Akane zostały osłabione{/i}"
-                                jump faza14
+                                jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -13137,32 +13473,74 @@ label fight1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Kibol 2 obronił się przed szlamem{/i}"
-                                jump faza14
+                                jump faza_fight14
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if kibol2_min_attack_now >= 2:
-                                    $ kibol2_min_attack_now -= 2
-                                    if kibol2_max_attack_now >= 6:
-                                        $ kibol2_max_attack_now -= 3
-                                    else:
-                                        $ kibol2_max_attack_now -= 2
-                        
+                                if kibol2_min_attack_now >= 28 and kibol2_min_attack_now <= 30:
+                                    $ kibol2_min_attack_now -= 10
                                 else:
-                                    $ kibol2_min_attack_now = 0
-
-                                    if kibol2_max_attack_now >= 2:
-                                        if kibol2_max_attack_now >= 6:
-                                            $ kibol2_max_attack_now -= 3
-                                        else:
-                                            $ kibol2_max_attack_now -= 2
-                                    
+                                    if kibol2_min_attack_now >= 25 and kibol2_min_attack_now <= 27:
+                                        $ kibol2_min_attack_now -= 9
                                     else:
-                                        $ kibol2_max_attack_now = 0
+                                        if kibol2_min_attack_now >= 22 and kibol2_min_attack_now <= 24:
+                                            $ kibol2_min_attack_now -= 8
+                                        else:
+                                            if kibol2_min_attack_now >= 19 and kibol2_min_attack_now <= 21:
+                                                $ kibol2_min_attack_now -= 7
+                                            else:
+                                                if kibol2_min_attack_now >= 16 and kibol2_min_attack_now <= 18:
+                                                    $ kibol2_min_attack_now -= 6
+                                                else:
+                                                    if kibol2_min_attack_now >= 13 and kibol2_min_attack_now <= 15:
+                                                        $ kibol2_min_attack_now -= 5
+                                                    else:   
+                                                        if kibol2_min_attack_now >= 10 and kibol2_min_attack_now <= 12:
+                                                            $ kibol2_min_attack_now -= 4
+                                                        else:
+                                                            if kibol2_min_attack_now >= 7 and kibol2_min_attack_now <= 9:
+                                                                $ kibol2_min_attack_now -= 3
+                                                            else:
+                                                                if kibol2_min_attack_now >= 4 and kibol2_min_attack_now <= 6:
+                                                                    $ kibol2_min_attack_now -= 2
+                                                                else:
+                                                                    if kibol2_min_attack_now >= 1 and kibol2_min_attack_now <= 3:
+                                                                        $ kibol2_min_attack_now -= 1
+
+
+                                if kibol2_max_attack_now >= 28 and kibol2_max_attack_now <= 30:
+                                    $ kibol2_max_attack_now -= 10
+                                else:
+                                    if kibol2_max_attack_now >= 25 and kibol2_max_attack_now <= 27:
+                                        $ kibol2_max_attack_now -= 9
+                                    else:
+                                        if kibol2_max_attack_now >= 22 and kibol2_max_attack_now <= 24:
+                                            $ kibol2_max_attack_now -= 8
+                                        else:
+                                            if kibol2_max_attack_now >= 19 and kibol2_max_attack_now <= 21:
+                                                $ kibol2_max_attack_now -= 7
+                                            else:
+                                                if kibol2_max_attack_now >= 16 and kibol2_max_attack_now <= 18:
+                                                    $ kibol2_max_attack_now -= 6
+                                                else:
+                                                    if kibol2_max_attack_now >= 13 and kibol2_max_attack_now <= 15:
+                                                        $ kibol2_max_attack_now -= 5
+                                                    else:
+                                                        if kibol2_max_attack_now >= 10 and kibol2_max_attack_now <= 12:
+                                                            $ kibol2_max_attack_now -= 4
+                                                        else:
+                                                            if kibol2_max_attack_now >= 7 and kibol2_max_attack_now <= 9:
+                                                                $ kibol2_max_attack_now -= 3
+                                                            else:
+                                                                if kibol2_max_attack_now >= 4 and kibol2_max_attack_now <= 6:
+                                                                    $ kibol2_max_attack_now -= 2
+                                                                else:
+                                                                    if kibol2_max_attack_now >= 1 and kibol2_max_attack_now <= 3:
+                                                                        $ kibol2_max_attack_now -= 1
                                 
                                 $ kibol2_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Kibol 2 zostały osłabione{/i}"
-                                jump faza14
+                                jump faza_fight14
 
         if urban_fighter == 3:
             if urban_wybrany == 1:
@@ -13376,7 +13754,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza14
+                        jump faza_fight14
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -13449,7 +13827,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
 
                                             $ kibol1_hp_now -= int(urban_attack / 2)
 
@@ -13485,7 +13863,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
 
                                             $ kibol1_hp_now -= urban_attack
 
@@ -13505,7 +13883,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -13518,7 +13896,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza14
+                                jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -13588,7 +13966,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
 
                                             $ akane_hp_now -= int(urban_attack / 2)
 
@@ -13624,7 +14002,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
 
                                             $ akane_hp_now -= urban_attack
 
@@ -13644,7 +14022,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -13657,7 +14035,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza14
+                                jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -13727,7 +14105,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
 
                                             $ kibol2_hp_now -= int(urban_attack / 2)
 
@@ -13763,7 +14141,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
 
                                             $ kibol2_hp_now -= urban_attack
 
@@ -13783,7 +14161,7 @@ label fight1:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza14
+                                                    jump faza_fight14
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -13796,7 +14174,7 @@ label fight1:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza14
+                                jump faza_fight14
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -13811,7 +14189,7 @@ label fight1:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -13892,7 +14270,7 @@ label fight1:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
                     
                     hide uszy
-                    jump faza14
+                    jump faza_fight14
 
         if zyd_fighter == 3:
             if zyd_wybrany == 1:
@@ -14106,7 +14484,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza14
+                        jump faza_fight14
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -14172,7 +14550,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol1_hp_now -= int(zyd_attack / 2)
 
@@ -14208,7 +14586,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol1_hp_now -= zyd_attack
 
@@ -14228,7 +14606,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -14241,7 +14619,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -14304,7 +14682,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ akane_hp_now -= int(zyd_attack / 2)
 
@@ -14340,7 +14718,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ akane_hp_now -= zyd_attack
 
@@ -14360,7 +14738,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -14373,7 +14751,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -14436,7 +14814,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol2_hp_now -= int(zyd_attack / 2)
 
@@ -14472,7 +14850,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol2_hp_now -= zyd_attack
 
@@ -14492,7 +14870,7 @@ label fight1:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -14505,7 +14883,7 @@ label fight1:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -14520,7 +14898,7 @@ label fight1:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -14558,7 +14936,7 @@ label fight1:
                             show pager1 zorder 15 at bok_wrog1
                             "{i}Kibol 1 kupił pager od Żyda{/i}"
 
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -14569,7 +14947,7 @@ label fight1:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Akane kupił pager od Żyda{/i}"
 
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -14580,7 +14958,7 @@ label fight1:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Kibol 2 kupił pager od Żyda{/i}"
 
-                            jump faza14
+                            jump faza_fight14
                 
                 "{b}Wysadź Pagery{/b}" if kibol1_pager >= 1 and pager_boom == 0 or akane_pager >= 1 and pager_boom == 0 or kibol2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -14597,55 +14975,55 @@ label fight1:
                     play sound "audio/sfx/boom.mp3" 
 
                     if kibol1_pager == 1 and akane_pager == 1 and kibol2_pager == 1:
-                        $ kibol1_hp_now -= 8
-                        $ kibol2_hp_now -= 8
-                        $ akane_hp_now -= 8
+                        $ kibol1_hp_now -= 10
+                        $ kibol2_hp_now -= 10
+                        $ akane_hp_now -= 10
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
-                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                        "{i}Kibol 1, Akane i Kibol 2 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                             
                     else:
                         if kibol1_pager == 1 and akane_pager == 1:
-                            $ kibol1_hp_now -= 8
-                            $ akane_hp_now -= 8
+                            $ kibol1_hp_now -= 10
+                            $ akane_hp_now -= 10
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
-                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                            "{i}Kibol 1 i Akane w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                 
                         else:
                             if akane_pager == 1 and kibol2_pager == 1:
-                                $ kibol2_hp_now -= 8
-                                $ akane_hp_now -= 8
+                                $ kibol2_hp_now -= 10
+                                $ akane_hp_now -= 10
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
-                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                "{i}Akane i Kibol 1 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                     
                             else:
                                 if kibol1_pager == 1 and kibol2_pager == 1:
-                                    $ kibol1_hp_now -= 8
-                                    $ kibol2_hp_now -= 8
+                                    $ kibol1_hp_now -= 10
+                                    $ kibol2_hp_now -= 10
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
-                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 8HP{/i}"
+                                    "{i}Kibol 1 i Kibol 2 w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                         
                                 else:
                                     if kibol1_pager == 1:
-                                        $ kibol1_hp_now -= 8
+                                        $ kibol1_hp_now -= 10
                                         show eksplozja1 zorder 16 at bok_wrog1
-                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                        "{i}Kibol 1 w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if akane_pager == 1:
-                                            $ akane_hp_now -= 8
+                                            $ akane_hp_now -= 10
                                             show eksplozja2 zorder 16 at bok_wrog3
-                                            "{i}Akane w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                            "{i}Akane w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
                                             if kibol2_pager == 1:
-                                                $ kibol2_hp_now -= 8
+                                                $ kibol2_hp_now -= 10
                                                 show eksplozja3 zorder 16 at bok_wrog2
-                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 8HP{/i}"
+                                                "{i}Kibol 2 w wyniku ekspolzji Pageru stracił 10HP{/i}"
                     
                     hide red_button
                     hide pager1
@@ -14658,7 +15036,7 @@ label fight1:
                     if dialog_fight1 == 0:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
-                    jump faza14
+                    jump faza_fight14
 
         if kazuma_fighter == 3:
             if kazuma_wybrany == 1:
@@ -14872,7 +15250,7 @@ label fight1:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza14
+                        jump faza_fight14
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -14938,7 +15316,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol1_hp_now -= int(kazuma_attack / 2)
 
@@ -14974,7 +15352,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol1_hp_now -= kazuma_attack
 
@@ -14994,7 +15372,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15007,7 +15385,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -15070,7 +15448,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ akane_hp_now -= int(kazuma_attack / 2)
 
@@ -15106,7 +15484,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ akane_hp_now -= kazuma_attack
 
@@ -15126,7 +15504,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15139,7 +15517,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -15202,7 +15580,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol2_hp_now -= int(kazuma_attack / 2)
 
@@ -15238,7 +15616,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
 
                                     $ kibol2_hp_now -= kazuma_attack
 
@@ -15258,7 +15636,7 @@ label fight1:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza14
+                                            jump faza_fight14
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15271,7 +15649,7 @@ label fight1:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza14
+                            jump faza_fight14
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -15286,7 +15664,7 @@ label fight1:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -15320,7 +15698,7 @@ label fight1:
                             if kibol1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 1 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza14
+                                jump faza_fight14
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if kibol1_sex == 0:
@@ -15387,14 +15765,14 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Kibol 1{/i}"
                                         hide chwyta
                                         
-                                jump faza14
+                                jump faza_fight14
 
                         "{b}Akane{/b}" if akane_hp_now >= 1 and akane_weapon > 0:
                             kazuma "Steal!"
                             if akane_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza14
+                                jump faza_fight14
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if akane_sex == 0:
@@ -15461,14 +15839,14 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
-                                jump faza14
+                                jump faza_fight14
 
                         "{b}Kibol 2{/b}" if kibol2_hp_now >= 1 and kibol2_weapon > 0:
                             kazuma "Steal!"
                             if kibol2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Kibol 2 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza14
+                                jump faza_fight14
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if kibol2_sex == 0:
@@ -15535,9 +15913,9 @@ label fight1:
                                         "{i}Nie udało sie ukraść broni Kibol 2{/i}"
                                         hide chwyta
                                         
-                                jump faza14
+                                jump faza_fight14
 
-    label faza14:
+    label faza_fight14:
         hide reka1
         hide reka2
         hide reka3
@@ -15633,7 +16011,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -15821,7 +16199,7 @@ label fight1:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
 
         if ring == 2 and luszcz_wybrany > 0 and luszcz_hp_now > 0:
             $ kostka = renpy.random.randint(1, 3)
@@ -17735,7 +18113,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -17923,7 +18301,7 @@ label fight1:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
 
         $ kibol1_obrona = 0
         $ akane_obrona = 0
@@ -17942,13 +18320,13 @@ label fight1:
         $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
 
         if kibol1_hp_now <= 0:
-            jump faza15    
+            jump faza_fight15    
 
         show ruch zorder 0 at tlo_wrog1  
     
         if kibol1_stun == 1:
             "{i}Kibol 1 jest zestunnowany{/i}"
-            jump faza15  
+            jump faza_fight15  
 
         if kibol1_uszy >= 1 and urban_hp_now >= 1:
             if kibol1_weapon >= 1:
@@ -17964,7 +18342,7 @@ label fight1:
                     $ kibol1_hp_now -= kibol1_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                    jump faza15
+                    jump faza_fight15
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
@@ -17979,20 +18357,20 @@ label fight1:
                     $ dmg = int(kibol1_attack / 2)
                     "{i}Kibol 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump faza15
+                    jump faza_fight15
                 else:
                     $ urban_hp_now -= kibol1_attack
 
                     "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump faza15
+                    jump faza_fight15
         
         if kibol1_max_attack_now <= 0 and kibol1_obrona == 0:
             show tarcza6 zorder 15 at weapon_wrog1  
             play sound "audio/sfx/shield.mp3"
             "{i}Kibol 1 broni się{/i}"
             $ kibol1_obrona += 1
-            jump faza15
+            jump faza_fight15
 
         if kibol1_hp_now >= 1 and kibol1_obrona == 0:
             if kibol1_hp_now <= 3:
@@ -18003,7 +18381,7 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 1 broni się{/i}"
                     $ kibol1_obrona += 1
-                    jump faza15
+                    jump faza_fight15
                 
                 else:
                     jump losowanko_fight14
@@ -18016,7 +18394,7 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 1 broni się{/i}"
                     $ kibol1_obrona += 1
-                    jump faza15
+                    jump faza_fight15
                 
                 else:
                     jump losowanko_fight14
@@ -18040,7 +18418,7 @@ label fight1:
                                     $ kibol1_hp_now -= kibol1_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                    jump faza15
+                                    jump faza_fight15
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -18064,7 +18442,7 @@ label fight1:
 
                                     "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
 
-                            jump faza15
+                            jump faza_fight15
                         else:
                             jump losowanko_fight14
 
@@ -18080,7 +18458,7 @@ label fight1:
                                         $ kibol1_hp_now -= kibol1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                        jump faza15
+                                        jump faza_fight15
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -18104,7 +18482,7 @@ label fight1:
 
                                         "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza15
+                                jump faza_fight15
                             else:
                                 jump losowanko_fight14
                         
@@ -18119,7 +18497,7 @@ label fight1:
                                         $ kibol1_hp_now -= kibol1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                        jump faza15
+                                        jump faza_fight15
                             
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -18143,7 +18521,7 @@ label fight1:
 
                                         "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza15
+                                jump faza_fight15
                             else:
                                 jump losowanko_fight14
 
@@ -18163,7 +18541,7 @@ label fight1:
                                         $ kibol1_hp_now -= kibol1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                        jump faza15
+                                        jump faza_fight15
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -18187,7 +18565,7 @@ label fight1:
 
                                         "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump faza15
+                                jump faza_fight15
                             else:
                                 jump losowanko_fight14
 
@@ -18203,7 +18581,7 @@ label fight1:
                                             $ kibol1_hp_now -= kibol1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                            jump faza15
+                                            jump faza_fight15
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -18227,7 +18605,7 @@ label fight1:
 
                                             "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza15
+                                    jump faza_fight15
                                 else:
                                     jump losowanko_fight14
                             
@@ -18242,7 +18620,7 @@ label fight1:
                                             $ kibol1_hp_now -= kibol1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                            jump faza15
+                                            jump faza_fight15
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -18266,7 +18644,7 @@ label fight1:
 
                                             "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza15
+                                    jump faza_fight15
                                 else:
                                     jump losowanko_fight14
 
@@ -18286,7 +18664,7 @@ label fight1:
                                             $ kibol1_hp_now -= kibol1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                            jump faza15
+                                            jump faza_fight15
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -18310,7 +18688,7 @@ label fight1:
 
                                             "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
 
-                                    jump faza15
+                                    jump faza_fight15
                                 else:
                                     jump losowanko_fight14
 
@@ -18326,7 +18704,7 @@ label fight1:
                                                 $ kibol1_hp_now -= kibol1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                jump faza15
+                                                jump faza_fight15
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -18350,7 +18728,7 @@ label fight1:
 
                                                 "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza15
+                                        jump faza_fight15
                                     else:
                                         jump losowanko_fight14
                                 
@@ -18365,7 +18743,7 @@ label fight1:
                                                 $ kibol1_hp_now -= kibol1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                jump faza15
+                                                jump faza_fight15
                                         
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -18389,7 +18767,7 @@ label fight1:
 
                                                 "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza15
+                                        jump faza_fight15
                                     else:
                                         jump losowanko_fight14
 
@@ -18409,7 +18787,7 @@ label fight1:
                                                 $ kibol1_hp_now -= kibol1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                jump faza15
+                                                jump faza_fight15
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -18433,7 +18811,7 @@ label fight1:
 
                                                 "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
 
-                                        jump faza15
+                                        jump faza_fight15
                                     else:
                                         jump losowanko_fight14
 
@@ -18449,7 +18827,7 @@ label fight1:
                                                     $ kibol1_hp_now -= kibol1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza15
+                                                    jump faza_fight15
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -18473,7 +18851,7 @@ label fight1:
 
                                                     "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza15
+                                            jump faza_fight15
                                         else:
                                             jump losowanko_fight14
                                     
@@ -18488,7 +18866,7 @@ label fight1:
                                                     $ kibol1_hp_now -= kibol1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza15
+                                                    jump faza_fight15
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -18512,7 +18890,7 @@ label fight1:
 
                                                     "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza15
+                                            jump faza_fight15
                                         else:
                                             jump losowanko_fight14
 
@@ -18532,7 +18910,7 @@ label fight1:
                                                     $ kibol1_hp_now -= kibol1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza15
+                                                    jump faza_fight15
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -18556,7 +18934,7 @@ label fight1:
 
                                                     "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
 
-                                            jump faza15
+                                            jump faza_fight15
                                         else:
                                             jump losowanko_fight14
 
@@ -18572,7 +18950,7 @@ label fight1:
                                                         $ kibol1_hp_now -= kibol1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza15
+                                                        jump faza_fight15
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -18596,7 +18974,7 @@ label fight1:
 
                                                         "{i} [kibol1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza15
+                                                jump faza_fight15
                                             else:
                                                 jump losowanko_fight14
                                         
@@ -18611,7 +18989,7 @@ label fight1:
                                                         $ kibol1_hp_now -= kibol1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza15
+                                                        jump faza_fight15
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -18635,7 +19013,7 @@ label fight1:
 
                                                         "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza15
+                                                jump faza_fight15
                                             else:
                                                 jump losowanko_fight14
 
@@ -18655,7 +19033,7 @@ label fight1:
                                                         $ kibol1_hp_now -= kibol1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza15
+                                                        jump faza_fight15
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -18679,7 +19057,7 @@ label fight1:
 
                                                         "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump faza15
+                                                jump faza_fight15
                                             else:
                                                 jump losowanko_fight14
 
@@ -18695,7 +19073,7 @@ label fight1:
                                                             $ kibol1_hp_now -= kibol1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                            jump faza15
+                                                            jump faza_fight15
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -18719,7 +19097,7 @@ label fight1:
 
                                                             "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza15
+                                                    jump faza_fight15
                                                 else:
                                                     jump losowanko_fight14
                                             
@@ -18734,7 +19112,7 @@ label fight1:
                                                             $ kibol1_hp_now -= kibol1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Kibol 1 odbił się od Szalika z Memów i zadał [kibol1_attack] obrażeń nadawcy{/i}"
-                                                            jump faza15
+                                                            jump faza_fight15
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -18758,7 +19136,7 @@ label fight1:
 
                                                             "{i}Kibol 1 zadaje [kibol1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza15
+                                                    jump faza_fight15
                                                 else:
                                                     jump losowanko_fight14
 
@@ -18768,7 +19146,7 @@ label fight1:
                                     jump losowanko_fight14
                 
                 
-    label faza15:
+    label faza_fight15:
         hide reka1
         hide reka2
         hide reka3
@@ -18861,7 +19239,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -19049,18 +19427,18 @@ label fight1:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
         else:
             $ ado += 1  
 
         if akane_hp_now <= 0:
-            jump faza16      
+            jump faza_fight16      
 
         show ruch zorder 0 at tlo_wrog3 
 
         if akane_stun == 1:
             "{i}Akane jest zestunnowany{/i}"
-            jump faza16 
+            jump faza_fight16 
 
         if akane_uszy >= 1 and urban_hp_now >= 1:
             if akane_weapon >= 1:
@@ -19075,7 +19453,7 @@ label fight1:
                     $ akane_hp_now -= akane_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                    jump faza16
+                    jump faza_fight16
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
@@ -19095,20 +19473,20 @@ label fight1:
                     $ dmg = int(akane_attack / 2)
                     "{i}Akane zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump faza16
+                    jump faza_fight16
                 else:
                     $ urban_hp_now -= akane_attack
 
                     "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                jump faza16
+                jump faza_fight16
 
         if akane_max_attack_now <= 0 and akane_obrona == 0:
             show tarcza7 zorder 15 at weapon_wrog3  
             play sound "audio/sfx/shield.mp3"
             "{i}Akane broni się{/i}"
             $ akane_obrona += 1
-            jump faza16
+            jump faza_fight16
 
         if akane_hp_now >= 1 and akane_obrona == 0:
             if akane_hp_now <= 3:
@@ -19119,7 +19497,7 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Akane broni się{/i}"
                     $ akane_obrona += 1
-                    jump faza16
+                    jump faza_fight16
                 
                 else:
                     jump losowanko_fight15
@@ -19132,7 +19510,7 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Akane broni się{/i}"
                     $ akane_obrona += 1
-                    jump faza16
+                    jump faza_fight16
                 
                 else:
                     jump losowanko_fight15
@@ -19157,7 +19535,7 @@ label fight1:
                                     $ akane_hp_now -= akane_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                    jump faza16
+                                    jump faza_fight16
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -19181,7 +19559,7 @@ label fight1:
 
                                     "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
 
-                            jump faza16
+                            jump faza_fight16
                         else:
                             jump losowanko_fight15
 
@@ -19197,7 +19575,7 @@ label fight1:
                                         $ akane_hp_now -= akane_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                        jump faza16
+                                        jump faza_fight16
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -19221,7 +19599,7 @@ label fight1:
 
                                         "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza16
+                                jump faza_fight16
                             else:
                                 jump losowanko_fight15
                         
@@ -19236,7 +19614,7 @@ label fight1:
                                         $ akane_hp_now -= akane_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                        jump faza16
+                                        jump faza_fight16
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -19260,7 +19638,7 @@ label fight1:
 
                                         "{i}Akane zadaje [akane_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza16
+                                jump faza_fight16
                             else:
                                 jump losowanko_fight15
 
@@ -19280,7 +19658,7 @@ label fight1:
                                         $ akane_hp_now -= akane_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                        jump faza16
+                                        jump faza_fight16
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -19304,7 +19682,7 @@ label fight1:
 
                                         "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump faza16
+                                jump faza_fight16
                             else:
                                 jump losowanko_fight15
 
@@ -19320,7 +19698,7 @@ label fight1:
                                             $ akane_hp_now -= akane_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                            jump faza16
+                                            jump faza_fight16
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -19344,7 +19722,7 @@ label fight1:
 
                                             "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza16
+                                    jump faza_fight16
                                 else:
                                     jump losowanko_fight15
                             
@@ -19359,7 +19737,7 @@ label fight1:
                                             $ akane_hp_now -= akane_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                            jump faza16
+                                            jump faza_fight16
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -19383,7 +19761,7 @@ label fight1:
 
                                             "{i}Akane zadaje [akane_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza16
+                                    jump faza_fight16
                                 else:
                                     jump losowanko_fight15
 
@@ -19403,7 +19781,7 @@ label fight1:
                                             $ akane_hp_now -= akane_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                            jump faza16
+                                            jump faza_fight16
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -19427,7 +19805,7 @@ label fight1:
 
                                             "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
 
-                                    jump faza16
+                                    jump faza_fight16
                                 else:
                                     jump losowanko_fight15
 
@@ -19443,7 +19821,7 @@ label fight1:
                                                 $ akane_hp_now -= akane_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                jump faza16
+                                                jump faza_fight16
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -19467,7 +19845,7 @@ label fight1:
 
                                                 "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza16
+                                        jump faza_fight16
                                     else:
                                         jump losowanko_fight15
                                 
@@ -19482,7 +19860,7 @@ label fight1:
                                                 $ akane_hp_now -= akane_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                jump faza16
+                                                jump faza_fight16
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -19506,7 +19884,7 @@ label fight1:
 
                                                 "{i}Akane zadaje [akane_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza16
+                                        jump faza_fight16
                                     else:
                                         jump losowanko_fight15
 
@@ -19526,7 +19904,7 @@ label fight1:
                                                 $ akane_hp_now -= akane_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                jump faza16
+                                                jump faza_fight16
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -19550,7 +19928,7 @@ label fight1:
 
                                                 "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
 
-                                        jump faza16
+                                        jump faza_fight16
                                     else:
                                         jump losowanko_fight15
 
@@ -19566,7 +19944,7 @@ label fight1:
                                                     $ akane_hp_now -= akane_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                    jump faza16
+                                                    jump faza_fight16
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -19590,7 +19968,7 @@ label fight1:
 
                                                     "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza16
+                                            jump faza_fight16
                                         else:
                                             jump losowanko_fight15
                                     
@@ -19605,7 +19983,7 @@ label fight1:
                                                     $ akane_hp_now -= akane_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                    jump faza16
+                                                    jump faza_fight16
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -19629,7 +20007,7 @@ label fight1:
 
                                                     "{i}Akane zadaje [akane_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza16
+                                            jump faza_fight16
                                         else:
                                             jump losowanko_fight15
 
@@ -19649,7 +20027,7 @@ label fight1:
                                                     $ akane_hp_now -= akane_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                    jump faza16
+                                                    jump faza_fight16
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -19673,7 +20051,7 @@ label fight1:
 
                                                     "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
 
-                                            jump faza16
+                                            jump faza_fight16
                                         else:
                                             jump losowanko_fight15
 
@@ -19689,7 +20067,7 @@ label fight1:
                                                         $ akane_hp_now -= akane_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                        jump faza16
+                                                        jump faza_fight16
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -19713,7 +20091,7 @@ label fight1:
 
                                                         "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza16
+                                                jump faza_fight16
                                             else:
                                                 jump losowanko_fight15
                                         
@@ -19728,7 +20106,7 @@ label fight1:
                                                         $ akane_hp_now -= akane_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                        jump faza16
+                                                        jump faza_fight16
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -19752,7 +20130,7 @@ label fight1:
 
                                                         "{i}Akane zadaje [akane_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza16
+                                                jump faza_fight16
                                             else:
                                                 jump losowanko_fight15
 
@@ -19772,7 +20150,7 @@ label fight1:
                                                         $ akane_hp_now -= akane_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                        jump faza16
+                                                        jump faza_fight16
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -19796,7 +20174,7 @@ label fight1:
 
                                                         "{i}Akane zadaje [akane_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump faza16
+                                                jump faza_fight16
                                             else:
                                                 jump losowanko_fight15
 
@@ -19812,7 +20190,7 @@ label fight1:
                                                             $ akane_hp_now -= akane_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                            jump faza16
+                                                            jump faza_fight16
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -19836,7 +20214,7 @@ label fight1:
 
                                                             "{i}Akane zadaje [akane_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza16
+                                                    jump faza_fight16
                                                 else:
                                                     jump losowanko_fight15
                                             
@@ -19851,7 +20229,7 @@ label fight1:
                                                             $ akane_hp_now -= akane_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Akane odbił się od Szalika z Memów i zadał [akane_attack] obrażeń nadawcy{/i}"
-                                                            jump faza16
+                                                            jump faza_fight16
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -19875,7 +20253,7 @@ label fight1:
 
                                                             "{i}Akane zadaje [akane_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza16
+                                                    jump faza_fight16
                                                 else:
                                                     jump losowanko_fight15
 
@@ -19885,7 +20263,7 @@ label fight1:
                                     jump losowanko_fight15
 
 
-    label faza16:
+    label faza_fight16:
         hide reka1
         hide reka2
         hide reka3
@@ -19978,7 +20356,7 @@ label fight1:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1
+            jump wygranko_fight11
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -20166,18 +20544,18 @@ label fight1:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1
+            jump przegranko_fight11
         else:
             $ ado += 1    
 
         if kibol2_hp_now <= 0:
-            jump start_fight1  
+            jump start_fight11  
 
         show ruch zorder 0 at tlo_wrog2
 
         if kibol2_stun == 1:
             "{i}Kibol 2 jest zestunnowany{/i}"
-            jump start_fight1  
+            jump start_fight11  
 
         if kibol2_uszy >= 1 and urban_hp_now >= 1:
             if kibol2_weapon >= 1:
@@ -20192,7 +20570,7 @@ label fight1:
                     $ kibol2_hp_now -= kibol2_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                    jump start_fight1
+                    jump start_fight11
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
@@ -20212,20 +20590,20 @@ label fight1:
                     $ dmg = int(kibol2_attack / 2)
                     "{i}Kibol 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump start_fight1
+                    jump start_fight11
                 else:
                     $ urban_hp_now -= kibol2_attack
 
                     "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                jump start_fight1
+                jump start_fight11
 
         if kibol2_max_attack_now <= 0 and kibol2_obrona == 0:
             show tarcza8 zorder 15 at weapon_wrog2  
             play sound "audio/sfx/shield.mp3"
             "{i}Kibol 2 broni się{/i}"
             $ kibol2_obrona += 1
-            jump start_fight1
+            jump start_fight11
 
         if kibol2_hp_now >= 1 and kibol2_obrona == 0:
             if kibol2_hp_now <= 3:
@@ -20236,7 +20614,7 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 2 broni się{/i}"
                     $ kibol2_obrona += 1
-                    jump start_fight1
+                    jump start_fight11
                 
                 else:
                     jump losowanko_fight16
@@ -20249,7 +20627,7 @@ label fight1:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 2 broni się{/i}"
                     $ kibol2_obrona += 1
-                    jump start_fight1
+                    jump start_fight11
                 
                 else:
                     jump losowanko_fight16
@@ -20273,7 +20651,7 @@ label fight1:
                                     $ kibol2_hp_now -= kibol2_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                    jump start_fight1
+                                    jump start_fight11
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -20297,7 +20675,7 @@ label fight1:
 
                                     "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
 
-                            jump start_fight1
+                            jump start_fight11
                         else:
                             jump losowanko_fight16
 
@@ -20313,7 +20691,7 @@ label fight1:
                                         $ kibol2_hp_now -= kibol2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight1
+                                        jump start_fight11
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -20337,7 +20715,7 @@ label fight1:
 
                                         "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight1
+                                jump start_fight11
                             else:
                                 jump losowanko_fight16
                         
@@ -20352,7 +20730,7 @@ label fight1:
                                         $ kibol2_hp_now -= kibol2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight1
+                                        jump start_fight11
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -20376,7 +20754,7 @@ label fight1:
 
                                         "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight1
+                                jump start_fight11
                             else:
                                 jump losowanko_fight16
 
@@ -20396,7 +20774,7 @@ label fight1:
                                         $ kibol2_hp_now -= kibol2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight1
+                                        jump start_fight11
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -20420,7 +20798,7 @@ label fight1:
 
                                         "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump start_fight1
+                                jump start_fight11
                             else:
                                 jump losowanko_fight16
 
@@ -20436,7 +20814,7 @@ label fight1:
                                             $ kibol2_hp_now -= kibol2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight1
+                                            jump start_fight11
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -20460,7 +20838,7 @@ label fight1:
 
                                             "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight1
+                                    jump start_fight11
                                 else:
                                     jump losowanko_fight16
                             
@@ -20475,7 +20853,7 @@ label fight1:
                                             $ kibol2_hp_now -= kibol2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight1
+                                            jump start_fight11
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -20499,7 +20877,7 @@ label fight1:
 
                                             "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight1
+                                    jump start_fight11
                                 else:
                                     jump losowanko_fight16
 
@@ -20519,7 +20897,7 @@ label fight1:
                                             $ kibol2_hp_now -= kibol2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight1
+                                            jump start_fight11
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -20543,7 +20921,7 @@ label fight1:
 
                                             "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
 
-                                    jump start_fight1
+                                    jump start_fight11
                                 else:
                                     jump losowanko_fight16
 
@@ -20559,7 +20937,7 @@ label fight1:
                                                 $ kibol2_hp_now -= kibol2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight1
+                                                jump start_fight11
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -20583,7 +20961,7 @@ label fight1:
 
                                                 "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight1
+                                        jump start_fight11
                                     else:
                                         jump losowanko_fight16
                                 
@@ -20598,7 +20976,7 @@ label fight1:
                                                 $ kibol2_hp_now -= kibol2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight1
+                                                jump start_fight11
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -20622,7 +21000,7 @@ label fight1:
 
                                                 "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight1
+                                        jump start_fight11
                                     else:
                                         jump losowanko_fight16
 
@@ -20642,7 +21020,7 @@ label fight1:
                                                 $ kibol2_hp_now -= kibol2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight1
+                                                jump start_fight11
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -20666,7 +21044,7 @@ label fight1:
 
                                                 "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
 
-                                        jump start_fight1
+                                        jump start_fight11
                                     else:
                                         jump losowanko_fight16
 
@@ -20682,7 +21060,7 @@ label fight1:
                                                     $ kibol2_hp_now -= kibol2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight1
+                                                    jump start_fight11
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -20706,7 +21084,7 @@ label fight1:
 
                                                     "{i}Kibol 1 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight1
+                                            jump start_fight11
                                         else:
                                             jump losowanko_fight16
                                     
@@ -20721,7 +21099,7 @@ label fight1:
                                                     $ kibol2_hp_now -= kibol2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight1
+                                                    jump start_fight11
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -20745,7 +21123,7 @@ label fight1:
 
                                                     "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight1
+                                            jump start_fight11
                                         else:
                                             jump losowanko_fight16
 
@@ -20765,7 +21143,7 @@ label fight1:
                                                     $ kibol2_hp_now -= kibol2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight1
+                                                    jump start_fight11
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -20789,7 +21167,7 @@ label fight1:
 
                                                     "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
 
-                                            jump start_fight1
+                                            jump start_fight11
                                         else:
                                             jump losowanko_fight16
 
@@ -20805,7 +21183,7 @@ label fight1:
                                                         $ kibol2_hp_now -= kibol2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight1
+                                                        jump start_fight11
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -20829,7 +21207,7 @@ label fight1:
 
                                                         "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight1
+                                                jump start_fight11
                                             else:
                                                 jump losowanko_fight16
                                         
@@ -20844,7 +21222,7 @@ label fight1:
                                                         $ kibol2_hp_now -= kibol2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight1
+                                                        jump start_fight11
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -20868,7 +21246,7 @@ label fight1:
 
                                                         "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight1
+                                                jump start_fight11
                                             else:
                                                 jump losowanko_fight16
 
@@ -20888,7 +21266,7 @@ label fight1:
                                                         $ kibol2_hp_now -= kibol2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight1
+                                                        jump start_fight11
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -20912,7 +21290,7 @@ label fight1:
 
                                                         "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump start_fight1
+                                                jump start_fight11
                                             else:
                                                 jump losowanko_fight16
 
@@ -20928,7 +21306,7 @@ label fight1:
                                                             $ kibol2_hp_now -= kibol2_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight1
+                                                            jump start_fight11
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -20952,7 +21330,7 @@ label fight1:
 
                                                             "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight1
+                                                    jump start_fight11
                                                 else:
                                                     jump losowanko_fight16
                                             
@@ -20967,7 +21345,7 @@ label fight1:
                                                             $ kibol2_hp_now -= kibol2_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Kibol 2 odbił się od Szalika z Memów i zadał [kibol2_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight1
+                                                            jump start_fight11
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -20991,7 +21369,7 @@ label fight1:
 
                                                             "{i}Kibol 2 zadaje [kibol2_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight1
+                                                    jump start_fight11
                                                 else:
                                                     jump losowanko_fight16
 
@@ -21000,7 +21378,7 @@ label fight1:
                                 else: 
                                     jump losowanko_fight16                
 
-    label przegranko_fight1:
+    label przegranko_fight11:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
@@ -21252,10 +21630,10 @@ label fight1:
                 $ kibol2_stun = 0
                 $ akane_poison = 0
                 $ akane_stun = 0
-                jump fight1
+                jump fight11
 
 
-    label wygranko_fight1:
+    label wygranko_fight11:
         stop sound 
         stop music
         hide luszcz
@@ -21530,4 +21908,4 @@ label fight1:
         $ akane_poison = 0
         $ akane_stun = 0
 
-        jump after_fight1
+        jump after_fight11

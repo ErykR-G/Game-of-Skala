@@ -165,7 +165,7 @@ label items11:
             $ piknik -= 1
             if piknik == 0:
                 $ ile_item -= 1
-            jump faza12
+            jump faza_fight12
 
         "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
@@ -257,7 +257,7 @@ label items11:
                     $ cake -= 1
                     if cake == 0:
                         $ ile_item -= 1
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Pokroić? (+5HP FOR ALL){/b}":
                     hide cake_full
@@ -351,14 +351,14 @@ label items11:
                     $ cake -= 1
                     if cake == 0:
                         $ ile_item -= 1
-                    jump faza12
+                    jump faza_fight12
 
         "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
             label pigulki11:
                 hide chest
                 if pills == 0:
                     $ ile_item -= 1
-                    jump faza12
+                    jump faza_fight12
 
                 if luszcz_fighter == 1:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -430,7 +430,7 @@ label items11:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Łuszcz umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza12
+                                        jump faza_fight12
 
                                     else:
                                         if luszcz_hp_now + 3 >= luszcz_hp:
@@ -458,7 +458,7 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Łuszcz umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                                         else:
                                             if luszcz_hp_now + 3 >= luszcz_hp:
@@ -484,11 +484,11 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Łuszcz umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                         "{b}Może lepiej już nie{/b}" if luszcz_piguly > 0:
                             hide pills
-                            jump faza12
+                            jump faza_fight12
 
                 if eminem_fighter == 1:
                     menu:
@@ -519,7 +519,7 @@ label items11:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Shadow umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza12
+                                        jump faza_fight12
 
                                     else:
                                         if eminem_hp_now + 3 >= eminem_hp:
@@ -547,7 +547,7 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Shadow umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                                         else:
                                             if eminem_hp_now + 3 >= eminem_hp:
@@ -573,11 +573,11 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Shadow umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                         "{b}Może lepiej już nie{/b}" if eminem_piguly > 0:
                             hide pills
-                            jump faza12
+                            jump faza_fight12
 
                 if urban_fighter == 1:
                     menu:
@@ -608,7 +608,7 @@ label items11:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza12
+                                        jump faza_fight12
 
                                     else:
                                         if urban_hp_now + 3 >= urban_hp:
@@ -636,7 +636,7 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                                         else:
                                             if urban_hp_now + 3 >= urban_hp:
@@ -662,11 +662,11 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                         "{b}Może lepiej już nie{/b}" if urban_piguly > 0:
                             hide pills
-                            jump faza12
+                            jump faza_fight12
 
                 if zyd_fighter == 1:
                     menu:
@@ -697,7 +697,7 @@ label items11:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Żyd umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza12
+                                        jump faza_fight12
 
                                     else:
                                         if zyd_hp_now + 3 >= zyd_hp:
@@ -725,7 +725,7 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Żyd umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                                         else:
                                             if zyd_hp_now + 3 >= zyd_hp:
@@ -751,11 +751,11 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Żyd umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                         "{b}Może lepiej już nie{/b}" if zyd_piguly > 0:
                             hide pills
-                            jump faza12
+                            jump faza_fight12
 
                 if kazuma_fighter == 1:
                     menu:
@@ -786,7 +786,7 @@ label items11:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Kazuma umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza12
+                                        jump faza_fight12
 
                                     else:
                                         if kazuma_hp_now + 3 >= kazuma_hp:
@@ -814,7 +814,7 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Kazuma umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                                         else:
                                             if kazuma_hp_now + 3 >= kazuma_hp:
@@ -840,11 +840,11 @@ label items11:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Kazuma umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza12
+                                            jump faza_fight12
 
                         "{b}Może lepiej już nie{/b}" if kazuma_piguly > 0:
                             hide pills
-                            jump faza12
+                            jump faza_fight12
             
         "{b}Tutorialowa Woda Święcona (+6HP) x [woda]{/b}" if wodax == 1:
             hide chest
@@ -912,7 +912,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -935,7 +935,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -958,7 +958,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -981,7 +981,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -1038,7 +1038,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -1061,7 +1061,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -1084,7 +1084,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -1107,7 +1107,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -1164,7 +1164,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -1187,7 +1187,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -1210,7 +1210,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -1233,7 +1233,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -1258,7 +1258,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -1281,7 +1281,7 @@ label items11:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza12
+                    jump faza_fight12
             
         "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
             hide chest
@@ -1353,7 +1353,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -1380,7 +1380,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -1407,7 +1407,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -1434,7 +1434,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -1461,7 +1461,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -1488,7 +1488,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -1515,7 +1515,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -1542,7 +1542,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -1569,7 +1569,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -1596,7 +1596,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -1623,7 +1623,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -1650,7 +1650,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -1677,7 +1677,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -1704,7 +1704,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -1731,7 +1731,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -1758,7 +1758,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -1785,7 +1785,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -1812,7 +1812,7 @@ label items11:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza12
+                    jump faza_fight12
             
         "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS) x [lagodny]{/b}" if lagodnyx == 1:
             hide chest
@@ -1889,7 +1889,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -1921,7 +1921,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -1953,7 +1953,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -1985,7 +1985,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -2017,7 +2017,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -2049,7 +2049,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -2081,7 +2081,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -2113,7 +2113,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -2145,7 +2145,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -2177,7 +2177,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -2209,7 +2209,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -2241,7 +2241,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -2273,7 +2273,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -2305,7 +2305,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -2337,7 +2337,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -2369,7 +2369,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -2401,7 +2401,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -2433,7 +2433,7 @@ label items11:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza12
+                    jump faza_fight12
                        
         "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 1:
             hide chest
@@ -2510,7 +2510,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -2542,7 +2542,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -2574,7 +2574,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -2606,7 +2606,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -2638,7 +2638,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -2670,7 +2670,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -2702,7 +2702,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -2734,7 +2734,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -2766,7 +2766,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -2798,7 +2798,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -2830,7 +2830,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -2862,7 +2862,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -2894,7 +2894,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -2926,7 +2926,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -2958,7 +2958,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -2990,7 +2990,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -3022,7 +3022,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -3054,7 +3054,7 @@ label items11:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
             
         "{b}Jabole (+6HP){/b} x [jabole]" if jabolex == 1:
             hide chest
@@ -3122,7 +3122,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -3145,7 +3145,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -3168,7 +3168,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -3191,7 +3191,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -3214,7 +3214,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -3237,7 +3237,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -3260,7 +3260,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -3283,7 +3283,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -3306,7 +3306,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -3329,7 +3329,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -3352,7 +3352,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -3375,7 +3375,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -3398,7 +3398,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -3421,7 +3421,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -3444,7 +3444,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -3467,7 +3467,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -3490,7 +3490,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -3513,7 +3513,7 @@ label items11:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
             
         "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 1:
             hide chest
@@ -3581,7 +3581,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -3604,7 +3604,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -3627,7 +3627,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -3650,7 +3650,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -3673,7 +3673,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -3696,7 +3696,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -3719,7 +3719,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -3742,7 +3742,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -3765,7 +3765,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -3788,7 +3788,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -3811,7 +3811,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -3834,7 +3834,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -3857,7 +3857,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -3880,7 +3880,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -3903,7 +3903,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -3926,7 +3926,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -3949,7 +3949,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -3972,7 +3972,7 @@ label items11:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                     
         "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 1:
             $ kostka = renpy.random.randint(4, 7)
@@ -4041,7 +4041,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -4064,7 +4064,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -4087,7 +4087,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -4110,7 +4110,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -4133,7 +4133,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -4156,7 +4156,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -4179,7 +4179,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -4202,7 +4202,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -4225,7 +4225,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -4248,7 +4248,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -4271,7 +4271,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -4294,7 +4294,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -4317,7 +4317,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -4340,7 +4340,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -4363,7 +4363,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -4386,7 +4386,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -4409,7 +4409,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -4432,7 +4432,7 @@ label items11:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                     
         "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 1:
             hide chest
@@ -4527,7 +4527,7 @@ label items11:
             $ banany -= 1
             if banany == 0:
                 $ ile_item -= 1
-            jump faza12
+            jump faza_fight12
                     
         "{b}Ostra Skałka (5-8 DMG){/b} x [skalka]" if skalkax == 1:
             hide chest
@@ -4597,7 +4597,7 @@ label items11:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Akane{/b}" if akane_hp_now >= 1:
                     if akane_obrona >= 2:
@@ -4621,7 +4621,7 @@ label items11:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                     if kibol2_obrona >= 2:
@@ -4645,7 +4645,7 @@ label items11:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza12
+                    jump faza_fight12
                     
         "{b}Granat (4 DMG FOR ALL){/b} x [granat]" if granatx == 1:
             hide chest
@@ -4750,7 +4750,7 @@ label items11:
             if granat == 0:
                 $ ile_item -= 1
             hide granat
-            jump faza12
+            jump faza_fight12
                     
         "{i}Strona 1/2 --->{/i}" if strona2 > 0:        
             jump items112        
@@ -4834,7 +4834,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -4866,7 +4866,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -4898,7 +4898,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -4930,7 +4930,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -4962,7 +4962,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -4994,7 +4994,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -5026,7 +5026,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -5058,7 +5058,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -5090,7 +5090,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -5122,7 +5122,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -5154,7 +5154,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -5186,7 +5186,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -5218,7 +5218,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -5250,7 +5250,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -5282,7 +5282,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -5314,7 +5314,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -5346,7 +5346,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -5378,7 +5378,7 @@ label items112:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza12
+                    jump faza_fight12
             
         "{b}Jabole (+6HP){/b} x [jabole]" if jabolex == 2:
             hide chest
@@ -5446,7 +5446,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -5469,7 +5469,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -5492,7 +5492,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -5515,7 +5515,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -5538,7 +5538,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -5561,7 +5561,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -5584,7 +5584,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -5607,7 +5607,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -5630,7 +5630,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -5653,7 +5653,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -5676,7 +5676,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -5699,7 +5699,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -5722,7 +5722,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -5745,7 +5745,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -5768,7 +5768,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -5791,7 +5791,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -5814,7 +5814,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -5837,7 +5837,7 @@ label items112:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza12
+                    jump faza_fight12
             
         "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 2:
             hide chest
@@ -5905,7 +5905,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -5928,7 +5928,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -5951,7 +5951,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -5974,7 +5974,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -5997,7 +5997,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -6020,7 +6020,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -6043,7 +6043,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -6066,7 +6066,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -6089,7 +6089,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -6112,7 +6112,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -6135,7 +6135,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -6158,7 +6158,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -6181,7 +6181,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -6204,7 +6204,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -6227,7 +6227,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -6250,7 +6250,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -6273,7 +6273,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -6296,7 +6296,7 @@ label items112:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza12
+                    jump faza_fight12
                     
         "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 2:
             $ kostka = renpy.random.randint(4, 7)
@@ -6365,7 +6365,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -6388,7 +6388,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -6411,7 +6411,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -6434,7 +6434,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -6457,7 +6457,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -6480,7 +6480,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -6503,7 +6503,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -6526,7 +6526,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -6549,7 +6549,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -6572,7 +6572,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -6595,7 +6595,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -6618,7 +6618,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -6641,7 +6641,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -6664,7 +6664,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -6687,7 +6687,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -6710,7 +6710,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -6733,7 +6733,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -6756,7 +6756,7 @@ label items112:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza12
+                    jump faza_fight12
                     
         "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 2:
             hide chest
@@ -6851,7 +6851,7 @@ label items112:
             $ banany -= 1
             if banany == 0:
                 $ ile_item -= 1
-            jump faza12
+            jump faza_fight12
                     
         "{b}Ostra Skałka (5-8 DMG){/b} x [skalka]" if skalkax == 2:
             hide chest
@@ -6921,7 +6921,7 @@ label items112:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Akane{/b}" if akane_hp_now >= 1:
                     if akane_obrona >= 2:
@@ -6945,7 +6945,7 @@ label items112:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza12
+                    jump faza_fight12
 
                 "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                     if kibol2_obrona >= 2:
@@ -6969,7 +6969,7 @@ label items112:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza12
+                    jump faza_fight12
                     
         "{b}Granat (4 DMG FOR ALL){/b} x [granat]" if granatx == 2:
             hide chest
@@ -7074,7 +7074,7 @@ label items112:
             if granat == 0:
                 $ ile_item -= 1
             hide granat
-            jump faza12
+            jump faza_fight12
                     
         "{i}<--- Strona 2/2{/i}":        
             jump items11
@@ -7256,7 +7256,7 @@ label items12:
             $ piknik -= 1
             if piknik == 0:
                 $ ile_item -= 1
-            jump faza13
+            jump faza_fight13
 
         "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
@@ -7348,7 +7348,7 @@ label items12:
                     $ cake -= 1
                     if cake == 0:
                         $ ile_item -= 1
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Pokroić? (+5HP FOR ALL){/b}":
                     hide cake_full
@@ -7442,14 +7442,14 @@ label items12:
                     $ cake -= 1
                     if cake == 0:
                         $ ile_item -= 1
-                    jump faza13
+                    jump faza_fight13
 
         "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
             label pigulki12:
                 hide chest
                 if pills == 0:
                     $ ile_item -= 1
-                    jump faza13
+                    jump faza_fight13
 
                 if luszcz_fighter == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -7521,7 +7521,7 @@ label items12:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Łuszcz umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza13
+                                        jump faza_fight13
 
                                     else:
                                         if luszcz_hp_now + 3 >= luszcz_hp:
@@ -7549,7 +7549,7 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Łuszcz umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                                         else:
                                             if luszcz_hp_now + 3 >= luszcz_hp:
@@ -7575,11 +7575,11 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Łuszcz umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                         "{b}Może lepiej już nie{/b}" if luszcz_piguly > 0:
                             hide pills
-                            jump faza13
+                            jump faza_fight13
 
                 if eminem_fighter == 2:
                     menu:
@@ -7610,7 +7610,7 @@ label items12:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Shadow umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza13
+                                        jump faza_fight13
 
                                     else:
                                         if eminem_hp_now + 3 >= eminem_hp:
@@ -7638,7 +7638,7 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Shadow umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                                         else:
                                             if eminem_hp_now + 3 >= eminem_hp:
@@ -7664,11 +7664,11 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Shadow umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                         "{b}Może lepiej już nie{/b}" if eminem_piguly > 0:
                             hide pills
-                            jump faza13
+                            jump faza_fight13
 
                 if urban_fighter == 2:
                     menu:
@@ -7699,7 +7699,7 @@ label items12:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza13
+                                        jump faza_fight13
 
                                     else:
                                         if urban_hp_now + 3 >= urban_hp:
@@ -7727,7 +7727,7 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                                         else:
                                             if urban_hp_now + 3 >= urban_hp:
@@ -7753,11 +7753,11 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                         "{b}Może lepiej już nie{/b}" if urban_piguly > 0:
                             hide pills
-                            jump faza13
+                            jump faza_fight13
 
                 if zyd_fighter == 2:
                     menu:
@@ -7788,7 +7788,7 @@ label items12:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Żyd umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza13
+                                        jump faza_fight13
 
                                     else:
                                         if zyd_hp_now + 3 >= zyd_hp:
@@ -7816,7 +7816,7 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Żyd umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                                         else:
                                             if zyd_hp_now + 3 >= zyd_hp:
@@ -7842,11 +7842,11 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Żyd umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                         "{b}Może lepiej już nie{/b}" if zyd_piguly > 0:
                             hide pills
-                            jump faza13
+                            jump faza_fight13
 
                 if kazuma_fighter == 2:
                     menu:
@@ -7877,7 +7877,7 @@ label items12:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Kazuma umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza13
+                                        jump faza_fight13
 
                                     else:
                                         if kazuma_hp_now + 3 >= kazuma_hp:
@@ -7905,7 +7905,7 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Kazuma umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                                         else:
                                             if kazuma_hp_now + 3 >= kazuma_hp:
@@ -7931,11 +7931,11 @@ label items12:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Kazuma umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza13
+                                            jump faza_fight13
 
                         "{b}Może lepiej już nie{/b}" if kazuma_piguly > 0:
                             hide pills
-                            jump faza13
+                            jump faza_fight13
             
         "{b}Tutorialowa Woda Święcona (+6HP) x [woda]{/b}" if wodax == 1:
             hide chest
@@ -8003,7 +8003,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -8026,7 +8026,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -8049,7 +8049,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -8072,7 +8072,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -8129,7 +8129,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -8152,7 +8152,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -8175,7 +8175,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -8198,7 +8198,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -8255,7 +8255,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -8278,7 +8278,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -8301,7 +8301,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -8324,7 +8324,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -8349,7 +8349,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -8372,7 +8372,7 @@ label items12:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza13
+                    jump faza_fight13
             
         "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
             hide chest
@@ -8444,7 +8444,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -8471,7 +8471,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -8498,7 +8498,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -8525,7 +8525,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -8552,7 +8552,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -8579,7 +8579,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -8606,7 +8606,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -8633,7 +8633,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -8660,7 +8660,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -8687,7 +8687,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -8714,7 +8714,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -8741,7 +8741,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -8768,7 +8768,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -8795,7 +8795,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -8822,7 +8822,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -8849,7 +8849,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -8876,7 +8876,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -8903,7 +8903,7 @@ label items12:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza13
+                    jump faza_fight13
             
         "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS) x [lagodny]{/b}" if lagodnyx == 1:
             hide chest
@@ -8980,7 +8980,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -9012,7 +9012,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -9044,7 +9044,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -9076,7 +9076,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -9108,7 +9108,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -9140,7 +9140,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -9172,7 +9172,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -9204,7 +9204,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -9236,7 +9236,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -9268,7 +9268,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -9300,7 +9300,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -9332,7 +9332,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -9364,7 +9364,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -9396,7 +9396,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -9428,7 +9428,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -9460,7 +9460,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -9492,7 +9492,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -9524,7 +9524,7 @@ label items12:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza13
+                    jump faza_fight13
                        
         "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 1:
             hide chest
@@ -9601,7 +9601,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -9633,7 +9633,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -9665,7 +9665,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -9697,7 +9697,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -9729,7 +9729,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -9761,7 +9761,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -9793,7 +9793,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -9825,7 +9825,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -9857,7 +9857,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -9889,7 +9889,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -9921,7 +9921,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -9953,7 +9953,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -9985,7 +9985,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -10017,7 +10017,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -10049,7 +10049,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -10081,7 +10081,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -10113,7 +10113,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -10145,7 +10145,7 @@ label items12:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
             
         "{b}Jabole (+6HP){/b} x [jabole]" if jabolex == 1:
             hide chest
@@ -10213,7 +10213,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -10236,7 +10236,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -10259,7 +10259,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -10282,7 +10282,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -10305,7 +10305,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -10328,7 +10328,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -10351,7 +10351,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -10374,7 +10374,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -10397,7 +10397,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -10420,7 +10420,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -10443,7 +10443,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -10466,7 +10466,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -10489,7 +10489,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -10512,7 +10512,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -10535,7 +10535,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -10558,7 +10558,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -10581,7 +10581,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -10604,7 +10604,7 @@ label items12:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
             
         "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 1:
             hide chest
@@ -10672,7 +10672,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -10695,7 +10695,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -10718,7 +10718,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -10741,7 +10741,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -10764,7 +10764,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -10787,7 +10787,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -10810,7 +10810,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -10833,7 +10833,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -10856,7 +10856,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -10879,7 +10879,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -10902,7 +10902,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -10925,7 +10925,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -10948,7 +10948,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -10971,7 +10971,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -10994,7 +10994,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -11017,7 +11017,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -11040,7 +11040,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -11063,7 +11063,7 @@ label items12:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                     
         "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 1:
             $ kostka = renpy.random.randint(4, 7)
@@ -11132,7 +11132,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -11155,7 +11155,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -11178,7 +11178,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -11201,7 +11201,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -11224,7 +11224,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -11247,7 +11247,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -11270,7 +11270,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -11293,7 +11293,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -11316,7 +11316,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -11339,7 +11339,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -11362,7 +11362,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -11385,7 +11385,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -11408,7 +11408,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -11431,7 +11431,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -11454,7 +11454,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -11477,7 +11477,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -11500,7 +11500,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -11523,7 +11523,7 @@ label items12:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                     
         "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 1:
             hide chest
@@ -11618,7 +11618,7 @@ label items12:
             $ banany -= 1
             if banany == 0:
                 $ ile_item -= 1
-            jump faza13
+            jump faza_fight13
                     
         "{b}Ostra Skałka (5-8 DMG){/b} x [skalka]" if skalkax == 1:
             hide chest
@@ -11688,7 +11688,7 @@ label items12:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Akane{/b}" if akane_hp_now >= 1:
                     if akane_obrona >= 2:
@@ -11712,7 +11712,7 @@ label items12:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                     if kibol2_obrona >= 2:
@@ -11736,7 +11736,7 @@ label items12:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza13
+                    jump faza_fight13
                     
         "{b}Granat (4 DMG FOR ALL){/b} x [granat]" if granatx == 1:
             hide chest
@@ -11841,7 +11841,7 @@ label items12:
             if granat == 0:
                 $ ile_item -= 1
             hide granat
-            jump faza13
+            jump faza_fight13
                     
         "{i}Strona 1/2 --->{/i}" if strona2 > 0:        
             jump items122        
@@ -11925,7 +11925,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -11957,7 +11957,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -11989,7 +11989,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -12021,7 +12021,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -12053,7 +12053,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -12085,7 +12085,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -12117,7 +12117,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -12149,7 +12149,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -12181,7 +12181,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -12213,7 +12213,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -12245,7 +12245,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -12277,7 +12277,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -12309,7 +12309,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -12341,7 +12341,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -12373,7 +12373,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -12405,7 +12405,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -12437,7 +12437,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -12469,7 +12469,7 @@ label items122:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza13
+                    jump faza_fight13
             
         "{b}Jabole (+6HP){/b} x [jabole]" if jabolex == 2:
             hide chest
@@ -12537,7 +12537,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -12560,7 +12560,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -12583,7 +12583,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -12606,7 +12606,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -12629,7 +12629,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -12652,7 +12652,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -12675,7 +12675,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -12698,7 +12698,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -12721,7 +12721,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -12744,7 +12744,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -12767,7 +12767,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -12790,7 +12790,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -12813,7 +12813,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -12836,7 +12836,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -12859,7 +12859,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -12882,7 +12882,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -12905,7 +12905,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -12928,7 +12928,7 @@ label items122:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza13
+                    jump faza_fight13
             
         "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 2:
             hide chest
@@ -12996,7 +12996,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -13019,7 +13019,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -13042,7 +13042,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -13065,7 +13065,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -13088,7 +13088,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -13111,7 +13111,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -13134,7 +13134,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -13157,7 +13157,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -13180,7 +13180,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -13203,7 +13203,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -13226,7 +13226,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -13249,7 +13249,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -13272,7 +13272,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -13295,7 +13295,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -13318,7 +13318,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -13341,7 +13341,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -13364,7 +13364,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -13387,7 +13387,7 @@ label items122:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza13
+                    jump faza_fight13
                     
         "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 2:
             $ kostka = renpy.random.randint(4, 7)
@@ -13456,7 +13456,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -13479,7 +13479,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -13502,7 +13502,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -13525,7 +13525,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -13548,7 +13548,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -13571,7 +13571,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -13594,7 +13594,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -13617,7 +13617,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -13640,7 +13640,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -13663,7 +13663,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -13686,7 +13686,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -13709,7 +13709,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -13732,7 +13732,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -13755,7 +13755,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -13778,7 +13778,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -13801,7 +13801,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -13824,7 +13824,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -13847,7 +13847,7 @@ label items122:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza13
+                    jump faza_fight13
                     
         "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 2:
             hide chest
@@ -13942,7 +13942,7 @@ label items122:
             $ banany -= 1
             if banany == 0:
                 $ ile_item -= 1
-            jump faza13
+            jump faza_fight13
                     
         "{b}Ostra Skałka (5-8 DMG){/b} x [skalka]" if skalkax == 2:
             hide chest
@@ -14012,7 +14012,7 @@ label items122:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Akane{/b}" if akane_hp_now >= 1:
                     if akane_obrona >= 2:
@@ -14036,7 +14036,7 @@ label items122:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza13
+                    jump faza_fight13
 
                 "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                     if kibol2_obrona >= 2:
@@ -14060,7 +14060,7 @@ label items122:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza13
+                    jump faza_fight13
                     
         "{b}Granat (4 DMG FOR ALL){/b} x [granat]" if granatx == 2:
             hide chest
@@ -14165,7 +14165,7 @@ label items122:
             if granat == 0:
                 $ ile_item -= 1
             hide granat
-            jump faza13
+            jump faza_fight13
                     
         "{i}<--- Strona 2/2{/i}":        
             jump items12
@@ -14346,7 +14346,7 @@ label items13:
             $ piknik -= 1
             if piknik == 0:
                 $ ile_item -= 1
-            jump faza14
+            jump faza_fight14
 
         "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
@@ -14438,7 +14438,7 @@ label items13:
                     $ cake -= 1
                     if cake == 0:
                         $ ile_item -= 1
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Pokroić? (+5HP FOR ALL){/b}":
                     hide cake_full
@@ -14532,14 +14532,14 @@ label items13:
                     $ cake -= 1
                     if cake == 0:
                         $ ile_item -= 1
-                    jump faza14
+                    jump faza_fight14
 
         "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
             label pigulki13:
                 hide chest
                 if pills == 0:
                     $ ile_item -= 1
-                    jump faza14
+                    jump faza_fight14
 
                 if luszcz_fighter == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -14611,7 +14611,7 @@ label items13:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Łuszcz umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza14
+                                        jump faza_fight14
 
                                     else:
                                         if luszcz_hp_now + 3 >= luszcz_hp:
@@ -14639,7 +14639,7 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Łuszcz umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                                         else:
                                             if luszcz_hp_now + 3 >= luszcz_hp:
@@ -14665,11 +14665,11 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Łuszcz umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                         "{b}Może lepiej już nie{/b}" if luszcz_piguly > 0:
                             hide pills
-                            jump faza14
+                            jump faza_fight14
 
                 if eminem_fighter == 3:
                     menu:
@@ -14700,7 +14700,7 @@ label items13:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Shadow umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza14
+                                        jump faza_fight14
 
                                     else:
                                         if eminem_hp_now + 3 >= eminem_hp:
@@ -14728,7 +14728,7 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Shadow umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                                         else:
                                             if eminem_hp_now + 3 >= eminem_hp:
@@ -14754,11 +14754,11 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Shadow umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                         "{b}Może lepiej już nie{/b}" if eminem_piguly > 0:
                             hide pills
-                            jump faza14
+                            jump faza_fight14
 
                 if urban_fighter == 3:
                     menu:
@@ -14789,7 +14789,7 @@ label items13:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza14
+                                        jump faza_fight14
 
                                     else:
                                         if urban_hp_now + 3 >= urban_hp:
@@ -14817,7 +14817,7 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                                         else:
                                             if urban_hp_now + 3 >= urban_hp:
@@ -14843,11 +14843,11 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Jerzy Urban umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                         "{b}Może lepiej już nie{/b}" if urban_piguly > 0:
                             hide pills
-                            jump faza14
+                            jump faza_fight14
 
                 if zyd_fighter == 3:
                     menu:
@@ -14878,7 +14878,7 @@ label items13:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Żyd umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza14
+                                        jump faza_fight14
 
                                     else:
                                         if zyd_hp_now + 3 >= zyd_hp:
@@ -14906,7 +14906,7 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Żyd umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                                         else:
                                             if zyd_hp_now + 3 >= zyd_hp:
@@ -14932,11 +14932,11 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Żyd umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                         "{b}Może lepiej już nie{/b}" if zyd_piguly > 0:
                             hide pills
-                            jump faza14
+                            jump faza_fight14
 
                 if kazuma_fighter == 3:
                     menu:
@@ -14967,7 +14967,7 @@ label items13:
                                         queue sound "audio/sfx/spadek.mp3"
                                         "{i}Kazuma umiera z przedawkowania{/i}"
                                         hide pills
-                                        jump faza14
+                                        jump faza_fight14
 
                                     else:
                                         if kazuma_hp_now + 3 >= kazuma_hp:
@@ -14995,7 +14995,7 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Kazuma umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                                         else:
                                             if kazuma_hp_now + 3 >= kazuma_hp:
@@ -15021,11 +15021,11 @@ label items13:
                                             queue sound "audio/sfx/spadek.mp3"
                                             "{i}Kazuma umiera z przedawkowania{/i}"
                                             hide pills
-                                            jump faza14
+                                            jump faza_fight14
 
                         "{b}Może lepiej już nie{/b}" if kazuma_piguly > 0:
                             hide pills
-                            jump faza14
+                            jump faza_fight14
             
         "{b}Tutorialowa Woda Święcona (+6HP) x [woda]{/b}" if wodax == 1:
             hide chest
@@ -15093,7 +15093,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -15116,7 +15116,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -15139,7 +15139,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -15162,7 +15162,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -15219,7 +15219,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -15242,7 +15242,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -15265,7 +15265,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -15288,7 +15288,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -15345,7 +15345,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -15368,7 +15368,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -15391,7 +15391,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -15414,7 +15414,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -15439,7 +15439,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -15462,7 +15462,7 @@ label items13:
                     if woda == 0:
                         $ ile_item -= 1
                     hide woda
-                    jump faza14
+                    jump faza_fight14
             
         "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
             hide chest
@@ -15534,7 +15534,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -15561,7 +15561,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -15588,7 +15588,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -15615,7 +15615,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -15642,7 +15642,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -15669,7 +15669,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -15696,7 +15696,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -15723,7 +15723,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -15750,7 +15750,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -15777,7 +15777,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -15804,7 +15804,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -15831,7 +15831,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -15858,7 +15858,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -15885,7 +15885,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -15912,7 +15912,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -15939,7 +15939,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -15966,7 +15966,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -15993,7 +15993,7 @@ label items13:
                     if ostry == 0:
                         $ ile_item -= 1
                     hide ostry
-                    jump faza14
+                    jump faza_fight14
             
         "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS) x [lagodny]{/b}" if lagodnyx == 1:
             hide chest
@@ -16070,7 +16070,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -16102,7 +16102,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -16134,7 +16134,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -16166,7 +16166,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -16198,7 +16198,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -16230,7 +16230,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -16262,7 +16262,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -16294,7 +16294,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -16326,7 +16326,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -16358,7 +16358,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -16390,7 +16390,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -16422,7 +16422,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -16454,7 +16454,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -16486,7 +16486,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -16518,7 +16518,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -16550,7 +16550,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -16582,7 +16582,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -16614,7 +16614,7 @@ label items13:
                     if lagodny == 0:
                         $ ile_item -= 1
                     hide lagodny
-                    jump faza14
+                    jump faza_fight14
                        
         "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 1:
             hide chest
@@ -16691,7 +16691,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -16723,7 +16723,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -16755,7 +16755,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -16787,7 +16787,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -16819,7 +16819,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -16851,7 +16851,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -16883,7 +16883,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -16915,7 +16915,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -16947,7 +16947,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -16979,7 +16979,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -17011,7 +17011,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -17043,7 +17043,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -17075,7 +17075,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -17107,7 +17107,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -17139,7 +17139,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -17171,7 +17171,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -17203,7 +17203,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -17235,7 +17235,7 @@ label items13:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
             
         "{b}Jabole (+6HP){/b} x [jabole]" if jabolex == 1:
             hide chest
@@ -17303,7 +17303,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -17326,7 +17326,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -17349,7 +17349,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -17372,7 +17372,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -17395,7 +17395,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -17418,7 +17418,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -17441,7 +17441,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -17464,7 +17464,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -17487,7 +17487,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -17510,7 +17510,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -17533,7 +17533,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -17556,7 +17556,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -17579,7 +17579,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -17602,7 +17602,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -17625,7 +17625,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -17648,7 +17648,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -17671,7 +17671,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -17694,7 +17694,7 @@ label items13:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
             
         "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 1:
             hide chest
@@ -17762,7 +17762,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -17785,7 +17785,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -17808,7 +17808,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -17831,7 +17831,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -17854,7 +17854,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -17877,7 +17877,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -17900,7 +17900,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -17923,7 +17923,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -17946,7 +17946,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -17969,7 +17969,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -17992,7 +17992,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -18015,7 +18015,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -18038,7 +18038,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -18061,7 +18061,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -18084,7 +18084,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -18107,7 +18107,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -18130,7 +18130,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -18153,7 +18153,7 @@ label items13:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                     
         "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 1:
             $ kostka = renpy.random.randint(4, 7)
@@ -18222,7 +18222,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -18245,7 +18245,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -18268,7 +18268,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -18291,7 +18291,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -18314,7 +18314,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -18337,7 +18337,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -18360,7 +18360,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -18383,7 +18383,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -18406,7 +18406,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -18429,7 +18429,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -18452,7 +18452,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -18475,7 +18475,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -18498,7 +18498,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -18521,7 +18521,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -18544,7 +18544,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -18567,7 +18567,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -18590,7 +18590,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -18613,7 +18613,7 @@ label items13:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                     
         "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 1:
             hide chest
@@ -18708,7 +18708,7 @@ label items13:
             $ banany -= 1
             if banany == 0:
                 $ ile_item -= 1
-            jump faza14
+            jump faza_fight14
                     
         "{b}Ostra Skałka (5-8 DMG){/b} x [skalka]" if skalkax == 1:
             hide chest
@@ -18778,7 +18778,7 @@ label items13:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Akane{/b}" if akane_hp_now >= 1:
                     if akane_obrona >= 2:
@@ -18802,7 +18802,7 @@ label items13:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                     if kibol2_obrona >= 2:
@@ -18826,7 +18826,7 @@ label items13:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza14
+                    jump faza_fight14
                     
         "{b}Granat (4 DMG FOR ALL){/b} x [granat]" if granatx == 1:
             hide chest
@@ -18931,7 +18931,7 @@ label items13:
             if granat == 0:
                 $ ile_item -= 1
             hide granat
-            jump faza14
+            jump faza_fight14
                     
         "{i}Strona 1/2 --->{/i}" if strona2 > 0:        
             jump items132        
@@ -19015,7 +19015,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -19047,7 +19047,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -19079,7 +19079,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -19111,7 +19111,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -19143,7 +19143,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -19175,7 +19175,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -19207,7 +19207,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -19239,7 +19239,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -19271,7 +19271,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -19303,7 +19303,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -19335,7 +19335,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -19367,7 +19367,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -19399,7 +19399,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -19431,7 +19431,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -19463,7 +19463,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -19495,7 +19495,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -19527,7 +19527,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -19559,7 +19559,7 @@ label items132:
                     if drpepper == 0:
                         $ ile_item -= 1
                     hide drpepper
-                    jump faza14
+                    jump faza_fight14
             
         "{b}Jabole (+6HP){/b} x [jabole]" if jabolex == 2:
             hide chest
@@ -19627,7 +19627,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -19650,7 +19650,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -19673,7 +19673,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -19696,7 +19696,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -19719,7 +19719,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -19742,7 +19742,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -19765,7 +19765,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -19788,7 +19788,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -19811,7 +19811,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -19834,7 +19834,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -19857,7 +19857,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -19880,7 +19880,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -19903,7 +19903,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -19926,7 +19926,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -19949,7 +19949,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -19972,7 +19972,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -19995,7 +19995,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -20018,7 +20018,7 @@ label items132:
                     if jabole == 0:
                         $ ile_item -= 1
                     hide jabole
-                    jump faza14
+                    jump faza_fight14
             
         "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 2:
             hide chest
@@ -20086,7 +20086,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -20109,7 +20109,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -20132,7 +20132,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -20155,7 +20155,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -20178,7 +20178,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -20201,7 +20201,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -20224,7 +20224,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -20247,7 +20247,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -20270,7 +20270,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -20293,7 +20293,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -20316,7 +20316,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -20339,7 +20339,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -20362,7 +20362,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -20385,7 +20385,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -20408,7 +20408,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -20431,7 +20431,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -20454,7 +20454,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -20477,7 +20477,7 @@ label items132:
                     if royal == 0:
                         $ ile_item -= 1
                     hide royal
-                    jump faza14
+                    jump faza_fight14
                     
         "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 2:
             $ kostka = renpy.random.randint(4, 7)
@@ -20546,7 +20546,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -20569,7 +20569,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -20592,7 +20592,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -20615,7 +20615,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -20638,7 +20638,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -20661,7 +20661,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -20684,7 +20684,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -20707,7 +20707,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -20730,7 +20730,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -20753,7 +20753,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -20776,7 +20776,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -20799,7 +20799,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -20822,7 +20822,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
@@ -20845,7 +20845,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
                     if urban_wybrany == 1 and urban_hp_now > 0:
@@ -20868,7 +20868,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
@@ -20891,7 +20891,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
@@ -20914,7 +20914,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -20937,7 +20937,7 @@ label items132:
                     if warzywo == 0:
                         $ ile_item -= 1
                     hide warzywo
-                    jump faza14
+                    jump faza_fight14
                     
         "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 2:
             hide chest
@@ -21032,7 +21032,7 @@ label items132:
             $ banany -= 1
             if banany == 0:
                 $ ile_item -= 1
-            jump faza14
+            jump faza_fight14
                     
         "{b}Ostra Skałka (5-8 DMG){/b} x [skalka]" if skalkax == 2:
             hide chest
@@ -21102,7 +21102,7 @@ label items132:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Akane{/b}" if akane_hp_now >= 1:
                     if akane_obrona >= 2:
@@ -21126,7 +21126,7 @@ label items132:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza14
+                    jump faza_fight14
 
                 "{b}Kibol 2{/b}" if kibol2_hp_now >= 1:
                     if kibol2_obrona >= 2:
@@ -21150,7 +21150,7 @@ label items132:
                     if skalka == 0:
                         $ ile_item -= 1
                     hide skalka
-                    jump faza14
+                    jump faza_fight14
                     
         "{b}Granat (4 DMG FOR ALL){/b} x [granat]" if granatx == 2:
             hide chest
@@ -21255,7 +21255,7 @@ label items132:
             if granat == 0:
                 $ ile_item -= 1
             hide granat
-            jump faza14
+            jump faza_fight14
                     
         "{i}<--- Strona 2/2{/i}":        
             jump items13

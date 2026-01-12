@@ -4057,7 +4057,7 @@ label eq:
         "{b}Zbroja{/b}":
             label zbroja:
                 menu:
-                    "{b}Łuszcz (HP:20){/b}" if luszcz_sojusznik == 1 and luszcz_nic == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]){/b}" if luszcz_sojusznik == 1 and luszcz_nic == 2:
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
@@ -4125,7 +4125,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Łuszcz (HP:25): Diamentowa Klata{/b}" if luszcz_sojusznik == 1 and luszcz_klata == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]): Diamentowa Klata{/b}" if luszcz_sojusznik == 1 and luszcz_klata == 2:
                         window show
                         "{i}Moje klejnoty. +5HP{/i}"
                         window hide
@@ -4205,7 +4205,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Łuszcz (HP:20): Pierścień z Władców Pierścieni{/b}" if luszcz_sojusznik == 1 and ring == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]): Pierścień z Władców Pierścieni{/b}" if luszcz_sojusznik == 1 and ring == 2:
                         window show
                         "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
                         window hide
@@ -4273,7 +4273,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Łuszcz (HP:20): VR Headset{/b}" if luszcz_sojusznik == 1 and vr == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]): VR Headset{/b}" if luszcz_sojusznik == 1 and vr == 2:
                         window show
                         "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
                         window hide
@@ -4341,7 +4341,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Łuszcz (HP:20): Szalik z Memów{/b}" if luszcz_sojusznik == 1 and memy == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]): Szalik z Memów{/b}" if luszcz_sojusznik == 1 and memy == 2:
                         window show
                         "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
                         window hide
@@ -4409,7 +4409,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Łuszcz (HP:20): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if luszcz_sojusznik == 1 and ziemia == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if luszcz_sojusznik == 1 and ziemia == 2:
                         window show
                         "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
                         window hide
@@ -4477,7 +4477,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Łuszcz (HP:30): Długie Nogi{/b}" if luszcz_sojusznik == 1 and nogi == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]): Długie Nogi{/b}" if luszcz_sojusznik == 1 and nogi == 2:
                         window show
                         "{i}Wysoki chłopak. Szybki. +10HP{/i}"
                         window hide
@@ -4551,7 +4551,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Łuszcz (HP:20): Złoty Człowiek{/b}" if luszcz_sojusznik == 1 and zloty == 2:
+                    "{b}Łuszcz (HP:[luszcz_hp]): Złoty Człowiek{/b}" if luszcz_sojusznik == 1 and zloty == 2:
                         window show
                         "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
                         window hide
@@ -4625,7 +4625,7 @@ label eq:
 
 
 
-                    "{b}Shadow (HP:15){/b}" if eminem_sojusznik == 1 and eminem_nic == 7:
+                    "{b}Shadow (HP:[eminem_hp]){/b}" if eminem_sojusznik == 1 and eminem_nic == 7:
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
@@ -4693,7 +4693,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Shadow (HP:20): Diamentowa Klata{/b}" if eminem_sojusznik == 1 and eminem_klata == 7:
+                    "{b}Shadow (HP:[eminem_hp]): Diamentowa Klata{/b}" if eminem_sojusznik == 1 and eminem_klata == 7:
                         window show
                         "{i}Moje klejnoty. +5HP{/i}"
                         window hide
@@ -4773,7 +4773,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Shadow (HP:15): Pierścień z Władców Pierścieni{/b}" if eminem_sojusznik == 1 and ring == 7:
+                    "{b}Shadow (HP:[eminem_hp]): Pierścień z Władców Pierścieni{/b}" if eminem_sojusznik == 1 and ring == 7:
                         window show
                         "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
                         window hide
@@ -4841,7 +4841,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Shadow (HP:15): VR Headset{/b}" if eminem_sojusznik == 1 and vr == 7:
+                    "{b}Shadow (HP:[eminem_hp]): VR Headset{/b}" if eminem_sojusznik == 1 and vr == 7:
                         window show
                         "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
                         window hide
@@ -4909,7 +4909,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Shadow (HP:15): Szalik z Memów{/b}" if eminem_sojusznik == 1 and memy == 7:
+                    "{b}Shadow (HP:[eminem_hp]): Szalik z Memów{/b}" if eminem_sojusznik == 1 and memy == 7:
                         window show
                         "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
                         window hide
@@ -4977,7 +4977,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Shadow (HP:15): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if eminem_sojusznik == 1 and ziemia == 7:
+                    "{b}Shadow (HP:[eminem_hp]): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if eminem_sojusznik == 1 and ziemia == 7:
                         window show
                         "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
                         window hide
@@ -5045,7 +5045,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Shadow (HP:25): Długie Nogi{/b}" if eminem_sojusznik == 1 and nogi == 7:
+                    "{b}Shadow (HP:[eminem_hp]): Długie Nogi{/b}" if eminem_sojusznik == 1 and nogi == 7:
                         window show
                         "{i}Wysoki chłopak. Szybki. +10HP{/i}"
                         window hide
@@ -5119,7 +5119,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Shadow (HP:15): Złoty Człowiek{/b}" if eminem_sojusznik == 1 and zloty == 7:
+                    "{b}Shadow (HP:[eminem_hp]): Złoty Człowiek{/b}" if eminem_sojusznik == 1 and zloty == 7:
                         window show
                         "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
                         window hide
@@ -5193,7 +5193,7 @@ label eq:
 
 
 
-                    "{b}Jerzy Urban (HP:20){/b}" if urban_sojusznik == 1 and urban_nic == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]){/b}" if urban_sojusznik == 1 and urban_nic == 3:
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
@@ -5261,7 +5261,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Jerzy Urban (HP:25): Diamentowa Klata{/b}" if urban_sojusznik == 1 and urban_klata == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]): Diamentowa Klata{/b}" if urban_sojusznik == 1 and urban_klata == 3:
                         window show
                         "{i}Moje klejnoty. +5HP{/i}"
                         window hide
@@ -5341,7 +5341,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Jerzy Urban (HP:20): Pierścień z Władców Pierścieni{/b}" if urban_sojusznik == 1 and ring == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]): Pierścień z Władców Pierścieni{/b}" if urban_sojusznik == 1 and ring == 3:
                         window show
                         "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
                         window hide
@@ -5409,7 +5409,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Jerzy Urban (HP:20): VR Headset{/b}" if urban_sojusznik == 1 and vr == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]): VR Headset{/b}" if urban_sojusznik == 1 and vr == 3:
                         window show
                         "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
                         window hide
@@ -5477,7 +5477,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Jerzy Urban (HP:20): Szalik z Memów{/b}" if urban_sojusznik == 1 and memy == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]): Szalik z Memów{/b}" if urban_sojusznik == 1 and memy == 3:
                         window show
                         "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
                         window hide
@@ -5545,7 +5545,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Jerzy Urban (HP:20): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if urban_sojusznik == 1 and ziemia == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if urban_sojusznik == 1 and ziemia == 3:
                         window show
                         "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
                         window hide
@@ -5613,7 +5613,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Jerzy Urban (HP:30): Długie Nogi{/b}" if urban_sojusznik == 1 and nogi == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]): Długie Nogi{/b}" if urban_sojusznik == 1 and nogi == 3:
                         window show
                         "{i}Wysoki chłopak. Szybki. +10HP{/i}"
                         window hide
@@ -5687,7 +5687,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Jerzy Urban (HP:20): Złoty Człowiek{/b}" if urban_sojusznik == 1 and zloty == 3:
+                    "{b}Jerzy Urban (HP:[urban_hp]): Złoty Człowiek{/b}" if urban_sojusznik == 1 and zloty == 3:
                         window show
                         "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
                         window hide
@@ -5762,7 +5762,7 @@ label eq:
 
 
 
-                    "{b}Żyd (HP:10){/b}" if zyd_sojusznik == 1 and zyd_nic == 4:
+                    "{b}Żyd (HP:[zyd_hp]){/b}" if zyd_sojusznik == 1 and zyd_nic == 4:
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
@@ -5830,7 +5830,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Żyd (HP:15): Diamentowa Klata{/b}" if zyd_sojusznik == 1 and zyd_klata == 4:
+                    "{b}Żyd (HP:[zyd_hp]): Diamentowa Klata{/b}" if zyd_sojusznik == 1 and zyd_klata == 4:
                         window show
                         "{i}Moje klejnoty. +5HP{/i}"
                         window hide
@@ -5910,7 +5910,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Żyd (HP:10): Pierścień z Władców Pierścieni{/b}" if zyd_sojusznik == 1 and ring == 4:
+                    "{b}Żyd (HP:[zyd_hp]): Pierścień z Władców Pierścieni{/b}" if zyd_sojusznik == 1 and ring == 4:
                         window show
                         "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
                         window hide
@@ -5978,7 +5978,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Żyd (HP:10): VR Headset{/b}" if zyd_sojusznik == 1 and vr == 4:
+                    "{b}Żyd (HP:[zyd_hp]): VR Headset{/b}" if zyd_sojusznik == 1 and vr == 4:
                         window show
                         "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
                         window hide
@@ -6046,7 +6046,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Żyd (HP:10): Szalik z Memów{/b}" if zyd_sojusznik == 1 and memy == 4:
+                    "{b}Żyd (HP:[zyd_hp]): Szalik z Memów{/b}" if zyd_sojusznik == 1 and memy == 4:
                         window show
                         "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
                         window hide
@@ -6114,7 +6114,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Żyd (HP:10): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if zyd_sojusznik == 1 and ziemia == 4:
+                    "{b}Żyd (HP:[zyd_hp]): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if zyd_sojusznik == 1 and ziemia == 4:
                         window show
                         "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
                         window hide
@@ -6182,7 +6182,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Żyd (HP:20): Długie Nogi{/b}" if zyd_sojusznik == 1 and nogi == 4:
+                    "{b}Żyd (HP:[zyd_hp]): Długie Nogi{/b}" if zyd_sojusznik == 1 and nogi == 4:
                         window show
                         "{i}Wysoki chłopak. Szybki. +10HP{/i}"
                         window hide
@@ -6256,7 +6256,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Żyd (HP:10): Złoty Człowiek{/b}" if zyd_sojusznik == 1 and zloty == 4:
+                    "{b}Żyd (HP:[zyd_hp]): Złoty Człowiek{/b}" if zyd_sojusznik == 1 and zloty == 4:
                         window show
                         "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
                         window hide
@@ -6328,8 +6328,7 @@ label eq:
 
 
 
-
-                    "{b}Kazuma (HP:10){/b}" if kazuma_sojusznik == 1 and kazuma_nic == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]){/b}" if kazuma_sojusznik == 1 and kazuma_nic == 5:
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
@@ -6397,7 +6396,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Kazuma (HP:15): Diamentowa Klata{/b}" if kazuma_sojusznik == 1 and kazuma_klata == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]): Diamentowa Klata{/b}" if kazuma_sojusznik == 1 and kazuma_klata == 5:
                         window show
                         "{i}Moje klejnoty. +5HP{/i}"
                         window hide
@@ -6477,7 +6476,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Kazuma (HP:10): Pierścień z Władców Pierścieni{/b}" if kazuma_sojusznik == 1 and ring == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]): Pierścień z Władców Pierścieni{/b}" if kazuma_sojusznik == 1 and ring == 5:
                         window show
                         "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
                         window hide
@@ -6545,7 +6544,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Kazuma (HP:10): VR Headset{/b}" if kazuma_sojusznik == 1 and vr == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]): VR Headset{/b}" if kazuma_sojusznik == 1 and vr == 5:
                         window show
                         "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
                         window hide
@@ -6613,7 +6612,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Kazuma (HP:10): Szalik z Memów{/b}" if kazuma_sojusznik == 1 and memy == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]): Szalik z Memów{/b}" if kazuma_sojusznik == 1 and memy == 5:
                         window show
                         "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
                         window hide
@@ -6681,7 +6680,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Kazuma (HP:10): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if kazuma_sojusznik == 1 and ziemia == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if kazuma_sojusznik == 1 and ziemia == 5:
                         window show
                         "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
                         window hide
@@ -6749,7 +6748,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Kazuma (HP:20): Długie Nogi{/b}" if kazuma_sojusznik == 1 and nogi == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]): Długie Nogi{/b}" if kazuma_sojusznik == 1 and nogi == 5:
                         window show
                         "{i}Wysoki chłopak. Szybki. +10HP{/i}"
                         window hide
@@ -6823,7 +6822,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Kazuma (HP:10): Złoty Człowiek{/b}" if kazuma_sojusznik == 1 and zloty == 5:
+                    "{b}Kazuma (HP:[kazuma_hp]): Złoty Człowiek{/b}" if kazuma_sojusznik == 1 and zloty == 5:
                         window show
                         "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
                         window hide
@@ -6897,7 +6896,7 @@ label eq:
 
 
 
-                    "{b}Naofumi (HP:15){/b}" if tarczownik_sojusznik == 1 and tarczownik_nic == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]){/b}" if tarczownik_sojusznik == 1 and tarczownik_nic == 6:
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
@@ -6965,7 +6964,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Naofumi (HP:20): Diamentowa Klata{/b}" if tarczownik_sojusznik == 1 and tarczownik_klata == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]): Diamentowa Klata{/b}" if tarczownik_sojusznik == 1 and tarczownik_klata == 6:
                         window show
                         "{i}Moje klejnoty. +5HP{/i}"
                         window hide
@@ -7045,7 +7044,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Naofumi (HP:15): Pierścień z Władców Pierścieni{/b}" if tarczownik_sojusznik == 1 and ring == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]): Pierścień z Władców Pierścieni{/b}" if tarczownik_sojusznik == 1 and ring == 6:
                         window show
                         "{i}Pierścień z Władców Pierścieni. 33%% w każdej turze na utworzenie potężnej obrony dla posiadacza"
                         window hide
@@ -7113,7 +7112,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Naofumi (HP:15): VR Headset{/b}" if tarczownik_sojusznik == 1 and vr == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]): VR Headset{/b}" if tarczownik_sojusznik == 1 and vr == 6:
                         window show
                         "{i}Dla pół-żywych lol. W każdej turze rzyga na losowego przeciwnika zadając 1-2 DMG{/i}"
                         window hide
@@ -7181,7 +7180,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Naofumi (HP:15): Szalik z Memów{/b}" if tarczownik_sojusznik == 1 and memy == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]): Szalik z Memów{/b}" if tarczownik_sojusznik == 1 and memy == 6:
                         window show
                         "{i}Zaspamowany z miłością. 15%% szans na odbicie obrażeń do atakującego{/i}"
                         window hide
@@ -7249,7 +7248,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Naofumi (HP:15): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if tarczownik_sojusznik == 1 and ziemia == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]): Kawałek ziemi, po której stąpał Jan Paweł 2{/b}" if tarczownik_sojusznik == 1 and ziemia == 6:
                         window show
                         "{i}Jak Pan Jezus powiedział. Gdy nosiciel atakuje, leczy się o 1-2 HP{/i}"
                         window hide
@@ -7317,7 +7316,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Naofumi (HP:25): Długie Nogi{/b}" if tarczownik_sojusznik == 1 and nogi == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]): Długie Nogi{/b}" if tarczownik_sojusznik == 1 and nogi == 6:
                         window show
                         "{i}Wysoki chłopak. Szybki. +10HP{/i}"
                         window hide
@@ -7391,7 +7390,7 @@ label eq:
                         else:
                             jump zbroja
                     
-                    "{b}Naofumi (HP:15): Złoty Człowiek{/b}" if tarczownik_sojusznik == 1 and zloty == 6:
+                    "{b}Naofumi (HP:[tarczownik_hp]): Złoty Człowiek{/b}" if tarczownik_sojusznik == 1 and zloty == 6:
                         window show
                         "{i}Pozdrawiamy Dominikę. Gdy umrzesz odżywasz. Działa tylko raz na walkę{/i}"
                         window hide

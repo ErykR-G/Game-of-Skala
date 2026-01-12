@@ -109,4 +109,4 @@ label menu_lokacji:
         menu:
             "{b}<--- Lipowa (20 min)":
                 $ timer += 20
-                jump lipowa
+                jump lipowa                              
