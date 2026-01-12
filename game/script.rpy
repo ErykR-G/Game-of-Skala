@@ -990,6 +990,8 @@ label start:
         jump fight01
 
         label after_fight01:
+            $ eminem_sojusznik = 0
+            $ liczba_sojusznikow -= 1
             show bg alejka3v2 with fade
             show luszcz spi at left
             show eminem spi at slightleft
