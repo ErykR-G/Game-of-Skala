@@ -109,4 +109,156 @@ label menu_lokacji:
         menu:
             "{b}<--- Lipowa (20 min)":
                 $ timer += 20
-                jump lipowa                              
+                jump lipowa    
+
+            "{b}TEST WALKA":
+                jump faubla     
+
+
+
+
+
+
+
+
+
+
+    label faubla:
+        scene bg korytarz
+        menu:
+            "{b}Ilu masz przyjaciół?{/b}"
+
+            "{b}DUŻO{/b}":
+                $ liczba_sojusznikow += 3
+                $ eminem_sojusznik += 1
+                $ urban_sojusznik += 1
+                $ zyd_sojusznik += 1
+                $ kazuma_sojusznik += 1
+                $ tarczownik_sojusznik += 1
+                $ stop = 1
+                $ miecz_swietlny = 1
+                $ ostrza_chaosu = 1
+                $ patyk = 1
+                $ bazooka = 1
+                $ miecz3d = 1
+                $ przepychaczka_liczba = 3
+                $ luszcz_przepychaczka = 1
+                $ urban_przepychaczka = 1
+                $ zyd_przepychaczka = 1
+                $ kazuma_przepychaczka = 1
+                $ tarczownik_przepychaczka = 1
+                $ klata_liczba = 2
+                $ luszcz_klata = 1
+                $ urban_klata = 1
+                $ zyd_klata = 1
+                $ kazuma_klata = 1
+                $ tarczownik_klata = 1
+                $ eminem_klata = 1
+                $ ring = 1
+                $ vr = 1
+                $ memy = 1
+                $ ziemia = 1
+                $ nogi = 1
+                $ zloty = 1
+
+                $ ile_item = 13
+                $ piknik = 1
+                $ cake = 1
+                $ pills = 20
+                $ woda = 2
+                $ ostry = 2
+                $ lagodny = 3
+                $ drpepper = 5
+                $ jabole = 5
+                $ royal = 4
+                $ warzywo = 3
+                $ banany = 4
+                $ skalka = 2
+                $ granat = 3
+
+
+            "{b}TROCHE{/b}":
+                $ liczba_sojusznikow += 2
+                $ eminem_sojusznik += 1
+                $ zyd_sojusznik += 1
+                $ stop = 1
+                $ miecz_swietlny = 1
+                $ ostrza_chaosu = 1
+                $ patyk = 1
+                $ bazooka = 1
+                $ miecz3d = 1
+                $ przepychaczka_liczba = 3
+                $ luszcz_przepychaczka = 1
+                $ zyd_przepychaczka = 1
+                $ klata_liczba = 2
+                $ luszcz_klata = 1
+                $ zyd_klata = 1
+                $ eminem_klata = 1
+                $ ring = 1
+                $ vr = 1
+                $ memy = 1
+                $ ziemia = 1
+                $ nogi = 1
+                $ zloty = 1
+
+                $ ile_item = 13
+                $ piknik = 1
+                $ cake = 1
+                $ pills = 20
+                $ woda = 2
+                $ ostry = 2
+                $ lagodny = 3
+                $ drpepper = 5
+                $ jabole = 5
+                $ royal = 4
+                $ warzywo = 3
+                $ banany = 4
+                $ skalka = 2
+                $ granat = 3
+
+            "{b}MAM{/b}":
+                $ liczba_sojusznikow += 1
+                $ eminem_sojusznik += 1
+                $ stop = 1
+                $ miecz_swietlny = 1
+                $ ostrza_chaosu = 1
+                $ patyk = 1
+                $ bazooka = 1
+                $ miecz3d = 1
+                $ przepychaczka_liczba = 3
+                $ luszcz_przepychaczka = 1
+                $ klata_liczba = 2
+                $ luszcz_klata = 1
+                $ eminem_klata = 1
+                $ ring = 1
+                $ vr = 1
+                $ memy = 1
+                $ ziemia = 1
+                $ nogi = 1
+                $ zloty = 1
+
+                $ ile_item = 13
+                $ piknik = 1
+                $ cake = 1
+                $ pills = 20
+                $ woda = 2
+                $ ostry = 2
+                $ lagodny = 3
+                $ drpepper = 5
+                $ jabole = 5
+                $ royal = 4
+                $ warzywo = 3
+                $ banany = 4
+                $ skalka = 2
+                $ granat = 3
+
+                
+            "{b}CO TO?{/b}":
+                pass
+
+        "{i}O bogowie walka{/i}"
+        jump fight11
+
+    label after_fight11:
+        "{i}Gratulacje wygrałeś{/i}"
+        jump rynek

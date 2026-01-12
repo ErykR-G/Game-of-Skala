@@ -82,6 +82,7 @@ label fight11:
         show screen akane_stats
         show kibol2 fight zorder 10 at wrog2
         show screen kibol2_stats
+        $ eminem_weapon = 0
         $ kibol1_hp_now = kibol1_hp
         $ kibol1_min_attack_now = kibol1_min_attack
         $ kibol1_max_attack_now = kibol1_max_attack
@@ -21634,7 +21635,8 @@ label fight11:
 
 
     label wygranko_fight11:
-        stop sound 
+        scene bg black with fade
+        play sound "audio/sfx/wygranko.mp3" 
         stop music
         hide luszcz
         hide eminem

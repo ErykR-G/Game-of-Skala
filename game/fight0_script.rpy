@@ -5,7 +5,7 @@ label fight01_stats:
 
     default trup1_hp = 15
     default trup2_hp = 15
-    default emina_hp = 35
+    default emina_hp = 40
 
     default trup1_uszy = 0
     default emina_uszy = 0
@@ -29,11 +29,11 @@ label fight01_stats:
 
     default trup1_min_attack = 1
     default trup2_min_attack = 1
-    default emina_min_attack = 4
+    default emina_min_attack = 2
 
     default trup1_max_attack = 4
     default trup2_max_attack = 4
-    default emina_max_attack = 8
+    default emina_max_attack = 5
 
     default trup1_max_attack_now = trup1_max_attack
     default trup2_max_attack_now = trup2_max_attack
@@ -71,12 +71,17 @@ label fight01_stats:
     default trup2_stun = 0
     default emina_stun = 0
 
+    default emina_special = 0
+
 label fight01:
     label wybor_fight01:
         play music "audio/music/emina_fight.mp3"
         scene bg alejka3v3
         show emina fight zorder 10 at wrog3
         show screen emina_stats
+        $ eminem_weapon = 0
+        $ trup1_umarty = 1
+        $ trup2_umarty = 1
         $ trup1_hp_now = 0
         $ trup2_hp_now = 0
         $ emina_hp_now = emina_hp
@@ -2333,6 +2338,13 @@ label fight01:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
+                            if emina_special == 3:
+                                play sound "audio/sfx/obrona.mp3"
+                                $ luszcz_hp_now -= luszcz_attack
+                                "{i}Atak Łuszcza odbił się od Eminema i wrócił do nadawcy zadając mu [luszcz_attack] obrażeń{/i}"
+                                jump faza_fight02
+
+
                             if emina_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
@@ -2955,6 +2967,12 @@ label fight01:
                         "{b}Eminem{/b}" if emina_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+
+                            if emina_special == 3:
+                                play sound "audio/sfx/obrona.mp3"
+                                $ eminem_hp_now -= eminem_attack
+                                "{i}Atak Shadowa odbił się od Eminema i wrócił do nadawcy zadając mu [luszcz_attack] obrażeń{/i}"
+                                jump faza_fight02
 
                             if emina_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -8518,6 +8536,12 @@ label fight01:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
+                            if emina_special == 3:
+                                play sound "audio/sfx/obrona.mp3"
+                                $ luszcz_hp_now -= luszcz_attack
+                                "{i}Atak Łuszcza odbił się od Eminema i wrócił do nadawcy zadając mu [luszcz_attack] obrażeń{/i}"
+                                jump faza_fight03
+
                             if emina_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
@@ -9140,6 +9164,12 @@ label fight01:
                         "{b}Eminem{/b}" if emina_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+
+                            if emina_special == 3:
+                                play sound "audio/sfx/obrona.mp3"
+                                $ eminem_hp_now -= eminem_attack
+                                "{i}Atak Shadowa odbił się od Eminema i wrócił do nadawcy zadając mu [luszcz_attack] obrażeń{/i}"
+                                jump faza_fight03
 
                             if emina_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -19468,6 +19498,58 @@ label fight01:
                     "{i}Eminem zadaje [emina_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                 jump faza_fight06
+        
+        if emina_special == 3:
+            show bornana zorder 15 at weapon_wrog3 
+            emina "fuck you"
+            play sound "audio/sfx/bornana.mp3"
+
+            $ emina_attack = renpy.random.randint(emina_min_attack_now, emina_max_attack_now)
+            if luszcz_hp_now > 0:
+                if luszcz_obrona == 1:
+                    $ luszcz_hp_now -= int(emina_attack / 2)
+                else:
+                    $ luszcz_hp_now -= emina_attack
+            if eminem_hp_now > 0:
+                if eminem_obrona == 1:
+                    $ eminem_hp_now -= int(emina_attack / 2)
+                else:
+                    $ eminem_hp_now -= emina_attack
+            
+            if luszcz_obrona == 1 and eminem_obrona == 1 and luszcz_hp_now > 0 and eminem_hp_now > 0:
+                "{i}Łuszcz i Shadow stracili po [int(emina_attack / 2)] punktów życia{/i}"
+            
+            if luszcz_obrona == 0 and eminem_obrona == 0 and luszcz_hp_now > 0 and eminem_hp_now > 0:
+                "{i}Łuszcz i Shadow stracili po [emina_attack] punktów życia{/i}"
+            
+            if luszcz_obrona == 1 and eminem_obrona == 0 and luszcz_hp_now > 0 and eminem_hp_now > 0:
+                "{i}Łuszcz stracił [int(emina_attack / 2)] punktów życia\n Shadow stracił [emina_attack] punktów życia{/i}"
+            
+            if luszcz_obrona == 0 and eminem_obrona == 1 and luszcz_hp_now > 0 and eminem_hp_now > 0:
+                "{i}Łuszcz stracił [emina_attack] punktów życia\n Shadow stracił [int(emina_attack / 2)] punktów życia{/i}"
+            
+            if luszcz_obrona == 0 and luszcz_hp_now > 0 and eminem_hp_now <= 0:
+                "{i}Łuszcz stracił [emina_attack] punktów życia{/i}"
+            
+            if luszcz_obrona == 1 and luszcz_hp_now > 0 and eminem_hp_now <= 0:
+                "{i}Łuszcz stracił [int(emina_attack / 2)] punktów życia{/i}"
+            
+            if eminem_obrona == 0 and eminem_hp_now > 0 and luszcz_hp_now <= 0:
+                "{i}Shadow stracił [emina_attack] punktów życia{/i}"
+            
+            if eminem_obrona == 1 and eminem_hp_now > 0 and luszcz_hp_now <= 0:
+                "{i}Shadow stracił [int(emina_attack / 2)] punktów życia{/i}"
+
+            if luszcz_hp_now <= 0 and eminem_hp_now <= 0:
+                "{i}Wszyscy sojusznicy umarli od ataku Eminema{/i}"
+            
+            hide emina special
+            show emina fight zorder 10 at wrog3
+            $ emina_min_attack_now_true = 2
+            $ emina_max_attack_now_true = 5
+            hide bornana
+            $ emina_special = 0
+            jump faza_fight06
 
         if emina_max_attack_now <= 0 and emina_obrona == 0:
             show tarcza7 zorder 15 at weapon_wrog3  
@@ -19516,6 +19598,7 @@ label fight01:
                         $ kostka = renpy.random.randint(1, 5)
                         if kostka >= 2:
                             $ emina_attack = renpy.random.randint(emina_min_attack_now, emina_max_attack_now)
+                            emina "Motherfucker!"
 
                             if memy == 2:
                                 $ kostka = renpy.random.randint(1, 20)
@@ -19542,10 +19625,53 @@ label fight01:
 
                                     $ dmg = int(emina_attack / 2)
                                     "{i}Eminem zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    if emina_special == 0:
+                                        $ emina_special += 1
+                                        play sound "audio/sfx/slim.mp3"
+                                        "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                    else:
+                                        if emina_special == 1:
+                                            $ emina_special += 1
+                                            play sound "audio/sfx/shady.mp3"
+                                            "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                        
+                                        else:
+                                            if emina_special == 2:
+                                                $ emina_special += 1
+                                                hide emina fight
+                                                show emina special zorder 10 at wrog3
+                                                play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                $ emina_min_attack_now += 10
+                                                $ emina_max_attack_now += 7
+                                                $ emina_min_attack_now_true = 12
+                                                $ emina_max_attack_now_true = 12
+                                                "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
+
                                 else:
                                     $ luszcz_hp_now -= emina_attack
 
                                     "{i}Eminem zadaje [emina_attack] obrażeń Łuszczowi{/i}"
+                                    if emina_special == 0:
+                                        $ emina_special += 1
+                                        play sound "audio/sfx/slim.mp3"
+                                        "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                    else:
+                                        if emina_special == 1:
+                                            $ emina_special += 1
+                                            play sound "audio/sfx/shady.mp3"
+                                            "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                        
+                                        else:
+                                            if emina_special == 2:
+                                                $ emina_special += 1
+                                                hide emina fight
+                                                show emina special zorder 10 at wrog3
+                                                play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                $ emina_min_attack_now += 10
+                                                $ emina_max_attack_now += 7
+                                                $ emina_min_attack_now_true = 12
+                                                $ emina_max_attack_now_true = 12
+                                                "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
 
                             jump faza_fight06
                         else:
@@ -19556,6 +19682,7 @@ label fight01:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 3:
                                 $ emina_attack = renpy.random.randint(emina_min_attack_now, emina_max_attack_now)
+                                emina "Motherfucker!"
 
                                 if memy == 2:
                                     $ kostka = renpy.random.randint(1, 20)
@@ -19582,10 +19709,52 @@ label fight01:
 
                                         $ dmg = int(emina_attack / 2)
                                         "{i}Eminem zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                        if emina_special == 0:
+                                            $ emina_special += 1
+                                            play sound "audio/sfx/slim.mp3"
+                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                        else:
+                                            if emina_special == 1:
+                                                $ emina_special += 1
+                                                play sound "audio/sfx/shady.mp3"
+                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                            
+                                            else:
+                                                if emina_special == 2:
+                                                    $ emina_special += 1
+                                                    hide emina fight
+                                                    show emina special zorder 10 at wrog3
+                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                    $ emina_min_attack_now += 10
+                                                    $ emina_max_attack_now += 7
+                                                    $ emina_min_attack_now_true = 12
+                                                    $ emina_max_attack_now_true = 12
+                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
                                     else:
                                         $ luszcz_hp_now -= emina_attack
 
                                         "{i}Eminem zadaje [emina_attack] obrażeń Łuszczowi{/i}"
+                                        if emina_special == 0:
+                                            $ emina_special += 1
+                                            play sound "audio/sfx/slim.mp3"
+                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                        else:
+                                            if emina_special == 1:
+                                                $ emina_special += 1
+                                                play sound "audio/sfx/shady.mp3"
+                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                            
+                                            else:
+                                                if emina_special == 2:
+                                                    $ emina_special += 1
+                                                    hide emina fight
+                                                    show emina special zorder 10 at wrog3
+                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                    $ emina_min_attack_now += 10
+                                                    $ emina_max_attack_now += 7
+                                                    $ emina_min_attack_now_true = 12
+                                                    $ emina_max_attack_now_true = 12
+                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
 
                                 jump faza_fight06
                             else:
@@ -19595,6 +19764,7 @@ label fight01:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
                                 $ emina_attack = renpy.random.randint(emina_min_attack_now, emina_max_attack_now)
+                                emina "Motherfucker!"
 
                                 if memy == 2:
                                     $ kostka = renpy.random.randint(1, 20)
@@ -19621,10 +19791,52 @@ label fight01:
 
                                         $ dmg = int(emina_attack / 2)
                                         "{i}Eminem zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                        if emina_special == 0:
+                                            $ emina_special += 1
+                                            play sound "audio/sfx/slim.mp3"
+                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                        else:
+                                            if emina_special == 1:
+                                                $ emina_special += 1
+                                                play sound "audio/sfx/shady.mp3"
+                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                            
+                                            else:
+                                                if emina_special == 2:
+                                                    $ emina_special += 1
+                                                    hide emina fight
+                                                    show emina special zorder 10 at wrog3
+                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                    $ emina_min_attack_now += 10
+                                                    $ emina_max_attack_now += 7
+                                                    $ emina_min_attack_now_true = 12
+                                                    $ emina_max_attack_now_true = 12
+                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
                                     else:
                                         $ luszcz_hp_now -= emina_attack
 
                                         "{i}Eminem zadaje [emina_attack] obrażeń Łuszczowi{/i}"
+                                        if emina_special == 0:
+                                            $ emina_special += 1
+                                            play sound "audio/sfx/slim.mp3"
+                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                        else:
+                                            if emina_special == 1:
+                                                $ emina_special += 1
+                                                play sound "audio/sfx/shady.mp3"
+                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                            
+                                            else:
+                                                if emina_special == 2:
+                                                    $ emina_special += 1
+                                                    hide emina fight
+                                                    show emina special zorder 10 at wrog3
+                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                    $ emina_min_attack_now += 10
+                                                    $ emina_max_attack_now += 7
+                                                    $ emina_min_attack_now_true = 12
+                                                    $ emina_max_attack_now_true = 12
+                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
 
                                 jump faza_fight06
                             else:
@@ -20008,6 +20220,7 @@ label fight01:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 2:
                                             $ emina_attack = renpy.random.randint(emina_min_attack_now, emina_max_attack_now)
+                                            emina "Motherfucker!"
 
                                             if memy == 7:
                                                 $ kostka = renpy.random.randint(1, 20)
@@ -20034,10 +20247,52 @@ label fight01:
 
                                                     $ dmg = int(emina_attack / 2)
                                                     "{i}Eminem zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    if emina_special == 0:
+                                                        $ emina_special += 1
+                                                        play sound "audio/sfx/slim.mp3"
+                                                        "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                                    else:
+                                                        if emina_special == 1:
+                                                            $ emina_special += 1
+                                                            play sound "audio/sfx/shady.mp3"
+                                                            "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                                        
+                                                        else:
+                                                            if emina_special == 2:
+                                                                $ emina_special += 1
+                                                                hide emina fight
+                                                                show emina special zorder 10 at wrog3
+                                                                play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                                $ emina_min_attack_now += 10
+                                                                $ emina_max_attack_now += 7
+                                                                $ emina_min_attack_now_true = 12
+                                                                $ emina_max_attack_now_true = 12
+                                                                "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
                                                 else:
                                                     $ eminem_hp_now -= emina_attack
 
                                                     "{i}Eminem zadaje [emina_attack] obrażeń Shadowowi{/i}"
+                                                    if emina_special == 0:
+                                                        $ emina_special += 1
+                                                        play sound "audio/sfx/slim.mp3"
+                                                        "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                                    else:
+                                                        if emina_special == 1:
+                                                            $ emina_special += 1
+                                                            play sound "audio/sfx/shady.mp3"
+                                                            "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                                        
+                                                        else:
+                                                            if emina_special == 2:
+                                                                $ emina_special += 1
+                                                                hide emina fight
+                                                                show emina special zorder 10 at wrog3
+                                                                play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                                $ emina_min_attack_now += 10
+                                                                $ emina_max_attack_now += 7
+                                                                $ emina_min_attack_now_true = 12
+                                                                $ emina_max_attack_now_true = 12
+                                                                "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
 
                                             jump faza_fight06
                                         else:
@@ -20048,6 +20303,7 @@ label fight01:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 3:
                                                 $ emina_attack = renpy.random.randint(emina_min_attack_now, emina_max_attack_now)
+                                                emina "Motherfucker!"
 
                                                 if memy == 7:
                                                     $ kostka = renpy.random.randint(1, 20)
@@ -20074,10 +20330,52 @@ label fight01:
 
                                                         $ dmg = int(emina_attack / 2)
                                                         "{i}Eminem zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                        if emina_special == 0:
+                                                            $ emina_special += 1
+                                                            play sound "audio/sfx/slim.mp3"
+                                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                                        else:
+                                                            if emina_special == 1:
+                                                                $ emina_special += 1
+                                                                play sound "audio/sfx/shady.mp3"
+                                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                                            
+                                                            else:
+                                                                if emina_special == 2:
+                                                                    $ emina_special += 1
+                                                                    hide emina fight
+                                                                    show emina special zorder 10 at wrog3
+                                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                                    $ emina_min_attack_now += 10
+                                                                    $ emina_max_attack_now += 7
+                                                                    $ emina_min_attack_now_true = 12
+                                                                    $ emina_max_attack_now_true = 12
+                                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
                                                     else:
                                                         $ eminem_hp_now -= emina_attack
 
                                                         "{i}Eminem zadaje [emina_attack] obrażeń Shadowowi{/i}"
+                                                        if emina_special == 0:
+                                                            $ emina_special += 1
+                                                            play sound "audio/sfx/slim.mp3"
+                                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                                        else:
+                                                            if emina_special == 1:
+                                                                $ emina_special += 1
+                                                                play sound "audio/sfx/shady.mp3"
+                                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                                            
+                                                            else:
+                                                                if emina_special == 2:
+                                                                    $ emina_special += 1
+                                                                    hide emina fight
+                                                                    show emina special zorder 10 at wrog3
+                                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                                    $ emina_min_attack_now += 10
+                                                                    $ emina_max_attack_now += 7
+                                                                    $ emina_min_attack_now_true = 12
+                                                                    $ emina_max_attack_now_true = 12
+                                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
 
                                                 jump faza_fight06
                                             else:
@@ -20087,6 +20385,7 @@ label fight01:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 5:
                                                 $ emina_attack = renpy.random.randint(emina_min_attack_now, emina_max_attack_now)
+                                                emina "Motherfucker!"
 
                                                 if memy == 7:
                                                     $ kostka = renpy.random.randint(1, 20)
@@ -20113,10 +20412,52 @@ label fight01:
 
                                                         $ dmg = int(emina_attack / 2)
                                                         "{i}Eminem zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                        if emina_special == 0:
+                                                            $ emina_special += 1
+                                                            play sound "audio/sfx/slim.mp3"
+                                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                                        else:
+                                                            if emina_special == 1:
+                                                                $ emina_special += 1
+                                                                play sound "audio/sfx/shady.mp3"
+                                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                                            
+                                                            else:
+                                                                if emina_special == 2:
+                                                                    $ emina_special += 1
+                                                                    hide emina fight
+                                                                    show emina special zorder 10 at wrog3
+                                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                                    $ emina_min_attack_now += 10
+                                                                    $ emina_max_attack_now += 7
+                                                                    $ emina_min_attack_now_true = 12
+                                                                    $ emina_max_attack_now_true = 12
+                                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
                                                     else:
                                                         $ eminem_hp_now -= emina_attack
 
                                                         "{i}Eminem zadaje [emina_attack] obrażeń Shadowowi{/i}"
+                                                        if emina_special == 0:
+                                                            $ emina_special += 1
+                                                            play sound "audio/sfx/slim.mp3"
+                                                            "{i}Eminem staje się {b}Slim{/b}{/i}"
+                                                        else:
+                                                            if emina_special == 1:
+                                                                $ emina_special += 1
+                                                                play sound "audio/sfx/shady.mp3"
+                                                                "{i}Eminem staje się {b}Shady{/b}{/i}"
+                                                            
+                                                            else:
+                                                                if emina_special == 2:
+                                                                    $ emina_special += 1
+                                                                    hide emina fight
+                                                                    show emina special zorder 10 at wrog3
+                                                                    play sound "audio/sfx/the_real_slim_shady.mp3"
+                                                                    $ emina_min_attack_now += 10
+                                                                    $ emina_max_attack_now += 7
+                                                                    $ emina_min_attack_now_true = 12
+                                                                    $ emina_max_attack_now_true = 12
+                                                                    "{i}Eminem staje się {b}The Real Slim Shady{/b}{/i}"
 
                                                 jump faza_fight06
                                             else:
@@ -21587,6 +21928,8 @@ label fight01:
                 $ emina_min_attack_now_true = emina_min_attack
                 $ emina_max_attack_now_true = emina_max_attack
 
+                $ emina_special = 0
+
                 $ trup1_pager = 0
                 $ trup2_pager = 0
                 $ emina_pager = 0
@@ -21622,7 +21965,8 @@ label fight01:
 
 
     label wygranko_fight01:
-        stop sound 
+        scene bg black with fade
+        play sound "audio/sfx/wygranko.mp3" 
         stop music
         hide luszcz
         hide eminem
@@ -21764,6 +22108,8 @@ label fight01:
         hide screen tarczownik3_stats
 
         $ fight_on = 0
+
+        $ emina_special = 0
 
         $ ile_sojusznikow = 0
         $ ile_wrogow = 0

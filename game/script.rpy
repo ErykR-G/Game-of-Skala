@@ -473,12 +473,14 @@ label fight_stats:
 label prolog_decyzje:
     define ofiara = 0
 
+label wybory:
+    define eminem_wybory = 0
+
 
 
 label start:
     label prolog:
         hide screen global_eq_key
-        show screen global_eq_key
         show bg start
         show luszcz siedzi right at slightright
         show screen clock
@@ -849,7 +851,6 @@ label start:
                     scene bg black with fade
                     show bg alejka3 with fade
                     play music "audio/music/alejka3.mp3"
-                    play music2 "audio/music/emina.mp3"
 
                     
                 "{b}Może lepiej nie{/b}":
@@ -989,146 +990,168 @@ label start:
         jump fight01
 
         label after_fight01:
-            ""
+            show bg alejka3v2 with fade
+            show luszcz spi at left
+            show eminem spi at slightleft
+            show emina spi at right
+        
+        play music "audio/music/alejka3.mp3"
+        ""
+        
+        cid "..."
 
+        luszcz "..."
 
+        play sound "audio/sfx/stand_up.mp3"
+        "{i}*głośnik* can the real slim shady please stand up *głośnik*{/i}"
+        show eminem neutral at slightleft
 
-    label faubla:
-        scene bg korytarz
+        $ renpy.pause(0.5)
+
+        emina "nie denerwuj mnie"
+
+        scene bg black with fade
+        scene bg rynek with fade
+
+        play music "audio/music/pole.mp3"
+
+        show luszcz neutral at slightleft
+        show eminem neutral at slightright
+
+        cid "Wielkie dzięki za pozbieranie mnie do kupy. Czy mogę się jakoś odpłacić?"
+
         menu:
-            "{b}Ilu masz przyjaciół?{/b}"
+            "{b}akszuli...{b}":
+                jump akszuli
 
-            "{b}DUŻO{/b}":
-                $ liczba_sojusznikow += 3
-                $ eminem_sojusznik += 1
-                $ urban_sojusznik += 1
-                $ zyd_sojusznik += 1
-                $ kazuma_sojusznik += 1
-                $ tarczownik_sojusznik += 1
-                $ stop = 1
-                $ miecz_swietlny = 1
-                $ ostrza_chaosu = 1
-                $ patyk = 1
-                $ bazooka = 1
-                $ miecz3d = 1
-                $ przepychaczka_liczba = 3
-                $ luszcz_przepychaczka = 1
-                $ urban_przepychaczka = 1
-                $ zyd_przepychaczka = 1
-                $ kazuma_przepychaczka = 1
-                $ tarczownik_przepychaczka = 1
-                $ klata_liczba = 2
-                $ luszcz_klata = 1
-                $ urban_klata = 1
-                $ zyd_klata = 1
-                $ kazuma_klata = 1
-                $ tarczownik_klata = 1
-                $ eminem_klata = 1
-                $ ring = 1
-                $ vr = 1
-                $ memy = 1
-                $ ziemia = 1
-                $ nogi = 1
-                $ zloty = 1
+            '{b}Idź lepiej do szpitala zanim się wykrwawisz{/b}':
+                cid "Ale tu nie ma żadnego szpitala… tylko jakiś skibidi lekarz pracujący w aptece."
+                luszcz "(Rzeczywiście, gdzieś w Skale był lekaż pracujący w aptece… mugłbym go do niego zabrać)"
+                menu:
+                    "{b}Dobra chodź ze mną{b}":
+                        jump akszuli
 
-                $ ile_item = 13
-                $ piknik = 1
-                $ cake = 1
-                $ pills = 20
-                $ woda = 2
-                $ ostry = 2
-                $ lagodny = 3
-                $ drpepper = 5
-                $ jabole = 5
-                $ royal = 4
-                $ warzywo = 3
-                $ banany = 4
-                $ skalka = 2
-                $ granat = 3
+                    '{b}Jakoś sobie poradzisz{/b}':
+                        luszcz "Jakoś sobie poradzisz"
+
+                        cid "To przynajmniej w podziękowaniu weź tą Tutorialową Wodę Święconą którą udało mi się ukraść z kościoła"
+
+                        $ ile_item += 1
+                        $ woda += 1
+                        hide screen global_eq_key
+                        show screen global_eq_key
+
+                        cid "Włożyłem ją do twojego ekwipunku"
+                        cid "Wiedziałeś że wciskając E możesz otworzyć ekwipunek?"
+
+                        jump wodaswiecona
+        label akszuli:
+            luszcz "Akszuli…"
+            luszcz "Jestem na misji żeby przekonać mieszańców Skały do przeciwstawienia się księdzu który dla własnego dobra sprzedaje nas i naszą Ojczyznę."
+            luszcz "Każda pomoc by się przydała."
+            luszcz "Nawet jeśli jesteś niepełnosprawny"
+
+            cid "To byłby mój zaszczyt"
+            cid "Już nigdy nie będę lizał stópek autorytetom!"
+
+            $ eminem_sojusznik = 1
+            $ liczba_sojusznikow += 1
+
+            luszcz "cacy"
+
+            cid "O właśnie"
+            cid "W ramach podziękowania mam dla ciebie Tutorialową Wodę Święconą którą udało mi się ukraść z kościoła"
+
+            $ ile_item += 1
+            $ woda += 1
+            hide screen global_eq_key
+            show screen global_eq_key
+
+            cid "Włożyłem ją do twojego ekwipunku"
+            cid "Wiedziałeś że wciskając E możesz otworzyć ekwipunek?"
+
+            menu:
+                "{b}Tak{/b}":
+                    luszcz "oczywiście że tak"
+                    luszcz "dzięki za leczonko"
+
+                    cid "Nie ma sprawy"
+                    $ eminem_wybory = 2
+
+                    luszcz "Dobra, to tym razem serio"
+                    luszcz "Gdzie by się najpierw wybrać?"
+
+                    hide luszcz
+                    hide eminem
+                    play music "audio/music/pole.mp3"
+                    jump rynek
+                
+                "{b}Nie{/b}":
+                    luszcz "oczywiście że nie"
+                    luszcz "dzięki za leczonko"
+
+                    cid "Nie ma sprawy"
+                    $ eminem_wybory = 2
+
+                    luszcz "Dobra, to tym razem serio"
+                    luszcz "Gdzie by się najpierw wybrać?"
+
+                    hide luszcz
+                    hide eminem
+                    play music "audio/music/pole.mp3"
+                    jump rynek
+        
+        label wodaswiecona:
+            menu:
+                "{b}Tak{/b}":
+                    luszcz "oczywiście że tak"
+                    luszcz "dzięki za leczonko"
+
+                    cid "Nie ma sprawy, miłego życia"
+
+                    luszcz "Miłego"
+                    $ eminem_wybory = 1
+
+                    hide eminem
+                    show luszcz neutral at center
+
+                    "{i}*Cid odchodzi z grymasem bólu na twarzy*{/i}"
+
+                    luszcz "Dobra, to tym razem serio"
+                    luszcz "Gdzie by się najpierw wybrać?"
+
+                    hide luszcz
+                    hide eminem
+                    play music "audio/music/pole.mp3"
+                    jump rynek
+
+                "{b}Nie{/b}":
+                    luszcz "oczywiście że nie"
+                    luszcz "dzięki za leczonko"
+
+                    cid "Nie ma sprawy, miłego życia"
+
+                    luszcz "Miłego"
+                    $ eminem_wybory = 1
+
+                    hide eminem
+                    show luszcz neutral at center
+
+                    "{i}*Cid odchodzi z grymasem bólu na twarzy*{/i}"
+
+                    luszcz "Dobra, to tym razem serio"
+                    luszcz "Gdzie by się najpierw wybrać?"
+
+                    hide luszcz
+                    hide eminem
+                    play music "audio/music/pole.mp3"
+                    jump rynek
 
 
-            "{b}TROCHE{/b}":
-                $ liczba_sojusznikow += 2
-                $ eminem_sojusznik += 1
-                $ zyd_sojusznik += 1
-                $ stop = 1
-                $ miecz_swietlny = 1
-                $ ostrza_chaosu = 1
-                $ patyk = 1
-                $ bazooka = 1
-                $ miecz3d = 1
-                $ przepychaczka_liczba = 3
-                $ luszcz_przepychaczka = 1
-                $ zyd_przepychaczka = 1
-                $ klata_liczba = 2
-                $ luszcz_klata = 1
-                $ zyd_klata = 1
-                $ eminem_klata = 1
-                $ ring = 1
-                $ vr = 1
-                $ memy = 1
-                $ ziemia = 1
-                $ nogi = 1
-                $ zloty = 1
 
-                $ ile_item = 13
-                $ piknik = 1
-                $ cake = 1
-                $ pills = 20
-                $ woda = 2
-                $ ostry = 2
-                $ lagodny = 3
-                $ drpepper = 5
-                $ jabole = 5
-                $ royal = 4
-                $ warzywo = 3
-                $ banany = 4
-                $ skalka = 2
-                $ granat = 3
-
-            "{b}MAM{/b}":
-                $ liczba_sojusznikow += 1
-                $ eminem_sojusznik += 1
-                $ stop = 1
-                $ miecz_swietlny = 1
-                $ ostrza_chaosu = 1
-                $ patyk = 1
-                $ bazooka = 1
-                $ miecz3d = 1
-                $ przepychaczka_liczba = 3
-                $ luszcz_przepychaczka = 1
-                $ klata_liczba = 2
-                $ luszcz_klata = 1
-                $ eminem_klata = 1
-                $ ring = 1
-                $ vr = 1
-                $ memy = 1
-                $ ziemia = 1
-                $ nogi = 1
-                $ zloty = 1
-
-                $ ile_item = 13
-                $ piknik = 1
-                $ cake = 1
-                $ pills = 20
-                $ woda = 2
-                $ ostry = 2
-                $ lagodny = 3
-                $ drpepper = 5
-                $ jabole = 5
-                $ royal = 4
-                $ warzywo = 3
-                $ banany = 4
-                $ skalka = 2
-                $ granat = 3
 
                 
-            "{b}CO TO?{/b}":
-                pass
+            
 
-        "{i}O bogowie walka{/i}"
-        jump fight11
 
-    label after_fight11:
-        "{i}Gratulacje wygrałeś{/i}"
-        jump rynek
+
