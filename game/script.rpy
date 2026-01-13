@@ -33,6 +33,11 @@ label postacie:
     
     define burmistrz = Character("Burmistrz", color="#f8bf44")
 
+    define braun = Character("Braun", color="#412607")
+    image braun neutral right = Transform("braun neutral", xzoom=-1) 
+    image braun shock right = Transform("braun schock", xzoom=-1) 
+    image braun smile right = Transform("braun smile", xzoom=-1) 
+
     define ksiadz = Character("Ksiądz", color="#8607b8")
 
     define kosc = Character("Kościelny", color="#9db2f8")
@@ -475,6 +480,9 @@ label prolog_decyzje:
 
 label wybory:
     define eminem_wybory = 0
+
+label social_links:
+    define zyd_social_link = 0
 
 
 

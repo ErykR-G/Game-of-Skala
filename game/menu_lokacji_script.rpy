@@ -43,6 +43,10 @@ label menu_lokacji:
             "{b}Rynek (10 min) --->":
                 $ timer += 10
                 jump rynek
+            
+            "{b}Sklep Monopolowy (60 min)" if zyd_social_link == 0:
+                $ timer += 60
+                jump zyd1
     
     label parking:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
