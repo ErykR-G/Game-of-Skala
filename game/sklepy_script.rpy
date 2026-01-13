@@ -23,4 +23,5 @@ label sklepy:
                     braun "Bóg zapłać"
                     hide braun 
                     hide luszcz
+                    play music "audio/music/pole.mp3"
                     jump alejka

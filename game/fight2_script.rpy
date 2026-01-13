@@ -72,6 +72,7 @@ label fight21_stats:
     default braun_stun = 0
 
     default braun_special = 0
+    default braun_special2 = 0
 
     default luszcz_gasnica = 0
     default eminem_gasnica = 0
@@ -19944,6 +19945,32 @@ label fight21:
             "{i}Grzegorz Braun broni się{/i}"
             $ braun_obrona += 1
             jump faza_fight26
+        
+        if braun_hp_now <= 15 and braun_special2 == 0:
+            show braun fight3 zorder 10 at wrog3
+            braun "....oh {w}Eryk"
+            braun "gdybyś tylko tutaj był"
+            braun "gdybyś tylko nie był żydem"
+            braun "gdybyś tylko nie był mężczyzną"
+            braun "ale to niemożliwe"
+            braun "dlatego muszę wygrać nawet bez Ciebie u mego boku"
+            
+            show braun fight zorder 10 at wrog3
+            "{i}*Grzegorz Braun wyciągą obrączkę ślubną*{/i}"
+            show obraczka zorder 15 at weapon_wrog3 
+
+            braun "Co bóg złączył niech człwowiek nie rozdziela!"
+
+            $ braun_hp_now = 35
+            $ braun_max_attack_now += 1
+            $ braun_max_attack_now_true += 1
+            $ braun_min_attack_now += 1
+            $ braun_min_attack_now_true += 1
+            $ braun_special2 = 1
+            hide obraczka
+            show braun fight4 zorder 10 at wrog3
+            "{i}Grzegorz Braun odzyskał połowe punktów życia oraz wzmocnił swój atak{/i}"
+
 
         if braun_hp_now >= 1 and braun_obrona == 0:
             if braun_hp_now <= 3:
@@ -20071,7 +20098,10 @@ label fight21:
                 
                 "{i}Grzegorz Braun używa gaśnicy{/i}"
                 hide braun 
-                show braun fight zorder 10 at wrog3
+                if braun_special2 == 1:
+                    show braun fight4 zorder 10 at wrog3
+                else:
+                    show braun fight zorder 10 at wrog3
                 hide gasnica
                 jump faza_fight26
 
@@ -22212,6 +22242,7 @@ label fight21:
                 $ tarczownik_gasnica = 0
 
                 $ braun_special = 0
+                $ braun_special2 = 0
                 jump fight21
 
 
@@ -22505,5 +22536,6 @@ label fight21:
         $ tarczownik_gasnica = 0
 
         $ braun_special = 0
+        $ braun_special2 = 0
 
         jump after_fight21
