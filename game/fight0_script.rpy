@@ -1324,7 +1324,6 @@ label fight01:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
-            hide kazuma_pierscien
             hide plamka5
             hide kazuma
             hide tarcza5
@@ -2632,7 +2631,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items11
+                    jump items_fight11
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -3102,7 +3101,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items11
+                    jump items_fight11
 
                 "{b}Rzut Szlamem{/b}":
                     if eminem_wybrany == 1:
@@ -4003,7 +4002,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items11
+                    jump items_fight11
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -4713,7 +4712,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items11
+                    jump items_fight11
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and trup1_pager == 0 and trup1_hp_now >= 1 or pager_boom == 0 and emina_pager == 0 and emina_hp_now >= 1 or pager_boom == 0 and trup2_pager == 0 and trup2_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -5481,7 +5480,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items11
+                    jump items_fight11
 
                 "{b}Steal{/b}" if trup1_weapon >= 1 or emina_weapon >= 1 or trup2_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -8829,7 +8828,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items12
+                    jump items_fight15
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -9299,7 +9298,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items12
+                    jump items_fight15
 
                 "{b}Rzut Szlamem{/b}":
                     if eminem_wybrany == 1:
@@ -10200,7 +10199,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items12
+                    jump items_fight15
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -10909,7 +10908,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items12
+                    jump items_fight15
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and trup1_pager == 0 and trup1_hp_now >= 1 or pager_boom == 0 and emina_pager == 0 and emina_hp_now >= 1 or pager_boom == 0 and trup2_pager == 0 and trup2_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -11675,7 +11674,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items12
+                    jump items_fight15
 
                 "{b}Steal{/b}" if trup1_weapon >= 1 or emina_weapon >= 1 or trup2_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -12855,7 +12854,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items13
+                    jump items_fight15
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -13319,7 +13318,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items13
+                    jump items_fight15
 
                 "{b}Rzut Szlamem{/b}":
 
@@ -14221,7 +14220,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items13
+                    jump items_fight15
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -14930,7 +14929,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items13
+                    jump items_fight15
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and trup1_pager == 0 and trup1_hp_now >= 1 or pager_boom == 0 and emina_pager == 0 and emina_hp_now >= 1 or pager_boom == 0 and trup2_pager == 0 and trup2_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -15696,7 +15695,7 @@ label fight01:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items13
+                    jump items_fight15
 
                 "{b}Steal{/b}" if trup1_weapon >= 1 or emina_weapon >= 1 or trup2_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -18400,9 +18399,6 @@ label fight01:
                     "{i}Kibol 1 broni się{/i}"
                     $ trup1_obrona += 1
                     jump faza_fight05
-                
-                else:
-                    jump losowanko_fight04
             
             else:
                 $ kostka = renpy.random.randint(1, 10)
@@ -18413,9 +18409,6 @@ label fight01:
                     "{i}Kibol 1 broni się{/i}"
                     $ trup1_obrona += 1
                     jump faza_fight05
-                
-                else:
-                    jump losowanko_fight04
                     
         label losowanko_fight04:   
             if trup1_weapon >= 1:
@@ -19568,9 +19561,6 @@ label fight01:
                     "{i}Eminem broni się{/i}"
                     $ emina_obrona += 1
                     jump faza_fight06
-                
-                else:
-                    jump losowanko_fight05
             
             else:
                 $ kostka = renpy.random.randint(1, 10)
@@ -19581,9 +19571,6 @@ label fight01:
                     "{i}Eminem broni się{/i}"
                     $ emina_obrona += 1
                     jump faza_fight06
-                
-                else:
-                    jump losowanko_fight05
                     
         label losowanko_fight05:
             if emina_weapon >= 1:
@@ -20944,9 +20931,6 @@ label fight01:
                     "{i}Kibol 2 broni się{/i}"
                     $ trup2_obrona += 1
                     jump start_fight01
-                
-                else:
-                    jump losowanko_fight06
             
             else:
                 $ kostka = renpy.random.randint(1, 10)
@@ -20957,9 +20941,6 @@ label fight01:
                     "{i}Kibol 2 broni się{/i}"
                     $ trup2_obrona += 1
                     jump start_fight01
-                
-                else:
-                    jump losowanko_fight06
                     
         label losowanko_fight06:    
             if trup2_weapon >= 1:

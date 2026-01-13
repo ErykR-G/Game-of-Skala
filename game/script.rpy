@@ -480,6 +480,8 @@ label prolog_decyzje:
 
 label wybory:
     define eminem_wybory = 0
+    define zyd_wybory = 0
+    define braun_wybory = 0
 
 label social_links:
     define zyd_social_link = 0

@@ -1,4 +1,4 @@
-label items11:
+label items_fight11:
     $ strona1 = 0   
     $ strona2 = 0
     $ piknikx = 0
@@ -354,7 +354,7 @@ label items11:
                     jump faza_fight12
 
         "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
-            label pigulki11:
+            label pigulki_fight11:
                 hide chest
                 if pills == 0:
                     $ ile_item -= 1
@@ -411,14 +411,14 @@ label items11:
                                     $ luszcz_hp_now = luszcz_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                                 else:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
                                     $ luszcz_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                             
                             else:
                                 if luszcz_piguly == 3:
@@ -439,14 +439,14 @@ label items11:
                                             $ luszcz_hp_now = luszcz_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                         else:
                                             $ pills -= 1
                                             $ luszcz_piguly += 1
                                             $ luszcz_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                 
                                 else:
                                     if luszcz_piguly == 4:
@@ -467,14 +467,14 @@ label items11:
                                                 $ luszcz_hp_now = luszcz_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                             else:
                                                 $ pills -= 1
                                                 $ luszcz_piguly += 1
                                                 $ luszcz_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                     
                                     else:
                                         if luszcz_piguly >= 5:
@@ -500,14 +500,14 @@ label items11:
                                     $ eminem_hp_now = eminem_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Shadow odzyskał cały pasek życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                                 else:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
                                     $ eminem_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                             
                             else:
                                 if eminem_piguly == 3:
@@ -528,14 +528,14 @@ label items11:
                                             $ eminem_hp_now = eminem_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Shadow odzyskał cały pasek życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                         else:
                                             $ pills -= 1
                                             $ eminem_piguly += 1
                                             $ eminem_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                 
                                 else:
                                     if eminem_piguly == 4:
@@ -556,14 +556,14 @@ label items11:
                                                 $ eminem_hp_now = eminem_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Shadow odzyskał cały pasek życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                             else:
                                                 $ pills -= 1
                                                 $ eminem_piguly += 1
                                                 $ eminem_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                     
                                     else:
                                         if eminem_piguly >= 5:
@@ -589,14 +589,14 @@ label items11:
                                     $ urban_hp_now = urban_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                                 else:
                                     $ pills -= 1
                                     $ urban_piguly += 1
                                     $ urban_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                             
                             else:
                                 if urban_piguly == 3:
@@ -617,14 +617,14 @@ label items11:
                                             $ urban_hp_now = urban_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                         else:
                                             $ pills -= 1
                                             $ urban_piguly += 1
                                             $ urban_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                 
                                 else:
                                     if urban_piguly == 4:
@@ -645,14 +645,14 @@ label items11:
                                                 $ urban_hp_now = urban_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                             else:
                                                 $ pills -= 1
                                                 $ urban_piguly += 1
                                                 $ urban_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                     
                                     else:
                                         if urban_piguly >= 5:
@@ -678,14 +678,14 @@ label items11:
                                     $ zyd_hp_now = zyd_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Żyd odzyskał cały pasek życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                                 else:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
                                     $ zyd_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                             
                             else:
                                 if zyd_piguly == 3:
@@ -706,14 +706,14 @@ label items11:
                                             $ zyd_hp_now = zyd_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Żyd odzyskał cały pasek życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                         else:
                                             $ pills -= 1
                                             $ zyd_piguly += 1
                                             $ zyd_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                 
                                 else:
                                     if zyd_piguly == 4:
@@ -734,14 +734,14 @@ label items11:
                                                 $ zyd_hp_now = zyd_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Żyd odzyskał cały pasek życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                             else:
                                                 $ pills -= 1
                                                 $ zyd_piguly += 1
                                                 $ zyd_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                     
                                     else:
                                         if zyd_piguly >= 5:
@@ -767,14 +767,14 @@ label items11:
                                     $ kazuma_hp_now = kazuma_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                                 else:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
                                     $ kazuma_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                    jump pigulki11
+                                    jump pigulki_fight11
                             
                             else:
                                 if kazuma_piguly == 3:
@@ -795,14 +795,14 @@ label items11:
                                             $ kazuma_hp_now = kazuma_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                         else:
                                             $ pills -= 1
                                             $ kazuma_piguly += 1
                                             $ kazuma_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                            jump pigulki11
+                                            jump pigulki_fight11
                                 
                                 else:
                                     if kazuma_piguly == 4:
@@ -823,14 +823,14 @@ label items11:
                                                 $ kazuma_hp_now = kazuma_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                             else:
                                                 $ pills -= 1
                                                 $ kazuma_piguly += 1
                                                 $ kazuma_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                                jump pigulki11
+                                                jump pigulki_fight11
                                     
                                     else:
                                         if kazuma_piguly >= 5:
@@ -4753,9 +4753,9 @@ label items11:
             jump faza_fight12
                     
         "{i}Strona 1/2 --->{/i}" if strona2 > 0:        
-            jump items112        
+            jump items_fight12        
 
-label items112:
+label items_fight12:
     menu:
         "{b}Co użyć?{/b}"
         
@@ -7077,7 +7077,7 @@ label items112:
             jump faza_fight12
                     
         "{i}<--- Strona 2/2{/i}":        
-            jump items11
+            jump items_fight11
 
 
 
@@ -7089,7 +7089,7 @@ label items112:
 
 
 
-label items12:
+label items_fight13:
     $ strona1 = 0   
     $ strona2 = 0
     $ piknikx = 0
@@ -7445,7 +7445,7 @@ label items12:
                     jump faza_fight13
 
         "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
-            label pigulki12:
+            label pigulki_fight12:
                 hide chest
                 if pills == 0:
                     $ ile_item -= 1
@@ -7502,14 +7502,14 @@ label items12:
                                     $ luszcz_hp_now = luszcz_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                                 else:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
                                     $ luszcz_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                             
                             else:
                                 if luszcz_piguly == 3:
@@ -7530,14 +7530,14 @@ label items12:
                                             $ luszcz_hp_now = luszcz_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                         else:
                                             $ pills -= 1
                                             $ luszcz_piguly += 1
                                             $ luszcz_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                 
                                 else:
                                     if luszcz_piguly == 4:
@@ -7558,14 +7558,14 @@ label items12:
                                                 $ luszcz_hp_now = luszcz_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                             else:
                                                 $ pills -= 1
                                                 $ luszcz_piguly += 1
                                                 $ luszcz_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                     
                                     else:
                                         if luszcz_piguly >= 5:
@@ -7591,14 +7591,14 @@ label items12:
                                     $ eminem_hp_now = eminem_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Shadow odzyskał cały pasek życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                                 else:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
                                     $ eminem_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                             
                             else:
                                 if eminem_piguly == 3:
@@ -7619,14 +7619,14 @@ label items12:
                                             $ eminem_hp_now = eminem_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Shadow odzyskał cały pasek życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                         else:
                                             $ pills -= 1
                                             $ eminem_piguly += 1
                                             $ eminem_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                 
                                 else:
                                     if eminem_piguly == 4:
@@ -7647,14 +7647,14 @@ label items12:
                                                 $ eminem_hp_now = eminem_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Shadow odzyskał cały pasek życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                             else:
                                                 $ pills -= 1
                                                 $ eminem_piguly += 1
                                                 $ eminem_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                     
                                     else:
                                         if eminem_piguly >= 5:
@@ -7680,14 +7680,14 @@ label items12:
                                     $ urban_hp_now = urban_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                                 else:
                                     $ pills -= 1
                                     $ urban_piguly += 1
                                     $ urban_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                             
                             else:
                                 if urban_piguly == 3:
@@ -7708,14 +7708,14 @@ label items12:
                                             $ urban_hp_now = urban_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                         else:
                                             $ pills -= 1
                                             $ urban_piguly += 1
                                             $ urban_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                 
                                 else:
                                     if urban_piguly == 4:
@@ -7736,14 +7736,14 @@ label items12:
                                                 $ urban_hp_now = urban_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                             else:
                                                 $ pills -= 1
                                                 $ urban_piguly += 1
                                                 $ urban_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                     
                                     else:
                                         if urban_piguly >= 5:
@@ -7769,14 +7769,14 @@ label items12:
                                     $ zyd_hp_now = zyd_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Żyd odzyskał cały pasek życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                                 else:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
                                     $ zyd_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                             
                             else:
                                 if zyd_piguly == 3:
@@ -7797,14 +7797,14 @@ label items12:
                                             $ zyd_hp_now = zyd_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Żyd odzyskał cały pasek życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                         else:
                                             $ pills -= 1
                                             $ zyd_piguly += 1
                                             $ zyd_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                 
                                 else:
                                     if zyd_piguly == 4:
@@ -7825,14 +7825,14 @@ label items12:
                                                 $ zyd_hp_now = zyd_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Żyd odzyskał cały pasek życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                             else:
                                                 $ pills -= 1
                                                 $ zyd_piguly += 1
                                                 $ zyd_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                     
                                     else:
                                         if zyd_piguly >= 5:
@@ -7858,14 +7858,14 @@ label items12:
                                     $ kazuma_hp_now = kazuma_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                                 else:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
                                     $ kazuma_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                    jump pigulki12
+                                    jump pigulki_fight12
                             
                             else:
                                 if kazuma_piguly == 3:
@@ -7886,14 +7886,14 @@ label items12:
                                             $ kazuma_hp_now = kazuma_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                         else:
                                             $ pills -= 1
                                             $ kazuma_piguly += 1
                                             $ kazuma_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                            jump pigulki12
+                                            jump pigulki_fight12
                                 
                                 else:
                                     if kazuma_piguly == 4:
@@ -7914,14 +7914,14 @@ label items12:
                                                 $ kazuma_hp_now = kazuma_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                             else:
                                                 $ pills -= 1
                                                 $ kazuma_piguly += 1
                                                 $ kazuma_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                                jump pigulki12
+                                                jump pigulki_fight12
                                     
                                     else:
                                         if kazuma_piguly >= 5:
@@ -11844,9 +11844,9 @@ label items12:
             jump faza_fight13
                     
         "{i}Strona 1/2 --->{/i}" if strona2 > 0:        
-            jump items122        
+            jump items_fight14        
 
-label items122:
+label items_fight14:
     menu:
         "{b}Co użyć?{/b}"
         
@@ -14168,7 +14168,7 @@ label items122:
             jump faza_fight13
                     
         "{i}<--- Strona 2/2{/i}":        
-            jump items12
+            jump items_fight13
 
 
 
@@ -14179,7 +14179,7 @@ label items122:
 
 
 
-label items13:
+label items_fight15:
     $ strona1 = 0   
     $ strona2 = 0
     $ piknikx = 0
@@ -14535,7 +14535,7 @@ label items13:
                     jump faza_fight14
 
         "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
-            label pigulki13:
+            label pigulki_fight13:
                 hide chest
                 if pills == 0:
                     $ ile_item -= 1
@@ -14592,14 +14592,14 @@ label items13:
                                     $ luszcz_hp_now = luszcz_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                                 else:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
                                     $ luszcz_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                             
                             else:
                                 if luszcz_piguly == 3:
@@ -14620,14 +14620,14 @@ label items13:
                                             $ luszcz_hp_now = luszcz_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                         else:
                                             $ pills -= 1
                                             $ luszcz_piguly += 1
                                             $ luszcz_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                 
                                 else:
                                     if luszcz_piguly == 4:
@@ -14648,14 +14648,14 @@ label items13:
                                                 $ luszcz_hp_now = luszcz_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Łuszcz odzyskał cały pasek życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                             else:
                                                 $ pills -= 1
                                                 $ luszcz_piguly += 1
                                                 $ luszcz_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Łuszcz odzyskał 3 punkty życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                     
                                     else:
                                         if luszcz_piguly >= 5:
@@ -14681,14 +14681,14 @@ label items13:
                                     $ eminem_hp_now = eminem_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Shadow odzyskał cały pasek życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                                 else:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
                                     $ eminem_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                             
                             else:
                                 if eminem_piguly == 3:
@@ -14709,14 +14709,14 @@ label items13:
                                             $ eminem_hp_now = eminem_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Shadow odzyskał cały pasek życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                         else:
                                             $ pills -= 1
                                             $ eminem_piguly += 1
                                             $ eminem_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                 
                                 else:
                                     if eminem_piguly == 4:
@@ -14737,14 +14737,14 @@ label items13:
                                                 $ eminem_hp_now = eminem_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Shadow odzyskał cały pasek życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                             else:
                                                 $ pills -= 1
                                                 $ eminem_piguly += 1
                                                 $ eminem_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Shadow odzyskał 3 punkty życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                     
                                     else:
                                         if eminem_piguly >= 5:
@@ -14770,14 +14770,14 @@ label items13:
                                     $ urban_hp_now = urban_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                                 else:
                                     $ pills -= 1
                                     $ urban_piguly += 1
                                     $ urban_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                             
                             else:
                                 if urban_piguly == 3:
@@ -14798,14 +14798,14 @@ label items13:
                                             $ urban_hp_now = urban_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                         else:
                                             $ pills -= 1
                                             $ urban_piguly += 1
                                             $ urban_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                 
                                 else:
                                     if urban_piguly == 4:
@@ -14826,14 +14826,14 @@ label items13:
                                                 $ urban_hp_now = urban_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                             else:
                                                 $ pills -= 1
                                                 $ urban_piguly += 1
                                                 $ urban_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                     
                                     else:
                                         if urban_piguly >= 5:
@@ -14859,14 +14859,14 @@ label items13:
                                     $ zyd_hp_now = zyd_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Żyd odzyskał cały pasek życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                                 else:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
                                     $ zyd_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                             
                             else:
                                 if zyd_piguly == 3:
@@ -14887,14 +14887,14 @@ label items13:
                                             $ zyd_hp_now = zyd_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Żyd odzyskał cały pasek życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                         else:
                                             $ pills -= 1
                                             $ zyd_piguly += 1
                                             $ zyd_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                 
                                 else:
                                     if zyd_piguly == 4:
@@ -14915,14 +14915,14 @@ label items13:
                                                 $ zyd_hp_now = zyd_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Żyd odzyskał cały pasek życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                             else:
                                                 $ pills -= 1
                                                 $ zyd_piguly += 1
                                                 $ zyd_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Żyd odzyskał 3 punkty życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                     
                                     else:
                                         if zyd_piguly >= 5:
@@ -14948,14 +14948,14 @@ label items13:
                                     $ kazuma_hp_now = kazuma_hp
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                                 else:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
                                     $ kazuma_hp_now += 3
                                     play sound "audio/sfx/lyk.mp3"
                                     "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                    jump pigulki13
+                                    jump pigulki_fight13
                             
                             else:
                                 if kazuma_piguly == 3:
@@ -14976,14 +14976,14 @@ label items13:
                                             $ kazuma_hp_now = kazuma_hp
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                         else:
                                             $ pills -= 1
                                             $ kazuma_piguly += 1
                                             $ kazuma_hp_now += 3
                                             play sound "audio/sfx/lyk.mp3"
                                             "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                            jump pigulki13
+                                            jump pigulki_fight13
                                 
                                 else:
                                     if kazuma_piguly == 4:
@@ -15004,14 +15004,14 @@ label items13:
                                                 $ kazuma_hp_now = kazuma_hp
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Kazuma odzyskał cały pasek życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                             else:
                                                 $ pills -= 1
                                                 $ kazuma_piguly += 1
                                                 $ kazuma_hp_now += 3
                                                 play sound "audio/sfx/lyk.mp3"
                                                 "{i}Kazuma odzyskał 3 punkty życia{/i}"
-                                                jump pigulki13
+                                                jump pigulki_fight13
                                     
                                     else:
                                         if kazuma_piguly >= 5:
@@ -18934,9 +18934,9 @@ label items13:
             jump faza_fight14
                     
         "{i}Strona 1/2 --->{/i}" if strona2 > 0:        
-            jump items132        
+            jump items_fight16       
 
-label items132:
+label items_fight16:
     menu:
         "{b}Co użyć?{/b}"
         
@@ -21258,4 +21258,4 @@ label items132:
             jump faza_fight14
                     
         "{i}<--- Strona 2/2{/i}":        
-            jump items13
+            jump items_fight15
