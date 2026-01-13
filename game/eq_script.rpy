@@ -71,6 +71,8 @@ label items:
     default skalka = 0
     default granat = 0
 
+label items_fabularne:
+    default lopatka = 0
     
 
 

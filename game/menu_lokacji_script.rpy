@@ -6,19 +6,19 @@ label menu_lokacji:
             scene bg rynek_noc
 
         menu:
-            "{b}<--- Alejka (10 min)":
+            "{i}<--- Alejka (10 min){/i}":
                 $ timer += 10
                 jump alejka
 
-            "{b}<--- Słoneczna (10 min)":
+            "{i}<--- Słoneczna (10 min){/i}":
                 $ timer += 10
                 jump sloneczna
             
-            "{b}Parking (10 min) --->":
+            "{i}Parking (10 min) --->{/i}":
                 $ timer += 10
                 jump parking
 
-            "{b}Bohaterów Września (10 min) --->":
+            "{i}Bohaterów Września (10 min) --->{/i}":
                 $ timer += 10
                 jump bohaterow_wrzesnia
     
@@ -29,9 +29,15 @@ label menu_lokacji:
             scene bg sloneczna_noc
 
         menu:      
-            "{b}Rynek (10 min) --->":
+            "{i}Rynek (10 min) --->{/i}":
                 $ timer += 10
                 jump rynek
+            
+            "{b}Plac Broni (10min){/b}":
+                $ timer += 10
+                $ lopatka = 1
+                "{i}dostajesz łopatke{/i}"
+                jump sloneczna
     
     label alejka:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
@@ -40,15 +46,15 @@ label menu_lokacji:
             scene bg alejka_noc
 
         menu:      
-            "{b}Rynek (10 min) --->":
+            "{i}Rynek (10 min) --->{/i}":
                 $ timer += 10
                 jump rynek
             
-            "{b}Sklep Monopolowy (60 min)" if zyd_social_link == 0:
+            "{b}Sklep Monopolowy (60 min){/b}" if zyd_social_link == 0:
                 $ timer += 60
                 jump zyd1
             
-            "{b}Sklep Monopolowy (15 min)" if zyd_social_link > 0:
+            "{b}Sklep Monopolowy (15 min){/b}" if zyd_social_link > 0:
                 $ timer += 15
                 jump sklep_monopolowy
     
@@ -59,11 +65,11 @@ label menu_lokacji:
             scene bg parking_noc
 
         menu:
-            "{b}<--- Wolbromska (20 min)":
+            "{i}<--- Wolbromska (20 min){/i}":
                 $ timer += 20
                 jump wolbromska
             
-            "{b}<--- Rynek (10 min)":
+            "{i}<--- Rynek (10 min){/i}":
                 $ timer += 10
                 jump rynek
     
@@ -74,7 +80,7 @@ label menu_lokacji:
             scene bg wolbromska_noc
 
         menu:
-            "{b}Parking (20 min) --->":
+            "{i}Parking (20 min) --->{/i}":
                 $ timer += 20
                 jump parking
     
@@ -85,11 +91,11 @@ label menu_lokacji:
             scene bg bohaterow_wrzesnia_noc
 
         menu:
-            "{b}<--- Rynek (10 min)":
+            "{i}<--- Rynek (10 min){/i}":
                 $ timer += 10
                 jump rynek
 
-            "{b}<--- Lipowa (10 min)":
+            "{i}<--- Lipowa (10 min){/i}":
                 $ timer += 10
                 jump lipowa
     
@@ -100,13 +106,30 @@ label menu_lokacji:
             scene bg lipowa_noc
 
         menu:
-            "{b}Bohaterów Września (10 min) --->":
+            "{i}Bohaterów Września (10 min) --->{/i}":
                 $ timer += 10
                 jump bohaterow_wrzesnia
 
-            "{b}Granica Skały (20 min) --->":
+            "{i}Granica Skały (20 min) --->{/i}":
                 $ timer += 20
                 jump granica
+            
+            "{b}Cmentarz Żydowski (30 min){/b}" if zyd_social_link == 1:
+                $ timer += 30
+                jump zyd2
+            
+            "{b}Cmentarz (15 min){/b}" if zyd_social_link == 2:
+                $ timer += 15
+                jump zyd3
+            
+            "{b}Cmentarz (3h){/b}" if zyd_social_link == 3:
+                if lopatka == 1:
+                    $ timer += 180
+                    jump zyd4
+                else:
+                    "{i}Na cmentarzu czeka na mnie żyd, ale nadal nie zdobyłem dla niego łopatki{/i}"
+                    "{i}Muszę się tym zająć zanim się z nim spotkam{/i}"
+                    jump lipowa
     
     label granica:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
@@ -115,11 +138,28 @@ label menu_lokacji:
             scene bg granica_noc
 
         menu:
-            "{b}<--- Lipowa (20 min)":
+            "{i}<--- Lipowa (20 min){/i}":
                 $ timer += 20
                 jump lipowa    
+            
+            "{b}Cmentarz Żydowski (30 min){/b}" if zyd_social_link == 1:
+                $ timer += 30
+                jump zyd2
+            
+            "{b}Cmentarz (15 min){/b}" if zyd_social_link == 2:
+                $ timer += 15
+                jump zyd3
+            
+            "{b}Cmentarz (3h){/b}" if zyd_social_link == 3 and lopatka == 1:
+                if lopatka == 1:
+                    $ timer += 180
+                    jump zyd4
+                else:
+                    "{i}Na cmentarzu czeka na mnie żyd, ale nadal nie zdobyłem dla niego łopatki{/i}"
+                    "{i}Muszę się tym zająć zanim się z nim spotkam{/i}"
+                    jump lipowa
 
-            "{b}TEST WALKA":
+            "{b}TEST WALKA{/b}":
                 jump faubla     
 
 

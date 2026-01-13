@@ -96,8 +96,8 @@ label zyd:
                 jump fight21
             
         label after_fight21:
-            play music "audio/music/monopolowy.mp3"
             scene bg monopolowy
+            play music "audio/music/monopolowy.mp3"
             show zyd neutral at left
             show luszcz neutral at center
             show braun neutral at right
@@ -183,3 +183,144 @@ label zyd:
             $ braun_wybory = 1
             hide luszcz
             jump alejka
+    
+    label zyd2:
+        scene bg cmentarz_zydowski
+        play music "audio/music/natura.mp3"
+        $ zyd_social_link = 2
+        show zyd neutral right at slightright
+        show luszcz neutral at left
+
+        luszcz "Alerz tu klimacik"
+
+        zyd "O! Szalom alehjem"
+        zyd "Właśnie o tobie myślałem"
+
+        luszcz "Szalom, jaką miałeś do mnie sprawę?"
+
+        zyd "Tak, dziękuję że przyszedłeś!"
+        zyd "Jak już ci mówiłem, moi przodkowie mieszkali w tych okolicach"
+        zyd "Wszyscy są tu pochowani"
+        zyd "Wszyscy poza moim pra-pra-dziadkiem"
+        zyd "Walczył w 1 wojnie światowej i jego ciało zostało przemycone do jakiegoś grobowca zbiorowego na pogańskim cmentarzu"
+        zyd "Nigdzie nie zgadzał się na takie potraktowanie. Chciałbym się mylić ale obawiam się, że gnije w gehennie (judaizmowym czyśćcu). To nie jest w porządku"
+        zyd "Chciałbym pójść pod kwaterę żołnierzy 1 wojny światowej i wydobyć jego ciało aby dać mu godny pochówek!!"
+        zyd "..."
+        zyd "Myślisz że to… dobry pomysł?"
+
+        menu:
+            "{b}Świetny{/b}":
+                luszcz "Tak myślę że jest świetny"
+                luszcz "Chętnie pomogę ci wykopać arcy stare ludzkie ciało z grobu do grobu"
+                
+                zyd "Toda! Dziękuję!"
+                zyd "Niech Jahwe będzie Ci litościwy za troskę o naród żydowski"
+                zyd "Niestety raczej nie ma dla ciebie nadziei, bo nie jesteś wierzący i nie jesteś żydem, więc będziesz płonął w piekle"
+
+                luszcz "Jestem w stanie to zaakceptować jeśli będę mógł spotkać wujka Stalina"
+
+                zyd "Cieszę się że znajdujesz pozytywy"
+                zyd "W takim razie widzimy się pod grobowcem! Pradziadek wreszcie wróci do domu!"
+                zyd "Lehitraot!"
+
+                luszcz "Lechii tarot"
+
+                hide zyd 
+                show luszcz neutral at center
+
+                luszcz "Doszpącone"
+                luszcz "Ale cel uświęca środki. To nawet nie jest nekrofilia"
+                luszcz "Cóż, mogę teraz iść poszukać kwatery żołnierzy 1 wojny światowej"
+
+                play music "audio/music/pole.mp3"
+                jump lipowa
+            
+            "{b}Okropny{/b}":
+                luszcz "O czym ty pierdolisz"
+                luszcz "To nie jest jakaś nekrofilia czy coś?"
+
+                zyd "Nie actually nie jest"
+                zyd "Nie będę wykorzystywał jego ciała seksualnie"
+
+                luszcz "Dobra niewarzne sory"
+                luszcz "Nie pomogę ci grzebać w grobach arz tyle to nie"
+
+                zyd "Smutne ale zrozumiałe"
+
+                luszcz "Możesz sobie sam to zrobić, nikomu nie powiem"
+                luszcz "Śmierć konfidentom"
+
+                zyd "Nooo… zrobię, na pewno"
+                zyd "pewnie"
+                zyd "jasne"
+                zyd "zobaczymy"
+                zyd "Czas pokaże"
+
+                hide zyd 
+                show luszcz neutral at center
+
+                luszcz "Freakass"
+
+                $ zyd_social_link = 10
+                play music "audio/music/pole.mp3"
+                jump lipowa
+    
+    label zyd3:
+        scene bg cmentarz
+        play music "audio/music/natura.mp3"
+        $ zyd_social_link = 3
+        show zyd neutral right at slightright
+        show luszcz neutral at left
+
+        zyd "Szalom alehjem!"
+        zyd "Rozejrzałem się, i myślę że dałbym radę wykopać tu ukryte przejście"
+        zyd "Jestem jednak żałośnie spłukany… czy mógłbyś nabyć skądś coś do kopania?"
+
+        menu:
+            "{b}Tak{/b}":
+                luszcz "Spoko git, wrócę tu z czymś do siedmiu dni roboczych"
+
+                zyd "Yay"
+
+                play music "audio/music/pole.mp3"
+                jump lipowa
+
+            "{b}Nie{/b}":
+                luszcz "nie"
+
+                zyd "szkoda :("
+                zyd "ale jak znajdziesz to przynieś"
+
+                luszcz "okej"
+
+                play music "audio/music/pole.mp3"
+                jump lipowa
+
+    label zyd4:
+        scene bg cmentarz
+        play music "audio/music/natura.mp3"
+        $ zyd_social_link = 4
+        show zyd neutral right at slightright
+        show luszcz neutral at left
+
+        zyd "Szalom, przyniosłeś coś do kopania?"
+
+        luszcz "Ano mam"
+
+        zyd "Ah! Łopatka! Wyśmienicie!"
+        zyd "Czas wziąć się do roboty!"
+
+        "{i}<kopu kopu kopu kopu…>{/i}"
+        "{i}<kopu kopu kopu kopu…>{/i}"
+        "{i}<kopu kopu kopu kopu…>{/i}"
+        "{i}<kopu kopu kopu kopu…>{/i}"
+        "{i}<kopu kopu kopu kopu…>{/i}"
+
+        zyd "Gotowe!"
+
+        luszcz "Fajny entuzjazm na chwilę go skopiuję"
+        luszcz "To co? Wchodzimy?"
+        
+        zyd "Jeszcze jak!"
+
+
