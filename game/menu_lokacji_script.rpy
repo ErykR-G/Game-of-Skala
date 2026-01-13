@@ -1,9 +1,9 @@
 label menu_lokacji:
     label rynek:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg rynek
+            scene bg rynek
         else:
-            show bg rynek_noc
+            scene bg rynek_noc
 
         menu:
             "{b}<--- Alejka (10 min)":
@@ -24,9 +24,9 @@ label menu_lokacji:
     
     label sloneczna:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg sloneczna
+            scene bg sloneczna
         else:
-            show bg sloneczna_noc
+            scene bg sloneczna_noc
 
         menu:      
             "{b}Rynek (10 min) --->":
@@ -35,9 +35,9 @@ label menu_lokacji:
     
     label alejka:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg alejka
+            scene bg alejka
         else:
-            show bg alejka_noc
+            scene bg alejka_noc
 
         menu:      
             "{b}Rynek (10 min) --->":
@@ -54,9 +54,9 @@ label menu_lokacji:
     
     label parking:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg parking
+            scene bg parking
         else:
-            show bg parking_noc
+            scene bg parking_noc
 
         menu:
             "{b}<--- Wolbromska (20 min)":
@@ -69,9 +69,9 @@ label menu_lokacji:
     
     label wolbromska:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg wolbromska
+            scene bg wolbromska
         else:
-            show bg wolbromska_noc
+            scene bg wolbromska_noc
 
         menu:
             "{b}Parking (20 min) --->":
@@ -80,9 +80,9 @@ label menu_lokacji:
     
     label bohaterow_wrzesnia:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg bohaterow_wrzesnia
+            scene bg bohaterow_wrzesnia
         else:
-            show bg bohaterow_wrzesnia_noc
+            scene bg bohaterow_wrzesnia_noc
 
         menu:
             "{b}<--- Rynek (10 min)":
@@ -95,9 +95,9 @@ label menu_lokacji:
     
     label lipowa:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg lipowa
+            scene bg lipowa
         else:
-            show bg lipowa_noc
+            scene bg lipowa_noc
 
         menu:
             "{b}Bohaterów Września (10 min) --->":
@@ -110,9 +110,9 @@ label menu_lokacji:
     
     label granica:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            show bg granica
+            scene bg granica
         else:
-            show bg granica_noc
+            scene bg granica_noc
 
         menu:
             "{b}<--- Lipowa (20 min)":

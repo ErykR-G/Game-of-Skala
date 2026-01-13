@@ -25,7 +25,10 @@ label postacie:
     image eminem neutral reka right = Transform("eminem neutral reka", xzoom=-1) 
 
     define urban = Character("Jerzy Urban", color="#ff4040")
+
     define zyd = Character("Żyd", color="#25ff37")
+    image zyd neutral right = Transform("zyd neutral", xzoom=-1) 
+
     define kazuma = Character("Kazuma", color="#dbf01f")
     define tarczownik = Character("Naofumi", color="#0a570a")
 
@@ -491,7 +494,7 @@ label social_links:
 label start:
     label prolog:
         hide screen global_eq_key
-        show bg start
+        scene bg start
         show luszcz siedzi right at slightright
         show screen clock
         play music "audio/music/wiatr.mp3"
@@ -781,7 +784,7 @@ label start:
 
         $ renpy.pause(0.5)
 
-        show bg rynek
+        scene bg rynek
         play music "audio/music/pole.mp3"
         $ timer += 5
 
@@ -813,7 +816,7 @@ label start:
 
         $ renpy.pause(0.5)
 
-        show bg rynek2
+        scene bg rynek2
         $ timer += 5
 
         show luszcz neutral at center:
@@ -843,7 +846,7 @@ label start:
 
         $ renpy.pause(0.5)
 
-        show bg alejka2
+        scene bg alejka2
         $ timer += 5
 
         show luszcz neutral at center:
@@ -859,7 +862,7 @@ label start:
 
                 "{b}Zejdż do piwnicy{/b}":
                     scene bg black with fade
-                    show bg alejka3 with fade
+                    scene bg alejka3 with fade
                     play music "audio/music/alejka3.mp3"
 
                     
@@ -1002,7 +1005,7 @@ label start:
         label after_fight01:
             $ eminem_sojusznik = 0
             $ liczba_sojusznikow -= 1
-            show bg alejka3v2 with fade
+            scene bg alejka3v2 with fade
             show luszcz spi at left
             show eminem spi at slightleft
             show emina spi at right

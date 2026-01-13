@@ -19974,6 +19974,8 @@ label fight21:
                 play sound "audio/sfx/panie_posle.mp3"
 
                 all "Panie pośle, co pan robi?"
+                hide braun 
+                show braun fight2 zorder 10 at wrog3
 
                 if luszcz_hp_now > 0 and luszcz_wybrany > 0 and luszcz_obrona == 0:
                     $ luszcz_gasnica = 2
@@ -20068,6 +20070,8 @@ label fight21:
                 play sound "audio/sfx/gasnica.mp3"
                 
                 "{i}Grzegorz Braun używa gaśnicy{/i}"
+                hide braun 
+                show braun fight zorder 10 at wrog3
                 hide gasnica
                 jump faza_fight26
 

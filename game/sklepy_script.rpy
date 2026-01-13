@@ -1,7 +1,7 @@
 label sklepy:
     label sklep_monopolowy:
         play music "audio/music/monopolowy.mp3"
-        show bg monopolowy
+        scene bg monopolowy
         show luszcz neutral at left
         show braun neutral at right
 

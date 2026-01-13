@@ -2,7 +2,7 @@ label zyd:
     label zyd1:
         $ zyd_social_link = 1
         play music "audio/music/monopolowy.mp3"
-        show bg monopolowy
+        scene bg monopolowy
         show luszcz neutral at left
         show braun neutral at right
 
@@ -97,6 +97,7 @@ label zyd:
             
         label after_fight21:
             play music "audio/music/monopolowy.mp3"
+            scene bg monopolowy
             show zyd neutral at left
             show luszcz neutral at center
             show braun neutral at right
@@ -136,7 +137,8 @@ label zyd:
 
             play music "audio/music/pole.mp3"
 
-            show bg alejka
+            scene bg alejka
+            hide zyd
             show luszcz neutral at slightleft
             show zyd neutral right at slightright
 
