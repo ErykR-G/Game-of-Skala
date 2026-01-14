@@ -21620,6 +21620,7 @@ label fight41:
                 $ trup7_stun = 0
                 $ czarny_poison = 0
                 $ czarny_stun = 0
+                play sound "audio/sfx/return.mp3"
                 jump fight41
 
 

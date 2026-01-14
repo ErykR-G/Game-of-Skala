@@ -21613,6 +21613,7 @@ label fight11:
                 $ kibol2_stun = 0
                 $ akane_poison = 0
                 $ akane_stun = 0
+                play sound "audio/sfx/return.mp3"
                 jump fight11
 
 

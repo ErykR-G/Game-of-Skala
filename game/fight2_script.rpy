@@ -22243,6 +22243,7 @@ label fight21:
 
                 $ braun_special = 0
                 $ braun_special2 = 0
+                play sound "audio/sfx/return.mp3"
                 jump fight21
 
 

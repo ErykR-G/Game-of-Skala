@@ -21609,6 +21609,7 @@ label fight31:
                 $ yippee2_stun = 0
                 $ trup5_poison = 0
                 $ trup5_stun = 0
+                play sound "audio/sfx/return.mp3"
                 jump fight31
 
 

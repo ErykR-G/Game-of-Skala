@@ -16,6 +16,10 @@ label menu_lokacji:
             
             "{i}Parking (10 min) --->{/i}":
                 $ timer += 10
+                $ kostka = renpy.random.randint(1, 10)
+                if kostka == 1:
+                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                    jump raem_fight
                 jump parking
 
             "{i}Bohaterów Września (10 min) --->{/i}":
@@ -166,6 +170,28 @@ label menu_lokacji:
 
 
 
+
+    label raem_fight:
+        scene bg raem
+        play music "audio/music/rezero.mp3"
+        show luszcz freaky at left
+        show ram neutral:
+            xalign 0.55
+            yalign 1.0
+        show rem neutral:
+            xalign 0.95
+            yalign 1.0
+        ram "Rem, Rem ten osobnik popatrzył się na mnie w dziwny sposób"
+        rem "Siostrczyko, siostrzyczko ten osobnik musi być zboczeńcem w takim razie"
+
+        show luszcz neutral at left
+
+        luszcz "Ej, chwila nie patrzyłem sie na ciebie w dziwny sposób i nie jestem zboczeńcem!!!"
+
+        rem "Siostrzyczko, siostrzyczko tego osobnika nie stać nawet na to by się przyznać"
+        ram "Rem, Rem chyba sami będziemy musieli nauczyć tego śmiecia manier"
+
+        jump fight51
 
 
 

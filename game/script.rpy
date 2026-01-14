@@ -51,6 +51,9 @@ label postacie:
 
     define czarny = Character("Czarny", color="#3a3a3b")
 
+    define rem = Character("Rem", color="#91C0F9")
+    define ram = Character("Ram", color="#FFA7BA")
+
     define akane = Character("Akane", color="#ffffff")
     define kibol1 = Character("Kibol 1", color="#ffffff")
     define kibol2 = Character("Kibol 2", color="#ffffff")

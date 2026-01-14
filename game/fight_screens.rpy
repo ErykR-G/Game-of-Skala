@@ -133,6 +133,58 @@ screen yippee2_stats():
 
             text "ATK: [yippee2_min_attack_now]-[yippee2_max_attack_now]" style "dmg_text" xalign 0.5
 
+screen ram_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value ram_hp_now range ram_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if ram_hp_now/ram_hp > 0.5 else
+                                "#ffcc00" if ram_hp_now/ram_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[ram_hp_now]/[ram_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [ram_min_attack_now]-[ram_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen rem_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value rem_hp_now range rem_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if rem_hp_now/rem_hp > 0.5 else
+                                "#ffcc00" if rem_hp_now/rem_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[rem_hp_now]/[rem_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [rem_min_attack_now]-[rem_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen emina_stats():
     fixed:
         xpos 0.89

@@ -21807,6 +21807,7 @@ label fight01:
         menu:
             "{b}Powtórz Walkę{/b}":
                 window show
+                play sound "audio/sfx/return.mp3"
                 $ fight_on = 0
                 $ timer += 5
 
