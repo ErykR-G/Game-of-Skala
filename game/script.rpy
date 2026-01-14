@@ -49,6 +49,8 @@ label postacie:
     image kosc neutral left = Transform("kosc neutral", xzoom=-1) 
     image kosc zly left = Transform("kosc zly", xzoom=-1)
 
+    define czarny = Character("Czarny", color="#3a3a3b")
+
     define akane = Character("Akane", color="#ffffff")
     define kibol1 = Character("Kibol 1", color="#ffffff")
     define kibol2 = Character("Kibol 2", color="#ffffff")

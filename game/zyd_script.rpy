@@ -388,6 +388,7 @@ label zyd:
                     scene bg lethal3
                     play sound "audio/sfx/door.mp3"
                     queue sound "audio/sfx/walk.mp3"
+                    show loli at center
                     zyd "Nic tu nie ma"
                     luszcz "Bez sensu"
                     $ lethalc12 = 1
@@ -433,7 +434,9 @@ label zyd:
 
                         hide luszcz
                         play sound "audio/sfx/jump.mp3"
-                        ""
+                        "{i}.{/i}"
+                        "{i}.{/i}"
+                        "{i}.{/i}"
                         play sound "audio/sfx/jump.mp3"
                         show luszcz neutral right:
                             xalign 1.2
@@ -510,7 +513,6 @@ label zyd:
                         $ zyd_sojusznik = 1
                         $ liczba_sojusznikow += 1
 
-                        jump after_fight41
                         jump fight41
                                       
             
