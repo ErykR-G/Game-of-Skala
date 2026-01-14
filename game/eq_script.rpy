@@ -73,10 +73,12 @@ label items:
 
 label items_fabularne:
     default lopatka = 0
+    default klucz = 0
     
 
 
 label eq:
+    $ config.menu_include_disabled = False
     window hide
     show eq zorder 100 at center
     $ eq_on = 1

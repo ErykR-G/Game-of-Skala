@@ -1,3 +1,11 @@
+default lethalc12 = 0
+default lethalc13 = 0
+default lethalc21 = 0
+default lethalc22 = 0
+default lethalc23 = 0
+default gaz = 1
+
+
 label zyd:
     label zyd1:
         $ zyd_social_link = 1
@@ -320,7 +328,378 @@ label zyd:
 
         luszcz "Fajny entuzjazm na chwilę go skopiuję"
         luszcz "To co? Wchodzimy?"
-        
+
         zyd "Jeszcze jak!"
+
+        scene bg lethal1
+        stop music
+        luszcz "Alerz ciemnica"
+
+        zyd "Wejdźmy głębiej, może znajdziemy jakieś światło"
+
+        luszcz "Czekaj, serjo nie wziąłeś latarki?"
+
+        zyd "Nie stać mnie na takie przywileje"
+
+        luszcz "Dobrze, to szukajmy po ciemku"
+
+        ""
+
+        zyd "O, czekaj, tu coś jest!"
+
+        play sound "audio/sfx/light_on.mp3"
+        "{i}*pstryk*{/i}"
+
+        scene bg lethal2
+        show zyd neutral right at slightright
+        show luszcz neutral at slightleft
+        play music "audio/music/lethal.mp3"
+        
+
+        zyd "Ja cie"
+        zyd "Nie spodziewałem się takiej przestrzeni"
+
+        luszcz "To twój pierwszy raz?"
+        luszcz "Ja miałem już okazję eksplorować podziemne urbeksy"
+
+        zyd "To może ty prowadź"
+        zyd "Powiem gdy coś będzie wyglądało jak pra pra dziadek"
+
+        luszcz "btw. Skąd wierz jak wygląda? Masz jakieś stare zdjęcia czy coś?"
+
+        zyd "Nie. Ale wyczuję jego aurę"
+        zyd "Nie martw się, umiem wyczuć swoich braci"
+
+        luszcz "hm… okej"
+        luszcz "gdzie iść?"
+
+        label lethalc1:
+            $ config.menu_include_disabled = False
+            $ config.menu_include_disabled = True
+            scene bg lethal2
+            show zyd neutral right at slightright
+            show luszcz neutral at slightleft
+            menu:
+                "{b}Przód{/b}":
+                    play sound "audio/sfx/walk.mp3"
+                    jump lethalc2
+                
+                "{b}Lewo{/b}" if lethalc12 == 0:
+                    scene bg lethal3
+                    play sound "audio/sfx/door.mp3"
+                    queue sound "audio/sfx/walk.mp3"
+                    zyd "Nic tu nie ma"
+                    luszcz "Bez sensu"
+                    $ lethalc12 = 1
+                    play sound "audio/sfx/walk.mp3"
+                    queue sound "audio/sfx/door2.mp3"
+                    jump lethalc1
+                
+                "{b}Prawo{/b}" if lethalc13 == 0 or gaz == 0:
+                    play sound "audio/sfx/walk.mp3"
+                    if gaz == 1:
+                        play music "audio/music/gaz.mp3"
+                        scene bg lethal4
+                        zyd "Ja tu nie wchodzę…"
+                        $ lethalc13 = 1
+                        play music "audio/music/lethal.mp3"
+                        play sound "audio/sfx/walk.mp3"
+                        jump lethalc1
+                    else:
+                        $ config.menu_include_disabled = False
+                        scene bg lethal13
+                        show zyd neutral right at slightright
+                        show luszcz neutral at slightleft
+                        luszcz "O patrz drzwi"
+
+                        zyd "patrzę"
+
+                        play sound "audio/sfx/door.mp3"
+                        queue sound "audio/sfx/walk.mp3"
+
+                        scene bg lethal14
+                        
+                        show luszcz neutral:
+                            xalign 0.05
+                            yalign 1.0
+                        show zyd neutral at left:
+                            xalign -0.2
+                            yalign 1.0
+
+                        zyd "To jest jak jakiś zakład psychiatryczny…"
+
+                        luszcz "No dosłownie to jest jak w Choroszczy"
+                        luszcz "Mam flashbacki…"
+
+                        hide luszcz
+                        play sound "audio/sfx/jump.mp3"
+                        ""
+                        play sound "audio/sfx/jump.mp3"
+                        show luszcz neutral right:
+                            xalign 1.2
+                            yalign 1.0
+
+                        luszcz "o"
+                        luszcz "nie spadnij przypadkiem"
+
+                        hide zyd
+                        play sound "audio/sfx/jump.mp3"
+                        ""
+                        play sound "audio/sfx/jump.mp3"
+                        show zyd neutral right:
+                            xalign 0.999
+                            yalign 1.0
+
+                        zyd "Okej"
+
+                        play sound "audio/sfx/walk.mp3"
+
+                        scene bg black with fade
+
+                        "{i}dużo chodzenia dalej…{/i}"
+
+                        scene bg lethal15 with fade
+                        play sound "audio/sfx/walk.mp3"
+                        show zyd neutral right at slightright
+                        show luszcz neutral at slightleft
+
+                        luszcz "Ale tu jasno i ciepło"
+                        zyd "Ej przyjacielu"
+                        zyd "Czuję go…"
+                        zyd "To musi być on"
+
+                        luszcz "Gdzie?"
+
+                        zyd "Tu, na ścianie"
+                        zyd "Nigdy nie czułem czyjejś obecności tak mocno… to musi być on"
+
+                        luszcz "Mam wrażenie że to promieniowanie"
+
+                        scene bg lethal16
+                        show zyd lampa right at slightright
+                        show luszcz neutral at slightleft
+                        play sound "audio/sfx/lampa.mp3"
+
+                        luszcz "O boże ty na serio"
+
+                        zyd "Nie na niby"
+                        zyd "Dobra teraz ja prowadzę, trzymaj się blisko"
+
+                        play sound "audio/sfx/walk.mp3"
+
+                        scene bg black with fade
+
+                        "{i}dużo chodzenia dalej…?{/i}"
+
+                        scene bg lethal17 with fade
+                        play sound "audio/sfx/walk.mp3"
+                        show zyd lampa at slightleft
+                        show luszcz neutral at left
+
+                        luszcz "Ciemno tu jak w dupie murzyna"
+
+                        zyd "Ej bo widzę jakieś oczy"
+
+                        luszcz "Gdzie?"
+
+                        zyd "Dobra teraz już nie"
+
+                        show czarny neutral at slightright
+                        $ renpy.pause(1.5)
+
+                        $ zyd_sojusznik = 1
+                        $ liczba_sojusznikow += 1
+
+                        jump after_fight41
+                        jump fight41
+                                      
+            
+        label lethalc2:
+            $ config.menu_include_disabled = False
+            $ config.menu_include_disabled = True
+            scene bg lethal5
+            show zyd neutral right at slightright
+            show luszcz neutral at slightleft
+            menu:
+                "{b}Przód{/b}" if lethalc21 == 0:
+                    play sound "audio/sfx/walk.mp3"
+                    scene bg lethal11
+                    zyd "Spójrz klucz!"
+
+                    luszcz "wow jakoś dziwnie blisko"
+                    luszcz "Bieremy"
+
+                    play sound "audio/sfx/grab_key.mp3"
+
+                    scene bg lethal12
+
+                    $ klucz = 1
+                    "{i}*Klucz został dodany do ekwipunku*{/i}"
+
+                    play sound "audio/sfx/yippee.mp3"
+                    queue sound "audio/sfx/yippee.mp3" fadein 1.0
+
+                    show yippee1 neutral at slightright
+                    show yippee2 neutral at slightleft
+
+                    zyd "Ej robale się na nas patrzą"
+                    luszcz "Dobra przejdź spokojnie naokoło"
+
+                    show yippee1 zly at slightright
+                    show yippee2 zly at slightleft
+                    play sound "audio/sfx/yippee1_weapon.mp3"
+                    $ renpy.pause(1.5)
+
+                    $ zyd_sojusznik = 1
+                    $ liczba_sojusznikow += 1
+                    $ config.menu_include_disabled = False
+                    jump fight31
+                    
+                    label after_fight31:
+                        scene bg lethal12
+                        play music "audio/music/lethal.mp3"
+                        luszcz "skurczybyki"
+                        $ zyd_sojusznik = 0
+                        $ liczba_sojusznikow -= 1
+                        $ lethalc21 = 1
+                        play sound "audio/sfx/walk.mp3"
+                        jump lethalc2
+
+                
+                "{b}Lewo{/b}" if lethalc22 == 0 or klucz == 1 and lethalc22 <= 1:
+                    scene bg lethal6
+                    play sound "audio/sfx/walk.mp3"
+                    if klucz == 0: 
+                        zyd "Bez klucza nie da rady..."
+                        $ lethalc22 = 1
+                        play sound "audio/sfx/walk.mp3"
+                        jump lethalc2
+                    else:
+                        scene bg lethal6
+                        queue sound "audio/sfx/key.mp3"
+                        "{i}*otwieracie drzwi za pomocą klucza*"
+                        play sound "audio/sfx/door.mp3"
+                        scene bg lethal7
+
+                        luszcz "O patż znak drogowy!"
+
+                        scene bg lethal8
+                        play sound "audio/sfx/grab_stop.mp3"
+
+                        "{i}*Łuszcz podnosi znak drogowy*{/i}"
+
+                        luszcz "Wydaje mi się rze dobrze by działał jako broń…"
+
+                        $ stop = 1
+                        "{i}*Znak drogowy został dodany do ekwipunku*{/i}"
+
+                        zyd "hel je"
+                        zyd "szkoda że nic tu dalej nie ma"
+                        play sound "audio/sfx/walk.mp3"
+
+                        $ lethalc22 = 2
+                        jump lethalc2
+
+                
+                "{b}Prawo{/b}" if lethalc23 == 0:
+                    play sound "audio/sfx/walk.mp3"
+                    scene bg lethal9
+                    play music "audio/music/gaz.mp3"
+                    luszcz "Ale tu dymi…"
+
+                    zyd "Czekaj widzisz to koło?"
+                    zyd "Chyba z niego gaz się puścił, spróbuję je zakręcić"
+                    zyd "mmmmmmggggghghhhhhhghghghhhhmhmhmmmmmmhmhmh"
+
+                    play sound "audio/sfx/gaz_stop.mp3"
+                    play music "audio/music/lethal.mp3"
+
+                    scene bg lethal10
+                    $ gaz = 0
+                    $ lethalc23 = 1
+
+                    zyd "cyk udało się"
+
+                    luszcz "najs"
+                    luszcz "łał, tó też nic nie ma"
+
+                    play sound "audio/sfx/walk.mp3"
+
+                    jump lethalc2
+                
+                "{b}Powrót{/b}":
+                    play sound "audio/sfx/walk.mp3"
+                    jump lethalc1
+
+        label after_fight41:  
+            scene bg lethal17  
+            show zyd lampa at slightleft
+            show luszcz neutral at left
+            show czarny neutral at slightright
+            $ zyd_sojusznik = 0
+            $ liczba_sojusznikow -= 1
+
+            zyd "Czuję pulsującą nienawiść wobec tego czegoś"
+
+            luszcz "O czym ty muwisz"
+            luszcz "To weź na to poświedź zobatczmy co to"
+            zyd "Dobra"
+
+            play sound "audio/sfx/light_on.mp3"
+
+            show czarny true at slightright
+
+            luszcz "O kurcze adolf hitler"
+
+            zyd "Chyba go sobie wezmę na pamiątkę"
+
+            luszcz "Super pomysł"
+            luszcz "Dobra chodźmy stąd"
+
+            play sound "audio/sfx/walk.mp3"
+            
+            scene bg cmentarz
+            show zyd lampa right at slightright
+            show luszcz neutral at slightleft
+
+            zyd "Bracie złowiliśmy dwie porządne rybunie"
+            zyd "Dzięki twojej pomocy mój pra pra dziadek może spać spokojnie"
+            zyd "A Fuhrer wisieć zamiast liści"
+            zyd "Czy mógłbym w jakiś sposób ci się odpłacić?"
+
+            menu:
+                "{b}akszuli...{b}":
+                    luszcz "W zasadzie to tak"
+                    luszcz "Widzialem jak dobrze radzisz sobie w walce, nie chciałbys może pomóc mi w walce z ksiendzem który chce włonczyć Skałę do Krakowa?"
+
+                    zyd "Włączenie Skały do Krakowa? To okropne!"
+                    zyd "Biedne prywatne biznesy… miasto wszystko ukradnie i zbezcześci"
+                    zyd "Nawet mi się zrobiło żal pana Brauna…"
+                    zyd "Oczywiście że do ciebie dołączę!"
+
+                    luszcz "Wybornie"
+
+                    $ zyd_sojusznik = 1
+                    $ liczba_sojusznikow += 1
+                    $ zyd_wybory = 2
+                
+                "{b}Nie trzeba{/b}":
+                    luszcz "Naprawdę nie musisz mi sie odpłacać w żaden sposób"
+
+                    zyd "Na pewno?"
+                    zyd "cóż jeśli kiedyś będziesz potrzebował pomocy to możesz na mnie liczyć"
+
+                    hide zyd
+                    $ zyd_wybory = 2
+                    show luszcz neutral at center
+
+                    luszcz "..."
+                
+            jump lipowa
+
+
+
+
+
 
 

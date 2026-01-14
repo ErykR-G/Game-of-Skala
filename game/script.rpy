@@ -18,6 +18,7 @@ label postacie:
     define luszcz = Character("Łuszcz", color="#1d0cbb")
     image luszcz siedzi right = Transform("luszcz siedzi", xzoom=-1) 
     image luszcz zmentzony right = Transform("luszcz zmentzony", xzoom=-1) 
+    image luszcz neutral right = Transform("luszcz neutral", xzoom=-1) 
 
     define eminem = Character("Shadow", color="#32313a")
     define cid = Character("Cid", color="#32313a")
@@ -28,6 +29,7 @@ label postacie:
 
     define zyd = Character("Żyd", color="#25ff37")
     image zyd neutral right = Transform("zyd neutral", xzoom=-1) 
+    image zyd lampa right = Transform("zyd lampa", xzoom=-1) 
 
     define kazuma = Character("Kazuma", color="#dbf01f")
     define tarczownik = Character("Naofumi", color="#0a570a")
@@ -1046,7 +1048,7 @@ label start:
                     "{b}Dobra chodź ze mną{b}":
                         jump akszuli
 
-                    '{b}Jakoś sobie poradzisz{/b}':
+                    "{b}Jakoś sobie poradzisz{/b}":
                         luszcz "Jakoś sobie poradzisz"
 
                         cid "To przynajmniej w podziękowaniu weź tą Tutorialową Wodę Święconą którą udało mi się ukraść z kościoła"
