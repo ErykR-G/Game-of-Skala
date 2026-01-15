@@ -8,7 +8,7 @@ label sklepy_define:
 label sklepy:
     label sklep_monopolowy:
         play music "audio/music/monopolowy.mp3"
-        scene bg monopolowy
+        scene bg monopolowy with fade
         show luszcz neutral at left
         show braun neutral at right
 

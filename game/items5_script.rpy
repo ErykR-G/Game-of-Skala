@@ -334,8 +334,8 @@ label items_fight51:
                             $ kazuma_hp_now += 5
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
-                        if tarczownik__hp_now + 5 >= tarczownik__hp:
-                            $ tarczownik__hp_now = tarczownik__hp
+                        if tarczownik_hp_now + 5 >= tarczownik_hp:
+                            $ tarczownik_hp_now = tarczownik_hp
                         else:
                             $ tarczownik_hp_now += 5
                             
@@ -7425,8 +7425,8 @@ label items_fight53:
                             $ kazuma_hp_now += 5
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
-                        if tarczownik__hp_now + 5 >= tarczownik__hp:
-                            $ tarczownik__hp_now = tarczownik__hp
+                        if tarczownik_hp_now + 5 >= tarczownik_hp:
+                            $ tarczownik_hp_now = tarczownik_hp
                         else:
                             $ tarczownik_hp_now += 5
                             
@@ -14515,8 +14515,8 @@ label items_fight55:
                             $ kazuma_hp_now += 5
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
-                        if tarczownik__hp_now + 5 >= tarczownik__hp:
-                            $ tarczownik__hp_now = tarczownik__hp
+                        if tarczownik_hp_now + 5 >= tarczownik_hp:
+                            $ tarczownik_hp_now = tarczownik_hp
                         else:
                             $ tarczownik_hp_now += 5
                             

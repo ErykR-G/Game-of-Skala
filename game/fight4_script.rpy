@@ -21603,7 +21603,7 @@ label fight41:
                 $ czarny_slime = 0
 
                 $ trup6_weapon = 1
-                $ czarny_weapon = 1
+                $ czarny_weapon = 0
                 $ trup7_weapon = 1
 
                 $ trup6_obrona = 0
@@ -21882,7 +21882,7 @@ label fight41:
         $ czarny_slime = 0
 
         $ trup6_weapon = 1
-        $ czarny_weapon = 1
+        $ czarny_weapon = 0
         $ trup7_weapon = 1
 
         $ trup6_obrona = 0

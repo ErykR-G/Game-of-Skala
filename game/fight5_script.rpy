@@ -19,7 +19,7 @@ label fight51_stats:
     default rem_slime = 0
     default trup8_slime = 0
 
-    default ram_weapon = 1
+    default ram_weapon = 0
     default rem_weapon = 1
     default trup8_weapon = 1
 
@@ -75,7 +75,7 @@ label fight51:
     label wybor_fight51:
         play music "audio/music/raem_fight.mp3"
         scene bg raem
-        $ ile_wrogow += 3
+        $ ile_wrogow += 2
         show ram fight zorder 10 at wrog1
         show screen ram_stats
         show rem fight zorder 10 at wrog2
@@ -1208,6 +1208,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -1235,6 +1236,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -1262,6 +1264,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -1292,6 +1295,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -1327,6 +1331,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -1354,6 +1359,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -1569,6 +1575,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -1596,6 +1603,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -1623,6 +1631,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -1653,6 +1662,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -1688,6 +1698,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -1715,6 +1726,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -1986,7 +1998,6 @@ label fight51:
             $ tarczownik_drpepper -= 1
             $ tarczownik_min_attack_now = tarczownik_max_attack_now
 
-
         if luszcz_fighter == 1:
             if luszcz_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
@@ -1996,6 +2007,17 @@ label fight51:
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if luszcz_stun == 2:
+                $ luszcz_stun -= 1
+                "{i}Łuszcz jest zestunnowany{/i}"
+                jump faza_fight52 
+            else:
+                if luszcz_stun == 1:
+                    $ luszcz_stun -= 1
+                    "{i}Łuszcz jest zestunnowany{/i}"
+                    hide stun4
+                    jump faza_fight52 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -2880,6 +2902,17 @@ label fight51:
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if eminem_stun == 2:
+                $ eminem_stun -= 1
+                "{i}Shadow jest zestunnowany{/i}"
+                jump faza_fight52 
+            else:
+                if eminem_stun == 1:
+                    $ eminem_stun -= 1
+                    "{i}Shadow jest zestunnowany{/i}"
+                    hide stun5
+                    jump faza_fight52 
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -3342,6 +3375,17 @@ label fight51:
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if urban_stun == 2:
+                $ urban_stun -= 1
+                "{i}Jerzy Urban jest zestunnowany{/i}"
+                jump faza_fight52 
+            else:
+                if urban_stun == 1:
+                    $ urban_stun -= 1
+                    "{i}Jerzy Urban jest zestunnowany{/i}"
+                    hide stun6
+                    jump faza_fight52 
 
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -4072,6 +4116,17 @@ label fight51:
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if zyd_stun == 2:
+                $ zyd_stun -= 1
+                "{i}Żyd jest zestunnowany{/i}"
+                jump faza_fight52 
+            else:
+                if zyd_stun == 1:
+                    $ zyd_stun -= 1
+                    "{i}Żyd jest zestunnowany{/i}"
+                    hide stun7
+                    jump faza_fight52 
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -4840,6 +4895,17 @@ label fight51:
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+
+            if kazuma_stun == 2:
+                $ kazuma_stun -= 1
+                "{i}Kazuma jest zestunnowany{/i}"
+                jump faza_fight52 
+            else:
+                if kazuma_stun == 1:
+                    $ kazuma_stun -= 1
+                    "{i}Kazuma jest zestunnowany{/i}"
+                    hide stun8
+                    jump faza_fight52 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -5720,6 +5786,17 @@ label fight51:
 
                 if tarczownik_wybrany == 3:
                     show ruch zorder 0 at tlo_sojusznik3 
+                
+                if tarczownik_stun == 2:
+                    $ tarczownik_stun -= 1
+                    "{i}Naofumi jest zestunnowany{/i}"
+                    jump faza_fight52 
+                else:
+                    if tarczownik_stun == 1:
+                        $ tarczownik_stun -= 1
+                        "{i}Naofumi jest zestunnowany{/i}"
+                        hide stun9
+                        jump faza_fight52 
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -7973,6 +8050,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -8000,6 +8078,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -8027,6 +8106,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -8057,6 +8137,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -8092,6 +8173,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -8119,6 +8201,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -8183,6 +8266,17 @@ label fight51:
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if luszcz_stun == 2:
+                $ luszcz_stun -= 1
+                "{i}Łuszcz jest zestunnowany{/i}"
+                jump faza_fight53 
+            else:
+                if luszcz_stun == 1:
+                    $ luszcz_stun -= 1
+                    "{i}Łuszcz jest zestunnowany{/i}"
+                    hide stun4
+                    jump faza_fight53 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -9066,6 +9160,17 @@ label fight51:
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if eminem_stun == 2:
+                $ eminem_stun -= 1
+                "{i}Shadow jest zestunnowany{/i}"
+                jump faza_fight53
+            else:
+                if eminem_stun == 1:
+                    $ eminem_stun -= 1
+                    "{i}Shadow jest zestunnowany{/i}"
+                    hide stun5
+                    jump faza_fight53
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -9526,6 +9631,17 @@ label fight51:
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if urban_stun == 2:
+                $ urban_stun -= 1
+                "{i}Jerzy Urban jest zestunnowany{/i}"
+                jump faza_fight53
+            else:
+                if urban_stun == 1:
+                    $ urban_stun -= 1
+                    "{i}Jerzy Urban jest zestunnowany{/i}"
+                    hide stun6
+                    jump faza_fight53
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -10256,6 +10372,17 @@ label fight51:
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if zyd_stun == 2:
+                $ zyd_stun -= 1
+                "{i}Żyd jest zestunnowany{/i}"
+                jump faza_fight53
+            else:
+                if zyd_stun == 1:
+                    $ zyd_stun -= 1
+                    "{i}Żyd jest zestunnowany{/i}"
+                    hide stun7
+                    jump faza_fight53
 
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -11022,6 +11149,17 @@ label fight51:
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if kazuma_stun == 2:
+                $ kazuma_stun -= 1
+                "{i}Kazuma jest zestunnowany{/i}"
+                jump faza_fight53 
+            else:
+                if kazuma_stun == 1:
+                    $ kazuma_stun -= 1
+                    "{i}Kazuma jest zestunnowany{/i}"
+                    hide stun8
+                    jump faza_fight53 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -11992,6 +12130,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -12019,6 +12158,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -12046,6 +12186,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -12076,6 +12217,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -12111,6 +12253,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -12138,6 +12281,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -12202,6 +12346,17 @@ label fight51:
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if luszcz_stun == 2:
+                $ luszcz_stun -= 1
+                "{i}Łuszcz jest zestunnowany{/i}"
+                jump faza_fight54 
+            else:
+                if luszcz_stun == 1:
+                    $ luszcz_stun -= 1
+                    "{i}Łuszcz jest zestunnowany{/i}"
+                    hide stun4
+                    jump faza_fight54
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -13085,6 +13240,17 @@ label fight51:
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if eminem_stun == 2:
+                $ eminem_stun -= 1
+                "{i}Shadow jest zestunnowany{/i}"
+                jump faza_fight54 
+            else:
+                if eminem_stun == 1:
+                    $ eminem_stun -= 1
+                    "{i}Shadow jest zestunnowany{/i}"
+                    hide stun5
+                    jump faza_fight54
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -13547,6 +13713,17 @@ label fight51:
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if urban_stun == 2:
+                $ urban_stun -= 1
+                "{i}Jerzy Urban jest zestunnowany{/i}"
+                jump faza_fight54 
+            else:
+                if urban_stun == 1:
+                    $ urban_stun -= 1
+                    "{i}Jerzy Urban jest zestunnowany{/i}"
+                    hide stun6
+                    jump faza_fight54 
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -14277,6 +14454,17 @@ label fight51:
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if zyd_stun == 2:
+                $ zyd_stun -= 1
+                "{i}Żyd jest zestunnowany{/i}"
+                jump faza_fight54 
+            else:
+                if zyd_stun == 1:
+                    $ zyd_stun -= 1
+                    "{i}Żyd jest zestunnowany{/i}"
+                    hide stun7
+                    jump faza_fight54
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -15043,6 +15231,17 @@ label fight51:
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if kazuma_stun == 2:
+                $ kazuma_stun -= 1
+                "{i}Kazuma jest zestunnowany{/i}"
+                jump faza_fight54 
+            else:
+                if kazuma_stun == 1:
+                    $ kazuma_stun -= 1
+                    "{i}Kazuma jest zestunnowany{/i}"
+                    hide stun8
+                    jump faza_fight54
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if ram_hp_now >= 1 and trup8_hp_now <= 0 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now >= 1 and rem_hp_now <= 0 or ram_hp_now <= 0 and trup8_hp_now <= 0 and rem_hp_now >= 1:
@@ -16016,6 +16215,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -16043,6 +16243,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -16070,6 +16271,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -16100,6 +16302,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -16135,6 +16338,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -16162,6 +16366,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -18118,6 +18323,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -18145,6 +18351,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -18172,6 +18379,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -18202,6 +18410,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -18237,6 +18446,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -18264,6 +18474,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -18388,6 +18599,162 @@ label fight51:
                     "{i}Ram broni się{/i}"
                     $ ram_obrona += 1
                     jump faza_fight55
+        
+        if ram_hp_now > 0 and rem_hp_now > 0 and rem_stun == 0 and ram_stun == 0 and rem_uszy == 0 and ram_uszy == 0 and rem_obrona == 0 and ram_obrona == 0:
+            $ kostka = renpy.random.randint(1, 5)
+            if kostka == 5:
+                ram "Rem, Rem myślisz o tym samym co ja?"
+                rem "Siostrzyczko, siostrzyczko jasne, że myślę o tym samym co ty!"
+                if ram_weapon >= 1:
+                    show ram_weapon zorder 15 at weapon_wrog1  
+                else:
+                    show reka6 zorder 15 at weapon_wrog1  
+                if rem_weapon >= 1:
+                    show rem_weapon zorder 15 at weapon_wrog2 
+                else:
+                    show reka8 zorder 15 at weapon_wrog2 
+                
+                if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                    if luszcz_obrona == 1:
+                        $ luszcz_hp_now -= 2
+                    else:
+                        $ luszcz_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and luszcz_obrona < 2:
+                        if luszcz_wybrany == 1:
+                            show stun4 zorder 15 at head_sojusznik1 
+
+                        if luszcz_wybrany == 2:
+                            show stun4 zorder 15 at head_sojusznik2  
+
+                        if luszcz_wybrany == 3:
+                            show stun4 zorder 15 at head_sojusznik3 
+                        $ luszcz_stun = 2
+                
+                if eminem_hp_now > 0 and eminem_wybrany > 0:
+                    if eminem_obrona == 1:
+                        $ eminem_hp_now -= 2
+                    else:
+                        $ eminem_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and eminem_obrona < 2:
+                        if eminem_wybrany == 1:
+                            show stun5 zorder 15 at head_sojusznik1 
+
+                        if eminem_wybrany == 2:
+                            show stun5 zorder 15 at head_sojusznik2  
+
+                        if eminem_wybrany == 3:
+                            show stun5 zorder 15 at head_sojusznik3 
+                        $ eminem_stun = 2
+                
+                if urban_hp_now > 0 and urban_wybrany > 0:
+                    if urban_obrona == 1:
+                        $ urban_hp_now -= 2
+                    else:
+                        $ urban_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and urban_obrona < 2:
+                        if urban_wybrany == 1:
+                            show stun6 zorder 15 at head_sojusznik1 
+
+                        if urban_wybrany == 2:
+                            show stun6 zorder 15 at head_sojusznik2  
+
+                        if urban_wybrany == 3:
+                            show stun6 zorder 15 at head_sojusznik3 
+                        $ urban_stun = 2
+                
+                if zyd_hp_now > 0 and zyd_wybrany > 0:
+                    if zyd_obrona == 1:
+                        $ zyd_hp_now -= 2
+                    else:
+                        $ zyd_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and zyd_obrona < 2:
+                        if zyd_wybrany == 1:
+                            show stun7 zorder 15 at head_sojusznik1 
+
+                        if zyd_wybrany == 2:
+                            show stun7 zorder 15 at head_sojusznik2  
+
+                        if zyd_wybrany == 3:
+                            show stun7 zorder 15 at head_sojusznik3 
+                        $ zyd_stun = 2
+                
+                if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                    if kazuma_obrona == 1:
+                        $ kazuma_hp_now -= 2
+                    else:
+                        $ kazuma_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and kazuma_obrona < 2:
+                        if kazuma_wybrany == 1:
+                            show stun8 zorder 15 at head_sojusznik1 
+
+                        if kazuma_wybrany == 2:
+                            show stun8 zorder 15 at head_sojusznik2  
+
+                        if kazuma_wybrany == 3:
+                            show stun8 zorder 15 at head_sojusznik3 
+                        $ kazuma_stun = 2
+                
+                if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                    if tarczownik_obrona == 1:
+                        $ tarczownik_hp_now -= 2
+                    else:
+                        $ tarczownik_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and tarczownik_obrona < 2:
+                        if tarczownik_wybrany == 1:
+                            show stun9 zorder 15 at head_sojusznik1 
+
+                        if tarczownik_wybrany == 2:
+                            show stun9 zorder 15 at head_sojusznik2  
+
+                        if tarczownik_wybrany == 3:
+                            show stun9 zorder 15 at head_sojusznik3 
+                        $ tarczownik_stun = 2
+
+                if rem_weapon >= 1:
+                    play sound "audio/sfx/rem_weapon.mp3"
+                
+                else:
+                    play sound "audio/sfx/reka.mp3"
+                
+                queue sound "audio/sfx/reka.mp3" fadein 0.5
+
+                "{i}Rem i Ram używają swojego specjalnego ataku zadającego 4 obrażenia wszystkim sojuszniką{/i}"
+                if luszcz_stun == 2:
+                    "{i}Łuszcz został również zestunnowany{/i}"
+
+                if eminem_stun == 2:
+                    "{i}Shadow został również zestunnowany{/i}"
+
+                if urban_stun == 2:
+                    "{i}Jerzy Urban został również zestunnowany{/i}"
+
+                if zyd_stun == 2:
+                    "{i}Żyd został również zestunnowany{/i}"
+
+                if kazuma_stun == 2:
+                    "{i}Kazuma został również zestunnowany{/i}"
+
+                if tarczownik_stun == 2:
+                    "{i}Naofumi został również zestunnowany{/i}"
+                hide rem_weapon
+                hide ram_weapon
+                hide reka6
+                hide reka8
+                jump faza_fight55
+
+                    
                     
         label losowanko_fight54:   
             if ram_weapon >= 1:
@@ -19238,6 +19605,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -19265,6 +19633,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -19292,6 +19661,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -19322,6 +19692,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -19357,6 +19728,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -19384,6 +19756,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -20349,6 +20722,7 @@ label fight51:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -20376,6 +20750,7 @@ label fight51:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -20403,6 +20778,7 @@ label fight51:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -20433,6 +20809,7 @@ label fight51:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -20468,6 +20845,7 @@ label fight51:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -20495,6 +20873,7 @@ label fight51:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -20609,6 +20988,160 @@ label fight51:
                     "{i}Rem broni się{/i}"
                     $ rem_obrona += 1
                     jump start_fight51
+        
+        if ram_hp_now > 0 and rem_hp_now > 0 and rem_stun == 0 and ram_stun == 0 and rem_uszy == 0 and ram_uszy == 0 and rem_obrona == 0 and ram_obrona == 0:
+            $ kostka = renpy.random.randint(1, 5)
+            if kostka == 5:
+                rem "Siostrzyczko, siostrzyczko myślisz o tym samym co ja?"
+                ram "Rem, Rem jasne, że myślę o tym samym co ty!"
+                if ram_weapon >= 1:
+                    show ram_weapon zorder 15 at weapon_wrog1  
+                else:
+                    show reka6 zorder 15 at weapon_wrog1  
+                if rem_weapon >= 1:
+                    show rem_weapon zorder 15 at weapon_wrog2 
+                else:
+                    show reka8 zorder 15 at weapon_wrog2 
+                
+                if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                    if luszcz_obrona == 1:
+                        $ luszcz_hp_now -= 2
+                    else:
+                        $ luszcz_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and luszcz_obrona < 2:
+                        if luszcz_wybrany == 1:
+                            show stun4 zorder 15 at head_sojusznik1 
+
+                        if luszcz_wybrany == 2:
+                            show stun4 zorder 15 at head_sojusznik2  
+
+                        if luszcz_wybrany == 3:
+                            show stun4 zorder 15 at head_sojusznik3 
+                        $ luszcz_stun = 2
+                
+                if eminem_hp_now > 0 and eminem_wybrany > 0:
+                    if eminem_obrona == 1:
+                        $ eminem_hp_now -= 2
+                    else:
+                        $ eminem_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and eminem_obrona < 2:
+                        if eminem_wybrany == 1:
+                            show stun5 zorder 15 at head_sojusznik1 
+
+                        if eminem_wybrany == 2:
+                            show stun5 zorder 15 at head_sojusznik2  
+
+                        if eminem_wybrany == 3:
+                            show stun5 zorder 15 at head_sojusznik3 
+                        $ eminem_stun = 2
+                
+                if urban_hp_now > 0 and urban_wybrany > 0:
+                    if urban_obrona == 1:
+                        $ urban_hp_now -= 2
+                    else:
+                        $ urban_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and urban_obrona < 2:
+                        if urban_wybrany == 1:
+                            show stun6 zorder 15 at head_sojusznik1 
+
+                        if urban_wybrany == 2:
+                            show stun6 zorder 15 at head_sojusznik2  
+
+                        if urban_wybrany == 3:
+                            show stun6 zorder 15 at head_sojusznik3 
+                        $ urban_stun = 2
+                
+                if zyd_hp_now > 0 and zyd_wybrany > 0:
+                    if zyd_obrona == 1:
+                        $ zyd_hp_now -= 2
+                    else:
+                        $ zyd_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and zyd_obrona < 2:
+                        if zyd_wybrany == 1:
+                            show stun7 zorder 15 at head_sojusznik1 
+
+                        if zyd_wybrany == 2:
+                            show stun7 zorder 15 at head_sojusznik2  
+
+                        if zyd_wybrany == 3:
+                            show stun7 zorder 15 at head_sojusznik3 
+                        $ zyd_stun = 2
+                
+                if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                    if kazuma_obrona == 1:
+                        $ kazuma_hp_now -= 2
+                    else:
+                        $ kazuma_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and kazuma_obrona < 2:
+                        if kazuma_wybrany == 1:
+                            show stun8 zorder 15 at head_sojusznik1 
+
+                        if kazuma_wybrany == 2:
+                            show stun8 zorder 15 at head_sojusznik2  
+
+                        if kazuma_wybrany == 3:
+                            show stun8 zorder 15 at head_sojusznik3 
+                        $ kazuma_stun = 2
+                
+                if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                    if tarczownik_obrona == 1:
+                        $ tarczownik_hp_now -= 2
+                    else:
+                        $ tarczownik_hp_now -= 4
+                    
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka < 4 and tarczownik_obrona < 2:
+                        if tarczownik_wybrany == 1:
+                            show stun9 zorder 15 at head_sojusznik1 
+
+                        if tarczownik_wybrany == 2:
+                            show stun9 zorder 15 at head_sojusznik2  
+
+                        if tarczownik_wybrany == 3:
+                            show stun9 zorder 15 at head_sojusznik3 
+                        $ tarczownik_stun = 2
+
+                if rem_weapon >= 1:
+                    play sound "audio/sfx/rem_weapon.mp3"
+                
+                else:
+                    play sound "audio/sfx/reka.mp3"
+                
+                queue sound "audio/sfx/reka.mp3" fadein 0.5
+
+                "{i}Rem i Ram używają swojego specjalnego ataku zadającego 4 obrażenia wszystkim sojuszniką{/i}"
+                if luszcz_stun == 2:
+                    "{i}Łuszcz został również zestunnowany{/i}"
+
+                if eminem_stun == 2:
+                    "{i}Shadow został również zestunnowany{/i}"
+
+                if urban_stun == 2:
+                    "{i}Jerzy Urban został również zestunnowany{/i}"
+
+                if zyd_stun == 2:
+                    "{i}Żyd został również zestunnowany{/i}"
+
+                if kazuma_stun == 2:
+                    "{i}Kazuma został również zestunnowany{/i}"
+
+                if tarczownik_stun == 2:
+                    "{i}Naofumi został również zestunnowany{/i}"
+                hide rem_weapon
+                hide ram_weapon
+                hide reka6
+                hide reka8
+                jump start_fight51
                     
         label losowanko_fight56:    
             if rem_weapon >= 1:
@@ -21468,6 +22001,15 @@ label fight51:
         hide tarczownik_ziemia
         hide tarczownik_nogi
         hide tarczownik_zloty
+        hide stun1
+        hide stun2
+        hide stun3
+        hide stun4
+        hide stun5
+        hide stun6
+        hide stun7
+        hide stun8
+        hide stun9
         hide screen ram_stats
         hide screen trup8_stats
         hide screen rem_stats
@@ -21590,7 +22132,7 @@ label fight51:
                 $ rem_slime = 0
                 $ trup8_slime = 0
 
-                $ ram_weapon = 1
+                $ ram_weapon = 0
                 $ trup8_weapon = 1
                 $ rem_weapon = 1
 
@@ -21608,6 +22150,13 @@ label fight51:
                 $ rem_stun = 0
                 $ trup8_poison = 0
                 $ trup8_stun = 0
+
+                $ luszcz_stun = 0
+                $ eminem_stun = 0
+                $ urban_stun = 0
+                $ zyd_stun = 0
+                $ kazuma_stun = 0
+                $ tarczownik_stun = 0
                 play sound "audio/sfx/return.mp3"
                 jump fight51
 
@@ -21730,6 +22279,15 @@ label fight51:
         hide tarczownik_ziemia
         hide tarczownik_nogi
         hide tarczownik_zloty
+        hide stun1
+        hide stun2
+        hide stun3
+        hide stun4
+        hide stun5
+        hide stun6
+        hide stun7
+        hide stun8
+        hide stun9
 
         hide screen luszcz1_stats
         hide screen luszcz2_stats
@@ -21780,6 +22338,13 @@ label fight51:
         $ zyd_wybrany = 0
         $ kazuma_wybrany = 0
         $ tarczownik_wybrany = 0
+
+        $ luszcz_stun = 0
+        $ eminem_stun = 0
+        $ urban_stun = 0
+        $ zyd_stun = 0
+        $ kazuma_stun = 0
+        $ tarczownik_stun = 0
 
         $ luszcz_weapon = 1
         $ eminem_weapon = 1
@@ -21869,7 +22434,7 @@ label fight51:
         $ rem_slime = 0
         $ trup8_slime = 0
 
-        $ ram_weapon = 1
+        $ ram_weapon = 0
         $ trup8_weapon = 1
         $ rem_weapon = 1
 

@@ -484,6 +484,13 @@ label fight_stats:
     default kazuma_zloty_czlowiek = 0
     default tarczownik_zloty_czlowiek = 0
 
+    default luszcz_stun = 0
+    default eminem_stun = 0
+    default urban_stun = 0
+    default zyd_stun = 0
+    default kazuma_stun = 0
+    default tarczownik_stun = 0
+
 
 label prolog_decyzje:
     define ofiara = 0

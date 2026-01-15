@@ -1213,6 +1213,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -1240,6 +1241,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -1267,6 +1269,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -1297,6 +1300,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -1332,6 +1336,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -1359,6 +1364,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -1574,6 +1580,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -1601,6 +1608,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -1628,6 +1636,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -1658,6 +1667,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -1693,6 +1703,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -1720,6 +1731,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -2001,6 +2013,17 @@ label fight11:
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if luszcz_stun == 2:
+                $ luszcz_stun -= 1
+                "{i}Łuszcz jest zestunnowany{/i}"
+                jump faza_fight12 
+            else:
+                if luszcz_stun == 1:
+                    $ luszcz_stun -= 1
+                    "{i}Łuszcz jest zestunnowany{/i}"
+                    hide stun4
+                    jump faza_fight12 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -2885,6 +2908,17 @@ label fight11:
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if eminem_stun == 2:
+                $ eminem_stun -= 1
+                "{i}Shadow jest zestunnowany{/i}"
+                jump faza_fight12 
+            else:
+                if eminem_stun == 1:
+                    $ eminem_stun -= 1
+                    "{i}Shadow jest zestunnowany{/i}"
+                    hide stun5
+                    jump faza_fight12 
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -3347,6 +3381,17 @@ label fight11:
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if urban_stun == 2:
+                $ urban_stun -= 1
+                "{i}Jerzy Urban jest zestunnowany{/i}"
+                jump faza_fight12 
+            else:
+                if urban_stun == 1:
+                    $ urban_stun -= 1
+                    "{i}Jerzy Urban jest zestunnowany{/i}"
+                    hide stun6
+                    jump faza_fight12 
 
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -4077,6 +4122,17 @@ label fight11:
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if zyd_stun == 2:
+                $ zyd_stun -= 1
+                "{i}Żyd jest zestunnowany{/i}"
+                jump faza_fight12 
+            else:
+                if zyd_stun == 1:
+                    $ zyd_stun -= 1
+                    "{i}Żyd jest zestunnowany{/i}"
+                    hide stun7
+                    jump faza_fight12 
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -4845,6 +4901,17 @@ label fight11:
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if kazuma_stun == 2:
+                $ kazuma_stun -= 1
+                "{i}Kazuma jest zestunnowany{/i}"
+                jump faza_fight12 
+            else:
+                if kazuma_stun == 1:
+                    $ kazuma_stun -= 1
+                    "{i}Kazuma jest zestunnowany{/i}"
+                    hide stun8
+                    jump faza_fight12 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -5725,6 +5792,17 @@ label fight11:
 
                 if tarczownik_wybrany == 3:
                     show ruch zorder 0 at tlo_sojusznik3 
+                
+                if tarczownik_stun == 2:
+                    $ tarczownik_stun -= 1
+                    "{i}Naofumi jest zestunnowany{/i}"
+                    jump faza_fight12 
+                else:
+                    if tarczownik_stun == 1:
+                        $ tarczownik_stun -= 1
+                        "{i}Naofumi jest zestunnowany{/i}"
+                        hide stun9
+                        jump faza_fight12 
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -7978,6 +8056,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -8005,6 +8084,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -8032,6 +8112,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -8062,6 +8143,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -8097,6 +8179,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -8124,6 +8207,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -8188,6 +8272,17 @@ label fight11:
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if luszcz_stun == 2:
+                $ luszcz_stun -= 1
+                "{i}Łuszcz jest zestunnowany{/i}"
+                jump faza_fight13 
+            else:
+                if luszcz_stun == 1:
+                    $ luszcz_stun -= 1
+                    "{i}Łuszcz jest zestunnowany{/i}"
+                    hide stun4
+                    jump faza_fight13 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -9071,6 +9166,17 @@ label fight11:
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if eminem_stun == 2:
+                $ eminem_stun -= 1
+                "{i}Shadow jest zestunnowany{/i}"
+                jump faza_fight13
+            else:
+                if eminem_stun == 1:
+                    $ eminem_stun -= 1
+                    "{i}Shadow jest zestunnowany{/i}"
+                    hide stun5
+                    jump faza_fight13
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -9531,6 +9637,17 @@ label fight11:
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if urban_stun == 2:
+                $ urban_stun -= 1
+                "{i}Jerzy Urban jest zestunnowany{/i}"
+                jump faza_fight13
+            else:
+                if urban_stun == 1:
+                    $ urban_stun -= 1
+                    "{i}Jerzy Urban jest zestunnowany{/i}"
+                    hide stun6
+                    jump faza_fight13
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -10261,6 +10378,17 @@ label fight11:
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if zyd_stun == 2:
+                $ zyd_stun -= 1
+                "{i}Żyd jest zestunnowany{/i}"
+                jump faza_fight13
+            else:
+                if zyd_stun == 1:
+                    $ zyd_stun -= 1
+                    "{i}Żyd jest zestunnowany{/i}"
+                    hide stun7
+                    jump faza_fight13
 
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -11027,6 +11155,17 @@ label fight11:
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if kazuma_stun == 2:
+                $ kazuma_stun -= 1
+                "{i}Kazuma jest zestunnowany{/i}"
+                jump faza_fight13
+            else:
+                if kazuma_stun == 1:
+                    $ kazuma_stun -= 1
+                    "{i}Kazuma jest zestunnowany{/i}"
+                    hide stun8
+                    jump faza_fight13
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -11997,6 +12136,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -12024,6 +12164,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -12051,6 +12192,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -12081,6 +12223,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -12116,6 +12259,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -12143,6 +12287,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -12207,6 +12352,17 @@ label fight11:
 
             if luszcz_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if luszcz_stun == 2:
+                $ luszcz_stun -= 1
+                "{i}Łuszcz jest zestunnowany{/i}"
+                jump faza_fight14 
+            else:
+                if luszcz_stun == 1:
+                    $ luszcz_stun -= 1
+                    "{i}Łuszcz jest zestunnowany{/i}"
+                    hide stun4
+                    jump faza_fight14
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -13090,6 +13246,17 @@ label fight11:
 
             if eminem_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if eminem_stun == 2:
+                $ eminem_stun -= 1
+                "{i}Shadow jest zestunnowany{/i}"
+                jump faza_fight14 
+            else:
+                if eminem_stun == 1:
+                    $ eminem_stun -= 1
+                    "{i}Shadow jest zestunnowany{/i}"
+                    hide stun5
+                    jump faza_fight14
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -13552,6 +13719,17 @@ label fight11:
 
             if urban_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if urban_stun == 2:
+                $ urban_stun -= 1
+                "{i}Jerzy Urban jest zestunnowany{/i}"
+                jump faza_fight14 
+            else:
+                if urban_stun == 1:
+                    $ urban_stun -= 1
+                    "{i}Jerzy Urban jest zestunnowany{/i}"
+                    hide stun6
+                    jump faza_fight14 
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -14282,6 +14460,17 @@ label fight11:
 
             if zyd_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if zyd_stun == 2:
+                $ zyd_stun -= 1
+                "{i}Żyd jest zestunnowany{/i}"
+                jump faza_fight14 
+            else:
+                if zyd_stun == 1:
+                    $ zyd_stun -= 1
+                    "{i}Żyd jest zestunnowany{/i}"
+                    hide stun7
+                    jump faza_fight14
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -15048,6 +15237,17 @@ label fight11:
 
             if kazuma_wybrany == 3:
                 show ruch zorder 0 at tlo_sojusznik3 
+            
+            if kazuma_stun == 2:
+                $ kazuma_stun -= 1
+                "{i}Kazuma jest zestunnowany{/i}"
+                jump faza_fight14 
+            else:
+                if kazuma_stun == 1:
+                    $ kazuma_stun -= 1
+                    "{i}Kazuma jest zestunnowany{/i}"
+                    hide stun8
+                    jump faza_fight14 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if kibol1_hp_now >= 1 and akane_hp_now <= 0 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now >= 1 and kibol2_hp_now <= 0 or kibol1_hp_now <= 0 and akane_hp_now <= 0 and kibol2_hp_now >= 1:
@@ -16021,6 +16221,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -16048,6 +16249,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -16075,6 +16277,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -16105,6 +16308,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -16140,6 +16344,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -16167,6 +16372,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -18123,6 +18329,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -18150,6 +18357,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -18177,6 +18385,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -18207,6 +18416,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -18242,6 +18452,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -18269,6 +18480,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -19243,6 +19455,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -19270,6 +19483,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -19297,6 +19511,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -19327,6 +19542,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -19362,6 +19578,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -19389,6 +19606,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -20354,6 +20572,7 @@ label fight11:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
             hide luszcz_klata
@@ -20381,6 +20600,7 @@ label fight11:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
             hide eminem_pierscien
             hide plamka2
             hide eminem
@@ -20408,6 +20628,7 @@ label fight11:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
             hide urban_pierscien
             hide plamka3
             hide uszy1
@@ -20438,6 +20659,7 @@ label fight11:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
             hide zyd_pierscien
             hide plamka4
             hide red_button
@@ -20473,6 +20695,7 @@ label fight11:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
             hide kazuma_pierscien
             hide plamka5
             hide kazuma
@@ -20500,6 +20723,7 @@ label fight11:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
             hide tarczownik_pierscien
             hide plamka6
             hide air_strike_shield1
@@ -21473,6 +21697,15 @@ label fight11:
         hide tarczownik_ziemia
         hide tarczownik_nogi
         hide tarczownik_zloty
+        hide stun1
+        hide stun2
+        hide stun3
+        hide stun4
+        hide stun5
+        hide stun6
+        hide stun7
+        hide stun8
+        hide stun9
         hide screen kibol1_stats
         hide screen akane_stats
         hide screen kibol2_stats
@@ -21613,6 +21846,13 @@ label fight11:
                 $ kibol2_stun = 0
                 $ akane_poison = 0
                 $ akane_stun = 0
+
+                $ luszcz_stun = 0
+                $ eminem_stun = 0
+                $ urban_stun = 0
+                $ zyd_stun = 0
+                $ kazuma_stun = 0
+                $ tarczownik_stun = 0
                 play sound "audio/sfx/return.mp3"
                 jump fight11
 
@@ -21735,6 +21975,15 @@ label fight11:
         hide tarczownik_ziemia
         hide tarczownik_nogi
         hide tarczownik_zloty
+        hide stun1
+        hide stun2
+        hide stun3
+        hide stun4
+        hide stun5
+        hide stun6
+        hide stun7
+        hide stun8
+        hide stun9
 
         hide screen luszcz1_stats
         hide screen luszcz2_stats
@@ -21759,6 +22008,13 @@ label fight11:
         hide screen tarczownik1_stats
         hide screen tarczownik2_stats
         hide screen tarczownik3_stats
+
+        $ luszcz_stun = 0
+        $ eminem_stun = 0
+        $ urban_stun = 0
+        $ zyd_stun = 0
+        $ kazuma_stun = 0
+        $ tarczownik_stun = 0
 
         $ fight_on = 0
 

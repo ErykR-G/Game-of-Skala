@@ -10,7 +10,7 @@ label zyd:
     label zyd1:
         $ zyd_social_link = 1
         play music "audio/music/monopolowy.mp3"
-        scene bg monopolowy
+        scene bg monopolowy with fade
         show luszcz neutral at left
         show braun neutral at right
 
@@ -190,10 +190,26 @@ label zyd:
             $ zyd_wybory = 1
             $ braun_wybory = 1
             hide luszcz
-            jump alejka
+            play music "audio/music/pole.mp3"
+            if rynek == 1:
+                jump rynek
+            if sloneczna == 1:
+                jump slonneczna 
+            if alejka == 1:
+                jump alejka 
+            if parking == 1:
+                jump parking
+            if wolbromska == 1:
+                jump wolbromska
+            if bohaterow_wrzesnia == 1:
+                jump bohaterow_wrzesnia 
+            if lipowa == 1:
+                jump lipowa 
+            if granica == 1:
+                jump granica
     
     label zyd2:
-        scene bg cmentarz_zydowski
+        scene bg cmentarz_zydowski with fade
         play music "audio/music/natura.mp3"
         $ zyd_social_link = 2
         show zyd neutral right at slightright
@@ -271,10 +287,25 @@ label zyd:
 
                 $ zyd_social_link = 10
                 play music "audio/music/pole.mp3"
-                jump lipowa
+                if rynek == 1:
+                    jump rynek
+                if sloneczna == 1:
+                    jump slonneczna 
+                if alejka == 1:
+                    jump alejka 
+                if parking == 1:
+                    jump parking
+                if wolbromska == 1:
+                    jump wolbromska
+                if bohaterow_wrzesnia == 1:
+                    jump bohaterow_wrzesnia 
+                if lipowa == 1:
+                    jump lipowa 
+                if granica == 1:
+                    jump granica
     
     label zyd3:
-        scene bg cmentarz
+        scene bg cmentarz with fade
         play music "audio/music/natura.mp3"
         $ zyd_social_link = 3
         show zyd neutral right at slightright
@@ -291,7 +322,22 @@ label zyd:
                 zyd "Yay"
 
                 play music "audio/music/pole.mp3"
-                jump lipowa
+                if rynek == 1:
+                    jump rynek
+                if sloneczna == 1:
+                    jump slonneczna 
+                if alejka == 1:
+                    jump alejka 
+                if parking == 1:
+                    jump parking
+                if wolbromska == 1:
+                    jump wolbromska
+                if bohaterow_wrzesnia == 1:
+                    jump bohaterow_wrzesnia 
+                if lipowa == 1:
+                    jump lipowa 
+                if granica == 1:
+                    jump granica
 
             "{b}Nie{/b}":
                 luszcz "nie"
@@ -302,10 +348,25 @@ label zyd:
                 luszcz "okej"
 
                 play music "audio/music/pole.mp3"
-                jump lipowa
+                if rynek == 1:
+                    jump rynek
+                if sloneczna == 1:
+                    jump slonneczna 
+                if alejka == 1:
+                    jump alejka 
+                if parking == 1:
+                    jump parking
+                if wolbromska == 1:
+                    jump wolbromska
+                if bohaterow_wrzesnia == 1:
+                    jump bohaterow_wrzesnia 
+                if lipowa == 1:
+                    jump lipowa 
+                if granica == 1:
+                    jump granica
 
     label zyd4:
-        scene bg cmentarz
+        scene bg cmentarz with fade
         play music "audio/music/natura.mp3"
         $ zyd_social_link = 4
         show zyd neutral right at slightright
@@ -697,7 +758,23 @@ label zyd:
 
                     luszcz "..."
                 
-            jump lipowa
+            play music "audio/music/pole.mp3"
+            if rynek == 1:
+                jump rynek
+            if sloneczna == 1:
+                jump slonneczna 
+            if alejka == 1:
+                jump alejka 
+            if parking == 1:
+                jump parking
+            if wolbromska == 1:
+                jump wolbromska
+            if bohaterow_wrzesnia == 1:
+                jump bohaterow_wrzesnia 
+            if lipowa == 1:
+                jump lipowa 
+            if granica == 1:
+                jump granica
 
 
 

@@ -21591,9 +21591,9 @@ label fight31:
                 $ yippee2_slime = 0
                 $ trup5_slime = 0
 
-                $ yippee1_weapon = 1
+                $ yippee1_weapon = 0
                 $ trup5_weapon = 1
-                $ yippee2_weapon = 1
+                $ yippee2_weapon = 0
 
                 $ yippee1_obrona = 0
                 $ yippee2_obrona = 0
@@ -21870,9 +21870,9 @@ label fight31:
         $ yippee2_slime = 0
         $ trup5_slime = 0
 
-        $ yippee1_weapon = 1
+        $ yippee1_weapon = 0
         $ trup5_weapon = 1
-        $ yippee2_weapon = 1
+        $ yippee2_weapon = 0
 
         $ yippee1_obrona = 0
         $ yippee2_obrona = 0
