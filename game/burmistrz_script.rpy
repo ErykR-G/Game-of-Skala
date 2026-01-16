@@ -1,3 +1,5 @@
+define burmistrza1 = 0
+define burmistrzkill = 0
 
 label burmistrz:
     label burmistrz1:
@@ -271,94 +273,263 @@ label burmistrz:
 
         nemeczek "Ani słowa więcej!"
 
-        menu:
-            "{b}Ulegnij{/b}":
-                luszcz "Ehhh jeżeli pan generał jest tego pewien"
+        label burmistrz1a:
+            menu:
+                "{b}Ulegnij{/b}":
+                    luszcz "Ehhh jeżeli pan generał jest tego pewien"
 
-                nemeczek "Jestem, a teraz wracać mi na południe"
+                    nemeczek "Jestem, a teraz wracać mi na południe"
 
-                "{i}Bez słowa daleszego sprzeciwu wyruszyliście z burmistrzem w drogę powrotną na południe{/i}"
+                    "{i}Bez słowa daleszego sprzeciwu wyruszyliście z burmistrzem w drogę powrotną na południe{/i}"
 
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                scene bg poludnie with fade
-                show burmistrz neutral at slightright
-                show luszcz neutral at slightleft
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    scene bg poludnie with fade
+                    show burmistrz neutral at slightright
+                    show luszcz neutral at slightleft
 
-                burmistrz "Mam co do przyszłości naszego kraju bardzo złe przeczucia"
+                    burmistrz "Mam co do przyszłości naszego kraju bardzo złe przeczucia"
 
-                luszcz "Może nie będzie, może Kartagińczycy zgubili po prosty drogę?"
+                    luszcz "Może nie będzie, może Kartagińczycy zgubili po prosty drogę?"
 
-                burmistrz "Miejmy taką nadzieje"
+                    burmistrz "Miejmy taką nadzieje"
 
-                scene bg black with fade
-                "{i}*upływają 2 godziny*{/i}"
-                scene bg poludnie with fade
-                show burmistrz neutral at slightright
-                show luszcz neutral at slightleft
+                    scene bg black with fade
+                    "{i}*upływają 2 godziny*{/i}"
+                    scene bg poludnie with fade
+                    show burmistrz neutral at slightright
+                    show luszcz neutral at slightleft
 
-                burmistrz "Chyba Kartagińczycy nie przybędą…"
+                    burmistrz "Chyba Kartagińczycy nie przybędą…"
 
-                luszcz "Chyba nie…"
+                    luszcz "Chyba nie…"
 
-                burmistrz "Wracamy do kwatery dowodzenia?"
+                    burmistrz "Wracamy do kwatery dowodzenia?"
 
-                luszcz "Wracajmy"
+                    luszcz "Wracajmy"
 
-                stop music
+                    stop music
 
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                scene bg kwatera with fade
-                show burmistrz neutral right at left
-                show luszcz neutral at slightleft
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    scene bg kwatera with fade
+                    show burmistrz neutral right at left
+                    show luszcz neutral at slightleft
 
-                luszcz "Panie generale, nadal nikt nieprzybyl"
+                    luszcz "Panie generale, nadal nikt nieprzybyl"
 
-                show nemeczek dead at right
-                play sound "audio/sfx/jumpscare.mp3"
+                    show nemeczek dead at right
+                    play sound "audio/sfx/jumpscare.mp3"
+                    
+
+                    luszcz "O ja pierdole"  
+                    luszcz "On się zajebał"
+                    luszcz "Co za pojeb"
+
+                    show luszcz telefon at center
+                    luszcz "Zrobię zdjęcię, będzie dla potomnych"
+
+                    show luszcz neutral at center
+
+                    luszcz "Dobra nic tu po nas wracajmy do domu"
+
+                    burmistrz "Wracajmy, nie chcę dłużej na to patrzeć"
+
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    scene bg plac with fade
+                    show burmistrz neutral at slightright
+                    show luszcz neutral at slightleft
+
+                    burmistrz "…"
+
+                    luszcz "…"
+
+                    burmistrz "To eeee zajmiesz się tą strażą pożarną?"
+
+                    luszcz "Zajme… zajme…"
+
+                    burmistrz "…"
+
+                    luszcz "…"
+
+                    burmistrz "To do zobaczenia czy coś"
+
+                    luszcz "no bywaj"
+
+                    hide burmistrz
+                    show luszcz neutral at center
+
+                    luszcz "…"
+
+                    $ burmistrz_wybory = 1
+                    $ nemeczek_wybory = 0
+                    $ burmistrz_social_link = 2
+                    
+                    play music "audio/music/pole.mp3"
+                    jump sloneczna
+
+                "{b}Postaw się{/b}":
+                    $ burmistrzkill = 0
+                    luszcz "Nie, nie mogę na to pozwolić panie generale"
+                    luszcz "Ruszam na północ nieważne co pan powie"
+                    luszcz "Nie pozwolę, by jeden błąd upartego człowieka doprowadził do upadku naszej republiki"
+
+                    burmistrz "Wyruszam z tobą!"
+
+                    luszcz "Nie, musisz tu zostać i przekonać Nemeczka do wysłania sił na północ"
+                    luszcz "Sami i tak, nie powstrzymamy Hanibala"
+
+                    burmistrz "Dobrze zostanę, uważaj na siebie"
+
+                    nemeczek "Jak śmiecie nie słuchać moich rozkazów!"
+                    nemeczek "Będziecie państwo wisieć!"
                 
+                "{b}Spójrz burmistrzowi w oczy{/b}" if burmistrza1 == 0:
+                    $ burmistrza1 = 1
+                    stop music
+                    "{i}W oczach burmistrza zobaczyłeś pełne zrozumienie{/i}"
 
-                luszcz "O ja pierdole"  
-                luszcz "On się zajebał"
-                luszcz "Co za pojeb"
+                    menu:
+                        "{b}Czy chcecie to uczynić?{/b}"
 
-                show luszcz telefon at center
-                luszcz "Zrobię zdjęcię, będzie dla potomnych"
-                luszcz "Dobra nic tu po nas wracajmy do domu"
-                show luszcz neutral at center
+                        "{b}Tak{/b}":
+                            $ burmistrzkill = 1
+                            "{i}W pełnej zgodzie i synchronizacji z burmistrzem, wyciągnęliście noże i rozpoczęliście zbrodnię{/i}"
 
-                burmistrz "Wracajmy, nie chcę dłużej na to patrzeć"
+                            show nemeczek dead at right
+                            with hpunch
+                            play sound "audio/sfx/krzyk.mp3"
 
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                scene bg plac with fade
-                show burmistrz neutral at slightright
-                show luszcz neutral at slightleft
+                            nemeczek "Aaaaaaaaagh i ty Łuszczu przeciwko mnie!?"
 
-                burmistrz "…"
+                            "{i}Lecz nie poprzestaliście na jednym dźgnięciu nożem{/i}"
+                            "{i}Zaczeliście dźgać, dżgać, dźgać bez opamiętania{/i}"
+                            "{i}Nie zważając na nic dokonywaliście tej okrutnej zbrodni, aby uratować republikę przed szaleńcem{/i}"
+                            "{i}I dopiero po 23 dźgnięciach stwierdziliścię, że to wystarczy{/i}"
 
-                luszcz "…"
+                            burmistrz "Nie chciałem tego uczynić, ale zostałem zmuszony"
+                            burmistrz "Dla Republiki zrobię wszystko nawet się skurwię"
 
-                burmistrz "To eeee zajmiesz się tą strażą pożarną?"
+                            luszcz "Dobra, dobra dość tych żalów"
+                            luszcz "Teraz mamy ważniejsze zmartwienia, a mianowicie gdzie powinniśmy ukryć ciało?"
 
-                luszcz "Zajme… zajme…"
+                            label burmistrz2a:
+                                menu:
+                                    "{b}Zakopmy{/b}":
+                                        luszcz "Bez sensu"
+                                        jump burmistrz2a
 
-                burmistrz "…"
+                                    "{b}Przyczepmy do ściany{/b}":
+                                        luszcz "Ej przyczepmy go do ściany, w miejscu tego ziutka co wisi"
 
-                luszcz "…"
+                                        burmistrz "Jakiego ziutka!?"
 
-                burmistrz "To do zobaczenia czy coś"
+                                        luszcz "No tego tam co tak z tyłu przy wejściu jest"
 
-                luszcz "no bywaj"
+                                        burmistrz "gdzie... o jezus maria"
+                                        burmistrz "i on tak przez cały czas tu był?"
+                                        burmistrz "Ej ty dobra podoba mi się ta kryjówka, robimy to"
+                                        
+                                        scene bg black with fade
+                                        scene bg kwatera2 with fade
+                                        show burmistrz neutral at slightright
+                                        show luszcz neutral at slightleft
 
-                hide burmistrz
-                show luszcz neutral at center
+                                        luszcz "No i nie widać tak jak mówiłem"
 
-                luszcz "…"
-                
-                play music "audio/music/pole.mp3"
-                jump sloneczna
+                                        burmistrz "ahh Łuszczu ty to masz łeb"
+                                    
+                                    "{b}Zjedzmy{/b}":
+                                        luszcz "Zjedzmy go"
+                                        luszcz "kiedyś jadłem zupę z elfa i była smakówa"
+                                        luszcz "Więc zupa z człowieka musi być lepsza z racji na naszą wyższość rasową"
 
+                                        burmistrz "Oh, no dobra"
+                                        burmistrz "W końcu trzeba otwierać sie na nowe smaki"
+
+                                        scene bg black with fade
+
+                                        "{i}Przygotowaliścię wszystkie rzeczy do ogniska, rozpaliliście ogień, wrzuciliście przyprawy do garka i zaczeliścię kroić Nemeczka{/i}"
+
+                                        scene bg kwatera with fade
+                                        show burmistrz neutral at slightright
+                                        show luszcz neutral at slightleft
+
+                                        burmistrz "A co robimy z głową?"
+                                        burmistrz "z niej zupa nie wyjdzie..."
+
+                                        luszcz "Ja ją wezmę, już od dawna potrzebowałem piłki do siatkówki, bo wszystkie poprzednie rozwaliłem"
+
+                                        burmistrz "No dobra skoro ją chcesz"
+
+                                        $ glowa = 1
+
+                                        "{i}*głowa nemeczka została dodana do ekwipunku*{/i}"
+
+                            burmistrz "no a teraz sprawa ważniejsza, co robimy, żeby powstrzymać Hannibala"
+
+                            luszcz "Musimy przejąć, kontrolę nad łańcuchem dowodzenia wojskami republiki"
+                            luszcz "I to ty burmistrzu musisz tego dokonać!"
+                            luszcz "Ja w tym czasię wyruszę na północ i spróbuję opóźnić Hannibala jak mogę"
+
+                            burmistrz "Dobrze, w takim razię powodzenia i niech republika zwycięży!"
+
+                            luszcz "All Hail Republic!"
+
+                        "{b}Nie{/b}":
+                            play music "audio/music/plac.mp3"
+                            jump burmistrz1a
+
+        scene bg black with fade
+
+        "{i}Podczas drogi na północ nie było widać, ani jednej żywej duszy{/i}"
+
+        "{i}Nawet na samej granicy nie było żadnych republikańskich żołnierzy{/i}"
+
+        scene bg polnoc with fade
+        show luszcz neutral at left
+        play music "audio/music/plac.mp3"
+        
+        if burmistrzkill == 1:
+            luszcz "(Naprawdę Nemeczek był pewien, że nie przejdą przez góry kartonów…)"
+        
+        else:
+            luszcz "(Naprawdę Nemeczek jest pewien, że nie przejdą przez góry kartonów…)"
+
+        luszcz "(Muszę zbudować mór)"
+
+        "{i}Lecz zanim stanęła na ziemi pierwsza cegła, przybyły wojska nieprzyjaciela{/i}"
+
+        show luszcz neutral at left
+        show tanya neutral at center
+
+        tanya "żołnierze! Przygotować się do blitzkriegu! Musimy dotrzeć ich stolicy zanim ktokol…."
+
+        tanya "…wiek się pojawi"
+
+        tanya "Kim ty do cholery jesteś? I skąd wiedziałeś, że tu będziemy?"
+
+        luszcz "Jam jestem Maciejus Luszczus i zwom mnie pierwszym strażnikiem republiki!"
+
+        luszcz "i jestem tutaj, aby Ciebie powstrzymać Hannibalu!"
+
+        tanya "Hannibal nie żyje"
+
+        luszcz "Jak to nie żyje!?"
+
+        tanya "Tak to"
+        tanya "Ten sebil stwierdził, że zamiast jeździć NA słoniach, możemy jeździć W słoniach i mieć w ten sposób zwierzęce człogi"
+        tanya "I ten idiota władował się do dupska słonia"
+        tanya "a ten słoń miał sraczkę…"
+        tanya "No i teraz ja, Tanya von Degurechaff tu dowodzę"
+
+        luszcz "aha smutne"
+
+        tanya "smutne, ale prawdziwe"
+        tanya "no, a wracając do rzeczy ważnych"
+        tanya "to stoisz nam na drodzę, więc będziemy musieli ciebie zabić"
+
+        luszcz "spróbujcie jeśli potraficie"
 
 

@@ -74,6 +74,7 @@ label items:
 label items_fabularne:
     default lopatka = 0
     default klucz = 0
+    default glowa = 0
     
 
 
