@@ -20,6 +20,9 @@ label postacie:
     image luszcz zmentzony right = Transform("luszcz zmentzony", xzoom=-1) 
     image luszcz neutral right = Transform("luszcz neutral", xzoom=-1) 
 
+
+    define rand = Character("Ktoś z widowni", color="#8a8a8a")
+
     define eminem = Character("Shadow", color="#32313a")
     define cid = Character("Cid", color="#32313a")
     image eminem sad right = Transform("eminem sad", xzoom=-1) 
@@ -37,6 +40,9 @@ label postacie:
     define emina = Character("Eminem", color="#a2a571")
     
     define burmistrz = Character("Burmistrz", color="#f8bf44")
+    image burmistrz neutral right = Transform("burmistrz neutral", xzoom=-1) 
+
+    define lb = Character("Łuszcz i Burmistrz", color="#9e9e9e")
 
     define braun = Character("Braun", color="#412607")
     image braun neutral right = Transform("braun neutral", xzoom=-1) 
@@ -44,6 +50,8 @@ label postacie:
     image braun smile right = Transform("braun smile", xzoom=-1) 
 
     define ksiadz = Character("Ksiądz", color="#8607b8")
+
+    define nemeczek = Character("Nemeczek", color="#49290b")
 
     define kosc = Character("Kościelny", color="#9db2f8")
     image kosc neutral left = Transform("kosc neutral", xzoom=-1) 
@@ -57,6 +65,8 @@ label postacie:
     define akane = Character("Akane", color="#ffffff")
     define kibol1 = Character("Kibol 1", color="#ffffff")
     define kibol2 = Character("Kibol 2", color="#ffffff")
+
+    define gnom = Character("Noggin Gnomes", color="#180a9b")
 
 
 label pozycje:
@@ -499,9 +509,12 @@ label wybory:
     define eminem_wybory = 0
     define zyd_wybory = 0
     define braun_wybory = 0
+    define burmistrz_wybory = 0
+    define nemeczek_wybory = 0
 
 label social_links:
     define zyd_social_link = 0
+    define burmistrz_social_link = 0
 
 
 

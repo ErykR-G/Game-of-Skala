@@ -81,6 +81,84 @@ screen kibol2_stats():
 
             text "ATK: [kibol2_min_attack_now]-[kibol2_max_attack_now]" style "dmg_text" xalign 0.5
 
+screen gnom1_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value gnom1_hp_now range gnom1_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if gnom1_hp_now/gnom1_hp > 0.5 else
+                                "#ffcc00" if gnom1_hp_now/gnom1_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[gnom1_hp_now]/[gnom1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [gnom1_min_attack_now]-[gnom1_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen gnom2_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value gnom2_hp_now range gnom2_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if gnom2_hp_now/gnom2_hp > 0.5 else
+                                "#ffcc00" if gnom2_hp_now/gnom2_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[gnom2_hp_now]/[gnom2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [gnom2_min_attack_now]-[gnom2_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen gnom3_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value gnom3_hp_now range gnom3_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if gnom3_hp_now/gnom3_hp > 0.5 else
+                                "#ffcc00" if gnom3_hp_now/gnom3_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[gnom3_hp_now]/[gnom3_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [gnom3_min_attack_now]-[gnom3_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen yippee1_stats():
     fixed:
         xpos 0.76

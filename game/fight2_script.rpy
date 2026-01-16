@@ -1,7 +1,7 @@
 label fight21_stats:
     default trup3_sex = 0
     default trup4_sex = 0
-    default braun_sex = 1
+    default braun_sex = 0
 
     default trup3_hp = 15
     default trup4_hp = 15
@@ -18800,6 +18800,8 @@ label fight21:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 1 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight25
                                                 
             else:
                 play sound "audio/sfx/trup3_weapon.mp3"
@@ -19917,6 +19919,8 @@ label fight21:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Grzegorz Braun został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight26
                                                 
             else:
                 if braun_weapon >= 1:
@@ -21179,6 +21183,8 @@ label fight21:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 2 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump start_fight21
                                                 
             else:
                 if trup4_weapon >= 1:

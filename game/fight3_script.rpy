@@ -1,7 +1,7 @@
 label fight31_stats:
     default yippee1_sex = 0
     default yippee2_sex = 0
-    default trup5_sex = 1
+    default trup5_sex = 0
 
     default yippee1_hp = 50
     default yippee2_hp = 50
@@ -18345,6 +18345,8 @@ label fight31:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Yippee 1 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight35
                                                 
             else:
                 play sound "audio/sfx/yippee1_weapon.mp3"
@@ -19450,6 +19452,8 @@ label fight31:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Akane został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight36
                                                 
             else:
                 if trup5_weapon >= 1:
@@ -20561,6 +20565,8 @@ label fight31:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Yippee 2 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump start_fight31
                                                 
             else:
                 if yippee2_weapon >= 1:

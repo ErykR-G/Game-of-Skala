@@ -1,7 +1,7 @@
 label fight41_stats:
     default trup6_sex = 0
     default trup7_sex = 0
-    default czarny_sex = 1
+    default czarny_sex = 0
 
     default trup6_hp = 15
     default trup7_hp = 15
@@ -18163,6 +18163,8 @@ label fight41:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 1 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight45
                                                 
             else:
                 play sound "audio/sfx/trup6_weapon.mp3"
@@ -19452,6 +19454,8 @@ label fight41:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Czarny został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight46
                                                 
             else:
                 if czarny_weapon >= 1:
@@ -20563,6 +20567,8 @@ label fight41:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 2 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump start_fight41
                                                 
             else:
                 if trup7_weapon >= 1:

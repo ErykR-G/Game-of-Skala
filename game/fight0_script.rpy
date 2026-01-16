@@ -18365,6 +18365,8 @@ label fight01:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 1 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight05
                                                 
             else:
                 play sound "audio/sfx/trup1_weapon.mp3"
@@ -19470,6 +19472,8 @@ label fight01:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Eminem został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight06
                                                 
             else:
                 if emina_weapon >= 1:
@@ -20892,6 +20896,8 @@ label fight01:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 2 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump start_fight01
                                                 
             else:
                 if trup2_weapon >= 1:

@@ -7,6 +7,10 @@ default bohaterow_wrzesnia = 0
 default lipowa = 0
 default granica = 0
 
+default cmentarz_zydowskix = 0
+default cmentarzx = 0
+default urzad_gminyx = 0
+
 label menu_lokacji:
     label rynek:
         play sound "audio/sfx/traveling.mp3" 
@@ -25,95 +29,137 @@ label menu_lokacji:
             scene bg black with fade
             scene bg rynek_noc with fade
 
-        menu:
-            "{i}<--- Alejka (10 min){/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 1
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label rynek2:
+            menu:
+                "{i}<--- Alejka (10 min){/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump alejka
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 1
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump alejka
 
-            "{i}<--- Słoneczna (10 min){/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 1
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                "{i}<--- Słoneczna (10 min){/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump sloneczna
-            
-            "{i}Parking (10 min) --->{/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 1
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                        $ rynek = 0
+                        $ sloneczna = 1
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump sloneczna
+                
+                "{i}Parking (10 min) --->{/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump parking
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 1
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump parking
 
-            "{i}Bohaterów Września (10 min) --->{/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 1
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                "{i}Bohaterów Września (10 min) --->{/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump bohaterow_wrzesnia
-    
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 1
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump bohaterow_wrzesnia
+                
+                "{b}Urząd Gminy{/b}": 
+                    $ urzad_gminyx = 0
+                    if burmistrz_social_link == 0:
+                        $ urzad_gminyx += 1
+                        "{i}W ratuszu trwają obecnie burzliwe obrady na temat budżetu Skały{/i}"
+                    
+                    if urzad_gminyx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump rynek2
+
+                    else:
+                        if urzad_gminyx == 1:
+                            if burmistrz_social_link == 0:
+                                menu:
+                                    "{b}Czy chcę wziać udział w obradach (5h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 300
+                                        jump burmistrz1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump rynek2
+
+                        else:
+                            if urzad_gminyx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Wziąć udział w obradach (5h){/b}" if burmistrz_social_link == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 300
+                                        jump burmistrz1
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump rynek2
+        
     label sloneczna:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -131,37 +177,38 @@ label menu_lokacji:
             scene bg black with fade
             scene bg sloneczna_noc with fade
 
-        menu:      
-            "{i}Rynek (10 min) --->{/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 1
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label sloneczna2:
+            menu:      
+                "{i}Rynek (10 min) --->{/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump rynek
-            
-            "{b}Plac Broni (10min){/b}":
-                $ timer += 10
-                $ lopatka = 1
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                "{i}dostajesz łopatke{/i}"
-                jump sloneczna
-    
+                        $ rynek = 1
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump rynek
+                
+                "{b}Plac Broni (10min){/b}":
+                    $ timer += 10
+                    $ lopatka = 1
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    "{i}dostajesz łopatke{/i}"
+                    jump sloneczna
+        
     label alejka:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -179,41 +226,83 @@ label menu_lokacji:
             scene bg black with fade
             scene bg alejka_noc with fade
 
-        menu:      
-            "{i}Rynek (10 min) --->{/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 1
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label alejka2:
+            menu:      
+                "{i}Rynek (10 min) --->{/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump rynek
-            
-            "{b}Sklep Monopolowy (60 min){/b}" if zyd_social_link == 0:
-                $ timer += 60
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                jump zyd1
-            
-            "{b}Sklep Monopolowy (15 min){/b}" if zyd_social_link > 0:
-                $ timer += 15
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                jump sklep_monopolowy
-    
+                        $ rynek = 1
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump rynek
+                
+                "{b}❓ Sklep Monopolowy (60 min){/b}" if zyd_social_link == 0:
+                    $ timer += 60
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    jump zyd1
+                
+                "{b}🛒 Sklep Monopolowy (15 min){/b}" if zyd_social_link > 0:
+                    $ timer += 15
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    jump sklep_monopolowy
+                
+                "{b}Urząd Gminy{/b}": 
+                    $ urzad_gminyx = 0
+                    if burmistrz_social_link == 0:
+                        $ urzad_gminyx += 1
+                        "{i}W ratuszu trwają obecnie burzliwe obrady na temat budżetu Skały{/i}"
+                    
+                    if urzad_gminyx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump alejka2
+
+                    else:
+                        if urzad_gminyx == 1:
+                            if burmistrz_social_link == 0:
+                                menu:
+                                    "{b}Czy chcę wziać udział w obradach (5h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 300
+                                        jump burmistrz1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
+
+                        else:
+                            if urzad_gminyx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Wziąć udział w obradach (5h){/b}" if burmistrz_social_link == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 300
+                                        jump burmistrz1
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
+        
     label parking:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -231,51 +320,52 @@ label menu_lokacji:
             scene bg black with fade
             scene bg parking_noc with fade
 
-        menu:
-            "{i}<--- Wolbromska (20 min){/i}":
-                $ timer += 20
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 1
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label parking2:
+            menu:
+                "{i}<--- Wolbromska (20 min){/i}":
+                    $ timer += 20
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump wolbromska
-            
-            "{i}<--- Rynek (10 min){/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 1
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 1
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump wolbromska
+                
+                "{i}<--- Rynek (10 min){/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump rynek
-    
+                        $ rynek = 1
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump rynek
+        
     label wolbromska:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -293,29 +383,30 @@ label menu_lokacji:
             scene bg black with fade
             scene bg wolbromska_noc with fade
 
-        menu:
-            "{i}Parking (20 min) --->{/i}":
-                $ timer += 20
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 1
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label wolbromska2:
+            menu:
+                "{i}Parking (20 min) --->{/i}":
+                    $ timer += 20
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump parking
-    
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 1
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump parking
+        
     label bohaterow_wrzesnia:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -333,51 +424,52 @@ label menu_lokacji:
             scene bg black with fade
             scene bg bohaterow_wrzesnia_noc with fade
 
-        menu:
-            "{i}<--- Rynek (10 min){/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 1
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label bohaterow_wrzesnia2:
+            menu:
+                "{i}<--- Rynek (10 min){/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump rynek
+                        $ rynek = 1
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump rynek
 
-            "{i}<--- Lipowa (10 min){/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 1
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                "{i}<--- Lipowa (10 min){/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump lipowa
-    
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 1
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump lipowa
+        
     label lipowa:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -395,74 +487,168 @@ label menu_lokacji:
             scene bg black with fade
             scene bg lipowa_noc with fade
 
-        menu:
-            "{i}Bohaterów Września (10 min) --->{/i}":
-                $ timer += 10
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 1
-                    $ lipowa = 0
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label lipowa2:
+            menu:
+                "{i}Bohaterów Września (10 min) --->{/i}":
+                    $ timer += 10
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump bohaterow_wrzesnia
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 1
+                        $ lipowa = 0
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump bohaterow_wrzesnia
 
-            "{i}Granica Skały (20 min) --->{/i}":
-                $ timer += 20
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 0
-                    $ granica = 1
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                "{i}Granica Skały (20 min) --->{/i}":
+                    $ timer += 20
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump granica
-            
-            "{b}Cmentarz Żydowski (30 min){/b}" if zyd_social_link == 1:
-                $ timer += 30
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                jump zyd2
-            
-            "{b}Cmentarz (15 min){/b}" if zyd_social_link == 2:
-                $ timer += 15
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                jump zyd3
-            
-            "{b}Cmentarz (3h){/b}" if zyd_social_link == 3:
-                if lopatka == 1:
-                    play sound "audio/sfx/traveling.mp3"
-                    scene bg black with fade
-                    $ timer += 180
-                    jump zyd4
-                else:
-                    "{i}Na cmentarzu czeka na mnie żyd, ale nadal nie zdobyłem dla niego łopatki{/i}"
-                    "{i}Muszę się tym zająć zanim się z nim spotkam{/i}"
-                    jump lipowa
-    
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 1
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump granica
+                
+                "{b}Cmentarz Żydowski{/b}": 
+                    $ cmentarz_zydowskix = 0
+                    if zyd_social_link == 1:
+                        $ cmentarz_zydowskix += 1
+                        "{i}Na cmentarzu żydowskim czeka na mnie Żyd{/i}"
+                        "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
+                    
+                    if cmentarz_zydowskix == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump lipowa2
+
+                    else:
+                        if cmentarz_zydowskix == 1:
+                            if zyd_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+
+                        else:
+                            if cmentarz_zydowskix > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+                
+                "{b}Cmentarz{/b}":
+                    $ cmentarzx = 0
+                    if zyd_social_link == 3 and lopatka == 1:
+                        $ cmentarzx += 1
+                        "{i}Na cmentarzu czeka na mnie Żyd, z którym zamierzamy wykopać prochy jego dziadka{/i}"
+                        "{i}Miałem w tym celu znaleźć łopatkę, co udało mi się wykonać{/i}"
+                    
+                    if zyd_social_link == 3 and lopatka == 0:
+                        "{i}Na cmentarzu czeka na mnie żyd, ale nadal nie zdobyłem dla niego łopatki{/i}"
+                        "{i}Muszę się tym zająć zanim się z nim spotkam{/i}"
+                    
+                    if zyd_social_link == 2:
+                        $ cmentarzx += 1
+                        "{i}Żyd czeka na mnie pod kwaterą żołnierzy 1 wojny światowej{/i}"
+                        "{i}Mamy razem wykopać zwłoki jego pra-pra-dziadka{/i}"
+
+                    if cmentarzx == 0:
+                        if zyd_social_link == 3 and lopatka == 0:
+                            jump lipowa2
+
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump lipowa2
+
+                    else:
+                        if cmentarzx == 1:
+                            if zyd_social_link == 3 and lopatka == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (3h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump zyd4
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+                            
+                            if zyd_social_link == 2:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump zyd3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+
+                        else:
+                            if cmentarzx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Żydem (3h){/b}" if zyd_social_link == 3 and lopatka == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump zyd4
+
+                                    "{b}Spotkaj się z Żydem (15min){/b}" if zyd_social_link == 2:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump zyd3
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+        
     label granica:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -480,50 +666,153 @@ label menu_lokacji:
             scene bg black with fade
             scene bg granica_noc with fade
 
-        menu:
-            "{i}<--- Lipowa (20 min){/i}":
-                $ timer += 20
-                $ kostka = renpy.random.randint(1, 11)
-                if kostka == 1:
-                    $ rynek = 0
-                    $ sloneczna = 0
-                    $ alejka = 0
-                    $ parking = 0
-                    $ wolbromska = 0
-                    $ bohaterow_wrzesnia = 0
-                    $ lipowa = 1
-                    $ granica = 0
-                    "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+        label granica2:
+            menu:
+                "{i}<--- Lipowa (20min){/i}":
+                    $ timer += 20
+                    $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
-                        jump raem_fight
-                    if kostka == 2:
-                        jump fightx2
-                    if kostka == 3:
-                        jump fightx3
-                jump lipowa    
-            
-            "{b}Cmentarz Żydowski (30 min){/b}" if zyd_social_link == 1:
-                $ timer += 30
-                jump zyd2
-            
-            "{b}Cmentarz (15 min){/b}" if zyd_social_link == 2:
-                $ timer += 15
-                jump zyd3
-            
-            "{b}Cmentarz (3h){/b}" if zyd_social_link == 3 and lopatka == 1:
-                if lopatka == 1:
-                    $ timer += 180
-                    jump zyd4
-                else:
-                    "{i}Na cmentarzu czeka na mnie żyd, ale nadal nie zdobyłem dla niego łopatki{/i}"
-                    "{i}Muszę się tym zająć zanim się z nim spotkam{/i}"
-                    jump lipowa
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 1
+                        $ granica = 0
+                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+                        $ kostka = renpy.random.randint(1, 3)
+                        if kostka == 1:
+                            jump raem_fight
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 3:
+                            jump fightx3
+                    jump lipowa    
+                
+                "{b}Cmentarz Żydowski{/b}": 
+                    $ cmentarz_zydowskix = 0
+                    if zyd_social_link == 1:
+                        $ cmentarz_zydowskix += 1
+                        "{i}Na cmentarzu żydowskim czeka na mnie Żyd{/i}"
+                        "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
+                    
+                    if cmentarz_zydowskix == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump granica2
 
-            "{b}TEST WALKA{/b}":
-                play sound "audio/sfx/traveling.mp3"
-                scene bg black with fade
-                jump faubla     
+                    else:
+                        if cmentarz_zydowskix == 1:
+                            if zyd_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+
+                        else:
+                            if cmentarz_zydowskix > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+                
+                "{b}Cmentarz{/b}":
+                    $ cmentarzx = 0
+                    if zyd_social_link == 3 and lopatka == 1:
+                        $ cmentarzx += 1
+                        "{i}Na cmentarzu czeka na mnie Żyd, z którym zamierzamy wykopać prochy jego dziadka{/i}"
+                        "{i}Miałem w tym celu znaleźć łopatkę, co udało mi się wykonać{/i}"
+                    
+                    if zyd_social_link == 3 and lopatka == 0:
+                        "{i}Na cmentarzu czeka na mnie żyd, ale nadal nie zdobyłem dla niego łopatki{/i}"
+                        "{i}Muszę się tym zająć zanim się z nim spotkam{/i}"
+                    
+                    if zyd_social_link == 2:
+                        $ cmentarzx += 1
+                        "{i}Żyd czeka na mnie pod kwaterą żołnierzy 1 wojny światowej{/i}"
+                        "{i}Mamy razem wykopać zwłoki jego pra-pra-dziadka{/i}"
+
+                    if cmentarzx == 0:
+                        if zyd_social_link == 3 and lopatka == 0:
+                            jump granica2
+
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump granica2
+
+                    else:
+                        if cmentarzx == 1:
+                            if zyd_social_link == 3 and lopatka == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (3h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump zyd4
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+                            
+                            if zyd_social_link == 2:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump zyd3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+
+                        else:
+                            if cmentarzx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Żydem (3h){/b}" if zyd_social_link == 3 and lopatka == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump zyd4
+
+                                    "{b}Spotkaj się z Żydem (15min){/b}" if zyd_social_link == 2:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump zyd3
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+
+
+
+
+                "{b}TEST WALKA{/b}":
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    jump faubla     
 
 
 
@@ -592,8 +881,40 @@ label menu_lokacji:
         if granica == 1:
             jump granica
 
-    label fightx2:
-        "po walce 2"
+    label gnoms_fight:
+        scene bg gnoms
+        stop music
+        show luszcz neutral at left
+        show gnom1 neutral:
+            xalign 0.55
+            yalign 1.0
+        show gnom2 neutral:
+            xalign 0.95
+            yalign 1.0
+        show gnom3 neutral:
+            xalign 0.75
+            yalign 1.0
+        play sound "audio/sfx/gnomowo.mp3"
+        gnom "You've been gnomed!"
+
+        jump fight61
+
+    label after_fight61:
+        scene bg gnoms
+        stop music
+        show luszcz neutral at left
+        show gnom1 neutral:
+            xalign 0.55
+            yalign 1.0
+        show gnom2 neutral:
+            xalign 0.95
+            yalign 1.0
+        show gnom3 neutral:
+            xalign 0.75
+            yalign 1.0
+        play sound "audio/sfx/gnomowo.mp3"
+        gnom "We've been gnomed!"
+
         play music "audio/music/pole.mp3"
         if rynek == 1:
             jump rynek

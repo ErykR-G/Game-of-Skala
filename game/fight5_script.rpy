@@ -1,7 +1,7 @@
 label fight51_stats:
-    default ram_sex = 0
-    default rem_sex = 0
-    default trup8_sex = 1
+    default ram_sex = 1
+    default rem_sex = 1
+    default trup8_sex = 0
 
     default ram_hp = 35
     default rem_hp = 35
@@ -18555,6 +18555,8 @@ label fight51:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Ram został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight55
                                                 
             else:
                 play sound "audio/sfx/ram_weapon.mp3"
@@ -19822,6 +19824,8 @@ label fight51:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Akane został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight56
                                                 
             else:
                 if trup8_weapon >= 1:
@@ -20939,6 +20943,8 @@ label fight51:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Rem został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump start_fight51
                                                 
             else:
                 if rem_weapon >= 1:

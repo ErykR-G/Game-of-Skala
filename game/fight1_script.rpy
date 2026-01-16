@@ -18561,6 +18561,8 @@ label fight11:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 1 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight15
                                                 
             else:
                 play sound "audio/sfx/kibol1_weapon.mp3"
@@ -19672,6 +19674,8 @@ label fight11:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Akane został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump faza_fight16
                                                 
             else:
                 if akane_weapon >= 1:
@@ -20789,6 +20793,8 @@ label fight11:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Kibol 2 został zablokowany{/i}"
                 $ urban_obrona = 1
+
+                jump start_fight11
                                                 
             else:
                 if kibol2_weapon >= 1:
