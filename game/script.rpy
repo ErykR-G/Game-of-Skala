@@ -54,6 +54,8 @@ label postacie:
 
     define ksiadz = Character("Ksiądz", color="#8607b8")
 
+    define toxic = Character("Toxic Pea", color="#7ec753")
+
     define nemeczek = Character("Nemeczek", color="#49290b")
 
     define kosc = Character("Kościelny", color="#9db2f8")
@@ -70,6 +72,8 @@ label postacie:
     define kibol2 = Character("Kibol 2", color="#ffffff")
 
     define gnom = Character("Noggin Gnomes", color="#180a9b")
+
+    define turek = Character("Turek", color="#910909")
 
 
 label pozycje:
@@ -506,18 +510,20 @@ label fight_stats:
 
 
 label prolog_decyzje:
-    define ofiara = 0
+    default ofiara = 0
 
 label wybory:
-    define eminem_wybory = 0
-    define zyd_wybory = 0
-    define braun_wybory = 0
-    define burmistrz_wybory = 0
-    define nemeczek_wybory = 0
+    default eminem_wybory = 0
+    default zyd_wybory = 0
+    default braun_wybory = 0
+    default burmistrz_wybory = 0
+    default nemeczek_wybory = 0
+    default toxic_pea_wybory = 0
 
 label social_links:
-    define zyd_social_link = 0
-    define burmistrz_social_link = 0
+    default zyd_social_link = 0
+    default burmistrz_social_link = 0
+    default toxic_pea_social_link = 0
 
 
 

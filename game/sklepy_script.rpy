@@ -1,9 +1,13 @@
 label sklepy_define:
-    define monopolowy_den = 0
-    define monopolowy_jabole = 0
-    define monopolowy_drpepper = 0
-    define monopolowy_royal = 0
-    define monopolowy_granat = 0
+    default monopolowy_den = 0
+    default monopolowy_jabole = 0
+    default monopolowy_drpepper = 0
+    default monopolowy_royal = 0
+    default monopolowy_granat = 0
+    default lag = 0
+    default os = 0
+    default mieso = 0
+    default samosamo = 0
 
 label sklepy:
     label sklep_monopolowy:
@@ -116,9 +120,149 @@ label sklepy:
                     jump alejka
         
     label kebab:
+        $ mieso = 0
+        $ os = 0
+        $ lag = 0
+        $ samosamo = 0
         play music "audio/music/kebab.mp3"
         scene bg kebab with fade
         show luszcz neutral at left
-        show toxic_pea neutral at right
+        if toxic_pea_social_link == 0:
+            show toxic_pea neutral at right
 
         luszcz "Dzień dobry"
+
+        menu:
+            "{b}Czy na pewno chcę kebaba?{/b}"
+
+            "{b}Tak (2 💰){/b}":
+                $ money -= 2
+                luszcz "Chciałbym zamówić kebaba…"
+                menu:
+                    "{b}Jakiego kebaba chcę..?{/b}"
+
+                    "{b}Zwykły{/b}":
+                        $ mieso = 1
+
+                    "{b}Samo mięso{/b}":
+                        $ mieso = 1
+                        $ samosamo = 1
+                        luszcz "Z samym mięsem..."
+
+                    "{b}Bez mięsa{/b}":
+                        luszcz "Bez mięsa..."
+
+                if mieso == 1:
+                    menu:
+                        "{b}Jakie mięso chcę..?{/b}"
+
+                        "{b}Baranina{/b}":
+                            luszcz "Baranina"
+
+                        "{b}Wołowina{/b}":
+                            luszcz "Wołowina"
+
+                        "{b}Kurczak{/b}":
+                            luszcz "Kurczak"
+                        
+                        "{b}Miszany{/b}":
+                            luszcz "Mięso miszane"
+                
+                menu:
+                    "{b}Jaki sos chcę..?{/b}"
+
+                    "{b}Sos ostry{/b}":
+                        $ os = 1
+                        luszcz "Sos ostry"
+
+                    "{b}Sos łagodny{/b}":
+                        $ lag = 1
+                        luszcz "Sos łagodny"
+
+
+                turek "Robi się szefie 😊"
+
+                turek "turturtur tur"
+                turek "tur tur tur tur tur"
+                turek "tur turtur"
+
+                if mieso == 0 and toxic_pea_social_link == 0:
+                    toxic "Obrzydliwe…"
+                    toxic "Ej ty, nie jadasz mięsa czy coś?"
+                    luszcz "Nie no, jem, ale teraz dla odmiany sobie odpóściłem… Chciałem zobaczyć jak posmakuje~~"
+                    toxic "To może ci dla odmiany wybombie i zobaczę jak się błagasz o litość"
+
+                    show luszcz blush at left
+
+                    toxic "Wy byście tylko próbowali i próbowali"
+                    toxic "Aż wszystko zwiędnie"
+                    toxic "Szkoda strzępić…"
+
+                    $ toxic_pea_social_link = 10
+                    $ toxic_pea_wybory = 0
+                    hide toxic_pea
+                    show luszcz neutral at left
+
+                else:
+                    "{i}…{/i}"
+
+                turek "Proszę gotowe smacznego!"
+
+                if lag == 1:
+                    if lagodny == 0:
+                        $ ile_item += 1
+                    $ lagodny += 1
+                    "{i}Kebab Łagodny został dodany do ekwipunku{/i}"
+
+                if os == 1:
+                    if ostry == 0:
+                        $ ile_item += 1
+                    $ ostry += 1
+                    "{i}Kebab Ostry został dodany do ekwipunku{/i}"
+
+                luszcz "Dziękuję panie turek!"
+                luszcz "Serwus!"
+
+                if samosamo == 1 and toxic_pea_social_link == 0:
+                    toxic "Ej ty"
+                    toxic "Dobry wybór"
+                    toxic "Nikt tutaj poza naszą dwójką nie jada z samym mięsem"
+
+                    show luszcz blush at left
+
+                    luszcz "Ah… tak?"
+
+                    turek "Zgadza się!"
+
+                    luszcz "No widzisz, co za niespodzianka"
+
+                    show luszcz neutral at left
+
+                    luszcz "Ci inni ludzie… głupi… co ciągle tylko by.. Jedli warzywa i deptali po trawie"
+
+                    toxic "No dosłownie"
+
+                    luszcz "A wiesz że nawet nie lubie niektórych warzyw? Tak kompletnie?"
+
+                    toxic "Erm.. yeah, ja czasem też"
+                    toxic "Uroczy jesteś, chciałbyś może pozbijać trochę zombiaków z mojego trawnika w nocy?"
+
+                    luszcz "Oh..! Um…. pewnie!"
+
+                    toxic "Masz mój adres, mieszkam koło Wołbrymskiej"
+
+                    luszcz "Okej… dzięki! Widzimy się! W nocy!"
+
+                    toxic "Pewnie, narka"
+
+                    $ toxic_pea_social_link = 1
+
+                play music "audio/music/pole.mp3"
+                jump bohaterow_wrzesnia
+
+
+                
+            "{b}Nie{/b}":
+                luszcz "dowidzenia"
+                play music "audio/music/pole.mp3"
+                jump bohaterow_wrzesnia
