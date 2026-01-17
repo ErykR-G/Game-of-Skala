@@ -1,4 +1,6 @@
 label fight51_stats:
+    default fight51_przegranko = 0
+
     default ram_sex = 1
     default rem_sex = 1
     default trup8_sex = 0
@@ -21947,6 +21949,7 @@ label fight51:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        $ fight51_przegranko += 1
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien
@@ -22214,8 +22217,13 @@ label fight51:
                 play sound "audio/sfx/return.mp3"
                 jump fight51
 
+            "{b}Pomiń Walkę{/b}" if fight51_przegranko >= 4:
+                $ fight51_przegranko = 0
+                $ timer += 20
+                jump wygranko_fight51
 
     label wygranko_fight51:
+        $ fight51_przegranko = 0
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 
         stop music

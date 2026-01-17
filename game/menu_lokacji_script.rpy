@@ -470,6 +470,11 @@ label menu_lokacji:
                             jump fightx3
                     jump lipowa
         
+                "{b}🛒 Kebab (15 min){/b}":
+                    $ timer += 15
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    jump kebab
     label lipowa:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0

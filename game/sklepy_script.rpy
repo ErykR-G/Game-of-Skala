@@ -114,3 +114,11 @@ label sklepy:
                     hide luszcz
                     play music "audio/music/pole.mp3"
                     jump alejka
+        
+    label kebab:
+        play music "audio/music/kebab.mp3"
+        scene bg kebab with fade
+        show luszcz neutral at left
+        show toxic_pea neutral at right
+
+        luszcz "Dzień dobry"

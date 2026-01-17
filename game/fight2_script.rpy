@@ -1,4 +1,6 @@
 label fight21_stats:
+    default fight21_przegranko = 0
+
     default trup3_sex = 0
     default trup4_sex = 0
     default braun_sex = 0
@@ -22039,6 +22041,7 @@ label fight21:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        $ fight21_przegranko += 1
         hide pianka1
         hide pianka2
         hide pianka3
@@ -22306,8 +22309,13 @@ label fight21:
                 play sound "audio/sfx/return.mp3"
                 jump fight21
 
+            "{b}Pomiń Walkę{/b}" if fight21_przegranko >= 4:
+                $ fight21_przegranko = 0
+                $ timer += 20
+                jump wygranko_fight21
 
     label wygranko_fight21:
+        $ fight21_przegranko = 0
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 
         stop music

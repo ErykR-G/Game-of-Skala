@@ -1,4 +1,5 @@
 label fight01_stats:
+    default fight01_przegranko = 0
     default trup1_sex = 0
     default trup2_sex = 0
     default emina_sex = 1
@@ -21746,6 +21747,7 @@ label fight01:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        $ fight01_przegranko += 1
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien
@@ -21999,8 +22001,13 @@ label fight01:
                 $ emina_stun = 0
                 jump fight01
 
+            "{b}Pomiń Walkę{/b}" if fight01_przegranko >= 4:
+                $ fight01_przegranko = 0
+                $ timer += 20
+                jump wygranko_fight01
 
     label wygranko_fight01:
+        $ fight01_przegranko = 0
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 
         stop music

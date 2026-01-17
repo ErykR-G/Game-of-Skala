@@ -1,4 +1,6 @@
 label fight11_stats:
+    default fight11_przegranko = 0
+    
     default kibol1_sex = 0
     default kibol2_sex = 0
     default akane_sex = 1
@@ -21643,6 +21645,7 @@ label fight11:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        $ fight11_przegranko += 1
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien
@@ -21910,8 +21913,13 @@ label fight11:
                 play sound "audio/sfx/return.mp3"
                 jump fight11
 
+            "{b}Pomiń Walkę{/b}" if fight11_przegranko >= 4:
+                $ fight11_przegranko = 0
+                $ timer += 20
+                jump wygranko_fight11
 
     label wygranko_fight11:
+        $ fight11_przegranko = 0
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 
         stop music

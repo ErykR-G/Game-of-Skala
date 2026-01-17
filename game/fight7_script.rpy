@@ -1,4 +1,5 @@
 label fight71_stats:
+    default fight71_przegranko = 0
     default kartaginczyk1_sex = 0
     default kartaginczyk2_sex = 0
     default tanya_sex = 1
@@ -22438,6 +22439,7 @@ label fight71:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
+        $ fight71_przegranko += 1
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien
@@ -22713,8 +22715,13 @@ label fight71:
                 play sound "audio/sfx/return.mp3"
                 jump fight71
 
+            "{b}Pomiń Walkę{/b}" if fight71_przegranko >= 4:
+                $ fight71_przegranko = 0
+                $ timer += 20
+                jump wygranko_fight71
 
     label wygranko_fight71:
+        $ fight71_przegranko = 0
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 
         stop music
