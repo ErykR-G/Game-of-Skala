@@ -1386,12 +1386,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide screen tarczownik1_stats
             hide screen tarczownik2_stats
@@ -1759,12 +1765,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide screen tarczownik1_stats
             hide screen tarczownik2_stats
@@ -5629,7 +5641,7 @@ label fight21:
                                         play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Grzegorz Braun.  \nStatystyki Grzegorz Braun zostały stale drastycznie osłabione.{/i}"
-                                        hide trup4_weapon
+                                        hide braun_weapon
                                         hide chwyta
                                     
                                     else:
@@ -5703,7 +5715,7 @@ label fight21:
                                         play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Kibol 2.  \nStatystyki Kibol 2 zostały stale drastycznie osłabione.{/i}"
-                                        hide braun_weapon
+                                        hide trup4_weapon
                                         hide chwyta
                                     
                                     else:
@@ -8174,12 +8186,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -12205,12 +12223,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -16241,12 +16265,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -16620,12 +16650,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -18734,12 +18770,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -19868,12 +19910,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -19929,8 +19977,8 @@ label fight21:
                 else:
                     play sound "audio/sfx/reka.mp3"
 
-                if braun_obrona == 1:
-                    $ braun_hp_now -= int(braun_attack / 2)
+                if urban_obrona == 1:
+                    $ urban_hp_now -= int(braun_attack / 2)
 
                     $ dmg = int(braun_attack / 2)
                     "{i}Grzegorz Braun zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
@@ -21132,12 +21180,18 @@ label fight21:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats

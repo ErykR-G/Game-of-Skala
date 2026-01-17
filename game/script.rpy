@@ -42,6 +42,9 @@ label postacie:
     define burmistrz = Character("Burmistrz", color="#f8bf44")
     image burmistrz neutral right = Transform("burmistrz neutral", xzoom=-1) 
 
+    define tanya = Character("Tanya", color="#215f36")
+    image tanya neutral right = Transform("tanya neutral", xzoom=-1) 
+
     define lb = Character("Łuszcz i Burmistrz", color="#9e9e9e")
 
     define braun = Character("Braun", color="#412607")

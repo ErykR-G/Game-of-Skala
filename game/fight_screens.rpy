@@ -3,7 +3,7 @@
     color "#dddddd"
     outlines [(1, "#00000080", 0, 0)]
 
-screen kibol1_stats():
+screen kartaginczyk1_stats():
     fixed:
         xpos 0.76
         ypos 0.44  
@@ -18,16 +18,16 @@ screen kibol1_stats():
                 xsize 200 
                 ysize 14
 
-                bar value kibol1_hp_now range kibol1_hp xsize 200 ysize 14:
+                bar value kartaginczyk1_hp_now range kartaginczyk1_hp xsize 200 ysize 14:
                     left_bar Solid(
-                                "#00cc00" if kibol1_hp_now/kibol1_hp > 0.5 else
-                                "#ffcc00" if kibol1_hp_now/kibol1_hp > 0.2 else
+                                "#00cc00" if kartaginczyk1_hp_now/kartaginczyk1_hp > 0.5 else
+                                "#ffcc00" if kartaginczyk1_hp_now/kartaginczyk1_hp > 0.2 else
                                 "#ff0000"
                             )
 
-                text "[kibol1_hp_now]/[kibol1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+                text "[kartaginczyk1_hp_now]/[kartaginczyk1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
 
-            text "ATK: [kibol1_min_attack_now]-[kibol1_max_attack_now]" style "dmg_text" xalign 0.5
+            text "ATK: [kartaginczyk1_min_attack_now]-[kartaginczyk1_max_attack_now]" style "dmg_text" xalign 0.5
 
 screen akane_stats():
     fixed:
@@ -80,6 +80,84 @@ screen kibol2_stats():
                 text "[kibol2_hp_now]/[kibol2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
 
             text "ATK: [kibol2_min_attack_now]-[kibol2_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen kartaginczyk1_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value kartaginczyk1_hp_now range kartaginczyk1_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if kartaginczyk1_hp_now/kartaginczyk1_hp > 0.5 else
+                                "#ffcc00" if kartaginczyk1_hp_now/kartaginczyk1_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[kartaginczyk1_hp_now]/[kartaginczyk1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [kartaginczyk1_min_attack_now]-[kartaginczyk1_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen tanya_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value tanya_hp_now range tanya_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if tanya_hp_now/tanya_hp > 0.5 else
+                                "#ffcc00" if tanya_hp_now/tanya_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[tanya_hp_now]/[tanya_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [tanya_min_attack_now]-[tanya_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen kartaginczyk2_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value kartaginczyk2_hp_now range kartaginczyk2_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if kartaginczyk2_hp_now/kartaginczyk2_hp > 0.5 else
+                                "#ffcc00" if kartaginczyk2_hp_now/kartaginczyk2_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[kartaginczyk2_hp_now]/[kartaginczyk2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [kartaginczyk2_min_attack_now]-[kartaginczyk2_max_attack_now]" style "dmg_text" xalign 0.5
 
 screen gnom1_stats():
     fixed:

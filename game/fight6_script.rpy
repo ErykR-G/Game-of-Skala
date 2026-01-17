@@ -1384,12 +1384,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide screen tarczownik1_stats
             hide screen tarczownik2_stats
@@ -1751,12 +1757,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide screen tarczownik1_stats
             hide screen tarczownik2_stats
@@ -5675,7 +5687,7 @@ label fight61:
                                         play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Noggin Gnome 2.  \nStatystyki Noggin Gnome 2 zostały stale drastycznie osłabione.{/i}"
-                                        hide gnom3_weapon
+                                        hide gnom2_weapon
                                         hide chwyta
                                     
                                     else:
@@ -5749,7 +5761,7 @@ label fight61:
                                         play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Noggin Gnome 3.  \nStatystyki Noggin Gnome 3 zostały stale drastycznie osłabione.{/i}"
-                                        hide gnom2_weapon
+                                        hide gnom3_weapon
                                         hide chwyta
                                     
                                     else:
@@ -8226,12 +8238,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -12306,12 +12324,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -16391,12 +16415,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -18499,12 +18529,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -18559,7 +18595,7 @@ label fight61:
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
 
-                    $ kostka = renpy.random.randint(1, 3)
+                    $ kostka = renpy.random.randint(1, 2)
                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                         play sound "audio/sfx/gnom.mp3"
                         gnom "You've been Gnomed"
@@ -18585,7 +18621,7 @@ label fight61:
                 "{i}Atak Noggin Gnome 1 został zablokowany{/i}"
                 $ urban_obrona = 1
 
-                $ kostka = renpy.random.randint1(1, 3)
+                $ kostka = renpy.random.randint1(1, 2)
                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                     play sound "audio/sfx/gnom.mp3"
                     gnom "You've been Gnomed"
@@ -18614,7 +18650,7 @@ label fight61:
                     $ dmg = int(gnom1_attack / 2)
                     "{i}Noggin Gnome 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    $ kostka = renpy.random.randint(1, 3)
+                    $ kostka = renpy.random.randint(1, 2)
                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                         play sound "audio/sfx/gnom.mp3"
                         gnom "You've been Gnomed"
@@ -18639,7 +18675,7 @@ label fight61:
 
                     "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                    $ kostka = renpy.random.randint(1, 3)
+                    $ kostka = renpy.random.randint(1, 2)
                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                         play sound "audio/sfx/gnom.mp3"
                         gnom "You've been Gnomed"
@@ -18707,7 +18743,7 @@ label fight61:
                                     $ gnom1_hp_now -= gnom1_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -18749,7 +18785,7 @@ label fight61:
 
                                     "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Łuszczowi{/i}"
 
-                            $ kostka = renpy.random.randint(1, 3)
+                            $ kostka = renpy.random.randint(1, 2)
                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                 play sound "audio/sfx/gnom.mp3"
                                 gnom "You've been Gnomed"
@@ -18784,7 +18820,7 @@ label fight61:
                                         $ gnom1_hp_now -= gnom1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -18826,7 +18862,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Łuszczowi{/i}"
 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -18860,7 +18896,7 @@ label fight61:
                                         $ gnom1_hp_now -= gnom1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -18902,7 +18938,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Łuszczowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -18941,7 +18977,7 @@ label fight61:
                                         $ gnom1_hp_now -= gnom1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -18983,7 +19019,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Jerzemu Urbanowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -19018,7 +19054,7 @@ label fight61:
                                             $ gnom1_hp_now -= gnom1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -19060,7 +19096,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Jerzemu Urbanowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -19094,7 +19130,7 @@ label fight61:
                                             $ gnom1_hp_now -= gnom1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -19136,7 +19172,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Jerzemu Urbanowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -19175,7 +19211,7 @@ label fight61:
                                             $ gnom1_hp_now -= gnom1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -19217,7 +19253,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Żydowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -19252,7 +19288,7 @@ label fight61:
                                                 $ gnom1_hp_now -= gnom1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -19294,7 +19330,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Żydowi{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -19328,7 +19364,7 @@ label fight61:
                                                 $ gnom1_hp_now -= gnom1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -19370,7 +19406,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Żydowi{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -19409,7 +19445,7 @@ label fight61:
                                                 $ gnom1_hp_now -= gnom1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -19451,7 +19487,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Kazumie{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -19486,7 +19522,7 @@ label fight61:
                                                     $ gnom1_hp_now -= gnom1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -19528,7 +19564,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Kazumie{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -19562,7 +19598,7 @@ label fight61:
                                                     $ gnom1_hp_now -= gnom1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -19604,7 +19640,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Kazumie{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -19643,7 +19679,7 @@ label fight61:
                                                     $ gnom1_hp_now -= gnom1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -19685,7 +19721,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Shadowowi{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -19720,7 +19756,7 @@ label fight61:
                                                         $ gnom1_hp_now -= gnom1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -19762,7 +19798,7 @@ label fight61:
 
                                                         "{i} [gnom1_attack] obrażeń Shadowowi{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -19796,7 +19832,7 @@ label fight61:
                                                         $ gnom1_hp_now -= gnom1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -19838,7 +19874,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Shadowowi{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -19877,7 +19913,7 @@ label fight61:
                                                         $ gnom1_hp_now -= gnom1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -19919,7 +19955,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Naofumiemu{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -19954,7 +19990,7 @@ label fight61:
                                                             $ gnom1_hp_now -= gnom1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            $ kostka = renpy.random.randint(1, 2)
                                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                                 play sound "audio/sfx/gnom.mp3"
                                                                 gnom "You've been Gnomed"
@@ -19996,7 +20032,7 @@ label fight61:
 
                                                             "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Naofumiemu{/i}"
                                                     
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -20030,7 +20066,7 @@ label fight61:
                                                             $ gnom1_hp_now -= gnom1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Noggin Gnome 1 odbił się od Szalika z Memów i zadał [gnom1_attack] obrażeń nadawcy{/i}"
-                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            $ kostka = renpy.random.randint(1, 2)
                                                             if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                                 play sound "audio/sfx/gnom.mp3"
                                                                 gnom "You've been Gnomed"
@@ -20072,7 +20108,7 @@ label fight61:
 
                                                             "{i}Noggin Gnome 1 zadaje [gnom1_attack] obrażeń Naofumiemu{/i}"
                                                     
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom2_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -20370,12 +20406,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -20414,7 +20456,7 @@ label fight61:
                     $ gnom2_hp_now -= gnom2_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                    $ kostka = renpy.random.randint(1, 2)
                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                         play sound "audio/sfx/gnom.mp3"
                         gnom "You've been Gnomed"
@@ -20438,7 +20480,7 @@ label fight61:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Noggin Gnome 2 został zablokowany{/i}"
                 $ urban_obrona = 1
-                $ kostka = renpy.random.randint(1, 3)
+                $ kostka = renpy.random.randint(1, 2)
                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                     play sound "audio/sfx/gnom.mp3"
                     gnom "You've been Gnomed"
@@ -20466,13 +20508,13 @@ label fight61:
                 else:
                     play sound "audio/sfx/reka.mp3"
 
-                if gnom2_obrona == 1:
-                    $ gnom2_hp_now -= int(gnom2_attack / 2)
+                if urban_obrona == 1:
+                    $ urban_hp_now -= int(gnom2_attack / 2)
 
                     $ dmg = int(gnom2_attack / 2)
                     "{i}Noggin Gnome 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    $ kostka = renpy.random.randint(1, 3)
+                    $ kostka = renpy.random.randint(1, 2)
                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                         play sound "audio/sfx/gnom.mp3"
                         gnom "You've been Gnomed"
@@ -20497,7 +20539,7 @@ label fight61:
 
                     "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                    $ kostka = renpy.random.randint(1, 3)
+                    $ kostka = renpy.random.randint(1, 2)
                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                         play sound "audio/sfx/gnom.mp3"
                         gnom "You've been Gnomed"
@@ -20566,7 +20608,7 @@ label fight61:
                                     $ gnom2_hp_now -= gnom2_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -20608,7 +20650,7 @@ label fight61:
 
                                     "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Łuszczowi{/i}"
                             
-                            $ kostka = renpy.random.randint(1, 3)
+                            $ kostka = renpy.random.randint(1, 2)
                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                 play sound "audio/sfx/gnom.mp3"
                                 gnom "You've been Gnomed"
@@ -20643,7 +20685,7 @@ label fight61:
                                         $ gnom2_hp_now -= gnom2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -20685,7 +20727,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Łuszczowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -20719,7 +20761,7 @@ label fight61:
                                         $ gnom2_hp_now -= gnom2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -20761,7 +20803,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Łuszczowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -20800,7 +20842,7 @@ label fight61:
                                         $ gnom2_hp_now -= gnom2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -20842,7 +20884,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Jerzemu Urbanowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -20877,7 +20919,7 @@ label fight61:
                                             $ gnom2_hp_now -= gnom2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -20919,7 +20961,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Jerzemu Urbanowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -20953,7 +20995,7 @@ label fight61:
                                             $ gnom2_hp_now -= gnom2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -20995,7 +21037,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Jerzemu Urbanowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -21034,7 +21076,7 @@ label fight61:
                                             $ gnom2_hp_now -= gnom2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -21076,7 +21118,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Żydowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -21111,7 +21153,7 @@ label fight61:
                                                 $ gnom2_hp_now -= gnom2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -21153,7 +21195,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Żydowi{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -21187,7 +21229,7 @@ label fight61:
                                                 $ gnom2_hp_now -= gnom2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -21229,7 +21271,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Żydowi{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -21268,7 +21310,7 @@ label fight61:
                                                 $ gnom2_hp_now -= gnom2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -21310,7 +21352,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Kazumie{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -21345,7 +21387,7 @@ label fight61:
                                                     $ gnom2_hp_now -= gnom2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -21387,7 +21429,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Kazumie{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -21421,7 +21463,7 @@ label fight61:
                                                     $ gnom2_hp_now -= gnom2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -21463,7 +21505,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Kazumie{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -21502,7 +21544,7 @@ label fight61:
                                                     $ gnom2_hp_now -= gnom2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -21544,7 +21586,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Shadowowi{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -21579,7 +21621,7 @@ label fight61:
                                                         $ gnom2_hp_now -= gnom2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -21621,7 +21663,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Shadowowi{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -21655,7 +21697,7 @@ label fight61:
                                                         $ gnom2_hp_now -= gnom2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -21697,7 +21739,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Shadowowi{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -21736,7 +21778,7 @@ label fight61:
                                                         $ gnom2_hp_now -= gnom2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -21778,7 +21820,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Naofumiemu{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -21813,7 +21855,7 @@ label fight61:
                                                             $ gnom2_hp_now -= gnom2_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            $ kostka = renpy.random.randint(1, 2)
                                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                                 play sound "audio/sfx/gnom.mp3"
                                                                 gnom "You've been Gnomed"
@@ -21855,7 +21897,7 @@ label fight61:
 
                                                             "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Naofumiemu{/i}"
                                                     
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -21889,7 +21931,7 @@ label fight61:
                                                             $ gnom2_hp_now -= gnom2_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Noggin Gnome 2 odbił się od Szalika z Memów i zadał [gnom2_attack] obrażeń nadawcy{/i}"
-                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            $ kostka = renpy.random.randint(1, 2)
                                                             if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                                 play sound "audio/sfx/gnom.mp3"
                                                                 gnom "You've been Gnomed"
@@ -21931,7 +21973,7 @@ label fight61:
 
                                                             "{i}Noggin Gnome 2 zadaje [gnom2_attack] obrażeń Naofumiemu{/i}"
                                                     
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom3_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -22229,12 +22271,18 @@ label fight61:
             hide tarczownik_zloty
 
             if tarczownik_air_strike_shield >= 1:
-                $ luszcz_obrona = 0
-                $ eminem_obrona = 0
-                $ urban_obrona = 0
-                $ zyd_obrona = 0
-                $ kazuma_obrona = 0
-                $ tarczownik_obrona = 0
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
 
             hide tarczownik
             hide screen tarczownik1_stats
@@ -22279,7 +22327,7 @@ label fight61:
                         $ gnom3_hp_now -= gnom3_attack
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
+                        $ kostka = renpy.random.randint(1, 2)
                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                             play sound "audio/sfx/gnom.mp3"
                             gnom "You've been Gnomed"
@@ -22310,7 +22358,7 @@ label fight61:
                     $ gnom3_hp_now -= gnom3_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                    $ kostka = renpy.random.randint(1, 3)
+                    $ kostka = renpy.random.randint(1, 2)
                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                         play sound "audio/sfx/gnom.mp3"
                         gnom "You've been Gnomed"
@@ -22349,7 +22397,7 @@ label fight61:
                         $ gnom3_hp_now -= gnom3_attack
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
+                        $ kostka = renpy.random.randint(1, 2)
                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                             play sound "audio/sfx/gnom.mp3"
                             gnom "You've been Gnomed"
@@ -22379,7 +22427,7 @@ label fight61:
                         $ gnom3_hp_now -= gnom3_attack
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
+                        $ kostka = renpy.random.randint(1, 2)
                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                             play sound "audio/sfx/gnom.mp3"
                             gnom "You've been Gnomed"
@@ -22447,7 +22495,7 @@ label fight61:
                                     $ gnom3_hp_now -= gnom3_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -22489,7 +22537,7 @@ label fight61:
 
                                     "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Łuszczowi{/i}"
                             
-                            $ kostka = renpy.random.randint(1, 3)
+                            $ kostka = renpy.random.randint(1, 2)
                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                 play sound "audio/sfx/gnom.mp3"
                                 gnom "You've been Gnomed"
@@ -22524,7 +22572,7 @@ label fight61:
                                         $ gnom3_hp_now -= gnom3_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -22566,7 +22614,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Łuszczowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -22600,7 +22648,7 @@ label fight61:
                                         $ gnom3_hp_now -= gnom3_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -22642,7 +22690,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Łuszczowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -22681,7 +22729,7 @@ label fight61:
                                         $ gnom3_hp_now -= gnom3_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -22723,7 +22771,7 @@ label fight61:
 
                                         "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Jerzemu Urbanowi{/i}"
                                 
-                                $ kostka = renpy.random.randint(1, 3)
+                                $ kostka = renpy.random.randint(1, 2)
                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                     play sound "audio/sfx/gnom.mp3"
                                     gnom "You've been Gnomed"
@@ -22758,7 +22806,7 @@ label fight61:
                                             $ gnom3_hp_now -= gnom3_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -22800,7 +22848,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Jerzemu Urbanowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -22834,7 +22882,7 @@ label fight61:
                                             $ gnom3_hp_now -= gnom3_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -22876,7 +22924,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Jerzemu Urbanowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -22915,7 +22963,7 @@ label fight61:
                                             $ gnom3_hp_now -= gnom3_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -22957,7 +23005,7 @@ label fight61:
 
                                             "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Żydowi{/i}"
                                     
-                                    $ kostka = renpy.random.randint(1, 3)
+                                    $ kostka = renpy.random.randint(1, 2)
                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                         play sound "audio/sfx/gnom.mp3"
                                         gnom "You've been Gnomed"
@@ -22992,7 +23040,7 @@ label fight61:
                                                 $ gnom3_hp_now -= gnom3_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -23034,7 +23082,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Żydowi{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -23068,7 +23116,7 @@ label fight61:
                                                 $ gnom3_hp_now -= gnom3_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -23110,7 +23158,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Żydowi{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -23149,7 +23197,7 @@ label fight61:
                                                 $ gnom3_hp_now -= gnom3_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -23191,7 +23239,7 @@ label fight61:
 
                                                 "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Kazumie{/i}"
                                         
-                                        $ kostka = renpy.random.randint(1, 3)
+                                        $ kostka = renpy.random.randint(1, 2)
                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                             play sound "audio/sfx/gnom.mp3"
                                             gnom "You've been Gnomed"
@@ -23226,7 +23274,7 @@ label fight61:
                                                     $ gnom3_hp_now -= gnom3_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -23268,7 +23316,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 1 zadaje [gnom3_attack] obrażeń Kazumie{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -23302,7 +23350,7 @@ label fight61:
                                                     $ gnom3_hp_now -= gnom3_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -23344,7 +23392,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Kazumie{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -23383,7 +23431,7 @@ label fight61:
                                                     $ gnom3_hp_now -= gnom3_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -23425,7 +23473,7 @@ label fight61:
 
                                                     "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Shadowowi{/i}"
                                             
-                                            $ kostka = renpy.random.randint(1, 3)
+                                            $ kostka = renpy.random.randint(1, 2)
                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                 play sound "audio/sfx/gnom.mp3"
                                                 gnom "You've been Gnomed"
@@ -23460,7 +23508,7 @@ label fight61:
                                                         $ gnom3_hp_now -= gnom3_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -23502,7 +23550,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Shadowowi{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -23536,7 +23584,7 @@ label fight61:
                                                         $ gnom3_hp_now -= gnom3_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -23578,7 +23626,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Shadowowi{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -23617,7 +23665,7 @@ label fight61:
                                                         $ gnom3_hp_now -= gnom3_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        $ kostka = renpy.random.randint(1, 2)
                                                         if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                             play sound "audio/sfx/gnom.mp3"
                                                             gnom "You've been Gnomed"
@@ -23659,7 +23707,7 @@ label fight61:
 
                                                         "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Naofumiemu{/i}"
                                                 
-                                                $ kostka = renpy.random.randint(1, 3)
+                                                $ kostka = renpy.random.randint(1, 2)
                                                 if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                     play sound "audio/sfx/gnom.mp3"
                                                     gnom "You've been Gnomed"
@@ -23694,7 +23742,7 @@ label fight61:
                                                             $ gnom3_hp_now -= gnom3_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            $ kostka = renpy.random.randint(1, 2)
                                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                                 play sound "audio/sfx/gnom.mp3"
                                                                 gnom "You've been Gnomed"
@@ -23736,7 +23784,7 @@ label fight61:
 
                                                             "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Naofumiemu{/i}"
                                                     
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"
@@ -23770,7 +23818,7 @@ label fight61:
                                                             $ gnom3_hp_now -= gnom3_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Noggin Gnome 3 odbił się od Szalika z Memów i zadał [gnom3_attack] obrażeń nadawcy{/i}"
-                                                            $ kostka = renpy.random.randint(1, 3)
+                                                            $ kostka = renpy.random.randint(1, 2)
                                                             if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                                 play sound "audio/sfx/gnom.mp3"
                                                                 gnom "You've been Gnomed"
@@ -23812,7 +23860,7 @@ label fight61:
 
                                                             "{i}Noggin Gnome 3 zadaje [gnom3_attack] obrażeń Naofumiemu{/i}"
                                                     
-                                                    $ kostka = renpy.random.randint(1, 3)
+                                                    $ kostka = renpy.random.randint(1, 2)
                                                     if gnom1_hp_now > 0 or gnom2_hp_now > 0:
                                                         play sound "audio/sfx/gnom.mp3"
                                                         gnom "You've been Gnomed"

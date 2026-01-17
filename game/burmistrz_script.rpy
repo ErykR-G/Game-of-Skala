@@ -1,5 +1,6 @@
 define burmistrza1 = 0
 define burmistrzkill = 0
+define burmistrzzbroja = 0
 
 label burmistrz:
     label burmistrz1:
@@ -127,6 +128,7 @@ label burmistrz:
                         nemeczek "Dobrze dostaniesz swoje uzbrojenie"
 
                         $ klata_liczba += 1
+                        $ burmistrzzbroja = 1
                         if luszcz_klata == 0 and urban_klata == 0 and zyd_klata == 0 and kazuma_klata == 0 and tarczownik_klata == 0 and eminem_klata == 0:
                             $ luszcz_klata = 1
                             $ urban_klata = 1
@@ -394,6 +396,7 @@ label burmistrz:
                         "{b}Czy chcecie to uczynić?{/b}"
 
                         "{b}Tak{/b}":
+                            $ burmistrzzbroja = 0
                             $ burmistrzkill = 1
                             "{i}W pełnej zgodzie i synchronizacji z burmistrzem, wyciągnęliście noże i rozpoczęliście zbrodnię{/i}"
 
@@ -502,15 +505,19 @@ label burmistrz:
         "{i}Lecz zanim stanęła na ziemi pierwsza cegła, przybyły wojska nieprzyjaciela{/i}"
 
         show luszcz neutral at left
-        show tanya neutral at center
+        show tanya neutral right at center
+        show kartaginczyk1 neutral at right
+        show kartaginczyk2 neutral at slightright
 
         tanya "żołnierze! Przygotować się do blitzkriegu! Musimy dotrzeć ich stolicy zanim ktokol…."
+
+        show tanya neutral at center
 
         tanya "…wiek się pojawi"
 
         tanya "Kim ty do cholery jesteś? I skąd wiedziałeś, że tu będziemy?"
 
-        luszcz "Jam jestem Maciejus Luszczus i zwom mnie pierwszym strażnikiem republiki!"
+        luszcz "Jam jestem Maciejus Luscus i zwom mnie pierwszym strażnikiem republiki!"
 
         luszcz "i jestem tutaj, aby Ciebie powstrzymać Hannibalu!"
 
@@ -519,7 +526,7 @@ label burmistrz:
         luszcz "Jak to nie żyje!?"
 
         tanya "Tak to"
-        tanya "Ten sebil stwierdził, że zamiast jeździć NA słoniach, możemy jeździć W słoniach i mieć w ten sposób zwierzęce człogi"
+        tanya "Ten debil stwierdził, że zamiast jeździć NA słoniach, możemy jeździć W słoniach i mieć w ten sposób zwierzęce czołgi"
         tanya "I ten idiota władował się do dupska słonia"
         tanya "a ten słoń miał sraczkę…"
         tanya "No i teraz ja, Tanya von Degurechaff tu dowodzę"
@@ -531,5 +538,90 @@ label burmistrz:
         tanya "to stoisz nam na drodzę, więc będziemy musieli ciebie zabić"
 
         luszcz "spróbujcie jeśli potraficie"
+
+        jump fight71
+
+        label after_fight71:
+            play music "audio/music/plac.mp3"
+            if burmistrzzbroja == 1:
+                scene bg polnoc
+                show luszcz zmentzony at center
+                luszcz "Ich jest za dużo! Nie powstrzymam ich samemu!"
+                luszcz "Nie mam już sił, poddaję się!"
+
+                scene bg black with fade
+                "{i}Łuszcz padł bez sił na ziemi i po chwili został pojmany i zgwałcony, a potem zasilił szeregi haremu władcy kartaginy i dopiero po latach udało mu się zwiać…{/i}"
+                play music "audio/music/pole.mp3"
+                scene bg plac with fade
+                show luszcz neutral at center
+
+                luszcz "whooh udało mi się zwiać"
+                luszcz "jebany nemeczek nie przysłał posiłków"
+                luszcz "ale burmistrz nie lepszy, nawet nie przyszedł mi pomóc, gdy nie przekonał Nemeczka"
+                luszcz "Ehhh, teraz to ja chcę tylko o tym zapomnieć jak najszybciej"
+                luszcz "Oby zły dotyk jednak nie bolał całe życie,,,"
+
+                $ burmistrz_wybory = 0
+                $ nemeczek_wybory = 0
+                $ burmistrz_social_link = 10
+                
+                jump sloneczna
+            
+            else:
+                scene bg polnoc
+                show luszcz zmentzony at center
+
+                luszcz "Ich jest za dużo! Nie powstrzymam ich samemu!"
+
+                burmistrz "I nie musisz!"
+
+                show luszcz neutral at left
+                show burmistrz neutral at center
+                show dzieci at right
+
+                luszcz "Burmistrzu przybyłeś!"
+
+                burmistrz "Nie mógłbym Ciebie porzucić!"
+                burmistrz "A teraz odpocznij sobie, a moi chłopcy zajmą się resztą"
+
+                burmistrz "Towarzysze, do boju. Zajebcie każdego kartagińczyka jakiego spotkacie!"
+
+                if burmistrzkill == 1:
+                    all "Tak jest panie generale"
+                else:
+                    all "Tak jest panie pułkowniku"
+
+                play sound "audio/sfx/fighting.mp3"
+                play music "audio/music/pole.mp3"
+
+                scene bg black with fade
+                scene bg plac with fade
+                show luszcz neutral at slightleft
+                show burmistrz neutral at slightright
+
+                burmistrz "whooh, ale to był dzień"
+                burmistrz "już dawno tak dobrze sie nie czulem"
+                burmistrz "trzeba będzie to kiedyś powtórzyć"
+
+                luszcz "no kiedyś będzie trzeba…"
+
+                burmistrz "to co do zobaczenia i pamiętaj o straży pożarnej"
+
+                hide burmistrz
+                show luszcz neutral at center
+
+                luszcz "Ale ja nie chcę tego ro…"
+                luszcz "Ehhh… strzelam"
+
+                $ burmistrz_wybory = 2
+                if burmistrzkill == 1:
+                    $ nemeczek_wybory = 0
+                else:
+                    $ nemeczek_wybory = 1
+                $ burmistrz_social_link = 1
+                
+                jump sloneczna
+
+
 
 
