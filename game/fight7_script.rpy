@@ -83,7 +83,7 @@ label fight71_stats:
 label fight71:
     label wybor_fight71:
         play music "audio/music/tanya_fight.mp3"
-        scene bg poludnie
+        scene bg polnoc
         $ ile_wrogow += 3
         show kartaginczyk1 fight zorder 10 at wrog1
         show screen kartaginczyk1_stats

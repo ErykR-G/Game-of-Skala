@@ -33,9 +33,9 @@ label fight61_stats:
     default gnom3_min_attack = 1
     default gnom2_min_attack = 1
 
-    default gnom1_max_attack = 4
-    default gnom3_max_attack = 4
-    default gnom2_max_attack = 4
+    default gnom1_max_attack = 3
+    default gnom3_max_attack = 3
+    default gnom2_max_attack = 3
 
     default gnom1_max_attack_now = gnom1_max_attack
     default gnom3_max_attack_now = gnom3_max_attack

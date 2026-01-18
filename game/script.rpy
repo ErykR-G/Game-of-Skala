@@ -23,6 +23,8 @@ label postacie:
 
     define rand = Character("Ktoś z widowni", color="#8a8a8a")
 
+    define pies = Character("Raphtalia", color="#d87829")
+
     define eminem = Character("Shadow", color="#32313a")
     define cid = Character("Cid", color="#32313a")
     image eminem sad right = Transform("eminem sad", xzoom=-1) 
@@ -519,11 +521,13 @@ label wybory:
     default burmistrz_wybory = 0
     default nemeczek_wybory = 0
     default toxic_pea_wybory = 0
+    default tarczownik_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
     default burmistrz_social_link = 0
     default toxic_pea_social_link = 0
+    default tarczownik_social_link  = 0
 
 
 
