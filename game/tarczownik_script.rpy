@@ -272,3 +272,31 @@ label tarczownik:
 
         luszcz "To chyba w tom strone..!"
 
+        scene bg cult with pixellate
+        play music "audio/music/cult.mp3"
+        show luszcz neutral at slightleft
+        show tarczownik neutral at slightright
+
+        tarczownik "ałć… gdzie jesteśmy?"
+
+        luszcz "Jakaś wioska..?"
+
+        show owca neutral at right
+        show luszcz neutral at left
+        show tarczownik neutral right at center
+
+        owca "A co to takiego?"
+        owca "Witajcie, przybysze! Skąd i dlaczego tu się pojawiliście?"
+        owca "Czy ten portal będzie dało się przestawić? Planowałam tu coś postawić…"
+
+        luszcz "Pochodzimy ze Skały. Szukamy kobiety z szopowatymi ószami zachowującej się jak pies"
+
+        tarczownik "Oddaj nam moją psiapsi!!!!"
+        
+        owca "Hm…"
+        owca "…"
+        owca "Jest szansa że mamy stworzenie o którym mówicie"
+        owca "Znajduje się w tej nie podejrzanej świątyni rytualnej"
+
+        tarczownik "Nie idziemy tam!! To podstęp!!"
+

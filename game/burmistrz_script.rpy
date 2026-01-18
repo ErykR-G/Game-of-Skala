@@ -72,17 +72,47 @@ label burmistrz:
 
         luszcz "Nie raczej nie…"
 
-        burmistrz "To świetnie, choć zabiorę Cię na plac, gdzie powstanie centrum szkolenia nowych strażaków!"
+        burmistrz "Świetnie, to przyjdź na plac budowy przy ulicy Słonecznej to ci pokaże, gdzie powstanie centrum szkolenia nowych strażaków!"
+        burmistrz "Do zobaczenia na placu"
+
+        hide burmistrz
+        show luszcz neutral at center
 
         luszcz "Ehhh, znów się w coś wplątałem"
 
-        play sound "audio/sfx/traveling.mp3" 
-        scene bg black with fade
+        $ burmistrz_social_link = 1
+        if rynek == 1:
+            jump rynek
+        if sloneczna == 1:
+            jump slonneczna 
+        if alejka == 1:
+            jump alejka 
+        if parking == 1:
+            jump parking
+        if wolbromska == 1:
+            jump wolbromska
+        if bohaterow_wrzesnia == 1:
+            jump bohaterow_wrzesnia 
+        if lipowa == 1:
+            jump lipowa 
+        if granica == 1:
+            jump granica
+
+    label burmistrz2:
+        $ burmistrz_social_link = 2        
         scene bg plac with fade
         show burmistrz neutral at slightright
         show luszcz neutral at slightleft
 
-        burmistrz "I dokładnie w tym oto miejscu powstanie całkowicie nowe, centrum szkoleniowe dla strażaków"
+        burmistrz "O przyszedłeś w takim razie bez przedłużania opowiem Ci o moich planach"
+
+        scene bg black with fade
+        "{i}2 godziny bajdużenia później{/i}"
+        scene bg plac with fade
+        show burmistrz neutral at slightright
+        show luszcz neutral at slightleft
+
+        burmistrz "I dokładnie w tym oto miejscu powstanie całkowicie nowe, zautomatyzowane centrum szkoleniowe dla strażaków"
 
         luszcz "Ludzie, ale tu przecież niczego nie ma"
 
@@ -90,7 +120,7 @@ label burmistrz:
         show burmistrz neutral at right
         show luszcz neutral at left
 
-        nemeczek "Jak śmiesz tak mówić, to jest nasza ojczyzna"
+        nemeczek "Jak śmiesz tak mówić, to jest nasza ojczyzna, nasz plac broni"
         nemeczek "i my będziemy o nią walczyć"
         nemeczek "nawet jeśli trzeba będzie walczyć na dwa fronty"
 
@@ -365,7 +395,7 @@ label burmistrz:
                     luszcz "…"
 
                     $ burmistrz_wybory = 1
-                    $ nemeczek_wybory = 0
+                    $ nemeczek_wybory = 10
                     $ burmistrz_social_link = 2
                     
                     play music "audio/music/pole.mp3"
@@ -615,10 +645,10 @@ label burmistrz:
 
                 $ burmistrz_wybory = 2
                 if burmistrzkill == 1:
-                    $ nemeczek_wybory = 0
+                    $ nemeczek_wybory = 10
                 else:
                     $ nemeczek_wybory = 1
-                $ burmistrz_social_link = 1
+                $ burmistrz_social_link = 2
                 
                 jump sloneczna
 

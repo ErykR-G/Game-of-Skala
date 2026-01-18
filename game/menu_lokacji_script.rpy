@@ -10,6 +10,8 @@ default granica = 0
 default cmentarz_zydowskix = 0
 default cmentarzx = 0
 default urzad_gminyx = 0
+default placx = 0
+default lopatka_ukradnieta = 0
 
 label menu_lokacji:
     label rynek:
@@ -133,12 +135,12 @@ label menu_lokacji:
                         if urzad_gminyx == 1:
                             if burmistrz_social_link == 0:
                                 menu:
-                                    "{b}Czy chcę wziać udział w obradach (5h){/b}"
+                                    "{b}Czy chcę wziać udział w obradach (1h){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 300
+                                        $ timer += 60
                                         jump burmistrz1
 
                                     "{b}Nie{/b}":
@@ -150,10 +152,10 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
-                                    "{b}Wziąć udział w obradach (5h){/b}" if burmistrz_social_link == 0:
+                                    "{b}Wziąć udział w obradach (1h){/b}" if burmistrz_social_link == 0:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 300
+                                        $ timer += 60
                                         jump burmistrz1
                                     
                                     "{b}Powrót{/b}":
@@ -201,13 +203,78 @@ label menu_lokacji:
                             jump fightx3
                     jump rynek
                 
-                "{b}Plac Broni (10min){/b}":
-                    $ timer += 10
-                    $ lopatka = 1
-                    play sound "audio/sfx/traveling.mp3"
-                    scene bg black with fade
-                    "{i}dostajesz łopatke{/i}"
-                    jump sloneczna
+                "{b}Plac Budowy{/b}":
+                    $ placx = 0
+                    if burmistrz_social_link == 1:
+                        $ placx += 1
+                        "{i}Przy placu budowy czeka na mnie Burmistrz, który chce mi pokazać gdzie powstanie nowe centrum szkolenia dla strażaków{/i}"
+                        "{i}Nie chcę tam iść{/i}"
+                    
+                    if lopatka == 0 and lopatka_ukradnieta == 0:
+                        $ placx += 1
+                        "{i}Widzę leżacą na ziemi łopatkę{/i}"
+                        "{i}Chyba dokładnie taką potrzebuje Żyd...{/i}"
+
+                    if placx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump sloneczna2
+
+                    else:
+                        if placx == 1:
+                            if burmistrz_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Burmistrzem? (4h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump burmistrz2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump sloneczna2
+                            
+                            if lopatka_ukradnieta == 0:
+                                menu:
+                                    "{b}Czy chcę ukraść łopatkę? (10min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        $ timer += 10
+                                        $ lopatka = 1
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ lopatka_ukradnieta = 1
+                                        "{i}łopatka została dodana do ekwipunku{/i}"
+                                        jump sloneczna
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump sloneczna2
+
+                        else:
+                            if placx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Burmistrzem (4h){/b}" if burmistrz_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump burmistrz2
+
+                                    "{b}Ukradnij łopatkę (10min){/b}" if lopatka_ukradnieta == 0:
+                                        $ timer += 10
+                                        $ lopatka = 1
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ lopatka_ukradnieta = 1
+                                        "{i}łopatka została dodana do ekwipunku{/i}"
+                                        jump sloneczna
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump sloneczna2
         
     label alejka:
         play sound "audio/sfx/traveling.mp3" 

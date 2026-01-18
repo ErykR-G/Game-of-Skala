@@ -376,6 +376,8 @@ label zyd:
 
         luszcz "Ano mam"
 
+        $ lopatka = 0
+
         zyd "Ah! Łopatka! Wyśmienicie!"
         zyd "Czas wziąć się do roboty!"
 

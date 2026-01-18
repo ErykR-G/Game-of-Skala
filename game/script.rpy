@@ -20,6 +20,7 @@ label postacie:
     image luszcz zmentzony right = Transform("luszcz zmentzony", xzoom=-1) 
     image luszcz neutral right = Transform("luszcz neutral", xzoom=-1) 
 
+    define owca = Character("Owca", color="#ffffff")
 
     define rand = Character("Ktoś z widowni", color="#8a8a8a")
 
@@ -38,6 +39,7 @@ label postacie:
 
     define kazuma = Character("Kazuma", color="#dbf01f")
     define tarczownik = Character("Naofumi", color="#0a570a")
+    image tarczownik neutral right = Transform("tarczownik neutral", xzoom=-1) 
 
     define emina = Character("Eminem", color="#a2a571")
     
