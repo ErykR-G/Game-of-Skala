@@ -3,7 +3,7 @@
     color "#dddddd"
     outlines [(1, "#00000080", 0, 0)]
 
-screen kartaginczyk1_stats():
+screen kibol1_stats():
     fixed:
         xpos 0.76
         ypos 0.44  
@@ -18,16 +18,16 @@ screen kartaginczyk1_stats():
                 xsize 200 
                 ysize 14
 
-                bar value kartaginczyk1_hp_now range kartaginczyk1_hp xsize 200 ysize 14:
+                bar value kibol1_hp_now range kibol1_hp xsize 200 ysize 14:
                     left_bar Solid(
-                                "#00cc00" if kartaginczyk1_hp_now/kartaginczyk1_hp > 0.5 else
-                                "#ffcc00" if kartaginczyk1_hp_now/kartaginczyk1_hp > 0.2 else
+                                "#00cc00" if kibol1_hp_now/kibol1_hp > 0.5 else
+                                "#ffcc00" if kibol1_hp_now/kibol1_hp > 0.2 else
                                 "#ff0000"
                             )
 
-                text "[kartaginczyk1_hp_now]/[kartaginczyk1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+                text "[kibol1_hp_now]/[kibol1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
 
-            text "ATK: [kartaginczyk1_min_attack_now]-[kartaginczyk1_max_attack_now]" style "dmg_text" xalign 0.5
+            text "ATK: [kibol1_min_attack_now]-[kibol1_max_attack_now]" style "dmg_text" xalign 0.5
 
 screen akane_stats():
     fixed:
@@ -80,6 +80,110 @@ screen kibol2_stats():
                 text "[kibol2_hp_now]/[kibol2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
 
             text "ATK: [kibol2_min_attack_now]-[kibol2_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen jaruzel_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value jaruzel_hp_now range jaruzel_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if jaruzel_hp_now/jaruzel_hp > 0.5 else
+                                "#ffcc00" if jaruzel_hp_now/jaruzel_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[jaruzel_hp_now]/[jaruzel_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [jaruzel_min_attack_now]-[jaruzel_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen urban_zly_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value urban_zly_hp_now range urban_zly_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if urban_zly_hp_now/urban_zly_hp > 0.5 else
+                                "#ffcc00" if urban_zly_hp_now/urban_zly_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[urban_zly_hp_now]/[urban_zly_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [urban_zly_min_attack_now]-[urban_zly_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen girek_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value girek_hp_now range girek_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if girek_hp_now/girek_hp > 0.5 else
+                                "#ffcc00" if girek_hp_now/girek_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[girek_hp_now]/[girek_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [girek_min_attack_now]-[girek_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen czarodziej_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value czarodziej_hp_now range czarodziej_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if czarodziej_hp_now/czarodziej_hp > 0.5 else
+                                "#ffcc00" if czarodziej_hp_now/czarodziej_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[czarodziej_hp_now]/[czarodziej_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [czarodziej_min_attack_now]-[czarodziej_max_attack_now]" style "dmg_text" xalign 0.5
 
 screen obama_stats():
     fixed:

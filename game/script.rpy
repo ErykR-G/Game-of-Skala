@@ -20,7 +20,11 @@ label postacie:
     image luszcz zmentzony right = Transform("luszcz zmentzony", xzoom=-1) 
     image luszcz neutral right = Transform("luszcz neutral", xzoom=-1) 
 
-    define owca = Character("Owca", color="#ffffff")
+    define owca = Character("Owca", color="#382a17")
+
+    define czarodziej = Character("Czarodziej", color="#222222")
+    image czarodziej neutral right = Transform("czarodziej neutral", xzoom=-1) 
+    image czarodziej neutral2 right = Transform("czarodziej neutral2", xzoom=-1) 
 
     define rand = Character("Ktoś z widowni", color="#8a8a8a")
 
@@ -32,6 +36,7 @@ label postacie:
     image eminem neutral reka right = Transform("eminem neutral reka", xzoom=-1) 
 
     define urban = Character("Jerzy Urban", color="#ff4040")
+    image urban neutral right = Transform("urban neutral", xzoom=-1)
 
     define zyd = Character("Żyd", color="#25ff37")
     image zyd neutral right = Transform("zyd neutral", xzoom=-1) 
@@ -94,6 +99,12 @@ label postacie:
     define obama = Character("Barack Obama", color="#362415")
 
     define kononowicz = Character("Kononowicz", color="#12db7d")
+
+    define mclowicz = Character("Mcłowicz", color="#87c932")
+
+    define jaruzel = Character("Jaruzel", color="#5c0701")
+
+    define girek = Character("Girek", color="#570303")
 
 
 label pozycje:
@@ -542,12 +553,14 @@ label wybory:
     default nemeczek_wybory = 0
     default toxic_pea_wybory = 0
     default tarczownik_wybory = 0
+    default urban_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
     default burmistrz_social_link = 0
     default toxic_pea_social_link = 0
     default tarczownik_social_link  = 0
+    default urban_social_link  = 0
 
 
 

@@ -14,6 +14,7 @@ default placx = 0
 default lopatka_ukradnieta = 0
 default portalx = 0
 default domx = 0
+default jeziorox = 0
 
 default spanko = 0
 
@@ -741,6 +742,49 @@ label menu_lokacji:
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
                     jump kebab
+                
+                "{b}Dom Kultury{/b}": 
+                    $ dom_kulturyx = 0
+                    if urban_social_link == 0:
+                        $ dom_kulturyx += 1
+                        "{i}W domu kultury trwa właśnie spotkanie seniorów{/i}"
+                        "{i}znam właściciela budynku, więc może dałbym radę porozmawiać z seniorami i przekonać ich do mojej sprawy...{/i}"
+                    
+                    if dom_kulturyx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump bohaterow_wrzesnia2
+
+                    else:
+                        if dom_kulturyx == 1:
+                            if urban_social_link == 0:
+                                menu:
+                                    "{b}Czy chcę porozmawiać z seniorami? (4h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump urban1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+
+                        else:
+                            if dom_kulturyx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z seniorami (4h){/b}" if urban_social_link == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump urban1
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+
     label lipowa:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -1102,15 +1146,47 @@ label menu_lokacji:
                                         jump granica2
 
 
+                "{b}Jezioro{/b}": 
+                    $ jeziorox = 0
+                    if urban_social_link == 1:
+                        $ jeziorox += 1
+                        "{i}Znalazłem przy jeiorze stary bunkier{/i}"
+                        "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
+                    
+                    if jeziorox == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump granica2
 
+                    else:
+                        if jeziorox == 1:
+                            if urban_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Jerzym Urbanem? (3h){/b}"
 
-                "{b}TEST WALKA{/b}":
-                    play sound "audio/sfx/traveling.mp3"
-                    scene bg black with fade
-                    jump faubla     
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump urban2
 
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
 
+                        else:
+                            if jeziorox > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
 
+                                    "{b}Spotkaj się z Jerzym Urbanem (3h){/b}" if urban_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump urban2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
 
 
 
@@ -1248,143 +1324,3 @@ label menu_lokacji:
         if granica == 1:
             jump granica
 
-
-    label faubla:
-        scene bg korytarz
-        menu:
-            "{b}Ilu masz przyjaciół?{/b}"
-
-            "{b}DUŻO{/b}":
-                $ liczba_sojusznikow += 3
-                $ eminem_sojusznik += 1
-                $ urban_sojusznik += 1
-                $ zyd_sojusznik += 1
-                $ kazuma_sojusznik += 1
-                $ tarczownik_sojusznik += 1
-                $ stop = 1
-                $ miecz_swietlny = 1
-                $ ostrza_chaosu = 1
-                $ patyk = 1
-                $ bazooka = 1
-                $ miecz3d = 1
-                $ przepychaczka_liczba = 3
-                $ luszcz_przepychaczka = 1
-                $ urban_przepychaczka = 1
-                $ zyd_przepychaczka = 1
-                $ kazuma_przepychaczka = 1
-                $ tarczownik_przepychaczka = 1
-                $ klata_liczba = 2
-                $ luszcz_klata = 1
-                $ urban_klata = 1
-                $ zyd_klata = 1
-                $ kazuma_klata = 1
-                $ tarczownik_klata = 1
-                $ eminem_klata = 1
-                $ ring = 1
-                $ vr = 1
-                $ memy = 1
-                $ ziemia = 1
-                $ nogi = 1
-                $ zloty = 1
-
-                $ ile_item = 13
-                $ piknik = 1
-                $ cake = 1
-                $ pills = 20
-                $ woda = 2
-                $ ostry = 2
-                $ lagodny = 3
-                $ drpepper = 5
-                $ jabole = 5
-                $ royal = 4
-                $ warzywo = 3
-                $ banany = 4
-                $ skalka = 2
-                $ granat = 3
-
-
-            "{b}TROCHE{/b}":
-                $ liczba_sojusznikow += 2
-                $ eminem_sojusznik += 1
-                $ zyd_sojusznik += 1
-                $ stop = 1
-                $ miecz_swietlny = 1
-                $ ostrza_chaosu = 1
-                $ patyk = 1
-                $ bazooka = 1
-                $ miecz3d = 1
-                $ przepychaczka_liczba = 3
-                $ luszcz_przepychaczka = 1
-                $ zyd_przepychaczka = 1
-                $ klata_liczba = 2
-                $ luszcz_klata = 1
-                $ zyd_klata = 1
-                $ eminem_klata = 1
-                $ ring = 1
-                $ vr = 1
-                $ memy = 1
-                $ ziemia = 1
-                $ nogi = 1
-                $ zloty = 1
-
-                $ ile_item = 13
-                $ piknik = 1
-                $ cake = 1
-                $ pills = 20
-                $ woda = 2
-                $ ostry = 2
-                $ lagodny = 3
-                $ drpepper = 5
-                $ jabole = 5
-                $ royal = 4
-                $ warzywo = 3
-                $ banany = 4
-                $ skalka = 2
-                $ granat = 3
-
-            "{b}MAM{/b}":
-                $ liczba_sojusznikow += 1
-                $ eminem_sojusznik += 1
-                $ stop = 1
-                $ miecz_swietlny = 1
-                $ ostrza_chaosu = 1
-                $ patyk = 1
-                $ bazooka = 1
-                $ miecz3d = 1
-                $ przepychaczka_liczba = 3
-                $ luszcz_przepychaczka = 1
-                $ klata_liczba = 2
-                $ luszcz_klata = 1
-                $ eminem_klata = 1
-                $ ring = 1
-                $ vr = 1
-                $ memy = 1
-                $ ziemia = 1
-                $ nogi = 1
-                $ zloty = 1
-
-                $ ile_item = 13
-                $ piknik = 1
-                $ cake = 1
-                $ pills = 20
-                $ woda = 2
-                $ ostry = 2
-                $ lagodny = 3
-                $ drpepper = 5
-                $ jabole = 5
-                $ royal = 4
-                $ warzywo = 3
-                $ banany = 4
-                $ skalka = 2
-                $ granat = 3
-
-                
-            "{b}CO TO?{/b}":
-                pass
-
-        "{i}O bogowie walka{/i}"
-        jump fight11
-
-    label after_fight11:
-        "{i}Gratulacje wygrałeś{/i}"
-        jump rynek
