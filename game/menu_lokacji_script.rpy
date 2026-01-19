@@ -12,6 +12,10 @@ default cmentarzx = 0
 default urzad_gminyx = 0
 default placx = 0
 default lopatka_ukradnieta = 0
+default portalx = 0
+default domx = 0
+
+default spanko = 0
 
 label menu_lokacji:
     label rynek:
@@ -30,6 +34,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg rynek_noc with fade
+
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label rynek2:
             menu:
@@ -178,6 +194,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg sloneczna_noc with fade
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label sloneczna2:
             menu:      
@@ -292,6 +320,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg alejka_noc with fade
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label alejka2:
             menu:      
@@ -386,6 +426,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg parking_noc with fade
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label parking2:
             menu:
@@ -432,6 +484,45 @@ label menu_lokacji:
                         if kostka == 3:
                             jump fightx3
                     jump rynek
+                
+                "{b}🏠 Dom{/b}": 
+                    $ domx = 0        
+                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                        $ domx += 1
+                        "{i}Robię się trochę śpiący...{/i}"
+
+                    if domx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump parking2
+
+                    else:
+                        if domx == 1:
+                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                menu:
+                                    "{b}Czy chcę iść spać?{/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump spanko
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
+
+                        else:
+                            if domx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Idź spać{/b}" if tarczownik_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump spanko
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
         
     label wolbromska:
         play sound "audio/sfx/traveling.mp3" 
@@ -453,6 +544,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg wolbromska_noc with fade
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label wolbromska2:
             menu:
@@ -477,7 +580,87 @@ label menu_lokacji:
                         if kostka == 3:
                             jump fightx3
                     jump parking
-        
+                
+                "{b}🏠 Dom{/b}": 
+                    $ domx = 0        
+                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                        $ domx += 1
+                        "{i}Robię się trochę śpiący...{/i}"
+
+                    if domx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump wolbromska2
+
+                    else:
+                        if domx == 1:
+                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                menu:
+                                    "{b}Czy chcę iść spać?{/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump spanko
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+
+                        else:
+                            if domx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Idź spać{/b}" if tarczownik_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump spanko
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+                
+                "{b}Portal{/b}": 
+                    $ portalx = 0
+                    if tarczownik_social_link == 1 and tarczownik_dzien == 0:
+                        $ portalx += 1
+                        "{i}Przy portalu zapewne czeka na mnie Naofumi...{/i}"
+                    
+                    if portalx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump wolbromska2
+
+                    else:
+                        if portalx == 1:
+                            if tarczownik_social_link == 1 and tarczownik_dzien == 0:
+                                menu:
+                                    "{b}Czy chcę się spotkać z Naofumim? (4h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump tarczownik2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+
+                        else:
+                            if portalx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Naofumim (4h){/b}" if tarczownik_social_link == 1 and tarczownik_dzien == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump tarczownik2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+
     label bohaterow_wrzesnia:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -494,6 +677,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg bohaterow_wrzesnia_noc with fade
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label bohaterow_wrzesnia2:
             menu:
@@ -562,6 +757,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg lipowa_noc with fade
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label lipowa2:
             menu:
@@ -741,6 +948,18 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg granica_noc with fade
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+            $ spanko += 1
+            if spanko == 1:
+                luszcz "Robię się troszkę śpiący..."
+            else:
+                if spanko == 5:
+                    luszcz "Jezu jestem mega śpiący..."
+                else:
+                    if spanko == 9:
+                        luszcz "Nie, nie dam rady"
+                        jump spanko2
 
         label granica2:
             menu:

@@ -58,6 +58,12 @@ label postacie:
 
     define ksiadz = Character("Ksiądz", color="#8607b8")
 
+    define kult = Character("Kultysci", color="#3b3d3a")
+
+    define diddy = Character("Diddy", color="#41301e")
+
+    define tentacle = Character("Hentai Tentakle potwór", color="#db5555")
+
     define toxic = Character("Toxic Pea", color="#7ec753")
 
     define nemeczek = Character("Nemeczek", color="#49290b")
@@ -78,6 +84,10 @@ label postacie:
     define gnom = Character("Noggin Gnomes", color="#180a9b")
 
     define turek = Character("Turek", color="#910909")
+
+    define ares = Character("Ares", color="#910909")
+
+    define arteuszek = Character("Arteuszek", color="#776767")
 
 
 label pozycje:
@@ -514,6 +524,7 @@ label fight_stats:
 
 
 label prolog_decyzje:
+    default gotka_poznanie = 0
     default ofiara = 0
 
 label wybory:
