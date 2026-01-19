@@ -8,7 +8,7 @@ label fight91_stats:
 
     default trup9_hp = 0
     default trup10_hp = 0
-    default czarodziej_hp = 120
+    default czarodziej_hp = 150
 
     default trup9_uszy = 0
     default czarodziej_uszy = 0
@@ -19695,6 +19695,7 @@ label fight91:
                 show czarodziej_weapon zorder 15 at weapon_wrog3 
             else:
                 show reka7 zorder 15 at weapon_wrog3
+            czarodziej "kadabra dupa"
             $ czarodziej_attack = renpy.random.randint(czarodziej_min_attack_now, czarodziej_max_attack_now)
 
             if memy == 3:
@@ -19703,6 +19704,11 @@ label fight91:
                     $ czarodziej_hp_now -= czarodziej_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Czarodziej z Tourette'm odbił się od Szalika z Memów i zadał [czarodziej_attack] obrażeń nadawcy{/i}"
+                    $ czarodziej_max_attack_now_true = czarodziej_max_attack
+                    $ czarodziej_max_attack_now = czarodziej_max_attack
+                    $ czarodziej_min_attack_now_true = czarodziej_min_attack
+                    $ czarodziej_min_attack_now = czarodziej_min_attack
+                    $ czarodziej_special = 0
                     jump faza_fight96
 
             if urban_obrona >= 2:
@@ -19710,6 +19716,11 @@ label fight91:
                 "{i}Atak Czarodziej z Tourette'm został zablokowany{/i}"
                 $ urban_obrona = 1
 
+                $ czarodziej_max_attack_now_true = czarodziej_max_attack
+                $ czarodziej_max_attack_now = czarodziej_max_attack
+                $ czarodziej_min_attack_now_true = czarodziej_min_attack
+                $ czarodziej_min_attack_now = czarodziej_min_attack
+                $ czarodziej_special = 0
                 jump faza_fight96
                                                 
             else:
@@ -19725,18 +19736,28 @@ label fight91:
                     $ dmg = int(czarodziej_attack / 2)
                     "{i}Czarodziej z Tourette'm zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
+                    $ czarodziej_max_attack_now_true = czarodziej_max_attack
+                    $ czarodziej_max_attack_now = czarodziej_max_attack
+                    $ czarodziej_min_attack_now_true = czarodziej_min_attack
+                    $ czarodziej_min_attack_now = czarodziej_min_attack
+                    $ czarodziej_special = 0
                     jump faza_fight96
                 else:
                     $ urban_hp_now -= czarodziej_attack
 
                     "{i}Czarodziej z Tourette'm zadaje [czarodziej_attack] obrażeń Jerzemu Urbanowi{/i}"
 
+                $ czarodziej_max_attack_now_true = czarodziej_max_attack
+                $ czarodziej_max_attack_now = czarodziej_max_attack
+                $ czarodziej_min_attack_now_true = czarodziej_min_attack
+                $ czarodziej_min_attack_now = czarodziej_min_attack
+                $ czarodziej_special = 0
                 jump faza_fight96
 
         if czarodziej_weapon == 1:
-            $ kostka = renpy.random.randint(1, 5) 
+            $ kostka = renpy.random.randint(1, 8) 
             if czarodziej_special >= 5:
-                if kostka <= 3:
+                if kostka <= 5:
                     show czarodziejka zorder 15 at weapon_wrog3 
                     czarodziej "kadabra dupa"
                     hide czarodziejka
@@ -19759,7 +19780,7 @@ label fight91:
                     jump faza_fight96
             else:
                 if czarodziej_special >= 3:
-                    if kostka <= 2:
+                    if kostka <= 3:
                         show czarodziejka zorder 15 at weapon_wrog3 
                         czarodziej "kadabra dupa"
                         hide czarodziejka
