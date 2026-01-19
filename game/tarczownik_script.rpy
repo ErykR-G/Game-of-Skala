@@ -438,7 +438,7 @@ label tarczownik:
                 
                 show luszcz neutral at left
 
-                "{i}*hentai tentakle potwor delikatnie wychodzi z wyrwy z podlogi*{/i}"
+                "{i}*hentai tentakle potwor delikatnie wychyla się z wyrwy w podłodze*{/i}"
 
                 kult "mno wszędzie… ciemno wsz…"
 
@@ -464,7 +464,6 @@ label tarczownik:
                 $ tarczownik_sojusznik = 1
                 $ liczba_sojusznikow += 1
 
-                jump after_fight81
                 jump fight81
                 label after_fight81:
                     $ tarczownik_sojusznik = 0

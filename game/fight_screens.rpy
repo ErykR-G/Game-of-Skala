@@ -81,6 +81,84 @@ screen kibol2_stats():
 
             text "ATK: [kibol2_min_attack_now]-[kibol2_max_attack_now]" style "dmg_text" xalign 0.5
 
+screen obama_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value obama_hp_now range obama_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if obama_hp_now/obama_hp > 0.5 else
+                                "#ffcc00" if obama_hp_now/obama_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[obama_hp_now]/[obama_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [obama_min_attack_now]-[obama_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen kononowicz_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value kononowicz_hp_now range kononowicz_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if kononowicz_hp_now/kononowicz_hp > 0.5 else
+                                "#ffcc00" if kononowicz_hp_now/kononowicz_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[kononowicz_hp_now]/[kononowicz_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [kononowicz_min_attack_now]-[kononowicz_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen prymon_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value prymon_hp_now range prymon_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if prymon_hp_now/prymon_hp > 0.5 else
+                                "#ffcc00" if prymon_hp_now/prymon_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[prymon_hp_now]/[prymon_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [prymon_min_attack_now]-[prymon_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen kartaginczyk1_stats():
     fixed:
         xpos 0.76

@@ -89,6 +89,12 @@ label postacie:
 
     define arteuszek = Character("Arteuszek", color="#776767")
 
+    define prymon = Character("Pan Prymon", color="#e95e54")
+
+    define obama = Character("Barack Obama", color="#362415")
+
+    define kononowicz = Character("Kononowicz", color="#12db7d")
+
 
 label pozycje:
     transform granatz:
@@ -376,6 +382,7 @@ label pozycje:
 label fight_stats:
     default dialog_fight1 = 0
     default dialog_fight2 = 0
+    default dialog_fight3 = 0
 
     default liczba_sojusznikow = 1
     default ile_sojusznikow = 0
