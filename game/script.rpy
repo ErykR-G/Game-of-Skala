@@ -22,6 +22,9 @@ label postacie:
 
     define owca = Character("Owca", color="#382a17")
 
+    define tasma = Character("Taśma", color="#919191")
+    define sex = Character("Tasiemka", color="#cccccc")
+
     define czarodziej = Character("Czarodziej", color="#222222")
     image czarodziej neutral right = Transform("czarodziej neutral", xzoom=-1) 
     image czarodziej neutral2 right = Transform("czarodziej neutral2", xzoom=-1) 
@@ -554,13 +557,15 @@ label wybory:
     default toxic_pea_wybory = 0
     default tarczownik_wybory = 0
     default urban_wybory = 0
+    default silver_sextape_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
     default burmistrz_social_link = 0
     default toxic_pea_social_link = 0
     default tarczownik_social_link  = 0
-    default urban_social_link  = 0
+    default urban_social_link = 0
+    default silver_sextape_social_link = 0
 
 
 

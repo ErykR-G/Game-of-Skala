@@ -15,8 +15,11 @@ default lopatka_ukradnieta = 0
 default portalx = 0
 default domx = 0
 default jeziorox = 0
+default klubx = 0
+default dom_tasmyx = 0
 
 default spanko = 0
+default ewento = 0
 
 label menu_lokacji:
     label rynek:
@@ -192,6 +195,10 @@ label menu_lokacji:
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
             scene bg black with fade
             scene bg sloneczna with fade
+            if silver_sextape_social_link == 3 and ewento == 0 and tasma_spotkanko == 0:
+                $ ewento += 1
+                jump silver_sextape4
+                
         else:
             scene bg black with fade
             scene bg sloneczna_noc with fade
@@ -305,6 +312,48 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
         
+                "{b}Klub Seniora GROTA{/b}":
+                    $ klubx = 0
+                    if silver_sextape_social_link == 1:
+                        $ klubx  += 1
+                        "{i}W klubie czeka na mnie Taśma, którą spotkałem przed monopolowym{/i}"
+                        "{i}Ma chyba do mnie jakąś ważną sprawę{/i}"
+
+                    if klubx  == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump sloneczna2
+
+                    else:
+                        if klubx == 1:
+                            if silver_sextape_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Taśmą? (1h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump silver_sextape2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump sloneczna2
+                        
+                        else:
+                            if klubx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Taśmą (1h){/b}" if silver_sextape_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump silver_sextape2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump sloneczna2
+
     label alejka:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -359,12 +408,16 @@ label menu_lokacji:
                     jump rynek
                 
                 "{b}❓ Sklep Monopolowy (60min){/b}" if zyd_social_link == 0:
+                    $ monopoleks += 1
                     $ timer += 60
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
                     jump zyd1
                 
                 "{b}🛒 Sklep Monopolowy (15min){/b}" if zyd_social_link > 0:
+                    if monopoleks == 2 and silver_sextape_social_link == 0:
+                        jump silver_sextape1
+                    $ monopoleks += 1
                     $ timer += 15
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
@@ -384,12 +437,12 @@ label menu_lokacji:
                         if urzad_gminyx == 1:
                             if burmistrz_social_link == 0:
                                 menu:
-                                    "{b}Czy chcę wziać udział w obradach (5h){/b}"
+                                    "{b}Czy chcę wziać udział w obradach (1h){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 300
+                                        $ timer += 60
                                         jump burmistrz1
 
                                     "{b}Nie{/b}":
@@ -401,11 +454,52 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
-                                    "{b}Wziąć udział w obradach (5h){/b}" if burmistrz_social_link == 0:
+                                    "{b}Wziąć udział w obradach (1h){/b}" if burmistrz_social_link == 0:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 300
+                                        $ timer += 60
                                         jump burmistrz1
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
+                
+                "{b}🏠 Dom Taśmy{/b}" if silver_sextape_social_link >= 2 and silver_sextape_social_link < 10: 
+                    $ dom_tasmyx = 0
+                    if silver_sextape_social_link == 2:
+                        $ dom_tasmyx += 1
+                        "{i}Taśma czeka na mnie, by przedłużyć wspólnie gatunek{/i}"
+                    
+                    if dom_tasmyx == 0:
+                        "{i}Nie ma tu nic do roboty{/i}"
+                        jump alejka2
+
+                    else:
+                        if dom_tasmyx == 1:
+                            if silver_sextape_social_link == 2:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Taśmą (4h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump silver_sextape3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
+
+                        else:
+                            if dom_tasmyx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Taśmą (4h){/b}" if silver_sextape_social_link == 2:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 240
+                                        jump silver_sextape3
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"

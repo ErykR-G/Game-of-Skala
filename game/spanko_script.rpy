@@ -1,4 +1,5 @@
 default drukowanko = 0
+default tasma_spotkanko = 0
 
 label spanko:
     if drukowanko == 1:
@@ -68,6 +69,11 @@ label spanko:
         $ zyd_piguly = 0
         $ kazuma_piguly = 0
         $ tarczownik_dzien = 0
+        if tasma_spotkanko == 2:
+            $ tasma_spotkanko = 1
+        else: 
+            if tasma_spotkanko == 1:
+                $ tasma_spotkanko = 0
 
         luszcz "Ooo rodzice zostawili mi kieszonkowe.."
 
@@ -136,6 +142,11 @@ label spanko2:
     $ zyd_piguly = 0
     $ kazuma_piguly = 0
     $ tarczownik_dzien = 0
+    if tasma_spotkanko == 2:
+            $ tasma_spotkanko = 1
+    else: 
+        if tasma_spotkanko == 1:
+            $ tasma_spotkanko = 0
 
     play music "audio/music/pole.mp3"
     if rynek == 1:

@@ -132,10 +132,13 @@ label sklepy:
 
         luszcz "Dzień dobry"
 
+        $ config.menu_include_disabled = True
         menu:
             "{b}Czy na pewno chcę kebaba?{/b}"
 
-            "{b}Tak (2 💰){/b}":
+            "{b}Tak (2 💰){/b}" if money >= 2:
+                play sound "audio/sfx/kupno.mp3"
+                $ config.menu_include_disabled = False
                 $ money -= 2
                 luszcz "Chciałbym zamówić kebaba…"
                 menu:
@@ -263,6 +266,7 @@ label sklepy:
 
                 
             "{b}Nie{/b}":
+                $ config.menu_include_disabled = False
                 luszcz "dowidzenia"
                 play music "audio/music/pole.mp3"
                 jump bohaterow_wrzesnia
