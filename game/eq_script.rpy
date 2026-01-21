@@ -88,6 +88,7 @@ label items_fabularne:
     default wazon_wezy = 0
     default ailbib = 0
     default cialo = 0
+    default cybertruck = 0
     
 
 

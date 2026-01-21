@@ -49,6 +49,11 @@ label skalka:
             luszcz "Czas postawić wazon"
         else:
             luszcz "Tylko kurcze nie załorzyłem niczego do grania muzyki!"
+
+            while not gitara == 2:
+                $ renpy.pause(0.2, hard=True)
+            
+            luszcz "Czas postawić wazon"
         
         $ wazon_wezy = 0
         $ ile_item_fabularne -= 1

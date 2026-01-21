@@ -10,6 +10,8 @@ label kibole:
         show piotrek neutral at slightright
         show luszcz neutral at slightleft
 
+        $ krowka = 0
+
         piotrek "Oooo, dawaj mi to"
         piotrek "Krystian, słuchaj, krówki przyszły!"
 
@@ -20,7 +22,6 @@ label kibole:
         krystian "Jezus wreszcie kocham to gówno"
         krystian "Dziękujemy bardzo oto zapłata"
 
-        $ krowka = 0
         $ mleczarz_social_link = 3
         $ money += 2
         "{i}*do ekwipunku zostały dodane 2 portfele*{/i}"
@@ -175,7 +176,7 @@ label kibole:
                     play music "audio/music/pole.mp3"
                     jump bohaterow_wrzesnia 
                 
-                "{b}Biblia{/b}" if biblia == 1 if nie_mam == 0:
+                "{b}Biblia{/b}" if biblia == 1 and nie_mam == 0:
                     luszcz "Chłopaki, kochacie Boga?"
 
                     krystian "Tak"
@@ -214,7 +215,7 @@ label kibole:
                             $ nie_mam = 1
                             jump kibole_wybory
                         
-                        "{b}Zielona Kula{/b}":
+                        "{b}Zielona Kula{/b}" if zielona_kula == 1:
                             luszcz "Macie to coś."
 
                             $ zielona_kula = 0
@@ -240,7 +241,7 @@ label kibole:
                             play music "audio/music/pole.mp3"
                             jump bohaterow_wrzesnia 
                         
-                        "{b}Głowa Nemeczka{/b}":
+                        "{b}Głowa Nemeczka{/b}" if glowa == 1:
                             luszcz "Macie to coś."
 
                             $ glowa = 0
@@ -290,14 +291,18 @@ label kibole:
 
         hide piotrek
         hide krystian
+        show luszcz neutral at center
 
         krystian "Dobra, start!"
 
         "{i}Łuszcz zasypia{/i}"
 
-        scene bg bLACK with fade
+        scene bg black with fade
         scene bg boisko with fade
+        show piotrek neutral at right
+        show krystian neutral at center
         piotrek "Ej, bracie, wstawaj!"
+        show luszcz neutral at left
 
         krystian "Gra się już dawno skończyła a ty tak leżysz i chrapiesz."
 
@@ -348,6 +353,7 @@ label kibole:
         
         hide piotrek
         hide krystian
+        show luszcz neutral at center
 
         luszcz "Ah… te piłkarzyki…"
         luszcz "Tak szybko dorastają…"

@@ -20,6 +20,8 @@ default dom_tasmyx = 0
 default szkolax = 0
 default czerwony_domx = 0
 default piwnicax = 0
+default fioletowy_domx = 0
+default stomatologx = 0
 
 default spanko = 0
 default ewento = 0
@@ -453,6 +455,48 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
 
+                "{b}🏠 Różowy Dom{/b}" if mleczarz_social_link > 1 or mleczarz_social_link == 1 and krowka == 1:
+                    $ fioletowy_domx = 0
+                    if mleczarz_social_link == 1 and krowka == 1:
+                        $ fioletowy_domx += 1
+                        "{i}Mam dostraczyć do tego domu krówkę...{/i}"
+                    
+                    if fioletowy_domx == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump alejka2
+
+                    else:
+                        if fioletowy_domx == 1:
+                            if mleczarz_social_link == 1 and krowka == 1:
+                                menu:
+                                    "{b}Czy chcę dostarczyć krówkę? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump mleczarz3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
+
+                        else:
+                            if fioletowy_domx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Dostarcz Krówkę (15min){/b}" if mleczarz_social_link == 1 and krowka == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump mleczarz3
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
+
+
     label alejka:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -648,6 +692,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump alejka2
+    
     label parking:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -788,7 +833,47 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
-        
+
+                "{b}Stomatolog{/b}" if mleczarz_social_link > 3 or mleczarz_social_link == 3 and krowka == 1:
+                    $ stomatologx = 0
+                    if mleczarz_social_link == 3 and krowka == 1:
+                        $ stomatologx += 1
+                        "{i}Mam dostraczyć tutaj krówkę...{/i}"
+                    
+                    if stomatologx == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump parking2
+
+                    else:
+                        if stomatologx == 1:
+                            if mleczarz_social_link == 3 and krowka == 1:
+                                menu:
+                                    "{b}Czy chcę dostarczyć krówkę? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump mleczarz4
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
+
+                        else:
+                            if stomatologx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Dostarcz Krówkę (15min){/b}" if mleczarz_social_link == 3 and krowka == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump mleczarz4
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
     label wolbromska:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -948,7 +1033,7 @@ label menu_lokacji:
 
                     if skalax == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
-                        jump bohaterow_wrzesnia2
+                        jump wolbromska2
 
                     else:
                         if skalax == 1:           
@@ -964,7 +1049,7 @@ label menu_lokacji:
 
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump bohaterow_wrzesnia2
+                                        jump wolbromska2
                             
                             if wazon_wezy == 1:
                                 menu:
@@ -978,7 +1063,7 @@ label menu_lokacji:
 
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump bohaterow_wrzesnia2
+                                        jump wolbromska2
                         
                         else:
                             if skalax > 1:
@@ -999,7 +1084,7 @@ label menu_lokacji:
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump bohaterow_wrzesnia2
+                                        jump wolbromska2
                 
 
                 "{b}Portal{/b}": 
@@ -1127,9 +1212,9 @@ label menu_lokacji:
                     scene bg black with fade
                     jump kebab
                 
-                "{b}🏠 Czerwony Dom{/b}" if mleczarz_social_link >= 2: 
+                "{b}🏠 Czerwony Dom{/b}" if mleczarz_social_link > 2 or mleczarz_social_link == 2 and krowka == 1:
                     $ czerwony_domx = 0        
-                    if mleczarz_social_link == 2:
+                    if mleczarz_social_link == 2 and krowka == 1:
                         $ czerwony_domx += 1
                         "{i}Mam dostraczyć do tego domu krówkę...{/i}"
 
@@ -1139,9 +1224,9 @@ label menu_lokacji:
 
                     else:
                         if czerwony_domx == 1:           
-                            if mleczarz_social_link == 2:
+                            if mleczarz_social_link == 2 and krowka == 1:
                                 menu:
-                                    "{b}Czy chcę dostarczyć krówkę? (60min){/b}"
+                                    "{b}Czy chcę dostarczyć krówkę? (1h){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
@@ -1159,7 +1244,7 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
                                     
-                                    "{b}Dostarcz Krówkę{/b}" if mleczarz_social_link == 2:
+                                    "{b}Dostarcz Krówkę (1h){/b}" if mleczarz_social_link == 2 and krowka == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -1695,7 +1780,6 @@ label menu_lokacji:
         if timer >= 360 and timer <= 1200:       
             scene bg black with fade
             scene bg granica with fade
-            show trump
 
         if timer >= 1800 and timer <= 2640:
             scene bg black with fade
@@ -1771,6 +1855,22 @@ label menu_lokacji:
                     if spanko == 9:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
+
+        if trump_social_link == 0:
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                jump trump1
+        
+        if trump_social_link == 1 and lopatka == 1:
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                play music "audio/music/usa.mp3"
+                jump trump3
+        
+        if mleczarz_social_link == 0 and krowka == 1:
+            jump mleczarz1
+        
+        if trump_social_link == 1 and lopatka == 0:
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                jump trump2
 
         label granica2:
             menu:

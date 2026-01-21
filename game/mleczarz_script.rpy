@@ -48,7 +48,7 @@ label mleczarz:
             menu:
                 "{b}Dostarczyć coś komuś?{/b}":
                     luszcz "Dostarczyć coś komuś?"
-                    mleczarz "Zamówienie na Słonecznej. Fioletowy dom."
+                    mleczarz "Zamówienie na Słonecznej. Różowy dom."
 
                     $ ile_item_fabularne += 1
                     $ krowka = 1
@@ -200,3 +200,156 @@ label mleczarz:
             $ mleczarz_social_link = 7
             play music "audio/music/pole.mp3"
             jump wolbromska
+
+    label mleczarz2:
+        play music "audio/music/usa.mp3"
+        show luszcz neutral zorder 15:
+            xalign 0.6
+            yalign 1.0
+
+        show trump neutral zorder 16 at right
+        luszcz "Dostawa krówek dla pana Trumpa!"
+
+        $ krowka = 0
+
+        trump "To są przepiękne, przepiękne krówki."
+        trump "Mam nadzieję że zrobią dobrą robotę, jako klocki budowlane."
+        trump "Ewentualnie, jako smakołyki dla pracowników."
+        trump "Tu masz pieniądze."
+
+        $ money += 2
+        $ mleczarz_social_link = 1
+
+        "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
+
+        luszcz "Dziękuję dowidzenia!"
+
+        play music "audio/music/pole.mp3"
+        hide luszcz 
+        hide trump 
+        jump granica2
+    
+    label mleczarz3:
+        scene bg musial with fade
+        show luszcz neutral at left
+
+        luszcz "*puk* *puk*"
+
+        nikt "Kto tam?"
+
+        luszcz "Dostawa krówek!"
+
+        show musial neutral at slightright
+
+        musial "Ah, no tak"
+
+        $ krowka = 0
+
+        musial "Pychotka, dziękuję"
+        musial "Tutaj masz pieniądze"
+
+        $ money += 2
+        $ mleczarz_social_link = 2
+
+        "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
+
+        musial "Miłego dnia!"
+
+        luszcz "Miłego dnia!"
+
+        hide luszcz 
+        hide musial 
+        jump sloneczna
+
+label mleczarz4:
+        scene bg stomatolog with fade
+        show luszcz neutral at left
+        show tata neutral at slightright
+
+        luszcz "Tata zamawiałeś krówki?"
+
+        tata "Zamawiałem."
+
+        $ krowka = 0
+
+        tata "Czekaj, to ty masz pr*cę?"
+
+        luszcz "Tak ojcze"
+        luszcz "Dostarczam krówki"
+
+        tata "Jestem z ciebie taki dumny synu. Masz pieniążka kup sobie lody."
+
+        $ money += 3
+        $ mleczarz_social_link = 4
+
+        "{i}*3 Portfele zostały dodane do ekwipunku*{/i}"
+
+        luszcz "Dzięki tatku"
+
+        hide luszcz 
+        hide tata
+        jump parking
+
+label mleczarz5:
+        scene bg musial
+        show luszcz neutral at left
+
+        luszcz "*puk* *puk*"
+
+        nikt "Kto tam?"
+
+        luszcz "Dostawa krówek!"
+
+        show musial neutral at slightright
+
+        musial "Ah, no tak"
+
+        $ krowka = 0
+
+        musial "Pychotka, dziękuję"
+        musial "Tutaj masz pieniądze"
+
+        $ money += 2
+        $ mleczarz_social_link = 5
+
+        "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
+
+        musial "Miłego dnia!"
+
+        luszcz "Miłego dnia!"
+
+        hide luszcz 
+        hide musial 
+        jump sloneczna
+
+label mleczarz6:
+        scene bg musial
+        show luszcz neutral at left
+
+        luszcz "*puk* *puk*"
+
+        nikt "Kto tam?"
+
+        luszcz "Dostawa krówek!"
+
+        show musial neutral at slightright
+
+        musial "Ah, no tak"
+
+        $ krowka = 0
+
+        musial "Pychotka, dziękuję"
+        musial "Tutaj masz pieniądze"
+
+        $ money += 2
+        $ mleczarz_social_link = 6
+
+        "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
+
+        musial "Miłego dnia!"
+
+        luszcz "Miłego dnia!"
+
+        hide luszcz 
+        hide musial 
+        jump sloneczna

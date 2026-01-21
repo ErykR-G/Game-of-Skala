@@ -132,6 +132,18 @@ label postacie:
 
     define harambe = Character("Harambe", color="#583c2f")
 
+    define trump = Character("Donald Trump", color="#c47214")
+
+    define musial = Character("Maciej Musiał", color="#bdbdbd")
+
+    define tata = Character("Tata", color="#474444")
+
+    define luigi = Character("Luigi", color="#2be92b")
+    image luigi neutral right = Transform("luigi neutral", xzoom=-1) 
+
+    define maduro = Character("Nicolás Maduro", color="#c47214")
+    image maduro neutral right = Transform("maduro neutral", xzoom=-1) 
+
 label pozycje:
     transform granatz:
         xalign 0.83
@@ -584,6 +596,7 @@ label wybory:
     default krystian_wybory = 0
     default piotrek_wybory = 0
     default kosc_wybory = 10
+    default trump_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
@@ -598,6 +611,7 @@ label social_links:
     default mleczarz_social_link = 0
     default kibole_social_link = 0
     default harambe_social_link = 0
+    default trump_social_link = 0
 
 
 
