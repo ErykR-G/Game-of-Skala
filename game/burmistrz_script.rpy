@@ -84,7 +84,7 @@ label burmistrz:
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
-            jump slonneczna 
+            jump sloneczna 
         if alejka == 1:
             jump alejka 
         if parking == 1:
@@ -492,11 +492,12 @@ label burmistrz:
                                         burmistrz "A co robimy z głową?"
                                         burmistrz "z niej zupa nie wyjdzie..."
 
-                                        luszcz "Ja ją wezmę, już od dawna potrzebowałem piłki do siatkówki, bo wszystkie poprzednie rozwaliłem"
+                                        luszcz "Ja ją wezmę, już od dawna potrzebowałem piłki do nogi, bo wszystkie poprzednie rozwaliłem"
 
                                         burmistrz "No dobra skoro ją chcesz"
 
                                         $ glowa = 1
+                                        $ ile_item_fabularne += 1
 
                                         "{i}*głowa nemeczka została dodana do ekwipunku*{/i}"
 

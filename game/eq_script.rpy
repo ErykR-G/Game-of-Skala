@@ -72,10 +72,19 @@ label items:
     default granat = 0
 
 label items_fabularne:
+    default ile_item_fabularne = 0
+
     default lopatka = 0
     default klucz = 0
     default glowa = 0
     default kartka = 0
+    default biblia = 0
+    default folder_memow = 0
+    default kremowka = 0
+    default dinozaur = 0
+    default krowka = 0
+    default piernik = 0
+    default zielona_kula = 0
     
 
 

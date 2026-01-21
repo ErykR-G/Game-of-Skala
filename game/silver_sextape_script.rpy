@@ -75,9 +75,6 @@ label silver_sextape:
 
         $ silver_sextape_social_link = 1
         $ silver_sextape_wybory = 0
-
-        play music "audio/music/pole.mp3"
-
         jump sklep_monopolowy
     
     label silver_sextape2:
@@ -296,7 +293,7 @@ label silver_sextape:
         jump sloneczna
 
     label silver_sextape3:
-        play music "audio/music/redsun.mp3"
+        play music "audio/music/sex.mp3"
         scene bg dom_tasma with fade
         show luszcz neutral at left
         show tasma neutral at center
@@ -304,8 +301,8 @@ label silver_sextape:
         tasma "Dobry wieczór"
         tasma "Zapraszam do środka"
         scene bg dom_tasma2
-        show luszcz neutral at slightright
-        show tasma neutral at slightleft
+        show luszcz neutral right at slightright
+        show tasma neutral right at slightleft
 
         luszcz "Dobry wieczur"
         luszcz "To będzie tutaj…? Bardzo ładny pokój."
@@ -322,6 +319,8 @@ label silver_sextape:
         show tasma neutral at slightleft
 
         luszcz "Chwila, to będzie kamerowane?"
+
+        show tasma neutral right at slightleft
 
         tasma "Oh… nienie, znaczy, tak, ale to ważne do rytuału."
         tasma "Mam nadzieję że to dla ciebie okej? Nikt tego nie zobaczy. Obiecuję."
@@ -424,7 +423,7 @@ label silver_sextape:
 
         "{i}*Taśma otwiera kamerę i wyjmuje sextape, trzyma je w dloniach*{/i}"
 
-        show tasma tasma at slightleft
+        show tasma tasma right at slightleft
 
         tasma "Spójrz! Nagrała się!"
         tasma "Czy nie jest piękna?"
@@ -505,6 +504,7 @@ label silver_sextape:
                     luszcz "Po prostu… nie było was w domu, więc przyszedłem tótaj."
                     luszcz "Widzisz?"
 
+                    $ ile_item_fabularne -= 1
                     $ kartka = 0
                     "{i}Łuszcz wyjmuje kartkę urodzinową i daje ja taśmie{/i}"
 

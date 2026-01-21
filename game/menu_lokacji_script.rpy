@@ -17,9 +17,12 @@ default domx = 0
 default jeziorox = 0
 default klubx = 0
 default dom_tasmyx = 0
+default szkolax = 0
+default czerwony_domx = 0
 
 default spanko = 0
 default ewento = 0
+default info = 0
 
 label menu_lokacji:
     label rynek:
@@ -38,8 +41,11 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg rynek_noc with fade
+        
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
 
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -148,7 +154,7 @@ label menu_lokacji:
                         "{i}W ratuszu trwają obecnie burzliwe obrady na temat budżetu Skały{/i}"
                     
                     if urzad_gminyx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump rynek2
 
                     else:
@@ -182,6 +188,78 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump rynek2
         
+                "{b}Kościół{/b}": 
+                    $ kosciolx = 0
+                    if kosc_social_link == 0 and koscielny_zyje == 0:
+                        $ kosciolx += 1
+                        "{i}Mógłbym porozmawiać z tym kościelnym ze mszy…{i}"
+                        "{i}Nie wydawał się taki zły, morze mogłbym przekabacić go na moją stronę...{i}"
+                    
+                    if timer >= 6120 and timer < 6660 and info == 0:
+                        $ info = 1
+                        "{i}Dziś w kościele ma się odbyć koncert zenka martyniuka{/i}"
+                        "{i}Jeśli chcę w nim wziąć udział powinienem przyjść tu PO 15:00{/i}"
+                    
+                    if timer >= 6660 and timer <= 6960:
+                        $ kosciolx += 1
+                        "{i}Właśnie w kościele trwa koncert Zenka Martyniuka{/i}"
+
+
+                    if kosciolx == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump rynek2
+
+                    else:
+                        if kosciolx == 1:
+                            if kosc_social_link == 0 and koscielny_zyje == 0:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Kościelnym? (1h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump rynek2
+                            
+                            if timer >= 6660 and timer <= 6960:
+                                menu:
+                                    "{b}Czy chcę wziąć udział w koncercie Zenka Martyniuka? (1h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump rynek2
+
+                        else:
+                            if kosciolx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Kościelnym (1h){/b}" if kosc_social_link == 0 and koscielny_zyje == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc1
+                                    
+                                    "{b}Weź udział w koncercie Zenka Martyniuka (1h){/b}" if timer >= 6660 and timer <= 6960:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc3
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump rynek2
+ 
     label sloneczna:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -203,7 +281,10 @@ label menu_lokacji:
             scene bg black with fade
             scene bg sloneczna_noc with fade
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -246,13 +327,16 @@ label menu_lokacji:
                         "{i}Przy placu budowy czeka na mnie Burmistrz, który chce mi pokazać gdzie powstanie nowe centrum szkolenia dla strażaków{/i}"
                         "{i}Nie chcę tam iść{/i}"
                     
-                    if lopatka == 0 and lopatka_ukradnieta == 0:
+                    if allozaur_social_link == 0:
                         $ placx += 1
-                        "{i}Widzę leżacą na ziemi łopatkę{/i}"
-                        "{i}Chyba dokładnie taką potrzebuje Żyd...{/i}"
+                        "{i}Słyszę głośne ryki, brzmiące jakby wydawało je jakieś dzikie zwierzę{/i}"
+                    
+                    if allozaur_social_link == 1:
+                        $ placx += 1
+                        "{i}Słyszę głośne ryki, Allozaura{/i}"
 
                     if placx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump sloneczna2
 
                     else:
@@ -271,18 +355,29 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
                             
-                            if lopatka_ukradnieta == 0:
+                            if allozaur_social_link == 0:
                                 menu:
-                                    "{b}Czy chcę ukraść łopatkę? (10min){/b}"
+                                    "{b}Czy chcę sprawdzic co wydaje te ryki? (15min){/b}"
 
                                     "{b}Tak{/b}":
-                                        $ timer += 10
-                                        $ lopatka = 1
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ lopatka_ukradnieta = 1
-                                        "{i}łopatka została dodana do ekwipunku{/i}"
-                                        jump sloneczna
+                                        $ timer += 15
+                                        jump allozaur1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump sloneczna2
+                            
+                            if allozaur_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Allozaurem? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump allozaur1
 
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -299,14 +394,17 @@ label menu_lokacji:
                                         $ timer += 240
                                         jump burmistrz2
 
-                                    "{b}Ukradnij łopatkę (10min){/b}" if lopatka_ukradnieta == 0:
-                                        $ timer += 10
-                                        $ lopatka = 1
+                                    "{b}Sprawdź co wydaje te ryki (15min){/b}" if allozaur_social_link == 0:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ lopatka_ukradnieta = 1
-                                        "{i}łopatka została dodana do ekwipunku{/i}"
-                                        jump sloneczna
+                                        $ timer += 15
+                                        jump allozaur1
+                                    
+                                    "{b}Spotkaj się z Allozaurem (15min){/b}" if allozaur_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump allozaur1
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -320,7 +418,7 @@ label menu_lokacji:
                         "{i}Ma chyba do mnie jakąś ważną sprawę{/i}"
 
                     if klubx  == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump sloneczna2
 
                     else:
@@ -371,7 +469,10 @@ label menu_lokacji:
             scene bg black with fade
             scene bg alejka_noc with fade
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -430,7 +531,7 @@ label menu_lokacji:
                         "{i}W ratuszu trwają obecnie burzliwe obrady na temat budżetu Skały{/i}"
                     
                     if urzad_gminyx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump alejka2
 
                     else:
@@ -471,7 +572,7 @@ label menu_lokacji:
                         "{i}Taśma czeka na mnie, by przedłużyć wspólnie gatunek{/i}"
                     
                     if dom_tasmyx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump alejka2
 
                     else:
@@ -522,7 +623,10 @@ label menu_lokacji:
             scene bg black with fade
             scene bg parking_noc with fade
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -582,17 +686,21 @@ label menu_lokacji:
                 
                 "{b}🏠 Dom{/b}": 
                     $ domx = 0        
-                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                         $ domx += 1
                         "{i}Robię się trochę śpiący...{/i}"
+                    
+                    if babcia_social_link == 1:
+                        $ domx += 1
+                        "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
 
                     if domx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump parking2
 
                     else:
                         if domx == 1:
-                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                                 menu:
                                     "{b}Czy chcę iść spać?{/b}"
 
@@ -600,6 +708,20 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         jump spanko
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
+
+                            if babcia_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę pobrać memy? (20min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 20
+                                        jump babcia2
 
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -614,6 +736,12 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         jump spanko
+                                    
+                                    "{b}Pobierz memy{/b}" if babcia_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 20
+                                        jump babcia2
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -640,7 +768,10 @@ label menu_lokacji:
             scene bg black with fade
             scene bg wolbromska_noc with fade
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -651,6 +782,8 @@ label menu_lokacji:
                     if spanko == 9:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
+        
+        
 
         label wolbromska2:
             menu:
@@ -678,17 +811,21 @@ label menu_lokacji:
                 
                 "{b}🏠 Dom{/b}": 
                     $ domx = 0        
-                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                         $ domx += 1
                         "{i}Robię się trochę śpiący...{/i}"
+                    
+                    if babcia_social_link == 1:
+                        $ domx += 1
+                        "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
 
                     if domx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump wolbromska2
 
                     else:
                         if domx == 1:
-                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                                 menu:
                                     "{b}Czy chcę iść spać?{/b}"
 
@@ -700,6 +837,21 @@ label menu_lokacji:
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
+                            
+                            if babcia_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę pobrać memy? (20min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 20
+                                        jump babcia2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+
 
                         else:
                             if domx > 1:
@@ -711,10 +863,37 @@ label menu_lokacji:
                                         scene bg black with fade
                                         jump spanko
                                     
+                                    "{b}Pobierz memy{/b}" if babcia_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 20
+                                        jump babcia2
+                                    
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
                 
+                "{b}🐄 Mleczarnia (15min){/b}": 
+                    if mleczarz_social_link == 7:
+                        "{i}Mleczarz już tutaj nie pracuje{/i}"
+                        "{i}Dzięki mnie mógł w spokoju przejść na emeryture{/i}"
+                        jump wolbromska2
+
+                    if krowka == 1:
+                        "{i}Nie dostarczyłem jescze krówki...{/i}"
+                        "{i}Muszę ją dostarczyć zanim tu wrócę{/i}"
+                        jump wolbromska2
+                    
+                    if krowko_limit == 1:
+                        "{i}Mleczarz nie ma dziś więcej krówek do rozdania{/i}"
+                        "{i}Powinienem wrócić tutaj jutro...{/i}"
+                        jump wolbromska2
+                    $ timer += 15
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    jump mleczarz1
+                
+
                 "{b}Portal{/b}": 
                     $ portalx = 0
                     if tarczownik_social_link == 1 and tarczownik_dzien == 0:
@@ -722,7 +901,7 @@ label menu_lokacji:
                         "{i}Przy portalu zapewne czeka na mnie Naofumi...{/i}"
                     
                     if portalx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump wolbromska2
 
                     else:
@@ -773,7 +952,10 @@ label menu_lokacji:
             scene bg black with fade
             scene bg bohaterow_wrzesnia_noc with fade
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -837,6 +1019,48 @@ label menu_lokacji:
                     scene bg black with fade
                     jump kebab
                 
+                "{b}🏠 Czerwony Dom{/b}" if mleczarz_social_link >= 2: 
+                    $ czerwony_domx = 0        
+                    if mleczarz_social_link == 2:
+                        $ czerwony_domx += 1
+                        "{i}Mam dostraczyć do tego domu krówkę...{/i}"
+
+                    if czerwony_domx == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump bohaterow_wrzesnia2
+
+                    else:
+                        if czerwony_domx == 1:           
+                            if mleczarz_social_link == 2:
+                                menu:
+                                    "{b}Czy chcę dostarczyć krówkę? (60min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kibole1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+
+
+                        else:
+                            if czerwony_domx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+                                    
+                                    "{b}Dostarcz Krówkę{/b}" if mleczarz_social_link == 2:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kibole1
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+
                 "{b}Dom Kultury{/b}": 
                     $ dom_kulturyx = 0
                     if urban_social_link == 0:
@@ -844,8 +1068,22 @@ label menu_lokacji:
                         "{i}W domu kultury trwa właśnie spotkanie seniorów{/i}"
                         "{i}znam właściciela budynku, więc może dałbym radę porozmawiać z seniorami i przekonać ich do mojej sprawy...{/i}"
                     
+                    if urban_social_link > 0 and babcia_social_link == 0 and akcja1 == 0:
+                        $ dom_kulturyx += 1
+                        "{i}Po ostatniej akcji z czarodziejem w domu kultury nastał chaos{/i}"
+                        "{i}może mógłbym tam pójść i zobaczyć czy mogę coś z tym zrobić...{/i}"
+                    
+                    if babcia_social_link == 1:
+                        "{i}W domu kultury czeka na mnie Babcia,{/i}"
+                        "{i}ale zanim się z nią spotkam muszę przynieśc jej materiał do szycia...{/i}"
+                    
+                    if babcia_social_link == 2:
+                        $ dom_kulturyx += 1
+                        "{i}W domu kultury czeka na mnie Babcia{/i}"
+                        "{i}mam dla niej materiał, z którego uszyje mi szalik{/i}"
+                    
                     if dom_kulturyx == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump bohaterow_wrzesnia2
 
                     else:
@@ -863,6 +1101,34 @@ label menu_lokacji:
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump bohaterow_wrzesnia2
+                        
+                        if urban_social_link > 0 and babcia_social_link == 0 and akcja1 == 0:
+                                menu:
+                                    "{b}Czy chcę sprawdzić sytuacje w domu kultury? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump babcia1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+                        
+                        if babcia_social_link == 2:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Babcią? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump babcia3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
 
                         else:
                             if dom_kulturyx > 1:
@@ -875,10 +1141,94 @@ label menu_lokacji:
                                         $ timer += 240
                                         jump urban1
                                     
+                                    "{b}Sprawdź sytuacje w domu kultury (30min){/b}" if urban_social_link > 0 and babcia_social_link == 0 and akcja1 == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump babcia1
+                                    
+                                    "{b}Spotkaj się z Babcią (30min){/b}" if babcia_social_link == 2:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump babcia3
+                                    
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump bohaterow_wrzesnia2
 
+                "{b}Kościół{/b}": 
+                    $ kosciolx = 0
+                    if kosc_social_link == 0 and koscielny_zyje == 0:
+                        $ kosciolx += 1
+                        "{i}Mógłbym porozmawiać z tym kościelnym ze mszy…{i}"
+                        "{i}Nie wydawał się taki zły, morze mogłbym przekabacić go na moją stronę...{i}"
+                    
+                    if timer >= 6120 and timer < 6660 and info == 0:
+                        $ info = 1
+                        "{i}Dziś w kościele ma się odbyć koncert zenka martyniuka{/i}"
+                        "{i}Jeśli chcę w nim wziąć udział powinienem przyjść tu PO 15:00{/i}"
+                    
+                    if timer >= 6660 and timer <= 6960:
+                        $ kosciolx += 1
+                        "{i}Właśnie w kościele trwa koncert Zenka Martyniuka{/i}"
+                    
+                    if kosciolx == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump bohaterow_wrzesnia2
+
+                    else:
+                        if kosciolx == 1:
+                            if kosc_social_link == 0 and koscielny_zyje == 0:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Kościelnym? (1h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+                            
+                            if timer >= 6660 and timer <= 6960:
+                                menu:
+                                    "{b}Czy chcę wziąć udział w koncercie Zenka Martyniuka? (1h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+
+                        else:
+                            if kosciolx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Kościelnym (1h){/b}" if kosc_social_link == 0 and koscielny_zyje == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc1
+                                    
+                                    "{b}Weź udział w koncercie Zenka Martyniuka (1h){/b}" if timer >= 6660 and timer <= 6960:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc3
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+
+                
     label lipowa:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -896,7 +1246,10 @@ label menu_lokacji:
             scene bg black with fade
             scene bg lipowa_noc with fade
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
+        
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -962,7 +1315,7 @@ label menu_lokacji:
                         "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
                     
                     if cmentarz_zydowskix == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump lipowa2
 
                     else:
@@ -1016,7 +1369,7 @@ label menu_lokacji:
                         if zyd_social_link == 3 and lopatka == 0:
                             jump lipowa2
 
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump lipowa2
 
                     else:
@@ -1070,6 +1423,73 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump lipowa2
         
+                "{b}Szkoła{/b}":
+                    $ szkolax = 0
+                    if kosc_social_link == 1 and koscielny_zyje == 0:
+                        $ szkolax += 1
+                        "{i}W szkole czeka na mnie kościelny{/i}"
+                        "{i}mam wysłuchać jego lekcji religii...{/i}"
+                    
+                    if kibole_social_link == 1:
+                        $ szkolax += 1
+                        "{i}Na szkolnym boisku Piotrek i Krystian mają zagrać w piłke nożną{/i}"
+                        "{i}i teorytycznie powinienem być na tym meczu...{/i}"
+
+                    if szkolax == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump lipowa2
+
+                    else:
+                        if szkolax == 1:
+                            if kosc_social_link == 1 and koscielny_zyje == 0:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Kościelnym? (3h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump kosc2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+                            
+                            if kibole_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Piotrkiem i Krystianem? (2h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump kibole2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+
+                        else:
+                            if szkolax > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Kościelnym (3h){/b}" if kosc_social_link == 1 and koscielny_zyje == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump kosc2
+                                    
+                                    "{b}Spotkaj się z Piotrkiem i Krystianem (3h){/b}" if kibole_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump kibole2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+
     label granica:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -1080,14 +1500,75 @@ label menu_lokacji:
         $ bohaterow_wrzesnia = 0
         $ lipowa = 0
         $ granica = 1
-        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+        if timer >= 360 and timer <= 1200:       
             scene bg black with fade
             scene bg granica with fade
-        else:
+            show trump
+
+        if timer >= 1800 and timer <= 2640:
+            scene bg black with fade
+            scene bg granica2 with fade
+
+        if timer >= 3240 and timer <= 4080:
+            scene bg black with fade
+            scene bg granica3 with fade
+
+        if timer >= 4680 and timer <= 5520:
+            scene bg black with fade
+            scene bg granica4 with fade
+
+        if timer >= 6120 and timer <= 6960:
+            scene bg black with fade
+            scene bg granica5 with fade
+
+        if timer >= 7560 and timer <= 8400:
+            scene bg black with fade
+            scene bg granica6 with fade
+
+        if timer >= 9000 and timer <= 9840:
+            scene bg black with fade
+            scene bg granica7 with fade
+
+        if timer >= 10440 and timer <= 11280:
+            scene bg black with fade
+            scene bg granica8 with fade
+
+        if timer > 1200 and timer < 1800:       
             scene bg black with fade
             scene bg granica_noc with fade
-        
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or  timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+
+        if  timer > 2640 and timer < 3240:
+            scene bg black with fade
+            scene bg granica2_noc with fade
+
+        if  timer > 4080 and timer < 4680:
+            scene bg black with fade
+            scene bg granica3_noc with fade
+
+        if  timer > 5520 and timer < 6120:
+            scene bg black with fade
+            scene bg granica4_noc with fade
+
+        if  timer > 6960 and timer < 7560:
+            scene bg black with fade
+            scene bg granica5_noc with fade
+
+        if  timer > 8400 and timer < 9000:
+            scene bg black with fade
+            scene bg granica6_noc with fade
+
+        if  timer > 9840 and timer < 10440:
+            scene bg black with fade
+            scene bg granica7_noc with fade
+
+        if  timer > 11280:
+            scene bg black with fade
+            scene bg granica8_noc with fade
+
+        if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            jump kosc_smierc
+
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 luszcz "Robię się troszkę śpiący..."
@@ -1131,7 +1612,7 @@ label menu_lokacji:
                         "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
                     
                     if cmentarz_zydowskix == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump granica2
 
                     else:
@@ -1180,12 +1661,17 @@ label menu_lokacji:
                         $ cmentarzx += 1
                         "{i}Żyd czeka na mnie pod kwaterą żołnierzy 1 wojny światowej{/i}"
                         "{i}Mamy razem wykopać zwłoki jego pra-pra-dziadka{/i}"
+                    
+                    if harambe_social_link == 0:
+                        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            $ cmentarzx += 1
+                            "{i}Spacer na cmentarzu nocą to świetny pomysł{/i}"
 
                     if cmentarzx == 0:
                         if zyd_social_link == 3 and lopatka == 0:
                             jump granica2
 
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump granica2
 
                     else:
@@ -1217,6 +1703,21 @@ label menu_lokacji:
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump granica2
+                            
+                            if harambe_social_link == 0:
+                                if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                    menu:
+                                        "{b}Czy chcę iść na spacer? (30min){/b}"
+
+                                        "{b}Tak{/b}":
+                                            play sound "audio/sfx/traveling.mp3"
+                                            scene bg black with fade
+                                            $ timer += 30
+                                            jump harambe1
+
+                                        "{b}Nie{/b}":
+                                            luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                            jump granica2
 
                         else:
                             if cmentarzx > 1:
@@ -1229,16 +1730,22 @@ label menu_lokacji:
                                         $ timer += 180
                                         jump zyd4
 
+                                    
                                     "{b}Spotkaj się z Żydem (15min){/b}" if zyd_social_link == 2:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
                                         jump zyd3
                                     
+                                    "{b}Idź na spacer (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 0 or timer > 2640 and timer < 3240 and harambe_social_link == 0 or timer > 4080 and timer < 4680 and harambe_social_link == 0 or timer > 5520 and timer < 6120 and harambe_social_link == 0 or timer > 6960 and timer < 7560 and harambe_social_link == 0 or timer > 8400 and timer < 9000 and harambe_social_link == 0 or timer > 9840 and timer < 10440 and harambe_social_link == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump harambe1
+                                    
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump granica2
-
 
                 "{b}Jezioro{/b}": 
                     $ jeziorox = 0
@@ -1248,7 +1755,7 @@ label menu_lokacji:
                         "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
                     
                     if jeziorox == 0:
-                        "{i}Nie ma tu nic do roboty{/i}"
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump granica2
 
                     else:
@@ -1332,7 +1839,7 @@ label menu_lokacji:
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
-            jump slonneczna 
+            jump sloneczna 
         if alejka == 1:
             jump alejka 
         if parking == 1:
@@ -1384,7 +1891,7 @@ label menu_lokacji:
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
-            jump slonneczna 
+            jump sloneczna 
         if alejka == 1:
             jump alejka 
         if parking == 1:
@@ -1404,7 +1911,7 @@ label menu_lokacji:
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
-            jump slonneczna 
+            jump sloneczna 
         if alejka == 1:
             jump alejka 
         if parking == 1:

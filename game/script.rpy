@@ -19,11 +19,18 @@ label postacie:
     image luszcz siedzi right = Transform("luszcz siedzi", xzoom=-1) 
     image luszcz zmentzony right = Transform("luszcz zmentzony", xzoom=-1) 
     image luszcz neutral right = Transform("luszcz neutral", xzoom=-1) 
+    image luszcz sigma right = Transform("luszcz sigma", xzoom=-1) 
 
     define owca = Character("Owca", color="#382a17")
 
+    define mleczarz = Character("Mleczarz", color="#807e7c")
+
+    define allozaur = Character("Allozaur", color="#0f3955")
+
     define tasma = Character("Taśma", color="#919191")
-    define sex = Character("Tasiemka", color="#cccccc")
+    image tasma neutral right = Transform("tasma neutral", xzoom=-1) 
+    image tasma tasma right = Transform("tasma tasma", xzoom=-1) 
+    define sex = Character("Sex tasiemka", color="#cccccc")
 
     define czarodziej = Character("Czarodziej", color="#222222")
     image czarodziej neutral right = Transform("czarodziej neutral", xzoom=-1) 
@@ -53,6 +60,8 @@ label postacie:
     
     define burmistrz = Character("Burmistrz", color="#f8bf44")
     image burmistrz neutral right = Transform("burmistrz neutral", xzoom=-1) 
+
+    define papaj = Character("Jan Paweł II", color="#fff345")
 
     define tanya = Character("Tanya", color="#215f36")
     image tanya neutral right = Transform("tanya neutral", xzoom=-1) 
@@ -109,6 +118,17 @@ label postacie:
 
     define girek = Character("Girek", color="#570303")
 
+    define babcia = Character("Babcia", color="#574b4b")
+
+    define dzieciak = Character("Jakis dzieciak", color="#8bcf4b8e")
+
+    define stefan = Character("Stefan", color="#d8ca07")
+
+    define krystian = Character("Krystian", color="#ff20208e")
+
+    define piotrek = Character("Piotrek", color="#ffffff")
+
+    define kip = Character("Krystian i Piotrek", color="#ce6a6a")
 
 label pozycje:
     transform granatz:
@@ -558,6 +578,9 @@ label wybory:
     default tarczownik_wybory = 0
     default urban_wybory = 0
     default silver_sextape_wybory = 0
+    default babcia_wybory = 0
+    default krystian_wybory = 0
+    default piotrek_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
@@ -566,6 +589,12 @@ label social_links:
     default tarczownik_social_link  = 0
     default urban_social_link = 0
     default silver_sextape_social_link = 0
+    default kosc_social_link = 0
+    default babcia_social_link = 0
+    default allozaur_social_link = 0
+    default mleczarz_social_link = 0
+    default kibole_social_link = 0
+    default harambe_social_link = 0
 
 
 
@@ -599,55 +628,46 @@ label start:
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "O kurde rzeczywiście. Dziś niedziela."
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Dzwon zawsze dzwoni trzy razy przed mszą rzeby przypomnieć ludziom że istnieje."
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Fajnie by było jakby wymyślili jakiś system który nie rozwala moich ószu."
 
         play sound "audio/sfx/bell.mp3"
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Ojej… jak bije więcej razy to coś znaczyło…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Pięć uderzeń to śmierć kościelnego…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Sześć to porzar…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Siedem ogłasza Sezon na misia…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Osiem to utoniencie człowieka w Wiśle…"
 
         play sound "audio/sfx/bell.mp3" 
         "{i}Bim Bom{/i}"
-        $ renpy.pause(0.5)
 
         luszcz "Dziewięć to ogłoszenia polityczne…"
 
@@ -1043,7 +1063,7 @@ label start:
 
         luszcz "Panie Shadow, ale ja panu pomogę"
         luszcz "Ja w domu wydrukowałem sobie taki sam miecz jak pan ma i dużo trenowałem"
-        luszcz "I biegałem nago po lesie jak pan"
+        luszcz "I biegałem nago wokół ogniska jak pan"
         luszcz "Ja mogę pomóc zobaczy pan"
         luszcz "Pokażę panu jak mogę być użyteczny!"
 

@@ -183,6 +183,7 @@ label urban:
 
         $ urban_sojusznik = 1
         $ liczba_sojusznikow += 1
+        $ akcja1 = 1
 
         jump fight91
 
@@ -218,7 +219,7 @@ label urban:
             if rynek == 1:
                 jump rynek
             if sloneczna == 1:
-                jump slonneczna 
+                jump sloneczna 
             if alejka == 1:
                 jump alejka 
             if parking == 1:
@@ -431,7 +432,7 @@ label urban:
                     if rynek == 1:
                         jump rynek
                     if sloneczna == 1:
-                        jump slonneczna 
+                        jump sloneczna 
                     if alejka == 1:
                         jump alejka 
                     if parking == 1:
@@ -510,7 +511,7 @@ label urban:
                     if rynek == 1:
                         jump rynek
                     if sloneczna == 1:
-                        jump slonneczna 
+                        jump sloneczna 
                     if alejka == 1:
                         jump alejka 
                     if parking == 1:

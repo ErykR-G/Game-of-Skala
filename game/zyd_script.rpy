@@ -194,7 +194,7 @@ label zyd:
             if rynek == 1:
                 jump rynek
             if sloneczna == 1:
-                jump slonneczna 
+                jump sloneczna 
             if alejka == 1:
                 jump alejka 
             if parking == 1:
@@ -290,7 +290,7 @@ label zyd:
                 if rynek == 1:
                     jump rynek
                 if sloneczna == 1:
-                    jump slonneczna 
+                    jump sloneczna 
                 if alejka == 1:
                     jump alejka 
                 if parking == 1:
@@ -325,7 +325,7 @@ label zyd:
                 if rynek == 1:
                     jump rynek
                 if sloneczna == 1:
-                    jump slonneczna 
+                    jump sloneczna 
                 if alejka == 1:
                     jump alejka 
                 if parking == 1:
@@ -351,7 +351,7 @@ label zyd:
                 if rynek == 1:
                     jump rynek
                 if sloneczna == 1:
-                    jump slonneczna 
+                    jump sloneczna 
                 if alejka == 1:
                     jump alejka 
                 if parking == 1:
@@ -376,6 +376,7 @@ label zyd:
 
         luszcz "Ano mam"
 
+        $ ile_item_fabularne -= 1
         $ lopatka = 0
 
         zyd "Ah! Łopatka! Wyśmienicie!"
@@ -598,6 +599,7 @@ label zyd:
 
                     scene bg lethal12
 
+                    $ ile_item_fabularne += 1
                     $ klucz = 1
                     "{i}*Klucz został dodany do ekwipunku*{/i}"
 
@@ -642,6 +644,8 @@ label zyd:
                     else:
                         scene bg lethal6
                         queue sound "audio/sfx/key.mp3"
+                        $ klucz = 0
+                        $ ile_item_fabularne -= 1
                         "{i}*otwieracie drzwi za pomocą klucza*"
                         play sound "audio/sfx/door.mp3"
                         scene bg lethal7
@@ -764,7 +768,7 @@ label zyd:
             if rynek == 1:
                 jump rynek
             if sloneczna == 1:
-                jump slonneczna 
+                jump sloneczna 
             if alejka == 1:
                 jump alejka 
             if parking == 1:

@@ -69,6 +69,9 @@ label spanko:
         $ zyd_piguly = 0
         $ kazuma_piguly = 0
         $ tarczownik_dzien = 0
+        $ akcja1 = 0
+        $ spanko = 0
+        $ krowko_limit = 0
         if tasma_spotkanko == 2:
             $ tasma_spotkanko = 1
         else: 
@@ -85,7 +88,7 @@ label spanko:
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
-            jump slonneczna 
+            jump sloneczna 
         if alejka == 1:
             jump alejka 
         if parking == 1:
@@ -142,6 +145,9 @@ label spanko2:
     $ zyd_piguly = 0
     $ kazuma_piguly = 0
     $ tarczownik_dzien = 0
+    $ akcja1 = 0
+    $ spanko = 0
+    $ krowko_limit = 0
     if tasma_spotkanko == 2:
             $ tasma_spotkanko = 1
     else: 
@@ -152,7 +158,7 @@ label spanko2:
     if rynek == 1:
         scene bg rynek with fade
     if sloneczna == 1:
-        scene bg slonneczna with fade
+        scene bg sloneczna with fade
     if alejka == 1:
         scene bg alejka with fade
     if parking == 1:
@@ -177,7 +183,7 @@ label spanko2:
     if rynek == 1:
         jump rynek2
     if sloneczna == 1:
-        jump slonneczna2 
+        jump sloneczna2 
     if alejka == 1:
         jump alejka2 
     if parking == 1:

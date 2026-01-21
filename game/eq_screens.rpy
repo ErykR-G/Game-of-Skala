@@ -8,6 +8,9 @@ screen global_eq_key():
 screen clock():
     $ day, hour, minute = get_time(timer)
 
+    $ days_of_week = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"]
+    $ day_name = days_of_week[(day - 1) % 7]
+
     frame:
         background "#0008"
         align (0.98, 0.02)
@@ -15,7 +18,7 @@ screen clock():
         vbox:
             xmaximum 90
             spacing 2
-            text "Dzień [day]" size 18
+            text "[day_name]" size 18
             text "[hour:02d]:[minute:02d]" size 22
 
             frame:
