@@ -19,6 +19,7 @@ default klubx = 0
 default dom_tasmyx = 0
 default szkolax = 0
 default czerwony_domx = 0
+default piwnicax = 0
 
 default spanko = 0
 default ewento = 0
@@ -605,7 +606,48 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump alejka2
-        
+
+                "{b}Piwnica Eminema{/b}": 
+                    $ piwnicax = 0
+                    if harambe_social_link == 2 and kosc_social_link == 3 and cialo == 0:
+                        $ piwnicax += 1
+                        "{i}Piwnica eminema, w której go pokonalismy i uratowaliśmy Cida{/i}"
+                        "{i}Może jego zwłoki się nadadzą do rytuału...{/i}"
+                    
+                    if piwnicax == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump alejka2
+
+                    else:
+                        if piwnicax == 1:
+                            if harambe_social_link == 2 and kosc_social_link == 3 and cialo == 0: 
+                                menu:
+                                    "{b}Czy chcę zabrać zwłoki Eminema? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump harambe2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
+
+                        else:
+                            if piwnicax > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Zabierz zwłoki eminema (15min){/b}"  if harambe_social_link == 2 and kosc_social_link == 3 and cialo == 0: 
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump harambe2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump alejka2
     label parking:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -892,6 +934,72 @@ label menu_lokacji:
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
                     jump mleczarz1
+                
+                "{b}Skała widokowa{/b}": 
+                    $ skalax = 0        
+                    if samobojstwo == 0:
+                        $ skalax += 1
+                        "{i}Mógłbym popełnić samobójstwo z tej skały widokowej...{/i}"
+                    
+                    if wazon_wezy == 1:
+                        $ skalax += 1
+                        "{i}Harambe kazał pomedytować w spokojnym miescu z wazonem z wężami{/i}"
+                        "{i}Może ta skałka, by sie nadała...{/i}"
+
+                    if skalax == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump bohaterow_wrzesnia2
+
+                    else:
+                        if skalax == 1:           
+                            if samobojstwo == 0:
+                                menu:
+                                    "{b}Czy chcę popełnić samobójstwo? (30min){/b}" 
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump skalka1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+                            
+                            if wazon_wezy == 1:
+                                menu:
+                                    "{b}Czy chcę pomedytować z wazonem z wężami? (15min){/b}" 
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump skalka2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
+                        
+                        else:
+                            if skalax > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+                                    
+                                    "{b}Popełnij Samobójstwo (30min){/b}" if samobojstwo == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump skalka1
+                                    
+                                    "{b}Pomedytuj z wazonem z wężami (15min){/b}" if wazon_wezy == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump skalka2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump bohaterow_wrzesnia2
                 
 
                 "{b}Portal{/b}": 
@@ -1364,6 +1472,28 @@ label menu_lokacji:
                         $ cmentarzx += 1
                         "{i}Żyd czeka na mnie pod kwaterą żołnierzy 1 wojny światowej{/i}"
                         "{i}Mamy razem wykopać zwłoki jego pra-pra-dziadka{/i}"
+                    
+                    if harambe_social_link == 0:
+                        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            $ cmentarzx += 1
+                            "{i}Spacer po cmentarzu nocą to świetny pomysł{/i}"
+                    
+                    if harambe_social_link == 1 and kosc_social_link == 3:
+                        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            $ cmentarzx += 1
+                            "{i}Na cmentarzu jest duch Harambe{/i}"
+                            "{i}może mógłbym go poprosić o pomoc w skrzeszeniu kościelnego...{/i}"
+                    
+                    if harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 0 or harambe_social_link == 2 and kosc_social_link == 3 and glowa == 0 and cialo == 0:
+                        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            "{i}Muszę przynieść ailbiB i ciało do Harambe{/i}"
+                            "{i}Jak narazie jeszcze tego nie mam...{/i}"
+                    
+                    if harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or harambe_social_link == 2 and kosc_social_link == 3 and cialo == 1 and ailbib == 1:
+                        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            $ cmentarzx += 1
+                            "{i}Muszę przynieść ailbiB i ciało do Harambe{/i}"
+                            "{i}Chyba mam już wszystko co potrzebne...{/i}"
 
                     if cmentarzx == 0:
                         if zyd_social_link == 3 and lopatka == 0:
@@ -1401,7 +1531,51 @@ label menu_lokacji:
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump lipowa2
+                            
+                            if harambe_social_link == 0:
+                                if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                    menu:
+                                        "{b}Czy chcę iść na spacer? (30min){/b}"
 
+                                        "{b}Tak{/b}":
+                                            play sound "audio/sfx/traveling.mp3"
+                                            scene bg black with fade
+                                            $ timer += 30
+                                            jump harambe1
+
+                                        "{b}Nie{/b}":
+                                            luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                            jump lipowa2
+
+                            if harambe_social_link == 1 and kosc_social_link == 3:
+                                if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                    menu:
+                                        "{b}Czy poprosić Harambe o pomoc? (30min){/b}"
+
+                                        "{b}Tak{/b}":
+                                            play sound "audio/sfx/traveling.mp3"
+                                            scene bg black with fade
+                                            $ timer += 30
+                                            jump kosc4
+
+                                        "{b}Nie{/b}":
+                                            luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                            jump lipowa2
+                            
+                            if harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or harambe_social_link == 2 and kosc_social_link == 3 and cialo == 1 and ailbib == 1:
+                                if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                    menu:
+                                        "{b}Czy wskrzesić Kościelnego? (1h){/b}"
+
+                                        "{b}Tak{/b}":
+                                            play sound "audio/sfx/traveling.mp3"
+                                            scene bg black with fade
+                                            $ timer += 60
+                                            jump kosc5
+
+                                        "{b}Nie{/b}":
+                                            luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                            jump lipowa2
                         else:
                             if cmentarzx > 1:
                                 menu:
@@ -1418,6 +1592,24 @@ label menu_lokacji:
                                         scene bg black with fade
                                         $ timer += 15
                                         jump zyd3
+
+                                    "{b}Idź na spacer (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 0 or timer > 2640 and timer < 3240 and harambe_social_link == 0 or timer > 4080 and timer < 4680 and harambe_social_link == 0 or timer > 5520 and timer < 6120 and harambe_social_link == 0 or timer > 6960 and timer < 7560 and harambe_social_link == 0 or timer > 8400 and timer < 9000 and harambe_social_link == 0 or timer > 9840 and timer < 10440 and harambe_social_link == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump harambe1
+                                    
+                                    "{b}Poproś o pomoc Harambe (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 2640 and timer < 3240 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 4080 and timer < 4680 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 5520 and timer < 6120 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 6960 and timer < 7560 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 8400 and timer < 9000 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 9840 and timer < 10440 and harambe_social_link == 1 and kosc_social_link == 3:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump kosc4
+                                    
+                                    "{b}Wskrześ Kościelnego (1h){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc5
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -1665,7 +1857,18 @@ label menu_lokacji:
                     if harambe_social_link == 0:
                         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                             $ cmentarzx += 1
-                            "{i}Spacer na cmentarzu nocą to świetny pomysł{/i}"
+                            "{i}Spacer po cmentarzu nocą to świetny pomysł{/i}"
+                    
+                    if harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 0 or harambe_social_link == 2 and kosc_social_link == 3 and glowa == 0 and cialo == 0:
+                        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            "{i}Muszę przynieść ailbiB i ciało do Harambe{/i}"
+                            "{i}Jak narazie jeszcze tego nie mam...{/i}"
+                    
+                    if harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or harambe_social_link == 2 and kosc_social_link == 3 and cialo == 1 and ailbib == 1:
+                        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                            $ cmentarzx += 1
+                            "{i}Muszę przynieść ailbiB i ciało do Harambe{/i}"
+                            "{i}Chyba mam już wszystko co potrzebne...{/i}"
 
                     if cmentarzx == 0:
                         if zyd_social_link == 3 and lopatka == 0:
@@ -1718,6 +1921,36 @@ label menu_lokacji:
                                         "{b}Nie{/b}":
                                             luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                             jump granica2
+                            
+                            if harambe_social_link == 1 and kosc_social_link == 3:
+                                if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                    menu:
+                                        "{b}Czy poprosić Harambe o pomoc? (30min){/b}"
+
+                                        "{b}Tak{/b}":
+                                            play sound "audio/sfx/traveling.mp3"
+                                            scene bg black with fade
+                                            $ timer += 30
+                                            jump kosc4
+
+                                        "{b}Nie{/b}":
+                                            luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                            jump granica2
+                            
+                            if harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or harambe_social_link == 2 and kosc_social_link == 3 and cialo == 1 and ailbib == 1:
+                                if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
+                                    menu:
+                                        "{b}Czy wskrzesić Kościelnego? (1h){/b}"
+
+                                        "{b}Tak{/b}":
+                                            play sound "audio/sfx/traveling.mp3"
+                                            scene bg black with fade
+                                            $ timer += 60
+                                            jump kosc5
+
+                                        "{b}Nie{/b}":
+                                            luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                            jump granica2
 
                         else:
                             if cmentarzx > 1:
@@ -1742,6 +1975,18 @@ label menu_lokacji:
                                         scene bg black with fade
                                         $ timer += 30
                                         jump harambe1
+                                    
+                                    "{b}Poproś o pomoc Harambe (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 2640 and timer < 3240 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 4080 and timer < 4680 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 5520 and timer < 6120 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 6960 and timer < 7560 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 8400 and timer < 9000 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 9840 and timer < 10440 and harambe_social_link == 1 and kosc_social_link == 3:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump kosc4
+                                    
+                                    "{b}Wskrześ Kościelnego (1h){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump kosc5
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"

@@ -85,6 +85,9 @@ label items_fabularne:
     default krowka = 0
     default piernik = 0
     default zielona_kula = 0
+    default wazon_wezy = 0
+    default ailbib = 0
+    default cialo = 0
     
 
 

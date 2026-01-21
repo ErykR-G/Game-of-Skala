@@ -130,6 +130,8 @@ label postacie:
 
     define kip = Character("Krystian i Piotrek", color="#ce6a6a")
 
+    define harambe = Character("Harambe", color="#583c2f")
+
 label pozycje:
     transform granatz:
         xalign 0.83
@@ -581,6 +583,7 @@ label wybory:
     default babcia_wybory = 0
     default krystian_wybory = 0
     default piotrek_wybory = 0
+    default kosc_wybory = 10
 
 label social_links:
     default zyd_social_link = 0

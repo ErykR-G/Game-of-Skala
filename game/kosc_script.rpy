@@ -1,5 +1,7 @@
 default lechia = 0
 default koscielny_zyje = 0 
+default cialo_wybrane = 0
+default glowa_wybrane = 0
 
 label kosc:
     label kosc1:
@@ -553,7 +555,313 @@ label kosc:
             if granica == 1:
                 jump granica
 
+    label kosc4:
+        scene bg cmentarz_noc with fade
+        play music "audio/music/natura.mp3"
+        show luszcz neutral at left
+        show harambe duch at slightright
 
+        luszcz "Harambe! Potrzebóję twojej pomocy!"
 
+        harambe "Łuszcz. Co."
 
+        luszcz "Kościelny zginął, ale nie dostał się do nieba i tuła się nieskończenie po ziemi!"
+
+        harambe "Jak. W. Dziadach."
+
+        luszcz "Czy da się coś zrobić aby go przywrócić do żywych?"
+
+        harambe "Oczywiście."
+        harambe "Jeden:"
+        harambe "Znajdź. ailbiB."
+        harambe "Jezioro. Noc."
+        harambe "Dwa:"
+        harambe "Ciało. Bez. Duszy."
+        harambe "Trzy:"
+        harambe "Przynieś. Harambe. Czary Mary."
+
+        luszcz "Ah, no przecierz"
+        luszcz "Dziękuję Harambe"
+
+        harambe "Przyjaciel."
+
+        $ harambe_social_link = 2
+
+        play music "audio/music/pole.mp3"
+        if rynek == 1:
+            jump rynek
+        if sloneczna == 1:
+            jump sloneczna 
+        if alejka == 1:
+            jump alejka 
+        if parking == 1:
+            jump parking
+        if wolbromska == 1:
+            jump wolbromska
+        if bohaterow_wrzesnia == 1:
+            jump bohaterow_wrzesnia 
+        if lipowa == 1:
+            jump lipowa 
+        if granica == 1:
+            jump granica
+
+    label kosc5:
+        scene bg cmentarz_noc with fade
+        play music "audio/music/natura.mp3"
+        show luszcz neutral at left
+        show harambe duch at slightright
+
+        luszcz "Harambe, mam już wszystko!"
+        harambe "Czary. Mary?"
+
+        menu:
+            "{b}Czary Mary{/b}":
+                if cialo == 1 and glowa == 1:
+                    harambe "Wybierz. Ciało."
+                    menu:
+                        "{b}Eminem{/b}":
+                            $ cialo_wybrane = 1
+                            harambe "Ciało. Emina."
+                            $ cialo = 0
+                            $ ile_item_fabularne -= 1
+                            harambe "Dobrze."
+                        
+                        "{b}Nemeczek{/b}":
+                            harambe "Ciało. Nemeczek."
+                            harambe "Ciało? Głowa."
+                            harambe "Głowa?"
+                            luszcz "(Czy to na pewno dobry pomysł?)"
+
+                            menu:
+                                "{b}Tak{/b}":
+                                    $ glowa_wybrane = 1
+                                    luszcz "Tak, głowa."
+                                    $ glowa = 0
+                                    $ ile_item_fabularne -= 1
+
+                                    harambe "Okej…"
+                                
+                                "{b}Nie{/b}":
+                                    $ cialo_wybrane = 1
+                                    luszcz "Żeczywiście, może lepiej nie."
+
+                                    harambe "Dobrze."
+
+                                    luszcz "W takim razie niech będzie ciało Eminema"
+                                    $ cialo = 0
+                                    $ ile_item_fabularne -= 1
+
+                                    harambe "Ciało. Emina."
+                                    harambe "Dobrze."
+
+                else:
+                    if cialo == 1:
+                        $ cialo_wybrane = 1
+                        harambe "Ciało. Emina."
+                        $ cialo = 0
+                        $ ile_item_fabularne -= 1
+                        harambe "Dobrze."
+                
+                    if glowa == 1:
+                        harambe "Ciało. Nemeczek."
+                        harambe "Ciało? Głowa."
+                        harambe "Głowa?"
+                        luszcz "(Czy to na pewno dobry pomysł?)"
+
+                        menu:
+                            "{b}Tak{/b}":
+                                $ glowa = 0
+                                luszcz "Tak, głowa."
+                                $ glowa = 0
+                                $ ile_item_fabularne -= 1
+
+                                harambe "Okej…"
+                            
+                            "{b}Nie{/b}":
+                                luszcz "Żeczywiście, może lepiej nie."
+
+                                harambe "Dobrze."
+
+                                luszcz "(Morze znajdę coś innego?)"
+
+                                play music "audio/music/pole.mp3"
+                                if rynek == 1:
+                                    jump rynek
+                                if sloneczna == 1:
+                                    jump sloneczna 
+                                if alejka == 1:
+                                    jump alejka 
+                                if parking == 1:
+                                    jump parking
+                                if wolbromska == 1:
+                                    jump wolbromska
+                                if bohaterow_wrzesnia == 1:
+                                    jump bohaterow_wrzesnia 
+                                if lipowa == 1:
+                                    jump lipowa 
+                                if granica == 1:
+                                    jump granica
+                $ ailbib = 0
+                $ ile_item_fabularne -= 1
+                harambe "Start. Rytuał."
+                show harambe ksiazka at right
+                if cialo_wybrane == 1:
+                    show emina dead at center
+                    harambe "U U A A"
+                    harambe "UE UE UEHEHEHE"
+                    harambe "…"
+                    harambe "リᔑ⋮ʖᔑ∷↸⨅╎ᒷ⋮  ꖎ⚍ʖ╎ᒷ  ⨅⚍⨅||ℸ ̣ ᒷ  !¡𝙹  ᓵᔑꖎ||ᒲ  ↸リ╎⚍  ᒲ𝙹ꖌ∷ᒷ  ∷ᔑ⋮ᓭℸ ̣ 𝙹!¡||  ∴ᓵ╎ᔑ⊣ᔑᓵ  ⨅ᔑ!¡ᔑᓵ⍑  ᒲᒲᒲ  !¡||ᓵ⍑𝙹ℸ ̣ ᔑ"
+                    harambe "⋮ᒷᓭꖎ╎  ℸ ̣ 𝙹  ᓵ⨅||ℸ ̣ ᔑᓭ⨅  ꖎ⚍ʖ╎ᓭ⨅  ↸⚍⨅ᒷ  ᒲᒷᓭꖌ╎ᒷ  !¡ᒷリ╎ᓭ||  ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ"
+                    show harambe duch at right
+
+                    show emina neutral
+
+                    emina "AAAAAAAAAAAA!!!"
+                    emina "Fuck!"
+                    emina "Kto to powiedział!"
+
+                    harambe "Czar. Zadzialał."
+
+                    luszcz "he he hell je"
+                    luszcz "Szczęść Boże!"
+
+                    emina "Szczęść Boże!"
+                    emina "Fuck!"
+                    emina "Fucking hell!! Czemu ciągle przeklinam!"
+
+                    luszcz "Jesteś w ciele Eminema"
+                    luszcz "Użyliśmy go żeby przywrócić cię do żywych"
+
+                    emina "Zabiłeś dla mnie drugiego człowieka? Fuck!"
+                    emina "A to nie był grzech?"
+
+                    luszcz "Nie no nie"
+                    luszcz "Znaczy teoretycznie zabiłem ale nie dla ciebie"
+                    luszcz "Jednakrze jak już lerzy ciało i się marnuje to morzna wykorzystać"
+
+                    emina "Hmm… Fuck!"
+                    emina "Dobra nie mam czasu żeby się tym martwić, mam swoje pierdolone życie spowrorem!"
+                    emina "Shit! To przeklinanie mnie drażni tho"
+
+                    harambe "Taka. Cena. Życia."
+
+                    luszcz "Dokładnie, to co mistrz powiedział."
+
+                    emina "Fuck on ma racje."
+                    emina "Życie ponad wszystko"
+                    emina "Kocham kurwa życie"
+                    emina "Fuck"
+                    emina "Dziękuję ci, młody, za zaaranżowanie tego"
+                    emina "Jestem ci nieskończenie wdzięczny"
+                    emina "Fuck"
+                    emina "Pozwól że pójdę oczyszczać to ciało z grzechu ciężką pracą. Fuck."
+                    emina "Przy okazji korzystając z kinowania pierwszego człowieka póki mogę."
+                    emina "Bóg z wami dobrzy ludzie! Fuck y’all!"
+
+                    hide emina
+                    $ kosc_wybory = 2
+                    $ kosc_social_link = 4
+
+                    luszcz "…"
+                    luszcz "CZEKAJ!"
+
+                    show emina neutral at center
+
+                    luszcz "Czy potrafisz zrymować pomarańczę z bananem?"
+                    emina "…"
+                    emina "Bornana"
+
+                    hide emina
+
+                    harambe "Mmmmm…"
+
+                    play music "audio/music/pole.mp3"
+                    if rynek == 1:
+                        jump rynek
+                    if sloneczna == 1:
+                        jump sloneczna 
+                    if alejka == 1:
+                        jump alejka 
+                    if parking == 1:
+                        jump parking
+                    if wolbromska == 1:
+                        jump wolbromska
+                    if bohaterow_wrzesnia == 1:
+                        jump bohaterow_wrzesnia 
+                    if lipowa == 1:
+                        jump lipowa 
+                    if granica == 1:
+                        jump granica
+
+                else:
+                    show glowa_nemeczek at center
+                    harambe "U U A A"
+                    harambe "UE UE UEHEHEHE"
+                    harambe "…"
+                    harambe "リᔑ⋮ʖᔑ∷↸⨅╎ᒷ⋮  ꖎ⚍ʖ╎ᒷ  ⨅⚍⨅||ℸ ̣ ᒷ  !¡𝙹  ᓵᔑꖎ||ᒲ  ↸リ╎⚍  ᒲ𝙹ꖌ∷ᒷ  ∷ᔑ⋮ᓭℸ ̣ 𝙹!¡||  ∴ᓵ╎ᔑ⊣ᔑᓵ  ⨅ᔑ!¡ᔑᓵ⍑  ᒲᒲᒲ  !¡||ᓵ⍑𝙹ℸ ̣ ᔑ"
+                    harambe "⋮ᒷᓭꖎ╎  ℸ ̣ 𝙹  ᓵ⨅||ℸ ̣ ᔑᓭ⨅  ꖎ⚍ʖ╎ᓭ⨅  ↸⚍⨅ᒷ  ᒲᒷᓭꖌ╎ᒷ  !¡ᒷリ╎ᓭ||  ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ⍑ᔑ"
+                    show harambe duch at right
+
+                    show glowa_nemeczek 2 
+
+                    nemeczek "AAAAAAAAA"
+                    nemeczek "AŁAAAAAAA AAAAAAA"
+
+                    harambe "Czar. Zadziałał."
+
+                    nemeczek "AAAAAAAAA AAAAAAAAAA"
+
+                    luszcz "Ups"
+
+                    nemeczek "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    nemeczek "eee…. eee……"
+                    nemeczek "hhhhhh  h hh hhh…"
+                    nemeczek "gfsddw"
+
+                    hide glowa_nemeczek
+                    $ kosc_wybory = 0
+                    $ kosc_social_link = 4
+
+                    luszcz "To chyba nie był dobry pomysł."
+
+                    harambe "Hm."
+
+                    play music "audio/music/pole.mp3"
+                    if rynek == 1:
+                        jump rynek
+                    if sloneczna == 1:
+                        jump sloneczna 
+                    if alejka == 1:
+                        jump alejka 
+                    if parking == 1:
+                        jump parking
+                    if wolbromska == 1:
+                        jump wolbromska
+                    if bohaterow_wrzesnia == 1:
+                        jump bohaterow_wrzesnia 
+                    if lipowa == 1:
+                        jump lipowa 
+                    if granica == 1:
+                        jump granica
+
+            "{b}Twoja Stara To Twój Stary{/b}":
+                harambe "Ha."
+                luszcz "Wrócę jak będę gotów."
+                play music "audio/music/pole.mp3"
+                if rynek == 1:
+                    jump rynek
+                if sloneczna == 1:
+                    jump sloneczna 
+                if alejka == 1:
+                    jump alejka 
+                if parking == 1:
+                    jump parking
+                if wolbromska == 1:
+                    jump wolbromska
+                if bohaterow_wrzesnia == 1:
+                    jump bohaterow_wrzesnia 
+                if lipowa == 1:
+                    jump lipowa 
+                if granica == 1:
+                    jump granica
 
