@@ -138,6 +138,8 @@ label postacie:
 
     define tata = Character("Tata", color="#474444")
 
+    define obi = Character("Obi-Wan Kenobi", color="#9b6c46")
+
     define luigi = Character("Luigi", color="#2be92b")
     image luigi neutral right = Transform("luigi neutral", xzoom=-1) 
 

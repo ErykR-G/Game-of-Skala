@@ -267,6 +267,6 @@ label sklepy:
                 
             "{b}Nie{/b}":
                 $ config.menu_include_disabled = False
-                luszcz "dowidzenia"
+                luszcz "do widzenia"
                 play music "audio/music/pole.mp3"
                 jump bohaterow_wrzesnia

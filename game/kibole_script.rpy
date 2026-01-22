@@ -84,7 +84,7 @@ label kibole:
                     krystian "To ja tu decyduję czy musi czy nie."
                     krystian "Do Widzenia, niezmiernie dziękuję."
 
-                    luszcz "Dowidzenia"
+                    luszcz "Do widzenia"
 
                     hide krystian
                     hide piotrek
@@ -123,7 +123,7 @@ label kibole:
 
                     piotrek "Tak kończą przegrani."
                     piotrek "Plus, w po dziurki w nosie mam ciągłego słuchania o twoim obsranym klubie i zajmowaniem się tobą gdy wracasz z ustawek."
-                    piotrek "Dowidzenia!"
+                    piotrek "Do widzenia!"
 
                     hide piotrek
                     show luszcz neutral at slightleft

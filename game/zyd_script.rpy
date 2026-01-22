@@ -139,7 +139,7 @@ label zyd:
 
             braun "Mój sklep jest dla pana zawsze otwarty"
 
-            luszcz "Dowidzenia Panie Braun"
+            luszcz "Do widzenia Panie Braun"
 
             braun "Żegnam pana"
 

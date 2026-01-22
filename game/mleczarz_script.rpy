@@ -34,10 +34,10 @@ label mleczarz:
                     play music "audio/music/pole.mp3"
                     jump wolbromska
                 
-                "{b}Dowidzenia{/b}":
-                    luszcz "Dowidzenia."
+                "{b}Do widzenia{/b}":
+                    luszcz "Do widzenia."
 
-                    mleczarz "Dowidzenia."
+                    mleczarz "Do widzenia."
 
                     play music "audio/music/pole.mp3"
                     jump wolbromska
@@ -60,10 +60,10 @@ label mleczarz:
                     play music "audio/music/pole.mp3"
                     jump wolbromska
                 
-                "{b}Dowidzenia{/b}":
-                    luszcz "Dowidzenia."
+                "{b}Do widzenia{/b}":
+                    luszcz "Do widzenia."
 
-                    mleczarz "Dowidzenia."
+                    mleczarz "Do widzenia."
 
                     play music "audio/music/pole.mp3"
                     jump wolbromska
@@ -99,10 +99,10 @@ label mleczarz:
                     play music "audio/music/pole.mp3"
                     jump wolbromska
                 
-                "{b}Dowidzenia{/b}":
-                    luszcz "Dowidzenia."
+                "{b}Do widzenia{/b}":
+                    luszcz "Do widzenia."
 
-                    mleczarz "Dowidzenia."
+                    mleczarz "Do widzenia."
 
                     play music "audio/music/pole.mp3"
                     jump wolbromska
@@ -125,10 +125,10 @@ label mleczarz:
                     play music "audio/music/pole.mp3"
                     jump wolbromska
                 
-                "{b}Dowidzenia{/b}":
-                    luszcz "Dowidzenia."
+                "{b}Do widzenia{/b}":
+                    luszcz "Do widzenia."
 
-                    mleczarz "Dowidzenia."
+                    mleczarz "Do widzenia."
 
                     play music "audio/music/pole.mp3"
                     jump wolbromska
@@ -151,10 +151,10 @@ label mleczarz:
                     play music "audio/music/pole.mp3"
                     jump wolbromska
                 
-                "{b}Dowidzenia{/b}":
-                    luszcz "Dowidzenia."
+                "{b}Do widzenia{/b}":
+                    luszcz "Do widzenia."
 
-                    mleczarz "Dowidzenia."
+                    mleczarz "Do widzenia."
 
                     play music "audio/music/pole.mp3"
                     jump wolbromska
@@ -177,10 +177,10 @@ label mleczarz:
                     play music "audio/music/pole.mp3"
                     jump wolbromska
                 
-                "{b}Dowidzenia{/b}":
-                    luszcz "Dowidzenia."
+                "{b}Do widzenia{/b}":
+                    luszcz "Do widzenia."
 
-                    mleczarz "Dowidzenia."
+                    mleczarz "Do widzenia."
 
                     play music "audio/music/pole.mp3"
                     jump wolbromska
@@ -222,7 +222,7 @@ label mleczarz:
 
         "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
 
-        luszcz "Dziękuję dowidzenia!"
+        luszcz "Dziękuję do widzenia!"
 
         play music "audio/music/pole.mp3"
         hide luszcz 
@@ -291,65 +291,75 @@ label mleczarz4:
         jump parking
 
 label mleczarz5:
-        scene bg musial
-        show luszcz neutral at left
+        play music "audio/music/ddlc.mp3"
+        scene bg sayori
+        show luszcz skinwalker at left
 
-        luszcz "*puk* *puk*"
-
-        nikt "Kto tam?"
-
-        luszcz "Dostawa krówek!"
-
-        show musial neutral at slightright
-
-        musial "Ah, no tak"
+        luszcz ""
+        luszcz ""
+        luszcz ""
 
         $ krowka = 0
 
-        musial "Pychotka, dziękuję"
-        musial "Tutaj masz pieniądze"
+        nikt ":"
+        luszcz ">>>"
+        nikt "$"
 
         $ money += 2
         $ mleczarz_social_link = 5
 
-        "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
+        "{i}*++++++*{/i}"
+        luszcz "."
 
-        musial "Miłego dnia!"
-
-        luszcz "Miłego dnia!"
-
+        stop music
         hide luszcz 
-        hide musial 
-        jump sloneczna
+        play music "audio/music/pole.mp3"
+        jump parking
 
 label mleczarz6:
-        scene bg musial
+        play music "audio/music/natura.mp3"
+        scene bg szkola
         show luszcz neutral at left
 
-        luszcz "*puk* *puk*"
+        luszcz "Dostawa krówek!!"
+        luszcz "Kto zamawiał krówki!!"
 
-        nikt "Kto tam?"
-
-        luszcz "Dostawa krówek!"
-
-        show musial neutral at slightright
-
-        musial "Ah, no tak"
+        show obi neutral at slightright
 
         $ krowka = 0
 
-        musial "Pychotka, dziękuję"
-        musial "Tutaj masz pieniądze"
+        obi "To ja, Obi Wan Kenobi, zamawiałem krówki"
+
+        luszcz "O Dzień dobry co pan tu robi"
+
+        obi "Nie twój interes"
+        obi "Oto pieniądze"
 
         $ money += 2
         $ mleczarz_social_link = 6
 
         "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
 
-        musial "Miłego dnia!"
+        luszcz "Dziękuję, do widzenia"
 
-        luszcz "Miłego dnia!"
+        obi "Do widzenia."
 
         hide luszcz 
-        hide musial 
-        jump sloneczna
+        hide obi
+        play music "audio/music/pole.mp3"
+        if rynek == 1:
+            jump rynek
+        if sloneczna == 1:
+            jump sloneczna 
+        if alejka == 1:
+            jump alejka 
+        if parking == 1:
+            jump parking
+        if wolbromska == 1:
+            jump wolbromska
+        if bohaterow_wrzesnia == 1:
+            jump bohaterow_wrzesnia 
+        if lipowa == 1:
+            jump lipowa 
+        if granica == 1:
+            jump granica

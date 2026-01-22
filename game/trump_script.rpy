@@ -70,7 +70,7 @@ label trump:
 
                         "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
 
-                        luszcz "Dziękuję dowidzenia!"
+                        luszcz "Dziękuję do widzenia!"
 
                     hide trump 
                     hide luigi 
@@ -103,7 +103,7 @@ label trump:
 
                     "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
 
-                    luszcz "Dziękuję dowidzenia!"
+                    luszcz "Dziękuję do widzenia!"
                 hide trump 
                 hide luigi 
                 hide luszcz 

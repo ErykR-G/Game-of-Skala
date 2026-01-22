@@ -41,7 +41,7 @@ label silver_sextape:
                         show luszcz neutral
                         luszcz "Nie, nie jest to mój interes."
                         luszcz "A dinożaury wyginęły dawno zanim mieliśmy o tym cokolwiek do powiedzenia."
-                        luszcz "Dowidzenia."
+                        luszcz "Do widzenia."
 
                         tasma "Proszę poczekać!"
                         tasma "Ostatnie pytanko…"
@@ -591,7 +591,7 @@ label silver_sextape:
 
             sex "mAcieju… Macieju… koniec,.. Już… tak… wystarczy.."
 
-            luszcz "dowidzenia, powodzenia z młodą."
+            luszcz "do widzenia, powodzenia z młodą."
 
             hide luszcz
             hide tasma 
