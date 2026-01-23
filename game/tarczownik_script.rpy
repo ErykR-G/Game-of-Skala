@@ -6,7 +6,10 @@ default tarczownik_dzien = 0
 label tarczownik:
     label tarczownik1:
         $ tarczownik_social_link = 1
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         scene bg wolbromska with fade
         show luszcz neutral zorder 11 at left
 
@@ -71,7 +74,8 @@ label tarczownik:
 
                 $ tarczownik_wybory = 0
                 $ tarczownik_social_link = 10
-                jump wolbromska
+                hide luszcz
+                jump wolbromska2
 
         play music "audio/music/natura.mp3"
         scene bg black with fade
@@ -217,7 +221,10 @@ label tarczownik:
                 luszcz "To był rzarcik…"
                 luszcz "Anyway"
 
-                play music "audio/music/pole.mp3"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
                 $ tarczownik_wybory = 10
                 $ tarczownik_social_link = 10
                 jump wolbromska
@@ -588,7 +595,10 @@ label tarczownik:
                     $ tarczownik_wybory = 1
                     $ tarczownik_social_link = 1
                     
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
 
     label tarczownik2:
@@ -862,7 +872,10 @@ label tarczownik:
                     $ tarczownik_wybory = 2
                     $ tarczownik_social_link = 2
                     
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Obawiam się że nie przyjdzie…{/b}":
@@ -891,7 +904,10 @@ label tarczownik:
                     $ tarczownik_wybory = 10
                     $ tarczownik_social_link = 10
                     
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Nie masz psychy{/b}":
@@ -923,7 +939,10 @@ label tarczownik:
                     $ tarczownik_wybory = 10
                     $ tarczownik_social_link = 10
                     
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
 
             

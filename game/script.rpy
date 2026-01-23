@@ -146,6 +146,14 @@ label postacie:
     define maduro = Character("Nicolás Maduro", color="#c47214")
     image maduro neutral right = Transform("maduro neutral", xzoom=-1) 
 
+    define nawrocki = Character("Karol Nawrocki", color="#e01b1b")
+
+    define tusk = Character("Donald Tusk", color="#3a4df0")
+
+    define n = Character("Narrator", color="#cccccc")
+
+    define luszcz2 = Character("Maciej_Rel", color="#1d0cbb")
+
 label pozycje:
     transform granatz:
         xalign 0.83
@@ -902,7 +910,10 @@ label start:
         $ renpy.pause(0.5)
 
         scene bg rynek
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         $ timer += 5
 
         show luszcz neutral at center:
@@ -1145,7 +1156,10 @@ label start:
         scene bg black with fade
         scene bg rynek with fade
 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
 
         show luszcz neutral at slightleft
         show eminem neutral at slightright
@@ -1215,7 +1229,10 @@ label start:
 
                     hide luszcz
                     hide eminem
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump rynek
                 
                 "{b}Nie{/b}":
@@ -1230,7 +1247,10 @@ label start:
 
                     hide luszcz
                     hide eminem
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump rynek
         
         label wodaswiecona:
@@ -1254,7 +1274,10 @@ label start:
 
                     hide luszcz
                     hide eminem
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump rynek
 
                 "{b}Nie{/b}":
@@ -1276,7 +1299,10 @@ label start:
 
                     hide luszcz
                     hide eminem
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump rynek
 
 

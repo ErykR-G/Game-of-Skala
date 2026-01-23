@@ -74,6 +74,7 @@ label fight51_stats:
     default trup8_stun = 0
 
 label fight51:
+    $ fight_on = 1
     label wybor_fight51:
         play music "audio/music/raem_fight.mp3"
         scene bg raem
@@ -97,7 +98,6 @@ label fight51:
         $ trup8_umarty = 1
 
         label team_fight51:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

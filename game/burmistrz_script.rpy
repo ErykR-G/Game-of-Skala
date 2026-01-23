@@ -48,7 +48,10 @@ label burmistrz:
         scene bg urzad_gminy2
 
         play sound "audio/sfx/rzut.mp3"
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         with hpunch
 
         $ renpy.pause(0.5)
@@ -205,7 +208,10 @@ label burmistrz:
                 $ nemeczek_wybory = 0
                 $ burmistrz_social_link = 10
 
-                play music "audio/music/pole.mp3"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
                 jump sloneczna 
                 
         scene bg black with fade
@@ -398,7 +404,10 @@ label burmistrz:
                     $ nemeczek_wybory = 10
                     $ burmistrz_social_link = 2
                     
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump sloneczna
 
                 "{b}Postaw się{/b}":
@@ -582,7 +591,10 @@ label burmistrz:
 
                 scene bg black with fade
                 "{i}Łuszcz padł bez sił na ziemi i po chwili został pojmany i zgwałcony, a potem zasilił szeregi haremu władcy kartaginy i dopiero po latach udało mu się zwiać…{/i}"
-                play music "audio/music/pole.mp3"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
                 scene bg plac with fade
                 show luszcz neutral at center
 
@@ -623,7 +635,10 @@ label burmistrz:
                     all "Tak jest panie pułkowniku"
 
                 play sound "audio/sfx/fighting.mp3"
-                play music "audio/music/pole.mp3"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
 
                 scene bg black with fade
                 scene bg plac with fade

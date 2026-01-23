@@ -31,7 +31,10 @@ label mleczarz:
 
                     luszcz "Dobrze, lecę dostarczyć"
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Do widzenia{/b}":
@@ -39,7 +42,10 @@ label mleczarz:
 
                     mleczarz "Do widzenia."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
         
         if mleczarz_social_link == 1:
@@ -57,7 +63,10 @@ label mleczarz:
 
                     luszcz "Dobrze, lecę dostarczyć"
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Do widzenia{/b}":
@@ -65,7 +74,10 @@ label mleczarz:
 
                     mleczarz "Do widzenia."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
         
         if mleczarz_social_link == 2:
@@ -96,7 +108,10 @@ label mleczarz:
 
                     luszcz "Dobrze, lecę dostarczyć"
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Do widzenia{/b}":
@@ -104,7 +119,10 @@ label mleczarz:
 
                     mleczarz "Do widzenia."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
         
         if mleczarz_social_link == 3:
@@ -122,7 +140,10 @@ label mleczarz:
 
                     luszcz "Dobrze, lecę dostarczyć"
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Do widzenia{/b}":
@@ -130,7 +151,10 @@ label mleczarz:
 
                     mleczarz "Do widzenia."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
         
         if mleczarz_social_link == 4:
@@ -148,7 +172,10 @@ label mleczarz:
 
                     luszcz "Dobrze, lecę dostarczyć"
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Do widzenia{/b}":
@@ -156,7 +183,10 @@ label mleczarz:
 
                     mleczarz "Do widzenia."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
         
         if mleczarz_social_link == 5:
@@ -174,7 +204,10 @@ label mleczarz:
 
                     luszcz "Dobrze, lecę dostarczyć"
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
                 
                 "{b}Do widzenia{/b}":
@@ -182,7 +215,10 @@ label mleczarz:
 
                     mleczarz "Do widzenia."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump wolbromska
         
         if mleczarz_social_link == 6:
@@ -198,7 +234,10 @@ label mleczarz:
 
             luszcz "Będę tęsknić, kruwkomleczażu."
             $ mleczarz_social_link = 7
-            play music "audio/music/pole.mp3"
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                play music "audio/music/pole.mp3"
+            else:
+                play music "audio/music/pole_noc.mp3"
             jump wolbromska
 
     label mleczarz2:
@@ -224,7 +263,10 @@ label mleczarz:
 
         luszcz "Dziękuję do widzenia!"
 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         hide luszcz 
         hide trump 
         jump granica2
@@ -313,7 +355,10 @@ label mleczarz5:
 
         stop music
         hide luszcz 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         jump parking
 
 label mleczarz6:
@@ -346,7 +391,10 @@ label mleczarz6:
 
         hide luszcz 
         hide obi
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         if rynek == 1:
             jump rynek
         if sloneczna == 1:

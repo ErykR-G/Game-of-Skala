@@ -84,6 +84,7 @@ label fight21_stats:
     default tarczownik_gasnica = 0
 
 label fight21:
+    $ fight_on = 1
     label wybor_fight21:
         play music "audio/music/braun_fight.mp3"
         scene bg monopolowy
@@ -102,7 +103,6 @@ label fight21:
         $ braun_max_attack_now_true = braun_max_attack
 
         label team_fight21:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

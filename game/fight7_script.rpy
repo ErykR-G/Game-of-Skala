@@ -81,6 +81,7 @@ label fight71_stats:
     default tarczownik_fokus = 0
 
 label fight71:
+    $ fight_on = 1
     label wybor_fight71:
         play music "audio/music/tanya_fight.mp3"
         scene bg polnoc
@@ -109,7 +110,6 @@ label fight71:
         $ tanya_max_attack_now_true = tanya_max_attack
 
         label team_fight71:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

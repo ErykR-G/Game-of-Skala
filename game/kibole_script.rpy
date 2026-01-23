@@ -1,4 +1,5 @@
 default nie_mam = 0
+default gole_rence = 0
 label kibole:
     label kibole1:
         scene bg czerwony with fade
@@ -94,7 +95,10 @@ label kibole:
                     $ krystian_wybory = 2
                     $ piotrek_wybory = 0
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump bohaterow_wrzesnia 
                 
                 "{b}Cracovia{/b}":
@@ -136,13 +140,53 @@ label kibole:
                     krystian "Ziomuś, to twoja wina."
                     krystian "Masz wpierdol"
 
-                    jump fight112
+                    play sound "audio/sfx/traveling.mp3" 
+                    scene bg black with fade
+                    scene bg krystian_fight with fade
+                    play music "audio/music/natura.mp3"
+
+                    show krystian neutral at slightright
+                    show luszcz neutral at slightleft
+
+                    krystian "Tutaj będzie dobrze"
+                    krystian "Psy nie powinny przyjechać na czas"
+
+                    luszcz "..?"
+
+                    krystian "Dobra to ustalmy warunki walki..."
+                    krystian "Z racji, iż jestem sam proponuje, aby było jeden na jeden honorowo"
+                    krystian "Oczywiście, bez sprzętu bez niczego na gołe ręce"
+                    krystian "Bo prawdziwi chuligani, to y bardziej ich to interesuje na ręce niż na jakieś noże to i to wszystko."
+                    krystian "Pasują ci warunki?"
+
+                    menu:
+                        "{b}Tak{/b}":
+                            $ gole_rence = 1
+                            luszcz "W porządku, zawsze byłem fanem uczciwych i całkowicie bezpiecznych walk huligańskich"
+
+                            krystian "no to dawaj"
+
+                            jump fight121
+
+                        "{b}Nie{/b}":
+                            $ gole_rence = 2
+                            luszcz "W dupie mam wasze gejowskie zasady, bez sprzetu nie ma zabawy i huj Cie obchodzi ile na ile sie klepiemy"
+
+                            krystian "Taa? to spierdalaj"
+
+                            jump fight121
+
                     label after_fight121:
+                        scene bg krystian_fight with fade
+                        show luszcz neutral at center
                         luszcz "Nienawidzę piłki nożnej."
                         $ krystian_wybory = 0
                         $ piotrek_wybory = 2
 
-                        play music "audio/music/pole.mp3"
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
                         jump bohaterow_wrzesnia 
                 
                 "{b}Piernik{/b}"if piernik == 1:
@@ -173,7 +217,10 @@ label kibole:
                     $ krystian_wybory = 0
                     $ piotrek_wybory = 0
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump bohaterow_wrzesnia 
                 
                 "{b}Biblia{/b}" if biblia == 1 and nie_mam == 0:
@@ -238,7 +285,10 @@ label kibole:
                             $ krystian_wybory = 1
                             $ piotrek_wybory = 1
 
-                            play music "audio/music/pole.mp3"
+                            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                play music "audio/music/pole.mp3"
+                            else:
+                                play music "audio/music/pole_noc.mp3"
                             jump bohaterow_wrzesnia 
                         
                         "{b}Głowa Nemeczka{/b}" if glowa == 1:
@@ -272,7 +322,10 @@ label kibole:
                             $ krystian_wybory = 1
                             $ piotrek_wybory = 1
 
-                            play music "audio/music/pole.mp3"
+                            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                play music "audio/music/pole.mp3"
+                            else:
+                                play music "audio/music/pole_noc.mp3"
                             jump bohaterow_wrzesnia 
 
     label kibole2:
@@ -363,7 +416,10 @@ label kibole:
         $ krystian_wybory = 2
         $ piotrek_wybory = 2
 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         if rynek == 1:
             jump rynek
         if sloneczna == 1:

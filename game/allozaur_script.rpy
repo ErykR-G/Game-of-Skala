@@ -17,7 +17,10 @@ label allozaur:
             menu:
                 "{b}Stypa{/b}":
                     luszcz "Ale siara nie mam nic dla niego."
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump sloneczna
 
                 "{b}Dinozaur{/b}" if dinozaur == 1:
@@ -52,7 +55,10 @@ label allozaur:
 
                     luszcz "Dziękuję ci Allozaurze."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     jump sloneczna
 
                 "{b}Kremówka{/b}" if kremowka == 1:
@@ -152,7 +158,10 @@ label allozaur:
 
                             luszcz "A teraz spowrotem."
                             
-                            play music "audio/music/pole.mp3"
+                            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                play music "audio/music/pole.mp3"
+                            else:
+                                play music "audio/music/pole_noc.mp3"
                             jump sloneczna
                         
                         "{b}Pożegnaj się z kremówką{/b}":
@@ -164,7 +173,10 @@ label allozaur:
                                 easeout 0.4 xalign 1.5
 
                             luszcz "To jednak allozaur nic nie dostanie."
-                            play music "audio/music/pole.mp3"
+                            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                play music "audio/music/pole.mp3"
+                            else:
+                                play music "audio/music/pole_noc.mp3"
                             jump sloneczna
         
         else:
@@ -176,7 +188,10 @@ label allozaur:
                     "{b}Pogłaskaj Allozaura{/b}":
                         "{i}Allozaur mruczeniem docenia głaskanie{/i}"
                         "{i}Chyba nic tutaj więcej nie zrobię...{/i}"
-                        play music "audio/music/pole.mp3"
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
                         jump sloneczna
 
             
@@ -191,7 +206,10 @@ label allozaur:
                 menu:
                     "{b}Stypa{/b}":
                         luszcz "Ale siara nie mam jednak nic dla ciebie."
-                        play music "audio/music/pole.mp3"
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
                         jump sloneczna
 
                     "{b}Dinozaur{/b}" if dinozaur == 1:
@@ -226,7 +244,10 @@ label allozaur:
 
                         luszcz "Dziękuję ci Allozaurze."
 
-                        play music "audio/music/pole.mp3"
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
                         jump sloneczna
 
                     "{b}Kremówka{/b}" if kremowka == 1:
@@ -326,7 +347,10 @@ label allozaur:
 
                                 luszcz "A teraz spowrotem."
                                 
-                                play music "audio/music/pole.mp3"
+                                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                    play music "audio/music/pole.mp3"
+                                else:
+                                    play music "audio/music/pole_noc.mp3"
                                 jump sloneczna
                             
                             "{b}Pożegnaj się z kremówką{/b}":
@@ -338,5 +362,8 @@ label allozaur:
                                     easeout 0.4 xalign 1.5
 
                                 luszcz "To jednak allozaur nic nie dostanie."
-                                play music "audio/music/pole.mp3"
+                                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                    play music "audio/music/pole.mp3"
+                                else:
+                                    play music "audio/music/pole_noc.mp3"
                                 jump sloneczna

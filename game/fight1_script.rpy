@@ -74,6 +74,7 @@ label fight11_stats:
     default akane_stun = 0
 
 label fight11:
+    $ fight_on = 1
     label wybor_fight11:
         play music "audio/music/fight.mp3"
         scene bg korytarz
@@ -102,7 +103,6 @@ label fight11:
         $ akane_max_attack_now_true = akane_max_attack
 
         label team_fight11:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

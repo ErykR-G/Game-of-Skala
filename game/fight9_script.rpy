@@ -75,6 +75,7 @@ label fight91_stats:
     default czarodziej_stun = 0
 
 label fight91:
+    $ fight_on = 1
     label wybor_fight91:
         play music "audio/music/fight.mp3"
         scene bg dom_kultury
@@ -93,7 +94,6 @@ label fight91:
         $ czarodziej_max_attack_now_true = czarodziej_max_attack
 
         label team_fight91:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

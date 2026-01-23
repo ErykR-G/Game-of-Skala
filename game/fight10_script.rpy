@@ -28,6 +28,7 @@ label fight101_stats:
     default trup11_stun = 0
 
 label fight101:
+    $ fight_on = 1
     label wybor_fight101:
         play music "audio/music/komuchy_fight.mp3"
         scene bg bunkier2
@@ -52,7 +53,6 @@ label fight101:
 
 
         label team_fight101:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

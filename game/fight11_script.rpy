@@ -74,6 +74,7 @@ label fight111_stats:
     default urban_zly_stun = 0
 
 label fight111:
+    $ fight_on = 1
     label wybor_fight111:
         play music "audio/music/komuchy_fight.mp3"
         scene bg bunkier2
@@ -102,7 +103,6 @@ label fight111:
         $ urban_zly_max_attack_now_true = urban_zly_max_attack
 
         label team_fight111:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

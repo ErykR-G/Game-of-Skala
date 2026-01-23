@@ -3,6 +3,84 @@
     color "#dddddd"
     outlines [(1, "#00000080", 0, 0)]
 
+screen nawrocki_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value nawrocki_hp_now range nawrocki_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if nawrocki_hp_now/nawrocki_hp > 0.5 else
+                                "#ffcc00" if nawrocki_hp_now/nawrocki_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[nawrocki_hp_now]/[nawrocki_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [nawrocki_min_attack_now]-[nawrocki_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen krystian_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value krystian_hp_now range krystian_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if krystian_hp_now/krystian_hp > 0.5 else
+                                "#ffcc00" if krystian_hp_now/krystian_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[krystian_hp_now]/[krystian_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [krystian_min_attack_now]-[krystian_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen tusk_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value tusk_hp_now range tusk_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if tusk_hp_now/tusk_hp > 0.5 else
+                                "#ffcc00" if tusk_hp_now/tusk_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[tusk_hp_now]/[tusk_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [tusk_min_attack_now]-[tusk_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen kibol1_stats():
     fixed:
         xpos 0.76

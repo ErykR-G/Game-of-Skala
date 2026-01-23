@@ -83,7 +83,10 @@ label kosc:
 
         kosc "Szczęść Boże młody."
 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
 
         $ kosc_social_link = 1
         if rynek == 1:
@@ -225,7 +228,10 @@ label kosc:
                     luszcz "no dobra,ale teraz spadam stąd zanim pojawi się inkwizycja"
 
                     $ kosc_social_link = 10
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     if rynek == 1:
                         jump rynek
                     if sloneczna == 1:
@@ -302,7 +308,10 @@ label kosc:
                 luszcz "Niech będzie niech będzie"
 
                 $ kosc_social_link = 2
-                play music "audio/music/pole.mp3"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
                 if rynek == 1:
                     jump rynek
                 if sloneczna == 1:
@@ -332,7 +341,10 @@ label kosc:
                 kosc "Pa.."
 
                 $ kosc_social_link = 10
-                play music "audio/music/pole.mp3"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
                 if rynek == 1:
                     jump rynek
                 if sloneczna == 1:
@@ -516,7 +528,10 @@ label kosc:
             luszcz "Dobra, spadam stąd."
 
             $ kosc_social_link = 3
-            play music "audio/music/pole.mp3"
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                play music "audio/music/pole.mp3"
+            else:
+                play music "audio/music/pole_noc.mp3"
 
             if rynek == 1:
                 jump rynek
@@ -537,7 +552,10 @@ label kosc:
 
         else:
             luszcz "Dłużej nie wytrzymam, idę stąd"
-            play music "audio/music/pole.mp3"
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                play music "audio/music/pole.mp3"
+            else:
+                play music "audio/music/pole_noc.mp3"
             if rynek == 1:
                 jump rynek
             if sloneczna == 1:
@@ -587,7 +605,10 @@ label kosc:
 
         $ harambe_social_link = 2
 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
@@ -684,7 +705,10 @@ label kosc:
 
                                 luszcz "(Morze znajdę coś innego?)"
 
-                                play music "audio/music/pole.mp3"
+                                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                    play music "audio/music/pole.mp3"
+                                else:
+                                    play music "audio/music/pole_noc.mp3"
                                 if rynek == 1:
                                     jump rynek
                                 if sloneczna == 1:
@@ -775,7 +799,10 @@ label kosc:
 
                     harambe "Mmmmm…"
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     if rynek == 1:
                         jump rynek
                     if sloneczna == 1:
@@ -826,7 +853,10 @@ label kosc:
 
                     harambe "Hm."
 
-                    play music "audio/music/pole.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
                     if rynek == 1:
                         jump rynek
                     if sloneczna == 1:
@@ -847,7 +877,10 @@ label kosc:
             "{b}Twoja Stara To Twój Stary{/b}":
                 harambe "Ha."
                 luszcz "Wrócę jak będę gotów."
-                play music "audio/music/pole.mp3"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
                 if rynek == 1:
                     jump rynek
                 if sloneczna == 1:

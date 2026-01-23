@@ -74,6 +74,7 @@ label fight31_stats:
     default trup5_stun = 0
 
 label fight31:
+    $ fight_on = 1
     label wybor_fight31:
         play music "audio/music/yippee_fight.mp3"
         scene bg lethal12
@@ -98,7 +99,6 @@ label fight31:
 
 
         label team_fight31:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

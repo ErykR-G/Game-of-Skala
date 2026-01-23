@@ -75,6 +75,7 @@ label fight01_stats:
     default emina_special = 0
 
 label fight01:
+    $ fight_on = 1
     label wybor_fight01:
         play music "audio/music/emina_fight.mp3"
         scene bg alejka3v3
@@ -93,7 +94,6 @@ label fight01:
         $ ile_wrogow = 1
 
         label team_fight01:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

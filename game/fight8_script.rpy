@@ -77,6 +77,7 @@ label fight81_stats:
     default potwor = 0
 
 label fight81:
+    $ fight_on = 1
     label wybor_fight81:
         play music "audio/music/cult_fight.mp3"
         scene bg dziady2
@@ -105,7 +106,6 @@ label fight81:
         $ kononowicz_max_attack_now_true = kononowicz_max_attack
 
         label team_fight81:
-            $ fight_on = 1
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:

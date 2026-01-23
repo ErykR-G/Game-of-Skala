@@ -22,10 +22,12 @@ default czerwony_domx = 0
 default piwnicax = 0
 default fioletowy_domx = 0
 default stomatologx = 0
+default toxic_domx = 0
 
 default spanko = 0
 default ewento = 0
 default info = 0
+default muzyczka = 0
 
 label menu_lokacji:
     label rynek:
@@ -51,6 +53,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -290,6 +293,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -520,6 +524,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -721,6 +726,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -906,6 +912,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -1005,6 +1012,49 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
                 
+                "{b}🏠 Dom Toxic Pea{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
+                    $ toxic_domx = 0        
+                    if toxic_pea_social_link == 1:
+                        $ toxic_domx += 1
+                        "{i}Tutaj mieszka Toxic Pea, którego spotkałem na Kebabie{/i}"
+                        "{i}Zaproponował mi byśmy razem pozabijali zombiaczki...{/i}"
+
+                    if toxic_domx == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump wolbromska2
+
+                    else:
+                        if toxic_domx == 1:
+                            if toxic_pea_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (1h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump toxic_pea1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+
+
+                        else:
+                            if toxic_domx > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+                                    
+                                    "{b}Spotkaj się z Toxic Pea (1h){/b}" if toxic_pea_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump toxic_pea1
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+
                 "{b}🐄 Mleczarnia (15min){/b}": 
                     if mleczarz_social_link == 7:
                         "{i}Mleczarz już tutaj nie pracuje{/i}"
@@ -1156,6 +1206,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -1449,6 +1500,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -1703,7 +1755,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump lipowa2
-        
+
                 "{b}Szkoła{/b}":
                     $ szkolax = 0
                     if kosc_social_link == 1 and koscielny_zyje == 0:
@@ -1877,6 +1929,7 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
             $ spanko += 1
             if spanko == 1:
+                play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
                 if spanko == 5:
@@ -2210,7 +2263,10 @@ label menu_lokacji:
 
         luszcz "Ehhh, nie mogę z wami"
 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
@@ -2262,7 +2318,10 @@ label menu_lokacji:
         play sound "audio/sfx/gnomowo.mp3"
         gnom "We've been gnomed!"
 
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
@@ -2282,7 +2341,10 @@ label menu_lokacji:
     
     label fightx3:
         "po walce 3"
-        play music "audio/music/pole.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            play music "audio/music/pole.mp3"
+        else:
+            play music "audio/music/pole_noc.mp3"
         if rynek == 1:
             jump rynek
         if sloneczna == 1:
