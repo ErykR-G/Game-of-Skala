@@ -53,6 +53,8 @@ label postacie:
     image zyd lampa right = Transform("zyd lampa", xzoom=-1) 
 
     define kazuma = Character("Kazuma", color="#dbf01f")
+    image kazuma neutral right = Transform("kazuma neutral", xzoom=-1) 
+
     define tarczownik = Character("Naofumi", color="#0a570a")
     image tarczownik neutral right = Transform("tarczownik neutral", xzoom=-1) 
 

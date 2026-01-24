@@ -73,24 +73,45 @@ label items:
 
 label items_fabularne:
     default ile_item_fabularne = 0
+    default stronaf1 = 0   
+    default stronaf2 = 0
+    default stronaf3 = 0   
 
-    default lopatka = 0
-    default klucz = 0
-    default glowa = 0
-    default kartka = 0
-    default biblia = 0
-    default folder_memow = 0
-    default kremowka = 0
-    default dinozaur = 0
-    default krowka = 0
     default piernik = 0
-    default zielona_kula = 0
-    default wazon_wezy = 0
+    default lopatka = 0
+    default krowka = 0
+    default kremowka = 0
+    default biblia = 0
     default ailbib = 0
+    default wazon_wezy = 0
+    default glowa = 0
+    default zielona_kula = 0
+    default aparat = 0
+    default kartka = 0
+    default dinozaur = 0
     default cialo = 0
     default cybertruck = 0
-    
+    default okulary = 0
+    default klucz = 0
+    default folder_memow = 0
 
+    default piernikx = 0
+    default lopatkax = 0
+    default krowkax = 0
+    default kremowkax = 0
+    default bibliax = 0
+    default ailbibx = 0
+    default wazon_wezyx = 0
+    default glowax = 0
+    default zielona_kulax = 0
+    default aparatx = 0
+    default kartkax = 0
+    default dinozaurx = 0
+    default cialox = 0
+    default cybertruckx = 0
+    default okularyx = 0
+    default kluczx = 0
+    default folder_memowx = 0
 
 label eq:
     $ config.menu_include_disabled = False
@@ -7483,10 +7504,311 @@ label eq:
                         jump eq
             jump eq
             
-        "{b}Itemy Fabularne{/b}":
-            "{i}Kiedyś będą{/i}"
-            jump eq
+        "{b}Itemy Fabularne{/b}" if ile_item_fabularne > 0: 
+            $ stronaf1 = 0   
+            $ stronaf2 = 0
+            $ stronaf3 = 0  
+            $ piernikx = 0
+            $ lopatkax = 0
+            $ krowkax = 0
+            $ kremowkax = 0
+            $ bibliax = 0
+            $ ailbibx = 0
+            $ wazon_wezyx = 0
+            $ glowax = 0
+            $ zielona_kulax = 0
+            $ aparatx = 0
+            $ kartkax = 0
+            $ dinozaurx = 0
+            $ cialox = 0
+            $ cybertruckx = 0
+            $ okularyx = 0
+            $ kluczx = 0
+            $ folder_memowx = 0
 
+            if piernik >= 1:
+                $ stronaf1 += 1
+                $ piernikx += 1
+                
+            if lopatka >= 1:
+                $ stronaf1 += 1
+                $ lopatkax += 1
+                
+            if krowka >= 1:
+                $ stronaf1 += 1
+                $ krowkax += 1
+
+            if kremowka >= 1:
+                $ stronaf1 += 1
+                $ kremowkax += 1
+
+            if biblia >= 1:
+                $ stronaf1 += 1
+                $ bibliax += 1
+                
+            if ailbib >= 1:
+                $ stronaf1 += 1
+                $ ailbibx += 1
+                
+            if wazon_wezy >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ wazon_wezyx += 1
+
+            else:
+                if wazon_wezy >= 1:
+                    $ wazon_wezyx += 2
+                    $ stronaf2 += 1
+                
+            if glowa >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ glowax += 1
+
+            else:
+                if glowa >= 1:
+                    $ glowax += 2
+                    $ stronaf2 += 1
+                
+            if zielona_kula >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ zielona_kulax += 1
+
+            else:
+                if zielona_kula >= 1:
+                    $ zielona_kulax += 2
+                    $ stronaf2 += 1
+                
+            if aparat >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ aparatx += 1
+
+            else:
+                if aparat >= 1:
+                    $ aparatx += 2
+                    $ stronaf2 += 1
+                
+            if kartka >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ kartkax += 1
+
+            else:
+                if kartka >= 1:
+                    $ kartkax += 2
+                    $ stronaf2 += 1
+                
+            if dinozaur >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ dinozaurx += 1
+
+            else: 
+                if dinozaur >= 1 and stronaf2 < 5:
+                    $ dinozaurx += 2
+                    $ stronaf2 += 1
+                
+                else: 
+                    if dinozaur >= 1:
+                        $ dinozaurx += 3
+                        $ stronaf3 += 1
+            
+            if cialo >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ cialox += 1
+
+            else: 
+                if cialo >= 1 and stronaf2 < 5:
+                    $ cialox += 2
+                    $ stronaf2 += 1
+                
+                else: 
+                    if cialo >= 1:
+                        $ cialox += 3
+                        $ stronaf3 += 1
+            
+            if cybertruck >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ cybertruckx += 1
+
+            else: 
+                if cybertruck >= 1 and stronaf2 < 5:
+                    $ cybertruckx += 2
+                    $ stronaf2 += 1
+                
+                else: 
+                    if cybertruck >= 1:
+                        $ cybertruckx += 3
+                        $ stronaf3 += 1
+            
+            if okulary >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ okularyx += 1
+
+            else: 
+                if okulary >= 1 and stronaf2 < 5:
+                    $ okularyx += 2
+                    $ stronaf2 += 1
+                
+                else: 
+                    if okulary >= 1:
+                        $ okularyx += 3
+                        $ stronaf3 += 1
+            
+            if klucz >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ kluczx += 1
+
+            else: 
+                if klucz >= 1 and stronaf2 < 5:
+                    $ kluczx += 2
+                    $ stronaf2 += 1
+                
+                else: 
+                    if klucz >= 1:
+                        $ kluczx += 3
+                        $ stronaf3 += 1
+            
+            if folder_memow >= 1 and stronaf1 < 6:
+                $ stronaf1 += 1
+                $ folder_memowx += 1
+
+            else: 
+                if folder_memow >= 1 and stronaf2 < 5:
+                    $ folder_memowx += 2
+                    $ stronaf2 += 1
+                
+                else: 
+                    if folder_memow >= 1:
+                        $ folder_memowx += 3
+                        $ stronaf3 += 1
+
+            label itemy_fabularne:
+                menu:
+                    "{b}Piernik{/b}" if piernikx == 1:
+                        window show
+                        "{i}Piernik jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Łopatka{/b}" if lopatkax == 1:
+                        window show
+                        "{i}Łopatka jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Krówka{/b}" if krowkax == 1:
+                        window show
+                        "{i}Krówka jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Kremówka{/b}" if kremowkax == 1:
+                        window show
+                        "{i}Kremówka jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Biblia{/b}" if bibliax == 1:
+                        window show
+                        "{i}Biblia jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Ailbib{/b}" if ailbibx == 1:
+                        window show
+                        "{i}Ailbib jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Wazon Węży{/b}" if wazon_wezyx == 1:
+                        window show
+                        "{i}Wazon Węży jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Głowa Nemeczka{/b}" if glowax == 1:
+                        window show
+                        "{i}Głowa Nemeczka jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Kula Toxic Pea{/b}" if zielona_kulax == 1:
+                        window show
+                        "{i}Kula Toxic Pea jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Aparat{/b}" if aparatx == 1:
+                        window show
+                        "{i}Aparat jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Kartka z Życzeniami{/b}" if kartkax == 1:
+                        window show
+                        "{i}Kartka z Życzeniami jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Dinozaur{/b}" if dinozaurx == 1:
+                        window show
+                        "{i}Dinozaur jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Ciało Eminema{/b}" if cialox == 1:
+                        window show
+                        "{i}Ciało Eminema jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Tesla Cybertruck{/b}" if cybertruckx == 1:
+                        window show
+                        "{i}Tesla Cybertruck jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Okulary z Wąsem{/b}" if okularyx == 1:
+                        window show
+                        "{i}Okulary z Wąsem jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Klucz{/b}" if kluczx == 1:
+                        window show
+                        "{i}Klucz jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{b}Folder z Memami{/b}" if folder_memowx == 1:
+                        window show
+                        "{i}Folder z Memami jest fajny{/i}"
+                        window hide
+
+                        jump itemy_fabularne
+                    
+                    "{i}Strona 1/2 --->{/i}" if stronaf2 > 0 and stronaf3 == 0:
+                        jump itemy_fabularne2
+                    
+                    "{i}Strona 1/3 --->{/i}" if stronaf2 > 0 and stronaf3 > 0:
+                        jump itemy_fabularne2
+
+
+                    "{b}Powrót{/b}":
+                        jump eq
         
         "{b}Itemy do Walki{/b}" if ile_item > 0: 
             $ strona1 = 0   
@@ -7753,3 +8075,139 @@ label itemy_do_walki2:
         
         "{i}<--- Strona 2/2{/i}":
             jump itemy_do_walki
+
+label itemy_fabularne2:
+    menu:
+        "{b}Wazon Węży{/b}" if wazon_wezyx == 2:
+            window show
+            "{i}Wazon Węży jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Głowa Nemeczka{/b}" if glowax == 2:
+            window show
+            "{i}Głowa Nemeczka jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Kula Toxic Pea{/b}" if zielona_kulax == 2:
+            window show
+            "{i}Kula Toxic Pea jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Aparat{/b}" if aparatx == 2:
+            window show
+            "{i}Aparat jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Kartka z Życzeniami{/b}" if kartkax == 2:
+            window show
+            "{i}Kartka z Życzeniami jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Dinozaur{/b}" if dinozaurx == 2:
+            window show
+            "{i}Dinozaur jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Ciało Eminema{/b}" if cialox == 2:
+            window show
+            "{i}Ciało Eminema jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Tesla Cybertruck{/b}" if cybertruckx == 2:
+            window show
+            "{i}Tesla Cybertruck jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Okulary z Wąsem{/b}" if okularyx == 2:
+            window show
+            "{i}Okulary z Wąsem jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Klucz{/b}" if kluczx == 2:
+            window show
+            "{i}Klucz jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Folder z Memami{/b}" if folder_memowx == 2:
+            window show
+            "{i}Folder z Memami jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{i}<--- Strona 1/3{/i}" if stronaf3 > 0:
+            jump itemy_fabularne
+        
+        "{i}<--- Strona 1/2{/i}" if stronaf3 == 0:
+            jump itemy_fabularne
+        
+        "{i}Strona 2/3 --->{/i}" if stronaf3 > 0:
+            jump itemy_fabularne3
+
+label itemy_fabularne3:
+    menu:
+        "{b}Dinozaur{/b}" if dinozaurx == 3:
+            window show
+            "{i}Dinozaur jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Ciało Eminema{/b}" if cialox == 3:
+            window show
+            "{i}Ciało Eminema jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Tesla Cybertruck{/b}" if cybertruckx == 3:
+            window show
+            "{i}Tesla Cybertruck jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Okulary z Wąsem{/b}" if okularyx == 3:
+            window show
+            "{i}Okulary z Wąsem jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Klucz{/b}" if kluczx == 3:
+            window show
+            "{i}Klucz jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{b}Folder z Memami{/b}" if folder_memowx == 3:
+            window show
+            "{i}Folder z Memami jest fajny{/i}"
+            window hide
+
+            jump itemy_fabularne
+        
+        "{i}<--- Strona 2/3{/i}":
+            jump itemy_fabularne2
+        
