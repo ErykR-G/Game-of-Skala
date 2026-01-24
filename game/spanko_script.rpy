@@ -72,6 +72,7 @@ label spanko:
         $ akcja1 = 0
         $ spanko = 0
         $ krowko_limit = 0
+        $ toxic_limit = 0
         if tasma_spotkanko == 2:
             $ tasma_spotkanko = 1
         else: 
@@ -151,6 +152,7 @@ label spanko2:
     $ akcja1 = 0
     $ spanko = 0
     $ krowko_limit = 0
+    $ toxic_limit = 0
     if tasma_spotkanko == 2:
             $ tasma_spotkanko = 1
     else: 

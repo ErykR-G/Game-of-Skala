@@ -153,7 +153,7 @@ label menu_lokacji:
                             jump fightx3
                     jump bohaterow_wrzesnia
                 
-                "{b}Urząd Gminy{/b}": 
+                "{b}🏛️ Urząd Gminy{/b}": 
                     $ urzad_gminyx = 0
                     if burmistrz_social_link == 0:
                         $ urzad_gminyx += 1
@@ -194,7 +194,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump rynek2
         
-                "{b}Kościół{/b}": 
+                "{b}⛪ Kościół{/b}": 
                     $ kosciolx = 0
                     if kosc_social_link == 0 and koscielny_zyje == 0:
                         $ kosciolx += 1
@@ -327,7 +327,7 @@ label menu_lokacji:
                             jump fightx3
                     jump rynek
                 
-                "{b}Plac Budowy{/b}":
+                "{b}🏗️ Plac Budowy{/b}":
                     $ placx = 0
                     if burmistrz_social_link == 1:
                         $ placx += 1
@@ -417,7 +417,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
         
-                "{b}Klub Seniora GROTA{/b}":
+                "{b}🪩 Klub Seniora GROTA{/b}":
                     $ klubx = 0
                     if silver_sextape_social_link == 1:
                         $ klubx  += 1
@@ -459,7 +459,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
 
-                "{b}🏠 Różowy Dom{/b}" if mleczarz_social_link > 1 or mleczarz_social_link == 1 and krowka == 1:
+                "{b}🏡 Różowy Dom{/b}" if mleczarz_social_link > 1 or mleczarz_social_link == 1 and krowka == 1:
                     $ fioletowy_domx = 0
                     if mleczarz_social_link == 1 and krowka == 1:
                         $ fioletowy_domx += 1
@@ -558,7 +558,7 @@ label menu_lokacji:
                             jump fightx3
                     jump rynek
                 
-                "{b}❓ Sklep Monopolowy (60min){/b}" if zyd_social_link == 0:
+                "{b}🛒 Sklep Monopolowy (60min){/b}" if zyd_social_link == 0:
                     $ monopoleks += 1
                     $ timer += 60
                     play sound "audio/sfx/traveling.mp3"
@@ -574,7 +574,7 @@ label menu_lokacji:
                     scene bg black with fade
                     jump sklep_monopolowy
                 
-                "{b}Urząd Gminy{/b}": 
+                "{b}🏛️ Urząd Gminy{/b}": 
                     $ urzad_gminyx = 0
                     if burmistrz_social_link == 0:
                         $ urzad_gminyx += 1
@@ -615,7 +615,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump alejka2
                 
-                "{b}🏠 Dom Taśmy{/b}" if silver_sextape_social_link >= 2 and silver_sextape_social_link < 10: 
+                "{b}🏡 Dom Taśmy{/b}" if silver_sextape_social_link >= 2 and silver_sextape_social_link < 10: 
                     $ dom_tasmyx = 0
                     if silver_sextape_social_link == 2:
                         $ dom_tasmyx += 1
@@ -656,7 +656,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump alejka2
 
-                "{b}Piwnica Eminema{/b}": 
+                "{b}🕳️ Piwnica Eminema{/b}": 
                     $ piwnicax = 0
                     if harambe_social_link == 2 and kosc_social_link == 3 and cialo == 0:
                         $ piwnicax += 1
@@ -782,7 +782,7 @@ label menu_lokacji:
                             jump fightx3
                     jump rynek
                 
-                "{b}🏠 Dom{/b}": 
+                "{b}🏡 Dom{/b}": 
                     $ domx = 0        
                     if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
                         $ domx += 1
@@ -845,7 +845,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
 
-                "{b}Stomatolog{/b}" if mleczarz_social_link > 3 or mleczarz_social_link == 3 and krowka == 1:
+                "{b}🦷 Stomatolog{/b}" if mleczarz_social_link > 3 or mleczarz_social_link == 3 and krowka == 1:
                     $ stomatologx = 0
                     if mleczarz_social_link == 3 and krowka == 1:
                         $ stomatologx += 1
@@ -885,6 +885,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
+
     label wolbromska:
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
@@ -948,7 +949,7 @@ label menu_lokacji:
                             jump fightx3
                     jump parking
                 
-                "{b}🏠 Dom{/b}": 
+                "{b}🏠 Dom | 24/7{/b}": 
                     $ domx = 0        
                     if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
                         $ domx += 1
@@ -1012,12 +1013,17 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
                 
-                "{b}🏠 Dom Toxic Pea{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
+                "{b}🏡 Dom Toxic Pea | 20–6{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
                     $ toxic_domx = 0        
-                    if toxic_pea_social_link == 1:
+                    if toxic_pea_social_link == 1 and toxic_limit == 0:
                         $ toxic_domx += 1
                         "{i}Tutaj mieszka Toxic Pea, którego spotkałem na Kebabie{/i}"
                         "{i}Zaproponował mi byśmy razem pozabijali zombiaczki...{/i}"
+                    
+                    if toxic_pea_social_link == 2 and toxic_limit == 0:
+                        $ toxic_domx += 1
+                        "{i}Ostatnio zabijałem tutaj zombiaczki razem z Toxic Pea{/i}"
+                        "{i}Zaproponował mi byśmy zrobili to jeszcze raz...{/i}"
 
                     if toxic_domx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -1025,15 +1031,29 @@ label menu_lokacji:
 
                     else:
                         if toxic_domx == 1:
-                            if toxic_pea_social_link == 1:
+                            if toxic_pea_social_link == 1 and toxic_limit == 0:
                                 menu:
-                                    "{b}Czy chcę spotkać się z Toxic Pea? (1h){/b}"
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (3h){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 60
+                                        $ timer += 180
                                         jump toxic_pea1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+                            
+                            if toxic_pea_social_link == 2 and toxic_limit == 0:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (3h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump toxic_pea2
 
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -1045,17 +1065,23 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
                                     
-                                    "{b}Spotkaj się z Toxic Pea (1h){/b}" if toxic_pea_social_link == 1:
+                                    "{b}Spotkaj się z Toxic Pea (3h){/b}" if toxic_pea_social_link == 1 and toxic_limit == 0:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 60
+                                        $ timer += 180
                                         jump toxic_pea1
+                                    
+                                    "{b}Spotkaj się z Toxic Pea (3h){/b}" if toxic_pea_social_link == 2 and toxic_limit = 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump toxic_pea2
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
 
-                "{b}🐄 Mleczarnia (15min){/b}": 
+                "{b}🐄 Mleczarnia (15min) | 8–16{/b}": 
                     if mleczarz_social_link == 7:
                         "{i}Mleczarz już tutaj nie pracuje{/i}"
                         "{i}Dzięki mnie mógł w spokoju przejść na emeryture{/i}"
@@ -1075,7 +1101,7 @@ label menu_lokacji:
                     scene bg black with fade
                     jump mleczarz1
                 
-                "{b}Skała widokowa{/b}": 
+                "{b}🪨 Skała widokowa | 6–20{/b}": 
                     $ skalax = 0        
                     if samobojstwo == 0:
                         $ skalax += 1
@@ -1140,9 +1166,8 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
-                
 
-                "{b}Portal{/b}": 
+                "{b}🌀 Portal{/b}": 
                     $ portalx = 0
                     if tarczownik_social_link == 1 and tarczownik_dzien == 0:
                         $ portalx += 1
@@ -1268,7 +1293,7 @@ label menu_lokacji:
                     scene bg black with fade
                     jump kebab
                 
-                "{b}🏠 Czerwony Dom{/b}" if mleczarz_social_link > 2 or mleczarz_social_link == 2 and krowka == 1:
+                "{b}🏡 Czerwony Dom{/b}" if mleczarz_social_link > 2 or mleczarz_social_link == 2 and krowka == 1:
                     $ czerwony_domx = 0        
                     if mleczarz_social_link == 2 and krowka == 1:
                         $ czerwony_domx += 1
@@ -1310,7 +1335,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump bohaterow_wrzesnia2
 
-                "{b}Dom Kultury{/b}": 
+                "{b}🎭 Dom Kultury{/b}": 
                     $ dom_kulturyx = 0
                     if urban_social_link == 0:
                         $ dom_kulturyx += 1
@@ -1406,7 +1431,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump bohaterow_wrzesnia2
 
-                "{b}Kościół{/b}": 
+                "{b}⛪ Kościół{/b}": 
                     $ kosciolx = 0
                     if kosc_social_link == 0 and koscielny_zyje == 0:
                         $ kosciolx += 1
@@ -1556,49 +1581,7 @@ label menu_lokacji:
                             jump fightx3
                     jump granica
                 
-                "{b}Cmentarz Żydowski{/b}": 
-                    $ cmentarz_zydowskix = 0
-                    if zyd_social_link == 1:
-                        $ cmentarz_zydowskix += 1
-                        "{i}Na cmentarzu żydowskim czeka na mnie Żyd{/i}"
-                        "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
-                    
-                    if cmentarz_zydowskix == 0:
-                        "{i}Nie ma tu teraz nic do roboty{/i}"
-                        jump lipowa2
-
-                    else:
-                        if cmentarz_zydowskix == 1:
-                            if zyd_social_link == 1:
-                                menu:
-                                    "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
-
-                                    "{b}Tak{/b}":
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 30
-                                        jump zyd2
-
-                                    "{b}Nie{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump lipowa2
-
-                        else:
-                            if cmentarz_zydowskix > 1:
-                                menu:
-                                    "{b}Co zrobić?{/b}"
-
-                                    "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 30
-                                        jump zyd2
-                                    
-                                    "{b}Powrót{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump lipowa2
-                
-                "{b}Cmentarz{/b}":
+                "{b}🪦 Cmentarz{/b}":
                     $ cmentarzx = 0
                     if zyd_social_link == 3 and lopatka == 1:
                         $ cmentarzx += 1
@@ -1756,7 +1739,49 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump lipowa2
 
-                "{b}Szkoła{/b}":
+                "{b}🕯️ Cmentarz Żydowski{/b}": 
+                    $ cmentarz_zydowskix = 0
+                    if zyd_social_link == 1:
+                        $ cmentarz_zydowskix += 1
+                        "{i}Na cmentarzu żydowskim czeka na mnie Żyd{/i}"
+                        "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
+                    
+                    if cmentarz_zydowskix == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump lipowa2
+
+                    else:
+                        if cmentarz_zydowskix == 1:
+                            if zyd_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+
+                        else:
+                            if cmentarz_zydowskix > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump lipowa2
+
+                "{b}🏫 Szkoła{/b}":
                     $ szkolax = 0
                     if kosc_social_link == 1 and koscielny_zyje == 0:
                         $ szkolax += 1
@@ -1979,49 +2004,7 @@ label menu_lokacji:
                             jump fightx3
                     jump lipowa    
                 
-                "{b}Cmentarz Żydowski{/b}": 
-                    $ cmentarz_zydowskix = 0
-                    if zyd_social_link == 1:
-                        $ cmentarz_zydowskix += 1
-                        "{i}Na cmentarzu żydowskim czeka na mnie Żyd{/i}"
-                        "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
-                    
-                    if cmentarz_zydowskix == 0:
-                        "{i}Nie ma tu teraz nic do roboty{/i}"
-                        jump granica2
-
-                    else:
-                        if cmentarz_zydowskix == 1:
-                            if zyd_social_link == 1:
-                                menu:
-                                    "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
-
-                                    "{b}Tak{/b}":
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 30
-                                        jump zyd2
-
-                                    "{b}Nie{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump granica2
-
-                        else:
-                            if cmentarz_zydowskix > 1:
-                                menu:
-                                    "{b}Co zrobić?{/b}"
-
-                                    "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 30
-                                        jump zyd2
-                                    
-                                    "{b}Powrót{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump granica2
-                
-                "{b}Cmentarz{/b}":
+                "{b}🪦 Cmentarz{/b}":
                     $ cmentarzx = 0
                     if zyd_social_link == 3 and lopatka == 1:
                         $ cmentarzx += 1
@@ -2175,11 +2158,53 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump granica2
 
-                "{b}Jezioro{/b}": 
+                "{b}🕯️ Cmentarz Żydowski{/b}": 
+                    $ cmentarz_zydowskix = 0
+                    if zyd_social_link == 1:
+                        $ cmentarz_zydowskix += 1
+                        "{i}Na cmentarzu żydowskim czeka na mnie Żyd{/i}"
+                        "{i}Nie wiem czemu kazał mi tu przyjść{/i}"
+                    
+                    if cmentarz_zydowskix == 0:
+                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        jump granica2
+
+                    else:
+                        if cmentarz_zydowskix == 1:
+                            if zyd_social_link == 1:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+
+                        else:
+                            if cmentarz_zydowskix > 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump zyd2
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+
+                "{b}🎣 Jezioro{/b}": 
                     $ jeziorox = 0
                     if urban_social_link == 1:
                         $ jeziorox += 1
-                        "{i}Znalazłem przy jeiorze stary bunkier{/i}"
+                        "{i}Znalazłem przy jeziorze stary bunkier{/i}"
                         "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
                     
                     if jeziorox == 0:

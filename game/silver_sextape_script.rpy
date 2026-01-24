@@ -287,7 +287,7 @@ label silver_sextape:
         tasma "Przyjdź nocą."
         tasma "Jeszcze raz dziękuję."
 
-        tasma "Przyjemność po mojej stronie."
+        luszcz "Przyjemność po mojej stronie."
 
         $ silver_sextape_social_link = 2
         $ silver_sextape_wybory = 1

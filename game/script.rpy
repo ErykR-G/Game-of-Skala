@@ -154,6 +154,14 @@ label postacie:
 
     define luszcz2 = Character("Maciej_Rel", color="#1d0cbb")
 
+    define sunflower = Character("Sunflower", color="#D59F1F")
+
+    define grucha = Character("Grucha", color="#507E03")
+
+    define grzyb = Character("Grzyb", color="#3C1B6D")
+
+    define chomper = Character("Chomper", color="#1d0cbb")
+
 label pozycje:
     transform granatz:
         xalign 0.83
