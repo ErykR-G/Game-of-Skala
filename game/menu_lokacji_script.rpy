@@ -2074,47 +2074,11 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump granica2
 
-                "{b}🎣 Jezioro | 6-20{/b}": 
-                    $ jeziorox = 0
-                    if urban_social_link == 1:
-                        $ jeziorox += 1
-                        "{i}Znalazłem przy jeziorze stary bunkier{/i}"
-                        "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
-                    
-                    if jeziorox == 0:
-                        "{i}Nie ma tu teraz nic do roboty{/i}"
-                        jump granica2
-
-                    else:
-                        if jeziorox == 1:
-                            if urban_social_link == 1:
-                                menu:
-                                    "{b}Czy chcę spotkać się z Jerzym Urbanem? (3h){/b}"
-
-                                    "{b}Tak{/b}":
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 180
-                                        jump urban2
-
-                                    "{b}Nie{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump granica2
-
-                        else:
-                            if jeziorox > 1:
-                                menu:
-                                    "{b}Co zrobić?{/b}"
-
-                                    "{b}Spotkaj się z Jerzym Urbanem (3h){/b}" if urban_social_link == 1:
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 180
-                                        jump urban2
-                                    
-                                    "{b}Powrót{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump granica2
+                "{b}🎣 Jezioro (15min) | 24/7{/b}": 
+                    $ timer += 15
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    jump jezioro1
 
                 "{b}🏰 Bunkier | 6-20{/b}": 
                     $ bunkierx = 0

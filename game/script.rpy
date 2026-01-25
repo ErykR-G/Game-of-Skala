@@ -164,7 +164,17 @@ label postacie:
 
     define chomper = Character("Chomper", color="#1d0cbb")
 
+    define ai = Character("Ailbib", color="#2b2a2a")
+
+    define bi = Character("Biblia", color="#ffffff")
+
+    define d = Character("Dinozaur", color="#15d344")
+
+
 label pozycje:
+    transform ryba:
+        xalign 0.53
+        yalign 0.49
     transform granatz:
         xalign 0.83
         yalign 0.50

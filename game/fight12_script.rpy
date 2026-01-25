@@ -5,8 +5,8 @@ label fight121_stats:
     default tusk_sex = 0
     default krystian_sex = 0
 
-    default nawrocki_hp = 15
-    default tusk_hp = 15
+    default nawrocki_hp = 20
+    default tusk_hp = 20
     default krystian_hp = 30
 
     default nawrocki_uszy = 0
@@ -33,9 +33,9 @@ label fight121_stats:
     default tusk_min_attack = 1
     default krystian_min_attack = 3
 
-    default nawrocki_max_attack = 4
-    default tusk_max_attack = 4
-    default krystian_max_attack = 8
+    default nawrocki_max_attack = 3
+    default tusk_max_attack = 3
+    default krystian_max_attack = 7
 
     default nawrocki_max_attack_now = nawrocki_max_attack
     default tusk_max_attack_now = tusk_max_attack
@@ -72,6 +72,13 @@ label fight121_stats:
     default nawrocki_stun = 0
     default tusk_stun = 0
     default krystian_stun = 0
+
+    default luszcz_horn = 0
+    default eminem_horn = 0
+    default urban_horn = 0
+    default zyd_horn = 0
+    default kazuma_horn = 0
+    default tarczownik_horn = 0
 
 label fight121:
     $ fight_on = 1
@@ -148,11 +155,10 @@ label fight121:
                 tusk "Młody, zaraz poczujesz się jak małe warszawskie dziecko we wrześniu 1944r."
                 tusk "FUR DEUTSCHLAND!"
 
-                luszcz "..."
-                luszcz "Chyba sobię nie poradzę bez dopingu..."
                 hide tusk_weapon
                 hide nawrocki_weapon
                 hide krystian_weapon
+                $ gole_rence = 4
             else:
                 if gole_rence == 3:
                     $ eminem_weapon = 1
@@ -224,6 +230,7 @@ label fight121:
                     hide tusk_weapon
                     hide nawrocki_weapon
                     hide krystian_weapon
+                    $ gole_rence = 4
                 else:
                     if gole_rence == 4:
                         $ ile_wrogow += 3
@@ -1375,6 +1382,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -1403,6 +1412,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -1431,6 +1442,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -1462,6 +1475,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -1498,6 +1513,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -1526,6 +1543,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -1748,6 +1767,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -1776,6 +1797,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -1804,6 +1827,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -1835,6 +1860,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -1871,6 +1898,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -1899,6 +1928,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -2543,6 +2574,13 @@ label fight121:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ luszcz_hp_now -= luszcz_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza odbił się od Szalika Wisły i zadał [luszcz_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight122
+
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
@@ -3176,6 +3214,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ eminem_hp_now -= eminem_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa odbił się od Szalika Wisły i zadał [eminem_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight122
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -3918,6 +3963,13 @@ label fight121:
                             label urban_fight122:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
+                                $ kostka = renpy.random.randint(1, 20)
+                                if kostka <= 3:
+                                    $ urban_hp_now -= urban_attack
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana odbił się od Szalika Wisły i zadał [urban_attack] obrażeń nadawcy{/i}"
+                                    jump faza_fight122
+
                                 if krystian_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
@@ -4220,7 +4272,7 @@ label fight121:
                     urban "No tak było, nie zmyślam"
                     jump items_fight121
 
-                "{b}Zatrzepocz Uszami{/b}":
+                "{b}Zatrzepocz Uszami{/b}" if urban_horn == 0:
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
 
@@ -4651,6 +4703,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ zyd_hp_now -= zyd_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda odbił się od Szalika Wisły i zadał [zyd_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight122
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -5429,6 +5488,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ kazuma_hp_now -= kazuma_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy odbił się od Szalika Wisły i zadał [kazuma_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight122
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -6932,6 +6998,13 @@ label fight121:
                                     if kostka >= 2:
                                         $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ tarczownik_hp_now -= tarczownik_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Naofumiego odbił się od Szalika Wisły i zadał [tarczownik_attack] obrażeń nadawcy{/i}"
+                                            jump faza_fight122
+
                                         if krystian_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Naofumiego został zablokowany{/i}"
@@ -7130,6 +7203,13 @@ label fight121:
                                         if kostka >= 3:
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ tarczownik_hp_now -= tarczownik_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Naofumiego odbił się od Szalika Wisły i zadał [tarczownik_attack] obrażeń nadawcy{/i}"
+                                                jump faza_fight122
+
                                             if krystian_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Naofumiego został zablokowany{/i}"
@@ -7327,6 +7407,13 @@ label fight121:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 5:
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ tarczownik_hp_now -= tarczownik_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Naofumiego odbił się od Szalika Wisły i zadał [tarczownik_attack] obrażeń nadawcy{/i}"
+                                                jump faza_fight122
 
                                             if krystian_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -8230,6 +8317,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -8258,6 +8347,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -8286,6 +8377,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -8317,6 +8410,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -8353,6 +8448,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -8381,6 +8478,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -8806,6 +8905,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ luszcz_hp_now -= luszcz_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza odbił się od Szalika Wisły i zadał [luszcz_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight123
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -9440,6 +9546,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ eminem_hp_now -= eminem_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa odbił się od Szalika Wisły i zadał [eminem_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight123
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -10180,6 +10293,13 @@ label fight121:
                             label urban_fight125:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
+                                $ kostka = renpy.random.randint(1, 20)
+                                if kostka <= 3:
+                                    $ urban_hp_now -= urban_attack
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana odbił się od Szalika Wisły i zadał [urban_attack] obrażeń nadawcy{/i}"
+                                    jump faza_fight123
+
                                 if krystian_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
@@ -10482,7 +10602,7 @@ label fight121:
                     urban "No tak było, nie zmyślam"
                     jump items_fight123
 
-                "{b}Zatrzepocz Uszami{/b}":
+                "{b}Zatrzepocz Uszami{/b}" if urban_horn == 0:
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
 
@@ -10912,6 +11032,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ zyd_hp_now -= zyd_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda odbił się od Szalika Wisły i zadał [zyd_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight123
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -11690,6 +11817,13 @@ label fight121:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ kazuma_hp_now -= kazuma_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy odbił się od Szalika Wisły i zadał [kazuma_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight123
+
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
@@ -12316,6 +12450,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -12344,6 +12480,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -12372,6 +12510,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -12403,6 +12543,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -12439,6 +12581,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -12467,6 +12611,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -12892,6 +13038,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ luszcz_hp_now -= luszcz_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza odbił się od Szalika Wisły i zadał [luszcz_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight124
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -13526,6 +13679,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ eminem_hp_now -= eminem_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Shadowa odbił się od Szalika Wisły i zadał [eminem_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight124
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -14268,6 +14428,13 @@ label fight121:
                             label urban_fight128:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
+                                $ kostka = renpy.random.randint(1, 20)
+                                if kostka <= 3:
+                                    $ urban_hp_now -= urban_attack
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana odbił się od Szalika Wisły i zadał [urban_attack] obrażeń nadawcy{/i}"
+                                    jump faza_fight124
+
                                 if krystian_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
@@ -14570,7 +14737,7 @@ label fight121:
                     urban "No tak było, nie zmyślam"
                     jump items_fight125
 
-                "{b}Zatrzepocz Uszami{/b}":
+                "{b}Zatrzepocz Uszami{/b}" if urban_horn == 0:
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
 
@@ -15000,6 +15167,13 @@ label fight121:
                         "{b}Krystian{/b}" if krystian_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ zyd_hp_now -= zyd_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda odbił się od Szalika Wisły i zadał [zyd_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight124
 
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -15778,6 +15952,13 @@ label fight121:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
+                            $ kostka = renpy.random.randint(1, 20)
+                            if kostka <= 3:
+                                $ kazuma_hp_now -= kazuma_attack
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy odbił się od Szalika Wisły i zadał [kazuma_attack] obrażeń nadawcy{/i}"
+                                jump faza_fight124
+
                             if krystian_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
@@ -16407,6 +16588,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -16435,6 +16618,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -16463,6 +16648,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -16494,6 +16681,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -16530,6 +16719,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -16558,6 +16749,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -18521,6 +18714,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -18549,6 +18744,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -18577,6 +18774,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -18608,6 +18807,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -18644,6 +18845,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -18672,6 +18875,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -18729,6 +18934,18 @@ label fight121:
         $ kazuma_max_attack_now = kazuma_max_attack_now_true
         $ tarczownik_min_attack_now = tarczownik_min_attack_now_true
         $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
+        hide uch1
+        hide uch2
+        hide uch3
+        hide uch4
+        hide uch5
+        hide uch6
+        $ luszcz_horn = 0
+        $ eminem_horn = 0
+        $ urban_horn = 0
+        $ zyd_horn = 0
+        $ kazuma_horn = 0
+        $ tarczownik_horn = 0
 
         if nawrocki_hp_now <= 0:
             jump faza_fight125    
@@ -18777,7 +18994,7 @@ label fight121:
                     "{i}Nawrocki zadaje [nawrocki_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                     jump faza_fight125
-        
+
         if nawrocki_max_attack_now <= 0 and nawrocki_obrona == 0:
             show tarcza6 zorder 15 at weapon_wrog1  
             play sound "audio/sfx/shield.mp3"
@@ -19655,6 +19872,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -19683,6 +19902,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -19711,6 +19932,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -19742,6 +19965,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -19778,6 +20003,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -19806,6 +20033,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -19915,6 +20144,248 @@ label fight121:
             hide ruch
             jump wybor_fight121
 
+        $ kostka = renpy.random.randint(1, 7)
+        if kostka <= 2:
+            show horn zorder 15 at wrog3 
+            krystian "tu tu tu turu tu tu tu"
+            play sound "audio/sfx/horn.mp3"
+            if luszcz_hp_now > 0:
+                if luszcz_obrona == 0:
+                    $ luszcz_horn = 1
+
+                    if luszcz_min_attack_now >= 10 and luszcz_min_attack_now <= 12:
+                        $ luszcz_min_attack_now -= 4
+                    
+                    else:
+                        if luszcz_min_attack_now >= 7 and luszcz_min_attack_now <= 9:
+                            $ luszcz_min_attack_now -= 3
+                        else:
+                            if luszcz_min_attack_now >= 4 and luszcz_min_attack_now <= 6:
+                                $ luszcz_min_attack_now -= 2
+                            else:
+                                if luszcz_min_attack_now >= 1 and luszcz_min_attack_now <= 3:
+                                    $ luszcz_min_attack_now -= 1
+                        
+
+                    if luszcz_max_attack_now >= 10 and luszcz_max_attack_now <= 12:
+                        $ luszcz_max_attack_now -= 4
+                    else:
+                        if luszcz_max_attack_now >= 7 and luszcz_max_attack_now <= 9:
+                            $ luszcz_max_attack_now -= 3
+                        else:
+                            if luszcz_max_attack_now >= 4 and luszcz_max_attack_now <= 6:
+                                $ luszcz_max_attack_now -= 2
+                            else:
+                                if luszcz_max_attack_now >= 1 and luszcz_max_attack_now <= 3:
+                                    $ luszcz_max_attack_now -= 1
+
+                    if luszcz_wybrany == 1:
+                        show uch1 zorder 15 at sojusznik1 
+
+                    if luszcz_wybrany == 2:
+                        show uch1 zorder 15 at sojusznik2  
+
+                    if luszcz_wybrany == 3:
+                        show uch1 zorder 15 at sojusznik3 
+            
+            if eminem_hp_now > 0:
+                if eminem_obrona == 0:
+                    $ eminem_horn = 1
+
+                    if eminem_min_attack_now >= 10 and eminem_min_attack_now <= 12:
+                        $ eminem_min_attack_now -= 4
+                    else:
+                        if eminem_min_attack_now >= 7 and eminem_min_attack_now <= 9:
+                            $ eminem_min_attack_now -= 3
+                        else:
+                            if eminem_min_attack_now >= 4 and eminem_min_attack_now <= 6:
+                                $ eminem_min_attack_now -= 2
+                            else:
+                                if eminem_min_attack_now >= 1 and eminem_min_attack_now <= 3:
+                                    $ eminem_min_attack_now -= 1
+                        
+
+                    if eminem_max_attack_now >= 10 and eminem_max_attack_now <= 12:
+                        $ eminem_max_attack_now -= 4
+                    else:
+                        if eminem_max_attack_now >= 7 and eminem_max_attack_now <= 9:
+                            $ eminem_max_attack_now -= 3
+                        else:
+                            if eminem_max_attack_now >= 4 and eminem_max_attack_now <= 6:
+                                $ eminem_max_attack_now -= 2
+                            else:
+                                if eminem_max_attack_now >= 1 and eminem_max_attack_now <= 3:
+                                    $ eminem_max_attack_now -= 1
+
+                    if eminem_wybrany == 1:
+                        show uch2 zorder 15 at sojusznik1 
+
+                    if eminem_wybrany == 2:
+                        show uch2 zorder 15 at sojusznik2  
+
+                    if eminem_wybrany == 3:
+                        show uch2 zorder 15 at sojusznik3 
+                
+            if urban_hp_now > 0:
+                if urban_obrona == 0:
+                    $ urban_horn = 1
+
+                    if urban_min_attack_now >= 10 and urban_min_attack_now <= 12:
+                        $ urban_min_attack_now -= 4
+                    else:
+                        if urban_min_attack_now >= 7 and urban_min_attack_now <= 9:
+                            $ urban_min_attack_now -= 3
+                        else:
+                            if urban_min_attack_now >= 4 and urban_min_attack_now <= 6:
+                                $ urban_min_attack_now -= 2
+                            else:
+                                if urban_min_attack_now >= 1 and urban_min_attack_now <= 3:
+                                    $ urban_min_attack_now -= 1
+                        
+
+                    if urban_max_attack_now >= 10 and urban_max_attack_now <= 12:
+                        $ urban_max_attack_now -= 4
+                    else:
+                        if urban_max_attack_now >= 7 and urban_max_attack_now <= 9:
+                            $ urban_max_attack_now -= 3
+                        else:
+                            if urban_max_attack_now >= 4 and urban_max_attack_now <= 6:
+                                $ urban_max_attack_now -= 2
+                            else:
+                                if urban_max_attack_now >= 1 and urban_max_attack_now <= 3:
+                                    $ urban_max_attack_now -= 1
+
+                    if urban_wybrany == 1:
+                        show uch3 zorder 15 at sojusznik1 
+
+                    if urban_wybrany == 2:
+                        show uch3 zorder 15 at sojusznik2  
+
+                    if urban_wybrany == 3:
+                        show uch3 zorder 15 at sojusznik3 
+            
+            if kazuma_hp_now > 0:
+                if kazuma_obrona == 0:
+                    $ kazuma_horn = 1
+
+                    if kazuma_min_attack_now >= 10 and kazuma_min_attack_now <= 12:
+                        $ kazuma_min_attack_now -= 4
+                    else:
+                        if kazuma_min_attack_now >= 7 and kazuma_min_attack_now <= 9:
+                            $ kazuma_min_attack_now -= 3
+                        else:
+                            if kazuma_min_attack_now >= 4 and kazuma_min_attack_now <= 6:
+                                $ kazuma_min_attack_now -= 2
+                            else:
+                                if kazuma_min_attack_now >= 1 and kazuma_min_attack_now <= 3:
+                                    $ kazuma_min_attack_now -= 1
+                        
+
+                    if kazuma_max_attack_now >= 10 and kazuma_max_attack_now <= 12:
+                        $ kazuma_max_attack_now -= 4
+                    else:
+                        if kazuma_max_attack_now >= 7 and kazuma_max_attack_now <= 9:
+                            $ kazuma_max_attack_now -= 3
+                        else:
+                            if kazuma_max_attack_now >= 4 and kazuma_max_attack_now <= 6:
+                                $ kazuma_max_attack_now -= 2
+                            else:
+                                if kazuma_max_attack_now >= 1 and kazuma_max_attack_now <= 3:
+                                    $ kazuma_max_attack_now -= 1
+
+                    if kazuma_wybrany == 1:
+                        show uch5 zorder 15 at ojusznik1 
+
+                    if kazuma_wybrany == 2:
+                        show uch5 zorder 15 at sojusznik2  
+
+                    if kazuma_wybrany == 3:
+                        show uch5 zorder 15 at sojusznik3 
+            
+            if zyd_hp_now > 0:
+                if zyd_obrona == 0:
+                    $ zyd_horn = 1
+
+                    if zyd_min_attack_now >= 10 and zyd_min_attack_now <= 12:
+                        $ zyd_min_attack_now -= 4
+                    else:
+                        if zyd_min_attack_now >= 7 and zyd_min_attack_now <= 9:
+                            $ zyd_min_attack_now -= 3
+                        else:
+                            if zyd_min_attack_now >= 4 and zyd_min_attack_now <= 6:
+                                $ zyd_min_attack_now -= 2
+                            else:
+                                if zyd_min_attack_now >= 1 and zyd_min_attack_now <= 3:
+                                    $ zyd_min_attack_now -= 1
+                        
+
+                    if zyd_max_attack_now >= 10 and zyd_max_attack_now <= 12:
+                        $ zyd_max_attack_now -= 4
+                    else:
+                        if zyd_max_attack_now >= 7 and zyd_max_attack_now <= 9:
+                            $ zyd_max_attack_now -= 3
+                        else:
+                            if zyd_max_attack_now >= 4 and zyd_max_attack_now <= 6:
+                                $ zyd_max_attack_now -= 2
+                            else:
+                                if zyd_max_attack_now >= 1 and zyd_max_attack_now <= 3:
+                                    $ zyd_max_attack_now -= 1
+
+                    if zyd_wybrany == 1:
+                        show uch4 zorder 15 at sojusznik1 
+
+                    if zyd_wybrany == 2:
+                        show uch4 zorder 15 at sojusznik2  
+
+                    if zyd_wybrany == 3:
+                        show uch4 zorder 15 at sojusznik3 
+            
+            if tarczownik_hp_now > 0:
+                if tarczownik_obrona == 0:
+                    $ tarczownik_horn = 1
+
+                    if tarczownik_min_attack_now >= 10 and tarczownik_min_attack_now <= 12:
+                        $ tarczownik_min_attack_now -= 4
+                    else:
+                        if tarczownik_min_attack_now >= 7 and tarczownik_min_attack_now <= 9:
+                            $ tarczownik_min_attack_now -= 3
+                        else:
+                            if tarczownik_min_attack_now >= 4 and tarczownik_min_attack_now <= 6:
+                                $ tarczownik_min_attack_now -= 2
+                            else:
+                                if tarczownik_min_attack_now >= 1 and tarczownik_min_attack_now <= 3:
+                                    $ tarczownik_min_attack_now -= 1
+                        
+
+                    if tarczownik_max_attack_now >= 10 and tarczownik_max_attack_now <= 12:
+                        $ tarczownik_max_attack_now -= 4
+                    else:
+                        if tarczownik_max_attack_now >= 7 and tarczownik_max_attack_now <= 9:
+                            $ tarczownik_max_attack_now -= 3
+                        else:
+                            if tarczownik_max_attack_now >= 4 and tarczownik_max_attack_now <= 6:
+                                $ tarczownik_max_attack_now -= 2
+                            else:
+                                if tarczownik_max_attack_now >= 1 and tarczownik_max_attack_now <= 3:
+                                    $ tarczownik_max_attack_now -= 1
+
+                    if tarczownik_wybrany == 1:
+                        show uch6 zorder 15 at sojusznik1 
+
+                    if tarczownik_wybrany == 2:
+                        show uch6 zorder 15 at sojusznik2  
+
+                    if tarczownik_wybrany == 3:
+                        show uch6 zorder 15 at sojusznik3 
+            
+            all "ała moje uszy"
+            if luszcz_horn == 1 or eminem_horn == 1 or urban_horn == 1 or zyd_horn == 1 or kazuma_horn == 1 or tarczownik_horn == 1:
+                "{i}Atak sojuszników bez zatyczek do uszy zmniejszył się{/i}"
+            else:
+                "{i}Gra na trąbce nie wyrządziła nikomu krzywdy{/i}"
+            
+            hide horn
+            jump faza_fight126
 
         if krystian_max_attack_now <= 0 and krystian_obrona == 0:
             show tarcza7 zorder 15 at weapon_wrog3  
@@ -20794,6 +21265,8 @@ label fight121:
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_horn = 0
+            hide uch1
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -20822,6 +21295,8 @@ label fight121:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_horn = 0
+            hide uch2
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -20850,6 +21325,8 @@ label fight121:
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_horn = 0
+            hide uch3
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -20881,6 +21358,8 @@ label fight121:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_horn = 0
+            hide uch4
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -20917,6 +21396,8 @@ label fight121:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_horn = 0
+            hide uch5
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -20945,6 +21426,8 @@ label fight121:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_horn = 0
+            hide uch6
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -21937,6 +22420,12 @@ label fight121:
         hide stun7
         hide stun8
         hide stun9
+        hide uch1
+        hide uch2
+        hide uch3
+        hide uch4
+        hide uch5
+        hide uch6
         hide screen nawrocki_stats
         hide screen krystian_stats
         hide screen tusk_stats
@@ -22084,6 +22573,13 @@ label fight121:
                 $ zyd_stun = 0
                 $ kazuma_stun = 0
                 $ tarczownik_stun = 0
+
+                $ luszcz_horn = 0
+                $ eminem_horn = 0
+                $ urban_horn = 0
+                $ zyd_horn = 0
+                $ kazuma_horn = 0
+                $ tarczownik_horn = 0
                 play sound "audio/sfx/return.mp3"
                 jump fight121
 
@@ -22220,6 +22716,12 @@ label fight121:
         hide stun7
         hide stun8
         hide stun9
+        hide uch1
+        hide uch2
+        hide uch3
+        hide uch4
+        hide uch5
+        hide uch6
 
         hide screen luszcz1_stats
         hide screen luszcz2_stats
@@ -22384,5 +22886,12 @@ label fight121:
         $ tusk_stun = 0
         $ krystian_poison = 0
         $ krystian_stun = 0
+
+        $ luszcz_horn = 0
+        $ eminem_horn = 0
+        $ urban_horn = 0
+        $ zyd_horn = 0
+        $ kazuma_horn = 0
+        $ tarczownik_horn = 0
 
         jump after_fight121
