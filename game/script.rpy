@@ -170,6 +170,18 @@ label postacie:
 
     define d = Character("Dinozaur", color="#15d344")
 
+    define ange = Character("Aniołek", color="#ffffff")
+
+    define nieb = Character("Niebieski Homar", color="#2743e0")
+
+    define grun = Character("Grün Mag", color="#0d5f1a")
+
+    define sfw = Character("Stary, Fanatyk Wędkarstwa", color="#7c6c24")
+
+    define zlota = Character("Złota Rybka", color="#c5a722")
+
+    define us = Character("Urzędniczki Skarbowe", color="#b6ab79")
+
 
 label pozycje:
     transform ryba:

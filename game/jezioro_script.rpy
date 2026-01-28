@@ -2,8 +2,12 @@ default dzien_lowionko = 0
 default noc_lowionko = 0
 default ailbib_odebrany = 0
 default dinozaur_odebrany = 0
+default zlota_odebrany = 0
+default fanatyk_odebrany = 0
 default vr_odebrany = 0
 default spanko_ryby = 0
+
+image segz = Movie(play="segz.webm", loop=True)
 
 label jezioro:
     label jezioro1:
@@ -178,7 +182,7 @@ label jezioro:
                             ai "Ok walcie się spadam stąd!!"
 
                             hide ailbib2
-                            play sound "audio/sfx/beta.mp3"
+                            play sound "audio/sfx/wolno.mp3"
 
                             bi "Krótko z nią"
                         
@@ -265,7 +269,7 @@ label jezioro:
                 jump jezioro12
             
             label losowanko_jezioro12:
-                $ kostka = renpy.random.randint(1, 112)
+                $ kostka = renpy.random.randint(1, 115)
                 if kostka == 1:
                     play sound "audio/sfx/powrot.mp3"
                     if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
@@ -288,7 +292,7 @@ label jezioro:
                 if kostka == 2:
                     play sound "audio/sfx/powrot.mp3"
                     if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                        show banany at ryba
+                        show bananyr at ryba
                     else:
                         show bananyr2 at ryba
                     
@@ -303,14 +307,399 @@ label jezioro:
                     "{i}*Kiść bananów została dodana do ekwipunku*{/i}" 
 
                     jump jezioro12
+                
+                if kostka == 3:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show drpepperr at ryba
+                    else:
+                        show drpepperr2 at ryba
+                    
+                    luszcz "Intelektualny drink, dla wybranych."
 
+                    if drpepper == 0:
+                        $ ile_item += 1
+                    $ drpepper += 1
+                    hide drpepperr2
+                    hide drpepperr
+                    play sound "audio/sfx/beta.mp3"
+                    "{i}*Dr Pepper został dodany do ekwipunku*{/i}" 
 
+                    jump jezioro12
+                
+                if kostka == 4:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show royalr at ryba
+                    else:
+                        show royalr2 at ryba
+                    
+                    luszcz "Intelektualniejszy dring, dla wybrańszych."
 
+                    if royal == 0:
+                        $ ile_item += 1
+                    $ royal += 1
+                    hide royalr2
+                    hide royalr
+                    play sound "audio/sfx/beta.mp3"
+                    "{i}*Royal Cola została dodana do ekwipunku*{/i}" 
 
+                    jump jezioro12
+                
+                if kostka >= 5 and kostka <= 6:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show skalkar at ryba
+                    else:
+                        show skalkar2 at ryba
+                    
+                    luszcz "Fajnie kamień dzieki"
 
+                    if skalka == 0:
+                        $ ile_item += 1
+                    $ skalka += 1
+                    hide skalkar2
+                    hide skalkar
+                    play sound "audio/sfx/beta.mp3"
+                    "{i}*Ostra Skałka została dodana do ekwipunku*{/i}" 
 
+                    jump jezioro12
+                
+                if kostka >= 7 and kostka <= 8:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show wodar at ryba
+                    else:
+                        show wodar2 at ryba
+                    
+                    luszcz "Wow to woda z kościoła!"
 
+                    if woda == 0:
+                        $ ile_item += 1
+                    $ woda += 1
+                    hide wodar2
+                    hide wodar
+                    play sound "audio/sfx/beta.mp3"
+                    "{i}*Tutorialowa Woda Święcona została dodana do ekwipunku*{/i}" 
 
+                    jump jezioro12
+                
+                if kostka >= 9 and kostka <= 11:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show jaboler at ryba
+                    else:
+                        show jaboler2 at ryba
+                    
+                    luszcz "Łowienie rozwiązuje większość moich problemów, alkohol rozwiązuje resztę."
 
-                jump jezioro12
+                    if jabole == 0:
+                        $ ile_item += 1
+                    $ jabole += 1
+                    hide jaboler2
+                    hide jaboler
+                    play sound "audio/sfx/beta.mp3"
+                    "{i}*Jabol został dodany do ekwipunku*{/i}" 
 
+                    jump jezioro12
+                
+                if kostka >= 12 and kostka <= 14:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show warzywor at ryba
+                    else:
+                        show warzywor2 at ryba
+                    
+                    luszcz "Fajnie warzywo dzieki"
+
+                    if warzywo == 0:
+                        $ ile_item += 1
+                    $ warzywo += 1
+                    hide warzywor2
+                    hide warzywor
+                    play sound "audio/sfx/beta.mp3"
+                    "{i}*Warzywo skalne zostało dodane do ekwipunku*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 15 and kostka <= 24:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show portfelr at ryba
+                    else:
+                        show portfelr2 at ryba
+                    
+                    luszcz "Awesome! Thank y"
+
+                    $ money += 1
+                    hide portfelr2
+                    hide portfelr
+                    play sound "audio/sfx/beta.mp3"
+                    "{i}*Portfel został dodany do ekwipunku*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 25 and kostka <= 29:
+                    play sound "audio/sfx/powrot.mp3"
+                    show segz onlayer overlay at ryba:
+                        size (100, 100)          
+                    luszcz "!"
+                    show segz onlayer overlay at ryba:
+                        size (100, 100)
+                    luszcz "Ojej panowie pżepraszam"
+                    show segz onlayer overlay at ryba:
+                        size (100, 100)
+                    luszcz "Ja nie chciałem jurz nie przeszkadzam"
+
+                    hide segz
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 30 and kostka <= 34:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show syryr at ryba
+                    else:
+                        show syryr2 at ryba
+
+                    luszcz "Chat czy to kultowa gra planszowa Syry Dziadka??"
+                    luszcz "Gilgotaj jego syrki…"
+                    luszcz "Nie, nie ma na to teraz czasu"
+
+                    hide syryr2
+                    hide syryr
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 35 and kostka <= 39:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show glonojadyr at ryba
+                    else:
+                        show glonojadyr2 at ryba
+
+                    luszcz "O kurka glonojady"
+                    luszcz "Mają około 6-7cm"
+                    luszcz "Szkoda że nie mam glonów w domu"
+                    luszcz "Bądźcie wolne"
+
+                    hide glonojadyr2
+                    hide glonojadyr
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycze do wody*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 40 and kostka <= 44:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show aniolekr at ryba
+                    else:
+                        show aniolekr2 at ryba
+
+                    ange ":)"
+                    luszcz ">:("
+
+                    hide aniolekr2
+                    hide aniolekr
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 45 and kostka <= 49:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show homarr at ryba
+                    else:
+                        show homarr2 at ryba
+
+                    nieb "Niebieski chomar twoja opinia jest inwalidą"
+
+                    hide homarr2
+                    hide homarr
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 50 and kostka <= 54:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show hytelr at ryba
+                    else:
+                        show hytelr2 at ryba
+
+                    luszcz "Chat patrzcie to Hytale!!"
+                    luszcz "Kupcie sobie hytale chat"
+                    luszcz "czy coś"
+                    luszcz "Ale ja nie potrzebuje mam jurz na steamie"
+
+                    hide hytelr2
+                    hide hytelr
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 55 and kostka <= 61:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show rybar at ryba
+                    else:
+                        show rybar2 at ryba
+
+                    luszcz "Po co mi to badziewie"
+                    luszcz "Ryba do wora wur do jeziora"
+
+                    hide rybar2
+                    hide rybar
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
+                
+                if kostka >= 62 and kostka <= 67:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show durr at ryba
+                    else:
+                        show durr2 at ryba
+
+                    luszcz "O boerz ale potwór"
+                    luszcz "Nie potrzebuje cie w naszym składzie"
+
+                    hide durr2
+                    hide durr
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+                
+                if kostka >= 68 and kostka <= 72:
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show grunmagr at ryba
+                    else:
+                        show grunmagr2 at ryba
+
+                    grun "pomóż mi kurwa…"
+                    luszcz "nie"
+
+                    hide grunmagr2
+                    hide grunmagr
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+                
+                if kostka >= 73 and kostka <= 80 and fanatyk_odebrany == 0:
+                    $ fanatyk_odebrany = 1
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show karasr at ryba
+                    else:
+                        show karasr2 at ryba
+
+                    luszcz "O boże karaś fujj"
+                    luszcz "Ale od niego wali"
+                    luszcz "Nienawidze karasi"
+                    luszcz "Po hója one jedzą to gówno…"
+
+                    sfw "KARASIE JEDZĄ GÓWNO?!"
+                    sfw "sam jesteś gównojadem!"
+
+                    jump after_fight181
+                    jump fight181
+                
+                if kostka >= 81 and kostka <= 115 and zlota_odebrany == 0 and vr_odebrany == 1:
+                    $ zlota_odebrany = 1
+                    play sound "audio/sfx/powrot.mp3"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        show zlotar at ryba
+                    else:
+                        show zlotar2 at ryba
+
+                    if ailbib_odebrany == 1:
+                        luszcz "O kurcze złota rybka"
+
+                        zlota "Hejka jak coś to złowiłeś wszystkie przydatne do progressu itemki"
+                        zlota "Teraz tylko zostały te co leczą i atakują i jakiś random szit"
+                        zlota "Tak tylko chciałam powiedzieć"
+                        zlota "Siema"
+                    else:
+                        luszcz "O kurcze złota rybka"
+
+                        zlota "Hejka jak coś to złowiłeś póki co prawie wszystkie przydatne do progressu itemki"
+                        zlota "Został tylko jeden ale żeby go wyłowić byś raczej potrzebował podpowiedzi"
+                        zlota "Więc na razie może się tym nie męcz"
+                        zlota "Tak tylko chciałam powiedzieć"
+                        zlota "Siema"
+
+                    hide zlotar2
+                    hide zlotar
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg jezioro2
+                    else:
+                        scene bg jezioro4
+                    play sound "audio/sfx/wolno.mp3"
+                    
+                    "{i}*Złota rybka wróciła do wody*{/i}" 
+
+                    jump jezioro12
+
+                jump losowanko_jezioro12
+
+    label after_fight181:
+        $ money += 2
+
+        "{i}*do ekwipunku zostały dodane 2 portfele*{/i}"
+
+        luszcz "Okay big guy"
+
+        jump jezioro12

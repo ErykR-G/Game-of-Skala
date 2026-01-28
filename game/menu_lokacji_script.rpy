@@ -2143,9 +2143,9 @@ label menu_lokacji:
         rem "Siostrzyczko, siostrzyczko tego osobnika nie stać nawet na to by się przyznać"
         ram "Rem, Rem chyba sami będziemy musieli nauczyć tego śmiecia manier"
 
-        jump fight51
+        jump fight151
 
-    label after_fight51:
+    label after_fight151:
         scene bg raem
         play music "audio/music/rezero.mp3"
         show luszcz neutral at left

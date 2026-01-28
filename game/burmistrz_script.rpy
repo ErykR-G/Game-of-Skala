@@ -25,7 +25,7 @@ label burmistrz:
 
         luszcz "Brawo i to jest bórmistż, na kturego głosowałem"
 
-        rand "Ale ty masz 18 lat od 6 dni dopiero…"
+        rand "Ale ty masz 18 lat od miesiąca dopiero…"
         rand "Nie mogłeś głosować w poprzenich wyborach"
 
         luszcz "Cisza!!!" with vpunch

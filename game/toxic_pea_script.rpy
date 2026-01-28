@@ -29,11 +29,11 @@ label toxic_pea:
         toxic "Nie, nie ma teraz czasu na rozmowy."
         toxic "Broń w dłoń i do boju!"
 
-        jump after_fight131
-        jump fight131
-        label after_fight131:
+        jump after_fight111
+        jump fight111
+        label after_fight111:
             play music "audio/music/toxic2.mp3"
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 
@@ -61,7 +61,7 @@ label toxic_pea:
             
             scene bg black with fade
             nikt "{i}Jeden netflix później{/i}"
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 
@@ -148,11 +148,11 @@ label toxic_pea:
         toxic "Wreszcie się ukazałeś, Maciek_Rel!"
         toxic "Chodź, dziś są jacyś pojebani!"
 
-        jump after_fight141
-        jump fight141
-        label after_fight141:
+        jump after_fight131
+        jump fight131
+        label after_fight131:
             play music "audio/music/toxic2.mp3"
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 
@@ -176,7 +176,7 @@ label toxic_pea:
 
             nikt "{i}jeden netflix później…{/i}"
 
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 
@@ -311,11 +311,11 @@ label toxic_pea:
         toxic "Podoba mi się twoja dedykacja."
         toxic "To co, do roboty!"
 
-        jump after_fight151
-        jump fight151
-        label after_fight151:
+        jump after_fight141
+        jump fight141
+        label after_fight141:
             play music "audio/music/toxic2.mp3"
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 
@@ -352,7 +352,7 @@ label toxic_pea:
 
             nikt "{i}jeden netflix później…{/i}"
 
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 
@@ -380,7 +380,7 @@ label toxic_pea:
 
             luszcz2 "Błlech!"
 
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz kula at center
 
             luszcz2 "….."
@@ -436,11 +436,11 @@ label toxic_pea:
         toxic "CZEKAJCIE, PRZYSZŁO WSPARCIE!"
         toxic "EJ DAWAJ TU SZYBKO, MAMY KURWA GIGANTY!"
 
-        jump after_fight161
-        jump fight161
-        label after_fight161:
+        jump after_fight151
+        jump fight151
+        label after_fight51:
             play music "audio/music/toxic2.mp3"
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 
@@ -470,7 +470,7 @@ label toxic_pea:
 
             nikt "{i}jeden netflix później…{/i}"
 
-            scene bg przed_walka_toxic_pea with fade
+            scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft
             show toxic_pea neutral at slightright
 

@@ -410,9 +410,9 @@ label urban:
 
                 luszcz "simierć wrogom ojczyzny!!!"
 
-                jump fight111
+                jump fight101
 
-                label after_fight111:
+                label after_fight1121:
                     play music "audio/music/redsun.mp3"
                     scene bg bunkier2
                     show luszcz neutral at center

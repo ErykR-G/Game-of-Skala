@@ -117,6 +117,9 @@ screen say(who, what):
         text what id "what"
 
 
+
+
+
     ## Jeśli jest obraz boczny, wyświetl go nad tekstem. Nie wyświetlaj w
     ## wariancie telefonu - nie ma miejsca
     if not renpy.variant("small"):
