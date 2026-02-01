@@ -70,7 +70,7 @@ label menu_lokacji:
 
         label rynek2:
             menu:
-                "{i}<--- Alejka (10min){/i}":
+                "{i}⬅️ Alejka (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -92,7 +92,7 @@ label menu_lokacji:
                             jump fightx3
                     jump alejka
 
-                "{i}<--- Słoneczna (10min){/i}":
+                "{i}↖️ Słoneczna (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -114,7 +114,7 @@ label menu_lokacji:
                             jump fightx3
                     jump sloneczna
                 
-                "{i}Parking (10min) --->{/i}":
+                "{i}➡️ Parking (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -136,7 +136,7 @@ label menu_lokacji:
                             jump fightx3
                     jump parking
 
-                "{i}Bohaterów Września (10min) --->{/i}":
+                "{i}↘️ Bohaterów Września (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -314,7 +314,7 @@ label menu_lokacji:
 
         label sloneczna2:
             menu:      
-                "{i}Rynek (10min) --->{/i}":
+                "{i}↘️ Rynek (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -549,7 +549,7 @@ label menu_lokacji:
 
         label alejka2:
             menu:      
-                "{i}Rynek (10min) --->{/i}":
+                "{i}➡️ Rynek (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -754,7 +754,7 @@ label menu_lokacji:
                             jump spanko2          
         label parking2:
             menu:
-                "{i}<--- Wolbromska (20min){/i}":
+                "{i}↖️ Wolbromska (20min){/i}":
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -776,7 +776,7 @@ label menu_lokacji:
                             jump fightx3
                     jump wolbromska
                 
-                "{i}<--- Rynek (10min){/i}":
+                "{i}⬅️ Rynek (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -798,6 +798,15 @@ label menu_lokacji:
                             jump fightx3
                     jump rynek
                 
+                "{b}🩺 Apteka (15min) | 8-20{/b}":
+                    $ timer += 15
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    if gotka_szpan > 0 or gotka_social_link > 0:
+                        jump gotka2
+                    else:
+                        jump gotka1
+
                 "{b}🏡 Dom | 24/7{/b}": 
                     $ domx = 0        
                     if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
@@ -945,7 +954,7 @@ label menu_lokacji:
         
         label wolbromska2:
             menu:
-                "{i}Parking (20min) --->{/i}":
+                "{i}↘️ Parking (20min){/i}":
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -1265,7 +1274,7 @@ label menu_lokacji:
 
         label bohaterow_wrzesnia2:
             menu:
-                "{i}<--- Rynek (10min){/i}":
+                "{i}↖️ Rynek (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -1287,7 +1296,7 @@ label menu_lokacji:
                             jump fightx3
                     jump rynek
 
-                "{i}<--- Lipowa (10min){/i}":
+                "{i}↙️ Lipowa (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -1563,7 +1572,7 @@ label menu_lokacji:
 
         label lipowa2:
             menu:
-                "{i}Bohaterów Września (10min) --->{/i}":
+                "{i}↗️ Bohaterów Września (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -1585,7 +1594,7 @@ label menu_lokacji:
                             jump fightx3
                     jump bohaterow_wrzesnia
 
-                "{i}Granica Skały (20min) --->{/i}":
+                "{i}⬇️ Granica Skały (20min){/i}":
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:
@@ -2010,7 +2019,7 @@ label menu_lokacji:
 
         label granica2:
             menu:
-                "{i}<--- Lipowa (20min){/i}":
+                "{i}⬆️🌽 Lipowa (20min){/i}":
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 11)
                     if kostka == 1:

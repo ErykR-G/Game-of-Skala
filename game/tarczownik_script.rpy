@@ -159,7 +159,6 @@ label tarczownik:
         pies "dobra wskakuje xD"
 
         tarczownik "Raphtalia!!!!!!"
-
         
         show pies woof:
             yoffset 0
@@ -319,13 +318,16 @@ label tarczownik:
 
                 show tarczownik tarcza at slightleft
                 play sound "audio/sfx/shield.mp3"
+
+                $ wypadek2 = 1
+
                 "{i}*tarczownik bije cię bokiem tarczy w kostkę*{/i}"
     
                 show luszcz kuca_smutny
                 show tarczownik neutral at center
 
                 luszcz "AŁAAAA"
-                if gotka_poznanie > 0:
+                if gotka_szpan > 0 or gotka_social_link > 0:
                     luszcz "(hm…. Będę mógł z tym iść do gotki… hehe)"
                 luszcz "AŁA CZEMÓ MNIE BIJESZ!?"
 

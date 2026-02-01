@@ -17,6 +17,7 @@ label bronie:
     default kazuma_przepychaczka = 0
     default tarczownik_przepychaczka = 0
 
+label zbrojki:
     default luszcz_nic = 2
     default urban_nic = 3
     default zyd_nic = 4

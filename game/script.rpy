@@ -5,6 +5,8 @@ init python:
         minute = timer % 60
         return day, hour, minute
 
+define gui.text_font = "DejaVuSans.ttf"
+
 default ado = 0
 default kostka = 0
 default kostka2 = 0
@@ -86,6 +88,8 @@ label postacie:
     define toxic = Character("Toxic Pea", color="#7ec753")
 
     define nemeczek = Character("Nemeczek", color="#49290b")
+
+    define gotka = Character("Takemi", color="#090457")
 
     define kosc = Character("Kościelny", color="#9db2f8")
     image kosc neutral left = Transform("kosc neutral", xzoom=-1) 
@@ -181,6 +185,14 @@ label postacie:
     define zlota = Character("Złota Rybka", color="#c5a722")
 
     define us = Character("Urzędniczki Skarbowe", color="#b6ab79")
+
+    define saul = Character("Saul Goodman", color="#8baf29")
+
+    define kasyn = Character("Kasyniarz", color="#e43636")
+
+    define policja1 = Character("Urzędniczka Skarbowa 1", color="#1325ca")
+
+    define policja2 = Character("Urzędniczka Skarbowa 2", color="#1325ca")
 
 
 label pozycje:
@@ -639,6 +651,7 @@ label wybory:
     default piotrek_wybory = 0
     default kosc_wybory = 10
     default trump_wybory = 0
+    default gotka_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
@@ -654,6 +667,7 @@ label social_links:
     default kibole_social_link = 0
     default harambe_social_link = 0
     default trump_social_link = 0
+    default gotka_social_link = 0
 
 
 
@@ -1200,6 +1214,7 @@ label start:
 
         menu:
             "{b}akszuli...{b}":
+                $ wypadek1 = 1
                 jump akszuli
 
             '{b}Idź lepiej do szpitala zanim się wykrwawisz{/b}':
@@ -1207,6 +1222,7 @@ label start:
                 luszcz "(Rzeczywiście, gdzieś w Skale był lekaż pracujący w aptece… mugłbym go do niego zabrać)"
                 menu:
                     "{b}Dobra chodź ze mną{b}":
+                        $ wypadek1 = 1
                         jump akszuli
 
                     "{b}Jakoś sobie poradzisz{/b}":

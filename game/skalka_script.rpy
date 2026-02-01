@@ -36,7 +36,7 @@ label skalka:
         "{i}.{/i}"
         "{i}.{/i}"
         "{i}.{/i}"
-        jump gotka1
+        jump gotka6
 
     label skalka2:
         scene bg start with fade
