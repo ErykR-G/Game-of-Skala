@@ -502,8 +502,204 @@ label kazuma3:
             jump kasyneczek
         
         label kasyneczek:
-            scene bg kasyno3
+            scene bg kasyno4
+            show kazuma czapka right at slightleft
+
+            kazuma "Witam chciałem wymienić moje żetony na pienionżki"
+            
+            scene bg kasyno6
+            show kazuma czapka right at slightleft
+            with hpunch
+
+            nu "……"
+            nu "(Chryste panie…)"
+            nu "(Chyba muszę to zgłosić szefowej…)"
+            nu "Już proszę pana, tylko do toalety pójdę"
+
+            kazuma "Oczywiście, nie ma problemu"
+
+            scene bg kasyno7
+            show kazuma czapka right at slightleft
+            if eminem_sojusznik == 1:
+                show eminem neutral at right
+                cid "Ej bo ja ją chyba skąś kojarzę"
+                cid "Tylko nie wiem skąd..."
+                cid "ewentualnie coś mi się powaliło"
+                cid "Za dużo kręci się wokół mnie kobiet"
+
+                luszcz "(No kobiety mega fujka)"
+                luszcz "(Jakby chociaż miały duże kutasy)"
+                luszcz "(ehhh no nic, oby tylko nie poszła nas zgłosić)"
+            
+            else:
+                luszcz "(przygłupie a co jak poszła to zgłosić?)"
+
+                kazuma "(dobra racja, ale przecież jej nie zatrzymam)"
+
+            scene bg kasyno5 with fade
+            show gamma neutral at center 
+            show nu neutral at right
+
+            gamma "…wiesz że ja jestem tu zajęta!"
+            gamma "Następnym razem musisz pukać!!"
+
+            nu "Dobrze, przepraszam…"
+            nu "Ale, sprawa jest poważna!"
+            nu "Jeden z klientów, Kazuma, właśnie chce wymienić żetony na kwotę dwustu stu trzech tysięcy siedemset portfeli!"
+
+            gamma "Co?! Czym ja będę teraz inwestować w sztuczną inteligencję?"
+            gamma "Zresztą, jakim cudem go jeszcze nie czmychnęliście?"
+
+            nu "Nie było podstaw, wszystko wygrał uczciwie"
+
+            gamma "Dobra dość, biorę sprawy w swoje ręce"
+
+            scene bg kasyno7 with fade
+            show kazuma czapka right at slightleft
+
+            luszcz "(Myślisz że sra czy siura)"
+
+            kazuma "(Jakbyś spytał minutę temu to bym powiedział że siura, ale już przekroczyła granicę czasową.)"
+
+            luszcz "(Nie no słuchaj)"
+            luszcz "(Nie masz tak czasem, że mega dużo wypijesz, i mega długo trzymasz, a potem jak siadasz na kiblu to nie przestaje lać?)"
+
+            scene bg kasyno6
+            show kazuma czapka right at slightleft
+
+            nu "Przepraszam, mogło chwilę zająć."
+
+            kazuma "Siórała pani czy srała?"
+
+            nu "Proszę pana proszę się zachowywać!"
+
+            luszcz "(na pewno siurała!)"
+
+            kazuma "Jejku, przepraszam, to moje tiki."
+            kazuma "(wykastruję cię jak to się skończy)"
+
+            nu "Em, w takim razie nie ma problemu."
+            nu "Znaczy w sumie jest…"
+            nu "Nie możemy panu dziś wydać portfeli…"
+            nu "Może spróbuje pan jutro?"
+
+            kazuma "O czym pani gada? Żadne kasyno tak nie operuje…"
+
+            nu "Em… dobra, walić"
+            nu "Pewnie i tak już mi za nic nie zapłaci"
+            nu "Szefowa uciekła ze wszystkimi portfelami."
+            nu "Chce pan żebym zadzwoniła dla pana na policję?"
+
+            kazuma "Nie! Proszę nie dzwonić!"
+
+            nu "…?"
+            nu "Dobrze, w takim razie miłego dnia, ja się w to nie mieszam."
+
+            kazuma "Miłego."
+
+            luszcz "(chodźmy szybko na zewnątrz, morze jeszcze nie odjechała!)"
+
+            scene bg grota
             show kazuma czapka at center
-            ""
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                play music "audio/music/pole.mp3"
+            else:
+                play music "audio/music/pole_noc.mp3"
+
+            kazuma "NIENAWIDZĘ CZARNYCH!!!"
+            kazuma "(Dobra, wyłaź już z tej czapy)"
+
+            luszcz "(Tak myślałem, rze to ostatnia szansa)"
+
+            show kazuma neutral at slightright
+            show luszcz neutral at slightleft
+            with hpunch
+
+            luszcz "Kurde… pewnie już odjechała…"
+
+            show luszcz neutral at center
+            show kazuma neutral right at left
+            show grzesiu pistolet at right
+            with vpunch
+
+            grzes "Panowie!"
+            grzes "Ani kroku dalej!"
+            grzes "Jeśli wam życie miłe"
+            
+            luszcz "Grzegoż co ty robisz?!"
+
+            kazuma "To ten robak z jeziora??"
+
+            grzes "Spokojnie… nikomu nic się nie stanie"
+            grzes "Tylko oddajcie wszystko co tam wygraliście."
+
+            luszcz "Ty?! Przeciwko mnie?!"
+            luszcz "Ufałem ci Grzegorz…"
+
+            kazuma "To ty zadzwoniłeś na gliny nad jeziorem??"
+            kazuma "Zasrany kapuś…"
+
+            grzes "Biznes to biznes."
+            grzes "Chajs albo śmierć."
+
+            kazuma "(łuszczu, przecież my nie mamy chajsu…)"
+            kazuma "(co robimy?)"
+
+            menu:
+                "{b}Zabij karalucha{/b}":
+                    luszcz "Uwaga!"
+
+                    "{i}Łuszczu szybkim ruchem próbuje zaatakować Grzesia{/i}"
+
+                    grzes "Piu piu!!!!!"
+
+                    play sound "audio/sfx/gun.mp3"
+                    with vpunch
+
+                    show kazuma strzal right
+
+                    kazuma "Ała kurwa!!!!"
+
+                    hide grzesiu
+                    show luszcz neutral right at slightright
+                    show kazuma strzal right at slightleft
+
+                    kazuma "aaaaaa krew jest wszędzie aaaa!!!"
+
+                    luszcz "Kamzuma!!!!"
+                    luszcz "Mósimy cię zabrać do lekaża!!"
+
+                    kazuma "No… kurcze rzeczywiście…"
+
+                    # <fabułka się kończy u gotki>
+                
+                "{b}Okradziono nas!{/b}":
+                    luszcz "Grzesio, ziomek, dałbym wszystko ale mam póste kieszenie!"
+                    luszcz "Szefowa jak odkryła ile wygraliśmy uciekła ze wszystkim!!"
+
+                    if urban_sojusznik == 1:
+                        show luszcz neutral at slightleft
+                        show urban neutral at center
+                        urban "Tak było!"
+                        urban "Nie zmyślam."
+                        hide urban 
+                        show luszcz neutral at center
+
+                    grzes "Hm…"
+                    grzes "No w sumie widziałem jakąś babkę odjeżdżającą z pełnymi worami."
+                    grzes "…"
+                    grzes "Pojechała w stronę granicy. Chce opuścić Skałę."
+                    grzes "Macie ostatnią szansę. Jak jej nie złapiecie to powiadamiam psy o twoim koledze."
+
+                    kazuma "Pierdol sie!!!"
+                    
+                    luszcz "Dobra to Kazuma dawaj szybko"
+
+                    kazuma "Ja jestem Kazuma."
+
+
+
+
+
 
 

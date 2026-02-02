@@ -56,6 +56,8 @@ label postacie:
 
     define kazuma = Character("Kazuma", color="#dbf01f")
     image kazuma neutral right = Transform("kazuma neutral", xzoom=-1) 
+    image kazuma czapka right = Transform("kazuma czapka", xzoom=-1) 
+    image kazuma strzal right = Transform("kazuma strzal", xzoom=-1) 
 
     define tarczownik = Character("Naofumi", color="#0a570a")
     image tarczownik neutral right = Transform("tarczownik neutral", xzoom=-1) 
@@ -88,6 +90,8 @@ label postacie:
     define toxic = Character("Toxic Pea", color="#7ec753")
 
     define nemeczek = Character("Nemeczek", color="#49290b")
+
+    define grzes = Character("Grześ", color="#49290b")
 
     define gotka = Character("Takemi", color="#090457")
 
@@ -143,6 +147,10 @@ label postacie:
     define musial = Character("Maciej Musiał", color="#bdbdbd")
 
     define tata = Character("Tata", color="#474444")
+
+    define nu = Character("Nu", color="#8b520b")
+
+    define gamma = Character("Gamma", color="#3A3E51")
 
     define obi = Character("Obi-Wan Kenobi", color="#9b6c46")
 
