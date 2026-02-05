@@ -671,7 +671,7 @@ label kazuma3:
 
                     kazuma "No… kurcze rzeczywiście…"
 
-                    # <fabułka się kończy u gotki>
+                    jump gotka7
                 
                 "{b}Okradziono nas!{/b}":
                     luszcz "Grzesio, ziomek, dałbym wszystko ale mam póste kieszenie!"
@@ -696,6 +696,519 @@ label kazuma3:
                     luszcz "Dobra to Kazuma dawaj szybko"
 
                     kazuma "Ja jestem Kazuma."
+
+                    play sound "audio/sfx/traveling.mp3" 
+                    $ rynek = 0
+                    $ sloneczna = 0
+                    $ alejka = 0
+                    $ parking = 0
+                    $ wolbromska = 0
+                    $ bohaterow_wrzesnia = 0
+                    $ lipowa = 0
+                    $ granica = 1
+                    if timer >= 360 and timer <= 1200:       
+                        scene bg black with fade
+                        scene bg granica with fade
+
+                    if timer >= 1800 and timer <= 2640:
+                        scene bg black with fade
+                        scene bg granica2 with fade
+
+                    if timer >= 3240 and timer <= 4080:
+                        scene bg black with fade
+                        scene bg granica3 with fade
+
+                    if timer >= 4680 and timer <= 5520:
+                        scene bg black with fade
+                        scene bg granica4 with fade
+
+                    if timer >= 6120 and timer <= 6960:
+                        scene bg black with fade
+                        scene bg granica5 with fade
+
+                    if timer >= 7560 and timer <= 8400:
+                        scene bg black with fade
+                        scene bg granica6 with fade
+
+                    if timer >= 9000 and timer <= 9840:
+                        scene bg black with fade
+                        scene bg granica7 with fade
+
+                    if timer >= 10440 and timer <= 11280:
+                        scene bg black with fade
+                        scene bg granica8 with fade
+
+                    if timer > 1200 and timer < 1800:       
+                        scene bg black with fade
+                        scene bg granica_noc with fade
+
+                    if  timer > 2640 and timer < 3240:
+                        scene bg black with fade
+                        scene bg granica2_noc with fade
+
+                    if  timer > 4080 and timer < 4680:
+                        scene bg black with fade
+                        scene bg granica3_noc with fade
+
+                    if  timer > 5520 and timer < 6120:
+                        scene bg black with fade
+                        scene bg granica4_noc with fade
+
+                    if  timer > 6960 and timer < 7560:
+                        scene bg black with fade
+                        scene bg granica5_noc with fade
+
+                    if  timer > 8400 and timer < 9000:
+                        scene bg black with fade
+                        scene bg granica6_noc with fade
+
+                    if  timer > 9840 and timer < 10440:
+                        scene bg black with fade
+                        scene bg granica7_noc with fade
+
+                    if  timer > 11280:
+                        scene bg black with fade
+                        scene bg granica8_noc with fade
+                    
+                    show auto zorder 9
+                    
+                    show gamma neutral zorder 10 at center
+                    show trump neutral zorder 10:
+                        xalign 1.1
+                        yalign 1.0
+
+                    gamma "Ktoś idzie… Czy to mechanik??"
+
+                    trump "Oby, bo to auto mi działa na nerwy"
+                    trump "Jeszcze chwila i sam się nim zajmę."
+
+                    gamma "Nie ruszaj SUBARU!!!" with vpunch
+                    gamma "On tak bardzo cierpi!"
+
+                    show gamma neutral right zorder 10 
+
+                    gamma "No już Subaru już, spokojnie jesteś już bezpieczny"
+                    gamma "Tym razem nie umrzesz obiecuję Ci"
+
+                    if eminem_sojusznik == 0:
+                        show kazuma neutral right zorder 10 at slightleft
+                        show luszcz neutral zorder 10 at left
+                        show gamma neutral right zorder 10 at slightright
+
+                        kazuma "Kobieto oddawaj nasz chajs!!!"
+
+                        gamma "Niczego nie oddam wszystko moje!!!"
+                        
+                        trump "Ah.. dobra rozumiem"
+                        trump "Nie chce mi się. Idę jeść koty z kolegami i gwałcić małe dzieci na wyspie"
+
+                        hide trump
+
+                        gamma "Myślicie że można sobie od tak wejść do kasyna i zarobić!! Kasyno jest do zabawy a nie do zarabiania!"
+
+                        luszcz "Nieprawda!!! Do zabawy i do zarabiania!"
+
+                        kazuma "Dawaj chajs!"
+
+                        gamma "Po moim trupie!"
+                        gamma "Jeśli chcecie je dostać, najpierw musicie się przedrzeć przeze mnie!"
+
+                        jump after_fight171
+                        jump fight171
+                    
+                    else:
+                        show kazuma neutral right zorder 10:
+                            xalign 0.18
+                            yalign 1.0
+                        show luszcz neutral zorder 10:
+                            xalign -0.1
+                            yalign 1.0
+                        show gamma neutral right zorder 10 at slightright
+
+                        kazuma "Kobieto oddawaj nasz chajs!!!"
+
+                        show eminem neutral right zorder 10:
+                            xalign 0.4
+                            yalign 1.0
+
+                        cid "Chwila czy ty przypadkiem nie jesteś eeeee..."
+                        cid "A jak Alfa..."
+                        cid "B jak Beta..."
+                        cid "C jak Ciota..."
+                        cid "D jak Delta..."
+                        cid "E jak Epsilon..."
+                        cid "Chwila, chwila, bo Eta też jest na E..!"
+                        cid "Coś zjebałem chyba trudno idźmy dalej"
+                        cid "F jak Duży Męski Fiut"
+                        
+                        luszcz "Ahhh jak ja kocham duże męskie fiuty"
+
+                        cid "Cichaj! Ja tu liczę!"
+                        cid "..."
+                        cid "No i zapomniałem wielkie dzięki!!!"
+                        cid "Teraz muszę od początku liczyć"
+                        cid "Okej dobra więc, A jak Alfa..."
+                        cid "B jak Be... chwila stop przecież są jeszcze te polskie znaczki!"
+                        cid "dobra to teraz Ą"
+                        cid "Ą jak eeee yyyy eeee..."
+                        cid "Ą jak ąaha!"
+                        cid "Ahh ta głupia plaża"
+                        cid "zawsze zapominam ją obstawić"
+                        cid "ale no wracając"
+                        cid "B jak Beta..."
+                        cid "C jak Ciota..."
+                        cid "Ć jak Ćeská republika..."
+                        cid "albo po prostu pepiczki"
+                        cid "D jak Delta..."
+                        cid "E jak Epsilon lub Eta"
+                        cid "ewentualnie Epstein"
+                        cid "Ę jak Ękaliptus"
+                        cid "F jak Duży Męski Fiut"
+
+                        luszcz "koch..."
+
+                        cid "G jak Gamma!"
+                        cid "Tak! Już pamiętam ty jesteś Gamma co nie!?"
+
+                        gamma "..."
+                        gamma "A ty kurwa skąd to wiesz!?"
+                        gamma "Pewnie jesteś z kultu Diablosa!"
+
+                        cid "Nie, nie gamma spójrz to ja Cid twój, twój wybawca"
+
+                        gamma "Mój wybawca nie żyje!"
+
+                        cid "Jak nie żyje, przecież tu jestem spójrz no stoję tu przed tobą!"
+
+                        gamma "Kłamiesz!"
+                        gamma "Mój pan, mój wybawca miał dwie ręce i mega aure!"
+
+                        luszcz "..."
+
+                        gamma "I i i do tego nigdy przenigdy nie zapomniałby mojego imienia!"
+
+                        cid "Ej no weź no czasami się to zdarza..."
+                        cid "Nie masz czasami tak, że podchodzisz do kogoś zagadać, ale akurat wyleciał ci jego numer z głowy więc krzyczysz “erschießen!” i odchodzisz?"
+
+                        gamma "..."
+                        gamma "Nie? Ktoś tak ma na seriO!?"
+
+                        cid "..."
+                        cid "Dobra, ale no musisz mi uwierzyć!"
+
+                        gamma "Nie!"
+                        gamma "Nigdy Ci nie uwierzę!"
+                        gamma "Pewnie to ty zabiłeś mojego wybawce i dlatego, aż tyle wiesz!"
+                        gamma "Pomszczę cię mój Panie!"
+
+                        trump "Ah.. dobra rozumiem"
+                        trump "Nie chce mi się. Idę jeść koty z kolegami i gwałcić małe dzieci na wyspie"
+                        hide trump
+                        show gamma neutral right zorder 10 at right 
+
+                        cid "..."
+                        cid "Ehhh chyba czas na walkę"
+
+                        $ kazuma_sojusznik = 1
+                        $ liczba_sojusznikow += 1
+
+                        jump after_fight171
+                        jump fight171
+                    
+                    label after_fight171:
+                        $ kazuma_sojusznik = 0
+                        $ liczba_sojusznikow -= 1
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 0
+                        $ granica = 1
+                        if timer >= 360 and timer <= 1200:       
+                            scene bg black with fade
+                            scene bg granica with fade
+
+                        if timer >= 1800 and timer <= 2640:
+                            scene bg black with fade
+                            scene bg granica2 with fade
+
+                        if timer >= 3240 and timer <= 4080:
+                            scene bg black with fade
+                            scene bg granica3 with fade
+
+                        if timer >= 4680 and timer <= 5520:
+                            scene bg black with fade
+                            scene bg granica4 with fade
+
+                        if timer >= 6120 and timer <= 6960:
+                            scene bg black with fade
+                            scene bg granica5 with fade
+
+                        if timer >= 7560 and timer <= 8400:
+                            scene bg black with fade
+                            scene bg granica6 with fade
+
+                        if timer >= 9000 and timer <= 9840:
+                            scene bg black with fade
+                            scene bg granica7 with fade
+
+                        if timer >= 10440 and timer <= 11280:
+                            scene bg black with fade
+                            scene bg granica8 with fade
+
+                        if timer > 1200 and timer < 1800:       
+                            scene bg black with fade
+                            scene bg granica_noc with fade
+
+                        if  timer > 2640 and timer < 3240:
+                            scene bg black with fade
+                            scene bg granica2_noc with fade
+
+                        if  timer > 4080 and timer < 4680:
+                            scene bg black with fade
+                            scene bg granica3_noc with fade
+
+                        if  timer > 5520 and timer < 6120:
+                            scene bg black with fade
+                            scene bg granica4_noc with fade
+
+                        if  timer > 6960 and timer < 7560:
+                            scene bg black with fade
+                            scene bg granica5_noc with fade
+
+                        if  timer > 8400 and timer < 9000:
+                            scene bg black with fade
+                            scene bg granica6_noc with fade
+
+                        if  timer > 9840 and timer < 10440:
+                            scene bg black with fade
+                            scene bg granica7_noc with fade
+
+                        if  timer > 11280:
+                            scene bg black with fade
+                            scene bg granica8_noc with fade
+                        
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        
+                        show auto zorder 9
+                        show gamma dead zorder 11
+                        
+                        if eminem_sojusznik == 0:
+                            show kazuma neutral zorder 11 at slightright
+                            show luszcz neutral zorder 11 at left
+                            
+                            luszcz "Łatwo z tobą!!"
+
+                            gamma "Chuj wam w dupe!!"
+
+                            play sound "audio/sfx/chanuka.mp3" 
+                            show fir zorder 10
+                            show kazuma neutral zorder 11 at right
+                            show luszcz neutral right zorder 11 at slightright
+
+                            $ renpy.pause(1.0)
+                            hide fir
+
+                            play sound "audio/sfx/boom.mp3" 
+                            show bu zorder 10
+
+                            $ renpy.pause(0.1)
+                            hide bu
+                            hide auto
+
+                            show auto2 zorder 9
+
+                            luszcz "Ej wtf po co to było???"
+
+                            kazuma "Uczciwie cię zabiliśmy!"
+
+                            gamma "Nie ma tak że ja przegrywam a inni zyskują!"
+                            gamma "Gnijcie sobie frajerzy!"
+
+                            show gamma dead2
+                        
+                        else:  
+                            show kazuma neutral zorder 11 at slightright
+                            show luszcz neutral zorder 11 at left
+                            
+                            luszcz "Łatwo z tobą!!"
+
+                            gamma "Chuj wam w dupe!! Nie będzie kult diablosa pluł nam w twarz!"
+
+                            play sound "audio/sfx/chanuka.mp3" 
+                            show fir zorder 10
+                            show kazuma neutral zorder 11 at right
+                            show luszcz neutral right zorder 11 at slightright
+
+                            $ renpy.pause(1.0)
+                            hide fir
+
+                            play sound "audio/sfx/boom.mp3" 
+                            show bu zorder 10
+
+                            $ renpy.pause(0.1)
+                            hide bu
+                            hide auto
+
+                            show auto2 zorder 9
+
+                            luszcz "Ej wtf no i po co to było???"
+
+                            kazuma "Uczciwie cię zabiliśmy!"
+
+                            gamma "Nieprawda! Wy z Kultu Diablosa nie jesteście uczciwi!"
+
+                            luszcz "Ale my nie jesteśmy z kultu diablosa..."
+
+                            gamma "Nie kłam, ja wiem i będe walczyła z wami do końca życ..."
+                        
+                            show gamma dead2
+
+                            luszcz "No i nie żyje"
+                        
+                        kazuma "Gupia dziwka…"
+
+                        luszcz "Gszegorz nas zamordóje…"
+                        luszcz "… "
+
+                        show grzesiu neutral zorder 11 at left
+
+                        grzes "Ej panowie sory że tak późno"
+                        grzes "Odbierałem makowce"
+                        grzes "Jak tam pieniądze?"
+
+                        kazuma "Kurrrrwaaaa…."
+
+                        luszcz "Grzegorz, stłukliśmy ją na kwaśne jabłko, ale zamiast przyjąć Gamma postanowiła spalić auto z całym chajsem…"
+                        luszcz "Zrobiliśmy co mogliśmy!"
+
+                        grzes "Hm…"
+                        grzes "Tak bardzo jak uwielbiam udupiać innych dla własnego zysku…"
+                        grzes "Nigdy nie rozumiałem krzywdzenia ludzi bez powodu."
+                        grzes "Przecież i tak już nie żyje… na co jej to było…"
+                        grzes "…"
+                        grzes "… … …"
+                        grzes "Ej panowie."
+                        grzes "Może… wykorzystajmy jej ciało"
+
+                        menu:
+                            "{b}nie?????{/b}":
+                                luszcz "Co ty pierdolisz??? Fuj???"
+
+                                kazuma "Nooo…. Dosłownie…"
+                            
+                            "{b}oki{/b}":
+                                luszcz "W sumie czemó nie hehe"
+
+                                kazuma "Ahh zawsze chciałem czegoś takiego spróbować"
+
+                                grzes "Nie, boże, debile"
+
+                        grzes "Nie o to mi chodziło idioci"
+                        grzes "Mam kontakty"
+                        grzes "Możemy sprzedać jej ciało na części"
+                        grzes "Nikt się nie dowie."
+                        grzes "A część zysku oddam ci, Kazuma, na spłacenie tamtego długu za który cię ścigają."
+
+                        kazuma "Mam na imie Kazuma."
+
+                        grzes "Wiem."
+                        grzes "Wszyscy wygrywają. Podoba wam się taki plan?"
+
+                        kazuma "No dla mnie cacy"
+
+                        luszcz "Ja tó jestem dla kolegi więc oczywiście że tak."
+
+                        grzes "To w takim razie panowie. Zmywamy się."
+                        grzes "Zajmę się samochodem zanim Pomarańcza wróci."
+                        grzes "Oczy widzą uszy słyszą usta milczą."
+
+                        luszcz "Jesteś ostatnią osobą do muwienia takich rzeczy, ale spoko."
+
+                        kazuma "To siema."
+
+                        play sound "audio/sfx/traveling.mp3" 
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 1
+                        $ granica = 0
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            scene bg black with fade
+                            scene bg lipowa with fade
+                        else:
+                            scene bg black with fade
+                            scene bg lipowa_noc with fade
+                            play music "audio/music/pole_noc.mp3"
+                        
+                        show luszcz neutral at slightleft
+                        show kazuma neutral at slightright
+
+                        kazuma "Uff… zasrany cwel z tego karalucha ale przynajmniej rozwiązał sprawę…"
+
+                        luszcz "Będę mósiał go naprostować jak to wszystko się skończy"
+                        luszcz "Nie wiedziałem że się zrobił takim rozwydrzonym kapósiem"
+
+                        kazuma "Ej to, póki dalej jestem na oczach policji, mogę ci dalej towarzyszyć?"
+                        kazuma "Potrzebuję kogoś kto mnie będzie krył, plus, chętnie ci pomogę w ratowaniu Skały."
+
+                        menu:
+                            "{b}Chodź ze mną{/b}":
+                                luszcz "Dobra, nie będę kłamał, twóje UMIEJĘTN0ŚCI są dość przydatne."
+
+                                kazuma "cnie"
+
+                                luszcz "To możesz do mnie dołączyć."
+
+                                kazuma "sigmastycznie."
+
+                                $ kazuma_sojusznik = 1
+                                $ liczba_sojusznikow += 1
+                                $ kazuma_wybory = 2
+                                $ kazuma_social_link = 3
+                                                            
+                            "{b}Dasz sobie radę{/b}":
+                                luszcz "Oj tam dasz sobie radę"
+                                luszcz "Do końca tygodnia psy tu jeszcze nie będą grasowały, a do wtedy Grzesio na pewno coś ogarnie"
+
+                                kazuma "No w sumie rel"
+                                kazuma "Niech będzie"
+                                kazuma "To do zobaczenia kolego ziomek fam kicia bratku towarzyszu kamracie."
+
+                                luszcz "Baj baj"
+
+                                $ kazuma_wybory = 2
+                                $ kazuma_social_link = 3
+                        
+                        hide kazuma 
+                        hide luszcz
+                        
+                        jump lipowa2
+                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

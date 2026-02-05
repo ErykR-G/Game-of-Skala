@@ -205,10 +205,3 @@ label spanko2:
     if granica == 1:
         jump granica2
 
-label after_player_win:
-    "Wygrałeś mini-grę!"
-    return
-
-label after_ai_win:
-    "AI wygrało mini-grę!"
-    return      

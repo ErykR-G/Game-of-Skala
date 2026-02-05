@@ -6,6 +6,23 @@ init python:
         return day, hour, minute
 
 define gui.text_font = "DejaVuSans.ttf"
+image w = "images/emotki/w.png"
+image a = "images/emotki/a.png"
+image s = "images/emotki/s.png"
+image d = "images/emotki/d.png"
+image wa = "images/emotki/wa.png"
+image wd = "images/emotki/wd.png"
+image sa = "images/emotki/sa.png"
+image sd = "images/emotki/sd.png"
+
+image w = im.Scale("images/emotki/w.png", 36, 36)
+image a = im.Scale("images/emotki/a.png", 36, 36)
+image s = im.Scale("images/emotki/s.png", 36, 36)
+image d = im.Scale("images/emotki/d.png", 36, 36)
+image wa = im.Scale("images/emotki/wa.png", 36, 36)
+image wd = im.Scale("images/emotki/wd.png", 36, 36)
+image sa = im.Scale("images/emotki/sa.png", 36, 36)
+image sd = im.Scale("images/emotki/sd.png", 36, 36)
 
 default ado = 0
 default kostka = 0
@@ -46,6 +63,7 @@ label postacie:
     define cid = Character("Cid", color="#32313a")
     image eminem sad right = Transform("eminem sad", xzoom=-1) 
     image eminem neutral reka right = Transform("eminem neutral reka", xzoom=-1) 
+    image eminem neutral right = Transform("eminem neutral", xzoom=-1) 
 
     define urban = Character("Jerzy Urban", color="#ff4040")
     image urban neutral right = Transform("urban neutral", xzoom=-1)
@@ -151,6 +169,7 @@ label postacie:
     define nu = Character("Nu", color="#8b520b")
 
     define gamma = Character("Gamma", color="#3A3E51")
+    image gamma neutral right = Transform("gamma neutral", xzoom=-1) 
 
     define obi = Character("Obi-Wan Kenobi", color="#9b6c46")
 
