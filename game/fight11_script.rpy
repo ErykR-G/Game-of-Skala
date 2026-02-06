@@ -21771,7 +21771,8 @@ label fight111:
             "{b}Powtórz Walkę{/b}":
                 window show
                 $ fight_on = 0
-                $ timer += 5
+                if przegranko <= 12:
+                    $ timer += 5
 
                 $ ile_sojusznikow = 0
                 $ ile_wrogow = 0
@@ -21913,9 +21914,28 @@ label fight111:
                 play sound "audio/sfx/return.mp3"
                 jump fight111
 
-            "{b}Pomiń Walkę{/b}" if fight111_przegranko >= 4:
+            "{b}Pomiń Walkę{/b}" if fight111_przegranko >= 3:
                 $ fight111_przegranko = 0
-                $ timer += 20
+                if przegranko == 3:
+                    $ timer += 50
+                if przegranko == 4:
+                    $ timer += 45
+                if przegranko == 5:
+                    $ timer += 40
+                if przegranko == 6:
+                    $ timer += 35
+                if przegranko == 7:
+                    $ timer += 30
+                if przegranko == 8:
+                    $ timer += 25
+                if przegranko == 9:
+                    $ timer += 20
+                if przegranko == 10:
+                    $ timer += 15
+                if przegranko == 11:
+                    $ timer += 10
+                if przegranko == 12:
+                    $ timer += 5
                 jump wygranko_fight111
 
     label wygranko_fight111:
