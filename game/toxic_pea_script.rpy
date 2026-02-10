@@ -438,7 +438,7 @@ label toxic_pea:
 
         jump after_fight151
         jump fight151
-        label after_fight51:
+        label after_fight151:
             play music "audio/music/toxic2.mp3"
             scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft

@@ -1,3 +1,4 @@
+default akcja1 = 0
 
 label urban:
     label urban1:

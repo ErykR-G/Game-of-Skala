@@ -59,8 +59,8 @@ label tarczownik:
         luszcz "W sumie morznaby za nim pobiec"
 
         menu:
-            "{b}Pobiegnij za nim (5h){/b}":
-                $ timer += 300
+            "{b}Pobiegnij za nim (4h){/b}":
+                $ timer += 240
                 show luszcz neutral at center:
                     xalign 0.0
                     yalign 1.0
@@ -68,7 +68,6 @@ label tarczownik:
             
                 $ renpy.pause(1.0)
 
-     
             "{b}Nie chce mi się{/b}":
                 luszcz "Niech sobie frajer sam lata za swoim psem"
 
@@ -604,7 +603,10 @@ label tarczownik:
                     jump wolbromska
 
     label tarczownik2:
-        scene bg portal with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg portal with fade
+        else:
+            scene bg portal_noc with fade
         play music "audio/music/portal.mp3"
         show luszcz neutral at slightleft
         show tarczownik neutral at right
@@ -792,7 +794,10 @@ label tarczownik:
         hide tarczownik
         $ renpy.pause(0.5)
 
-        scene bg portal with pixellate
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg portal with pixellate
+        else:
+            scene bg portal_noc with pixellate
         show luszcz neutral at slightleft
         show tarczownik neutral at slightright
         play music "audio/music/portal.mp3"
