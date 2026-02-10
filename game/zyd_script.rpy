@@ -148,7 +148,11 @@ label zyd:
             else:
                 play music "audio/music/pole_noc.mp3"
 
-            scene bg alejka
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                scene bg alejka
+            else:
+                scene bg alejka_noc
+
             hide zyd
             show luszcz neutral at slightleft
             show zyd neutral right at slightright
@@ -193,10 +197,6 @@ label zyd:
             $ zyd_wybory = 1
             $ braun_wybory = 1
             hide luszcz
-            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                play music "audio/music/pole.mp3"
-            else:
-                play music "audio/music/pole_noc.mp3"
             if rynek == 1:
                 jump rynek
             if sloneczna == 1:

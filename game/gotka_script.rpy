@@ -187,7 +187,10 @@ label gotka:
             eminem "(spoko)"
 
             if gotka_social_link == 1:
-                scene bg klinika3 with fade
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    scene bg klinika3 with fade
+                else:
+                    scene bg klinika3_noc with fade
                 if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                     play music "audio/music/pole.mp3"
                 else:
@@ -296,7 +299,10 @@ label gotka:
 
                                 gotka "Ah… wreszcie mam na kim wykorzystać mojego 5m potwora.."
 
-                                scene bg klinika3 with fade
+                                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                    scene bg klinika3 with fade
+                                else:
+                                    scene bg klinika3_noc with fade
                                 if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                                     play music "audio/music/pole.mp3"
                                 else:
@@ -348,7 +354,10 @@ label gotka:
 
                         luszcz "Miłego"
 
-                        scene bg klinika3 with fade
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            scene bg klinika3 with fade
+                        else:
+                            scene bg klinika3_noc with fade
                         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                             play music "audio/music/pole.mp3"
                         else:
@@ -439,7 +448,10 @@ label gotka:
                 gotka "Do usług"
             
             if gotka_social_link == 1:
-                scene bg klinika3 with fade
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    scene bg klinika3 with fade
+                else:
+                    scene bg klinika3_noc with fade
                 if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                     play music "audio/music/pole.mp3"
                 else:
@@ -548,7 +560,10 @@ label gotka:
 
                                 gotka "Ah… wreszcie mam na kim wykorzystać mojego 5m potwora.."
 
-                                scene bg klinika3 with fade
+                                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                    scene bg klinika3 with fade
+                                else:
+                                    scene bg klinika3_noc with fade
                                 if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                                     play music "audio/music/pole.mp3"
                                 else:
@@ -599,7 +614,10 @@ label gotka:
 
                         luszcz "Miłego"
 
-                        scene bg klinika3 with fade
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            scene bg klinika3 with fade
+                        else:
+                            scene bg klinika3_noc with fade
                         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                             play music "audio/music/pole.mp3"
                         else:
@@ -664,7 +682,10 @@ label gotka:
             gotka "... taka moja robota"
 
             if gotka_social_link == 1:
-                scene bg klinika3 with fade
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    scene bg klinika3 with fade
+                else:
+                    scene bg klinika3_noc with fade
                 if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                     play music "audio/music/pole.mp3"
                 else:
@@ -772,7 +793,10 @@ label gotka:
 
                                 gotka "Ah… wreszcie mam na kim wykorzystać mojego 5m potwora.."
 
-                                scene bg klinika3 with fade
+                                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                    scene bg klinika3 with fade
+                                else:
+                                    scene bg klinika3_noc with fade
                                 if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                                     play music "audio/music/pole.mp3"
                                 else:
@@ -824,7 +848,10 @@ label gotka:
 
                         luszcz "Miłego"
 
-                        scene bg klinika3 with fade
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            scene bg klinika3 with fade
+                        else:
+                            scene bg klinika3_noc with fade
                         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                             play music "audio/music/pole.mp3"
                         else:

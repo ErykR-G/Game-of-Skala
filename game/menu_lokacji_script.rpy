@@ -593,6 +593,12 @@ label menu_lokacji:
                     jump rynek
                 
                 "{b}🛒 Sklep Monopolowy (60min) | 6-23{/b}" if zyd_social_link == 0:
+                    if timer >= 360 and timer <= 1380 or timer >= 1800 and timer <= 2820 or timer >= 3240 and timer <= 4260 or timer >= 4680 and timer <= 5700 or timer >= 6120 and timer <= 7140 or timer >= 7560 and timer <= 8580 or timer >= 9000 and timer <= 10020 or timer >= 10440 and timer <= 11460:
+                        $ ado += 1
+                    else:
+                        "{i}Sklep Monopolowy jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump alejka2
                     $ monopoleks += 1
                     $ timer += 60
                     play sound "audio/sfx/traveling.mp3"
@@ -600,6 +606,12 @@ label menu_lokacji:
                     jump zyd1
                 
                 "{b}🛒 Sklep Monopolowy (15min) | 6-23{/b}" if zyd_social_link > 0:
+                    if timer >= 360 and timer <= 1380 or timer >= 1800 and timer <= 2820 or timer >= 3240 and timer <= 4260 or timer >= 4680 and timer <= 5700 or timer >= 6120 and timer <= 7140 or timer >= 7560 and timer <= 8580 or timer >= 9000 and timer <= 10020 or timer >= 10440 and timer <= 11460:
+                        $ ado += 1
+                    else:
+                        "{i}Sklep Monopolowy jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump alejka2
                     if monopoleks == 2 and silver_sextape_social_link == 0:
                         jump silver_sextape1
                     $ monopoleks += 1
@@ -827,6 +839,13 @@ label menu_lokacji:
                     jump rynek
                 
                 "{b}🩺 Apteka (15min) | 8-20{/b}":
+                    if timer >= 480 and timer <= 1200 or timer >= 1920 and timer <= 2640 or timer >= 3360 and timer <= 4080 or timer >= 4800 and timer <= 5520 or timer >= 6240 and timer <= 6960 or timer >= 7680 and timer <= 8400 or timer >= 9120 and timer <= 9840 or timer >= 10560 and timer <= 11280:
+                        $ ado += 1
+                    else:
+                        "{i}Apteka jest obecnie zamknięta{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump parking2
+
                     $ timer += 15
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
@@ -950,9 +969,11 @@ label menu_lokacji:
         $ bohaterow_wrzesnia = 0
         $ lipowa = 0
         $ granica = 0
-        if tarczownik_social_link == 0:
-            scene bg black with fade
-            jump tarczownik1
+
+        if timer >= 360 and timer <= 900 or timer >= 1800 and timer <= 2340 or timer >= 3240 and timer <= 3780 or timer >= 4680 and timer <= 5220 or timer >= 6120 and timer <= 6660 or timer >= 7560 and timer <= 8100 or timer >= 9000 and timer <= 9540 or timer >= 10440 and timer <= 10980:
+            if tarczownik_social_link == 0:
+                scene bg black with fade
+                jump tarczownik1
 
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
             scene bg black with fade
@@ -1166,6 +1187,13 @@ label menu_lokacji:
                 
                 "{b}🪨 Skała widokowa | 6–18{/b}": 
                     $ skalax = 0        
+                    if timer >= 360 and timer <= 1080 or timer >= 1800 and timer <= 2520 or timer >= 3240 and timer <= 3960 or timer >= 4680 and timer <= 5400 or timer >= 6120 and timer <= 6840 or timer >= 7560 and timer <= 8280 or timer >= 9000 and timer <= 9720 or timer >= 10440 and timer <= 11160:
+                        $ ado += 1
+                    else:
+                        "{i}Obecnie jest zbyt niebezpiecznie, by iść na skałkę{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump wolbromska2
+
                     if samobojstwo == 0:
                         $ skalax += 1
                         "{i}Mógłbym popełnić samobójstwo z tej skały widokowej...{/i}"
