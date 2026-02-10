@@ -103,7 +103,10 @@ label burmistrz:
 
     label burmistrz2:
         $ burmistrz_social_link = 2        
-        scene bg plac with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg plac with fade
+        else:
+            scene bg plac_noc with fade
         show burmistrz neutral at slightright
         show luszcz neutral at slightleft
 
@@ -111,7 +114,10 @@ label burmistrz:
 
         scene bg black with fade
         "{i}2 godziny bajdużenia później{/i}"
-        scene bg plac with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg plac with fade
+        else:
+            scene bg plac_noc with fade
         show burmistrz neutral at slightright
         show luszcz neutral at slightleft
 
@@ -218,7 +224,10 @@ label burmistrz:
         "{i}*po przedarciu się przez linię frontu udało nam się dotrzeć do głównej kwatery dowodzenia sił republiki*{/i}"
         play sound "audio/sfx/traveling.mp3" 
         play music "audio/music/plac.mp3"
-        scene bg kwatera with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg kwatera with fade
+        else:
+            scene bg kwatera_noc with fade
 
         show nemeczek neutral at right
         show burmistrz neutral right at left
@@ -272,7 +281,10 @@ label burmistrz:
 
         play sound "audio/sfx/traveling.mp3"
         scene bg black with fade
-        scene bg poludnie with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg poludnie with fade
+        else:
+            scene bg poludnie_noc with fade
         show burmistrz neutral at slightright
         show luszcz neutral at slightleft
 
@@ -290,7 +302,10 @@ label burmistrz:
 
         play sound "audio/sfx/traveling.mp3"
         scene bg black with fade
-        scene bg kwatera with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg kwatera with fade
+        else:
+            scene bg kwatera_noc with fade
 
         show nemeczek neutral at right
         show burmistrz neutral right at left
@@ -322,7 +337,10 @@ label burmistrz:
 
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
-                    scene bg poludnie with fade
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg poludnie with fade
+                    else:
+                        scene bg poludnie_noc with fade
                     show burmistrz neutral at slightright
                     show luszcz neutral at slightleft
 
@@ -334,7 +352,10 @@ label burmistrz:
 
                     scene bg black with fade
                     "{i}*upływają 2 godziny*{/i}"
-                    scene bg poludnie with fade
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg poludnie with fade
+                    else:
+                        scene bg poludnie_noc with fade
                     show burmistrz neutral at slightright
                     show luszcz neutral at slightleft
 
@@ -350,7 +371,10 @@ label burmistrz:
 
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
-                    scene bg kwatera with fade
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg kwatera with fade
+                    else:
+                        scene bg kwatera_noc with fade
                     show burmistrz neutral right at left
                     show luszcz neutral at slightleft
 
@@ -375,7 +399,10 @@ label burmistrz:
 
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
-                    scene bg plac with fade
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg plac with fade
+                    else:
+                        scene bg plac_noc with fade
                     show burmistrz neutral at slightright
                     show luszcz neutral at slightleft
 
@@ -474,7 +501,10 @@ label burmistrz:
                                         burmistrz "Ej ty dobra podoba mi się ta kryjówka, robimy to"
                                         
                                         scene bg black with fade
-                                        scene bg kwatera2 with fade
+                                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                            scene bg kwatera2 with fade
+                                        else:
+                                            scene bg kwatera2_noc with fade
                                         show burmistrz neutral at slightright
                                         show luszcz neutral at slightleft
 
@@ -494,7 +524,10 @@ label burmistrz:
 
                                         "{i}Przygotowaliścię wszystkie rzeczy do ogniska, rozpaliliście ogień, wrzuciliście przyprawy do garka i zaczeliścię kroić Nemeczka{/i}"
 
-                                        scene bg kwatera with fade
+                                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                                            scene bg kwatera with fade
+                                        else:
+                                            scene bg kwatera_noc with fade
                                         show burmistrz neutral at slightright
                                         show luszcz neutral at slightleft
 
@@ -530,7 +563,10 @@ label burmistrz:
 
         "{i}Nawet na samej granicy nie było żadnych republikańskich żołnierzy{/i}"
 
-        scene bg polnoc with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg polnoc with fade
+        else:
+            scene bg polnoc_noc with fade
         show luszcz neutral at left
         play music "audio/music/plac.mp3"
         
@@ -584,7 +620,10 @@ label burmistrz:
         label after_fight71:
             play music "audio/music/plac.mp3"
             if burmistrzzbroja == 1:
-                scene bg polnoc
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    scene bg polnoc
+                else:
+                    scene bg polnoc_noc
                 show luszcz zmentzony at center
                 luszcz "Ich jest za dużo! Nie powstrzymam ich samemu!"
                 luszcz "Nie mam już sił, poddaję się!"
@@ -595,7 +634,10 @@ label burmistrz:
                     play music "audio/music/pole.mp3"
                 else:
                     play music "audio/music/pole_noc.mp3"
-                scene bg plac with fade
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    scene bg plac with fade
+                else:
+                    scene bg plac_noc with fade
                 show luszcz neutral at center
 
                 luszcz "whooh udało mi się zwiać"
@@ -611,7 +653,10 @@ label burmistrz:
                 jump sloneczna
             
             else:
-                scene bg polnoc
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    scene bg polnoc
+                else:
+                    scene bg polnoc_noc
                 show luszcz zmentzony at center
 
                 luszcz "Ich jest za dużo! Nie powstrzymam ich samemu!"
@@ -641,7 +686,10 @@ label burmistrz:
                     play music "audio/music/pole_noc.mp3"
 
                 scene bg black with fade
-                scene bg plac with fade
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    scene bg plac with fade
+                else:
+                    scene bg plac_noc with fade
                 show luszcz neutral at slightleft
                 show burmistrz neutral at slightright
 

@@ -72,7 +72,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=a} Alejka (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -94,7 +94,7 @@ label menu_lokacji:
 
                 "{i}{image=wa} Słoneczna (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 1
@@ -116,7 +116,7 @@ label menu_lokacji:
                 
                 "{i}{image=d} Parking (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -138,7 +138,7 @@ label menu_lokacji:
 
                 "{i}{image=sd} Bohaterów Września (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -160,6 +160,13 @@ label menu_lokacji:
                 
                 "{b}🏛️ Urząd Gminy | 7-15{/b}": 
                     $ urzad_gminyx = 0
+                    if timer >= 420 and timer <= 900 or timer >= 1860 and timer <= 2340 or timer >= 3300 and timer <= 3780 or timer >= 4740 and timer <= 5220 or timer >= 6180 and timer <= 6660 or timer >= 7620 and timer <= 8100 or timer >= 9060 and timer <= 9540 or timer >= 10500 and timer <= 10980:
+                        $ ado += 1
+                    else:
+                        "{i}Urząd gminy jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump rynek2
+                         
                     if burmistrz_social_link == 0:
                         $ urzad_gminyx += 1
                         "{i}W ratuszu trwają obecnie burzliwe obrady na temat budżetu Skały{/i}"
@@ -201,6 +208,13 @@ label menu_lokacji:
         
                 "{b}⛪ Kościół | 7-20{/b}": 
                     $ kosciolx = 0
+                    if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500 and timer <= 11280:
+                        $ ado += 1
+                    else:
+                        "{i}Kościół jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump rynek2
+
                     if kosc_social_link == 0 and koscielny_zyje == 0:
                         $ kosciolx += 1
                         "{i}Mógłbym porozmawiać z tym kościelnym ze mszy…{i}"
@@ -316,7 +330,7 @@ label menu_lokacji:
             menu:      
                 "{i}{image=sd} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -336,8 +350,15 @@ label menu_lokacji:
                             jump fightx3
                     jump rynek
                 
-                "{b}🏗️ Plac Budowy | 6-20 {/b}":
+                "{b}🏗️ Plac Budowy | 6-18 {/b}":
                     $ placx = 0
+                    if timer >= 360 and timer <= 1080 or timer >= 1800 and timer <= 2520 or timer >= 3240 and timer <= 3960 or timer >= 4680 and timer <= 5400 or timer >= 6120 and timer <= 6840 or timer >= 7560 and timer <= 8280 or timer >= 9000 and timer <= 9720 or timer >= 10440 and timer <= 11160:
+                        $ ado += 1
+                    else:
+                        "{i}Plac Budowy jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump sloneczna2
+
                     if burmistrz_social_link == 1:
                         $ placx += 1
                         "{i}Przy placu budowy czeka na mnie Burmistrz, który chce mi pokazać gdzie powstanie nowe centrum szkolenia dla strażaków{/i}"
@@ -426,7 +447,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
         
-                "{b}🪩 Klub Seniora GROTA | 16-24{/b}":
+                "{b}🪩 Klub Seniora GROTA | 16-22{/b}":
                     $ klubx = 0
                     if silver_sextape_social_link == 1:
                         $ klubx  += 1
@@ -551,7 +572,7 @@ label menu_lokacji:
             menu:      
                 "{i}{image=d} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -589,6 +610,13 @@ label menu_lokacji:
                 
                 "{b}🏛️ Urząd Gminy | 7-15{/b}": 
                     $ urzad_gminyx = 0
+                    if timer >= 420 and timer <= 900 or timer >= 1860 and timer <= 2340 or timer >= 3300 and timer <= 3780 or timer >= 4740 and timer <= 5220 or timer >= 6180 and timer <= 6660 or timer >= 7620 and timer <= 8100 or timer >= 9060 and timer <= 9540 or timer >= 10500 and timer <= 10980:
+                        $ ado += 1
+                    else:
+                        "{i}Urząd gminy jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump alejka2
+
                     if burmistrz_social_link == 0:
                         $ urzad_gminyx += 1
                         "{i}W ratuszu trwają obecnie burzliwe obrady na temat budżetu Skały{/i}"
@@ -756,7 +784,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=wa} Wolbromska (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -778,7 +806,7 @@ label menu_lokacji:
                 
                 "{i}{image=a} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -813,9 +841,10 @@ label menu_lokacji:
                         $ domx += 1
                         "{i}Robię się trochę śpiący...{/i}"
                     
-                    if babcia_social_link == 1:
-                        $ domx += 1
-                        "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
+                    else:
+                        if babcia_social_link == 1:
+                            $ domx += 1
+                            "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
 
                     if domx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -838,12 +867,12 @@ label menu_lokacji:
 
                             if babcia_social_link == 1:
                                 menu:
-                                    "{b}Czy chcę pobrać memy? (20min){/b}"
+                                    "{b}Czy chcę pobrać memy? (30min){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 20
+                                        $ timer += 30
                                         jump babcia2
 
                                     "{b}Nie{/b}":
@@ -863,7 +892,7 @@ label menu_lokacji:
                                     "{b}Pobierz memy{/b}" if babcia_social_link == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 20
+                                        $ timer += 30
                                         jump babcia2
                                     
                                     "{b}Powrót{/b}":
@@ -956,7 +985,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=sd} Parking (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -982,9 +1011,10 @@ label menu_lokacji:
                         $ domx += 1
                         "{i}Robię się trochę śpiący...{/i}"
                     
-                    if babcia_social_link == 1:
-                        $ domx += 1
-                        "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
+                    else:
+                        if babcia_social_link == 1:
+                            $ domx += 1
+                            "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
 
                     if domx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -1007,18 +1037,17 @@ label menu_lokacji:
                             
                             if babcia_social_link == 1:
                                 menu:
-                                    "{b}Czy chcę pobrać memy? (20min){/b}"
+                                    "{b}Czy chcę pobrać memy? (30min){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 20
+                                        $ timer += 30
                                         jump babcia2
 
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
-
 
                         else:
                             if domx > 1:
@@ -1033,7 +1062,7 @@ label menu_lokacji:
                                     "{b}Pobierz memy{/b}" if babcia_social_link == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 20
+                                        $ timer += 30
                                         jump babcia2
                                     
                                     "{b}Powrót{/b}":
@@ -1113,6 +1142,13 @@ label menu_lokacji:
                         "{i}Mleczarz już tutaj nie pracuje{/i}"
                         "{i}Dzięki mnie mógł w spokoju przejść na emeryture{/i}"
                         jump wolbromska2
+                    
+                    if timer >= 460 and timer <= 960 or timer >= 1920 and timer <= 2400 or timer >= 3360 and timer <= 3840 or timer >= 4800 and timer <= 5280 or timer >= 6240 and timer <= 6720 or timer >= 7680 and timer <= 8160 or timer >= 9120 and timer <= 9600 or timer >= 10560 and timer <= 11040:
+                        $ ado += 1
+                    else:
+                        "{i}Mleczarnia jest obecnie zamknięta{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump wolbromska2
 
                     if krowka == 1:
                         "{i}Nie dostarczyłem jescze krówki...{/i}"
@@ -1128,7 +1164,7 @@ label menu_lokacji:
                     scene bg black with fade
                     jump mleczarz1
                 
-                "{b}🪨 Skała widokowa | 6–20{/b}": 
+                "{b}🪨 Skała widokowa | 6–18{/b}": 
                     $ skalax = 0        
                     if samobojstwo == 0:
                         $ skalax += 1
@@ -1276,7 +1312,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=wa} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -1298,7 +1334,7 @@ label menu_lokacji:
 
                 "{i}{image=sa} Lipowa (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -1368,6 +1404,13 @@ label menu_lokacji:
 
                 "{b}🎭 Dom Kultury | 7–19{/b}": 
                     $ dom_kulturyx = 0
+                    if timer >= 420 and timer <= 1140 or timer >= 1860 and timer <= 2580 or timer >= 3300 and timer <= 4020 or timer >= 4740 and timer <= 5460 or timer >= 6180 and timer <= 6900 or timer >= 7620 and timer <= 8340 or timer >= 9060 and timer <= 9780 or timer >= 10500 and timer <= 11220:
+                        $ ado += 1
+                    else:
+                        "{i}Dom Kultury jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump bohaterow_wrzesnia2
+
                     if urban_social_link == 0:
                         $ dom_kulturyx += 1
                         "{i}W domu kultury trwa właśnie spotkanie seniorów{/i}"
@@ -1455,7 +1498,7 @@ label menu_lokacji:
                                     "{b}Spotkaj się z Babcią (30min){/b}" if babcia_social_link == 2:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 60
+                                        $ timer += 30
                                         jump babcia3
                                     
                                     "{b}Powrót{/b}":
@@ -1464,6 +1507,13 @@ label menu_lokacji:
 
                 "{b}⛪ Kościół | 7–20{/b}": 
                     $ kosciolx = 0
+                    if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500 and timer <= 11280:
+                        $ ado += 1
+                    else:
+                        "{i}Kościół jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump bohaterow_wrzesnia2
+                        
                     if kosc_social_link == 0 and koscielny_zyje == 0:
                         $ kosciolx += 1
                         "{i}Mógłbym porozmawiać z tym kościelnym ze mszy…{i}"
@@ -1574,7 +1624,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=wd} Bohaterów Września (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -1596,7 +1646,7 @@ label menu_lokacji:
 
                 "{i}{image=s} Granica Skały (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -2021,7 +2071,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=w} Lipowa (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 11)
+                    $ kostka = renpy.random.randint(1, 15)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
