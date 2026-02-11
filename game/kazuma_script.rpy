@@ -156,7 +156,10 @@ label kazuma:
     label after_fight161:
         $ kazuma_sojusznik = 0
         $ liczba_sojusznikow -= 1
-        scene bg jezioro
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg jezioro
+        else:
+            scene bg jezioro_noc
         play music "audio/music/ryby.mp3"
         show kazuma neutral at slightright
         show luszcz neutral at slightleft
@@ -173,6 +176,16 @@ label kazuma:
             luszcz "To jeszcze dziwniejsze…"
 
             kazuma "Anyway, czas przetransportować mój…"
+            kazuma "Gdzie jest mój towar????"
+            kazuma "Te dranie!!! Wszystko ukradli!!!"
+            kazuma "Wszystko od nowa!!!"
+            kazuma "Pewnie jeszcze kogoś po mnie teraz wysłali…"
+            kazuma "Pomóż mi kurwa…"
+        
+        else:
+            luszcz "Łatwo z nimi"
+
+            kazuma "W takim razie czas przetransportować mój…"
             kazuma "Gdzie jest mój towar????"
             kazuma "Te dranie!!! Wszystko ukradli!!!"
             kazuma "Wszystko od nowa!!!"

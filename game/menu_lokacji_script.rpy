@@ -14,7 +14,6 @@ default placx = 0
 default lopatka_ukradnieta = 0
 default portalx = 0
 default domx = 0
-default jeziorox = 0
 default klubx = 0
 default dom_tasmyx = 0
 default szkolax = 0
@@ -23,7 +22,7 @@ default piwnicax = 0
 default fioletowy_domx = 0
 default stomatologx = 0
 default toxic_domx = 0
-default bunkierx = 0
+default jeziorox = 0
 
 default spanko = 0
 default ewento = 0
@@ -710,8 +709,13 @@ label menu_lokacji:
                 "{b}🏡 Dom Taśmy | 20-24{/b}" if silver_sextape_social_link >= 2 and silver_sextape_social_link < 10: 
                     $ dom_tasmyx = 0
                     if silver_sextape_social_link == 2:
-                        $ dom_tasmyx += 1
-                        "{i}Taśma czeka na mnie, by przedłużyć wspólnie gatunek{/i}"
+                        if timer > 1200 and timer < 1440 or timer > 2640 and timer < 2880 or timer > 4080 and timer < 4320 or timer > 5520 and timer < 5760 or timer > 6960 and timer < 7200 or timer > 8400 and timer < 8640 or timer > 9840 and timer < 1080 or timer > 11280:
+                            $ dom_tasmyx += 1
+                            "{i}Taśma czeka na mnie, by przedłużyć wspólnie gatunek{/i}"
+                        else:
+                            "{i}Obecnie nie ma nikogo w Domu Taśmy{/i}"
+                            "{i}Muszę przyjść tu o odpowiedniej porze...{/i}"
+                            jump alejka2
                     
                     if dom_tasmyx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -721,12 +725,12 @@ label menu_lokacji:
                         if dom_tasmyx == 1:
                             if silver_sextape_social_link == 2:
                                 menu:
-                                    "{b}Czy chcę spotkać się z Taśmą (4h){/b}"
+                                    "{b}Czy chcę spotkać się z Taśmą (2h){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 240
+                                        $ timer += 120
                                         jump silver_sextape3
 
                                     "{b}Nie{/b}":
@@ -738,10 +742,10 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
-                                    "{b}Spotkaj się z Taśmą (4h){/b}" if silver_sextape_social_link == 2:
+                                    "{b}Spotkaj się z Taśmą (2h){/b}" if silver_sextape_social_link == 2:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 240
+                                        $ timer += 120
                                         jump silver_sextape3
                                     
                                     "{b}Powrót{/b}":
@@ -959,6 +963,13 @@ label menu_lokacji:
 
                 "{b}🦷 Stomatolog | 12-19{/b}" if mleczarz_social_link > 3 or mleczarz_social_link == 3 and krowka == 1:
                     $ stomatologx = 0
+                    if timer >= 720 and timer <= 1140 or timer >= 2160 and timer <= 2580 or timer >= 3600 and timer <= 4020 or timer >= 5040 and timer <= 5460 or timer >= 6480 and timer <= 6900 or timer >= 7920 and timer <= 8340 or timer >= 9360 and timer <= 9780 or timer >= 10800 and timer <= 11220:
+                        $ ado += 1
+                    else:
+                        "{i}Stomatolog jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump parking2
+
                     if mleczarz_social_link == 3 and krowka == 1:
                         $ stomatologx += 1
                         "{i}Mam dostraczyć tutaj krówkę...{/i}"
@@ -1129,17 +1140,57 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
                 
-                "{b}🏡 Dom Toxic Pea | 20–6{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
+                "{b}🏡 Dom Toxic Pea | 20–24{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
                     $ toxic_domx = 0        
                     if toxic_pea_social_link == 1 and toxic_limit == 0:
-                        $ toxic_domx += 1
-                        "{i}Tutaj mieszka Toxic Pea, którego spotkałem na Kebabie{/i}"
-                        "{i}Zaproponował mi byśmy razem pozabijali zombiaczki...{/i}"
+                        if timer > 1200 and timer < 1440 or timer > 2640 and timer < 2880 or timer > 4080 and timer < 4320 or timer > 5520 and timer < 5760 or timer > 6960 and timer < 7200 or timer > 8400 and timer < 8640 or timer > 9840 and timer < 1080 or timer > 11280:
+                            $ toxic_domx += 1
+                            "{i}Tutaj mieszka Toxic Pea, którego spotkałem na Kebabie{/i}"
+                            "{i}Zaproponował mi byśmy razem pozabijali zombiaczki...{/i}"
+                        else:
+                            "{i}Obecnie nie ma nikogo w Domu Toxic Pea{/i}"
+                            "{i}Muszę przyjść tu o odpowiedniej porze...{/i}"
+                            jump wolbromska2
                     
                     if toxic_pea_social_link == 2 and toxic_limit == 0:
-                        $ toxic_domx += 1
-                        "{i}Ostatnio zabijałem tutaj zombiaczki razem z Toxic Pea{/i}"
-                        "{i}Zaproponował mi byśmy zrobili to jeszcze raz...{/i}"
+                        if timer > 1200 and timer < 1440 or timer > 2640 and timer < 2880 or timer > 4080 and timer < 4320 or timer > 5520 and timer < 5760 or timer > 6960 and timer < 7200 or timer > 8400 and timer < 8640 or timer > 9840 and timer < 1080 or timer > 11280:
+                            $ toxic_domx += 1
+                            "{i}Ostatnio zabijałem tutaj zombiaczki razem z Toxic Pea{/i}"
+                            "{i}Zaproponował mi byśmy zrobili to jeszcze raz...{/i}"
+                        else:
+                            "{i}Obecnie nie ma nikogo w Domu Toxic Pea{/i}"
+                            "{i}Muszę przyjść tu o odpowiedniej porze...{/i}"
+                            jump wolbromska2
+                    
+                    if toxic_pea_social_link == 3 and toxic_limit == 0:
+                        if timer > 1200 and timer < 1440 or timer > 2640 and timer < 2880 or timer > 4080 and timer < 4320 or timer > 5520 and timer < 5760 or timer > 6960 and timer < 7200 or timer > 8400 and timer < 8640 or timer > 9840 and timer < 1080 or timer > 11280:
+                            $ toxic_domx += 1
+                            "{i}Ostatnio zabijałem tutaj zombiaczki i robiłem inne rzeczy razem z Toxic Pea{/i}"
+                            "{i}Zaproponował mi byśmy zrobili to jeszcze raz...{/i}"
+                        else:
+                            "{i}Obecnie nie ma nikogo w Domu Toxic Pea{/i}"
+                            "{i}Muszę przyjść tu o odpowiedniej porze...{/i}"
+                            jump wolbromska2
+                    
+                    if toxic_pea_social_link == 4 and toxic_limit == 0:
+                        if timer > 1200 and timer < 1440 or timer > 2640 and timer < 2880 or timer > 4080 and timer < 4320 or timer > 5520 and timer < 5760 or timer > 6960 and timer < 7200 or timer > 8400 and timer < 8640 or timer > 9840 and timer < 1080 or timer > 11280:
+                            $ toxic_domx += 1
+                            "{i}Ostatnio zabijałem tutaj zombiaczki i robiłem inne rzeczy razem z Toxic Pea{/i}"
+                            "{i}Zaproponował mi byśmy zrobili to jeszcze raz...{/i}"
+                        else:
+                            "{i}Obecnie nie ma nikogo w Domu Toxic Pea{/i}"
+                            "{i}Muszę przyjść tu o odpowiedniej porze...{/i}"
+                            jump wolbromska2
+                    
+                    if toxic_pea_social_link == 5 and toxic_limit == 0:
+                        if timer > 1200 and timer < 1440 or timer > 2640 and timer < 2880 or timer > 4080 and timer < 4320 or timer > 5520 and timer < 5760 or timer > 6960 and timer < 7200 or timer > 8400 and timer < 8640 or timer > 9840 and timer < 1080 or timer > 11280:
+                            $ toxic_domx += 1
+                            "{i}Ostatnio zabijałem tutaj zombiaczki i robiłem inne rzeczy razem z Toxic Pea{/i}"
+                            "{i}Zaproponował mi byśmy zrobili to jeszcze raz...{/i}"
+                        else:
+                            "{i}Obecnie nie ma nikogo w Domu Toxic Pea{/i}"
+                            "{i}Muszę przyjść tu o odpowiedniej porze...{/i}"
+                            jump wolbromska2
 
                     if toxic_domx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -1149,12 +1200,12 @@ label menu_lokacji:
                         if toxic_domx == 1:
                             if toxic_pea_social_link == 1 and toxic_limit == 0:
                                 menu:
-                                    "{b}Czy chcę spotkać się z Toxic Pea? (3h){/b}"
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 180
+                                        $ timer += 120
                                         jump toxic_pea1
 
                                     "{b}Nie{/b}":
@@ -1163,35 +1214,94 @@ label menu_lokacji:
                             
                             if toxic_pea_social_link == 2 and toxic_limit == 0:
                                 menu:
-                                    "{b}Czy chcę spotkać się z Toxic Pea? (3h){/b}"
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 180
+                                        $ timer += 120
                                         jump toxic_pea2
 
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
+                            
+                            if toxic_pea_social_link == 3 and toxic_limit == 0:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump toxic_pea3
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+                            
+                            if toxic_pea_social_link == 4 and toxic_limit == 0:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump toxic_pea4
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
+                            
+                            if toxic_pea_social_link == 5 and toxic_limit == 0:
+                                menu:
+                                    "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump toxic_pea5
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump wolbromska2
 
                         else:
                             if toxic_domx > 1:
                                 menu:
                                     "{b}Co zrobić?{/b}"
                                     
-                                    "{b}Spotkaj się z Toxic Pea (3h){/b}" if toxic_pea_social_link == 1 and toxic_limit == 0:
+                                    "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 1 and toxic_limit == 0:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 180
+                                        $ timer += 120
                                         jump toxic_pea1
                                     
-                                    "{b}Spotkaj się z Toxic Pea (3h){/b}" if toxic_pea_social_link == 2 and toxic_limit = 0:
+                                    "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 2 and toxic_limit = 0:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 180
+                                        $ timer += 120
                                         jump toxic_pea2
+                                    
+                                    "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 3 and toxic_limit = 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump toxic_pea3
+                                    
+                                    "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 4 and toxic_limit = 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump toxic_pea4
+                                    
+                                    "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 5 and toxic_limit = 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump toxic_pea5
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -1427,6 +1537,12 @@ label menu_lokacji:
                     jump lipowa
         
                 "{b}🛒 Kebab (15min) | 11–23{/b}":
+                    if timer >= 660 and timer <= 1380 or timer >= 2100 and timer <= 2820 or timer >= 3540 and timer <= 4260 or timer >= 4980 and timer <= 5700 or timer >= 6420 and timer <= 7140 or timer >= 7860 and timer <= 8580 or timer >= 9300 and timer <= 10020 or timer >= 10740 and timer <= 11460:
+                        $ ado += 1
+                    else:
+                        "{i}Kebab jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump bohaterow_wrzesnia2
                     $ timer += 15
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
@@ -2237,54 +2353,110 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump granica2
 
-                "{b}🎣 Jezioro (15min) | 24/7{/b}": 
-                    $ timer += 15
-                    play sound "audio/sfx/traveling.mp3"
-                    scene bg black with fade
-                    jump jezioro1
-
-                "{b}🏰 Bunkier | 6-20{/b}": 
-                    $ bunkierx = 0
+                "{b}🎣 Jezioro (2h) | 6-18{/b}" if kazuma_social_link == 0: 
+                    $ jeziorox = 0
                     if urban_social_link == 1:
-                        $ bunkierx += 1
-                        "{i}Znalazłem przy jeziorze stary bunkier{/i}"
-                        "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
-                    
-                    if bunkierx == 0:
-                        "{i}Nie ma tu teraz nic do roboty{/i}"
+                        if timer >= 540 and timer <= 1080 or timer >= 1980 and timer <= 2520 or timer >= 3420 and timer <= 3980 or timer >= 4860 and timer <= 5400 or timer >= 6300 and timer <= 6840 or timer >= 7740 and timer <= 8280 or timer >= 9180 and timer <= 9720 or timer >= 10620 and timer <= 11160:
+                            $ jeziorox += 1
+                            "{i}Znalazłem przy jeziorze stary bunkier{/i}"
+                            "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
+                        else:
+                            "{i}Znalazłem przy jeziorze stary bunkier{/i}"
+                            "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
+                            "{i}Jednak obecnie jest za późna godzina, by tam iść{/i}"    
+                            jump granica2   
+
+                    if timer >= 540 and timer <= 1080 or timer >= 1980 and timer <= 2520 or timer >= 3420 and timer <= 3980 or timer >= 4860 and timer <= 5400 or timer >= 6300 and timer <= 6840 or timer >= 7740 and timer <= 8280 or timer >= 9180 and timer <= 9720 or timer >= 10620 and timer <= 11160:
+                        "{i}Rybki, rybki kocham rybki{/i}"
+                    else:
+                        "{i}Obecnie jest za późna godzina, by tu iść{/i}"
+                        "{i}Muszę wrócić tutaj o wcześniejszej porze dnia{/i}"
                         jump granica2
+                    
+                    if jeziorox == 0:
+                        play sound "audio/sfx/traveling.mp3"
+                        scene bg black with fade
+                        $ timer += 120
+                        jump kazuma1
 
                     else:
-                        if bunkierx == 1:
+                        if jeziorox == 1:
                             if urban_social_link == 1:
-                                menu:
-                                    "{b}Czy chcę spotkać się z Jerzym Urbanem? (3h){/b}"
-
-                                    "{b}Tak{/b}":
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 180
-                                        jump urban2
-
-                                    "{b}Nie{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump granica2
-
-                        else:
-                            if bunkierx > 1:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
-                                    "{b}Spotkaj się z Jerzym Urbanem (3h){/b}" if urban_social_link == 1:
+                                    "{b}Spotkaj się z Jerzym Urbanem (2h){/b}" if urban_social_link == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
-                                        $ timer += 180
+                                        $ timer += 120
                                         jump urban2
+                                    
+                                    "{b}Idź na ryby (2h){/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump kazuma1
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump granica2
 
+                "{b}🎣 Jezioro (15min) | 24/7{/b}" if kazuma_social_link > 0: 
+                    $ jeziorox = 0
+                    if urban_social_link == 1:
+                        if timer >= 540 and timer <= 1080 or timer >= 1980 and timer <= 2520 or timer >= 3420 and timer <= 3980 or timer >= 4860 and timer <= 5400 or timer >= 6300 and timer <= 6840 or timer >= 7740 and timer <= 8280 or timer >= 9180 and timer <= 9720 or timer >= 10620 and timer <= 11160:
+                            $ jeziorox += 1
+                            "{i}Znalazłem przy jeziorze stary bunkier{/i}"
+                            "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
+                        else:
+                            $ jeziorox += 2
+                            "{i}Znalazłem przy jeziorze stary bunkier{/i}"
+                            "{i}Prawdopodobnie to o nim mówił Jerzy Urban{/i}"
+                            "{i}Jednak obecnie jest za późna godzina, by tam iść{/i}"       
+                    
+                    if jeziorox == 0:
+                        $ timer += 15
+                        play sound "audio/sfx/traveling.mp3"
+                        scene bg black with fade
+                        jump jezioro1
+
+                    else:
+                        if jeziorox == 1:
+                            if urban_social_link == 1:
+                                menu:
+                                    "{b}Co zrobić?{/b}"
+
+                                    "{b}Spotkaj się z Jerzym Urbanem (2h){/b}" if urban_social_link == 1:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 120
+                                        jump urban2
+                                    
+                                    "{b}Idź na ryby (15min){/b}":
+                                        $ timer += 15
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump jezioro1
+                                    
+                                    "{b}Powrót{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump granica2
+                        
+                        else:
+                            if jeziorox == 2:
+                                if urban_social_link == 1:
+                                    menu:
+                                        "{b}Czy chcę iść na ryby? (15min){/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ timer += 15
+                                            play sound "audio/sfx/traveling.mp3"
+                                            scene bg black with fade
+                                            jump jezioro1
+
+                                        "{b}Nie{/b}":
+                                            luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                            jump granica2
 
     label raem_fight:
         scene bg raem

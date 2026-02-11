@@ -239,7 +239,10 @@ label urban:
     
     label urban2:
         play music "audio/music/natura.mp3"
-        scene bg bunkier3 with fade
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg bunkier3 with fade
+        else:
+            scene bg bunkier3_noc with fade
         show luszcz neutral at center
         luszcz "To chyba tutaj"
 
@@ -421,8 +424,10 @@ label urban:
                     luszcz "ale babcia jednak miała dobre powiedzenie"
                     luszcz "”dobry komóh to martwy komóh”"
 
-
-                    scene bg bunkier3
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg bunkier3 with fade
+                    else:
+                        scene bg bunkier3_noc with fade
                     play music "audio/music/natura.mp3"
                     show luszcz neutral at center
 
@@ -503,7 +508,10 @@ label urban:
 
                     luszcz "w takim razie, za mną"
 
-                    scene bg bunkier3
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        scene bg bunkier3 with fade
+                    else:
+                        scene bg bunkier3_noc with fade
                     play music "audio/music/natura.mp3"
                     show luszcz neutral at slightleft
                     show urban neutral at slightright

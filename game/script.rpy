@@ -679,6 +679,7 @@ label wybory:
     default kosc_wybory = 10
     default trump_wybory = 0
     default gotka_wybory = 0
+    default kazuma_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
@@ -695,6 +696,7 @@ label social_links:
     default harambe_social_link = 0
     default trump_social_link = 0
     default gotka_social_link = 0
+    default kazuma_social_link = 0
 
 
 
