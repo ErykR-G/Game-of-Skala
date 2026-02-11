@@ -961,7 +961,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
 
-                "{b}🦷 Stomatolog | 12-19{/b}" if mleczarz_social_link > 3 or mleczarz_social_link == 3 and krowka == 1:
+                "{b}🦷 Stomatolog | 12-19{/b}":
                     $ stomatologx = 0
                     if timer >= 720 and timer <= 1140 or timer >= 2160 and timer <= 2580 or timer >= 3600 and timer <= 4020 or timer >= 5040 and timer <= 5460 or timer >= 6480 and timer <= 6900 or timer >= 7920 and timer <= 8340 or timer >= 9360 and timer <= 9780 or timer >= 10800 and timer <= 11220:
                         $ ado += 1
