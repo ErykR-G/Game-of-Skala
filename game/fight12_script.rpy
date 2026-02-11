@@ -83,7 +83,10 @@ label fight121_stats:
 label fight121:
     $ fight_on = 1
     play music "audio/music/krystian_fight.mp3"
-    scene bg krystian_fight
+    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+        scene bg krystian_fight with fade
+    else:
+        scene bg krystian_fight_noc with fade
     label wybor_fight121:
         if gole_rence == 1:
             $ ile_wrogow = 1

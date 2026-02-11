@@ -1432,8 +1432,16 @@ label menu_lokacji:
                     scene bg black with fade
                     jump kebab
                 
-                "{b}🏡 Czerwony Dom | 8–20{/b}" if mleczarz_social_link > 2 or mleczarz_social_link == 2 and krowka == 1:
-                    $ czerwony_domx = 0        
+                "{b}🏡 Czerwony Dom | 9–19{/b}" if mleczarz_social_link > 2 or mleczarz_social_link == 2 and krowka == 1:
+                    $ czerwony_domx = 0   
+                    if timer >= 540 and timer <= 1140 or timer >= 1980 and timer <= 2580 or timer >= 3420 and timer <= 4020 or timer >= 4860 and timer <= 5460 or timer >= 6300 and timer <= 6900 or timer >= 7740 and timer <= 8340 or timer >= 9180 and timer <= 9780 or timer >= 10620 and timer <= 11220:
+                        $ ado += 1
+                    else:
+                        "{i}Mam dostraczyć do tego domu krówkę...{/i}"
+                        "{i}Jednak jest na to za późna godzina{/i}"
+                        "{i}Muszę przyjść tu o wcześniejszej godzinie{/i}"
+                        jump bohaterow_wrzesnia2
+
                     if mleczarz_social_link == 2 and krowka == 1:
                         $ czerwony_domx += 1
                         "{i}Mam dostraczyć do tego domu krówkę...{/i}"
