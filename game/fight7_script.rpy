@@ -22568,7 +22568,7 @@ label fight71:
             "{b}Powtórz Walkę{/b}":
                 window show
                 $ fight_on = 0
-                if przegranko <= 12:
+                if fight71_przegranko <= 12:
                     $ timer += 5
 
                 $ ile_sojusznikow = 0

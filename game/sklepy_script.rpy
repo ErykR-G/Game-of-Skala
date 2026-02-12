@@ -8,6 +8,11 @@ label sklepy_define:
     default os = 0
     default mieso = 0
     default samosamo = 0
+    default chinczyk_den = 0
+    default chinczyk_banany = 0
+    default chinczyk_przepychaczka = 6
+    default chinczyk_klata = 6
+
 
 label sklepy:
     label sklep_monopolowy:
@@ -21,94 +26,94 @@ label sklepy:
         label sklep_monopolowy2:
             $ config.menu_include_disabled = True
             if timer >= 0 and timer <= 1440 and monopolowy_den == 0: 
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 4
-                $ monopolowy_drpepper = 3
+                $ monopolowy_den = 1
+                $ monopolowy_jabole = 3
+                $ monopolowy_drpepper = 4
                 $ monopolowy_royal = 3
+                $ monopolowy_granat = 3
+            if timer >= 1441 and timer <= 2880 and monopolowy_den <= 1:  
+                $ monopolowy_den = 2
+                $ monopolowy_jabole = 3
+                $ monopolowy_drpepper = 4
+                $ monopolowy_royal = 5
                 $ monopolowy_granat = 2
-            if timer >= 1441 and timer <= 2880 and monopolowy_den == 1:  
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 2
-                $ monopolowy_drpepper = 2
-                $ monopolowy_royal = 1
+            if timer >= 2881 and timer <= 4320 and monopolowy_den <= 2: 
+                $ monopolowy_den = 3
+                $ monopolowy_jabole = 4
+                $ monopolowy_drpepper = 4
+                $ monopolowy_royal = 2
+                $ monopolowy_granat = 3
+            if timer >= 4321 and timer <= 5760 and monopolowy_den <= 3: 
+                $ monopolowy_den = 4
+                $ monopolowy_jabole = 3
+                $ monopolowy_drpepper = 3
+                $ monopolowy_royal = 4
+                $ monopolowy_granat = 1
+            if timer >= 5761 and timer <= 7200 and monopolowy_den <= 4: 
+                $ monopolowy_den = 5
+                $ monopolowy_jabole = 5
+                $ monopolowy_drpepper = 3
+                $ monopolowy_royal = 4
+                $ monopolowy_granat = 2
+            if timer >= 7201 and timer <= 8640 and monopolowy_den <= 5: 
+                $ monopolowy_den = 6
+                $ monopolowy_jabole = 6
+                $ monopolowy_drpepper = 3
+                $ monopolowy_royal = 2
                 $ monopolowy_granat = 4
-            if timer >= 2881 and timer <= 4320 and monopolowy_den == 2: 
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 4
-                $ monopolowy_drpepper = 3
+            if timer >= 8641 and timer <= 10080 and monopolowy_den <= 6:
+                $ monopolowy_den = 7
+                $ monopolowy_jabole = 5
+                $ monopolowy_drpepper = 2
                 $ monopolowy_royal = 3
-                $ monopolowy_granat = 2
-            if timer >= 4321 and timer <= 5760 and monopolowy_den == 3: 
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 4
-                $ monopolowy_drpepper = 3
-                $ monopolowy_royal = 3
-                $ monopolowy_granat = 2
-            if timer >= 5761 and timer <= 7200 and monopolowy_den == 4: 
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 4
-                $ monopolowy_drpepper = 3
-                $ monopolowy_royal = 3
-                $ monopolowy_granat = 2
-            if timer >= 7201 and timer <= 8640 and monopolowy_den == 5: 
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 4
-                $ monopolowy_drpepper = 3
-                $ monopolowy_royal = 3
-                $ monopolowy_granat = 2
-            if timer >= 8641 and timer <= 10080 and monopolowy_den == 6:
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 4
-                $ monopolowy_drpepper = 3
-                $ monopolowy_royal = 3
-                $ monopolowy_granat = 2
-            if timer >= 10081 and timer <= 11520 and monopolowy_den == 7:
-                $ monopolowy_den += 1
-                $ monopolowy_jabole = 4
-                $ monopolowy_drpepper = 3
-                $ monopolowy_royal = 3
-                $ monopolowy_granat = 2
+                $ monopolowy_granat = 3
+            if timer >= 10081 and timer <= 11520 and monopolowy_den <= 7:
+                $ monopolowy_den = 8
+                $ monopolowy_jabole = 6
+                $ monopolowy_drpepper = 2
+                $ monopolowy_royal = 2
+                $ monopolowy_granat = 4
             menu:
                 "{b}Co kupić?{/b}"
 
-                "{b}Jabole x 2 (1 💰){/b}" if monopolowy_jabole > 0 and money >= 1:
+                "{b}Jabole x 4 (1 💰){/b}" if monopolowy_jabole > 0 and money >= 1:
                     if jabole == 0:
                         $ ile_item += 1
-                    $ jabole += 2
+                    $ jabole += 4
                     $ monopolowy_jabole -= 1
                     $ money -= 1
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Jabole x 2 zostały dodane do twojego ekwipunku*{/i}"
+                    "{i}*Jabole x 4 zostały dodane do twojego ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
-                "{b}DrPepper (1 💰){/b}" if monopolowy_drpepper > 0 and money >= 1:
+                "{b}DrPepper x 2 (1 💰){/b}" if monopolowy_drpepper > 0 and money >= 1:
                     if drpepper == 0:
                         $ ile_item += 1
-                    $ drpepper += 1
+                    $ drpepper += 2
                     $ monopolowy_drpepper -= 1
                     $ money -= 1
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*DrPepper został dodany do twojego ekwipunku*{/i}"
+                    "{i}*DrPepper x 2 został dodany do twojego ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
-                "{b}Royal Cola (2 💰){/b}" if monopolowy_royal > 0 and money >= 2:
+                "{b}Royal Cola x 2 (1 💰){/b}" if monopolowy_royal > 0 and money >= 1:
                     if royal == 0:
                         $ ile_item += 1
-                    $ royal += 1
+                    $ royal += 2
                     $ monopolowy_royal -= 1
-                    $ money -= 2
+                    $ money -= 1
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Royal Cola została dodana do twojego ekwipunku*{/i}"
+                    "{i}*Royal Cola x 2 została dodana do twojego ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
-                "{b}Granat (2 💰){/b}" if monopolowy_granat > 0 and money >= 2:
+                "{b}Granat x 2 (2 💰){/b}" if monopolowy_granat > 0 and money >= 2:
                     if granat == 0:
                         $ ile_item += 1
-                    $ granat += 1
+                    $ granat += 2
                     $ monopolowy_granat -= 1
                     $ money -= 2
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Granat został dodany do twojego ekwipunku*{/i}"
+                    "{i}*Granat x 2 został dodany do twojego ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
                 "{i}Powrót{/i}":
@@ -139,10 +144,10 @@ label sklepy:
         menu:
             "{b}Czy na pewno chcę kebaba?{/b}"
 
-            "{b}Tak (2 💰){/b}" if money >= 2:
+            "{b}Tak (1 💰){/b}" if money >= 2:
                 play sound "audio/sfx/kupno.mp3"
                 $ config.menu_include_disabled = False
-                $ money -= 2
+                $ money -= 1
                 luszcz "Chciałbym zamówić kebaba…"
                 menu:
                     "{b}Jakiego kebaba chcę..?{/b}"
@@ -279,3 +284,94 @@ label sklepy:
                 else:
                     play music "audio/music/pole_noc.mp3"
                 jump bohaterow_wrzesnia
+
+    label chinczyk:
+        play music "audio/music/chinczyk.mp3"
+        scene bg chinczyk with fade
+        show luszcz neutral right at slightright
+
+        daj "Witam serdecznie!"
+
+        luszcz "Pokaż mi swoje towary."
+
+        label chinczyk2:
+            $ config.menu_include_disabled = True
+            if chinczyk_den == 0:
+                $ chinczyk_przepychaczka = 6
+                $ chinczyk_klata = 6
+            if timer >= 0 and timer <= 1440 and chinczyk_den == 0: 
+                $ chinczyk_den = 1
+                $ chinczyk_banany = 2
+            if timer >= 1441 and timer <= 2880 and chinczyk_den <= 1:  
+                $ chinczyk_den = 2
+                $ chinczyk_banany = 3
+            if timer >= 2881 and timer <= 4320 and chinczyk_den <= 2: 
+                $ chinczyk_den = 3
+                $ chinczyk_banany = 2
+            if timer >= 4321 and timer <= 5760 and chinczyk_den <= 3: 
+                $ chinczyk_den = 4
+                $ chinczyk_banany = 1
+            if timer >= 5761 and timer <= 7200 and chinczyk_den <= 4: 
+                $ chinczyk_den = 5
+                $ chinczyk_banany = 4
+            if timer >= 7201 and timer <= 8640 and chinczyk_den <= 5: 
+                $ chinczyk_den = 6
+                $ chinczyk_banany = 3
+            if timer >= 8641 and timer <= 10080 and chinczyk_den <= 6:
+                $ chinczyk_den = 7
+                $ chinczyk_banany = 2
+            if timer >= 10081 and timer <= 11520 and chinczyk_den <= 7:
+                $ chinczyk_den = 8
+                $ chinczyk_banany = 2
+            menu:
+                "{b}Co kupić?{/b}"
+
+                "{b}Kiść Bananów x 3 (2 💰){/b}" if chinczyk_banany > 0 and money >= 2:
+                    if banany == 0:
+                        $ ile_item += 1
+                    $ banany += 3
+                    $ chinczyk_banany -= 1
+                    $ money -= 2
+                    play sound "audio/sfx/kupno.mp3"
+                    "{i}*Kiść Bananów x 3 została dodana do twojego ekwipunku*{/i}"
+                    jump chinczyk2
+                
+                "{b}Przepychaczka x 1 (4 💰){/b}" if chinczyk_przepychaczka > 0 and money >= 4:
+                    $ przepychaczka_liczba += 1
+                    if luszcz_przepychaczka == 0 and urban_przepychaczka == 0 and zyd_przepychaczka == 0 and kazuma_przepychaczka == 0 and tarczownik_przepychaczka == 0:
+                        $ luszcz_przepychaczka = 1
+                        $ urban_przepychaczka = 1
+                        $ zyd_przepychaczka = 1
+                        $ kazuma_przepychaczka = 1
+                        $ tarczownik_przepychaczka = 1
+                        $ eminem_przepychaczka = 1
+                    $ chinczyk_przepychaczka -= 1
+                    $ money -= 4
+                    play sound "audio/sfx/kupno.mp3"
+                    "{i}*Przepychaczka x 1 została dodana do twojego ekwipunku*{/i}"
+                    jump chinczyk2
+                
+                "{b}Diamentowa Klata x 1 (4 💰){/b}" if chinczyk_klata > 0 and money >= 4:
+                    $ klata_liczba += 1
+                    if luszcz_klata == 0 and urban_klata == 0 and zyd_klata == 0 and kazuma_klata == 0 and tarczownik_klata == 0 and eminem_klata == 0:
+                        $ luszcz_klata = 1
+                        $ urban_klata = 1
+                        $ zyd_klata = 1
+                        $ kazuma_klata = 1
+                        $ tarczownik_klata = 1
+                        $ eminem_klata = 1
+                    $ chinczyk_klata -= 1
+                    $ money -= 4
+                    play sound "audio/sfx/kupno.mp3"
+                    "{i}*Diamentowa Klata x 1 została dodana do twojego ekwipunku*{/i}"
+                    jump chinczyk2
+                
+                "{i}Powrót{/i}":
+                    $ config.menu_include_disabled = False
+                    daj "Do widzenia" 
+                    hide luszcz
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
+                    jump granica

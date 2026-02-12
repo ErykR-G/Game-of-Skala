@@ -21865,7 +21865,7 @@ label fight01:
                 window show
                 play sound "audio/sfx/return.mp3"
                 $ fight_on = 0
-                if przegranko <= 12:
+                if fight01_przegranko <= 12:
                     $ timer += 5
 
                 $ ile_sojusznikow = 0

@@ -152,6 +152,8 @@ label postacie:
 
     define stefan = Character("Stefan", color="#d8ca07")
 
+    define daj = Character("Daj", color="#e258588e")
+
     define krystian = Character("Krystian", color="#ff20208e")
 
     define piotrek = Character("Piotrek", color="#ffffff")
@@ -220,6 +222,8 @@ label postacie:
     define policja1 = Character("Urzędniczka Skarbowa 1", color="#1325ca")
 
     define policja2 = Character("Urzędniczka Skarbowa 2", color="#1325ca")
+
+    define dzieci = Character("Dzieci", color="#8baf29")
 
 
 label pozycje:

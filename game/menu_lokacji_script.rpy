@@ -28,6 +28,7 @@ default spanko = 0
 default ewento = 0
 default info = 0
 default muzyczka = 0
+default kamala = 0
 
 label menu_lokacji:
     label rynek:
@@ -66,6 +67,12 @@ label menu_lokacji:
                         if timer > 1620 and timer < 1980 or timer > 3060 and timer < 3420 or timer > 4500 and timer < 4860 or timer > 5940 and timer < 6300 or timer > 7380 and timer < 7740 or timer > 8820 and timer < 9180 or timer > 10260 and timer < 10620 or timer > 11700:
                             luszcz "Nie, nie dam rady"
                             jump spanko2  
+        
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            $ kostka = renpy.random.randint(1, 50)
+            if kostka == 1 and kamala == 0:
+                $ kamala = 1
+                jump kamala
 
         label rynek2:
             menu:
@@ -2306,6 +2313,18 @@ label menu_lokacji:
                             jump fightx3
                     jump lipowa    
                 
+                "{b}🛒 Chiński Market (15min) | 9–19{/b}":
+                    if timer >= 540 and timer <= 1140 or timer >= 1980 and timer <= 2580 or timer >= 3420 and timer <= 4020 or timer >= 4860 and timer <= 5460 or timer >= 6300 and timer <= 6900 or timer >= 7740 and timer <= 8340 or timer >= 9180 and timer <= 9780 or timer >= 10620 and timer <= 11220:
+                        $ ado += 1
+                    else:
+                        "{i}Chiński Market jest obecnie zamknięty{/i}"
+                        "{i}Muszę przyjść tu później...{/i}"
+                        jump granica2
+                    $ timer += 15
+                    play sound "audio/sfx/traveling.mp3"
+                    scene bg black with fade
+                    jump chinczyk
+
                 "{b}🕯️ Cmentarz Żydowski | 24/7{/b}": 
                     $ cmentarz_zydowskix = 0
                     if zyd_social_link == 1:
@@ -2457,6 +2476,44 @@ label menu_lokacji:
                                         "{b}Nie{/b}":
                                             luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                             jump granica2
+
+    label kamala:
+        play sound "audio/sfx/godlewska.mp3"
+        show luszcz neutral at left
+        show kamala neutral:
+            xalign 1.0
+            yalign 1.0
+
+        dzieci "Głosujemy na Kamale Harris!"
+        dzieci "Kamala Harris na prezydentke USA!!!"
+
+        luszcz "Ale wy wiecie, że już jest po wyborach, a wy nawet nie jesteście z Ameryki?"
+
+        dzieci "Kamala Harris do boju!"
+
+        hide kamala
+        stop sound
+
+        luszcz "ehhh bahory"
+
+        hide luszcz
+
+        if rynek == 1:
+            jump rynek
+        if sloneczna == 1:
+            jump sloneczna 
+        if alejka == 1:
+            jump alejka 
+        if parking == 1:
+            jump parking
+        if wolbromska == 1:
+            jump wolbromska
+        if bohaterow_wrzesnia == 1:
+            jump bohaterow_wrzesnia 
+        if lipowa == 1:
+            jump lipowa 
+        if granica == 1:
+            jump granica
 
     label raem_fight:
         scene bg raem
