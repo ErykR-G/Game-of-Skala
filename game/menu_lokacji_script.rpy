@@ -980,6 +980,11 @@ label menu_lokacji:
                     if mleczarz_social_link == 3 and krowka == 1:
                         $ stomatologx += 1
                         "{i}Mam dostraczyć tutaj krówkę...{/i}"
+
+                    if duda_social_link == 0:
+                        $ stomatologx += 1
+                        "{i}Chyba Mama ma u siebie jakiegoś klienta{/i}"
+                        "{i}Może mógłbym zobaczyć kto to jest...{/i}"
                     
                     if stomatologx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -1000,6 +1005,21 @@ label menu_lokacji:
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
+                            
+                            if duda_social_link == 0:
+                                menu:
+                                    "{b}Czy chcę zobaczyć kto jest u stomatologa? (1h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump duda1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
+                                    
 
                         else:
                             if stomatologx > 1:
@@ -1011,6 +1031,12 @@ label menu_lokacji:
                                         scene bg black with fade
                                         $ timer += 15
                                         jump mleczarz4
+                                    
+                                    "{b}Zobacz kto jest u stomatologa (1h){/b}" if duda_social_link == 0:
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 60
+                                        jump duda1
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"

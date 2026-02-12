@@ -59,6 +59,9 @@ label postacie:
 
     define pies = Character("Raphtalia", color="#d87829")
 
+    define duda = Character("Andrzej Duda", color="#a17c5c")
+    image duda neutral right = Transform("duda neutral", xzoom=-1) 
+
     define eminem = Character("Shadow", color="#32313a")
     define cid = Character("Cid", color="#32313a")
     image eminem sad right = Transform("eminem sad", xzoom=-1) 
@@ -167,6 +170,8 @@ label postacie:
     define musial = Character("Maciej Musiał", color="#bdbdbd")
 
     define tata = Character("Tata", color="#474444")
+
+    define cien = Character("Ostry Cień Mgły", color="#686868")
 
     define nu = Character("Nu", color="#8b520b")
 
@@ -684,6 +689,7 @@ label wybory:
     default trump_wybory = 0
     default gotka_wybory = 0
     default kazuma_wybory = 0
+    default duda_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
@@ -701,7 +707,7 @@ label social_links:
     default trump_social_link = 0
     default gotka_social_link = 0
     default kazuma_social_link = 0
-
+    default duda_social_link = 0
 
 
 label start:
