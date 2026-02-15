@@ -2,7 +2,7 @@ label fight01_stats:
     default fight01_przegranko = 0
     default trup1_sex = 0
     default trup2_sex = 0
-    default emina_sex = 1
+    default emina_sex = 0
 
     default trup1_hp = 15
     default trup2_hp = 15

@@ -4575,23 +4575,23 @@ label items_fight111:
             menu:
                 "{b}Na kim użyć?{/b}"
 
-                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
-                    if jaruzel_obrona >= 2:
+                "{b}Girek{/b}" if girek_hp_now >= 1:
+                    if girek_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ jaruzel_obrona = 1
+                        $ girek_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog1
                         play sound "audio/sfx/atak.mp3"
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
+                        if girek_obrona == 1:
+                            $ girek_hp_now -= int(kostka / 2)
 
-                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ jaruzel_hp_now -= kostka
+                            $ girek_hp_now -= kostka
 
-                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
+                            "{i}Girek traci [kostka] punktów życia{/i}"
                             
                     $ skalka -= 1
                     if skalka == 0:
@@ -4623,23 +4623,23 @@ label items_fight111:
                     hide skalka
                     jump faza_fight112
 
-                "{b}Girek{/b}" if girek_hp_now >= 1:
-                    if girek_obrona >= 2:
+                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                    if jaruzel_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ girek_obrona = 1
+                        $ jaruzel_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog2
                         play sound "audio/sfx/atak.mp3"
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
+                        if jaruzel_obrona == 1:
+                            $ jaruzel_hp_now -= int(kostka / 2)
 
-                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ girek_hp_now -= kostka
+                            $ jaruzel_hp_now -= kostka
 
-                            "{i}Girek traci [kostka] punktów życia{/i}"
+                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
 
                     $ skalka -= 1
                     if skalka == 0:
@@ -4691,34 +4691,6 @@ label items_fight111:
                 if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                     show granat zorder 15 at weapon_sojusznik3
 
-            if jaruzel_hp_now >= 1:
-                if jaruzel_obrona >= 2:
-                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ jaruzel_obrona = 1
-                                                                
-                else:     
-                    if jaruzel_obrona == 1:
-                        $ jaruzel_hp_now -= 2
-                    else:
-                        $ jaruzel_hp_now -= 4
-                        
-            if urban_zly_hp_now >= 1:
-                if urban_zly_obrona >= 2:
-                    if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ urban_zly_obrona = 1
-                                                                
-                else:     
-                    if urban_zly_obrona == 1:
-                        $ urban_zly_hp_now -= 2
-                    else:
-                        $ urban_zly_hp_now -= 4
-
             if girek_hp_now >= 1:
                 if girek_obrona >= 2:
                     if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -4733,7 +4705,35 @@ label items_fight111:
                     else:
                         $ girek_hp_now -= 4
                         
-            if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+            if urban_zly_hp_now >= 1:
+                if urban_zly_obrona >= 2:
+                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ urban_zly_obrona = 1
+                                                                
+                else:     
+                    if urban_zly_obrona == 1:
+                        $ urban_zly_hp_now -= 2
+                    else:
+                        $ urban_zly_hp_now -= 4
+
+            if jaruzel_hp_now >= 1:
+                if jaruzel_obrona >= 2:
+                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ jaruzel_obrona = 1
+                                                                
+                else:     
+                    if jaruzel_obrona == 1:
+                        $ jaruzel_hp_now -= 2
+                    else:
+                        $ jaruzel_hp_now -= 4
+                        
+            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                 show granat zorder 15 at granatz
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
@@ -6899,23 +6899,23 @@ label items_fight112:
             menu:
                 "{b}Na kim użyć?{/b}"
 
-                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
-                    if jaruzel_obrona >= 2:
+                "{b}Girek{/b}" if girek_hp_now >= 1:
+                    if girek_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ jaruzel_obrona = 1
+                        $ girek_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog1
                         play sound "audio/sfx/atak.mp3"
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
+                        if girek_obrona == 1:
+                            $ girek_hp_now -= int(kostka / 2)
 
-                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ jaruzel_hp_now -= kostka
+                            $ girek_hp_now -= kostka
 
-                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
+                            "{i}Girek traci [kostka] punktów życia{/i}"
                             
                     $ skalka -= 1
                     if skalka == 0:
@@ -6947,23 +6947,23 @@ label items_fight112:
                     hide skalka
                     jump faza_fight112
 
-                "{b}Girek{/b}" if girek_hp_now >= 1:
-                    if girek_obrona >= 2:
+                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                    if jaruzel_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ girek_obrona = 1
+                        $ jaruzel_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog2
                         play sound "audio/sfx/atak.mp3"
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
+                        if jaruzel_obrona == 1:
+                            $ jaruzel_hp_now -= int(kostka / 2)
 
-                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ girek_hp_now -= kostka
+                            $ jaruzel_hp_now -= kostka
 
-                            "{i}Girek traci [kostka] punktów życia{/i}"
+                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
 
                     $ skalka -= 1
                     if skalka == 0:
@@ -7015,34 +7015,6 @@ label items_fight112:
                 if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                     show granat zorder 15 at weapon_sojusznik3
 
-            if jaruzel_hp_now >= 1:
-                if jaruzel_obrona >= 2:
-                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ jaruzel_obrona = 1
-                                                                
-                else:     
-                    if jaruzel_obrona == 1:
-                        $ jaruzel_hp_now -= 2
-                    else:
-                        $ jaruzel_hp_now -= 4
-                        
-            if urban_zly_hp_now >= 1:
-                if urban_zly_obrona >= 2:
-                    if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ urban_zly_obrona = 1
-                                                                
-                else:     
-                    if urban_zly_obrona == 1:
-                        $ urban_zly_hp_now -= 2
-                    else:
-                        $ urban_zly_hp_now -= 4
-
             if girek_hp_now >= 1:
                 if girek_obrona >= 2:
                     if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -7057,7 +7029,35 @@ label items_fight112:
                     else:
                         $ girek_hp_now -= 4
                         
-            if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+            if urban_zly_hp_now >= 1:
+                if urban_zly_obrona >= 2:
+                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ urban_zly_obrona = 1
+                                                                
+                else:     
+                    if urban_zly_obrona == 1:
+                        $ urban_zly_hp_now -= 2
+                    else:
+                        $ urban_zly_hp_now -= 4
+
+            if jaruzel_hp_now >= 1:
+                if jaruzel_obrona >= 2:
+                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ jaruzel_obrona = 1
+                                                                
+                else:     
+                    if jaruzel_obrona == 1:
+                        $ jaruzel_hp_now -= 2
+                    else:
+                        $ jaruzel_hp_now -= 4
+                        
+            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                 show granat zorder 15 at granatz
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
@@ -11666,23 +11666,23 @@ label items_fight113:
             menu:
                 "{b}Na kim użyć?{/b}"
 
-                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
-                    if jaruzel_obrona >= 2:
+                "{b}Girek{/b}" if girek_hp_now >= 1:
+                    if girek_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ jaruzel_obrona = 1
+                        $ girek_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog1
                         play sound "audio/sfx/atak.mp3"
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
+                        if girek_obrona == 1:
+                            $ girek_hp_now -= int(kostka / 2)
 
-                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ jaruzel_hp_now -= kostka
+                            $ girek_hp_now -= kostka
 
-                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
+                            "{i}Girek traci [kostka] punktów życia{/i}"
                             
                     $ skalka -= 1
                     if skalka == 0:
@@ -11714,23 +11714,23 @@ label items_fight113:
                     hide skalka
                     jump faza_fight113
 
-                "{b}Girek{/b}" if girek_hp_now >= 1:
-                    if girek_obrona >= 2:
+                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                    if jaruzel_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ girek_obrona = 1
+                        $ jaruzel_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog2
                         play sound "audio/sfx/atak.mp3"
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
+                        if jaruzel_obrona == 1:
+                            $ jaruzel_hp_now -= int(kostka / 2)
 
-                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ girek_hp_now -= kostka
+                            $ jaruzel_hp_now -= kostka
 
-                            "{i}Girek traci [kostka] punktów życia{/i}"
+                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
 
                     $ skalka -= 1
                     if skalka == 0:
@@ -11782,34 +11782,6 @@ label items_fight113:
                 if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                     show granat zorder 15 at weapon_sojusznik3
 
-            if jaruzel_hp_now >= 1:
-                if jaruzel_obrona >= 2:
-                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ jaruzel_obrona = 1
-                                                                
-                else:     
-                    if jaruzel_obrona == 1:
-                        $ jaruzel_hp_now -= 2
-                    else:
-                        $ jaruzel_hp_now -= 4
-                        
-            if urban_zly_hp_now >= 1:
-                if urban_zly_obrona >= 2:
-                    if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ urban_zly_obrona = 1
-                                                                
-                else:     
-                    if urban_zly_obrona == 1:
-                        $ urban_zly_hp_now -= 2
-                    else:
-                        $ urban_zly_hp_now -= 4
-
             if girek_hp_now >= 1:
                 if girek_obrona >= 2:
                     if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -11824,7 +11796,35 @@ label items_fight113:
                     else:
                         $ girek_hp_now -= 4
                         
-            if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+            if urban_zly_hp_now >= 1:
+                if urban_zly_obrona >= 2:
+                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ urban_zly_obrona = 1
+                                                                
+                else:     
+                    if urban_zly_obrona == 1:
+                        $ urban_zly_hp_now -= 2
+                    else:
+                        $ urban_zly_hp_now -= 4
+
+            if jaruzel_hp_now >= 1:
+                if jaruzel_obrona >= 2:
+                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ jaruzel_obrona = 1
+                                                                
+                else:     
+                    if jaruzel_obrona == 1:
+                        $ jaruzel_hp_now -= 2
+                    else:
+                        $ jaruzel_hp_now -= 4
+                        
+            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                 show granat zorder 15 at granatz
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
@@ -13990,23 +13990,23 @@ label items_fight114:
             menu:
                 "{b}Na kim użyć?{/b}"
 
-                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
-                    if jaruzel_obrona >= 2:
+                "{b}Girek{/b}" if girek_hp_now >= 1:
+                    if girek_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ jaruzel_obrona = 1
+                        $ girek_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog1
                         play sound "audio/sfx/atak.mp3"
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
+                        if girek_obrona == 1:
+                            $ girek_hp_now -= int(kostka / 2)
 
-                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ jaruzel_hp_now -= kostka
+                            $ girek_hp_now -= kostka
 
-                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
+                            "{i}Girek traci [kostka] punktów życia{/i}"
                             
                     $ skalka -= 1
                     if skalka == 0:
@@ -14038,23 +14038,23 @@ label items_fight114:
                     hide skalka
                     jump faza_fight113
 
-                "{b}Girek{/b}" if girek_hp_now >= 1:
-                    if girek_obrona >= 2:
+                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                    if jaruzel_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ girek_obrona = 1
+                        $ jaruzel_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog2
                         play sound "audio/sfx/atak.mp3"
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
+                        if jaruzel_obrona == 1:
+                            $ jaruzel_hp_now -= int(kostka / 2)
 
-                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ girek_hp_now -= kostka
+                            $ jaruzel_hp_now -= kostka
 
-                            "{i}Girek traci [kostka] punktów życia{/i}"
+                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
 
                     $ skalka -= 1
                     if skalka == 0:
@@ -14106,34 +14106,6 @@ label items_fight114:
                 if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                     show granat zorder 15 at weapon_sojusznik3
 
-            if jaruzel_hp_now >= 1:
-                if jaruzel_obrona >= 2:
-                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ jaruzel_obrona = 1
-                                                                
-                else:     
-                    if jaruzel_obrona == 1:
-                        $ jaruzel_hp_now -= 2
-                    else:
-                        $ jaruzel_hp_now -= 4
-                        
-            if urban_zly_hp_now >= 1:
-                if urban_zly_obrona >= 2:
-                    if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ urban_zly_obrona = 1
-                                                                
-                else:     
-                    if urban_zly_obrona == 1:
-                        $ urban_zly_hp_now -= 2
-                    else:
-                        $ urban_zly_hp_now -= 4
-
             if girek_hp_now >= 1:
                 if girek_obrona >= 2:
                     if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -14148,7 +14120,35 @@ label items_fight114:
                     else:
                         $ girek_hp_now -= 4
                         
-            if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+            if urban_zly_hp_now >= 1:
+                if urban_zly_obrona >= 2:
+                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ urban_zly_obrona = 1
+                                                                
+                else:     
+                    if urban_zly_obrona == 1:
+                        $ urban_zly_hp_now -= 2
+                    else:
+                        $ urban_zly_hp_now -= 4
+
+            if jaruzel_hp_now >= 1:
+                if jaruzel_obrona >= 2:
+                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ jaruzel_obrona = 1
+                                                                
+                else:     
+                    if jaruzel_obrona == 1:
+                        $ jaruzel_hp_now -= 2
+                    else:
+                        $ jaruzel_hp_now -= 4
+                        
+            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                 show granat zorder 15 at granatz
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
@@ -18756,23 +18756,23 @@ label items_fight115:
             menu:
                 "{b}Na kim użyć?{/b}"
 
-                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
-                    if jaruzel_obrona >= 2:
+                "{b}Girek{/b}" if girek_hp_now >= 1:
+                    if girek_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ jaruzel_obrona = 1
+                        $ girek_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog1
                         play sound "audio/sfx/atak.mp3"
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
+                        if girek_obrona == 1:
+                            $ girek_hp_now -= int(kostka / 2)
 
-                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ jaruzel_hp_now -= kostka
+                            $ girek_hp_now -= kostka
 
-                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
+                            "{i}Girek traci [kostka] punktów życia{/i}"
                             
                     $ skalka -= 1
                     if skalka == 0:
@@ -18804,23 +18804,23 @@ label items_fight115:
                     hide skalka
                     jump faza_fight114
 
-                "{b}Girek{/b}" if girek_hp_now >= 1:
-                    if girek_obrona >= 2:
+                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                    if jaruzel_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ girek_obrona = 1
+                        $ jaruzel_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog2
                         play sound "audio/sfx/atak.mp3"
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
+                        if jaruzel_obrona == 1:
+                            $ jaruzel_hp_now -= int(kostka / 2)
 
-                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ girek_hp_now -= kostka
+                            $ jaruzel_hp_now -= kostka
 
-                            "{i}Girek traci [kostka] punktów życia{/i}"
+                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
 
                     $ skalka -= 1
                     if skalka == 0:
@@ -18872,34 +18872,6 @@ label items_fight115:
                 if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                     show granat zorder 15 at weapon_sojusznik3
 
-            if jaruzel_hp_now >= 1:
-                if jaruzel_obrona >= 2:
-                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ jaruzel_obrona = 1
-                                                                
-                else:     
-                    if jaruzel_obrona == 1:
-                        $ jaruzel_hp_now -= 2
-                    else:
-                        $ jaruzel_hp_now -= 4
-                        
-            if urban_zly_hp_now >= 1:
-                if urban_zly_obrona >= 2:
-                    if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ urban_zly_obrona = 1
-                                                                
-                else:     
-                    if urban_zly_obrona == 1:
-                        $ urban_zly_hp_now -= 2
-                    else:
-                        $ urban_zly_hp_now -= 4
-
             if girek_hp_now >= 1:
                 if girek_obrona >= 2:
                     if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -18914,7 +18886,35 @@ label items_fight115:
                     else:
                         $ girek_hp_now -= 4
                         
-            if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+            if urban_zly_hp_now >= 1:
+                if urban_zly_obrona >= 2:
+                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ urban_zly_obrona = 1
+                                                                
+                else:     
+                    if urban_zly_obrona == 1:
+                        $ urban_zly_hp_now -= 2
+                    else:
+                        $ urban_zly_hp_now -= 4
+
+            if jaruzel_hp_now >= 1:
+                if jaruzel_obrona >= 2:
+                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ jaruzel_obrona = 1
+                                                                
+                else:     
+                    if jaruzel_obrona == 1:
+                        $ jaruzel_hp_now -= 2
+                    else:
+                        $ jaruzel_hp_now -= 4
+                        
+            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                 show granat zorder 15 at granatz
                 with hpunch
                 show eksplozja1 zorder 15 at granatz
@@ -21080,23 +21080,23 @@ label items_fight116:
             menu:
                 "{b}Na kim użyć?{/b}"
 
-                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
-                    if jaruzel_obrona >= 2:
+                "{b}Girek{/b}" if girek_hp_now >= 1:
+                    if girek_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ jaruzel_obrona = 1
+                        $ girek_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog1
                         play sound "audio/sfx/atak.mp3"
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
+                        if girek_obrona == 1:
+                            $ girek_hp_now -= int(kostka / 2)
 
-                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ jaruzel_hp_now -= kostka
+                            $ girek_hp_now -= kostka
 
-                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
+                            "{i}Girek traci [kostka] punktów życia{/i}"
                             
                     $ skalka -= 1
                     if skalka == 0:
@@ -21128,23 +21128,23 @@ label items_fight116:
                     hide skalka
                     jump faza_fight114
 
-                "{b}Girek{/b}" if girek_hp_now >= 1:
-                    if girek_obrona >= 2:
+                "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                    if jaruzel_obrona >= 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Ostra Skałka została zablokowana{/i}"
-                        $ girek_obrona = 1
+                        $ jaruzel_obrona = 1
                                                                
                     else:
                         show skalka zorder 15 at center_wrog2
                         play sound "audio/sfx/atak.mp3"
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
+                        if jaruzel_obrona == 1:
+                            $ jaruzel_hp_now -= int(kostka / 2)
 
-                            "{i}Girek traci [int(kostka / 2)] punkty życia{/i}"
+                            "{i}Jaruzel traci [int(kostka / 2)] punkty życia{/i}"
                         else:
-                            $ girek_hp_now -= kostka
+                            $ jaruzel_hp_now -= kostka
 
-                            "{i}Girek traci [kostka] punktów życia{/i}"
+                            "{i}Jaruzel traci [kostka] punktów życia{/i}"
 
                     $ skalka -= 1
                     if skalka == 0:
@@ -21196,34 +21196,6 @@ label items_fight116:
                 if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                     show granat zorder 15 at weapon_sojusznik3
 
-            if jaruzel_hp_now >= 1:
-                if jaruzel_obrona >= 2:
-                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ jaruzel_obrona = 1
-                                                                
-                else:     
-                    if jaruzel_obrona == 1:
-                        $ jaruzel_hp_now -= 2
-                    else:
-                        $ jaruzel_hp_now -= 4
-                        
-            if urban_zly_hp_now >= 1:
-                if urban_zly_obrona >= 2:
-                    if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                        hide granat
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Granat został zablokowany{/i}"
-                    $ urban_zly_obrona = 1
-                                                                
-                else:     
-                    if urban_zly_obrona == 1:
-                        $ urban_zly_hp_now -= 2
-                    else:
-                        $ urban_zly_hp_now -= 4
-
             if girek_hp_now >= 1:
                 if girek_obrona >= 2:
                     if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -21238,7 +21210,35 @@ label items_fight116:
                     else:
                         $ girek_hp_now -= 4
                         
-            if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+            if urban_zly_hp_now >= 1:
+                if urban_zly_obrona >= 2:
+                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ urban_zly_obrona = 1
+                                                                
+                else:     
+                    if urban_zly_obrona == 1:
+                        $ urban_zly_hp_now -= 2
+                    else:
+                        $ urban_zly_hp_now -= 4
+
+            if jaruzel_hp_now >= 1:
+                if jaruzel_obrona >= 2:
+                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        hide granat
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Granat został zablokowany{/i}"
+                    $ jaruzel_obrona = 1
+                                                                
+                else:     
+                    if jaruzel_obrona == 1:
+                        $ jaruzel_hp_now -= 2
+                    else:
+                        $ jaruzel_hp_now -= 4
+                        
+            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                 show granat zorder 15 at granatz
                 with hpunch
                 show eksplozja1 zorder 15 at granatz

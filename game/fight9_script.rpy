@@ -4,7 +4,7 @@ label fight91_stats:
     
     default trup9_sex = 0
     default trup10_sex = 0
-    default czarodziej_sex = 1
+    default czarodziej_sex = 0
 
     default trup9_hp = 0
     default trup10_hp = 0

@@ -414,49 +414,7 @@ label urban:
 
                 luszcz "simierć wrogom ojczyzny!!!"
 
-                jump fight101
-
-                label after_fight1121:
-                    play music "audio/music/redsun.mp3"
-                    scene bg bunkier2
-                    show luszcz neutral at center
-                    luszcz "no szkoda, myślałem, że się dogadamy"
-                    luszcz "ale babcia jednak miała dobre powiedzenie"
-                    luszcz "”dobry komóh to martwy komóh”"
-
-                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                        scene bg bunkier3 with fade
-                    else:
-                        scene bg bunkier3_noc with fade
-                    play music "audio/music/natura.mp3"
-                    show luszcz neutral at center
-
-                    luszcz "no cusz, nie wiem czego się spodziewałem, ale na pewno nie tego"
-                    luszcz "mam wrażenie jakby to była strata czasu, oby nie był to decydujący czynnik"
-
-                    $ urban_wybory = 10
-                    $ urban_social_link = 10
-
-                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                        play music "audio/music/pole.mp3"
-                    else:
-                        play music "audio/music/pole_noc.mp3"
-                    if rynek == 1:
-                        jump rynek
-                    if sloneczna == 1:
-                        jump sloneczna 
-                    if alejka == 1:
-                        jump alejka 
-                    if parking == 1:
-                        jump parking
-                    if wolbromska == 1:
-                        jump wolbromska
-                    if bohaterow_wrzesnia == 1:
-                        jump bohaterow_wrzesnia 
-                    if lipowa == 1:
-                        jump lipowa 
-                    if granica == 1:
-                        jump granica
+                jump fight111
 
             "{b}no dobra{/b}":
                 luszcz "no dobra, w sumie wujek to jednak miał rację, pomogę ci"
@@ -488,60 +446,103 @@ label urban:
                 $ urban_sojusznik = 1
                 $ liczba_sojusznikow += 1
 
-                jump fight101
+                jump fight111
 
-                label after_fight101:
-                    play music "audio/music/redsun.mp3"
-                    scene bg bunkier2
-                    show luszcz neutral at slightleft
-                    show urban neutral at slightright
+                label after_fight111:
+                    if urban_sojusznik == 1:
+                        play music "audio/music/redsun.mp3"
+                        scene bg bunkier2
+                        show luszcz neutral at slightleft
+                        show urban neutral at slightright
 
-                    $ urban_sojusznik = 0
-                    $ liczba_sojusznikow -= 1
+                        $ urban_sojusznik = 0
+                        $ liczba_sojusznikow -= 1
 
-                    urban "dziekuje ci, dzięki tobie światowa rewolucja będzie mogla rokwitnac na całym swiecie"
+                        urban "dziekuje ci, dzięki tobie światowa rewolucja będzie mogla rokwitnac na całym swiecie"
 
-                    $ urban_sojusznik = 1
-                    $ liczba_sojusznikow += 1
+                        $ urban_sojusznik = 1
+                        $ liczba_sojusznikow += 1
 
-                    urban "wywiązałeś się ze swojej części umowy, jestem teraz to twojej dystozycji"
+                        urban "wywiązałeś się ze swojej części umowy, jestem teraz to twojej dystozycji"
 
-                    luszcz "w takim razie, za mną"
+                        luszcz "w takim razie, za mną"
 
-                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                        scene bg bunkier3 with fade
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            scene bg bunkier3 with fade
+                        else:
+                            scene bg bunkier3_noc with fade
+                        play music "audio/music/natura.mp3"
+                        show luszcz neutral at slightleft
+                        show urban neutral at slightright
+
+                        luszcz "nie wiem czego się spodziewałem po tym bunkrze, ale na pewno nie tego"
+                        luszcz "w każdym razie czuje, że jestem coraz bliżej obalenia ksieńca natanka "
+
+                        $ urban_wybory = 2
+                        $ urban_social_link = 2
+
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        if rynek == 1:
+                            jump rynek
+                        if sloneczna == 1:
+                            jump sloneczna 
+                        if alejka == 1:
+                            jump alejka 
+                        if parking == 1:
+                            jump parking
+                        if wolbromska == 1:
+                            jump wolbromska
+                        if bohaterow_wrzesnia == 1:
+                            jump bohaterow_wrzesnia 
+                        if lipowa == 1:
+                            jump lipowa 
+                        if granica == 1:
+                            jump granica
+                    
                     else:
-                        scene bg bunkier3_noc with fade
-                    play music "audio/music/natura.mp3"
-                    show luszcz neutral at slightleft
-                    show urban neutral at slightright
+                        play music "audio/music/redsun.mp3"
+                        scene bg bunkier2
+                        show luszcz neutral at center
+                        luszcz "no szkoda, myślałem, że się dogadamy"
+                        luszcz "ale babcia jednak miała dobre powiedzenie"
+                        luszcz "”dobry komóh to martwy komóh”"
 
-                    luszcz "nie wiem czego się spodziewałem po tym bunkrze, ale na pewno nie tego"
-                    luszcz "w każdym razie czuje, że jestem coraz bliżej obalenia ksieńca natanka "
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            scene bg bunkier3 with fade
+                        else:
+                            scene bg bunkier3_noc with fade
+                        play music "audio/music/natura.mp3"
+                        show luszcz neutral at center
 
-                    $ urban_wybory = 2
-                    $ urban_social_link = 2
+                        luszcz "no cusz, nie wiem czego się spodziewałem, ale na pewno nie tego"
+                        luszcz "mam wrażenie jakby to była strata czasu, oby nie był to decydujący czynnik"
 
-                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                        play music "audio/music/pole.mp3"
-                    else:
-                        play music "audio/music/pole_noc.mp3"
-                    if rynek == 1:
-                        jump rynek
-                    if sloneczna == 1:
-                        jump sloneczna 
-                    if alejka == 1:
-                        jump alejka 
-                    if parking == 1:
-                        jump parking
-                    if wolbromska == 1:
-                        jump wolbromska
-                    if bohaterow_wrzesnia == 1:
-                        jump bohaterow_wrzesnia 
-                    if lipowa == 1:
-                        jump lipowa 
-                    if granica == 1:
-                        jump granica
+                        $ urban_wybory = 10
+                        $ urban_social_link = 10
+
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        if rynek == 1:
+                            jump rynek
+                        if sloneczna == 1:
+                            jump sloneczna 
+                        if alejka == 1:
+                            jump alejka 
+                        if parking == 1:
+                            jump parking
+                        if wolbromska == 1:
+                            jump wolbromska
+                        if bohaterow_wrzesnia == 1:
+                            jump bohaterow_wrzesnia 
+                        if lipowa == 1:
+                            jump lipowa 
+                        if granica == 1:
+                            jump granica
 
 
 

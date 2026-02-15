@@ -21,15 +21,28 @@ label spanko:
         "{i}Łuszcz położył się spać{/i}"
         "{i}Podczas snu założył kilka haremów w innych światach{/i}"
         "{i}Niestety, po obudzeniu stracił wszystkie, które kochał{/i}"
-
-    if drukowanko == 1:
-        scene bg pokoj2 with fade
-        play music "audio/music/drukowanie.mp3"
+    
     else:
-        scene bg pokoj with fade
-        play music "audio/music/pokoj.mp3"
+        if lilith_social_link == 0:
+            jump lilith1
+        
+        else:
+            if lilith_social_link == 1:
+                jump lilith2
+            
+            else:
+                "{i}Łuszcz położył się spać{/i}"
+                "{i}Podczas snu założył kilka haremów w innych światach{/i}"
+                "{i}Niestety, po obudzeniu stracił wszystkie, które kochał{/i}"
 
     label spanko_bed:
+        if drukowanko == 1:
+            scene bg pokoj2 with fade
+            play music "audio/music/drukowanie.mp3"
+        else:
+            scene bg pokoj with fade
+            play music "audio/music/pokoj.mp3"
+
         if timer > 1200 and timer < 1800:
             $ timer = 1980
         

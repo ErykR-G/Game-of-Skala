@@ -159,7 +159,33 @@ screen kibol2_stats():
 
             text "ATK: [kibol2_min_attack_now]-[kibol2_max_attack_now]" style "dmg_text" xalign 0.5
 
-screen jaruzel_stats():
+screen fanatyk_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value fanatyk_hp_now range fanatyk_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if fanatyk_hp_now/fanatyk_hp > 0.5 else
+                                "#ffcc00" if fanatyk_hp_now/fanatyk_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[fanatyk_hp_now]/[fanatyk_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [fanatyk_min_attack_now]-[fanatyk_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen girek_stats():
     fixed:
         xpos 0.76
         ypos 0.44  
@@ -174,16 +200,16 @@ screen jaruzel_stats():
                 xsize 200 
                 ysize 14
 
-                bar value jaruzel_hp_now range jaruzel_hp xsize 200 ysize 14:
+                bar value girek_hp_now range girek_hp xsize 200 ysize 14:
                     left_bar Solid(
-                                "#00cc00" if jaruzel_hp_now/jaruzel_hp > 0.5 else
-                                "#ffcc00" if jaruzel_hp_now/jaruzel_hp > 0.2 else
+                                "#00cc00" if girek_hp_now/girek_hp > 0.5 else
+                                "#ffcc00" if girek_hp_now/girek_hp > 0.2 else
                                 "#ff0000"
                             )
 
-                text "[jaruzel_hp_now]/[jaruzel_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+                text "[girek_hp_now]/[girek_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
 
-            text "ATK: [jaruzel_min_attack_now]-[jaruzel_max_attack_now]" style "dmg_text" xalign 0.5
+            text "ATK: [girek_min_attack_now]-[girek_max_attack_now]" style "dmg_text" xalign 0.5
 
 screen urban_zly_stats():
     fixed:
@@ -211,7 +237,7 @@ screen urban_zly_stats():
 
             text "ATK: [urban_zly_min_attack_now]-[urban_zly_max_attack_now]" style "dmg_text" xalign 0.5
 
-screen girek_stats():
+screen jaruzel_stats():
     fixed:
         xpos 0.76
         ypos 0.945  
@@ -226,16 +252,16 @@ screen girek_stats():
                 xsize 200 
                 ysize 14
 
-                bar value girek_hp_now range girek_hp xsize 200 ysize 14:
+                bar value jaruzel_hp_now range jaruzel_hp xsize 200 ysize 14:
                     left_bar Solid(
-                                "#00cc00" if girek_hp_now/girek_hp > 0.5 else
-                                "#ffcc00" if girek_hp_now/girek_hp > 0.2 else
+                                "#00cc00" if jaruzel_hp_now/jaruzel_hp > 0.5 else
+                                "#ffcc00" if jaruzel_hp_now/jaruzel_hp > 0.2 else
                                 "#ff0000"
                             )
 
-                text "[girek_hp_now]/[girek_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+                text "[jaruzel_hp_now]/[jaruzel_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
 
-            text "ATK: [girek_min_attack_now]-[girek_max_attack_now]" style "dmg_text" xalign 0.5
+            text "ATK: [jaruzel_min_attack_now]-[jaruzel_max_attack_now]" style "dmg_text" xalign 0.5
 
 screen czarodziej_stats():
     fixed:

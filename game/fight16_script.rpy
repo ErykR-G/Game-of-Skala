@@ -5,8 +5,8 @@ label fight161_stats:
     default policja2_sex = 1
     default trup17_sex = 0
 
-    default policja1_hp = 15
-    default policja2_hp = 15
+    default policja1_hp = 40
+    default policja2_hp = 40
     default trup17_hp = 30
 
     default policja1_uszy = 0
@@ -23,18 +23,18 @@ label fight161_stats:
 
     default policja1_weapon = 1
     default policja2_weapon = 1
-    default trup17_weapon = 1
+    default trup17_weapon = 0
 
     default policja1_hp_now = policja1_hp
     default policja2_hp_now = policja2_hp
     default trup17_hp_now = trup17_hp
 
-    default policja1_min_attack = 1
-    default policja2_min_attack = 1
+    default policja1_min_attack = 6
+    default policja2_min_attack = 6
     default trup17_min_attack = 3
 
-    default policja1_max_attack = 4
-    default policja2_max_attack = 4
+    default policja1_max_attack = 9
+    default policja2_max_attack = 9
     default trup17_max_attack = 8
 
     default policja1_max_attack_now = policja1_max_attack
@@ -76,8 +76,11 @@ label fight161_stats:
 label fight161:
     $ fight_on = 1
     label wybor_fight161:
-        play music "audio/music/fight.mp3"
-        scene bg korytarz
+        play music "audio/music/policja_fight.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg jezioro_fight
+        else:
+            scene bg jezioro_fight_noc
         $ ile_wrogow += 2
         show policja1 fight zorder 10 at wrog1
         show screen policja1_stats

@@ -861,10 +861,11 @@ label kazuma3:
 
                         cid "Cichaj! Ja tu liczę!"
                         cid "..."
+                        cid "..."
                         cid "No i zapomniałem wielkie dzięki!!!"
                         cid "Teraz muszę od początku liczyć"
-                        cid "Okej dobra więc, A jak Alfa..."
-                        cid "B jak Be... chwila stop przecież są jeszcze te polskie znaczki!"
+                        cid "Ehh okej dobra więc, A jak Alfa..."
+                        cid "B jak Be... chwila stop przecież są jeszcze te śmieszne polskie znaczki!"
                         cid "dobra to teraz Ą"
                         cid "Ą jak eeee yyyy eeee..."
                         cid "Ą jak ąaha!"
@@ -904,7 +905,7 @@ label kazuma3:
                         gamma "I i i do tego nigdy przenigdy nie zapomniałby mojego imienia!"
 
                         cid "Ej no weź no czasami się to zdarza..."
-                        cid "Nie masz czasami tak, że podchodzisz do kogoś zagadać, ale akurat wyleciał ci jego numer z głowy więc krzyczysz “erschießen!” i odchodzisz?"
+                        cid "Nie masz czasami tak, że podchodzisz do kogoś zagadać, ale akurat wyleciał ci jego numer z głowy więc krzyczysz jakieś cool niemieckie słówko typu “erschießen!” i odchodzisz?"
 
                         gamma "..."
                         gamma "Nie? Ktoś tak ma na seriO!?"

@@ -29,9 +29,9 @@ label toxic_pea:
         toxic "Nie, nie ma teraz czasu na rozmowy."
         toxic "Broń w dłoń i do boju!"
 
-        jump after_fight111
-        jump fight111
-        label after_fight111:
+        jump after_fight101
+        jump fight101
+        label after_fight101:
             play music "audio/music/toxic2.mp3"
             scene bg po_walka_toxic_pea with fade
             show luszcz neutral at slightleft

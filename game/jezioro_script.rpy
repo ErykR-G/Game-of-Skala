@@ -221,8 +221,7 @@ label jezioro:
                     "{i}*Ailbib został dodany do ekwipunku*{/i}" 
             
                 jump jezioro12
-
-                            
+       
             if dzien_lowionko >= 3 and dinozaur_odebrany == 0:
                 $ dinozaur_odebrany = 1
                 play sound "audio/sfx/powrot.mp3"
@@ -617,6 +616,8 @@ label jezioro:
                     play sound "audio/sfx/wolno.mp3"
                     
                     "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
                 
                 if kostka >= 68 and kostka <= 72:
                     play sound "audio/sfx/powrot.mp3"
@@ -637,25 +638,30 @@ label jezioro:
                     play sound "audio/sfx/wolno.mp3"
                     
                     "{i}*Łuszcz wypuścił zdobycz do wody*{/i}" 
+
+                    jump jezioro12
                 
                 if kostka >= 73 and kostka <= 80 and fanatyk_odebrany == 0:
-                    $ fanatyk_odebrany = 1
-                    play sound "audio/sfx/powrot.mp3"
-                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                        show karasr at ryba
-                    else:
-                        show karasr2 at ryba
+                    if timer >= 540 and timer <= 1140 or timer >= 1980 and timer <= 2580 or timer >= 3420 and timer <= 4020 or timer >= 4860 and timer <= 5460 or timer >= 6300 and timer <= 6900 or timer >= 7740 and timer <= 8340 or timer >= 9180 and timer <= 9780 or timer >= 10620 and timer <= 11220:
+                        $ fanatyk_odebrany = 1
+                        play sound "audio/sfx/powrot.mp3"
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            show karasr at ryba
+                        else:
+                            show karasr2 at ryba
 
-                    luszcz "O boże karaś fujj"
-                    luszcz "Ale od niego wali"
-                    luszcz "Nienawidze karasi"
-                    luszcz "Po hója one jedzą to gówno…"
+                        luszcz "O boże karaś fujj"
+                        luszcz "Ale od niego wali"
+                        luszcz "Nienawidze karasi"
+                        luszcz "Po hója one jedzą to gówno…"
 
-                    sfw "KARASIE JEDZĄ GÓWNO?!"
-                    sfw "sam jesteś gównojadem!"
+                        show fanatyk neutral at right
+                        with vpunch
 
-                    jump after_fight181
-                    jump fight181
+                        fanatyk "KARASIE JEDZĄ GÓWNO?!"
+                        fanatyk "sam jesteś gównojadem!"
+
+                        jump fight181
                 
                 if kostka >= 81 and kostka <= 115 and zlota_odebrany == 0 and vr_odebrany == 1:
                     $ zlota_odebrany = 1
@@ -696,8 +702,13 @@ label jezioro:
                 jump losowanko_jezioro12
 
     label after_fight181:
-        $ money += 2
+        play music "audio/music/ryby.mp3"
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            scene bg jezioro2
+        else:
+            scene bg jezioro4
 
+        $ money += 2
         "{i}*do ekwipunku zostały dodane 2 portfele*{/i}"
 
         luszcz "Okay big guy"

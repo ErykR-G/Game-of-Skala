@@ -102,6 +102,8 @@ label postacie:
 
     define ksiadz = Character("Ksiądz", color="#8607b8")
 
+    define siostra = Character("Marysia", color="#5c2672")
+
     define kult = Character("Kultysci", color="#3b3d3a")
 
     define diddy = Character("Diddy", color="#41301e")
@@ -130,6 +132,8 @@ label postacie:
     define kibol2 = Character("Kibol 2", color="#ffffff")
 
     define gnom = Character("Noggin Gnomes", color="#180a9b")
+
+    define lilith = Character("Lilith", color="#AA5769")
 
     define turek = Character("Turek", color="#910909")
 
@@ -214,7 +218,7 @@ label postacie:
 
     define grun = Character("Grün Mag", color="#0d5f1a")
 
-    define sfw = Character("Stary, Fanatyk Wędkarstwa", color="#7c6c24")
+    define fanatyk = Character("Fanatyk Wędkarstwa", color="#7c6c24")
 
     define zlota = Character("Złota Rybka", color="#c5a722")
 
@@ -708,6 +712,7 @@ label social_links:
     default gotka_social_link = 0
     default kazuma_social_link = 0
     default duda_social_link = 0
+    default lilith_social_link = 0
 
 
 label start:

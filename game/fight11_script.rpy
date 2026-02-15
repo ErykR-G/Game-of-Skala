@@ -1,76 +1,76 @@
 label fight111_stats:
     default fight111_przegranko = 0
     
-    default jaruzel_sex = 0
     default girek_sex = 0
+    default jaruzel_sex = 0
     default urban_zly_sex = 0
 
-    default jaruzel_hp = 15
     default girek_hp = 15
-    default urban_zly_hp = 30
+    default jaruzel_hp = 15
+    default urban_zly_hp = 25
 
-    default jaruzel_uszy = 0
-    default urban_zly_uszy = 0
     default girek_uszy = 0
+    default urban_zly_uszy = 0
+    default jaruzel_uszy = 0
 
-    default jaruzel_pager = 0
     default girek_pager = 0
+    default jaruzel_pager = 0
     default urban_zly_pager = 0
 
-    default jaruzel_slime = 0
     default girek_slime = 0
+    default jaruzel_slime = 0
     default urban_zly_slime = 0
 
-    default jaruzel_weapon = 1
     default girek_weapon = 1
+    default jaruzel_weapon = 1
     default urban_zly_weapon = 1
 
-    default jaruzel_hp_now = jaruzel_hp
     default girek_hp_now = girek_hp
+    default jaruzel_hp_now = jaruzel_hp
     default urban_zly_hp_now = urban_zly_hp
 
-    default jaruzel_min_attack = 1
     default girek_min_attack = 1
-    default urban_zly_min_attack = 3
+    default jaruzel_min_attack = 1
+    default urban_zly_min_attack = 0
 
-    default jaruzel_max_attack = 4
     default girek_max_attack = 4
-    default urban_zly_max_attack = 8
+    default jaruzel_max_attack = 4
+    default urban_zly_max_attack = 4
 
-    default jaruzel_max_attack_now = jaruzel_max_attack
     default girek_max_attack_now = girek_max_attack
+    default jaruzel_max_attack_now = jaruzel_max_attack
     default urban_zly_max_attack_now = urban_zly_max_attack
 
-    default jaruzel_min_attack_now = jaruzel_min_attack
     default girek_min_attack_now = girek_min_attack
+    default jaruzel_min_attack_now = jaruzel_min_attack
     default urban_zly_min_attack_now = urban_zly_min_attack
 
-    default jaruzel_max_attack_now_true = jaruzel_max_attack
     default girek_max_attack_now_true = girek_max_attack
+    default jaruzel_max_attack_now_true = jaruzel_max_attack
     default urban_zly_max_attack_now_true = urban_zly_max_attack
 
-    default jaruzel_min_attack_now_true = jaruzel_min_attack
     default girek_min_attack_now_true = girek_min_attack
+    default jaruzel_min_attack_now_true = jaruzel_min_attack
     default urban_zly_min_attack_now_true = urban_zly_min_attack
 
-    default jaruzel_attack = 0
     default girek_attack = 0
+    default jaruzel_attack = 0
     default urban_zly_attack = 0
 
-    default jaruzel_obrona = 0
     default girek_obrona = 0
+    default jaruzel_obrona = 0
     default urban_zly_obrona = 0
 
-    default jaruzel_umarty = 0
     default girek_umarty = 0
+    default jaruzel_umarty = 0
     default urban_zly_umarty = 0
 
-    default jaruzel_poison = 0
     default girek_poison = 0
+    default jaruzel_poison = 0
     default urban_zly_poison = 0
 
-    default jaruzel_stun = 0
     default girek_stun = 0
+    default jaruzel_stun = 0
     default urban_zly_stun = 0
 
 label fight111:
@@ -78,29 +78,34 @@ label fight111:
     label wybor_fight111:
         play music "audio/music/komuchy_fight.mp3"
         scene bg bunkier2
-        $ ile_wrogow = 3
-        show jaruzel fight zorder 10 at wrog1
-        show screen jaruzel_stats
-        show urban_zly fight zorder 10 at wrog3
-        show screen urban_zly_stats
-        show girek fight zorder 10 at wrog2
+        show girek fight zorder 10 at wrog1
         show screen girek_stats
+        show jaruzel fight zorder 10 at wrog2
+        show screen jaruzel_stats
         $ eminem_weapon = 0
-        $ jaruzel_hp_now = jaruzel_hp
-        $ jaruzel_min_attack_now = jaruzel_min_attack
-        $ jaruzel_max_attack_now = jaruzel_max_attack
-        $ jaruzel_min_attack_now_true = jaruzel_min_attack
-        $ jaruzel_max_attack_now_true = jaruzel_max_attack
         $ girek_hp_now = girek_hp
         $ girek_min_attack_now = girek_min_attack
         $ girek_max_attack_now = girek_max_attack
         $ girek_min_attack_now_true = girek_min_attack
         $ girek_max_attack_now_true = girek_max_attack
-        $ urban_zly_hp_now = urban_zly_hp
-        $ urban_zly_min_attack_now = urban_zly_min_attack
-        $ urban_zly_max_attack_now = urban_zly_max_attack
-        $ urban_zly_min_attack_now_true = urban_zly_min_attack
-        $ urban_zly_max_attack_now_true = urban_zly_max_attack
+        $ jaruzel_hp_now = jaruzel_hp
+        $ jaruzel_min_attack_now = jaruzel_min_attack
+        $ jaruzel_max_attack_now = jaruzel_max_attack
+        $ jaruzel_min_attack_now_true = jaruzel_min_attack
+        $ jaruzel_max_attack_now_true = jaruzel_max_attack
+        if urban_sojusznik == 1:
+            $ urban_zly_hp_now = 0
+            $ urban_zly_umarty = 1
+            $ ile_wrogow += 2
+        else:
+            $ ile_wrogow += 3
+            show urban_zly fight zorder 10 at wrog3
+            show screen urban_zly_stats
+            $ urban_zly_hp_now = urban_zly_hp
+            $ urban_zly_min_attack_now = urban_zly_min_attack
+            $ urban_zly_max_attack_now = urban_zly_max_attack
+            $ urban_zly_min_attack_now_true = urban_zly_min_attack
+            $ urban_zly_max_attack_now_true = urban_zly_max_attack
 
         label team_fight111:
             if liczba_sojusznikow >= 3:
@@ -1132,9 +1137,9 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide ruch
         hide tarcza1
         hide tarcza2
@@ -1145,24 +1150,24 @@ label fight111:
         hide stun2
         hide stun3
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -1185,24 +1190,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -1408,16 +1413,16 @@ label fight111:
         if ile_sojusznikow <= 0:
             jump przegranko_fight111
 
-        if jaruzel_poison >= 3 and jaruzel_hp_now >= 1:
-            $ jaruzel_hp_now -= 1
+        if girek_poison >= 3 and girek_hp_now >= 1:
+            $ girek_hp_now -= 1
         
         else:
-            if jaruzel_poison == 2:
-                $ jaruzel_hp_now -= 1
+            if girek_poison == 2:
+                $ girek_hp_now -= 1
             
             else:
-                if jaruzel_poison == 1:
-                    $ jaruzel_hp_now -= 1
+                if girek_poison == 1:
+                    $ girek_hp_now -= 1
         
         if urban_zly_poison >= 3 and urban_zly_hp_now >= 1:
             $ urban_zly_hp_now -= 1
@@ -1430,41 +1435,41 @@ label fight111:
                 if urban_zly_poison == 1:
                     $ urban_zly_hp_now -= 1
         
-        if girek_poison >= 3 and girek_hp_now >= 1:
-            $ girek_hp_now -= 1
+        if jaruzel_poison >= 3 and jaruzel_hp_now >= 1:
+            $ jaruzel_hp_now -= 1
         
         else:
-            if girek_poison == 2:
-                $ girek_hp_now -= 1
+            if jaruzel_poison == 2:
+                $ jaruzel_hp_now -= 1
             
             else:
-                if girek_poison == 1:
-                    $ girek_hp_now -= 1
+                if jaruzel_poison == 1:
+                    $ jaruzel_hp_now -= 1
                 
-        if jaruzel_poison >= 1 and urban_zly_poison >= 1 and girek_poison >= 1 and jaruzel_hp_now >= 0 and urban_zly_hp_now >= 0 and girek_hp_now >= 0:
+        if girek_poison >= 1 and urban_zly_poison >= 1 and jaruzel_poison >= 1 and girek_hp_now >= 0 and urban_zly_hp_now >= 0 and jaruzel_hp_now >= 0:
             play sound "audio/sfx/snake.mp3"
-            "{i}Jaruzel, Jerzy Urban i Girek stracili po 1HP z powodu ukąszenia przez węża{/i}"
+            "{i}Girek, Jerzy Urban i Jaruzel stracili po 1HP z powodu ukąszenia przez węża{/i}"
                     
         else:
-            if jaruzel_poison >= 1 and urban_zly_poison >= 1 and jaruzel_hp_now >= 0 and urban_zly_hp_now >= 0:
+            if girek_poison >= 1 and urban_zly_poison >= 1 and girek_hp_now >= 0 and urban_zly_hp_now >= 0:
                 play sound "audio/sfx/snake.mp3"
-                "{i}Jaruzel i Jerzy Urban stracili po 1HP z powodu ukąszenia przez węża{/i}"
+                "{i}Girek i Jerzy Urban stracili po 1HP z powodu ukąszenia przez węża{/i}"
                         
             else:
-                if urban_zly_poison >= 1 and girek_poison >= 1 and urban_zly_hp_now >= 0 and girek_hp_now >= 0:
+                if urban_zly_poison >= 1 and jaruzel_poison >= 1 and urban_zly_hp_now >= 0 and jaruzel_hp_now >= 0:
                     play sound "audio/sfx/snake.mp3"
-                    "{i}Jerzy Urban i Girek stracili po 1HP z powodu ukąszenia przez węża{/i}"
+                    "{i}Jerzy Urban i Jaruzel stracili po 1HP z powodu ukąszenia przez węża{/i}"
                                 
                             
                 else:
-                    if jaruzel_poison >= 1 and girek_poison >= 1 and jaruzel_hp_now >= 0 and girek_hp_now >= 0:
+                    if girek_poison >= 1 and jaruzel_poison >= 1 and girek_hp_now >= 0 and jaruzel_hp_now >= 0:
                         play sound "audio/sfx/snake.mp3"
-                        "{i}Jaruzel i Girek stracili po 1HP z powodu ukąszenia przez węża{/i}"
+                        "{i}Girek i Jaruzel stracili po 1HP z powodu ukąszenia przez węża{/i}"
                                 
                     else:
-                        if jaruzel_poison >= 1 and jaruzel_hp_now >= 0:
+                        if girek_poison >= 1 and girek_hp_now >= 0:
                             play sound "audio/sfx/snake.mp3"
-                            "{i}Jaruzel stracił 1HP z powodu ukąszenia przez węża{/i}"
+                            "{i}Girek stracił 1HP z powodu ukąszenia przez węża{/i}"
                                     
                         else:
                             if urban_zly_poison >= 1 and urban_zly_hp_now >= 0:
@@ -1472,21 +1477,21 @@ label fight111:
                                 "{i}Jerzy Urban stracił 1HP z powodu ukąszenia przez węża{/i}"
 
                             else:
-                                if girek_poison >= 1 and girek_hp_now >= 0:
+                                if jaruzel_poison >= 1 and jaruzel_hp_now >= 0:
                                     play sound "audio/sfx/snake.mp3"
-                                    "{i}Girek stracił 1HP z powodu ukąszenia przez węża{/i}"
+                                    "{i}Jaruzel stracił 1HP z powodu ukąszenia przez węża{/i}"
         
-        if jaruzel_poison == 1 and jaruzel_hp_now >= 1:
-            $ jaruzel_poison -= 1
+        if girek_poison == 1 and girek_hp_now >= 1:
+            $ girek_poison -= 1
             hide snake11
         
-        if jaruzel_poison == 2 and jaruzel_hp_now >= 1:
-            $ jaruzel_poison -= 1
+        if girek_poison == 2 and girek_hp_now >= 1:
+            $ girek_poison -= 1
             hide snake21
             show snake11 zorder 15 at center_wrog1
 
-        if jaruzel_poison == 3 and jaruzel_hp_now >= 1:
-            $ jaruzel_poison -= 1
+        if girek_poison == 3 and girek_hp_now >= 1:
+            $ girek_poison -= 1
             hide snake31
             show snake21 zorder 15 at center_wrog1
         
@@ -1504,38 +1509,38 @@ label fight111:
             hide snake32
             show snake22 zorder 15 at center_wrog3
 
-        if girek_poison == 1 and girek_hp_now >= 1:
-            $ girek_poison -= 1
+        if jaruzel_poison == 1 and jaruzel_hp_now >= 1:
+            $ jaruzel_poison -= 1
             hide snake13    
 
-        if girek_poison == 2 and girek_hp_now >= 1:
-            $ girek_poison -= 1
+        if jaruzel_poison == 2 and jaruzel_hp_now >= 1:
+            $ jaruzel_poison -= 1
             hide snake23
             show snake13 zorder 15 at center_wrog2 
         
-        if girek_poison == 3 and girek_hp_now >= 1:
-            $ girek_poison -= 1
+        if jaruzel_poison == 3 and jaruzel_hp_now >= 1:
+            $ jaruzel_poison -= 1
             hide snake33
             show snake23 zorder 15 at center_wrog2
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -1558,24 +1563,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -1931,13 +1936,13 @@ label fight111:
 
             $ tarczownik_lagodny -= 1
         
-        $ jaruzel_uszy = 0
-        $ urban_zly_uszy = 0
         $ girek_uszy = 0
+        $ urban_zly_uszy = 0
+        $ jaruzel_uszy = 0
 
         $ urban_zly_stun = 0
-        $ jaruzel_stun = 0
         $ girek_stun = 0
+        $ jaruzel_stun = 0
 
         $ luszcz_obrona = 0
         $ eminem_obrona = 0
@@ -1948,10 +1953,10 @@ label fight111:
 
         $ tarczownik_air_strike_shield = 0
 
-        $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-        $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
         $ girek_min_attack_now = girek_min_attack_now_true
         $ girek_max_attack_now = girek_max_attack_now_true
+        $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+        $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
         $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
         $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
 
@@ -2040,7 +2045,7 @@ label fight111:
                     jump faza_fight112 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ luszcz_min_attack_now += 1
 
             menu:
@@ -2138,56 +2143,6 @@ label fight111:
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= luszcz_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= luszcz_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -2213,7 +2168,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= luszcz_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= luszcz_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= luszcz_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
@@ -2246,11 +2251,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
@@ -2263,7 +2268,7 @@ label fight111:
                                         $ luszcz_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:  
                                 if luszcz_weapon >= 1:
@@ -2291,11 +2296,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= luszcz_attack
+                                            $ girek_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -2309,7 +2314,7 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+                                    $ girek_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -2325,13 +2330,13 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 2:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= luszcz_attack * 2
+                                            $ girek_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -2345,13 +2350,13 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ jaruzel_hp_now -= luszcz_attack
+                                    $ girek_hp_now -= luszcz_attack
 
-                                    if luszcz_przepychaczka == 2 and jaruzel_stun == 0:
+                                    if luszcz_przepychaczka == 2 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -2511,11 +2516,11 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
@@ -2528,7 +2533,7 @@ label fight111:
                                         $ luszcz_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:     
                                 if luszcz_weapon >= 1:
@@ -2556,11 +2561,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= luszcz_attack
+                                            $ jaruzel_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -2574,7 +2579,7 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ girek_hp_now -= int(luszcz_attack / 2)
+                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -2590,13 +2595,13 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 2:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= luszcz_attack * 2
+                                            $ jaruzel_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -2610,13 +2615,13 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ girek_hp_now -= luszcz_attack
+                                    $ jaruzel_hp_now -= luszcz_attack
 
-                                    if luszcz_przepychaczka == 2 and girek_stun == 0:
+                                    if luszcz_przepychaczka == 2 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -2961,11 +2966,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
@@ -2978,12 +2983,12 @@ label fight111:
                                         $ eminem_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:  
                                 play sound "audio/sfx/reka.mp3"             
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(eminem_attack / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(eminem_attack / 2)
 
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -2998,7 +3003,7 @@ label fight111:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                 else:
-                                    $ jaruzel_hp_now -= eminem_attack
+                                    $ girek_hp_now -= eminem_attack
                                 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
@@ -3065,11 +3070,11 @@ label fight111:
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
@@ -3082,12 +3087,12 @@ label fight111:
                                         $ eminem_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:
                                 play sound "audio/sfx/reka.mp3"
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(eminem_attack / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(eminem_attack / 2)
 
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -3102,7 +3107,7 @@ label fight111:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                 else:
-                                    $ girek_hp_now -= eminem_attack
+                                    $ jaruzel_hp_now -= eminem_attack
 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
@@ -3160,80 +3165,80 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
-                            if jaruzel_obrona >= 1:
+                            if girek_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
-                                "{i}Jaruzel obronił się przed szlamem{/i}"
+                                "{i}Girek obronił się przed szlamem{/i}"
                                 jump faza_fight112
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if jaruzel_min_attack_now >= 28 and jaruzel_min_attack_now <= 30:
-                                    $ jaruzel_min_attack_now -= 10
+                                if girek_min_attack_now >= 28 and girek_min_attack_now <= 30:
+                                    $ girek_min_attack_now -= 10
                                 else:
-                                    if jaruzel_min_attack_now >= 25 and jaruzel_min_attack_now <= 27:
-                                        $ jaruzel_min_attack_now -= 9
+                                    if girek_min_attack_now >= 25 and girek_min_attack_now <= 27:
+                                        $ girek_min_attack_now -= 9
                                     else:
-                                        if jaruzel_min_attack_now >= 22 and jaruzel_min_attack_now <= 24:
-                                            $ jaruzel_min_attack_now -= 8
+                                        if girek_min_attack_now >= 22 and girek_min_attack_now <= 24:
+                                            $ girek_min_attack_now -= 8
                                         else:
-                                            if jaruzel_min_attack_now >= 19 and jaruzel_min_attack_now <= 21:
-                                                $ jaruzel_min_attack_now -= 7
+                                            if girek_min_attack_now >= 19 and girek_min_attack_now <= 21:
+                                                $ girek_min_attack_now -= 7
                                             else:
-                                                if jaruzel_min_attack_now >= 16 and jaruzel_min_attack_now <= 18:
-                                                    $ jaruzel_min_attack_now -= 6
+                                                if girek_min_attack_now >= 16 and girek_min_attack_now <= 18:
+                                                    $ girek_min_attack_now -= 6
                                                 else:
-                                                    if jaruzel_min_attack_now >= 13 and jaruzel_min_attack_now <= 15:
-                                                        $ jaruzel_min_attack_now -= 5
+                                                    if girek_min_attack_now >= 13 and girek_min_attack_now <= 15:
+                                                        $ girek_min_attack_now -= 5
                                                     else:   
-                                                        if jaruzel_min_attack_now >= 10 and jaruzel_min_attack_now <= 12:
-                                                            $ jaruzel_min_attack_now -= 4
+                                                        if girek_min_attack_now >= 10 and girek_min_attack_now <= 12:
+                                                            $ girek_min_attack_now -= 4
                                                         else:
-                                                            if jaruzel_min_attack_now >= 7 and jaruzel_min_attack_now <= 9:
-                                                                $ jaruzel_min_attack_now -= 3
+                                                            if girek_min_attack_now >= 7 and girek_min_attack_now <= 9:
+                                                                $ girek_min_attack_now -= 3
                                                             else:
-                                                                if jaruzel_min_attack_now >= 4 and jaruzel_min_attack_now <= 6:
-                                                                    $ jaruzel_min_attack_now -= 2
+                                                                if girek_min_attack_now >= 4 and girek_min_attack_now <= 6:
+                                                                    $ girek_min_attack_now -= 2
                                                                 else:
-                                                                    if jaruzel_min_attack_now >= 1 and jaruzel_min_attack_now <= 3:
-                                                                        $ jaruzel_min_attack_now -= 1
+                                                                    if girek_min_attack_now >= 1 and girek_min_attack_now <= 3:
+                                                                        $ girek_min_attack_now -= 1
 
 
-                                if jaruzel_max_attack_now >= 28 and jaruzel_max_attack_now <= 30:
-                                    $ jaruzel_max_attack_now -= 10
+                                if girek_max_attack_now >= 28 and girek_max_attack_now <= 30:
+                                    $ girek_max_attack_now -= 10
                                 else:
-                                    if jaruzel_max_attack_now >= 25 and jaruzel_max_attack_now <= 27:
-                                        $ jaruzel_max_attack_now -= 9
+                                    if girek_max_attack_now >= 25 and girek_max_attack_now <= 27:
+                                        $ girek_max_attack_now -= 9
                                     else:
-                                        if jaruzel_max_attack_now >= 22 and jaruzel_max_attack_now <= 24:
-                                            $ jaruzel_max_attack_now -= 8
+                                        if girek_max_attack_now >= 22 and girek_max_attack_now <= 24:
+                                            $ girek_max_attack_now -= 8
                                         else:
-                                            if jaruzel_max_attack_now >= 19 and jaruzel_max_attack_now <= 21:
-                                                $ jaruzel_max_attack_now -= 7
+                                            if girek_max_attack_now >= 19 and girek_max_attack_now <= 21:
+                                                $ girek_max_attack_now -= 7
                                             else:
-                                                if jaruzel_max_attack_now >= 16 and jaruzel_max_attack_now <= 18:
-                                                    $ jaruzel_max_attack_now -= 6
+                                                if girek_max_attack_now >= 16 and girek_max_attack_now <= 18:
+                                                    $ girek_max_attack_now -= 6
                                                 else:
-                                                    if jaruzel_max_attack_now >= 13 and jaruzel_max_attack_now <= 15:
-                                                        $ jaruzel_max_attack_now -= 5
+                                                    if girek_max_attack_now >= 13 and girek_max_attack_now <= 15:
+                                                        $ girek_max_attack_now -= 5
                                                     else:
-                                                        if jaruzel_max_attack_now >= 10 and jaruzel_max_attack_now <= 12:
-                                                            $ jaruzel_max_attack_now -= 4
+                                                        if girek_max_attack_now >= 10 and girek_max_attack_now <= 12:
+                                                            $ girek_max_attack_now -= 4
                                                         else:
-                                                            if jaruzel_max_attack_now >= 7 and jaruzel_max_attack_now <= 9:
-                                                                $ jaruzel_max_attack_now -= 3
+                                                            if girek_max_attack_now >= 7 and girek_max_attack_now <= 9:
+                                                                $ girek_max_attack_now -= 3
                                                             else:
-                                                                if jaruzel_max_attack_now >= 4 and jaruzel_max_attack_now <= 6:
-                                                                    $ jaruzel_max_attack_now -= 2
+                                                                if girek_max_attack_now >= 4 and girek_max_attack_now <= 6:
+                                                                    $ girek_max_attack_now -= 2
                                                                 else:
-                                                                    if jaruzel_max_attack_now >= 1 and jaruzel_max_attack_now <= 3:
-                                                                        $ jaruzel_max_attack_now -= 1
+                                                                    if girek_max_attack_now >= 1 and girek_max_attack_now <= 3:
+                                                                        $ girek_max_attack_now -= 1
 
 
-                                $ jaruzel_slime += 1
+                                $ girek_slime += 1
                                 show slime zorder 15 at center_wrog1 
-                                "{i}Statystyki Jaruzel zostały osłabione{/i}"
+                                "{i}Statystyki Girek zostały osłabione{/i}"
                                 jump faza_fight112
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
@@ -3311,79 +3316,79 @@ label fight111:
                                 "{i}Statystyki Jerzy Urban zostały osłabione{/i}"
                                 jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
-                            if girek_obrona >= 1:
+                            if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
-                                "{i}Girek obronił się przed szlamem{/i}"
+                                "{i}Jaruzel obronił się przed szlamem{/i}"
                                 jump faza_fight112
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if girek_min_attack_now >= 28 and girek_min_attack_now <= 30:
-                                    $ girek_min_attack_now -= 10
+                                if jaruzel_min_attack_now >= 28 and jaruzel_min_attack_now <= 30:
+                                    $ jaruzel_min_attack_now -= 10
                                 else:
-                                    if girek_min_attack_now >= 25 and girek_min_attack_now <= 27:
-                                        $ girek_min_attack_now -= 9
+                                    if jaruzel_min_attack_now >= 25 and jaruzel_min_attack_now <= 27:
+                                        $ jaruzel_min_attack_now -= 9
                                     else:
-                                        if girek_min_attack_now >= 22 and girek_min_attack_now <= 24:
-                                            $ girek_min_attack_now -= 8
+                                        if jaruzel_min_attack_now >= 22 and jaruzel_min_attack_now <= 24:
+                                            $ jaruzel_min_attack_now -= 8
                                         else:
-                                            if girek_min_attack_now >= 19 and girek_min_attack_now <= 21:
-                                                $ girek_min_attack_now -= 7
+                                            if jaruzel_min_attack_now >= 19 and jaruzel_min_attack_now <= 21:
+                                                $ jaruzel_min_attack_now -= 7
                                             else:
-                                                if girek_min_attack_now >= 16 and girek_min_attack_now <= 18:
-                                                    $ girek_min_attack_now -= 6
+                                                if jaruzel_min_attack_now >= 16 and jaruzel_min_attack_now <= 18:
+                                                    $ jaruzel_min_attack_now -= 6
                                                 else:
-                                                    if girek_min_attack_now >= 13 and girek_min_attack_now <= 15:
-                                                        $ girek_min_attack_now -= 5
+                                                    if jaruzel_min_attack_now >= 13 and jaruzel_min_attack_now <= 15:
+                                                        $ jaruzel_min_attack_now -= 5
                                                     else:   
-                                                        if girek_min_attack_now >= 10 and girek_min_attack_now <= 12:
-                                                            $ girek_min_attack_now -= 4
+                                                        if jaruzel_min_attack_now >= 10 and jaruzel_min_attack_now <= 12:
+                                                            $ jaruzel_min_attack_now -= 4
                                                         else:
-                                                            if girek_min_attack_now >= 7 and girek_min_attack_now <= 9:
-                                                                $ girek_min_attack_now -= 3
+                                                            if jaruzel_min_attack_now >= 7 and jaruzel_min_attack_now <= 9:
+                                                                $ jaruzel_min_attack_now -= 3
                                                             else:
-                                                                if girek_min_attack_now >= 4 and girek_min_attack_now <= 6:
-                                                                    $ girek_min_attack_now -= 2
+                                                                if jaruzel_min_attack_now >= 4 and jaruzel_min_attack_now <= 6:
+                                                                    $ jaruzel_min_attack_now -= 2
                                                                 else:
-                                                                    if girek_min_attack_now >= 1 and girek_min_attack_now <= 3:
-                                                                        $ girek_min_attack_now -= 1
+                                                                    if jaruzel_min_attack_now >= 1 and jaruzel_min_attack_now <= 3:
+                                                                        $ jaruzel_min_attack_now -= 1
 
 
-                                if girek_max_attack_now >= 28 and girek_max_attack_now <= 30:
-                                    $ girek_max_attack_now -= 10
+                                if jaruzel_max_attack_now >= 28 and jaruzel_max_attack_now <= 30:
+                                    $ jaruzel_max_attack_now -= 10
                                 else:
-                                    if girek_max_attack_now >= 25 and girek_max_attack_now <= 27:
-                                        $ girek_max_attack_now -= 9
+                                    if jaruzel_max_attack_now >= 25 and jaruzel_max_attack_now <= 27:
+                                        $ jaruzel_max_attack_now -= 9
                                     else:
-                                        if girek_max_attack_now >= 22 and girek_max_attack_now <= 24:
-                                            $ girek_max_attack_now -= 8
+                                        if jaruzel_max_attack_now >= 22 and jaruzel_max_attack_now <= 24:
+                                            $ jaruzel_max_attack_now -= 8
                                         else:
-                                            if girek_max_attack_now >= 19 and girek_max_attack_now <= 21:
-                                                $ girek_max_attack_now -= 7
+                                            if jaruzel_max_attack_now >= 19 and jaruzel_max_attack_now <= 21:
+                                                $ jaruzel_max_attack_now -= 7
                                             else:
-                                                if girek_max_attack_now >= 16 and girek_max_attack_now <= 18:
-                                                    $ girek_max_attack_now -= 6
+                                                if jaruzel_max_attack_now >= 16 and jaruzel_max_attack_now <= 18:
+                                                    $ jaruzel_max_attack_now -= 6
                                                 else:
-                                                    if girek_max_attack_now >= 13 and girek_max_attack_now <= 15:
-                                                        $ girek_max_attack_now -= 5
+                                                    if jaruzel_max_attack_now >= 13 and jaruzel_max_attack_now <= 15:
+                                                        $ jaruzel_max_attack_now -= 5
                                                     else:
-                                                        if girek_max_attack_now >= 10 and girek_max_attack_now <= 12:
-                                                            $ girek_max_attack_now -= 4
+                                                        if jaruzel_max_attack_now >= 10 and jaruzel_max_attack_now <= 12:
+                                                            $ jaruzel_max_attack_now -= 4
                                                         else:
-                                                            if girek_max_attack_now >= 7 and girek_max_attack_now <= 9:
-                                                                $ girek_max_attack_now -= 3
+                                                            if jaruzel_max_attack_now >= 7 and jaruzel_max_attack_now <= 9:
+                                                                $ jaruzel_max_attack_now -= 3
                                                             else:
-                                                                if girek_max_attack_now >= 4 and girek_max_attack_now <= 6:
-                                                                    $ girek_max_attack_now -= 2
+                                                                if jaruzel_max_attack_now >= 4 and jaruzel_max_attack_now <= 6:
+                                                                    $ jaruzel_max_attack_now -= 2
                                                                 else:
-                                                                    if girek_max_attack_now >= 1 and girek_max_attack_now <= 3:
-                                                                        $ girek_max_attack_now -= 1
+                                                                    if jaruzel_max_attack_now >= 1 and jaruzel_max_attack_now <= 3:
+                                                                        $ jaruzel_max_attack_now -= 1
                                 
-                                $ girek_slime += 1
+                                $ jaruzel_slime += 1
                                 show slime zorder 15 at center_wrog2
-                                "{i}Statystyki Girek zostały osłabione{/i}"
+                                "{i}Statystyki Jaruzel zostały osłabione{/i}"
                                 jump faza_fight112
 
         if urban_fighter == 1:
@@ -3408,7 +3413,7 @@ label fight111:
                     jump faza_fight112 
 
             if ostrza_chaosu == 3 and urban_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ urban_min_attack_now += 1
 
             menu:
@@ -3506,56 +3511,6 @@ label fight111:
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                    if ziemia == 3:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if urban_hp_now + kostka >= urban_hp:
-                                            $ urban_hp_now = urban_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ urban_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(urban_attack / 2)
-
-                                    $ dmg = int(urban_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= urban_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                    if ziemia == 3:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if urban_hp_now + kostka >= urban_hp:
-                                            $ urban_hp_now = urban_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ urban_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(urban_attack / 2)
-
-                                    $ dmg = int(urban_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= urban_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -3581,7 +3536,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= urban_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    if ziemia == 3:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if urban_hp_now + kostka >= urban_hp:
+                                            $ urban_hp_now = urban_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ urban_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= urban_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    if ziemia == 3:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if urban_hp_now + kostka >= urban_hp:
+                                            $ urban_hp_now = urban_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ urban_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= urban_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
@@ -3614,12 +3619,12 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
                             label urban_fight111:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                                if jaruzel_obrona >= 2:
+                                if girek_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
@@ -3632,10 +3637,10 @@ label fight111:
                                             $ urban_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                    $ jaruzel_obrona = 1
+                                    $ girek_obrona = 1
                                                                 
                                 else:  
-                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and jaruzel_obrona == 1 and stop == 3 or urban_attack == 2 and jaruzel_obrona == 1 and stop == 3:
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and girek_obrona == 1 and stop == 3 or urban_attack == 2 and girek_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
                                         jump urban_fight111
@@ -3666,11 +3671,11 @@ label fight111:
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
 
-                                        if jaruzel_obrona == 1:
+                                        if girek_obrona == 1:
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= urban_attack
+                                                    $ girek_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -3684,7 +3689,7 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight112
 
-                                            $ jaruzel_hp_now -= int(urban_attack / 2)
+                                            $ girek_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -3700,13 +3705,13 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                         else:
                                             if bazooka == 3:
-                                                $ jaruzel_poison = 3
+                                                $ girek_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
                                             
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= urban_attack * 2
+                                                    $ girek_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -3720,13 +3725,13 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight112
 
-                                            $ jaruzel_hp_now -= urban_attack
+                                            $ girek_hp_now -= urban_attack
 
-                                            if urban_przepychaczka == 3 and jaruzel_stun == 0:
+                                            if urban_przepychaczka == 3 and girek_stun == 0:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
                                                     show stun1 zorder 15 at head_wrog1
-                                                    $ jaruzel_stun = 1
+                                                    $ girek_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -3892,12 +3897,12 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                 jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
                             label urban_fight113:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                                if girek_obrona >= 2:
+                                if jaruzel_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
@@ -3910,10 +3915,10 @@ label fight111:
                                             $ urban_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                    $ girek_obrona = 1
+                                    $ jaruzel_obrona = 1
                                                                 
                                 else: 
-                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and girek_obrona == 1 and stop == 3 or urban_attack == 2 and girek_obrona == 1 and stop == 3:
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and jaruzel_obrona == 1 and stop == 3 or urban_attack == 2 and jaruzel_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
                                         jump urban_fight113
@@ -3944,11 +3949,11 @@ label fight111:
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
 
-                                        if girek_obrona == 1:
+                                        if jaruzel_obrona == 1:
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ girek_hp_now -= urban_attack
+                                                    $ jaruzel_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -3962,7 +3967,7 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight112
 
-                                            $ girek_hp_now -= int(urban_attack / 2)
+                                            $ jaruzel_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -3978,13 +3983,13 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                         else:
                                             if bazooka == 3:
-                                                $ girek_poison = 3
+                                                $ jaruzel_poison = 3
                                                 show snake33 zorder 15 at center_wrog2
                                             
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ girek_hp_now -= urban_attack * 2
+                                                    $ jaruzel_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -3998,13 +4003,13 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight112
 
-                                            $ girek_hp_now -= urban_attack
+                                            $ jaruzel_hp_now -= urban_attack
 
-                                            if urban_przepychaczka == 3 and girek_stun == 0:
+                                            if urban_przepychaczka == 3 and jaruzel_stun == 0:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
                                                     show stun3 zorder 15 at head_wrog2
-                                                    $ girek_stun = 1
+                                                    $ jaruzel_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -4073,44 +4078,44 @@ label fight111:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if jaruzel_obrona <= 0:
-                        $ jaruzel_uszy += 1
+                    if girek_obrona <= 0:
+                        $ girek_uszy += 1
                     
                     if urban_zly_obrona <= 0:
                         $ urban_zly_uszy += 1
                     
-                    if girek_obrona <= 0:
-                        $ girek_uszy += 1
+                    if jaruzel_obrona <= 0:
+                        $ jaruzel_uszy += 1
 
-                    if jaruzel_uszy == 1 and urban_zly_uszy == 1 and girek_uszy == 1 and jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                    if girek_uszy == 1 and urban_zly_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
                         show uszy3 zorder 15 at head_wrog2
                         show uszy1 zorder 15 at head_wrog1
-                        "{i}Jaruzel, Jerzy Urban i Girek skupili się na uszach Urbana{/i}"
+                        "{i}Girek, Jerzy Urban i Jaruzel skupili się na uszach Urbana{/i}"
                     
                     else:
-                        if jaruzel_uszy == 1 and urban_zly_uszy == 1 and jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1:
+                        if girek_uszy == 1 and urban_zly_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1:
                             show uszy2 zorder 15 at head_wrog3
                             show uszy1 zorder 15 at head_wrog1
-                            "{i}Jaruzel i Jerzy Urban skupili się na uszach Urbana{/i}"
+                            "{i}Girek i Jerzy Urban skupili się na uszach Urbana{/i}"
                         
                         else:
-                            if urban_zly_uszy == 1 and girek_uszy == 1 and urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                            if urban_zly_uszy == 1 and jaruzel_uszy == 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                                 show uszy2 zorder 15 at head_wrog3
                                 show uszy3 zorder 15 at head_wrog2
-                                "{i}Jerzy Urban i Girek skupili się na uszach Urbana{/i}"
+                                "{i}Jerzy Urban i Jaruzel skupili się na uszach Urbana{/i}"
                                 
                             
                             else:
-                                if jaruzel_uszy == 1 and girek_uszy == 1 and jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                                if girek_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                                     show uszy3 zorder 15 at head_wrog2
                                     show uszy1 zorder 15 at head_wrog1
-                                    "{i}Jaruzel i Girek skupili się na uszach Urbana{/i}"
+                                    "{i}Girek i Jaruzel skupili się na uszach Urbana{/i}"
                                 
                                 else:
-                                    if jaruzel_uszy == 1 and jaruzel_hp_now >= 1:
+                                    if girek_uszy == 1 and girek_hp_now >= 1:
                                         show uszy1 zorder 15 at head_wrog1
-                                        "{i}Jaruzel skupił się na uszach Urbana{/i}"
+                                        "{i}Girek skupił się na uszach Urbana{/i}"
                                     
                                     else:
                                         if urban_zly_uszy == 1 and urban_zly_hp_now >= 1:
@@ -4118,9 +4123,9 @@ label fight111:
                                             "{i}Jerzy Urban skupił się na uszach Urbana{/i}"
 
                                         else:
-                                            if girek_uszy == 1 and girek_hp_now >= 1:
+                                            if jaruzel_uszy == 1 and jaruzel_hp_now >= 1:
                                                 show uszy3 zorder 15 at head_wrog2
-                                                "{i}Girek skupił się na uszach Urbana{/i}"
+                                                "{i}Jaruzel skupił się na uszach Urbana{/i}"
 
                                             else:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
@@ -4149,7 +4154,7 @@ label fight111:
                     jump faza_fight112 
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ zyd_min_attack_now += 1
 
             menu:
@@ -4247,56 +4252,6 @@ label fight111:
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= zyd_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= zyd_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -4322,7 +4277,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= zyd_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= zyd_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= zyd_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
@@ -4355,11 +4360,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
@@ -4372,7 +4377,7 @@ label fight111:
                                         $ zyd_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:
                                 if zyd_weapon >= 1:
@@ -4400,11 +4405,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= zyd_attack
+                                            $ girek_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -4418,7 +4423,7 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+                                    $ girek_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -4434,13 +4439,13 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 4:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
 
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= zyd_attack * 2
+                                            $ girek_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -4454,13 +4459,13 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ jaruzel_hp_now -= zyd_attack
+                                    $ girek_hp_now -= zyd_attack
 
-                                    if zyd_przepychaczka == 4 and jaruzel_stun == 0:
+                                    if zyd_przepychaczka == 4 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -4620,11 +4625,11 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
@@ -4637,7 +4642,7 @@ label fight111:
                                         $ zyd_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:  
                                 if zyd_weapon >= 1:
@@ -4665,11 +4670,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= zyd_attack
+                                            $ jaruzel_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -4683,7 +4688,7 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ girek_hp_now -= int(zyd_attack / 2)
+                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -4699,13 +4704,13 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 4:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= zyd_attack * 2
+                                            $ jaruzel_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -4719,13 +4724,13 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ girek_hp_now -= zyd_attack
+                                    $ jaruzel_hp_now -= zyd_attack
 
-                                    if zyd_przepychaczka == 4 and girek_stun == 0:
+                                    if zyd_przepychaczka == 4 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -4781,7 +4786,7 @@ label fight111:
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items_fight111
 
-                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and jaruzel_pager == 0 and jaruzel_hp_now >= 1 or pager_boom == 0 and urban_zly_pager == 0 and urban_zly_hp_now >= 1 or pager_boom == 0 and girek_pager == 0 and girek_hp_now >= 1:
+                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and girek_pager == 0 and girek_hp_now >= 1 or pager_boom == 0 and urban_zly_pager == 0 and urban_zly_hp_now >= 1 or pager_boom == 0 and jaruzel_pager == 0 and jaruzel_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
 
@@ -4794,14 +4799,14 @@ label fight111:
                     menu:
                         "{b}Komu?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_pager == 0:
+                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
-                            $ jaruzel_pager += 1
+                            $ girek_pager += 1
                             show pager1 zorder 15 at bok_wrog1  
                             
-                            "{i}Jaruzel kupił pager od Żyda{/i}"
+                            "{i}Girek kupił pager od Żyda{/i}"
 
                             jump faza_fight112
 
@@ -4816,18 +4821,18 @@ label fight111:
 
                             jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_pager == 0:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
-                            $ girek_pager += 1
+                            $ jaruzel_pager += 1
                             
                             show pager3 zorder 15 at bok_wrog2
-                            "{i}Girek kupił pager od Żyda{/i}"
+                            "{i}Jaruzel kupił pager od Żyda{/i}"
 
                             jump faza_fight112
                 
-                "{b}Wysadź Pagery{/b}" if jaruzel_pager >= 1 and pager_boom == 0 or urban_zly_pager >= 1 and pager_boom == 0 or girek_pager >= 1 and pager_boom == 0:
+                "{b}Wysadź Pagery{/b}" if girek_pager >= 1 and pager_boom == 0 or urban_zly_pager >= 1 and pager_boom == 0 or jaruzel_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
@@ -4841,44 +4846,44 @@ label fight111:
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
                     play sound "audio/sfx/boom.mp3" 
 
-                    if jaruzel_pager == 1 and urban_zly_pager == 1 and girek_pager == 1:
-                        $ jaruzel_hp_now -= 10
+                    if girek_pager == 1 and urban_zly_pager == 1 and jaruzel_pager == 1:
                         $ girek_hp_now -= 10
+                        $ jaruzel_hp_now -= 10
                         $ urban_zly_hp_now -= 10
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
-                        "{i}Jaruzel, Jerzy Urban i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                        "{i}Girek, Jerzy Urban i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                             
                     else:
-                        if jaruzel_pager == 1 and urban_zly_pager == 1:
-                            $ jaruzel_hp_now -= 10
+                        if girek_pager == 1 and urban_zly_pager == 1:
+                            $ girek_hp_now -= 10
                             $ urban_zly_hp_now -= 10
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
-                            "{i}Jaruzel i Jerzy Urban w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                            "{i}Girek i Jerzy Urban w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                 
                         else:
-                            if urban_zly_pager == 1 and girek_pager == 1:
-                                $ girek_hp_now -= 10
+                            if urban_zly_pager == 1 and jaruzel_pager == 1:
+                                $ jaruzel_hp_now -= 10
                                 $ urban_zly_hp_now -= 10
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
-                                "{i}Jerzy Urban i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                                "{i}Jerzy Urban i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                     
                             else:
-                                if jaruzel_pager == 1 and girek_pager == 1:
-                                    $ jaruzel_hp_now -= 10
+                                if girek_pager == 1 and jaruzel_pager == 1:
                                     $ girek_hp_now -= 10
+                                    $ jaruzel_hp_now -= 10
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
-                                    "{i}Jaruzel i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                                    "{i}Girek i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                         
                                 else:
-                                    if jaruzel_pager == 1:
-                                        $ jaruzel_hp_now -= 10
+                                    if girek_pager == 1:
+                                        $ girek_hp_now -= 10
                                         show eksplozja1 zorder 16 at bok_wrog1
-                                        "{i}Jaruzel w wyniku ekspolzji Pageru stracił 10HP{/i}"
+                                        "{i}Girek w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if urban_zly_pager == 1:
@@ -4887,10 +4892,10 @@ label fight111:
                                             "{i}Jerzy Urban w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
-                                            if girek_pager == 1:
-                                                $ girek_hp_now -= 10
+                                            if jaruzel_pager == 1:
+                                                $ jaruzel_hp_now -= 10
                                                 show eksplozja3 zorder 16 at bok_wrog2
-                                                "{i}Girek w wyniku ekspolzji Pageru stracił 10HP{/i}"
+                                                "{i}Jaruzel w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                     hide red_button
                     hide pager1
@@ -4928,7 +4933,7 @@ label fight111:
                     jump faza_fight112 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ kazuma_min_attack_now += 1
 
             menu:
@@ -5026,9 +5031,9 @@ label fight111:
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        if girek_hp_now >= 1:
+                            if girek_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -5041,19 +5046,19 @@ label fight111:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                 
                             else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                 else:
-                                    $ jaruzel_hp_now -= kazuma_attack
+                                    $ girek_hp_now -= kazuma_attack
                         
                         if urban_zly_hp_now >= 1:
                             if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -5076,9 +5081,9 @@ label fight111:
                                 else:
                                     $ urban_zly_hp_now -= kazuma_attack
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -5091,17 +5096,17 @@ label fight111:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                 
                             else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(v_attack / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(v_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                 else:
-                                    $ girek_hp_now -= kazuma_attack
+                                    $ jaruzel_hp_now -= kazuma_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
@@ -5134,11 +5139,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
@@ -5151,7 +5156,7 @@ label fight111:
                                         $ kazuma_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:
                                 if kazuma_weapon >= 1:
@@ -5179,11 +5184,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= kazuma_attack
+                                            $ girek_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -5197,7 +5202,7 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
+                                    $ girek_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -5213,13 +5218,13 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 5:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= kazuma_attack * 2
+                                            $ girek_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -5233,13 +5238,13 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ jaruzel_hp_now -= kazuma_attack
+                                    $ girek_hp_now -= kazuma_attack
 
-                                    if kazuma_przepychaczka == 5 and jaruzel_stun == 0:
+                                    if kazuma_przepychaczka == 5 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -5398,11 +5403,11 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
@@ -5415,7 +5420,7 @@ label fight111:
                                         $ kazuma_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:
                                 if kazuma_weapon >= 1:
@@ -5443,11 +5448,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= kazuma_attack
+                                            $ jaruzel_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -5461,7 +5466,7 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ girek_hp_now -= int(kazuma_attack / 2)
+                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -5477,13 +5482,13 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 5:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= kazuma_attack * 2
+                                            $ jaruzel_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -5497,13 +5502,13 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight112
 
-                                    $ girek_hp_now -= kazuma_attack
+                                    $ jaruzel_hp_now -= kazuma_attack
 
-                                    if kazuma_przepychaczka == 5 and girek_stun == 0:
+                                    if kazuma_przepychaczka == 5 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -5560,7 +5565,7 @@ label fight111:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight111
 
-                "{b}Steal{/b}" if jaruzel_weapon >= 1 or urban_zly_weapon >= 1 or girek_weapon >= 1:
+                "{b}Steal{/b}" if girek_weapon >= 1 or urban_zly_weapon >= 1 or jaruzel_weapon >= 1:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5573,51 +5578,51 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
+                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
                             kazuma "Steal!"
 
-                            if jaruzel_obrona >= 1:
+                            if girek_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
-                                "{i}Jaruzel obronił się przed umiejętnością “Steal“{/i}"
+                                "{i}Girek obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight112
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
-                                if jaruzel_sex == 0:
+                                if girek_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if jaruzel_max_attack_now < jaruzel_max_attack:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
-                                            $ jaruzel_max_attack_now -= 2
+                                        if girek_max_attack_now < girek_max_attack:
+                                            $ girek_max_attack_now_true = 2
+                                            $ girek_min_attack_now_true = 0
+                                            $ girek_min_attack_now = girek_min_attack_now_true
+                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            $ girek_max_attack_now -= 2
                                         
                                         else:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            $ girek_max_attack_now_true = 2
+                                            $ girek_min_attack_now_true = 0
+                                            $ girek_min_attack_now = girek_min_attack_now_true
+                                            $ girek_max_attack_now = girek_max_attack_now_true
                                         
-                                        $ jaruzel_weapon -= 1
+                                        $ girek_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik1  
+                                            show girek_weapon zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik2  
+                                            show girek_weapon zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik3 
+                                            show girek_weapon zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Jaruzel.  \nStatystyki Jaruzel zostały stale drastycznie osłabione.{/i}"
-                                        hide jaruzel_weapon
+                                        "{i}Udało sie ukraść broń Girek.  \nStatystyki Girek zostały stale drastycznie osłabione.{/i}"
+                                        hide girek_weapon
                                         hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
+                                        "{i}Nie udało sie ukraść broni Girek{/i}"
                                         hide chwyta
                         
                                 else:
@@ -5634,16 +5639,16 @@ label fight111:
                                         play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
-                                        jaruzel "Nie! Oddaj mi moje majtki!"
+                                        girek "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Jaruzel.  \nJaruzel poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ jaruzel_hp_now = 0
+                                        "{i}Udało sie ukraść bieliznę Girek.  \nGirek poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ girek_hp_now = 0
                                         hide majtki
                                         hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
+                                        "{i}Nie udało sie ukraść broni Girek{/i}"
                                         hide chwyta
                                         
                                 jump faza_fight112
@@ -5722,50 +5727,50 @@ label fight111:
                                         
                                 jump faza_fight112
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
                             kazuma "Steal!"
-                            if girek_obrona >= 1:
+                            if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
-                                "{i}Girek obronił się przed umiejętnością “Steal“{/i}"
+                                "{i}Jaruzel obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight112
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
-                                if girek_sex == 0:
+                                if jaruzel_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if girek_max_attack_now < girek_max_attack:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
-                                            $ girek_max_attack_now -= 2
+                                        if jaruzel_max_attack_now < jaruzel_max_attack:
+                                            $ jaruzel_max_attack_now_true = 2
+                                            $ jaruzel_min_attack_now_true = 0
+                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            $ jaruzel_max_attack_now -= 2
                                         
                                         else:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            $ jaruzel_max_attack_now_true = 2
+                                            $ jaruzel_min_attack_now_true = 0
+                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
                                         
-                                        $ girek_weapon -= 1
+                                        $ jaruzel_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show girek_weapon zorder 15 at weapon_sojusznik1  
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show girek_weapon zorder 15 at weapon_sojusznik2  
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show girek_weapon zorder 15 at weapon_sojusznik3 
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Girek.  \nStatystyki Girek zostały stale drastycznie osłabione.{/i}"
-                                        hide girek_weapon
+                                        "{i}Udało sie ukraść broń Jaruzel.  \nStatystyki Jaruzel zostały stale drastycznie osłabione.{/i}"
+                                        hide jaruzel_weapon
                                         hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Girek{/i}"
+                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
                                         hide chwyta
                         
                                 else:
@@ -5782,16 +5787,16 @@ label fight111:
                                         play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
-                                        girek "Nie! Oddaj mi moje majtki!"
+                                        jaruzel "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Girek.  \nGirek poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ girek_hp_now = 0
+                                        "{i}Udało sie ukraść bieliznę Jaruzel.  \nJaruzel poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ jaruzel_hp_now = 0
                                         hide majtki
                                         hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Girek{/i}"
+                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
                                         hide chwyta
                                         
                                 jump faza_fight112
@@ -6050,62 +6055,12 @@ label fight111:
                         show reka9 zorder 15 at weapon_sojusznik3 
 
                 if ostrza_chaosu == 6 and tarczownik_weapon >= 1:
-                    if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                    if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                         $ tarczownik_min_attack_now += 1
                         
                     tarczownik "Aaaaaaaaagh!"
                     
                     $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
-
-                    if jaruzel_hp_now >= 1:
-                        if jaruzel_obrona >= 2:
-                            if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Naofumiego został zablokowany{/i}"
-                                if ziemia == 6:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                        $ tarczownik_hp_now = tarczownik_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                    else:
-                                        $ tarczownik_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                            $ jaruzel_obrona = 1
-                                                                
-                        else:     
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(tarczownik_attack / 2)
-
-                                $ dmg = int(tarczownik_attack / 2)
-                            else:
-                                $ jaruzel_hp_now -= tarczownik_attack
-                        
-                    if urban_zly_hp_now >= 1:
-                        if urban_zly_obrona >= 2:
-                            if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Naofumiego został zablokowany{/i}"
-                                if ziemia == 6:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                        $ tarczownik_hp_now = tarczownik_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                    else:
-                                        $ tarczownik_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                            $ urban_zly_obrona = 1
-                                                                
-                        else:     
-                            if urban_zly_obrona == 1:
-                                $ urban_zly_hp_now -= int(tarczownik_attack / 2)
-
-                                $ dmg = int(tarczownik_attack / 2)
-                            else:
-                                $ urban_zly_hp_now -= tarczownik_attack
 
                     if girek_hp_now >= 1:
                         if girek_obrona >= 2:
@@ -6132,7 +6087,57 @@ label fight111:
                             else:
                                 $ girek_hp_now -= tarczownik_attack
                         
-                    if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                    if urban_zly_hp_now >= 1:
+                        if urban_zly_obrona >= 2:
+                            if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Naofumiego został zablokowany{/i}"
+                                if ziemia == 6:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                            $ urban_zly_obrona = 1
+                                                                
+                        else:     
+                            if urban_zly_obrona == 1:
+                                $ urban_zly_hp_now -= int(tarczownik_attack / 2)
+
+                                $ dmg = int(tarczownik_attack / 2)
+                            else:
+                                $ urban_zly_hp_now -= tarczownik_attack
+
+                    if jaruzel_hp_now >= 1:
+                        if jaruzel_obrona >= 2:
+                            if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Naofumiego został zablokowany{/i}"
+                                if ziemia == 6:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                            $ jaruzel_obrona = 1
+                                                                
+                        else:     
+                            if jaruzel_obrona == 1:
+                                $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+
+                                $ dmg = int(tarczownik_attack / 2)
+                            else:
+                                $ jaruzel_hp_now -= tarczownik_attack
+                        
+                    if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                         play sound "audio/sfx/ostrza_chaosu.mp3"
                         "{i}Atak zadał [tarczownik_attack] obrażeń wszystkim przeciwnikom{/i}"
                         if ziemia == 6:
@@ -6167,13 +6172,13 @@ label fight111:
                 label losowanko_tarczownik_fight111:
                     $ kostka = renpy.random.randint(1, 3)
                     if kostka == 1:
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_hp_now <= 3:
+                        if girek_hp_now >= 1:
+                            if girek_hp_now <= 3:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 2:
                                     $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                    if jaruzel_obrona >= 2:
+                                    if girek_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Naofumiego został zablokowany{/i}"
                                         if ziemia == 6:
@@ -6186,7 +6191,7 @@ label fight111:
                                                 $ tarczownik_hp_now += kostka
                                                 queue sound "audio/sfx/heal.mp3" 
                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                        $ jaruzel_obrona = 1
+                                        $ girek_obrona = 1
                                                             
                                     else:
                                         if tarczownik_weapon >= 1:
@@ -6214,11 +6219,11 @@ label fight111:
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
 
-                                        if jaruzel_obrona == 1:
+                                        if girek_obrona == 1:
                                             if patyk == 6:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= tarczownik_attack
+                                                    $ girek_hp_now -= tarczownik_attack
                                                     "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                     if ziemia == 6:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -6232,9 +6237,9 @@ label fight111:
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 
                                                 else:
-                                                    $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+                                                    $ girek_hp_now -= int(tarczownik_attack / 2)
                                                     $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
                                                     if ziemia == 6:
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6246,9 +6251,9 @@ label fight111:
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                             else:
-                                                $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+                                                $ girek_hp_now -= int(tarczownik_attack / 2)
                                                 $ dmg = int(tarczownik_attack / 2)
-                                                "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
+                                                "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
                                                 if ziemia == 6:
                                                     $ kostka = renpy.random.randint(1, 2)
                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6262,13 +6267,13 @@ label fight111:
 
                                         else:
                                             if bazooka == 6:
-                                                $ jaruzel_poison = 3
+                                                $ girek_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
                                             
                                             if patyk == 6:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= tarczownik_attack * 2
+                                                    $ girek_hp_now -= tarczownik_attack * 2
                                                     "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                     if ziemia == 6:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -6282,8 +6287,8 @@ label fight111:
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 
                                                 else:
-                                                    $ jaruzel_hp_now -= tarczownik_attack
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                    $ girek_hp_now -= tarczownik_attack
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                     if ziemia == 6:
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6295,12 +6300,12 @@ label fight111:
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                             else:
-                                                $ jaruzel_hp_now -= tarczownik_attack
-                                                if tarczownik_przepychaczka == 6 and jaruzel_stun == 0:
+                                                $ girek_hp_now -= tarczownik_attack
+                                                if tarczownik_przepychaczka == 6 and girek_stun == 0:
                                                     $ kostka = renpy.random.randint(1, 20)
                                                     if kostka <= 3:
                                                         show stun1 zorder 15 at head_wrog1
-                                                        $ jaruzel_stun = 1
+                                                        $ girek_stun = 1
                                                         "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
@@ -6314,7 +6319,7 @@ label fight111:
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     
                                                     else:
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6327,7 +6332,7 @@ label fight111:
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 
                                                 else:
-                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                     if ziemia == 6:
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6369,12 +6374,12 @@ label fight111:
                                     jump losowanko_tarczownik_fight111
 
                             else:
-                                if jaruzel_hp_now <= 10:
+                                if girek_hp_now <= 10:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 3:
                                         $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                        if jaruzel_obrona >= 2:
+                                        if girek_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Naofumiego został zablokowany{/i}"
                                             if ziemia == 6:
@@ -6387,7 +6392,7 @@ label fight111:
                                                     $ tarczownik_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                            $ jaruzel_obrona = 1
+                                            $ girek_obrona = 1
                                                                 
                                         else:
                                             if tarczownik_weapon >= 1:
@@ -6414,11 +6419,11 @@ label fight111:
 
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
-                                            if jaruzel_obrona == 1:
+                                            if girek_obrona == 1:
                                                 if patyk == 6:
                                                     $ kostka = renpy.random.randint(1, 3)
                                                     if kostka == 3:
-                                                        $ jaruzel_hp_now -= tarczownik_attack
+                                                        $ girek_hp_now -= tarczownik_attack
                                                         "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
@@ -6432,9 +6437,9 @@ label fight111:
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     
                                                     else:
-                                                        $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+                                                        $ girek_hp_now -= int(tarczownik_attack / 2)
                                                         $ dmg = int(tarczownik_attack / 2)
-                                                        "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6446,9 +6451,9 @@ label fight111:
                                                                 queue sound "audio/sfx/heal.mp3" 
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 else:
-                                                    $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+                                                    $ girek_hp_now -= int(tarczownik_attack / 2)
                                                     $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
                                                     if ziemia == 6:
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6461,12 +6466,12 @@ label fight111:
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                             else:
                                                 if bazooka == 6:
-                                                    $ jaruzel_poison = 3
+                                                    $ girek_poison = 3
                                                     show snake31 zorder 15 at center_wrog1
                                                 if patyk == 6:
                                                     $ kostka = renpy.random.randint(1, 3)
                                                     if kostka == 3:
-                                                        $ jaruzel_hp_now -= tarczownik_attack * 2
+                                                        $ girek_hp_now -= tarczownik_attack * 2
                                                         "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
@@ -6480,8 +6485,8 @@ label fight111:
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     
                                                     else:
-                                                        $ jaruzel_hp_now -= tarczownik_attack
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                        $ girek_hp_now -= tarczownik_attack
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6493,12 +6498,12 @@ label fight111:
                                                                 queue sound "audio/sfx/heal.mp3" 
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 else:
-                                                    $ jaruzel_hp_now -= tarczownik_attack
-                                                    if tarczownik_przepychaczka == 6 and jaruzel_stun == 0:
+                                                    $ girek_hp_now -= tarczownik_attack
+                                                    if tarczownik_przepychaczka == 6 and girek_stun == 0:
                                                         $ kostka = renpy.random.randint(1, 20)
                                                         if kostka <= 3:
                                                             show stun1 zorder 15 at head_wrog1
-                                                            $ jaruzel_stun = 1
+                                                            $ girek_stun = 1
                                                             "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
@@ -6512,7 +6517,7 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         
                                                         else:
-                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6525,7 +6530,7 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     
                                                     else:
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6570,7 +6575,7 @@ label fight111:
                                     if kostka >= 5:
                                         $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                        if jaruzel_obrona >= 2:
+                                        if girek_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Naofumiego został zablokowany{/i}"
                                             if ziemia == 6:
@@ -6583,7 +6588,7 @@ label fight111:
                                                     $ tarczownik_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                            $ jaruzel_obrona = 1
+                                            $ girek_obrona = 1
                                                                 
                                         else:
                                             if tarczownik_weapon >= 1:
@@ -6610,11 +6615,11 @@ label fight111:
 
                                             else:
                                                 play sound "audio/sfx/reka.mp3" 
-                                            if jaruzel_obrona == 1:
+                                            if girek_obrona == 1:
                                                 if patyk == 6:
                                                     $ kostka = renpy.random.randint(1, 3)
                                                     if kostka == 3:
-                                                        $ jaruzel_hp_now -= tarczownik_attack
+                                                        $ girek_hp_now -= tarczownik_attack
                                                         "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
@@ -6628,9 +6633,9 @@ label fight111:
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     
                                                     else:
-                                                        $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+                                                        $ girek_hp_now -= int(tarczownik_attack / 2)
                                                         $ dmg = int(tarczownik_attack / 2)
-                                                        "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6642,9 +6647,9 @@ label fight111:
                                                                 queue sound "audio/sfx/heal.mp3" 
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 else:
-                                                    $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+                                                    $ girek_hp_now -= int(tarczownik_attack / 2)
                                                     $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
+                                                    "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
                                                     if ziemia == 6:
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6657,13 +6662,13 @@ label fight111:
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                             else:
                                                 if bazooka == 6:
-                                                    $ jaruzel_poison = 3
+                                                    $ girek_poison = 3
                                                     show snake31 zorder 15 at center_wrog1
 
                                                 if patyk == 6:
                                                     $ kostka = renpy.random.randint(1, 3)
                                                     if kostka == 3:
-                                                        $ jaruzel_hp_now -= tarczownik_attack * 2
+                                                        $ girek_hp_now -= tarczownik_attack * 2
                                                         "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
@@ -6677,8 +6682,8 @@ label fight111:
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     
                                                     else:
-                                                        $ jaruzel_hp_now -= tarczownik_attack
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                        $ girek_hp_now -= tarczownik_attack
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6690,12 +6695,12 @@ label fight111:
                                                                 queue sound "audio/sfx/heal.mp3" 
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 else:
-                                                    $ jaruzel_hp_now -= tarczownik_attack
-                                                    if tarczownik_przepychaczka == 6 and jaruzel_stun == 0:
+                                                    $ girek_hp_now -= tarczownik_attack
+                                                    if tarczownik_przepychaczka == 6 and girek_stun == 0:
                                                         $ kostka = renpy.random.randint(1, 20)
                                                         if kostka <= 3:
                                                             show stun1 zorder 15 at head_wrog1
-                                                            $ jaruzel_stun = 1
+                                                            $ girek_stun = 1
                                                             "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
@@ -6709,7 +6714,7 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         
                                                         else:
-                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6722,7 +6727,7 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     
                                                     else:
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
+                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7366,13 +7371,13 @@ label fight111:
                                 jump losowanko_tarczownik_fight111
                         else:
                             if kostka == 3:
-                                if girek_hp_now >= 1:
-                                    if girek_hp_now <= 3:
+                                if jaruzel_hp_now >= 1:
+                                    if jaruzel_hp_now <= 3:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 2:
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                            if girek_obrona >= 2:
+                                            if jaruzel_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Naofumiego został zablokowany{/i}"
                                                 if ziemia == 6:
@@ -7385,7 +7390,7 @@ label fight111:
                                                         $ tarczownik_hp_now += kostka
                                                         queue sound "audio/sfx/heal.mp3" 
                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                                $ girek_obrona = 1
+                                                $ jaruzel_obrona = 1
                                                                     
                                             else:
                                                 if tarczownik_weapon >= 1:
@@ -7413,11 +7418,11 @@ label fight111:
                                                 else:
                                                     play sound "audio/sfx/reka.mp3" 
 
-                                                if girek_obrona == 1:
+                                                if jaruzel_obrona == 1:
                                                     if patyk == 6:
                                                         $ kostka = renpy.random.randint(1, 3)
                                                         if kostka == 3:
-                                                            $ girek_hp_now -= tarczownik_attack
+                                                            $ jaruzel_hp_now -= tarczownik_attack
                                                             "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
@@ -7431,9 +7436,9 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         
                                                         else:
-                                                            $ girek_hp_now -= int(tarczownik_attack / 2)
+                                                            $ jaruzel_hp_now -= int(tarczownik_attack / 2)
                                                             $ dmg = int(tarczownik_attack / 2)
-                                                            "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7445,9 +7450,9 @@ label fight111:
                                                                     queue sound "audio/sfx/heal.mp3" 
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     else:
-                                                        $ girek_hp_now -= int(tarczownik_attack / 2)
+                                                        $ jaruzel_hp_now -= int(tarczownik_attack / 2)
                                                         $ dmg = int(tarczownik_attack / 2)
-                                                        "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
+                                                        "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
                                                         if ziemia == 6:
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7460,13 +7465,13 @@ label fight111:
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 else:
                                                     if bazooka == 6:
-                                                        $ girek_poison = 3
+                                                        $ jaruzel_poison = 3
                                                         show snake33 zorder 15 at center_wrog2
 
                                                     if patyk == 6:
                                                         $ kostka = renpy.random.randint(1, 3)
                                                         if kostka == 3:
-                                                            $ girek_hp_now -= tarczownik_attack * 2
+                                                            $ jaruzel_hp_now -= tarczownik_attack * 2
                                                             "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
@@ -7480,8 +7485,8 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         
                                                         else:
-                                                            $ girek_hp_now -= tarczownik_attack
-                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                            $ jaruzel_hp_now -= tarczownik_attack
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7493,12 +7498,12 @@ label fight111:
                                                                     queue sound "audio/sfx/heal.mp3" 
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     else:
-                                                        $ girek_hp_now -= tarczownik_attack
-                                                        if tarczownik_przepychaczka == 6 and girek_stun == 0:
+                                                        $ jaruzel_hp_now -= tarczownik_attack
+                                                        if tarczownik_przepychaczka == 6 and jaruzel_stun == 0:
                                                             $ kostka = renpy.random.randint(1, 20)
                                                             if kostka <= 3:
                                                                 show stun3 zorder 15 at head_wrog2
-                                                                $ girek_stun = 1
+                                                                $ jaruzel_stun = 1
                                                                 "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
@@ -7512,7 +7517,7 @@ label fight111:
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                             
                                                             else:
-                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7525,7 +7530,7 @@ label fight111:
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         
                                                         else:
-                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7566,12 +7571,12 @@ label fight111:
                                             jump losowanko_tarczownik_fight111
 
                                     else:
-                                        if girek_hp_now <= 10:
+                                        if jaruzel_hp_now <= 10:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 3:
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                                if girek_obrona >= 2:
+                                                if jaruzel_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Naofumiego został zablokowany{/i}"
                                                     if ziemia == 6:
@@ -7584,7 +7589,7 @@ label fight111:
                                                             $ tarczownik_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                                    $ girek_obrona = 1
+                                                    $ jaruzel_obrona = 1
                                                                         
                                                 else:
                                                     if tarczownik_weapon >= 1:
@@ -7612,11 +7617,11 @@ label fight111:
                                                     else:
                                                         play sound "audio/sfx/reka.mp3" 
 
-                                                    if girek_obrona == 1:
+                                                    if jaruzel_obrona == 1:
                                                         if patyk == 6:
                                                             $ kostka = renpy.random.randint(1, 3)
                                                             if kostka == 3:
-                                                                $ girek_hp_now -= tarczownik_attack
+                                                                $ jaruzel_hp_now -= tarczownik_attack
                                                                 "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
@@ -7630,9 +7635,9 @@ label fight111:
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                             
                                                             else:
-                                                                $ girek_hp_now -= int(tarczownik_attack / 2)
+                                                                $ jaruzel_hp_now -= int(tarczownik_attack / 2)
                                                                 $ dmg = int(tarczownik_attack / 2)
-                                                                "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
+                                                                "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7644,9 +7649,9 @@ label fight111:
                                                                         queue sound "audio/sfx/heal.mp3" 
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         else:
-                                                            $ girek_hp_now -= int(tarczownik_attack / 2)
+                                                            $ jaruzel_hp_now -= int(tarczownik_attack / 2)
                                                             $ dmg = int(tarczownik_attack / 2)
-                                                            "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7659,13 +7664,13 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     else:
                                                         if bazooka == 6:
-                                                            $ girek_poison = 3
+                                                            $ jaruzel_poison = 3
                                                             show snake33 zorder 15 at center_wrog2
 
                                                         if patyk == 6:
                                                             $ kostka = renpy.random.randint(1, 3)
                                                             if kostka == 3:
-                                                                $ girek_hp_now -= tarczownik_attack * 2
+                                                                $ jaruzel_hp_now -= tarczownik_attack * 2
                                                                 "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
@@ -7679,8 +7684,8 @@ label fight111:
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                             
                                                             else:
-                                                                $ girek_hp_now -= tarczownik_attack
-                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                                $ jaruzel_hp_now -= tarczownik_attack
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7692,12 +7697,12 @@ label fight111:
                                                                         queue sound "audio/sfx/heal.mp3" 
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         else:
-                                                            $ girek_hp_now -= tarczownik_attack
-                                                            if tarczownik_przepychaczka == 6 and girek_stun == 0:
+                                                            $ jaruzel_hp_now -= tarczownik_attack
+                                                            if tarczownik_przepychaczka == 6 and jaruzel_stun == 0:
                                                                 $ kostka = renpy.random.randint(1, 20)
                                                                 if kostka <= 3:
                                                                     show stun3 zorder 15 at head_wrog2
-                                                                    $ girek_stun = 1
+                                                                    $ jaruzel_stun = 1
                                                                     "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                                     if ziemia == 6:
                                                                         $ kostka = renpy.random.randint(1, 2)
@@ -7711,7 +7716,7 @@ label fight111:
                                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                                 
                                                                 else:
-                                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                                     if ziemia == 6:
                                                                         $ kostka = renpy.random.randint(1, 2)
                                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7724,7 +7729,7 @@ label fight111:
                                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                             
                                                             else:
-                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7769,7 +7774,7 @@ label fight111:
                                             if kostka >= 5:
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                                if girek_obrona >= 2:
+                                                if jaruzel_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Naofumiego został zablokowany{/i}"
                                                     if ziemia == 6:
@@ -7782,7 +7787,7 @@ label fight111:
                                                             $ tarczownik_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                                    $ girek_obrona = 1
+                                                    $ jaruzel_obrona = 1
                                                                         
                                                 else:
                                                     if tarczownik_weapon >= 1:
@@ -7810,11 +7815,11 @@ label fight111:
                                                     else:
                                                         play sound "audio/sfx/reka.mp3" 
 
-                                                    if girek_obrona == 1:
+                                                    if jaruzel_obrona == 1:
                                                         if patyk == 6:
                                                             $ kostka = renpy.random.randint(1, 3)
                                                             if kostka == 3:
-                                                                $ girek_hp_now -= tarczownik_attack
+                                                                $ jaruzel_hp_now -= tarczownik_attack
                                                                 "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
@@ -7828,9 +7833,9 @@ label fight111:
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                             
                                                             else:
-                                                                $ girek_hp_now -= int(tarczownik_attack / 2)
+                                                                $ jaruzel_hp_now -= int(tarczownik_attack / 2)
                                                                 $ dmg = int(tarczownik_attack / 2)
-                                                                "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
+                                                                "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7842,9 +7847,9 @@ label fight111:
                                                                         queue sound "audio/sfx/heal.mp3" 
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         else:
-                                                            $ girek_hp_now -= int(tarczownik_attack / 2)
+                                                            $ jaruzel_hp_now -= int(tarczownik_attack / 2)
                                                             $ dmg = int(tarczownik_attack / 2)
-                                                            "{i}Naofumi zadaje [dmg] obrażeń Girek{/i}"
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Jaruzel{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7857,13 +7862,13 @@ label fight111:
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     else:
                                                         if bazooka == 6:
-                                                            $ girek_poison = 3
+                                                            $ jaruzel_poison = 3
                                                             show snake33 zorder 15 at center_wrog2
 
                                                         if patyk == 6:
                                                             $ kostka = renpy.random.randint(1, 3)
                                                             if kostka == 3:
-                                                                $ girek_hp_now -= tarczownik_attack * 2
+                                                                $ jaruzel_hp_now -= tarczownik_attack * 2
                                                                 "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
@@ -7877,8 +7882,8 @@ label fight111:
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                             
                                                             else:
-                                                                $ girek_hp_now -= tarczownik_attack
-                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                                $ jaruzel_hp_now -= tarczownik_attack
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7890,12 +7895,12 @@ label fight111:
                                                                         queue sound "audio/sfx/heal.mp3" 
                                                                         "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         else:
-                                                            $ girek_hp_now -= tarczownik_attack
-                                                            if tarczownik_przepychaczka == 6 and girek_stun == 0:
+                                                            $ jaruzel_hp_now -= tarczownik_attack
+                                                            if tarczownik_przepychaczka == 6 and jaruzel_stun == 0:
                                                                 $ kostka = renpy.random.randint(1, 20)
                                                                 if kostka <= 3:
                                                                     show stun3 zorder 15 at head_wrog2
-                                                                    $ girek_stun = 1
+                                                                    $ jaruzel_stun = 1
                                                                     "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                                     if ziemia == 6:
                                                                         $ kostka = renpy.random.randint(1, 2)
@@ -7909,7 +7914,7 @@ label fight111:
                                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                                 
                                                                 else:
-                                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                                    "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                                     if ziemia == 6:
                                                                         $ kostka = renpy.random.randint(1, 2)
                                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7922,7 +7927,7 @@ label fight111:
                                                                             "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                             
                                                             else:
-                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Girek{/i}"
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jaruzel{/i}"
                                                                 if ziemia == 6:
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -7995,29 +8000,29 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide ruch
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -8040,24 +8045,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -8305,7 +8310,7 @@ label fight111:
                     jump faza_fight113 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ luszcz_min_attack_now += 1
 
             menu:
@@ -8403,56 +8408,6 @@ label fight111:
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= luszcz_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= luszcz_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -8478,7 +8433,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= luszcz_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= luszcz_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= luszcz_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
@@ -8511,11 +8516,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
@@ -8528,7 +8533,7 @@ label fight111:
                                         $ luszcz_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:  
                                 if luszcz_weapon >= 1:
@@ -8556,11 +8561,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= luszcz_attack
+                                            $ girek_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -8574,7 +8579,7 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+                                    $ girek_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -8590,13 +8595,13 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 2:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= luszcz_attack * 2
+                                            $ girek_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -8610,13 +8615,13 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ jaruzel_hp_now -= luszcz_attack
+                                    $ girek_hp_now -= luszcz_attack
 
-                                    if luszcz_przepychaczka == 2 and jaruzel_stun == 0:
+                                    if luszcz_przepychaczka == 2 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -8775,11 +8780,11 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
@@ -8792,7 +8797,7 @@ label fight111:
                                         $ luszcz_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:  
                                 if luszcz_weapon >= 1:
@@ -8820,11 +8825,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= luszcz_attack
+                                            $ girek_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -8838,7 +8843,7 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ girek_hp_now -= int(luszcz_attack / 2)
+                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -8854,13 +8859,13 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 2:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= luszcz_attack * 2
+                                            $ jaruzel_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -8874,13 +8879,13 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ girek_hp_now -= luszcz_attack
+                                    $ jaruzel_hp_now -= luszcz_attack
 
-                                    if luszcz_przepychaczka == 2 and girek_stun == 0:
+                                    if luszcz_przepychaczka == 2 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -9225,11 +9230,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
@@ -9242,12 +9247,12 @@ label fight111:
                                         $ eminem_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else: 
                                 play sound "audio/sfx/reka.mp3"                             
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(eminem_attack / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(eminem_attack / 2)
 
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -9262,7 +9267,7 @@ label fight111:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                 else:
-                                    $ jaruzel_hp_now -= eminem_attack
+                                    $ girek_hp_now -= eminem_attack
                                 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
@@ -9329,11 +9334,11 @@ label fight111:
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
@@ -9346,12 +9351,12 @@ label fight111:
                                         $ eminem_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:
                                 play sound "audio/sfx/reka.mp3"
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(eminem_attack / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(eminem_attack / 2)
 
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -9366,7 +9371,7 @@ label fight111:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                 else:
-                                    $ girek_hp_now -= eminem_attack
+                                    $ jaruzel_hp_now -= eminem_attack
 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
@@ -9424,79 +9429,79 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
-                            if jaruzel_obrona >= 1:
+                            if girek_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
-                                "{i}Jaruzel obronił się przed szlamem{/i}"
+                                "{i}Girek obronił się przed szlamem{/i}"
                                 jump faza_fight113
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if jaruzel_min_attack_now >= 28 and jaruzel_min_attack_now <= 30:
-                                    $ jaruzel_min_attack_now -= 10
+                                if girek_min_attack_now >= 28 and girek_min_attack_now <= 30:
+                                    $ girek_min_attack_now -= 10
                                 else:
-                                    if jaruzel_min_attack_now >= 25 and jaruzel_min_attack_now <= 27:
-                                        $ jaruzel_min_attack_now -= 9
+                                    if girek_min_attack_now >= 25 and girek_min_attack_now <= 27:
+                                        $ girek_min_attack_now -= 9
                                     else:
-                                        if jaruzel_min_attack_now >= 22 and jaruzel_min_attack_now <= 24:
-                                            $ jaruzel_min_attack_now -= 8
+                                        if girek_min_attack_now >= 22 and girek_min_attack_now <= 24:
+                                            $ girek_min_attack_now -= 8
                                         else:
-                                            if jaruzel_min_attack_now >= 19 and jaruzel_min_attack_now <= 21:
-                                                $ jaruzel_min_attack_now -= 7
+                                            if girek_min_attack_now >= 19 and girek_min_attack_now <= 21:
+                                                $ girek_min_attack_now -= 7
                                             else:
-                                                if jaruzel_min_attack_now >= 16 and jaruzel_min_attack_now <= 18:
-                                                    $ jaruzel_min_attack_now -= 6
+                                                if girek_min_attack_now >= 16 and girek_min_attack_now <= 18:
+                                                    $ girek_min_attack_now -= 6
                                                 else:
-                                                    if jaruzel_min_attack_now >= 13 and jaruzel_min_attack_now <= 15:
-                                                        $ jaruzel_min_attack_now -= 5
+                                                    if girek_min_attack_now >= 13 and girek_min_attack_now <= 15:
+                                                        $ girek_min_attack_now -= 5
                                                     else:   
-                                                        if jaruzel_min_attack_now >= 10 and jaruzel_min_attack_now <= 12:
-                                                            $ jaruzel_min_attack_now -= 4
+                                                        if girek_min_attack_now >= 10 and girek_min_attack_now <= 12:
+                                                            $ girek_min_attack_now -= 4
                                                         else:
-                                                            if jaruzel_min_attack_now >= 7 and jaruzel_min_attack_now <= 9:
-                                                                $ jaruzel_min_attack_now -= 3
+                                                            if girek_min_attack_now >= 7 and girek_min_attack_now <= 9:
+                                                                $ girek_min_attack_now -= 3
                                                             else:
-                                                                if jaruzel_min_attack_now >= 4 and jaruzel_min_attack_now <= 6:
-                                                                    $ jaruzel_min_attack_now -= 2
+                                                                if girek_min_attack_now >= 4 and girek_min_attack_now <= 6:
+                                                                    $ girek_min_attack_now -= 2
                                                                 else:
-                                                                    if jaruzel_min_attack_now >= 1 and jaruzel_min_attack_now <= 3:
-                                                                        $ jaruzel_min_attack_now -= 1
+                                                                    if girek_min_attack_now >= 1 and girek_min_attack_now <= 3:
+                                                                        $ girek_min_attack_now -= 1
 
 
-                                if jaruzel_max_attack_now >= 28 and jaruzel_max_attack_now <= 30:
-                                    $ jaruzel_max_attack_now -= 10
+                                if girek_max_attack_now >= 28 and girek_max_attack_now <= 30:
+                                    $ girek_max_attack_now -= 10
                                 else:
-                                    if jaruzel_max_attack_now >= 25 and jaruzel_max_attack_now <= 27:
-                                        $ jaruzel_max_attack_now -= 9
+                                    if girek_max_attack_now >= 25 and girek_max_attack_now <= 27:
+                                        $ girek_max_attack_now -= 9
                                     else:
-                                        if jaruzel_max_attack_now >= 22 and jaruzel_max_attack_now <= 24:
-                                            $ jaruzel_max_attack_now -= 8
+                                        if girek_max_attack_now >= 22 and girek_max_attack_now <= 24:
+                                            $ girek_max_attack_now -= 8
                                         else:
-                                            if jaruzel_max_attack_now >= 19 and jaruzel_max_attack_now <= 21:
-                                                $ jaruzel_max_attack_now -= 7
+                                            if girek_max_attack_now >= 19 and girek_max_attack_now <= 21:
+                                                $ girek_max_attack_now -= 7
                                             else:
-                                                if jaruzel_max_attack_now >= 16 and jaruzel_max_attack_now <= 18:
-                                                    $ jaruzel_max_attack_now -= 6
+                                                if girek_max_attack_now >= 16 and girek_max_attack_now <= 18:
+                                                    $ girek_max_attack_now -= 6
                                                 else:
-                                                    if jaruzel_max_attack_now >= 13 and jaruzel_max_attack_now <= 15:
-                                                        $ jaruzel_max_attack_now -= 5
+                                                    if girek_max_attack_now >= 13 and girek_max_attack_now <= 15:
+                                                        $ girek_max_attack_now -= 5
                                                     else:
-                                                        if jaruzel_max_attack_now >= 10 and jaruzel_max_attack_now <= 12:
-                                                            $ jaruzel_max_attack_now -= 4
+                                                        if girek_max_attack_now >= 10 and girek_max_attack_now <= 12:
+                                                            $ girek_max_attack_now -= 4
                                                         else:
-                                                            if jaruzel_max_attack_now >= 7 and jaruzel_max_attack_now <= 9:
-                                                                $ jaruzel_max_attack_now -= 3
+                                                            if girek_max_attack_now >= 7 and girek_max_attack_now <= 9:
+                                                                $ girek_max_attack_now -= 3
                                                             else:
-                                                                if jaruzel_max_attack_now >= 4 and jaruzel_max_attack_now <= 6:
-                                                                    $ jaruzel_max_attack_now -= 2
+                                                                if girek_max_attack_now >= 4 and girek_max_attack_now <= 6:
+                                                                    $ girek_max_attack_now -= 2
                                                                 else:
-                                                                    if jaruzel_max_attack_now >= 1 and jaruzel_max_attack_now <= 3:
-                                                                        $ jaruzel_max_attack_now -= 1
+                                                                    if girek_max_attack_now >= 1 and girek_max_attack_now <= 3:
+                                                                        $ girek_max_attack_now -= 1
                                 
-                                $ jaruzel_slime += 1
+                                $ girek_slime += 1
                                 show slime zorder 15 at center_wrog1 
-                                "{i}Statystyki Jaruzel zostały osłabione{/i}"
+                                "{i}Statystyki Girek zostały osłabione{/i}"
                                 jump faza_fight113
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
@@ -9573,79 +9578,79 @@ label fight111:
                                 "{i}Statystyki Jerzy Urban zostały osłabione{/i}"
                                 jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
-                            if girek_obrona >= 1:
+                            if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
-                                "{i}Girek obronił się przed szlamem{/i}"
+                                "{i}Jaruzel obronił się przed szlamem{/i}"
                                 jump faza_fight113
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if girek_min_attack_now >= 28 and girek_min_attack_now <= 30:
-                                    $ girek_min_attack_now -= 10
+                                if jaruzel_min_attack_now >= 28 and jaruzel_min_attack_now <= 30:
+                                    $ jaruzel_min_attack_now -= 10
                                 else:
-                                    if girek_min_attack_now >= 25 and girek_min_attack_now <= 27:
-                                        $ girek_min_attack_now -= 9
+                                    if jaruzel_min_attack_now >= 25 and jaruzel_min_attack_now <= 27:
+                                        $ jaruzel_min_attack_now -= 9
                                     else:
-                                        if girek_min_attack_now >= 22 and girek_min_attack_now <= 24:
-                                            $ girek_min_attack_now -= 8
+                                        if jaruzel_min_attack_now >= 22 and jaruzel_min_attack_now <= 24:
+                                            $ jaruzel_min_attack_now -= 8
                                         else:
-                                            if girek_min_attack_now >= 19 and girek_min_attack_now <= 21:
-                                                $ girek_min_attack_now -= 7
+                                            if jaruzel_min_attack_now >= 19 and jaruzel_min_attack_now <= 21:
+                                                $ jaruzel_min_attack_now -= 7
                                             else:
-                                                if girek_min_attack_now >= 16 and girek_min_attack_now <= 18:
-                                                    $ girek_min_attack_now -= 6
+                                                if jaruzel_min_attack_now >= 16 and jaruzel_min_attack_now <= 18:
+                                                    $ jaruzel_min_attack_now -= 6
                                                 else:
-                                                    if girek_min_attack_now >= 13 and girek_min_attack_now <= 15:
-                                                        $ girek_min_attack_now -= 5
+                                                    if jaruzel_min_attack_now >= 13 and jaruzel_min_attack_now <= 15:
+                                                        $ jaruzel_min_attack_now -= 5
                                                     else:   
-                                                        if girek_min_attack_now >= 10 and girek_min_attack_now <= 12:
-                                                            $ girek_min_attack_now -= 4
+                                                        if jaruzel_min_attack_now >= 10 and jaruzel_min_attack_now <= 12:
+                                                            $ jaruzel_min_attack_now -= 4
                                                         else:
-                                                            if girek_min_attack_now >= 7 and girek_min_attack_now <= 9:
-                                                                $ girek_min_attack_now -= 3
+                                                            if jaruzel_min_attack_now >= 7 and jaruzel_min_attack_now <= 9:
+                                                                $ jaruzel_min_attack_now -= 3
                                                             else:
-                                                                if girek_min_attack_now >= 4 and girek_min_attack_now <= 6:
-                                                                    $ girek_min_attack_now -= 2
+                                                                if jaruzel_min_attack_now >= 4 and jaruzel_min_attack_now <= 6:
+                                                                    $ jaruzel_min_attack_now -= 2
                                                                 else:
-                                                                    if girek_min_attack_now >= 1 and girek_min_attack_now <= 3:
-                                                                        $ girek_min_attack_now -= 1
+                                                                    if jaruzel_min_attack_now >= 1 and jaruzel_min_attack_now <= 3:
+                                                                        $ jaruzel_min_attack_now -= 1
 
 
-                                if girek_max_attack_now >= 28 and girek_max_attack_now <= 30:
-                                    $ girek_max_attack_now -= 10
+                                if jaruzel_max_attack_now >= 28 and jaruzel_max_attack_now <= 30:
+                                    $ jaruzel_max_attack_now -= 10
                                 else:
-                                    if girek_max_attack_now >= 25 and girek_max_attack_now <= 27:
-                                        $ girek_max_attack_now -= 9
+                                    if jaruzel_max_attack_now >= 25 and jaruzel_max_attack_now <= 27:
+                                        $ jaruzel_max_attack_now -= 9
                                     else:
-                                        if girek_max_attack_now >= 22 and girek_max_attack_now <= 24:
-                                            $ girek_max_attack_now -= 8
+                                        if jaruzel_max_attack_now >= 22 and jaruzel_max_attack_now <= 24:
+                                            $ jaruzel_max_attack_now -= 8
                                         else:
-                                            if girek_max_attack_now >= 19 and girek_max_attack_now <= 21:
-                                                $ girek_max_attack_now -= 7
+                                            if jaruzel_max_attack_now >= 19 and jaruzel_max_attack_now <= 21:
+                                                $ jaruzel_max_attack_now -= 7
                                             else:
-                                                if girek_max_attack_now >= 16 and girek_max_attack_now <= 18:
-                                                    $ girek_max_attack_now -= 6
+                                                if jaruzel_max_attack_now >= 16 and jaruzel_max_attack_now <= 18:
+                                                    $ jaruzel_max_attack_now -= 6
                                                 else:
-                                                    if girek_max_attack_now >= 13 and girek_max_attack_now <= 15:
-                                                        $ girek_max_attack_now -= 5
+                                                    if jaruzel_max_attack_now >= 13 and jaruzel_max_attack_now <= 15:
+                                                        $ jaruzel_max_attack_now -= 5
                                                     else:
-                                                        if girek_max_attack_now >= 10 and girek_max_attack_now <= 12:
-                                                            $ girek_max_attack_now -= 4
+                                                        if jaruzel_max_attack_now >= 10 and jaruzel_max_attack_now <= 12:
+                                                            $ jaruzel_max_attack_now -= 4
                                                         else:
-                                                            if girek_max_attack_now >= 7 and girek_max_attack_now <= 9:
-                                                                $ girek_max_attack_now -= 3
+                                                            if jaruzel_max_attack_now >= 7 and jaruzel_max_attack_now <= 9:
+                                                                $ jaruzel_max_attack_now -= 3
                                                             else:
-                                                                if girek_max_attack_now >= 4 and girek_max_attack_now <= 6:
-                                                                    $ girek_max_attack_now -= 2
+                                                                if jaruzel_max_attack_now >= 4 and jaruzel_max_attack_now <= 6:
+                                                                    $ jaruzel_max_attack_now -= 2
                                                                 else:
-                                                                    if girek_max_attack_now >= 1 and girek_max_attack_now <= 3:
-                                                                        $ girek_max_attack_now -= 1
+                                                                    if jaruzel_max_attack_now >= 1 and jaruzel_max_attack_now <= 3:
+                                                                        $ jaruzel_max_attack_now -= 1
                                 
-                                $ girek_slime += 1
+                                $ jaruzel_slime += 1
                                 show slime zorder 15 at center_wrog2
-                                "{i}Statystyki Girek zostały osłabione{/i}"
+                                "{i}Statystyki Jaruzel zostały osłabione{/i}"
                                 jump faza_fight113
 
         if urban_fighter == 2:
@@ -9670,7 +9675,7 @@ label fight111:
                     jump faza_fight113
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ urban_min_attack_now += 1
 
             menu:
@@ -9768,56 +9773,6 @@ label fight111:
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                    if ziemia == 3:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if urban_hp_now + kostka >= urban_hp:
-                                            $ urban_hp_now = urban_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ urban_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(urban_attack / 2)
-
-                                    $ dmg = int(urban_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= urban_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                    if ziemia == 3:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if urban_hp_now + kostka >= urban_hp:
-                                            $ urban_hp_now = urban_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ urban_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(urban_attack / 2)
-
-                                    $ dmg = int(urban_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= urban_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -9843,7 +9798,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= urban_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    if ziemia == 3:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if urban_hp_now + kostka >= urban_hp:
+                                            $ urban_hp_now = urban_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ urban_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= urban_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    if ziemia == 3:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if urban_hp_now + kostka >= urban_hp:
+                                            $ urban_hp_now = urban_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ urban_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= urban_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
@@ -9876,12 +9881,12 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
                             label urban_fight114:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                                if jaruzel_obrona >= 2:
+                                if girek_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
@@ -9894,10 +9899,10 @@ label fight111:
                                             $ urban_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                    $ jaruzel_obrona = 1
+                                    $ girek_obrona = 1
                                                                 
                                 else:
-                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and jaruzel_obrona == 1 and stop == 3 or urban_attack == 2 and jaruzel_obrona == 1 and stop == 3:
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and girek_obrona == 1 and stop == 3 or urban_attack == 2 and girek_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
                                         jump urban_fight114
@@ -9928,11 +9933,11 @@ label fight111:
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
 
-                                        if jaruzel_obrona == 1:
+                                        if girek_obrona == 1:
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= urban_attack
+                                                    $ girek_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -9946,7 +9951,7 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight113
 
-                                            $ jaruzel_hp_now -= int(urban_attack / 2)
+                                            $ girek_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -9962,13 +9967,13 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                         else:
                                             if bazooka == 3:
-                                                $ jaruzel_poison = 3
+                                                $ girek_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
                                             
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= urban_attack * 2
+                                                    $ girek_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -9982,13 +9987,13 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight113
 
-                                            $ jaruzel_hp_now -= urban_attack
+                                            $ girek_hp_now -= urban_attack
 
-                                            if urban_przepychaczka == 3 and jaruzel_stun == 0:
+                                            if urban_przepychaczka == 3 and girek_stun == 0:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
                                                     show stun1 zorder 15 at head_wrog1
-                                                    $ jaruzel_stun = 1
+                                                    $ girek_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -10154,12 +10159,12 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                 jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
                             label urban_fight116:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                                if girek_obrona >= 2:
+                                if jaruzel_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
@@ -10172,10 +10177,10 @@ label fight111:
                                             $ urban_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                    $ girek_obrona = 1
+                                    $ jaruzel_obrona = 1
                                                                 
                                 else:  
-                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and girek_obrona == 1 and stop == 3 or urban_attack == 2 and girek_obrona == 1 and stop == 3:
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and jaruzel_obrona == 1 and stop == 3 or urban_attack == 2 and jaruzel_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
                                         jump urban_fight116
@@ -10206,11 +10211,11 @@ label fight111:
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
 
-                                        if girek_obrona == 1:
+                                        if jaruzel_obrona == 1:
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ girek_hp_now -= urban_attack
+                                                    $ jaruzel_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -10224,7 +10229,7 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight113
 
-                                            $ girek_hp_now -= int(urban_attack / 2)
+                                            $ jaruzel_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -10240,13 +10245,13 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                         else:
                                             if bazooka == 3:
-                                                $ girek_poison = 3
+                                                $ jaruzel_poison = 3
                                                 show snake33 zorder 15 at center_wrog2
                                             
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ girek_hp_now -= urban_attack * 2
+                                                    $ jaruzel_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -10260,13 +10265,13 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight113
 
-                                            $ girek_hp_now -= urban_attack
+                                            $ jaruzel_hp_now -= urban_attack
 
-                                            if urban_przepychaczka == 3 and girek_stun == 0:
+                                            if urban_przepychaczka == 3 and jaruzel_stun == 0:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
                                                     show stun3 zorder 15 at head_wrog2
-                                                    $ girek_stun = 1
+                                                    $ jaruzel_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -10335,43 +10340,43 @@ label fight111:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if jaruzel_obrona <= 0:
-                        $ jaruzel_uszy += 1
+                    if girek_obrona <= 0:
+                        $ girek_uszy += 1
                     
                     if urban_zly_obrona <= 0:
                         $ urban_zly_uszy += 1
                     
-                    if girek_obrona <= 0:
-                        $ girek_uszy += 1
+                    if jaruzel_obrona <= 0:
+                        $ jaruzel_uszy += 1
 
-                    if jaruzel_uszy == 1 and urban_zly_uszy == 1 and girek_uszy == 1 and jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                    if girek_uszy == 1 and urban_zly_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
                         show uszy1 zorder 15 at head_wrog1
                         show uszy3 zorder 15 at head_wrog2
-                        "{i}Jaruzel, Jerzy Urban i Girek skupili się na uszach Urbana{/i}"
+                        "{i}Girek, Jerzy Urban i Jaruzel skupili się na uszach Urbana{/i}"
                     
                     else:
-                        if jaruzel_uszy == 1 and urban_zly_uszy == 1 and jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1:
+                        if girek_uszy == 1 and urban_zly_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1:
                             show uszy2 zorder 15 at head_wrog3
                             show uszy1 zorder 15 at head_wrog1
-                            "{i}Jaruzel i Jerzy Urban skupili się na uszach Urbana{/i}"
+                            "{i}Girek i Jerzy Urban skupili się na uszach Urbana{/i}"
                         
                         else:
-                            if urban_zly_uszy == 1 and girek_uszy == 1 and urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                            if urban_zly_uszy == 1 and jaruzel_uszy == 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                                 show uszy2 zorder 15 at head_wrog3
                                 show uszy3 zorder 15 at head_wrog2
-                                "{i}Jerzy Urban i Girek skupili się na uszach Urbana{/i}"
+                                "{i}Jerzy Urban i Jaruzel skupili się na uszach Urbana{/i}"
                             
                             else:
-                                if jaruzel_uszy == 1 and girek_uszy == 1 and jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                                if girek_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                                     show uszy3 zorder 15 at head_wrog2
                                     show uszy1 zorder 15 at head_wrog1
-                                    "{i}Jaruzel i Girek skupili się na uszach Urbana{/i}"
+                                    "{i}Girek i Jaruzel skupili się na uszach Urbana{/i}"
                                 
                                 else:
-                                    if jaruzel_uszy == 1 and jaruzel_hp_now >= 1:
+                                    if girek_uszy == 1 and girek_hp_now >= 1:
                                         show uszy1 zorder 15 at head_wrog1
-                                        "{i}Jaruzel skupił się na uszach Urbana{/i}"
+                                        "{i}Girek skupił się na uszach Urbana{/i}"
                                     
                                     else:
                                         if urban_zly_uszy == 1 and urban_zly_hp_now >= 1:
@@ -10379,9 +10384,9 @@ label fight111:
                                             "{i}Jerzy Urban skupił się na uszach Urbana{/i}"
 
                                         else:
-                                            if girek_uszy == 1 and girek_hp_now >= 1:
+                                            if jaruzel_uszy == 1 and jaruzel_hp_now >= 1:
                                                 show uszy3 zorder 15 at head_wrog2
-                                                "{i}Girek skupił się na uszach Urbana{/i}"
+                                                "{i}Jaruzel skupił się na uszach Urbana{/i}"
 
                                             else:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
@@ -10411,7 +10416,7 @@ label fight111:
                     jump faza_fight113
 
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ zyd_min_attack_now += 1
 
             menu:
@@ -10509,56 +10514,6 @@ label fight111:
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= zyd_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= zyd_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -10584,7 +10539,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= zyd_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= zyd_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= zyd_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
@@ -10617,11 +10622,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
@@ -10634,7 +10639,7 @@ label fight111:
                                         $ zyd_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:
                                 if zyd_weapon >= 1:
@@ -10662,11 +10667,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= zyd_attack
+                                            $ girek_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -10680,7 +10685,7 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+                                    $ girek_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -10696,13 +10701,13 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 4:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= zyd_attack * 2
+                                            $ girek_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -10716,13 +10721,13 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ jaruzel_hp_now -= zyd_attack
+                                    $ girek_hp_now -= zyd_attack
 
-                                    if zyd_przepychaczka == 4 and jaruzel_stun == 0:
+                                    if zyd_przepychaczka == 4 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -10881,11 +10886,11 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
@@ -10898,7 +10903,7 @@ label fight111:
                                         $ zyd_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:  
                                 if zyd_weapon >= 1:
@@ -10926,11 +10931,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= zyd_attack
+                                            $ jaruzel_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -10944,7 +10949,7 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ girek_hp_now -= int(zyd_attack / 2)
+                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -10960,13 +10965,13 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 4:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= zyd_attack * 2
+                                            $ jaruzel_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -10980,13 +10985,13 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ girek_hp_now -= zyd_attack
+                                    $ jaruzel_hp_now -= zyd_attack
 
-                                    if zyd_przepychaczka == 4 and girek_stun == 0:
+                                    if zyd_przepychaczka == 4 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -11042,7 +11047,7 @@ label fight111:
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items_fight113
 
-                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and jaruzel_pager == 0 and jaruzel_hp_now >= 1 or pager_boom == 0 and urban_zly_pager == 0 and urban_zly_hp_now >= 1 or pager_boom == 0 and girek_pager == 0 and girek_hp_now >= 1:
+                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and girek_pager == 0 and girek_hp_now >= 1 or pager_boom == 0 and urban_zly_pager == 0 and urban_zly_hp_now >= 1 or pager_boom == 0 and jaruzel_pager == 0 and jaruzel_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
 
@@ -11055,14 +11060,14 @@ label fight111:
                     menu:
                         "{b}Komu?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_pager == 0:
+                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
-                            $ jaruzel_pager += 1
+                            $ girek_pager += 1
                             
                             show pager1 zorder 15 at bok_wrog1
-                            "{i}Jaruzel kupił pager od Żyda{/i}"
+                            "{i}Girek kupił pager od Żyda{/i}"
 
                             jump faza_fight113
 
@@ -11077,18 +11082,18 @@ label fight111:
 
                             jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_pager == 0:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
-                            $ girek_pager += 1
+                            $ jaruzel_pager += 1
                             
                             show pager3 zorder 15 at bok_wrog2
-                            "{i}Girek kupił pager od Żyda{/i}"
+                            "{i}Jaruzel kupił pager od Żyda{/i}"
 
                             jump faza_fight113
                 
-                "{b}Wysadź Pagery{/b}" if jaruzel_pager >= 1 and pager_boom == 0 or urban_zly_pager >= 1 and pager_boom == 0 or girek_pager >= 1 and pager_boom == 0:
+                "{b}Wysadź Pagery{/b}" if girek_pager >= 1 and pager_boom == 0 or urban_zly_pager >= 1 and pager_boom == 0 or jaruzel_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
@@ -11102,44 +11107,44 @@ label fight111:
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
                     play sound "audio/sfx/boom.mp3" 
 
-                    if jaruzel_pager == 1 and urban_zly_pager == 1 and girek_pager == 1:
-                        $ jaruzel_hp_now -= 10
+                    if girek_pager == 1 and urban_zly_pager == 1 and jaruzel_pager == 1:
                         $ girek_hp_now -= 10
+                        $ jaruzel_hp_now -= 10
                         $ urban_zly_hp_now -= 10
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
-                        "{i}Jaruzel, Jerzy Urban i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                        "{i}Girek, Jerzy Urban i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                             
                     else:
-                        if jaruzel_pager == 1 and urban_zly_pager == 1:
-                            $ jaruzel_hp_now -= 10
+                        if girek_pager == 1 and urban_zly_pager == 1:
+                            $ girek_hp_now -= 10
                             $ urban_zly_hp_now -= 10
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
-                            "{i}Jaruzel i Jerzy Urban w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                            "{i}Girek i Jerzy Urban w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                 
                         else:
-                            if urban_zly_pager == 1 and girek_pager == 1:
-                                $ girek_hp_now -= 10
+                            if urban_zly_pager == 1 and jaruzel_pager == 1:
+                                $ jaruzel_hp_now -= 10
                                 $ urban_zly_hp_now -= 10
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
-                                "{i}Jerzy Urban i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                                "{i}Jerzy Urban i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                     
                             else:
-                                if jaruzel_pager == 1 and girek_pager == 1:
-                                    $ jaruzel_hp_now -= 10
+                                if girek_pager == 1 and jaruzel_pager == 1:
                                     $ girek_hp_now -= 10
+                                    $ jaruzel_hp_now -= 10
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
-                                    "{i}Jaruzel i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                                    "{i}Girek i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                         
                                 else:
-                                    if jaruzel_pager == 1:
-                                        $ jaruzel_hp_now -= 10
+                                    if girek_pager == 1:
+                                        $ girek_hp_now -= 10
                                         show eksplozja1 zorder 16 at bok_wrog1
-                                        "{i}Jaruzel w wyniku ekspolzji Pageru stracił 10HP{/i}"
+                                        "{i}Girek w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if urban_zly_pager == 1:
@@ -11148,10 +11153,10 @@ label fight111:
                                             "{i}Jerzy Urban w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
-                                            if girek_pager == 1:
-                                                $ girek_hp_now -= 10
+                                            if jaruzel_pager == 1:
+                                                $ jaruzel_hp_now -= 10
                                                 show eksplozja3 zorder 16 at bok_wrog2
-                                                "{i}Girek w wyniku ekspolzji Pageru stracił 10HP{/i}"
+                                                "{i}Jaruzel w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                     hide red_button
                     hide pager1
@@ -11188,7 +11193,7 @@ label fight111:
                     jump faza_fight113
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ kazuma_min_attack_now += 1
 
             menu:
@@ -11286,9 +11291,9 @@ label fight111:
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        if girek_hp_now >= 1:
+                            if girek_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -11301,19 +11306,19 @@ label fight111:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                 
                             else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                 else:
-                                    $ jaruzel_hp_now -= kazuma_attack
+                                    $ girek_hp_now -= kazuma_attack
                         
                         if urban_zly_hp_now >= 1:
                             if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -11336,9 +11341,9 @@ label fight111:
                                 else:
                                     $ urban_zly_hp_now -= kazuma_attack
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -11351,17 +11356,17 @@ label fight111:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                 
                             else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(v_attack / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(v_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                 else:
-                                    $ girek_hp_now -= kazuma_attack
+                                    $ jaruzel_hp_now -= kazuma_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
@@ -11394,11 +11399,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
@@ -11411,7 +11416,7 @@ label fight111:
                                         $ kazuma_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:
                                 if kazuma_weapon >= 1:
@@ -11439,11 +11444,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= kazuma_attack
+                                            $ girek_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -11457,7 +11462,7 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
+                                    $ girek_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -11473,13 +11478,13 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 5:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= kazuma_attack * 2
+                                            $ girek_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -11493,13 +11498,13 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ jaruzel_hp_now -= kazuma_attack
+                                    $ girek_hp_now -= kazuma_attack
 
-                                    if kazuma_przepychaczka == 5 and jaruzel_stun == 0:
+                                    if kazuma_przepychaczka == 5 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -11658,11 +11663,11 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
@@ -11675,7 +11680,7 @@ label fight111:
                                         $ kazuma_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:
                                 if kazuma_weapon >= 1:
@@ -11703,11 +11708,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= kazuma_attack
+                                            $ jaruzel_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -11721,7 +11726,7 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ girek_hp_now -= int(kazuma_attack / 2)
+                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -11737,13 +11742,13 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 5:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= kazuma_attack * 2
+                                            $ jaruzel_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -11757,13 +11762,13 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight113
 
-                                    $ girek_hp_now -= kazuma_attack
+                                    $ jaruzel_hp_now -= kazuma_attack
 
-                                    if kazuma_przepychaczka == 5 and girek_stun == 0:
+                                    if kazuma_przepychaczka == 5 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -11819,7 +11824,7 @@ label fight111:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight113
 
-                "{b}Steal{/b}" if jaruzel_weapon >= 1 or urban_zly_weapon >= 1 or girek_weapon >= 1:
+                "{b}Steal{/b}" if girek_weapon >= 1 or urban_zly_weapon >= 1 or jaruzel_weapon >= 1:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11832,50 +11837,50 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
+                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
                             kazuma "Steal!"
-                            if jaruzel_obrona >= 1:
+                            if girek_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
-                                "{i}Jaruzel obronił się przed umiejętnością “Steal“{/i}"
+                                "{i}Girek obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight113
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
-                                if jaruzel_sex == 0:
+                                if girek_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if jaruzel_max_attack_now < jaruzel_max_attack:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
-                                            $ jaruzel_max_attack_now -= 2
+                                        if girek_max_attack_now < girek_max_attack:
+                                            $ girek_max_attack_now_true = 2
+                                            $ girek_min_attack_now_true = 0
+                                            $ girek_min_attack_now = girek_min_attack_now_true
+                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            $ girek_max_attack_now -= 2
                                         
                                         else:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            $ girek_max_attack_now_true = 2
+                                            $ girek_min_attack_now_true = 0
+                                            $ girek_min_attack_now = girek_min_attack_now_true
+                                            $ girek_max_attack_now = girek_max_attack_now_true
 
-                                        $ jaruzel_weapon -= 1
+                                        $ girek_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik1  
+                                            show girek_weapon zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik2  
+                                            show girek_weapon zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik3 
+                                            show girek_weapon zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Jaruzel.  \nStatystyki Jaruzel zostały stale drastycznie osłabione.{/i}"
-                                        hide jaruzel_weapon
+                                        "{i}Udało sie ukraść broń Girek.  \nStatystyki Girek zostały stale drastycznie osłabione.{/i}"
+                                        hide girek_weapon
                                         hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
+                                        "{i}Nie udało sie ukraść broni Girek{/i}"
                                         hide chwyta
                         
                                 else:
@@ -11892,16 +11897,16 @@ label fight111:
                                         play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
-                                        jaruzel "Nie! Oddaj mi moje majtki!"
+                                        girek "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Jaruzel.  \nJaruzel poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ jaruzel_hp_now = 0
+                                        "{i}Udało sie ukraść bieliznę Girek.  \nGirek poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ girek_hp_now = 0
                                         hide majtki
                                         hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
+                                        "{i}Nie udało sie ukraść broni Girek{/i}"
                                         hide chwyta
                                         
                                 jump faza_fight113
@@ -11980,50 +11985,50 @@ label fight111:
                                         
                                 jump faza_fight113
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
                             kazuma "Steal!"
-                            if girek_obrona >= 1:
+                            if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
-                                "{i}Girek obronił się przed umiejętnością “Steal“{/i}"
+                                "{i}Jaruzel obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight113
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
-                                if girek_sex == 0:
+                                if jaruzel_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if girek_max_attack_now < girek_max_attack:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
-                                            $ girek_max_attack_now -= 2
+                                        if jaruzel_max_attack_now < jaruzel_max_attack:
+                                            $ jaruzel_max_attack_now_true = 2
+                                            $ jaruzel_min_attack_now_true = 0
+                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            $ jaruzel_max_attack_now -= 2
                                         
                                         else:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            $ jaruzel_max_attack_now_true = 2
+                                            $ jaruzel_min_attack_now_true = 0
+                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
                                         
-                                        $ girek_weapon -= 1
+                                        $ jaruzel_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show girek_weapon zorder 15 at weapon_sojusznik1  
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show girek_weapon zorder 15 at weapon_sojusznik2  
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show girek_weapon zorder 15 at weapon_sojusznik3 
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Girek.  \nStatystyki Girek zostały stale drastycznie osłabione.{/i}"
-                                        hide girek_weapon
+                                        "{i}Udało sie ukraść broń Jaruzel.  \nStatystyki Jaruzel zostały stale drastycznie osłabione.{/i}"
+                                        hide jaruzel_weapon
                                         hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Girek{/i}"
+                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
                                         hide chwyta
                         
                                 else:
@@ -12040,16 +12045,16 @@ label fight111:
                                         play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
-                                        girek "Nie! Oddaj mi moje majtki!"
+                                        jaruzel "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Girek.  \nGirek poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ girek_hp_now = 0
+                                        "{i}Udało sie ukraść bieliznę Jaruzel.  \nJaruzel poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ jaruzel_hp_now = 0
                                         hide majtki
                                         hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Girek{/i}"
+                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
                                         hide chwyta
                                         
                                 jump faza_fight113
@@ -12081,29 +12086,29 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide ruch
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -12126,24 +12131,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -12391,7 +12396,7 @@ label fight111:
                     jump faza_fight114
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ luszcz_min_attack_now += 1
 
             menu:
@@ -12489,56 +12494,6 @@ label fight111:
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= luszcz_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= luszcz_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -12564,7 +12519,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= luszcz_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= luszcz_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+
+                                    $ dmg = int(luszcz_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= luszcz_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
@@ -12597,11 +12602,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
@@ -12614,7 +12619,7 @@ label fight111:
                                         $ luszcz_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:  
                                 if luszcz_weapon >= 1:
@@ -12642,11 +12647,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= luszcz_attack
+                                            $ girek_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -12660,7 +12665,7 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+                                    $ girek_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -12676,13 +12681,13 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 2:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= luszcz_attack * 2
+                                            $ girek_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -12696,13 +12701,13 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ jaruzel_hp_now -= luszcz_attack
+                                    $ girek_hp_now -= luszcz_attack
 
-                                    if luszcz_przepychaczka == 2 and jaruzel_stun == 0:
+                                    if luszcz_przepychaczka == 2 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -12861,11 +12866,11 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
@@ -12878,7 +12883,7 @@ label fight111:
                                         $ luszcz_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:  
                                 if luszcz_weapon >= 1:
@@ -12906,11 +12911,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= luszcz_attack
+                                            $ jaruzel_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -12924,7 +12929,7 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ girek_hp_now -= int(luszcz_attack / 2)
+                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
 
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -12940,13 +12945,13 @@ label fight111:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 2:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 2:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= luszcz_attack * 2
+                                            $ jaruzel_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -12960,13 +12965,13 @@ label fight111:
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ girek_hp_now -= luszcz_attack
+                                    $ jaruzel_hp_now -= luszcz_attack
 
-                                    if luszcz_przepychaczka == 2 and girek_stun == 0:
+                                    if luszcz_przepychaczka == 2 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -13311,11 +13316,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
@@ -13328,12 +13333,12 @@ label fight111:
                                         $ eminem_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:  
                                 play sound "audio/sfx/reka.mp3"     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(eminem_attack / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(eminem_attack / 2)
 
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -13348,7 +13353,7 @@ label fight111:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                 else:
-                                    $ jaruzel_hp_now -= eminem_attack
+                                    $ girek_hp_now -= eminem_attack
                                 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
@@ -13415,11 +13420,11 @@ label fight111:
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
@@ -13432,12 +13437,12 @@ label fight111:
                                         $ eminem_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:
                                 play sound "audio/sfx/reka.mp3"
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(eminem_attack / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(eminem_attack / 2)
 
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -13452,7 +13457,7 @@ label fight111:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                 else:
-                                    $ girek_hp_now -= eminem_attack
+                                    $ jaruzel_hp_now -= eminem_attack
 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
@@ -13511,79 +13516,79 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
-                            if jaruzel_obrona >= 1:
+                            if girek_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
-                                "{i}Jaruzel obronił się przed szlamem{/i}"
+                                "{i}Girek obronił się przed szlamem{/i}"
                                 jump faza_fight114
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if jaruzel_min_attack_now >= 28 and jaruzel_min_attack_now <= 30:
-                                    $ jaruzel_min_attack_now -= 10
+                                if girek_min_attack_now >= 28 and girek_min_attack_now <= 30:
+                                    $ girek_min_attack_now -= 10
                                 else:
-                                    if jaruzel_min_attack_now >= 25 and jaruzel_min_attack_now <= 27:
-                                        $ jaruzel_min_attack_now -= 9
+                                    if girek_min_attack_now >= 25 and girek_min_attack_now <= 27:
+                                        $ girek_min_attack_now -= 9
                                     else:
-                                        if jaruzel_min_attack_now >= 22 and jaruzel_min_attack_now <= 24:
-                                            $ jaruzel_min_attack_now -= 8
+                                        if girek_min_attack_now >= 22 and girek_min_attack_now <= 24:
+                                            $ girek_min_attack_now -= 8
                                         else:
-                                            if jaruzel_min_attack_now >= 19 and jaruzel_min_attack_now <= 21:
-                                                $ jaruzel_min_attack_now -= 7
+                                            if girek_min_attack_now >= 19 and girek_min_attack_now <= 21:
+                                                $ girek_min_attack_now -= 7
                                             else:
-                                                if jaruzel_min_attack_now >= 16 and jaruzel_min_attack_now <= 18:
-                                                    $ jaruzel_min_attack_now -= 6
+                                                if girek_min_attack_now >= 16 and girek_min_attack_now <= 18:
+                                                    $ girek_min_attack_now -= 6
                                                 else:
-                                                    if jaruzel_min_attack_now >= 13 and jaruzel_min_attack_now <= 15:
-                                                        $ jaruzel_min_attack_now -= 5
+                                                    if girek_min_attack_now >= 13 and girek_min_attack_now <= 15:
+                                                        $ girek_min_attack_now -= 5
                                                     else:   
-                                                        if jaruzel_min_attack_now >= 10 and jaruzel_min_attack_now <= 12:
-                                                            $ jaruzel_min_attack_now -= 4
+                                                        if girek_min_attack_now >= 10 and girek_min_attack_now <= 12:
+                                                            $ girek_min_attack_now -= 4
                                                         else:
-                                                            if jaruzel_min_attack_now >= 7 and jaruzel_min_attack_now <= 9:
-                                                                $ jaruzel_min_attack_now -= 3
+                                                            if girek_min_attack_now >= 7 and girek_min_attack_now <= 9:
+                                                                $ girek_min_attack_now -= 3
                                                             else:
-                                                                if jaruzel_min_attack_now >= 4 and jaruzel_min_attack_now <= 6:
-                                                                    $ jaruzel_min_attack_now -= 2
+                                                                if girek_min_attack_now >= 4 and girek_min_attack_now <= 6:
+                                                                    $ girek_min_attack_now -= 2
                                                                 else:
-                                                                    if jaruzel_min_attack_now >= 1 and jaruzel_min_attack_now <= 3:
-                                                                        $ jaruzel_min_attack_now -= 1
+                                                                    if girek_min_attack_now >= 1 and girek_min_attack_now <= 3:
+                                                                        $ girek_min_attack_now -= 1
 
 
-                                if jaruzel_max_attack_now >= 28 and jaruzel_max_attack_now <= 30:
-                                    $ jaruzel_max_attack_now -= 10
+                                if girek_max_attack_now >= 28 and girek_max_attack_now <= 30:
+                                    $ girek_max_attack_now -= 10
                                 else:
-                                    if jaruzel_max_attack_now >= 25 and jaruzel_max_attack_now <= 27:
-                                        $ jaruzel_max_attack_now -= 9
+                                    if girek_max_attack_now >= 25 and girek_max_attack_now <= 27:
+                                        $ girek_max_attack_now -= 9
                                     else:
-                                        if jaruzel_max_attack_now >= 22 and jaruzel_max_attack_now <= 24:
-                                            $ jaruzel_max_attack_now -= 8
+                                        if girek_max_attack_now >= 22 and girek_max_attack_now <= 24:
+                                            $ girek_max_attack_now -= 8
                                         else:
-                                            if jaruzel_max_attack_now >= 19 and jaruzel_max_attack_now <= 21:
-                                                $ jaruzel_max_attack_now -= 7
+                                            if girek_max_attack_now >= 19 and girek_max_attack_now <= 21:
+                                                $ girek_max_attack_now -= 7
                                             else:
-                                                if jaruzel_max_attack_now >= 16 and jaruzel_max_attack_now <= 18:
-                                                    $ jaruzel_max_attack_now -= 6
+                                                if girek_max_attack_now >= 16 and girek_max_attack_now <= 18:
+                                                    $ girek_max_attack_now -= 6
                                                 else:
-                                                    if jaruzel_max_attack_now >= 13 and jaruzel_max_attack_now <= 15:
-                                                        $ jaruzel_max_attack_now -= 5
+                                                    if girek_max_attack_now >= 13 and girek_max_attack_now <= 15:
+                                                        $ girek_max_attack_now -= 5
                                                     else:
-                                                        if jaruzel_max_attack_now >= 10 and jaruzel_max_attack_now <= 12:
-                                                            $ jaruzel_max_attack_now -= 4
+                                                        if girek_max_attack_now >= 10 and girek_max_attack_now <= 12:
+                                                            $ girek_max_attack_now -= 4
                                                         else:
-                                                            if jaruzel_max_attack_now >= 7 and jaruzel_max_attack_now <= 9:
-                                                                $ jaruzel_max_attack_now -= 3
+                                                            if girek_max_attack_now >= 7 and girek_max_attack_now <= 9:
+                                                                $ girek_max_attack_now -= 3
                                                             else:
-                                                                if jaruzel_max_attack_now >= 4 and jaruzel_max_attack_now <= 6:
-                                                                    $ jaruzel_max_attack_now -= 2
+                                                                if girek_max_attack_now >= 4 and girek_max_attack_now <= 6:
+                                                                    $ girek_max_attack_now -= 2
                                                                 else:
-                                                                    if jaruzel_max_attack_now >= 1 and jaruzel_max_attack_now <= 3:
-                                                                        $ jaruzel_max_attack_now -= 1
+                                                                    if girek_max_attack_now >= 1 and girek_max_attack_now <= 3:
+                                                                        $ girek_max_attack_now -= 1
                                 
-                                $ jaruzel_slime += 1
+                                $ girek_slime += 1
                                 show slime zorder 15 at center_wrog1 
-                                "{i}Statystyki Jaruzel zostały osłabione{/i}"
+                                "{i}Statystyki Girek zostały osłabione{/i}"
                                 jump faza_fight114
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
@@ -13661,79 +13666,79 @@ label fight111:
                                 "{i}Statystyki Jerzy Urban zostały osłabione{/i}"
                                 jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
-                            if girek_obrona >= 1:
+                            if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
-                                "{i}Girek obronił się przed szlamem{/i}"
+                                "{i}Jaruzel obronił się przed szlamem{/i}"
                                 jump faza_fight114
                             else:
                                 play sound "audio/sfx/slime.mp3"
-                                if girek_min_attack_now >= 28 and girek_min_attack_now <= 30:
-                                    $ girek_min_attack_now -= 10
+                                if jaruzel_min_attack_now >= 28 and jaruzel_min_attack_now <= 30:
+                                    $ jaruzel_min_attack_now -= 10
                                 else:
-                                    if girek_min_attack_now >= 25 and girek_min_attack_now <= 27:
-                                        $ girek_min_attack_now -= 9
+                                    if jaruzel_min_attack_now >= 25 and jaruzel_min_attack_now <= 27:
+                                        $ jaruzel_min_attack_now -= 9
                                     else:
-                                        if girek_min_attack_now >= 22 and girek_min_attack_now <= 24:
-                                            $ girek_min_attack_now -= 8
+                                        if jaruzel_min_attack_now >= 22 and jaruzel_min_attack_now <= 24:
+                                            $ jaruzel_min_attack_now -= 8
                                         else:
-                                            if girek_min_attack_now >= 19 and girek_min_attack_now <= 21:
-                                                $ girek_min_attack_now -= 7
+                                            if jaruzel_min_attack_now >= 19 and jaruzel_min_attack_now <= 21:
+                                                $ jaruzel_min_attack_now -= 7
                                             else:
-                                                if girek_min_attack_now >= 16 and girek_min_attack_now <= 18:
-                                                    $ girek_min_attack_now -= 6
+                                                if jaruzel_min_attack_now >= 16 and jaruzel_min_attack_now <= 18:
+                                                    $ jaruzel_min_attack_now -= 6
                                                 else:
-                                                    if girek_min_attack_now >= 13 and girek_min_attack_now <= 15:
-                                                        $ girek_min_attack_now -= 5
+                                                    if jaruzel_min_attack_now >= 13 and jaruzel_min_attack_now <= 15:
+                                                        $ jaruzel_min_attack_now -= 5
                                                     else:   
-                                                        if girek_min_attack_now >= 10 and girek_min_attack_now <= 12:
-                                                            $ girek_min_attack_now -= 4
+                                                        if jaruzel_min_attack_now >= 10 and jaruzel_min_attack_now <= 12:
+                                                            $ jaruzel_min_attack_now -= 4
                                                         else:
-                                                            if girek_min_attack_now >= 7 and girek_min_attack_now <= 9:
-                                                                $ girek_min_attack_now -= 3
+                                                            if jaruzel_min_attack_now >= 7 and jaruzel_min_attack_now <= 9:
+                                                                $ jaruzel_min_attack_now -= 3
                                                             else:
-                                                                if girek_min_attack_now >= 4 and girek_min_attack_now <= 6:
-                                                                    $ girek_min_attack_now -= 2
+                                                                if jaruzel_min_attack_now >= 4 and jaruzel_min_attack_now <= 6:
+                                                                    $ jaruzel_min_attack_now -= 2
                                                                 else:
-                                                                    if girek_min_attack_now >= 1 and girek_min_attack_now <= 3:
-                                                                        $ girek_min_attack_now -= 1
+                                                                    if jaruzel_min_attack_now >= 1 and jaruzel_min_attack_now <= 3:
+                                                                        $ jaruzel_min_attack_now -= 1
 
 
-                                if girek_max_attack_now >= 28 and girek_max_attack_now <= 30:
-                                    $ girek_max_attack_now -= 10
+                                if jaruzel_max_attack_now >= 28 and jaruzel_max_attack_now <= 30:
+                                    $ jaruzel_max_attack_now -= 10
                                 else:
-                                    if girek_max_attack_now >= 25 and girek_max_attack_now <= 27:
-                                        $ girek_max_attack_now -= 9
+                                    if jaruzel_max_attack_now >= 25 and jaruzel_max_attack_now <= 27:
+                                        $ jaruzel_max_attack_now -= 9
                                     else:
-                                        if girek_max_attack_now >= 22 and girek_max_attack_now <= 24:
-                                            $ girek_max_attack_now -= 8
+                                        if jaruzel_max_attack_now >= 22 and jaruzel_max_attack_now <= 24:
+                                            $ jaruzel_max_attack_now -= 8
                                         else:
-                                            if girek_max_attack_now >= 19 and girek_max_attack_now <= 21:
-                                                $ girek_max_attack_now -= 7
+                                            if jaruzel_max_attack_now >= 19 and jaruzel_max_attack_now <= 21:
+                                                $ jaruzel_max_attack_now -= 7
                                             else:
-                                                if girek_max_attack_now >= 16 and girek_max_attack_now <= 18:
-                                                    $ girek_max_attack_now -= 6
+                                                if jaruzel_max_attack_now >= 16 and jaruzel_max_attack_now <= 18:
+                                                    $ jaruzel_max_attack_now -= 6
                                                 else:
-                                                    if girek_max_attack_now >= 13 and girek_max_attack_now <= 15:
-                                                        $ girek_max_attack_now -= 5
+                                                    if jaruzel_max_attack_now >= 13 and jaruzel_max_attack_now <= 15:
+                                                        $ jaruzel_max_attack_now -= 5
                                                     else:
-                                                        if girek_max_attack_now >= 10 and girek_max_attack_now <= 12:
-                                                            $ girek_max_attack_now -= 4
+                                                        if jaruzel_max_attack_now >= 10 and jaruzel_max_attack_now <= 12:
+                                                            $ jaruzel_max_attack_now -= 4
                                                         else:
-                                                            if girek_max_attack_now >= 7 and girek_max_attack_now <= 9:
-                                                                $ girek_max_attack_now -= 3
+                                                            if jaruzel_max_attack_now >= 7 and jaruzel_max_attack_now <= 9:
+                                                                $ jaruzel_max_attack_now -= 3
                                                             else:
-                                                                if girek_max_attack_now >= 4 and girek_max_attack_now <= 6:
-                                                                    $ girek_max_attack_now -= 2
+                                                                if jaruzel_max_attack_now >= 4 and jaruzel_max_attack_now <= 6:
+                                                                    $ jaruzel_max_attack_now -= 2
                                                                 else:
-                                                                    if girek_max_attack_now >= 1 and girek_max_attack_now <= 3:
-                                                                        $ girek_max_attack_now -= 1
+                                                                    if jaruzel_max_attack_now >= 1 and jaruzel_max_attack_now <= 3:
+                                                                        $ jaruzel_max_attack_now -= 1
                                 
-                                $ girek_slime += 1
+                                $ jaruzel_slime += 1
                                 show slime zorder 15 at center_wrog2
-                                "{i}Statystyki Girek zostały osłabione{/i}"
+                                "{i}Statystyki Jaruzel zostały osłabione{/i}"
                                 jump faza_fight114
 
         if urban_fighter == 3:
@@ -13758,7 +13763,7 @@ label fight111:
                     jump faza_fight114 
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ urban_min_attack_now += 1
 
             menu:
@@ -13856,56 +13861,6 @@ label fight111:
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                    if ziemia == 3:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if urban_hp_now + kostka >= urban_hp:
-                                            $ urban_hp_now = urban_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ urban_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(urban_attack / 2)
-
-                                    $ dmg = int(urban_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= urban_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
-                                    if ziemia == 3:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if urban_hp_now + kostka >= urban_hp:
-                                            $ urban_hp_now = urban_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ urban_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(urban_attack / 2)
-
-                                    $ dmg = int(urban_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= urban_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -13931,7 +13886,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= urban_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    if ziemia == 3:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if urban_hp_now + kostka >= urban_hp:
+                                            $ urban_hp_now = urban_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ urban_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= urban_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Jerzego Urbana został zablokowany{/i}"
+                                    if ziemia == 3:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if urban_hp_now + kostka >= urban_hp:
+                                            $ urban_hp_now = urban_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ urban_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(urban_attack / 2)
+
+                                    $ dmg = int(urban_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= urban_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
@@ -13964,12 +13969,12 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
                             label urban_fight117:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                                if jaruzel_obrona >= 2:
+                                if girek_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
@@ -13982,10 +13987,10 @@ label fight111:
                                             $ urban_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                    $ jaruzel_obrona = 1
+                                    $ girek_obrona = 1
                                                                 
                                 else:
-                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and jaruzel_obrona == 1 and stop == 3 or urban_attack == 2 and jaruzel_obrona == 1 and stop == 3:
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and girek_obrona == 1 and stop == 3 or urban_attack == 2 and girek_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
                                         jump urban_fight117
@@ -14016,11 +14021,11 @@ label fight111:
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
 
-                                        if jaruzel_obrona == 1:
+                                        if girek_obrona == 1:
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= urban_attack
+                                                    $ girek_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -14034,7 +14039,7 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight114
 
-                                            $ jaruzel_hp_now -= int(urban_attack / 2)
+                                            $ girek_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -14050,13 +14055,13 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                         else:
                                             if bazooka == 3:
-                                                $ jaruzel_poison = 3
+                                                $ girek_poison = 3
                                                 show snake31 zorder 15 at center_wrog1
                                             
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ jaruzel_hp_now -= urban_attack * 2
+                                                    $ girek_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -14070,13 +14075,13 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight114
 
-                                            $ jaruzel_hp_now -= urban_attack
+                                            $ girek_hp_now -= urban_attack
 
-                                            if urban_przepychaczka == 3 and jaruzel_stun == 0:
+                                            if urban_przepychaczka == 3 and girek_stun == 0:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
                                                     show stun1 zorder 15 at head_wrog1
-                                                    $ jaruzel_stun = 1
+                                                    $ girek_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -14242,12 +14247,12 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                 jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
                             label urban_fight119:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
-                                if girek_obrona >= 2:
+                                if jaruzel_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
@@ -14260,10 +14265,10 @@ label fight111:
                                             $ urban_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                    $ girek_obrona = 1
+                                    $ jaruzel_obrona = 1
                                                                 
                                 else:
-                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and girek_obrona == 1 and stop == 3 or urban_attack == 2 and girek_obrona == 1 and stop == 3:
+                                    if urban_attack == 1 and stop == 3 or urban_attack == 3 and jaruzel_obrona == 1 and stop == 3 or urban_attack == 2 and jaruzel_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
                                         jump urban_fight119
@@ -14294,11 +14299,11 @@ label fight111:
                                         else:
                                             play sound "audio/sfx/reka.mp3" 
 
-                                        if girek_obrona == 1:
+                                        if jaruzel_obrona == 1:
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ girek_hp_now -= urban_attack
+                                                    $ jaruzel_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -14312,7 +14317,7 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight114
 
-                                            $ girek_hp_now -= int(urban_attack / 2)
+                                            $ jaruzel_hp_now -= int(urban_attack / 2)
 
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -14328,13 +14333,13 @@ label fight111:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                         else:
                                             if bazooka == 3:
-                                                $ girek_poison = 3
+                                                $ jaruzel_poison = 3
                                                 show snake33 zorder 15 at center_wrog2
                                             
                                             if patyk == 3:
                                                 $ kostka = renpy.random.randint(1, 3)
                                                 if kostka == 3:
-                                                    $ girek_hp_now -= urban_attack * 2
+                                                    $ jaruzel_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -14348,13 +14353,13 @@ label fight111:
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                                     jump faza_fight114
 
-                                            $ girek_hp_now -= urban_attack
+                                            $ jaruzel_hp_now -= urban_attack
 
-                                            if urban_przepychaczka == 3 and girek_stun == 0:
+                                            if urban_przepychaczka == 3 and jaruzel_stun == 0:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
                                                     show stun3 zorder 15 at head_wrog2
-                                                    $ girek_stun = 1
+                                                    $ jaruzel_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
                                                         $ kostka = renpy.random.randint(1, 2)
@@ -14423,43 +14428,43 @@ label fight111:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if jaruzel_obrona <= 0:
-                        $ jaruzel_uszy += 1
+                    if girek_obrona <= 0:
+                        $ girek_uszy += 1
                     
                     if urban_zly_obrona <= 0:
                         $ urban_zly_uszy += 1
                     
-                    if girek_obrona <= 0:
-                        $ girek_uszy += 1
+                    if jaruzel_obrona <= 0:
+                        $ jaruzel_uszy += 1
 
-                    if jaruzel_uszy == 1 and urban_zly_uszy == 1 and girek_uszy == 1 and jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                    if girek_uszy == 1 and urban_zly_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
                         show uszy1 zorder 15 at head_wrog1
                         show uszy3 zorder 15 at head_wrog2
-                        "{i}Jaruzel, Jerzy Urban i Girek skupili się na uszach Urbana{/i}"
+                        "{i}Girek, Jerzy Urban i Jaruzel skupili się na uszach Urbana{/i}"
                     
                     else:
-                        if jaruzel_uszy == 1 and urban_zly_uszy == 1 and jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1: 
+                        if girek_uszy == 1 and urban_zly_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1: 
                             show uszy2 zorder 15 at head_wrog3
                             show uszy1 zorder 15 at head_wrog1
-                            "{i}Jaruzel i Jerzy Urban skupili się na uszach Urbana{/i}"
+                            "{i}Girek i Jerzy Urban skupili się na uszach Urbana{/i}"
                         
                         else:
-                            if urban_zly_uszy == 1 and girek_uszy == 1 and urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                            if urban_zly_uszy == 1 and jaruzel_uszy == 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                                 show uszy2 zorder 15 at head_wrog3
                                 show uszy3 zorder 15 at head_wrog2
-                                "{i}Jerzy Urban i Girek skupili się na uszach Urbana{/i}"
+                                "{i}Jerzy Urban i Jaruzel skupili się na uszach Urbana{/i}"
                             
                             else:
-                                if jaruzel_uszy == 1 and girek_uszy == 1 and jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                                if girek_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                                     show uszy1 zorder 15 at head_wrog1
                                     show uszy3 zorder 15 at head_wrog2
-                                    "{i}Jaruzel i Girek skupili się na uszach Urbana{/i}"
+                                    "{i}Girek i Jaruzel skupili się na uszach Urbana{/i}"
                                 
                                 else:
-                                    if jaruzel_uszy == 1 and jaruzel_hp_now >= 1:
+                                    if girek_uszy == 1 and girek_hp_now >= 1:
                                         show uszy1 zorder 15 at head_wrog1
-                                        "{i}Jaruzel skupił się na uszach Urbana{/i}"
+                                        "{i}Girek skupił się na uszach Urbana{/i}"
                                     
                                     else:
                                         if urban_zly_uszy == 1 and urban_zly_hp_now >= 1:
@@ -14467,9 +14472,9 @@ label fight111:
                                             "{i}Jerzy Urban skupił się na uszach Urbana{/i}"
 
                                         else:
-                                            if girek_uszy == 1 and girek_hp_now >= 1:
+                                            if jaruzel_uszy == 1 and jaruzel_hp_now >= 1:
                                                 show uszy3 zorder 15 at head_wrog2
-                                                "{i}Girek skupił się na uszach Urbana{/i}"
+                                                "{i}Jaruzel skupił się na uszach Urbana{/i}"
 
                                             else:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
@@ -14499,7 +14504,7 @@ label fight111:
                     jump faza_fight114
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ zyd_min_attack_now += 1
 
             menu:
@@ -14597,56 +14602,6 @@ label fight111:
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= zyd_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= zyd_attack
-
                         if girek_hp_now >= 1:
                             if girek_obrona >= 2:
                                 if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
@@ -14672,7 +14627,57 @@ label fight111:
                                 else:
                                     $ girek_hp_now -= zyd_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= zyd_attack
+
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+
+                                    $ dmg = int(zyd_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= zyd_attack
+                        
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
@@ -14705,11 +14710,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
@@ -14722,7 +14727,7 @@ label fight111:
                                         $ zyd_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:
                                 if zyd_weapon >= 1:
@@ -14750,11 +14755,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= zyd_attack
+                                            $ girek_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -14768,7 +14773,7 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+                                    $ girek_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -14784,13 +14789,13 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 4:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= zyd_attack * 2
+                                            $ girek_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -14804,13 +14809,13 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ jaruzel_hp_now -= zyd_attack
+                                    $ girek_hp_now -= zyd_attack
 
-                                    if zyd_przepychaczka == 4 and jaruzel_stun == 0:
+                                    if zyd_przepychaczka == 4 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -14969,11 +14974,11 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
@@ -14986,7 +14991,7 @@ label fight111:
                                         $ zyd_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:   
                                 if zyd_weapon >= 1:
@@ -15014,11 +15019,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= zyd_attack
+                                            $ jaruzel_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15032,7 +15037,7 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ girek_hp_now -= int(zyd_attack / 2)
+                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
 
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -15048,13 +15053,13 @@ label fight111:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 4:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 4:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= zyd_attack * 2
+                                            $ jaruzel_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15068,13 +15073,13 @@ label fight111:
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ girek_hp_now -= zyd_attack
+                                    $ jaruzel_hp_now -= zyd_attack
 
-                                    if zyd_przepychaczka == 4 and girek_stun == 0:
+                                    if zyd_przepychaczka == 4 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15130,7 +15135,7 @@ label fight111:
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items_fight115
 
-                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and jaruzel_pager == 0 and jaruzel_hp_now >= 1 or pager_boom == 0 and urban_zly_pager == 0 and urban_zly_hp_now >= 1 or pager_boom == 0 and girek_pager == 0 and girek_hp_now >= 1:
+                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and girek_pager == 0 and girek_hp_now >= 1 or pager_boom == 0 and urban_zly_pager == 0 and urban_zly_hp_now >= 1 or pager_boom == 0 and jaruzel_pager == 0 and jaruzel_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
 
@@ -15143,14 +15148,14 @@ label fight111:
                     menu:
                         "{b}Komu?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_pager == 0:
+                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
-                            $ jaruzel_pager += 1
+                            $ girek_pager += 1
                             
                             show pager1 zorder 15 at bok_wrog1
-                            "{i}Jaruzel kupił pager od Żyda{/i}"
+                            "{i}Girek kupił pager od Żyda{/i}"
 
                             jump faza_fight114
 
@@ -15165,18 +15170,18 @@ label fight111:
 
                             jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_pager == 0:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
-                            $ girek_pager += 1
+                            $ jaruzel_pager += 1
                             
                             show pager3 zorder 15 at bok_wrog2
-                            "{i}Girek kupił pager od Żyda{/i}"
+                            "{i}Jaruzel kupił pager od Żyda{/i}"
 
                             jump faza_fight114
                 
-                "{b}Wysadź Pagery{/b}" if jaruzel_pager >= 1 and pager_boom == 0 or urban_zly_pager >= 1 and pager_boom == 0 or girek_pager >= 1 and pager_boom == 0:
+                "{b}Wysadź Pagery{/b}" if girek_pager >= 1 and pager_boom == 0 or urban_zly_pager >= 1 and pager_boom == 0 or jaruzel_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
@@ -15190,44 +15195,44 @@ label fight111:
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
                     play sound "audio/sfx/boom.mp3" 
 
-                    if jaruzel_pager == 1 and urban_zly_pager == 1 and girek_pager == 1:
-                        $ jaruzel_hp_now -= 10
+                    if girek_pager == 1 and urban_zly_pager == 1 and jaruzel_pager == 1:
                         $ girek_hp_now -= 10
+                        $ jaruzel_hp_now -= 10
                         $ urban_zly_hp_now -= 10
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
-                        "{i}Jaruzel, Jerzy Urban i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                        "{i}Girek, Jerzy Urban i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                             
                     else:
-                        if jaruzel_pager == 1 and urban_zly_pager == 1:
-                            $ jaruzel_hp_now -= 10
+                        if girek_pager == 1 and urban_zly_pager == 1:
+                            $ girek_hp_now -= 10
                             $ urban_zly_hp_now -= 10
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
-                            "{i}Jaruzel i Jerzy Urban w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                            "{i}Girek i Jerzy Urban w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                 
                         else:
-                            if urban_zly_pager == 1 and girek_pager == 1:
-                                $ girek_hp_now -= 10
+                            if urban_zly_pager == 1 and jaruzel_pager == 1:
+                                $ jaruzel_hp_now -= 10
                                 $ urban_zly_hp_now -= 10
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
-                                "{i}Jerzy Urban i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                                "{i}Jerzy Urban i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                     
                             else:
-                                if jaruzel_pager == 1 and girek_pager == 1:
-                                    $ jaruzel_hp_now -= 10
+                                if girek_pager == 1 and jaruzel_pager == 1:
                                     $ girek_hp_now -= 10
+                                    $ jaruzel_hp_now -= 10
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
-                                    "{i}Jaruzel i Girek w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
+                                    "{i}Girek i Jaruzel w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
                                         
                                 else:
-                                    if jaruzel_pager == 1:
-                                        $ jaruzel_hp_now -= 10
+                                    if girek_pager == 1:
+                                        $ girek_hp_now -= 10
                                         show eksplozja1 zorder 16 at bok_wrog1
-                                        "{i}Jaruzel w wyniku ekspolzji Pageru stracił 10HP{/i}"
+                                        "{i}Girek w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if urban_zly_pager == 1:
@@ -15236,10 +15241,10 @@ label fight111:
                                             "{i}Jerzy Urban w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
-                                            if girek_pager == 1:
-                                                $ girek_hp_now -= 10
+                                            if jaruzel_pager == 1:
+                                                $ jaruzel_hp_now -= 10
                                                 show eksplozja3 zorder 16 at bok_wrog2
-                                                "{i}Girek w wyniku ekspolzji Pageru stracił 10HP{/i}"
+                                                "{i}Jaruzel w wyniku ekspolzji Pageru stracił 10HP{/i}"
                     
                     hide red_button
                     hide pager1
@@ -15276,7 +15281,7 @@ label fight111:
                     jump faza_fight114 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
-                if jaruzel_hp_now >= 1 and urban_zly_hp_now <= 0 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now >= 1 and girek_hp_now <= 0 or jaruzel_hp_now <= 0 and urban_zly_hp_now <= 0 and girek_hp_now >= 1:
+                if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ kazuma_min_attack_now += 1
                 
             menu:
@@ -15374,9 +15379,9 @@ label fight111:
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                        if girek_hp_now >= 1:
+                            if girek_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -15389,19 +15394,19 @@ label fight111:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                 
                             else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                 else:
-                                    $ jaruzel_hp_now -= kazuma_attack
+                                    $ girek_hp_now -= kazuma_attack
                         
                         if urban_zly_hp_now >= 1:
                             if urban_zly_obrona >= 2:
-                                if jaruzel_hp_now <= 0 and girek_hp_now <= 0:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -15424,9 +15429,9 @@ label fight111:
                                 else:
                                     $ urban_zly_hp_now -= kazuma_attack
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
@@ -15439,17 +15444,17 @@ label fight111:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                 
                             else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(v_attack / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(v_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                 else:
-                                    $ girek_hp_now -= kazuma_attack
+                                    $ jaruzel_hp_now -= kazuma_attack
                         
-                        if jaruzel_hp_now >= 1 and jaruzel_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or girek_hp_now >= 1 and girek_obrona <= 1:
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
@@ -15482,11 +15487,11 @@ label fight111:
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
+                        "{b}Girek{/b}" if girek_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if jaruzel_obrona >= 2:
+                            if girek_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
@@ -15499,7 +15504,7 @@ label fight111:
                                         $ kazuma_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
+                                $ girek_obrona = 1
                                                                
                             else:
                                 if kazuma_weapon >= 1:
@@ -15527,11 +15532,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if jaruzel_obrona == 1:
+                                if girek_obrona == 1:
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= kazuma_attack
+                                            $ girek_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15545,7 +15550,7 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
+                                    $ girek_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -15561,13 +15566,13 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 5:
-                                        $ jaruzel_poison = 3
+                                        $ girek_poison = 3
                                         show snake31 zorder 15 at center_wrog1
                                     
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ jaruzel_hp_now -= kazuma_attack * 2
+                                            $ girek_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15581,13 +15586,13 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ jaruzel_hp_now -= kazuma_attack
+                                    $ girek_hp_now -= kazuma_attack
 
-                                    if kazuma_przepychaczka == 5 and jaruzel_stun == 0:
+                                    if kazuma_przepychaczka == 5 and girek_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun1 zorder 15 at head_wrog1
-                                            $ jaruzel_stun = 1
+                                            $ girek_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15746,11 +15751,11 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if girek_obrona >= 2:
+                            if jaruzel_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
@@ -15763,7 +15768,7 @@ label fight111:
                                         $ kazuma_hp_now += kostka
                                         queue sound "audio/sfx/heal.mp3" 
                                         "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
+                                $ jaruzel_obrona = 1
                                                                
                             else:
                                 if kazuma_weapon >= 1:
@@ -15791,11 +15796,11 @@ label fight111:
                                 else:
                                     play sound "audio/sfx/reka.mp3" 
 
-                                if girek_obrona == 1:
+                                if jaruzel_obrona == 1:
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= kazuma_attack
+                                            $ jaruzel_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15809,7 +15814,7 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ girek_hp_now -= int(kazuma_attack / 2)
+                                    $ jaruzel_hp_now -= int(kazuma_attack / 2)
 
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
@@ -15825,13 +15830,13 @@ label fight111:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                 else:
                                     if bazooka == 5:
-                                        $ girek_poison = 3
+                                        $ jaruzel_poison = 3
                                         show snake33 zorder 15 at center_wrog2
                                     
                                     if patyk == 5:
                                         $ kostka = renpy.random.randint(1, 3)
                                         if kostka == 3:
-                                            $ girek_hp_now -= kazuma_attack * 2
+                                            $ jaruzel_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15845,13 +15850,13 @@ label fight111:
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                                             jump faza_fight114
 
-                                    $ girek_hp_now -= kazuma_attack
+                                    $ jaruzel_hp_now -= kazuma_attack
 
-                                    if kazuma_przepychaczka == 5 and girek_stun == 0:
+                                    if kazuma_przepychaczka == 5 and jaruzel_stun == 0:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
                                             show stun3 zorder 15 at head_wrog2
-                                            $ girek_stun = 1
+                                            $ jaruzel_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
                                                 $ kostka = renpy.random.randint(1, 2)
@@ -15907,7 +15912,7 @@ label fight111:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight115
 
-                "{b}Steal{/b}" if jaruzel_weapon >= 1 or urban_zly_weapon >= 1 or girek_weapon >= 1:
+                "{b}Steal{/b}" if girek_weapon >= 1 or urban_zly_weapon >= 1 or jaruzel_weapon >= 1:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15920,50 +15925,50 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
+                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
                             kazuma "Steal!"
-                            if jaruzel_obrona >= 1:
+                            if girek_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
-                                "{i}Jaruzel obronił się przed umiejętnością “Steal“{/i}"
+                                "{i}Girek obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight114
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
-                                if jaruzel_sex == 0:
+                                if girek_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if jaruzel_max_attack_now < jaruzel_max_attack:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
-                                            $ jaruzel_max_attack_now -= 2
+                                        if girek_max_attack_now < girek_max_attack:
+                                            $ girek_max_attack_now_true = 2
+                                            $ girek_min_attack_now_true = 0
+                                            $ girek_min_attack_now = girek_min_attack_now_true
+                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            $ girek_max_attack_now -= 2
                                         
                                         else:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            $ girek_max_attack_now_true = 2
+                                            $ girek_min_attack_now_true = 0
+                                            $ girek_min_attack_now = girek_min_attack_now_true
+                                            $ girek_max_attack_now = girek_max_attack_now_true
                                         
-                                        $ jaruzel_weapon -= 1
+                                        $ girek_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik1  
+                                            show girek_weapon zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik2  
+                                            show girek_weapon zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show jaruzel_weapon zorder 15 at weapon_sojusznik3 
+                                            show girek_weapon zorder 15 at weapon_sojusznik3 
 
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Jaruzel.  \nStatystyki Jaruzel zostały stale drastycznie osłabione.{/i}"
-                                        hide jaruzel_weapon
+                                        "{i}Udało sie ukraść broń Girek.  \nStatystyki Girek zostały stale drastycznie osłabione.{/i}"
+                                        hide girek_weapon
                                         hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
+                                        "{i}Nie udało sie ukraść broni Girek{/i}"
                                         hide chwyta
                         
                                 else:
@@ -15980,16 +15985,16 @@ label fight111:
                                         play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
-                                        jaruzel "Nie! Oddaj mi moje majtki!"
+                                        girek "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Jaruzel.  \nJaruzel poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ jaruzel_hp_now = 0
+                                        "{i}Udało sie ukraść bieliznę Girek.  \nGirek poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ girek_hp_now = 0
                                         hide majtki
                                         hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
+                                        "{i}Nie udało sie ukraść broni Girek{/i}"
                                         hide chwyta
                                         
                                 jump faza_fight114
@@ -16068,50 +16073,50 @@ label fight111:
                                         
                                 jump faza_fight114
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
+                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
                             kazuma "Steal!"
-                            if girek_obrona >= 1:
+                            if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
-                                "{i}Girek obronił się przed umiejętnością “Steal“{/i}"
+                                "{i}Jaruzel obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight114
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
-                                if girek_sex == 0:
+                                if jaruzel_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if girek_max_attack_now < girek_max_attack:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
-                                            $ girek_max_attack_now -= 2
+                                        if jaruzel_max_attack_now < jaruzel_max_attack:
+                                            $ jaruzel_max_attack_now_true = 2
+                                            $ jaruzel_min_attack_now_true = 0
+                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            $ jaruzel_max_attack_now -= 2
                                         
                                         else:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            $ jaruzel_max_attack_now_true = 2
+                                            $ jaruzel_min_attack_now_true = 0
+                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
                                         
-                                        $ girek_weapon -= 1
+                                        $ jaruzel_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show girek_weapon zorder 15 at weapon_sojusznik1  
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show girek_weapon zorder 15 at weapon_sojusznik2  
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show girek_weapon zorder 15 at weapon_sojusznik3 
+                                            show jaruzel_weapon zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Girek.  \nStatystyki Girek zostały stale drastycznie osłabione.{/i}"
-                                        hide girek_weapon
+                                        "{i}Udało sie ukraść broń Jaruzel.  \nStatystyki Jaruzel zostały stale drastycznie osłabione.{/i}"
+                                        hide jaruzel_weapon
                                         hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Girek{/i}"
+                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
                                         hide chwyta
                         
                                 else:
@@ -16128,16 +16133,16 @@ label fight111:
                                         play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
-                                        girek "Nie! Oddaj mi moje majtki!"
+                                        jaruzel "Nie! Oddaj mi moje majtki!"
                                         kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Girek.  \nGirek poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ girek_hp_now = 0
+                                        "{i}Udało sie ukraść bieliznę Jaruzel.  \nJaruzel poddaje sie wzamian za jej zwrócenie.{/i}"
+                                        $ jaruzel_hp_now = 0
                                         hide majtki
                                         hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Girek{/i}"
+                                        "{i}Nie udało sie ukraść broni Jaruzel{/i}"
                                         hide chwyta
                                         
                                 jump faza_fight114
@@ -16169,32 +16174,32 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide tarcza6
         hide tarcza7
         hide tarcza8
         hide ruch  
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -16217,24 +16222,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -16564,41 +16569,41 @@ label fight111:
 
             label losowanko_luszcz_vr_fight111:
                 $ kostka2 = renpy.random.randint(1, 3)
-                if jaruzel_hp_now >= 1 and girek_hp_now >= 1 or urban_zly_hp_now >= 1 and girek_hp_now >= 1 or jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1: 
+                if girek_hp_now >= 1 and jaruzel_hp_now >= 1 or urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1 or girek_hp_now >= 1 and urban_zly_hp_now >= 1: 
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                        if girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and girek_obrona == 2:
+                            if girek_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
-                                    show kostka1 zorder 15 at center_wrog1
-                                
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
-                                    show kostka1 zorder 15 at center_wrog1
-                                
                                 if girek_obrona == 1:
                                     $ girek_hp_now -= kostka / 2
-                                    show kostka2 zorder 15 at center_wrog2
+                                    show kostka1 zorder 15 at center_wrog1
                                 
                                 if girek_obrona == 0:
                                     $ girek_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -16606,27 +16611,27 @@ label fight111:
                             jump losowanko_luszcz_vr_fight111
                     
                     if kostka2 == 2:
-                        if jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1:
+                        if girek_hp_now >= 1 and urban_zly_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and urban_zly_obrona == 2:
+                            if girek_obrona == 2 and urban_zly_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
                                 if urban_zly_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= kostka / 2
                                     show kostka1 zorder 15 at center_wrog1
                                 
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog1
                                 
                                 if urban_zly_obrona == 1:
@@ -16638,7 +16643,7 @@ label fight111:
                                     show kostka2 zorder 15 at center_wrog3
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Jerzy Urban{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jerzy Urban{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -16646,9 +16651,9 @@ label fight111:
                             jump losowanko_luszcz_vr_fight111
 
                     if kostka2 == 3:
-                        if urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                        if urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if urban_zly_obrona == 2 and girek_obrona == 2:
+                            if urban_zly_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
@@ -16658,7 +16663,7 @@ label fight111:
                                 if urban_zly_obrona == 2:
                                     hide kostka1
 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
                                 if urban_zly_obrona == 1:
@@ -16669,16 +16674,16 @@ label fight111:
                                     $ urban_zly_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog3
                                 
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= kostka / 2
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
                                     show kostka2 zorder 15 at center_wrog2
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -16687,31 +16692,31 @@ label fight111:
 
                 else:
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1:
+                        if girek_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if jaruzel_obrona == 2:
+                            if girek_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog1
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                     
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog1 
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -16751,31 +16756,31 @@ label fight111:
                             jump losowanko_luszcz_vr_fight111
 
                     if kostka2 == 3:
-                        if girek_hp_now >= 1:
+                        if jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if girek_obrona == 2:
+                            if jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:   
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kostka / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog2
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog2  
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -16796,26 +16801,26 @@ label fight111:
 
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kostka2 == 1:
-                    if jaruzel_hp_now >= 1:
+                    if girek_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
+                        if girek_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
+                            if girek_obrona == 1:
+                                $ girek_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń{/i}"
+                                "{i}Łuszcz zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
+                            if girek_obrona == 0:
+                                $ girek_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Jaruzel zadając [kostka] obrażeń{/i}"
+                                "{i}Łuszcz zrzygał się na Girek zadając [kostka] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -16848,26 +16853,26 @@ label fight111:
                         jump losowanko_luszcz_rzygi_fight111
 
                 if kostka2 == 3:
-                    if girek_hp_now >= 1:
+                    if jaruzel_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
+                        if jaruzel_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:   
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
+                            if jaruzel_obrona == 1:
+                                $ jaruzel_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Girek zadając [int(kostka / 2)] obrażeń"
+                                "{i}Łuszcz zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
+                            if jaruzel_obrona == 0:
+                                $ jaruzel_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Girek zadając [kostka] obrażeń"
+                                "{i}Łuszcz zrzygał się na Jaruzel zadając [kostka] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -16886,26 +16891,26 @@ label fight111:
 
             $ kostka2 = renpy.random.randint(1, 3)
             if kostka2 == 1:
-                if jaruzel_hp_now >= 1:
+                if girek_hp_now >= 1:
                     $ kostka = renpy.random.randint(1, 2)
-                    if jaruzel_obrona == 2:
+                    if girek_obrona == 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Rzygi zostały zablokowane{/i}"
                         hide rzyg
                     else:
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
+                        if girek_obrona == 1:
+                            $ girek_hp_now -= int(kostka / 2)
                             show rzygowina zorder 15 at center_wrog1
                             play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń{/i}"
+                            "{i}Shadow zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
                             hide rzygowina
                             hide rzyg
                         
-                        if jaruzel_obrona == 0:
-                            $ jaruzel_hp_now -= kostka
+                        if girek_obrona == 0:
+                            $ girek_hp_now -= kostka
                             show rzygowina zorder 15 at center_wrog1
                             play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Jaruzel zadając [kostka] obrażeń{/i}"
+                            "{i}Shadow zrzygał się na Girek zadając [kostka] obrażeń{/i}"
                             hide rzygowina
                             hide rzyg
                 else:
@@ -16938,26 +16943,26 @@ label fight111:
                     jump losowanko_eminem_rzygi_fight111
 
             if kostka2 == 3:
-                if girek_hp_now >= 1:
+                if jaruzel_hp_now >= 1:
                     $ kostka = renpy.random.randint(1, 2)
-                    if girek_obrona == 2:
+                    if jaruzel_obrona == 2:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Rzygi zostały zablokowane{/i}"
                         hide rzyg
                     else:   
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
+                        if jaruzel_obrona == 1:
+                            $ jaruzel_hp_now -= int(kostka / 2)
                             show rzygowina zorder 15 at center_wrog2
                             play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Girek zadając [int(kostka / 2)] obrażeń"
+                            "{i}Shadow zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
                             hide rzygowina
                             hide rzyg
                         
-                        if girek_obrona == 0:
-                            $ girek_hp_now -= kostka
+                        if jaruzel_obrona == 0:
+                            $ jaruzel_hp_now -= kostka
                             show rzygowina zorder 15 at center_wrog2
                             play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Girek zadając [kostka] obrażeń"
+                            "{i}Shadow zrzygał się na Jaruzel zadając [kostka] obrażeń"
                             hide rzygowina
                             hide rzyg
                 else:
@@ -16986,41 +16991,41 @@ label fight111:
 
             label losowanko_urban_vr_fight111:
                 $ kostka2 = renpy.random.randint(1, 3)
-                if jaruzel_hp_now >= 1 and girek_hp_now >= 1 or urban_zly_hp_now >= 1 and girek_hp_now >= 1 or jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1: 
+                if girek_hp_now >= 1 and jaruzel_hp_now >= 1 or urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1 or girek_hp_now >= 1 and urban_zly_hp_now >= 1: 
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                        if girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and girek_obrona == 2:
+                            if girek_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
-                                    show kostka1 zorder 15 at center_wrog1
-                                
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
-                                    show kostka1 zorder 15 at center_wrog1
-                                
                                 if girek_obrona == 1:
                                     $ girek_hp_now -= kostka / 2
-                                    show kostka2 zorder 15 at center_wrog2
+                                    show kostka1 zorder 15 at center_wrog1
                                 
                                 if girek_obrona == 0:
                                     $ girek_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17028,27 +17033,27 @@ label fight111:
                             jump losowanko_urban_vr_fight111
                     
                     if kostka2 == 2:
-                        if jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1:
+                        if girek_hp_now >= 1 and urban_zly_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and urban_zly_obrona == 2:
+                            if girek_obrona == 2 and urban_zly_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
                                 if urban_zly_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= kostka / 2
                                     show kostka1 zorder 15 at center_wrog1
                                 
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog1
                                 
                                 if urban_zly_obrona == 1:
@@ -17060,7 +17065,7 @@ label fight111:
                                     show kostka2 zorder 15 at center_wrog3
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Jerzy Urban{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jerzy Urban{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17068,9 +17073,9 @@ label fight111:
                             jump losowanko_urban_vr_fight111
 
                     if kostka2 == 3:
-                        if urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                        if urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if urban_zly_obrona == 2 and girek_obrona == 2:
+                            if urban_zly_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
@@ -17080,7 +17085,7 @@ label fight111:
                                 if urban_zly_obrona == 2:
                                     hide kostka1
 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
                                 if urban_zly_obrona == 1:
@@ -17091,16 +17096,16 @@ label fight111:
                                     $ urban_zly_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog3
                                 
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= kostka / 2
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
                                     show kostka2 zorder 15 at center_wrog2
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17109,31 +17114,31 @@ label fight111:
 
                 else:
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1:
+                        if girek_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if jaruzel_obrona == 2:
+                            if girek_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog1
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                     
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog1 
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -17173,31 +17178,31 @@ label fight111:
                             jump losowanko_urban_vr_fight111
 
                     if kostka2 == 3:
-                        if girek_hp_now >= 1:
+                        if jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if girek_obrona == 2:
+                            if jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:   
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kostka / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog2
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog2  
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -17218,26 +17223,26 @@ label fight111:
 
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kostka2 == 1:
-                    if jaruzel_hp_now >= 1:
+                    if girek_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
+                        if girek_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
+                            if girek_obrona == 1:
+                                $ girek_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń{/i}"
+                                "{i}Jerzy Urban zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
+                            if girek_obrona == 0:
+                                $ girek_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Jaruzel zadając [kostka] obrażeń{/i}"
+                                "{i}Jerzy Urban zrzygał się na Girek zadając [kostka] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -17270,26 +17275,26 @@ label fight111:
                         jump losowanko_urban_rzygi_fight111
 
                 if kostka2 == 3:
-                    if girek_hp_now >= 1:
+                    if jaruzel_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
+                        if jaruzel_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:   
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
+                            if jaruzel_obrona == 1:
+                                $ jaruzel_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Girek zadając [int(kostka / 2)] obrażeń"
+                                "{i}Jerzy Urban zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
+                            if jaruzel_obrona == 0:
+                                $ jaruzel_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Girek zadając [kostka] obrażeń"
+                                "{i}Jerzy Urban zrzygał się na Jaruzel zadając [kostka] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -17318,41 +17323,41 @@ label fight111:
 
             label losowanko_zyd_vr_fight111:
                 $ kostka2 = renpy.random.randint(1, 3)
-                if jaruzel_hp_now >= 1 and girek_hp_now >= 1 or urban_zly_hp_now >= 1 and girek_hp_now >= 1 or jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1: 
+                if girek_hp_now >= 1 and jaruzel_hp_now >= 1 or urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1 or girek_hp_now >= 1 and urban_zly_hp_now >= 1: 
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                        if girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and girek_obrona == 2:
+                            if girek_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
-                                    show kostka1 zorder 15 at center_wrog1
-                                
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
-                                    show kostka1 zorder 15 at center_wrog1
-                                
                                 if girek_obrona == 1:
                                     $ girek_hp_now -= kostka / 2
-                                    show kostka2 zorder 15 at center_wrog2
+                                    show kostka1 zorder 15 at center_wrog1
                                 
                                 if girek_obrona == 0:
                                     $ girek_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17360,27 +17365,27 @@ label fight111:
                             jump losowanko_zyd_vr_fight111
                     
                     if kostka2 == 2:
-                        if jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1:
+                        if girek_hp_now >= 1 and urban_zly_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and urban_zly_obrona == 2:
+                            if girek_obrona == 2 and urban_zly_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
                                 if urban_zly_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= kostka / 2
                                     show kostka1 zorder 15 at center_wrog1
                                 
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog1
                                 
                                 if urban_zly_obrona == 1:
@@ -17392,7 +17397,7 @@ label fight111:
                                     show kostka2 zorder 15 at center_wrog3
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Jerzy Urban{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jerzy Urban{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17400,9 +17405,9 @@ label fight111:
                             jump losowanko_zyd_vr_fight111
 
                     if kostka2 == 3:
-                        if urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                        if urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if urban_zly_obrona == 2 and girek_obrona == 2:
+                            if urban_zly_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
@@ -17412,7 +17417,7 @@ label fight111:
                                 if urban_zly_obrona == 2:
                                     hide kostka1
 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
                                 if urban_zly_obrona == 1:
@@ -17423,16 +17428,16 @@ label fight111:
                                     $ urban_zly_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog3
                                 
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= kostka / 2
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
                                     show kostka2 zorder 15 at center_wrog2
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17441,31 +17446,31 @@ label fight111:
 
                 else:
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1:
+                        if girek_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if jaruzel_obrona == 2:
+                            if girek_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog1
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                     
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog1 
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -17505,31 +17510,31 @@ label fight111:
                             jump losowanko_zyd_vr_fight111
 
                     if kostka2 == 3:
-                        if girek_hp_now >= 1:
+                        if jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if girek_obrona == 2:
+                            if jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:   
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kostka / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog2
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog2  
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -17550,26 +17555,26 @@ label fight111:
 
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kostka2 == 1:
-                    if jaruzel_hp_now >= 1:
+                    if girek_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
+                        if girek_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
+                            if girek_obrona == 1:
+                                $ girek_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń{/i}"
+                                "{i}Żyd zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
+                            if girek_obrona == 0:
+                                $ girek_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Jaruzel zadając [kostka] obrażeń{/i}"
+                                "{i}Żyd zrzygał się na Girek zadając [kostka] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -17602,26 +17607,26 @@ label fight111:
                         jump losowanko_zyd_rzygi_fight111
 
                 if kostka2 == 3:
-                    if girek_hp_now >= 1:
+                    if jaruzel_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
+                        if jaruzel_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:   
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
+                            if jaruzel_obrona == 1:
+                                $ jaruzel_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Girek zadając [int(kostka / 2)] obrażeń"
+                                "{i}Żyd zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
+                            if jaruzel_obrona == 0:
+                                $ jaruzel_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Girek zadając [kostka] obrażeń"
+                                "{i}Żyd zrzygał się na Jaruzel zadając [kostka] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -17650,41 +17655,41 @@ label fight111:
 
             label losowanko_kazuma_vr_fight111:
                 $ kostka2 = renpy.random.randint(1, 3)
-                if jaruzel_hp_now >= 1 and girek_hp_now >= 1 or urban_zly_hp_now >= 1 and girek_hp_now >= 1 or jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1: 
+                if girek_hp_now >= 1 and jaruzel_hp_now >= 1 or urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1 or girek_hp_now >= 1 and urban_zly_hp_now >= 1: 
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                        if girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and girek_obrona == 2:
+                            if girek_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
-                                    show kostka1 zorder 15 at center_wrog1
-                                
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
-                                    show kostka1 zorder 15 at center_wrog1
-                                
                                 if girek_obrona == 1:
                                     $ girek_hp_now -= kostka / 2
-                                    show kostka2 zorder 15 at center_wrog2
+                                    show kostka1 zorder 15 at center_wrog1
                                 
                                 if girek_obrona == 0:
                                     $ girek_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17692,27 +17697,27 @@ label fight111:
                             jump losowanko_kazuma_vr_fight111
                     
                     if kostka2 == 2:
-                        if jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1:
+                        if girek_hp_now >= 1 and urban_zly_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and urban_zly_obrona == 2:
+                            if girek_obrona == 2 and urban_zly_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
                                 if urban_zly_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= kostka / 2
                                     show kostka1 zorder 15 at center_wrog1
                                 
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog1
                                 
                                 if urban_zly_obrona == 1:
@@ -17724,7 +17729,7 @@ label fight111:
                                     show kostka2 zorder 15 at center_wrog3
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Jerzy Urban{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jerzy Urban{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17732,9 +17737,9 @@ label fight111:
                             jump losowanko_kazuma_vr_fight111
 
                     if kostka2 == 3:
-                        if urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                        if urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if urban_zly_obrona == 2 and girek_obrona == 2:
+                            if urban_zly_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
@@ -17744,7 +17749,7 @@ label fight111:
                                 if urban_zly_obrona == 2:
                                     hide kostka1
 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
                                 if urban_zly_obrona == 1:
@@ -17755,16 +17760,16 @@ label fight111:
                                     $ urban_zly_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog3
                                 
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= kostka / 2
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
                                     show kostka2 zorder 15 at center_wrog2
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -17773,31 +17778,31 @@ label fight111:
 
                 else:
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1:
+                        if girek_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if jaruzel_obrona == 2:
+                            if girek_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog1
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                     
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog1 
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -17837,31 +17842,31 @@ label fight111:
                             jump losowanko_kazuma_vr_fight111
 
                     if kostka2 == 3:
-                        if girek_hp_now >= 1:
+                        if jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if girek_obrona == 2:
+                            if jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:   
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kostka / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog2
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog2  
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -17882,26 +17887,26 @@ label fight111:
 
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kostka2 == 1:
-                    if jaruzel_hp_now >= 1:
+                    if girek_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
+                        if girek_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
+                            if girek_obrona == 1:
+                                $ girek_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń{/i}"
+                                "{i}Kazuma zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
+                            if girek_obrona == 0:
+                                $ girek_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Jaruzel zadając [kostka] obrażeń{/i}"
+                                "{i}Kazuma zrzygał się na Girek zadając [kostka] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -17934,26 +17939,26 @@ label fight111:
                         jump losowanko_kazuma_rzygi_fight111
 
                 if kostka2 == 3:
-                    if girek_hp_now >= 1:
+                    if jaruzel_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
+                        if jaruzel_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:   
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
+                            if jaruzel_obrona == 1:
+                                $ jaruzel_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Girek zadając [int(kostka / 2)] obrażeń"
+                                "{i}Kazuma zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
+                            if jaruzel_obrona == 0:
+                                $ jaruzel_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Girek zadając [kostka] obrażeń"
+                                "{i}Kazuma zrzygał się na Jaruzel zadając [kostka] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -17982,41 +17987,41 @@ label fight111:
 
             label losowanko_tarczownik_vr_fight111:
                 $ kostka2 = renpy.random.randint(1, 3)
-                if jaruzel_hp_now >= 1 and girek_hp_now >= 1 or urban_zly_hp_now >= 1 and girek_hp_now >= 1 or jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1: 
+                if girek_hp_now >= 1 and jaruzel_hp_now >= 1 or urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1 or girek_hp_now >= 1 and urban_zly_hp_now >= 1: 
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1 and girek_hp_now >= 1:
+                        if girek_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and girek_obrona == 2:
+                            if girek_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
-                                    show kostka1 zorder 15 at center_wrog1
-                                
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
-                                    show kostka1 zorder 15 at center_wrog1
-                                
                                 if girek_obrona == 1:
                                     $ girek_hp_now -= kostka / 2
-                                    show kostka2 zorder 15 at center_wrog2
+                                    show kostka1 zorder 15 at center_wrog1
                                 
                                 if girek_obrona == 0:
                                     $ girek_hp_now -= kostka
+                                    show kostka1 zorder 15 at center_wrog1
+                                
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
+                                    show kostka2 zorder 15 at center_wrog2
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -18024,27 +18029,27 @@ label fight111:
                             jump losowanko_tarczownik_vr_fight111
                     
                     if kostka2 == 2:
-                        if jaruzel_hp_now >= 1 and urban_zly_hp_now >= 1:
+                        if girek_hp_now >= 1 and urban_zly_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if jaruzel_obrona == 2 and urban_zly_obrona == 2:
+                            if girek_obrona == 2 and urban_zly_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 2:
+                                if girek_obrona == 2:
                                     hide kostka1
                                 
                                 if urban_zly_obrona == 2:
                                     hide kostka2
 
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= kostka / 2
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= kostka / 2
                                     show kostka1 zorder 15 at center_wrog1
                                 
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog1
                                 
                                 if urban_zly_obrona == 1:
@@ -18056,7 +18061,7 @@ label fight111:
                                     show kostka2 zorder 15 at center_wrog3
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jaruzel i Jerzy Urban{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Girek i Jerzy Urban{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -18064,9 +18069,9 @@ label fight111:
                             jump losowanko_tarczownik_vr_fight111
 
                     if kostka2 == 3:
-                        if urban_zly_hp_now >= 1 and girek_hp_now >= 1:
+                        if urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 2)
-                            if urban_zly_obrona == 2 and girek_obrona == 2:
+                            if urban_zly_obrona == 2 and jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
@@ -18076,7 +18081,7 @@ label fight111:
                                 if urban_zly_obrona == 2:
                                     hide kostka1
 
-                                if girek_obrona == 2:
+                                if jaruzel_obrona == 2:
                                     hide kostka2
 
                                 if urban_zly_obrona == 1:
@@ -18087,16 +18092,16 @@ label fight111:
                                     $ urban_zly_hp_now -= kostka
                                     show kostka1 zorder 15 at center_wrog3
                                 
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= kostka / 2
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= kostka / 2
                                     show kostka2 zorder 15 at center_wrog2
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     show kostka2 zorder 15 at center_wrog2
                                 
                                 play sound "audio/sfx/atak.mp3"
-                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Girek{/i}"
+                                "{i}Atak zadał [kostka] obrażeń Jerzy Urban i Jaruzel{/i}"
                                 hide kostka1
                                 hide kostka2
                                 hide miecz_swietlny
@@ -18105,31 +18110,31 @@ label fight111:
 
                 else:
                     if kostka2 == 1:
-                        if jaruzel_hp_now >= 1:
+                        if girek_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if jaruzel_obrona == 2:
+                            if girek_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog1
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                     
-                                if jaruzel_obrona == 0:
-                                    $ jaruzel_hp_now -= kostka
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog1 
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -18169,31 +18174,31 @@ label fight111:
                             jump losowanko_tarczownik_vr_fight111
 
                     if kostka2 == 3:
-                        if girek_hp_now >= 1:
+                        if jaruzel_hp_now >= 1:
                             $ kostka = renpy.random.randint(1, 3)
-                            if girek_obrona == 2:
+                            if jaruzel_obrona == 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 hide kostka1
                                 hide kostka2
                                 "{i}Atak został zablokowany{/i}"
                                 hide miecz_swietlny
                             else:   
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kostka / 2)
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
                                     hide kostka2
                                     show kostka1 zorder 15 at center_wrog2
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [int(kostka / 2)] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
                                 
-                                if girek_obrona == 0:
-                                    $ girek_hp_now -= kostka
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
                                     hide kostka1
                                     show kostka2 zorder 15 at center_wrog2  
                                     play sound "audio/sfx/atak.mp3"
-                                    "{i}Atak zadał [kostka] obrażeń Girek{/i}"
+                                    "{i}Atak zadał [kostka] obrażeń Jaruzel{/i}"
                                     hide kostka1
                                     hide kostka2
                                     hide miecz_swietlny
@@ -18214,26 +18219,26 @@ label fight111:
 
                 $ kostka2 = renpy.random.randint(1, 3)
                 if kostka2 == 1:
-                    if jaruzel_hp_now >= 1:
+                    if girek_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
+                        if girek_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
+                            if girek_obrona == 1:
+                                $ girek_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń{/i}"
+                                "{i}Naofumi zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
+                            if girek_obrona == 0:
+                                $ girek_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Jaruzel zadając [kostka] obrażeń{/i}"
+                                "{i}Naofumi zrzygał się na Girek zadając [kostka] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                     else:
@@ -18266,49 +18271,49 @@ label fight111:
                         jump losowanko_tarczownik_rzygi_fight111
 
                 if kostka2 == 3:
-                    if girek_hp_now >= 1:
+                    if jaruzel_hp_now >= 1:
                         $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
+                        if jaruzel_obrona == 2:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Rzygi zostały zablokowane{/i}"
                             hide rzyg
                         else:   
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
+                            if jaruzel_obrona == 1:
+                                $ jaruzel_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Girek zadając [int(kostka / 2)] obrażeń"
+                                "{i}Naofumi zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                             
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
+                            if jaruzel_obrona == 0:
+                                $ jaruzel_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Girek zadając [kostka] obrażeń"
+                                "{i}Naofumi zrzygał się na Jaruzel zadając [kostka] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                     else:
                         jump losowanko_tarczownik_rzygi_fight111
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -18331,24 +18336,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -18554,9 +18559,9 @@ label fight111:
         if ile_sojusznikow <= 0:
             jump przegranko_fight111
 
-        $ jaruzel_obrona = 0
-        $ urban_zly_obrona = 0
         $ girek_obrona = 0
+        $ urban_zly_obrona = 0
+        $ jaruzel_obrona = 0
         $ luszcz_min_attack_now = luszcz_min_attack_now_true
         $ luszcz_max_attack_now = luszcz_max_attack_now_true
         $ eminem_min_attack_now = eminem_min_attack_now_true
@@ -18570,70 +18575,70 @@ label fight111:
         $ tarczownik_min_attack_now = tarczownik_min_attack_now_true
         $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
 
-        if jaruzel_hp_now <= 0:
+        if girek_hp_now <= 0:
             jump faza_fight115    
 
         show ruch zorder 0 at tlo_wrog1  
     
-        if jaruzel_stun == 1:
-            "{i}Jaruzel jest zestunnowany{/i}"
+        if girek_stun == 1:
+            "{i}Girek jest zestunnowany{/i}"
             jump faza_fight115  
 
-        if jaruzel_uszy >= 1 and urban_hp_now >= 1:
-            if jaruzel_weapon >= 1:
-                show jaruzel_weapon zorder 15 at weapon_wrog1  
+        if girek_uszy >= 1 and urban_hp_now >= 1:
+            if girek_weapon >= 1:
+                show girek_weapon zorder 15 at weapon_wrog1  
             else:
                 show reka6 zorder 15 at weapon_wrog1
             
-            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
             if memy == 3:
                 $ kostka = renpy.random.randint(1, 20)
                 if kostka <= 3:
-                    $ jaruzel_hp_now -= jaruzel_attack
+                    $ girek_hp_now -= girek_attack
                     play sound "audio/sfx/obrona.mp3"
-                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                     jump faza_fight115
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
-                "{i}Atak Jaruzel został zablokowany{/i}"
+                "{i}Atak Girek został zablokowany{/i}"
                 $ urban_obrona = 1
 
                 jump faza_fight115
                                                 
             else:
-                play sound "audio/sfx/jaruzel_weapon.mp3"
+                play sound "audio/sfx/girek_weapon.mp3"
                 if urban_obrona == 1:
-                    $ urban_hp_now -= int(jaruzel_attack / 2)
+                    $ urban_hp_now -= int(girek_attack / 2)
 
-                    $ dmg = int(jaruzel_attack / 2)
-                    "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                    $ dmg = int(girek_attack / 2)
+                    "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
                     jump faza_fight115
                 else:
-                    $ urban_hp_now -= jaruzel_attack
+                    $ urban_hp_now -= girek_attack
 
-                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
+                    "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                     jump faza_fight115
         
-        if jaruzel_max_attack_now <= 0 and jaruzel_obrona == 0:
+        if girek_max_attack_now <= 0 and girek_obrona == 0:
             show tarcza6 zorder 15 at weapon_wrog1  
             play sound "audio/sfx/shield.mp3"
-            "{i}Jaruzel broni się{/i}"
-            $ jaruzel_obrona += 1
+            "{i}Girek broni się{/i}"
+            $ girek_obrona += 1
             jump faza_fight115
 
-        if jaruzel_hp_now >= 1 and jaruzel_obrona == 0:
-            if jaruzel_hp_now <= 3:
+        if girek_hp_now >= 1 and girek_obrona == 0:
+            if girek_hp_now <= 3:
                 $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
                     show tarcza6 zorder 15 at weapon_wrog1  
                     play sound "audio/sfx/shield.mp3"
-                    "{i}Jaruzel broni się{/i}"
-                    $ jaruzel_obrona += 1
+                    "{i}Girek broni się{/i}"
+                    $ girek_obrona += 1
                     jump faza_fight115
             
             else:
@@ -18642,13 +18647,14 @@ label fight111:
                 if kostka == 10:
                     show tarcza6 zorder 15 at weapon_wrog1  
                     play sound "audio/sfx/shield.mp3"
-                    "{i}Jaruzel broni się{/i}"
-                    $ jaruzel_obrona += 1
+                    "{i}Girek broni się{/i}"
+                    $ girek_obrona += 1
                     jump faza_fight115
-                    
+    
+                                
         label losowanko_fight114:   
-            if jaruzel_weapon >= 1:
-                show jaruzel_weapon zorder 15 at weapon_wrog1  
+            if girek_weapon >= 1:
+                show girek_weapon zorder 15 at weapon_wrog1  
             else:
                 show reka6 zorder 15 at weapon_wrog1    
             $ kostka = renpy.random.randint(1, 6)
@@ -18657,37 +18663,37 @@ label fight111:
                     if luszcz_hp_now <= 3:
                         $ kostka = renpy.random.randint(1, 5)
                         if kostka >= 2:
-                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                             if memy == 2:
                                 $ kostka = renpy.random.randint(1, 20)
                                 if kostka <= 3:
-                                    $ jaruzel_hp_now -= jaruzel_attack
+                                    $ girek_hp_now -= girek_attack
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                     jump faza_fight115
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Jaruzel został zablokowany{/i}"
+                                "{i}Atak Girek został zablokowany{/i}"
                                 $ luszcz_obrona = 1
                                                 
                             else:
-                                if jaruzel_weapon >= 1:
-                                    play sound "audio/sfx/jaruzel_weapon.mp3"
+                                if girek_weapon >= 1:
+                                    play sound "audio/sfx/girek_weapon.mp3"
                                 
                                 else:
                                     play sound "audio/sfx/reka.mp3"
 
                                 if luszcz_obrona == 1:
-                                    $ luszcz_hp_now -= int(jaruzel_attack / 2)
+                                    $ luszcz_hp_now -= int(girek_attack / 2)
 
-                                    $ dmg = int(jaruzel_attack / 2)
-                                    "{i}Jaruzel zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    $ dmg = int(girek_attack / 2)
+                                    "{i}Girek zadaje [dmg] obrażeń Łuszczowi{/i}"
                                 else:
-                                    $ luszcz_hp_now -= jaruzel_attack
+                                    $ luszcz_hp_now -= girek_attack
 
-                                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Łuszczowi{/i}"
+                                    "{i}Girek zadaje [girek_attack] obrażeń Łuszczowi{/i}"
 
                             jump faza_fight115
                         else:
@@ -18697,37 +18703,37 @@ label fight111:
                         if luszcz_hp_now <= 10:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 3:
-                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                 if memy == 2:
                                     $ kostka = renpy.random.randint(1, 20)
                                     if kostka <= 3:
-                                        $ jaruzel_hp_now -= jaruzel_attack
+                                        $ girek_hp_now -= girek_attack
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                         jump faza_fight115
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jaruzel został zablokowany{/i}"
+                                    "{i}Atak Girek został zablokowany{/i}"
                                     $ luszcz_obrona = 1
                                                     
                                 else:
-                                    if jaruzel_weapon >= 1:
-                                        play sound "audio/sfx/jaruzel_weapon.mp3"
+                                    if girek_weapon >= 1:
+                                        play sound "audio/sfx/girek_weapon.mp3"
                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
 
                                     if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(jaruzel_attack / 2)
+                                        $ luszcz_hp_now -= int(girek_attack / 2)
 
-                                        $ dmg = int(jaruzel_attack / 2)
-                                        "{i}Jaruzel zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(girek_attack / 2)
+                                        "{i}Girek zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
-                                        $ luszcz_hp_now -= jaruzel_attack
+                                        $ luszcz_hp_now -= girek_attack
 
-                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Łuszczowi{/i}"
+                                        "{i}Girek zadaje [girek_attack] obrażeń Łuszczowi{/i}"
 
                                 jump faza_fight115
                             else:
@@ -18736,37 +18742,37 @@ label fight111:
                         else:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
-                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                 if memy == 2:
                                     $ kostka = renpy.random.randint(1, 20)
                                     if kostka <= 3:
-                                        $ jaruzel_hp_now -= jaruzel_attack
+                                        $ girek_hp_now -= girek_attack
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                         jump faza_fight115
                             
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jaruzel został zablokowany{/i}"
+                                    "{i}Atak Girek został zablokowany{/i}"
                                     $ luszcz_obrona = 1
                                                     
                                 else:
-                                    if jaruzel_weapon >= 1:
-                                        play sound "audio/sfx/jaruzel_weapon.mp3"
+                                    if girek_weapon >= 1:
+                                        play sound "audio/sfx/girek_weapon.mp3"
                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
 
                                     if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(jaruzel_attack / 2)
+                                        $ luszcz_hp_now -= int(girek_attack / 2)
 
-                                        $ dmg = int(jaruzel_attack / 2)
-                                        "{i}Jaruzel zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(girek_attack / 2)
+                                        "{i}Girek zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
-                                        $ luszcz_hp_now -= jaruzel_attack
+                                        $ luszcz_hp_now -= girek_attack
 
-                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Łuszczowi{/i}"
+                                        "{i}Girek zadaje [girek_attack] obrażeń Łuszczowi{/i}"
 
                                 jump faza_fight115
                             else:
@@ -18780,37 +18786,37 @@ label fight111:
                         if urban_hp_now <= 3:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 2:
-                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                 if memy == 3:
                                     $ kostka = renpy.random.randint(1, 20)
                                     if kostka <= 3:
-                                        $ jaruzel_hp_now -= jaruzel_attack
+                                        $ girek_hp_now -= girek_attack
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                         jump faza_fight115
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Jaruzel został zablokowany{/i}"
+                                    "{i}Atak Girek został zablokowany{/i}"
                                     $ urban_obrona = 1
 
                                 else:
-                                    if jaruzel_weapon >= 1:
-                                        play sound "audio/sfx/jaruzel_weapon.mp3"
+                                    if girek_weapon >= 1:
+                                        play sound "audio/sfx/girek_weapon.mp3"
                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
 
                                     if urban_obrona == 1:
-                                        $ urban_hp_now -= int(jaruzel_attack / 2)
+                                        $ urban_hp_now -= int(girek_attack / 2)
 
-                                        $ dmg = int(jaruzel_attack / 2)
-                                        "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        $ dmg = int(girek_attack / 2)
+                                        "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
-                                        $ urban_hp_now -= jaruzel_attack
+                                        $ urban_hp_now -= girek_attack
 
-                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                        "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                 jump faza_fight115
                             else:
@@ -18820,37 +18826,37 @@ label fight111:
                             if urban_hp_now <= 10:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 3:
-                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                     if memy == 3:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
-                                            $ jaruzel_hp_now -= jaruzel_attack
+                                            $ girek_hp_now -= girek_attack
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                             jump faza_fight115
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Jaruzel został zablokowany{/i}"
+                                        "{i}Atak Girek został zablokowany{/i}"
                                         $ urban_obrona = 1
 
                                     else:
-                                        if jaruzel_weapon >= 1:
-                                            play sound "audio/sfx/jaruzel_weapon.mp3"
+                                        if girek_weapon >= 1:
+                                            play sound "audio/sfx/girek_weapon.mp3"
                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
 
                                         if urban_obrona == 1:
-                                            $ urban_hp_now -= int(jaruzel_attack / 2)
+                                            $ urban_hp_now -= int(girek_attack / 2)
 
-                                            $ dmg = int(jaruzel_attack / 2)
-                                            "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(girek_attack / 2)
+                                            "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
-                                            $ urban_hp_now -= jaruzel_attack
+                                            $ urban_hp_now -= girek_attack
 
-                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza_fight115
                                 else:
@@ -18859,37 +18865,37 @@ label fight111:
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 5:
-                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                     if memy == 3:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
-                                            $ jaruzel_hp_now -= jaruzel_attack
+                                            $ girek_hp_now -= girek_attack
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                             jump faza_fight115
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Jaruzel został zablokowany{/i}"
+                                        "{i}Atak Girek został zablokowany{/i}"
                                         $ urban_obrona = 1
 
                                     else:
-                                        if jaruzel_weapon >= 1:
-                                            play sound "audio/sfx/jaruzel_weapon.mp3"
+                                        if girek_weapon >= 1:
+                                            play sound "audio/sfx/girek_weapon.mp3"
                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
                                     
                                         if urban_obrona == 1:
-                                            $ urban_hp_now -= int(jaruzel_attack / 2)
+                                            $ urban_hp_now -= int(girek_attack / 2)
 
-                                            $ dmg = int(jaruzel_attack / 2)
-                                            "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(girek_attack / 2)
+                                            "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
-                                            $ urban_hp_now -= jaruzel_attack
+                                            $ urban_hp_now -= girek_attack
 
-                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza_fight115
                                 else:
@@ -18903,37 +18909,37 @@ label fight111:
                             if zyd_hp_now <= 3:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 2:
-                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                     if memy == 4:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
-                                            $ jaruzel_hp_now -= jaruzel_attack
+                                            $ girek_hp_now -= girek_attack
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                             jump faza_fight115
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Jaruzel został zablokowany{/i}"
+                                        "{i}Atak Girek został zablokowany{/i}"
                                         $ zyd_obrona = 1
                                         
                                     else:
-                                        if jaruzel_weapon >= 1:
-                                            play sound "audio/sfx/jaruzel_weapon.mp3"
+                                        if girek_weapon >= 1:
+                                            play sound "audio/sfx/girek_weapon.mp3"
                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
 
                                         if zyd_obrona == 1:
-                                            $ zyd_hp_now -= int(jaruzel_attack / 2)
+                                            $ zyd_hp_now -= int(girek_attack / 2)
 
-                                            $ dmg = int(jaruzel_attack / 2)
-                                            "{i}Jaruzel zadaje [dmg] obrażeń Żydowi{/i}"
+                                            $ dmg = int(girek_attack / 2)
+                                            "{i}Girek zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
-                                            $ zyd_hp_now -= jaruzel_attack
+                                            $ zyd_hp_now -= girek_attack
 
-                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Żydowi{/i}"
+                                            "{i}Girek zadaje [girek_attack] obrażeń Żydowi{/i}"
 
                                     jump faza_fight115
                                 else:
@@ -18943,37 +18949,37 @@ label fight111:
                                 if zyd_hp_now <= 10:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 3:
-                                        $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                        $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                         if memy == 4:
                                             $ kostka = renpy.random.randint(1, 20)
                                             if kostka <= 3:
-                                                $ jaruzel_hp_now -= jaruzel_attack
+                                                $ girek_hp_now -= girek_attack
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                 jump faza_fight115
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Jaruzel został zablokowany{/i}"
+                                            "{i}Atak Girek został zablokowany{/i}"
                                             $ zyd_obrona = 1
 
                                         else:
-                                            if jaruzel_weapon >= 1:
-                                                play sound "audio/sfx/jaruzel_weapon.mp3"
+                                            if girek_weapon >= 1:
+                                                play sound "audio/sfx/girek_weapon.mp3"
                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
 
                                             if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(jaruzel_attack / 2)
+                                                $ zyd_hp_now -= int(girek_attack / 2)
 
-                                                $ dmg = int(jaruzel_attack / 2)
-                                                "{i}Jaruzel zadaje [dmg] obrażeń Żydowi{/i}"
+                                                $ dmg = int(girek_attack / 2)
+                                                "{i}Girek zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
-                                                $ zyd_hp_now -= jaruzel_attack
+                                                $ zyd_hp_now -= girek_attack
 
-                                                "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Żydowi{/i}"
+                                                "{i}Girek zadaje [girek_attack] obrażeń Żydowi{/i}"
 
                                         jump faza_fight115
                                     else:
@@ -18982,37 +18988,37 @@ label fight111:
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 5:
-                                        $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                        $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                         if memy == 4:
                                             $ kostka = renpy.random.randint(1, 20)
                                             if kostka <= 3:
-                                                $ jaruzel_hp_now -= jaruzel_attack
+                                                $ girek_hp_now -= girek_attack
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                 jump faza_fight115
                                         
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Jaruzel został zablokowany{/i}"
+                                            "{i}Atak Girek został zablokowany{/i}"
                                             $ zyd_obrona = 1
 
                                         else:
-                                            if jaruzel_weapon >= 1:
-                                                play sound "audio/sfx/jaruzel_weapon.mp3"
+                                            if girek_weapon >= 1:
+                                                play sound "audio/sfx/girek_weapon.mp3"
                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
 
                                             if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(jaruzel_attack / 2)
+                                                $ zyd_hp_now -= int(girek_attack / 2)
 
-                                                $ dmg = int(jaruzel_attack / 2)
-                                                "{i}Jaruzel zadaje [dmg] obrażeń Żydowi{/i}"
+                                                $ dmg = int(girek_attack / 2)
+                                                "{i}Girek zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
-                                                $ zyd_hp_now -= jaruzel_attack
+                                                $ zyd_hp_now -= girek_attack
 
-                                                "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Żydowi{/i}"
+                                                "{i}Girek zadaje [girek_attack] obrażeń Żydowi{/i}"
 
                                         jump faza_fight115
                                     else:
@@ -19026,37 +19032,37 @@ label fight111:
                                 if kazuma_hp_now <= 3:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 2:
-                                        $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                        $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                         if memy == 5:
                                             $ kostka = renpy.random.randint(1, 20)
                                             if kostka <= 3:
-                                                $ jaruzel_hp_now -= jaruzel_attack
+                                                $ girek_hp_now -= girek_attack
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                 jump faza_fight115
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Jaruzel został zablokowany{/i}"
+                                            "{i}Atak Girek został zablokowany{/i}"
                                             $ kazuma_obrona = 1
                                         
                                         else:
-                                            if jaruzel_weapon >= 1:
-                                                play sound "audio/sfx/jaruzel_weapon.mp3"
+                                            if girek_weapon >= 1:
+                                                play sound "audio/sfx/girek_weapon.mp3"
                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
 
                                             if kazuma_obrona == 1:
-                                                $ kazuma_hp_now -= int(jaruzel_attack / 2)
+                                                $ kazuma_hp_now -= int(girek_attack / 2)
 
-                                                $ dmg = int(jaruzel_attack / 2)
-                                                "{i}Jaruzel zadaje [dmg] obrażeń Kazumie{/i}"
+                                                $ dmg = int(girek_attack / 2)
+                                                "{i}Girek zadaje [dmg] obrażeń Kazumie{/i}"
                                             else:
-                                                $ kazuma_hp_now -= jaruzel_attack
+                                                $ kazuma_hp_now -= girek_attack
 
-                                                "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Kazumie{/i}"
+                                                "{i}Girek zadaje [girek_attack] obrażeń Kazumie{/i}"
 
                                         jump faza_fight115
                                     else:
@@ -19066,37 +19072,37 @@ label fight111:
                                     if kazuma_hp_now <= 10:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 3:
-                                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                             if memy == 5:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
-                                                    $ jaruzel_hp_now -= jaruzel_attack
+                                                    $ girek_hp_now -= girek_attack
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                     jump faza_fight115
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Jaruzel został zablokowany{/i}"
+                                                "{i}Atak Girek został zablokowany{/i}"
                                                 $ kazuma_obrona = 1
                                             
                                             else:
-                                                if jaruzel_weapon >= 1:
-                                                    play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                if girek_weapon >= 1:
+                                                    play sound "audio/sfx/girek_weapon.mp3"
                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
 
                                                 if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(jaruzel_attack / 2)
+                                                    $ kazuma_hp_now -= int(girek_attack / 2)
 
-                                                    $ dmg = int(jaruzel_attack / 2)
-                                                    "{i}Jaruzel zadaje [dmg] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(girek_attack / 2)
+                                                    "{i}Girek zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
-                                                    $ kazuma_hp_now -= jaruzel_attack
+                                                    $ kazuma_hp_now -= girek_attack
 
-                                                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Kazumie{/i}"
+                                                    "{i}Girek zadaje [girek_attack] obrażeń Kazumie{/i}"
 
                                             jump faza_fight115
                                         else:
@@ -19105,37 +19111,37 @@ label fight111:
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 5:
-                                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                             if memy == 5:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
-                                                    $ jaruzel_hp_now -= jaruzel_attack
+                                                    $ girek_hp_now -= girek_attack
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                     jump faza_fight115
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Jaruzel został zablokowany{/i}"
+                                                "{i}Atak Girek został zablokowany{/i}"
                                                 $ kazuma_obrona = 1
                                             
                                             else:
-                                                if jaruzel_weapon >= 1:
-                                                    play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                if girek_weapon >= 1:
+                                                    play sound "audio/sfx/girek_weapon.mp3"
                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
 
                                                 if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(jaruzel_attack / 2)
+                                                    $ kazuma_hp_now -= int(girek_attack / 2)
 
-                                                    $ dmg = int(jaruzel_attack / 2)
-                                                    "{i}Jaruzel zadaje [dmg] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(girek_attack / 2)
+                                                    "{i}Girek zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
-                                                    $ kazuma_hp_now -= jaruzel_attack
+                                                    $ kazuma_hp_now -= girek_attack
 
-                                                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Kazumie{/i}"
+                                                    "{i}Girek zadaje [girek_attack] obrażeń Kazumie{/i}"
 
                                             jump faza_fight115
                                         else:
@@ -19149,37 +19155,37 @@ label fight111:
                                     if eminem_hp_now <= 3:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 2:
-                                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                             if memy == 7:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
-                                                    $ jaruzel_hp_now -= jaruzel_attack
+                                                    $ girek_hp_now -= girek_attack
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                     jump faza_fight115
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Jaruzel został zablokowany{/i}"
+                                                "{i}Atak Girek został zablokowany{/i}"
                                                 $ eminem_obrona = 1
                                             
                                             else:
-                                                if jaruzel_weapon >= 1:
-                                                    play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                if girek_weapon >= 1:
+                                                    play sound "audio/sfx/girek_weapon.mp3"
                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
 
                                                 if eminem_obrona == 1:
-                                                    $ eminem_hp_now -= int(jaruzel_attack / 2)
+                                                    $ eminem_hp_now -= int(girek_attack / 2)
 
-                                                    $ dmg = int(jaruzel_attack / 2)
-                                                    "{i}Jaruzel zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    $ dmg = int(girek_attack / 2)
+                                                    "{i}Girek zadaje [dmg] obrażeń Shadowowi{/i}"
                                                 else:
-                                                    $ eminem_hp_now -= jaruzel_attack
+                                                    $ eminem_hp_now -= girek_attack
 
-                                                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Shadowowi{/i}"
+                                                    "{i}Girek zadaje [girek_attack] obrażeń Shadowowi{/i}"
 
                                             jump faza_fight115
                                         else:
@@ -19189,37 +19195,37 @@ label fight111:
                                         if eminem_hp_now <= 10:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 3:
-                                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                                 if memy == 7:
                                                     $ kostka = renpy.random.randint(1, 20)
                                                     if kostka <= 3:
-                                                        $ jaruzel_hp_now -= jaruzel_attack
+                                                        $ girek_hp_now -= girek_attack
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                         jump faza_fight115
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Jaruzel został zablokowany{/i}"
+                                                    "{i}Atak Girek został zablokowany{/i}"
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
-                                                    if jaruzel_weapon >= 1:
-                                                        play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                    if girek_weapon >= 1:
+                                                        play sound "audio/sfx/girek_weapon.mp3"
                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
 
                                                     if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(jaruzel_attack / 2)
+                                                        $ eminem_hp_now -= int(girek_attack / 2)
 
-                                                        $ dmg = int(jaruzel_attack / 2)
-                                                        "{i}Jaruzel zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(girek_attack / 2)
+                                                        "{i}Girek zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
-                                                        $ eminem_hp_now -= jaruzel_attack
+                                                        $ eminem_hp_now -= girek_attack
 
-                                                        "{i} [jaruzel_attack] obrażeń Shadowowi{/i}"
+                                                        "{i} [girek_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza_fight115
                                             else:
@@ -19228,37 +19234,37 @@ label fight111:
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 5:
-                                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                                 if memy == 7:
                                                     $ kostka = renpy.random.randint(1, 20)
                                                     if kostka <= 3:
-                                                        $ jaruzel_hp_now -= jaruzel_attack
+                                                        $ girek_hp_now -= girek_attack
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                         jump faza_fight115
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Jaruzel został zablokowany{/i}"
+                                                    "{i}Atak Girek został zablokowany{/i}"
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
-                                                    if jaruzel_weapon >= 1:
-                                                        play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                    if girek_weapon >= 1:
+                                                        play sound "audio/sfx/girek_weapon.mp3"
                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
 
                                                     if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(jaruzel_attack / 2)
+                                                        $ eminem_hp_now -= int(girek_attack / 2)
 
-                                                        $ dmg = int(jaruzel_attack / 2)
-                                                        "{i}Jaruzel zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(girek_attack / 2)
+                                                        "{i}Girek zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
-                                                        $ eminem_hp_now -= jaruzel_attack
+                                                        $ eminem_hp_now -= girek_attack
 
-                                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Shadowowi{/i}"
+                                                        "{i}Girek zadaje [girek_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza_fight115
                                             else:
@@ -19272,37 +19278,37 @@ label fight111:
                                         if tarczownik_hp_now <= 3:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 2:
-                                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                                 if memy == 6:
                                                     $ kostka = renpy.random.randint(1, 20)
                                                     if kostka <= 3:
-                                                        $ jaruzel_hp_now -= jaruzel_attack
+                                                        $ girek_hp_now -= girek_attack
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                         jump faza_fight115
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Jaruzel został zablokowany{/i}"
+                                                    "{i}Atak Girek został zablokowany{/i}"
                                                     $ tarczownik_obrona = 1
                                                 
                                                 else:
-                                                    if jaruzel_weapon >= 1:
-                                                        play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                    if girek_weapon >= 1:
+                                                        play sound "audio/sfx/girek_weapon.mp3"
                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
 
                                                     if tarczownik_obrona == 1:
-                                                        $ tarczownik_hp_now -= int(jaruzel_attack / 2)
+                                                        $ tarczownik_hp_now -= int(girek_attack / 2)
 
-                                                        $ dmg = int(jaruzel_attack / 2)
-                                                        "{i}Jaruzel zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        $ dmg = int(girek_attack / 2)
+                                                        "{i}Girek zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                     else:
-                                                        $ tarczownik_hp_now -= jaruzel_attack
+                                                        $ tarczownik_hp_now -= girek_attack
 
-                                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Naofumiemu{/i}"
+                                                        "{i}Girek zadaje [girek_attack] obrażeń Naofumiemu{/i}"
 
                                                 jump faza_fight115
                                             else:
@@ -19312,37 +19318,37 @@ label fight111:
                                             if tarczownik_hp_now <= 10:
                                                 $ kostka = renpy.random.randint(1, 5)
                                                 if kostka >= 3:
-                                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                                     if memy == 6:
                                                         $ kostka = renpy.random.randint(1, 20)
                                                         if kostka <= 3:
-                                                            $ jaruzel_hp_now -= jaruzel_attack
+                                                            $ girek_hp_now -= girek_attack
                                                             play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                             jump faza_fight115
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Jaruzel został zablokowany{/i}"
+                                                        "{i}Atak Girek został zablokowany{/i}"
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
-                                                        if jaruzel_weapon >= 1:
-                                                            play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                        if girek_weapon >= 1:
+                                                            play sound "audio/sfx/girek_weapon.mp3"
                                                         
                                                         else:
                                                             play sound "audio/sfx/reka.mp3"
 
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(jaruzel_attack / 2)
+                                                            $ tarczownik_hp_now -= int(girek_attack / 2)
 
-                                                            $ dmg = int(jaruzel_attack / 2)
-                                                            "{i}Jaruzel zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            $ dmg = int(girek_attack / 2)
+                                                            "{i}Girek zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
-                                                            $ tarczownik_hp_now -= jaruzel_attack
+                                                            $ tarczownik_hp_now -= girek_attack
 
-                                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Naofumiemu{/i}"
+                                                            "{i}Girek zadaje [girek_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump faza_fight115
                                                 else:
@@ -19351,37 +19357,37 @@ label fight111:
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
                                                 if kostka >= 5:
-                                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
+                                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
 
                                                     if memy == 6:
                                                         $ kostka = renpy.random.randint(1, 20)
                                                         if kostka <= 3:
-                                                            $ jaruzel_hp_now -= jaruzel_attack
+                                                            $ girek_hp_now -= girek_attack
                                                             play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
+                                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
                                                             jump faza_fight115
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Jaruzel został zablokowany{/i}"
+                                                        "{i}Atak Girek został zablokowany{/i}"
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
-                                                        if jaruzel_weapon >= 1:
-                                                            play sound "audio/sfx/jaruzel_weapon.mp3"
+                                                        if girek_weapon >= 1:
+                                                            play sound "audio/sfx/girek_weapon.mp3"
                                                         
                                                         else:
                                                             play sound "audio/sfx/reka.mp3"
 
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(jaruzel_attack / 2)
+                                                            $ tarczownik_hp_now -= int(girek_attack / 2)
 
-                                                            $ dmg = int(jaruzel_attack / 2)
-                                                            "{i}Jaruzel zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            $ dmg = int(girek_attack / 2)
+                                                            "{i}Girek zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
-                                                            $ tarczownik_hp_now -= jaruzel_attack
+                                                            $ tarczownik_hp_now -= girek_attack
 
-                                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Naofumiemu{/i}"
+                                                            "{i}Girek zadaje [girek_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump faza_fight115
                                                 else:
@@ -19420,29 +19426,29 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide ruch
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -19465,24 +19471,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -20545,29 +20551,29 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide ruch
 
-        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+        if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
             hide snake11
             hide pager1
             hide uszy1
-            hide jaruzel
+            hide girek
             hide tarcza6
-            hide screen jaruzel_stats
-            $ jaruzel_umarty = 1
+            hide screen girek_stats
+            $ girek_umarty = 1
             $ ile_wrogow -= 1
-            $ jaruzel_obrona = 0
-            $ jaruzel_weapon = 0
-            $ jaruzel_pager = 0
-            $ jaruzel_poison = 0
-            $ jaruzel_stun = 0
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
 
-            if jaruzel_slime >= 1:
+            if girek_slime >= 1:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
@@ -20590,24 +20596,24 @@ label fight111:
             if urban_zly_slime >= 1:
                 hide slime
         
-        if girek_hp_now <= 0 and girek_umarty == 0:
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
             hide snake33
             hide snake23
             hide snake13
             hide pager3
             hide uszy3
-            hide girek
+            hide jaruzel
             hide tarcza8
-            hide screen girek_stats
-            $ girek_umarty = 1
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
             $ ile_wrogow -= 1
-            $ girek_obrona = 0
-            $ girek_weapon = 0
-            $ girek_pager = 0
-            $ girek_poison = 0
-            $ girek_stun = 0
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
 
-            if girek_slime >= 1:
+            if jaruzel_slime >= 1:
                 hide slime
         
         if ile_wrogow <= 0:
@@ -20815,74 +20821,74 @@ label fight111:
         else:
             $ ado += 1    
 
-        if girek_hp_now <= 0:
+        if jaruzel_hp_now <= 0:
             jump start_fight111  
 
         show ruch zorder 0 at tlo_wrog2
 
-        if girek_stun == 1:
-            "{i}Girek jest zestunnowany{/i}"
+        if jaruzel_stun == 1:
+            "{i}Jaruzel jest zestunnowany{/i}"
             jump start_fight111  
 
-        if girek_uszy >= 1 and urban_hp_now >= 1:
-            if girek_weapon >= 1:
-                show girek_weapon zorder 15 at weapon_wrog2 
+        if jaruzel_uszy >= 1 and urban_hp_now >= 1:
+            if jaruzel_weapon >= 1:
+                show jaruzel_weapon zorder 15 at weapon_wrog2 
             else:
                 show reka8 zorder 15 at weapon_wrog2
-            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
             if memy == 3:
                 $ kostka = renpy.random.randint(1, 20)
                 if kostka <= 3:
-                    $ girek_hp_now -= girek_attack
+                    $ jaruzel_hp_now -= jaruzel_attack
                     play sound "audio/sfx/obrona.mp3"
-                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                     jump start_fight111
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
-                "{i}Atak Girek został zablokowany{/i}"
+                "{i}Atak Jaruzel został zablokowany{/i}"
                 $ urban_obrona = 1
 
                 jump start_fight111
                                                 
             else:
-                if girek_weapon >= 1:
-                    play sound "audio/sfx/girek_weapon.mp3"
+                if jaruzel_weapon >= 1:
+                    play sound "audio/sfx/jaruzel_weapon.mp3"
                                 
                 else:
                     play sound "audio/sfx/reka.mp3"
 
                 if urban_obrona >= 1:
-                    $ urban_hp_now -= int(girek_attack / 2)
+                    $ urban_hp_now -= int(jaruzel_attack / 2)
 
-                    $ dmg = int(girek_attack / 2)
-                    "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                    $ dmg = int(jaruzel_attack / 2)
+                    "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
                     jump start_fight111
                 else:
-                    $ urban_hp_now -= girek_attack
+                    $ urban_hp_now -= jaruzel_attack
 
-                    "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
+                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                 jump start_fight111
 
-        if girek_max_attack_now <= 0 and girek_obrona == 0:
+        if jaruzel_max_attack_now <= 0 and jaruzel_obrona == 0:
             show tarcza8 zorder 15 at weapon_wrog2  
             play sound "audio/sfx/shield.mp3"
-            "{i}Girek broni się{/i}"
-            $ girek_obrona += 1
+            "{i}Jaruzel broni się{/i}"
+            $ jaruzel_obrona += 1
             jump start_fight111
 
-        if girek_hp_now >= 1 and girek_obrona == 0:
-            if girek_hp_now <= 3:
+        if jaruzel_hp_now >= 1 and jaruzel_obrona == 0:
+            if jaruzel_hp_now <= 3:
                 $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
                     show tarcza8 zorder 15 at weapon_wrog2  
                     play sound "audio/sfx/shield.mp3"
-                    "{i}Girek broni się{/i}"
-                    $ girek_obrona += 1
+                    "{i}Jaruzel broni się{/i}"
+                    $ jaruzel_obrona += 1
                     jump start_fight111
             
             else:
@@ -20891,13 +20897,13 @@ label fight111:
                 if kostka == 10:
                     show tarcza8 zorder 15 at weapon_wrog2  
                     play sound "audio/sfx/shield.mp3"
-                    "{i}Girek broni się{/i}"
-                    $ girek_obrona += 1
+                    "{i}Jaruzel broni się{/i}"
+                    $ jaruzel_obrona += 1
                     jump start_fight111
                     
         label losowanko_fight116:    
-            if girek_weapon >= 1:
-                show girek_weapon zorder 15 at weapon_wrog2 
+            if jaruzel_weapon >= 1:
+                show jaruzel_weapon zorder 15 at weapon_wrog2 
             else:
                 show reka8 zorder 15 at weapon_wrog2     
             $ kostka = renpy.random.randint(1, 6)
@@ -20906,37 +20912,37 @@ label fight111:
                     if luszcz_hp_now <= 3:
                         $ kostka = renpy.random.randint(1, 5)
                         if kostka >= 2:
-                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                             if memy == 2:
                                 $ kostka = renpy.random.randint(1, 20)
                                 if kostka <= 3:
-                                    $ girek_hp_now -= girek_attack
+                                    $ jaruzel_hp_now -= jaruzel_attack
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                     jump start_fight111
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Girek został zablokowany{/i}"
+                                "{i}Atak Jaruzel został zablokowany{/i}"
                                 $ luszcz_obrona = 1
                                                     
                             else:
-                                if girek_weapon >= 1:
-                                    play sound "audio/sfx/girek_weapon.mp3"
+                                if jaruzel_weapon >= 1:
+                                    play sound "audio/sfx/jaruzel_weapon.mp3"
                                                 
                                 else:
                                     play sound "audio/sfx/reka.mp3"
 
                                 if luszcz_obrona == 1:
-                                    $ luszcz_hp_now -= int(girek_attack / 2)
+                                    $ luszcz_hp_now -= int(jaruzel_attack / 2)
 
-                                    $ dmg = int(girek_attack / 2)
-                                    "{i}Girek zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    $ dmg = int(jaruzel_attack / 2)
+                                    "{i}Jaruzel zadaje [dmg] obrażeń Łuszczowi{/i}"
                                 else:
-                                    $ luszcz_hp_now -= girek_attack
+                                    $ luszcz_hp_now -= jaruzel_attack
 
-                                    "{i}Girek zadaje [girek_attack] obrażeń Łuszczowi{/i}"
+                                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Łuszczowi{/i}"
 
                             jump start_fight111
                         else:
@@ -20946,37 +20952,37 @@ label fight111:
                         if luszcz_hp_now <= 10:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 3:
-                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                 if memy == 2:
                                     $ kostka = renpy.random.randint(1, 20)
                                     if kostka <= 3:
-                                        $ girek_hp_now -= girek_attack
+                                        $ jaruzel_hp_now -= jaruzel_attack
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                         jump start_fight111
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Girek został zablokowany{/i}"
+                                    "{i}Atak Jaruzel został zablokowany{/i}"
                                     $ luszcz_obrona = 1
                                                     
                                 else:
-                                    if girek_weapon >= 1:
-                                        play sound "audio/sfx/girek_weapon.mp3"
+                                    if jaruzel_weapon >= 1:
+                                        play sound "audio/sfx/jaruzel_weapon.mp3"
                                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
 
                                     if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(girek_attack / 2)
+                                        $ luszcz_hp_now -= int(jaruzel_attack / 2)
 
-                                        $ dmg = int(girek_attack / 2)
-                                        "{i}Girek zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(jaruzel_attack / 2)
+                                        "{i}Jaruzel zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
-                                        $ luszcz_hp_now -= girek_attack
+                                        $ luszcz_hp_now -= jaruzel_attack
 
-                                        "{i}Girek zadaje [girek_attack] obrażeń Łuszczowi{/i}"
+                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Łuszczowi{/i}"
 
                                 jump start_fight111
                             else:
@@ -20985,37 +20991,37 @@ label fight111:
                         else:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
-                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                 if memy == 2:
                                     $ kostka = renpy.random.randint(1, 20)
                                     if kostka <= 3:
-                                        $ girek_hp_now -= girek_attack
+                                        $ jaruzel_hp_now -= jaruzel_attack
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                         jump start_fight111
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Girek został zablokowany{/i}"
+                                    "{i}Atak Jaruzel został zablokowany{/i}"
                                     $ luszcz_obrona = 1
                                                     
                                 else:
-                                    if girek_weapon >= 1:
-                                        play sound "audio/sfx/girek_weapon.mp3"
+                                    if jaruzel_weapon >= 1:
+                                        play sound "audio/sfx/jaruzel_weapon.mp3"
                                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
 
                                     if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(girek_attack / 2)
+                                        $ luszcz_hp_now -= int(jaruzel_attack / 2)
 
-                                        $ dmg = int(girek_attack / 2)
-                                        "{i}Girek zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                        $ dmg = int(jaruzel_attack / 2)
+                                        "{i}Jaruzel zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
-                                        $ luszcz_hp_now -= girek_attack
+                                        $ luszcz_hp_now -= jaruzel_attack
 
-                                        "{i}Girek zadaje [girek_attack] obrażeń Łuszczowi{/i}"
+                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Łuszczowi{/i}"
 
                                 jump start_fight111
                             else:
@@ -21029,37 +21035,37 @@ label fight111:
                         if urban_hp_now <= 3:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 2:
-                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                 if memy == 3:
                                     $ kostka = renpy.random.randint(1, 20)
                                     if kostka <= 3:
-                                        $ girek_hp_now -= girek_attack
+                                        $ jaruzel_hp_now -= jaruzel_attack
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                         jump start_fight111
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Girek został zablokowany{/i}"
+                                    "{i}Atak Jaruzel został zablokowany{/i}"
                                     $ urban_obrona = 1
 
                                 else:
-                                    if girek_weapon >= 1:
-                                        play sound "audio/sfx/girek_weapon.mp3"
+                                    if jaruzel_weapon >= 1:
+                                        play sound "audio/sfx/jaruzel_weapon.mp3"
                                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
 
                                     if urban_obrona == 1:
-                                        $ urban_hp_now -= int(girek_attack / 2)
+                                        $ urban_hp_now -= int(jaruzel_attack / 2)
 
-                                        $ dmg = int(girek_attack / 2)
-                                        "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        $ dmg = int(jaruzel_attack / 2)
+                                        "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
-                                        $ urban_hp_now -= girek_attack
+                                        $ urban_hp_now -= jaruzel_attack
 
-                                        "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                 jump start_fight111
                             else:
@@ -21069,37 +21075,37 @@ label fight111:
                             if urban_hp_now <= 10:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 3:
-                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                     if memy == 3:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
-                                            $ girek_hp_now -= girek_attack
+                                            $ jaruzel_hp_now -= jaruzel_attack
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                             jump start_fight111
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Girek został zablokowany{/i}"
+                                        "{i}Atak Jaruzel został zablokowany{/i}"
                                         $ urban_obrona = 1
 
                                     else:
-                                        if girek_weapon >= 1:
-                                            play sound "audio/sfx/girek_weapon.mp3"
+                                        if jaruzel_weapon >= 1:
+                                            play sound "audio/sfx/jaruzel_weapon.mp3"
                                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
 
                                         if urban_obrona == 1:
-                                            $ urban_hp_now -= int(girek_attack / 2)
+                                            $ urban_hp_now -= int(jaruzel_attack / 2)
 
-                                            $ dmg = int(girek_attack / 2)
-                                            "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(jaruzel_attack / 2)
+                                            "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
-                                            $ urban_hp_now -= girek_attack
+                                            $ urban_hp_now -= jaruzel_attack
 
-                                            "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump start_fight111
                                 else:
@@ -21108,37 +21114,37 @@ label fight111:
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 5:
-                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                     if memy == 3:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
-                                            $ girek_hp_now -= girek_attack
+                                            $ jaruzel_hp_now -= jaruzel_attack
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                             jump start_fight111
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Girek został zablokowany{/i}"
+                                        "{i}Atak Jaruzel został zablokowany{/i}"
                                         $ urban_obrona = 1
                                     
                                     else:
-                                        if girek_weapon >= 1:
-                                            play sound "audio/sfx/girek_weapon.mp3"
+                                        if jaruzel_weapon >= 1:
+                                            play sound "audio/sfx/jaruzel_weapon.mp3"
                                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
 
                                         if urban_obrona == 1:
-                                            $ urban_hp_now -= int(girek_attack / 2)
+                                            $ urban_hp_now -= int(jaruzel_attack / 2)
 
-                                            $ dmg = int(girek_attack / 2)
-                                            "{i}Girek zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                            $ dmg = int(jaruzel_attack / 2)
+                                            "{i}Jaruzel zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
-                                            $ urban_hp_now -= girek_attack
+                                            $ urban_hp_now -= jaruzel_attack
 
-                                            "{i}Girek zadaje [girek_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump start_fight111
                                 else:
@@ -21152,37 +21158,37 @@ label fight111:
                             if zyd_hp_now <= 3:
                                 $ kostka = renpy.random.randint(1, 5)
                                 if kostka >= 2:
-                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                     if memy == 4:
                                         $ kostka = renpy.random.randint(1, 20)
                                         if kostka <= 3:
-                                            $ girek_hp_now -= girek_attack
+                                            $ jaruzel_hp_now -= jaruzel_attack
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                             jump start_fight111
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Girek został zablokowany{/i}"
+                                        "{i}Atak Jaruzel został zablokowany{/i}"
                                         $ zyd_obrona = 1
                                     
                                     else:
-                                        if girek_weapon >= 1:
-                                            play sound "audio/sfx/girek_weapon.mp3"
+                                        if jaruzel_weapon >= 1:
+                                            play sound "audio/sfx/jaruzel_weapon.mp3"
                                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
 
                                         if zyd_obrona == 1:
-                                            $ zyd_hp_now -= int(girek_attack / 2)
+                                            $ zyd_hp_now -= int(jaruzel_attack / 2)
 
-                                            $ dmg = int(girek_attack / 2)
-                                            "{i}Girek zadaje [dmg] obrażeń Żydowi{/i}"
+                                            $ dmg = int(jaruzel_attack / 2)
+                                            "{i}Jaruzel zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
-                                            $ zyd_hp_now -= girek_attack
+                                            $ zyd_hp_now -= jaruzel_attack
 
-                                            "{i}Girek zadaje [girek_attack] obrażeń Żydowi{/i}"
+                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Żydowi{/i}"
 
                                     jump start_fight111
                                 else:
@@ -21192,37 +21198,37 @@ label fight111:
                                 if zyd_hp_now <= 10:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 3:
-                                        $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                        $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                         if memy == 4:
                                             $ kostka = renpy.random.randint(1, 20)
                                             if kostka <= 3:
-                                                $ girek_hp_now -= girek_attack
+                                                $ jaruzel_hp_now -= jaruzel_attack
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                 jump start_fight111
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Girek został zablokowany{/i}"
+                                            "{i}Atak Jaruzel został zablokowany{/i}"
                                             $ zyd_obrona = 1
                                         
                                         else:
-                                            if girek_weapon >= 1:
-                                                play sound "audio/sfx/girek_weapon.mp3"
+                                            if jaruzel_weapon >= 1:
+                                                play sound "audio/sfx/jaruzel_weapon.mp3"
                                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
 
                                             if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(girek_attack / 2)
+                                                $ zyd_hp_now -= int(jaruzel_attack / 2)
 
-                                                $ dmg = int(girek_attack / 2)
-                                                "{i}Girek zadaje [dmg] obrażeń Żydowi{/i}"
+                                                $ dmg = int(jaruzel_attack / 2)
+                                                "{i}Jaruzel zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
-                                                $ zyd_hp_now -= girek_attack
+                                                $ zyd_hp_now -= jaruzel_attack
 
-                                                "{i}Girek zadaje [girek_attack] obrażeń Żydowi{/i}"
+                                                "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Żydowi{/i}"
 
                                         jump start_fight111
                                     else:
@@ -21231,37 +21237,37 @@ label fight111:
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 5:
-                                        $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                        $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                         if memy == 4:
                                             $ kostka = renpy.random.randint(1, 20)
                                             if kostka <= 3:
-                                                $ girek_hp_now -= girek_attack
+                                                $ jaruzel_hp_now -= jaruzel_attack
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                 jump start_fight111
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Girek został zablokowany{/i}"
+                                            "{i}Atak Jaruzel został zablokowany{/i}"
                                             $ zyd_obrona = 1
                                         
                                         else:
-                                            if girek_weapon >= 1:
-                                                play sound "audio/sfx/girek_weapon.mp3"
+                                            if jaruzel_weapon >= 1:
+                                                play sound "audio/sfx/jaruzel_weapon.mp3"
                                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
 
                                             if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(girek_attack / 2)
+                                                $ zyd_hp_now -= int(jaruzel_attack / 2)
 
-                                                $ dmg = int(girek_attack / 2)
-                                                "{i}Girek zadaje [dmg] obrażeń Żydowi{/i}"
+                                                $ dmg = int(jaruzel_attack / 2)
+                                                "{i}Jaruzel zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
-                                                $ zyd_hp_now -= girek_attack
+                                                $ zyd_hp_now -= jaruzel_attack
 
-                                                "{i}Girek zadaje [girek_attack] obrażeń Żydowi{/i}"
+                                                "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Żydowi{/i}"
 
                                         jump start_fight111
                                     else:
@@ -21275,37 +21281,37 @@ label fight111:
                                 if kazuma_hp_now <= 3:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 2:
-                                        $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                        $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                         if memy == 5:
                                             $ kostka = renpy.random.randint(1, 20)
                                             if kostka <= 3:
-                                                $ girek_hp_now -= girek_attack
+                                                $ jaruzel_hp_now -= jaruzel_attack
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                 jump start_fight111
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Girek został zablokowany{/i}"
+                                            "{i}Atak Jaruzel został zablokowany{/i}"
                                             $ kazuma_obrona = 1
                                         
                                         else:
-                                            if girek_weapon >= 1:
-                                                play sound "audio/sfx/girek_weapon.mp3"
+                                            if jaruzel_weapon >= 1:
+                                                play sound "audio/sfx/jaruzel_weapon.mp3"
                                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
 
                                             if kazuma_obrona == 1:
-                                                $ kazuma_hp_now -= int(girek_attack / 2)
+                                                $ kazuma_hp_now -= int(jaruzel_attack / 2)
 
-                                                $ dmg = int(girek_attack / 2)
-                                                "{i}Girek zadaje [dmg] obrażeń Kazumie{/i}"
+                                                $ dmg = int(jaruzel_attack / 2)
+                                                "{i}Jaruzel zadaje [dmg] obrażeń Kazumie{/i}"
                                             else:
-                                                $ kazuma_hp_now -= girek_attack
+                                                $ kazuma_hp_now -= jaruzel_attack
 
-                                                "{i}Girek zadaje [girek_attack] obrażeń Kazumie{/i}"
+                                                "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Kazumie{/i}"
 
                                         jump start_fight111
                                     else:
@@ -21315,37 +21321,37 @@ label fight111:
                                     if kazuma_hp_now <= 10:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 3:
-                                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                             if memy == 5:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
-                                                    $ girek_hp_now -= girek_attack
+                                                    $ jaruzel_hp_now -= jaruzel_attack
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                     jump start_fight111
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Girek został zablokowany{/i}"
+                                                "{i}Atak Jaruzel został zablokowany{/i}"
                                                 $ kazuma_obrona = 1
                                             
                                             else:
-                                                if girek_weapon >= 1:
-                                                    play sound "audio/sfx/girek_weapon.mp3"
+                                                if jaruzel_weapon >= 1:
+                                                    play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
 
                                                 if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(girek_attack / 2)
+                                                    $ kazuma_hp_now -= int(jaruzel_attack / 2)
 
-                                                    $ dmg = int(girek_attack / 2)
-                                                    "{i}Girek zadaje [dmg] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(jaruzel_attack / 2)
+                                                    "{i}Jaruzel zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
-                                                    $ kazuma_hp_now -= girek_attack
+                                                    $ kazuma_hp_now -= jaruzel_attack
 
-                                                    "{i}Jaruzel zadaje [girek_attack] obrażeń Kazumie{/i}"
+                                                    "{i}Girek zadaje [jaruzel_attack] obrażeń Kazumie{/i}"
 
                                             jump start_fight111
                                         else:
@@ -21354,37 +21360,37 @@ label fight111:
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 5:
-                                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                             if memy == 5:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
-                                                    $ girek_hp_now -= girek_attack
+                                                    $ jaruzel_hp_now -= jaruzel_attack
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                     jump start_fight111
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Girek został zablokowany{/i}"
+                                                "{i}Atak Jaruzel został zablokowany{/i}"
                                                 $ kazuma_obrona = 1
                                             
                                             else:
-                                                if girek_weapon >= 1:
-                                                    play sound "audio/sfx/girek_weapon.mp3"
+                                                if jaruzel_weapon >= 1:
+                                                    play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
 
                                                 if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(girek_attack / 2)
+                                                    $ kazuma_hp_now -= int(jaruzel_attack / 2)
 
-                                                    $ dmg = int(girek_attack / 2)
-                                                    "{i}Girek zadaje [dmg] obrażeń Kazumie{/i}"
+                                                    $ dmg = int(jaruzel_attack / 2)
+                                                    "{i}Jaruzel zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
-                                                    $ kazuma_hp_now -= girek_attack
+                                                    $ kazuma_hp_now -= jaruzel_attack
 
-                                                    "{i}Girek zadaje [girek_attack] obrażeń Kazumie{/i}"
+                                                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Kazumie{/i}"
 
                                             jump start_fight111
                                         else:
@@ -21398,37 +21404,37 @@ label fight111:
                                     if eminem_hp_now <= 3:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 2:
-                                            $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                            $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                             if memy == 7:
                                                 $ kostka = renpy.random.randint(1, 20)
                                                 if kostka <= 3:
-                                                    $ girek_hp_now -= girek_attack
+                                                    $ jaruzel_hp_now -= jaruzel_attack
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                    "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                     jump start_fight111
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Girek został zablokowany{/i}"
+                                                "{i}Atak Jaruzel został zablokowany{/i}"
                                                 $ eminem_obrona = 1  
                                             
                                             else:
-                                                if girek_weapon >= 1:
-                                                    play sound "audio/sfx/girek_weapon.mp3"
+                                                if jaruzel_weapon >= 1:
+                                                    play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
 
                                                 if eminem_obrona == 1:
-                                                    $ eminem_hp_now -= int(girek_attack / 2)
+                                                    $ eminem_hp_now -= int(jaruzel_attack / 2)
 
-                                                    $ dmg = int(girek_attack / 2)
-                                                    "{i}Girek zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    $ dmg = int(jaruzel_attack / 2)
+                                                    "{i}Jaruzel zadaje [dmg] obrażeń Shadowowi{/i}"
                                                 else:
-                                                    $ eminem_hp_now -= girek_attack
+                                                    $ eminem_hp_now -= jaruzel_attack
 
-                                                    "{i}Girek zadaje [girek_attack] obrażeń Shadowowi{/i}"
+                                                    "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Shadowowi{/i}"
 
                                             jump start_fight111
                                         else:
@@ -21438,37 +21444,37 @@ label fight111:
                                         if eminem_hp_now <= 10:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 3:
-                                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                                 if memy == 7:
                                                     $ kostka = renpy.random.randint(1, 20)
                                                     if kostka <= 3:
-                                                        $ girek_hp_now -= girek_attack
+                                                        $ jaruzel_hp_now -= jaruzel_attack
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                         jump start_fight111
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Girek został zablokowany{/i}"
+                                                    "{i}Atak Jaruzel został zablokowany{/i}"
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
-                                                    if girek_weapon >= 1:
-                                                        play sound "audio/sfx/girek_weapon.mp3"
+                                                    if jaruzel_weapon >= 1:
+                                                        play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
 
                                                     if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(girek_attack / 2)
+                                                        $ eminem_hp_now -= int(jaruzel_attack / 2)
 
-                                                        $ dmg = int(girek_attack / 2)
-                                                        "{i}Girek zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(jaruzel_attack / 2)
+                                                        "{i}Jaruzel zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
-                                                        $ eminem_hp_now -= girek_attack
+                                                        $ eminem_hp_now -= jaruzel_attack
 
-                                                        "{i}Girek zadaje [girek_attack] obrażeń Shadowowi{/i}"
+                                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Shadowowi{/i}"
 
                                                 jump start_fight111
                                             else:
@@ -21477,37 +21483,37 @@ label fight111:
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 5:
-                                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                                 if memy == 7:
                                                     $ kostka = renpy.random.randint(1, 20)
                                                     if kostka <= 3:
-                                                        $ girek_hp_now -= girek_attack
+                                                        $ jaruzel_hp_now -= jaruzel_attack
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                         jump start_fight111
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Girek został zablokowany{/i}"
+                                                    "{i}Atak Jaruzel został zablokowany{/i}"
                                                     $ eminem_obrona = 1
                                                 
                                                 else:
-                                                    if girek_weapon >= 1:
-                                                        play sound "audio/sfx/girek_weapon.mp3"
+                                                    if jaruzel_weapon >= 1:
+                                                        play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
 
                                                     if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(girek_attack / 2)
+                                                        $ eminem_hp_now -= int(jaruzel_attack / 2)
 
-                                                        $ dmg = int(girek_attack / 2)
-                                                        "{i}Girek zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                        $ dmg = int(jaruzel_attack / 2)
+                                                        "{i}Jaruzel zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
-                                                        $ eminem_hp_now -= girek_attack
+                                                        $ eminem_hp_now -= jaruzel_attack
 
-                                                        "{i}Girek zadaje [girek_attack] obrażeń Shadowowi{/i}"
+                                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Shadowowi{/i}"
 
                                                 jump start_fight111
                                             else:
@@ -21521,37 +21527,37 @@ label fight111:
                                         if tarczownik_hp_now <= 3:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 2:
-                                                $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                                $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                                 if memy == 6:
                                                     $ kostka = renpy.random.randint(1, 20)
                                                     if kostka <= 3:
-                                                        $ girek_hp_now -= girek_attack
+                                                        $ jaruzel_hp_now -= jaruzel_attack
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                        "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                         jump start_fight111
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Girek został zablokowany{/i}"
+                                                    "{i}Atak Jaruzel został zablokowany{/i}"
                                                     $ tarczownik_obrona = 1
                                                 
                                                 else:
-                                                    if girek_weapon >= 1:
-                                                        play sound "audio/sfx/girek_weapon.mp3"
+                                                    if jaruzel_weapon >= 1:
+                                                        play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
 
                                                     if tarczownik_obrona == 1:
-                                                        $ tarczownik_hp_now -= int(girek_attack / 2)
+                                                        $ tarczownik_hp_now -= int(jaruzel_attack / 2)
 
-                                                        $ dmg = int(girek_attack / 2)
-                                                        "{i}Girek zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        $ dmg = int(jaruzel_attack / 2)
+                                                        "{i}Jaruzel zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                     else:
-                                                        $ tarczownik_hp_now -= girek_attack
+                                                        $ tarczownik_hp_now -= jaruzel_attack
 
-                                                        "{i}Girek zadaje [girek_attack] obrażeń Naofumiemu{/i}"
+                                                        "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Naofumiemu{/i}"
 
                                                 jump start_fight111
                                             else:
@@ -21561,37 +21567,37 @@ label fight111:
                                             if tarczownik_hp_now <= 10:
                                                 $ kostka = renpy.random.randint(1, 5)
                                                 if kostka >= 3:
-                                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                                     if memy == 6:
                                                         $ kostka = renpy.random.randint(1, 20)
                                                         if kostka <= 3:
-                                                            $ girek_hp_now -= girek_attack
+                                                            $ jaruzel_hp_now -= jaruzel_attack
                                                             play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                             jump start_fight111
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Girek został zablokowany{/i}"
+                                                        "{i}Atak Jaruzel został zablokowany{/i}"
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
-                                                        if girek_weapon >= 1:
-                                                            play sound "audio/sfx/girek_weapon.mp3"
+                                                        if jaruzel_weapon >= 1:
+                                                            play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                         
                                                         else:
                                                             play sound "audio/sfx/reka.mp3"
 
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(girek_attack / 2)
+                                                            $ tarczownik_hp_now -= int(jaruzel_attack / 2)
 
-                                                            $ dmg = int(girek_attack / 2)
-                                                            "{i}Girek zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            $ dmg = int(jaruzel_attack / 2)
+                                                            "{i}Jaruzel zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
-                                                            $ tarczownik_hp_now -= girek_attack
+                                                            $ tarczownik_hp_now -= jaruzel_attack
 
-                                                            "{i}Girek zadaje [girek_attack] obrażeń Naofumiemu{/i}"
+                                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump start_fight111
                                                 else:
@@ -21600,37 +21606,37 @@ label fight111:
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
                                                 if kostka >= 5:
-                                                    $ girek_attack = renpy.random.randint(girek_min_attack_now, girek_max_attack_now)
+                                                    $ jaruzel_attack = renpy.random.randint(jaruzel_min_attack_now, jaruzel_max_attack_now)
 
                                                     if memy == 6:
                                                         $ kostka = renpy.random.randint(1, 20)
                                                         if kostka <= 3:
-                                                            $ girek_hp_now -= girek_attack
+                                                            $ jaruzel_hp_now -= jaruzel_attack
                                                             play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Girek odbił się od Szalika z Memów i zadał [girek_attack] obrażeń nadawcy{/i}"
+                                                            "{i}Atak Jaruzel odbił się od Szalika z Memów i zadał [jaruzel_attack] obrażeń nadawcy{/i}"
                                                             jump start_fight111
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Girek został zablokowany{/i}"
+                                                        "{i}Atak Jaruzel został zablokowany{/i}"
                                                         $ tarczownik_obrona = 1
                                                 
                                                     else:
-                                                        if girek_weapon >= 1:
-                                                            play sound "audio/sfx/girek_weapon.mp3"
+                                                        if jaruzel_weapon >= 1:
+                                                            play sound "audio/sfx/jaruzel_weapon.mp3"
                                                                         
                                                         else:
                                                             play sound "audio/sfx/reka.mp3"
 
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(girek_attack / 2)
+                                                            $ tarczownik_hp_now -= int(jaruzel_attack / 2)
 
-                                                            $ dmg = int(girek_attack / 2)
-                                                            "{i}Girek zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            $ dmg = int(jaruzel_attack / 2)
+                                                            "{i}Jaruzel zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
-                                                            $ tarczownik_hp_now -= girek_attack
+                                                            $ tarczownik_hp_now -= jaruzel_attack
 
-                                                            "{i}Girek zadaje [girek_attack] obrażeń Naofumiemu{/i}"
+                                                            "{i}Jaruzel zadaje [jaruzel_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump start_fight111
                                                 else:
@@ -21709,9 +21715,9 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide luszcz_vr
         hide luszcz_klata
         hide luszcz_memy
@@ -21763,9 +21769,9 @@ label fight111:
         hide stun7
         hide stun8
         hide stun9
-        hide screen jaruzel_stats
-        hide screen urban_zly_stats
         hide screen girek_stats
+        hide screen urban_zly_stats
+        hide screen jaruzel_stats
         window hide
         menu:
             "{b}Powtórz Walkę{/b}":
@@ -21857,51 +21863,51 @@ label fight111:
                 $ tarczownik_min_attack_now_true = tarczownik_min_attack
                 $ tarczownik_max_attack_now_true = tarczownik_max_attack
 
-                $ jaruzel_hp_now = jaruzel_hp
-                $ jaruzel_min_attack_now = jaruzel_min_attack
-                $ jaruzel_max_attack_now = jaruzel_max_attack
-                $ jaruzel_min_attack_now_true = jaruzel_min_attack
-                $ jaruzel_max_attack_now_true = jaruzel_max_attack
                 $ girek_hp_now = girek_hp
                 $ girek_min_attack_now = girek_min_attack
                 $ girek_max_attack_now = girek_max_attack
                 $ girek_min_attack_now_true = girek_min_attack
                 $ girek_max_attack_now_true = girek_max_attack
+                $ jaruzel_hp_now = jaruzel_hp
+                $ jaruzel_min_attack_now = jaruzel_min_attack
+                $ jaruzel_max_attack_now = jaruzel_max_attack
+                $ jaruzel_min_attack_now_true = jaruzel_min_attack
+                $ jaruzel_max_attack_now_true = jaruzel_max_attack
                 $ urban_zly_hp_now = urban_zly_hp
                 $ urban_zly_min_attack_now = urban_zly_min_attack
                 $ urban_zly_max_attack_now = urban_zly_max_attack
                 $ urban_zly_min_attack_now_true = urban_zly_min_attack
                 $ urban_zly_max_attack_now_true = urban_zly_max_attack
 
-                $ jaruzel_pager = 0
                 $ girek_pager = 0
+                $ jaruzel_pager = 0
                 $ urban_zly_pager = 0
                 $ pager_boom = 0
                 
-                $ jaruzel_uszy = 0
                 $ girek_uszy = 0
+                $ jaruzel_uszy = 0
                 $ urban_zly_uszy = 0
 
-                $ jaruzel_slime = 0
                 $ girek_slime = 0
+                $ jaruzel_slime = 0
                 $ urban_zly_slime = 0
 
-                $ jaruzel_weapon = 1
-                $ urban_zly_weapon = 1
                 $ girek_weapon = 1
+                $ urban_zly_weapon = 1
+                $ jaruzel_weapon = 1
 
-                $ jaruzel_obrona = 0
                 $ girek_obrona = 0
+                $ jaruzel_obrona = 0
                 $ urban_zly_obrona = 0
 
-                $ jaruzel_umarty = 0
                 $ girek_umarty = 0
+                $ jaruzel_umarty = 0
                 $ urban_zly_umarty = 0
 
-                $ jaruzel_poison = 0
-                $ jaruzel_stun = 0
                 $ girek_poison = 0
                 $ girek_stun = 0
+                $ jaruzel_poison = 0
+                $ jaruzel_stun = 0
                 $ urban_zly_poison = 0
                 $ urban_zly_stun = 0
 
@@ -22012,9 +22018,9 @@ label fight111:
         hide zyd_weapon
         hide kazuma_weapon
         hide tarczownik_weapon
-        hide jaruzel_weapon
-        hide urban_zly_weapon
         hide girek_weapon
+        hide urban_zly_weapon
+        hide jaruzel_weapon
         hide luszcz_vr
         hide luszcz_klata
         hide luszcz_memy
@@ -22183,51 +22189,51 @@ label fight111:
         $ tarczownik_min_attack_now_true = tarczownik_min_attack
         $ tarczownik_max_attack_now_true = tarczownik_max_attack
 
-        $ jaruzel_hp_now = jaruzel_hp
-        $ jaruzel_min_attack_now = jaruzel_min_attack
-        $ jaruzel_max_attack_now = jaruzel_max_attack
-        $ jaruzel_min_attack_now_true = jaruzel_min_attack
-        $ jaruzel_max_attack_now_true = jaruzel_max_attack
         $ girek_hp_now = girek_hp
         $ girek_min_attack_now = girek_min_attack
         $ girek_max_attack_now = girek_max_attack
         $ girek_min_attack_now_true = girek_min_attack
         $ girek_max_attack_now_true = girek_max_attack
+        $ jaruzel_hp_now = jaruzel_hp
+        $ jaruzel_min_attack_now = jaruzel_min_attack
+        $ jaruzel_max_attack_now = jaruzel_max_attack
+        $ jaruzel_min_attack_now_true = jaruzel_min_attack
+        $ jaruzel_max_attack_now_true = jaruzel_max_attack
         $ urban_zly_hp_now = urban_zly_hp
         $ urban_zly_min_attack_now = urban_zly_min_attack
         $ urban_zly_max_attack_now = urban_zly_max_attack
         $ urban_zly_min_attack_now_true = urban_zly_min_attack
         $ urban_zly_max_attack_now_true = urban_zly_max_attack
 
-        $ jaruzel_pager = 0
         $ girek_pager = 0
+        $ jaruzel_pager = 0
         $ urban_zly_pager = 0
         $ pager_boom = 0
 
-        $ jaruzel_uszy = 0
         $ girek_uszy = 0
+        $ jaruzel_uszy = 0
         $ urban_zly_uszy = 0
 
-        $ jaruzel_slime = 0
         $ girek_slime = 0
+        $ jaruzel_slime = 0
         $ urban_zly_slime = 0
 
-        $ jaruzel_weapon = 1
-        $ urban_zly_weapon = 1
         $ girek_weapon = 1
+        $ urban_zly_weapon = 1
+        $ jaruzel_weapon = 1
 
-        $ jaruzel_obrona = 0
         $ girek_obrona = 0
+        $ jaruzel_obrona = 0
         $ urban_zly_obrona = 0
 
-        $ jaruzel_umarty = 0
         $ girek_umarty = 0
+        $ jaruzel_umarty = 0
         $ urban_zly_umarty = 0
 
-        $ jaruzel_poison = 0
-        $ jaruzel_stun = 0
         $ girek_poison = 0
         $ girek_stun = 0
+        $ jaruzel_poison = 0
+        $ jaruzel_stun = 0
         $ urban_zly_poison = 0
         $ urban_zly_stun = 0
 
