@@ -73,6 +73,45 @@ label fight181_stats:
     default trup12_stun = 0
     default fanatyk_stun = 0
 
+    default fanatyk_special = 3
+    default fanatyk_haczyki = 0
+    default luszcz_haczyki = 0
+    default eminem_haczyki = 0
+    default urban_haczyki = 0
+    default zyd_haczyki = 0
+    default kazuma_haczyki = 0
+    default tarczownik_haczyki = 0
+
+    $ luszcz_haczyki = 0
+    hide haczyki11
+    hide haczyki12
+    hide haczyki13
+    $ eminem_haczyki = 0
+    hide haczyki21
+    hide haczyki22
+    hide haczyki23
+    $ urban_haczyki = 0
+    hide haczyki31
+    hide haczyki32
+    hide haczyki33
+    $ zyd_haczyki = 0
+    hide haczyki41
+    hide haczyki42
+    hide haczyki43
+    $ kazuma_haczyki = 0
+    hide haczyki51
+    hide haczyki52
+    hide haczyki53
+    $ tarczownik_haczyki = 0
+    hide haczyki61
+    hide haczyki62
+    hide haczyki63
+    $ fanatyk_special = 3
+    $ fanatyk_haczyki = 0
+    hide fanatyk_haczyk1
+    hide fanatyk_haczyk2
+    hide fanatyk_haczyk3
+
 label fight181:
     $ fight_on = 1
     label wybor_fight181:
@@ -91,6 +130,7 @@ label fight181:
         $ fanatyk_max_attack_now = fanatyk_max_attack
         $ fanatyk_min_attack_now_true = fanatyk_min_attack
         $ fanatyk_max_attack_now_true = fanatyk_max_attack
+        $ fanatyk_special = 3
 
         label team_fight181:
             if liczba_sojusznikow >= 3:
@@ -1199,12 +1239,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -1227,12 +1275,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -1255,12 +1311,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -1286,12 +1350,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -1322,12 +1394,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -1350,12 +1430,20 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -1572,12 +1660,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -1600,12 +1696,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -1628,12 +1732,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -1659,12 +1771,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -1695,12 +1815,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -1723,12 +1851,20 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -1774,6 +1910,10 @@ label fight181:
         if luszcz_lagodny == 1:
             if luszcz_hp_now + 1 < luszcz_hp:
                 $ luszcz_hp_now += 1
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 play sound "audio/sfx/heal.mp3"
                 "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1783,6 +1923,10 @@ label fight181:
         if luszcz_lagodny == 2:
             if luszcz_hp_now + 1 < luszcz_hp:
                 $ luszcz_hp_now += 1
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 play sound "audio/sfx/heal.mp3"
                 "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1791,6 +1935,10 @@ label fight181:
         if luszcz_lagodny == 3:
             if luszcz_hp_now + 1 < luszcz_hp:
                 $ luszcz_hp_now += 1
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 play sound "audio/sfx/heal.mp3"
                 "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1799,6 +1947,10 @@ label fight181:
         if eminem_lagodny == 1:
             if eminem_hp_now + 1 < eminem_hp:
                 $ eminem_hp_now += 1
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 play sound "audio/sfx/heal.mp3"
                 "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1808,6 +1960,10 @@ label fight181:
         if eminem_lagodny == 2:
             if eminem_hp_now + 1 < eminem_hp:
                 $ eminem_hp_now += 1
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 play sound "audio/sfx/heal.mp3"
                 "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1816,6 +1972,10 @@ label fight181:
         if eminem_lagodny == 3:
             if eminem_hp_now + 1 < eminem_hp:
                 $ eminem_hp_now += 1
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 play sound "audio/sfx/heal.mp3"
                 "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1824,6 +1984,10 @@ label fight181:
         if urban_lagodny == 1:
             if urban_hp_now + 1 < urban_hp:
                 $ urban_hp_now += 1
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 play sound "audio/sfx/heal.mp3"
                 "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1833,6 +1997,10 @@ label fight181:
         if urban_lagodny == 2:
             if urban_hp_now + 1 < urban_hp:
                 $ urban_hp_now += 1
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 play sound "audio/sfx/heal.mp3"
                 "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1841,6 +2009,10 @@ label fight181:
         if urban_lagodny == 3:
             if urban_hp_now + 1 < urban_hp:
                 $ urban_hp_now += 1
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 play sound "audio/sfx/heal.mp3"
                 "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1849,6 +2021,10 @@ label fight181:
         if zyd_lagodny == 1:
             if zyd_hp_now + 1 < zyd_hp:
                 $ zyd_hp_now += 1
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 play sound "audio/sfx/heal.mp3"
                 "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1858,6 +2034,10 @@ label fight181:
         if zyd_lagodny == 2:
             if zyd_hp_now + 1 < zyd_hp:
                 $ zyd_hp_now += 1
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 play sound "audio/sfx/heal.mp3"
                 "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1866,6 +2046,10 @@ label fight181:
         if zyd_lagodny == 3:
             if zyd_hp_now + 1 < zyd_hp:
                 $ zyd_hp_now += 1
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 play sound "audio/sfx/heal.mp3"
                 "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1874,6 +2058,10 @@ label fight181:
         if kazuma_lagodny == 1:
             if kazuma_hp_now + 1 < kazuma_hp:
                 $ kazuma_hp_now += 1
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 play sound "audio/sfx/heal.mp3"
                 "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1883,6 +2071,10 @@ label fight181:
         if kazuma_lagodny == 2:
             if kazuma_hp_now + 1 < kazuma_hp:
                 $ kazuma_hp_now += 1
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 play sound "audio/sfx/heal.mp3"
                 "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1891,6 +2083,10 @@ label fight181:
         if kazuma_lagodny == 3:
             if kazuma_hp_now + 1 < kazuma_hp:
                 $ kazuma_hp_now += 1
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 play sound "audio/sfx/heal.mp3"
                 "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1899,6 +2095,10 @@ label fight181:
         if tarczownik_lagodny == 1:
             if tarczownik_hp_now + 1 >= tarczownik_hp:
                 $ tarczownik_hp_now += 1
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 play sound "audio/sfx/heal.mp3"
                 "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1908,6 +2108,10 @@ label fight181:
         if tarczownik_lagodny == 2:
             if tarczownik_hp_now + 1 < tarczownik_hp:
                 $ tarczownik_hp_now += 1
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 play sound "audio/sfx/heal.mp3"
                 "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -1916,6 +2120,10 @@ label fight181:
         if tarczownik_lagodny == 3:
             if tarczownik_hp_now + 1 < tarczownik_hp:
                 $ tarczownik_hp_now += 1
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 play sound "audio/sfx/heal.mp3"
                 "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
 
@@ -2134,6 +2342,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -2159,6 +2371,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -2184,6 +2400,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -2207,6 +2427,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
@@ -2221,6 +2445,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Łuszcza został zablokowany{/i}"
                             if ziemia == 2:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
@@ -2230,6 +2458,59 @@ label fight181:
                                     $ luszcz_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                        
+                        if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if luszcz_haczyki == 0:
+                                    $ luszcz_haczyki = 1
+                                    if luszcz_wybrany == 1:
+                                        show haczyki11 zorder 25 at sojusznik1 
+
+                                    if luszcz_wybrany == 2:
+                                        show haczyki11 zorder 25 at sojusznik2  
+
+                                    if luszcz_wybrany == 3:
+                                        show haczyki11 zorder 25 at sojusznik3 
+                                else:
+                                    if luszcz_haczyki == 1:
+                                        $ luszcz_haczyki = 2
+                                        if luszcz_wybrany == 1:
+                                            show haczyki12 zorder 25 at sojusznik1 
+
+                                        if luszcz_wybrany == 2:
+                                            show haczyki12 zorder 25 at sojusznik2  
+
+                                        if luszcz_wybrany == 3:
+                                            show haczyki12 zorder 25 at sojusznik3 
+                                    else:
+                                        if luszcz_haczyki == 2:
+                                            $ luszcz_haczyki = 3
+                                            if luszcz_wybrany == 1:
+                                                show haczyki13 zorder 25 at sojusznik1 
+
+                                            if luszcz_wybrany == 2:
+                                                show haczyki13 zorder 25 at sojusznik2  
+
+                                            if luszcz_wybrany == 3:
+                                                show haczyki13 zorder 25 at sojusznik3 
+                                
+                                $ luszcz_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight182
 
@@ -2288,6 +2569,10 @@ label fight181:
                                             $ trup11_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -2304,6 +2589,10 @@ label fight181:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -2344,6 +2633,10 @@ label fight181:
                                             $ trup11_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -2357,6 +2650,10 @@ label fight181:
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -2377,6 +2674,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
+                                    $ luszcz_haczyki = 0
+                                    hide haczyki11
+                                    hide haczyki12
+                                    hide haczyki13
                                     $ kostka = renpy.random.randint(1, 2)
                                     if luszcz_hp_now + kostka >= luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -2421,6 +2722,10 @@ label fight181:
                                             $ fanatyk_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -2430,6 +2735,58 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
 
                                     $ fanatyk_hp_now -= int(luszcz_attack / 2)
@@ -2437,6 +2794,10 @@ label fight181:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -2457,6 +2818,10 @@ label fight181:
                                             $ fanatyk_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -2466,6 +2831,59 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
 
                                     $ fanatyk_hp_now -= luszcz_attack
@@ -2477,6 +2895,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -2486,10 +2908,67 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+    
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -2499,6 +2978,59 @@ label fight181:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+
+                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if luszcz_haczyki == 0:
+                                        $ luszcz_haczyki = 1
+                                        if luszcz_wybrany == 1:
+                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                        if luszcz_wybrany == 2:
+                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                        if luszcz_wybrany == 3:
+                                            show haczyki11 zorder 25 at sojusznik3 
+                                    else:
+                                        if luszcz_haczyki == 1:
+                                            $ luszcz_haczyki = 2
+                                            if luszcz_wybrany == 1:
+                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                            if luszcz_wybrany == 2:
+                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                            if luszcz_wybrany == 3:
+                                                show haczyki12 zorder 25 at sojusznik3 
+                                        else:
+                                            if luszcz_haczyki == 2:
+                                                $ luszcz_haczyki = 3
+                                                if luszcz_wybrany == 1:
+                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                if luszcz_wybrany == 2:
+                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                if luszcz_wybrany == 3:
+                                                    show haczyki13 zorder 25 at sojusznik3 
+                                    
+                                    $ luszcz_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight182
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -2693,6 +3225,10 @@ label fight181:
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
+                                    $ luszcz_haczyki = 0
+                                    hide haczyki11
+                                    hide haczyki12
+                                    hide haczyki13
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
                                         "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -2704,6 +3240,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ eminem_haczyki = 0
+                                    hide haczyki21
+                                    hide haczyki22
+                                    hide haczyki23
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -2724,6 +3264,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ urban_haczyki = 0
+                                    hide haczyki31
+                                    hide haczyki32
+                                    hide haczyki33
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -2744,6 +3288,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ zyd_haczyki = 0
+                                    hide haczyki41
+                                    hide haczyki42
+                                    hide haczyki43
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -2764,6 +3312,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ kazuma_haczyki = 0
+                                    hide haczyki51
+                                    hide haczyki52
+                                    hide haczyki53
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -2784,6 +3336,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ tarczownik_haczyki = 0
+                                    hide haczyki61
+                                    hide haczyki62
+                                    hide haczyki63
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -2817,12 +3373,20 @@ label fight181:
                                 show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
 
                             if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 if luszcz_hp_now + 2 > luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
                                 else:
                                     $ luszcz_hp_now += 2
                             
                             if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                $ eminem_haczyki = 0
+                                hide haczyki21
+                                hide haczyki22
+                                hide haczyki23
                                 if eminem_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -2838,6 +3402,10 @@ label fight181:
                                     $ eminem_hp_now += 2
 
                             if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 if urban_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -2853,6 +3421,10 @@ label fight181:
                                     $ urban_hp_now += 2
 
                             if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 if zyd_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -2868,6 +3440,10 @@ label fight181:
                                     $ zyd_hp_now += 2
 
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 if kazuma_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -2883,6 +3459,10 @@ label fight181:
                                     $ kazuma_hp_now += 2
                             
                             if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                $ tarczownik_haczyki = 0
+                                hide haczyki61
+                                hide haczyki62
+                                hide haczyki63
                                 if tarczownik_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -2959,6 +3539,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
+                                    $ eminem_haczyki = 0
+                                    hide haczyki21
+                                    hide haczyki22
+                                    hide haczyki23
                                     $ kostka = renpy.random.randint(1, 2)
                                     if eminem_hp_now + kostka >= eminem_hp:
                                         $ eminem_hp_now = eminem_hp
@@ -2978,6 +3562,10 @@ label fight181:
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 7:
+                                        $ eminem_haczyki = 0
+                                        hide haczyki21
+                                        hide haczyki22
+                                        hide haczyki23
                                         $ kostka = renpy.random.randint(1, 2)
                                         if eminem_hp_now + kostka >= eminem_hp:
                                             $ eminem_hp_now = eminem_hp
@@ -3011,6 +3599,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
+                                    $ eminem_haczyki = 0
+                                    hide haczyki21
+                                    hide haczyki22
+                                    hide haczyki23
                                     $ kostka = renpy.random.randint(1, 2)
                                     if eminem_hp_now + kostka >= eminem_hp:
                                         $ eminem_hp_now = eminem_hp
@@ -3030,6 +3622,10 @@ label fight181:
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 7:
+                                        $ eminem_haczyki = 0
+                                        hide haczyki21
+                                        hide haczyki22
+                                        hide haczyki23
                                         $ kostka = renpy.random.randint(1, 2)
                                         if eminem_hp_now + kostka >= eminem_hp:
                                             $ eminem_hp_now = eminem_hp
@@ -3044,6 +3640,10 @@ label fight181:
                                 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
+                                        $ eminem_haczyki = 0
+                                        hide haczyki21
+                                        hide haczyki22
+                                        hide haczyki23
                                         $ kostka = renpy.random.randint(1, 2)
                                         if eminem_hp_now + kostka >= eminem_hp:
                                             $ eminem_hp_now = eminem_hp
@@ -3053,6 +3653,58 @@ label fight181:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and eminem_haczyki < 3 and eminem_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if eminem_haczyki == 0:
+                                        $ eminem_haczyki = 1
+                                        if eminem_wybrany == 1:
+                                            show haczyki21 zorder 25 at sojusznik1 
+
+                                        if eminem_wybrany == 2:
+                                            show haczyki21 zorder 25 at sojusznik2  
+
+                                        if eminem_wybrany == 3:
+                                            show haczyki21 zorder 25 at sojusznik3 
+                                    else:
+                                        if eminem_haczyki == 1:
+                                            $ eminem_haczyki = 2
+                                            if eminem_wybrany == 1:
+                                                show haczyki22 zorder 25 at sojusznik1 
+
+                                            if eminem_wybrany == 2:
+                                                show haczyki22 zorder 25 at sojusznik2  
+
+                                            if eminem_wybrany == 3:
+                                                show haczyki22 zorder 25 at sojusznik3 
+                                        else:
+                                            if eminem_haczyki == 2:
+                                                $ eminem_haczyki = 3
+                                                if eminem_wybrany == 1:
+                                                    show haczyki23 zorder 25 at sojusznik1 
+
+                                                if eminem_wybrany == 2:
+                                                    show haczyki23 zorder 25 at sojusznik2  
+
+                                                if eminem_wybrany == 3:
+                                                    show haczyki23 zorder 25 at sojusznik3 
+                                    
+                                    $ eminem_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Shadow wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight182
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -3502,6 +4154,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -3527,6 +4183,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -3552,6 +4212,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -3575,6 +4239,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -3589,6 +4257,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Jerzego Urbana został zablokowany{/i}"
                             if ziemia == 3:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -3598,6 +4270,59 @@ label fight181:
                                     $ urban_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                        
+                        if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if urban_haczyki == 0:
+                                    $ urban_haczyki = 1
+                                    if urban_wybrany == 1:
+                                        show haczyki31 zorder 25 at sojusznik1 
+
+                                    if urban_wybrany == 2:
+                                        show haczyki31 zorder 25 at sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show haczyki31 zorder 25 at sojusznik3 
+                                else:
+                                    if urban_haczyki == 1:
+                                        $ urban_haczyki = 2
+                                        if urban_wybrany == 1:
+                                            show haczyki32 zorder 25 at sojusznik1 
+
+                                        if urban_wybrany == 2:
+                                            show haczyki32 zorder 25 at sojusznik2  
+
+                                        if urban_wybrany == 3:
+                                            show haczyki32 zorder 25 at sojusznik3 
+                                    else:
+                                        if urban_haczyki == 2:
+                                            $ urban_haczyki = 3
+                                            if urban_wybrany == 1:
+                                                show haczyki33 zorder 25 at sojusznik1 
+
+                                            if urban_wybrany == 2:
+                                                show haczyki33 zorder 25 at sojusznik2  
+
+                                            if urban_wybrany == 3:
+                                                show haczyki33 zorder 25 at sojusznik3 
+                                
+                                $ urban_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight182
 
@@ -3752,6 +4477,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -3802,6 +4531,10 @@ label fight181:
                                                     $ fanatyk_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -3811,6 +4544,58 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight182
 
                                             $ fanatyk_hp_now -= int(urban_attack / 2)
@@ -3818,6 +4603,10 @@ label fight181:
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
                                             if ziemia == 3:
+                                                $ urban_haczyki = 0
+                                                hide haczyki31
+                                                hide haczyki32
+                                                hide haczyki33
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if urban_hp_now + kostka >= urban_hp:
                                                     $ urban_hp_now = urban_hp
@@ -3838,6 +4627,10 @@ label fight181:
                                                     $ fanatyk_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -3847,6 +4640,58 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight182
 
                                             $ fanatyk_hp_now -= urban_attack
@@ -3858,6 +4703,10 @@ label fight181:
                                                     $ fanatyk_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -3867,10 +4716,66 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight182
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
+                                                $ urban_haczyki = 0
+                                                hide haczyki31
+                                                hide haczyki32
+                                                hide haczyki33
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if urban_hp_now + kostka >= urban_hp:
                                                     $ urban_hp_now = urban_hp
@@ -3880,6 +4785,58 @@ label fight181:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kostka == 1:
+                                        if fanatyk_haczyki == 3:
+                                            $ fanatyk_haczyki = 2
+                                            hide fanatyk_haczyk3
+                                            show fanatyk_haczyk2 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 2:
+                                                $ fanatyk_haczyki = 1
+                                                hide fanatyk_haczyk2
+                                                show fanatyk_haczyk1 zorder 15 at haczyki
+                                            else:
+                                                if fanatyk_haczyki == 1:
+                                                    $ fanatyk_haczyki = 0
+                                                    hide fanatyk_haczyk1
+                                        if urban_haczyki == 0:
+                                            $ urban_haczyki = 1
+                                            if urban_wybrany == 1:
+                                                show haczyki31 zorder 25 at sojusznik1 
+
+                                            if urban_wybrany == 2:
+                                                show haczyki31 zorder 25 at sojusznik2  
+
+                                            if urban_wybrany == 3:
+                                                show haczyki31 zorder 25 at sojusznik3 
+                                        else:
+                                            if urban_haczyki == 1:
+                                                $ urban_haczyki = 2
+                                                if urban_wybrany == 1:
+                                                    show haczyki32 zorder 25 at sojusznik1 
+
+                                                if urban_wybrany == 2:
+                                                    show haczyki32 zorder 25 at sojusznik2  
+
+                                                if urban_wybrany == 3:
+                                                    show haczyki32 zorder 25 at sojusznik3 
+                                            else:
+                                                if urban_haczyki == 2:
+                                                    $ urban_haczyki = 3
+                                                    if urban_wybrany == 1:
+                                                        show haczyki33 zorder 25 at sojusznik1 
+
+                                                    if urban_wybrany == 2:
+                                                        show haczyki33 zorder 25 at sojusznik2  
+
+                                                    if urban_wybrany == 3:
+                                                        show haczyki33 zorder 25 at sojusznik3 
+                                        
+                                        $ urban_hp_now -= 3
+                                        play sound "audio/sfx/lego.mp3"
+                                        "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                 jump faza_fight182
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -4243,6 +5200,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -4268,6 +5229,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -4293,6 +5258,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -4316,6 +5285,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -4330,6 +5303,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Żyda został zablokowany{/i}"
                             if ziemia == 4:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -4341,6 +5318,59 @@ label fight181:
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
                         jump faza_fight182
+
+                        if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if zyd_haczyki == 0:
+                                    $ zyd_haczyki = 1
+                                    if zyd_wybrany == 1:
+                                        show haczyki41 zorder 25 at sojusznik1 
+
+                                    if zyd_wybrany == 2:
+                                        show haczyki41 zorder 25 at sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show haczyki41 zorder 25 at sojusznik3 
+                                else:
+                                    if zyd_haczyki == 1:
+                                        $ zyd_haczyki = 2
+                                        if zyd_wybrany == 1:
+                                            show haczyki42 zorder 25 at sojusznik1 
+
+                                        if zyd_wybrany == 2:
+                                            show haczyki42 zorder 25 at sojusznik2  
+
+                                        if zyd_wybrany == 3:
+                                            show haczyki42 zorder 25 at sojusznik3 
+                                    else:
+                                        if zyd_haczyki == 2:
+                                            $ zyd_haczyki = 3
+                                            if zyd_wybrany == 1:
+                                                show haczyki43 zorder 25 at sojusznik1 
+
+                                            if zyd_wybrany == 2:
+                                                show haczyki43 zorder 25 at sojusznik2  
+
+                                            if zyd_wybrany == 3:
+                                                show haczyki43 zorder 25 at sojusznik3 
+                                
+                                $ zyd_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4486,6 +5516,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
+                                    $ zyd_haczyki = 0
+                                    hide haczyki41
+                                    hide haczyki42
+                                    hide haczyki43
                                     $ kostka = renpy.random.randint(1, 2)
                                     if zyd_hp_now + kostka >= zyd_hp:
                                         $ zyd_hp_now = zyd_hp
@@ -4530,6 +5564,10 @@ label fight181:
                                             $ fanatyk_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -4539,6 +5577,58 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
 
                                     $ fanatyk_hp_now -= int(zyd_attack / 2)
@@ -4546,6 +5636,10 @@ label fight181:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -4566,6 +5660,10 @@ label fight181:
                                             $ fanatyk_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -4575,6 +5673,58 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
 
                                     $ fanatyk_hp_now -= zyd_attack
@@ -4586,6 +5736,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -4595,10 +5749,66 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -4608,6 +5818,58 @@ label fight181:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if zyd_haczyki == 0:
+                                        $ zyd_haczyki = 1
+                                        if zyd_wybrany == 1:
+                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                        if zyd_wybrany == 2:
+                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                        if zyd_wybrany == 3:
+                                            show haczyki41 zorder 25 at sojusznik3 
+                                    else:
+                                        if zyd_haczyki == 1:
+                                            $ zyd_haczyki = 2
+                                            if zyd_wybrany == 1:
+                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                            if zyd_wybrany == 2:
+                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                            if zyd_wybrany == 3:
+                                                show haczyki42 zorder 25 at sojusznik3 
+                                        else:
+                                            if zyd_haczyki == 2:
+                                                $ zyd_haczyki = 3
+                                                if zyd_wybrany == 1:
+                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                if zyd_wybrany == 2:
+                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                if zyd_wybrany == 3:
+                                                    show haczyki43 zorder 25 at sojusznik3 
+                                    
+                                    $ zyd_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight182
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -5022,6 +6284,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -5047,6 +6313,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -5072,6 +6342,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -5095,6 +6369,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -5109,6 +6387,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Kazumy został zablokowany{/i}"
                             if ziemia == 5:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -5118,6 +6400,59 @@ label fight181:
                                     $ kazuma_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                        
+                        if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if kazuma_haczyki == 0:
+                                    $ kazuma_haczyki = 1
+                                    if kazuma_wybrany == 1:
+                                        show haczyki51 zorder 25 at sojusznik1 
+
+                                    if kazuma_wybrany == 2:
+                                        show haczyki51 zorder 25 at sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show haczyki51 zorder 25 at sojusznik3 
+                                else:
+                                    if kazuma_haczyki == 1:
+                                        $ kazuma_haczyki = 2
+                                        if kazuma_wybrany == 1:
+                                            show haczyki52 zorder 25 at sojusznik1 
+
+                                        if kazuma_wybrany == 2:
+                                            show haczyki52 zorder 25 at sojusznik2  
+
+                                        if kazuma_wybrany == 3:
+                                            show haczyki52 zorder 25 at sojusznik3 
+                                    else:
+                                        if kazuma_haczyki == 2:
+                                            $ kazuma_haczyki = 3
+                                            if kazuma_wybrany == 1:
+                                                show haczyki53 zorder 25 at sojusznik1 
+
+                                            if kazuma_wybrany == 2:
+                                                show haczyki53 zorder 25 at sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show haczyki53 zorder 25 at sojusznik3 
+                                
+                                $ kazuma_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight182
 
@@ -5264,6 +6599,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
+                                    $ kazuma_haczyki = 0
+                                    hide haczyki51
+                                    hide haczyki52
+                                    hide haczyki53
                                     $ kostka = renpy.random.randint(1, 2)
                                     if kazuma_hp_now + kostka >= kazuma_hp:
                                         $ kazuma_hp_now = kazuma_hp
@@ -5308,6 +6647,10 @@ label fight181:
                                             $ fanatyk_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -5317,6 +6660,58 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
 
                                     $ fanatyk_hp_now -= int(kazuma_attack / 2)
@@ -5324,6 +6719,10 @@ label fight181:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -5344,6 +6743,10 @@ label fight181:
                                             $ fanatyk_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -5353,6 +6756,58 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
 
                                     $ fanatyk_hp_now -= kazuma_attack
@@ -5364,6 +6819,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -5373,10 +6832,66 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight182
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -5386,6 +6901,58 @@ label fight181:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if kazuma_haczyki == 0:
+                                        $ kazuma_haczyki = 1
+                                        if kazuma_wybrany == 1:
+                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                        if kazuma_wybrany == 2:
+                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                        if kazuma_wybrany == 3:
+                                            show haczyki51 zorder 25 at sojusznik3 
+                                    else:
+                                        if kazuma_haczyki == 1:
+                                            $ kazuma_haczyki = 2
+                                            if kazuma_wybrany == 1:
+                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                            if kazuma_wybrany == 2:
+                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show haczyki52 zorder 25 at sojusznik3 
+                                        else:
+                                            if kazuma_haczyki == 2:
+                                                $ kazuma_haczyki = 3
+                                                if kazuma_wybrany == 1:
+                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                if kazuma_wybrany == 2:
+                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                if kazuma_wybrany == 3:
+                                                    show haczyki53 zorder 25 at sojusznik3 
+                                    
+                                    $ kazuma_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight182
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -6053,6 +7620,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Naofumiego został zablokowany{/i}"
                                 if ziemia == 6:
+                                    $ tarczownik_haczyki = 0
+                                    hide haczyki61
+                                    hide haczyki62
+                                    hide haczyki63
                                     $ kostka = renpy.random.randint(1, 2)
                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                         $ tarczownik_hp_now = tarczownik_hp
@@ -6078,6 +7649,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Naofumiego został zablokowany{/i}"
                                 if ziemia == 6:
+                                    $ tarczownik_haczyki = 0
+                                    hide haczyki61
+                                    hide haczyki62
+                                    hide haczyki63
                                     $ kostka = renpy.random.randint(1, 2)
                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                         $ tarczownik_hp_now = tarczownik_hp
@@ -6103,6 +7678,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Naofumiego został zablokowany{/i}"
                                 if ziemia == 6:
+                                    $ tarczownik_haczyki = 0
+                                    hide haczyki61
+                                    hide haczyki62
+                                    hide haczyki63
                                     $ kostka = renpy.random.randint(1, 2)
                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                         $ tarczownik_hp_now = tarczownik_hp
@@ -6126,6 +7705,10 @@ label fight181:
                         play sound "audio/sfx/ostrza_chaosu.mp3"
                         "{i}Atak zadał [tarczownik_attack] obrażeń wszystkim przeciwnikom{/i}"
                         if ziemia == 6:
+                            $ tarczownik_haczyki = 0
+                            hide haczyki61
+                            hide haczyki62
+                            hide haczyki63
                             $ kostka = renpy.random.randint(1, 2)
                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                 $ tarczownik_hp_now = tarczownik_hp
@@ -6140,6 +7723,10 @@ label fight181:
                         play sound "audio/sfx/obrona.mp3"
                         "{i}Atak Naofumiego został zablokowany{/i}"
                         if ziemia == 6:
+                            $ tarczownik_haczyki = 0
+                            hide haczyki61
+                            hide haczyki62
+                            hide haczyki63
                             $ kostka = renpy.random.randint(1, 2)
                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                 $ tarczownik_hp_now = tarczownik_hp
@@ -6149,6 +7736,59 @@ label fight181:
                                 $ tarczownik_hp_now += kostka
                                 queue sound "audio/sfx/heal.mp3" 
                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                    
+                    if fanatyk_haczyki > 0 and tarczownik_haczyki < 3 and tarczownik_hp_now > 0:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kostka == 1:
+                            if fanatyk_haczyki == 3:
+                                $ fanatyk_haczyki = 2
+                                hide fanatyk_haczyk3
+                                show fanatyk_haczyk2 zorder 15 at haczyki
+                            else:
+                                if fanatyk_haczyki == 2:
+                                    $ fanatyk_haczyki = 1
+                                    hide fanatyk_haczyk2
+                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 1:
+                                        $ fanatyk_haczyki = 0
+                                        hide fanatyk_haczyk1
+                            if tarczownik_haczyki == 0:
+                                $ tarczownik_haczyki = 1
+                                if tarczownik_wybrany == 1:
+                                    show haczyki61 zorder 25 at sojusznik1 
+
+                                if tarczownik_wybrany == 2:
+                                    show haczyki61 zorder 25 at sojusznik2  
+
+                                if tarczownik_wybrany == 3:
+                                    show haczyki61 zorder 25 at sojusznik3 
+                            else:
+                                if tarczownik_haczyki == 1:
+                                    $ tarczownik_haczyki = 2
+                                    if tarczownik_wybrany == 1:
+                                        show haczyki62 zorder 25 at sojusznik1 
+
+                                    if tarczownik_wybrany == 2:
+                                        show haczyki62 zorder 25 at sojusznik2  
+
+                                    if tarczownik_wybrany == 3:
+                                        show haczyki62 zorder 25 at sojusznik3 
+                                else:
+                                    if tarczownik_haczyki == 2:
+                                        $ tarczownik_haczyki = 3
+                                        if tarczownik_wybrany == 1:
+                                            show haczyki63 zorder 25 at sojusznik1 
+
+                                        if tarczownik_wybrany == 2:
+                                            show haczyki63 zorder 25 at sojusznik2  
+
+                                        if tarczownik_wybrany == 3:
+                                            show haczyki63 zorder 25 at sojusznik3 
+                            
+                            $ tarczownik_hp_now -= 3
+                            play sound "audio/sfx/lego.mp3"
+                            "{i}Naofumi wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                     jump faza_fight182
                 
@@ -6766,6 +8406,10 @@ label fight181:
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Naofumiego został zablokowany{/i}"
                                             if ziemia == 6:
+                                                $ tarczownik_haczyki = 0
+                                                hide haczyki61
+                                                hide haczyki62
+                                                hide haczyki63
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -6809,6 +8453,10 @@ label fight181:
                                                         $ fanatyk_hp_now -= tarczownik_attack
                                                         "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                         if ziemia == 6:
+                                                            $ tarczownik_haczyki = 0
+                                                            hide haczyki61
+                                                            hide haczyki62
+                                                            hide haczyki63
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                 $ tarczownik_hp_now = tarczownik_hp
@@ -6824,6 +8472,10 @@ label fight181:
                                                         $ dmg = int(tarczownik_attack / 2)
                                                         "{i}Naofumi zadaje [dmg] obrażeń Fanatyk Wędkarstwa{/i}"
                                                         if ziemia == 6:
+                                                            $ tarczownik_haczyki = 0
+                                                            hide haczyki61
+                                                            hide haczyki62
+                                                            hide haczyki63
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                 $ tarczownik_hp_now = tarczownik_hp
@@ -6838,6 +8490,10 @@ label fight181:
                                                     $ dmg = int(tarczownik_attack / 2)
                                                     "{i}Naofumi zadaje [dmg] obrażeń Fanatyk Wędkarstwa{/i}"
                                                     if ziemia == 6:
+                                                        $ tarczownik_haczyki = 0
+                                                        hide haczyki61
+                                                        hide haczyki62
+                                                        hide haczyki63
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                             $ tarczownik_hp_now = tarczownik_hp
@@ -6858,6 +8514,10 @@ label fight181:
                                                         $ fanatyk_hp_now -= tarczownik_attack * 2
                                                         "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                         if ziemia == 6:
+                                                            $ tarczownik_haczyki = 0
+                                                            hide haczyki61
+                                                            hide haczyki62
+                                                            hide haczyki63
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                 $ tarczownik_hp_now = tarczownik_hp
@@ -6872,6 +8532,10 @@ label fight181:
                                                         $ fanatyk_hp_now -= tarczownik_attack
                                                         "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                         if ziemia == 6:
+                                                            $ tarczownik_haczyki = 0
+                                                            hide haczyki61
+                                                            hide haczyki62
+                                                            hide haczyki63
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                 $ tarczownik_hp_now = tarczownik_hp
@@ -6890,6 +8554,10 @@ label fight181:
                                                             $ fanatyk_stun = 1
                                                             "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -6903,6 +8571,10 @@ label fight181:
                                                         else:
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -6916,6 +8588,10 @@ label fight181:
                                                     else:
                                                         "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                         if ziemia == 6:
+                                                            $ tarczownik_haczyki = 0
+                                                            hide haczyki61
+                                                            hide haczyki62
+                                                            hide haczyki63
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                 $ tarczownik_hp_now = tarczownik_hp
@@ -6925,7 +8601,60 @@ label fight181:
                                                                 $ tarczownik_hp_now += kostka
                                                                 queue sound "audio/sfx/heal.mp3" 
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                            
+                                        
+                                        if fanatyk_haczyki > 0 and tarczownik_haczyki < 3 and tarczownik_hp_now > 0:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kostka == 1:
+                                                if fanatyk_haczyki == 3:
+                                                    $ fanatyk_haczyki = 2
+                                                    hide fanatyk_haczyk3
+                                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                                else:
+                                                    if fanatyk_haczyki == 2:
+                                                        $ fanatyk_haczyki = 1
+                                                        hide fanatyk_haczyk2
+                                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 1:
+                                                            $ fanatyk_haczyki = 0
+                                                            hide fanatyk_haczyk1
+                                                if tarczownik_haczyki == 0:
+                                                    $ tarczownik_haczyki = 1
+                                                    if tarczownik_wybrany == 1:
+                                                        show haczyki61 zorder 25 at sojusznik1 
+
+                                                    if tarczownik_wybrany == 2:
+                                                        show haczyki61 zorder 25 at sojusznik2  
+
+                                                    if tarczownik_wybrany == 3:
+                                                        show haczyki61 zorder 25 at sojusznik3 
+                                                else:
+                                                    if tarczownik_haczyki == 1:
+                                                        $ tarczownik_haczyki = 2
+                                                        if tarczownik_wybrany == 1:
+                                                            show haczyki62 zorder 25 at sojusznik1 
+
+                                                        if tarczownik_wybrany == 2:
+                                                            show haczyki62 zorder 25 at sojusznik2  
+
+                                                        if tarczownik_wybrany == 3:
+                                                            show haczyki62 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if tarczownik_haczyki == 2:
+                                                            $ tarczownik_haczyki = 3
+                                                            if tarczownik_wybrany == 1:
+                                                                show haczyki63 zorder 25 at sojusznik1 
+
+                                                            if tarczownik_wybrany == 2:
+                                                                show haczyki63 zorder 25 at sojusznik2  
+
+                                                            if tarczownik_wybrany == 3:
+                                                                show haczyki63 zorder 25 at sojusznik3 
+                                                
+                                                $ tarczownik_hp_now -= 3
+                                                play sound "audio/sfx/lego.mp3"
+                                                "{i}Naofumi wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
+
                                         if dialog_fight2 == 0:
                                             $ dialog_fight2 += 1
 
@@ -6964,6 +8693,10 @@ label fight181:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Naofumiego został zablokowany{/i}"
                                                 if ziemia == 6:
+                                                    $ tarczownik_haczyki = 0
+                                                    hide haczyki61
+                                                    hide haczyki62
+                                                    hide haczyki63
                                                     $ kostka = renpy.random.randint(1, 2)
                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                         $ tarczownik_hp_now = tarczownik_hp
@@ -7008,6 +8741,10 @@ label fight181:
                                                             $ fanatyk_hp_now -= tarczownik_attack
                                                             "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7023,6 +8760,10 @@ label fight181:
                                                             $ dmg = int(tarczownik_attack / 2)
                                                             "{i}Naofumi zadaje [dmg] obrażeń Fanatyk Wędkarstwa{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7037,6 +8778,10 @@ label fight181:
                                                         $ dmg = int(tarczownik_attack / 2)
                                                         "{i}Naofumi zadaje [dmg] obrażeń Fanatyk Wędkarstwa{/i}"
                                                         if ziemia == 6:
+                                                            $ tarczownik_haczyki = 0
+                                                            hide haczyki61
+                                                            hide haczyki62
+                                                            hide haczyki63
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                 $ tarczownik_hp_now = tarczownik_hp
@@ -7057,6 +8802,10 @@ label fight181:
                                                             $ fanatyk_hp_now -= tarczownik_attack * 2
                                                             "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7071,6 +8820,10 @@ label fight181:
                                                             $ fanatyk_hp_now -= tarczownik_attack
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7089,6 +8842,10 @@ label fight181:
                                                                 $ fanatyk_stun = 1
                                                                 "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                                 if ziemia == 6:
+                                                                    $ tarczownik_haczyki = 0
+                                                                    hide haczyki61
+                                                                    hide haczyki62
+                                                                    hide haczyki63
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                         $ tarczownik_hp_now = tarczownik_hp
@@ -7102,6 +8859,10 @@ label fight181:
                                                             else:
                                                                 "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                                 if ziemia == 6:
+                                                                    $ tarczownik_haczyki = 0
+                                                                    hide haczyki61
+                                                                    hide haczyki62
+                                                                    hide haczyki63
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                         $ tarczownik_hp_now = tarczownik_hp
@@ -7115,6 +8876,10 @@ label fight181:
                                                         else:
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7124,7 +8889,60 @@ label fight181:
                                                                     $ tarczownik_hp_now += kostka
                                                                     queue sound "audio/sfx/heal.mp3" 
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                            
+
+                                            if fanatyk_haczyki > 0 and tarczownik_haczyki < 3 and tarczownik_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if tarczownik_haczyki == 0:
+                                                        $ tarczownik_haczyki = 1
+                                                        if tarczownik_wybrany == 1:
+                                                            show haczyki61 zorder 25 at sojusznik1 
+
+                                                        if tarczownik_wybrany == 2:
+                                                            show haczyki61 zorder 25 at sojusznik2  
+
+                                                        if tarczownik_wybrany == 3:
+                                                            show haczyki61 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if tarczownik_haczyki == 1:
+                                                            $ tarczownik_haczyki = 2
+                                                            if tarczownik_wybrany == 1:
+                                                                show haczyki62 zorder 25 at sojusznik1 
+
+                                                            if tarczownik_wybrany == 2:
+                                                                show haczyki62 zorder 25 at sojusznik2  
+
+                                                            if tarczownik_wybrany == 3:
+                                                                show haczyki62 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if tarczownik_haczyki == 2:
+                                                                $ tarczownik_haczyki = 3
+                                                                if tarczownik_wybrany == 1:
+                                                                    show haczyki63 zorder 25 at sojusznik1 
+
+                                                                if tarczownik_wybrany == 2:
+                                                                    show haczyki63 zorder 25 at sojusznik2  
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    show haczyki63 zorder 25 at sojusznik3 
+                                                    
+                                                    $ tarczownik_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Naofumi wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
+
                                             if dialog_fight2 == 0:
                                                 $ dialog_fight2 += 1
 
@@ -7162,6 +8980,10 @@ label fight181:
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Naofumiego został zablokowany{/i}"
                                                 if ziemia == 6:
+                                                    $ tarczownik_haczyki = 0
+                                                    hide haczyki61
+                                                    hide haczyki62
+                                                    hide haczyki63
                                                     $ kostka = renpy.random.randint(1, 2)
                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                         $ tarczownik_hp_now = tarczownik_hp
@@ -7206,6 +9028,10 @@ label fight181:
                                                             $ fanatyk_hp_now -= tarczownik_attack
                                                             "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7221,6 +9047,10 @@ label fight181:
                                                             $ dmg = int(tarczownik_attack / 2)
                                                             "{i}Naofumi zadaje [dmg] obrażeń Fanatyk Wędkarstwa{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7235,6 +9065,10 @@ label fight181:
                                                         $ dmg = int(tarczownik_attack / 2)
                                                         "{i}Naofumi zadaje [dmg] obrażeń Fanatyk Wędkarstwa{/i}"
                                                         if ziemia == 6:
+                                                            $ tarczownik_haczyki = 0
+                                                            hide haczyki61
+                                                            hide haczyki62
+                                                            hide haczyki63
                                                             $ kostka = renpy.random.randint(1, 2)
                                                             if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                 $ tarczownik_hp_now = tarczownik_hp
@@ -7255,6 +9089,10 @@ label fight181:
                                                             $ fanatyk_hp_now -= tarczownik_attack * 2
                                                             "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7269,6 +9107,10 @@ label fight181:
                                                             $ fanatyk_hp_now -= tarczownik_attack
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7287,6 +9129,10 @@ label fight181:
                                                                 $ fanatyk_stun = 1
                                                                 "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                                 if ziemia == 6:
+                                                                    $ tarczownik_haczyki = 0
+                                                                    hide haczyki61
+                                                                    hide haczyki62
+                                                                    hide haczyki63
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                         $ tarczownik_hp_now = tarczownik_hp
@@ -7300,6 +9146,10 @@ label fight181:
                                                             else:
                                                                 "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                                 if ziemia == 6:
+                                                                    $ tarczownik_haczyki = 0
+                                                                    hide haczyki61
+                                                                    hide haczyki62
+                                                                    hide haczyki63
                                                                     $ kostka = renpy.random.randint(1, 2)
                                                                     if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                         $ tarczownik_hp_now = tarczownik_hp
@@ -7313,6 +9163,10 @@ label fight181:
                                                         else:
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Fanatyk Wędkarstwa{/i}"
                                                             if ziemia == 6:
+                                                                $ tarczownik_haczyki = 0
+                                                                hide haczyki61
+                                                                hide haczyki62
+                                                                hide haczyki63
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
                                                                     $ tarczownik_hp_now = tarczownik_hp
@@ -7347,6 +9201,59 @@ label fight181:
                                                         if dialog_fight2 >= 3:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
+                                            
+                                            if fanatyk_haczyki > 0 and tarczownik_haczyki < 3 and tarczownik_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if tarczownik_haczyki == 0:
+                                                        $ tarczownik_haczyki = 1
+                                                        if tarczownik_wybrany == 1:
+                                                            show haczyki61 zorder 25 at sojusznik1 
+
+                                                        if tarczownik_wybrany == 2:
+                                                            show haczyki61 zorder 25 at sojusznik2  
+
+                                                        if tarczownik_wybrany == 3:
+                                                            show haczyki61 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if tarczownik_haczyki == 1:
+                                                            $ tarczownik_haczyki = 2
+                                                            if tarczownik_wybrany == 1:
+                                                                show haczyki62 zorder 25 at sojusznik1 
+
+                                                            if tarczownik_wybrany == 2:
+                                                                show haczyki62 zorder 25 at sojusznik2  
+
+                                                            if tarczownik_wybrany == 3:
+                                                                show haczyki62 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if tarczownik_haczyki == 2:
+                                                                $ tarczownik_haczyki = 3
+                                                                if tarczownik_wybrany == 1:
+                                                                    show haczyki63 zorder 25 at sojusznik1 
+
+                                                                if tarczownik_wybrany == 2:
+                                                                    show haczyki63 zorder 25 at sojusznik2  
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    show haczyki63 zorder 25 at sojusznik3 
+                                                    
+                                                    $ tarczownik_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Naofumi wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                                             jump faza_fight182
                                         else:
@@ -8054,12 +9961,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -8082,12 +9997,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -8110,12 +10033,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -8141,12 +10072,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -8177,12 +10116,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -8205,12 +10152,20 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -8399,6 +10354,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -8424,6 +10383,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -8449,6 +10412,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -8472,6 +10439,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
@@ -8486,6 +10457,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Łuszcza został zablokowany{/i}"
                             if ziemia == 2:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
@@ -8495,6 +10470,59 @@ label fight181:
                                     $ luszcz_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                        
+                        if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if luszcz_haczyki == 0:
+                                    $ luszcz_haczyki = 1
+                                    if luszcz_wybrany == 1:
+                                        show haczyki11 zorder 25 at sojusznik1 
+
+                                    if luszcz_wybrany == 2:
+                                        show haczyki11 zorder 25 at sojusznik2  
+
+                                    if luszcz_wybrany == 3:
+                                        show haczyki11 zorder 25 at sojusznik3 
+                                else:
+                                    if luszcz_haczyki == 1:
+                                        $ luszcz_haczyki = 2
+                                        if luszcz_wybrany == 1:
+                                            show haczyki12 zorder 25 at sojusznik1 
+
+                                        if luszcz_wybrany == 2:
+                                            show haczyki12 zorder 25 at sojusznik2  
+
+                                        if luszcz_wybrany == 3:
+                                            show haczyki12 zorder 25 at sojusznik3 
+                                    else:
+                                        if luszcz_haczyki == 2:
+                                            $ luszcz_haczyki = 3
+                                            if luszcz_wybrany == 1:
+                                                show haczyki13 zorder 25 at sojusznik1 
+
+                                            if luszcz_wybrany == 2:
+                                                show haczyki13 zorder 25 at sojusznik2  
+
+                                            if luszcz_wybrany == 3:
+                                                show haczyki13 zorder 25 at sojusznik3 
+                                
+                                $ luszcz_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight183
 
@@ -8641,6 +10669,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
+                                    $ luszcz_haczyki = 0
+                                    hide haczyki11
+                                    hide haczyki12
+                                    hide haczyki13
                                     $ kostka = renpy.random.randint(1, 2)
                                     if luszcz_hp_now + kostka >= luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -8685,6 +10717,10 @@ label fight181:
                                             $ fanatyk_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -8694,6 +10730,58 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
 
                                     $ fanatyk_hp_now -= int(luszcz_attack / 2)
@@ -8701,6 +10789,10 @@ label fight181:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -8721,6 +10813,10 @@ label fight181:
                                             $ fanatyk_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -8730,6 +10826,58 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
 
                                     $ fanatyk_hp_now -= luszcz_attack
@@ -8741,6 +10889,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -8750,10 +10902,67 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -8763,6 +10972,58 @@ label fight181:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if luszcz_haczyki == 0:
+                                        $ luszcz_haczyki = 1
+                                        if luszcz_wybrany == 1:
+                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                        if luszcz_wybrany == 2:
+                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                        if luszcz_wybrany == 3:
+                                            show haczyki11 zorder 25 at sojusznik3 
+                                    else:
+                                        if luszcz_haczyki == 1:
+                                            $ luszcz_haczyki = 2
+                                            if luszcz_wybrany == 1:
+                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                            if luszcz_wybrany == 2:
+                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                            if luszcz_wybrany == 3:
+                                                show haczyki12 zorder 25 at sojusznik3 
+                                        else:
+                                            if luszcz_haczyki == 2:
+                                                $ luszcz_haczyki = 3
+                                                if luszcz_wybrany == 1:
+                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                if luszcz_wybrany == 2:
+                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                if luszcz_wybrany == 3:
+                                                    show haczyki13 zorder 25 at sojusznik3 
+                                    
+                                    $ luszcz_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight183
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -8957,6 +11218,10 @@ label fight181:
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
+                                    $ luszcz_haczyki = 0
+                                    hide haczyki11
+                                    hide haczyki12
+                                    hide haczyki13
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
                                         "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -8968,6 +11233,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ eminem_haczyki = 0
+                                    hide haczyki21
+                                    hide haczyki22
+                                    hide haczyki23
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -8988,6 +11257,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ urban_haczyki = 0
+                                    hide haczyki31
+                                    hide haczyki32
+                                    hide haczyki33
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -9008,6 +11281,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ zyd_haczyki = 0
+                                    hide haczyki41
+                                    hide haczyki42
+                                    hide haczyki43
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -9028,6 +11305,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ kazuma_haczyki = 0
+                                    hide haczyki51
+                                    hide haczyki52
+                                    hide haczyki53
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -9048,6 +11329,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ tarczownik_haczyki = 0
+                                    hide haczyki61
+                                    hide haczyki62
+                                    hide haczyki63
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -9081,12 +11366,20 @@ label fight181:
                                 show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
 
                             if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 if luszcz_hp_now + 2 > luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
                                 else:
                                     $ luszcz_hp_now += 2
                             
                             if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                $ eminem_haczyki = 0
+                                hide haczyki21
+                                hide haczyki22
+                                hide haczyki23
                                 if eminem_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -9102,6 +11395,10 @@ label fight181:
                                     $ eminem_hp_now += 2
 
                             if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 if urban_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -9117,6 +11414,10 @@ label fight181:
                                     $ urban_hp_now += 2
 
                             if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 if zyd_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -9132,6 +11433,10 @@ label fight181:
                                     $ zyd_hp_now += 2
 
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 if kazuma_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -9147,6 +11452,10 @@ label fight181:
                                     $ kazuma_hp_now += 2
                             
                             if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                $ tarczownik_haczyki = 0
+                                hide haczyki61
+                                hide haczyki62
+                                hide haczyki63
                                 if tarczownik_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -9275,6 +11584,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
+                                    $ eminem_haczyki = 0
+                                    hide haczyki21
+                                    hide haczyki22
+                                    hide haczyki23
                                     $ kostka = renpy.random.randint(1, 2)
                                     if eminem_hp_now + kostka >= eminem_hp:
                                         $ eminem_hp_now = eminem_hp
@@ -9294,6 +11607,10 @@ label fight181:
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 7:
+                                        $ eminem_haczyki = 0
+                                        hide haczyki21
+                                        hide haczyki22
+                                        hide haczyki23
                                         $ kostka = renpy.random.randint(1, 2)
                                         if eminem_hp_now + kostka >= eminem_hp:
                                             $ eminem_hp_now = eminem_hp
@@ -9308,6 +11625,10 @@ label fight181:
                                 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
+                                        $ eminem_haczyki = 0
+                                        hide haczyki21
+                                        hide haczyki22
+                                        hide haczyki23
                                         $ kostka = renpy.random.randint(1, 2)
                                         if eminem_hp_now + kostka >= eminem_hp:
                                             $ eminem_hp_now = eminem_hp
@@ -9317,6 +11638,58 @@ label fight181:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and eminem_haczyki < 3 and eminem_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if eminem_haczyki == 0:
+                                        $ eminem_haczyki = 1
+                                        if eminem_wybrany == 1:
+                                            show haczyki21 zorder 25 at sojusznik1 
+
+                                        if eminem_wybrany == 2:
+                                            show haczyki21 zorder 25 at sojusznik2  
+
+                                        if eminem_wybrany == 3:
+                                            show haczyki21 zorder 25 at sojusznik3 
+                                    else:
+                                        if eminem_haczyki == 1:
+                                            $ eminem_haczyki = 2
+                                            if eminem_wybrany == 1:
+                                                show haczyki22 zorder 25 at sojusznik1 
+
+                                            if eminem_wybrany == 2:
+                                                show haczyki22 zorder 25 at sojusznik2  
+
+                                            if eminem_wybrany == 3:
+                                                show haczyki22 zorder 25 at sojusznik3 
+                                        else:
+                                            if eminem_haczyki == 2:
+                                                $ eminem_haczyki = 3
+                                                if eminem_wybrany == 1:
+                                                    show haczyki23 zorder 25 at sojusznik1 
+
+                                                if eminem_wybrany == 2:
+                                                    show haczyki23 zorder 25 at sojusznik2  
+
+                                                if eminem_wybrany == 3:
+                                                    show haczyki23 zorder 25 at sojusznik3 
+                                    
+                                    $ eminem_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Shadow wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight183
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -9764,6 +12137,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -9789,6 +12166,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -9814,6 +12195,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -9837,6 +12222,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -9851,6 +12240,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Jerzego Urbana został zablokowany{/i}"
                             if ziemia == 3:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -9860,6 +12253,59 @@ label fight181:
                                     $ urban_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                        
+                        if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if urban_haczyki == 0:
+                                    $ urban_haczyki = 1
+                                    if urban_wybrany == 1:
+                                        show haczyki31 zorder 25 at sojusznik1 
+
+                                    if urban_wybrany == 2:
+                                        show haczyki31 zorder 25 at sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show haczyki31 zorder 25 at sojusznik3 
+                                else:
+                                    if urban_haczyki == 1:
+                                        $ urban_haczyki = 2
+                                        if urban_wybrany == 1:
+                                            show haczyki32 zorder 25 at sojusznik1 
+
+                                        if urban_wybrany == 2:
+                                            show haczyki32 zorder 25 at sojusznik2  
+
+                                        if urban_wybrany == 3:
+                                            show haczyki32 zorder 25 at sojusznik3 
+                                    else:
+                                        if urban_haczyki == 2:
+                                            $ urban_haczyki = 3
+                                            if urban_wybrany == 1:
+                                                show haczyki33 zorder 25 at sojusznik1 
+
+                                            if urban_wybrany == 2:
+                                                show haczyki33 zorder 25 at sojusznik2  
+
+                                            if urban_wybrany == 3:
+                                                show haczyki33 zorder 25 at sojusznik3 
+                                
+                                $ urban_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight183
 
@@ -10014,6 +12460,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -10064,6 +12514,10 @@ label fight181:
                                                     $ fanatyk_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -10073,6 +12527,58 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight183
 
                                             $ fanatyk_hp_now -= int(urban_attack / 2)
@@ -10080,6 +12586,10 @@ label fight181:
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
                                             if ziemia == 3:
+                                                $ urban_haczyki = 0
+                                                hide haczyki31
+                                                hide haczyki32
+                                                hide haczyki33
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if urban_hp_now + kostka >= urban_hp:
                                                     $ urban_hp_now = urban_hp
@@ -10100,6 +12610,10 @@ label fight181:
                                                     $ fanatyk_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -10109,6 +12623,58 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight183
 
                                             $ fanatyk_hp_now -= urban_attack
@@ -10120,6 +12686,10 @@ label fight181:
                                                     $ fanatyk_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -10129,10 +12699,66 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight183
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
+                                                $ urban_haczyki = 0
+                                                hide haczyki31
+                                                hide haczyki32
+                                                hide haczyki33
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if urban_hp_now + kostka >= urban_hp:
                                                     $ urban_hp_now = urban_hp
@@ -10142,6 +12768,58 @@ label fight181:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kostka == 1:
+                                        if fanatyk_haczyki == 3:
+                                            $ fanatyk_haczyki = 2
+                                            hide fanatyk_haczyk3
+                                            show fanatyk_haczyk2 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 2:
+                                                $ fanatyk_haczyki = 1
+                                                hide fanatyk_haczyk2
+                                                show fanatyk_haczyk1 zorder 15 at haczyki
+                                            else:
+                                                if fanatyk_haczyki == 1:
+                                                    $ fanatyk_haczyki = 0
+                                                    hide fanatyk_haczyk1
+                                        if urban_haczyki == 0:
+                                            $ urban_haczyki = 1
+                                            if urban_wybrany == 1:
+                                                show haczyki31 zorder 25 at sojusznik1 
+
+                                            if urban_wybrany == 2:
+                                                show haczyki31 zorder 25 at sojusznik2  
+
+                                            if urban_wybrany == 3:
+                                                show haczyki31 zorder 25 at sojusznik3 
+                                        else:
+                                            if urban_haczyki == 1:
+                                                $ urban_haczyki = 2
+                                                if urban_wybrany == 1:
+                                                    show haczyki32 zorder 25 at sojusznik1 
+
+                                                if urban_wybrany == 2:
+                                                    show haczyki32 zorder 25 at sojusznik2  
+
+                                                if urban_wybrany == 3:
+                                                    show haczyki32 zorder 25 at sojusznik3 
+                                            else:
+                                                if urban_haczyki == 2:
+                                                    $ urban_haczyki = 3
+                                                    if urban_wybrany == 1:
+                                                        show haczyki33 zorder 25 at sojusznik1 
+
+                                                    if urban_wybrany == 2:
+                                                        show haczyki33 zorder 25 at sojusznik2  
+
+                                                    if urban_wybrany == 3:
+                                                        show haczyki33 zorder 25 at sojusznik3 
+                                        
+                                        $ urban_hp_now -= 3
+                                        play sound "audio/sfx/lego.mp3"
+                                        "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                 jump faza_fight183
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -10505,6 +13183,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -10530,6 +13212,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -10555,6 +13241,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -10578,6 +13268,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -10592,6 +13286,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Żyda został zablokowany{/i}"
                             if ziemia == 4:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -10601,6 +13299,58 @@ label fight181:
                                     $ zyd_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                        if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if zyd_haczyki == 0:
+                                    $ zyd_haczyki = 1
+                                    if zyd_wybrany == 1:
+                                        show haczyki41 zorder 25 at sojusznik1 
+
+                                    if zyd_wybrany == 2:
+                                        show haczyki41 zorder 25 at sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show haczyki41 zorder 25 at sojusznik3 
+                                else:
+                                    if zyd_haczyki == 1:
+                                        $ zyd_haczyki = 2
+                                        if zyd_wybrany == 1:
+                                            show haczyki42 zorder 25 at sojusznik1 
+
+                                        if zyd_wybrany == 2:
+                                            show haczyki42 zorder 25 at sojusznik2  
+
+                                        if zyd_wybrany == 3:
+                                            show haczyki42 zorder 25 at sojusznik3 
+                                    else:
+                                        if zyd_haczyki == 2:
+                                            $ zyd_haczyki = 3
+                                            if zyd_wybrany == 1:
+                                                show haczyki43 zorder 25 at sojusznik1 
+
+                                            if zyd_wybrany == 2:
+                                                show haczyki43 zorder 25 at sojusznik2  
+
+                                            if zyd_wybrany == 3:
+                                                show haczyki43 zorder 25 at sojusznik3 
+                                
+                                $ zyd_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight183
 
@@ -10747,6 +13497,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
+                                    $ zyd_haczyki = 0
+                                    hide haczyki41
+                                    hide haczyki42
+                                    hide haczyki43
                                     $ kostka = renpy.random.randint(1, 2)
                                     if zyd_hp_now + kostka >= zyd_hp:
                                         $ zyd_hp_now = zyd_hp
@@ -10791,6 +13545,10 @@ label fight181:
                                             $ fanatyk_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -10800,6 +13558,58 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
 
                                     $ fanatyk_hp_now -= int(zyd_attack / 2)
@@ -10807,6 +13617,10 @@ label fight181:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -10827,6 +13641,10 @@ label fight181:
                                             $ fanatyk_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -10836,6 +13654,58 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
 
                                     $ fanatyk_hp_now -= zyd_attack
@@ -10847,6 +13717,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -10856,10 +13730,66 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -10869,6 +13799,58 @@ label fight181:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if zyd_haczyki == 0:
+                                        $ zyd_haczyki = 1
+                                        if zyd_wybrany == 1:
+                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                        if zyd_wybrany == 2:
+                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                        if zyd_wybrany == 3:
+                                            show haczyki41 zorder 25 at sojusznik3 
+                                    else:
+                                        if zyd_haczyki == 1:
+                                            $ zyd_haczyki = 2
+                                            if zyd_wybrany == 1:
+                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                            if zyd_wybrany == 2:
+                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                            if zyd_wybrany == 3:
+                                                show haczyki42 zorder 25 at sojusznik3 
+                                        else:
+                                            if zyd_haczyki == 2:
+                                                $ zyd_haczyki = 3
+                                                if zyd_wybrany == 1:
+                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                if zyd_wybrany == 2:
+                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                if zyd_wybrany == 3:
+                                                    show haczyki43 zorder 25 at sojusznik3 
+                                    
+                                    $ zyd_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight183
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -11282,6 +14264,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -11307,6 +14293,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -11332,6 +14322,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -11355,6 +14349,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -11369,6 +14367,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Kazumy został zablokowany{/i}"
                             if ziemia == 5:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -11378,6 +14380,59 @@ label fight181:
                                     $ kazuma_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+
+                        if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if kazuma_haczyki == 0:
+                                    $ kazuma_haczyki = 1
+                                    if kazuma_wybrany == 1:
+                                        show haczyki51 zorder 25 at sojusznik1 
+
+                                    if kazuma_wybrany == 2:
+                                        show haczyki51 zorder 25 at sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show haczyki51 zorder 25 at sojusznik3 
+                                else:
+                                    if kazuma_haczyki == 1:
+                                        $ kazuma_haczyki = 2
+                                        if kazuma_wybrany == 1:
+                                            show haczyki52 zorder 25 at sojusznik1 
+
+                                        if kazuma_wybrany == 2:
+                                            show haczyki52 zorder 25 at sojusznik2  
+
+                                        if kazuma_wybrany == 3:
+                                            show haczyki52 zorder 25 at sojusznik3 
+                                    else:
+                                        if kazuma_haczyki == 2:
+                                            $ kazuma_haczyki = 3
+                                            if kazuma_wybrany == 1:
+                                                show haczyki53 zorder 25 at sojusznik1 
+
+                                            if kazuma_wybrany == 2:
+                                                show haczyki53 zorder 25 at sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show haczyki53 zorder 25 at sojusznik3 
+                                
+                                $ kazuma_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight183
 
@@ -11524,6 +14579,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
+                                    $ kazuma_haczyki = 0
+                                    hide haczyki51
+                                    hide haczyki52
+                                    hide haczyki53
                                     $ kostka = renpy.random.randint(1, 2)
                                     if kazuma_hp_now + kostka >= kazuma_hp:
                                         $ kazuma_hp_now = kazuma_hp
@@ -11568,6 +14627,10 @@ label fight181:
                                             $ fanatyk_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -11577,6 +14640,58 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
 
                                     $ fanatyk_hp_now -= int(kazuma_attack / 2)
@@ -11584,6 +14699,10 @@ label fight181:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -11604,6 +14723,10 @@ label fight181:
                                             $ fanatyk_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -11613,6 +14736,58 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
 
                                     $ fanatyk_hp_now -= kazuma_attack
@@ -11624,6 +14799,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -11633,10 +14812,66 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight183
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -11646,6 +14881,58 @@ label fight181:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if kazuma_haczyki == 0:
+                                        $ kazuma_haczyki = 1
+                                        if kazuma_wybrany == 1:
+                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                        if kazuma_wybrany == 2:
+                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                        if kazuma_wybrany == 3:
+                                            show haczyki51 zorder 25 at sojusznik3 
+                                    else:
+                                        if kazuma_haczyki == 1:
+                                            $ kazuma_haczyki = 2
+                                            if kazuma_wybrany == 1:
+                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                            if kazuma_wybrany == 2:
+                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show haczyki52 zorder 25 at sojusznik3 
+                                        else:
+                                            if kazuma_haczyki == 2:
+                                                $ kazuma_haczyki = 3
+                                                if kazuma_wybrany == 1:
+                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                if kazuma_wybrany == 2:
+                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                if kazuma_wybrany == 3:
+                                                    show haczyki53 zorder 25 at sojusznik3 
+                                    
+                                    $ kazuma_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight183
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -12140,12 +15427,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -12168,12 +15463,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -12196,12 +15499,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -12227,12 +15538,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -12263,12 +15582,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -12291,12 +15618,20 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -12485,6 +15820,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -12510,6 +15849,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -12535,6 +15878,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Łuszcza został zablokowany{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -12558,6 +15905,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 2:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
@@ -12572,6 +15923,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Łuszcza został zablokowany{/i}"
                             if ziemia == 2:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 $ kostka = renpy.random.randint(1, 2)
                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
@@ -12581,6 +15936,59 @@ label fight181:
                                     $ luszcz_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                        
+                        if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if luszcz_haczyki == 0:
+                                    $ luszcz_haczyki = 1
+                                    if luszcz_wybrany == 1:
+                                        show haczyki11 zorder 25 at sojusznik1 
+
+                                    if luszcz_wybrany == 2:
+                                        show haczyki11 zorder 25 at sojusznik2  
+
+                                    if luszcz_wybrany == 3:
+                                        show haczyki11 zorder 25 at sojusznik3 
+                                else:
+                                    if luszcz_haczyki == 1:
+                                        $ luszcz_haczyki = 2
+                                        if luszcz_wybrany == 1:
+                                            show haczyki12 zorder 25 at sojusznik1 
+
+                                        if luszcz_wybrany == 2:
+                                            show haczyki12 zorder 25 at sojusznik2  
+
+                                        if luszcz_wybrany == 3:
+                                            show haczyki12 zorder 25 at sojusznik3 
+                                    else:
+                                        if luszcz_haczyki == 2:
+                                            $ luszcz_haczyki = 3
+                                            if luszcz_wybrany == 1:
+                                                show haczyki13 zorder 25 at sojusznik1 
+
+                                            if luszcz_wybrany == 2:
+                                                show haczyki13 zorder 25 at sojusznik2  
+
+                                            if luszcz_wybrany == 3:
+                                                show haczyki13 zorder 25 at sojusznik3 
+                                
+                                $ luszcz_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight184
 
@@ -12727,6 +16135,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Łuszcza został zablokowany{/i}"
                                 if ziemia == 2:
+                                    $ luszcz_haczyki = 0
+                                    hide haczyki11
+                                    hide haczyki12
+                                    hide haczyki13
                                     $ kostka = renpy.random.randint(1, 2)
                                     if luszcz_hp_now + kostka >= luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -12771,6 +16183,10 @@ label fight181:
                                             $ fanatyk_hp_now -= luszcz_attack
                                             "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -12780,6 +16196,59 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
 
                                     $ fanatyk_hp_now -= int(luszcz_attack / 2)
@@ -12787,6 +16256,10 @@ label fight181:
                                     $ dmg = int(luszcz_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -12807,6 +16280,10 @@ label fight181:
                                             $ fanatyk_hp_now -= luszcz_attack * 2
                                             "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -12816,6 +16293,58 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
 
                                     $ fanatyk_hp_now -= luszcz_attack
@@ -12827,6 +16356,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 2:
+                                                $ luszcz_haczyki = 0
+                                                hide haczyki11
+                                                hide haczyki12
+                                                hide haczyki13
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if luszcz_hp_now + kostka >= luszcz_hp:
                                                     $ luszcz_hp_now = luszcz_hp
@@ -12836,10 +16369,66 @@ label fight181:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if luszcz_haczyki == 0:
+                                                        $ luszcz_haczyki = 1
+                                                        if luszcz_wybrany == 1:
+                                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                                        if luszcz_wybrany == 2:
+                                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                                        if luszcz_wybrany == 3:
+                                                            show haczyki11 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if luszcz_haczyki == 1:
+                                                            $ luszcz_haczyki = 2
+                                                            if luszcz_wybrany == 1:
+                                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                                            if luszcz_wybrany == 2:
+                                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                                            if luszcz_wybrany == 3:
+                                                                show haczyki12 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if luszcz_haczyki == 2:
+                                                                $ luszcz_haczyki = 3
+                                                                if luszcz_wybrany == 1:
+                                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                                if luszcz_wybrany == 2:
+                                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                                if luszcz_wybrany == 3:
+                                                                    show haczyki13 zorder 25 at sojusznik3 
+                                                    
+                                                    $ luszcz_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
+                                        $ luszcz_haczyki = 0
+                                        hide haczyki11
+                                        hide haczyki12
+                                        hide haczyki13
                                         $ kostka = renpy.random.randint(1, 2)
                                         if luszcz_hp_now + kostka >= luszcz_hp:
                                             $ luszcz_hp_now = luszcz_hp
@@ -12849,6 +16438,58 @@ label fight181:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and luszcz_haczyki < 3 and luszcz_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if luszcz_haczyki == 0:
+                                        $ luszcz_haczyki = 1
+                                        if luszcz_wybrany == 1:
+                                            show haczyki11 zorder 25 at sojusznik1 
+
+                                        if luszcz_wybrany == 2:
+                                            show haczyki11 zorder 25 at sojusznik2  
+
+                                        if luszcz_wybrany == 3:
+                                            show haczyki11 zorder 25 at sojusznik3 
+                                    else:
+                                        if luszcz_haczyki == 1:
+                                            $ luszcz_haczyki = 2
+                                            if luszcz_wybrany == 1:
+                                                show haczyki12 zorder 25 at sojusznik1 
+
+                                            if luszcz_wybrany == 2:
+                                                show haczyki12 zorder 25 at sojusznik2  
+
+                                            if luszcz_wybrany == 3:
+                                                show haczyki12 zorder 25 at sojusznik3 
+                                        else:
+                                            if luszcz_haczyki == 2:
+                                                $ luszcz_haczyki = 3
+                                                if luszcz_wybrany == 1:
+                                                    show haczyki13 zorder 25 at sojusznik1 
+
+                                                if luszcz_wybrany == 2:
+                                                    show haczyki13 zorder 25 at sojusznik2  
+
+                                                if luszcz_wybrany == 3:
+                                                    show haczyki13 zorder 25 at sojusznik3 
+                                    
+                                    $ luszcz_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Łuszcz wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight184
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -13043,6 +16684,10 @@ label fight181:
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
+                                    $ luszcz_haczyki = 0
+                                    hide haczyki11
+                                    hide haczyki12
+                                    hide haczyki13
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
                                         "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -13054,6 +16699,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ eminem_haczyki = 0
+                                    hide haczyki21
+                                    hide haczyki22
+                                    hide haczyki23
                                     if eminem_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -13074,6 +16723,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ urban_haczyki = 0
+                                    hide haczyki31
+                                    hide haczyki32
+                                    hide haczyki33
                                     if urban_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -13094,6 +16747,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ zyd_haczyki = 0
+                                    hide haczyki41
+                                    hide haczyki42
+                                    hide haczyki43
                                     if zyd_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -13114,6 +16771,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ kazuma_haczyki = 0
+                                    hide haczyki51
+                                    hide haczyki52
+                                    hide haczyki53
                                     if kazuma_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -13134,6 +16795,10 @@ label fight181:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
+                                    $ tarczownik_haczyki = 0
+                                    hide haczyki61
+                                    hide haczyki62
+                                    hide haczyki63
                                     if tarczownik_wybrany == 1:
                                         show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
 
@@ -13167,12 +16832,20 @@ label fight181:
                                 show hiszpanska_mandarynka3 zorder 15 at weapon_sojusznik3 
 
                             if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                $ luszcz_haczyki = 0
+                                hide haczyki11
+                                hide haczyki12
+                                hide haczyki13
                                 if luszcz_hp_now + 2 > luszcz_hp:
                                     $ luszcz_hp_now = luszcz_hp
                                 else:
                                     $ luszcz_hp_now += 2
                             
                             if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                $ eminem_haczyki = 0
+                                hide haczyki21
+                                hide haczyki22
+                                hide haczyki23
                                 if eminem_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -13188,6 +16861,10 @@ label fight181:
                                     $ eminem_hp_now += 2
 
                             if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 if urban_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -13203,6 +16880,10 @@ label fight181:
                                     $ urban_hp_now += 2
 
                             if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 if zyd_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -13218,6 +16899,10 @@ label fight181:
                                     $ zyd_hp_now += 2
 
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 if kazuma_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -13233,6 +16918,10 @@ label fight181:
                                     $ kazuma_hp_now += 2
                             
                             if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                $ tarczownik_haczyki = 0
+                                hide haczyki61
+                                hide haczyki62
+                                hide haczyki63
                                 if tarczownik_wybrany == 1:
                                     show hiszpanska_mandarynka1 zorder 15 at weapon_sojusznik1  
 
@@ -13361,6 +17050,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
                                 if ziemia == 7:
+                                    $ eminem_haczyki = 0
+                                    hide haczyki21
+                                    hide haczyki22
+                                    hide haczyki23
                                     $ kostka = renpy.random.randint(1, 2)
                                     if eminem_hp_now + kostka >= eminem_hp:
                                         $ eminem_hp_now = eminem_hp
@@ -13380,6 +17073,10 @@ label fight181:
                                     $ dmg = int(eminem_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 7:
+                                        $ eminem_haczyki = 0
+                                        hide haczyki21
+                                        hide haczyki22
+                                        hide haczyki23
                                         $ kostka = renpy.random.randint(1, 2)
                                         if eminem_hp_now + kostka >= eminem_hp:
                                             $ eminem_hp_now = eminem_hp
@@ -13394,6 +17091,10 @@ label fight181:
                                 
                                     "{i}Atak zadał [eminem_attack] obrażeń{/i}"
                                     if ziemia == 7:
+                                        $ eminem_haczyki = 0
+                                        hide haczyki21
+                                        hide haczyki22
+                                        hide haczyki23
                                         $ kostka = renpy.random.randint(1, 2)
                                         if eminem_hp_now + kostka >= eminem_hp:
                                             $ eminem_hp_now = eminem_hp
@@ -13403,6 +17104,58 @@ label fight181:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and eminem_haczyki < 3 and eminem_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if eminem_haczyki == 0:
+                                        $ eminem_haczyki = 1
+                                        if eminem_wybrany == 1:
+                                            show haczyki21 zorder 25 at sojusznik1 
+
+                                        if eminem_wybrany == 2:
+                                            show haczyki21 zorder 25 at sojusznik2  
+
+                                        if eminem_wybrany == 3:
+                                            show haczyki21 zorder 25 at sojusznik3 
+                                    else:
+                                        if eminem_haczyki == 1:
+                                            $ eminem_haczyki = 2
+                                            if eminem_wybrany == 1:
+                                                show haczyki22 zorder 25 at sojusznik1 
+
+                                            if eminem_wybrany == 2:
+                                                show haczyki22 zorder 25 at sojusznik2  
+
+                                            if eminem_wybrany == 3:
+                                                show haczyki22 zorder 25 at sojusznik3 
+                                        else:
+                                            if eminem_haczyki == 2:
+                                                $ eminem_haczyki = 3
+                                                if eminem_wybrany == 1:
+                                                    show haczyki23 zorder 25 at sojusznik1 
+
+                                                if eminem_wybrany == 2:
+                                                    show haczyki23 zorder 25 at sojusznik2  
+
+                                                if eminem_wybrany == 3:
+                                                    show haczyki23 zorder 25 at sojusznik3 
+                                    
+                                    $ eminem_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Shadow wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight184
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -13852,6 +17605,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -13877,6 +17634,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -13902,6 +17663,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -13925,6 +17690,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [urban_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 3:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -13939,6 +17708,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Jerzego Urbana został zablokowany{/i}"
                             if ziemia == 3:
+                                $ urban_haczyki = 0
+                                hide haczyki31
+                                hide haczyki32
+                                hide haczyki33
                                 $ kostka = renpy.random.randint(1, 2)
                                 if urban_hp_now + kostka >= urban_hp:
                                     $ urban_hp_now = urban_hp
@@ -13948,6 +17721,58 @@ label fight181:
                                     $ urban_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                        if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if urban_haczyki == 0:
+                                    $ urban_haczyki = 1
+                                    if urban_wybrany == 1:
+                                        show haczyki31 zorder 25 at sojusznik1 
+
+                                    if urban_wybrany == 2:
+                                        show haczyki31 zorder 25 at sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show haczyki31 zorder 25 at sojusznik3 
+                                else:
+                                    if urban_haczyki == 1:
+                                        $ urban_haczyki = 2
+                                        if urban_wybrany == 1:
+                                            show haczyki32 zorder 25 at sojusznik1 
+
+                                        if urban_wybrany == 2:
+                                            show haczyki32 zorder 25 at sojusznik2  
+
+                                        if urban_wybrany == 3:
+                                            show haczyki32 zorder 25 at sojusznik3 
+                                    else:
+                                        if urban_haczyki == 2:
+                                            $ urban_haczyki = 3
+                                            if urban_wybrany == 1:
+                                                show haczyki33 zorder 25 at sojusznik1 
+
+                                            if urban_wybrany == 2:
+                                                show haczyki33 zorder 25 at sojusznik2  
+
+                                            if urban_wybrany == 3:
+                                                show haczyki33 zorder 25 at sojusznik3 
+                                
+                                $ urban_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight184
 
@@ -14102,6 +17927,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Jerzego Urbana został zablokowany{/i}"
                                     if ziemia == 3:
+                                        $ urban_haczyki = 0
+                                        hide haczyki31
+                                        hide haczyki32
+                                        hide haczyki33
                                         $ kostka = renpy.random.randint(1, 2)
                                         if urban_hp_now + kostka >= urban_hp:
                                             $ urban_hp_now = urban_hp
@@ -14152,6 +17981,10 @@ label fight181:
                                                     $ fanatyk_hp_now -= urban_attack
                                                     "{i}Atak został podwojony i zadał [urban_attack] obrażeń{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -14161,6 +17994,58 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight184
 
                                             $ fanatyk_hp_now -= int(urban_attack / 2)
@@ -14168,6 +18053,10 @@ label fight181:
                                             $ dmg = int(urban_attack / 2)
                                             "{i}Atak zadał [dmg] obrażeń{/i}"
                                             if ziemia == 3:
+                                                $ urban_haczyki = 0
+                                                hide haczyki31
+                                                hide haczyki32
+                                                hide haczyki33
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if urban_hp_now + kostka >= urban_hp:
                                                     $ urban_hp_now = urban_hp
@@ -14188,6 +18077,10 @@ label fight181:
                                                     $ fanatyk_hp_now -= urban_attack * 2
                                                     "{i}Atak został podwojony i zadał [urban_attack * 2] obrażeń{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -14197,6 +18090,58 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight184
 
                                             $ fanatyk_hp_now -= urban_attack
@@ -14208,6 +18153,10 @@ label fight181:
                                                     $ fanatyk_stun = 1
                                                     "{i}Atak zadał [urban_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                                     if ziemia == 3:
+                                                        $ urban_haczyki = 0
+                                                        hide haczyki31
+                                                        hide haczyki32
+                                                        hide haczyki33
                                                         $ kostka = renpy.random.randint(1, 2)
                                                         if urban_hp_now + kostka >= urban_hp:
                                                             $ urban_hp_now = urban_hp
@@ -14217,10 +18166,66 @@ label fight181:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                                    if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                                        $ kostka = renpy.random.randint(1, 2)
+                                                        if kostka == 1:
+                                                            if fanatyk_haczyki == 3:
+                                                                $ fanatyk_haczyki = 2
+                                                                hide fanatyk_haczyk3
+                                                                show fanatyk_haczyk2 zorder 15 at haczyki
+                                                            else:
+                                                                if fanatyk_haczyki == 2:
+                                                                    $ fanatyk_haczyki = 1
+                                                                    hide fanatyk_haczyk2
+                                                                    show fanatyk_haczyk1 zorder 15 at haczyki
+                                                                else:
+                                                                    if fanatyk_haczyki == 1:
+                                                                        $ fanatyk_haczyki = 0
+                                                                        hide fanatyk_haczyk1
+                                                            if urban_haczyki == 0:
+                                                                $ urban_haczyki = 1
+                                                                if urban_wybrany == 1:
+                                                                    show haczyki31 zorder 25 at sojusznik1 
+
+                                                                if urban_wybrany == 2:
+                                                                    show haczyki31 zorder 25 at sojusznik2  
+
+                                                                if urban_wybrany == 3:
+                                                                    show haczyki31 zorder 25 at sojusznik3 
+                                                            else:
+                                                                if urban_haczyki == 1:
+                                                                    $ urban_haczyki = 2
+                                                                    if urban_wybrany == 1:
+                                                                        show haczyki32 zorder 25 at sojusznik1 
+
+                                                                    if urban_wybrany == 2:
+                                                                        show haczyki32 zorder 25 at sojusznik2  
+
+                                                                    if urban_wybrany == 3:
+                                                                        show haczyki32 zorder 25 at sojusznik3 
+                                                                else:
+                                                                    if urban_haczyki == 2:
+                                                                        $ urban_haczyki = 3
+                                                                        if urban_wybrany == 1:
+                                                                            show haczyki33 zorder 25 at sojusznik1 
+
+                                                                        if urban_wybrany == 2:
+                                                                            show haczyki33 zorder 25 at sojusznik2  
+
+                                                                        if urban_wybrany == 3:
+                                                                            show haczyki33 zorder 25 at sojusznik3 
+                                                            
+                                                            $ urban_hp_now -= 3
+                                                            play sound "audio/sfx/lego.mp3"
+                                                            "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                                     jump faza_fight184
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
+                                                $ urban_haczyki = 0
+                                                hide haczyki31
+                                                hide haczyki32
+                                                hide haczyki33
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if urban_hp_now + kostka >= urban_hp:
                                                     $ urban_hp_now = urban_hp
@@ -14230,6 +18235,58 @@ label fight181:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
+                                if fanatyk_haczyki > 0 and urban_haczyki < 3 and urban_hp_now > 0:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kostka == 1:
+                                        if fanatyk_haczyki == 3:
+                                            $ fanatyk_haczyki = 2
+                                            hide fanatyk_haczyk3
+                                            show fanatyk_haczyk2 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 2:
+                                                $ fanatyk_haczyki = 1
+                                                hide fanatyk_haczyk2
+                                                show fanatyk_haczyk1 zorder 15 at haczyki
+                                            else:
+                                                if fanatyk_haczyki == 1:
+                                                    $ fanatyk_haczyki = 0
+                                                    hide fanatyk_haczyk1
+                                        if urban_haczyki == 0:
+                                            $ urban_haczyki = 1
+                                            if urban_wybrany == 1:
+                                                show haczyki31 zorder 25 at sojusznik1 
+
+                                            if urban_wybrany == 2:
+                                                show haczyki31 zorder 25 at sojusznik2  
+
+                                            if urban_wybrany == 3:
+                                                show haczyki31 zorder 25 at sojusznik3 
+                                        else:
+                                            if urban_haczyki == 1:
+                                                $ urban_haczyki = 2
+                                                if urban_wybrany == 1:
+                                                    show haczyki32 zorder 25 at sojusznik1 
+
+                                                if urban_wybrany == 2:
+                                                    show haczyki32 zorder 25 at sojusznik2  
+
+                                                if urban_wybrany == 3:
+                                                    show haczyki32 zorder 25 at sojusznik3 
+                                            else:
+                                                if urban_haczyki == 2:
+                                                    $ urban_haczyki = 3
+                                                    if urban_wybrany == 1:
+                                                        show haczyki33 zorder 25 at sojusznik1 
+
+                                                    if urban_wybrany == 2:
+                                                        show haczyki33 zorder 25 at sojusznik2  
+
+                                                    if urban_wybrany == 3:
+                                                        show haczyki33 zorder 25 at sojusznik3 
+                                        
+                                        $ urban_hp_now -= 3
+                                        play sound "audio/sfx/lego.mp3"
+                                        "{i}Jerzy Urban wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                 jump faza_fight184
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -14593,6 +18650,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -14618,6 +18679,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -14643,6 +18708,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Żyda został zablokowany{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -14666,6 +18735,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 4:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -14680,6 +18753,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Żyda został zablokowany{/i}"
                             if ziemia == 4:
+                                $ zyd_haczyki = 0
+                                hide haczyki41
+                                hide haczyki42
+                                hide haczyki43
                                 $ kostka = renpy.random.randint(1, 2)
                                 if zyd_hp_now + kostka >= zyd_hp:
                                     $ zyd_hp_now = zyd_hp
@@ -14689,6 +18766,58 @@ label fight181:
                                     $ zyd_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                        if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if zyd_haczyki == 0:
+                                    $ zyd_haczyki = 1
+                                    if zyd_wybrany == 1:
+                                        show haczyki41 zorder 25 at sojusznik1 
+
+                                    if zyd_wybrany == 2:
+                                        show haczyki41 zorder 25 at sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show haczyki41 zorder 25 at sojusznik3 
+                                else:
+                                    if zyd_haczyki == 1:
+                                        $ zyd_haczyki = 2
+                                        if zyd_wybrany == 1:
+                                            show haczyki42 zorder 25 at sojusznik1 
+
+                                        if zyd_wybrany == 2:
+                                            show haczyki42 zorder 25 at sojusznik2  
+
+                                        if zyd_wybrany == 3:
+                                            show haczyki42 zorder 25 at sojusznik3 
+                                    else:
+                                        if zyd_haczyki == 2:
+                                            $ zyd_haczyki = 3
+                                            if zyd_wybrany == 1:
+                                                show haczyki43 zorder 25 at sojusznik1 
+
+                                            if zyd_wybrany == 2:
+                                                show haczyki43 zorder 25 at sojusznik2  
+
+                                            if zyd_wybrany == 3:
+                                                show haczyki43 zorder 25 at sojusznik3 
+                                
+                                $ zyd_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight184
 
@@ -14835,6 +18964,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
+                                    $ zyd_haczyki = 0
+                                    hide haczyki41
+                                    hide haczyki42
+                                    hide haczyki43
                                     $ kostka = renpy.random.randint(1, 2)
                                     if zyd_hp_now + kostka >= zyd_hp:
                                         $ zyd_hp_now = zyd_hp
@@ -14879,6 +19012,10 @@ label fight181:
                                             $ fanatyk_hp_now -= zyd_attack
                                             "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -14888,6 +19025,58 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
 
                                     $ fanatyk_hp_now -= int(zyd_attack / 2)
@@ -14895,6 +19084,10 @@ label fight181:
                                     $ dmg = int(zyd_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -14915,6 +19108,10 @@ label fight181:
                                             $ fanatyk_hp_now -= zyd_attack * 2
                                             "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -14924,6 +19121,58 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
 
                                     $ fanatyk_hp_now -= zyd_attack
@@ -14935,6 +19184,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 4:
+                                                $ zyd_haczyki = 0
+                                                hide haczyki41
+                                                hide haczyki42
+                                                hide haczyki43
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if zyd_hp_now + kostka >= zyd_hp:
                                                     $ zyd_hp_now = zyd_hp
@@ -14944,10 +19197,66 @@ label fight181:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if zyd_haczyki == 0:
+                                                        $ zyd_haczyki = 1
+                                                        if zyd_wybrany == 1:
+                                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show haczyki41 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if zyd_haczyki == 1:
+                                                            $ zyd_haczyki = 2
+                                                            if zyd_wybrany == 1:
+                                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show haczyki42 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if zyd_haczyki == 2:
+                                                                $ zyd_haczyki = 3
+                                                                if zyd_wybrany == 1:
+                                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                                if zyd_wybrany == 2:
+                                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                                if zyd_wybrany == 3:
+                                                                    show haczyki43 zorder 25 at sojusznik3 
+                                                    
+                                                    $ zyd_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
+                                        $ zyd_haczyki = 0
+                                        hide haczyki41
+                                        hide haczyki42
+                                        hide haczyki43
                                         $ kostka = renpy.random.randint(1, 2)
                                         if zyd_hp_now + kostka >= zyd_hp:
                                             $ zyd_hp_now = zyd_hp
@@ -14957,6 +19266,58 @@ label fight181:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and zyd_haczyki < 3 and zyd_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if zyd_haczyki == 0:
+                                        $ zyd_haczyki = 1
+                                        if zyd_wybrany == 1:
+                                            show haczyki41 zorder 25 at sojusznik1 
+
+                                        if zyd_wybrany == 2:
+                                            show haczyki41 zorder 25 at sojusznik2  
+
+                                        if zyd_wybrany == 3:
+                                            show haczyki41 zorder 25 at sojusznik3 
+                                    else:
+                                        if zyd_haczyki == 1:
+                                            $ zyd_haczyki = 2
+                                            if zyd_wybrany == 1:
+                                                show haczyki42 zorder 25 at sojusznik1 
+
+                                            if zyd_wybrany == 2:
+                                                show haczyki42 zorder 25 at sojusznik2  
+
+                                            if zyd_wybrany == 3:
+                                                show haczyki42 zorder 25 at sojusznik3 
+                                        else:
+                                            if zyd_haczyki == 2:
+                                                $ zyd_haczyki = 3
+                                                if zyd_wybrany == 1:
+                                                    show haczyki43 zorder 25 at sojusznik1 
+
+                                                if zyd_wybrany == 2:
+                                                    show haczyki43 zorder 25 at sojusznik2  
+
+                                                if zyd_wybrany == 3:
+                                                    show haczyki43 zorder 25 at sojusznik3 
+                                    
+                                    $ zyd_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Żyd wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight184
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -14967,6 +19328,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Żyda został zablokowany{/i}"
                                 if ziemia == 4:
+                                    $ zyd_haczyki = 0
+                                    hide haczyki41
+                                    hide haczyki42
+                                    hide haczyki43
                                     $ kostka = renpy.random.randint(1, 2)
                                     if zyd_hp_now + kostka >= zyd_hp:
                                         $ zyd_hp_now = zyd_hp
@@ -15370,6 +19735,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -15395,6 +19764,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -15420,6 +19793,10 @@ label fight181:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Kazumy został zablokowany{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -15443,6 +19820,10 @@ label fight181:
                             play sound "audio/sfx/ostrza_chaosu.mp3"
                             "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
                             if ziemia == 5:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -15457,6 +19838,10 @@ label fight181:
                             play sound "audio/sfx/obrona.mp3"
                             "{i}Atak Kazumy został zablokowany{/i}"
                             if ziemia == 5:
+                                $ kazuma_haczyki = 0
+                                hide haczyki51
+                                hide haczyki52
+                                hide haczyki53
                                 $ kostka = renpy.random.randint(1, 2)
                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                     $ kazuma_hp_now = kazuma_hp
@@ -15466,6 +19851,59 @@ label fight181:
                                     $ kazuma_hp_now += kostka
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                        
+                        if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if kostka == 1:
+                                if fanatyk_haczyki == 3:
+                                    $ fanatyk_haczyki = 2
+                                    hide fanatyk_haczyk3
+                                    show fanatyk_haczyk2 zorder 15 at haczyki
+                                else:
+                                    if fanatyk_haczyki == 2:
+                                        $ fanatyk_haczyki = 1
+                                        hide fanatyk_haczyk2
+                                        show fanatyk_haczyk1 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 1:
+                                            $ fanatyk_haczyki = 0
+                                            hide fanatyk_haczyk1
+                                if kazuma_haczyki == 0:
+                                    $ kazuma_haczyki = 1
+                                    if kazuma_wybrany == 1:
+                                        show haczyki51 zorder 25 at sojusznik1 
+
+                                    if kazuma_wybrany == 2:
+                                        show haczyki51 zorder 25 at sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show haczyki51 zorder 25 at sojusznik3 
+                                else:
+                                    if kazuma_haczyki == 1:
+                                        $ kazuma_haczyki = 2
+                                        if kazuma_wybrany == 1:
+                                            show haczyki52 zorder 25 at sojusznik1 
+
+                                        if kazuma_wybrany == 2:
+                                            show haczyki52 zorder 25 at sojusznik2  
+
+                                        if kazuma_wybrany == 3:
+                                            show haczyki52 zorder 25 at sojusznik3 
+                                    else:
+                                        if kazuma_haczyki == 2:
+                                            $ kazuma_haczyki = 3
+                                            if kazuma_wybrany == 1:
+                                                show haczyki53 zorder 25 at sojusznik1 
+
+                                            if kazuma_wybrany == 2:
+                                                show haczyki53 zorder 25 at sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show haczyki53 zorder 25 at sojusznik3 
+                                
+                                $ kazuma_hp_now -= 3
+                                play sound "audio/sfx/lego.mp3"
+                                "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
 
                         jump faza_fight184
 
@@ -15612,6 +20050,10 @@ label fight181:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Kazumy został zablokowany{/i}"
                                 if ziemia == 5:
+                                    $ kazuma_haczyki = 0
+                                    hide haczyki51
+                                    hide haczyki52
+                                    hide haczyki53
                                     $ kostka = renpy.random.randint(1, 2)
                                     if kazuma_hp_now + kostka >= kazuma_hp:
                                         $ kazuma_hp_now = kazuma_hp
@@ -15656,6 +20098,10 @@ label fight181:
                                             $ fanatyk_hp_now -= kazuma_attack
                                             "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -15665,6 +20111,58 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
 
                                     $ fanatyk_hp_now -= int(kazuma_attack / 2)
@@ -15672,6 +20170,10 @@ label fight181:
                                     $ dmg = int(kazuma_attack / 2)
                                     "{i}Atak zadał [dmg] obrażeń{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -15692,6 +20194,10 @@ label fight181:
                                             $ fanatyk_hp_now -= kazuma_attack * 2
                                             "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -15701,6 +20207,58 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
 
                                     $ fanatyk_hp_now -= kazuma_attack
@@ -15712,6 +20270,10 @@ label fight181:
                                             $ fanatyk_stun = 1
                                             "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
                                             if ziemia == 5:
+                                                $ kazuma_haczyki = 0
+                                                hide haczyki51
+                                                hide haczyki52
+                                                hide haczyki53
                                                 $ kostka = renpy.random.randint(1, 2)
                                                 if kazuma_hp_now + kostka >= kazuma_hp:
                                                     $ kazuma_hp_now = kazuma_hp
@@ -15721,10 +20283,66 @@ label fight181:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                                $ kostka = renpy.random.randint(1, 2)
+                                                if kostka == 1:
+                                                    if fanatyk_haczyki == 3:
+                                                        $ fanatyk_haczyki = 2
+                                                        hide fanatyk_haczyk3
+                                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                                    else:
+                                                        if fanatyk_haczyki == 2:
+                                                            $ fanatyk_haczyki = 1
+                                                            hide fanatyk_haczyk2
+                                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                                        else:
+                                                            if fanatyk_haczyki == 1:
+                                                                $ fanatyk_haczyki = 0
+                                                                hide fanatyk_haczyk1
+                                                    if kazuma_haczyki == 0:
+                                                        $ kazuma_haczyki = 1
+                                                        if kazuma_wybrany == 1:
+                                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show haczyki51 zorder 25 at sojusznik3 
+                                                    else:
+                                                        if kazuma_haczyki == 1:
+                                                            $ kazuma_haczyki = 2
+                                                            if kazuma_wybrany == 1:
+                                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show haczyki52 zorder 25 at sojusznik3 
+                                                        else:
+                                                            if kazuma_haczyki == 2:
+                                                                $ kazuma_haczyki = 3
+                                                                if kazuma_wybrany == 1:
+                                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show haczyki53 zorder 25 at sojusznik3 
+                                                    
+                                                    $ kazuma_hp_now -= 3
+                                                    play sound "audio/sfx/lego.mp3"
+                                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                                             jump faza_fight184
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
+                                        $ kazuma_haczyki = 0
+                                        hide haczyki51
+                                        hide haczyki52
+                                        hide haczyki53
                                         $ kostka = renpy.random.randint(1, 2)
                                         if kazuma_hp_now + kostka >= kazuma_hp:
                                             $ kazuma_hp_now = kazuma_hp
@@ -15734,6 +20352,58 @@ label fight181:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            if fanatyk_haczyki > 0 and kazuma_haczyki < 3 and kazuma_hp_now > 0:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if kostka == 1:
+                                    if fanatyk_haczyki == 3:
+                                        $ fanatyk_haczyki = 2
+                                        hide fanatyk_haczyk3
+                                        show fanatyk_haczyk2 zorder 15 at haczyki
+                                    else:
+                                        if fanatyk_haczyki == 2:
+                                            $ fanatyk_haczyki = 1
+                                            hide fanatyk_haczyk2
+                                            show fanatyk_haczyk1 zorder 15 at haczyki
+                                        else:
+                                            if fanatyk_haczyki == 1:
+                                                $ fanatyk_haczyki = 0
+                                                hide fanatyk_haczyk1
+                                    if kazuma_haczyki == 0:
+                                        $ kazuma_haczyki = 1
+                                        if kazuma_wybrany == 1:
+                                            show haczyki51 zorder 25 at sojusznik1 
+
+                                        if kazuma_wybrany == 2:
+                                            show haczyki51 zorder 25 at sojusznik2  
+
+                                        if kazuma_wybrany == 3:
+                                            show haczyki51 zorder 25 at sojusznik3 
+                                    else:
+                                        if kazuma_haczyki == 1:
+                                            $ kazuma_haczyki = 2
+                                            if kazuma_wybrany == 1:
+                                                show haczyki52 zorder 25 at sojusznik1 
+
+                                            if kazuma_wybrany == 2:
+                                                show haczyki52 zorder 25 at sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show haczyki52 zorder 25 at sojusznik3 
+                                        else:
+                                            if kazuma_haczyki == 2:
+                                                $ kazuma_haczyki = 3
+                                                if kazuma_wybrany == 1:
+                                                    show haczyki53 zorder 25 at sojusznik1 
+
+                                                if kazuma_wybrany == 2:
+                                                    show haczyki53 zorder 25 at sojusznik2  
+
+                                                if kazuma_wybrany == 3:
+                                                    show haczyki53 zorder 25 at sojusznik3 
+                                    
+                                    $ kazuma_hp_now -= 3
+                                    play sound "audio/sfx/lego.mp3"
+                                    "{i}Kazuma wbił sobie haczyk do nogi i stracił 3 punkty życia{/i}"
                             jump faza_fight184
 
                         "{b}Kibol 2{/b}" if trup12_hp_now >= 1:
@@ -16231,12 +20901,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -16259,12 +20937,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -16287,12 +20973,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -16318,12 +21012,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -16354,12 +21056,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -16382,12 +21092,439 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
+            hide stun9
+            hide tarczownik_pierscien
+            hide plamka6
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
+
+            if tarczownik_air_strike_shield >= 1:
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight181
+
+        if luszcz_haczyki > 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
+            $ ado += 1
+        else:
+            play sound "audio/sfx/lego.mp3"
+            if luszcz_haczyki > 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
+                if luszcz_haczyki == 1:
+                    $ luszcz_hp_now -= 2
+                    "{i}Łuszcz traci 2 punkty życia z powodu haczyka w stopie{/i}"
+                if luszcz_haczyki == 2:
+                    $ luszcz_hp_now -= 4
+                    "{i}Łuszcz traci 4 punkty życia z powodu haczyków w stopie{/i}"
+                if luszcz_haczyki == 3:
+                    $ luszcz_hp_now -= 6
+                    "{i}Łuszcz traci 6 punkty życia z powodu haczyków w stopie{/i}"
+            else:
+                if luszcz_haczyki == 0 and eminem_haczyki > 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
+                    if eminem_haczyki == 1:
+                        $ eminem_hp_now -= 2
+                        "{i}Shadow traci 2 punkty życia z powodu haczyka w stopie{/i}"
+                    if eminem_haczyki == 2:
+                        $ eminem_hp_now -= 4
+                        "{i}Shadow traci 4 punkty życia z powodu haczyków w stopie{/i}"
+                    if eminem_haczyki == 3:
+                        $ eminem_hp_now -= 6
+                        "{i}Shadow traci 6 punkty życia z powodu haczyków w stopie{/i}"
+                else:
+                    if luszcz_haczyki == 0 and eminem_haczyki == 0 and urban_haczyki > 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
+                        if urban_haczyki == 1:
+                            $ urban_hp_now -= 2
+                            "{i}Jerzy Urban traci 2 punkty życia z powodu haczyka w stopie{/i}"
+                        if urban_haczyki == 2:
+                            $ urban_hp_now -= 4
+                            "{i}Jerzy Urban traci 4 punkty życia z powodu haczyków w stopie{/i}"
+                        if urban_haczyki == 3:
+                            $ urban_hp_now -= 6
+                            "{i}Jerzy Urban traci 6 punkty życia z powodu haczyków w stopie{/i}"
+                    else:
+                        if luszcz_haczyki == 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki > 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
+                            if zyd_haczyki == 1:
+                                $ zyd_hp_now -= 2
+                                "{i}Żyd traci 2 punkty życia z powodu haczyka w stopie{/i}"
+                            if zyd_haczyki == 2:
+                                $ zyd_hp_now -= 4
+                                "{i}Żyd traci 4 punkty życia z powodu haczyków w stopie{/i}"
+                            if zyd_haczyki == 3:
+                                $ zyd_hp_now -= 6
+                                "{i}Żyd traci 6 punkty życia z powodu haczyków w stopie{/i}"
+                        else:
+                            if luszcz_haczyki == 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki > 0 and tarczownik_haczyki == 0:
+                                if kazuma_haczyki == 1:
+                                    $ kazuma_hp_now -= 2
+                                    "{i}Kazuma traci 2 punkty życia z powodu haczyka w stopie{/i}"
+                                if kazuma_haczyki == 2:
+                                    $ kazuma_hp_now -= 4
+                                    "{i}Kazuma traci 4 punkty życia z powodu haczyków w stopie{/i}"
+                                if kazuma_haczyki == 3:
+                                    $ kazuma_hp_now -= 6
+                                    "{i}Kazuma traci 6 punkty życia z powodu haczyków w stopie{/i}"
+                            else:
+                                if luszcz_haczyki == 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki > 0:
+                                    if tarczownik_haczyki == 1:
+                                        $ tarczownik_hp_now -= 2
+                                        "{i}Naofumi traci 2 punkty życia z powodu haczyka w stopie{/i}"
+                                    if tarczownik_haczyki == 2:
+                                        $ tarczownik_hp_now -= 4
+                                        "{i}Naofumi traci 4 punkty życia z powodu haczyków w stopie{/i}"
+                                    if tarczownik_haczyki == 3:
+                                        $ tarczownik_hp_now -= 6
+                                        "{i}Naofumi traci 6 punkty życia z powodu haczyków w stopie{/i}"
+                                else:
+                                    if luszcz_haczyki == 1:
+                                        $ luszcz_hp_now -= 2
+                                    if luszcz_haczyki == 2:
+                                        $ luszcz_hp_now -= 4
+                                    if luszcz_haczyki == 3:
+                                        $ luszcz_hp_now -= 6
+                                    if eminem_haczyki == 1:
+                                        $ eminem_hp_now -= 2
+                                    if eminem_haczyki == 2:
+                                        $ eminem_hp_now -= 4
+                                    if eminem_haczyki == 3:
+                                        $ eminem_hp_now -= 6
+                                    if urban_haczyki == 1:
+                                        $ urban_hp_now -= 2
+                                    if urban_haczyki == 2:
+                                        $ urban_hp_now -= 4
+                                    if urban_haczyki == 3:
+                                        $ urban_hp_now -= 6
+                                    if zyd_haczyki == 1:
+                                        $ zyd_hp_now -= 2
+                                    if zyd_haczyki == 2:
+                                        $ zyd_hp_now -= 4
+                                    if zyd_haczyki == 3:
+                                        $ zyd_hp_now -= 6
+                                    if kazuma_haczyki == 1:
+                                        $ kazuma_hp_now -= 2
+                                    if kazuma_haczyki == 2:
+                                        $ kazuma_hp_now -= 4
+                                    if kazuma_haczyki == 3:
+                                        $ kazuma_hp_now -= 6
+                                    if tarczownik_haczyki == 1:
+                                        $ tarczownik_hp_now -= 2
+                                    if tarczownik_haczyki == 2:
+                                        $ tarczownik_hp_now -= 4
+                                    if tarczownik_haczyki == 3:
+                                        $ tarczownik_hp_now -= 6
+                                    "{i}Wszyscy sojusznicy tracą po 2 punkty życia za każdy wbity w stopę haczyk{/i}"
+
+        if trup11_hp_now <= 0 and trup11_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide trup11
+            hide tarcza6
+            hide screen trup11_stats
+            $ trup11_umarty = 1
+            $ ile_wrogow -= 1
+            $ trup11_obrona = 0
+            $ trup11_weapon = 0
+            $ trup11_pager = 0
+            $ trup11_poison = 0
+            $ trup11_stun = 0
+
+            if trup11_slime >= 1:
+                hide slime
+
+        if fanatyk_hp_now <= 0 and fanatyk_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide fanatyk
+            hide tarcza7
+            hide screen fanatyk_stats
+            $ fanatyk_umarty = 1
+            $ ile_wrogow -= 1
+            $ fanatyk_obrona = 0
+            $ fanatyk_weapon = 0
+            $ fanatyk_pager = 0
+            $ fanatyk_poison = 0
+            $ fanatyk_stun = 0
+
+            if fanatyk_slime >= 1:
+                hide slime
+        
+        if trup12_hp_now <= 0 and trup12_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide trup12
+            hide tarcza8
+            hide screen trup12_stats
+            $ trup12_umarty = 1
+            $ ile_wrogow -= 1
+            $ trup12_obrona = 0
+            $ trup12_weapon = 0
+            $ trup12_pager = 0
+            $ trup12_poison = 0
+            $ trup12_stun = 0
+
+            if trup12_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight181
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
+            hide stun4
+            hide luszcz_pierscien
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
+            hide plamka1
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
+            hide stun5
+            hide eminem_pierscien
+            hide plamka2
+            hide eminem
+            hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
+            hide stun6
+            hide urban_pierscien
+            hide plamka3
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
+            hide stun7
+            hide zyd_pierscien
+            hide plamka4
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
+            hide stun8
+            hide kazuma_pierscien
+            hide plamka5
+            hide kazuma
+            hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -18345,12 +23482,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -18373,12 +23518,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -18401,12 +23554,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -18432,12 +23593,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -18468,12 +23637,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -18496,12 +23673,20 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -19479,12 +24664,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -19507,12 +24700,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -19535,12 +24736,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -19566,12 +24775,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -19602,12 +24819,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -19630,12 +24855,20 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -19691,7 +24924,10 @@ label fight181:
 
         if fanatyk_uszy >= 1 and urban_hp_now >= 1:
             if fanatyk_weapon >= 1:
-                show fanatyk_weapon zorder 15 at weapon_wrog3 
+                if fanatyk_special == 0:
+                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                else:
+                    show fanatyk_weapon zorder 15 at weapon_wrog3 
             else:
                 show reka7 zorder 15 at weapon_wrog3
             $ fanatyk_attack = renpy.random.randint(fanatyk_min_attack_now, fanatyk_max_attack_now)
@@ -19702,18 +24938,62 @@ label fight181:
                     $ fanatyk_hp_now -= fanatyk_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                        $ fanatyk_special -= 1
+                        if fanatyk_special == 0:
+                            play sound "audio/sfx/weapon_break.mp3"
+                            hide fanatyk_weapon
+                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                $ fanatyk_max_attack_now_true = 2
+                                $ fanatyk_min_attack_now_true = 0
+                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                $ fanatyk_max_attack_now -= 2
+                            
+                            else:
+                                $ fanatyk_max_attack_now_true = 2
+                                $ fanatyk_min_attack_now_true = 0
+                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                            hide fanatyk_weapon2
+
                     jump faza_fight186
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Fanatyk Wędkarstwa został zablokowany{/i}"
                 $ urban_obrona = 1
+                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                    $ fanatyk_special -= 1
+                    if fanatyk_special == 0:
+                        play sound "audio/sfx/weapon_break.mp3"
+                        hide fanatyk_weapon
+                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                            $ fanatyk_max_attack_now_true = 2
+                            $ fanatyk_min_attack_now_true = 0
+                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                            $ fanatyk_max_attack_now -= 2
+                        
+                        else:
+                            $ fanatyk_max_attack_now_true = 2
+                            $ fanatyk_min_attack_now_true = 0
+                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                        hide fanatyk_weapon2
 
                 jump faza_fight186
                                                 
             else:
                 if fanatyk_weapon >= 1:
-                    play sound "audio/sfx/fanatyk_weapon.mp3"
+                    if fanatyk_special == 0:
+                        play sound "audio/sfx/patyk.mp3"
+                    else:
+                        play sound "audio/sfx/fanatyk_weapon.mp3"
                                 
                 else:
                     play sound "audio/sfx/reka.mp3"
@@ -19724,13 +25004,73 @@ label fight181:
                     $ dmg = int(fanatyk_attack / 2)
                     "{i}Fanatyk Wędkarstwa zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
+                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                        $ fanatyk_special -= 1
+                        if fanatyk_special == 0:
+                            play sound "audio/sfx/weapon_break.mp3"
+                            hide fanatyk_weapon
+                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                $ fanatyk_max_attack_now_true = 2
+                                $ fanatyk_min_attack_now_true = 0
+                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                $ fanatyk_max_attack_now -= 2
+                            
+                            else:
+                                $ fanatyk_max_attack_now_true = 2
+                                $ fanatyk_min_attack_now_true = 0
+                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                            hide fanatyk_weapon2
+
                     jump faza_fight186
                 else:
                     $ urban_hp_now -= fanatyk_attack
 
                     "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Jerzemu Urbanowi{/i}"
+                
+                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                    $ fanatyk_special -= 1
+                    if fanatyk_special == 0:
+                        play sound "audio/sfx/weapon_break.mp3"
+                        hide fanatyk_weapon
+                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                            $ fanatyk_max_attack_now_true = 2
+                            $ fanatyk_min_attack_now_true = 0
+                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                            $ fanatyk_max_attack_now -= 2
+                        
+                        else:
+                            $ fanatyk_max_attack_now_true = 2
+                            $ fanatyk_min_attack_now_true = 0
+                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                        hide fanatyk_weapon2
 
                 jump faza_fight186
+
+        if fanatyk_special == 0:
+            show fanatyk_weapon2 zorder 15 at weapon_wrog3  
+            "{i}Fanatyk Wędkarstwa zakłada haczyk na wędkę{/i}"
+            hide fanatyk_weapon2
+            hide fanatyk_haczyk2
+            hide fanatyk_haczyk1
+            show fanatyk_haczyk3 zorder 15 at haczyki
+            show fanatyk_weapon zorder 15 at weapon_wrog3  
+            $ fanatyk_max_attack_now_true = fanatyk_max_attack
+            $ fanatyk_min_attack_now_true = fanatyk_min_attack
+            $ fanatyk_min_attack_now = fanatyk_min_attack
+            $ fanatyk_max_attack_now = fanatyk_max_attack
+            $ fanatyk_special = 3
+            $ fanatyk_haczyki = 3
+            play sound "audio/sfx/haki.mp3"
+            "{i}Podczas tego wysypuje kilka haczyków{/i}"
+            jump faza_fight186
 
         if fanatyk_max_attack_now <= 0 and fanatyk_obrona == 0:
             show tarcza7 zorder 15 at weapon_wrog3  
@@ -19780,6 +25120,27 @@ label fight181:
                                     $ fanatyk_hp_now -= fanatyk_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                        $ fanatyk_special -= 1
+                                        if fanatyk_special == 0:
+                                            play sound "audio/sfx/weapon_break.mp3"
+                                            hide fanatyk_weapon
+                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                $ fanatyk_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                            hide fanatyk_weapon2
+
                                     jump faza_fight186
 
                             if luszcz_obrona >= 2:
@@ -19789,7 +25150,10 @@ label fight181:
                                                     
                             else:
                                 if fanatyk_weapon >= 1:
-                                    play sound "audio/sfx/fanatyk_weapon.mp3"
+                                    if fanatyk_special == 0:
+                                        play sound "audio/sfx/patyk.mp3"
+                                    else:
+                                        play sound "audio/sfx/fanatyk_weapon.mp3"
                                                 
                                 else:
                                     play sound "audio/sfx/reka.mp3"
@@ -19803,6 +25167,28 @@ label fight181:
                                     $ luszcz_hp_now -= fanatyk_attack
 
                                     "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Łuszczowi{/i}"
+
+                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                $ fanatyk_special -= 1
+                                if fanatyk_special == 0:
+                                    play sound "audio/sfx/weapon_break.mp3"
+                                    hide fanatyk_weapon
+                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                        $ fanatyk_max_attack_now_true = 2
+                                        $ fanatyk_min_attack_now_true = 0
+                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                        $ fanatyk_max_attack_now -= 2
+                                    
+                                    else:
+                                        $ fanatyk_max_attack_now_true = 2
+                                        $ fanatyk_min_attack_now_true = 0
+                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                    hide fanatyk_weapon2
+
 
                             jump faza_fight186
                         else:
@@ -19820,6 +25206,28 @@ label fight181:
                                         $ fanatyk_hp_now -= fanatyk_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+
+                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                            $ fanatyk_special -= 1
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/weapon_break.mp3"
+                                                hide fanatyk_weapon
+                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    $ fanatyk_max_attack_now -= 2
+                                                
+                                                else:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                hide fanatyk_weapon2
+
                                         jump faza_fight186
 
                                 if luszcz_obrona >= 2:
@@ -19829,7 +25237,10 @@ label fight181:
                                                         
                                 else:
                                     if fanatyk_weapon >= 1:
-                                        play sound "audio/sfx/fanatyk_weapon.mp3"
+                                        if fanatyk_special == 0:
+                                            play sound "audio/sfx/patyk.mp3"
+                                        else:
+                                            play sound "audio/sfx/fanatyk_weapon.mp3"
                                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
@@ -19843,6 +25254,27 @@ label fight181:
                                         $ luszcz_hp_now -= fanatyk_attack
 
                                         "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Łuszczowi{/i}"
+                                
+                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                    $ fanatyk_special -= 1
+                                    if fanatyk_special == 0:
+                                        play sound "audio/sfx/weapon_break.mp3"
+                                        hide fanatyk_weapon
+                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                            $ fanatyk_max_attack_now_true = 2
+                                            $ fanatyk_min_attack_now_true = 0
+                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                            $ fanatyk_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ fanatyk_max_attack_now_true = 2
+                                            $ fanatyk_min_attack_now_true = 0
+                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                        hide fanatyk_weapon2
 
                                 jump faza_fight186
                             else:
@@ -19859,6 +25291,27 @@ label fight181:
                                         $ fanatyk_hp_now -= fanatyk_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                            $ fanatyk_special -= 1
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/weapon_break.mp3"
+                                                hide fanatyk_weapon
+                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    $ fanatyk_max_attack_now -= 2
+                                                
+                                                else:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                hide fanatyk_weapon2
+
                                         jump faza_fight186
 
                                 if luszcz_obrona >= 2:
@@ -19868,7 +25321,10 @@ label fight181:
                                                         
                                 else:
                                     if fanatyk_weapon >= 1:
-                                        play sound "audio/sfx/fanatyk_weapon.mp3"
+                                        if fanatyk_special == 0:
+                                            play sound "audio/sfx/patyk.mp3"
+                                        else:
+                                            play sound "audio/sfx/fanatyk_weapon.mp3"
                                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
@@ -19882,6 +25338,27 @@ label fight181:
                                         $ luszcz_hp_now -= fanatyk_attack
 
                                         "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Łuszczowi{/i}"
+                                
+                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                    $ fanatyk_special -= 1
+                                    if fanatyk_special == 0:
+                                        play sound "audio/sfx/weapon_break.mp3"
+                                        hide fanatyk_weapon
+                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                            $ fanatyk_max_attack_now_true = 2
+                                            $ fanatyk_min_attack_now_true = 0
+                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                            $ fanatyk_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ fanatyk_max_attack_now_true = 2
+                                            $ fanatyk_min_attack_now_true = 0
+                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                        hide fanatyk_weapon2
 
                                 jump faza_fight186
                             else:
@@ -19903,6 +25380,28 @@ label fight181:
                                         $ fanatyk_hp_now -= fanatyk_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+
+                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                            $ fanatyk_special -= 1
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/weapon_break.mp3"
+                                                hide fanatyk_weapon
+                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    $ fanatyk_max_attack_now -= 2
+                                                
+                                                else:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                hide fanatyk_weapon2
+
                                         jump faza_fight186
 
                                 if urban_obrona >= 2:
@@ -19912,7 +25411,10 @@ label fight181:
 
                                 else:
                                     if fanatyk_weapon >= 1:
-                                        play sound "audio/sfx/fanatyk_weapon.mp3"
+                                        if fanatyk_special == 0:
+                                            play sound "audio/sfx/patyk.mp3"
+                                        else:
+                                            play sound "audio/sfx/fanatyk_weapon.mp3"
                                                     
                                     else:
                                         play sound "audio/sfx/reka.mp3"
@@ -19926,6 +25428,28 @@ label fight181:
                                         $ urban_hp_now -= fanatyk_attack
 
                                         "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                
+                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                    $ fanatyk_special -= 1
+                                    if fanatyk_special == 0:
+                                        play sound "audio/sfx/weapon_break.mp3"
+                                        hide fanatyk_weapon
+                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                            $ fanatyk_max_attack_now_true = 2
+                                            $ fanatyk_min_attack_now_true = 0
+                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                            $ fanatyk_max_attack_now -= 2
+                                        
+                                        else:
+                                            $ fanatyk_max_attack_now_true = 2
+                                            $ fanatyk_min_attack_now_true = 0
+                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                        hide fanatyk_weapon2
+
 
                                 jump faza_fight186
                             else:
@@ -19943,6 +25467,27 @@ label fight181:
                                             $ fanatyk_hp_now -= fanatyk_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                $ fanatyk_special -= 1
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                    hide fanatyk_weapon
+                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        $ fanatyk_max_attack_now -= 2
+                                                    
+                                                    else:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                    hide fanatyk_weapon2
+
                                             jump faza_fight186
 
                                     if urban_obrona >= 2:
@@ -19952,7 +25497,10 @@ label fight181:
 
                                     else:
                                         if fanatyk_weapon >= 1:
-                                            play sound "audio/sfx/fanatyk_weapon.mp3"
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/patyk.mp3"
+                                            else:
+                                                play sound "audio/sfx/fanatyk_weapon.mp3"
                                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
@@ -19966,6 +25514,28 @@ label fight181:
                                             $ urban_hp_now -= fanatyk_attack
 
                                             "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                    
+                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                        $ fanatyk_special -= 1
+                                        if fanatyk_special == 0:
+                                            play sound "audio/sfx/weapon_break.mp3"
+                                            hide fanatyk_weapon
+                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                $ fanatyk_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                            hide fanatyk_weapon2
+
 
                                     jump faza_fight186
                                 else:
@@ -19982,6 +25552,27 @@ label fight181:
                                             $ fanatyk_hp_now -= fanatyk_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                $ fanatyk_special -= 1
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                    hide fanatyk_weapon
+                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        $ fanatyk_max_attack_now -= 2
+                                                    
+                                                    else:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                    hide fanatyk_weapon2
+
                                             jump faza_fight186
 
                                     if urban_obrona >= 2:
@@ -19991,8 +25582,11 @@ label fight181:
 
                                     else:
                                         if fanatyk_weapon >= 1:
-                                            play sound "audio/sfx/fanatyk_weapon.mp3"
-                                                        
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/patyk.mp3"
+                                            else:
+                                                play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                                                
                                         else:
                                             play sound "audio/sfx/reka.mp3"
 
@@ -20005,6 +25599,28 @@ label fight181:
                                             $ urban_hp_now -= fanatyk_attack
 
                                             "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                        $ fanatyk_special -= 1
+                                        if fanatyk_special == 0:
+                                            play sound "audio/sfx/weapon_break.mp3"
+                                            hide fanatyk_weapon
+                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                $ fanatyk_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                            hide fanatyk_weapon2
+
 
                                     jump faza_fight186
                                 else:
@@ -20026,6 +25642,27 @@ label fight181:
                                             $ fanatyk_hp_now -= fanatyk_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                $ fanatyk_special -= 1
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                    hide fanatyk_weapon
+                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        $ fanatyk_max_attack_now -= 2
+                                                    
+                                                    else:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                    hide fanatyk_weapon2
+
                                             jump faza_fight186
 
                                     if zyd_obrona >= 2:
@@ -20035,7 +25672,10 @@ label fight181:
 
                                     else:
                                         if fanatyk_weapon >= 1:
-                                            play sound "audio/sfx/fanatyk_weapon.mp3"
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/patyk.mp3"
+                                            else:
+                                                play sound "audio/sfx/fanatyk_weapon.mp3"
                                                         
                                         else:
                                             play sound "audio/sfx/reka.mp3"
@@ -20049,6 +25689,28 @@ label fight181:
                                             $ zyd_hp_now -= fanatyk_attack
 
                                             "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Żydowi{/i}"
+                                    
+                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                        $ fanatyk_special -= 1
+                                        if fanatyk_special == 0:
+                                            play sound "audio/sfx/weapon_break.mp3"
+                                            hide fanatyk_weapon
+                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                $ fanatyk_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ fanatyk_max_attack_now_true = 2
+                                                $ fanatyk_min_attack_now_true = 0
+                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                            hide fanatyk_weapon2
+
 
                                     jump faza_fight186
                                 else:
@@ -20066,6 +25728,27 @@ label fight181:
                                                 $ fanatyk_hp_now -= fanatyk_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                    $ fanatyk_special -= 1
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/weapon_break.mp3"
+                                                        hide fanatyk_weapon
+                                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            $ fanatyk_max_attack_now -= 2
+                                                        
+                                                        else:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                        hide fanatyk_weapon2
+
                                                 jump faza_fight186
 
                                         if zyd_obrona >= 2:
@@ -20075,7 +25758,10 @@ label fight181:
 
                                         else:
                                             if fanatyk_weapon >= 1:
-                                                play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/patyk.mp3"
+                                                else:
+                                                    play sound "audio/sfx/fanatyk_weapon.mp3"
                                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
@@ -20089,6 +25775,27 @@ label fight181:
                                                 $ zyd_hp_now -= fanatyk_attack
 
                                                 "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Żydowi{/i}"
+                                        
+                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                            $ fanatyk_special -= 1
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/weapon_break.mp3"
+                                                hide fanatyk_weapon
+                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    $ fanatyk_max_attack_now -= 2
+                                                
+                                                else:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                hide fanatyk_weapon2
 
                                         jump faza_fight186
                                     else:
@@ -20105,6 +25812,27 @@ label fight181:
                                                 $ fanatyk_hp_now -= fanatyk_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                    $ fanatyk_special -= 1
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/weapon_break.mp3"
+                                                        hide fanatyk_weapon
+                                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            $ fanatyk_max_attack_now -= 2
+                                                        
+                                                        else:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                        hide fanatyk_weapon2
+
                                                 jump faza_fight186
 
                                         if zyd_obrona >= 2:
@@ -20114,7 +25842,10 @@ label fight181:
 
                                         else:
                                             if fanatyk_weapon >= 1:
-                                                play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/patyk.mp3"
+                                                else:
+                                                    play sound "audio/sfx/fanatyk_weapon.mp3"
                                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
@@ -20128,6 +25859,27 @@ label fight181:
                                                 $ zyd_hp_now -= fanatyk_attack
 
                                                 "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Żydowi{/i}"
+                                        
+                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                            $ fanatyk_special -= 1
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/weapon_break.mp3"
+                                                hide fanatyk_weapon
+                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    $ fanatyk_max_attack_now -= 2
+                                                
+                                                else:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                hide fanatyk_weapon2
 
                                         jump faza_fight186
                                     else:
@@ -20149,6 +25901,27 @@ label fight181:
                                                 $ fanatyk_hp_now -= fanatyk_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                    $ fanatyk_special -= 1
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/weapon_break.mp3"
+                                                        hide fanatyk_weapon
+                                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            $ fanatyk_max_attack_now -= 2
+                                                        
+                                                        else:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                        hide fanatyk_weapon2
+
                                                 jump faza_fight186
 
                                         if kazuma_obrona >= 2:
@@ -20158,7 +25931,10 @@ label fight181:
                                         
                                         else:
                                             if fanatyk_weapon >= 1:
-                                                play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/patyk.mp3"
+                                                else:
+                                                    play sound "audio/sfx/fanatyk_weapon.mp3"
                                                             
                                             else:
                                                 play sound "audio/sfx/reka.mp3"
@@ -20172,6 +25948,27 @@ label fight181:
                                                 $ kazuma_hp_now -= fanatyk_attack
 
                                                 "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Kazumie{/i}"
+                                        
+                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                            $ fanatyk_special -= 1
+                                            if fanatyk_special == 0:
+                                                play sound "audio/sfx/weapon_break.mp3"
+                                                hide fanatyk_weapon
+                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    $ fanatyk_max_attack_now -= 2
+                                                
+                                                else:
+                                                    $ fanatyk_max_attack_now_true = 2
+                                                    $ fanatyk_min_attack_now_true = 0
+                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                hide fanatyk_weapon2
 
                                         jump faza_fight186
                                     else:
@@ -20189,6 +25986,27 @@ label fight181:
                                                     $ fanatyk_hp_now -= fanatyk_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                        $ fanatyk_special -= 1
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/weapon_break.mp3"
+                                                            hide fanatyk_weapon
+                                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                $ fanatyk_max_attack_now -= 2
+                                                            
+                                                            else:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                            hide fanatyk_weapon2
+
                                                     jump faza_fight186
 
                                             if kazuma_obrona >= 2:
@@ -20198,7 +26016,10 @@ label fight181:
                                             
                                             else:
                                                 if fanatyk_weapon >= 1:
-                                                    play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/patyk.mp3"
+                                                    else:
+                                                        play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
@@ -20212,6 +26033,28 @@ label fight181:
                                                     $ kazuma_hp_now -= fanatyk_attack
 
                                                     "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Kazumie{/i}"
+                                            
+                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                $ fanatyk_special -= 1
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                    hide fanatyk_weapon
+                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        $ fanatyk_max_attack_now -= 2
+                                                    
+                                                    else:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                    hide fanatyk_weapon2
+
 
                                             jump faza_fight186
                                         else:
@@ -20228,6 +26071,27 @@ label fight181:
                                                     $ fanatyk_hp_now -= fanatyk_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                        $ fanatyk_special -= 1
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/weapon_break.mp3"
+                                                            hide fanatyk_weapon
+                                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                $ fanatyk_max_attack_now -= 2
+                                                            
+                                                            else:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                            hide fanatyk_weapon2
+
                                                     jump faza_fight186
 
                                             if kazuma_obrona >= 2:
@@ -20237,7 +26101,10 @@ label fight181:
                                             
                                             else:
                                                 if fanatyk_weapon >= 1:
-                                                    play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/patyk.mp3"
+                                                    else:
+                                                        play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
@@ -20251,6 +26118,28 @@ label fight181:
                                                     $ kazuma_hp_now -= fanatyk_attack
 
                                                     "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Kazumie{/i}"
+                                            
+                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                $ fanatyk_special -= 1
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                    hide fanatyk_weapon
+                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        $ fanatyk_max_attack_now -= 2
+                                                    
+                                                    else:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                    hide fanatyk_weapon2
+
 
                                             jump faza_fight186
                                         else:
@@ -20272,6 +26161,27 @@ label fight181:
                                                     $ fanatyk_hp_now -= fanatyk_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                        $ fanatyk_special -= 1
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/weapon_break.mp3"
+                                                            hide fanatyk_weapon
+                                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                $ fanatyk_max_attack_now -= 2
+                                                            
+                                                            else:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                            hide fanatyk_weapon2
+
                                                     jump faza_fight186
 
                                             if eminem_obrona >= 2:
@@ -20281,7 +26191,10 @@ label fight181:
                                                 
                                             else:
                                                 if fanatyk_weapon >= 1:
-                                                    play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/patyk.mp3"
+                                                    else:
+                                                        play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                 
                                                 else:
                                                     play sound "audio/sfx/reka.mp3"
@@ -20295,6 +26208,28 @@ label fight181:
                                                     $ eminem_hp_now -= fanatyk_attack
 
                                                     "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Shadowowi{/i}"
+                                            
+                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                $ fanatyk_special -= 1
+                                                if fanatyk_special == 0:
+                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                    hide fanatyk_weapon
+                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        $ fanatyk_max_attack_now -= 2
+                                                    
+                                                    else:
+                                                        $ fanatyk_max_attack_now_true = 2
+                                                        $ fanatyk_min_attack_now_true = 0
+                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                    hide fanatyk_weapon2
+
 
                                             jump faza_fight186
                                         else:
@@ -20312,6 +26247,27 @@ label fight181:
                                                         $ fanatyk_hp_now -= fanatyk_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                            $ fanatyk_special -= 1
+                                                            if fanatyk_special == 0:
+                                                                play sound "audio/sfx/weapon_break.mp3"
+                                                                hide fanatyk_weapon
+                                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                    $ fanatyk_max_attack_now_true = 2
+                                                                    $ fanatyk_min_attack_now_true = 0
+                                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                    $ fanatyk_max_attack_now -= 2
+                                                                
+                                                                else:
+                                                                    $ fanatyk_max_attack_now_true = 2
+                                                                    $ fanatyk_min_attack_now_true = 0
+                                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                                hide fanatyk_weapon2
+
                                                         jump faza_fight186
 
                                                 if eminem_obrona >= 2:
@@ -20321,7 +26277,10 @@ label fight181:
                                                 
                                                 else:
                                                     if fanatyk_weapon >= 1:
-                                                        play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/patyk.mp3"
+                                                        else:
+                                                            play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
@@ -20335,6 +26294,28 @@ label fight181:
                                                         $ eminem_hp_now -= fanatyk_attack
 
                                                         "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Shadowowi{/i}"
+                                                
+                                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                    $ fanatyk_special -= 1
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/weapon_break.mp3"
+                                                        hide fanatyk_weapon
+                                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            $ fanatyk_max_attack_now -= 2
+                                                        
+                                                        else:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                        hide fanatyk_weapon2
+
 
                                                 jump faza_fight186
                                             else:
@@ -20351,6 +26332,27 @@ label fight181:
                                                         $ fanatyk_hp_now -= fanatyk_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                            $ fanatyk_special -= 1
+                                                            if fanatyk_special == 0:
+                                                                play sound "audio/sfx/weapon_break.mp3"
+                                                                hide fanatyk_weapon
+                                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                    $ fanatyk_max_attack_now_true = 2
+                                                                    $ fanatyk_min_attack_now_true = 0
+                                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                    $ fanatyk_max_attack_now -= 2
+                                                                
+                                                                else:
+                                                                    $ fanatyk_max_attack_now_true = 2
+                                                                    $ fanatyk_min_attack_now_true = 0
+                                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                                hide fanatyk_weapon2
+
                                                         jump faza_fight186
 
                                                 if eminem_obrona >= 2:
@@ -20360,7 +26362,10 @@ label fight181:
                                                 
                                                 else:
                                                     if fanatyk_weapon >= 1:
-                                                        play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/patyk.mp3"
+                                                        else:
+                                                            play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
@@ -20374,6 +26379,28 @@ label fight181:
                                                         $ eminem_hp_now -= fanatyk_attack
 
                                                         "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Shadowowi{/i}"
+                                                
+                                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                    $ fanatyk_special -= 1
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/weapon_break.mp3"
+                                                        hide fanatyk_weapon
+                                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            $ fanatyk_max_attack_now -= 2
+                                                        
+                                                        else:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                        hide fanatyk_weapon2
+
 
                                                 jump faza_fight186
                                             else:
@@ -20395,6 +26422,27 @@ label fight181:
                                                         $ fanatyk_hp_now -= fanatyk_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                        if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                            $ fanatyk_special -= 1
+                                                            if fanatyk_special == 0:
+                                                                play sound "audio/sfx/weapon_break.mp3"
+                                                                hide fanatyk_weapon
+                                                                show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                                if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                    $ fanatyk_max_attack_now_true = 2
+                                                                    $ fanatyk_min_attack_now_true = 0
+                                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                    $ fanatyk_max_attack_now -= 2
+                                                                
+                                                                else:
+                                                                    $ fanatyk_max_attack_now_true = 2
+                                                                    $ fanatyk_min_attack_now_true = 0
+                                                                    $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                    $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                                hide fanatyk_weapon2
+
                                                         jump faza_fight186
 
                                                 if tarczownik_obrona >= 2:
@@ -20404,7 +26452,10 @@ label fight181:
                                                 
                                                 else:
                                                     if fanatyk_weapon >= 1:
-                                                        play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/patyk.mp3"
+                                                        else:
+                                                            play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                     
                                                     else:
                                                         play sound "audio/sfx/reka.mp3"
@@ -20418,6 +26469,28 @@ label fight181:
                                                         $ tarczownik_hp_now -= fanatyk_attack
 
                                                         "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Naofumiemu{/i}"
+                                                
+                                                if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                    $ fanatyk_special -= 1
+                                                    if fanatyk_special == 0:
+                                                        play sound "audio/sfx/weapon_break.mp3"
+                                                        hide fanatyk_weapon
+                                                        show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                        if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            $ fanatyk_max_attack_now -= 2
+                                                        
+                                                        else:
+                                                            $ fanatyk_max_attack_now_true = 2
+                                                            $ fanatyk_min_attack_now_true = 0
+                                                            $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                            $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                        "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                        hide fanatyk_weapon2
+
 
                                                 jump faza_fight186
                                             else:
@@ -20435,6 +26508,27 @@ label fight181:
                                                             $ fanatyk_hp_now -= fanatyk_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+                                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                                $ fanatyk_special -= 1
+                                                                if fanatyk_special == 0:
+                                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                                    hide fanatyk_weapon
+                                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                        $ fanatyk_max_attack_now_true = 2
+                                                                        $ fanatyk_min_attack_now_true = 0
+                                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                        $ fanatyk_max_attack_now -= 2
+                                                                    
+                                                                    else:
+                                                                        $ fanatyk_max_attack_now_true = 2
+                                                                        $ fanatyk_min_attack_now_true = 0
+                                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                                    hide fanatyk_weapon2
+
                                                             jump faza_fight186
 
                                                     if tarczownik_obrona >= 2:
@@ -20444,7 +26538,10 @@ label fight181:
                                                 
                                                     else:
                                                         if fanatyk_weapon >= 1:
-                                                            play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                            if fanatyk_special == 0:
+                                                                play sound "audio/sfx/patyk.mp3"
+                                                            else:
+                                                                play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                         
                                                         else:
                                                             play sound "audio/sfx/reka.mp3"
@@ -20458,6 +26555,28 @@ label fight181:
                                                             $ tarczownik_hp_now -= fanatyk_attack
 
                                                             "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Naofumiemu{/i}"
+                                                    
+                                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                        $ fanatyk_special -= 1
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/weapon_break.mp3"
+                                                            hide fanatyk_weapon
+                                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                $ fanatyk_max_attack_now -= 2
+                                                            
+                                                            else:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                            hide fanatyk_weapon2
+
 
                                                     jump faza_fight186
                                                 else:
@@ -20474,6 +26593,28 @@ label fight181:
                                                             $ fanatyk_hp_now -= fanatyk_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Fanatyk Wędkarstwa odbił się od Szalika z Memów i zadał [fanatyk_attack] obrażeń nadawcy{/i}"
+
+                                                            if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                                $ fanatyk_special -= 1
+                                                                if fanatyk_special == 0:
+                                                                    play sound "audio/sfx/weapon_break.mp3"
+                                                                    hide fanatyk_weapon
+                                                                    show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                                    if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                        $ fanatyk_max_attack_now_true = 2
+                                                                        $ fanatyk_min_attack_now_true = 0
+                                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                        $ fanatyk_max_attack_now -= 2
+                                                                    
+                                                                    else:
+                                                                        $ fanatyk_max_attack_now_true = 2
+                                                                        $ fanatyk_min_attack_now_true = 0
+                                                                        $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                        $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                    "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                                    hide fanatyk_weapon2
+
                                                             jump faza_fight186
 
                                                     if tarczownik_obrona >= 2:
@@ -20483,7 +26624,10 @@ label fight181:
                                                 
                                                     else:
                                                         if fanatyk_weapon >= 1:
-                                                            play sound "audio/sfx/fanatyk_weapon.mp3"
+                                                            if fanatyk_special == 0:
+                                                                play sound "audio/sfx/patyk.mp3"
+                                                            else:
+                                                                play sound "audio/sfx/fanatyk_weapon.mp3"
                                                                         
                                                         else:
                                                             play sound "audio/sfx/reka.mp3"
@@ -20497,6 +26641,28 @@ label fight181:
                                                             $ tarczownik_hp_now -= fanatyk_attack
 
                                                             "{i}Fanatyk Wędkarstwa zadaje [fanatyk_attack] obrażeń Naofumiemu{/i}"
+                                                    
+                                                    if fanatyk_weapon >= 1 and fanatyk_special > 0:
+                                                        $ fanatyk_special -= 1
+                                                        if fanatyk_special == 0:
+                                                            play sound "audio/sfx/weapon_break.mp3"
+                                                            hide fanatyk_weapon
+                                                            show fanatyk_weapon2 zorder 15 at weapon_wrog3 
+                                                            if fanatyk_max_attack_now < fanatyk_max_attack:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                                $ fanatyk_max_attack_now -= 2
+                                                            
+                                                            else:
+                                                                $ fanatyk_max_attack_now_true = 2
+                                                                $ fanatyk_min_attack_now_true = 0
+                                                                $ fanatyk_min_attack_now = fanatyk_min_attack_now_true
+                                                                $ fanatyk_max_attack_now = fanatyk_max_attack_now_true
+                                                            "{i}Haczyk od wędki uległ destrukcji{/i}"
+                                                            hide fanatyk_weapon2
+
 
                                                     jump faza_fight186
                                                 else:
@@ -20604,12 +26770,20 @@ label fight181:
             jump wygranko_fight181
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide luszcz_zloty
             $ luszcz_zloty_czlowiek = 0
             $ luszcz_hp_now = luszcz_hp
             "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            $ luszcz_haczyki = 0
+            hide haczyki11
+            hide haczyki12
+            hide haczyki13
             hide stun4
             hide luszcz_pierscien
             hide luszcz_vr
@@ -20632,12 +26806,20 @@ label fight181:
             $ luszcz_weapon = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide eminem_zloty
             $ eminem_zloty_czlowiek = 0
             $ eminem_hp_now = eminem_hp
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_haczyki = 0
+            hide haczyki21
+            hide haczyki22
+            hide haczyki23
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -20660,12 +26842,20 @@ label fight181:
             $ eminem_weapon = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide urban_zloty
             $ urban_zloty_czlowiek = 0
             $ urban_hp_now = urban_hp
             "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if urban_hp_now <= 0 and urban_fighter >= 1:
+            $ urban_haczyki = 0
+            hide haczyki31
+            hide haczyki32
+            hide haczyki33
             hide stun6
             hide urban_pierscien
             hide plamka3
@@ -20691,12 +26881,20 @@ label fight181:
             $ urban_weapon = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide zyd_zloty
             $ zyd_zloty_czlowiek = 0
             $ zyd_hp_now = zyd_hp
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_haczyki = 0
+            hide haczyki41
+            hide haczyki42
+            hide haczyki43
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -20727,12 +26925,20 @@ label fight181:
             $ zyd_weapon = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide kazuma_zloty
             $ kazuma_zloty_czlowiek = 0
             $ kazuma_hp_now = kazuma_hp
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_haczyki = 0
+            hide haczyki51
+            hide haczyki52
+            hide haczyki53
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -20755,12 +26961,20 @@ label fight181:
             $ kazuma_weapon = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide tarczownik_zloty
             $ tarczownik_zloty_czlowiek = 0
             $ tarczownik_hp_now = tarczownik_hp
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_haczyki = 0
+            hide haczyki61
+            hide haczyki62
+            hide haczyki63
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -21753,6 +27967,35 @@ label fight181:
         hide stun7
         hide stun8
         hide stun9
+        $ fanatyk_haczyki = 0
+        $ fanatyk_special = 3
+        hide fanatyk_haczyk1
+        hide fanatyk_haczyk2
+        hide fanatyk_haczyk3
+        $ luszcz_haczyki = 0
+        hide haczyki11
+        hide haczyki12
+        hide haczyki13
+        $ eminem_haczyki = 0
+        hide haczyki21
+        hide haczyki22
+        hide haczyki23
+        $ urban_haczyki = 0
+        hide haczyki31
+        hide haczyki32
+        hide haczyki33
+        $ zyd_haczyki = 0
+        hide haczyki41
+        hide haczyki42
+        hide haczyki43
+        $ kazuma_haczyki = 0
+        hide haczyki51
+        hide haczyki52
+        hide haczyki53
+        $ tarczownik_haczyki = 0
+        hide haczyki61
+        hide haczyki62
+        hide haczyki63
         hide screen trup11_stats
         hide screen fanatyk_stats
         hide screen trup12_stats
@@ -21929,6 +28172,34 @@ label fight181:
                 jump wygranko_fight181
 
     label wygranko_fight181:
+        $ fanatyk_special = 3
+        hide fanatyk_haczyk1
+        hide fanatyk_haczyk2
+        hide fanatyk_haczyk3
+        $ luszcz_haczyki = 0
+        hide haczyki11
+        hide haczyki12
+        hide haczyki13
+        $ eminem_haczyki = 0
+        hide haczyki21
+        hide haczyki22
+        hide haczyki23
+        $ urban_haczyki = 0
+        hide haczyki31
+        hide haczyki32
+        hide haczyki33
+        $ zyd_haczyki = 0
+        hide haczyki41
+        hide haczyki42
+        hide haczyki43
+        $ kazuma_haczyki = 0
+        hide haczyki51
+        hide haczyki52
+        hide haczyki53
+        $ tarczownik_haczyki = 0
+        hide haczyki61
+        hide haczyki62
+        hide haczyki63
         $ fight181_przegranko = 0
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 

@@ -119,7 +119,7 @@ label fight01:
                             show luszcz_memy zorder 11 at sojusznik1
                         if vr == 2:
                             show luszcz_vr zorder 11 at sojusznik1
-                        if ziemia == 2:
+                        
                             show luszcz_ziemia zorder 11 at sojusznik1
                         if nogi == 2:
                             show luszcz_nogi zorder 11 at sojusznik1

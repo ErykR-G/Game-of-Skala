@@ -236,6 +236,10 @@ label postacie:
 
 
 label pozycje:
+    transform haczyki:
+        xalign 0.79
+        yalign 0.74
+
     transform ryba:
         xalign 0.53
         yalign 0.49
