@@ -124,12 +124,12 @@ label items_fight181:
                 if eminem_wybrany == 3:
                     show piknik zorder 15 at weapon_sojusznik3
                     
-            if luszcz_fighter == 1:
-                if luszcz_wybrany == 1:
+            if zyd_fighter == 1:
+                if zyd_wybrany == 1:
                     show piknik zorder 15 at weapon_sojusznik1
-                if luszcz_wybrany == 2:
+                if zyd_wybrany == 2:
                     show piknik zorder 15 at weapon_sojusznik2
-                if luszcz_wybrany == 3:
+                if zyd_wybrany == 3:
                     show piknik zorder 15 at weapon_sojusznik3
                     
             if urban_fighter == 1:
@@ -149,16 +149,40 @@ label items_fight181:
                     show piknik zorder 15 at weapon_sojusznik3
 
             if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 $ luszcz_hp_now = luszcz_hp
             if eminem_hp_now > 0 and eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 $ eminem_hp_now = eminem_hp
             if urban_hp_now > 0 and urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 $ urban_hp_now = urban_hp
             if zyd_hp_now > 0 and zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 $ zyd_hp_now = zyd_hp
             if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 $ kazuma_hp_now = kazuma_hp
             if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 $ tarczownik_hp_now = tarczownik_hp
             "{i}Życie każdej z postaci zostało w pełni przywrócone{/i}"
             hide piknik
@@ -215,6 +239,10 @@ label items_fight181:
                     play sound "audio/sfx/heal.mp3" 
                     if luszcz_fighter == 1:
                         if luszcz_hp_now + 15 >= luszcz_hp:
+                            $ luszcz_haczyki = 0
+                            hide haczyki11
+                            hide haczyki12
+                            hide haczyki13
                             $ luszcz_hp_now = luszcz_hp
                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
                         else:
@@ -223,6 +251,10 @@ label items_fight181:
                             
                     if eminem_fighter == 1:
                         if eminem_hp_now + 15 >= eminem_hp:
+                            $ eminem_haczyki = 0
+                            hide haczyki21
+                            hide haczyki22
+                            hide haczyki23
                             $ eminem_hp_now = eminem_hp
                             "{i}Shadow odzyskał cały pasek życia{/i}"
                         else:
@@ -231,6 +263,10 @@ label items_fight181:
                             
                     if urban_fighter == 1:
                         if urban_hp_now + 15 >= urban_hp:
+                            $ urban_haczyki = 0
+                            hide haczyki31
+                            hide haczyki32
+                            hide haczyki33
                             $ urban_hp_now = urban_hp
                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
                         else:
@@ -239,6 +275,10 @@ label items_fight181:
                             
                     if zyd_fighter == 1:
                         if zyd_hp_now + 15 >= zyd_hp:
+                            $ zyd_haczyki = 0
+                            hide haczyki41
+                            hide haczyki42
+                            hide haczyki43
                             $ zyd_hp_now = zyd_hp
                             "{i}Żyd odzyskał cały pasek życia{/i}"
                         else:
@@ -247,6 +287,10 @@ label items_fight181:
                             
                     if kazuma_fighter == 1:
                         if kazuma_hp_now + 15 >= kazuma_hp:
+                            $ kazuma_haczyki = 0
+                            hide haczyki51
+                            hide haczyki52
+                            hide haczyki53
                             $ kazuma_hp_now = kazuma_hp
                             "{i}Kazuma odzyskał cały pasek życia{/i}"
                         else:
@@ -304,36 +348,60 @@ label items_fight181:
                         show cake6 zorder 15 at weapon_sojusznik3
                                     
                     if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                        $ luszcz_haczyki = 0
+                        hide haczyki11
+                        hide haczyki12
+                        hide haczyki13
                         if luszcz_hp_now + 5 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                         else:
                             $ luszcz_hp_now += 5
 
                     if eminem_hp_now > 0 and eminem_wybrany > 0:
+                        $ eminem_haczyki = 0
+                        hide haczyki21
+                        hide haczyki22
+                        hide haczyki23
                         if eminem_hp_now + 5 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                         else:
                             $ eminem_hp_now += 5
                                 
                     if urban_hp_now > 0 and urban_wybrany > 0:
+                        $ urban_haczyki = 0
+                        hide haczyki31
+                        hide haczyki32
+                        hide haczyki33
                         if urban_hp_now + 5 >= urban_hp:
                             $ urban_hp_now = urban_hp
                         else:
                             $ urban_hp_now += 5
 
                     if zyd_hp_now > 0 and zyd_wybrany > 0:
+                        $ zyd_haczyki = 0
+                        hide haczyki41
+                        hide haczyki42
+                        hide haczyki43
                         if zyd_hp_now + 5 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                         else:
                             $ zyd_hp_now += 5
 
                     if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                        $ kazuma_haczyki = 0
+                        hide haczyki51
+                        hide haczyki52
+                        hide haczyki53
                         if kazuma_hp_now + 5 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                         else:
                             $ kazuma_hp_now += 5
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                        $ tarczownik_haczyki = 0
+                        hide haczyki61
+                        hide haczyki62
+                        hide haczyki63
                         if tarczownik_hp_now + 5 >= tarczownik_hp:
                             $ tarczownik_hp_now = tarczownik_hp
                         else:
@@ -404,6 +472,10 @@ label items_fight181:
                 if luszcz_fighter == 1:
                     menu:
                         "{b}Weź pigułke{/b}":
+                            $ luszcz_haczyki = 0
+                            hide haczyki11
+                            hide haczyki12
+                            hide haczyki13
                             if luszcz_piguly <= 3:
                                 if luszcz_hp_now + 3 >= luszcz_hp:
                                     $ pills -= 1
@@ -493,6 +565,10 @@ label items_fight181:
                 if eminem_fighter == 1:
                     menu:
                         "{b}Weź pigułke{/b}":
+                            $ eminem_haczyki = 0
+                            hide haczyki21
+                            hide haczyki22
+                            hide haczyki23
                             if eminem_piguly <= 3:
                                 if eminem_hp_now + 3 >= eminem_hp:
                                     $ pills -= 1
@@ -581,7 +657,11 @@ label items_fight181:
 
                 if urban_fighter == 1:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}": 
+                            $ urban_haczyki = 0
+                            hide haczyki31
+                            hide haczyki32
+                            hide haczyki33           
                             if urban_piguly <= 3:
                                 if urban_hp_now + 3 >= urban_hp:
                                     $ pills -= 1
@@ -670,7 +750,11 @@ label items_fight181:
 
                 if zyd_fighter == 1:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}":
+                            $ zyd_haczyki = 0
+                            hide haczyki41
+                            hide haczyki42
+                            hide haczyki43           
                             if zyd_piguly <= 3:
                                 if zyd_hp_now + 3 >= zyd_hp:
                                     $ pills -= 1
@@ -759,7 +843,11 @@ label items_fight181:
 
                 if kazuma_fighter == 1:
                     menu:
-                        "{b}Weź pigułke{/b}" :            
+                        "{b}Weź pigułke{/b}":  
+                            $ kazuma_haczyki = 0
+                            hide haczyki51
+                            hide haczyki52
+                            hide haczyki53        
                             if kazuma_piguly <= 3:
                                 if kazuma_hp_now + 3 >= kazuma_hp:
                                     $ pills -= 1
@@ -892,6 +980,10 @@ label items_fight181:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -915,6 +1007,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -938,6 +1034,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -961,6 +1061,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -984,6 +1088,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -1000,7 +1108,17 @@ label items_fight181:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight182
+                    
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -1017,7 +1135,17 @@ label items_fight181:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight182
+                    
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -1041,6 +1169,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -1064,6 +1196,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -1087,6 +1223,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -1110,6 +1250,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -1125,8 +1269,18 @@ label items_fight181:
                         $ kazuma_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -1143,7 +1297,17 @@ label items_fight181:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight182
+                    
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -1167,6 +1331,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -1190,6 +1358,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -1213,6 +1385,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -1236,6 +1412,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -1252,8 +1432,6 @@ label items_fight181:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
 
-
-
                     $ woda -= 1
                     if woda == 0:
                         $ ile_item -= 1
@@ -1261,6 +1439,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -1329,6 +1511,10 @@ label items_fight181:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -1356,6 +1542,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -1383,6 +1573,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -1410,6 +1604,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -1437,6 +1635,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -1464,6 +1666,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -1490,7 +1696,11 @@ label items_fight181:
                     hide ostry
                     jump faza_fight182
                 
-                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -1518,6 +1728,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -1545,6 +1759,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -1572,6 +1790,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -1599,6 +1821,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -1626,6 +1852,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -1653,6 +1883,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -1680,6 +1914,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -1707,6 +1945,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -1734,6 +1976,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -1761,6 +2007,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -1788,6 +2038,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -1860,6 +2114,10 @@ label items_fight181:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -1892,6 +2150,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -1924,6 +2186,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -1956,6 +2222,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -1988,6 +2258,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -2020,6 +2294,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -2052,6 +2330,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -2084,6 +2366,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -2116,6 +2402,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -2148,6 +2438,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -2180,6 +2474,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -2212,6 +2510,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -2244,6 +2546,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -2276,6 +2582,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -2308,6 +2618,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -2340,6 +2654,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -2372,6 +2690,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -2404,6 +2726,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -2481,6 +2807,10 @@ label items_fight181:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -2513,6 +2843,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -2545,6 +2879,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -2577,6 +2915,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -2609,6 +2951,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -2641,6 +2987,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -2673,6 +3023,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -2705,6 +3059,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -2737,6 +3095,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -2769,6 +3131,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -2801,6 +3167,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -2833,6 +3203,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -2865,6 +3239,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -2897,6 +3275,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -2929,6 +3311,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -2961,6 +3347,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -2993,6 +3383,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -3025,6 +3419,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -3102,6 +3500,10 @@ label items_fight181:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -3125,6 +3527,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -3148,6 +3554,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -3171,6 +3581,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -3194,6 +3608,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -3217,6 +3635,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -3240,6 +3662,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -3263,6 +3689,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -3286,6 +3716,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -3309,6 +3743,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -3332,6 +3770,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -3355,6 +3797,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -3378,6 +3824,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -3401,6 +3851,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -3424,6 +3878,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -3447,6 +3905,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -3470,6 +3932,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -3493,6 +3959,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -3561,6 +4031,10 @@ label items_fight181:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -3584,6 +4058,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -3607,6 +4085,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -3630,6 +4112,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -3653,6 +4139,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -3676,6 +4166,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -3699,6 +4193,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -3722,6 +4220,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -3745,6 +4247,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -3768,6 +4274,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -3791,6 +4301,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -3814,6 +4328,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -3837,6 +4355,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -3860,6 +4382,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -3883,6 +4409,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -3906,6 +4436,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -3929,6 +4463,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -3952,6 +4490,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -4021,6 +4563,10 @@ label items_fight181:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -4044,6 +4590,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -4067,6 +4617,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -4090,6 +4644,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -4113,6 +4671,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -4136,6 +4698,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -4159,6 +4725,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -4182,6 +4752,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -4205,6 +4779,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -4228,6 +4806,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -4251,6 +4833,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -4274,6 +4860,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -4297,6 +4887,10 @@ label items_fight181:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -4320,6 +4914,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -4343,6 +4941,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -4366,6 +4968,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -4389,6 +4995,10 @@ label items_fight181:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -4412,6 +5022,10 @@ label items_fight181:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -4480,36 +5094,60 @@ label items_fight181:
                 show banany6 zorder 15 at weapon_sojusznik3
                     
             if luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 if luszcz_hp_now + 3 >= luszcz_hp:
                     $ luszcz_hp_now = luszcz_hp
                 else:
                     $ luszcz_hp_now += 3
                             
             if eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 if eminem_hp_now + 3 >= eminem_hp:
                     $ eminem_hp_now = eminem_hp
                 else:
                     $ eminem_hp_now += 3
                             
             if urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 if urban_hp_now + 3 >= urban_hp:
                     $ urban_hp_now = urban_hp
                 else:
                     $ urban_hp_now += 3
                             
             if zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 if zyd_hp_now + 3 >= zyd_hp:
                     $ zyd_hp_now = zyd_hp
                 else:
                     $ zyd_hp_now += 3
                             
             if kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 if kazuma_hp_now + 3 >= kazuma_hp:
                     $ kazuma_hp_now = kazuma_hp
                 else:
                     $ kazuma_hp_now += 3
                     
             if tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 if tarczownik_hp_now + 3 >= tarczownik_hp:
                     $ tarczownik_hp_now = tarczownik_hp
                 else:
@@ -4805,6 +5443,10 @@ label items_fight182:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -4837,6 +5479,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -4869,6 +5515,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -4901,6 +5551,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -4933,6 +5587,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -4965,6 +5623,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -4997,6 +5659,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -5029,6 +5695,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -5061,6 +5731,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -5093,6 +5767,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -5125,6 +5803,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -5157,6 +5839,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -5189,6 +5875,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -5221,6 +5911,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -5253,6 +5947,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -5285,6 +5983,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -5317,6 +6019,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -5349,6 +6055,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -5426,6 +6136,10 @@ label items_fight182:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -5449,6 +6163,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -5472,6 +6190,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -5495,6 +6217,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -5518,6 +6244,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -5541,6 +6271,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -5564,6 +6298,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -5587,6 +6325,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -5610,6 +6352,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -5633,6 +6379,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -5656,6 +6406,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -5679,6 +6433,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -5702,6 +6460,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -5725,6 +6487,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -5748,6 +6514,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -5771,6 +6541,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -5794,6 +6568,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -5817,6 +6595,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -5885,6 +6667,10 @@ label items_fight182:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -5908,6 +6694,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -5931,6 +6721,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -5954,6 +6748,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -5977,6 +6775,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -6000,6 +6802,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -6023,6 +6829,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -6046,6 +6856,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -6069,6 +6883,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -6092,6 +6910,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -6115,6 +6937,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -6138,6 +6964,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -6161,6 +6991,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -6184,6 +7018,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -6207,6 +7045,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -6230,6 +7072,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -6253,6 +7099,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -6276,6 +7126,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -6345,6 +7199,10 @@ label items_fight182:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -6368,6 +7226,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -6391,6 +7253,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -6414,6 +7280,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -6437,6 +7307,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -6460,6 +7334,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -6483,6 +7361,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -6506,6 +7388,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -6529,6 +7415,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -6552,6 +7442,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -6575,6 +7469,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -6598,6 +7496,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -6621,6 +7523,10 @@ label items_fight182:
                     jump faza_fight182
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -6644,6 +7550,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -6667,6 +7577,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -6690,6 +7604,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -6713,6 +7631,10 @@ label items_fight182:
                     jump faza_fight182
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -6736,6 +7658,10 @@ label items_fight182:
                     jump faza_fight182
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -6804,36 +7730,60 @@ label items_fight182:
                 show banany6 zorder 15 at weapon_sojusznik3
                     
             if luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 if luszcz_hp_now + 3 >= luszcz_hp:
                     $ luszcz_hp_now = luszcz_hp
                 else:
                     $ luszcz_hp_now += 3
                             
             if eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 if eminem_hp_now + 3 >= eminem_hp:
                     $ eminem_hp_now = eminem_hp
                 else:
                     $ eminem_hp_now += 3
                             
             if urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 if urban_hp_now + 3 >= urban_hp:
                     $ urban_hp_now = urban_hp
                 else:
                     $ urban_hp_now += 3
                             
             if zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 if zyd_hp_now + 3 >= zyd_hp:
                     $ zyd_hp_now = zyd_hp
                 else:
                     $ zyd_hp_now += 3
                             
             if kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 if kazuma_hp_now + 3 >= kazuma_hp:
                     $ kazuma_hp_now = kazuma_hp
                 else:
                     $ kazuma_hp_now += 3
                     
             if tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 if tarczownik_hp_now + 3 >= tarczownik_hp:
                     $ tarczownik_hp_now = tarczownik_hp
                 else:
@@ -7240,16 +8190,40 @@ label items_fight183:
                     show piknik zorder 15 at weapon_sojusznik3
 
             if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 $ luszcz_hp_now = luszcz_hp
             if eminem_hp_now > 0 and eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 $ eminem_hp_now = eminem_hp
             if urban_hp_now > 0 and urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 $ urban_hp_now = urban_hp
             if zyd_hp_now > 0 and zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 $ zyd_hp_now = zyd_hp
             if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 $ kazuma_hp_now = kazuma_hp
             if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 $ tarczownik_hp_now = tarczownik_hp
             "{i}Życie każdej z postaci zostało w pełni przywrócone{/i}"
             hide piknik
@@ -7305,6 +8279,10 @@ label items_fight183:
                 "{b}Zjeść sam? (+15HP){/b}":
                     play sound "audio/sfx/heal.mp3" 
                     if luszcz_fighter == 2:
+                        $ luszcz_haczyki = 0
+                        hide haczyki11
+                        hide haczyki12
+                        hide haczyki13
                         if luszcz_hp_now + 15 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -7313,6 +8291,10 @@ label items_fight183:
                             "{i}Łuszcz odzyskał 15 punktów życia{/i}"
                             
                     if eminem_fighter == 2:
+                        $ eminem_haczyki = 0
+                        hide haczyki21
+                        hide haczyki22
+                        hide haczyki23
                         if eminem_hp_now + 15 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                             "{i}Shadow odzyskał cały pasek życia{/i}"
@@ -7321,6 +8303,10 @@ label items_fight183:
                             "{i}Shadow odzyskał 15 punktów życia{/i}"
                             
                     if urban_fighter == 2:
+                        $ urban_haczyki = 0
+                        hide haczyki31
+                        hide haczyki32
+                        hide haczyki33
                         if urban_hp_now + 15 >= urban_hp:
                             $ urban_hp_now = urban_hp
                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
@@ -7329,6 +8315,10 @@ label items_fight183:
                             "{i}Jerzy Urban odzyskał 15 punktów życia{/i}"
                             
                     if zyd_fighter == 2:
+                        $ zyd_haczyki = 0
+                        hide haczyki41
+                        hide haczyki42
+                        hide haczyki43
                         if zyd_hp_now + 15 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                             "{i}Żyd odzyskał cały pasek życia{/i}"
@@ -7337,6 +8327,10 @@ label items_fight183:
                             "{i}Żyd odzyskał 15 punktów życia{/i}"
                             
                     if kazuma_fighter == 2:
+                        $ kazuma_haczyki = 0
+                        hide haczyki51
+                        hide haczyki52
+                        hide haczyki53
                         if kazuma_hp_now + 15 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                             "{i}Kazuma odzyskał cały pasek życia{/i}"
@@ -7395,36 +8389,60 @@ label items_fight183:
                         show cake6 zorder 15 at weapon_sojusznik3
                                     
                     if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                        $ luszcz_haczyki = 0
+                        hide haczyki11
+                        hide haczyki12
+                        hide haczyki13
                         if luszcz_hp_now + 5 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                         else:
                             $ luszcz_hp_now += 5
 
                     if eminem_hp_now > 0 and eminem_wybrany > 0:
+                        $ eminem_haczyki = 0
+                        hide haczyki21
+                        hide haczyki22
+                        hide haczyki23
                         if eminem_hp_now + 5 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                         else:
                             $ eminem_hp_now += 5
                                 
                     if urban_hp_now > 0 and urban_wybrany > 0:
+                        $ urban_haczyki = 0
+                        hide haczyki31
+                        hide haczyki32
+                        hide haczyki33
                         if urban_hp_now + 5 >= urban_hp:
                             $ urban_hp_now = urban_hp
                         else:
                             $ urban_hp_now += 5
 
                     if zyd_hp_now > 0 and zyd_wybrany > 0:
+                        $ zyd_haczyki = 0
+                        hide haczyki41
+                        hide haczyki42
+                        hide haczyki43
                         if zyd_hp_now + 5 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                         else:
                             $ zyd_hp_now += 5
 
                     if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                        $ kazuma_haczyki = 0
+                        hide haczyki51
+                        hide haczyki52
+                        hide haczyki53
                         if kazuma_hp_now + 5 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                         else:
                             $ kazuma_hp_now += 5
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                        $ tarczownik_haczyki = 0
+                        hide haczyki61
+                        hide haczyki62
+                        hide haczyki63
                         if tarczownik_hp_now + 5 >= tarczownik_hp:
                             $ tarczownik_hp_now = tarczownik_hp
                         else:
@@ -7495,6 +8513,10 @@ label items_fight183:
                 if luszcz_fighter == 2:
                     menu:
                         "{b}Weź pigułke{/b}":
+                            $ luszcz_haczyki = 0
+                            hide haczyki11
+                            hide haczyki12
+                            hide haczyki13
                             if luszcz_piguly <= 3:
                                 if luszcz_hp_now + 3 >= luszcz_hp:
                                     $ pills -= 1
@@ -7584,6 +8606,10 @@ label items_fight183:
                 if eminem_fighter == 2:
                     menu:
                         "{b}Weź pigułke{/b}":
+                            $ eminem_haczyki = 0
+                            hide haczyki21
+                            hide haczyki22
+                            hide haczyki23
                             if eminem_piguly <= 3:
                                 if eminem_hp_now + 3 >= eminem_hp:
                                     $ pills -= 1
@@ -7672,7 +8698,11 @@ label items_fight183:
 
                 if urban_fighter == 2:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}":   
+                            $ urban_haczyki = 0
+                            hide haczyki31
+                            hide haczyki32
+                            hide haczyki33         
                             if urban_piguly <= 3:
                                 if urban_hp_now + 3 >= urban_hp:
                                     $ pills -= 1
@@ -7761,7 +8791,11 @@ label items_fight183:
 
                 if zyd_fighter == 2:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}":          
+                            $ zyd_haczyki = 0
+                            hide haczyki41
+                            hide haczyki42
+                            hide haczyki43  
                             if zyd_piguly <= 3:
                                 if zyd_hp_now + 3 >= zyd_hp:
                                     $ pills -= 1
@@ -7850,7 +8884,11 @@ label items_fight183:
 
                 if kazuma_fighter == 2:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}":   
+                            $ kazuma_haczyki = 0
+                            hide haczyki51
+                            hide haczyki52
+                            hide haczyki53         
                             if kazuma_piguly <= 3:
                                 if kazuma_hp_now + 3 >= kazuma_hp:
                                     $ pills -= 1
@@ -7983,6 +9021,10 @@ label items_fight183:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8006,6 +9048,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -8029,6 +9075,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -8052,6 +9102,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -8075,6 +9129,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -8091,7 +9149,17 @@ label items_fight183:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight183
+                    
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -8108,7 +9176,17 @@ label items_fight183:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight183
+                    
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8132,6 +9210,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -8155,6 +9237,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -8178,6 +9264,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -8201,6 +9291,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -8216,8 +9310,18 @@ label items_fight183:
                         $ kazuma_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -8234,7 +9338,17 @@ label items_fight183:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight183
+                    
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8258,6 +9372,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -8281,6 +9399,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -8304,6 +9426,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -8327,6 +9453,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -8343,8 +9473,6 @@ label items_fight183:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
 
-
-
                     $ woda -= 1
                     if woda == 0:
                         $ ile_item -= 1
@@ -8352,6 +9480,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -8420,6 +9552,10 @@ label items_fight183:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8447,6 +9583,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -8474,6 +9614,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -8501,6 +9645,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -8528,6 +9676,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -8555,6 +9707,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -8581,7 +9737,11 @@ label items_fight183:
                     hide ostry
                     jump faza_fight183
                 
-                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8609,6 +9769,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -8636,6 +9800,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -8663,6 +9831,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -8690,6 +9862,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -8717,6 +9893,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -8744,6 +9924,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8771,6 +9955,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -8798,6 +9986,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -8825,6 +10017,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -8852,6 +10048,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -8879,6 +10079,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -8951,6 +10155,10 @@ label items_fight183:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8983,6 +10191,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -9015,6 +10227,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -9047,6 +10263,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -9079,6 +10299,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -9111,6 +10335,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -9143,6 +10371,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -9175,6 +10407,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -9207,6 +10443,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -9239,6 +10479,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -9271,6 +10515,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -9303,6 +10551,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -9335,6 +10587,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -9367,6 +10623,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -9399,6 +10659,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -9431,6 +10695,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -9463,6 +10731,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -9495,6 +10767,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -9572,6 +10848,10 @@ label items_fight183:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -9604,6 +10884,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -9636,6 +10920,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -9668,6 +10956,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -9700,6 +10992,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -9732,6 +11028,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -9764,6 +11064,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -9796,6 +11100,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -9828,6 +11136,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -9860,6 +11172,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -9892,6 +11208,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -9924,6 +11244,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -9956,6 +11280,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -9988,6 +11316,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -10020,6 +11352,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -10052,6 +11388,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -10084,6 +11424,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -10116,6 +11460,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -10193,6 +11541,10 @@ label items_fight183:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -10216,6 +11568,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -10239,6 +11595,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -10262,6 +11622,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -10285,6 +11649,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -10308,6 +11676,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -10331,6 +11703,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -10354,6 +11730,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -10377,6 +11757,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -10400,6 +11784,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -10423,6 +11811,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -10446,6 +11838,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -10469,6 +11865,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -10492,6 +11892,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -10515,6 +11919,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -10538,6 +11946,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -10561,6 +11973,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -10584,6 +12000,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -10652,6 +12072,10 @@ label items_fight183:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -10675,6 +12099,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -10698,6 +12126,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -10721,6 +12153,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -10744,6 +12180,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -10767,6 +12207,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -10790,6 +12234,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -10813,6 +12261,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -10836,6 +12288,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -10859,6 +12315,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -10882,6 +12342,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -10905,6 +12369,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -10928,6 +12396,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -10951,6 +12423,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -10974,6 +12450,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -10997,6 +12477,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -11020,6 +12504,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -11043,6 +12531,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -11112,6 +12604,10 @@ label items_fight183:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -11135,6 +12631,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -11158,6 +12658,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -11181,6 +12685,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -11204,6 +12712,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -11227,6 +12739,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -11250,6 +12766,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -11273,6 +12793,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -11296,6 +12820,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -11319,6 +12847,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -11342,6 +12874,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -11365,6 +12901,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -11388,6 +12928,10 @@ label items_fight183:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -11411,6 +12955,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -11434,6 +12982,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -11457,6 +13009,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -11480,6 +13036,10 @@ label items_fight183:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -11503,6 +13063,10 @@ label items_fight183:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -11571,36 +13135,60 @@ label items_fight183:
                 show banany6 zorder 15 at weapon_sojusznik3
                     
             if luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 if luszcz_hp_now + 3 >= luszcz_hp:
                     $ luszcz_hp_now = luszcz_hp
                 else:
                     $ luszcz_hp_now += 3
                             
             if eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 if eminem_hp_now + 3 >= eminem_hp:
                     $ eminem_hp_now = eminem_hp
                 else:
                     $ eminem_hp_now += 3
                             
             if urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 if urban_hp_now + 3 >= urban_hp:
                     $ urban_hp_now = urban_hp
                 else:
                     $ urban_hp_now += 3
                             
             if zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 if zyd_hp_now + 3 >= zyd_hp:
                     $ zyd_hp_now = zyd_hp
                 else:
                     $ zyd_hp_now += 3
                             
             if kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 if kazuma_hp_now + 3 >= kazuma_hp:
                     $ kazuma_hp_now = kazuma_hp
                 else:
                     $ kazuma_hp_now += 3
                     
             if tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 if tarczownik_hp_now + 3 >= tarczownik_hp:
                     $ tarczownik_hp_now = tarczownik_hp
                 else:
@@ -11896,6 +13484,10 @@ label items_fight184:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -11928,6 +13520,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -11960,6 +13556,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -11992,6 +13592,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -12024,6 +13628,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -12056,6 +13664,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -12088,6 +13700,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -12120,6 +13736,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -12152,6 +13772,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -12184,6 +13808,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -12216,6 +13844,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -12248,6 +13880,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -12280,6 +13916,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -12312,6 +13952,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -12344,6 +13988,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -12376,6 +14024,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -12408,6 +14060,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -12440,6 +14096,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -12517,6 +14177,10 @@ label items_fight184:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -12540,6 +14204,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -12563,6 +14231,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -12586,6 +14258,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -12609,6 +14285,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -12632,6 +14312,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -12655,6 +14339,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -12678,6 +14366,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -12701,6 +14393,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -12724,6 +14420,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -12747,6 +14447,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -12770,6 +14474,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -12793,6 +14501,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -12816,6 +14528,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -12839,6 +14555,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -12862,6 +14582,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -12885,6 +14609,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -12908,6 +14636,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -12976,6 +14708,10 @@ label items_fight184:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -12999,6 +14735,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -13022,6 +14762,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -13045,6 +14789,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -13068,6 +14816,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -13091,6 +14843,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -13114,6 +14870,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -13137,6 +14897,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -13160,6 +14924,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -13183,6 +14951,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -13206,6 +14978,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -13229,6 +15005,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -13252,6 +15032,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -13275,6 +15059,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -13298,6 +15086,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -13321,6 +15113,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -13344,6 +15140,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -13367,6 +15167,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -13436,6 +15240,10 @@ label items_fight184:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -13459,6 +15267,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -13482,6 +15294,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -13505,6 +15321,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -13528,6 +15348,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -13551,6 +15375,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -13574,6 +15402,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -13597,6 +15429,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -13620,6 +15456,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -13643,6 +15483,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -13666,6 +15510,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -13689,6 +15537,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -13712,6 +15564,10 @@ label items_fight184:
                     jump faza_fight183
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -13735,6 +15591,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -13758,6 +15618,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -13781,6 +15645,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -13804,6 +15672,10 @@ label items_fight184:
                     jump faza_fight183
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -13827,6 +15699,10 @@ label items_fight184:
                     jump faza_fight183
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -13895,36 +15771,60 @@ label items_fight184:
                 show banany6 zorder 15 at weapon_sojusznik3
                     
             if luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 if luszcz_hp_now + 3 >= luszcz_hp:
                     $ luszcz_hp_now = luszcz_hp
                 else:
                     $ luszcz_hp_now += 3
                             
             if eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 if eminem_hp_now + 3 >= eminem_hp:
                     $ eminem_hp_now = eminem_hp
                 else:
                     $ eminem_hp_now += 3
                             
             if urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 if urban_hp_now + 3 >= urban_hp:
                     $ urban_hp_now = urban_hp
                 else:
                     $ urban_hp_now += 3
                             
             if zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 if zyd_hp_now + 3 >= zyd_hp:
                     $ zyd_hp_now = zyd_hp
                 else:
                     $ zyd_hp_now += 3
                             
             if kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 if kazuma_hp_now + 3 >= kazuma_hp:
                     $ kazuma_hp_now = kazuma_hp
                 else:
                     $ kazuma_hp_now += 3
                     
             if tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 if tarczownik_hp_now + 3 >= tarczownik_hp:
                     $ tarczownik_hp_now = tarczownik_hp
                 else:
@@ -14330,16 +16230,40 @@ label items_fight185:
                     show piknik zorder 15 at weapon_sojusznik3
 
             if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 $ luszcz_hp_now = luszcz_hp
             if eminem_hp_now > 0 and eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 $ eminem_hp_now = eminem_hp
             if urban_hp_now > 0 and urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 $ urban_hp_now = urban_hp
             if zyd_hp_now > 0 and zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 $ zyd_hp_now = zyd_hp
             if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 $ kazuma_hp_now = kazuma_hp
             if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 $ tarczownik_hp_now = tarczownik_hp
             "{i}Życie każdej z postaci zostało w pełni przywrócone{/i}"
             hide piknik
@@ -14395,6 +16319,10 @@ label items_fight185:
                 "{b}Zjeść sam? (+15HP){/b}":
                     play sound "audio/sfx/heal.mp3" 
                     if luszcz_fighter == 3:
+                        $ luszcz_haczyki = 0
+                        hide haczyki11
+                        hide haczyki12
+                        hide haczyki13
                         if luszcz_hp_now + 15 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
@@ -14403,6 +16331,10 @@ label items_fight185:
                             "{i}Łuszcz odzyskał 15 punktów życia{/i}"
                             
                     if eminem_fighter == 3:
+                        $ eminem_haczyki = 0
+                        hide haczyki21
+                        hide haczyki22
+                        hide haczyki23
                         if eminem_hp_now + 15 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                             "{i}Shadow odzyskał cały pasek życia{/i}"
@@ -14411,6 +16343,10 @@ label items_fight185:
                             "{i}Shadow odzyskał 15 punktów życia{/i}"
                             
                     if urban_fighter == 3:
+                        $ urban_haczyki = 0
+                        hide haczyki31
+                        hide haczyki32
+                        hide haczyki33
                         if urban_hp_now + 15 >= urban_hp:
                             $ urban_hp_now = urban_hp
                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
@@ -14419,6 +16355,10 @@ label items_fight185:
                             "{i}Jerzy Urban odzyskał 15 punktów życia{/i}"
                             
                     if zyd_fighter == 3:
+                        $ zyd_haczyki = 0
+                        hide haczyki41
+                        hide haczyki42
+                        hide haczyki43
                         if zyd_hp_now + 15 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                             "{i}Żyd odzyskał cały pasek życia{/i}"
@@ -14427,6 +16367,10 @@ label items_fight185:
                             "{i}Żyd odzyskał 15 punktów życia{/i}"
                             
                     if kazuma_fighter == 3:
+                        $ kazuma_haczyki = 0
+                        hide haczyki51
+                        hide haczyki52
+                        hide haczyki53
                         if kazuma_hp_now + 15 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                             "{i}Kazuma odzyskał cały pasek życia{/i}"
@@ -14485,36 +16429,60 @@ label items_fight185:
                         show cake6 zorder 15 at weapon_sojusznik3
                                     
                     if luszcz_hp_now > 0 and luszcz_wybrany > 0:
+                        $ luszcz_haczyki = 0
+                        hide haczyki11
+                        hide haczyki12
+                        hide haczyki13
                         if luszcz_hp_now + 5 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                         else:
                             $ luszcz_hp_now += 5
 
                     if eminem_hp_now > 0 and eminem_wybrany > 0:
+                        $ eminem_haczyki = 0
+                        hide haczyki21
+                        hide haczyki22
+                        hide haczyki23
                         if eminem_hp_now + 5 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                         else:
                             $ eminem_hp_now += 5
                                 
                     if urban_hp_now > 0 and urban_wybrany > 0:
+                        $ urban_haczyki = 0
+                        hide haczyki31
+                        hide haczyki32
+                        hide haczyki33
                         if urban_hp_now + 5 >= urban_hp:
                             $ urban_hp_now = urban_hp
                         else:
                             $ urban_hp_now += 5
 
                     if zyd_hp_now > 0 and zyd_wybrany > 0:
+                        $ zyd_haczyki = 0
+                        hide haczyki41
+                        hide haczyki42
+                        hide haczyki43
                         if zyd_hp_now + 5 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                         else:
                             $ zyd_hp_now += 5
 
                     if kazuma_hp_now > 0 and kazuma_wybrany > 0:
+                        $ kazuma_haczyki = 0
+                        hide haczyki51
+                        hide haczyki52
+                        hide haczyki53
                         if kazuma_hp_now + 5 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                         else:
                             $ kazuma_hp_now += 5
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+                        $ tarczownik_haczyki = 0
+                        hide haczyki61
+                        hide haczyki62
+                        hide haczyki63
                         if tarczownik_hp_now + 5 >= tarczownik_hp:
                             $ tarczownik_hp_now = tarczownik_hp
                         else:
@@ -14585,6 +16553,10 @@ label items_fight185:
                 if luszcz_fighter == 3:
                     menu:
                         "{b}Weź pigułke{/b}":
+                            $ luszcz_haczyki = 0
+                            hide haczyki11
+                            hide haczyki12
+                            hide haczyki13
                             if luszcz_piguly <= 3:
                                 if luszcz_hp_now + 3 >= luszcz_hp:
                                     $ pills -= 1
@@ -14674,6 +16646,10 @@ label items_fight185:
                 if eminem_fighter == 3:
                     menu:
                         "{b}Weź pigułke{/b}":
+                            $ eminem_haczyki = 0
+                            hide haczyki21
+                            hide haczyki22
+                            hide haczyki23
                             if eminem_piguly <= 3:
                                 if eminem_hp_now + 3 >= eminem_hp:
                                     $ pills -= 1
@@ -14762,7 +16738,11 @@ label items_fight185:
 
                 if urban_fighter == 3:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}":   
+                            $ urban_haczyki = 0
+                            hide haczyki31
+                            hide haczyki32
+                            hide haczyki33         
                             if urban_piguly <= 3:
                                 if urban_hp_now + 3 >= urban_hp:
                                     $ pills -= 1
@@ -14851,7 +16831,11 @@ label items_fight185:
 
                 if zyd_fighter == 3:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}":   
+                            $ zyd_haczyki = 0
+                            hide haczyki41
+                            hide haczyki42
+                            hide haczyki43         
                             if zyd_piguly <= 3:
                                 if zyd_hp_now + 3 >= zyd_hp:
                                     $ pills -= 1
@@ -14940,7 +16924,11 @@ label items_fight185:
 
                 if kazuma_fighter == 3:
                     menu:
-                        "{b}Weź pigułke{/b}":            
+                        "{b}Weź pigułke{/b}":       
+                            $ kazuma_haczyki = 0
+                            hide haczyki51
+                            hide haczyki52
+                            hide haczyki53     
                             if kazuma_piguly <= 3:
                                 if kazuma_hp_now + 3 >= kazuma_hp:
                                     $ pills -= 1
@@ -15073,6 +17061,10 @@ label items_fight185:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -15096,6 +17088,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -15119,6 +17115,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -15142,6 +17142,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -15165,6 +17169,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -15181,7 +17189,17 @@ label items_fight185:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight184
+                    
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -15198,7 +17216,17 @@ label items_fight185:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight184
+                    
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -15222,6 +17250,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -15245,6 +17277,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -15268,6 +17304,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -15291,6 +17331,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -15306,8 +17350,18 @@ label items_fight185:
                         $ kazuma_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -15324,7 +17378,17 @@ label items_fight185:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight184
+                    
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -15348,6 +17412,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -15371,6 +17439,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -15394,6 +17466,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -15417,6 +17493,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -15433,8 +17513,6 @@ label items_fight185:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
 
-
-
                     $ woda -= 1
                     if woda == 0:
                         $ ile_item -= 1
@@ -15442,6 +17520,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -15510,6 +17592,10 @@ label items_fight185:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -15537,6 +17623,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -15564,6 +17654,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -15591,6 +17685,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -15618,6 +17716,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -15645,6 +17747,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -15671,7 +17777,11 @@ label items_fight185:
                     hide ostry
                     jump faza_fight184
                 
-                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -15699,6 +17809,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -15726,6 +17840,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -15753,6 +17871,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -15780,6 +17902,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -15807,6 +17933,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -15834,6 +17964,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -15861,6 +17995,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -15888,6 +18026,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -15915,6 +18057,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -15942,6 +18088,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -15969,6 +18119,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -16041,6 +18195,10 @@ label items_fight185:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -16073,6 +18231,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -16105,6 +18267,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -16137,6 +18303,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -16169,6 +18339,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -16201,6 +18375,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -16233,6 +18411,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -16265,6 +18447,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -16297,6 +18483,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -16329,6 +18519,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -16361,6 +18555,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -16393,6 +18591,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -16425,6 +18627,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -16457,6 +18663,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -16489,6 +18699,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -16521,6 +18735,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -16553,6 +18771,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -16585,6 +18807,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show lagodny zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -16662,6 +18888,10 @@ label items_fight185:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -16694,6 +18924,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -16726,6 +18960,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -16758,6 +18996,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -16790,6 +19032,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -16822,6 +19068,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -16854,6 +19104,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -16886,6 +19140,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -16918,6 +19176,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -16950,6 +19212,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -16982,6 +19248,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -17014,6 +19284,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -17046,6 +19320,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -17078,6 +19356,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -17110,6 +19392,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -17142,6 +19428,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -17174,6 +19464,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -17206,6 +19500,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -17283,6 +19581,10 @@ label items_fight185:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -17306,6 +19608,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -17329,6 +19635,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -17352,6 +19662,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -17375,6 +19689,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -17398,6 +19716,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -17421,6 +19743,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -17444,6 +19770,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -17467,6 +19797,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -17490,6 +19824,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -17513,6 +19851,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -17536,6 +19878,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -17559,6 +19905,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -17582,6 +19932,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -17605,6 +19959,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -17628,6 +19986,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -17651,6 +20013,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -17674,6 +20040,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -17742,6 +20112,10 @@ label items_fight185:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -17765,6 +20139,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -17788,6 +20166,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -17811,6 +20193,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -17834,6 +20220,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -17857,6 +20247,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -17880,6 +20274,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -17903,6 +20301,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -17926,6 +20328,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -17949,6 +20355,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -17972,6 +20382,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -17995,6 +20409,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -18018,6 +20436,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -18041,6 +20463,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -18064,6 +20490,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -18087,6 +20517,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -18110,6 +20544,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -18133,6 +20571,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -18202,6 +20644,10 @@ label items_fight185:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -18225,6 +20671,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -18248,6 +20698,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -18271,6 +20725,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -18294,6 +20752,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -18317,6 +20779,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -18340,6 +20806,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -18363,6 +20833,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -18386,6 +20860,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -18409,6 +20887,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -18432,6 +20914,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -18455,6 +20941,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -18478,6 +20968,10 @@ label items_fight185:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -18501,6 +20995,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -18524,6 +21022,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -18547,6 +21049,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -18570,6 +21076,10 @@ label items_fight185:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -18593,6 +21103,10 @@ label items_fight185:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -18661,36 +21175,60 @@ label items_fight185:
                 show banany6 zorder 15 at weapon_sojusznik3
                     
             if luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 if luszcz_hp_now + 3 >= luszcz_hp:
                     $ luszcz_hp_now = luszcz_hp
                 else:
                     $ luszcz_hp_now += 3
                             
             if eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 if eminem_hp_now + 3 >= eminem_hp:
                     $ eminem_hp_now = eminem_hp
                 else:
                     $ eminem_hp_now += 3
                             
             if urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 if urban_hp_now + 3 >= urban_hp:
                     $ urban_hp_now = urban_hp
                 else:
                     $ urban_hp_now += 3
                             
             if zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 if zyd_hp_now + 3 >= zyd_hp:
                     $ zyd_hp_now = zyd_hp
                 else:
                     $ zyd_hp_now += 3
                             
             if kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 if kazuma_hp_now + 3 >= kazuma_hp:
                     $ kazuma_hp_now = kazuma_hp
                 else:
                     $ kazuma_hp_now += 3
                     
             if tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 if tarczownik_hp_now + 3 >= tarczownik_hp:
                     $ tarczownik_hp_now = tarczownik_hp
                 else:
@@ -18986,6 +21524,10 @@ label items_fight186:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -19018,6 +21560,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -19050,6 +21596,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -19082,6 +21632,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -19114,6 +21668,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -19146,6 +21704,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -19178,6 +21740,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -19210,6 +21776,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -19242,6 +21812,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -19274,6 +21848,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -19306,6 +21884,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -19338,6 +21920,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -19370,6 +21956,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -19402,6 +21992,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -19434,6 +22028,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -19466,6 +22064,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -19498,6 +22100,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -19530,6 +22136,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show drpepper zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -19607,6 +22217,10 @@ label items_fight186:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -19630,6 +22244,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -19653,6 +22271,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -19676,6 +22298,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -19699,6 +22325,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -19722,6 +22352,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -19745,6 +22379,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -19768,6 +22406,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -19791,6 +22433,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -19814,6 +22460,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -19837,6 +22487,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -19860,6 +22514,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -19883,6 +22541,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -19906,6 +22568,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -19929,6 +22595,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -19952,6 +22622,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -19975,6 +22649,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -19998,6 +22676,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show jabole zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -20066,6 +22748,10 @@ label items_fight186:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -20089,6 +22775,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -20112,6 +22802,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -20135,6 +22829,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -20158,6 +22856,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -20181,6 +22883,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -20204,6 +22910,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -20227,6 +22937,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -20250,6 +22964,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -20273,6 +22991,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -20296,6 +23018,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -20319,6 +23045,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -20342,6 +23072,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -20365,6 +23099,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -20388,6 +23126,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -20411,6 +23153,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -20434,6 +23180,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -20457,6 +23207,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show royal zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -20526,6 +23280,10 @@ label items_fight186:
                 "{b}Na kim użyć?{/b}"
 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -20549,6 +23307,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 1:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -20572,6 +23334,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 1:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -20595,6 +23361,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 1:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -20618,6 +23388,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 1:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -20641,6 +23415,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -20664,6 +23442,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -20687,6 +23469,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 3:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -20710,6 +23496,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 3:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -20733,6 +23523,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 3:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -20756,6 +23550,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 3:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -20779,6 +23577,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -20802,6 +23604,10 @@ label items_fight186:
                     jump faza_fight184
                 
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
+                    $ luszcz_haczyki = 0
+                    hide haczyki11
+                    hide haczyki12
+                    hide haczyki13
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -20825,6 +23631,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany == 2:
+                    $ eminem_haczyki = 0
+                    hide haczyki21
+                    hide haczyki22
+                    hide haczyki23
                     if eminem_wybrany == 1 and eminem_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if eminem_wybrany == 2 and eminem_hp_now > 0:
@@ -20848,6 +23658,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany == 2:
+                    $ urban_haczyki = 0
+                    hide haczyki31
+                    hide haczyki32
+                    hide haczyki33
                     if urban_wybrany == 1 and urban_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if urban_wybrany == 2 and urban_hp_now > 0:
@@ -20871,6 +23685,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany == 2:
+                    $ zyd_haczyki = 0
+                    hide haczyki41
+                    hide haczyki42
+                    hide haczyki43
                     if zyd_wybrany == 1 and zyd_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if zyd_wybrany == 2 and zyd_hp_now > 0:
@@ -20894,6 +23712,10 @@ label items_fight186:
                     jump faza_fight184
 
                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany == 2:
+                    $ kazuma_haczyki = 0
+                    hide haczyki51
+                    hide haczyki52
+                    hide haczyki53
                     if kazuma_wybrany == 1 and kazuma_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if kazuma_wybrany == 2 and kazuma_hp_now > 0:
@@ -20917,6 +23739,10 @@ label items_fight186:
                     jump faza_fight184
                         
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 2:
+                    $ tarczownik_haczyki = 0
+                    hide haczyki61
+                    hide haczyki62
+                    hide haczyki63
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show warzywo zorder 15 at weapon_sojusznik1
                     if tarczownik_wybrany == 2 and tarczownik_hp_now > 0:
@@ -20985,36 +23811,60 @@ label items_fight186:
                 show banany6 zorder 15 at weapon_sojusznik3
                     
             if luszcz_wybrany > 0:
+                $ luszcz_haczyki = 0
+                hide haczyki11
+                hide haczyki12
+                hide haczyki13
                 if luszcz_hp_now + 3 >= luszcz_hp:
                     $ luszcz_hp_now = luszcz_hp
                 else:
                     $ luszcz_hp_now += 3
                             
             if eminem_wybrany > 0:
+                $ eminem_haczyki = 0
+                hide haczyki21
+                hide haczyki22
+                hide haczyki23
                 if eminem_hp_now + 3 >= eminem_hp:
                     $ eminem_hp_now = eminem_hp
                 else:
                     $ eminem_hp_now += 3
                             
             if urban_wybrany > 0:
+                $ urban_haczyki = 0
+                hide haczyki31
+                hide haczyki32
+                hide haczyki33
                 if urban_hp_now + 3 >= urban_hp:
                     $ urban_hp_now = urban_hp
                 else:
                     $ urban_hp_now += 3
                             
             if zyd_wybrany > 0:
+                $ zyd_haczyki = 0
+                hide haczyki41
+                hide haczyki42
+                hide haczyki43
                 if zyd_hp_now + 3 >= zyd_hp:
                     $ zyd_hp_now = zyd_hp
                 else:
                     $ zyd_hp_now += 3
                             
             if kazuma_wybrany > 0:
+                $ kazuma_haczyki = 0
+                hide haczyki51
+                hide haczyki52
+                hide haczyki53
                 if kazuma_hp_now + 3 >= kazuma_hp:
                     $ kazuma_hp_now = kazuma_hp
                 else:
                     $ kazuma_hp_now += 3
                     
             if tarczownik_wybrany > 0:
+                $ tarczownik_haczyki = 0
+                hide haczyki61
+                hide haczyki62
+                hide haczyki63
                 if tarczownik_hp_now + 3 >= tarczownik_hp:
                     $ tarczownik_hp_now = tarczownik_hp
                 else:

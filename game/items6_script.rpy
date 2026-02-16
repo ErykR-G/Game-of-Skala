@@ -124,12 +124,12 @@ label items_fight61:
                 if eminem_wybrany == 3:
                     show piknik zorder 15 at weapon_sojusznik3
                     
-            if luszcz_fighter == 1:
-                if luszcz_wybrany == 1:
+            if zyd_fighter == 1:
+                if zyd_wybrany == 1:
                     show piknik zorder 15 at weapon_sojusznik1
-                if luszcz_wybrany == 2:
+                if zyd_wybrany == 2:
                     show piknik zorder 15 at weapon_sojusznik2
-                if luszcz_wybrany == 3:
+                if zyd_wybrany == 3:
                     show piknik zorder 15 at weapon_sojusznik3
                     
             if urban_fighter == 1:
@@ -1000,6 +1000,12 @@ label items_fight61:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight62
+                    
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
@@ -1016,6 +1022,12 @@ label items_fight61:
                         $ tarczownik_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight62
                     
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -1125,6 +1137,12 @@ label items_fight61:
                         $ kazuma_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight62
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -1142,6 +1160,12 @@ label items_fight61:
                         $ tarczownik_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight62
                     
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -1490,7 +1514,7 @@ label items_fight61:
                     hide ostry
                     jump faza_fight62
                 
-                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -8091,6 +8115,12 @@ label items_fight63:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight63
+                    
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
@@ -8107,6 +8137,12 @@ label items_fight63:
                         $ tarczownik_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight63
                     
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -8216,6 +8252,12 @@ label items_fight63:
                         $ kazuma_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight63
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -8233,6 +8275,12 @@ label items_fight63:
                         $ tarczownik_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight63
                     
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -8581,7 +8629,7 @@ label items_fight63:
                     hide ostry
                     jump faza_fight63
                 
-                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:
@@ -15181,6 +15229,12 @@ label items_fight65:
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
                     
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight64
+                    
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 1:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
                         show woda zorder 15 at weapon_sojusznik1
@@ -15197,6 +15251,12 @@ label items_fight65:
                         $ tarczownik_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight64
                     
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -15306,6 +15366,12 @@ label items_fight65:
                         $ kazuma_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight64
                 
                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany == 3:
                     if tarczownik_wybrany == 1 and tarczownik_hp_now > 0:
@@ -15323,6 +15389,12 @@ label items_fight65:
                         $ tarczownik_hp_now += 6
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał 6 punktów życia{/i}"
+                    
+                    $ woda -= 1
+                    if woda == 0:
+                        $ ile_item -= 1
+                    hide woda
+                    jump faza_fight64
                     
                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 2:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -15671,7 +15743,7 @@ label items_fight65:
                     hide ostry
                     jump faza_fight64
                 
-                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 1:
+                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany == 3:
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik1
                     if luszcz_wybrany == 2 and luszcz_hp_now > 0:

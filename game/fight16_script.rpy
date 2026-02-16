@@ -2029,13 +2029,13 @@ label fight161:
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
                 "{i}Łuszcz jest zestunnowany{/i}"
-                jump faza_fight1662 
+                jump faza_fight162 
             else:
                 if luszcz_stun == 1:
                     $ luszcz_stun -= 1
                     "{i}Łuszcz jest zestunnowany{/i}"
                     hide stun4
-                    jump faza_fight1662 
+                    jump faza_fight162 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -2239,7 +2239,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1662
+                        jump faza_fight162
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -2305,7 +2305,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja1_hp_now -= int(luszcz_attack / 2)
 
@@ -2341,7 +2341,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja1_hp_now -= luszcz_attack
 
@@ -2361,7 +2361,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2375,7 +2375,7 @@ label fight161:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                                jump faza_fight1662
+                                jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2438,7 +2438,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ trup17_hp_now -= int(luszcz_attack / 2)
 
@@ -2474,7 +2474,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ trup17_hp_now -= luszcz_attack
 
@@ -2494,7 +2494,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2507,7 +2507,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2570,7 +2570,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja2_hp_now -= int(luszcz_attack / 2)
 
@@ -2606,7 +2606,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja2_hp_now -= luszcz_attack
 
@@ -2626,7 +2626,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2639,7 +2639,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -2654,7 +2654,7 @@ label fight161:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza_fight1662
+                    jump faza_fight162
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -2809,7 +2809,7 @@ label fight161:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza_fight1662
+                            jump faza_fight162
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -2909,7 +2909,7 @@ label fight161:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza_fight1662
+                            jump faza_fight162
         
         if eminem_fighter == 1:
             if eminem_wybrany == 1:
@@ -2924,13 +2924,13 @@ label fight161:
             if eminem_stun == 2:
                 $ eminem_stun -= 1
                 "{i}Shadow jest zestunnowany{/i}"
-                jump faza_fight1662 
+                jump faza_fight162 
             else:
                 if eminem_stun == 1:
                     $ eminem_stun -= 1
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
-                    jump faza_fight1662 
+                    jump faza_fight162 
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -3009,7 +3009,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3061,7 +3061,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3113,7 +3113,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -3129,7 +3129,7 @@ label fight161:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza_fight1662
+                    jump faza_fight162
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -3164,7 +3164,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Urzędniczka Skarbowa 1 obronił się przed szlamem{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if policja1_min_attack_now >= 28 and policja1_min_attack_now <= 30:
@@ -3232,7 +3232,7 @@ label fight161:
                                 $ policja1_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Urzędniczka Skarbowa 1 zostały osłabione{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3240,7 +3240,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if trup17_min_attack_now >= 28 and trup17_min_attack_now <= 30:
@@ -3307,7 +3307,7 @@ label fight161:
                                 $ trup17_slime += 1
                                 show slime zorder 15 at center_wrog3
                                 "{i}Statystyki Akane zostały osłabione{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3315,7 +3315,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Urzędniczka Skarbowa 2 obronił się przed szlamem{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if policja2_min_attack_now >= 28 and policja2_min_attack_now <= 30:
@@ -3382,7 +3382,7 @@ label fight161:
                                 $ policja2_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Urzędniczka Skarbowa 2 zostały osłabione{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
 
         if urban_fighter == 1:
             if urban_wybrany == 1:
@@ -3397,13 +3397,13 @@ label fight161:
             if urban_stun == 2:
                 $ urban_stun -= 1
                 "{i}Jerzy Urban jest zestunnowany{/i}"
-                jump faza_fight1662 
+                jump faza_fight162 
             else:
                 if urban_stun == 1:
                     $ urban_stun -= 1
                     "{i}Jerzy Urban jest zestunnowany{/i}"
                     hide stun6
-                    jump faza_fight1662 
+                    jump faza_fight162 
 
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -3607,7 +3607,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1662
+                        jump faza_fight162
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -3680,7 +3680,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
 
                                             $ policja1_hp_now -= int(urban_attack / 2)
 
@@ -3716,7 +3716,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
 
                                             $ policja1_hp_now -= urban_attack
 
@@ -3736,7 +3736,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -3749,11 +3749,11 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1662:
+                            label urban_fight162:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if trup17_obrona >= 2:
@@ -3775,7 +3775,7 @@ label fight161:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and trup17_obrona == 1 and stop == 3 or urban_attack == 2 and trup17_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1662
+                                        jump urban_fight162
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -3819,7 +3819,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
 
                                             $ trup17_hp_now -= int(urban_attack / 2)
 
@@ -3855,7 +3855,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
 
                                             $ trup17_hp_now -= urban_attack
 
@@ -3875,7 +3875,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -3888,11 +3888,11 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1663:
+                            label urban_fight163:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if policja2_obrona >= 2:
@@ -3914,7 +3914,7 @@ label fight161:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and policja2_obrona == 1 and stop == 3 or urban_attack == 2 and policja2_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1663
+                                        jump urban_fight163
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -3958,7 +3958,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
 
                                             $ policja2_hp_now -= int(urban_attack / 2)
 
@@ -3994,7 +3994,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
 
                                             $ policja2_hp_now -= urban_attack
 
@@ -4014,7 +4014,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1662
+                                                    jump faza_fight162
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -4027,7 +4027,7 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -4042,7 +4042,7 @@ label fight161:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza_fight1662
+                    jump faza_fight162
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -4124,7 +4124,7 @@ label fight161:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
 
                     hide uszy
-                    jump faza_fight1662   
+                    jump faza_fight162   
         if zyd_fighter == 1:
             if zyd_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
@@ -4138,13 +4138,13 @@ label fight161:
             if zyd_stun == 2:
                 $ zyd_stun -= 1
                 "{i}Żyd jest zestunnowany{/i}"
-                jump faza_fight1662 
+                jump faza_fight162 
             else:
                 if zyd_stun == 1:
                     $ zyd_stun -= 1
                     "{i}Żyd jest zestunnowany{/i}"
                     hide stun7
-                    jump faza_fight1662 
+                    jump faza_fight162 
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -4348,7 +4348,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1662
+                        jump faza_fight162
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4414,7 +4414,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja1_hp_now -= int(zyd_attack / 2)
 
@@ -4450,7 +4450,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja1_hp_now -= zyd_attack
 
@@ -4470,7 +4470,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4484,7 +4484,7 @@ label fight161:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -4547,7 +4547,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ trup17_hp_now -= int(zyd_attack / 2)
 
@@ -4583,7 +4583,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ trup17_hp_now -= zyd_attack
 
@@ -4603,7 +4603,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4616,7 +4616,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -4679,7 +4679,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja2_hp_now -= int(zyd_attack / 2)
 
@@ -4715,7 +4715,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja2_hp_now -= zyd_attack
 
@@ -4735,7 +4735,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4748,7 +4748,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -4763,7 +4763,7 @@ label fight161:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza_fight1662
+                    jump faza_fight162
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -4801,7 +4801,7 @@ label fight161:
                             
                             "{i}Urzędniczka Skarbowa 1 kupił pager od Żyda{/i}"
 
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -4812,7 +4812,7 @@ label fight161:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Akane kupił pager od Żyda{/i}"
 
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -4823,7 +4823,7 @@ label fight161:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Urzędniczka Skarbowa 2 kupił pager od Żyda{/i}"
 
-                            jump faza_fight1662
+                            jump faza_fight162
                 
                 "{b}Wysadź Pagery{/b}" if policja1_pager >= 1 and pager_boom == 0 or trup17_pager >= 1 and pager_boom == 0 or policja2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -4902,7 +4902,7 @@ label fight161:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
 
-                    jump faza_fight1662
+                    jump faza_fight162
 
         if kazuma_fighter == 1:
             if kazuma_wybrany == 1:
@@ -4917,13 +4917,13 @@ label fight161:
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
                 "{i}Kazuma jest zestunnowany{/i}"
-                jump faza_fight1662 
+                jump faza_fight162 
             else:
                 if kazuma_stun == 1:
                     $ kazuma_stun -= 1
                     "{i}Kazuma jest zestunnowany{/i}"
                     hide stun8
-                    jump faza_fight1662 
+                    jump faza_fight162 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -5127,7 +5127,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1662
+                        jump faza_fight162
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -5193,7 +5193,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja1_hp_now -= int(kazuma_attack / 2)
 
@@ -5229,7 +5229,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja1_hp_now -= kazuma_attack
 
@@ -5249,7 +5249,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5262,7 +5262,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5325,7 +5325,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ trup17_hp_now -= int(kazuma_attack / 2)
 
@@ -5361,7 +5361,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ trup17_hp_now -= kazuma_attack
 
@@ -5381,7 +5381,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5394,7 +5394,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5457,7 +5457,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja2_hp_now -= int(kazuma_attack / 2)
 
@@ -5493,7 +5493,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
 
                                     $ policja2_hp_now -= kazuma_attack
 
@@ -5513,7 +5513,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5526,7 +5526,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1662
+                            jump faza_fight162
     
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
@@ -5542,7 +5542,7 @@ label fight161:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza_fight1662
+                    jump faza_fight162
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -5577,7 +5577,7 @@ label fight161:
                             if policja1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Urzędniczka Skarbowa 1 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if policja1_sex == 0:
@@ -5644,14 +5644,14 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Urzędniczka Skarbowa 1{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1662
+                                jump faza_fight162
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_weapon > 0:
                             kazuma "Steal!"
                             if trup17_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if trup17_sex == 0:
@@ -5718,14 +5718,14 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1662
+                                jump faza_fight162
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_weapon > 0:
                             kazuma "Steal!"
                             if policja2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Urzędniczka Skarbowa 2 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1662
+                                jump faza_fight162
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if policja2_sex == 0:
@@ -5793,7 +5793,7 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Urzędniczka Skarbowa 2{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1662
+                                jump faza_fight162
 
         if tarczownik_fighter == 1 and tarczownik_weapon >= 1:
             if tarczownik_hp_now >= 1:
@@ -5809,13 +5809,13 @@ label fight161:
                 if tarczownik_stun == 2:
                     $ tarczownik_stun -= 1
                     "{i}Naofumi jest zestunnowany{/i}"
-                    jump faza_fight1662 
+                    jump faza_fight162 
                 else:
                     if tarczownik_stun == 1:
                         $ tarczownik_stun -= 1
                         "{i}Naofumi jest zestunnowany{/i}"
                         hide stun9
-                        jump faza_fight1662 
+                        jump faza_fight162 
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -5866,7 +5866,7 @@ label fight161:
 
 
 
-                        jump faza_fight1662
+                        jump faza_fight162
                 
                 if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1:
                     $ kostka = renpy.random.randint(1, 2)
@@ -5911,7 +5911,7 @@ label fight161:
 
 
 
-                        jump faza_fight1662
+                        jump faza_fight162
                 
                 $ kostka = renpy.random.randint(1, 10)
 
@@ -5960,7 +5960,7 @@ label fight161:
                                     luszcz "..."
 
 
-                    jump faza_fight1662
+                    jump faza_fight162
                 
                 if tarczownik_weapon >= 1:
                     if tarczownik_wybrany == 1:
@@ -6159,7 +6159,7 @@ label fight161:
                                 queue sound "audio/sfx/heal.mp3" 
                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
 
-                    jump faza_fight1662
+                    jump faza_fight162
                 
                 tarczownik "Aaaaaaaaagh!"
 
@@ -6363,7 +6363,7 @@ label fight161:
                                                     $ dialog_fight2 += 1
                                                     luszcz "..."
 
-                                    jump faza_fight1662
+                                    jump faza_fight162
                                 else:
                                     jump losowanko_tarczownik_fight161
 
@@ -6560,7 +6560,7 @@ label fight161:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1662
+                                        jump faza_fight162
                                     else:
                                         jump losowanko_tarczownik_fight161
                                 
@@ -6757,7 +6757,7 @@ label fight161:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1662
+                                        jump faza_fight162
                                     else:
                                         jump losowanko_tarczownik_fight161
 
@@ -6959,7 +6959,7 @@ label fight161:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1662
+                                        jump faza_fight162
                                     else:
                                         jump losowanko_tarczownik_fight161
 
@@ -7158,7 +7158,7 @@ label fight161:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                         else:
                                             jump losowanko_tarczownik_fight161
                                     
@@ -7357,7 +7357,7 @@ label fight161:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                         else:
                                             jump losowanko_tarczownik_fight161
 
@@ -7560,7 +7560,7 @@ label fight161:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1662
+                                            jump faza_fight162
                                         else:
                                             jump losowanko_tarczownik_fight161
 
@@ -7759,7 +7759,7 @@ label fight161:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza_fight1662
+                                                jump faza_fight162
                                             else:
                                                 jump losowanko_tarczownik_fight161
                                         
@@ -7958,7 +7958,7 @@ label fight161:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza_fight1662
+                                                jump faza_fight162
                                             else:
                                                 jump losowanko_tarczownik_fight161
 
@@ -7967,7 +7967,7 @@ label fight161:
                             else:
                                 jump losowanko_tarczownik_fight161
 
-    label faza_fight1662:
+    label faza_fight162:
         hide reka1
         hide reka2
         hide reka3
@@ -8295,13 +8295,13 @@ label fight161:
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
                 "{i}Łuszcz jest zestunnowany{/i}"
-                jump faza_fight1663 
+                jump faza_fight163 
             else:
                 if luszcz_stun == 1:
                     $ luszcz_stun -= 1
                     "{i}Łuszcz jest zestunnowany{/i}"
                     hide stun4
-                    jump faza_fight1663 
+                    jump faza_fight163 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -8505,7 +8505,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1663
+                        jump faza_fight163
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -8571,7 +8571,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja1_hp_now -= int(luszcz_attack / 2)
 
@@ -8607,7 +8607,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja1_hp_now -= luszcz_attack
 
@@ -8627,7 +8627,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8640,7 +8640,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -8703,7 +8703,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ trup17_hp_now -= int(luszcz_attack / 2)
 
@@ -8739,7 +8739,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ trup17_hp_now -= luszcz_attack
 
@@ -8759,7 +8759,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8772,7 +8772,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -8835,7 +8835,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja2_hp_now -= int(luszcz_attack / 2)
 
@@ -8871,7 +8871,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja2_hp_now -= luszcz_attack
 
@@ -8891,7 +8891,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8904,7 +8904,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -8919,7 +8919,7 @@ label fight161:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza_fight1663
+                    jump faza_fight163
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -8933,7 +8933,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items_fight1663
+                    jump items_fight163
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -9074,7 +9074,7 @@ label fight161:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza_fight1663
+                            jump faza_fight163
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -9174,7 +9174,7 @@ label fight161:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza_fight1663
+                            jump faza_fight163
         
         if eminem_fighter == 2:
             if eminem_wybrany == 1:
@@ -9189,13 +9189,13 @@ label fight161:
             if eminem_stun == 2:
                 $ eminem_stun -= 1
                 "{i}Shadow jest zestunnowany{/i}"
-                jump faza_fight1663
+                jump faza_fight163
             else:
                 if eminem_stun == 1:
                     $ eminem_stun -= 1
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
-                    jump faza_fight1663
+                    jump faza_fight163
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -9274,7 +9274,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -9326,7 +9326,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -9378,7 +9378,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -9394,7 +9394,7 @@ label fight161:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza_fight1663
+                    jump faza_fight163
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -9408,7 +9408,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items_fight1663
+                    jump items_fight163
 
                 "{b}Rzut Szlamem{/b}":
                     if eminem_wybrany == 1:
@@ -9429,7 +9429,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Urzędniczka Skarbowa 1 obronił się przed szlamem{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if policja1_min_attack_now >= 28 and policja1_min_attack_now <= 30:
@@ -9496,7 +9496,7 @@ label fight161:
                                 $ policja1_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Urzędniczka Skarbowa 1 zostały osłabione{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -9504,7 +9504,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if trup17_min_attack_now >= 28 and trup17_min_attack_now <= 30:
@@ -9570,7 +9570,7 @@ label fight161:
                                 $ trup17_slime += 1
                                 show slime zorder 15 at center_wrog3 
                                 "{i}Statystyki Akane zostały osłabione{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -9578,7 +9578,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Urzędniczka Skarbowa 2 obronił się przed szlamem{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if policja2_min_attack_now >= 28 and policja2_min_attack_now <= 30:
@@ -9645,7 +9645,7 @@ label fight161:
                                 $ policja2_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Urzędniczka Skarbowa 2 zostały osłabione{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
 
         if urban_fighter == 2:
             if urban_wybrany == 1:
@@ -9660,13 +9660,13 @@ label fight161:
             if urban_stun == 2:
                 $ urban_stun -= 1
                 "{i}Jerzy Urban jest zestunnowany{/i}"
-                jump faza_fight1663
+                jump faza_fight163
             else:
                 if urban_stun == 1:
                     $ urban_stun -= 1
                     "{i}Jerzy Urban jest zestunnowany{/i}"
                     hide stun6
-                    jump faza_fight1663
+                    jump faza_fight163
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -9870,14 +9870,14 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1663
+                        jump faza_fight163
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Urzędniczka Skarbowa 1{/b}" if policja1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1664:
+                            label urban_fight164:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if policja1_obrona >= 2:
@@ -9899,7 +9899,7 @@ label fight161:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and policja1_obrona == 1 and stop == 3 or urban_attack == 2 and policja1_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1664
+                                        jump urban_fight164
                                     
                                     else:  
                                         if urban_weapon >= 1:
@@ -9943,7 +9943,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
 
                                             $ policja1_hp_now -= int(urban_attack / 2)
 
@@ -9979,7 +9979,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
 
                                             $ policja1_hp_now -= urban_attack
 
@@ -9999,7 +9999,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -10012,11 +10012,11 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1665:
+                            label urban_fight165:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if trup17_obrona >= 2:
@@ -10038,7 +10038,7 @@ label fight161:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and trup17_obrona == 1 and stop == 3 or urban_attack == 2 and trup17_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1665
+                                        jump urban_fight165
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -10082,7 +10082,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
 
                                             $ trup17_hp_now -= int(urban_attack / 2)
 
@@ -10118,7 +10118,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
 
                                             $ trup17_hp_now -= urban_attack
 
@@ -10138,7 +10138,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -10151,7 +10151,7 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -10221,7 +10221,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
 
                                             $ policja2_hp_now -= int(urban_attack / 2)
 
@@ -10257,7 +10257,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
 
                                             $ policja2_hp_now -= urban_attack
 
@@ -10277,7 +10277,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1663
+                                                    jump faza_fight163
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -10290,7 +10290,7 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -10305,7 +10305,7 @@ label fight161:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza_fight1663
+                    jump faza_fight163
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -10319,7 +10319,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items_fight1663
+                    jump items_fight163
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -10386,7 +10386,7 @@ label fight161:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
 
                     hide uszy
-                    jump faza_fight1663  
+                    jump faza_fight163  
 
         if zyd_fighter == 2:
             if zyd_wybrany == 1:
@@ -10401,13 +10401,13 @@ label fight161:
             if zyd_stun == 2:
                 $ zyd_stun -= 1
                 "{i}Żyd jest zestunnowany{/i}"
-                jump faza_fight1663
+                jump faza_fight163
             else:
                 if zyd_stun == 1:
                     $ zyd_stun -= 1
                     "{i}Żyd jest zestunnowany{/i}"
                     hide stun7
-                    jump faza_fight1663
+                    jump faza_fight163
 
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -10611,7 +10611,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1663
+                        jump faza_fight163
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -10677,7 +10677,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja1_hp_now -= int(zyd_attack / 2)
 
@@ -10713,7 +10713,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja1_hp_now -= zyd_attack
 
@@ -10733,7 +10733,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -10746,7 +10746,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -10809,7 +10809,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ trup17_hp_now -= int(zyd_attack / 2)
 
@@ -10845,7 +10845,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ trup17_hp_now -= zyd_attack
 
@@ -10865,7 +10865,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -10878,7 +10878,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -10941,7 +10941,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja2_hp_now -= int(zyd_attack / 2)
 
@@ -10977,7 +10977,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja2_hp_now -= zyd_attack
 
@@ -10997,7 +10997,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -11010,7 +11010,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -11025,7 +11025,7 @@ label fight161:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza_fight1663
+                    jump faza_fight163
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -11039,7 +11039,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items_fight1663
+                    jump items_fight163
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and policja1_pager == 0 and policja1_hp_now >= 1 or pager_boom == 0 and trup17_pager == 0 and trup17_hp_now >= 1 or pager_boom == 0 and policja2_pager == 0 and policja2_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -11063,7 +11063,7 @@ label fight161:
                             show pager1 zorder 15 at bok_wrog1
                             "{i}Urzędniczka Skarbowa 1 kupił pager od Żyda{/i}"
 
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -11074,7 +11074,7 @@ label fight161:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Akane kupił pager od Żyda{/i}"
 
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -11085,7 +11085,7 @@ label fight161:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Urzędniczka Skarbowa 2 kupił pager od Żyda{/i}"
 
-                            jump faza_fight1663
+                            jump faza_fight163
                 
                 "{b}Wysadź Pagery{/b}" if policja1_pager >= 1 and pager_boom == 0 or trup17_pager >= 1 and pager_boom == 0 or policja2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -11163,7 +11163,7 @@ label fight161:
                     if dialog_fight1 == 0:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
-                    jump faza_fight1663
+                    jump faza_fight163
 
         if kazuma_fighter == 2:
             if kazuma_wybrany == 1:
@@ -11178,13 +11178,13 @@ label fight161:
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
                 "{i}Kazuma jest zestunnowany{/i}"
-                jump faza_fight1663
+                jump faza_fight163
             else:
                 if kazuma_stun == 1:
                     $ kazuma_stun -= 1
                     "{i}Kazuma jest zestunnowany{/i}"
                     hide stun8
-                    jump faza_fight1663
+                    jump faza_fight163
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -11388,7 +11388,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1663
+                        jump faza_fight163
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -11454,7 +11454,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja1_hp_now -= int(kazuma_attack / 2)
 
@@ -11490,7 +11490,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja1_hp_now -= kazuma_attack
 
@@ -11510,7 +11510,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11523,7 +11523,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -11586,7 +11586,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ trup17_hp_now -= int(kazuma_attack / 2)
 
@@ -11622,7 +11622,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ trup17_hp_now -= kazuma_attack
 
@@ -11642,7 +11642,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11655,7 +11655,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -11718,7 +11718,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja2_hp_now -= int(kazuma_attack / 2)
 
@@ -11754,7 +11754,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
 
                                     $ policja2_hp_now -= kazuma_attack
 
@@ -11774,7 +11774,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1663
+                                            jump faza_fight163
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11787,7 +11787,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1663
+                            jump faza_fight163
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -11802,7 +11802,7 @@ label fight161:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza_fight1663
+                    jump faza_fight163
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -11816,7 +11816,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items_fight1663
+                    jump items_fight163
 
                 "{b}Steal{/b}" if policja1_weapon >= 1 or trup17_weapon >= 1 or policja2_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -11836,7 +11836,7 @@ label fight161:
                             if policja1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Urzędniczka Skarbowa 1 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if policja1_sex == 0:
@@ -11904,14 +11904,14 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Urzędniczka Skarbowa 1{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1663
+                                jump faza_fight163
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_weapon > 0:
                             kazuma "Steal!"
                             if trup17_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if trup17_sex == 0:
@@ -11978,14 +11978,14 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1663
+                                jump faza_fight163
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_weapon > 0:
                             kazuma "Steal!"
                             if policja2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Urzędniczka Skarbowa 2 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1663
+                                jump faza_fight163
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if policja2_sex == 0:
@@ -12053,9 +12053,9 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Urzędniczka Skarbowa 2{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1663
+                                jump faza_fight163
 
-    label faza_fight1663:
+    label faza_fight163:
         hide reka1
         hide reka2
         hide reka3
@@ -12383,13 +12383,13 @@ label fight161:
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
                 "{i}Łuszcz jest zestunnowany{/i}"
-                jump faza_fight1664 
+                jump faza_fight164 
             else:
                 if luszcz_stun == 1:
                     $ luszcz_stun -= 1
                     "{i}Łuszcz jest zestunnowany{/i}"
                     hide stun4
-                    jump faza_fight1664
+                    jump faza_fight164
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -12593,7 +12593,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1664
+                        jump faza_fight164
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -12659,7 +12659,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja1_hp_now -= int(luszcz_attack / 2)
 
@@ -12695,7 +12695,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja1_hp_now -= luszcz_attack
 
@@ -12715,7 +12715,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12728,7 +12728,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -12791,7 +12791,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ trup17_hp_now -= int(luszcz_attack / 2)
 
@@ -12827,7 +12827,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ trup17_hp_now -= luszcz_attack
 
@@ -12847,7 +12847,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12860,7 +12860,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -12923,7 +12923,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja2_hp_now -= int(luszcz_attack / 2)
 
@@ -12959,7 +12959,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja2_hp_now -= luszcz_attack
 
@@ -12979,7 +12979,7 @@ label fight161:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12992,7 +12992,7 @@ label fight161:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -13007,7 +13007,7 @@ label fight161:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza_fight1664
+                    jump faza_fight164
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -13021,7 +13021,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items_fight1665
+                    jump items_fight165
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -13162,7 +13162,7 @@ label fight161:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza_fight1664
+                            jump faza_fight164
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -13262,7 +13262,7 @@ label fight161:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza_fight1664
+                            jump faza_fight164
         
         if eminem_fighter == 3:
             if eminem_wybrany == 1:
@@ -13277,13 +13277,13 @@ label fight161:
             if eminem_stun == 2:
                 $ eminem_stun -= 1
                 "{i}Shadow jest zestunnowany{/i}"
-                jump faza_fight1664 
+                jump faza_fight164 
             else:
                 if eminem_stun == 1:
                     $ eminem_stun -= 1
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
-                    jump faza_fight1664
+                    jump faza_fight164
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -13362,7 +13362,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -13414,7 +13414,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -13466,7 +13466,7 @@ label fight161:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -13482,7 +13482,7 @@ label fight161:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza_fight1664
+                    jump faza_fight164
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -13496,7 +13496,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items_fight1665
+                    jump items_fight165
 
                 "{b}Rzut Szlamem{/b}":
 
@@ -13518,7 +13518,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Urzędniczka Skarbowa 1 obronił się przed szlamem{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if policja1_min_attack_now >= 28 and policja1_min_attack_now <= 30:
@@ -13585,7 +13585,7 @@ label fight161:
                                 $ policja1_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Urzędniczka Skarbowa 1 zostały osłabione{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -13593,7 +13593,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Akane obronił się przed szlamem{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if trup17_min_attack_now >= 28 and trup17_min_attack_now <= 30:
@@ -13660,7 +13660,7 @@ label fight161:
                                 $ trup17_slime += 1
                                 show slime zorder 15 at center_wrog3
                                 "{i}Statystyki Akane zostały osłabione{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -13668,7 +13668,7 @@ label fight161:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Urzędniczka Skarbowa 2 obronił się przed szlamem{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if policja2_min_attack_now >= 28 and policja2_min_attack_now <= 30:
@@ -13735,7 +13735,7 @@ label fight161:
                                 $ policja2_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Urzędniczka Skarbowa 2 zostały osłabione{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
 
         if urban_fighter == 3:
             if urban_wybrany == 1:
@@ -13750,13 +13750,13 @@ label fight161:
             if urban_stun == 2:
                 $ urban_stun -= 1
                 "{i}Jerzy Urban jest zestunnowany{/i}"
-                jump faza_fight1664 
+                jump faza_fight164 
             else:
                 if urban_stun == 1:
                     $ urban_stun -= 1
                     "{i}Jerzy Urban jest zestunnowany{/i}"
                     hide stun6
-                    jump faza_fight1664 
+                    jump faza_fight164 
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -13960,7 +13960,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1664
+                        jump faza_fight164
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -14033,7 +14033,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
 
                                             $ policja1_hp_now -= int(urban_attack / 2)
 
@@ -14069,7 +14069,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
 
                                             $ policja1_hp_now -= urban_attack
 
@@ -14089,7 +14089,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -14102,7 +14102,7 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -14172,7 +14172,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
 
                                             $ trup17_hp_now -= int(urban_attack / 2)
 
@@ -14208,7 +14208,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
 
                                             $ trup17_hp_now -= urban_attack
 
@@ -14228,7 +14228,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -14241,7 +14241,7 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -14311,7 +14311,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
 
                                             $ policja2_hp_now -= int(urban_attack / 2)
 
@@ -14347,7 +14347,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
 
                                             $ policja2_hp_now -= urban_attack
 
@@ -14367,7 +14367,7 @@ label fight161:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1664
+                                                    jump faza_fight164
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -14380,7 +14380,7 @@ label fight161:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -14395,7 +14395,7 @@ label fight161:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza_fight1664
+                    jump faza_fight164
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -14409,7 +14409,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items_fight1665
+                    jump items_fight165
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -14476,7 +14476,7 @@ label fight161:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
                     
                     hide uszy
-                    jump faza_fight1664
+                    jump faza_fight164
 
         if zyd_fighter == 3:
             if zyd_wybrany == 1:
@@ -14491,13 +14491,13 @@ label fight161:
             if zyd_stun == 2:
                 $ zyd_stun -= 1
                 "{i}Żyd jest zestunnowany{/i}"
-                jump faza_fight1664 
+                jump faza_fight164 
             else:
                 if zyd_stun == 1:
                     $ zyd_stun -= 1
                     "{i}Żyd jest zestunnowany{/i}"
                     hide stun7
-                    jump faza_fight1664
+                    jump faza_fight164
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -14701,7 +14701,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1664
+                        jump faza_fight164
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -14767,7 +14767,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja1_hp_now -= int(zyd_attack / 2)
 
@@ -14803,7 +14803,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja1_hp_now -= zyd_attack
 
@@ -14823,7 +14823,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -14836,7 +14836,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -14899,7 +14899,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ trup17_hp_now -= int(zyd_attack / 2)
 
@@ -14935,7 +14935,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ trup17_hp_now -= zyd_attack
 
@@ -14955,7 +14955,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -14968,7 +14968,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -15031,7 +15031,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja2_hp_now -= int(zyd_attack / 2)
 
@@ -15067,7 +15067,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja2_hp_now -= zyd_attack
 
@@ -15087,7 +15087,7 @@ label fight161:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -15100,7 +15100,7 @@ label fight161:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -15115,7 +15115,7 @@ label fight161:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza_fight1664
+                    jump faza_fight164
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -15129,7 +15129,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items_fight1665
+                    jump items_fight165
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and policja1_pager == 0 and policja1_hp_now >= 1 or pager_boom == 0 and trup17_pager == 0 and trup17_hp_now >= 1 or pager_boom == 0 and policja2_pager == 0 and policja2_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -15153,7 +15153,7 @@ label fight161:
                             show pager1 zorder 15 at bok_wrog1
                             "{i}Urzędniczka Skarbowa 1 kupił pager od Żyda{/i}"
 
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -15164,7 +15164,7 @@ label fight161:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Akane kupił pager od Żyda{/i}"
 
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -15175,7 +15175,7 @@ label fight161:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Urzędniczka Skarbowa 2 kupił pager od Żyda{/i}"
 
-                            jump faza_fight1664
+                            jump faza_fight164
                 
                 "{b}Wysadź Pagery{/b}" if policja1_pager >= 1 and pager_boom == 0 or trup17_pager >= 1 and pager_boom == 0 or policja2_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -15253,7 +15253,7 @@ label fight161:
                     if dialog_fight1 == 0:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
-                    jump faza_fight1664
+                    jump faza_fight164
 
         if kazuma_fighter == 3:
             if kazuma_wybrany == 1:
@@ -15268,13 +15268,13 @@ label fight161:
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
                 "{i}Kazuma jest zestunnowany{/i}"
-                jump faza_fight1664 
+                jump faza_fight164 
             else:
                 if kazuma_stun == 1:
                     $ kazuma_stun -= 1
                     "{i}Kazuma jest zestunnowany{/i}"
                     hide stun8
-                    jump faza_fight1664 
+                    jump faza_fight164 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if policja1_hp_now >= 1 and trup17_hp_now <= 0 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now >= 1 and policja2_hp_now <= 0 or policja1_hp_now <= 0 and trup17_hp_now <= 0 and policja2_hp_now >= 1:
@@ -15478,7 +15478,7 @@ label fight161:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1664
+                        jump faza_fight164
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -15544,7 +15544,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja1_hp_now -= int(kazuma_attack / 2)
 
@@ -15580,7 +15580,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja1_hp_now -= kazuma_attack
 
@@ -15600,7 +15600,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15613,7 +15613,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -15676,7 +15676,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ trup17_hp_now -= int(kazuma_attack / 2)
 
@@ -15712,7 +15712,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ trup17_hp_now -= kazuma_attack
 
@@ -15732,7 +15732,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15745,7 +15745,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -15808,7 +15808,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja2_hp_now -= int(kazuma_attack / 2)
 
@@ -15844,7 +15844,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
 
                                     $ policja2_hp_now -= kazuma_attack
 
@@ -15864,7 +15864,7 @@ label fight161:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1664
+                                            jump faza_fight164
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15877,7 +15877,7 @@ label fight161:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1664
+                            jump faza_fight164
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -15892,7 +15892,7 @@ label fight161:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza_fight1664
+                    jump faza_fight164
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -15906,7 +15906,7 @@ label fight161:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items_fight1665
+                    jump items_fight165
 
                 "{b}Steal{/b}" if policja1_weapon >= 1 or trup17_weapon >= 1 or policja2_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -15926,7 +15926,7 @@ label fight161:
                             if policja1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Urzędniczka Skarbowa 1 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if policja1_sex == 0:
@@ -15994,14 +15994,14 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Urzędniczka Skarbowa 1{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1664
+                                jump faza_fight164
 
                         "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_weapon > 0:
                             kazuma "Steal!"
                             if trup17_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Akane obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if trup17_sex == 0:
@@ -16068,14 +16068,14 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Akane{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1664
+                                jump faza_fight164
 
                         "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_weapon > 0:
                             kazuma "Steal!"
                             if policja2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Urzędniczka Skarbowa 2 obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1664
+                                jump faza_fight164
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if policja2_sex == 0:
@@ -16143,9 +16143,9 @@ label fight161:
                                         "{i}Nie udało sie ukraść broni Urzędniczka Skarbowa 2{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1664
+                                jump faza_fight164
 
-    label faza_fight1664:
+    label faza_fight164:
         hide reka1
         hide reka2
         hide reka3
@@ -18574,13 +18574,13 @@ label fight161:
         $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
 
         if policja1_hp_now <= 0:
-            jump faza_fight1665    
+            jump faza_fight165    
 
         show ruch zorder 0 at tlo_wrog1  
     
         if policja1_stun == 1:
             "{i}Urzędniczka Skarbowa 1 jest zestunnowany{/i}"
-            jump faza_fight1665  
+            jump faza_fight165  
 
         if policja1_uszy >= 1 and urban_hp_now >= 1:
             if policja1_weapon >= 1:
@@ -18596,14 +18596,14 @@ label fight161:
                     $ policja1_hp_now -= policja1_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                    jump faza_fight1665
+                    jump faza_fight165
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Urzędniczka Skarbowa 1 został zablokowany{/i}"
                 $ urban_obrona = 1
 
-                jump faza_fight1665
+                jump faza_fight165
                                                 
             else:
                 play sound "audio/sfx/policja1_weapon.mp3"
@@ -18613,20 +18613,20 @@ label fight161:
                     $ dmg = int(policja1_attack / 2)
                     "{i}Urzędniczka Skarbowa 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump faza_fight1665
+                    jump faza_fight165
                 else:
                     $ urban_hp_now -= policja1_attack
 
                     "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump faza_fight1665
+                    jump faza_fight165
         
         if policja1_max_attack_now <= 0 and policja1_obrona == 0:
             show tarcza6 zorder 15 at weapon_wrog1  
             play sound "audio/sfx/shield.mp3"
             "{i}Urzędniczka Skarbowa 1 broni się{/i}"
             $ policja1_obrona += 1
-            jump faza_fight1665
+            jump faza_fight165
 
         if policja1_hp_now >= 1 and policja1_obrona == 0:
             if policja1_hp_now <= 3:
@@ -18637,7 +18637,7 @@ label fight161:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Urzędniczka Skarbowa 1 broni się{/i}"
                     $ policja1_obrona += 1
-                    jump faza_fight1665
+                    jump faza_fight165
             
             else:
                 $ kostka = renpy.random.randint(1, 10)
@@ -18647,9 +18647,9 @@ label fight161:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Urzędniczka Skarbowa 1 broni się{/i}"
                     $ policja1_obrona += 1
-                    jump faza_fight1665
+                    jump faza_fight165
                     
-        label losowanko_fight1664:   
+        label losowanko_fight164:   
             if policja1_weapon >= 1:
                 show policja1_weapon zorder 15 at weapon_wrog1  
             else:
@@ -18668,7 +18668,7 @@ label fight161:
                                     $ policja1_hp_now -= policja1_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                    jump faza_fight1665
+                                    jump faza_fight165
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -18692,9 +18692,9 @@ label fight161:
 
                                     "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Łuszczowi{/i}"
 
-                            jump faza_fight1665
+                            jump faza_fight165
                         else:
-                            jump losowanko_fight1664
+                            jump losowanko_fight164
 
                     else:
                         if luszcz_hp_now <= 10:
@@ -18708,7 +18708,7 @@ label fight161:
                                         $ policja1_hp_now -= policja1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1665
+                                        jump faza_fight165
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -18732,9 +18732,9 @@ label fight161:
 
                                         "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza_fight1665
+                                jump faza_fight165
                             else:
-                                jump losowanko_fight1664
+                                jump losowanko_fight164
                         
                         else:
                             $ kostka = renpy.random.randint(1, 5)
@@ -18747,7 +18747,7 @@ label fight161:
                                         $ policja1_hp_now -= policja1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1665
+                                        jump faza_fight165
                             
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -18771,12 +18771,12 @@ label fight161:
 
                                         "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza_fight1665
+                                jump faza_fight165
                             else:
-                                jump losowanko_fight1664
+                                jump losowanko_fight164
 
                 else:
-                    jump losowanko_fight1664
+                    jump losowanko_fight164
             else:
                 if kostka == 2:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
@@ -18791,7 +18791,7 @@ label fight161:
                                         $ policja1_hp_now -= policja1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1665
+                                        jump faza_fight165
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -18815,9 +18815,9 @@ label fight161:
 
                                         "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump faza_fight1665
+                                jump faza_fight165
                             else:
-                                jump losowanko_fight1664
+                                jump losowanko_fight164
 
                         else:
                             if urban_hp_now <= 10:
@@ -18831,7 +18831,7 @@ label fight161:
                                             $ policja1_hp_now -= policja1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1665
+                                            jump faza_fight165
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -18855,9 +18855,9 @@ label fight161:
 
                                             "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza_fight1665
+                                    jump faza_fight165
                                 else:
-                                    jump losowanko_fight1664
+                                    jump losowanko_fight164
                             
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -18870,7 +18870,7 @@ label fight161:
                                             $ policja1_hp_now -= policja1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1665
+                                            jump faza_fight165
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -18894,12 +18894,12 @@ label fight161:
 
                                             "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza_fight1665
+                                    jump faza_fight165
                                 else:
-                                    jump losowanko_fight1664
+                                    jump losowanko_fight164
 
                     else:
-                        jump losowanko_fight1664
+                        jump losowanko_fight164
                 else:
                     if kostka == 3:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
@@ -18914,7 +18914,7 @@ label fight161:
                                             $ policja1_hp_now -= policja1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1665
+                                            jump faza_fight165
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -18938,9 +18938,9 @@ label fight161:
 
                                             "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Żydowi{/i}"
 
-                                    jump faza_fight1665
+                                    jump faza_fight165
                                 else:
-                                    jump losowanko_fight1664
+                                    jump losowanko_fight164
 
                             else:
                                 if zyd_hp_now <= 10:
@@ -18954,7 +18954,7 @@ label fight161:
                                                 $ policja1_hp_now -= policja1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1665
+                                                jump faza_fight165
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -18978,9 +18978,9 @@ label fight161:
 
                                                 "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza_fight1665
+                                        jump faza_fight165
                                     else:
-                                        jump losowanko_fight1664
+                                        jump losowanko_fight164
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -18993,7 +18993,7 @@ label fight161:
                                                 $ policja1_hp_now -= policja1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1665
+                                                jump faza_fight165
                                         
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -19017,12 +19017,12 @@ label fight161:
 
                                                 "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza_fight1665
+                                        jump faza_fight165
                                     else:
-                                        jump losowanko_fight1664
+                                        jump losowanko_fight164
 
                         else:
-                            jump losowanko_fight1664
+                            jump losowanko_fight164
                     else:
                         if kostka == 4:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
@@ -19037,7 +19037,7 @@ label fight161:
                                                 $ policja1_hp_now -= policja1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1665
+                                                jump faza_fight165
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -19061,9 +19061,9 @@ label fight161:
 
                                                 "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Kazumie{/i}"
 
-                                        jump faza_fight1665
+                                        jump faza_fight165
                                     else:
-                                        jump losowanko_fight1664
+                                        jump losowanko_fight164
 
                                 else:
                                     if kazuma_hp_now <= 10:
@@ -19077,7 +19077,7 @@ label fight161:
                                                     $ policja1_hp_now -= policja1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1665
+                                                    jump faza_fight165
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -19101,9 +19101,9 @@ label fight161:
 
                                                     "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza_fight1665
+                                            jump faza_fight165
                                         else:
-                                            jump losowanko_fight1664
+                                            jump losowanko_fight164
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -19116,7 +19116,7 @@ label fight161:
                                                     $ policja1_hp_now -= policja1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1665
+                                                    jump faza_fight165
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -19140,12 +19140,12 @@ label fight161:
 
                                                     "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza_fight1665
+                                            jump faza_fight165
                                         else:
-                                            jump losowanko_fight1664
+                                            jump losowanko_fight164
 
                             else:
-                                jump losowanko_fight1664
+                                jump losowanko_fight164
                         else:
                             if kostka == 5:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
@@ -19160,7 +19160,7 @@ label fight161:
                                                     $ policja1_hp_now -= policja1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1665
+                                                    jump faza_fight165
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -19184,9 +19184,9 @@ label fight161:
 
                                                     "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Shadowowi{/i}"
 
-                                            jump faza_fight1665
+                                            jump faza_fight165
                                         else:
-                                            jump losowanko_fight1664
+                                            jump losowanko_fight164
 
                                     else:
                                         if eminem_hp_now <= 10:
@@ -19200,7 +19200,7 @@ label fight161:
                                                         $ policja1_hp_now -= policja1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1665
+                                                        jump faza_fight165
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -19224,9 +19224,9 @@ label fight161:
 
                                                         "{i} [policja1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza_fight1665
+                                                jump faza_fight165
                                             else:
-                                                jump losowanko_fight1664
+                                                jump losowanko_fight164
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -19239,7 +19239,7 @@ label fight161:
                                                         $ policja1_hp_now -= policja1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1665
+                                                        jump faza_fight165
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -19263,12 +19263,12 @@ label fight161:
 
                                                         "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza_fight1665
+                                                jump faza_fight165
                                             else:
-                                                jump losowanko_fight1664
+                                                jump losowanko_fight164
 
                                 else:
-                                    jump losowanko_fight1664
+                                    jump losowanko_fight164
                             else:
                                 if kostka == 6:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
@@ -19283,7 +19283,7 @@ label fight161:
                                                         $ policja1_hp_now -= policja1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1665
+                                                        jump faza_fight165
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -19307,9 +19307,9 @@ label fight161:
 
                                                         "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump faza_fight1665
+                                                jump faza_fight165
                                             else:
-                                                jump losowanko_fight1664
+                                                jump losowanko_fight164
 
                                         else:
                                             if tarczownik_hp_now <= 10:
@@ -19323,7 +19323,7 @@ label fight161:
                                                             $ policja1_hp_now -= policja1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight1665
+                                                            jump faza_fight165
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -19347,9 +19347,9 @@ label fight161:
 
                                                             "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza_fight1665
+                                                    jump faza_fight165
                                                 else:
-                                                    jump losowanko_fight1664
+                                                    jump losowanko_fight164
                                             
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
@@ -19362,7 +19362,7 @@ label fight161:
                                                             $ policja1_hp_now -= policja1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Urzędniczka Skarbowa 1 odbił się od Szalika z Memów i zadał [policja1_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight1665
+                                                            jump faza_fight165
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -19386,17 +19386,17 @@ label fight161:
 
                                                             "{i}Urzędniczka Skarbowa 1 zadaje [policja1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza_fight1665
+                                                    jump faza_fight165
                                                 else:
-                                                    jump losowanko_fight1664
+                                                    jump losowanko_fight164
 
                                     else:
-                                        jump losowanko_fight1664
+                                        jump losowanko_fight164
                                 else:
-                                    jump losowanko_fight1664
+                                    jump losowanko_fight164
                 
                 
-    label faza_fight1665:
+    label faza_fight165:
         hide reka1
         hide reka2
         hide reka3
@@ -19773,7 +19773,7 @@ label fight161:
                     $ trup17_obrona += 1
                     jump faza_fight166
                     
-        label losowanko_fight1665:
+        label losowanko_fight165:
             if trup17_weapon >= 1:
                 show trup17_weapon zorder 15 at weapon_wrog3 
             else:
@@ -19819,7 +19819,7 @@ label fight161:
 
                             jump faza_fight166
                         else:
-                            jump losowanko_fight1665
+                            jump losowanko_fight165
 
                     else:
                         if luszcz_hp_now <= 10:
@@ -19859,7 +19859,7 @@ label fight161:
 
                                 jump faza_fight166
                             else:
-                                jump losowanko_fight1665
+                                jump losowanko_fight165
                         
                         else:
                             $ kostka = renpy.random.randint(1, 5)
@@ -19898,10 +19898,10 @@ label fight161:
 
                                 jump faza_fight166
                             else:
-                                jump losowanko_fight1665
+                                jump losowanko_fight165
 
                 else:
-                    jump losowanko_fight1665
+                    jump losowanko_fight165
             else:
                 if kostka == 2:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
@@ -19942,7 +19942,7 @@ label fight161:
 
                                 jump faza_fight166
                             else:
-                                jump losowanko_fight1665
+                                jump losowanko_fight165
 
                         else:
                             if urban_hp_now <= 10:
@@ -19982,7 +19982,7 @@ label fight161:
 
                                     jump faza_fight166
                                 else:
-                                    jump losowanko_fight1665
+                                    jump losowanko_fight165
                             
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -20021,10 +20021,10 @@ label fight161:
 
                                     jump faza_fight166
                                 else:
-                                    jump losowanko_fight1665
+                                    jump losowanko_fight165
 
                     else:
-                        jump losowanko_fight1665
+                        jump losowanko_fight165
                 else:
                     if kostka == 3:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
@@ -20065,7 +20065,7 @@ label fight161:
 
                                     jump faza_fight166
                                 else:
-                                    jump losowanko_fight1665
+                                    jump losowanko_fight165
 
                             else:
                                 if zyd_hp_now <= 10:
@@ -20105,7 +20105,7 @@ label fight161:
 
                                         jump faza_fight166
                                     else:
-                                        jump losowanko_fight1665
+                                        jump losowanko_fight165
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -20144,10 +20144,10 @@ label fight161:
 
                                         jump faza_fight166
                                     else:
-                                        jump losowanko_fight1665
+                                        jump losowanko_fight165
 
                         else:
-                            jump losowanko_fight1665
+                            jump losowanko_fight165
                     else:
                         if kostka == 4:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
@@ -20188,7 +20188,7 @@ label fight161:
 
                                         jump faza_fight166
                                     else:
-                                        jump losowanko_fight1665
+                                        jump losowanko_fight165
 
                                 else:
                                     if kazuma_hp_now <= 10:
@@ -20228,7 +20228,7 @@ label fight161:
 
                                             jump faza_fight166
                                         else:
-                                            jump losowanko_fight1665
+                                            jump losowanko_fight165
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -20267,10 +20267,10 @@ label fight161:
 
                                             jump faza_fight166
                                         else:
-                                            jump losowanko_fight1665
+                                            jump losowanko_fight165
 
                             else:
-                                jump losowanko_fight1665
+                                jump losowanko_fight165
                         else:
                             if kostka == 5:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
@@ -20311,7 +20311,7 @@ label fight161:
 
                                             jump faza_fight166
                                         else:
-                                            jump losowanko_fight1665
+                                            jump losowanko_fight165
 
                                     else:
                                         if eminem_hp_now <= 10:
@@ -20351,7 +20351,7 @@ label fight161:
 
                                                 jump faza_fight166
                                             else:
-                                                jump losowanko_fight1665
+                                                jump losowanko_fight165
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -20390,10 +20390,10 @@ label fight161:
 
                                                 jump faza_fight166
                                             else:
-                                                jump losowanko_fight1665
+                                                jump losowanko_fight165
 
                                 else:
-                                    jump losowanko_fight1665
+                                    jump losowanko_fight165
                             else:
                                 if kostka == 6:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
@@ -20434,7 +20434,7 @@ label fight161:
 
                                                 jump faza_fight166
                                             else:
-                                                jump losowanko_fight1665
+                                                jump losowanko_fight165
 
                                         else:
                                             if tarczownik_hp_now <= 10:
@@ -20474,7 +20474,7 @@ label fight161:
 
                                                     jump faza_fight166
                                                 else:
-                                                    jump losowanko_fight1665
+                                                    jump losowanko_fight165
                                             
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
@@ -20513,12 +20513,12 @@ label fight161:
 
                                                     jump faza_fight166
                                                 else:
-                                                    jump losowanko_fight1665
+                                                    jump losowanko_fight165
 
                                     else:
-                                        jump losowanko_fight1665
+                                        jump losowanko_fight165
                                 else:
-                                    jump losowanko_fight1665
+                                    jump losowanko_fight165
 
 
     label faza_fight166:

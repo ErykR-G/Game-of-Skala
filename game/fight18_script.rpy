@@ -7,7 +7,7 @@ label fight181_stats:
 
     default trup11_hp = 15
     default trup12_hp = 15
-    default fanatyk_hp = 30
+    default fanatyk_hp = 70
 
     default trup11_uszy = 0
     default fanatyk_uszy = 0
@@ -31,7 +31,7 @@ label fight181_stats:
 
     default trup11_min_attack = 1
     default trup12_min_attack = 1
-    default fanatyk_min_attack = 3
+    default fanatyk_min_attack = 4
 
     default trup11_max_attack = 4
     default trup12_max_attack = 4
@@ -81,41 +81,11 @@ label fight181_stats:
     default zyd_haczyki = 0
     default kazuma_haczyki = 0
     default tarczownik_haczyki = 0
-
-    $ luszcz_haczyki = 0
-    hide haczyki11
-    hide haczyki12
-    hide haczyki13
-    $ eminem_haczyki = 0
-    hide haczyki21
-    hide haczyki22
-    hide haczyki23
-    $ urban_haczyki = 0
-    hide haczyki31
-    hide haczyki32
-    hide haczyki33
-    $ zyd_haczyki = 0
-    hide haczyki41
-    hide haczyki42
-    hide haczyki43
-    $ kazuma_haczyki = 0
-    hide haczyki51
-    hide haczyki52
-    hide haczyki53
-    $ tarczownik_haczyki = 0
-    hide haczyki61
-    hide haczyki62
-    hide haczyki63
-    $ fanatyk_special = 3
-    $ fanatyk_haczyki = 0
-    hide fanatyk_haczyk1
-    hide fanatyk_haczyk2
-    hide fanatyk_haczyk3
-
+                
 label fight181:
     $ fight_on = 1
     label wybor_fight181:
-        play music "audio/music/fight.mp3"
+        play music "audio/music/fanatyk_fight.mp3"
         scene bg jezioro_fight
         $ ile_wrogow += 1
         show fanatyk fight zorder 10 at wrog3
@@ -21148,10 +21118,10 @@ label fight181:
         if ile_sojusznikow <= 0:
             jump przegranko_fight181
 
-        if luszcz_haczyki > 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
+        if luszcz_haczyki == 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
             $ ado += 1
         else:
-            play sound "audio/sfx/lego.mp3"
+            play sound "audio/sfx/lego2.mp3"
             if luszcz_haczyki > 0 and eminem_haczyki == 0 and urban_haczyki == 0 and zyd_haczyki == 0 and kazuma_haczyki == 0 and tarczownik_haczyki == 0:
                 if luszcz_haczyki == 1:
                     $ luszcz_hp_now -= 2
