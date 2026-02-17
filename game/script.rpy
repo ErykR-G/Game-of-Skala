@@ -175,6 +175,8 @@ label postacie:
 
     define tata = Character("Tata", color="#474444")
 
+    define yusuke = Character("Yusuke", color="#100e8b")
+
     define cien = Character("Ostry Cień Mgły", color="#686868")
 
     define nu = Character("Nu", color="#8b520b")
@@ -290,6 +292,10 @@ label pozycje:
     label pozycje_wojownikow:
         transform slightleft:
             xalign 0.25
+            yalign 1.0
+        
+        transform slightleft2:
+            xalign 0.15
             yalign 1.0
         
         transform slightright:
@@ -717,6 +723,8 @@ label social_links:
     default kazuma_social_link = 0
     default duda_social_link = 0
     default lilith_social_link = 0
+    default yusuke_social_link = 0
+    default drukarka3d_social_link = 0
 
 
 label start:

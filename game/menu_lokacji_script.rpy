@@ -909,11 +909,36 @@ label menu_lokacji:
                     if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
                         $ domx += 1
                         "{i}Robię się trochę śpiący...{/i}"
+
+                    if (babcia_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                        $ domx += 1
+                        "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
                     
+                    if (kazuma_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                        $ domx += 1
+                        "{i}Pozwoliłem Kazumie ukryć się przed Urzędem Skarbowym w moim domu{/i}"
+                        "{i}Powinienem z nim porozmawiać co robimy dalej...{/i}"
+                    
+                    if (drukarka3d_social_link == 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                        $ domx += 1
+                        "{i}Mam w pokoju drukarkę 3d{/i}"
+                        "{i}Może mógłbym coś nią wydrukować...{/i}"
+                    
+                    if (drukarka3d_social_link == 1 and czasd <= 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                        $ domx += 1
+                        "{i}Drukarka 3d skończyła drukować...{/i}"
+
+                    if ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                        $ ado += 1
                     else:
                         if babcia_social_link == 1:
-                            $ domx += 1
                             "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
+                            "{i}Jednakże jestem na to za śpiący{/i}"
+
+                        if kazuma_social_link == 1:
+                            "{i}Pozwoliłem Kazumie ukryć się przed Urzędem Skarbowym w moim domu{/i}"
+                            "{i}Powinienem z nim porozmawiać co robimy dalej...{/i}"
+                            "{i}Jednakże teraz jestem na to za śpiący{/i}"
 
                     if domx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -934,7 +959,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
 
-                            if babcia_social_link == 1:
+                            if (babcia_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
                                 menu:
                                     "{b}Czy chcę pobrać memy? (30min){/b}"
 
@@ -947,22 +972,82 @@ label menu_lokacji:
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
+                            
+                            if (kazuma_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                menu:
+                                    "{b}Czy chcę spotkać się z Kazumą? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump kazuma2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
+                            
+                            if (drukarka3d_social_link == 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                menu:
+                                    "{b}Czy chcę użyć drukarki 3d? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump drukarka3d1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
+                            
+                            if (drukarka3d_social_link == 1 and czasd <= 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                menu:
+                                    "{b}Czy chcę odebrać wydrukowany miecz? (30min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump drukarka3d2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
 
                         else:
                             if domx > 1:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
-                                    "{b}Idź spać{/b}" if tarczownik_social_link == 1:
+                                    "{b}Idź spać{/b}" if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         jump spanko
                                     
-                                    "{b}Pobierz memy{/b}" if babcia_social_link == 1:
+                                    "{b}Pobierz memy{/b}" if (babcia_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
                                         jump babcia2
+
+                                    "{b}Spotkaj się z Kazumą (15min){/b}" if (kazuma_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump kazuma2
+                                    
+                                    "{b}Użyj drukarki 3d (30min){/b}" if (drukarka3d_social_link == 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump drukarka3d1
+                                    
+                                    "{b}Odbierz wydrukowany miecz (30min){/b}" if (drukarka3d_social_link == 1 and czasd <= 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 30
+                                        jump drukarka3d2
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
@@ -1108,70 +1193,6 @@ label menu_lokacji:
                         if kostka == 3:
                             jump fightx3
                     jump parking
-                
-                "{b}🏠 Dom | 24/7{/b}": 
-                    $ domx = 0        
-                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
-                        $ domx += 1
-                        "{i}Robię się trochę śpiący...{/i}"
-                    
-                    else:
-                        if babcia_social_link == 1:
-                            $ domx += 1
-                            "{i}Mam dla Babci przynieść memy, by uszyła mi z nich szalik...{/i}"
-
-                    if domx == 0:
-                        "{i}Nie ma tu teraz nic do roboty{/i}"
-                        jump wolbromska2
-
-                    else:
-                        if domx == 1:
-                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
-                                menu:
-                                    "{b}Czy chcę iść spać?{/b}"
-
-                                    "{b}Tak{/b}":
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        jump spanko
-
-                                    "{b}Nie{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump wolbromska2
-                            
-                            if babcia_social_link == 1:
-                                menu:
-                                    "{b}Czy chcę pobrać memy? (30min){/b}"
-
-                                    "{b}Tak{/b}":
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 30
-                                        jump babcia2
-
-                                    "{b}Nie{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump wolbromska2
-
-                        else:
-                            if domx > 1:
-                                menu:
-                                    "{b}Co zrobić?{/b}"
-
-                                    "{b}Idź spać{/b}" if tarczownik_social_link == 1:
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        jump spanko
-                                    
-                                    "{b}Pobierz memy{/b}" if babcia_social_link == 1:
-                                        play sound "audio/sfx/traveling.mp3"
-                                        scene bg black with fade
-                                        $ timer += 30
-                                        jump babcia2
-                                    
-                                    "{b}Powrót{/b}":
-                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
-                                        jump wolbromska2
                 
                 "{b}🏡 Dom Toxic Pea | 20–24{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
                     $ toxic_domx = 0        
