@@ -927,8 +927,16 @@ label menu_lokacji:
                     if (drukarka3d_social_link == 1 and czasd <= 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
                         $ domx += 1
                         "{i}Drukarka 3d skończyła drukować...{/i}"
+                    
+                    if (yusuke_social_link >= 1 and yusuke_social_link <= 4 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1170) or (timer >= 1800 and timer <= 2610) or (timer >= 3240 and timer <= 4050) or (timer >= 4680 and timer <= 5490) or (timer >= 6120 and timer <= 6930) or (timer >= 7560 and timer <= 8370) or (timer >= 9000 and timer <= 9810) or (timer >= 10440 and timer <= 11250)):
+                        $ domx += 1
+                        "{i}Yusuke poprosił mnie o pomoc w poszukiwaniu inspiracji do jego obrazu{/i}"
+                    
+                    if (yusuke_social_link == 5 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1140) or (timer >= 1800 and timer <= 2580) or (timer >= 3240 and timer <= 4020) or (timer >= 4680 and timer <= 5460) or (timer >= 6120 and timer <= 6900) or (timer >= 7560 and timer <= 8340) or (timer >= 9000 and timer <= 9785) or (timer >= 10440 and timer <= 11220)):
+                        $ domx += 1
+                        "{i}Yusuke skończył poszukiwania inspiracji do swojego obrazu{/i}"
 
-                    if ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                    if ((timer >= 360 and timer <= 1080) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
                         $ ado += 1
                     else:
                         if babcia_social_link == 1:
@@ -1014,6 +1022,34 @@ label menu_lokacji:
                                     "{b}Nie{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump parking2
+                            
+                            if (yusuke_social_link >= 1 and yusuke_social_link <= 4 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1170) or (timer >= 1800 and timer <= 2610) or (timer >= 3240 and timer <= 4050) or (timer >= 4680 and timer <= 5490) or (timer >= 6120 and timer <= 6930) or (timer >= 7560 and timer <= 8370) or (timer >= 9000 and timer <= 9810) or (timer >= 10440 and timer <= 11250)):
+                                menu:
+                                    "{b}Czy chcę spotkać się z Yusuke? (15min){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump yusuke1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
+                            
+                            if (yusuke_social_link == 5 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1140) or (timer >= 1800 and timer <= 2580) or (timer >= 3240 and timer <= 4020) or (timer >= 4680 and timer <= 5460) or (timer >= 6120 and timer <= 6900) or (timer >= 7560 and timer <= 8340) or (timer >= 9000 and timer <= 9785) or (timer >= 10440 and timer <= 11220)):
+                                menu:
+                                    "{b}Czy chcę spotkać się z Yusuke? (3h){/b}"
+
+                                    "{b}Tak{/b}":
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump yusuke2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
+                                        jump parking2
 
                         else:
                             if domx > 1:
@@ -1048,6 +1084,17 @@ label menu_lokacji:
                                         scene bg black with fade
                                         $ timer += 30
                                         jump drukarka3d2
+                                    
+                                    "{b}Spotkaj się z Yusukę (15min){/b}" if (yusuke_social_link >= 1 and yusuke_social_link <= 4 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1170) or (timer >= 1800 and timer <= 2610) or (timer >= 3240 and timer <= 4050) or (timer >= 4680 and timer <= 5490) or (timer >= 6120 and timer <= 6930) or (timer >= 7560 and timer <= 8370) or (timer >= 9000 and timer <= 9810) or (timer >= 10440 and timer <= 11250)):
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 15
+                                        jump yusuke1
+                                    
+                                    "{b}Spotkaj się z Yusukę (3h){/b}" if (yusuke_social_link == 5 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1140) or (timer >= 1800 and timer <= 2580) or (timer >= 3240 and timer <= 4020) or (timer >= 4680 and timer <= 5460) or (timer >= 6120 and timer <= 6900) or (timer >= 7560 and timer <= 8340) or (timer >= 9000 and timer <= 9785) or (timer >= 10440 and timer <= 11220)):
+                                        scene bg black with fade
+                                        $ timer += 180
+                                        jump yusuke2
                                     
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
