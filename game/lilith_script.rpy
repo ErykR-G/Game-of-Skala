@@ -121,10 +121,36 @@ label lilith:
         label after_yapping:
             luszcz "..."
 
-            if drukowanko == 1:
-                scene bg pokoj2 with fade
+            if yusuke_social_link >= 1 and yusuke_social_link <= 5:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if drukowanko == 1:
+                        scene bg pokoj8 with fade
+                    else:
+                        scene bg pokoj7 with fade
+                 
+
+                else:
+                    if drukowanko == 1:
+                        scene bg pokoj4 with fade
+                    else:
+                        scene bg pokoj3 with fade
+                    
+
             else:
-                scene bg pokoj with fade
+                if yusuke_social_link >= 6:
+                    if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                        if drukowanko == 1:
+                            scene bg pokoj6 with fade
+                        else:
+                            scene bg pokoj5 with fade
+                        
+                        
+                    else:
+                        if drukowanko == 1:
+                            scene bg pokoj2 with fade
+                        else:
+                            scene bg pokoj with fade
+
 
             show luszcz neutral right at slightright
             show lilith neutral1 at left

@@ -176,6 +176,7 @@ label postacie:
     define tata = Character("Tata", color="#474444")
 
     define yusuke = Character("Yusuke", color="#100e8b")
+    image yusuke neutral right = Transform("yusuke neutral", xzoom=-1) 
 
     define cien = Character("Ostry Cień Mgły", color="#686868")
 

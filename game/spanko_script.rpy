@@ -3,14 +3,223 @@ default tasma_spotkanko = 0
 default czasd = 0
 
 label spanko:
-    if drukowanko == 1:
-        scene bg pokoj2 with fade
-        play music "audio/music/drukowanie.mp3"
-    else:
-        scene bg pokoj with fade
-        play music "audio/music/pokoj.mp3"
+    if yusuke_social_link == 0:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if drukowanko == 1:
+                play music "audio/music/drukowanie.mp3"
+                scene bg pokoj8 with fade
+            else:
+                play music "audio/music/pokoj.mp3"
+                scene bg pokoj7 with fade
+        else:
+            if drukowanko == 1:
+                play music "audio/music/drukowanie.mp3"
+                scene bg pokoj4 with fade
+            else:
+                play music "audio/music/pokoj.mp3"
+                scene bg pokoj3 with fade
+        
+        show luszcz neutral at center
 
-    show luszcz neutral at center 
+        luszcz "Wait wtf kim jest ten ziomek??"
+
+        yusuke "zzz…"
+
+        "{i}łuszczu dotyka go za suty*{/i}"
+
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if drukowanko == 1:
+                scene bg pokoj12
+            else:
+                scene bg pokoj11
+        else:
+            if drukowanko == 1:
+                scene bg pokoj10
+            else:
+                scene bg pokoj9
+
+        show luszcz neutral at left
+        show yusuke neutral right at center
+
+        yusuke "aaa!!! Prosze nie obiecałeś że już nie..!"
+
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            kazuma "Ej nie wydzieraj sie tak próbuję tu spać!"
+
+        yusuke "Oh. Um, proszę wybaczyć."
+
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            kazuma "honk mimimimi"
+
+        yusuke "Panie Łuszcz, niech pan pozwoli że się przedstawię."
+
+        yusuke "Mam na imię Yusuke."
+        yusuke "Jako iż zostałem pozbawiony domu, twoi rodzice zgodzili się przyjąć mnie do końca tygodnia abym mógł rozejrzeć się nad stałym dachem nad głową oraz pracą."
+        yusuke "Jednak jako iż nie mają czasu, powierzyli opiekę nade mną tobie."
+        yusuke "Możesz zrobić ze mną co zechcesz, mistrzu."
+
+        luszcz "Em… okej? Yusuke."
+        luszcz "Czyli zwaliłeś mi się do mojego pokoju?"
+
+        yusuke "Nie będę sprawiał problemów. Zależy mi tylko na ciszy i miejscu na sztalugę."
+
+        luszcz "O, malujesz obrazy?"
+
+        yusuke "Tak, moim planem jest namalować coś na Wielką Wystawę Zwycięstwa w Krakowie. Jeśli mój obraz zostanie zaakceptowany, będę w stanie utrzymać się samemu, w takim razie opuścić twój pokój."
+        yusuke "Czasu jest jednak niewiele. Muszę spędzić każdą możliwą chwilę na dopieszczaniu malunku."
+        yusuke "Wybacz za moją bezpośredniość, zarówno jak i moje wymagania. Obiecuję że jak tylko mi się uda, odpłacę ci odpowiednią sumę."
+        yusuke "Czy mógłbyś pomóc mi znaleźć inspirację do moich obrazów?"
+
+        menu:
+            "{b}Nic ci nie pomogę, wynocha z pokojó{/b}":
+                $ yusuke_social_link = 10
+                luszcz "Hola hola nie bądź taki do przodu bo cię z tyłu zabraknie"
+                luszcz "Jestem bardzo zajętym człowiekiem i żaden niebieskowłosy obiekt nie będzie mi się wpieprzał teraz do pokoju"
+
+                yusuke "Ale mistrzu-"
+
+                luszcz "Polecam zacząć rysować furry porno."
+                luszcz "Dowidzenia."
+                luszcz "Panu."
+
+                yusuke "Ah, więc to tak…"
+                yusuke "W takim razie się stąd usuwam."
+                yusuke "Dowidzenia."
+                yusuke "Panu."
+                
+                hide yusuke
+                show luszcz neutral at center
+
+                luszcz "Co to miało niby być?"
+
+                show luszcz neutral at left
+                show tata neutral at center
+
+                tata "No sory synu chcieliśmy sprawdzić jak byś sobie poradził ze zwierzątkiem domowym."
+                tata "Planowaliśmy ci kupić kota na dzień dziecka"
+
+                luszcz "Tato ale nie jestem już dzieckiem!!!"
+                luszcz "Zresztą mówiłem wam że ja chcę Allozaura!!"
+
+                tata "Allozaur by cię zjadł synu"
+                
+                show luszcz blush
+
+                luszcz "Nieee… racja… nie chciałbym tego…."
+
+                tata "Tak my z mamą też byśmy tego nie chcieli"
+                tata "Dobra wracam do łóżeczka dobranoc."
+
+                luszcz "Dobranoc tato."
+
+                hide tata 
+                show luszcz neutral at center
+            
+            "{b}Jak mogę pomóc?{/b}":
+                $ yusuke_social_link = 1
+                luszcz "Jaką pomoc masz na myśli?"
+                luszcz "Nie rzebym się przechwalał, ale mam w sobie trochę artysty"
+                luszcz "Btw najlepsza rzecz jaką narysowałem"
+                luszcz "To to:"
+
+                show obraz1 zorder 50 at center
+                ""
+                hide obraz1
+
+                yusuke "Ah… cóż za piękne dzieło."
+                yusuke "W ramach pomocy, chciałbym żebyś zabierał mnie do ciekawych miejsc w okolicy."
+                yusuke "Będąc pod opiekądo mojego poprzedniego mistrza miałem zakaz opuszczania domu."
+                yusuke "Swoją drogą to przez to że ktoś wyjawił jego nielegalne praktyki jestem teraz bezdomny i bezrobotny."
+
+                luszcz "To bardzo niemiłe ze strony tej osoby"
+                luszcz "Jebać ją jebać kapusi"
+
+                yusuke "Widzę że się tu zgadzamy."
+
+                luszcz "Czyli co, mam cię zabierać do rurznych miejsc, a potem ty będziesz sobie malował, a potem się wyprowadzisz?"
+                
+                yusuke "Jeśli byłbyś taki dobry, i wszystko wyszło zgodnie z planem, to tak."
+
+                luszcz "Dobrze, ale chciałbym ci postawić jeden warónek na to wszystko:"
+                luszcz "Czy postawisz się przeciw księdzó w sprawie przyłączenia Skały do Krakowa?"
+
+                yusuke "Ah, słyszałem coś o tym. Ogłaszano to podczas mszy, gdy przechodziłem obok żeby napić się wody święconej."
+                yusuke "Oczywiście że stanę po twojej stronie, mistrzu."
+
+                luszcz "No i sigmastycznie."
+
+                yusuke "W takim razie, chciałbyś mnie gdzieś teraz zabrać?"
+
+                luszcz "Nie"
+                luszcz "Wrócę do ciebie jak będę miał czas."
+
+                yusuke "Dobrze mistrzu."
+
+                luszcz "Jest puźna:00"
+                luszcz "Trzeba spać"
+
+                yusuke "Ah, tak, rzeczywiście."
+                yusuke "Dobranoc, mistrzu"
+
+                luszcz "Dobranoc"
+
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if drukowanko == 1:
+                        scene bg pokoj8
+                    else:
+                        scene bg pokoj7
+                else:
+                    if drukowanko == 1:
+                        scene bg pokoj4
+                    else:
+                        scene bg pokoj3
+
+                hide yusuke 
+                show luszcz neutral at center
+
+    else:
+        if yusuke_social_link >= 1 and yusuke_social_link <= 5:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if drukowanko == 1:
+                    play music "audio/music/drukowanie.mp3"
+                    scene bg pokoj8 with fade
+                else:
+                    play music "audio/music/pokoj.mp3"
+                    scene bg pokoj7 with fade
+                
+                show luszcz neutral at center
+
+            else:
+                if drukowanko == 1:
+                    play music "audio/music/drukowanie.mp3"
+                    scene bg pokoj4 with fade
+                else:
+                    play music "audio/music/pokoj.mp3"
+                    scene bg pokoj3 with fade
+                
+                show luszcz neutral at center
+
+        else:
+            if yusuke_social_link >= 6:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if drukowanko == 1:
+                        play music "audio/music/drukowanie.mp3"
+                        scene bg pokoj6 with fade
+                    else:
+                        play music "audio/music/pokoj.mp3"
+                        scene bg pokoj5 with fade
+                    
+                    show luszcz neutral at center
+                    
+                else:
+                    if drukowanko == 1:
+                        play music "audio/music/drukowanie.mp3"
+                        scene bg pokoj2 with fade
+                    else:
+                        play music "audio/music/pokoj.mp3"
+                        scene bg pokoj with fade
+
+                    show luszcz neutral at center 
 
     luszcz "ohhh jestem wyczerpany"
     luszcz "idę spać"
@@ -37,12 +246,40 @@ label spanko:
                 "{i}Niestety, po obudzeniu stracił wszystkie, które kochał{/i}"
 
     label spanko_bed:
-        if drukowanko == 1:
-            scene bg pokoj2 with fade
-            play music "audio/music/drukowanie.mp3"
+        if yusuke_social_link >= 1 and yusuke_social_link <= 5:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if drukowanko == 1:
+                    play music "audio/music/drukowanie.mp3"
+                    scene bg pokoj8 with fade
+                else:
+                    play music "audio/music/pokoj.mp3"
+                    scene bg pokoj7 with fade
+
+            else:
+                if drukowanko == 1:
+                    play music "audio/music/drukowanie.mp3"
+                    scene bg pokoj4 with fade
+                else:
+                    play music "audio/music/pokoj.mp3"
+                    scene bg pokoj3 with fade
+
         else:
-            scene bg pokoj with fade
-            play music "audio/music/pokoj.mp3"
+            if yusuke_social_link >= 6:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if drukowanko == 1:
+                        play music "audio/music/drukowanie.mp3"
+                        scene bg pokoj6 with fade
+                    else:
+                        play music "audio/music/pokoj.mp3"
+                        scene bg pokoj5 with fade
+                    
+                else:
+                    if drukowanko == 1:
+                        play music "audio/music/drukowanie.mp3"
+                        scene bg pokoj2 with fade
+                    else:
+                        play music "audio/music/pokoj.mp3"
+                        scene bg pokoj with fade
 
         if timer > 1200 and timer < 1800:
             $ timer = 1980
