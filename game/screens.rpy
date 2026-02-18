@@ -263,6 +263,14 @@ screen quick_menu():
             textbutton _("Zapis") action ShowMenu('save')
             textbutton _("Opcje") action ShowMenu('preferences')
 
+screen full_click_screen(img):
+    modal True
+    add img
+
+    button:
+        xysize (config.screen_width, config.screen_height)
+        background None
+        action Return()
 
 ## Ten kod zapewnia, że ekran quick_menu jest wyświetlany w grze, gdy gracz nie
 ## ukrył jawnie interfejsu.

@@ -243,6 +243,27 @@ label postacie:
 
     define chlopiec = Character("Chłopiec", color="#f72f2f")
 
+    define tvp = Character("TVP", color="#ffffff")
+
+    define tvn = Character("TVN", color="#1815d8")
+
+    define republika = Character("Republika", color="#f72f2f")
+
+    define polsat = Character("Polsat", color="#e9d41d")
+
+    define blobber = Character("Blobber", color="#502816")
+
+    define gkp = Character("Głupi Królik Pies", color="#e4d97a")
+     
+    define glos = Character("Głos", color="#497516")
+
+    define pingwin = Character("Pingwin z aparatem", color="#a2a79d")
+
+    define vergil = Character("Vergil", color="#430e80")
+
+    define bartuch = Character("Bartuch Przeździuch", color="#693e1b")
+
+
 
 label pozycje:
     transform haczyki:
@@ -711,6 +732,7 @@ label wybory:
     default gotka_wybory = 0
     default kazuma_wybory = 0
     default duda_wybory = 0
+    default yusuke_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
