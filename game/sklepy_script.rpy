@@ -145,7 +145,7 @@ label sklepy:
             "{b}Czy na pewno chcę kebaba?{/b}"
 
             "{b}Tak (1 💰){/b}" if money >= 2:
-                $ ykebab += 1
+                $ ykebab = 1
                 play sound "audio/sfx/kupno.mp3"
                 $ config.menu_include_disabled = False
                 $ money -= 1

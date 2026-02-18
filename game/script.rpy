@@ -90,6 +90,8 @@ label postacie:
 
     define papaj = Character("Jan Paweł II", color="#fff345")
 
+    define duchs = Character("Duch Święty", color="#fffbc0")
+
     define tanya = Character("Tanya", color="#215f36")
     image tanya neutral right = Transform("tanya neutral", xzoom=-1) 
 
@@ -236,6 +238,10 @@ label postacie:
     define policja2 = Character("Urzędniczka Skarbowa 2", color="#1325ca")
 
     define dzieci = Character("Dzieci", color="#8baf29")
+
+    define dziecko = Character("Dziecko", color="#f18b38")
+
+    define chlopiec = Character("Chłopiec", color="#f72f2f")
 
 
 label pozycje:

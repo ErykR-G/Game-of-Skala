@@ -250,6 +250,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ ykosciol = 1
                                         jump kosc1
 
                                     "{b}Nie{/b}":
@@ -264,6 +265,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
+                                        $ ykosciol = 1
                                         jump kosc3
 
                                     "{b}Nie{/b}":
@@ -279,12 +281,14 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ ykosciol = 1
                                         jump kosc1
                                     
                                     "{b}Weź udział w koncercie Zenka Martyniuka (1h){/b}" if timer >= 6660 and timer <= 6960:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
+                                        $ ykosciol = 1
                                         jump kosc3
                                     
                                     "{b}Powrót{/b}":
@@ -405,6 +409,7 @@ label menu_lokacji:
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
+                                        $ yplac = 1
                                         $ timer += 15
                                         jump allozaur1
 
@@ -420,6 +425,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
+                                        $ yplac = 1
                                         jump allozaur1
 
                                     "{b}Nie{/b}":
@@ -441,12 +447,14 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
+                                        $ yplac = 1
                                         jump allozaur1
                                     
                                     "{b}Spotkaj się z Allozaurem (15min){/b}" if allozaur_social_link == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
+                                        $ yplac = 1
                                         jump allozaur1
                                     
                                     "{b}Powrót{/b}":
@@ -931,6 +939,10 @@ label menu_lokacji:
                     if (yusuke_social_link >= 1 and yusuke_social_link <= 4 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1170) or (timer >= 1800 and timer <= 2610) or (timer >= 3240 and timer <= 4050) or (timer >= 4680 and timer <= 5490) or (timer >= 6120 and timer <= 6930) or (timer >= 7560 and timer <= 8370) or (timer >= 9000 and timer <= 9810) or (timer >= 10440 and timer <= 11250)):
                         $ domx += 1
                         "{i}Yusuke poprosił mnie o pomoc w poszukiwaniu inspiracji do jego obrazu{/i}"
+                    
+                    if (yusuke_social_link >= 1 and yusuke_social_link <= 5 and yusuke_timer >= timer) and ((timer >= 360 and timer <= 1170) or (timer >= 1800 and timer <= 2610) or (timer >= 3240 and timer <= 4050) or (timer >= 4680 and timer <= 5490) or (timer >= 6120 and timer <= 6930) or (timer >= 7560 and timer <= 8370) or (timer >= 9000 and timer <= 9810) or (timer >= 10440 and timer <= 11250)):
+                        "{i}Yusuke poprosił mnie o pomoc w poszukiwaniu inspiracji do jego obrazu{/i}"
+                        "{i}Jednak teraz jest chyba za bardzo zajęty po naszym ostatnim wyjściu...{/i}"
                     
                     if (yusuke_social_link == 5 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1140) or (timer >= 1800 and timer <= 2580) or (timer >= 3240 and timer <= 4020) or (timer >= 4680 and timer <= 5460) or (timer >= 6120 and timer <= 6900) or (timer >= 7560 and timer <= 8340) or (timer >= 9000 and timer <= 9785) or (timer >= 10440 and timer <= 11220)):
                         $ domx += 1
@@ -1467,6 +1479,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ yskalka = 1
                                         jump skalka1
 
                                     "{b}Nie{/b}":
@@ -1481,6 +1494,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ yskalka = 1
                                         jump skalka2
 
                                     "{b}Nie{/b}":
@@ -1496,12 +1510,14 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ yskalka = 1
                                         jump skalka1
                                     
                                     "{b}Pomedytuj z wazonem z wężami (30min){/b}" if wazon_wezy == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ yskalka = 1
                                         jump skalka2
                                     
                                     "{b}Powrót{/b}":
@@ -1839,6 +1855,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ ykosciol = 1
                                         jump kosc1
 
                                     "{b}Nie{/b}":
@@ -1853,6 +1870,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
+                                        $ ykosciol = 1
                                         jump kosc3
 
                                     "{b}Nie{/b}":
@@ -1868,12 +1886,14 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ ykosciol = 1
                                         jump kosc1
                                     
                                     "{b}Weź udział w koncercie Zenka Martyniuka (1h){/b}" if timer >= 6660 and timer <= 6960:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
+                                        $ ykosciol = 1
                                         jump kosc3
                                     
                                     "{b}Powrót{/b}":
@@ -2024,6 +2044,7 @@ label menu_lokacji:
                                     "{b}Tak{/b}":
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
+                                        $ ycmentarz = 1
                                         $ timer += 240
                                         jump zyd4
 
@@ -2039,6 +2060,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
+                                        $ ycmentarz = 1
                                         jump zyd3
 
                                     "{b}Nie{/b}":
@@ -2054,6 +2076,7 @@ label menu_lokacji:
                                             play sound "audio/sfx/traveling.mp3"
                                             scene bg black with fade
                                             $ timer += 30
+                                            $ ycmentarz = 1
                                             jump harambe1
 
                                         "{b}Nie{/b}":
@@ -2069,6 +2092,7 @@ label menu_lokacji:
                                             play sound "audio/sfx/traveling.mp3"
                                             scene bg black with fade
                                             $ timer += 30
+                                            $ ycmentarz = 1
                                             jump kosc4
 
                                         "{b}Nie{/b}":
@@ -2084,6 +2108,7 @@ label menu_lokacji:
                                             play sound "audio/sfx/traveling.mp3"
                                             scene bg black with fade
                                             $ timer += 60
+                                            $ ycmentarz = 1
                                             jump kosc5
 
                                         "{b}Nie{/b}":
@@ -2098,30 +2123,35 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 240
+                                        $ ycmentarz = 1
                                         jump zyd4
 
                                     "{b}Spotkaj się z Żydem (15min){/b}" if (zyd_social_link == 2) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
+                                        $ ycmentarz = 1
                                         jump zyd3
 
                                     "{b}Idź na spacer (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 0 or timer > 2640 and timer < 3240 and harambe_social_link == 0 or timer > 4080 and timer < 4680 and harambe_social_link == 0 or timer > 5520 and timer < 6120 and harambe_social_link == 0 or timer > 6960 and timer < 7560 and harambe_social_link == 0 or timer > 8400 and timer < 9000 and harambe_social_link == 0 or timer > 9840 and timer < 10440 and harambe_social_link == 0:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ ycmentarz = 1
                                         jump harambe1
                                     
                                     "{b}Poproś o pomoc Harambe (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 2640 and timer < 3240 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 4080 and timer < 4680 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 5520 and timer < 6120 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 6960 and timer < 7560 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 8400 and timer < 9000 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 9840 and timer < 10440 and harambe_social_link == 1 and kosc_social_link == 3:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ ycmentarz = 1
                                         jump kosc4
                                     
                                     "{b}Wskrześ Kościelnego (1h){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
+                                        $ ycmentarz = 1
                                         jump kosc5
                                     
                                     "{b}Powrót{/b}":
@@ -2212,6 +2242,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
+                                        $ yszkola = 1 
                                         jump kosc2
 
                                     "{b}Nie{/b}":
@@ -2226,6 +2257,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ yszkola = 1
                                         jump kibole2
 
                                     "{b}Nie{/b}":
@@ -2240,6 +2272,7 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
+                                        $ yszkola = 1
                                         jump mleczarz6
 
                                     "{b}Nie{/b}":
@@ -2255,18 +2288,21 @@ label menu_lokacji:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
+                                        $ yszkola = 1
                                         jump kosc2
                                     
                                     "{b}Spotkaj się z Piotrkiem i Krystianem (30min){/b}" if kibole_social_link == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
+                                        $ yszkola = 1
                                         jump kibole2
                                     
                                     "{b}Dostarcz Krówkę (15min){/b}" if mleczarz_social_link == 5 and krowka == 1:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
+                                        $ yszkola = 1
                                         jump mleczarz6
                                     
                                     "{b}Powrót{/b}":
