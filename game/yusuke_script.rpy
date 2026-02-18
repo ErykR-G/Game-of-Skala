@@ -774,5 +774,5 @@ label yusuke:
                 jump parking
 
             
-#            "{b}🌀 Portal (15min{/b}":
+#            "{b}🌀 Portal (15min){/b}":
 

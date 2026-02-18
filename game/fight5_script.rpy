@@ -4067,13 +4067,17 @@ label fight51:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if ram_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if ram_obrona <= 0 and kostka > 1:
                         $ ram_uszy += 1
                     
-                    if trup8_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup8_obrona <= 0 and kostka > 1:
                         $ trup8_uszy += 1
                     
-                    if rem_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if rem_obrona <= 0 and kostka > 1:
                         $ rem_uszy += 1
 
                     if ram_uszy == 1 and trup8_uszy == 1 and rem_uszy == 1 and ram_hp_now >= 1 and trup8_hp_now >= 1 and rem_hp_now >= 1:
@@ -10329,13 +10333,18 @@ label fight51:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if ram_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if ram_obrona <= 0 and kostka > 1:
                         $ ram_uszy += 1
+
+                    $ kostka = renpy.random.randint(1, 10)
                     
-                    if trup8_obrona <= 0:
+                    if trup8_obrona <= 0 and kostka > 1:
                         $ trup8_uszy += 1
                     
-                    if rem_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if rem_obrona <= 0 and kostka > 1:
                         $ rem_uszy += 1
 
                     if ram_uszy == 1 and trup8_uszy == 1 and rem_uszy == 1 and ram_hp_now >= 1 and trup8_hp_now >= 1 and rem_hp_now >= 1:
@@ -14417,13 +14426,19 @@ label fight51:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if ram_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if ram_obrona <= 0 and kostka > 1:
                         $ ram_uszy += 1
                     
-                    if trup8_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if trup8_obrona <= 0 and kostka > 1:
                         $ trup8_uszy += 1
                     
-                    if rem_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if rem_obrona <= 0 and kostka > 1:
                         $ rem_uszy += 1
 
                     if ram_uszy == 1 and trup8_uszy == 1 and rem_uszy == 1 and ram_hp_now >= 1 and trup8_hp_now >= 1 and rem_hp_now >= 1:

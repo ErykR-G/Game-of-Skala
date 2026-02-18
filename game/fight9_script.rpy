@@ -4064,13 +4064,17 @@ label fight91:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if trup9_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if trup9_obrona <= 0 and kostka > 1:
                         $ trup9_uszy += 1
                     
-                    if czarodziej_obrona <= 0 and czarodziej_special > 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if czarodziej_obrona <= 0 and czarodziej_special > 0 and kostka > 1:
                         $ czarodziej_uszy += 1
                     
-                    if trup10_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup10_obrona <= 0 and kostka > 1:
                         $ trup10_uszy += 1
 
                     if trup9_uszy == 1 and czarodziej_uszy == 1 and trup10_uszy == 1 and trup9_hp_now >= 1 and czarodziej_hp_now >= 1 and trup10_hp_now >= 1:
@@ -10326,13 +10330,19 @@ label fight91:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if trup9_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if trup9_obrona <= 0 and kostka > 1:
                         $ trup9_uszy += 1
+
+                    $ kostka = renpy.random.randint(1, 10)
                     
-                    if czarodziej_obrona <= 0 and czarodziej_special > 0: 
+                    if czarodziej_obrona <= 0 and czarodziej_special > 0 and kostka > 1: 
                         $ czarodziej_uszy += 1
                     
-                    if trup10_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if trup10_obrona <= 0 and kostka > 1:
                         $ trup10_uszy += 1
 
                     if trup9_uszy == 1 and czarodziej_uszy == 1 and trup10_uszy == 1 and trup9_hp_now >= 1 and czarodziej_hp_now >= 1 and trup10_hp_now >= 1:
@@ -14414,13 +14424,17 @@ label fight91:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if trup9_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if trup9_obrona <= 0 and kostka > 1:
                         $ trup9_uszy += 1
                     
-                    if czarodziej_obrona <= 0 and czarodziej_special > 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if czarodziej_obrona <= 0 and czarodziej_special > 0 and kostka > 1:
                         $ czarodziej_uszy += 1
                     
-                    if trup10_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup10_obrona <= 0 and kostka > 1:
                         $ trup10_uszy += 1
 
                     if trup9_uszy == 1 and czarodziej_uszy == 1 and trup10_uszy == 1 and trup9_hp_now >= 1 and czarodziej_hp_now >= 1 and trup10_hp_now >= 1:

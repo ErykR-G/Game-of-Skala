@@ -4076,13 +4076,19 @@ label fight61:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if gnom1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if gnom1_obrona <= 0 and kostka > 1:
                         $ gnom1_uszy += 1
+
+                    $ kostka = renpy.random.randint(1, 10)
                     
-                    if gnom2_obrona <= 0:
+                    if gnom2_obrona <= 0 and kostka > 1:
                         $ gnom2_uszy += 1
                     
-                    if gnom3_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if gnom3_obrona <= 0 and kostka > 1:
                         $ gnom3_uszy += 1
 
                     if gnom1_uszy == 1 and gnom2_uszy == 1 and gnom3_uszy == 1 and gnom1_hp_now >= 1 and gnom2_hp_now >= 1 and gnom3_hp_now >= 1:
@@ -10338,13 +10344,19 @@ label fight61:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if gnom1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if gnom1_obrona <= 0 and kostka > 1:
                         $ gnom1_uszy += 1
                     
-                    if gnom2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if gnom2_obrona <= 0 and kostka > 1:
                         $ gnom2_uszy += 1
                     
-                    if gnom3_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if gnom3_obrona <= 0 and kostka > 1:
                         $ gnom3_uszy += 1
 
                     if gnom1_uszy == 1 and gnom2_uszy == 1 and gnom3_uszy == 1 and gnom1_hp_now >= 1 and gnom2_hp_now >= 1 and gnom3_hp_now >= 1:
@@ -14426,13 +14438,19 @@ label fight61:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if gnom1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if gnom1_obrona <= 0 and kostka > 1:
                         $ gnom1_uszy += 1
+
+                    $ kostka = renpy.random.randint(1, 10)
                     
-                    if gnom2_obrona <= 0:
+                    if gnom2_obrona <= 0 and kostka > 1:
                         $ gnom2_uszy += 1
                     
-                    if gnom3_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if gnom3_obrona <= 0 and kostka > 1:
                         $ gnom3_uszy += 1
 
                     if gnom1_uszy == 1 and gnom2_uszy == 1 and gnom3_uszy == 1 and gnom1_hp_now >= 1 and gnom2_hp_now >= 1 and gnom3_hp_now >= 1:

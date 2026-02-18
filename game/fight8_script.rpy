@@ -4224,13 +4224,17 @@ label fight81:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if obama_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if obama_obrona <= 0 and kostka > 1:
                         $ obama_uszy += 1
-                    
-                    if kononowicz_obrona <= 0:
+
+                    $ kostka = renpy.random.randint(1, 10)   
+                    if kononowicz_obrona <= 0 and kostka > 1:
                         $ kononowicz_uszy += 1
                     
-                    if prymon_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if prymon_obrona <= 0 and kostka > 1:
                         $ prymon_uszy += 1
 
                     if obama_uszy == 1 and kononowicz_uszy == 1 and prymon_uszy == 1 and obama_hp_now >= 1 and kononowicz_hp_now >= 1 and prymon_hp_now >= 1:
@@ -10486,13 +10490,19 @@ label fight81:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if obama_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if obama_obrona <= 0 and kostka > 1:
                         $ obama_uszy += 1
                     
-                    if kononowicz_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if kononowicz_obrona <= 0 and kostka > 1:
                         $ kononowicz_uszy += 1
                     
-                    if prymon_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if prymon_obrona <= 0 and kostka > 1:
                         $ prymon_uszy += 1
 
                     if obama_uszy == 1 and kononowicz_uszy == 1 and prymon_uszy == 1 and obama_hp_now >= 1 and kononowicz_hp_now >= 1 and prymon_hp_now >= 1:
@@ -14574,13 +14584,19 @@ label fight81:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if obama_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if obama_obrona <= 0 and kostka > 1:
                         $ obama_uszy += 1
                     
-                    if kononowicz_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if kononowicz_obrona <= 0 and kostka > 1:
                         $ kononowicz_uszy += 1
                     
-                    if prymon_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if prymon_obrona <= 0 and kostka > 1:
                         $ prymon_uszy += 1
 
                     if obama_uszy == 1 and kononowicz_uszy == 1 and prymon_uszy == 1 and obama_hp_now >= 1 and kononowicz_hp_now >= 1 and prymon_hp_now >= 1:

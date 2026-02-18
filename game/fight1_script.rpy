@@ -4073,13 +4073,16 @@ label fight11:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kibol1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kibol1_obrona <= 0 and kostka > 1:
                         $ kibol1_uszy += 1
                     
-                    if akane_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if akane_obrona <= 0 and kostka > 1:
                         $ akane_uszy += 1
                     
-                    if kibol2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kibol2_obrona <= 0 and kostka > 1:
                         $ kibol2_uszy += 1
 
                     if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -10335,13 +10338,16 @@ label fight11:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kibol1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kibol1_obrona <= 0 and kostka > 1:
                         $ kibol1_uszy += 1
                     
-                    if akane_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if akane_obrona <= 0 and kostka > 1:
                         $ akane_uszy += 1
                     
-                    if kibol2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kibol2_obrona <= 0 and kostka > 1:
                         $ kibol2_uszy += 1
 
                     if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:
@@ -14423,13 +14429,16 @@ label fight11:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kibol1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kibol1_obrona <= 0 and kostka > 1:
                         $ kibol1_uszy += 1
                     
-                    if akane_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if akane_obrona <= 0 and kostka > 1:
                         $ akane_uszy += 1
                     
-                    if kibol2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kibol2_obrona <= 0 and kostka > 1:
                         $ kibol2_uszy += 1
 
                     if kibol1_uszy == 1 and akane_uszy == 1 and kibol2_uszy == 1 and kibol1_hp_now >= 1 and akane_hp_now >= 1 and kibol2_hp_now >= 1:

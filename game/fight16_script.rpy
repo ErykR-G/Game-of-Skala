@@ -4071,13 +4071,16 @@ label fight161:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if policja1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if policja1_obrona <= 0 and kostka > 1:
                         $ policja1_uszy += 1
                     
-                    if trup17_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup17_obrona <= 0 and kostka > 1:
                         $ trup17_uszy += 1
                     
-                    if policja2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if policja2_obrona <= 0 and kostka > 1:
                         $ policja2_uszy += 1
 
                     if policja1_uszy == 1 and trup17_uszy == 1 and policja2_uszy == 1 and policja1_hp_now >= 1 and trup17_hp_now >= 1 and policja2_hp_now >= 1:
@@ -10334,13 +10337,16 @@ label fight161:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if policja1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if policja1_obrona <= 0 and kostka > 1:
                         $ policja1_uszy += 1
                     
-                    if trup17_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup17_obrona <= 0 and kostka > 1:
                         $ trup17_uszy += 1
                     
-                    if policja2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if policja2_obrona <= 0 and kostka > 1:
                         $ policja2_uszy += 1
 
                     if policja1_uszy == 1 and trup17_uszy == 1 and policja2_uszy == 1 and policja1_hp_now >= 1 and trup17_hp_now >= 1 and policja2_hp_now >= 1:
@@ -14424,13 +14430,16 @@ label fight161:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if policja1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if policja1_obrona <= 0 and kostka > 1:
                         $ policja1_uszy += 1
                     
-                    if trup17_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup17_obrona <= 0 and kostka > 1:
                         $ trup17_uszy += 1
                     
-                    if policja2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if policja2_obrona <= 0 and kostka > 1:
                         $ policja2_uszy += 1
 
                     if policja1_uszy == 1 and trup17_uszy == 1 and policja2_uszy == 1 and policja1_hp_now >= 1 and trup17_hp_now >= 1 and policja2_hp_now >= 1:

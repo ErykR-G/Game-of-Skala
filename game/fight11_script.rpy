@@ -4078,13 +4078,17 @@ label fight111:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if girek_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if girek_obrona <= 0 and kostka > 1:
                         $ girek_uszy += 1
                     
-                    if urban_zly_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if urban_zly_obrona <= 0 and kostka > 1:
                         $ urban_zly_uszy += 1
                     
-                    if jaruzel_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if jaruzel_obrona <= 0 and kostka > 1:
                         $ jaruzel_uszy += 1
 
                     if girek_uszy == 1 and urban_zly_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
@@ -10340,13 +10344,16 @@ label fight111:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if girek_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if girek_obrona <= 0 and kostka > 1:
                         $ girek_uszy += 1
                     
-                    if urban_zly_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if urban_zly_obrona <= 0 and kostka > 1:
                         $ urban_zly_uszy += 1
                     
-                    if jaruzel_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if jaruzel_obrona <= 0 and kostka > 1:
                         $ jaruzel_uszy += 1
 
                     if girek_uszy == 1 and urban_zly_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:
@@ -14428,13 +14435,16 @@ label fight111:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if girek_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if girek_obrona <= 0 and kostka > 1:
                         $ girek_uszy += 1
                     
-                    if urban_zly_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if urban_zly_obrona <= 0 and kostka > 1:
                         $ urban_zly_uszy += 1
                     
-                    if jaruzel_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if jaruzel_obrona <= 0 and kostka > 1:
                         $ jaruzel_uszy += 1
 
                     if girek_uszy == 1 and urban_zly_uszy == 1 and jaruzel_uszy == 1 and girek_hp_now >= 1 and urban_zly_hp_now >= 1 and jaruzel_hp_now >= 1:

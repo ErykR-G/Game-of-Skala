@@ -4052,13 +4052,17 @@ label fight21:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if trup3_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if trup3_obrona <= 0 and kostka > 1:
                         $ trup3_uszy += 1
-                    
-                    if braun_obrona <= 0:
+
+                    $ kostka = renpy.random.randint(1, 10)
+                    if braun_obrona <= 0 and kostka > 1:
                         $ braun_uszy += 1
                     
-                    if trup4_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup4_obrona <= 0 and kostka > 1:
                         $ trup4_uszy += 1
 
                     if trup3_uszy == 1 and braun_uszy == 1 and trup4_uszy == 1 and trup3_hp_now >= 1 and braun_hp_now >= 1 and trup4_hp_now >= 1:
@@ -10254,13 +10258,17 @@ label fight21:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if trup3_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if trup3_obrona <= 0 and kostka > 1:
                         $ trup3_uszy += 1
                     
-                    if braun_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if braun_obrona <= 0 and kostka > 1:
                         $ braun_uszy += 1
                     
-                    if trup4_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup4_obrona <= 0 and kostka > 1:
                         $ trup4_uszy += 1
 
                     if trup3_uszy == 1 and braun_uszy == 1 and trup4_uszy == 1 and trup3_hp_now >= 1 and braun_hp_now >= 1 and trup4_hp_now >= 1:
@@ -14293,13 +14301,17 @@ label fight21:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if trup3_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if trup3_obrona <= 0 and kostka > 1:
                         $ trup3_uszy += 1
                     
-                    if braun_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if braun_obrona <= 0 and kostka > 1:
                         $ braun_uszy += 1
                     
-                    if trup4_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if trup4_obrona <= 0 and kostka > 1:
                         $ trup4_uszy += 1
 
                     if trup3_uszy == 1 and braun_uszy == 1 and trup4_uszy == 1 and trup3_hp_now >= 1 and braun_hp_now >= 1 and trup4_hp_now >= 1:

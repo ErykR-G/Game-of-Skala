@@ -4095,10 +4095,14 @@ label fight71:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kartaginczyk1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if kartaginczyk1_obrona <= 0 and kostka > 1:
                         $ kartaginczyk1_uszy += 1
                     
-                    if kartaginczyk2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    
+                    if kartaginczyk2_obrona <= 0 and kostka > 1:
                         $ kartaginczyk2_uszy += 1
 
                     if kartaginczyk1_uszy == 1 and tanya_uszy == 1 and kartaginczyk2_uszy == 1 and kartaginczyk1_hp_now >= 1 and tanya_hp_now >= 1 and kartaginczyk2_hp_now >= 1:
@@ -10332,10 +10336,13 @@ label fight71:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kartaginczyk1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if kartaginczyk1_obrona <= 0 and kostka > 1:
                         $ kartaginczyk1_uszy += 1
                     
-                    if kartaginczyk2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kartaginczyk2_obrona <= 0 and kostka > 1:
                         $ kartaginczyk2_uszy += 1
 
                     if kartaginczyk1_uszy == 1 and tanya_uszy == 1 and kartaginczyk2_uszy == 1 and kartaginczyk1_hp_now >= 1 and tanya_hp_now >= 1 and kartaginczyk2_hp_now >= 1:
@@ -14395,10 +14402,13 @@ label fight71:
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
                     play sound "audio/sfx/uszy.mp3" 
 
-                    if kartaginczyk1_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+
+                    if kartaginczyk1_obrona <= 0 and kostka > 1:
                         $ kartaginczyk1_uszy += 1
                     
-                    if kartaginczyk2_obrona <= 0:
+                    $ kostka = renpy.random.randint(1, 10)
+                    if kartaginczyk2_obrona <= 0 and kostka > 1:
                         $ kartaginczyk2_uszy += 1
 
                     if kartaginczyk1_uszy == 1 and tanya_uszy == 1 and kartaginczyk2_uszy == 1 and kartaginczyk1_hp_now >= 1 and tanya_hp_now >= 1 and kartaginczyk2_hp_now >= 1:
