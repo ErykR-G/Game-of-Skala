@@ -119,6 +119,7 @@ label postacie:
     define grzes = Character("Grześ", color="#49290b")
 
     define gotka = Character("Takemi", color="#090457")
+    image gotka neutral right = Transform("gotka neutral", xzoom=-1) 
 
     define kosc = Character("Kościelny", color="#9db2f8")
     image kosc neutral left = Transform("kosc neutral", xzoom=-1) 
@@ -262,7 +263,6 @@ label postacie:
     define vergil = Character("Vergil", color="#430e80")
 
     define bartuch = Character("Bartuch Przeździuch", color="#693e1b")
-
 
 
 label pozycje:

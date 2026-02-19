@@ -92,7 +92,7 @@ label items_fabularne:
     default dinozaur = 0
     default cialo = 0
     default cybertruck = 0
-    default okulary = 0
+    default leki = 0
     default klucz = 0
     default folder_memow = 0
 
@@ -110,7 +110,7 @@ label items_fabularne:
     default dinozaurx = 0
     default cialox = 0
     default cybertruckx = 0
-    default okularyx = 0
+    default lekix = 0
     default kluczx = 0
     default folder_memowx = 0
 
@@ -7523,7 +7523,7 @@ label eq:
             $ dinozaurx = 0
             $ cialox = 0
             $ cybertruckx = 0
-            $ okularyx = 0
+            $ lekix = 0
             $ kluczx = 0
             $ folder_memowx = 0
 
@@ -7640,16 +7640,16 @@ label eq:
             
             if okulary >= 1 and stronaf1 < 6:
                 $ stronaf1 += 1
-                $ okularyx += 1
+                $ lekix += 1
 
             else: 
                 if okulary >= 1 and stronaf2 < 5:
-                    $ okularyx += 2
+                    $ lekix += 2
                     $ stronaf2 += 1
                 
                 else: 
                     if okulary >= 1:
-                        $ okularyx += 3
+                        $ lekix += 3
                         $ stronaf3 += 1
             
             if klucz >= 1 and stronaf1 < 6:
@@ -7780,9 +7780,9 @@ label eq:
 
                         jump itemy_fabularne
                     
-                    "{b}Okulary z Wąsem{/b}" if okularyx == 1:
+                    "{b}Leki na Schizofrenię{/b}" if lekix == 1:
                         window show
-                        "{i}Okulary z Wąsem jest fajny{/i}"
+                        "{i}Leki na Schizofrenię jest fajny{/i}"
                         window hide
 
                         jump itemy_fabularne
@@ -8135,9 +8135,9 @@ label itemy_fabularne2:
 
             jump itemy_fabularne
         
-        "{b}Okulary z Wąsem{/b}" if okularyx == 2:
+        "{b}Leki na Schizofrenię{/b}" if lekix == 2:
             window show
-            "{i}Okulary z Wąsem jest fajny{/i}"
+            "{i}Leki na Schizofrenię jest fajny{/i}"
             window hide
 
             jump itemy_fabularne
@@ -8188,9 +8188,9 @@ label itemy_fabularne3:
 
             jump itemy_fabularne
         
-        "{b}Okulary z Wąsem{/b}" if okularyx == 3:
+        "{b}Leki na Schizofrenię{/b}" if lekix == 3:
             window show
-            "{i}Okulary z Wąsem jest fajny{/i}"
+            "{i}Leki na Schizofrenię jest fajny{/i}"
             window hide
 
             jump itemy_fabularne

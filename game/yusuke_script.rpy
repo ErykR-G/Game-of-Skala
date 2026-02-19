@@ -35,7 +35,7 @@ default yportal = 0
 
 label yusuke:
     label yusuke1:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 play music "audio/music/drukowanie.mp3"
                 scene bg pokoj24 with fade
@@ -1014,7 +1014,7 @@ label yusuke:
                 jump parking
 
     label yusuke2:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 play music "audio/music/drukowanie.mp3"
                 scene bg pokoj24 with fade
@@ -1069,7 +1069,7 @@ label yusuke:
 
                 yusuke "Hm.. tak. Jordanów idealnie pasuje do reszty obrazu."
 
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 scene bg pokoj22
             else:
@@ -1094,7 +1094,7 @@ label yusuke:
         yusuke "NIE!"
         yusuke "Zobaczysz na wystawie."
 
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 scene bg pokoj20
             else:

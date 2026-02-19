@@ -907,10 +907,21 @@ label menu_lokacji:
                     $ timer += 15
                     play sound "audio/sfx/traveling.mp3"
                     scene bg black with fade
-                    if gotka_szpan > 0 or gotka_social_link > 0:
-                        jump gotka2
+                    if kazuma_strzal <= 2 and ailbib == 1:
+                        jump gotka8
                     else:
-                        jump gotka1
+                        if kazuma_strzal <= 2 and kazuma_strzal > 0 and ailbib == 0:
+                            "{i}Żeby uratować Kazumę muszę znaleźć księgę czarnej magii{/i}"
+                            "{i}Niestety nadal jej nie znalazłem...{/i}"
+                            jump parking2
+                        else:
+                            if kazuma_strzal == 0 and kazuma_social_link < 100:
+                                jump gotka8
+                            else:
+                                if gotka_szpan > 0 or gotka_social_link > 0:
+                                    jump gotka2
+                                else:
+                                    jump gotka1
 
                 "{b}🏡 Dom | 24/7{/b}": 
                     $ domx = 0        

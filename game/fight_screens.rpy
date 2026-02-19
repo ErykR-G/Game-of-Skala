@@ -81,6 +81,84 @@ screen tusk_stats():
 
             text "ATK: [tusk_min_attack_now]-[tusk_max_attack_now]" style "dmg_text" xalign 0.5
 
+screen delta_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value delta_hp_now range delta_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if delta_hp_now/delta_hp > 0.5 else
+                                "#ffcc00" if delta_hp_now/delta_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[delta_hp_now]/[delta_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [delta_min_attack_now]-[delta_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen gamma_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value gamma_hp_now range gamma_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if gamma_hp_now/gamma_hp > 0.5 else
+                                "#ffcc00" if gamma_hp_now/gamma_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[gamma_hp_now]/[gamma_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [gamma_min_attack_now]-[gamma_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen epsilon_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value epsilon_hp_now range epsilon_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if epsilon_hp_now/epsilon_hp > 0.5 else
+                                "#ffcc00" if epsilon_hp_now/epsilon_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[epsilon_hp_now]/[epsilon_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [epsilon_min_attack_now]-[epsilon_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen kibol1_stats():
     fixed:
         xpos 0.76

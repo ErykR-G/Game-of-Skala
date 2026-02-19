@@ -122,7 +122,7 @@ label lilith:
             luszcz "..."
 
             if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj8 with fade
                     else:
@@ -138,7 +138,7 @@ label lilith:
 
             else:
                 if yusuke_social_link >= 6:
-                    if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                         if drukowanko == 1:
                             scene bg pokoj6 with fade
                         else:
@@ -262,7 +262,119 @@ label lilith:
 
                     luszcz "a okej"
 
-                "{i}…{/i}"
+            "{i}…{/i}"
+
+            luszcz "dobra skoro już wiem kim jesteś to:"
+
+            menu:
+                "{b}Wiesz, że w skyblocku lvl 2137…{/b}":
+                    luszcz "Wiedziałqś, że aby osiągnąć 2137 lvl exp. w minecrafcie"
+                    luszcz "potrzebujesz 22 318 169 pkt. expa"
+                    luszcz "?"
+                    luszcz "a zatem dzięki temu obliczyłem"
+                    luszcz "że na Skyblocku na hypixelu"
+                    luszcz "przy moim obecnym lvl. enchantingu"
+                    luszcz "i przy użyciu najlepszej potki expa, która przy 38 lvl. enchantingu daje 1 450 000 pkt. expa"
+                    luszcz "potrzebowałbym 16 pełnych potek"
+                    luszcz "i musiałbym wydać nadmierne lvl."
+                    luszcz "przy obecnym stanie rynkowym"
+                    luszcz "gdzie taka potka expa kosztuje mniej więcej 1 200 000"
+                    luszcz "koszt takiego przedsięwzięcia wynosi +/- 19 200 000"
+                    luszcz "Jednakże"
+                    luszcz "jako iż posiadam już 450 lvl expa na moim koncie"
+                    luszcz "ilośc pkt exp, których mi brakuje, wynosi 21 411 404"
+                    luszcz "a zatem potrzebuję jednie 15 pełnych potek a następnie wydanie nadmiernych lvlów"
+                    luszcz "co zmniejsza wydatek takiego przedsięwzięcia do 18 000 000"
+                    luszcz "+/-"
+                    luszcz "Według strony SkyCryp, która przelicza Networth graczy"
+                    luszcz "mój profil, na którym gram, ma wartość: 2 000 158 093"
+                    luszcz "a zatem przedsięwzięcie, którym jest zdobycie 2137 lvl expa wynosi 0,89992886% wartości mojego całego konta"
+                    luszcz "Czy uważasz, że osiągnięcie tego celu jest tego warte?"
+                    luszcz "alternatywnie, mógłbym zamordować 80 bossów zombie na najwyższym poziomie"
+                    luszcz "którego aby zespawnić wymaga odemnie masowego mordu na nieumarłych zombiakach"
+                    luszcz "od ponad 150 do tylko 3, w zależności od typu i lvl danego zombie"
+                    luszcz "co więcej aby podjąć się zabicia jednego bosa, należy zapłacić 200 000"
+                    luszcz "a zatem, musiałbym zapłacić dodatkowe 16 000 000 aby ukończyć poziom 8 tego bossa"
+                    luszcz "i go zabić te 80 razy więcej"
+                    luszcz "dzięki temu odblokuję hełm, który jest uważany za najlepszy hełm pod obrażenia w całej grze"
+                    luszcz "i jego koszt wynosi coś w okolicach 100 000 000"
+                    luszcz "a zatem, aby go posiąść, musiałbym wydać coś koło 116 000 000"
+                    luszcz "jak już wcześniej wspomniałem, mój networth wynosi 2 000 158 093"
+                    luszcz "a zatem wyniosłoby to 5,79954157% całej wartośmy mojego konta"
+                
+                "{b}Czy ty też uważasz, że kraje pierwszego świata…{/b}":
+                    luszcz "Czy ty też uważasz, że kraje pierwszego świata to tylko te kraje, które korzystają z blika?"
+                    luszcz "No bo przeciesz to jest podstawa każdego rozwiniętego społeczeństwa"
+                    luszcz "Nie da się inaczej płacić niż blikiem"
+                    luszcz "Dlatego właśnie muszę powstrzymać księdza i przywrócić u nas płatność blikiem"
+                    luszcz "Inaczej staniemy się jak te dzikusy co gadajom po jakimś Maoryskim czy czymś takim i robią uga buga…"
+
+
+            lilith "eeeee"
+            lilith "hehehe"
+            lilith "fajnie"
+            lilith "…"
+            lilith "Upieczmy tort!"
+
+            luszcz "teraz?"
+
+            lilith "TERAZ"
+
+            luszcz "Człowieku jest środek nocy!"
+            luszcz "Wszyscy w domu śpią i nie będę ich budzić!"
+
+            lilith "ej Noo weeeeź"
+            lilith "będzie fajnieee"
+
+            menu:
+                "{b}Niech będzie{/b}":
+                    luszcz "niech bendzie"
+                    luszcz "upiękę z tobą ten tort"
+
+                    lilith "yuppi!"
+                    luszcz "ale masz być cicho!"
+                    lilith "dobrze dobrze"
+                    lilith "w takim razie marsz do kuchni!"
+                
+                "{b}Nie ma opcji ide spać{/b}":
+                    luszcz "nie ma opcji idę spać"
+                    luszcz "a i btw ty nie istniejesz czy coś"
+
+                    show lilith neutral4
+
+                    lilith "na serio tak uważasz…?"
+
+                    menu:
+                        "{b}Tak{/b}":
+                            "DODAĆ"
+
+                        "{b}Nie{/b}":
+                            luszcz "Dobra żartuję"
+                            luszcz "upiękę z tobą ten tort"
+
+                            lilith "yuppi!"
+                            lilith "to do kuchni marsz!"
+
+                            luszcz "dobrze dobrze"
+            
+            scene bg kuchnia with ease 
+
+            lilith "…aaa na koniec dodajesz trochę miłości ❤️"
+
+            lilith "Powtórzyć czy możemy zaczynać?"
+
+            menu:
+                "{b}Powtórzyć{/b}":
+                    "DODAĆ"
+
+                "{b}Zaczynajmny{/b}":
+                    luszcz "zaczynajmy"
+
+
+
+
+
+
 
 
 

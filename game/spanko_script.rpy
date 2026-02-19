@@ -4,7 +4,7 @@ default czasd = 0
 
 label spanko:
     if yusuke_social_link == 0:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 play music "audio/music/drukowanie.mp3"
                 scene bg pokoj8 with fade
@@ -27,7 +27,7 @@ label spanko:
 
         "{i}łuszczu dotyka go za suty*{/i}"
 
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 scene bg pokoj12
             else:
@@ -43,12 +43,12 @@ label spanko:
 
         yusuke "aaa!!! Prosze nie obiecałeś że już nie..!"
 
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             kazuma "Ej nie wydzieraj sie tak próbuję tu spać!"
 
         yusuke "Oh. Um, proszę wybaczyć."
 
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             kazuma "honk mimimimi"
 
         yusuke "Panie Łuszcz, niech pan pozwoli że się przedstawię."
@@ -163,7 +163,7 @@ label spanko:
 
                 luszcz "Dobranoc"
 
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj8
                     else:
@@ -179,7 +179,7 @@ label spanko:
 
     else:
         if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     play music "audio/music/drukowanie.mp3"
                     scene bg pokoj8 with fade
@@ -201,7 +201,7 @@ label spanko:
 
         else:
             if yusuke_social_link >= 6:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         play music "audio/music/drukowanie.mp3"
                         scene bg pokoj6 with fade
@@ -247,7 +247,7 @@ label spanko:
 
     label spanko_bed:
         if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     play music "audio/music/drukowanie.mp3"
                     scene bg pokoj8 with fade
@@ -265,7 +265,7 @@ label spanko:
 
         else:
             if yusuke_social_link >= 6:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         play music "audio/music/drukowanie.mp3"
                         scene bg pokoj6 with fade
@@ -325,6 +325,8 @@ label spanko:
         $ krowko_limit = 0
         $ toxic_limit = 0
         $ czasd -= 1
+        if kazuma_strzal > 0:
+            $ kazuma_strzal -= 1
         if tasma_spotkanko == 2:
             $ tasma_spotkanko = 1
         else: 
@@ -406,6 +408,8 @@ label spanko2:
     $ krowko_limit = 0
     $ toxic_limit = 0
     $ czasd -= 1
+    if kazuma_strzal > 0:
+            $ kazuma_strzal -= 1
     if tasma_spotkanko == 2:
             $ tasma_spotkanko = 1
     else: 
@@ -460,7 +464,7 @@ label spanko2:
 
 label drukarka3d1:
     if yusuke_social_link == 0:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 play music "audio/music/drukowanie.mp3"
                 scene bg pokoj24 with fade
@@ -482,7 +486,7 @@ label drukarka3d1:
 
         luszcz "Dafaq? Kim ty jesteś co ty robisz w moim pokojó?"
 
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             luszcz "Jeśli dobrze pamiętam zaprosiłem tu tylko jendą osobę…"
 
             kazuma "Też myślałem że będę tu sam lol"
@@ -522,7 +526,7 @@ label drukarka3d1:
                 yusuke "Dowidzenia."
                 yusuke "Panu."
 
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj20
                     else:
@@ -536,7 +540,7 @@ label drukarka3d1:
                 hide yusuke
                 show luszcz neutral right at center
 
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     kazuma "Damn ziomuś. Dobrze że mnie nie wywalasz."
 
                     luszcz "No bo ciebie tutaj sam zaprosiłem."
@@ -613,7 +617,7 @@ label drukarka3d1:
 
                 yusuke "Dobrze mistrzu."
 
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj22
                     else:
@@ -633,7 +637,7 @@ label drukarka3d1:
 
     else:
         if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     play music "audio/music/drukowanie.mp3"
                     scene bg pokoj22 with fade
@@ -662,7 +666,7 @@ label drukarka3d1:
                 yusuke "Dzień dobry"
         else:
             if yusuke_social_link >= 6:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         play music "audio/music/drukowanie.mp3"
                         scene bg pokoj20 with fade
@@ -693,7 +697,7 @@ label drukarka3d1:
     $ czasd = 5
 
     if yusuke_social_link == 0:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 scene bg pokoj24 with fade
                 play music "audio/music/drukowanie.mp3"
@@ -708,7 +712,7 @@ label drukarka3d1:
 
     else:
         if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     scene bg pokoj22 with fade
                     play music "audio/music/drukowanie.mp3"
@@ -724,7 +728,7 @@ label drukarka3d1:
                 
         else:
             if yusuke_social_link >= 6:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj20 with fade
                         play music "audio/music/drukowanie.mp3"
@@ -766,7 +770,7 @@ label drukarka3d1:
 
 label drukarka3d2:
     if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 play music "audio/music/drukowanie.mp3"
                 scene bg pokoj22 with fade
@@ -795,7 +799,7 @@ label drukarka3d2:
             yusuke "Dzień dobry"
     else:
         if yusuke_social_link >= 6:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     play music "audio/music/drukowanie.mp3"
                     scene bg pokoj20 with fade
@@ -825,7 +829,7 @@ label drukarka3d2:
     $ drukarka3d_social_link = 2
 
     if yusuke_social_link == 0:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 scene bg pokoj24 
             else:
@@ -838,7 +842,7 @@ label drukarka3d2:
 
     else:
         if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     scene bg pokoj22
                 else:
@@ -852,7 +856,7 @@ label drukarka3d2:
                 
         else:
             if yusuke_social_link >= 6:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj20
                     else:

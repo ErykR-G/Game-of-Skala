@@ -71,7 +71,7 @@ label babcia:
     
     label babcia2:
         if yusuke_social_link == 0:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     play music "audio/music/drukowanie.mp3"
                     scene bg pokoj24 with fade
@@ -93,7 +93,7 @@ label babcia:
 
             luszcz "Dafaq? Kim ty jesteś co ty robisz w moim pokojó?"
 
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 luszcz "Jeśli dobrze pamiętam zaprosiłem tu tylko jendą osobę…"
 
                 kazuma "Też myślałem że będę tu sam lol"
@@ -133,7 +133,7 @@ label babcia:
                     yusuke "Dowidzenia."
                     yusuke "Panu."
 
-                    if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                         if drukowanko == 1:
                             scene bg pokoj20
                         else:
@@ -147,7 +147,7 @@ label babcia:
                     hide yusuke
                     show luszcz neutral right at center
 
-                    if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                         kazuma "Damn ziomuś. Dobrze że mnie nie wywalasz."
 
                         luszcz "No bo ciebie tutaj sam zaprosiłem."
@@ -224,7 +224,7 @@ label babcia:
 
                     yusuke "Dobrze mistrzu."
 
-                    if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                         if drukowanko == 1:
                             scene bg pokoj22
                         else:
@@ -244,7 +244,7 @@ label babcia:
 
         else:
             if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         play music "audio/music/drukowanie.mp3"
                         scene bg pokoj22 with fade
@@ -273,7 +273,7 @@ label babcia:
                     yusuke "Dzień dobry"
             else:
                 if yusuke_social_link >= 6:
-                    if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                    if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                         if drukowanko == 1:
                             play music "audio/music/drukowanie.mp3"
                             scene bg pokoj20 with fade

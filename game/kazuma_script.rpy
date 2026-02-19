@@ -230,7 +230,7 @@ label kazuma:
 
 label kazuma2:
     if yusuke_social_link == 0:
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             if drukowanko == 1:
                 play music "audio/music/drukowanie.mp3"
                 scene bg pokoj24 with fade
@@ -256,7 +256,7 @@ label kazuma2:
 
         luszcz "Dafaq? Kim ty jesteś co ty robisz w moim pokojó?"
 
-        if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+        if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
             luszcz "Jeśli dobrze pamiętam zaprosiłem tu tylko jendą osobę…"
 
             kazuma "Też myślałem że będę tu sam lol"
@@ -296,7 +296,7 @@ label kazuma2:
                 yusuke "Dowidzenia."
                 yusuke "Panu."
 
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj20
                     else:
@@ -314,7 +314,7 @@ label kazuma2:
                 hide yusuke
                 show luszcz neutral right at center
 
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     kazuma "Damn ziomuś. Dobrze że mnie nie wywalasz."
 
                     luszcz "No bo ciebie tutaj sam zaprosiłem."
@@ -397,7 +397,7 @@ label kazuma2:
 
                 yusuke "Dobrze mistrzu."
 
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         scene bg pokoj22
                     else:
@@ -427,7 +427,7 @@ label kazuma2:
 
     else:
         if yusuke_social_link >= 1 and yusuke_social_link <= 5:
-            if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+            if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                 if drukowanko == 1:
                     play music "audio/music/drukowanie.mp3"
                     scene bg pokoj22 with fade
@@ -444,7 +444,7 @@ label kazuma2:
 
         else:
             if yusuke_social_link >= 6:
-                if kazuma_social_link >= 1 and kazuma_social_link <= 2:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
                     if drukowanko == 1:
                         play music "audio/music/drukowanie.mp3"
                         scene bg pokoj20 with fade
@@ -704,7 +704,6 @@ label kazuma3:
         kasyn "Jak pan wygra to podwajamy kwotę, gdy przegra to zabieramy co pan dał."
         kasyn "Z jaką kwotą gramy?"
 
-        $ money -= 1
         kazuma "Jeden portfel."
 
         kasyn "Dobrze. Powodzenia."
@@ -717,8 +716,8 @@ label kazuma3:
             play music "audio/music/kasyno.mp3"
             kasyn "Gratuluję, oto pański portfel oraz drugi za wygraną."
 
-            $ money += 2
-            "{i}*2 Portfele zostały dodane do ekwipunku*{/i}"
+            $ money += 1
+            "{i}*1 Portfel został dodany do ekwipunku*{/i}"
 
             kazuma "A dziękuję."
 
@@ -897,6 +896,7 @@ label kazuma3:
 
             menu:
                 "{b}Zabij karalucha{/b}":
+                    $ kazuma_social_link = 10
                     luszcz "Uwaga!"
 
                     "{i}Łuszczu szybkim ruchem próbuje zaatakować Grzesia{/i}"
@@ -1063,7 +1063,6 @@ label kazuma3:
                         gamma "Po moim trupie!"
                         gamma "Jeśli chcecie je dostać, najpierw musicie się przedrzeć przeze mnie!"
 
-                        jump after_fight171
                         jump fight171
                     
                     else:
@@ -1163,7 +1162,6 @@ label kazuma3:
                         $ kazuma_sojusznik = 1
                         $ liczba_sojusznikow += 1
 
-                        jump after_fight171
                         jump fight171
                     
                     label after_fight171:
