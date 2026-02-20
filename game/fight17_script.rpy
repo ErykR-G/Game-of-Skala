@@ -5817,7 +5817,6 @@ label fight171:
                                             gamma "Można tak powiedzieć"
                                             kazuma "No cóż do dwóch razy sztuka!"
                                             "{i}Udało sie ukraść bieliznę Gamma.  \nJednak Gammie pozostała jeszcze jedna para.{/i}"
-                                            $ gamma_hp_now = 0
                                             hide majtki
                                             hide chwyta
 
@@ -12128,7 +12127,6 @@ label fight171:
                                             gamma "Można tak powiedzieć"
                                             kazuma "No cóż do dwóch razy sztuka!"
                                             "{i}Udało sie ukraść bieliznę Gamma.  \nJednak Gammie pozostała jeszcze jedna para.{/i}"
-                                            $ gamma_hp_now = 0
                                             hide majtki
                                             hide chwyta
 
@@ -16270,7 +16268,6 @@ label fight171:
                                             gamma "Można tak powiedzieć"
                                             kazuma "No cóż do dwóch razy sztuka!"
                                             "{i}Udało sie ukraść bieliznę Gamma.  \nJednak Gammie pozostała jeszcze jedna para.{/i}"
-                                            $ gamma_hp_now = 0
                                             hide majtki
                                             hide chwyta
 

@@ -21929,6 +21929,7 @@ label fight161:
                 jump fight161
 
             "{b}Pomiń Walkę{/b}" if fight161_przegranko >= 3:
+                $ gacie_ukradniete = 0
                 $ fight161_przegranko = 0
                 if fight161_przegranko == 3:
                     $ timer += 50
