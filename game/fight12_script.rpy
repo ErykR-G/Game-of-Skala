@@ -5792,7 +5792,7 @@ label fight121:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight121
 
-                "{b}Steal{/b}" if nawrocki_weapon >= 1 or krystian_weapon >= 1 or tusk_weapon >= 1:
+                "{b}Steal{/b}" if nawrocki_sex == 0 and nawrocki_weapon >= 1 and nawrocki_hp_now > 0 or krystian_sex == 0 and krystian_weapon >= 1 and krystian_hp_now > 0 or tusk_sex == 0 and tusk_weapon >= 1 and tusk_hp_now > 0 or nawrocki_sex == 1 and nawrocki_hp_now > 0 or krystian_sex == 1 and krystian_hp_now > 0 or tusk_sex == 1 and tusk_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5805,7 +5805,7 @@ label fight121:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Nawrocki{/b}" if nawrocki_hp_now >= 1 and nawrocki_weapon > 0:
+                        "{b}Nawrocki{/b}" if nawrocki_sex == 0 and nawrocki_weapon >= 1 and nawrocki_hp_now > 0 or nawrocki_sex == 1 and nawrocki_hp_now > 0:
                             kazuma "Steal!"
 
                             if nawrocki_obrona >= 1:
@@ -5880,7 +5880,7 @@ label fight121:
                                         
                                 jump faza_fight122
 
-                        "{b}Krystian{/b}" if krystian_hp_now >= 1 and krystian_weapon > 0:
+                        "{b}Krystian{/b}" if krystian_sex == 0 and krystian_weapon >= 1 and krystian_hp_now > 0 or krystian_sex == 1 and krystian_hp_now > 0:
                             kazuma "Steal!"
                             if krystian_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5954,7 +5954,7 @@ label fight121:
                                         
                                 jump faza_fight122
 
-                        "{b}Tusk{/b}" if tusk_hp_now >= 1 and tusk_weapon > 0:
+                        "{b}Tusk{/b}" if tusk_sex == 0 and tusk_weapon >= 1 and tusk_hp_now > 0 or tusk_sex == 1 and tusk_hp_now > 0:
                             kazuma "Steal!"
                             if tusk_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -12122,7 +12122,7 @@ label fight121:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight123
 
-                "{b}Steal{/b}" if nawrocki_weapon >= 1 or krystian_weapon >= 1 or tusk_weapon >= 1:
+                "{b}Steal{/b}" if nawrocki_sex == 0 and nawrocki_weapon >= 1 and nawrocki_hp_now > 0 or krystian_sex == 0 and krystian_weapon >= 1 and krystian_hp_now > 0 or tusk_sex == 0 and tusk_weapon >= 1 and tusk_hp_now > 0 or nawrocki_sex == 1 and nawrocki_hp_now > 0 or krystian_sex == 1 and krystian_hp_now > 0 or tusk_sex == 1 and tusk_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -12135,7 +12135,7 @@ label fight121:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Nawrocki{/b}" if nawrocki_hp_now >= 1 and nawrocki_weapon > 0:
+                        "{b}Nawrocki{/b}" if nawrocki_sex == 0 and nawrocki_weapon >= 1 and nawrocki_hp_now > 0 or nawrocki_sex == 1 and nawrocki_hp_now > 0:
                             kazuma "Steal!"
                             if nawrocki_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -12209,7 +12209,7 @@ label fight121:
                                         
                                 jump faza_fight123
 
-                        "{b}Krystian{/b}" if krystian_hp_now >= 1 and krystian_weapon > 0:
+                        "{b}Krystian{/b}" if krystian_sex == 0 and krystian_weapon >= 1 and krystian_hp_now > 0 or krystian_sex == 1 and krystian_hp_now > 0:
                             kazuma "Steal!"
                             if krystian_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -12283,7 +12283,7 @@ label fight121:
                                         
                                 jump faza_fight123
 
-                        "{b}Tusk{/b}" if tusk_hp_now >= 1 and tusk_weapon > 0:
+                        "{b}Tusk{/b}" if tusk_sex == 0 and tusk_weapon >= 1 and tusk_hp_now > 0 or tusk_sex == 1 and tusk_hp_now > 0:
                             kazuma "Steal!"
                             if tusk_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16260,7 +16260,7 @@ label fight121:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight125
 
-                "{b}Steal{/b}" if nawrocki_weapon >= 1 or krystian_weapon >= 1 or tusk_weapon >= 1:
+                "{b}Steal{/b}" if nawrocki_sex == 0 and nawrocki_weapon >= 1 and nawrocki_hp_now > 0 or krystian_sex == 0 and krystian_weapon >= 1 and krystian_hp_now > 0 or tusk_sex == 0 and tusk_weapon >= 1 and tusk_hp_now > 0 or nawrocki_sex == 1 and nawrocki_hp_now > 0 or krystian_sex == 1 and krystian_hp_now > 0 or tusk_sex == 1 and tusk_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -16273,7 +16273,7 @@ label fight121:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Nawrocki{/b}" if nawrocki_hp_now >= 1 and nawrocki_weapon > 0:
+                        "{b}Nawrocki{/b}" if nawrocki_sex == 0 and nawrocki_weapon >= 1 and nawrocki_hp_now > 0 or nawrocki_sex == 1 and nawrocki_hp_now > 0:
                             kazuma "Steal!"
                             if nawrocki_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16347,7 +16347,7 @@ label fight121:
                                         
                                 jump faza_fight124
 
-                        "{b}Krystian{/b}" if krystian_hp_now >= 1 and krystian_weapon > 0:
+                        "{b}Krystian{/b}" if krystian_sex == 0 and krystian_weapon >= 1 and krystian_hp_now > 0 or krystian_sex == 1 and krystian_hp_now > 0:
                             kazuma "Steal!"
                             if krystian_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16421,7 +16421,7 @@ label fight121:
                                         
                                 jump faza_fight124
 
-                        "{b}Tusk{/b}" if tusk_hp_now >= 1 and tusk_weapon > 0:
+                        "{b}Tusk{/b}" if tusk_sex == 0 and tusk_weapon >= 1 and tusk_hp_now > 0 or tusk_sex == 1 and tusk_hp_now > 0:
                             kazuma "Steal!"
                             if tusk_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -22598,25 +22598,25 @@ label fight121:
 
             "{b}Pomiń Walkę{/b}" if fight121_przegranko >= 3:
                 $ fight121_przegranko = 0
-                if przegranko == 3:
+                if fight121_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight121_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight121_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight121_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight121_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight121_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight121_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight121_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight121_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight121_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight121
 

@@ -5493,7 +5493,7 @@ label fight31:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight31
 
-                "{b}Steal{/b}" if yippee1_weapon >= 1 or trup5_weapon >= 1 or yippee2_weapon >= 1:
+                "{b}Steal{/b}" if yippee1_sex == 0 and yippee1_weapon >= 1 and yippee1_hp_now > 0 or trup5_sex == 0 and trup5_weapon >= 1 and trup5_hp_now > 0 or yippee2_sex == 0 and yippee2_weapon >= 1 and yippee2_hp_now > 0 or yippee1_sex == 1 and yippee1_hp_now > 0 or trup5_sex == 1 and trup5_hp_now > 0 or yippee2_sex == 1 and yippee2_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5506,7 +5506,7 @@ label fight31:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Yippee 1{/b}" if yippee1_hp_now >= 1 and yippee1_weapon > 0:
+                        "{b}Yippee 1{/b}" if yippee1_sex == 0 and yippee1_weapon >= 1 and yippee1_hp_now > 0 or yippee1_sex == 1 and yippee1_hp_now > 0:
                             kazuma "Steal!"
 
                             if yippee1_obrona >= 1:
@@ -5581,7 +5581,7 @@ label fight31:
                                         
                                 jump faza_fight32
 
-                        "{b}Akane{/b}" if trup5_hp_now >= 1 and trup5_weapon > 0:
+                        "{b}Akane{/b}" if trup5_sex == 0 and trup5_weapon >= 1 and trup5_hp_now > 0 or trup5_sex == 1 and trup5_hp_now > 0:
                             kazuma "Steal!"
                             if trup5_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5655,7 +5655,7 @@ label fight31:
                                         
                                 jump faza_fight32
 
-                        "{b}Yippee 2{/b}" if yippee2_hp_now >= 1 and yippee2_weapon > 0:
+                        "{b}Yippee 2{/b}" if yippee2_sex == 0 and yippee2_weapon >= 1 and yippee2_hp_now > 0 or yippee2_sex == 1 and yippee2_hp_now > 0:
                             kazuma "Steal!"
                             if yippee2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11684,7 +11684,7 @@ label fight31:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight33
 
-                "{b}Steal{/b}" if yippee1_weapon >= 1 or trup5_weapon >= 1 or yippee2_weapon >= 1:
+                "{b}Steal{/b}" if yippee1_sex == 0 and yippee1_weapon >= 1 and yippee1_hp_now > 0 or trup5_sex == 0 and trup5_weapon >= 1 and trup5_hp_now > 0 or yippee2_sex == 0 and yippee2_weapon >= 1 and yippee2_hp_now > 0 or yippee1_sex == 1 and yippee1_hp_now > 0 or trup5_sex == 1 and trup5_hp_now > 0 or yippee2_sex == 1 and yippee2_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11697,7 +11697,7 @@ label fight31:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Yippee 1{/b}" if yippee1_hp_now >= 1 and yippee1_weapon > 0:
+                        "{b}Yippee 1{/b}" if yippee1_sex == 0 and yippee1_weapon >= 1 and yippee1_hp_now > 0 or yippee1_sex == 1 and yippee1_hp_now > 0:
                             kazuma "Steal!"
                             if yippee1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11771,7 +11771,7 @@ label fight31:
                                         
                                 jump faza_fight33
 
-                        "{b}Akane{/b}" if trup5_hp_now >= 1 and trup5_weapon > 0:
+                        "{b}Akane{/b}" if trup5_sex == 0 and trup5_weapon >= 1 and trup5_hp_now > 0 or trup5_sex == 1 and trup5_hp_now > 0:
                             kazuma "Steal!"
                             if trup5_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11845,7 +11845,7 @@ label fight31:
                                         
                                 jump faza_fight33
 
-                        "{b}Yippee 2{/b}" if yippee2_hp_now >= 1 and yippee2_weapon > 0:
+                        "{b}Yippee 2{/b}" if yippee2_sex == 0 and yippee2_weapon >= 1 and yippee2_hp_now > 0 or yippee2_sex == 1 and yippee2_hp_now > 0:
                             kazuma "Steal!"
                             if yippee2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15715,7 +15715,7 @@ label fight31:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight35
 
-                "{b}Steal{/b}" if yippee1_weapon >= 1 or trup5_weapon >= 1 or yippee2_weapon >= 1:
+                "{b}Steal{/b}" if yippee1_sex == 0 and yippee1_weapon >= 1 and yippee1_hp_now > 0 or trup5_sex == 0 and trup5_weapon >= 1 and trup5_hp_now > 0 or yippee2_sex == 0 and yippee2_weapon >= 1 and yippee2_hp_now > 0 or yippee1_sex == 1 and yippee1_hp_now > 0 or trup5_sex == 1 and trup5_hp_now > 0 or yippee2_sex == 1 and yippee2_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15728,7 +15728,7 @@ label fight31:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Yippee 1{/b}" if yippee1_hp_now >= 1 and yippee1_weapon > 0:
+                        "{b}Yippee 1{/b}" if yippee1_sex == 0 and yippee1_weapon >= 1 and yippee1_hp_now > 0 or yippee1_sex == 1 and yippee1_hp_now > 0:
                             kazuma "Steal!"
                             if yippee1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15802,7 +15802,7 @@ label fight31:
                                         
                                 jump faza_fight34
 
-                        "{b}Akane{/b}" if trup5_hp_now >= 1 and trup5_weapon > 0:
+                        "{b}Akane{/b}" if trup5_sex == 0 and trup5_weapon >= 1 and trup5_hp_now > 0 or trup5_sex == 1 and trup5_hp_now > 0:
                             kazuma "Steal!"
                             if trup5_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15876,7 +15876,7 @@ label fight31:
                                         
                                 jump faza_fight34
 
-                        "{b}Yippee 2{/b}" if yippee2_hp_now >= 1 and yippee2_weapon > 0:
+                        "{b}Yippee 2{/b}" if yippee2_sex == 0 and yippee2_weapon >= 1 and yippee2_hp_now > 0 or yippee2_sex == 1 and yippee2_hp_now > 0:
                             kazuma "Steal!"
                             if yippee2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -21684,25 +21684,25 @@ label fight31:
 
             "{b}Pomiń Walkę{/b}" if fight31_przegranko >= 3:
                 $ fight31_przegranko = 0
-                if przegranko == 3:
+                if fight31_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight31_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight31_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight31_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight31_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight31_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight31_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight31_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight31_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight31_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight31
 

@@ -5715,7 +5715,7 @@ label fight81:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight81
 
-                "{b}Steal{/b}" if obama_weapon >= 1 or kononowicz_weapon >= 1 or prymon_weapon >= 1:
+                "{b}Steal{/b}" if obama_sex == 0 and obama_weapon >= 1 and obama_hp_now > 0 or kononowicz_sex == 0 and kononowicz_weapon >= 1 and kononowicz_hp_now > 0 or prymon_sex == 0 and prymon_weapon >= 1 and prymon_hp_now > 0 or obama_sex == 1 and obama_hp_now > 0 or kononowicz_sex == 1 and kononowicz_hp_now > 0 or prymon_sex == 1 and prymon_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5728,7 +5728,7 @@ label fight81:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Barack Obama{/b}" if obama_hp_now >= 1 and obama_weapon > 0:
+                        "{b}Barack Obama{/b}" if obama_sex == 0 and obama_weapon >= 1 and obama_hp_now > 0 or obama_sex == 1 and obama_hp_now > 0:
                             kazuma "Steal!"
 
                             if obama_obrona >= 1:
@@ -5803,7 +5803,7 @@ label fight81:
                                         
                                 jump faza_fight82
 
-                        "{b}Kononowicz{/b}" if kononowicz_hp_now >= 1 and kononowicz_weapon > 0:
+                        "{b}Kononowicz{/b}" if kononowicz_sex == 0 and kononowicz_weapon >= 1 and kononowicz_hp_now > 0 or kononowicz_sex == 1 and kononowicz_hp_now > 0:
                             kazuma "Steal!"
                             if kononowicz_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5877,7 +5877,7 @@ label fight81:
                                         
                                 jump faza_fight82
 
-                        "{b}Pan Prymon{/b}" if prymon_hp_now >= 1 and prymon_weapon > 0:
+                        "{b}Pan Prymon{/b}" if prymon_sex == 0 and prymon_weapon >= 1 and prymon_hp_now > 0 or prymon_sex == 1 and prymon_hp_now > 0:
                             kazuma "Steal!"
                             if prymon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11980,7 +11980,7 @@ label fight81:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight83
 
-                "{b}Steal{/b}" if obama_weapon >= 1 or kononowicz_weapon >= 1 or prymon_weapon >= 1:
+                "{b}Steal{/b}" if obama_sex == 0 and obama_weapon >= 1 and obama_hp_now > 0 or kononowicz_sex == 0 and kononowicz_weapon >= 1 and kononowicz_hp_now > 0 or prymon_sex == 0 and prymon_weapon >= 1 and prymon_hp_now > 0 or obama_sex == 1 and obama_hp_now > 0 or kononowicz_sex == 1 and kononowicz_hp_now > 0 or prymon_sex == 1 and prymon_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11993,7 +11993,7 @@ label fight81:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Barack Obama{/b}" if obama_hp_now >= 1 and obama_weapon > 0:
+                        "{b}Barack Obama{/b}" if obama_sex == 0 and obama_weapon >= 1 and obama_hp_now > 0 or obama_sex == 1 and obama_hp_now > 0:
                             kazuma "Steal!"
                             if obama_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -12067,7 +12067,7 @@ label fight81:
                                         
                                 jump faza_fight83
 
-                        "{b}Kononowicz{/b}" if kononowicz_hp_now >= 1 and kononowicz_weapon > 0:
+                        "{b}Kononowicz{/b}" if kononowicz_sex == 0 and kononowicz_weapon >= 1 and kononowicz_hp_now > 0 or kononowicz_sex == 1 and kononowicz_hp_now > 0:
                             kazuma "Steal!"
                             if kononowicz_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -12141,7 +12141,7 @@ label fight81:
                                         
                                 jump faza_fight83
 
-                        "{b}Pan Prymon{/b}" if prymon_hp_now >= 1 and prymon_weapon > 0:
+                        "{b}Pan Prymon{/b}" if prymon_sex == 0 and prymon_weapon >= 1 and prymon_hp_now > 0 or prymon_sex == 1 and prymon_hp_now > 0:
                             kazuma "Steal!"
                             if prymon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16074,7 +16074,7 @@ label fight81:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight85
 
-                "{b}Steal{/b}" if obama_weapon >= 1 or kononowicz_weapon >= 1 or prymon_weapon >= 1:
+                "{b}Steal{/b}" if obama_sex == 0 and obama_weapon >= 1 and obama_hp_now > 0 or kononowicz_sex == 0 and kononowicz_weapon >= 1 and kononowicz_hp_now > 0 or prymon_sex == 0 and prymon_weapon >= 1 and prymon_hp_now > 0 or obama_sex == 1 and obama_hp_now > 0 or kononowicz_sex == 1 and kononowicz_hp_now > 0 or prymon_sex == 1 and prymon_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -16087,7 +16087,7 @@ label fight81:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Barack Obama{/b}" if obama_hp_now >= 1 and obama_weapon > 0:
+                        "{b}Barack Obama{/b}" if obama_sex == 0 and obama_weapon >= 1 and obama_hp_now > 0 or obama_sex == 1 and obama_hp_now > 0:
                             kazuma "Steal!"
                             if obama_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16161,7 +16161,7 @@ label fight81:
                                         
                                 jump faza_fight84
 
-                        "{b}Kononowicz{/b}" if kononowicz_hp_now >= 1 and kononowicz_weapon > 0:
+                        "{b}Kononowicz{/b}" if kononowicz_sex == 0 and kononowicz_weapon >= 1 and kononowicz_hp_now > 0 or kononowicz_sex == 1 and kononowicz_hp_now > 0:
                             kazuma "Steal!"
                             if kononowicz_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16235,7 +16235,7 @@ label fight81:
                                         
                                 jump faza_fight84
 
-                        "{b}Pan Prymon{/b}" if prymon_hp_now >= 1 and prymon_weapon > 0:
+                        "{b}Pan Prymon{/b}" if prymon_sex == 0 and prymon_weapon >= 1 and prymon_hp_now > 0 or prymon_sex == 1 and prymon_hp_now > 0:
                             kazuma "Steal!"
                             if prymon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -22382,25 +22382,25 @@ label fight81:
 
             "{b}Pomiń Walkę{/b}" if fight81_przegranko >= 3:
                 $ fight81_przegranko = 0
-                if przegranko == 3:
+                if fight81_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight81_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight81_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight81_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight81_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight81_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight81_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight81_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight81_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight81_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight81
 

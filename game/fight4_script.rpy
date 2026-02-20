@@ -5510,7 +5510,7 @@ label fight41:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight41
 
-                "{b}Steal{/b}" if trup6_weapon >= 1 or czarny_weapon >= 1 or trup7_weapon >= 1:
+                "{b}Steal{/b}" if trup6_sex == 0 and trup6_weapon >= 1 and trup6_hp_now > 0 or czarny_sex == 0 and czarny_weapon >= 1 and czarny_hp_now > 0 or trup7_sex == 0 and trup7_weapon >= 1 and trup7_hp_now > 0 or trup6_sex == 1 and trup6_hp_now > 0 or czarny_sex == 1 and czarny_hp_now > 0 or trup7_sex == 1 and trup7_hp_now > 0:
                     $ kazuma_czarny += 1
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
@@ -5524,7 +5524,7 @@ label fight41:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup6_hp_now >= 1 and trup6_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup6_sex == 0 and trup6_weapon >= 1 and trup6_hp_now > 0 or trup6_sex == 1 and trup6_hp_now > 0:
                             kazuma "Steal!"
 
                             if trup6_obrona >= 1:
@@ -5599,13 +5599,13 @@ label fight41:
                                         
                                 jump faza_fight42
 
-                        "{b}Czarny{/b}" if czarny_hp_now >= 1 and czarny_weapon > 0:
+                        "{b}Czarny{/b}" if czarny_sex == 0 and czarny_weapon >= 1 and czarny_hp_now > 0 or czarny_sex == 1 and czarny_hp_now > 0:
                             kazuma "Steal!"
                             play sound "audio/sfx/stel.mp3"
                             "{i}Czarny obronił się przed umiejętnością “Steal“{/i}"
                             jump faza_fight42
 
-                        "{b}Kibol 2{/b}" if trup7_hp_now >= 1 and trup7_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup7_sex == 0 and trup7_weapon >= 1 and trup7_hp_now > 0 or trup7_sex == 1 and trup7_hp_now > 0:
                             kazuma "Steal!"
                             if trup7_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11657,7 +11657,7 @@ label fight41:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight43
 
-                "{b}Steal{/b}" if trup6_weapon >= 1 or czarny_weapon >= 1 or trup7_weapon >= 1:
+                "{b}Steal{/b}" if trup6_sex == 0 and trup6_weapon >= 1 and trup6_hp_now > 0 or czarny_sex == 0 and czarny_weapon >= 1 and czarny_hp_now > 0 or trup7_sex == 0 and trup7_weapon >= 1 and trup7_hp_now > 0 or trup6_sex == 1 and trup6_hp_now > 0 or czarny_sex == 1 and czarny_hp_now > 0 or trup7_sex == 1 and trup7_hp_now > 0:
                     $ kazuma_czarny += 1
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
@@ -11671,7 +11671,7 @@ label fight41:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup6_hp_now >= 1 and trup6_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup6_sex == 0 and trup6_weapon >= 1 and trup6_hp_now > 0 or trup6_sex == 1 and trup6_hp_now > 0:
                             kazuma "Steal!"
                             if trup6_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11745,13 +11745,13 @@ label fight41:
                                         
                                 jump faza_fight43
 
-                        "{b}Czarny{/b}" if czarny_hp_now >= 1 and czarny_weapon > 0:
+                        "{b}Czarny{/b}" if czarny_sex == 0 and czarny_weapon >= 1 and czarny_hp_now > 0 or czarny_sex == 1 and czarny_hp_now > 0:
                             kazuma "Steal!"
                             play sound "audio/sfx/stel.mp3"
                             "{i}Czarny obronił się przed umiejętnością “Steal“{/i}"
                             jump faza_fight43
 
-                        "{b}Kibol 2{/b}" if trup7_hp_now >= 1 and trup7_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup7_sex == 0 and trup7_weapon >= 1 and trup7_hp_now > 0 or trup7_sex == 1 and trup7_hp_now > 0:
                             kazuma "Steal!"
                             if trup7_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15588,7 +15588,7 @@ label fight41:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight45
 
-                "{b}Steal{/b}" if trup6_weapon >= 1 or czarny_weapon >= 1 or trup7_weapon >= 1:
+                "{b}Steal{/b}" if trup6_sex == 0 and trup6_weapon >= 1 and trup6_hp_now > 0 or czarny_sex == 0 and czarny_weapon >= 1 and czarny_hp_now > 0 or trup7_sex == 0 and trup7_weapon >= 1 and trup7_hp_now > 0 or trup6_sex == 1 and trup6_hp_now > 0 or czarny_sex == 1 and czarny_hp_now > 0 or trup7_sex == 1 and trup7_hp_now > 0:
                     $ kazuma_czarny += 1
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
@@ -15602,7 +15602,7 @@ label fight41:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup6_hp_now >= 1 and trup6_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup6_sex == 0 and trup6_weapon >= 1 and trup6_hp_now > 0 or trup6_sex == 1 and trup6_hp_now > 0:
                             kazuma "Steal!"
                             if trup6_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15676,13 +15676,13 @@ label fight41:
                                         
                                 jump faza_fight44
 
-                        "{b}Czarny{/b}" if czarny_hp_now >= 1 and czarny_weapon > 0:
+                        "{b}Czarny{/b}" if czarny_sex == 0 and czarny_weapon >= 1 and czarny_hp_now > 0 or czarny_sex == 1 and czarny_hp_now > 0:
                             kazuma "Steal!"
                             play sound "audio/sfx/stel.mp3"
                             "{i}Czarny obronił się przed umiejętnością “Steal“{/i}"
                             jump faza_fight44
                             
-                        "{b}Kibol 2{/b}" if trup7_hp_now >= 1 and trup7_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup7_sex == 0 and trup7_weapon >= 1 and trup7_hp_now > 0 or trup7_sex == 1 and trup7_hp_now > 0:
                             kazuma "Steal!"
                             if trup7_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -21683,25 +21683,25 @@ label fight41:
 
             "{b}Pomiń Walkę{/b}" if fight41_przegranko >= 3:
                 $ fight41_przegranko = 0
-                if przegranko == 3:
+                if fight41_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight41_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight41_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight41_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight41_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight41_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight41_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight41_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight41_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight41_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight41
 

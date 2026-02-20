@@ -5569,7 +5569,7 @@ label fight61:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight61
 
-                "{b}Steal{/b}" if gnom1_weapon >= 1 or gnom2_weapon >= 1 or gnom3_weapon >= 1:
+                "{b}Steal{/b}" if gnom1_sex == 0 and gnom1_weapon >= 1 and gnom1_hp_now > 0 or gnom2_sex == 0 and gnom2_weapon >= 1 and gnom2_hp_now > 0 or gnom3_sex == 0 and gnom3_weapon >= 1 and gnom3hp_now > 0 or gnom1_sex == 1 and gnom1_hp_now > 0 or gnom2_sex == 1 and gnom2_hp_now > 0 or gnom3_sex == 1 and gnom3_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5582,7 +5582,7 @@ label fight61:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Noggin Gnome 1{/b}" if gnom1_hp_now >= 1 and gnom1_weapon > 0:
+                        "{b}Noggin Gnome 1{/b}" if gnom1_sex == 0 and gnom1_weapon >= 1 and gnom1_hp_now > 0 or gnom1_sex == 1 and gnom1_hp_now > 0:
                             kazuma "Steal!"
 
                             if gnom1_obrona >= 1:
@@ -5657,7 +5657,7 @@ label fight61:
                                         
                                 jump faza_fight62
 
-                        "{b}Noggin Gnome 2{/b}" if gnom2_hp_now >= 1 and gnom2_weapon > 0:
+                        "{b}Noggin Gnome 2{/b}" if gnom2_sex == 0 and gnom2_weapon >= 1 and gnom2_hp_now > 0 or gnom2_sex == 1 and gnom2_hp_now > 0:
                             kazuma "Steal!"
                             if gnom2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5731,7 +5731,7 @@ label fight61:
                                         
                                 jump faza_fight62
 
-                        "{b}Noggin Gnome 3{/b}" if gnom3_hp_now >= 1 and gnom3_weapon > 0:
+                        "{b}Noggin Gnome 3{/b}" if gnom3_sex == 0 and gnom3_weapon >= 1 and gnom3_hp_now > 0 or gnom3_sex == 1 and gnom3_hp_now > 0:
                             kazuma "Steal!"
                             if gnom3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11834,7 +11834,7 @@ label fight61:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight63
 
-                "{b}Steal{/b}" if gnom1_weapon >= 1 or gnom2_weapon >= 1 or gnom3_weapon >= 1:
+                "{b}Steal{/b}" if gnom1_sex == 0 and gnom1_weapon >= 1 and gnom1_hp_now > 0 or gnom2_sex == 0 and gnom2_weapon >= 1 and gnom2_hp_now > 0 or gnom3_sex == 0 and gnom3_weapon >= 1 and gnom3hp_now > 0 or gnom1_sex == 1 and gnom1_hp_now > 0 or gnom2_sex == 1 and gnom2_hp_now > 0 or gnom3_sex == 1 and gnom3_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11847,7 +11847,7 @@ label fight61:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Noggin Gnome 1{/b}" if gnom1_hp_now >= 1 and gnom1_weapon > 0:
+                        "{b}Noggin Gnome 1{/b}" if gnom1_sex == 0 and gnom1_weapon >= 1 and gnom1_hp_now > 0 or gnom1_sex == 1 and gnom1_hp_now > 0:
                             kazuma "Steal!"
                             if gnom1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11921,7 +11921,7 @@ label fight61:
                                         
                                 jump faza_fight63
 
-                        "{b}Noggin Gnome 2{/b}" if gnom2_hp_now >= 1 and gnom2_weapon > 0:
+                        "{b}Noggin Gnome 2{/b}" if gnom2_sex == 0 and gnom2_weapon >= 1 and gnom2_hp_now > 0 or gnom2_sex == 1 and gnom2_hp_now > 0:
                             kazuma "Steal!"
                             if gnom2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11995,7 +11995,7 @@ label fight61:
                                         
                                 jump faza_fight63
 
-                        "{b}Noggin Gnome 3{/b}" if gnom3_hp_now >= 1 and gnom3_weapon > 0:
+                        "{b}Noggin Gnome 3{/b}" if gnom3_sex == 0 and gnom3_weapon >= 1 and gnom3_hp_now > 0 or gnom3_sex == 1 and gnom3_hp_now > 0:
                             kazuma "Steal!"
                             if gnom3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15928,7 +15928,7 @@ label fight61:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight65
 
-                "{b}Steal{/b}" if gnom1_weapon >= 1 or gnom2_weapon >= 1 or gnom3_weapon >= 1:
+                "{b}Steal{/b}" if gnom1_sex == 0 and gnom1_weapon >= 1 and gnom1_hp_now > 0 or gnom2_sex == 0 and gnom2_weapon >= 1 and gnom2_hp_now > 0 or gnom3_sex == 0 and gnom3_weapon >= 1 and gnom3hp_now > 0 or gnom1_sex == 1 and gnom1_hp_now > 0 or gnom2_sex == 1 and gnom2_hp_now > 0 or gnom3_sex == 1 and gnom3_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15941,7 +15941,7 @@ label fight61:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Noggin Gnome 1{/b}" if gnom1_hp_now >= 1 and gnom1_weapon > 0:
+                        "{b}Noggin Gnome 1{/b}" if gnom1_sex == 0 and gnom1_weapon >= 1 and gnom1_hp_now > 0 or gnom1_sex == 1 and gnom1_hp_now > 0:
                             kazuma "Steal!"
                             if gnom1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16015,7 +16015,7 @@ label fight61:
                                         
                                 jump faza_fight64
 
-                        "{b}Noggin Gnome 2{/b}" if gnom2_hp_now >= 1 and gnom2_weapon > 0:
+                        "{b}Noggin Gnome 2{/b}" if gnom2_sex == 0 and gnom2_weapon >= 1 and gnom2_hp_now > 0 or gnom2_sex == 1 and gnom2_hp_now > 0:
                             kazuma "Steal!"
                             if gnom2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16089,7 +16089,7 @@ label fight61:
                                         
                                 jump faza_fight64
 
-                        "{b}Noggin Gnome 3{/b}" if gnom3_hp_now >= 1 and gnom3_weapon > 0:
+                        "{b}Noggin Gnome 3{/b}" if gnom3_sex == 0 and gnom3_weapon >= 1 and gnom3_hp_now > 0 or gnom3_sex == 1 and gnom3_hp_now > 0:
                             kazuma "Steal!"
                             if gnom3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -24183,25 +24183,25 @@ label fight61:
 
             "{b}Pomiń Walkę{/b}" if fight61_przegranko >= 3:
                 $ fight61_przegranko = 0
-                if przegranko == 3:
+                if fight61_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight61_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight61_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight61_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight61_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight61_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight61_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight61_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight61_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight61_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight61
 

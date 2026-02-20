@@ -185,7 +185,7 @@ label postacie:
 
     define nu = Character("Nu", color="#8b520b")
 
-    define gamma = Character("Gamma", color="#3A3E51")
+    define gamma = Character("Gamma", color="#50577c")
     image gamma neutral right = Transform("gamma neutral", xzoom=-1) 
 
     define obi = Character("Obi-Wan Kenobi", color="#9b6c46")
@@ -263,6 +263,10 @@ label postacie:
     define vergil = Character("Vergil", color="#430e80")
 
     define bartuch = Character("Bartuch Przeździuch", color="#693e1b")
+
+    define epsilon = Character("Epsilon", color="#BEE0E0")
+
+    define delta = Character("Delta", color="#A8A4BE")
 
 
 label pozycje:

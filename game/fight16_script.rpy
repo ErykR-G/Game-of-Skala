@@ -5561,7 +5561,7 @@ label fight161:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight161
 
-                "{b}Steal{/b}" if policja1_weapon >= 1 or trup17_weapon >= 1 or policja2_weapon >= 1:
+                "{b}Steal{/b}" if trup17_sex == 0 and trup17_weapon >= 1 and trup17_hp_now > 0 or policja1_sex == 0 and policja1_weapon >= 1 and policja1_hp_now > 0 or policja2_sex == 0 and policja2_weapon >= 1 and policja2_hp_now > 0 or policja2_sex == 1 and policja2_hp_now > 0 or policja1_sex == 1 and policja1_hp_now > 0 or trup17_sex == 1 and trup17_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5574,7 +5574,7 @@ label fight161:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Urzędniczka Skarbowa 1{/b}" if policja1_hp_now >= 1 and policja1_weapon > 0:
+                        "{b}Urzędniczka Skarbowa 1{/b}" if policja1_sex == 0 and policja1_weapon >= 1 and policja1_hp_now > 0 or policja1_sex == 1 and policja1_hp_now > 0:
                             kazuma "Steal!"
 
                             if policja1_obrona >= 1:
@@ -5649,7 +5649,7 @@ label fight161:
                                         
                                 jump faza_fight162
 
-                        "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_weapon > 0:
+                        "{b}Akane{/b}" if trup17_sex == 0 and trup17_weapon >= 1 and trup17_hp_now > 0 or trup17_sex == 1 and trup17_hp_now > 0:
                             kazuma "Steal!"
                             if trup17_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5723,7 +5723,7 @@ label fight161:
                                         
                                 jump faza_fight162
 
-                        "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_weapon > 0:
+                        "{b}Urzędniczka Skarbowa 2{/b}" if policja2_sex == 0 and policja2_weapon >= 1 and policja2_hp_now > 0 or policja2_sex == 1 and policja2_hp_now > 0:
                             kazuma "Steal!"
                             if policja2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11824,7 +11824,7 @@ label fight161:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight163
 
-                "{b}Steal{/b}" if policja1_weapon >= 1 or trup17_weapon >= 1 or policja2_weapon >= 1:
+                "{b}Steal{/b}" if trup17_sex == 0 and trup17_weapon >= 1 and trup17_hp_now > 0 or policja1_sex == 0 and policja1_weapon >= 1 and policja1_hp_now > 0 or policja2_sex == 0 and policja2_weapon >= 1 and policja2_hp_now > 0 or policja2_sex == 1 and policja2_hp_now > 0 or policja1_sex == 1 and policja1_hp_now > 0 or trup17_sex == 1 and trup17_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11837,7 +11837,7 @@ label fight161:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Urzędniczka Skarbowa 1{/b}" if policja1_hp_now >= 1 and policja1_weapon > 0:
+                        "{b}Urzędniczka Skarbowa 1{/b}" if policja1_sex == 0 and policja1_weapon >= 1 and policja1_hp_now > 0 or policja1_sex == 1 and policja1_hp_now > 0:
                             kazuma "Steal!"
                             if policja1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11912,7 +11912,7 @@ label fight161:
                                         
                                 jump faza_fight163
 
-                        "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_weapon > 0:
+                        "{b}Akane{/b}" if trup17_sex == 0 and trup17_weapon >= 1 and trup17_hp_now > 0 or trup17_sex == 1 and trup17_hp_now > 0:
                             kazuma "Steal!"
                             if trup17_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11986,7 +11986,7 @@ label fight161:
                                         
                                 jump faza_fight163
 
-                        "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_weapon > 0:
+                        "{b}Urzędniczka Skarbowa 2{/b}" if policja2_sex == 0 and policja2_weapon >= 1 and policja2_hp_now > 0 or policja2_sex == 1 and policja2_hp_now > 0:
                             kazuma "Steal!"
                             if policja2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15917,7 +15917,7 @@ label fight161:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight165
 
-                "{b}Steal{/b}" if policja1_weapon >= 1 or trup17_weapon >= 1 or policja2_weapon >= 1:
+                "{b}Steal{/b}" if trup17_sex == 0 and trup17_weapon >= 1 and trup17_hp_now > 0 or policja1_sex == 0 and policja1_weapon >= 1 and policja1_hp_now > 0 or policja2_sex == 0 and policja2_weapon >= 1 and policja2_hp_now > 0 or policja2_sex == 1 and policja2_hp_now > 0 or policja1_sex == 1 and policja1_hp_now > 0 or trup17_sex == 1 and trup17_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15930,7 +15930,7 @@ label fight161:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Urzędniczka Skarbowa 1{/b}" if policja1_hp_now >= 1 and policja1_weapon > 0:
+                        "{b}Urzędniczka Skarbowa 1{/b}" if policja1_sex == 0 and policja1_weapon >= 1 and policja1_hp_now > 0 or policja1_sex == 1 and policja1_hp_now > 0:
                             kazuma "Steal!"
                             if policja1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16005,7 +16005,7 @@ label fight161:
                                         
                                 jump faza_fight164
 
-                        "{b}Akane{/b}" if trup17_hp_now >= 1 and trup17_weapon > 0:
+                        "{b}Akane{/b}" if trup17_sex == 0 and trup17_weapon >= 1 and trup17_hp_now > 0 or trup17_sex == 1 and trup17_hp_now > 0:
                             kazuma "Steal!"
                             if trup17_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16079,7 +16079,7 @@ label fight161:
                                         
                                 jump faza_fight164
 
-                        "{b}Urzędniczka Skarbowa 2{/b}" if policja2_hp_now >= 1 and policja2_weapon > 0:
+                        "{b}Urzędniczka Skarbowa 2{/b}" if policja2_sex == 0 and policja2_weapon >= 1 and policja2_hp_now > 0 or policja2_sex == 1 and policja2_hp_now > 0:
                             kazuma "Steal!"
                             if policja2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -21930,25 +21930,25 @@ label fight161:
 
             "{b}Pomiń Walkę{/b}" if fight161_przegranko >= 3:
                 $ fight161_przegranko = 0
-                if przegranko == 3:
+                if fight161_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight161_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight161_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight161_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight161_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight161_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight161_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight161_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight161_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight161_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight161
 

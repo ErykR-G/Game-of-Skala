@@ -5499,7 +5499,7 @@ label fight01:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight11
 
-                "{b}Steal{/b}" if trup1_weapon >= 1 or emina_weapon >= 1 or trup2_weapon >= 1:
+                "{b}Steal{/b}" if trup1_sex == 0 and trup1_weapon >= 1 and trup1_hp_now > 0 or emina_sex == 0 and emina_weapon >= 1 and emina_hp_now > 0 or trup2_sex == 0 and trup2_weapon >= 1 and trup2_hp_now > 0 or trup1_sex == 1 and trup1_hp_now > 0 or emina_sex == 1 and emina_hp_now > 0 or trup2_sex == 1 and trup2_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5512,7 +5512,7 @@ label fight01:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup1_hp_now >= 1 and trup1_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup1_sex == 0 and trup1_weapon >= 1 and trup1_hp_now > 0 or trup1_sex == 1 and trup1_hp_now > 0:
                             kazuma "Steal!"
 
                             if trup1_obrona >= 1:
@@ -5587,7 +5587,7 @@ label fight01:
                                         
                                 jump faza_fight02
 
-                        "{b}Eminem{/b}" if emina_hp_now >= 1 and emina_weapon > 0:
+                        "{b}Eminem{/b}" if emina_sex == 0 and emina_weapon >= 1 and emina_hp_now > 0 or emina_sex == 1 and emina_hp_now > 0:
                             kazuma "Steal!"
                             if emina_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5661,7 +5661,7 @@ label fight01:
                                         
                                 jump faza_fight02
 
-                        "{b}Kibol 2{/b}" if trup2_hp_now >= 1 and trup2_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup2_sex == 0 and trup2_weapon >= 1 and trup2_hp_now > 0 or trup2_sex == 1 and trup2_hp_now > 0:
                             kazuma "Steal!"
                             if trup2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11702,7 +11702,7 @@ label fight01:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight15
 
-                "{b}Steal{/b}" if trup1_weapon >= 1 or emina_weapon >= 1 or trup2_weapon >= 1:
+                "{b}Steal{/b}" if trup1_sex == 0 and trup1_weapon >= 1 and trup1_hp_now > 0 or emina_sex == 0 and emina_weapon >= 1 and emina_hp_now > 0 or trup2_sex == 0 and trup2_weapon >= 1 and trup2_hp_now > 0 or trup1_sex == 1 and trup1_hp_now > 0 or emina_sex == 1 and emina_hp_now > 0 or trup2_sex == 1 and trup2_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11715,7 +11715,7 @@ label fight01:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup1_hp_now >= 1 and trup1_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup1_sex == 0 and trup1_weapon >= 1 and trup1_hp_now > 0 or trup1_sex == 1 and trup1_hp_now > 0:
                             kazuma "Steal!"
                             if trup1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11789,7 +11789,7 @@ label fight01:
                                         
                                 jump faza_fight03
 
-                        "{b}Eminem{/b}" if emina_hp_now >= 1 and emina_weapon > 0:
+                        "{b}Eminem{/b}" if emina_sex == 0 and emina_weapon >= 1 and emina_hp_now > 0 or emina_sex == 1 and emina_hp_now > 0:
                             kazuma "Steal!"
                             if emina_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11863,7 +11863,7 @@ label fight01:
                                         
                                 jump faza_fight03
 
-                        "{b}Kibol 2{/b}" if trup2_hp_now >= 1 and trup2_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup2_sex == 0 and trup2_weapon >= 1 and trup2_hp_now > 0 or trup2_sex == 1 and trup2_hp_now > 0:
                             kazuma "Steal!"
                             if trup2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15732,7 +15732,7 @@ label fight01:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight15
 
-                "{b}Steal{/b}" if trup1_weapon >= 1 or emina_weapon >= 1 or trup2_weapon >= 1:
+                "{b}Steal{/b}" if trup1_sex == 0 and trup1_weapon >= 1 and trup1_hp_now > 0 or emina_sex == 0 and emina_weapon >= 1 and emina_hp_now > 0 or trup2_sex == 0 and trup2_weapon >= 1 and trup2_hp_now > 0 or trup1_sex == 1 and trup1_hp_now > 0 or emina_sex == 1 and emina_hp_now > 0 or trup2_sex == 1 and trup2_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15745,7 +15745,7 @@ label fight01:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup1_hp_now >= 1 and trup1_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup1_sex == 0 and trup1_weapon >= 1 and trup1_hp_now > 0 or trup1_sex == 1 and trup1_hp_now > 0:
                             kazuma "Steal!"
                             if trup1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15819,7 +15819,7 @@ label fight01:
                                         
                                 jump faza_fight04
 
-                        "{b}Eminem{/b}" if emina_hp_now >= 1 and emina_weapon > 0:
+                        "{b}Eminem{/b}" if emina_sex == 0 and emina_weapon >= 1 and emina_hp_now > 0 or emina_sex == 1 and emina_hp_now > 0:
                             kazuma "Steal!"
                             if emina_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15893,7 +15893,7 @@ label fight01:
                                         
                                 jump faza_fight04
 
-                        "{b}Kibol 2{/b}" if trup2_hp_now >= 1 and trup2_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup2_sex == 0 and trup2_weapon >= 1 and trup2_hp_now > 0 or trup2_sex == 1 and trup2_hp_now > 0:
                             kazuma "Steal!"
                             if trup2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -22014,25 +22014,25 @@ label fight01:
 
             "{b}Pomiń Walkę{/b}" if fight01_przegranko >= 3:
                 $ fight01_przegranko = 0
-                if przegranko == 3:
+                if fight01_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight01_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight01_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight01_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight01_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight01_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight01_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight01_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight01_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight01_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight01
 

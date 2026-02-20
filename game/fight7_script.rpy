@@ -5583,7 +5583,7 @@ label fight71:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight71
 
-                "{b}Steal{/b}" if kartaginczyk1_weapon >= 1 or tanya_weapon >= 1 or kartaginczyk2_weapon >= 1:
+                "{b}Steal{/b}" if kartaginczyk1_sex == 0 and kartaginczyk1_weapon >= 1 and kartaginczyk1_hp_now > 0 or tanya_sex == 0 and tanya_weapon >= 1 and tanya_hp_now > 0 or kartaginczyk2_sex == 0 and kartaginczyk2_weapon >= 1 and kartaginczyk2_hp_now > 0 or kartaginczyk2_sex == 1 and kartaginczyk2_hp_now > 0 or tanya_sex == 1 and tanya_hp_now > 0 or kartaginczyk1_sex == 1 and kartaginczyk1_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5596,7 +5596,7 @@ label fight71:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kartagińczyk 1{/b}" if kartaginczyk1_hp_now >= 1 and kartaginczyk1_weapon > 0:
+                        "{b}Kartagińczyk 1{/b}" if kartaginczyk1_sex == 0 and kartaginczyk1_weapon >= 1 and kartaginczyk1_hp_now > 0 or kartaginczyk1_sex == 1 and kartaginczyk1_hp_now > 0:
                             kazuma "Steal!"
 
                             if kartaginczyk1_obrona >= 1:
@@ -5657,7 +5657,7 @@ label fight71:
                                         
                                 jump faza_fight72
 
-                        "{b}Tanya{/b}" if tanya_hp_now >= 1 and tanya_weapon > 0:
+                        "{b}Tanya{/b}" if tanya_sex == 0 and tanya_weapon >= 1 and tanya_hp_now > 0 or tanya_sex == 1 and tanya_hp_now > 0:
                             kazuma "Steal!"
                             if tanya_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5731,7 +5731,7 @@ label fight71:
                                         
                                 jump faza_fight72
 
-                        "{b}Kartagińczyk 2{/b}" if kartaginczyk2_hp_now >= 1 and kartaginczyk2_weapon > 0:
+                        "{b}Kartagińczyk 2{/b}" if kartaginczyk2_sex == 0 and kartaginczyk2_weapon >= 1 and kartaginczyk2_hp_now > 0 or kartaginczyk2_sex == 1 and kartaginczyk2_hp_now > 0:
                             kazuma "Steal!"
                             if kartaginczyk2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11820,7 +11820,7 @@ label fight71:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight73
 
-                "{b}Steal{/b}" if kartaginczyk1_weapon >= 1 or tanya_weapon >= 1 or kartaginczyk2_weapon >= 1:
+                "{b}Steal{/b}" if kartaginczyk1_sex == 0 and kartaginczyk1_weapon >= 1 and kartaginczyk1_hp_now > 0 or tanya_sex == 0 and tanya_weapon >= 1 and tanya_hp_now > 0 or kartaginczyk2_sex == 0 and kartaginczyk2_weapon >= 1 and kartaginczyk2_hp_now > 0 or kartaginczyk2_sex == 1 and kartaginczyk2_hp_now > 0 or tanya_sex == 1 and tanya_hp_now > 0 or kartaginczyk1_sex == 1 and kartaginczyk1_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11833,7 +11833,7 @@ label fight71:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kartagińczyk 1{/b}" if kartaginczyk1_hp_now >= 1 and kartaginczyk1_weapon > 0:
+                        "{b}Kartagińczyk 1{/b}" if kartaginczyk1_sex == 0 and kartaginczyk1_weapon >= 1 and kartaginczyk1_hp_now > 0 or kartaginczyk1_sex == 1 and kartaginczyk1_hp_now > 0:
                             kazuma "Steal!"
                             if kartaginczyk1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11893,7 +11893,7 @@ label fight71:
                                         
                                 jump faza_fight73
 
-                        "{b}Tanya{/b}" if tanya_hp_now >= 1 and tanya_weapon > 0:
+                        "{b}Tanya{/b}" if tanya_sex == 0 and tanya_weapon >= 1 and tanya_hp_now > 0 or tanya_sex == 1 and tanya_hp_now > 0:
                             kazuma "Steal!"
                             if tanya_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11967,7 +11967,7 @@ label fight71:
                                         
                                 jump faza_fight73
 
-                        "{b}Kartagińczyk 2{/b}" if kartaginczyk2_hp_now >= 1 and kartaginczyk2_weapon > 0:
+                        "{b}Kartagińczyk 2{/b}" if kartaginczyk2_sex == 0 and kartaginczyk2_weapon >= 1 and kartaginczyk2_hp_now > 0 or kartaginczyk2_sex == 1 and kartaginczyk2_hp_now > 0:
                             kazuma "Steal!"
                             if kartaginczyk2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15886,7 +15886,7 @@ label fight71:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight75
 
-                "{b}Steal{/b}" if kartaginczyk1_weapon >= 1 or tanya_weapon >= 1 or kartaginczyk2_weapon >= 1:
+                "{b}Steal{/b}" if kartaginczyk1_sex == 0 and kartaginczyk1_weapon >= 1 and kartaginczyk1_hp_now > 0 or tanya_sex == 0 and tanya_weapon >= 1 and tanya_hp_now > 0 or kartaginczyk2_sex == 0 and kartaginczyk2_weapon >= 1 and kartaginczyk2_hp_now > 0 or kartaginczyk2_sex == 1 and kartaginczyk2_hp_now > 0 or tanya_sex == 1 and tanya_hp_now > 0 or kartaginczyk1_sex == 1 and kartaginczyk1_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15899,7 +15899,7 @@ label fight71:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kartagińczyk 1{/b}" if kartaginczyk1_hp_now >= 1 and kartaginczyk1_weapon > 0:
+                        "{b}Kartagińczyk 1{/b}" if kartaginczyk1_sex == 0 and kartaginczyk1_weapon >= 1 and kartaginczyk1_hp_now > 0 or kartaginczyk1_sex == 1 and kartaginczyk1_hp_now > 0:
                             kazuma "Steal!"
                             if kartaginczyk1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15959,7 +15959,7 @@ label fight71:
                                         
                                 jump faza_fight74
 
-                        "{b}Tanya{/b}" if tanya_hp_now >= 1 and tanya_weapon > 0:
+                        "{b}Tanya{/b}" if tanya_sex == 0 and tanya_weapon >= 1 and tanya_hp_now > 0 or tanya_sex == 1 and tanya_hp_now > 0:
                             kazuma "Steal!"
                             if tanya_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16033,7 +16033,7 @@ label fight71:
                                         
                                 jump faza_fight74
 
-                        "{b}Kartagińczyk 2{/b}" if kartaginczyk2_hp_now >= 1 and kartaginczyk2_weapon > 0:
+                        "{b}Kartagińczyk 2{/b}" if kartaginczyk2_sex == 0 and kartaginczyk2_weapon >= 1 and kartaginczyk2_hp_now > 0 or kartaginczyk2_sex == 1 and kartaginczyk2_hp_now > 0:
                             kazuma "Steal!"
                             if kartaginczyk2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -22731,25 +22731,25 @@ label fight71:
 
             "{b}Pomiń Walkę{/b}" if fight71_przegranko >= 3:
                 $ fight71_przegranko = 0
-                if przegranko == 3:
+                if fight71_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight71_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight71_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight71_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight71_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight71_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight71_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight71_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight71_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight71_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight71
 

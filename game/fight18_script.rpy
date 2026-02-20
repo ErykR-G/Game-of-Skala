@@ -7090,7 +7090,7 @@ label fight181:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight181
 
-                "{b}Steal{/b}" if trup11_weapon >= 1 or fanatyk_weapon >= 1 or trup12_weapon >= 1:
+                "{b}Steal{/b}" if trup11_sex == 0 and trup11_weapon >= 1 and trup11_hp_now > 0 or fanatyk_sex == 0 and fanatyk_weapon >= 1 and fanatyk_hp_now > 0 or trup12_sex == 0 and trup12_weapon >= 1 and trup12_hp_now > 0 or trup11_sex == 1 and trup11_hp_now > 0 or fanatyk_sex == 1 and fanatyk_hp_now > 0 or trup12_sex == 1 and trup12_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -7103,7 +7103,7 @@ label fight181:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup11_hp_now >= 1 and trup11_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup11_sex == 0 and trup11_weapon >= 1 and trup11_hp_now > 0 or trup11_sex == 1 and trup11_hp_now > 0:
                             kazuma "Steal!"
 
                             if trup11_obrona >= 1:
@@ -7178,7 +7178,7 @@ label fight181:
                                         
                                 jump faza_fight182
 
-                        "{b}Fanatyk Wędkarstwa{/b}" if fanatyk_hp_now >= 1 and fanatyk_weapon > 0:
+                        "{b}Fanatyk Wędkarstwa{/b}" if fanatyk_sex == 0 and fanatyk_weapon >= 1 and fanatyk_hp_now > 0 or fanatyk_sex == 1 and fanatyk_hp_now > 0:
                             kazuma "Steal!"
                             if fanatyk_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -7252,7 +7252,7 @@ label fight181:
                                         
                                 jump faza_fight182
 
-                        "{b}Kibol 2{/b}" if trup12_hp_now >= 1 and trup12_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup12_sex == 0 and trup12_weapon >= 1 and trup12_hp_now > 0 or trup12_sex == 1 and trup12_hp_now > 0:
                             kazuma "Steal!"
                             if trup12_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15072,7 +15072,7 @@ label fight181:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight183
 
-                "{b}Steal{/b}" if trup11_weapon >= 1 or fanatyk_weapon >= 1 or trup12_weapon >= 1:
+                "{b}Steal{/b}" if trup11_sex == 0 and trup11_weapon >= 1 and trup11_hp_now > 0 or fanatyk_sex == 0 and fanatyk_weapon >= 1 and fanatyk_hp_now > 0 or trup12_sex == 0 and trup12_weapon >= 1 and trup12_hp_now > 0 or trup11_sex == 1 and trup11_hp_now > 0 or fanatyk_sex == 1 and fanatyk_hp_now > 0 or trup12_sex == 1 and trup12_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15085,7 +15085,7 @@ label fight181:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup11_hp_now >= 1 and trup11_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup11_sex == 0 and trup11_weapon >= 1 and trup11_hp_now > 0 or trup11_sex == 1 and trup11_hp_now > 0:
                             kazuma "Steal!"
                             if trup11_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15159,7 +15159,7 @@ label fight181:
                                         
                                 jump faza_fight183
 
-                        "{b}Fanatyk Wędkarstwa{/b}" if fanatyk_hp_now >= 1 and fanatyk_weapon > 0:
+                        "{b}Fanatyk Wędkarstwa{/b}" if fanatyk_sex == 0 and fanatyk_weapon >= 1 and fanatyk_hp_now > 0 or fanatyk_sex == 1 and fanatyk_hp_now > 0:
                             kazuma "Steal!"
                             if fanatyk_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15233,7 +15233,7 @@ label fight181:
                                         
                                 jump faza_fight183
 
-                        "{b}Kibol 2{/b}" if trup12_hp_now >= 1 and trup12_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup12_sex == 0 and trup12_weapon >= 1 and trup12_hp_now > 0 or trup12_sex == 1 and trup12_hp_now > 0:
                             kazuma "Steal!"
                             if trup12_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -20546,7 +20546,7 @@ label fight181:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight185
 
-                "{b}Steal{/b}" if trup11_weapon >= 1 or fanatyk_weapon >= 1 or trup12_weapon >= 1:
+                "{b}Steal{/b}" if trup11_sex == 0 and trup11_weapon >= 1 and trup11_hp_now > 0 or fanatyk_sex == 0 and fanatyk_weapon >= 1 and fanatyk_hp_now > 0 or trup12_sex == 0 and trup12_weapon >= 1 and trup12_hp_now > 0 or trup11_sex == 1 and trup11_hp_now > 0 or fanatyk_sex == 1 and fanatyk_hp_now > 0 or trup12_sex == 1 and trup12_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -20559,7 +20559,7 @@ label fight181:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup11_hp_now >= 1 and trup11_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup11_sex == 0 and trup11_weapon >= 1 and trup11_hp_now > 0 or trup11_sex == 1 and trup11_hp_now > 0:
                             kazuma "Steal!"
                             if trup11_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -20633,7 +20633,7 @@ label fight181:
                                         
                                 jump faza_fight184
 
-                        "{b}Fanatyk Wędkarstwa{/b}" if fanatyk_hp_now >= 1 and fanatyk_weapon > 0:
+                        "{b}Fanatyk Wędkarstwa{/b}" if fanatyk_sex == 0 and fanatyk_weapon >= 1 and fanatyk_hp_now > 0 or fanatyk_sex == 1 and fanatyk_hp_now > 0:
                             kazuma "Steal!"
                             if fanatyk_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -20707,7 +20707,7 @@ label fight181:
                                         
                                 jump faza_fight184
 
-                        "{b}Kibol 2{/b}" if trup12_hp_now >= 1 and trup12_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup12_sex == 0 and trup12_weapon >= 1 and trup12_hp_now > 0 or trup12_sex == 1 and trup12_hp_now > 0:
                             kazuma "Steal!"
                             if trup12_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -28128,25 +28128,25 @@ label fight181:
 
             "{b}Pomiń Walkę{/b}" if fight181_przegranko >= 3:
                 $ fight181_przegranko = 0
-                if przegranko == 3:
+                if fight181_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight181_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight181_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight181_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight181_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight181_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight181_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight181_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight181_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight181_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight181
 

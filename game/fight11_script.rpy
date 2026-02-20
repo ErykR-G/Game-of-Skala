@@ -5569,7 +5569,7 @@ label fight111:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight111
 
-                "{b}Steal{/b}" if girek_weapon >= 1 or urban_zly_weapon >= 1 or jaruzel_weapon >= 1:
+                "{b}Steal{/b}" if girek_sex == 0 and girek_weapon >= 1 and girek_hp_now > 0 or urban_zly_sex == 0 and urban_zly_weapon >= 1 and urban_zly_hp_now > 0 or jaruzel_sex == 0 and jaruzel_weapon >= 1 and jaruzel_hp_now > 0 or girek_sex == 1 and girek_hp_now > 0 or urban_zly_sex == 1 and urban_zly_hp_now > 0 or jaruzel_sex == 1 and jaruzel_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5582,7 +5582,7 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
+                        "{b}Girek{/b}" if girek_sex == 0 and girek_weapon >= 1 and girek_hp_now > 0 or girek_sex == 1 and girek_hp_now > 0:
                             kazuma "Steal!"
 
                             if girek_obrona >= 1:
@@ -5657,7 +5657,7 @@ label fight111:
                                         
                                 jump faza_fight112
 
-                        "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1 and urban_zly_weapon > 0:
+                        "{b}Jerzy Urban{/b}" if urban_zly_sex == 0 and urban_zly_weapon >= 1 and urban_zly_hp_now > 0 or urban_zly_sex == 1 and urban_zly_hp_now > 0:
                             kazuma "Steal!"
                             if urban_zly_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5731,7 +5731,7 @@ label fight111:
                                         
                                 jump faza_fight112
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
+                        "{b}Jaruzel{/b}" if jaruzel_sex == 0 and jaruzel_weapon >= 1 and jaruzel_hp_now > 0 or jaruzel_sex == 1 and jaruzel_hp_now > 0:
                             kazuma "Steal!"
                             if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11831,7 +11831,7 @@ label fight111:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight113
 
-                "{b}Steal{/b}" if girek_weapon >= 1 or urban_zly_weapon >= 1 or jaruzel_weapon >= 1:
+                "{b}Steal{/b}" if girek_sex == 0 and girek_weapon >= 1 and girek_hp_now > 0 or urban_zly_sex == 0 and urban_zly_weapon >= 1 and urban_zly_hp_now > 0 or jaruzel_sex == 0 and jaruzel_weapon >= 1 and jaruzel_hp_now > 0 or girek_sex == 1 and girek_hp_now > 0 or urban_zly_sex == 1 and urban_zly_hp_now > 0 or jaruzel_sex == 1 and jaruzel_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11844,7 +11844,7 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
+                        "{b}Girek{/b}" if girek_sex == 0 and girek_weapon >= 1 and girek_hp_now > 0 or girek_sex == 1 and girek_hp_now > 0:
                             kazuma "Steal!"
                             if girek_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11918,7 +11918,7 @@ label fight111:
                                         
                                 jump faza_fight113
 
-                        "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1 and urban_zly_weapon > 0:
+                        "{b}Jerzy Urban{/b}" if urban_zly_sex == 0 and urban_zly_weapon >= 1 and urban_zly_hp_now > 0 or urban_zly_sex == 1 and urban_zly_hp_now > 0:
                             kazuma "Steal!"
                             if urban_zly_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11992,7 +11992,7 @@ label fight111:
                                         
                                 jump faza_fight113
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
+                        "{b}Jaruzel{/b}" if jaruzel_sex == 0 and jaruzel_weapon >= 1 and jaruzel_hp_now > 0 or jaruzel_sex == 1 and jaruzel_hp_now > 0:
                             kazuma "Steal!"
                             if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15922,7 +15922,7 @@ label fight111:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight115
 
-                "{b}Steal{/b}" if girek_weapon >= 1 or urban_zly_weapon >= 1 or jaruzel_weapon >= 1:
+                "{b}Steal{/b}" if girek_sex == 0 and girek_weapon >= 1 and girek_hp_now > 0 or urban_zly_sex == 0 and urban_zly_weapon >= 1 and urban_zly_hp_now > 0 or jaruzel_sex == 0 and jaruzel_weapon >= 1 and jaruzel_hp_now > 0 or girek_sex == 1 and girek_hp_now > 0 or urban_zly_sex == 1 and urban_zly_hp_now > 0 or jaruzel_sex == 1 and jaruzel_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15935,7 +15935,7 @@ label fight111:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Girek{/b}" if girek_hp_now >= 1 and girek_weapon > 0:
+                        "{b}Girek{/b}" if girek_sex == 0 and girek_weapon >= 1 and girek_hp_now > 0 or girek_sex == 1 and girek_hp_now > 0:
                             kazuma "Steal!"
                             if girek_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16009,7 +16009,7 @@ label fight111:
                                         
                                 jump faza_fight114
 
-                        "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1 and urban_zly_weapon > 0:
+                        "{b}Jerzy Urban{/b}" if urban_zly_sex == 0 and urban_zly_weapon >= 1 and urban_zly_hp_now > 0 or urban_zly_sex == 1 and urban_zly_hp_now > 0:
                             kazuma "Steal!"
                             if urban_zly_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16083,7 +16083,7 @@ label fight111:
                                         
                                 jump faza_fight114
 
-                        "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1 and jaruzel_weapon > 0:
+                        "{b}Jaruzel{/b}" if jaruzel_sex == 0 and jaruzel_weapon >= 1 and jaruzel_hp_now > 0 or jaruzel_sex == 1 and jaruzel_hp_now > 0:
                             kazuma "Steal!"
                             if jaruzel_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -21932,25 +21932,25 @@ label fight111:
 
             "{b}Pomiń Walkę{/b}" if fight111_przegranko >= 3:
                 $ fight111_przegranko = 0
-                if przegranko == 3:
+                if fight111_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight111_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight111_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight111_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight111_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight111_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight111_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight111_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight111_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight111_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight111
 

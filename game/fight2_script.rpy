@@ -5521,7 +5521,7 @@ label fight21:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight21
 
-                "{b}Steal{/b}" if trup3_weapon >= 1 or braun_weapon >= 1 or trup4_weapon >= 1:
+                "{b}Steal{/b}" if trup3_sex == 0 and trup3_weapon >= 1 and trup3_hp_now > 0 or braun_sex == 0 and braun_weapon >= 1 and braun_hp_now > 0 or trup4_sex == 0 and trup4_weapon >= 1 and trup4_hp_now > 0 or trup3_sex == 1 and trup3_hp_now > 0 or braun_sex == 1 and braun_hp_now > 0 or trup4_sex == 1 and trup4_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5534,7 +5534,7 @@ label fight21:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup3_hp_now >= 1 and trup3_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup3_sex == 0 and trup3_weapon >= 1 and trup3_hp_now > 0 or trup3_sex == 1 and trup3_hp_now > 0:
                             kazuma "Steal!"
 
                             if trup3_obrona >= 1:
@@ -5609,7 +5609,7 @@ label fight21:
                                         
                                 jump faza_fight22
 
-                        "{b}Grzegorz Braun{/b}" if braun_hp_now >= 1 and braun_weapon > 0:
+                        "{b}Grzegorz Braun{/b}" if braun_sex == 0 and braun_weapon >= 1 and braun_hp_now > 0 or braun_sex == 1 and braun_hp_now > 0:
                             kazuma "Steal!"
                             if braun_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5618,7 +5618,6 @@ label fight21:
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if braun_sex == 0:
-                                    
                                     if kostka >= 9:
                                         if braun_max_attack_now < braun_max_attack:
                                             $ braun_max_attack_now_true = 2
@@ -5683,7 +5682,7 @@ label fight21:
                                         
                                 jump faza_fight22
 
-                        "{b}Kibol 2{/b}" if trup4_hp_now >= 1 and trup4_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup4_sex == 0 and trup4_weapon >= 1 and trup4_hp_now > 0 or trup4_sex == 1 and trup4_hp_now > 0:
                             kazuma "Steal!"
                             if trup4_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11724,7 +11723,7 @@ label fight21:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight23
 
-                "{b}Steal{/b}" if trup3_weapon >= 1 or braun_weapon >= 1 or trup4_weapon >= 1:
+                "{b}Steal{/b}" if trup3_sex == 0 and trup3_weapon >= 1 and trup3_hp_now > 0 or braun_sex == 0 and braun_weapon >= 1 and braun_hp_now > 0 or trup4_sex == 0 and trup4_weapon >= 1 and trup4_hp_now > 0 or trup3_sex == 1 and trup3_hp_now > 0 or braun_sex == 1 and braun_hp_now > 0 or trup4_sex == 1 and trup4_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11737,7 +11736,7 @@ label fight21:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup3_hp_now >= 1 and trup3_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup3_sex == 0 and trup3_weapon >= 1 and trup3_hp_now > 0 or trup3_sex == 1 and trup3_hp_now > 0:
                             kazuma "Steal!"
                             if trup3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11811,7 +11810,7 @@ label fight21:
                                         
                                 jump faza_fight23
 
-                        "{b}Grzegorz Braun{/b}" if braun_hp_now >= 1 and braun_weapon > 0:
+                        "{b}Grzegorz Braun{/b}" if braun_sex == 0 and braun_weapon >= 1 and braun_hp_now > 0 or braun_sex == 1 and braun_hp_now > 0:
                             kazuma "Steal!"
                             if braun_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11819,8 +11818,7 @@ label fight21:
                                 jump faza_fight23
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
-                                if braun_sex == 0:
-                                    
+                                if braun_sex == 0:  
                                     if kostka >= 9:
                                         if braun_max_attack_now < braun_max_attack:
                                             $ braun_max_attack_now_true = 2
@@ -11885,7 +11883,7 @@ label fight21:
                                         
                                 jump faza_fight23
 
-                        "{b}Kibol 2{/b}" if trup4_hp_now >= 1 and trup4_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup4_sex == 0 and trup4_weapon >= 1 and trup4_hp_now > 0 or trup4_sex == 1 and trup4_hp_now > 0:
                             kazuma "Steal!"
                             if trup4_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15767,7 +15765,7 @@ label fight21:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight25
 
-                "{b}Steal{/b}" if trup3_weapon >= 1 or braun_weapon >= 1 or trup4_weapon >= 1:
+                "{b}Steal{/b}" if trup3_sex == 0 and trup3_weapon >= 1 and trup3_hp_now > 0 or braun_sex == 0 and braun_weapon >= 1 and braun_hp_now > 0 or trup4_sex == 0 and trup4_weapon >= 1 and trup4_hp_now > 0 or trup3_sex == 1 and trup3_hp_now > 0 or braun_sex == 1 and braun_hp_now > 0 or trup4_sex == 1 and trup4_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15780,7 +15778,7 @@ label fight21:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup3_hp_now >= 1 and trup3_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup3_sex == 0 and trup3_weapon >= 1 and trup3_hp_now > 0 or trup3_sex == 1 and trup3_hp_now > 0:
                             kazuma "Steal!"
                             if trup3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15854,7 +15852,7 @@ label fight21:
                                         
                                 jump faza_fight24
 
-                        "{b}Grzegorz Braun{/b}" if braun_hp_now >= 1 and braun_weapon > 0:
+                        "{b}Grzegorz Braun{/b}" if braun_sex == 0 and braun_weapon >= 1 and braun_hp_now > 0 or braun_sex == 1 and braun_hp_now > 0:
                             kazuma "Steal!"
                             if braun_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15863,7 +15861,6 @@ label fight21:
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if braun_sex == 0:
-                                    
                                     if kostka >= 9:
                                         if braun_max_attack_now < braun_max_attack:
                                             $ braun_max_attack_now_true = 2
@@ -15928,7 +15925,7 @@ label fight21:
                                         
                                 jump faza_fight24
 
-                        "{b}Kibol 2{/b}" if trup4_hp_now >= 1 and trup4_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup4_sex == 0 and trup4_weapon >= 1 and trup4_hp_now > 0 or trup4_sex == 1 and trup4_hp_now > 0:
                             kazuma "Steal!"
                             if trup4_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16322,8 +16319,9 @@ label fight21:
                 $ luszcz_hp_now -= 2
                 $ luszcz_max_attack_now += 1
                 $ luszcz_max_attack_now_true += 1
-                $ luszcz_min_attack_now += 1
-                $ luszcz_min_attack_now_true += 1
+                if luszcz_min_attack > 0:
+                    $ luszcz_min_attack_now += 1
+                    $ luszcz_min_attack_now_true += 1
         
         if eminem_gasnica == 2:
             $ eminem_hp_now -= 2
@@ -16332,8 +16330,9 @@ label fight21:
                 $ eminem_hp_now -= 2
                 $ eminem_max_attack_now += 1
                 $ eminem_max_attack_now_true += 1
-                $ eminem_min_attack_now += 1
-                $ eminem_min_attack_now_true += 1
+                if eminem_min_attack > 0:
+                    $ eminem_min_attack_now += 1
+                    $ eminem_min_attack_now_true += 1
 
         if urban_gasnica == 2:
             $ urban_hp_now -= 2
@@ -16342,8 +16341,9 @@ label fight21:
                 $ urban_hp_now -= 2
                 $ urban_max_attack_now += 1
                 $ urban_max_attack_now_true += 1
-                $ urban_min_attack_now += 1
-                $ urban_min_attack_now_true += 1
+                if urban_min_attack > 0:
+                    $ urban_min_attack_now += 1
+                    $ urban_min_attack_now_true += 1
 
         if zyd_gasnica == 2:
             $ zyd_hp_now -= 2
@@ -16352,8 +16352,9 @@ label fight21:
                 $ zyd_hp_now -= 2
                 $ zyd_max_attack_now += 1
                 $ zyd_max_attack_now_true += 1
-                $ zyd_min_attack_now += 1
-                $ zyd_min_attack_now_true += 1
+                if zyd_min_attack > 0:
+                    $ zyd_min_attack_now += 1
+                    $ zyd_min_attack_now_true += 1
 
         if kazuma_gasnica == 2:
             $ kazuma_hp_now -= 2
@@ -16362,8 +16363,9 @@ label fight21:
                 $ kazuma_hp_now -= 2
                 $ kazuma_max_attack_now += 1
                 $ kazuma_max_attack_now_true += 1
-                $ kazuma_min_attack_now += 1
-                $ kazuma_min_attack_now_true += 1
+                if kazuma_min_attack > 0:
+                    $ kazuma_min_attack_now += 1
+                    $ kazuma_min_attack_now_true += 1
 
         if tarczownik_gasnica == 2:
             $ tarczownik_hp_now -= 2
@@ -16372,8 +16374,9 @@ label fight21:
                 $ tarczownik_hp_now -= 2
                 $ tarczownik_max_attack_now += 1
                 $ tarczownik_max_attack_now_true += 1
-                $ tarczownik_min_attack_now += 1
-                $ tarczownik_min_attack_now_true += 1
+                if tarczownik_min_attack > 0:
+                    $ tarczownik_min_attack_now += 1
+                    $ tarczownik_min_attack_now_true += 1
 
         if luszcz_gasnica > 0 and luszcz_wybrany > 0 or eminem_gasnica > 0 and eminem_wybrany > 0 or urban_gasnica > 0 and urban_wybrany > 0 or zyd_gasnica > 0 and zyd_wybrany > 0 or kazuma_gasnica > 0 and kazuma_wybrany > 0 or tarczownik_gasnica > 0 and tarczownik_wybrany > 0:
             play sound "audio/sfx/kaszel.mp3"
@@ -20074,8 +20077,9 @@ label fight21:
                     $ luszcz_gasnica = 2
                     $ luszcz_max_attack_now -= 1
                     $ luszcz_max_attack_now_true -= 1
-                    $ luszcz_min_attack_now -= 1
-                    $ luszcz_min_attack_now_true -= 1
+                    if luszcz_min_attack > 0:
+                        $ luszcz_min_attack_now -= 1
+                        $ luszcz_min_attack_now_true -= 1
                     if luszcz_wybrany == 1:
                         show pianka1 zorder 15 at center_sojusznik1 
 
@@ -20089,8 +20093,9 @@ label fight21:
                     $ eminem_gasnica = 2
                     $ eminem_max_attack_now -= 1
                     $ eminem_max_attack_now_true -= 1
-                    $ eminem_min_attack_now -= 1
-                    $ eminem_min_attack_now_true -= 1
+                    if eminem_min_attack > 0:
+                        $ eminem_min_attack_now -= 1
+                        $ eminem_min_attack_now_true -= 1
                     if eminem_wybrany == 1:
                         show pianka2 zorder 15 at center_sojusznik1 
 
@@ -20104,8 +20109,9 @@ label fight21:
                     $ urban_gasnica = 2
                     $ urban_max_attack_now -= 1
                     $ urban_max_attack_now_true -= 1
-                    $ urban_min_attack_now -= 1
-                    $ urban_min_attack_now_true -= 1
+                    if urban_min_attack > 0:
+                        $ urban_min_attack_now -= 1
+                        $ urban_min_attack_now_true -= 1
                     if urban_wybrany == 1:
                         show pianka3 zorder 15 at center_sojusznik1 
 
@@ -20119,8 +20125,9 @@ label fight21:
                     $ zyd_gasnica = 2
                     $ zyd_max_attack_now -= 1
                     $ zyd_max_attack_now_true -= 1
-                    $ zyd_min_attack_now -= 1
-                    $ zyd_min_attack_now_true -= 1
+                    if zyd_min_attack > 0:
+                        $ zyd_min_attack_now -= 1
+                        $ zyd_min_attack_now_true -= 1
                     if zyd_wybrany == 1:
                         show pianka4 zorder 15 at center_sojusznik1 
 
@@ -20134,8 +20141,9 @@ label fight21:
                     $ kazuma_gasnica = 2
                     $ kazuma_max_attack_now -= 1
                     $ kazuma_max_attack_now_true -= 1
-                    $ kazuma_min_attack_now -= 1
-                    $ kazuma_min_attack_now_true -= 1
+                    if kazuma_min_attack > 0:
+                        $ kazuma_min_attack_now -= 1
+                        $ kazuma_min_attack_now_true -= 1
                     if kazuma_wybrany == 1:
                         show pianka5 zorder 15 at center_sojusznik1 
 
@@ -20149,8 +20157,9 @@ label fight21:
                     $ tarczownik_gasnica = 2
                     $ tarczownik_max_attack_now -= 1
                     $ tarczownik_max_attack_now_true -= 1
-                    $ tarczownik_min_attack_now -= 1
-                    $ tarczownik_min_attack_now_true -= 1
+                    if tarczownik_min_attack > 0:
+                        $ tarczownik_min_attack_now -= 1
+                        $ tarczownik_min_attack_now_true -= 1
                     if tarczownik_wybrany == 1:
                         show pianka6 zorder 15 at center_sojusznik1 
 
@@ -22324,25 +22333,25 @@ label fight21:
 
             "{b}Pomiń Walkę{/b}" if fight21_przegranko >= 3:
                 $ fight21_przegranko = 0
-                if przegranko == 3:
+                if fight21_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight21_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight21_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight21_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight21_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight21_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight21_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight21_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight21_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight21_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight21
 

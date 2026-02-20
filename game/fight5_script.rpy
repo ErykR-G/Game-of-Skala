@@ -5558,7 +5558,7 @@ label fight51:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight51
 
-                "{b}Steal{/b}" if ram_weapon >= 1 or trup8_weapon >= 1 or rem_weapon >= 1:
+                "{b}Steal{/b}" if trup8_sex == 0 and trup8_weapon >= 1 and trup8_hp_now > 0 or ram_sex == 0 and ram_weapon >= 1 and ram_hp_now > 0 or rem_sex == 0 and rem_weapon >= 1 and rem_hp_now > 0 or rem_sex == 1 and rem_hp_now > 0 or ram_sex == 1 and ram_hp_now > 0 or trup8_sex == 1 and trup8_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5571,7 +5571,7 @@ label fight51:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Ram{/b}" if ram_hp_now >= 1 and ram_weapon > 0:
+                        "{b}Ram{/b}" if ram_sex == 0 and ram_weapon >= 1 and ram_hp_now > 0 or ram_sex == 1 and ram_hp_now > 0:
                             kazuma "Steal!"
 
                             if ram_obrona >= 1:
@@ -5646,7 +5646,7 @@ label fight51:
                                         
                                 jump faza_fight52
 
-                        "{b}Akane{/b}" if trup8_hp_now >= 1 and trup8_weapon > 0:
+                        "{b}Akane{/b}" if trup8_sex == 0 and trup8_weapon >= 1 and trup8_hp_now > 0 or trup8_sex == 1 and trup8_hp_now > 0:
                             kazuma "Steal!"
                             if trup8_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5720,7 +5720,7 @@ label fight51:
                                         
                                 jump faza_fight52
 
-                        "{b}Rem{/b}" if rem_hp_now >= 1 and rem_weapon > 0:
+                        "{b}Rem{/b}" if rem_sex == 0 and rem_weapon >= 1 and rem_hp_now > 0 or rem_sex == 1 and rem_hp_now > 0:
                             kazuma "Steal!"
                             if rem_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11822,7 +11822,7 @@ label fight51:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight53
 
-                "{b}Steal{/b}" if ram_weapon >= 1 or trup8_weapon >= 1 or rem_weapon >= 1:
+                "{b}Steal{/b}" if trup8_sex == 0 and trup8_weapon >= 1 and trup8_hp_now > 0 or ram_sex == 0 and ram_weapon >= 1 and ram_hp_now > 0 or rem_sex == 0 and rem_weapon >= 1 and rem_hp_now > 0 or rem_sex == 1 and rem_hp_now > 0 or ram_sex == 1 and ram_hp_now > 0 or trup8_sex == 1 and trup8_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11835,7 +11835,7 @@ label fight51:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Ram{/b}" if ram_hp_now >= 1 and ram_weapon > 0:
+                        "{b}Ram{/b}" if ram_sex == 0 and ram_weapon >= 1 and ram_hp_now > 0 or ram_sex == 1 and ram_hp_now > 0:
                             kazuma "Steal!"
                             if ram_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11909,7 +11909,7 @@ label fight51:
                                         
                                 jump faza_fight53
 
-                        "{b}Akane{/b}" if trup8_hp_now >= 1 and trup8_weapon > 0:
+                        "{b}Akane{/b}" if trup8_sex == 0 and trup8_weapon >= 1 and trup8_hp_now > 0 or trup8_sex == 1 and trup8_hp_now > 0:
                             kazuma "Steal!"
                             if trup8_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11983,7 +11983,7 @@ label fight51:
                                         
                                 jump faza_fight53
 
-                        "{b}Rem{/b}" if rem_hp_now >= 1 and rem_weapon > 0:
+                        "{b}Rem{/b}" if rem_sex == 0 and rem_weapon >= 1 and rem_hp_now > 0 or rem_sex == 1 and rem_hp_now > 0:
                             kazuma "Steal!"
                             if rem_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15916,7 +15916,7 @@ label fight51:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight55
 
-                "{b}Steal{/b}" if ram_weapon >= 1 or trup8_weapon >= 1 or rem_weapon >= 1:
+                "{b}Steal{/b}" if trup8_sex == 0 and trup8_weapon >= 1 and trup8_hp_now > 0 or ram_sex == 0 and ram_weapon >= 1 and ram_hp_now > 0 or rem_sex == 0 and rem_weapon >= 1 and rem_hp_now > 0 or rem_sex == 1 and rem_hp_now > 0 or ram_sex == 1 and ram_hp_now > 0 or trup8_sex == 1 and trup8_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15929,7 +15929,7 @@ label fight51:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Ram{/b}" if ram_hp_now >= 1 and ram_weapon > 0:
+                        "{b}Ram{/b}" if ram_sex == 0 and ram_weapon >= 1 and ram_hp_now > 0 or ram_sex == 1 and ram_hp_now > 0:
                             kazuma "Steal!"
                             if ram_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16003,7 +16003,7 @@ label fight51:
                                         
                                 jump faza_fight54
 
-                        "{b}Akane{/b}" if trup8_hp_now >= 1 and trup8_weapon > 0:
+                        "{b}Akane{/b}" if trup8_sex == 0 and trup8_weapon >= 1 and trup8_hp_now > 0 or trup8_sex == 1 and trup8_hp_now > 0:
                             kazuma "Steal!"
                             if trup8_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16077,7 +16077,7 @@ label fight51:
                                         
                                 jump faza_fight54
 
-                        "{b}Rem{/b}" if rem_hp_now >= 1 and rem_weapon > 0:
+                        "{b}Rem{/b}" if rem_sex == 0 and rem_weapon >= 1 and rem_hp_now > 0 or rem_sex == 1 and rem_hp_now > 0:
                             kazuma "Steal!"
                             if rem_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -22235,25 +22235,25 @@ label fight51:
 
             "{b}Pomiń Walkę{/b}" if fight51_przegranko >= 3:
                 $ fight51_przegranko = 0
-                if przegranko == 3:
+                if fight51_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight51_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight51_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight51_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight51_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight51_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight51_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight51_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight51_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight51_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight51
 

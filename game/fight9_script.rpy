@@ -5555,7 +5555,7 @@ label fight91:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight91
 
-                "{b}Steal{/b}" if trup9_weapon >= 1 or czarodziej_weapon >= 1 or trup10_weapon >= 1:
+                "{b}Steal{/b}" if trup9_sex == 0 and trup9_weapon >= 1 and trup9_hp_now > 0 or czarodziej_sex == 0 and czarodziej_weapon >= 1 and czarodziej_hp_now > 0 or trup10_sex == 0 and trup10_weapon >= 1 and trup10_hp_now > 0 or trup9_sex == 1 and trup9_hp_now > 0 or czarodziej_sex == 1 and czarodziej_hp_now > 0 or trup10_sex == 1 and trup10_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5568,7 +5568,7 @@ label fight91:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup9_hp_now >= 1 and trup9_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup9_sex == 0 and trup9_weapon >= 1 and trup9_hp_now > 0 or trup9_sex == 1 and trup9_hp_now > 0:
                             kazuma "Steal!"
 
                             if trup9_obrona >= 1:
@@ -5643,7 +5643,7 @@ label fight91:
                                         
                                 jump faza_fight92
 
-                        "{b}Czarodziej z Tourette'm{/b}" if czarodziej_hp_now >= 1 and czarodziej_weapon > 0:
+                        "{b}Czarodziej z Tourette'm{/b}" if czarodziej_sex == 0 and czarodziej_weapon >= 1 and czarodziej_hp_now > 0 or czarodziej_sex == 1 and czarodziej_hp_now > 0:
                             kazuma "Steal!"
                             if czarodziej_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5717,7 +5717,7 @@ label fight91:
                                         
                                 jump faza_fight92
 
-                        "{b}Kibol 2{/b}" if trup10_hp_now >= 1 and trup10_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup10_sex == 0 and trup10_weapon >= 1 and trup10_hp_now > 0 or trup10_sex == 1 and trup10_hp_now > 0:
                             kazuma "Steal!"
                             if trup10_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11820,7 +11820,7 @@ label fight91:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight93
 
-                "{b}Steal{/b}" if trup9_weapon >= 1 or czarodziej_weapon >= 1 or trup10_weapon >= 1:
+                "{b}Steal{/b}" if trup9_sex == 0 and trup9_weapon >= 1 and trup9_hp_now > 0 or czarodziej_sex == 0 and czarodziej_weapon >= 1 and czarodziej_hp_now > 0 or trup10_sex == 0 and trup10_weapon >= 1 and trup10_hp_now > 0 or trup9_sex == 1 and trup9_hp_now > 0 or czarodziej_sex == 1 and czarodziej_hp_now > 0 or trup10_sex == 1 and trup10_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11833,7 +11833,7 @@ label fight91:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup9_hp_now >= 1 and trup9_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup9_sex == 0 and trup9_weapon >= 1 and trup9_hp_now > 0 or trup9_sex == 1 and trup9_hp_now > 0:
                             kazuma "Steal!"
                             if trup9_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11907,7 +11907,7 @@ label fight91:
                                         
                                 jump faza_fight93
 
-                        "{b}Czarodziej z Tourette'm{/b}" if czarodziej_hp_now >= 1 and czarodziej_weapon > 0:
+                        "{b}Czarodziej z Tourette'm{/b}" if czarodziej_sex == 0 and czarodziej_weapon >= 1 and czarodziej_hp_now > 0 or czarodziej_sex == 1 and czarodziej_hp_now > 0:
                             kazuma "Steal!"
                             if czarodziej_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11981,7 +11981,7 @@ label fight91:
                                         
                                 jump faza_fight93
 
-                        "{b}Kibol 2{/b}" if trup10_hp_now >= 1 and trup10_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup10_sex == 0 and trup10_weapon >= 1 and trup10_hp_now > 0 or trup10_sex == 1 and trup10_hp_now > 0:
                             kazuma "Steal!"
                             if trup10_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15912,7 +15912,7 @@ label fight91:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight95
 
-                "{b}Steal{/b}" if trup9_weapon >= 1 or czarodziej_weapon >= 1 or trup10_weapon >= 1:
+                "{b}Steal{/b}" if trup9_sex == 0 and trup9_weapon >= 1 and trup9_hp_now > 0 or czarodziej_sex == 0 and czarodziej_weapon >= 1 and czarodziej_hp_now > 0 or trup10_sex == 0 and trup10_weapon >= 1 and trup10_hp_now > 0 or trup9_sex == 1 and trup9_hp_now > 0 or czarodziej_sex == 1 and czarodziej_hp_now > 0 or trup10_sex == 1 and trup10_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -15925,7 +15925,7 @@ label fight91:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Kibol 1{/b}" if trup9_hp_now >= 1 and trup9_weapon > 0:
+                        "{b}Kibol 1{/b}" if trup9_sex == 0 and trup9_weapon >= 1 and trup9_hp_now > 0 or trup9_sex == 1 and trup9_hp_now > 0:
                             kazuma "Steal!"
                             if trup9_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15999,7 +15999,7 @@ label fight91:
                                         
                                 jump faza_fight94
 
-                        "{b}Czarodziej z Tourette'm{/b}" if czarodziej_hp_now >= 1 and czarodziej_weapon > 0:
+                        "{b}Czarodziej z Tourette'm{/b}" if czarodziej_sex == 0 and czarodziej_weapon >= 1 and czarodziej_hp_now > 0 or czarodziej_sex == 1 and czarodziej_hp_now > 0:
                             kazuma "Steal!"
                             if czarodziej_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16073,7 +16073,7 @@ label fight91:
                                         
                                 jump faza_fight94
 
-                        "{b}Kibol 2{/b}" if trup10_hp_now >= 1 and trup10_weapon > 0:
+                        "{b}Kibol 2{/b}" if trup10_sex == 0 and trup10_weapon >= 1 and trup10_hp_now > 0 or trup10_sex == 1 and trup10_hp_now > 0:
                             kazuma "Steal!"
                             if trup10_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -22169,25 +22169,25 @@ label fight91:
 
             "{b}Pomiń Walkę{/b}" if fight91_przegranko >= 3:
                 $ fight91_przegranko = 0
-                if przegranko == 3:
+                if fight91_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight91_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight91_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight91_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight91_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight91_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight91_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight91_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight91_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight91_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight91
 

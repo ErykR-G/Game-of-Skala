@@ -1,5 +1,6 @@
 label fight171_stats:
     default dialog17p = 0
+    default epsilon_cyce = 1
     default fight171_przegranko = 0
     
     default delta_sex = 1
@@ -171,7 +172,7 @@ label fight171:
             eminem "O chwila was też kojarzę!"
             eminem "Nazywacie się..."
             eminem "yyyy eeee yh"
-            gamma "Deltai i Epsilon"
+            gamma "Delta i Epsilon"
             gamma "A ty jesteś martwy"
         else:
             if dialog17p == 0:
@@ -5641,7 +5642,7 @@ label fight171:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight171
 
-                "{b}Steal{/b}" if delta_weapon >= 1 or gamma_weapon >= 1 or epsilon_weapon >= 1:
+                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5654,7 +5655,7 @@ label fight171:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Delta{/b}" if delta_hp_now >= 1 and delta_weapon > 0:
+                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
                             kazuma "Steal!"
 
                             if delta_obrona >= 1:
@@ -5729,7 +5730,7 @@ label fight171:
                                         
                                 jump faza_fight172
 
-                        "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_weapon > 0:
+                        "{b}Gamma{/b}" if gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0:
                             kazuma "Steal!"
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -5803,7 +5804,7 @@ label fight171:
                                         
                                 jump faza_fight172
 
-                        "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_weapon > 0:
+                        "{b}Epsilon{/b}" if epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0:
                             kazuma "Steal!"
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11903,7 +11904,7 @@ label fight171:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight173
 
-                "{b}Steal{/b}" if delta_weapon >= 1 or gamma_weapon >= 1 or epsilon_weapon >= 1:
+                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -11916,7 +11917,7 @@ label fight171:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Delta{/b}" if delta_hp_now >= 1 and delta_weapon > 0:
+                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
                             kazuma "Steal!"
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11990,7 +11991,7 @@ label fight171:
                                         
                                 jump faza_fight173
 
-                        "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_weapon > 0:
+                        "{b}Gamma{/b}" if gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0:
                             kazuma "Steal!"
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -12064,7 +12065,7 @@ label fight171:
                                         
                                 jump faza_fight173
 
-                        "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_weapon > 0:
+                        "{b}Epsilon{/b}" if epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0:
                             kazuma "Steal!"
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -15994,7 +15995,7 @@ label fight171:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight175
 
-                "{b}Steal{/b}" if delta_weapon >= 1 or gamma_weapon >= 1 or epsilon_weapon >= 1:
+                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -16007,7 +16008,7 @@ label fight171:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Delta{/b}" if delta_hp_now >= 1 and delta_weapon > 0:
+                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
                             kazuma "Steal!"
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16081,7 +16082,7 @@ label fight171:
                                         
                                 jump faza_fight174
 
-                        "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_weapon > 0:
+                        "{b}Gamma{/b}" if gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0:
                             kazuma "Steal!"
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16155,7 +16156,7 @@ label fight171:
                                         
                                 jump faza_fight174
 
-                        "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_weapon > 0:
+                        "{b}Epsilon{/b}" if epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0:
                             kazuma "Steal!"
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -19227,7 +19228,7 @@ label fight171:
             if kostka <= 3:
                 $ gamma_hp_now -= gamma_attack
                 play sound "audio/sfx/rzut.mp3"
-                "{i}Podczas ataku Gamma przewróciła się i nabiła na własny miecz tracąc [gamma_attack] obrażeń{/i}"
+                "{i}Podczas ataku Gamma przewróciła się i nabiła na własny miecz tracąc [gamma_attack] puntky życia{/i}"
                 jump faza_fight176
 
             if memy == 3:
@@ -19299,7 +19300,11 @@ label fight171:
             $ gamma_attack = renpy.random.randint(gamma_min_attack_now, gamma_max_attack_now)
             $ gamma_hp_now -= gamma_attack
             play sound "audio/sfx/rzut.mp3"
-            "{i}Podczas ataku Gamma przewróciła się i nabiła na własny miecz tracąc [gamma_attack] obrażeń{/i}"
+            if gamma_weapon >= 1:
+                show gamma_weapon zorder 15 at weapon_wrog3 
+            else:
+                show reka7 zorder 15 at weapon_wrog3  
+            "{i}Podczas ataku Gamma przewróciła się i nabiła na własny miecz tracąc [gamma_attack] puntky życia{/i}"
             jump faza_fight176
 
         label losowanko_fight175:
@@ -20426,7 +20431,146 @@ label fight171:
                     "{i}Epsilon broni się{/i}"
                     $ epsilon_obrona += 1
                     jump start_fight171
+        
+        if epsilon_hp_now >= 1 and epsilon_cyce == 1:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                play sound "audio/sfx/eps.mp3"
+                show epsilon fight zorder 10 at wrog2:
+                    yoffset 0
+                    linear 0.02 yoffset -5
+                    linear 0.02 yoffset 0
                     
+                pause 0.1
+
+                queue sound "audio/sfx/eps.mp3"
+                show epsilon fight zorder 10 at wrog2:
+                    yoffset 0
+                    linear 0.02 yoffset -5
+                    linear 0.02 yoffset 0
+
+                "{i}*Boing Boing*{/i}"
+                label epsilon_cyce:
+                    $ kostka = renpy.random.randint(1, 6)
+                    if kostka == 1:
+                        if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+
+                            if luszcz_obrona >= 1:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Flirt Epsilon na Łuszczu się nie udał{/i}"
+                                $ luszcz_obrona = 1
+                                                    
+                            else:
+                                $ luszcz_hp_now -= 6
+                                if epsilon_hp_now + 6 >= epsilon_hp:
+                                    $ epsilon_hp_now = epsilon_hp
+                                else:
+                                    $ epsilon_hp_now += 6
+
+                                "{i}Epsilon uwiodła Łuszcza na Cyce i wyssała mu 6 punktów życia{/i}"
+
+                            jump start_fight171
+                        else:
+                            jump epsilon_cyce
+                    
+                    if kostka == 2:
+                        if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                            
+                            $ kostka = renpy.random.randint(1, 3)
+                            if kostka == 1:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Flirt Epsilon na Shadowie się nie udał{/i}"
+                                jump start_fight171
+
+                            else:
+                                jump epsilon_cyce
+                        else:
+                            jump epsilon_cyce
+                    
+                    if kostka == 3:
+                        if urban_hp_now >= 1 and urban_wybrany >= 1:
+
+                            if urban_obrona >= 1:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Flirt Epsilon na Jerzym Urbanie się nie udał{/i}"
+                                $ urban_obrona = 1
+                                                    
+                            else:
+                                $ urban_hp_now -= 6
+                                if epsilon_hp_now + 6 >= epsilon_hp:
+                                    $ epsilon_hp_now = epsilon_hp
+                                else:
+                                    $ epsilon_hp_now += 6
+
+                                "{i}Epsilon uwiodła Jerzego Urbana na Cyce i wyssała mu 6 punktów życia{/i}"
+
+                            jump start_fight171
+                        else:
+                            jump epsilon_cyce
+                    
+                    if kostka == 4:
+                        if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+
+                            if zyd_obrona >= 1:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Flirt Epsilon na Żydzie się nie udał{/i}"
+                                $ zyd_obrona = 1
+                                                    
+                            else:
+                                $ zyd_hp_now -= 6
+                                if epsilon_hp_now + 6 >= epsilon_hp:
+                                    $ epsilon_hp_now = epsilon_hp
+                                else:
+                                    $ epsilon_hp_now += 6
+
+                                "{i}Epsilon uwiodła Żyda na Cyce i wyssała mu 6 punktów życia{/i}"
+
+                            jump start_fight171
+                        else:
+                            jump epsilon_cyce
+                    
+                    if kostka == 5:
+                        if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+
+                            if kazuma_obrona >= 1:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Flirt Epsilon na Kazumie się nie udał{/i}"
+                                $ kazuma_obrona = 1
+                                                    
+                            else:
+                                $ kazuma_hp_now -= 6
+                                if epsilon_hp_now + 6 >= epsilon_hp:
+                                    $ epsilon_hp_now = epsilon_hp
+                                else:
+                                    $ epsilon_hp_now += 6
+
+                                "{i}Epsilon uwiodła Kazumę na Cyce i wyssała mu 6 punktów życia{/i}"
+
+                            jump start_fight171
+                        else:
+                            jump epsilon_cyce
+                    
+                    if kostka == 6:
+                        if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+
+                            if tarczownik_obrona >= 1:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Flirt Epsilon na Naofumim się nie udał{/i}"
+                                $ tarczownik_obrona = 1
+                                                    
+                            else:
+                                $ tarczownik_hp_now -= 6
+                                if epsilon_hp_now + 6 >= epsilon_hp:
+                                    $ epsilon_hp_now = epsilon_hp
+                                else:
+                                    $ epsilon_hp_now += 6
+
+                                "{i}Epsilon uwiodła Naofumiego na Cyce i wyssała mu 6 punktów życia{/i}"
+
+                            jump start_fight171
+                        else:
+                            jump epsilon_cyce             
+
         label losowanko_fight176:    
             if epsilon_weapon >= 1:
                 show epsilon_weapon zorder 15 at weapon_wrog2 
@@ -20467,11 +20611,8 @@ label fight171:
                                     "{i}Epsilon zadaje [dmg] obrażeń Łuszczowi{/i}"
                                 else:
                                     $ luszcz_hp_now -= epsilon_attack
-                                    if epsilon_hp_now + epsilon_attack > epsilon_hp:
-                                        $ epsilon_hp_now = epsilon_hp
-                                    else:
-                                        $ epsilon_hp_now += epsilon_attack
-                                    "{i}Epsilon zabiera [epsilon_attack] punktów życia Łuszczowi{/i}"
+
+                                    "{i}Epsilon zadaje [epsilon_attack] obrażeń Łuszczowi{/i}"
 
                             jump start_fight171
                         else:
@@ -21451,25 +21592,25 @@ label fight171:
 
             "{b}Pomiń Walkę{/b}" if fight171_przegranko >= 3:
                 $ fight171_przegranko = 0
-                if przegranko == 3:
+                if fight171_przegranko == 3:
                     $ timer += 50
-                if przegranko == 4:
+                if fight171_przegranko == 4:
                     $ timer += 45
-                if przegranko == 5:
+                if fight171_przegranko == 5:
                     $ timer += 40
-                if przegranko == 6:
+                if fight171_przegranko == 6:
                     $ timer += 35
-                if przegranko == 7:
+                if fight171_przegranko == 7:
                     $ timer += 30
-                if przegranko == 8:
+                if fight171_przegranko == 8:
                     $ timer += 25
-                if przegranko == 9:
+                if fight171_przegranko == 9:
                     $ timer += 20
-                if przegranko == 10:
+                if fight171_przegranko == 10:
                     $ timer += 15
-                if przegranko == 11:
+                if fight171_przegranko == 11:
                     $ timer += 10
-                if przegranko == 12:
+                if fight171_przegranko == 12:
                     $ timer += 5
                 jump wygranko_fight171
 
