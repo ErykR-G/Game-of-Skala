@@ -1,15 +1,17 @@
 label fight171_stats:
     default dialog17p = 0
     default epsilon_cyce = 1
+    default gamma_zapas = 1
+    default delta_majty = 1
     default fight171_przegranko = 0
     
     default delta_sex = 1
     default epsilon_sex = 1
     default gamma_sex = 1
 
-    default delta_hp = 15
-    default epsilon_hp = 15
-    default gamma_hp = 30
+    default delta_hp = 30
+    default epsilon_hp = 30
+    default gamma_hp = 45
 
     default delta_uszy = 0
     default gamma_uszy = 0
@@ -33,11 +35,11 @@ label fight171_stats:
 
     default delta_min_attack = 1
     default epsilon_min_attack = 2
-    default gamma_min_attack = 3
+    default gamma_min_attack = 4
 
     default delta_max_attack = 4
-    default epsilon_max_attack = 8
-    default gamma_max_attack = 8
+    default epsilon_max_attack = 5
+    default gamma_max_attack = 10
 
     default delta_max_attack_now = delta_max_attack
     default epsilon_max_attack_now = epsilon_max_attack
@@ -172,14 +174,24 @@ label fight171:
             eminem "O chwila was też kojarzę!"
             eminem "Nazywacie się..."
             eminem "yyyy eeee yh"
+
             gamma "Delta i Epsilon"
-            gamma "A ty jesteś martwy"
+            gamma "A ty zaraz dołączysz do mojego mistrza w zaświatach!"
         else:
             if dialog17p == 0:
                 $ dialog17p = 1
-                kazuma "chwila a one to się skąd tutaj wzieły!"
+                kazuma "Ej chwila a te skąd się tu wzieły?"
 
+                gamma "UOKiK mówi ci to coś?"
 
+                luszcz "A to nie tak, że UOKiK jest właśnie po to, by chronić prawa konsumentów?"
+
+                gamma "No ja konsumuję wasze pieniądze więc wszystko jest na miejscu"
+
+                luszcz "..."
+
+                gamma "..."
+                gamma "może po prostu walczmy"
 
         label team_fight171:
             if liczba_sojusznikow >= 3:
@@ -5642,7 +5654,7 @@ label fight171:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight171
 
-                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
+                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5655,7 +5667,7 @@ label fight171:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
+                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
                             kazuma "Steal!"
 
                             if delta_obrona >= 1:
@@ -5714,12 +5726,14 @@ label fight171:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
+                                        $ gacie_ukradniete = 1
 
                                         kazuma "Trafiłem jackpota!"
-                                        delta "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Delta.  \nDelta poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ delta_hp_now = 0
+                                        delta "O dziękuję teraz już nic nie krępuje moich ruchów!"
+                                        kazuma "..?"
+                                        delta "Jak chcesz to możesz sobie zachować na pamiątkę"
+                                        "{i}Udało sie ukraść bieliznę Delta.  \nJednak to w żaden sposób nie wpłyneło na chęć Delty do walki.{/i}"
+                                        $ delta_majty = 0
                                         hide majtki
                                         hide chwyta
                                         
@@ -5788,15 +5802,35 @@ label fight171:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
+                                        $ gacie_ukradniete = 1
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gamma "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gamma.  \nGamma poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gamma_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
+                                        if gamma_zapas == 1:
+                                            $ gamma_zapas = 0
+                                            kazuma "Trafiłem jackpota!"
+                                            gamma "Nie! Oddaj mi moje majtki!"
+                                            gamma "Myślałeś, że tak powiem? co!?"
+                                            kazuma "hyy?"
+                                            kazuma "A nie?"
+                                            gamma "Nie ponieważ najlepsi Midgarscy Naukowcy odkryli na zlecenie korporacji Mitsugoshi specjalną bieliznę którą ma dwie warstwy i.."
+                                            kazuma "Po prostu nosisz dwie pary gaci?"
+                                            gamma "..."
+                                            gamma "Można tak powiedzieć"
+                                            kazuma "No cóż do dwóch razy sztuka!"
+                                            "{i}Udało sie ukraść bieliznę Gamma.  \nJednak Gammie pozostała jeszcze jedna para.{/i}"
+                                            $ gamma_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+
+                                        else:
+                                            kazuma "Trafiłem jackpota?"
+                                            gamma "Eh niestety, ale teraz tak"
+                                            gamma "chyba muszę się poddać"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Gamma.  \nGamma poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ gamma_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
                                     else:
                                         play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Gamma{/i}"
@@ -5852,25 +5886,53 @@ label fight171:
                         
                                 else:
                                     if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        if epsilon_cyce == 1:
+                                            if kazuma_wybrany == 1:
+                                                show cyce zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show cyce zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            if kazuma_wybrany == 3:
+                                                show cyce zorder 15 at weapon_sojusznik3 
+                                            
+                                            show epsilon fight2 zorder 10 at wrog2
+                                            
+                                            play sound "audio/sfx/steal.mp3"
 
-                                        kazuma "Trafiłem jackpota!"
-                                        epsilon "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Epsilon.  \nEpsilon poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ epsilon_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
+                                            kazuma "hmmm co to jest?"
+                                            epsilon "Zabiję Cię!" with vpunch
+                                            epsilon "Zabiję i poćwiartuję!" with vpunch
+                                            $ epsilon_max_attack_now = epsilon_max_attack_now * 2
+                                            $ epsilon_min_attack_now = epsilon_min_attack_now * 2
+                                            $ epsilon_max_attack_now_true = epsilon_max_attack_now
+                                            $ epsilon_min_attack_now_true = epsilon_min_attack_now
+                                            $ epsilon_cyce = 0
+                                            "{i}Udało sie ukraść szlamowe cyce Epsilon.  \nAtak Epsilon się wzmocnił.{/i}"
+                                            hide cyce
+                                            hide chwyta
+
+                                        else:
+                                            $ gacie_ukradniete = 1
+                                            if kazuma_wybrany == 1:
+                                                show majtki zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show majtki zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show majtki zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "Trafiłem jackpota!"
+                                            epsilon "Nie! Oddaj mi moje majtki!"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Epsilon.  \nEpsilon poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ epsilon_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
                                     else:
                                         play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Epsilon{/i}"
@@ -11917,7 +11979,7 @@ label fight171:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
+                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
                             kazuma "Steal!"
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -11965,6 +12027,7 @@ label fight171:
                         
                                 else:
                                     if kostka >= 6:
+                                        $ gacie_ukradniete = 1
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
 
@@ -11977,10 +12040,11 @@ label fight171:
                                         play sound "audio/sfx/steal.mp3"
 
                                         kazuma "Trafiłem jackpota!"
-                                        delta "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Delta.  \nDelta poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ delta_hp_now = 0
+                                        delta "O dziękuję teraz już nic nie krępuje moich ruchów!"
+                                        kazuma "..?"
+                                        delta "Jak chcesz to możesz sobie zachować na pamiątkę"
+                                        "{i}Udało sie ukraść bieliznę Delta.  \nJednak to w żaden sposób nie wpłyneło na chęć Delty do walki.{/i}"
+                                        $ delta_majty = 0
                                         hide majtki
                                         hide chwyta
                                         
@@ -12039,6 +12103,7 @@ label fight171:
                         
                                 else:
                                     if kostka >= 6:
+                                        $ gacie_ukradniete = 1
                                         if kazuma_wybrany == 1:
                                             show majtki zorder 15 at weapon_sojusznik1  
 
@@ -12050,18 +12115,38 @@ label fight171:
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gamma "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gamma.  \nGamma poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gamma_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
+                                        if gamma_zapas == 1:
+                                            $ gamma_zapas = 0
+                                            kazuma "Trafiłem jackpota!"
+                                            gamma "Nie! Oddaj mi moje majtki!"
+                                            gamma "Myślałeś, że tak powiem? co!?"
+                                            kazuma "hyy?"
+                                            kazuma "A nie?"
+                                            gamma "Nie ponieważ najlepsi Midgarscy Naukowcy odkryli na zlecenie korporacji Mitsugoshi specjalną bieliznę którą ma dwie warstwy i.."
+                                            kazuma "Po prostu nosisz dwie pary gaci?"
+                                            gamma "..."
+                                            gamma "Można tak powiedzieć"
+                                            kazuma "No cóż do dwóch razy sztuka!"
+                                            "{i}Udało sie ukraść bieliznę Gamma.  \nJednak Gammie pozostała jeszcze jedna para.{/i}"
+                                            $ gamma_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+
+                                        else:
+                                            kazuma "Trafiłem jackpota?"
+                                            gamma "Eh niestety, ale teraz tak"
+                                            gamma "chyba muszę się poddać"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Gamma.  \nGamma poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ gamma_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
                                     else:
                                         play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Gamma{/i}"
                                         hide chwyta
+                                        
                                         
                                 jump faza_fight173
 
@@ -12113,25 +12198,53 @@ label fight171:
                         
                                 else:
                                     if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        if epsilon_cyce == 1:
+                                            if kazuma_wybrany == 1:
+                                                show cyce zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show cyce zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
+                                            if kazuma_wybrany == 3:
+                                                show cyce zorder 15 at weapon_sojusznik3 
+                                            
+                                            show epsilon fight2 zorder 10 at wrog2
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "hmmm co to jest?"
+                                            epsilon "Zabiję Cię!" with vpunch
+                                            epsilon "Zabiję i poćwiartuję!" with vpunch
+                                            $ epsilon_max_attack_now = epsilon_max_attack_now * 2
+                                            $ epsilon_min_attack_now = epsilon_min_attack_now * 2
+                                            $ epsilon_max_attack_now_true = epsilon_max_attack_now
+                                            $ epsilon_min_attack_now_true = epsilon_min_attack_now
+                                            $ epsilon_cyce = 0
+                                            "{i}Udało sie ukraść szlamowe cyce Epsilon.  \nAtak Epsilon się wzmocnił.{/i}"
+                                            hide cyce
+                                            hide chwyta
                                         
-                                        play sound "audio/sfx/steal.mp3"
+                                        else:
+                                            $ gacie_ukradniete = 1
+                                            if kazuma_wybrany == 1:
+                                                show majtki zorder 15 at weapon_sojusznik1  
 
-                                        kazuma "Trafiłem jackpota!"
-                                        epsilon "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Epsilon.  \nEpsilon poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ epsilon_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
+                                            if kazuma_wybrany == 2:
+                                                show majtki zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show majtki zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "Trafiłem jackpota!"
+                                            epsilon "Nie! Oddaj mi moje majtki!"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Epsilon.  \nEpsilon poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ epsilon_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
                                     else:
                                         play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Epsilon{/i}"
@@ -16008,7 +16121,7 @@ label fight171:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
+                        "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
                             kazuma "Steal!"
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -16066,12 +16179,14 @@ label fight171:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
+                                        $ gacie_ukradniete = 1
 
                                         kazuma "Trafiłem jackpota!"
-                                        delta "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Delta.  \nDelta poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ delta_hp_now = 0
+                                        delta "O dziękuję teraz już nic nie krępuje moich ruchów!"
+                                        kazuma "..?"
+                                        delta "Jak chcesz to możesz sobie zachować na pamiątkę"
+                                        "{i}Udało sie ukraść bieliznę Delta.  \nJednak to w żaden sposób nie wpłyneło na chęć Delty do walki.{/i}"
+                                        $ delta_majty = 0
                                         hide majtki
                                         hide chwyta
                                         
@@ -16140,15 +16255,35 @@ label fight171:
                                             show majtki zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
+                                        $ gacie_ukradniete = 1
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gamma "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gamma.  \nGamma poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gamma_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
+                                        if gamma_zapas == 1:
+                                            $ gamma_zapas = 0
+                                            kazuma "Trafiłem jackpota!"
+                                            gamma "Nie! Oddaj mi moje majtki!"
+                                            gamma "Myślałeś, że tak powiem? co!?"
+                                            kazuma "hyy?"
+                                            kazuma "A nie?"
+                                            gamma "Nie ponieważ najlepsi Midgarscy Naukowcy odkryli na zlecenie korporacji Mitsugoshi specjalną bieliznę którą ma dwie warstwy i.."
+                                            kazuma "Po prostu nosisz dwie pary gaci?"
+                                            gamma "..."
+                                            gamma "Można tak powiedzieć"
+                                            kazuma "No cóż do dwóch razy sztuka!"
+                                            "{i}Udało sie ukraść bieliznę Gamma.  \nJednak Gammie pozostała jeszcze jedna para.{/i}"
+                                            $ gamma_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+
+                                        else:
+                                            kazuma "Trafiłem jackpota?"
+                                            gamma "Eh niestety, ale teraz tak"
+                                            gamma "chyba muszę się poddać"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Gamma.  \nGamma poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ gamma_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
                                     else:
                                         play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Gamma{/i}"
@@ -16204,25 +16339,53 @@ label fight171:
                         
                                 else:
                                     if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        if epsilon_cyce == 1:
+                                            if kazuma_wybrany == 1:
+                                                show cyce zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show cyce zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
+                                            if kazuma_wybrany == 3:
+                                                show cyce zorder 15 at weapon_sojusznik3 
+                                            
+                                            show epsilon fight2 zorder 10 at wrog2
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "hmmm co to jest?"
+                                            epsilon "Zabiję Cię!" with vpunch
+                                            epsilon "Zabiję i poćwiartuję!" with vpunch
+                                            $ epsilon_max_attack_now = epsilon_max_attack_now * 2
+                                            $ epsilon_min_attack_now = epsilon_min_attack_now * 2
+                                            $ epsilon_max_attack_now_true = epsilon_max_attack_now
+                                            $ epsilon_min_attack_now_true = epsilon_min_attack_now
+                                            $ epsilon_cyce = 0
+                                            "{i}Udało sie ukraść szlamowe cyce Epsilon.  \nAtak Epsilon się wzmocnił.{/i}"
+                                            hide cyce
+                                            hide chwyta
                                         
-                                        play sound "audio/sfx/steal.mp3"
+                                        else:
+                                            $ gacie_ukradniete = 1
+                                            if kazuma_wybrany == 1:
+                                                show majtki zorder 15 at weapon_sojusznik1  
 
-                                        kazuma "Trafiłem jackpota!"
-                                        epsilon "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Epsilon.  \nEpsilon poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ epsilon_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
+                                            if kazuma_wybrany == 2:
+                                                show majtki zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show majtki zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "Trafiłem jackpota!"
+                                            epsilon "Nie! Oddaj mi moje majtki!"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Epsilon.  \nEpsilon poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ epsilon_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
                                     else:
                                         play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Epsilon{/i}"
@@ -21587,10 +21750,16 @@ label fight171:
                 $ zyd_stun = 0
                 $ kazuma_stun = 0
                 $ tarczownik_stun = 0
+
+                $ epsilon_cyce = 1
+                $ gamma_zapas = 1
+                $ delta_majty = 1
+                $ gacie_ukradniete = 0
                 play sound "audio/sfx/return.mp3"
                 jump fight171
 
             "{b}Pomiń Walkę{/b}" if fight171_przegranko >= 3:
+                $ gacie_ukradniete = 0
                 $ fight171_przegranko = 0
                 if fight171_przegranko == 3:
                     $ timer += 50
@@ -21906,5 +22075,9 @@ label fight171:
         $ epsilon_stun = 0
         $ gamma_poison = 0
         $ gamma_stun = 0
+
+        $ epsilon_cyce = 1
+        $ gamma_zapas = 1
+        $ delta_majty = 1
 
         jump after_fight171
