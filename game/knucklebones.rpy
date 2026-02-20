@@ -17,7 +17,8 @@ init python:
         return random.randint(1, 6)
 
     def total_score(board):
-        return sum(sum(col) for col in board)
+        return sum(column_score(col) for col in board)
+
 
     # Oblicza sumę kolumny z mnożnikami za powtarzające się wartości
     def column_score(col):

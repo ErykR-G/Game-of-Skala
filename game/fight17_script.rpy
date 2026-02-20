@@ -1,8 +1,9 @@
-label fight1771_stats:
-    default fight1771_przegranko = 0
+label fight171_stats:
+    default dialog17p = 0
+    default fight171_przegranko = 0
     
-    default delta_sex = 0
-    default epsilon_sex = 0
+    default delta_sex = 1
+    default epsilon_sex = 1
     default gamma_sex = 1
 
     default delta_hp = 15
@@ -30,11 +31,11 @@ label fight1771_stats:
     default gamma_hp_now = gamma_hp
 
     default delta_min_attack = 1
-    default epsilon_min_attack = 1
+    default epsilon_min_attack = 2
     default gamma_min_attack = 3
 
     default delta_max_attack = 4
-    default epsilon_max_attack = 4
+    default epsilon_max_attack = 8
     default gamma_max_attack = 8
 
     default delta_max_attack_now = delta_max_attack
@@ -73,11 +74,75 @@ label fight1771_stats:
     default epsilon_stun = 0
     default gamma_stun = 0
 
-label fight1771:
+label fight171:
     $ fight_on = 1
-    label wybor_fight1771:
-        play music "audio/music/fight.mp3"
-        scene bg korytarz
+    label wybor_fight171:
+        play music "audio/music/eis_fight.mp3"
+        if timer >= 360 and timer <= 1200:       
+            scene bg black 
+            scene bg granica 
+
+        if timer >= 1800 and timer <= 2640:
+            scene bg black 
+            scene bg granica2
+
+        if timer >= 3240 and timer <= 4080:
+            scene bg black
+            scene bg granica3 
+
+        if timer >= 4680 and timer <= 5520:
+            scene bg black 
+            scene bg granica4 
+
+        if timer >= 6120 and timer <= 6960:
+            scene bg black 
+            scene bg granica5
+
+        if timer >= 7560 and timer <= 8400:
+            scene bg black
+            scene bg granica6 
+
+        if timer >= 9000 and timer <= 9840:
+            scene bg black
+            scene bg granica7 
+
+        if timer >= 10440 and timer <= 11280:
+            scene bg black 
+            scene bg granica8 
+
+        if timer > 1200 and timer < 1800:       
+            scene bg black 
+            scene bg granica_noc 
+
+        if  timer > 2640 and timer < 3240:
+            scene bg black
+            scene bg granica2_noc
+
+        if  timer > 4080 and timer < 4680:
+            scene bg black
+            scene bg granica3_noc 
+
+        if  timer > 5520 and timer < 6120:
+            scene bg black 
+            scene bg granica4_noc 
+
+        if  timer > 6960 and timer < 7560:
+            scene bg black 
+            scene bg granica5_noc 
+
+        if  timer > 8400 and timer < 9000:
+            scene bg black 
+            scene bg granica6_noc 
+
+        if  timer > 9840 and timer < 10440:
+            scene bg black 
+            scene bg granica7_noc
+
+        if  timer > 11280:
+            scene bg black 
+            scene bg granica8_noc 
+        show auto zorder 1
+
         $ ile_wrogow += 3
         show delta fight zorder 10 at wrog1
         show screen delta_stats
@@ -101,8 +166,21 @@ label fight1771:
         $ gamma_max_attack_now = gamma_max_attack
         $ gamma_min_attack_now_true = gamma_min_attack
         $ gamma_max_attack_now_true = gamma_max_attack
+        if eminem_sojusznik == 1 and dialog17p == 0:
+            $ dialog17p = 1
+            eminem "O chwila was też kojarzę!"
+            eminem "Nazywacie się..."
+            eminem "yyyy eeee yh"
+            gamma "Deltai i Epsilon"
+            gamma "A ty jesteś martwy"
+        else:
+            if dialog17p == 0:
+                $ dialog17p = 1
+                kazuma "chwila a one to się skąd tutaj wzieły!"
 
-        label team_fight1771:
+
+
+        label team_fight171:
             if liczba_sojusznikow >= 3:
                 $ ile_sojusznikow += 3
                 menu:
@@ -682,7 +760,7 @@ label fight1771:
                         show screen tarczownik2_stats
                         tarczownik "Gotowy do boju"
 
-                jump start_fight1771
+                jump start_fight171
                 
             else:
                 if liczba_sojusznikow == 2:
@@ -1057,7 +1135,7 @@ label fight1771:
                             show screen tarczownik2_stats
                             tarczownik "Gotowy do boju"
                         
-                    jump start_fight1771
+                    jump start_fight171
 
                 else:
                     $ ile_sojusznikow += 1
@@ -1089,9 +1167,9 @@ label fight1771:
                     show screen luszcz3_stats
                     luszcz "Gotowy do boju"
 
-                    jump start_fight1771
+                    jump start_fight171
     
-    label start_fight1771:
+    label start_fight171:
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien
@@ -1206,7 +1284,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -1406,7 +1484,7 @@ label fight1771:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
 
         if delta_poison >= 3 and delta_hp_now >= 1:
             $ delta_hp_now -= 1
@@ -1579,7 +1657,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -1779,7 +1857,7 @@ label fight1771:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
 
         if luszcz_lagodny == 1:
             if luszcz_hp_now + 1 < luszcz_hp:
@@ -2031,13 +2109,13 @@ label fight1771:
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
                 "{i}Łuszcz jest zestunnowany{/i}"
-                jump faza_fight1772 
+                jump faza_fight172 
             else:
                 if luszcz_stun == 1:
                     $ luszcz_stun -= 1
                     "{i}Łuszcz jest zestunnowany{/i}"
                     hide stun4
-                    jump faza_fight1772 
+                    jump faza_fight172 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -2241,7 +2319,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1772
+                        jump faza_fight172
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -2307,7 +2385,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ delta_hp_now -= int(luszcz_attack / 2)
 
@@ -2343,7 +2421,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ delta_hp_now -= luszcz_attack
 
@@ -2363,7 +2441,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2377,7 +2455,7 @@ label fight1771:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                                jump faza_fight1772
+                                jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2440,7 +2518,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ gamma_hp_now -= int(luszcz_attack / 2)
 
@@ -2476,7 +2554,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ gamma_hp_now -= luszcz_attack
 
@@ -2496,7 +2574,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2509,7 +2587,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2572,7 +2650,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ epsilon_hp_now -= int(luszcz_attack / 2)
 
@@ -2608,7 +2686,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ epsilon_hp_now -= luszcz_attack
 
@@ -2628,7 +2706,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2641,7 +2719,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -2656,7 +2734,7 @@ label fight1771:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza_fight1772
+                    jump faza_fight172
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -2670,7 +2748,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items_fight1771
+                    jump items_fight171
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -2811,7 +2889,7 @@ label fight1771:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza_fight1772
+                            jump faza_fight172
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -2911,7 +2989,7 @@ label fight1771:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza_fight1772
+                            jump faza_fight172
         
         if eminem_fighter == 1:
             if eminem_wybrany == 1:
@@ -2926,13 +3004,13 @@ label fight1771:
             if eminem_stun == 2:
                 $ eminem_stun -= 1
                 "{i}Shadow jest zestunnowany{/i}"
-                jump faza_fight1772 
+                jump faza_fight172 
             else:
                 if eminem_stun == 1:
                     $ eminem_stun -= 1
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
-                    jump faza_fight1772 
+                    jump faza_fight172 
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -3011,7 +3089,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3063,7 +3141,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3115,7 +3193,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -3131,7 +3209,7 @@ label fight1771:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza_fight1772
+                    jump faza_fight172
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -3145,7 +3223,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items_fight1771
+                    jump items_fight171
 
                 "{b}Rzut Szlamem{/b}":
                     if eminem_wybrany == 1:
@@ -3166,7 +3244,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Delta obronił się przed szlamem{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if delta_min_attack_now >= 28 and delta_min_attack_now <= 30:
@@ -3234,7 +3312,7 @@ label fight1771:
                                 $ delta_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Delta zostały osłabione{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3242,7 +3320,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Gamma obronił się przed szlamem{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if gamma_min_attack_now >= 28 and gamma_min_attack_now <= 30:
@@ -3309,7 +3387,7 @@ label fight1771:
                                 $ gamma_slime += 1
                                 show slime zorder 15 at center_wrog3
                                 "{i}Statystyki Gamma zostały osłabione{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3317,7 +3395,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Epsilon obronił się przed szlamem{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if epsilon_min_attack_now >= 28 and epsilon_min_attack_now <= 30:
@@ -3384,7 +3462,7 @@ label fight1771:
                                 $ epsilon_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Epsilon zostały osłabione{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
 
         if urban_fighter == 1:
             if urban_wybrany == 1:
@@ -3399,13 +3477,13 @@ label fight1771:
             if urban_stun == 2:
                 $ urban_stun -= 1
                 "{i}Jerzy Urban jest zestunnowany{/i}"
-                jump faza_fight1772 
+                jump faza_fight172 
             else:
                 if urban_stun == 1:
                     $ urban_stun -= 1
                     "{i}Jerzy Urban jest zestunnowany{/i}"
                     hide stun6
-                    jump faza_fight1772 
+                    jump faza_fight172 
 
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -3609,14 +3687,14 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1772
+                        jump faza_fight172
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Delta{/b}" if delta_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1771:
+                            label urban_fight171:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if delta_obrona >= 2:
@@ -3638,7 +3716,7 @@ label fight1771:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and delta_obrona == 1 and stop == 3 or urban_attack == 2 and delta_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1771
+                                        jump urban_fight171
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -3682,7 +3760,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
 
                                             $ delta_hp_now -= int(urban_attack / 2)
 
@@ -3718,7 +3796,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
 
                                             $ delta_hp_now -= urban_attack
 
@@ -3738,7 +3816,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -3751,11 +3829,11 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1772:
+                            label urban_fight172:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if gamma_obrona >= 2:
@@ -3777,7 +3855,7 @@ label fight1771:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and gamma_obrona == 1 and stop == 3 or urban_attack == 2 and gamma_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1772
+                                        jump urban_fight172
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -3821,7 +3899,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
 
                                             $ gamma_hp_now -= int(urban_attack / 2)
 
@@ -3857,7 +3935,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
 
                                             $ gamma_hp_now -= urban_attack
 
@@ -3877,7 +3955,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -3890,11 +3968,11 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1773:
+                            label urban_fight173:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if epsilon_obrona >= 2:
@@ -3916,7 +3994,7 @@ label fight1771:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and epsilon_obrona == 1 and stop == 3 or urban_attack == 2 and epsilon_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1773
+                                        jump urban_fight173
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -3960,7 +4038,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
 
                                             $ epsilon_hp_now -= int(urban_attack / 2)
 
@@ -3996,7 +4074,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
 
                                             $ epsilon_hp_now -= urban_attack
 
@@ -4016,7 +4094,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1772
+                                                    jump faza_fight172
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -4029,7 +4107,7 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -4044,7 +4122,7 @@ label fight1771:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza_fight1772
+                    jump faza_fight172
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -4058,7 +4136,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items_fight1771
+                    jump items_fight171
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -4129,7 +4207,7 @@ label fight1771:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
 
                     hide uszy
-                    jump faza_fight1772   
+                    jump faza_fight172   
         if zyd_fighter == 1:
             if zyd_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
@@ -4143,13 +4221,13 @@ label fight1771:
             if zyd_stun == 2:
                 $ zyd_stun -= 1
                 "{i}Żyd jest zestunnowany{/i}"
-                jump faza_fight1772 
+                jump faza_fight172 
             else:
                 if zyd_stun == 1:
                     $ zyd_stun -= 1
                     "{i}Żyd jest zestunnowany{/i}"
                     hide stun7
-                    jump faza_fight1772 
+                    jump faza_fight172 
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -4353,7 +4431,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1772
+                        jump faza_fight172
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4419,7 +4497,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ delta_hp_now -= int(zyd_attack / 2)
 
@@ -4455,7 +4533,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ delta_hp_now -= zyd_attack
 
@@ -4475,7 +4553,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4489,7 +4567,7 @@ label fight1771:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -4552,7 +4630,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ gamma_hp_now -= int(zyd_attack / 2)
 
@@ -4588,7 +4666,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ gamma_hp_now -= zyd_attack
 
@@ -4608,7 +4686,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4621,7 +4699,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -4684,7 +4762,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ epsilon_hp_now -= int(zyd_attack / 2)
 
@@ -4720,7 +4798,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ epsilon_hp_now -= zyd_attack
 
@@ -4740,7 +4818,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -4753,7 +4831,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -4768,7 +4846,7 @@ label fight1771:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza_fight1772
+                    jump faza_fight172
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -4782,7 +4860,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items_fight1771
+                    jump items_fight171
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and delta_pager == 0 and delta_hp_now >= 1 or pager_boom == 0 and gamma_pager == 0 and gamma_hp_now >= 1 or pager_boom == 0 and epsilon_pager == 0 and epsilon_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -4806,7 +4884,7 @@ label fight1771:
                             
                             "{i}Delta kupił pager od Żyda{/i}"
 
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -4817,7 +4895,7 @@ label fight1771:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Gamma kupił pager od Żyda{/i}"
 
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -4828,7 +4906,7 @@ label fight1771:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Epsilon kupił pager od Żyda{/i}"
 
-                            jump faza_fight1772
+                            jump faza_fight172
                 
                 "{b}Wysadź Pagery{/b}" if delta_pager >= 1 and pager_boom == 0 or gamma_pager >= 1 and pager_boom == 0 or epsilon_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -4907,7 +4985,7 @@ label fight1771:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
 
-                    jump faza_fight1772
+                    jump faza_fight172
 
         if kazuma_fighter == 1:
             if kazuma_wybrany == 1:
@@ -4922,13 +5000,13 @@ label fight1771:
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
                 "{i}Kazuma jest zestunnowany{/i}"
-                jump faza_fight1772 
+                jump faza_fight172 
             else:
                 if kazuma_stun == 1:
                     $ kazuma_stun -= 1
                     "{i}Kazuma jest zestunnowany{/i}"
                     hide stun8
-                    jump faza_fight1772 
+                    jump faza_fight172 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -5132,7 +5210,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1772
+                        jump faza_fight172
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -5198,7 +5276,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ delta_hp_now -= int(kazuma_attack / 2)
 
@@ -5234,7 +5312,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ delta_hp_now -= kazuma_attack
 
@@ -5254,7 +5332,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5267,7 +5345,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5330,7 +5408,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ gamma_hp_now -= int(kazuma_attack / 2)
 
@@ -5366,7 +5444,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ gamma_hp_now -= kazuma_attack
 
@@ -5386,7 +5464,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5399,7 +5477,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5462,7 +5540,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ epsilon_hp_now -= int(kazuma_attack / 2)
 
@@ -5498,7 +5576,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
 
                                     $ epsilon_hp_now -= kazuma_attack
 
@@ -5518,7 +5596,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5531,7 +5609,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1772
+                            jump faza_fight172
     
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
@@ -5547,7 +5625,7 @@ label fight1771:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza_fight1772
+                    jump faza_fight172
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -5561,7 +5639,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items_fight1771
+                    jump items_fight171
 
                 "{b}Steal{/b}" if delta_weapon >= 1 or gamma_weapon >= 1 or epsilon_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -5582,7 +5660,7 @@ label fight1771:
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Delta obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if delta_sex == 0:
@@ -5649,14 +5727,14 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Delta{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1772
+                                jump faza_fight172
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_weapon > 0:
                             kazuma "Steal!"
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Gamma obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if gamma_sex == 0:
@@ -5723,14 +5801,14 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Gamma{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1772
+                                jump faza_fight172
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_weapon > 0:
                             kazuma "Steal!"
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Epsilon obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1772
+                                jump faza_fight172
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if epsilon_sex == 0:
@@ -5797,7 +5875,7 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Epsilon{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1772
+                                jump faza_fight172
 
         if tarczownik_fighter == 1 and tarczownik_weapon >= 1:
             if tarczownik_hp_now >= 1:
@@ -5813,13 +5891,13 @@ label fight1771:
                 if tarczownik_stun == 2:
                     $ tarczownik_stun -= 1
                     "{i}Naofumi jest zestunnowany{/i}"
-                    jump faza_fight1772 
+                    jump faza_fight172 
                 else:
                     if tarczownik_stun == 1:
                         $ tarczownik_stun -= 1
                         "{i}Naofumi jest zestunnowany{/i}"
                         hide stun9
-                        jump faza_fight1772 
+                        jump faza_fight172 
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -5870,7 +5948,7 @@ label fight1771:
 
 
 
-                        jump faza_fight1772
+                        jump faza_fight172
                 
                 if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1:
                     $ kostka = renpy.random.randint(1, 2)
@@ -5915,7 +5993,7 @@ label fight1771:
 
 
 
-                        jump faza_fight1772
+                        jump faza_fight172
                 
                 $ kostka = renpy.random.randint(1, 10)
 
@@ -5964,7 +6042,7 @@ label fight1771:
                                     luszcz "..."
 
 
-                    jump faza_fight1772
+                    jump faza_fight172
                 
                 if tarczownik_weapon >= 1:
                     if tarczownik_wybrany == 1:
@@ -6163,11 +6241,11 @@ label fight1771:
                                 queue sound "audio/sfx/heal.mp3" 
                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
 
-                    jump faza_fight1772
+                    jump faza_fight172
                 
                 tarczownik "Aaaaaaaaagh!"
 
-                label losowanko_tarczownik_fight1771:
+                label losowanko_tarczownik_fight171:
                     $ kostka = renpy.random.randint(1, 3)
                     if kostka == 1:
                         if delta_hp_now >= 1:
@@ -6367,9 +6445,9 @@ label fight1771:
                                                     $ dialog_fight2 += 1
                                                     luszcz "..."
 
-                                    jump faza_fight1772
+                                    jump faza_fight172
                                 else:
-                                    jump losowanko_tarczownik_fight1771
+                                    jump losowanko_tarczownik_fight171
 
                             else:
                                 if delta_hp_now <= 10:
@@ -6564,9 +6642,9 @@ label fight1771:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1772
+                                        jump faza_fight172
                                     else:
-                                        jump losowanko_tarczownik_fight1771
+                                        jump losowanko_tarczownik_fight171
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -6761,12 +6839,12 @@ label fight1771:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1772
+                                        jump faza_fight172
                                     else:
-                                        jump losowanko_tarczownik_fight1771
+                                        jump losowanko_tarczownik_fight171
 
                         else:
-                            jump losowanko_tarczownik_fight1771
+                            jump losowanko_tarczownik_fight171
                     else:
                         if kostka == 2:
                             if gamma_hp_now >= 1:
@@ -6963,9 +7041,9 @@ label fight1771:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1772
+                                        jump faza_fight172
                                     else:
-                                        jump losowanko_tarczownik_fight1771
+                                        jump losowanko_tarczownik_fight171
 
                                 else:
                                     if gamma_hp_now <= 10:
@@ -7162,9 +7240,9 @@ label fight1771:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                         else:
-                                            jump losowanko_tarczownik_fight1771
+                                            jump losowanko_tarczownik_fight171
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -7361,12 +7439,12 @@ label fight1771:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                         else:
-                                            jump losowanko_tarczownik_fight1771
+                                            jump losowanko_tarczownik_fight171
 
                             else:
-                                jump losowanko_tarczownik_fight1771
+                                jump losowanko_tarczownik_fight171
                         else:
                             if kostka == 3:
                                 if epsilon_hp_now >= 1:
@@ -7564,9 +7642,9 @@ label fight1771:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1772
+                                            jump faza_fight172
                                         else:
-                                            jump losowanko_tarczownik_fight1771
+                                            jump losowanko_tarczownik_fight171
 
                                     else:
                                         if epsilon_hp_now <= 10:
@@ -7763,9 +7841,9 @@ label fight1771:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza_fight1772
+                                                jump faza_fight172
                                             else:
-                                                jump losowanko_tarczownik_fight1771
+                                                jump losowanko_tarczownik_fight171
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -7962,16 +8040,16 @@ label fight1771:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza_fight1772
+                                                jump faza_fight172
                                             else:
-                                                jump losowanko_tarczownik_fight1771
+                                                jump losowanko_tarczownik_fight171
 
                                 else:
-                                    jump losowanko_tarczownik_fight1771
+                                    jump losowanko_tarczownik_fight171
                             else:
-                                jump losowanko_tarczownik_fight1771
+                                jump losowanko_tarczownik_fight171
 
-    label faza_fight1772:
+    label faza_fight172:
         hide reka1
         hide reka2
         hide reka3
@@ -8064,7 +8142,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -8264,7 +8342,7 @@ label fight1771:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
         
         if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 2:
             $ luszcz_min_attack_now += 1
@@ -8299,13 +8377,13 @@ label fight1771:
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
                 "{i}Łuszcz jest zestunnowany{/i}"
-                jump faza_fight1773 
+                jump faza_fight173 
             else:
                 if luszcz_stun == 1:
                     $ luszcz_stun -= 1
                     "{i}Łuszcz jest zestunnowany{/i}"
                     hide stun4
-                    jump faza_fight1773 
+                    jump faza_fight173 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -8509,7 +8587,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1773
+                        jump faza_fight173
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -8575,7 +8653,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ delta_hp_now -= int(luszcz_attack / 2)
 
@@ -8611,7 +8689,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ delta_hp_now -= luszcz_attack
 
@@ -8631,7 +8709,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8644,7 +8722,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -8707,7 +8785,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ gamma_hp_now -= int(luszcz_attack / 2)
 
@@ -8743,7 +8821,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ gamma_hp_now -= luszcz_attack
 
@@ -8763,7 +8841,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8776,7 +8854,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -8839,7 +8917,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ epsilon_hp_now -= int(luszcz_attack / 2)
 
@@ -8875,7 +8953,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ epsilon_hp_now -= luszcz_attack
 
@@ -8895,7 +8973,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -8908,7 +8986,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -8923,7 +9001,7 @@ label fight1771:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza_fight1773
+                    jump faza_fight173
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -8937,7 +9015,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items_fight1773
+                    jump items_fight173
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -9078,7 +9156,7 @@ label fight1771:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza_fight1773
+                            jump faza_fight173
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -9178,7 +9256,7 @@ label fight1771:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza_fight1773
+                            jump faza_fight173
         
         if eminem_fighter == 2:
             if eminem_wybrany == 1:
@@ -9193,13 +9271,13 @@ label fight1771:
             if eminem_stun == 2:
                 $ eminem_stun -= 1
                 "{i}Shadow jest zestunnowany{/i}"
-                jump faza_fight1773
+                jump faza_fight173
             else:
                 if eminem_stun == 1:
                     $ eminem_stun -= 1
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
-                    jump faza_fight1773
+                    jump faza_fight173
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -9278,7 +9356,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -9330,7 +9408,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -9382,7 +9460,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -9398,7 +9476,7 @@ label fight1771:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza_fight1773
+                    jump faza_fight173
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -9412,7 +9490,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items_fight1773
+                    jump items_fight173
 
                 "{b}Rzut Szlamem{/b}":
                     if eminem_wybrany == 1:
@@ -9433,7 +9511,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Delta obronił się przed szlamem{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if delta_min_attack_now >= 28 and delta_min_attack_now <= 30:
@@ -9500,7 +9578,7 @@ label fight1771:
                                 $ delta_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Delta zostały osłabione{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -9508,7 +9586,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Gamma obronił się przed szlamem{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if gamma_min_attack_now >= 28 and gamma_min_attack_now <= 30:
@@ -9574,7 +9652,7 @@ label fight1771:
                                 $ gamma_slime += 1
                                 show slime zorder 15 at center_wrog3 
                                 "{i}Statystyki Gamma zostały osłabione{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -9582,7 +9660,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Epsilon obronił się przed szlamem{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if epsilon_min_attack_now >= 28 and epsilon_min_attack_now <= 30:
@@ -9649,7 +9727,7 @@ label fight1771:
                                 $ epsilon_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Epsilon zostały osłabione{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
 
         if urban_fighter == 2:
             if urban_wybrany == 1:
@@ -9664,13 +9742,13 @@ label fight1771:
             if urban_stun == 2:
                 $ urban_stun -= 1
                 "{i}Jerzy Urban jest zestunnowany{/i}"
-                jump faza_fight1773
+                jump faza_fight173
             else:
                 if urban_stun == 1:
                     $ urban_stun -= 1
                     "{i}Jerzy Urban jest zestunnowany{/i}"
                     hide stun6
-                    jump faza_fight1773
+                    jump faza_fight173
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -9874,14 +9952,14 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1773
+                        jump faza_fight173
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
 
                         "{b}Delta{/b}" if delta_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1774:
+                            label urban_fight174:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if delta_obrona >= 2:
@@ -9903,7 +9981,7 @@ label fight1771:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and delta_obrona == 1 and stop == 3 or urban_attack == 2 and delta_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1774
+                                        jump urban_fight174
                                     
                                     else:  
                                         if urban_weapon >= 1:
@@ -9947,7 +10025,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
 
                                             $ delta_hp_now -= int(urban_attack / 2)
 
@@ -9983,7 +10061,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
 
                                             $ delta_hp_now -= urban_attack
 
@@ -10003,7 +10081,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -10016,11 +10094,11 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1775:
+                            label urban_fight175:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if gamma_obrona >= 2:
@@ -10042,7 +10120,7 @@ label fight1771:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and gamma_obrona == 1 and stop == 3 or urban_attack == 2 and gamma_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1775
+                                        jump urban_fight175
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -10086,7 +10164,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
 
                                             $ gamma_hp_now -= int(urban_attack / 2)
 
@@ -10122,7 +10200,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
 
                                             $ gamma_hp_now -= urban_attack
 
@@ -10142,7 +10220,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -10155,11 +10233,11 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1776:
+                            label urban_fight176:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if epsilon_obrona >= 2:
@@ -10181,7 +10259,7 @@ label fight1771:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and epsilon_obrona == 1 and stop == 3 or urban_attack == 2 and epsilon_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1776
+                                        jump urban_fight176
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -10225,7 +10303,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
 
                                             $ epsilon_hp_now -= int(urban_attack / 2)
 
@@ -10261,7 +10339,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
 
                                             $ epsilon_hp_now -= urban_attack
 
@@ -10281,7 +10359,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1773
+                                                    jump faza_fight173
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -10294,7 +10372,7 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -10309,7 +10387,7 @@ label fight1771:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza_fight1773
+                    jump faza_fight173
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -10323,7 +10401,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items_fight1773
+                    jump items_fight173
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -10393,7 +10471,7 @@ label fight1771:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
 
                     hide uszy
-                    jump faza_fight1773  
+                    jump faza_fight173  
 
         if zyd_fighter == 2:
             if zyd_wybrany == 1:
@@ -10408,13 +10486,13 @@ label fight1771:
             if zyd_stun == 2:
                 $ zyd_stun -= 1
                 "{i}Żyd jest zestunnowany{/i}"
-                jump faza_fight1773
+                jump faza_fight173
             else:
                 if zyd_stun == 1:
                     $ zyd_stun -= 1
                     "{i}Żyd jest zestunnowany{/i}"
                     hide stun7
-                    jump faza_fight1773
+                    jump faza_fight173
 
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -10618,7 +10696,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1773
+                        jump faza_fight173
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -10684,7 +10762,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ delta_hp_now -= int(zyd_attack / 2)
 
@@ -10720,7 +10798,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ delta_hp_now -= zyd_attack
 
@@ -10740,7 +10818,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -10753,7 +10831,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -10816,7 +10894,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ gamma_hp_now -= int(zyd_attack / 2)
 
@@ -10852,7 +10930,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ gamma_hp_now -= zyd_attack
 
@@ -10872,7 +10950,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -10885,7 +10963,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -10948,7 +11026,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ epsilon_hp_now -= int(zyd_attack / 2)
 
@@ -10984,7 +11062,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ epsilon_hp_now -= zyd_attack
 
@@ -11004,7 +11082,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -11017,7 +11095,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -11032,7 +11110,7 @@ label fight1771:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza_fight1773
+                    jump faza_fight173
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -11046,7 +11124,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items_fight1773
+                    jump items_fight173
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and delta_pager == 0 and delta_hp_now >= 1 or pager_boom == 0 and gamma_pager == 0 and gamma_hp_now >= 1 or pager_boom == 0 and epsilon_pager == 0 and epsilon_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -11070,7 +11148,7 @@ label fight1771:
                             show pager1 zorder 15 at bok_wrog1
                             "{i}Delta kupił pager od Żyda{/i}"
 
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -11081,7 +11159,7 @@ label fight1771:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Gamma kupił pager od Żyda{/i}"
 
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -11092,7 +11170,7 @@ label fight1771:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Epsilon kupił pager od Żyda{/i}"
 
-                            jump faza_fight1773
+                            jump faza_fight173
                 
                 "{b}Wysadź Pagery{/b}" if delta_pager >= 1 and pager_boom == 0 or gamma_pager >= 1 and pager_boom == 0 or epsilon_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -11170,7 +11248,7 @@ label fight1771:
                     if dialog_fight1 == 0:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
-                    jump faza_fight1773
+                    jump faza_fight173
 
         if kazuma_fighter == 2:
             if kazuma_wybrany == 1:
@@ -11185,13 +11263,13 @@ label fight1771:
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
                 "{i}Kazuma jest zestunnowany{/i}"
-                jump faza_fight1773
+                jump faza_fight173
             else:
                 if kazuma_stun == 1:
                     $ kazuma_stun -= 1
                     "{i}Kazuma jest zestunnowany{/i}"
                     hide stun8
-                    jump faza_fight1773
+                    jump faza_fight173
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -11395,7 +11473,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1773
+                        jump faza_fight173
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -11461,7 +11539,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ delta_hp_now -= int(kazuma_attack / 2)
 
@@ -11497,7 +11575,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ delta_hp_now -= kazuma_attack
 
@@ -11517,7 +11595,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11530,7 +11608,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -11593,7 +11671,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ gamma_hp_now -= int(kazuma_attack / 2)
 
@@ -11629,7 +11707,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ gamma_hp_now -= kazuma_attack
 
@@ -11649,7 +11727,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11662,7 +11740,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -11725,7 +11803,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ epsilon_hp_now -= int(kazuma_attack / 2)
 
@@ -11761,7 +11839,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
 
                                     $ epsilon_hp_now -= kazuma_attack
 
@@ -11781,7 +11859,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1773
+                                            jump faza_fight173
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -11794,7 +11872,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1773
+                            jump faza_fight173
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -11809,7 +11887,7 @@ label fight1771:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza_fight1773
+                    jump faza_fight173
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -11823,7 +11901,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items_fight1773
+                    jump items_fight173
 
                 "{b}Steal{/b}" if delta_weapon >= 1 or gamma_weapon >= 1 or epsilon_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -11843,7 +11921,7 @@ label fight1771:
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Delta obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if delta_sex == 0:
@@ -11910,14 +11988,14 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Delta{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1773
+                                jump faza_fight173
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_weapon > 0:
                             kazuma "Steal!"
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Gamma obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if gamma_sex == 0:
@@ -11984,14 +12062,14 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Gamma{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1773
+                                jump faza_fight173
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_weapon > 0:
                             kazuma "Steal!"
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Epsilon obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1773
+                                jump faza_fight173
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if epsilon_sex == 0:
@@ -12058,9 +12136,9 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Epsilon{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1773
+                                jump faza_fight173
 
-    label faza_fight1773:
+    label faza_fight173:
         hide reka1
         hide reka2
         hide reka3
@@ -12153,7 +12231,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -12353,7 +12431,7 @@ label fight1771:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
         
         if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 3:
             $ luszcz_min_attack_now += 1
@@ -12388,13 +12466,13 @@ label fight1771:
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
                 "{i}Łuszcz jest zestunnowany{/i}"
-                jump faza_fight1774 
+                jump faza_fight174 
             else:
                 if luszcz_stun == 1:
                     $ luszcz_stun -= 1
                     "{i}Łuszcz jest zestunnowany{/i}"
                     hide stun4
-                    jump faza_fight1774
+                    jump faza_fight174
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -12598,7 +12676,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1774
+                        jump faza_fight174
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -12664,7 +12742,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ delta_hp_now -= int(luszcz_attack / 2)
 
@@ -12700,7 +12778,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ delta_hp_now -= luszcz_attack
 
@@ -12720,7 +12798,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12733,7 +12811,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -12796,7 +12874,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ gamma_hp_now -= int(luszcz_attack / 2)
 
@@ -12832,7 +12910,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ gamma_hp_now -= luszcz_attack
 
@@ -12852,7 +12930,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12865,7 +12943,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -12928,7 +13006,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ epsilon_hp_now -= int(luszcz_attack / 2)
 
@@ -12964,7 +13042,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ epsilon_hp_now -= luszcz_attack
 
@@ -12984,7 +13062,7 @@ label fight1771:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -12997,7 +13075,7 @@ label fight1771:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -13012,7 +13090,7 @@ label fight1771:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza_fight1774
+                    jump faza_fight174
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -13026,7 +13104,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
-                    jump items_fight1775
+                    jump items_fight175
 
                 "{b}Zaparz Herbatę{/b}":
                     play sound "audio/sfx/herbaty.mp3"
@@ -13167,7 +13245,7 @@ label fight1771:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza_fight1774
+                            jump faza_fight174
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -13267,7 +13345,7 @@ label fight1771:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza_fight1774
+                            jump faza_fight174
         
         if eminem_fighter == 3:
             if eminem_wybrany == 1:
@@ -13282,13 +13360,13 @@ label fight1771:
             if eminem_stun == 2:
                 $ eminem_stun -= 1
                 "{i}Shadow jest zestunnowany{/i}"
-                jump faza_fight1774 
+                jump faza_fight174 
             else:
                 if eminem_stun == 1:
                     $ eminem_stun -= 1
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
-                    jump faza_fight1774
+                    jump faza_fight174
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -13367,7 +13445,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -13419,7 +13497,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -13471,7 +13549,7 @@ label fight1771:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -13487,7 +13565,7 @@ label fight1771:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza_fight1774
+                    jump faza_fight174
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -13501,7 +13579,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     eminem "Czas zabawy się skończył"
-                    jump items_fight1775
+                    jump items_fight175
 
                 "{b}Rzut Szlamem{/b}":
 
@@ -13523,7 +13601,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Delta obronił się przed szlamem{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if delta_min_attack_now >= 28 and delta_min_attack_now <= 30:
@@ -13590,7 +13668,7 @@ label fight1771:
                                 $ delta_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Delta zostały osłabione{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -13598,7 +13676,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Gamma obronił się przed szlamem{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if gamma_min_attack_now >= 28 and gamma_min_attack_now <= 30:
@@ -13665,7 +13743,7 @@ label fight1771:
                                 $ gamma_slime += 1
                                 show slime zorder 15 at center_wrog3
                                 "{i}Statystyki Gamma zostały osłabione{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -13673,7 +13751,7 @@ label fight1771:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Epsilon obronił się przed szlamem{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if epsilon_min_attack_now >= 28 and epsilon_min_attack_now <= 30:
@@ -13740,7 +13818,7 @@ label fight1771:
                                 $ epsilon_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Epsilon zostały osłabione{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
 
         if urban_fighter == 3:
             if urban_wybrany == 1:
@@ -13755,13 +13833,13 @@ label fight1771:
             if urban_stun == 2:
                 $ urban_stun -= 1
                 "{i}Jerzy Urban jest zestunnowany{/i}"
-                jump faza_fight1774 
+                jump faza_fight174 
             else:
                 if urban_stun == 1:
                     $ urban_stun -= 1
                     "{i}Jerzy Urban jest zestunnowany{/i}"
                     hide stun6
-                    jump faza_fight1774 
+                    jump faza_fight174 
             
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -13965,7 +14043,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1774
+                        jump faza_fight174
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -14038,7 +14116,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
 
                                             $ delta_hp_now -= int(urban_attack / 2)
 
@@ -14074,7 +14152,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
 
                                             $ delta_hp_now -= urban_attack
 
@@ -14094,7 +14172,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -14107,7 +14185,7 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -14177,7 +14255,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
 
                                             $ gamma_hp_now -= int(urban_attack / 2)
 
@@ -14213,7 +14291,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
 
                                             $ gamma_hp_now -= urban_attack
 
@@ -14233,7 +14311,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -14246,7 +14324,7 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -14316,7 +14394,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
 
                                             $ epsilon_hp_now -= int(urban_attack / 2)
 
@@ -14352,7 +14430,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
 
                                             $ epsilon_hp_now -= urban_attack
 
@@ -14372,7 +14450,7 @@ label fight1771:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1774
+                                                    jump faza_fight174
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -14385,7 +14463,7 @@ label fight1771:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -14400,7 +14478,7 @@ label fight1771:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza_fight1774
+                    jump faza_fight174
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -14414,7 +14492,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     urban "No tak było, nie zmyślam"
-                    jump items_fight1775
+                    jump items_fight175
 
                 "{b}Zatrzepocz Uszami{/b}":
                     if urban_wybrany == 1:
@@ -14484,7 +14562,7 @@ label fight1771:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
                     
                     hide uszy
-                    jump faza_fight1774
+                    jump faza_fight174
 
         if zyd_fighter == 3:
             if zyd_wybrany == 1:
@@ -14499,13 +14577,13 @@ label fight1771:
             if zyd_stun == 2:
                 $ zyd_stun -= 1
                 "{i}Żyd jest zestunnowany{/i}"
-                jump faza_fight1774 
+                jump faza_fight174 
             else:
                 if zyd_stun == 1:
                     $ zyd_stun -= 1
                     "{i}Żyd jest zestunnowany{/i}"
                     hide stun7
-                    jump faza_fight1774
+                    jump faza_fight174
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -14709,7 +14787,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1774
+                        jump faza_fight174
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -14775,7 +14853,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ delta_hp_now -= int(zyd_attack / 2)
 
@@ -14811,7 +14889,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ delta_hp_now -= zyd_attack
 
@@ -14831,7 +14909,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -14844,7 +14922,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -14907,7 +14985,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ gamma_hp_now -= int(zyd_attack / 2)
 
@@ -14943,7 +15021,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ gamma_hp_now -= zyd_attack
 
@@ -14963,7 +15041,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -14976,7 +15054,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -15039,7 +15117,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ epsilon_hp_now -= int(zyd_attack / 2)
 
@@ -15075,7 +15153,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ epsilon_hp_now -= zyd_attack
 
@@ -15095,7 +15173,7 @@ label fight1771:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -15108,7 +15186,7 @@ label fight1771:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -15123,7 +15201,7 @@ label fight1771:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza_fight1774
+                    jump faza_fight174
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -15137,7 +15215,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
-                    jump items_fight1775
+                    jump items_fight175
 
                 "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and delta_pager == 0 and delta_hp_now >= 1 or pager_boom == 0 and gamma_pager == 0 and gamma_hp_now >= 1 or pager_boom == 0 and epsilon_pager == 0 and epsilon_hp_now >= 1:
                     if zyd_wybrany == 1:
@@ -15161,7 +15239,7 @@ label fight1771:
                             show pager1 zorder 15 at bok_wrog1
                             "{i}Delta kupił pager od Żyda{/i}"
 
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -15172,7 +15250,7 @@ label fight1771:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}Gamma kupił pager od Żyda{/i}"
 
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -15183,7 +15261,7 @@ label fight1771:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Epsilon kupił pager od Żyda{/i}"
 
-                            jump faza_fight1774
+                            jump faza_fight174
                 
                 "{b}Wysadź Pagery{/b}" if delta_pager >= 1 and pager_boom == 0 or gamma_pager >= 1 and pager_boom == 0 or epsilon_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -15261,7 +15339,7 @@ label fight1771:
                     if dialog_fight1 == 0:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
-                    jump faza_fight1774
+                    jump faza_fight174
 
         if kazuma_fighter == 3:
             if kazuma_wybrany == 1:
@@ -15276,13 +15354,13 @@ label fight1771:
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
                 "{i}Kazuma jest zestunnowany{/i}"
-                jump faza_fight1774 
+                jump faza_fight174 
             else:
                 if kazuma_stun == 1:
                     $ kazuma_stun -= 1
                     "{i}Kazuma jest zestunnowany{/i}"
                     hide stun8
-                    jump faza_fight1774 
+                    jump faza_fight174 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if delta_hp_now >= 1 and gamma_hp_now <= 0 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now >= 1 and epsilon_hp_now <= 0 or delta_hp_now <= 0 and gamma_hp_now <= 0 and epsilon_hp_now >= 1:
@@ -15486,7 +15564,7 @@ label fight1771:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1774
+                        jump faza_fight174
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -15552,7 +15630,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ delta_hp_now -= int(kazuma_attack / 2)
 
@@ -15588,7 +15666,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ delta_hp_now -= kazuma_attack
 
@@ -15608,7 +15686,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15621,7 +15699,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -15684,7 +15762,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ gamma_hp_now -= int(kazuma_attack / 2)
 
@@ -15720,7 +15798,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ gamma_hp_now -= kazuma_attack
 
@@ -15740,7 +15818,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15753,7 +15831,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -15816,7 +15894,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ epsilon_hp_now -= int(kazuma_attack / 2)
 
@@ -15852,7 +15930,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
 
                                     $ epsilon_hp_now -= kazuma_attack
 
@@ -15872,7 +15950,7 @@ label fight1771:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1774
+                                            jump faza_fight174
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -15885,7 +15963,7 @@ label fight1771:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1774
+                            jump faza_fight174
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -15900,7 +15978,7 @@ label fight1771:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza_fight1774
+                    jump faza_fight174
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -15914,7 +15992,7 @@ label fight1771:
                         show chest zorder 15 at weapon_sojusznik3 
 
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
-                    jump items_fight1775
+                    jump items_fight175
 
                 "{b}Steal{/b}" if delta_weapon >= 1 or gamma_weapon >= 1 or epsilon_weapon >= 1:
                     if kazuma_wybrany == 1:
@@ -15934,7 +16012,7 @@ label fight1771:
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Delta obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if delta_sex == 0:
@@ -16001,14 +16079,14 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Delta{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1774
+                                jump faza_fight174
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_weapon > 0:
                             kazuma "Steal!"
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Gamma obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if gamma_sex == 0:
@@ -16075,14 +16153,14 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Gamma{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1774
+                                jump faza_fight174
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_weapon > 0:
                             kazuma "Steal!"
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Epsilon obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1774
+                                jump faza_fight174
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if epsilon_sex == 0:
@@ -16149,9 +16227,9 @@ label fight1771:
                                         "{i}Nie udało sie ukraść broni Epsilon{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1774
+                                jump faza_fight174
 
-    label faza_fight1774:
+    label faza_fight174:
         hide reka1
         hide reka2
         hide reka3
@@ -16247,7 +16325,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -16447,7 +16525,7 @@ label fight1771:
             $ tarczownik_weapon = 0
 
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
 
         if ring == 2 and luszcz_wybrany > 0 and luszcz_hp_now > 0:
             $ kostka = renpy.random.randint(1, 3)
@@ -16571,7 +16649,7 @@ label fight1771:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Łuszcz odpala Beat Sabera{/i}"
 
-            label losowanko_luszcz_vr_fight1771:
+            label losowanko_luszcz_vr_fight171:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if delta_hp_now >= 1 and epsilon_hp_now >= 1 or gamma_hp_now >= 1 and epsilon_hp_now >= 1 or delta_hp_now >= 1 and gamma_hp_now >= 1: 
                     if kostka2 == 1:
@@ -16612,7 +16690,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr_fight1771
+                            jump losowanko_luszcz_vr_fight171
                     
                     if kostka2 == 2:
                         if delta_hp_now >= 1 and gamma_hp_now >= 1:
@@ -16652,7 +16730,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr_fight1771
+                            jump losowanko_luszcz_vr_fight171
 
                     if kostka2 == 3:
                         if gamma_hp_now >= 1 and epsilon_hp_now >= 1:
@@ -16692,7 +16770,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr_fight1771
+                            jump losowanko_luszcz_vr_fight171
 
                 else:
                     if kostka2 == 1:
@@ -16725,7 +16803,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr_fight1771
+                            jump losowanko_luszcz_vr_fight171
                     
                     if kostka2 == 2:
                         if gamma_hp_now >= 1:
@@ -16757,7 +16835,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr_fight1771
+                            jump losowanko_luszcz_vr_fight171
 
                     if kostka2 == 3:
                         if epsilon_hp_now >= 1:
@@ -16789,11 +16867,11 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_luszcz_vr_fight1771
+                            jump losowanko_luszcz_vr_fight171
 
         else:
             if vr == 2 and luszcz_obrona == 0 and luszcz_hp_now > 0 and luszcz_wybrany > 0:
-                label losowanko_luszcz_rzygi_fight1771:
+                label losowanko_luszcz_rzygi_fight171:
                 if luszcz_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -16828,7 +16906,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi_fight1771
+                        jump losowanko_luszcz_rzygi_fight171
                 
                 if kostka2 == 2:
                     if gamma_hp_now >= 1:
@@ -16854,7 +16932,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi_fight1771
+                        jump losowanko_luszcz_rzygi_fight171
 
                 if kostka2 == 3:
                     if epsilon_hp_now >= 1:
@@ -16880,10 +16958,10 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi_fight1771
+                        jump losowanko_luszcz_rzygi_fight171
 
         if vr == 7 and eminem_obrona == 0 and eminem_hp_now > 0 and eminem_wybrany > 0:
-            label losowanko_eminem_rzygi_fight1771:
+            label losowanko_eminem_rzygi_fight171:
             if eminem_wybrany == 1:
                 show rzyg zorder 15 at rzygi_sojusznik1
             
@@ -16918,7 +16996,7 @@ label fight1771:
                             hide rzygowina
                             hide rzyg
                 else:
-                    jump losowanko_eminem_rzygi_fight1771
+                    jump losowanko_eminem_rzygi_fight171
             
             if kostka2 == 2:
                 if gamma_hp_now >= 1:
@@ -16944,7 +17022,7 @@ label fight1771:
                             hide rzygowina
                             hide rzyg
                 else:
-                    jump losowanko_eminem_rzygi_fight1771
+                    jump losowanko_eminem_rzygi_fight171
 
             if kostka2 == 3:
                 if epsilon_hp_now >= 1:
@@ -16970,7 +17048,7 @@ label fight1771:
                             hide rzygowina
                             hide rzyg
                 else:
-                    jump losowanko_eminem_rzygi_fight1771
+                    jump losowanko_eminem_rzygi_fight171
 
 
         
@@ -16993,7 +17071,7 @@ label fight1771:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Jerzy Urban odpala Beat Sabera{/i}"
 
-            label losowanko_urban_vr_fight1771:
+            label losowanko_urban_vr_fight171:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if delta_hp_now >= 1 and epsilon_hp_now >= 1 or gamma_hp_now >= 1 and epsilon_hp_now >= 1 or delta_hp_now >= 1 and gamma_hp_now >= 1: 
                     if kostka2 == 1:
@@ -17034,7 +17112,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr_fight1771
+                            jump losowanko_urban_vr_fight171
                     
                     if kostka2 == 2:
                         if delta_hp_now >= 1 and gamma_hp_now >= 1:
@@ -17074,7 +17152,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr_fight1771
+                            jump losowanko_urban_vr_fight171
 
                     if kostka2 == 3:
                         if gamma_hp_now >= 1 and epsilon_hp_now >= 1:
@@ -17114,7 +17192,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr_fight1771
+                            jump losowanko_urban_vr_fight171
 
                 else:
                     if kostka2 == 1:
@@ -17147,7 +17225,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr_fight1771
+                            jump losowanko_urban_vr_fight171
                     
                     if kostka2 == 2:
                         if gamma_hp_now >= 1:
@@ -17179,7 +17257,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr_fight1771
+                            jump losowanko_urban_vr_fight171
 
                     if kostka2 == 3:
                         if epsilon_hp_now >= 1:
@@ -17211,11 +17289,11 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_urban_vr_fight1771
+                            jump losowanko_urban_vr_fight171
 
         else:
             if vr == 3 and urban_obrona == 0 and urban_hp_now > 0 and urban_wybrany > 0:
-                label losowanko_urban_rzygi_fight1771:
+                label losowanko_urban_rzygi_fight171:
                 if urban_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -17250,7 +17328,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_urban_rzygi_fight1771
+                        jump losowanko_urban_rzygi_fight171
                 
                 if kostka2 == 2:
                     if gamma_hp_now >= 1:
@@ -17276,7 +17354,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_urban_rzygi_fight1771
+                        jump losowanko_urban_rzygi_fight171
 
                 if kostka2 == 3:
                     if epsilon_hp_now >= 1:
@@ -17302,7 +17380,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_urban_rzygi_fight1771
+                        jump losowanko_urban_rzygi_fight171
         
 
 
@@ -17325,7 +17403,7 @@ label fight1771:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Żyd odpala Beat Sabera{/i}"
 
-            label losowanko_zyd_vr_fight1771:
+            label losowanko_zyd_vr_fight171:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if delta_hp_now >= 1 and epsilon_hp_now >= 1 or gamma_hp_now >= 1 and epsilon_hp_now >= 1 or delta_hp_now >= 1 and gamma_hp_now >= 1: 
                     if kostka2 == 1:
@@ -17366,7 +17444,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr_fight1771
+                            jump losowanko_zyd_vr_fight171
                     
                     if kostka2 == 2:
                         if delta_hp_now >= 1 and gamma_hp_now >= 1:
@@ -17406,7 +17484,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr_fight1771
+                            jump losowanko_zyd_vr_fight171
 
                     if kostka2 == 3:
                         if gamma_hp_now >= 1 and epsilon_hp_now >= 1:
@@ -17446,7 +17524,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr_fight1771
+                            jump losowanko_zyd_vr_fight171
 
                 else:
                     if kostka2 == 1:
@@ -17479,7 +17557,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr_fight1771
+                            jump losowanko_zyd_vr_fight171
                     
                     if kostka2 == 2:
                         if gamma_hp_now >= 1:
@@ -17511,7 +17589,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr_fight1771
+                            jump losowanko_zyd_vr_fight171
 
                     if kostka2 == 3:
                         if epsilon_hp_now >= 1:
@@ -17543,11 +17621,11 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_zyd_vr_fight1771
+                            jump losowanko_zyd_vr_fight171
 
         else:
             if vr == 4 and zyd_obrona == 0 and zyd_hp_now > 0 and zyd_wybrany > 0:
-                label losowanko_zyd_rzygi_fight1771:
+                label losowanko_zyd_rzygi_fight171:
                 if zyd_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -17582,7 +17660,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_zyd_rzygi_fight1771
+                        jump losowanko_zyd_rzygi_fight171
                 
                 if kostka2 == 2:
                     if gamma_hp_now >= 1:
@@ -17608,7 +17686,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_zyd_rzygi_fight1771
+                        jump losowanko_zyd_rzygi_fight171
 
                 if kostka2 == 3:
                     if epsilon_hp_now >= 1:
@@ -17634,7 +17712,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_zyd_rzygi_fight1771
+                        jump losowanko_zyd_rzygi_fight171
 
 
         
@@ -17657,7 +17735,7 @@ label fight1771:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Kazuma odpala Beat Sabera{/i}"
 
-            label losowanko_kazuma_vr_fight1771:
+            label losowanko_kazuma_vr_fight171:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if delta_hp_now >= 1 and epsilon_hp_now >= 1 or gamma_hp_now >= 1 and epsilon_hp_now >= 1 or delta_hp_now >= 1 and gamma_hp_now >= 1: 
                     if kostka2 == 1:
@@ -17698,7 +17776,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr_fight1771
+                            jump losowanko_kazuma_vr_fight171
                     
                     if kostka2 == 2:
                         if delta_hp_now >= 1 and gamma_hp_now >= 1:
@@ -17738,7 +17816,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr_fight1771
+                            jump losowanko_kazuma_vr_fight171
 
                     if kostka2 == 3:
                         if gamma_hp_now >= 1 and epsilon_hp_now >= 1:
@@ -17778,7 +17856,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr_fight1771
+                            jump losowanko_kazuma_vr_fight171
 
                 else:
                     if kostka2 == 1:
@@ -17811,7 +17889,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr_fight1771
+                            jump losowanko_kazuma_vr_fight171
                     
                     if kostka2 == 2:
                         if gamma_hp_now >= 1:
@@ -17843,7 +17921,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr_fight1771
+                            jump losowanko_kazuma_vr_fight171
 
                     if kostka2 == 3:
                         if epsilon_hp_now >= 1:
@@ -17875,11 +17953,11 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_kazuma_vr_fight1771
+                            jump losowanko_kazuma_vr_fight171
 
         else:
             if vr == 5 and kazuma_obrona == 0 and kazuma_hp_now > 0 and kazuma_wybrany > 0:
-                label losowanko_kazuma_rzygi_fight1771:
+                label losowanko_kazuma_rzygi_fight171:
                 if kazuma_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -17914,7 +17992,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_kazuma_rzygi_fight1771
+                        jump losowanko_kazuma_rzygi_fight171
                 
                 if kostka2 == 2:
                     if gamma_hp_now >= 1:
@@ -17940,7 +18018,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_kazuma_rzygi_fight1771
+                        jump losowanko_kazuma_rzygi_fight171
 
                 if kostka2 == 3:
                     if epsilon_hp_now >= 1:
@@ -17966,7 +18044,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_kazuma_rzygi_fight1771
+                        jump losowanko_kazuma_rzygi_fight171
 
 
         
@@ -17989,7 +18067,7 @@ label fight1771:
             play sound "audio/sfx/megalovania.mp3"
             "{i}Naofumi odpala Beat Sabera{/i}"
 
-            label losowanko_tarczownik_vr_fight1771:
+            label losowanko_tarczownik_vr_fight171:
                 $ kostka2 = renpy.random.randint(1, 3)
                 if delta_hp_now >= 1 and epsilon_hp_now >= 1 or gamma_hp_now >= 1 and epsilon_hp_now >= 1 or delta_hp_now >= 1 and gamma_hp_now >= 1: 
                     if kostka2 == 1:
@@ -18030,7 +18108,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr_fight1771
+                            jump losowanko_tarczownik_vr_fight171
                     
                     if kostka2 == 2:
                         if delta_hp_now >= 1 and gamma_hp_now >= 1:
@@ -18070,7 +18148,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr_fight1771
+                            jump losowanko_tarczownik_vr_fight171
 
                     if kostka2 == 3:
                         if gamma_hp_now >= 1 and epsilon_hp_now >= 1:
@@ -18110,7 +18188,7 @@ label fight1771:
                                 hide kostka2
                                 hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr_fight1771
+                            jump losowanko_tarczownik_vr_fight171
 
                 else:
                     if kostka2 == 1:
@@ -18143,7 +18221,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr_fight1771
+                            jump losowanko_tarczownik_vr_fight171
                     
                     if kostka2 == 2:
                         if gamma_hp_now >= 1:
@@ -18175,7 +18253,7 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr_fight1771
+                            jump losowanko_tarczownik_vr_fight171
 
                     if kostka2 == 3:
                         if epsilon_hp_now >= 1:
@@ -18207,11 +18285,11 @@ label fight1771:
                                     hide kostka2
                                     hide miecz_swietlny
                         else:
-                            jump losowanko_tarczownik_vr_fight1771
+                            jump losowanko_tarczownik_vr_fight171
 
         else:
             if vr == 2 and tarczownik_obrona == 0 and tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
-                label losowanko_tarczownik_rzygi_fight1771:
+                label losowanko_tarczownik_rzygi_fight171:
                 if tarczownik_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
@@ -18246,7 +18324,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_tarczownik_rzygi_fight1771
+                        jump losowanko_tarczownik_rzygi_fight171
                 
                 if kostka2 == 2:
                     if gamma_hp_now >= 1:
@@ -18272,7 +18350,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_tarczownik_rzygi_fight1771
+                        jump losowanko_tarczownik_rzygi_fight171
 
                 if kostka2 == 3:
                     if epsilon_hp_now >= 1:
@@ -18298,7 +18376,7 @@ label fight1771:
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_tarczownik_rzygi_fight1771
+                        jump losowanko_tarczownik_rzygi_fight171
 
         if delta_hp_now <= 0 and delta_umarty == 0:
             hide snake31
@@ -18361,7 +18439,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -18561,7 +18639,7 @@ label fight1771:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
 
         $ delta_obrona = 0
         $ gamma_obrona = 0
@@ -18580,59 +18658,128 @@ label fight1771:
         $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
 
         if delta_hp_now <= 0:
-            jump faza_fight1775    
+            jump faza_fight175    
 
         show ruch zorder 0 at tlo_wrog1  
     
         if delta_stun == 1:
             "{i}Delta jest zestunnowany{/i}"
-            jump faza_fight1775  
+            jump faza_fight175  
 
         if delta_uszy >= 1 and urban_hp_now >= 1:
             if delta_weapon >= 1:
                 show delta_weapon zorder 15 at weapon_wrog1  
             else:
-                show reka6 zorder 15 at weapon_wrog1
-            
+                show reka6 zorder 15 at weapon_wrog1  
+
             $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
 
-            if memy == 3:
-                $ kostka = renpy.random.randint(1, 20)
-                if kostka <= 3:
-                    $ delta_hp_now -= delta_attack
-                    play sound "audio/sfx/obrona.mp3"
-                    "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                    jump faza_fight1775
+            if luszcz_hp_now >= 1:
+                if luszcz_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ luszcz_obrona = 1
+                                                    
+                else:     
+                    if luszcz_obrona == 1:
+                        $ luszcz_hp_now -= int(delta_attack / 2)
 
-            if urban_obrona >= 2:
-                play sound "audio/sfx/obrona.mp3"
-                "{i}Atak Delta został zablokowany{/i}"
-                $ urban_obrona = 1
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ luszcz_hp_now -= delta_attack
+            
+            if eminem_hp_now >= 1:
+                if eminem_obrona >= 2:
+                    if luszcz_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ eminem_obrona = 1
+                                                    
+                else:     
+                    if eminem_obrona == 1:
+                        $ eminem_hp_now -= int(delta_attack / 2)
 
-                jump faza_fight1775
-                                                
-            else:
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ eminem_hp_now -= delta_attack
+            
+            if urban_hp_now >= 1:
+                if urban_obrona >= 2:
+                    if eminem_hp_now <= 0 and luszcz_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ urban_obrona = 1
+                                                    
+                else:     
+                    if urban_obrona == 1:
+                        $ urban_hp_now -= int(delta_attack / 2)
+
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ urban_hp_now -= delta_attack
+            
+            if zyd_hp_now >= 1:
+                if zyd_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and luszcz_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ zyd_obrona = 1
+                                                    
+                else:     
+                    if zyd_obrona == 1:
+                        $ zyd_hp_now -= int(delta_attack / 2)
+
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ zyd_hp_now -= delta_attack
+            
+            if kazuma_hp_now >= 1:
+                if kazuma_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and luszcz_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ kazuma_obrona = 1
+                                                    
+                else:     
+                    if kazuma_obrona == 1:
+                        $ kazuma_hp_now -= int(delta_attack / 2)
+
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ kazuma_hp_now -= delta_attack
+            
+            if tarczownik_hp_now >= 1:
+                if tarczownik_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and luszcz_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ tarczownik_obrona = 1
+                                                    
+                else:     
+                    if tarczownik_obrona == 1:
+                        $ tarczownik_hp_now -= int(delta_attack / 2)
+
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ tarczownik_hp_now -= delta_attack
+            
+            if luszcz_hp_now >= 1 and luszcz_obrona <= 1 or eminem_hp_now >= 1 and eminem_obrona <= 1 or urban_hp_now >= 1 and urban_obrona <= 1 and zyd_hp_now >= 1 and zyd_obrona <= 1 or kazuma_hp_now >= 1 and kazuma_obrona <= 1 or tarczownik_hp_now >= 1 and tarczownik_obrona <= 1:
                 play sound "audio/sfx/delta_weapon.mp3"
-                if urban_obrona == 1:
-                    $ urban_hp_now -= int(delta_attack / 2)
+                "{i}Delta zadaje [delta_attack] obrażeń wszystkim sojusznikom{/i}"
+            
+            else:
+                play sound "audio/sfx/obrona.mp3"
+                "{i}Atak Delty został zablokowany{/i}"
 
-                    $ dmg = int(delta_attack / 2)
-                    "{i}Delta zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-
-                    jump faza_fight1775
-                else:
-                    $ urban_hp_now -= delta_attack
-
-                    "{i}Delta zadaje [delta_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                    jump faza_fight1775
+            jump faza_fight175
         
         if delta_max_attack_now <= 0 and delta_obrona == 0:
             show tarcza6 zorder 15 at weapon_wrog1  
             play sound "audio/sfx/shield.mp3"
             "{i}Delta broni się{/i}"
             $ delta_obrona += 1
-            jump faza_fight1775
+            jump faza_fight175
 
         if delta_hp_now >= 1 and delta_obrona == 0:
             if delta_hp_now <= 3:
@@ -18643,7 +18790,7 @@ label fight1771:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Delta broni się{/i}"
                     $ delta_obrona += 1
-                    jump faza_fight1775
+                    jump faza_fight175
             
             else:
                 $ kostka = renpy.random.randint(1, 10)
@@ -18653,756 +18800,117 @@ label fight1771:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Delta broni się{/i}"
                     $ delta_obrona += 1
-                    jump faza_fight1775
+                    jump faza_fight175
                     
-        label losowanko_fight1774:   
+        label losowanko_fight174:   
             if delta_weapon >= 1:
                 show delta_weapon zorder 15 at weapon_wrog1  
             else:
-                show reka6 zorder 15 at weapon_wrog1    
-            $ kostka = renpy.random.randint(1, 6)
-            if kostka == 1:
-                if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
-                    if luszcz_hp_now <= 3:
-                        $ kostka = renpy.random.randint(1, 5)
-                        if kostka >= 2:
-                            $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
+                show reka6 zorder 15 at weapon_wrog1  
 
-                            if memy == 2:
-                                $ kostka = renpy.random.randint(1, 20)
-                                if kostka <= 3:
-                                    $ delta_hp_now -= delta_attack
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                    jump faza_fight1775
+            $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
 
-                            if luszcz_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Delta został zablokowany{/i}"
-                                $ luszcz_obrona = 1
-                                                
-                            else:
-                                if delta_weapon >= 1:
-                                    play sound "audio/sfx/delta_weapon.mp3"
-                                
-                                else:
-                                    play sound "audio/sfx/reka.mp3"
+            if luszcz_hp_now >= 1:
+                if luszcz_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ luszcz_obrona = 1
+                                                    
+                else:     
+                    if luszcz_obrona == 1:
+                        $ luszcz_hp_now -= int(delta_attack / 2)
 
-                                if luszcz_obrona == 1:
-                                    $ luszcz_hp_now -= int(delta_attack / 2)
-
-                                    $ dmg = int(delta_attack / 2)
-                                    "{i}Delta zadaje [dmg] obrażeń Łuszczowi{/i}"
-                                else:
-                                    $ luszcz_hp_now -= delta_attack
-
-                                    "{i}Delta zadaje [delta_attack] obrażeń Łuszczowi{/i}"
-
-                            jump faza_fight1775
-                        else:
-                            jump losowanko_fight1774
-
+                        $ dmg = int(delta_attack / 2)
                     else:
-                        if luszcz_hp_now <= 10:
-                            $ kostka = renpy.random.randint(1, 5)
-                            if kostka >= 3:
-                                $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                if memy == 2:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ delta_hp_now -= delta_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1775
-
-                                if luszcz_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Delta został zablokowany{/i}"
-                                    $ luszcz_obrona = 1
+                        $ luszcz_hp_now -= delta_attack
+            
+            if eminem_hp_now >= 1:
+                if eminem_obrona >= 2:
+                    if luszcz_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ eminem_obrona = 1
                                                     
-                                else:
-                                    if delta_weapon >= 1:
-                                        play sound "audio/sfx/delta_weapon.mp3"
-                                    
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
+                else:     
+                    if eminem_obrona == 1:
+                        $ eminem_hp_now -= int(delta_attack / 2)
 
-                                    if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(delta_attack / 2)
-
-                                        $ dmg = int(delta_attack / 2)
-                                        "{i}Delta zadaje [dmg] obrażeń Łuszczowi{/i}"
-                                    else:
-                                        $ luszcz_hp_now -= delta_attack
-
-                                        "{i}Delta zadaje [delta_attack] obrażeń Łuszczowi{/i}"
-
-                                jump faza_fight1775
-                            else:
-                                jump losowanko_fight1774
-                        
-                        else:
-                            $ kostka = renpy.random.randint(1, 5)
-                            if kostka >= 5:
-                                $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                if memy == 2:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ delta_hp_now -= delta_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1775
-                            
-                                if luszcz_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Delta został zablokowany{/i}"
-                                    $ luszcz_obrona = 1
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ eminem_hp_now -= delta_attack
+            
+            if urban_hp_now >= 1:
+                if urban_obrona >= 2:
+                    if eminem_hp_now <= 0 and luszcz_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ urban_obrona = 1
                                                     
-                                else:
-                                    if delta_weapon >= 1:
-                                        play sound "audio/sfx/delta_weapon.mp3"
-                                    
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
+                else:     
+                    if urban_obrona == 1:
+                        $ urban_hp_now -= int(delta_attack / 2)
 
-                                    if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(delta_attack / 2)
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ urban_hp_now -= delta_attack
+            
+            if zyd_hp_now >= 1:
+                if zyd_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and luszcz_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ zyd_obrona = 1
+                                                    
+                else:     
+                    if zyd_obrona == 1:
+                        $ zyd_hp_now -= int(delta_attack / 2)
 
-                                        $ dmg = int(delta_attack / 2)
-                                        "{i}Delta zadaje [dmg] obrażeń Łuszczowi{/i}"
-                                    else:
-                                        $ luszcz_hp_now -= delta_attack
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ zyd_hp_now -= delta_attack
+            
+            if kazuma_hp_now >= 1:
+                if kazuma_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and luszcz_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ kazuma_obrona = 1
+                                                    
+                else:     
+                    if kazuma_obrona == 1:
+                        $ kazuma_hp_now -= int(delta_attack / 2)
 
-                                        "{i}Delta zadaje [delta_attack] obrażeń Łuszczowi{/i}"
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ kazuma_hp_now -= delta_attack
+            
+            if tarczownik_hp_now >= 1:
+                if tarczownik_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and luszcz_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Delty został zablokowany{/i}"
+                    $ tarczownik_obrona = 1
+                                                    
+                else:     
+                    if tarczownik_obrona == 1:
+                        $ tarczownik_hp_now -= int(delta_attack / 2)
 
-                                jump faza_fight1775
-                            else:
-                                jump losowanko_fight1774
-
-                else:
-                    jump losowanko_fight1774
+                        $ dmg = int(delta_attack / 2)
+                    else:
+                        $ tarczownik_hp_now -= delta_attack
+            
+            if luszcz_hp_now >= 1 and luszcz_obrona <= 1 or eminem_hp_now >= 1 and eminem_obrona <= 1 or urban_hp_now >= 1 and urban_obrona <= 1 and zyd_hp_now >= 1 and zyd_obrona <= 1 or kazuma_hp_now >= 1 and kazuma_obrona <= 1 or tarczownik_hp_now >= 1 and tarczownik_obrona <= 1:
+                play sound "audio/sfx/delta_weapon.mp3"
+                "{i}Delta zadaje [delta_attack] obrażeń wszystkim sojusznikom{/i}"
+            
             else:
-                if kostka == 2:
-                    if urban_hp_now >= 1 and urban_wybrany >= 1:
-                        if urban_hp_now <= 3:
-                            $ kostka = renpy.random.randint(1, 5)
-                            if kostka >= 2:
-                                $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                if memy == 3:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ delta_hp_now -= delta_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1775
-
-                                if urban_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Delta został zablokowany{/i}"
-                                    $ urban_obrona = 1
-
-                                else:
-                                    if delta_weapon >= 1:
-                                        play sound "audio/sfx/delta_weapon.mp3"
-                                    
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
-
-                                    if urban_obrona == 1:
-                                        $ urban_hp_now -= int(delta_attack / 2)
-
-                                        $ dmg = int(delta_attack / 2)
-                                        "{i}Delta zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-                                    else:
-                                        $ urban_hp_now -= delta_attack
-
-                                        "{i}Delta zadaje [delta_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                                jump faza_fight1775
-                            else:
-                                jump losowanko_fight1774
-
-                        else:
-                            if urban_hp_now <= 10:
-                                $ kostka = renpy.random.randint(1, 5)
-                                if kostka >= 3:
-                                    $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                    if memy == 3:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ delta_hp_now -= delta_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1775
-
-                                    if urban_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Delta został zablokowany{/i}"
-                                        $ urban_obrona = 1
-
-                                    else:
-                                        if delta_weapon >= 1:
-                                            play sound "audio/sfx/delta_weapon.mp3"
-                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-
-                                        if urban_obrona == 1:
-                                            $ urban_hp_now -= int(delta_attack / 2)
-
-                                            $ dmg = int(delta_attack / 2)
-                                            "{i}Delta zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-                                        else:
-                                            $ urban_hp_now -= delta_attack
-
-                                            "{i}Delta zadaje [delta_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                                    jump faza_fight1775
-                                else:
-                                    jump losowanko_fight1774
-                            
-                            else:
-                                $ kostka = renpy.random.randint(1, 5)
-                                if kostka >= 5:
-                                    $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                    if memy == 3:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ delta_hp_now -= delta_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1775
-
-                                    if urban_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Delta został zablokowany{/i}"
-                                        $ urban_obrona = 1
-
-                                    else:
-                                        if delta_weapon >= 1:
-                                            play sound "audio/sfx/delta_weapon.mp3"
-                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-                                    
-                                        if urban_obrona == 1:
-                                            $ urban_hp_now -= int(delta_attack / 2)
-
-                                            $ dmg = int(delta_attack / 2)
-                                            "{i}Delta zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-                                        else:
-                                            $ urban_hp_now -= delta_attack
-
-                                            "{i}Delta zadaje [delta_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                                    jump faza_fight1775
-                                else:
-                                    jump losowanko_fight1774
-
-                    else:
-                        jump losowanko_fight1774
-                else:
-                    if kostka == 3:
-                        if zyd_hp_now >= 1 and zyd_wybrany >= 1:
-                            if zyd_hp_now <= 3:
-                                $ kostka = renpy.random.randint(1, 5)
-                                if kostka >= 2:
-                                    $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                    if memy == 4:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ delta_hp_now -= delta_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1775
-
-                                    if zyd_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Delta został zablokowany{/i}"
-                                        $ zyd_obrona = 1
-                                        
-                                    else:
-                                        if delta_weapon >= 1:
-                                            play sound "audio/sfx/delta_weapon.mp3"
-                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-
-                                        if zyd_obrona == 1:
-                                            $ zyd_hp_now -= int(delta_attack / 2)
-
-                                            $ dmg = int(delta_attack / 2)
-                                            "{i}Delta zadaje [dmg] obrażeń Żydowi{/i}"
-                                        else:
-                                            $ zyd_hp_now -= delta_attack
-
-                                            "{i}Delta zadaje [delta_attack] obrażeń Żydowi{/i}"
-
-                                    jump faza_fight1775
-                                else:
-                                    jump losowanko_fight1774
-
-                            else:
-                                if zyd_hp_now <= 10:
-                                    $ kostka = renpy.random.randint(1, 5)
-                                    if kostka >= 3:
-                                        $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                        if memy == 4:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ delta_hp_now -= delta_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1775
-
-                                        if zyd_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Delta został zablokowany{/i}"
-                                            $ zyd_obrona = 1
-
-                                        else:
-                                            if delta_weapon >= 1:
-                                                play sound "audio/sfx/delta_weapon.mp3"
-                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
-                                            if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(delta_attack / 2)
-
-                                                $ dmg = int(delta_attack / 2)
-                                                "{i}Delta zadaje [dmg] obrażeń Żydowi{/i}"
-                                            else:
-                                                $ zyd_hp_now -= delta_attack
-
-                                                "{i}Delta zadaje [delta_attack] obrażeń Żydowi{/i}"
-
-                                        jump faza_fight1775
-                                    else:
-                                        jump losowanko_fight1774
-                                
-                                else:
-                                    $ kostka = renpy.random.randint(1, 5)
-                                    if kostka >= 5:
-                                        $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                        if memy == 4:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ delta_hp_now -= delta_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1775
-                                        
-                                        if zyd_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Delta został zablokowany{/i}"
-                                            $ zyd_obrona = 1
-
-                                        else:
-                                            if delta_weapon >= 1:
-                                                play sound "audio/sfx/delta_weapon.mp3"
-                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
-                                            if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(delta_attack / 2)
-
-                                                $ dmg = int(delta_attack / 2)
-                                                "{i}Delta zadaje [dmg] obrażeń Żydowi{/i}"
-                                            else:
-                                                $ zyd_hp_now -= delta_attack
-
-                                                "{i}Delta zadaje [delta_attack] obrażeń Żydowi{/i}"
-
-                                        jump faza_fight1775
-                                    else:
-                                        jump losowanko_fight1774
-
-                        else:
-                            jump losowanko_fight1774
-                    else:
-                        if kostka == 4:
-                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
-                                if kazuma_hp_now <= 3:
-                                    $ kostka = renpy.random.randint(1, 5)
-                                    if kostka >= 2:
-                                        $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                        if memy == 5:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ delta_hp_now -= delta_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1775
-
-                                        if kazuma_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Delta został zablokowany{/i}"
-                                            $ kazuma_obrona = 1
-                                        
-                                        else:
-                                            if delta_weapon >= 1:
-                                                play sound "audio/sfx/delta_weapon.mp3"
-                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
-                                            if kazuma_obrona == 1:
-                                                $ kazuma_hp_now -= int(delta_attack / 2)
-
-                                                $ dmg = int(delta_attack / 2)
-                                                "{i}Delta zadaje [dmg] obrażeń Kazumie{/i}"
-                                            else:
-                                                $ kazuma_hp_now -= delta_attack
-
-                                                "{i}Delta zadaje [delta_attack] obrażeń Kazumie{/i}"
-
-                                        jump faza_fight1775
-                                    else:
-                                        jump losowanko_fight1774
-
-                                else:
-                                    if kazuma_hp_now <= 10:
-                                        $ kostka = renpy.random.randint(1, 5)
-                                        if kostka >= 3:
-                                            $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                            if memy == 5:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ delta_hp_now -= delta_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1775
-
-                                            if kazuma_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Delta został zablokowany{/i}"
-                                                $ kazuma_obrona = 1
-                                            
-                                            else:
-                                                if delta_weapon >= 1:
-                                                    play sound "audio/sfx/delta_weapon.mp3"
-                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
-                                                if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(delta_attack / 2)
-
-                                                    $ dmg = int(delta_attack / 2)
-                                                    "{i}Delta zadaje [dmg] obrażeń Kazumie{/i}"
-                                                else:
-                                                    $ kazuma_hp_now -= delta_attack
-
-                                                    "{i}Delta zadaje [delta_attack] obrażeń Kazumie{/i}"
-
-                                            jump faza_fight1775
-                                        else:
-                                            jump losowanko_fight1774
-                                    
-                                    else:
-                                        $ kostka = renpy.random.randint(1, 5)
-                                        if kostka >= 5:
-                                            $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                            if memy == 5:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ delta_hp_now -= delta_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1775
-
-                                            if kazuma_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Delta został zablokowany{/i}"
-                                                $ kazuma_obrona = 1
-                                            
-                                            else:
-                                                if delta_weapon >= 1:
-                                                    play sound "audio/sfx/delta_weapon.mp3"
-                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
-                                                if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(delta_attack / 2)
-
-                                                    $ dmg = int(delta_attack / 2)
-                                                    "{i}Delta zadaje [dmg] obrażeń Kazumie{/i}"
-                                                else:
-                                                    $ kazuma_hp_now -= delta_attack
-
-                                                    "{i}Delta zadaje [delta_attack] obrażeń Kazumie{/i}"
-
-                                            jump faza_fight1775
-                                        else:
-                                            jump losowanko_fight1774
-
-                            else:
-                                jump losowanko_fight1774
-                        else:
-                            if kostka == 5:
-                                if eminem_hp_now >= 1 and eminem_wybrany >= 1:
-                                    if eminem_hp_now <= 3:
-                                        $ kostka = renpy.random.randint(1, 5)
-                                        if kostka >= 2:
-                                            $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                            if memy == 7:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ delta_hp_now -= delta_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1775
-
-                                            if eminem_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Delta został zablokowany{/i}"
-                                                $ eminem_obrona = 1
-                                            
-                                            else:
-                                                if delta_weapon >= 1:
-                                                    play sound "audio/sfx/delta_weapon.mp3"
-                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
-                                                if eminem_obrona == 1:
-                                                    $ eminem_hp_now -= int(delta_attack / 2)
-
-                                                    $ dmg = int(delta_attack / 2)
-                                                    "{i}Delta zadaje [dmg] obrażeń Shadowowi{/i}"
-                                                else:
-                                                    $ eminem_hp_now -= delta_attack
-
-                                                    "{i}Delta zadaje [delta_attack] obrażeń Shadowowi{/i}"
-
-                                            jump faza_fight1775
-                                        else:
-                                            jump losowanko_fight1774
-
-                                    else:
-                                        if eminem_hp_now <= 10:
-                                            $ kostka = renpy.random.randint(1, 5)
-                                            if kostka >= 3:
-                                                $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                                if memy == 7:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ delta_hp_now -= delta_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1775
-
-                                                if eminem_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Delta został zablokowany{/i}"
-                                                    $ eminem_obrona = 1
-                                                
-                                                else:
-                                                    if delta_weapon >= 1:
-                                                        play sound "audio/sfx/delta_weapon.mp3"
-                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
-                                                    if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(delta_attack / 2)
-
-                                                        $ dmg = int(delta_attack / 2)
-                                                        "{i}Delta zadaje [dmg] obrażeń Shadowowi{/i}"
-                                                    else:
-                                                        $ eminem_hp_now -= delta_attack
-
-                                                        "{i} [delta_attack] obrażeń Shadowowi{/i}"
-
-                                                jump faza_fight1775
-                                            else:
-                                                jump losowanko_fight1774
-                                        
-                                        else:
-                                            $ kostka = renpy.random.randint(1, 5)
-                                            if kostka >= 5:
-                                                $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                                if memy == 7:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ delta_hp_now -= delta_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1775
-
-                                                if eminem_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Delta został zablokowany{/i}"
-                                                    $ eminem_obrona = 1
-                                                
-                                                else:
-                                                    if delta_weapon >= 1:
-                                                        play sound "audio/sfx/delta_weapon.mp3"
-                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
-                                                    if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(delta_attack / 2)
-
-                                                        $ dmg = int(delta_attack / 2)
-                                                        "{i}Delta zadaje [dmg] obrażeń Shadowowi{/i}"
-                                                    else:
-                                                        $ eminem_hp_now -= delta_attack
-
-                                                        "{i}Delta zadaje [delta_attack] obrażeń Shadowowi{/i}"
-
-                                                jump faza_fight1775
-                                            else:
-                                                jump losowanko_fight1774
-
-                                else:
-                                    jump losowanko_fight1774
-                            else:
-                                if kostka == 6:
-                                    if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
-                                        if tarczownik_hp_now <= 3:
-                                            $ kostka = renpy.random.randint(1, 5)
-                                            if kostka >= 2:
-                                                $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                                if memy == 6:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ delta_hp_now -= delta_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1775
-
-                                                if tarczownik_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Delta został zablokowany{/i}"
-                                                    $ tarczownik_obrona = 1
-                                                
-                                                else:
-                                                    if delta_weapon >= 1:
-                                                        play sound "audio/sfx/delta_weapon.mp3"
-                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
-                                                    if tarczownik_obrona == 1:
-                                                        $ tarczownik_hp_now -= int(delta_attack / 2)
-
-                                                        $ dmg = int(delta_attack / 2)
-                                                        "{i}Delta zadaje [dmg] obrażeń Naofumiemu{/i}"
-                                                    else:
-                                                        $ tarczownik_hp_now -= delta_attack
-
-                                                        "{i}Delta zadaje [delta_attack] obrażeń Naofumiemu{/i}"
-
-                                                jump faza_fight1775
-                                            else:
-                                                jump losowanko_fight1774
-
-                                        else:
-                                            if tarczownik_hp_now <= 10:
-                                                $ kostka = renpy.random.randint(1, 5)
-                                                if kostka >= 3:
-                                                    $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                                    if memy == 6:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            $ delta_hp_now -= delta_attack
-                                                            play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight1775
-
-                                                    if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Delta został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
-                                                
-                                                    else:
-                                                        if delta_weapon >= 1:
-                                                            play sound "audio/sfx/delta_weapon.mp3"
-                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
-                                                        if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(delta_attack / 2)
-
-                                                            $ dmg = int(delta_attack / 2)
-                                                            "{i}Delta zadaje [dmg] obrażeń Naofumiemu{/i}"
-                                                        else:
-                                                            $ tarczownik_hp_now -= delta_attack
-
-                                                            "{i}Delta zadaje [delta_attack] obrażeń Naofumiemu{/i}"
-
-                                                    jump faza_fight1775
-                                                else:
-                                                    jump losowanko_fight1774
-                                            
-                                            else:
-                                                $ kostka = renpy.random.randint(1, 5)
-                                                if kostka >= 5:
-                                                    $ delta_attack = renpy.random.randint(delta_min_attack_now, delta_max_attack_now)
-
-                                                    if memy == 6:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            $ delta_hp_now -= delta_attack
-                                                            play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Delta odbił się od Szalika z Memów i zadał [delta_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight1775
-
-                                                    if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Delta został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
-                                                
-                                                    else:
-                                                        if delta_weapon >= 1:
-                                                            play sound "audio/sfx/delta_weapon.mp3"
-                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
-                                                        if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(delta_attack / 2)
-
-                                                            $ dmg = int(delta_attack / 2)
-                                                            "{i}Delta zadaje [dmg] obrażeń Naofumiemu{/i}"
-                                                        else:
-                                                            $ tarczownik_hp_now -= delta_attack
-
-                                                            "{i}Delta zadaje [delta_attack] obrażeń Naofumiemu{/i}"
-
-                                                    jump faza_fight1775
-                                                else:
-                                                    jump losowanko_fight1774
-
-                                    else:
-                                        jump losowanko_fight1774
-                                else:
-                                    jump losowanko_fight1774
-                
-                
-    label faza_fight1775:
+                play sound "audio/sfx/obrona.mp3"
+                "{i}Atak Delty został zablokowany{/i}"
+
+            jump faza_fight175
+  
+    label faza_fight175:
         hide reka1
         hide reka2
         hide reka3
@@ -19495,7 +19003,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -19695,18 +19203,18 @@ label fight1771:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
         else:
             $ ado += 1  
 
         if gamma_hp_now <= 0:
-            jump faza_fight1776      
+            jump faza_fight176      
 
         show ruch zorder 0 at tlo_wrog3 
 
         if gamma_stun == 1:
             "{i}Gamma jest zestunnowany{/i}"
-            jump faza_fight1776 
+            jump faza_fight176 
 
         if gamma_uszy >= 1 and urban_hp_now >= 1:
             if gamma_weapon >= 1:
@@ -19715,20 +19223,27 @@ label fight1771:
                 show reka7 zorder 15 at weapon_wrog3
             $ gamma_attack = renpy.random.randint(gamma_min_attack_now, gamma_max_attack_now)
 
+            $ kostka = renpy.random.randint(1, 20)
+            if kostka <= 3:
+                $ gamma_hp_now -= gamma_attack
+                play sound "audio/sfx/rzut.mp3"
+                "{i}Podczas ataku Gamma przewróciła się i nabiła na własny miecz tracąc [gamma_attack] obrażeń{/i}"
+                jump faza_fight176
+
             if memy == 3:
                 $ kostka = renpy.random.randint(1, 20)
                 if kostka <= 3:
                     $ gamma_hp_now -= gamma_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                    jump faza_fight1776
+                    jump faza_fight176
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Gamma został zablokowany{/i}"
                 $ urban_obrona = 1
 
-                jump faza_fight1776
+                jump faza_fight176
                                                 
             else:
                 if gamma_weapon >= 1:
@@ -19743,20 +19258,20 @@ label fight1771:
                     $ dmg = int(gamma_attack / 2)
                     "{i}Gamma zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump faza_fight1776
+                    jump faza_fight176
                 else:
                     $ urban_hp_now -= gamma_attack
 
                     "{i}Gamma zadaje [gamma_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                jump faza_fight1776
+                jump faza_fight176
 
         if gamma_max_attack_now <= 0 and gamma_obrona == 0:
             show tarcza7 zorder 15 at weapon_wrog3  
             play sound "audio/sfx/shield.mp3"
             "{i}Gamma broni się{/i}"
             $ gamma_obrona += 1
-            jump faza_fight1776
+            jump faza_fight176
 
         if gamma_hp_now >= 1 and gamma_obrona == 0:
             if gamma_hp_now <= 3:
@@ -19767,7 +19282,7 @@ label fight1771:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Gamma broni się{/i}"
                     $ gamma_obrona += 1
-                    jump faza_fight1776
+                    jump faza_fight176
             
             else:
                 $ kostka = renpy.random.randint(1, 10)
@@ -19777,13 +19292,21 @@ label fight1771:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Gamma broni się{/i}"
                     $ gamma_obrona += 1
-                    jump faza_fight1776
-                    
-        label losowanko_fight1775:
+                    jump faza_fight176
+
+        $ kostka = renpy.random.randint(1, 20)
+        if kostka <= 3:
+            $ gamma_attack = renpy.random.randint(gamma_min_attack_now, gamma_max_attack_now)
+            $ gamma_hp_now -= gamma_attack
+            play sound "audio/sfx/rzut.mp3"
+            "{i}Podczas ataku Gamma przewróciła się i nabiła na własny miecz tracąc [gamma_attack] obrażeń{/i}"
+            jump faza_fight176
+
+        label losowanko_fight175:
             if gamma_weapon >= 1:
                 show gamma_weapon zorder 15 at weapon_wrog3 
             else:
-                show reka7 zorder 15 at weapon_wrog3
+                show reka7 zorder 15 at weapon_wrog3  
 
             $ kostka = renpy.random.randint(1, 6)
             if kostka == 1:
@@ -19799,7 +19322,7 @@ label fight1771:
                                     $ gamma_hp_now -= gamma_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                    jump faza_fight1776
+                                    jump faza_fight176
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -19823,9 +19346,9 @@ label fight1771:
 
                                     "{i}Gamma zadaje [gamma_attack] obrażeń Łuszczowi{/i}"
 
-                            jump faza_fight1776
+                            jump faza_fight176
                         else:
-                            jump losowanko_fight1775
+                            jump losowanko_fight175
 
                     else:
                         if luszcz_hp_now <= 10:
@@ -19839,7 +19362,7 @@ label fight1771:
                                         $ gamma_hp_now -= gamma_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1776
+                                        jump faza_fight176
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -19863,9 +19386,9 @@ label fight1771:
 
                                         "{i}Gamma zadaje [gamma_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza_fight1776
+                                jump faza_fight176
                             else:
-                                jump losowanko_fight1775
+                                jump losowanko_fight175
                         
                         else:
                             $ kostka = renpy.random.randint(1, 5)
@@ -19878,7 +19401,7 @@ label fight1771:
                                         $ gamma_hp_now -= gamma_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1776
+                                        jump faza_fight176
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -19902,12 +19425,12 @@ label fight1771:
 
                                         "{i}Gamma zadaje [gamma_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza_fight1776
+                                jump faza_fight176
                             else:
-                                jump losowanko_fight1775
+                                jump losowanko_fight175
 
                 else:
-                    jump losowanko_fight1775
+                    jump losowanko_fight175
             else:
                 if kostka == 2:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
@@ -19922,7 +19445,7 @@ label fight1771:
                                         $ gamma_hp_now -= gamma_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight1776
+                                        jump faza_fight176
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -19946,9 +19469,9 @@ label fight1771:
 
                                         "{i}Gamma zadaje [gamma_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump faza_fight1776
+                                jump faza_fight176
                             else:
-                                jump losowanko_fight1775
+                                jump losowanko_fight175
 
                         else:
                             if urban_hp_now <= 10:
@@ -19962,7 +19485,7 @@ label fight1771:
                                             $ gamma_hp_now -= gamma_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1776
+                                            jump faza_fight176
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -19986,9 +19509,9 @@ label fight1771:
 
                                             "{i}Gamma zadaje [gamma_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza_fight1776
+                                    jump faza_fight176
                                 else:
-                                    jump losowanko_fight1775
+                                    jump losowanko_fight175
                             
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -20001,7 +19524,7 @@ label fight1771:
                                             $ gamma_hp_now -= gamma_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1776
+                                            jump faza_fight176
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -20025,12 +19548,12 @@ label fight1771:
 
                                             "{i}Gamma zadaje [gamma_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza_fight1776
+                                    jump faza_fight176
                                 else:
-                                    jump losowanko_fight1775
+                                    jump losowanko_fight175
 
                     else:
-                        jump losowanko_fight1775
+                        jump losowanko_fight175
                 else:
                     if kostka == 3:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
@@ -20045,7 +19568,7 @@ label fight1771:
                                             $ gamma_hp_now -= gamma_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight1776
+                                            jump faza_fight176
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -20069,9 +19592,9 @@ label fight1771:
 
                                             "{i}Gamma zadaje [gamma_attack] obrażeń Żydowi{/i}"
 
-                                    jump faza_fight1776
+                                    jump faza_fight176
                                 else:
-                                    jump losowanko_fight1775
+                                    jump losowanko_fight175
 
                             else:
                                 if zyd_hp_now <= 10:
@@ -20085,7 +19608,7 @@ label fight1771:
                                                 $ gamma_hp_now -= gamma_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1776
+                                                jump faza_fight176
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -20109,9 +19632,9 @@ label fight1771:
 
                                                 "{i}Gamma zadaje [gamma_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza_fight1776
+                                        jump faza_fight176
                                     else:
-                                        jump losowanko_fight1775
+                                        jump losowanko_fight175
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -20124,7 +19647,7 @@ label fight1771:
                                                 $ gamma_hp_now -= gamma_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1776
+                                                jump faza_fight176
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -20148,12 +19671,12 @@ label fight1771:
 
                                                 "{i}Gamma zadaje [gamma_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza_fight1776
+                                        jump faza_fight176
                                     else:
-                                        jump losowanko_fight1775
+                                        jump losowanko_fight175
 
                         else:
-                            jump losowanko_fight1775
+                            jump losowanko_fight175
                     else:
                         if kostka == 4:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
@@ -20168,7 +19691,7 @@ label fight1771:
                                                 $ gamma_hp_now -= gamma_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight1776
+                                                jump faza_fight176
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -20192,9 +19715,9 @@ label fight1771:
 
                                                 "{i}Gamma zadaje [gamma_attack] obrażeń Kazumie{/i}"
 
-                                        jump faza_fight1776
+                                        jump faza_fight176
                                     else:
-                                        jump losowanko_fight1775
+                                        jump losowanko_fight175
 
                                 else:
                                     if kazuma_hp_now <= 10:
@@ -20208,7 +19731,7 @@ label fight1771:
                                                     $ gamma_hp_now -= gamma_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1776
+                                                    jump faza_fight176
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -20232,9 +19755,9 @@ label fight1771:
 
                                                     "{i}Gamma zadaje [gamma_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza_fight1776
+                                            jump faza_fight176
                                         else:
-                                            jump losowanko_fight1775
+                                            jump losowanko_fight175
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -20247,7 +19770,7 @@ label fight1771:
                                                     $ gamma_hp_now -= gamma_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1776
+                                                    jump faza_fight176
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -20271,12 +19794,12 @@ label fight1771:
 
                                                     "{i}Gamma zadaje [gamma_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza_fight1776
+                                            jump faza_fight176
                                         else:
-                                            jump losowanko_fight1775
+                                            jump losowanko_fight175
 
                             else:
-                                jump losowanko_fight1775
+                                jump losowanko_fight175
                         else:
                             if kostka == 5:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
@@ -20291,7 +19814,7 @@ label fight1771:
                                                     $ gamma_hp_now -= gamma_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight1776
+                                                    jump faza_fight176
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -20315,9 +19838,9 @@ label fight1771:
 
                                                     "{i}Gamma zadaje [gamma_attack] obrażeń Shadowowi{/i}"
 
-                                            jump faza_fight1776
+                                            jump faza_fight176
                                         else:
-                                            jump losowanko_fight1775
+                                            jump losowanko_fight175
 
                                     else:
                                         if eminem_hp_now <= 10:
@@ -20331,7 +19854,7 @@ label fight1771:
                                                         $ gamma_hp_now -= gamma_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1776
+                                                        jump faza_fight176
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -20355,9 +19878,9 @@ label fight1771:
 
                                                         "{i}Gamma zadaje [gamma_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza_fight1776
+                                                jump faza_fight176
                                             else:
-                                                jump losowanko_fight1775
+                                                jump losowanko_fight175
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -20370,7 +19893,7 @@ label fight1771:
                                                         $ gamma_hp_now -= gamma_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1776
+                                                        jump faza_fight176
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -20394,12 +19917,12 @@ label fight1771:
 
                                                         "{i}Gamma zadaje [gamma_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza_fight1776
+                                                jump faza_fight176
                                             else:
-                                                jump losowanko_fight1775
+                                                jump losowanko_fight175
 
                                 else:
-                                    jump losowanko_fight1775
+                                    jump losowanko_fight175
                             else:
                                 if kostka == 6:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
@@ -20414,7 +19937,7 @@ label fight1771:
                                                         $ gamma_hp_now -= gamma_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight1776
+                                                        jump faza_fight176
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -20438,9 +19961,9 @@ label fight1771:
 
                                                         "{i}Gamma zadaje [gamma_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump faza_fight1776
+                                                jump faza_fight176
                                             else:
-                                                jump losowanko_fight1775
+                                                jump losowanko_fight175
 
                                         else:
                                             if tarczownik_hp_now <= 10:
@@ -20454,7 +19977,7 @@ label fight1771:
                                                             $ gamma_hp_now -= gamma_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight1776
+                                                            jump faza_fight176
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -20478,9 +20001,9 @@ label fight1771:
 
                                                             "{i}Gamma zadaje [gamma_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza_fight1776
+                                                    jump faza_fight176
                                                 else:
-                                                    jump losowanko_fight1775
+                                                    jump losowanko_fight175
                                             
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
@@ -20493,7 +20016,7 @@ label fight1771:
                                                             $ gamma_hp_now -= gamma_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Gamma odbił się od Szalika z Memów i zadał [gamma_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight1776
+                                                            jump faza_fight176
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -20517,17 +20040,17 @@ label fight1771:
 
                                                             "{i}Gamma zadaje [gamma_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza_fight1776
+                                                    jump faza_fight176
                                                 else:
-                                                    jump losowanko_fight1775
+                                                    jump losowanko_fight175
 
                                     else:
-                                        jump losowanko_fight1775
+                                        jump losowanko_fight175
                                 else:
-                                    jump losowanko_fight1775
+                                    jump losowanko_fight175
 
 
-    label faza_fight1776:
+    label faza_fight176:
         hide reka1
         hide reka2
         hide reka3
@@ -20620,7 +20143,7 @@ label fight1771:
                 hide slime
         
         if ile_wrogow <= 0:
-            jump wygranko_fight1771
+            jump wygranko_fight171
         
         if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
             hide luszcz_zloty
@@ -20820,18 +20343,18 @@ label fight1771:
             $ tarczownik_weapon = 0
         
         if ile_sojusznikow <= 0:
-            jump przegranko_fight1771
+            jump przegranko_fight171
         else:
             $ ado += 1    
 
         if epsilon_hp_now <= 0:
-            jump start_fight1771  
+            jump start_fight171  
 
         show ruch zorder 0 at tlo_wrog2
 
         if epsilon_stun == 1:
             "{i}Epsilon jest zestunnowany{/i}"
-            jump start_fight1771  
+            jump start_fight171  
 
         if epsilon_uszy >= 1 and urban_hp_now >= 1:
             if epsilon_weapon >= 1:
@@ -20846,14 +20369,14 @@ label fight1771:
                     $ epsilon_hp_now -= epsilon_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                    jump start_fight1771
+                    jump start_fight171
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Epsilon został zablokowany{/i}"
                 $ urban_obrona = 1
 
-                jump start_fight1771
+                jump start_fight171
                                                 
             else:
                 if epsilon_weapon >= 1:
@@ -20868,20 +20391,20 @@ label fight1771:
                     $ dmg = int(epsilon_attack / 2)
                     "{i}Epsilon zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump start_fight1771
+                    jump start_fight171
                 else:
                     $ urban_hp_now -= epsilon_attack
 
                     "{i}Epsilon zadaje [epsilon_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                jump start_fight1771
+                jump start_fight171
 
         if epsilon_max_attack_now <= 0 and epsilon_obrona == 0:
             show tarcza8 zorder 15 at weapon_wrog2  
             play sound "audio/sfx/shield.mp3"
             "{i}Epsilon broni się{/i}"
             $ epsilon_obrona += 1
-            jump start_fight1771
+            jump start_fight171
 
         if epsilon_hp_now >= 1 and epsilon_obrona == 0:
             if epsilon_hp_now <= 3:
@@ -20892,7 +20415,7 @@ label fight1771:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Epsilon broni się{/i}"
                     $ epsilon_obrona += 1
-                    jump start_fight1771
+                    jump start_fight171
             
             else:
                 $ kostka = renpy.random.randint(1, 10)
@@ -20902,9 +20425,9 @@ label fight1771:
                     play sound "audio/sfx/shield.mp3"
                     "{i}Epsilon broni się{/i}"
                     $ epsilon_obrona += 1
-                    jump start_fight1771
+                    jump start_fight171
                     
-        label losowanko_fight1776:    
+        label losowanko_fight176:    
             if epsilon_weapon >= 1:
                 show epsilon_weapon zorder 15 at weapon_wrog2 
             else:
@@ -20923,7 +20446,7 @@ label fight1771:
                                     $ epsilon_hp_now -= epsilon_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                    jump start_fight1771
+                                    jump start_fight171
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -20944,12 +20467,15 @@ label fight1771:
                                     "{i}Epsilon zadaje [dmg] obrażeń Łuszczowi{/i}"
                                 else:
                                     $ luszcz_hp_now -= epsilon_attack
+                                    if epsilon_hp_now + epsilon_attack > epsilon_hp:
+                                        $ epsilon_hp_now = epsilon_hp
+                                    else:
+                                        $ epsilon_hp_now += epsilon_attack
+                                    "{i}Epsilon zabiera [epsilon_attack] punktów życia Łuszczowi{/i}"
 
-                                    "{i}Epsilon zadaje [epsilon_attack] obrażeń Łuszczowi{/i}"
-
-                            jump start_fight1771
+                            jump start_fight171
                         else:
-                            jump losowanko_fight1776
+                            jump losowanko_fight176
 
                     else:
                         if luszcz_hp_now <= 10:
@@ -20963,7 +20489,7 @@ label fight1771:
                                         $ epsilon_hp_now -= epsilon_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight1771
+                                        jump start_fight171
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -20987,9 +20513,9 @@ label fight1771:
 
                                         "{i}Epsilon zadaje [epsilon_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight1771
+                                jump start_fight171
                             else:
-                                jump losowanko_fight1776
+                                jump losowanko_fight176
                         
                         else:
                             $ kostka = renpy.random.randint(1, 5)
@@ -21002,7 +20528,7 @@ label fight1771:
                                         $ epsilon_hp_now -= epsilon_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight1771
+                                        jump start_fight171
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21026,12 +20552,12 @@ label fight1771:
 
                                         "{i}Epsilon zadaje [epsilon_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight1771
+                                jump start_fight171
                             else:
-                                jump losowanko_fight1776
+                                jump losowanko_fight176
 
                 else:
-                    jump losowanko_fight1776
+                    jump losowanko_fight176
             else:
                 if kostka == 2:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
@@ -21046,7 +20572,7 @@ label fight1771:
                                         $ epsilon_hp_now -= epsilon_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight1771
+                                        jump start_fight171
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21070,9 +20596,9 @@ label fight1771:
 
                                         "{i}Epsilon zadaje [epsilon_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump start_fight1771
+                                jump start_fight171
                             else:
-                                jump losowanko_fight1776
+                                jump losowanko_fight176
 
                         else:
                             if urban_hp_now <= 10:
@@ -21086,7 +20612,7 @@ label fight1771:
                                             $ epsilon_hp_now -= epsilon_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight1771
+                                            jump start_fight171
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21110,9 +20636,9 @@ label fight1771:
 
                                             "{i}Epsilon zadaje [epsilon_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight1771
+                                    jump start_fight171
                                 else:
-                                    jump losowanko_fight1776
+                                    jump losowanko_fight176
                             
                             else:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -21125,7 +20651,7 @@ label fight1771:
                                             $ epsilon_hp_now -= epsilon_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight1771
+                                            jump start_fight171
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21149,12 +20675,12 @@ label fight1771:
 
                                             "{i}Epsilon zadaje [epsilon_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight1771
+                                    jump start_fight171
                                 else:
-                                    jump losowanko_fight1776
+                                    jump losowanko_fight176
 
                     else:
-                        jump losowanko_fight1776
+                        jump losowanko_fight176
                 else:
                     if kostka == 3:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
@@ -21169,7 +20695,7 @@ label fight1771:
                                             $ epsilon_hp_now -= epsilon_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight1771
+                                            jump start_fight171
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21193,9 +20719,9 @@ label fight1771:
 
                                             "{i}Epsilon zadaje [epsilon_attack] obrażeń Żydowi{/i}"
 
-                                    jump start_fight1771
+                                    jump start_fight171
                                 else:
-                                    jump losowanko_fight1776
+                                    jump losowanko_fight176
 
                             else:
                                 if zyd_hp_now <= 10:
@@ -21209,7 +20735,7 @@ label fight1771:
                                                 $ epsilon_hp_now -= epsilon_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight1771
+                                                jump start_fight171
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -21233,9 +20759,9 @@ label fight1771:
 
                                                 "{i}Epsilon zadaje [epsilon_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight1771
+                                        jump start_fight171
                                     else:
-                                        jump losowanko_fight1776
+                                        jump losowanko_fight176
                                 
                                 else:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -21248,7 +20774,7 @@ label fight1771:
                                                 $ epsilon_hp_now -= epsilon_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight1771
+                                                jump start_fight171
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -21272,12 +20798,12 @@ label fight1771:
 
                                                 "{i}Epsilon zadaje [epsilon_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight1771
+                                        jump start_fight171
                                     else:
-                                        jump losowanko_fight1776
+                                        jump losowanko_fight176
 
                         else:
-                            jump losowanko_fight1776
+                            jump losowanko_fight176
                     else:
                         if kostka == 4:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
@@ -21292,7 +20818,7 @@ label fight1771:
                                                 $ epsilon_hp_now -= epsilon_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight1771
+                                                jump start_fight171
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -21316,9 +20842,9 @@ label fight1771:
 
                                                 "{i}Epsilon zadaje [epsilon_attack] obrażeń Kazumie{/i}"
 
-                                        jump start_fight1771
+                                        jump start_fight171
                                     else:
-                                        jump losowanko_fight1776
+                                        jump losowanko_fight176
 
                                 else:
                                     if kazuma_hp_now <= 10:
@@ -21332,7 +20858,7 @@ label fight1771:
                                                     $ epsilon_hp_now -= epsilon_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight1771
+                                                    jump start_fight171
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -21356,9 +20882,9 @@ label fight1771:
 
                                                     "{i}Delta zadaje [epsilon_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight1771
+                                            jump start_fight171
                                         else:
-                                            jump losowanko_fight1776
+                                            jump losowanko_fight176
                                     
                                     else:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -21371,7 +20897,7 @@ label fight1771:
                                                     $ epsilon_hp_now -= epsilon_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight1771
+                                                    jump start_fight171
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -21395,12 +20921,12 @@ label fight1771:
 
                                                     "{i}Epsilon zadaje [epsilon_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight1771
+                                            jump start_fight171
                                         else:
-                                            jump losowanko_fight1776
+                                            jump losowanko_fight176
 
                             else:
-                                jump losowanko_fight1776
+                                jump losowanko_fight176
                         else:
                             if kostka == 5:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
@@ -21415,7 +20941,7 @@ label fight1771:
                                                     $ epsilon_hp_now -= epsilon_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight1771
+                                                    jump start_fight171
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -21439,9 +20965,9 @@ label fight1771:
 
                                                     "{i}Epsilon zadaje [epsilon_attack] obrażeń Shadowowi{/i}"
 
-                                            jump start_fight1771
+                                            jump start_fight171
                                         else:
-                                            jump losowanko_fight1776
+                                            jump losowanko_fight176
 
                                     else:
                                         if eminem_hp_now <= 10:
@@ -21455,7 +20981,7 @@ label fight1771:
                                                         $ epsilon_hp_now -= epsilon_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight1771
+                                                        jump start_fight171
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -21479,9 +21005,9 @@ label fight1771:
 
                                                         "{i}Epsilon zadaje [epsilon_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight1771
+                                                jump start_fight171
                                             else:
-                                                jump losowanko_fight1776
+                                                jump losowanko_fight176
                                         
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -21494,7 +21020,7 @@ label fight1771:
                                                         $ epsilon_hp_now -= epsilon_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight1771
+                                                        jump start_fight171
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -21518,12 +21044,12 @@ label fight1771:
 
                                                         "{i}Epsilon zadaje [epsilon_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight1771
+                                                jump start_fight171
                                             else:
-                                                jump losowanko_fight1776
+                                                jump losowanko_fight176
 
                                 else:
-                                    jump losowanko_fight1776
+                                    jump losowanko_fight176
                             else:
                                 if kostka == 6:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
@@ -21538,7 +21064,7 @@ label fight1771:
                                                         $ epsilon_hp_now -= epsilon_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight1771
+                                                        jump start_fight171
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -21562,9 +21088,9 @@ label fight1771:
 
                                                         "{i}Epsilon zadaje [epsilon_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump start_fight1771
+                                                jump start_fight171
                                             else:
-                                                jump losowanko_fight1776
+                                                jump losowanko_fight176
 
                                         else:
                                             if tarczownik_hp_now <= 10:
@@ -21578,7 +21104,7 @@ label fight1771:
                                                             $ epsilon_hp_now -= epsilon_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight1771
+                                                            jump start_fight171
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -21602,9 +21128,9 @@ label fight1771:
 
                                                             "{i}Epsilon zadaje [epsilon_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight1771
+                                                    jump start_fight171
                                                 else:
-                                                    jump losowanko_fight1776
+                                                    jump losowanko_fight176
                                             
                                             else:
                                                 $ kostka = renpy.random.randint(1, 5)
@@ -21617,7 +21143,7 @@ label fight1771:
                                                             $ epsilon_hp_now -= epsilon_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Epsilon odbił się od Szalika z Memów i zadał [epsilon_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight1771
+                                                            jump start_fight171
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -21641,20 +21167,20 @@ label fight1771:
 
                                                             "{i}Epsilon zadaje [epsilon_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight1771
+                                                    jump start_fight171
                                                 else:
-                                                    jump losowanko_fight1776
+                                                    jump losowanko_fight176
 
                                     else:
-                                        jump losowanko_fight1776
+                                        jump losowanko_fight176
                                 else: 
-                                    jump losowanko_fight1776                
+                                    jump losowanko_fight176                
 
-    label przegranko_fight1771:
+    label przegranko_fight171:
         scene bg dead
         play music "audio/music/losing.mp3" 
         queue music "audio/music/dead.mp3" 
-        $ fight1771_przegranko += 1
+        $ fight171_przegranko += 1
         hide eminem_pierscien
         hide luszcz_pierscien
         hide urban_pierscien
@@ -21780,7 +21306,7 @@ label fight1771:
             "{b}Powtórz Walkę{/b}":
                 window show
                 $ fight_on = 0
-                if fight1771_przegranko <= 12:
+                if fight171_przegranko <= 12:
                     $ timer += 5
 
                 $ ile_sojusznikow = 0
@@ -21921,10 +21447,10 @@ label fight1771:
                 $ kazuma_stun = 0
                 $ tarczownik_stun = 0
                 play sound "audio/sfx/return.mp3"
-                jump fight1771
+                jump fight171
 
-            "{b}Pomiń Walkę{/b}" if fight1771_przegranko >= 3:
-                $ fight1771_przegranko = 0
+            "{b}Pomiń Walkę{/b}" if fight171_przegranko >= 3:
+                $ fight171_przegranko = 0
                 if przegranko == 3:
                     $ timer += 50
                 if przegranko == 4:
@@ -21945,10 +21471,10 @@ label fight1771:
                     $ timer += 10
                 if przegranko == 12:
                     $ timer += 5
-                jump wygranko_fight1771
+                jump wygranko_fight171
 
-    label wygranko_fight1771:
-        $ fight1771_przegranko = 0
+    label wygranko_fight171:
+        $ fight171_przegranko = 0
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 
         stop music
@@ -22240,4 +21766,4 @@ label fight1771:
         $ gamma_poison = 0
         $ gamma_stun = 0
 
-        jump after_fight1771
+        jump after_fight171
