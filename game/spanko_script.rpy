@@ -226,7 +226,7 @@ label spanko:
 
     scene bg black with fade
     stop music
-    $ kostka = renpy.random.randint(1, 2)
+    $ kostka = renpy.random.randint(1, 1)
     if kostka == 1:
         "{i}Łuszcz położył się spać{/i}"
         "{i}Podczas snu założył kilka haremów w innych światach{/i}"
