@@ -69,6 +69,7 @@ label postacie:
     image eminem neutral right = Transform("eminem neutral", xzoom=-1) 
 
     define urban = Character("Jerzy Urban", color="#ff4040")
+    define urban_zly = Character("Jerzy Urban", color="#ff4040")
     image urban neutral right = Transform("urban neutral", xzoom=-1)
 
     define zyd = Character("Żyd", color="#25ff37")
@@ -357,6 +358,10 @@ label pozycje:
         transform wrog2:
             xalign 0.80
             yalign 0.90
+        
+        transform wrog32:
+            xalign 0.60
+            yalign 0.50
 
         transform wrog3:
             xalign 0.95
@@ -436,6 +441,30 @@ label pozycje:
         transform head_wrog3:
             xalign 0.91
             yalign 0.35
+        
+        transform head_sojusznik11:
+            xalign 0.228
+            yalign 0.075
+
+        transform head_sojusznik21:
+            xalign 0.228
+            yalign 0.63
+
+        transform head_sojusznik31:
+            xalign 0.09
+            yalign 0.35
+
+        transform head_wrog11:
+            xalign 0.228
+            yalign 0.10
+
+        transform head_wrog21:
+            xalign 0.772
+            yalign 0.66
+
+        transform head_wrog31:
+            xalign 0.91
+            yalign 0.38
 
     label pozycje_nadhead:
         transform nadhead_sojusznik1:

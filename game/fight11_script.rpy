@@ -5,13 +5,19 @@ label fight111_stats:
     default jaruzel_sex = 0
     default urban_zly_sex = 0
 
-    default girek_hp = 15
-    default jaruzel_hp = 15
-    default urban_zly_hp = 25
+    default girek_hp = 60
+    default jaruzel_hp = 40
+    default urban_zly_hp = 50
 
     default girek_uszy = 0
     default urban_zly_uszy = 0
     default jaruzel_uszy = 0
+
+    default luszcz_uszy = 0
+    default kazuma_uszy = 0
+    default eminem_uszy = 0
+    default zyd_uszy = 0
+    default tarczownik_uszy = 0
 
     default girek_pager = 0
     default jaruzel_pager = 0
@@ -29,12 +35,12 @@ label fight111_stats:
     default jaruzel_hp_now = jaruzel_hp
     default urban_zly_hp_now = urban_zly_hp
 
-    default girek_min_attack = 1
-    default jaruzel_min_attack = 1
+    default girek_min_attack = 2
+    default jaruzel_min_attack = 3
     default urban_zly_min_attack = 0
 
-    default girek_max_attack = 4
-    default jaruzel_max_attack = 4
+    default girek_max_attack = 5
+    default jaruzel_max_attack = 6
     default urban_zly_max_attack = 4
 
     default girek_max_attack_now = girek_max_attack
@@ -72,6 +78,10 @@ label fight111_stats:
     default girek_stun = 0
     default jaruzel_stun = 0
     default urban_zly_stun = 0
+
+    default jaruzel_special = 2
+    default girek_special = 0
+    default urban_zly_special = 2
 
 label fight111:
     $ fight_on = 1
@@ -1171,6 +1181,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -1235,6 +1255,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -1248,6 +1270,8 @@ label fight111:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -1307,6 +1331,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -1343,6 +1369,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -1371,6 +1399,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -1544,6 +1574,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -1608,6 +1648,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -1621,6 +1663,8 @@ label fight111:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -1680,6 +1724,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -1716,6 +1762,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -1744,6 +1792,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -1785,6 +1835,373 @@ label fight111:
 
         if ile_sojusznikow <= 0:
             jump przegranko_fight111
+        
+        if girek_special > 0 and girek_hp_now > 0:
+            play sound "audio/sfx/kredyt.mp3"
+            if girek_special == 1:
+                $ girek_hp_now -= 1
+                "{i}Girek traci 1 punkt życia na rate kredytu{/i}"
+            else:
+                if girek_special == 2:
+                    $ girek_hp_now -= 2
+                    "{i}Girek traci 2 punkty życia na rate kredytu{/i}"
+                else:
+                    if girek_special == 3:
+                        $ girek_hp_now -= 3
+                        "{i}Girek traci 3 punkty życia na rate kredytu{/i}"
+                    else:
+                        if girek_special == 4:
+                            $ girek_hp_now -= 4
+                            "{i}Girek traci 4 punkty życia na rate kredytu{/i}"
+                        else:
+                            if girek_special == 5:
+                                $ girek_hp_now -= 5
+                                "{i}Girek traci 5 punktów życia na rate kredytu{/i}"
+                            else:
+                                if girek_special == 6:
+                                    $ girek_hp_now -= 6
+                                    "{i}Girek traci 6 punktów życia na rate kredytu{/i}"
+                                else:
+                                    if girek_special == 7:
+                                        $ girek_hp_now -= 7
+                                        "{i}Girek traci 7 punktów życia na rate kredytu{/i}"
+                                    else:
+                                        if girek_special == 8:
+                                            $ girek_hp_now -= 8
+                                            "{i}Girek traci 8 punktów życia na rate kredytu{/i}"
+                                        else:
+                                            if girek_special == 9:
+                                                $ girek_hp_now -= 9
+                                                "{i}Girek traci 9 punktów życia na rate kredytu{/i}"
+                                            else:
+                                                if girek_special == 10:
+                                                    $ girek_hp_now -= 10
+                                                    "{i}Girek traci 10 punktów życia na rate kredytu{/i}"
+                        
+        
+        if girek_hp_now <= 0 and girek_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide girek
+            hide tarcza6
+            hide screen girek_stats
+            $ girek_umarty = 1
+            $ ile_wrogow -= 1
+            $ girek_obrona = 0
+            $ girek_weapon = 0
+            $ girek_pager = 0
+            $ girek_poison = 0
+            $ girek_stun = 0
+
+            if girek_slime >= 1:
+                hide slime
+
+        if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide urban_zly
+            hide tarcza7
+            hide screen urban_zly_stats
+            $ urban_zly_umarty = 1
+            $ ile_wrogow -= 1
+            $ urban_zly_obrona = 0
+            $ urban_zly_weapon = 0
+            $ urban_zly_pager = 0
+            $ urban_zly_poison = 0
+            $ urban_zly_stun = 0
+
+            if urban_zly_slime >= 1:
+                hide slime
+        
+        if jaruzel_hp_now <= 0 and jaruzel_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide jaruzel
+            hide tarcza8
+            hide screen jaruzel_stats
+            $ jaruzel_umarty = 1
+            $ ile_wrogow -= 1
+            $ jaruzel_obrona = 0
+            $ jaruzel_weapon = 0
+            $ jaruzel_pager = 0
+            $ jaruzel_poison = 0
+            $ jaruzel_stun = 0
+
+            if jaruzel_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight111
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
+            hide luszcz_pierscien
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
+            hide plamka1
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
+            hide stun5
+            hide eminem_pierscien
+            hide plamka2
+            hide eminem
+            hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
+            hide urban_pierscien
+            hide plamka3
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
+            hide stun7
+            hide zyd_pierscien
+            hide plamka4
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide ekdplozja3
+            hide zyd
+            hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
+            hide stun8
+            hide kazuma_pierscien
+            hide plamka5
+            hide kazuma
+            hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
+            hide stun9
+            hide tarczownik_pierscien
+            hide plamka6
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
+
+            if tarczownik_air_strike_shield >= 1:
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
+
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight111
+        
+        if urban_zly_special > 0:
+            $ urban_zly_special -= 1
+
+        if jaruzel_special > 0:
+            $ jaruzel_special -= 1
+            if jaruzel_special == 2:
+                hide czolg
+                if urban_zly_hp > 0 and urban_zly_weapon == 1:
+                    $ urban_zly_max_attack_now = urban_zly_max_attack_now // 2
+                    $ urban_zly_min_attack_now = urban_zly_min_attack_now // 2
+                    $ urban_zly_max_attack_now_true = urban_zly_max_attack_now
+                    $ urban_zly_min_attack_now_true = urban_zly_min_attack_now
+                else:
+                    if urban_zly_hp > 0 and urban_zly_weapon == 0:
+                        $ urban_zly_max_attack_now = urban_zly_max_attack_now // 2
+                        $ urban_zly_max_attack_now_true = urban_zly_max_attack_now
+
+                if girek_hp > 0 and girek_weapon == 1:
+                    $ girek_max_attack_now = girek_max_attack_now // 2
+                    $ girek_min_attack_now = girek_min_attack_now // 2
+                    $ girek_max_attack_now_true = girek_max_attack_now
+                    $ girek_min_attack_now_true = girek_min_attack_now
+                else:
+                    if girek_hp > 0 and girek_weapon == 0:
+                        $ girek_max_attack_now = girek_max_attack_now // 2
+                        $ girek_max_attack_now_true = girek_max_attack_now
+                        if girek_min_attack_now > 0:
+                            $ girek_min_attack_now = girek_min_attack_now // 2
+                            $ girek_min_attack_now_true = girek_min_attack_now
+
+                if jaruzel_hp > 0 and jaruzel_weapon == 1:
+                    $ jaruzel_max_attack_now = jaruzel_max_attack_now // 2
+                    $ jaruzel_min_attack_now = jaruzel_min_attack_now // 2
+                    $ jaruzel_max_attack_now_true = jaruzel_max_attack_now
+                    $ jaruzel_min_attack_now_true = jaruzel_min_attack_now
+                else:
+                    if jaruzel_hp > 0 and jaruzel_weapon == 0:
+                        $ jaruzel_max_attack_now = jaruzel_max_attack_now // 2
+                        $ jaruzel_max_attack_now_true = jaruzel_max_attack_now
+                "{i}Stan Wojenny został zniesiony{/i}"
 
         if luszcz_lagodny == 1:
             if luszcz_hp_now + 1 < luszcz_hp:
@@ -2025,13 +2442,13 @@ label fight111:
 
         if luszcz_fighter == 1:
             if luszcz_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if luszcz_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if luszcz_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
@@ -2047,6 +2464,98 @@ label fight111:
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ luszcz_min_attack_now += 1
+            
+            if luszcz_uszy >= 1 and urban_zly_hp_now >= 1:
+                if luszcz_weapon >= 1:
+                    if luszcz_wybrany == 1:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik1  
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if luszcz_wybrany == 2:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik2  
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if luszcz_wybrany == 3:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik3 
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik3   
+
+                else:
+                    if luszcz_wybrany == 1:
+                        show reka1 zorder 15 at weapon_sojusznik1 
+
+                    if luszcz_wybrany == 2:
+                        show reka1 zorder 15 at weapon_sojusznik2  
+
+                    if luszcz_wybrany == 3:
+                        show reka1 zorder 15 at weapon_sojusznik3 
+                
+                if ostrza_chaosu == 2 and luszcz_weapon >= 1:   
+                    jump zlyur1
+                else:
+                    jump zlyur2                  
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -2140,113 +2649,113 @@ label fight111:
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
-                    
-                        $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                        label zlyur1:
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(luszcz_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(luszcz_attack / 2)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ girek_hp_now -= luszcz_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= luszcz_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(luszcz_attack / 2)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= luszcz_attack
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= luszcz_attack
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(luszcz_attack / 2)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= luszcz_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 2:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                    $ luszcz_hp_now = luszcz_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ luszcz_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Łuszcza został zablokowany{/i}"
-                            if ziemia == 2:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                    $ luszcz_hp_now = luszcz_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ luszcz_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= luszcz_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 2:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                if ziemia == 2:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight112
+                            jump faza_fight112
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -2386,135 +2895,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
-                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            label zlyur2:
+                                $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Łuszcza został zablokowany{/i}"
-                                if ziemia == 2:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if luszcz_hp_now + kostka >= luszcz_hp:
-                                        $ luszcz_hp_now = luszcz_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:
+                                    if luszcz_weapon >= 1:
+                                        if gitara == 2:
+                                            play sound "audio/sfx/gitara.mp3" 
+
+                                        if luszcz_przepychaczka == 2: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 2:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 2:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 2:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 2:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 2:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ luszcz_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:
-                                if luszcz_weapon >= 1:
-                                    if gitara == 2:
-                                        play sound "audio/sfx/gitara.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if luszcz_przepychaczka == 2: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 2:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= luszcz_attack
+                                                "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
 
-                                    if stop == 2:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(luszcz_attack / 2)
 
-                                    if miecz_swietlny == 2:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(luszcz_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 2:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 2:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= luszcz_attack * 2
+                                                "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
+
+                                        $ urban_zly_hp_now -= luszcz_attack
+
+                                        if luszcz_przepychaczka == 2 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
                                     
-                                    if patyk == 2:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 2:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 2:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 2:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= luszcz_attack
-                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 2:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 2:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= luszcz_attack * 2
-                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-
-                                    $ urban_zly_hp_now -= luszcz_attack
-
-                                    if luszcz_przepychaczka == 2 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-                                
-                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight112
+                                        "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight112
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2920,13 +3430,13 @@ label fight111:
         
         if eminem_fighter == 1:
             if eminem_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if eminem_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if eminem_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if eminem_stun == 2:
                 $ eminem_stun -= 1
@@ -2938,6 +3448,29 @@ label fight111:
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
                     jump faza_fight112 
+
+            if eminem_uszy >= 1 and urban_zly_hp_now >= 1:
+                if eminem_weapon >= 1:
+                    if eminem_wybrany == 1:
+                        show eminem_weapon zorder 15 at weapon_sojusznik1  
+
+                    if eminem_wybrany == 2:
+                        show eminem_weapon zorder 15 at weapon_sojusznik2  
+
+                    if eminem_wybrany == 3:
+                        show eminem_weapon zorder 15 at weapon_sojusznik3 
+
+                else:
+                    if eminem_wybrany == 1:
+                        show reka2 zorder 15 at weapon_sojusznik1 
+
+                    if eminem_wybrany == 2:
+                        show reka2 zorder 15 at weapon_sojusznik2  
+
+                    if eminem_wybrany == 3:
+                        show reka2 zorder 15 at weapon_sojusznik3 
+                
+                jump zlyur3
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -3020,55 +3553,56 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
-                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            label zlyur3:
+                                $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Shadowa został zablokowany{/i}"
-                                if ziemia == 7:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if eminem_hp_now + kostka >= eminem_hp:
-                                        $ eminem_hp_now = eminem_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Shadowa został zablokowany{/i}"
+                                    if ziemia == 7:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if eminem_hp_now + kostka >= eminem_hp:
+                                            $ eminem_hp_now = eminem_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ eminem_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else: 
+                                    play sound "audio/sfx/reka.mp3"                          
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(eminem_attack / 2)
+
+                                        $ dmg = int(eminem_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 7:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if eminem_hp_now + kostka >= eminem_hp:
+                                                $ eminem_hp_now = eminem_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ eminem_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                     else:
-                                        $ eminem_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else: 
-                                play sound "audio/sfx/reka.mp3"                          
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(eminem_attack / 2)
-
-                                    $ dmg = int(eminem_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 7:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if eminem_hp_now + kostka >= eminem_hp:
-                                            $ eminem_hp_now = eminem_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ eminem_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    $ urban_zly_hp_now -= eminem_attack
-                                
-                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
-                                    if ziemia == 7:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if eminem_hp_now + kostka >= eminem_hp:
-                                            $ eminem_hp_now = eminem_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ eminem_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight112
+                                        $ urban_zly_hp_now -= eminem_attack
+                                    
+                                        "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                                        if ziemia == 7:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if eminem_hp_now + kostka >= eminem_hp:
+                                                $ eminem_hp_now = eminem_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ eminem_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight112
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3393,13 +3927,13 @@ label fight111:
 
         if urban_fighter == 1:
             if urban_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if urban_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if urban_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if urban_stun == 2:
                 $ urban_stun -= 1
@@ -4138,13 +4672,13 @@ label fight111:
                     jump faza_fight112   
         if zyd_fighter == 1:
             if zyd_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if zyd_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if zyd_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if zyd_stun == 2:
                 $ zyd_stun -= 1
@@ -4160,6 +4694,98 @@ label fight111:
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ zyd_min_attack_now += 1
+
+            if zyd_uszy >= 1 and urban_zly_hp_now >= 1:
+                if zyd_weapon >= 1:
+                    if zyd_wybrany == 1:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik1  
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if zyd_wybrany == 2:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik2  
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if zyd_wybrany == 3:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik3 
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik3
+
+                else:
+                    if zyd_wybrany == 1:
+                        show reka4 zorder 15 at weapon_sojusznik1 
+
+                    if zyd_wybrany == 2:
+                        show reka4 zorder 15 at weapon_sojusznik2  
+
+                    if zyd_wybrany == 3:
+                        show reka4 zorder 15 at weapon_sojusznik3 
+                
+                if ostrza_chaosu == 4 and zyd_weapon >= 1:   
+                    jump zlyur4
+                else:
+                    jump zlyur5
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -4253,113 +4879,113 @@ label fight111:
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:    
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
-                    
-                        $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                        label zlyur4:
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(zyd_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ girek_hp_now -= zyd_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= zyd_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= zyd_attack
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= zyd_attack
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= zyd_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 4:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if zyd_hp_now + kostka >= zyd_hp:
-                                    $ zyd_hp_now = zyd_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ zyd_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Żyda został zablokowany{/i}"
-                            if ziemia == 4:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if zyd_hp_now + kostka >= zyd_hp:
-                                    $ zyd_hp_now = zyd_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ zyd_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= zyd_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 4:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if zyd_hp_now + kostka >= zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ zyd_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                if ziemia == 4:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if zyd_hp_now + kostka >= zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ zyd_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight112
+                            jump faza_fight112
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4499,135 +5125,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
-                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            label zlyur5:
+                                $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Żyda został zablokowany{/i}"
-                                if ziemia == 4:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if zyd_hp_now + kostka >= zyd_hp:
-                                        $ zyd_hp_now = zyd_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else: 
+                                    if zyd_weapon >= 1:
+                                        if chanuka == 4:
+                                            play sound "audio/sfx/chanuka.mp3" 
+
+                                        if zyd_przepychaczka == 4: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 4:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 4:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 4:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 4:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 4:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ zyd_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else: 
-                                if zyd_weapon >= 1:
-                                    if chanuka == 4:
-                                        play sound "audio/sfx/chanuka.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if zyd_przepychaczka == 4: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 4:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= zyd_attack
+                                                "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
 
-                                    if stop == 4:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(zyd_attack / 2)
 
-                                    if miecz_swietlny == 4:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(zyd_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 4:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 4:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= zyd_attack * 2
+                                                "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
+
+                                        $ urban_zly_hp_now -= zyd_attack
+
+                                        if zyd_przepychaczka == 4 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
                                     
-                                    if patyk == 4:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 4:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 4:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 4:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= zyd_attack
-                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 4:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 4:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= zyd_attack * 2
-                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-
-                                    $ urban_zly_hp_now -= zyd_attack
-
-                                    if zyd_przepychaczka == 4 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-                                
-                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight112
+                                        "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight112
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -4917,13 +5544,13 @@ label fight111:
 
         if kazuma_fighter == 1:
             if kazuma_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if kazuma_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if kazuma_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
@@ -4939,6 +5566,98 @@ label fight111:
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ kazuma_min_attack_now += 1
+
+            if kazuma_uszy >= 1 and urban_zly_hp_now >= 1:
+                if kazuma_weapon >= 1:
+                    if kazuma_wybrany == 1:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik1  
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if kazuma_wybrany == 2:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik2  
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if kazuma_wybrany == 3:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik3 
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik3  
+
+                else:
+                    if kazuma_wybrany == 1:
+                        show reka5 zorder 15 at weapon_sojusznik1 
+
+                    if kazuma_wybrany == 2:
+                        show reka5 zorder 15 at weapon_sojusznik2  
+
+                    if kazuma_wybrany == 3:
+                        show reka5 zorder 15 at weapon_sojusznik3
+                
+                if ostrza_chaosu == 5 and kazuma_weapon >= 1:   
+                    jump zlyur6
+                else:
+                    jump zlyur7
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -5032,113 +5751,114 @@ label fight111:
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:   
                         kazuma "Tak, jestem Kazuma"
-                    
-                        $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kazuma_attack / 2)
+                        label zlyur6:                  
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ girek_hp_now -= kazuma_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(kazuma_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(kazuma_attack / 2)
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= kazuma_attack
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= kazuma_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(kazuma_attack / 2)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(v_attack / 2)
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= kazuma_attack
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= kazuma_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 5:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                    $ kazuma_hp_now = kazuma_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ kazuma_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Kazumy został zablokowany{/i}"
-                            if ziemia == 5:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                    $ kazuma_hp_now = kazuma_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ kazuma_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(v_attack / 2)
 
-                        jump faza_fight112
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= kazuma_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 5:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                if ziemia == 5:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+
+                            jump faza_fight112
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -5277,135 +5997,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
-                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+                            label zlyur7:
+                                $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Kazumy został zablokowany{/i}"
-                                if ziemia == 5:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if kazuma_hp_now + kostka >= kazuma_hp:
-                                        $ kazuma_hp_now = kazuma_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kazumy został zablokowany{/i}"
+                                    if ziemia == 5:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if kazuma_hp_now + kostka >= kazuma_hp:
+                                            $ kazuma_hp_now = kazuma_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ kazuma_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:
+                                    if kazuma_weapon >= 1:
+                                        if chunchunmaru == 5:
+                                            play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                        if kazuma_przepychaczka == 5: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 5:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 5:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 5:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 5:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 5:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ kazuma_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:
-                                if kazuma_weapon >= 1:
-                                    if chunchunmaru == 5:
-                                        play sound "audio/sfx/chunchunmaru.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if kazuma_przepychaczka == 5: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 5:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= kazuma_attack
+                                                "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
 
-                                    if stop == 5:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(kazuma_attack / 2)
 
-                                    if miecz_swietlny == 5:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(kazuma_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 5:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 5:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= kazuma_attack * 2
+                                                "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
+
+                                        $ urban_zly_hp_now -= kazuma_attack
+
+                                        if kazuma_przepychaczka == 5 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight112
                                     
-                                    if patyk == 5:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 5:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 5:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 5:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= kazuma_attack
-                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-
-                                    $ urban_zly_hp_now -= int(kazuma_attack / 2)
-
-                                    $ dmg = int(kazuma_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 5:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 5:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= kazuma_attack * 2
-                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-
-                                    $ urban_zly_hp_now -= kazuma_attack
-
-                                    if kazuma_przepychaczka == 5 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight112
-                                
-                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight112
+                                        "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight112
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5594,19 +6315,26 @@ label fight111:
                                 if girek_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if girek_max_attack_now < girek_max_attack:
-                                            $ girek_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ girek_max_attack_now_true = 4
                                             $ girek_min_attack_now_true = 0
                                             $ girek_min_attack_now = girek_min_attack_now_true
                                             $ girek_max_attack_now = girek_max_attack_now_true
-                                            $ girek_max_attack_now -= 2
                                         
                                         else:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
-                                        
+                                            if girek_max_attack_now < girek_max_attack:
+                                                $ girek_max_attack_now_true = 2
+                                                $ girek_min_attack_now_true = 0
+                                                $ girek_min_attack_now = girek_min_attack_now_true
+                                                $ girek_max_attack_now = girek_max_attack_now_true
+                                                $ girek_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ girek_max_attack_now_true = 2
+                                                $ girek_min_attack_now_true = 0
+                                                $ girek_min_attack_now = girek_min_attack_now_true
+                                                $ girek_max_attack_now = girek_max_attack_now_true
+
                                         $ girek_weapon -= 1
 
                                         if kazuma_wybrany == 1:
@@ -5668,18 +6396,25 @@ label fight111:
                                 if urban_zly_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if urban_zly_max_attack_now < urban_zly_max_attack:
-                                            $ urban_zly_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ urban_zly_max_attack_now_true = 4
                                             $ urban_zly_min_attack_now_true = 0
                                             $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
                                             $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
-                                            $ urban_zly_max_attack_now -= 2
                                         
                                         else:
-                                            $ urban_zly_max_attack_now_true = 2
-                                            $ urban_zly_min_attack_now_true = 0
-                                            $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
-                                            $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
+                                            if urban_zly_max_attack_now < urban_zly_max_attack:
+                                                $ urban_zly_max_attack_now_true = 2
+                                                $ urban_zly_min_attack_now_true = 0
+                                                $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
+                                                $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
+                                                $ urban_zly_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ urban_zly_max_attack_now_true = 2
+                                                $ urban_zly_min_attack_now_true = 0
+                                                $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
+                                                $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
                                         
                                         $ urban_zly_weapon -= 1
 
@@ -5742,18 +6477,25 @@ label fight111:
                                 if jaruzel_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if jaruzel_max_attack_now < jaruzel_max_attack:
-                                            $ jaruzel_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ jaruzel_max_attack_now_true = 4
                                             $ jaruzel_min_attack_now_true = 0
                                             $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
                                             $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
-                                            $ jaruzel_max_attack_now -= 2
                                         
                                         else:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            if jaruzel_max_attack_now < jaruzel_max_attack:
+                                                $ jaruzel_max_attack_now_true = 2
+                                                $ jaruzel_min_attack_now_true = 0
+                                                $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                                $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                                $ jaruzel_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ jaruzel_max_attack_now_true = 2
+                                                $ jaruzel_min_attack_now_true = 0
+                                                $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                                $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
                                         
                                         $ jaruzel_weapon -= 1
 
@@ -5808,13 +6550,13 @@ label fight111:
         if tarczownik_fighter == 1 and tarczownik_weapon >= 1:
             if tarczownik_hp_now >= 1:
                 if tarczownik_wybrany == 1:
-                    show ruch zorder 0 at tlo_sojusznik1  
+                    show ruch zorder 1 at tlo_sojusznik1  
 
                 if tarczownik_wybrany == 2:
-                    show ruch zorder 0 at tlo_sojusznik2  
+                    show ruch zorder 1 at tlo_sojusznik2  
 
                 if tarczownik_wybrany == 3:
-                    show ruch zorder 0 at tlo_sojusznik3 
+                    show ruch zorder 1 at tlo_sojusznik3 
                 
                 if tarczownik_stun == 2:
                     $ tarczownik_stun -= 1
@@ -5826,6 +6568,98 @@ label fight111:
                         "{i}Naofumi jest zestunnowany{/i}"
                         hide stun9
                         jump faza_fight112 
+                
+                if tarczownik_uszy >= 1 and urban_zly_hp_now >= 1:
+                    if tarczownik_weapon >= 1:
+                        if tarczownik_wybrany == 1:
+                            if legendary_shield == 6:
+                                show tarczownik_weapon zorder 15 at weapon_sojusznik1  
+
+                            if tarczownik_przepychaczka == 6:
+                                show tarczownik_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                            if stop == 6:
+                                show stop zorder 15 at weapon_sojusznik1  
+                                
+                            if miecz_swietlny == 6:
+                                show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                                
+                            if ostrza_chaosu == 6:
+                                show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                            if patyk == 6:
+                                show patyk zorder 15 at weapon_sojusznik1  
+
+                            if bazooka == 6:
+                                show bazooka zorder 15 at weapon_sojusznik1  
+                                
+                            if miecz3d == 6:
+                                show miecz3d zorder 15 at weapon_sojusznik1  
+
+                        if tarczownik_wybrany == 2:
+                            if legendary_shield == 6:
+                                show tarczownik_weapon zorder 15 at weapon_sojusznik2  
+
+                            if tarczownik_przepychaczka == 6:
+                                show tarczownik_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                            if stop == 6:
+                                show stop zorder 15 at weapon_sojusznik2 
+                                
+                            if miecz_swietlny == 6:
+                                show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                                
+                            if ostrza_chaosu == 6:
+                                show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                            if patyk == 6:
+                                show patyk zorder 15 at weapon_sojusznik2  
+
+                            if bazooka == 6:
+                                show bazooka zorder 15 at weapon_sojusznik2  
+                                
+                            if miecz3d == 6:
+                                show miecz3d zorder 15 at weapon_sojusznik2   
+
+                        if tarczownik_wybrany == 3:
+                            if legendary_shield == 6:
+                                show tarczownik_weapon zorder 15 at weapon_sojusznik3 
+
+                            if tarczownik_przepychaczka == 6:
+                                show tarczownik_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                            if stop == 6:
+                                show stop zorder 15 at weapon_sojusznik3  
+                                
+                            if miecz_swietlny == 6:
+                                show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                                
+                            if ostrza_chaosu == 6:
+                                show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                            if patyk == 6:
+                                show patyk zorder 15 at weapon_sojusznik3  
+
+                            if bazooka == 6:
+                                show bazooka zorder 15 at weapon_sojusznik3  
+                                
+                            if miecz3d == 6:
+                                show miecz3d zorder 15 at weapon_sojusznik3  
+
+                    else:
+                        if tarczownik_wybrany == 1:
+                            show reka9 zorder 15 at weapon_sojusznik1 
+
+                        if tarczownik_wybrany == 2:
+                            show reka9 zorder 15 at weapon_sojusznik2  
+
+                        if tarczownik_wybrany == 3:
+                            show reka9 zorder 15 at weapon_sojusznik3 
+                    
+                    if ostrza_chaosu == 6 and tarczownik_weapon >= 1:   
+                        jump zlyur22
+                    else:
+                        jump zlyur23  
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -6063,113 +6897,115 @@ label fight111:
                         $ tarczownik_min_attack_now += 1
                         
                     tarczownik "Aaaaaaaaagh!"
+
+                    label zlyur22:
                     
-                    $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+                        $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                    if girek_hp_now >= 1:
-                        if girek_obrona >= 2:
-                            if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Naofumiego został zablokowany{/i}"
-                                if ziemia == 6:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                        $ tarczownik_hp_now = tarczownik_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                    else:
-                                        $ tarczownik_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                            $ girek_obrona = 1
-                                                                
-                        else:     
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(tarczownik_attack / 2)
+                        if girek_hp_now >= 1:
+                            if girek_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Naofumiego został zablokowany{/i}"
+                                    if ziemia == 6:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                            $ tarczownik_hp_now = tarczownik_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ tarczownik_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                $ girek_obrona = 1
+                                                                    
+                            else:     
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(tarczownik_attack / 2)
 
-                                $ dmg = int(tarczownik_attack / 2)
-                            else:
-                                $ girek_hp_now -= tarczownik_attack
-                        
-                    if urban_zly_hp_now >= 1:
-                        if urban_zly_obrona >= 2:
-                            if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Naofumiego został zablokowany{/i}"
-                                if ziemia == 6:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                        $ tarczownik_hp_now = tarczownik_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                    else:
-                                        $ tarczownik_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                            $ urban_zly_obrona = 1
-                                                                
-                        else:     
-                            if urban_zly_obrona == 1:
-                                $ urban_zly_hp_now -= int(tarczownik_attack / 2)
+                                    $ dmg = int(tarczownik_attack / 2)
+                                else:
+                                    $ girek_hp_now -= tarczownik_attack
+                            
+                        if urban_zly_hp_now >= 1:
+                            if urban_zly_obrona >= 2:
+                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Naofumiego został zablokowany{/i}"
+                                    if ziemia == 6:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                            $ tarczownik_hp_now = tarczownik_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ tarczownik_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                $ urban_zly_obrona = 1
+                                                                    
+                            else:     
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(tarczownik_attack / 2)
 
-                                $ dmg = int(tarczownik_attack / 2)
-                            else:
-                                $ urban_zly_hp_now -= tarczownik_attack
+                                    $ dmg = int(tarczownik_attack / 2)
+                                else:
+                                    $ urban_zly_hp_now -= tarczownik_attack
 
-                    if jaruzel_hp_now >= 1:
-                        if jaruzel_obrona >= 2:
-                            if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Naofumiego został zablokowany{/i}"
-                                if ziemia == 6:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                        $ tarczownik_hp_now = tarczownik_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                    else:
-                                        $ tarczownik_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                            $ jaruzel_obrona = 1
-                                                                
-                        else:     
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(tarczownik_attack / 2)
+                        if jaruzel_hp_now >= 1:
+                            if jaruzel_obrona >= 2:
+                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Naofumiego został zablokowany{/i}"
+                                    if ziemia == 6:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                            $ tarczownik_hp_now = tarczownik_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ tarczownik_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                $ jaruzel_obrona = 1
+                                                                    
+                            else:     
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(tarczownik_attack / 2)
 
-                                $ dmg = int(tarczownik_attack / 2)
-                            else:
-                                $ jaruzel_hp_now -= tarczownik_attack
-                        
-                    if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                        play sound "audio/sfx/ostrza_chaosu.mp3"
-                        "{i}Atak zadał [tarczownik_attack] obrażeń wszystkim przeciwnikom{/i}"
-                        if ziemia == 6:
-                            $ kostka = renpy.random.randint(1, 2)
-                            if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                $ tarczownik_hp_now = tarczownik_hp
-                                queue sound "audio/sfx/heal.mp3" 
-                                "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                            else:
-                                $ tarczownik_hp_now += kostka
-                                queue sound "audio/sfx/heal.mp3" 
-                                "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                        
-                    else:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Atak Naofumiego został zablokowany{/i}"
-                        if ziemia == 6:
-                            $ kostka = renpy.random.randint(1, 2)
-                            if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                $ tarczownik_hp_now = tarczownik_hp
-                                queue sound "audio/sfx/heal.mp3" 
-                                "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                            else:
-                                $ tarczownik_hp_now += kostka
-                                queue sound "audio/sfx/heal.mp3" 
-                                "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                    $ dmg = int(tarczownik_attack / 2)
+                                else:
+                                    $ jaruzel_hp_now -= tarczownik_attack
+                            
+                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                            play sound "audio/sfx/ostrza_chaosu.mp3"
+                            "{i}Atak zadał [tarczownik_attack] obrażeń wszystkim przeciwnikom{/i}"
+                            if ziemia == 6:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                    $ tarczownik_hp_now = tarczownik_hp
+                                    queue sound "audio/sfx/heal.mp3" 
+                                    "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                else:
+                                    $ tarczownik_hp_now += kostka
+                                    queue sound "audio/sfx/heal.mp3" 
+                                    "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                            
+                        else:
+                            play sound "audio/sfx/obrona.mp3"
+                            "{i}Atak Naofumiego został zablokowany{/i}"
+                            if ziemia == 6:
+                                $ kostka = renpy.random.randint(1, 2)
+                                if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                    $ tarczownik_hp_now = tarczownik_hp
+                                    queue sound "audio/sfx/heal.mp3" 
+                                    "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                else:
+                                    $ tarczownik_hp_now += kostka
+                                    queue sound "audio/sfx/heal.mp3" 
+                                    "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
 
-                    jump faza_fight112
+                        jump faza_fight112
                 
                 tarczownik "Aaaaaaaaagh!"
 
@@ -6779,65 +7615,80 @@ label fight111:
                                 if urban_zly_hp_now <= 3:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 2:
-                                        $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
+                                        label zlyur23:
+                                            $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
-                                        if urban_zly_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Naofumiego został zablokowany{/i}"
-                                            if ziemia == 6:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                                    $ tarczownik_hp_now = tarczownik_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ tarczownik_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                            $ urban_zly_obrona = 1
-                                                                    
-                                        else:
-                                            if tarczownik_weapon >= 1:
-                                                if legendary_shield == 6:
-                                                    play sound "audio/sfx/legendary_shield.mp3" 
-
-                                                if tarczownik_przepychaczka == 6: 
-                                                    play sound "audio/sfx/przepychaczka.mp3" 
-
-                                                if stop == 6:
-                                                    play sound "audio/sfx/stop.mp3" 
-
-                                                if miecz_swietlny == 6:
-                                                    play sound "audio/sfx/miecz_swietlny.mp3" 
-                                                
-                                                if patyk == 6:
-                                                    play sound "audio/sfx/patyk.mp3" 
-                                                
-                                                if bazooka == 6:
-                                                    play sound "audio/sfx/bazooka.mp3" 
-                                                
-                                                if miecz3d == 6:
-                                                    play sound "audio/sfx/miecz3d.mp3" 
-
+                                            if urban_zly_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Naofumiego został zablokowany{/i}"
+                                                if ziemia == 6:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                                        $ tarczownik_hp_now = tarczownik_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ tarczownik_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                                $ urban_zly_obrona = 1
+                                                                        
                                             else:
-                                                play sound "audio/sfx/reka.mp3" 
-                                            if urban_zly_obrona == 1:
-                                                if patyk == 6:
-                                                    $ kostka = renpy.random.randint(1, 3)
-                                                    if kostka == 3:
-                                                        $ urban_zly_hp_now -= tarczownik_attack
-                                                        "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
-                                                        if ziemia == 6:
-                                                            $ kostka = renpy.random.randint(1, 2)
-                                                            if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                                                $ tarczownik_hp_now = tarczownik_hp
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                                            else:
-                                                                $ tarczownik_hp_now += kostka
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                                        
+                                                if tarczownik_weapon >= 1:
+                                                    if legendary_shield == 6:
+                                                        play sound "audio/sfx/legendary_shield.mp3" 
+
+                                                    if tarczownik_przepychaczka == 6: 
+                                                        play sound "audio/sfx/przepychaczka.mp3" 
+
+                                                    if stop == 6:
+                                                        play sound "audio/sfx/stop.mp3" 
+
+                                                    if miecz_swietlny == 6:
+                                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                                    
+                                                    if patyk == 6:
+                                                        play sound "audio/sfx/patyk.mp3" 
+                                                    
+                                                    if bazooka == 6:
+                                                        play sound "audio/sfx/bazooka.mp3" 
+                                                    
+                                                    if miecz3d == 6:
+                                                        play sound "audio/sfx/miecz3d.mp3" 
+
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3" 
+                                                if urban_zly_obrona == 1:
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ urban_zly_hp_now -= tarczownik_attack
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack] obrażeń{/i}"
+                                                            if ziemia == 6:
+                                                                $ kostka = renpy.random.randint(1, 2)
+                                                                if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                                                    $ tarczownik_hp_now = tarczownik_hp
+                                                                    queue sound "audio/sfx/heal.mp3" 
+                                                                    "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                                                else:
+                                                                    $ tarczownik_hp_now += kostka
+                                                                    queue sound "audio/sfx/heal.mp3" 
+                                                                    "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                                            
+                                                        else:
+                                                            $ urban_zly_hp_now -= int(tarczownik_attack / 2)
+                                                            $ dmg = int(tarczownik_attack / 2)
+                                                            "{i}Naofumi zadaje [dmg] obrażeń Jerzy Urban{/i}"
+                                                            if ziemia == 6:
+                                                                $ kostka = renpy.random.randint(1, 2)
+                                                                if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                                                    $ tarczownik_hp_now = tarczownik_hp
+                                                                    queue sound "audio/sfx/heal.mp3" 
+                                                                    "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                                                else:
+                                                                    $ tarczownik_hp_now += kostka
+                                                                    queue sound "audio/sfx/heal.mp3" 
+                                                                    "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                     else:
                                                         $ urban_zly_hp_now -= int(tarczownik_attack / 2)
                                                         $ dmg = int(tarczownik_attack / 2)
@@ -6853,61 +7704,15 @@ label fight111:
                                                                 queue sound "audio/sfx/heal.mp3" 
                                                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                 else:
-                                                    $ urban_zly_hp_now -= int(tarczownik_attack / 2)
-                                                    $ dmg = int(tarczownik_attack / 2)
-                                                    "{i}Naofumi zadaje [dmg] obrażeń Jerzy Urban{/i}"
-                                                    if ziemia == 6:
-                                                        $ kostka = renpy.random.randint(1, 2)
-                                                        if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                                            $ tarczownik_hp_now = tarczownik_hp
-                                                            queue sound "audio/sfx/heal.mp3" 
-                                                            "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                                        else:
-                                                            $ tarczownik_hp_now += kostka
-                                                            queue sound "audio/sfx/heal.mp3" 
-                                                            "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                            else:
-                                                if bazooka == 6:
-                                                    $ urban_zly_poison = 3
-                                                    show snake32 zorder 15 at center_wrog3
+                                                    if bazooka == 6:
+                                                        $ urban_zly_poison = 3
+                                                        show snake32 zorder 15 at center_wrog3
 
-                                                if patyk == 6:
-                                                    $ kostka = renpy.random.randint(1, 3)
-                                                    if kostka == 3:
-                                                        $ urban_zly_hp_now -= tarczownik_attack * 2
-                                                        "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
-                                                        if ziemia == 6:
-                                                            $ kostka = renpy.random.randint(1, 2)
-                                                            if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                                                $ tarczownik_hp_now = tarczownik_hp
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                                            else:
-                                                                $ tarczownik_hp_now += kostka
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                                    
-                                                    else:
-                                                        $ urban_zly_hp_now -= tarczownik_attack
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jerzy Urban{/i}"
-                                                        if ziemia == 6:
-                                                            $ kostka = renpy.random.randint(1, 2)
-                                                            if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                                                $ tarczownik_hp_now = tarczownik_hp
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                                            else:
-                                                                $ tarczownik_hp_now += kostka
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                                else:
-                                                    $ urban_zly_hp_now -= tarczownik_attack
-                                                    if tarczownik_przepychaczka == 6 and urban_zly_stun == 0:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            show stun2 zorder 15 at head_wrog3
-                                                            $ urban_zly_stun = 1
-                                                            "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                    if patyk == 6:
+                                                        $ kostka = renpy.random.randint(1, 3)
+                                                        if kostka == 3:
+                                                            $ urban_zly_hp_now -= tarczownik_attack * 2
+                                                            "{i}Atak został podwojony i zadał [tarczownik_attack * 2] obrażeń{/i}"
                                                             if ziemia == 6:
                                                                 $ kostka = renpy.random.randint(1, 2)
                                                                 if tarczownik_hp_now + kostka >= tarczownik_hp:
@@ -6918,6 +7723,51 @@ label fight111:
                                                                     $ tarczownik_hp_now += kostka
                                                                     queue sound "audio/sfx/heal.mp3" 
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                                        
+                                                        else:
+                                                            $ urban_zly_hp_now -= tarczownik_attack
+                                                            "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jerzy Urban{/i}"
+                                                            if ziemia == 6:
+                                                                $ kostka = renpy.random.randint(1, 2)
+                                                                if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                                                    $ tarczownik_hp_now = tarczownik_hp
+                                                                    queue sound "audio/sfx/heal.mp3" 
+                                                                    "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                                                else:
+                                                                    $ tarczownik_hp_now += kostka
+                                                                    queue sound "audio/sfx/heal.mp3" 
+                                                                    "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                                    else:
+                                                        $ urban_zly_hp_now -= tarczownik_attack
+                                                        if tarczownik_przepychaczka == 6 and urban_zly_stun == 0:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if kostka <= 3:
+                                                                show stun2 zorder 15 at head_wrog3
+                                                                $ urban_zly_stun = 1
+                                                                "{i}Atak zadał [tarczownik_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                                if ziemia == 6:
+                                                                    $ kostka = renpy.random.randint(1, 2)
+                                                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                                                        $ tarczownik_hp_now = tarczownik_hp
+                                                                        queue sound "audio/sfx/heal.mp3" 
+                                                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                                                    else:
+                                                                        $ tarczownik_hp_now += kostka
+                                                                        queue sound "audio/sfx/heal.mp3" 
+                                                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
+                                                            
+                                                            else:
+                                                                "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jerzy Urban{/i}"
+                                                                if ziemia == 6:
+                                                                    $ kostka = renpy.random.randint(1, 2)
+                                                                    if tarczownik_hp_now + kostka >= tarczownik_hp:
+                                                                        $ tarczownik_hp_now = tarczownik_hp
+                                                                        queue sound "audio/sfx/heal.mp3" 
+                                                                        "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
+                                                                    else:
+                                                                        $ tarczownik_hp_now += kostka
+                                                                        queue sound "audio/sfx/heal.mp3" 
+                                                                        "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
                                                         
                                                         else:
                                                             "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jerzy Urban{/i}"
@@ -6931,45 +7781,32 @@ label fight111:
                                                                     $ tarczownik_hp_now += kostka
                                                                     queue sound "audio/sfx/heal.mp3" 
                                                                     "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                                    
-                                                    else:
-                                                        "{i}Naofumi zadaje [tarczownik_attack] obrażeń Jerzy Urban{/i}"
-                                                        if ziemia == 6:
-                                                            $ kostka = renpy.random.randint(1, 2)
-                                                            if tarczownik_hp_now + kostka >= tarczownik_hp:
-                                                                $ tarczownik_hp_now = tarczownik_hp
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał cały pasek zdrowia{/i}"
-                                                            else:
-                                                                $ tarczownik_hp_now += kostka
-                                                                queue sound "audio/sfx/heal.mp3" 
-                                                                "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
-                                            
-                                        if dialog_fight2 == 0:
-                                            $ dialog_fight2 += 1
-
-                                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
-
-                                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
-                                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
-                                            luszcz "..."
-                                        
-                                        else:
-                                            if dialog_fight2 == 1:
+                                                
+                                            if dialog_fight2 == 0 and tarczownik_uszy == 0:
                                                 $ dialog_fight2 += 1
-                                                luszcz "Ja jebie co za debil"
+
+                                                luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                                                tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                                                tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                                                luszcz "..."
                                             
                                             else:
-                                                if dialog_fight2 == 2:
+                                                if dialog_fight2 == 1 and tarczownik_uszy == 0:
                                                     $ dialog_fight2 += 1
-                                                    luszcz "Zajębię tego huja zaraz"
-                                            
+                                                    luszcz "Ja jebie co za debil"
+                                                
                                                 else:
-                                                    if dialog_fight2 >= 3:
+                                                    if dialog_fight2 == 2 and tarczownik_uszy == 0:
                                                         $ dialog_fight2 += 1
-                                                        luszcz "..."
+                                                        luszcz "Zajębię tego huja zaraz"
+                                                
+                                                    else:
+                                                        if dialog_fight2 >= 3 and tarczownik_uszy == 0:
+                                                            $ dialog_fight2 += 1
+                                                            luszcz "..."
 
-                                        jump faza_fight112
+                                            jump faza_fight112
                                     else:
                                         jump losowanko_tarczownik_fight111
 
@@ -8030,6 +8867,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -8094,6 +8941,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -8107,6 +8956,8 @@ label fight111:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -8166,6 +9017,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -8202,6 +9055,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -8230,6 +9085,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -8294,13 +9151,13 @@ label fight111:
 
         if luszcz_fighter == 2:
             if luszcz_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if luszcz_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if luszcz_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
@@ -8316,6 +9173,98 @@ label fight111:
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ luszcz_min_attack_now += 1
+
+            if luszcz_uszy >= 1 and urban_zly_hp_now >= 1:
+                if luszcz_weapon >= 1:
+                    if luszcz_wybrany == 1:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik1  
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if luszcz_wybrany == 2:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik2  
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if luszcz_wybrany == 3:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik3 
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik3   
+
+                else:
+                    if luszcz_wybrany == 1:
+                        show reka1 zorder 15 at weapon_sojusznik1 
+
+                    if luszcz_wybrany == 2:
+                        show reka1 zorder 15 at weapon_sojusznik2  
+
+                    if luszcz_wybrany == 3:
+                        show reka1 zorder 15 at weapon_sojusznik3 
+                
+                if ostrza_chaosu == 2 and luszcz_weapon >= 1:   
+                    jump zlyur8
+                else:
+                    jump zlyur9
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -8409,113 +9358,114 @@ label fight111:
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
-                    
-                        $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(luszcz_attack / 2)
+                        label zlyur8:               
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ girek_hp_now -= luszcz_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(luszcz_attack / 2)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= luszcz_attack
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= luszcz_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(luszcz_attack / 2)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= luszcz_attack
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= luszcz_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 2:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                    $ luszcz_hp_now = luszcz_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ luszcz_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Łuszcza został zablokowany{/i}"
-                            if ziemia == 2:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                    $ luszcz_hp_now = luszcz_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ luszcz_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(luszcz_attack / 2)
 
-                        jump faza_fight113
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= luszcz_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 2:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                if ziemia == 2:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+
+                            jump faza_fight113
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -8654,135 +9604,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
-                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            label zlyur9:
+                                $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Łuszcza został zablokowany{/i}"
-                                if ziemia == 2:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if luszcz_hp_now + kostka >= luszcz_hp:
-                                        $ luszcz_hp_now = luszcz_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:
+                                    if luszcz_weapon >= 1:
+                                        if gitara == 2:
+                                            play sound "audio/sfx/gitara.mp3" 
+
+                                        if luszcz_przepychaczka == 2: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 2:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 2:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 2:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 2:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 2:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ luszcz_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:
-                                if luszcz_weapon >= 1:
-                                    if gitara == 2:
-                                        play sound "audio/sfx/gitara.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if luszcz_przepychaczka == 2: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 2:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= luszcz_attack
+                                                "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
 
-                                    if stop == 2:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(luszcz_attack / 2)
 
-                                    if miecz_swietlny == 2:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(luszcz_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 2:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 2:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= luszcz_attack * 2
+                                                "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
+
+                                        $ urban_zly_hp_now -= luszcz_attack
+
+                                        if luszcz_przepychaczka == 2 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
                                     
-                                    if patyk == 2:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 2:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 2:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 2:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= luszcz_attack
-                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 2:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 2:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= luszcz_attack * 2
-                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-
-                                    $ urban_zly_hp_now -= luszcz_attack
-
-                                    if luszcz_przepychaczka == 2 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-                                
-                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight113
+                                        "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight113
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -9188,13 +10139,13 @@ label fight111:
         
         if eminem_fighter == 2:
             if eminem_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if eminem_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if eminem_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if eminem_stun == 2:
                 $ eminem_stun -= 1
@@ -9206,6 +10157,29 @@ label fight111:
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
                     jump faza_fight113
+            
+            if eminem_uszy >= 1 and urban_zly_hp_now >= 1:
+                if eminem_weapon >= 1:
+                    if eminem_wybrany == 1:
+                        show eminem_weapon zorder 15 at weapon_sojusznik1  
+
+                    if eminem_wybrany == 2:
+                        show eminem_weapon zorder 15 at weapon_sojusznik2  
+
+                    if eminem_wybrany == 3:
+                        show eminem_weapon zorder 15 at weapon_sojusznik3 
+
+                else:
+                    if eminem_wybrany == 1:
+                        show reka2 zorder 15 at weapon_sojusznik1 
+
+                    if eminem_wybrany == 2:
+                        show reka2 zorder 15 at weapon_sojusznik2  
+
+                    if eminem_wybrany == 3:
+                        show reka2 zorder 15 at weapon_sojusznik3 
+                
+                jump zlyur10
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -9288,55 +10262,56 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
-                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            label zlyur10:
+                                $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Shadowa został zablokowany{/i}"
-                                if ziemia == 7:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if eminem_hp_now + kostka >= eminem_hp:
-                                        $ eminem_hp_now = eminem_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Shadowa został zablokowany{/i}"
+                                    if ziemia == 7:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if eminem_hp_now + kostka >= eminem_hp:
+                                            $ eminem_hp_now = eminem_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ eminem_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:  
+                                    play sound "audio/sfx/reka.mp3"                          
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(eminem_attack / 2)
+
+                                        $ dmg = int(eminem_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 7:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if eminem_hp_now + kostka >= eminem_hp:
+                                                $ eminem_hp_now = eminem_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ eminem_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                     else:
-                                        $ eminem_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:  
-                                play sound "audio/sfx/reka.mp3"                          
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(eminem_attack / 2)
-
-                                    $ dmg = int(eminem_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 7:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if eminem_hp_now + kostka >= eminem_hp:
-                                            $ eminem_hp_now = eminem_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ eminem_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    $ urban_zly_hp_now -= eminem_attack
-                                
-                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
-                                    if ziemia == 7:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if eminem_hp_now + kostka >= eminem_hp:
-                                            $ eminem_hp_now = eminem_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ eminem_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight113
+                                        $ urban_zly_hp_now -= eminem_attack
+                                    
+                                        "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                                        if ziemia == 7:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if eminem_hp_now + kostka >= eminem_hp:
+                                                $ eminem_hp_now = eminem_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ eminem_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight113
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -9659,13 +10634,13 @@ label fight111:
 
         if urban_fighter == 2:
             if urban_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if urban_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if urban_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if urban_stun == 2:
                 $ urban_stun -= 1
@@ -10403,13 +11378,13 @@ label fight111:
 
         if zyd_fighter == 2:
             if zyd_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if zyd_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if zyd_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if zyd_stun == 2:
                 $ zyd_stun -= 1
@@ -10425,6 +11400,98 @@ label fight111:
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ zyd_min_attack_now += 1
+
+            if zyd_uszy >= 1 and urban_zly_hp_now >= 1:
+                if zyd_weapon >= 1:
+                    if zyd_wybrany == 1:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik1  
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if zyd_wybrany == 2:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik2  
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if zyd_wybrany == 3:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik3 
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik3
+
+                else:
+                    if zyd_wybrany == 1:
+                        show reka4 zorder 15 at weapon_sojusznik1 
+
+                    if zyd_wybrany == 2:
+                        show reka4 zorder 15 at weapon_sojusznik2  
+
+                    if zyd_wybrany == 3:
+                        show reka4 zorder 15 at weapon_sojusznik3 
+                
+                if ostrza_chaosu == 4 and zyd_weapon >= 1:   
+                    jump zlyur11
+                else:
+                    jump zlyur12
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -10518,113 +11585,113 @@ label fight111:
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
-                    
-                        $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                        label zlyur11:
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(zyd_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ girek_hp_now -= zyd_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= zyd_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= zyd_attack
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= zyd_attack
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= zyd_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 4:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if zyd_hp_now + kostka >= zyd_hp:
-                                    $ zyd_hp_now = zyd_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ zyd_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Żyda został zablokowany{/i}"
-                            if ziemia == 4:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if zyd_hp_now + kostka >= zyd_hp:
-                                    $ zyd_hp_now = zyd_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ zyd_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= zyd_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 4:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if zyd_hp_now + kostka >= zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ zyd_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                if ziemia == 4:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if zyd_hp_now + kostka >= zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ zyd_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight113
+                            jump faza_fight113
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -10763,135 +11830,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
-                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            label zlyur12:
+                                $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Żyda został zablokowany{/i}"
-                                if ziemia == 4:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if zyd_hp_now + kostka >= zyd_hp:
-                                        $ zyd_hp_now = zyd_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else: 
+                                    if zyd_weapon >= 1:
+                                        if chanuka == 4:
+                                            play sound "audio/sfx/chanuka.mp3" 
+
+                                        if zyd_przepychaczka == 4: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 4:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 4:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 4:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 4:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 4:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ zyd_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else: 
-                                if zyd_weapon >= 1:
-                                    if chanuka == 4:
-                                        play sound "audio/sfx/chanuka.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if zyd_przepychaczka == 4: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 4:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= zyd_attack
+                                                "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
 
-                                    if stop == 4:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(zyd_attack / 2)
 
-                                    if miecz_swietlny == 4:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(zyd_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 4:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 4:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= zyd_attack * 2
+                                                "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
+
+                                        $ urban_zly_hp_now -= zyd_attack
+
+                                        if zyd_przepychaczka == 4 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
                                     
-                                    if patyk == 4:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 4:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 4:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 4:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= zyd_attack
-                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 4:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 4:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= zyd_attack * 2
-                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-
-                                    $ urban_zly_hp_now -= zyd_attack
-
-                                    if zyd_przepychaczka == 4 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-                                
-                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight113
+                                        "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight113
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -11180,13 +12248,13 @@ label fight111:
 
         if kazuma_fighter == 2:
             if kazuma_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if kazuma_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if kazuma_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
@@ -11202,6 +12270,98 @@ label fight111:
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ kazuma_min_attack_now += 1
+
+            if kazuma_uszy >= 1 and urban_zly_hp_now >= 1:
+                if kazuma_weapon >= 1:
+                    if kazuma_wybrany == 1:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik1  
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if kazuma_wybrany == 2:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik2  
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if kazuma_wybrany == 3:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik3 
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik3  
+
+                else:
+                    if kazuma_wybrany == 1:
+                        show reka5 zorder 15 at weapon_sojusznik1 
+
+                    if kazuma_wybrany == 2:
+                        show reka5 zorder 15 at weapon_sojusznik2  
+
+                    if kazuma_wybrany == 3:
+                        show reka5 zorder 15 at weapon_sojusznik3
+                
+                if ostrza_chaosu == 5 and kazuma_weapon >= 1:   
+                    jump zlyur13
+                else:
+                    jump zlyur14
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -11295,113 +12455,114 @@ label fight111:
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                         kazuma "Tak, jestem Kazuma"
-                    
-                        $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kazuma_attack / 2)
+                        label zlyur13:
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ girek_hp_now -= kazuma_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(kazuma_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(kazuma_attack / 2)
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= kazuma_attack
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= kazuma_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(kazuma_attack / 2)
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(v_attack / 2)
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= kazuma_attack
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= kazuma_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 5:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                    $ kazuma_hp_now = kazuma_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ kazuma_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Kazumy został zablokowany{/i}"
-                            if ziemia == 5:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                    $ kazuma_hp_now = kazuma_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ kazuma_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(v_attack / 2)
 
-                        jump faza_fight113
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= kazuma_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 5:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                if ziemia == 5:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+
+                            jump faza_fight113
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -11540,135 +12701,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
-                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+                            label zlyur14:
+                                $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Kazumy został zablokowany{/i}"
-                                if ziemia == 5:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if kazuma_hp_now + kostka >= kazuma_hp:
-                                        $ kazuma_hp_now = kazuma_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kazumy został zablokowany{/i}"
+                                    if ziemia == 5:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if kazuma_hp_now + kostka >= kazuma_hp:
+                                            $ kazuma_hp_now = kazuma_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ kazuma_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:
+                                    if kazuma_weapon >= 1:
+                                        if chunchunmaru == 5:
+                                            play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                        if kazuma_przepychaczka == 5: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 5:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 5:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 5:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 5:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 5:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ kazuma_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:
-                                if kazuma_weapon >= 1:
-                                    if chunchunmaru == 5:
-                                        play sound "audio/sfx/chunchunmaru.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if kazuma_przepychaczka == 5: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 5:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= kazuma_attack
+                                                "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
 
-                                    if stop == 5:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(kazuma_attack / 2)
 
-                                    if miecz_swietlny == 5:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(kazuma_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 5:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 5:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= kazuma_attack * 2
+                                                "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
+
+                                        $ urban_zly_hp_now -= kazuma_attack
+
+                                        if kazuma_przepychaczka == 5 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight113
                                     
-                                    if patyk == 5:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 5:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 5:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 5:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= kazuma_attack
-                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-
-                                    $ urban_zly_hp_now -= int(kazuma_attack / 2)
-
-                                    $ dmg = int(kazuma_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 5:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 5:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= kazuma_attack * 2
-                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-
-                                    $ urban_zly_hp_now -= kazuma_attack
-
-                                    if kazuma_przepychaczka == 5 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight113
-                                
-                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight113
+                                        "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight113
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -11855,18 +13017,25 @@ label fight111:
                                 if girek_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if girek_max_attack_now < girek_max_attack:
-                                            $ girek_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ girek_max_attack_now_true = 4
                                             $ girek_min_attack_now_true = 0
                                             $ girek_min_attack_now = girek_min_attack_now_true
                                             $ girek_max_attack_now = girek_max_attack_now_true
-                                            $ girek_max_attack_now -= 2
                                         
                                         else:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            if girek_max_attack_now < girek_max_attack:
+                                                $ girek_max_attack_now_true = 2
+                                                $ girek_min_attack_now_true = 0
+                                                $ girek_min_attack_now = girek_min_attack_now_true
+                                                $ girek_max_attack_now = girek_max_attack_now_true
+                                                $ girek_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ girek_max_attack_now_true = 2
+                                                $ girek_min_attack_now_true = 0
+                                                $ girek_min_attack_now = girek_min_attack_now_true
+                                                $ girek_max_attack_now = girek_max_attack_now_true
 
                                         $ girek_weapon -= 1
 
@@ -11929,18 +13098,25 @@ label fight111:
                                 if urban_zly_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if urban_zly_max_attack_now < urban_zly_max_attack:
-                                            $ urban_zly_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ urban_zly_max_attack_now_true = 4
                                             $ urban_zly_min_attack_now_true = 0
                                             $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
                                             $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
-                                            $ urban_zly_max_attack_now -= 2
                                         
                                         else:
-                                            $ urban_zly_max_attack_now_true = 2
-                                            $ urban_zly_min_attack_now_true = 0
-                                            $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
-                                            $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
+                                            if urban_zly_max_attack_now < urban_zly_max_attack:
+                                                $ urban_zly_max_attack_now_true = 2
+                                                $ urban_zly_min_attack_now_true = 0
+                                                $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
+                                                $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
+                                                $ urban_zly_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ urban_zly_max_attack_now_true = 2
+                                                $ urban_zly_min_attack_now_true = 0
+                                                $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
+                                                $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
                                         
                                         $ urban_zly_weapon -= 1
 
@@ -12003,18 +13179,25 @@ label fight111:
                                 if jaruzel_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if jaruzel_max_attack_now < jaruzel_max_attack:
-                                            $ jaruzel_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ jaruzel_max_attack_now_true = 4
                                             $ jaruzel_min_attack_now_true = 0
                                             $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
                                             $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
-                                            $ jaruzel_max_attack_now -= 2
                                         
                                         else:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            if jaruzel_max_attack_now < jaruzel_max_attack:
+                                                $ jaruzel_max_attack_now_true = 2
+                                                $ jaruzel_min_attack_now_true = 0
+                                                $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                                $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                                $ jaruzel_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ jaruzel_max_attack_now_true = 2
+                                                $ jaruzel_min_attack_now_true = 0
+                                                $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                                $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
                                         
                                         $ jaruzel_weapon -= 1
 
@@ -12119,6 +13302,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -12183,6 +13376,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -12196,6 +13391,8 @@ label fight111:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -12255,6 +13452,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -12291,6 +13490,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -12319,6 +13520,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -12383,13 +13586,13 @@ label fight111:
 
         if luszcz_fighter == 3:
             if luszcz_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if luszcz_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if luszcz_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
@@ -12405,6 +13608,98 @@ label fight111:
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ luszcz_min_attack_now += 1
+
+            if luszcz_uszy >= 1 and urban_zly_hp_now >= 1:
+                if luszcz_weapon >= 1:
+                    if luszcz_wybrany == 1:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik1  
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if luszcz_wybrany == 2:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik2  
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if luszcz_wybrany == 3:
+                        if gitara == 2:
+                            show luszcz_weapon zorder 15 at weapon_sojusznik3 
+
+                        if luszcz_przepychaczka == 2:
+                            show luszcz_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 2:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 2:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 2:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 2:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 2:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 2:
+                            show miecz3d zorder 15 at weapon_sojusznik3   
+
+                else:
+                    if luszcz_wybrany == 1:
+                        show reka1 zorder 15 at weapon_sojusznik1 
+
+                    if luszcz_wybrany == 2:
+                        show reka1 zorder 15 at weapon_sojusznik2  
+
+                    if luszcz_wybrany == 3:
+                        show reka1 zorder 15 at weapon_sojusznik3 
+                
+                if ostrza_chaosu == 2 and luszcz_weapon >= 1:   
+                    jump zlyur15
+                else:
+                    jump zlyur16
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -12498,113 +13793,115 @@ label fight111:
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
+
+                        label zlyur15:
                     
-                        $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(luszcz_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(luszcz_attack / 2)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ girek_hp_now -= luszcz_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= luszcz_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(luszcz_attack / 2)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= luszcz_attack
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= luszcz_attack
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Łuszcza został zablokowany{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(luszcz_attack / 2)
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Łuszcza został zablokowany{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(luszcz_attack / 2)
 
-                                    $ dmg = int(luszcz_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= luszcz_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 2:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                    $ luszcz_hp_now = luszcz_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ luszcz_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Łuszcza został zablokowany{/i}"
-                            if ziemia == 2:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                    $ luszcz_hp_now = luszcz_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ luszcz_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                        $ dmg = int(luszcz_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= luszcz_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [luszcz_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 2:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Łuszcza został zablokowany{/i}"
+                                if ziemia == 2:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight114
+                            jump faza_fight114
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -12743,135 +14040,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
-                            $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+                            label zlyur16:
+                                $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Łuszcza został zablokowany{/i}"
-                                if ziemia == 2:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if luszcz_hp_now + kostka >= luszcz_hp:
-                                        $ luszcz_hp_now = luszcz_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Łuszcza został zablokowany{/i}"
+                                    if ziemia == 2:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if luszcz_hp_now + kostka >= luszcz_hp:
+                                            $ luszcz_hp_now = luszcz_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ luszcz_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:
+                                    if luszcz_weapon >= 1:
+                                        if gitara == 2:
+                                            play sound "audio/sfx/gitara.mp3" 
+
+                                        if luszcz_przepychaczka == 2: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 2:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 2:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 2:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 2:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 2:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ luszcz_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:
-                                if luszcz_weapon >= 1:
-                                    if gitara == 2:
-                                        play sound "audio/sfx/gitara.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if luszcz_przepychaczka == 2: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 2:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= luszcz_attack
+                                                "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
 
-                                    if stop == 2:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(luszcz_attack / 2)
 
-                                    if miecz_swietlny == 2:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(luszcz_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 2:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 2:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= luszcz_attack * 2
+                                                "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
+
+                                        $ urban_zly_hp_now -= luszcz_attack
+
+                                        if luszcz_przepychaczka == 2 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 2:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if luszcz_hp_now + kostka >= luszcz_hp:
+                                                        $ luszcz_hp_now = luszcz_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ luszcz_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
                                     
-                                    if patyk == 2:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 2:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 2:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 2:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= luszcz_attack
-                                            "{i}Atak został podwojony i zadał [luszcz_attack] obrażeń{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-
-                                    $ urban_zly_hp_now -= int(luszcz_attack / 2)
-
-                                    $ dmg = int(luszcz_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 2:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 2:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= luszcz_attack * 2
-                                            "{i}Atak został podwojony i zadał [luszcz_attack * 2] obrażeń{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-
-                                    $ urban_zly_hp_now -= luszcz_attack
-
-                                    if luszcz_przepychaczka == 2 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [luszcz_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 2:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if luszcz_hp_now + kostka >= luszcz_hp:
-                                                    $ luszcz_hp_now = luszcz_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ luszcz_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-                                
-                                    "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
-                                    if ziemia == 2:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if luszcz_hp_now + kostka >= luszcz_hp:
-                                            $ luszcz_hp_now = luszcz_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ luszcz_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight114
+                                        "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
+                                        if ziemia == 2:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if luszcz_hp_now + kostka >= luszcz_hp:
+                                                $ luszcz_hp_now = luszcz_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ luszcz_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight114
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -13277,13 +14575,13 @@ label fight111:
         
         if eminem_fighter == 3:
             if eminem_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if eminem_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if eminem_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if eminem_stun == 2:
                 $ eminem_stun -= 1
@@ -13295,6 +14593,29 @@ label fight111:
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
                     jump faza_fight114
+            
+            if eminem_uszy >= 1 and urban_zly_hp_now >= 1:
+                if eminem_weapon >= 1:
+                    if eminem_wybrany == 1:
+                        show eminem_weapon zorder 15 at weapon_sojusznik1  
+
+                    if eminem_wybrany == 2:
+                        show eminem_weapon zorder 15 at weapon_sojusznik2  
+
+                    if eminem_wybrany == 3:
+                        show eminem_weapon zorder 15 at weapon_sojusznik3 
+
+                else:
+                    if eminem_wybrany == 1:
+                        show reka2 zorder 15 at weapon_sojusznik1 
+
+                    if eminem_wybrany == 2:
+                        show reka2 zorder 15 at weapon_sojusznik2  
+
+                    if eminem_wybrany == 3:
+                        show reka2 zorder 15 at weapon_sojusznik3 
+                
+                jump zlyur17
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -13377,55 +14698,56 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
-                            $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
+                            label zlyur17:
+                                $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Shadowa został zablokowany{/i}"
-                                if ziemia == 7:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if eminem_hp_now + kostka >= eminem_hp:
-                                        $ eminem_hp_now = eminem_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Shadowa został zablokowany{/i}"
+                                    if ziemia == 7:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if eminem_hp_now + kostka >= eminem_hp:
+                                            $ eminem_hp_now = eminem_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ eminem_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:   
+                                    play sound "audio/sfx/reka.mp3"                        
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(eminem_attack / 2)
+
+                                        $ dmg = int(eminem_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 7:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if eminem_hp_now + kostka >= eminem_hp:
+                                                $ eminem_hp_now = eminem_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ eminem_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                                     else:
-                                        $ eminem_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:   
-                                play sound "audio/sfx/reka.mp3"                        
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(eminem_attack / 2)
-
-                                    $ dmg = int(eminem_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 7:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if eminem_hp_now + kostka >= eminem_hp:
-                                            $ eminem_hp_now = eminem_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ eminem_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    $ urban_zly_hp_now -= eminem_attack
-                                
-                                    "{i}Atak zadał [eminem_attack] obrażeń{/i}"
-                                    if ziemia == 7:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if eminem_hp_now + kostka >= eminem_hp:
-                                            $ eminem_hp_now = eminem_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ eminem_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight114
+                                        $ urban_zly_hp_now -= eminem_attack
+                                    
+                                        "{i}Atak zadał [eminem_attack] obrażeń{/i}"
+                                        if ziemia == 7:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if eminem_hp_now + kostka >= eminem_hp:
+                                                $ eminem_hp_now = eminem_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ eminem_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Shadow odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight114
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -13750,13 +15072,13 @@ label fight111:
 
         if urban_fighter == 3:
             if urban_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if urban_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if urban_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if urban_stun == 2:
                 $ urban_stun -= 1
@@ -14494,13 +15816,13 @@ label fight111:
 
         if zyd_fighter == 3:
             if zyd_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if zyd_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if zyd_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if zyd_stun == 2:
                 $ zyd_stun -= 1
@@ -14516,6 +15838,98 @@ label fight111:
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ zyd_min_attack_now += 1
+
+            if zyd_uszy >= 1 and urban_zly_hp_now >= 1:
+                if zyd_weapon >= 1:
+                    if zyd_wybrany == 1:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik1  
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if zyd_wybrany == 2:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik2  
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if zyd_wybrany == 3:
+                        if chanuka == 4:
+                            show zyd_weapon zorder 15 at weapon_sojusznik3 
+
+                        if zyd_przepychaczka == 4:
+                            show zyd_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 4:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 4:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 4:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 4:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 4:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 4:
+                            show miecz3d zorder 15 at weapon_sojusznik3
+
+                else:
+                    if zyd_wybrany == 1:
+                        show reka4 zorder 15 at weapon_sojusznik1 
+
+                    if zyd_wybrany == 2:
+                        show reka4 zorder 15 at weapon_sojusznik2  
+
+                    if zyd_wybrany == 3:
+                        show reka4 zorder 15 at weapon_sojusznik3 
+                
+                if ostrza_chaosu == 4 and zyd_weapon >= 1:   
+                    jump zlyur18
+                else:
+                    jump zlyur19
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -14609,113 +16023,115 @@ label fight111:
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
+
+                        label zlyur18:
                     
-                        $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(zyd_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ girek_hp_now -= zyd_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= zyd_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= zyd_attack
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= zyd_attack
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Żyda został zablokowany{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(zyd_attack / 2)
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Żyda został zablokowany{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(zyd_attack / 2)
 
-                                    $ dmg = int(zyd_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= zyd_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 4:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if zyd_hp_now + kostka >= zyd_hp:
-                                    $ zyd_hp_now = zyd_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ zyd_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Żyda został zablokowany{/i}"
-                            if ziemia == 4:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if zyd_hp_now + kostka >= zyd_hp:
-                                    $ zyd_hp_now = zyd_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ zyd_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                        $ dmg = int(zyd_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= zyd_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [zyd_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 4:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if zyd_hp_now + kostka >= zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ zyd_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Żyda został zablokowany{/i}"
+                                if ziemia == 4:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if zyd_hp_now + kostka >= zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ zyd_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight114
+                            jump faza_fight114
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -14854,135 +16270,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
-                            $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
+                            label zlyur19:
+                                $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Żyda został zablokowany{/i}"
-                                if ziemia == 4:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if zyd_hp_now + kostka >= zyd_hp:
-                                        $ zyd_hp_now = zyd_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Żyda został zablokowany{/i}"
+                                    if ziemia == 4:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if zyd_hp_now + kostka >= zyd_hp:
+                                            $ zyd_hp_now = zyd_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ zyd_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:   
+                                    if zyd_weapon >= 1:
+                                        if chanuka == 4:
+                                            play sound "audio/sfx/chanuka.mp3" 
+
+                                        if zyd_przepychaczka == 4: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 4:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 4:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 4:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 4:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 4:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ zyd_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:   
-                                if zyd_weapon >= 1:
-                                    if chanuka == 4:
-                                        play sound "audio/sfx/chanuka.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if zyd_przepychaczka == 4: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 4:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= zyd_attack
+                                                "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
 
-                                    if stop == 4:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(zyd_attack / 2)
 
-                                    if miecz_swietlny == 4:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(zyd_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 4:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 4:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= zyd_attack * 2
+                                                "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
+
+                                        $ urban_zly_hp_now -= zyd_attack
+
+                                        if zyd_przepychaczka == 4 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 4:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if zyd_hp_now + kostka >= zyd_hp:
+                                                        $ zyd_hp_now = zyd_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ zyd_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
                                     
-                                    if patyk == 4:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 4:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 4:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 4:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= zyd_attack
-                                            "{i}Atak został podwojony i zadał [zyd_attack] obrażeń{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-
-                                    $ urban_zly_hp_now -= int(zyd_attack / 2)
-
-                                    $ dmg = int(zyd_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 4:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 4:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= zyd_attack * 2
-                                            "{i}Atak został podwojony i zadał [zyd_attack * 2] obrażeń{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-
-                                    $ urban_zly_hp_now -= zyd_attack
-
-                                    if zyd_przepychaczka == 4 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [zyd_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 4:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if zyd_hp_now + kostka >= zyd_hp:
-                                                    $ zyd_hp_now = zyd_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ zyd_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-                                
-                                    "{i}Atak zadał [zyd_attack] obrażeń{/i}"
-                                    if ziemia == 4:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if zyd_hp_now + kostka >= zyd_hp:
-                                            $ zyd_hp_now = zyd_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ zyd_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight114
+                                        "{i}Atak zadał [zyd_attack] obrażeń{/i}"
+                                        if ziemia == 4:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if zyd_hp_now + kostka >= zyd_hp:
+                                                $ zyd_hp_now = zyd_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ zyd_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Żyd odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight114
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -15271,13 +16688,13 @@ label fight111:
 
         if kazuma_fighter == 3:
             if kazuma_wybrany == 1:
-                show ruch zorder 0 at tlo_sojusznik1  
+                show ruch zorder 1 at tlo_sojusznik1  
 
             if kazuma_wybrany == 2:
-                show ruch zorder 0 at tlo_sojusznik2  
+                show ruch zorder 1 at tlo_sojusznik2  
 
             if kazuma_wybrany == 3:
-                show ruch zorder 0 at tlo_sojusznik3 
+                show ruch zorder 1 at tlo_sojusznik3 
             
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
@@ -15293,7 +16710,99 @@ label fight111:
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if girek_hp_now >= 1 and urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now >= 1 and jaruzel_hp_now <= 0 or girek_hp_now <= 0 and urban_zly_hp_now <= 0 and jaruzel_hp_now >= 1:
                     $ kazuma_min_attack_now += 1
+            
+            if kazuma_uszy >= 1 and urban_zly_hp_now >= 1:
+                if kazuma_weapon >= 1:
+                    if kazuma_wybrany == 1:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik1  
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik1  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik1  
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik1  
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik1  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik1  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik1  
+
+                    if kazuma_wybrany == 2:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik2  
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik2  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik2 
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik2 
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik2 
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik2  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik2  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik2   
+
+                    if kazuma_wybrany == 3:
+                        if chunchunmaru == 5:
+                            show kazuma_weapon zorder 15 at weapon_sojusznik3 
+
+                        if kazuma_przepychaczka == 5:
+                            show kazuma_przepychaczka zorder 15 at weapon_sojusznik3  
+
+                        if stop == 5:
+                            show stop zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz_swietlny == 5:
+                            show miecz_swietlny zorder 15 at weapon_sojusznik3 
+                        
+                        if ostrza_chaosu == 5:
+                            show ostrza_chaosu zorder 15 at weapon_sojusznik3  
+
+                        if patyk == 5:
+                            show patyk zorder 15 at weapon_sojusznik3  
+
+                        if bazooka == 5:
+                            show bazooka zorder 15 at weapon_sojusznik3  
+                        
+                        if miecz3d == 5:
+                            show miecz3d zorder 15 at weapon_sojusznik3  
+
+                else:
+                    if kazuma_wybrany == 1:
+                        show reka5 zorder 15 at weapon_sojusznik1 
+
+                    if kazuma_wybrany == 2:
+                        show reka5 zorder 15 at weapon_sojusznik2  
+
+                    if kazuma_wybrany == 3:
+                        show reka5 zorder 15 at weapon_sojusznik3
                 
+                if ostrza_chaosu == 5 and kazuma_weapon >= 1:   
+                    jump zlyur20
+                else:
+                    jump zlyur21
+
             menu:
                 "{b}Co zrobić{/b}"
 
@@ -15386,113 +16895,115 @@ label fight111:
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                         kazuma "Tak, jestem Kazuma"
+
+                        label zlyur20:
                     
-                        $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                        if girek_hp_now >= 1:
-                            if girek_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ girek_obrona = 1
-                                                                
-                            else:     
-                                if girek_obrona == 1:
-                                    $ girek_hp_now -= int(kazuma_attack / 2)
+                            if girek_hp_now >= 1:
+                                if girek_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ girek_obrona = 1
+                                                                    
+                                else:     
+                                    if girek_obrona == 1:
+                                        $ girek_hp_now -= int(kazuma_attack / 2)
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ girek_hp_now -= kazuma_attack
-                        
-                        if urban_zly_hp_now >= 1:
-                            if urban_zly_obrona >= 2:
-                                if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                                
-                            else:     
-                                if urban_zly_obrona == 1:
-                                    $ urban_zly_hp_now -= int(kazuma_attack / 2)
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ girek_hp_now -= kazuma_attack
+                            
+                            if urban_zly_hp_now >= 1:
+                                if urban_zly_obrona >= 2:
+                                    if girek_hp_now <= 0 and jaruzel_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                    
+                                else:     
+                                    if urban_zly_obrona == 1:
+                                        $ urban_zly_hp_now -= int(kazuma_attack / 2)
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ urban_zly_hp_now -= kazuma_attack
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ urban_zly_hp_now -= kazuma_attack
 
-                        if jaruzel_hp_now >= 1:
-                            if jaruzel_obrona >= 2:
-                                if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Kazumy został zablokowany{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ jaruzel_obrona = 1
-                                                                
-                            else:     
-                                if jaruzel_obrona == 1:
-                                    $ jaruzel_hp_now -= int(v_attack / 2)
+                            if jaruzel_hp_now >= 1:
+                                if jaruzel_obrona >= 2:
+                                    if urban_zly_hp_now <= 0 and girek_hp_now <= 0:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Kazumy został zablokowany{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ jaruzel_obrona = 1
+                                                                    
+                                else:     
+                                    if jaruzel_obrona == 1:
+                                        $ jaruzel_hp_now -= int(v_attack / 2)
 
-                                    $ dmg = int(kazuma_attack / 2)
-                                else:
-                                    $ jaruzel_hp_now -= kazuma_attack
-                        
-                        if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
-                            play sound "audio/sfx/ostrza_chaosu.mp3"
-                            "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
-                            if ziemia == 5:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                    $ kazuma_hp_now = kazuma_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ kazuma_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                        
-                        else:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Kazumy został zablokowany{/i}"
-                            if ziemia == 5:
-                                $ kostka = renpy.random.randint(1, 2)
-                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                    $ kazuma_hp_now = kazuma_hp
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                else:
-                                    $ kazuma_hp_now += kostka
-                                    queue sound "audio/sfx/heal.mp3" 
-                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                        $ dmg = int(kazuma_attack / 2)
+                                    else:
+                                        $ jaruzel_hp_now -= kazuma_attack
+                            
+                            if girek_hp_now >= 1 and girek_obrona <= 1 or urban_zly_hp_now >= 1 and urban_zly_obrona <= 1 or jaruzel_hp_now >= 1 and jaruzel_obrona <= 1:
+                                play sound "audio/sfx/ostrza_chaosu.mp3"
+                                "{i}Atak zadał [kazuma_attack] obrażeń wszystkim przeciwnikom{/i}"
+                                if ziemia == 5:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                            
+                            else:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Kazumy został zablokowany{/i}"
+                                if ziemia == 5:
+                                    $ kostka = renpy.random.randint(1, 2)
+                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += kostka
+                                        queue sound "audio/sfx/heal.mp3" 
+                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight114
+                            jump faza_fight114
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -15631,135 +17142,136 @@ label fight111:
 
                         "{b}Jerzy Urban{/b}" if urban_zly_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
-                            $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
+                            label zlyur21:
+                                $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
-                            if urban_zly_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Kazumy został zablokowany{/i}"
-                                if ziemia == 5:
-                                    $ kostka = renpy.random.randint(1, 2)
-                                    if kazuma_hp_now + kostka >= kazuma_hp:
-                                        $ kazuma_hp_now = kazuma_hp
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                if urban_zly_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Kazumy został zablokowany{/i}"
+                                    if ziemia == 5:
+                                        $ kostka = renpy.random.randint(1, 2)
+                                        if kazuma_hp_now + kostka >= kazuma_hp:
+                                            $ kazuma_hp_now = kazuma_hp
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                        else:
+                                            $ kazuma_hp_now += kostka
+                                            queue sound "audio/sfx/heal.mp3" 
+                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    $ urban_zly_obrona = 1
+                                                                
+                                else:
+                                    if kazuma_weapon >= 1:
+                                        if chunchunmaru == 5:
+                                            play sound "audio/sfx/chunchunmaru.mp3" 
+
+                                        if kazuma_przepychaczka == 5: 
+                                            play sound "audio/sfx/przepychaczka.mp3" 
+
+                                        if stop == 5:
+                                            play sound "audio/sfx/stop.mp3" 
+
+                                        if miecz_swietlny == 5:
+                                            play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        
+                                        if patyk == 5:
+                                            play sound "audio/sfx/patyk.mp3" 
+                                        
+                                        if bazooka == 5:
+                                            play sound "audio/sfx/bazooka.mp3" 
+                                        
+                                        if miecz3d == 5:
+                                            play sound "audio/sfx/miecz3d.mp3" 
+
                                     else:
-                                        $ kazuma_hp_now += kostka
-                                        queue sound "audio/sfx/heal.mp3" 
-                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                $ urban_zly_obrona = 1
-                                                               
-                            else:
-                                if kazuma_weapon >= 1:
-                                    if chunchunmaru == 5:
-                                        play sound "audio/sfx/chunchunmaru.mp3" 
+                                        play sound "audio/sfx/reka.mp3" 
 
-                                    if kazuma_przepychaczka == 5: 
-                                        play sound "audio/sfx/przepychaczka.mp3" 
+                                    if urban_zly_obrona == 1:
+                                        if patyk == 5:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= kazuma_attack
+                                                "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
 
-                                    if stop == 5:
-                                        play sound "audio/sfx/stop.mp3" 
+                                        $ urban_zly_hp_now -= int(kazuma_attack / 2)
 
-                                    if miecz_swietlny == 5:
-                                        play sound "audio/sfx/miecz_swietlny.mp3" 
+                                        $ dmg = int(kazuma_attack / 2)
+                                        "{i}Atak zadał [dmg] obrażeń{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                    else:
+                                        if bazooka == 5:
+                                            $ urban_zly_poison = 3
+                                            show snake32 zorder 15 at center_wrog3
+                                        
+                                        if patyk == 5:
+                                            $ kostka = renpy.random.randint(1, 3)
+                                            if kostka == 3:
+                                                $ urban_zly_hp_now -= kazuma_attack * 2
+                                                "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
+
+                                        $ urban_zly_hp_now -= kazuma_attack
+
+                                        if kazuma_przepychaczka == 5 and urban_zly_stun == 0:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                show stun2 zorder 15 at head_wrog3
+                                                $ urban_zly_stun = 1
+                                                "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
+                                                if ziemia == 5:
+                                                    $ kostka = renpy.random.randint(1, 2)
+                                                    if kazuma_hp_now + kostka >= kazuma_hp:
+                                                        $ kazuma_hp_now = kazuma_hp
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                                    else:
+                                                        $ kazuma_hp_now += kostka
+                                                        queue sound "audio/sfx/heal.mp3" 
+                                                        "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                                jump faza_fight114
                                     
-                                    if patyk == 5:
-                                        play sound "audio/sfx/patyk.mp3" 
-                                    
-                                    if bazooka == 5:
-                                        play sound "audio/sfx/bazooka.mp3" 
-                                    
-                                    if miecz3d == 5:
-                                        play sound "audio/sfx/miecz3d.mp3" 
-
-                                else:
-                                    play sound "audio/sfx/reka.mp3" 
-
-                                if urban_zly_obrona == 1:
-                                    if patyk == 5:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= kazuma_attack
-                                            "{i}Atak został podwojony i zadał [kazuma_attack] obrażeń{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-
-                                    $ urban_zly_hp_now -= int(kazuma_attack / 2)
-
-                                    $ dmg = int(kazuma_attack / 2)
-                                    "{i}Atak zadał [dmg] obrażeń{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                else:
-                                    if bazooka == 5:
-                                        $ urban_zly_poison = 3
-                                        show snake32 zorder 15 at center_wrog3
-                                    
-                                    if patyk == 5:
-                                        $ kostka = renpy.random.randint(1, 3)
-                                        if kostka == 3:
-                                            $ urban_zly_hp_now -= kazuma_attack * 2
-                                            "{i}Atak został podwojony i zadał [kazuma_attack * 2] obrażeń{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-
-                                    $ urban_zly_hp_now -= kazuma_attack
-
-                                    if kazuma_przepychaczka == 5 and urban_zly_stun == 0:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            show stun2 zorder 15 at head_wrog3
-                                            $ urban_zly_stun = 1
-                                            "{i}Atak zadał [kazuma_attack] obrażeń \nPrzeciwnik został również zestunnowany{/i}"
-                                            if ziemia == 5:
-                                                $ kostka = renpy.random.randint(1, 2)
-                                                if kazuma_hp_now + kostka >= kazuma_hp:
-                                                    $ kazuma_hp_now = kazuma_hp
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                                else:
-                                                    $ kazuma_hp_now += kostka
-                                                    queue sound "audio/sfx/heal.mp3" 
-                                                    "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight114
-                                
-                                    "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
-                                    if ziemia == 5:
-                                        $ kostka = renpy.random.randint(1, 2)
-                                        if kazuma_hp_now + kostka >= kazuma_hp:
-                                            $ kazuma_hp_now = kazuma_hp
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
-                                        else:
-                                            $ kazuma_hp_now += kostka
-                                            queue sound "audio/sfx/heal.mp3" 
-                                            "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight114
+                                        "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
+                                        if ziemia == 5:
+                                            $ kostka = renpy.random.randint(1, 2)
+                                            if kazuma_hp_now + kostka >= kazuma_hp:
+                                                $ kazuma_hp_now = kazuma_hp
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał cały pasek zdrowia{/i}"
+                                            else:
+                                                $ kazuma_hp_now += kostka
+                                                queue sound "audio/sfx/heal.mp3" 
+                                                "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
+                                jump faza_fight114
 
                         "{b}Jaruzel{/b}" if jaruzel_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -15946,18 +17458,25 @@ label fight111:
                                 if girek_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if girek_max_attack_now < girek_max_attack:
-                                            $ girek_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ girek_max_attack_now_true = 4
                                             $ girek_min_attack_now_true = 0
                                             $ girek_min_attack_now = girek_min_attack_now_true
                                             $ girek_max_attack_now = girek_max_attack_now_true
-                                            $ girek_max_attack_now -= 2
                                         
                                         else:
-                                            $ girek_max_attack_now_true = 2
-                                            $ girek_min_attack_now_true = 0
-                                            $ girek_min_attack_now = girek_min_attack_now_true
-                                            $ girek_max_attack_now = girek_max_attack_now_true
+                                            if girek_max_attack_now < girek_max_attack:
+                                                $ girek_max_attack_now_true = 2
+                                                $ girek_min_attack_now_true = 0
+                                                $ girek_min_attack_now = girek_min_attack_now_true
+                                                $ girek_max_attack_now = girek_max_attack_now_true
+                                                $ girek_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ girek_max_attack_now_true = 2
+                                                $ girek_min_attack_now_true = 0
+                                                $ girek_min_attack_now = girek_min_attack_now_true
+                                                $ girek_max_attack_now = girek_max_attack_now_true
                                         
                                         $ girek_weapon -= 1
 
@@ -16020,18 +17539,25 @@ label fight111:
                                 if urban_zly_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if urban_zly_max_attack_now < urban_zly_max_attack:
-                                            $ urban_zly_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ urban_zly_max_attack_now_true = 4
                                             $ urban_zly_min_attack_now_true = 0
                                             $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
                                             $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
-                                            $ urban_zly_max_attack_now -= 2
                                         
                                         else:
-                                            $ urban_zly_max_attack_now_true = 2
-                                            $ urban_zly_min_attack_now_true = 0
-                                            $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
-                                            $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
+                                            if urban_zly_max_attack_now < urban_zly_max_attack:
+                                                $ urban_zly_max_attack_now_true = 2
+                                                $ urban_zly_min_attack_now_true = 0
+                                                $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
+                                                $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
+                                                $ urban_zly_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ urban_zly_max_attack_now_true = 2
+                                                $ urban_zly_min_attack_now_true = 0
+                                                $ urban_zly_min_attack_now = urban_zly_min_attack_now_true
+                                                $ urban_zly_max_attack_now = urban_zly_max_attack_now_true
                                         
                                         $ urban_zly_weapon -= 1
 
@@ -16094,18 +17620,25 @@ label fight111:
                                 if jaruzel_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if jaruzel_max_attack_now < jaruzel_max_attack:
-                                            $ jaruzel_max_attack_now_true = 2
+                                        if jaruzel_special > 2:
+                                            $ jaruzel_max_attack_now_true = 4
                                             $ jaruzel_min_attack_now_true = 0
                                             $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
                                             $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
-                                            $ jaruzel_max_attack_now -= 2
                                         
                                         else:
-                                            $ jaruzel_max_attack_now_true = 2
-                                            $ jaruzel_min_attack_now_true = 0
-                                            $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
-                                            $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                            if jaruzel_max_attack_now < jaruzel_max_attack:
+                                                $ jaruzel_max_attack_now_true = 2
+                                                $ jaruzel_min_attack_now_true = 0
+                                                $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                                $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
+                                                $ jaruzel_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ jaruzel_max_attack_now_true = 2
+                                                $ jaruzel_min_attack_now_true = 0
+                                                $ jaruzel_min_attack_now = jaruzel_min_attack_now_true
+                                                $ jaruzel_max_attack_now = jaruzel_max_attack_now_true
                                         
                                         $ jaruzel_weapon -= 1
 
@@ -16213,6 +17746,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -16277,6 +17820,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -16290,6 +17835,8 @@ label fight111:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -16349,6 +17896,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -16385,6 +17934,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -16413,6 +17964,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -18306,6 +19859,17 @@ label fight111:
                     else:
                         jump losowanko_tarczownik_rzygi_fight111
 
+        $ luszcz_uszy = 0
+        $ eminem_uszy = 0
+        $ zyd_uszy = 0
+        $ kazuma_uszy = 0
+        $ tarczownik_uszy = 0
+        hide uszy4
+        hide uszy5
+        hide uszy6
+        hide uszy7
+        hide uszy8
+
         if girek_hp_now <= 0 and girek_umarty == 0:
             hide snake31
             hide snake21
@@ -18327,6 +19891,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -18391,6 +19965,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -18404,6 +19980,8 @@ label fight111:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -18463,6 +20041,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -18499,6 +20079,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -18527,6 +20109,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -18588,7 +20172,7 @@ label fight111:
         if girek_hp_now <= 0:
             jump faza_fight115    
 
-        show ruch zorder 0 at tlo_wrog1  
+        show ruch zorder 1 at tlo_wrog1  
     
         if girek_stun == 1:
             "{i}Girek jest zestunnowany{/i}"
@@ -18660,8 +20244,246 @@ label fight111:
                     "{i}Girek broni się{/i}"
                     $ girek_obrona += 1
                     jump faza_fight115
-    
+
+        if girek_special == 0 and girek_weapon == 1:
+            if girek_hp_now >= girek_hp * 0.66:
+                $ kostka = renpy.random.randint(1, 2)
+            if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                $ kostka = renpy.random.randint(1, 2)
+            if girek_hp_now < girek_hp * 0.33:
+                $ kostka = renpy.random.randint(1, 3)
+           
+            if kostka == 1:
+                show hajs zorder 15 at weapon_wrog1  
+                play sound "audio/sfx/hajs.mp3"
+                girek "Towarzysze pomożecie?"
+                $ girek_special += 1
+                if jaruzel_special > 2:
+                    $ girek_max_attack_now += 2
+                    $ girek_max_attack_now_true += 2
+                else:
+                    $ girek_max_attack_now += 1
+                    $ girek_max_attack_now_true += 1
+                "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                hide hajs
+                jump faza_fight115
+           
+        else:
+            if girek_special == 1 and girek_weapon == 1:
+                if girek_hp_now >= girek_hp * 0.66:
+                    $ kostka = renpy.random.randint(1, 2)
+                if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                    $ kostka = renpy.random.randint(1, 3)
+                if girek_hp_now < girek_hp * 0.33:
+                    $ kostka = renpy.random.randint(1, 5)
+            
+                if kostka == 1:
+                    show hajs zorder 15 at weapon_wrog1  
+                    play sound "audio/sfx/hajs.mp3"
+                    girek "Towarzysze pomożecie?"
+                    $ girek_special += 1
+                    if jaruzel_special > 2:
+                        $ girek_min_attack_now += 2
+                        $ girek_min_attack_now_true += 2
+                    else:
+                        $ girek_min_attack_now += 1
+                        $ girek_min_attack_now_true += 1
+                    "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                    hide hajs
+                    jump faza_fight115
+           
+            else:
+                if girek_special == 2 and girek_weapon == 1:
+                    if girek_hp_now >= girek_hp * 0.66:
+                        $ kostka = renpy.random.randint(1, 3)
+                    if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                        $ kostka = renpy.random.randint(1, 5)
+                    if girek_hp_now < girek_hp * 0.33:
+                        $ kostka = renpy.random.randint(1, 6)
+                
+                    if kostka == 1:
+                        show hajs zorder 15 at weapon_wrog1  
+                        play sound "audio/sfx/hajs.mp3"
+                        girek "Towarzysze pomożecie?"
+                        $ girek_special += 1
+                        if jaruzel_special > 2:
+                            $ girek_max_attack_now += 2
+                            $ girek_max_attack_now_true += 2
+                        else:
+                            $ girek_max_attack_now += 1
+                            $ girek_max_attack_now_true += 1
+                        "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                        hide hajs
+                        jump faza_fight115
+               
+                else:
+                    if girek_special == 3 and girek_weapon == 1:
+                        if girek_hp_now >= girek_hp * 0.66:
+                            $ kostka = renpy.random.randint(1, 4)
+                        if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                            $ kostka = renpy.random.randint(1, 6)
+                        if girek_hp_now < girek_hp * 0.33:
+                            $ kostka = renpy.random.randint(1, 8)
+                    
+                        if kostka == 1:
+                            show hajs zorder 15 at weapon_wrog1  
+                            play sound "audio/sfx/hajs.mp3"
+                            girek "Towarzysze pomożecie?"
+                            $ girek_special += 1
+                            if jaruzel_special > 2:
+                                $ girek_min_attack_now += 2
+                                $ girek_min_attack_now_true += 2
+                            else:
+                                $ girek_min_attack_now += 1
+                                $ girek_min_attack_now_true += 1
+                            "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                            hide hajs
+                            jump faza_fight115
+                   
+                    else:
+                        if girek_special == 4 and girek_weapon == 1:
+                            if girek_hp_now >= girek_hp * 0.66:
+                                $ kostka = renpy.random.randint(1, 5)
+                            if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                                $ kostka = renpy.random.randint(1, 7)
+                            if girek_hp_now < girek_hp * 0.33:
+                                $ kostka = renpy.random.randint(1, 9)
+                        
+                            if kostka == 1:
+                                show hajs zorder 15 at weapon_wrog1  
+                                play sound "audio/sfx/hajs.mp3"
+                                girek "Towarzysze pomożecie?"
+                                $ girek_special += 1
+                                if jaruzel_special > 2:
+                                    $ girek_max_attack_now += 2
+                                    $ girek_max_attack_now_true += 2
+                                else:
+                                    $ girek_max_attack_now += 1
+                                    $ girek_max_attack_now_true += 1
+                                "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                                hide hajs
+                                jump faza_fight115
+                       
+                        else:
+                            if girek_special == 5 and girek_weapon == 1:
+                                if girek_hp_now >= girek_hp * 0.66:
+                                    $ kostka = renpy.random.randint(1, 6)
+                                if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                                    $ kostka = renpy.random.randint(1, 9)
+                                if girek_hp_now < girek_hp * 0.33:
+                                    $ kostka = renpy.random.randint(1, 11)
+                            
+                                if kostka == 1:
+                                    show hajs zorder 15 at weapon_wrog1  
+                                    play sound "audio/sfx/hajs.mp3"
+                                    girek "Towarzysze pomożecie?"
+                                    $ girek_special += 1
+                                    if jaruzel_special > 2:
+                                        $ girek_min_attack_now += 2
+                                        $ girek_min_attack_now_true += 2
+                                    else:
+                                        $ girek_min_attack_now += 1
+                                        $ girek_min_attack_now_true += 1
+                                    "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                                    hide hajs
+                                    jump faza_fight115
+                           
+                            else:
+                                if girek_special == 6 and girek_weapon == 1:
+                                    if girek_hp_now >= girek_hp * 0.66:
+                                        $ kostka = renpy.random.randint(1, 7)
+                                    if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                                        $ kostka = renpy.random.randint(1, 10)
+                                    if girek_hp_now < girek_hp * 0.33:
+                                        $ kostka = renpy.random.randint(1, 12)
                                 
+                                    if kostka == 1:
+                                        show hajs zorder 15 at weapon_wrog1  
+                                        play sound "audio/sfx/hajs.mp3"
+                                        girek "Towarzysze pomożecie?"
+                                        $ girek_special += 1
+                                        if jaruzel_special > 2:
+                                            $ girek_max_attack_now += 2
+                                            $ girek_max_attack_now_true += 2
+                                        else:
+                                            $ girek_max_attack_now += 1
+                                            $ girek_max_attack_now_true += 1
+                                        "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                                        hide hajs
+                                        jump faza_fight115
+                               
+                                else:
+                                    if girek_special == 7 and girek_weapon == 1:
+                                        if girek_hp_now >= girek_hp * 0.66:
+                                            $ kostka = renpy.random.randint(1, 8)
+                                        if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                                            $ kostka = renpy.random.randint(1, 11)
+                                        if girek_hp_now < girek_hp * 0.33:
+                                            $ kostka = renpy.random.randint(1, 14)
+                                    
+                                        if kostka == 1:
+                                            show hajs zorder 15 at weapon_wrog1  
+                                            play sound "audio/sfx/hajs.mp3"
+                                            girek "Towarzysze pomożecie?"
+                                            $ girek_special += 1
+                                            if jaruzel_special > 2:
+                                                $ girek_min_attack_now += 2
+                                                $ girek_min_attack_now_true += 2
+                                            else:
+                                                $ girek_min_attack_now += 1
+                                                $ girek_min_attack_now_true += 1
+                                            "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                                            hide hajs
+                                            jump faza_fight115
+                                   
+                                    else:
+                                        if girek_special == 8 and girek_weapon == 1:
+                                            if girek_hp_now >= girek_hp * 0.66:
+                                                $ kostka = renpy.random.randint(1, 9)
+                                            if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                                                $ kostka = renpy.random.randint(1, 13)
+                                            if girek_hp_now < girek_hp * 0.33:
+                                                $ kostka = renpy.random.randint(1, 15)
+                                        
+                                            if kostka == 1:
+                                                show hajs zorder 15 at weapon_wrog1  
+                                                play sound "audio/sfx/hajs.mp3"
+                                                girek "Towarzysze pomożecie?"
+                                                $ girek_special += 1
+                                                if jaruzel_special > 2:
+                                                    $ girek_max_attack_now += 2
+                                                    $ girek_max_attack_now_true += 2
+                                                else:
+                                                    $ girek_max_attack_now += 1
+                                                    $ girek_max_attack_now_true += 1
+                                                "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                                                hide hajs
+                                                jump faza_fight115
+                                       
+                                        else:
+                                            if girek_special == 9 and girek_weapon == 1:
+                                                if girek_hp_now >= girek_hp * 0.66:
+                                                    $ kostka = renpy.random.randint(1, 10)
+                                                if girek_hp_now >= girek_hp * 0.33 and girek_hp_now < girek_hp * 0.66:
+                                                    $ kostka = renpy.random.randint(1, 14)
+                                                if girek_hp_now < girek_hp * 0.33:
+                                                    $ kostka = renpy.random.randint(1, 16)
+                                            
+                                                if kostka == 1:
+                                                    show hajs zorder 15 at weapon_wrog1  
+                                                    play sound "audio/sfx/hajs.mp3"
+                                                    girek "Towarzysze pomożecie?"
+                                                    $ girek_special += 1
+                                                    if jaruzel_special > 2:
+                                                        $ girek_min_attack_now += 2
+                                                        $ girek_min_attack_now_true += 2
+                                                    else:
+                                                        $ girek_min_attack_now += 1
+                                                        $ girek_min_attack_now_true += 1
+                                                    "{i}Girek zaciagą kredyt, który wzmacnia jego atak{/i}"
+                                                    hide hajs
+                                                    jump faza_fight115                                        
+
         label losowanko_fight114:   
             if girek_weapon >= 1:
                 show girek_weapon zorder 15 at weapon_wrog1  
@@ -19462,6 +21284,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -19526,6 +21358,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -19539,6 +21373,8 @@ label fight111:
             "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            $ eminem_uszy = 0
+            hide uszy5
             hide stun5
             hide eminem_pierscien
             hide plamka2
@@ -19598,6 +21434,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -19634,6 +21472,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -19662,6 +21502,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -19709,7 +21551,7 @@ label fight111:
         if urban_zly_hp_now <= 0:
             jump faza_fight116      
 
-        show ruch zorder 0 at tlo_wrog3 
+        show ruch zorder 1 at tlo_wrog3 
 
         if urban_zly_stun == 1:
             "{i}Jerzy Urban jest zestunnowany{/i}"
@@ -19785,6 +21627,177 @@ label fight111:
                     "{i}Jerzy Urban broni się{/i}"
                     $ urban_zly_obrona += 1
                     jump faza_fight116
+        
+        if urban_zly_special == 0 and urban_zly_hp_now >= 1:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                $ urban_zly_special = 3
+                show uszy0 zorder 15 at head_wrog31
+                
+                urban "Hhyyy pfff hhyyy pffff hhyyy"
+                play sound "audio/sfx/uszy.mp3" 
+
+                $ kostka = renpy.random.randint(1, 10)
+                if luszcz_obrona <= 0 and kostka > 1 and luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                    if luszcz_wybrany == 1:
+                        show uszy4 zorder 15 at head_sojusznik11 
+
+                    if luszcz_wybrany == 2:
+                        show uszy4 zorder 15 at head_sojusznik21  
+
+                    if luszcz_wybrany == 3:
+                        show uszy4 zorder 15 at head_sojusznik31 
+                    $ luszcz_uszy += 1
+                
+                $ kostka = renpy.random.randint(1, 10)
+                if eminem_obrona <= 0 and kostka > 1 and eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                    if eminem_wybrany == 1:
+                        show uszy5 zorder 15 at head_sojusznik11 
+
+                    if eminem_wybrany == 2:
+                        show uszy5 zorder 15 at head_sojusznik21  
+
+                    if eminem_wybrany == 3:
+                        show uszy5 zorder 15 at head_sojusznik31 
+                    $ eminem_uszy += 1
+                
+                $ kostka = renpy.random.randint(1, 10)
+                if zyd_obrona <= 0 and kostka > 1 and zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                    if zyd_wybrany == 1:
+                        show uszy6 zorder 15 at head_sojusznik11 
+
+                    if zyd_wybrany == 2:
+                        show uszy6 zorder 15 at head_sojusznik21  
+
+                    if zyd_wybrany == 3:
+                        show uszy6 zorder 15 at head_sojusznik31 
+                    $ zyd_uszy += 1
+                
+                $ kostka = renpy.random.randint(1, 10)
+                if kazuma_obrona <= 0 and kostka > 1 and kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                    if kazuma_wybrany == 1:
+                        show uszy7 zorder 15 at head_sojusznik11 
+
+                    if kazuma_wybrany == 2:
+                        show uszy7 zorder 15 at head_sojusznik21  
+
+                    if kazuma_wybrany == 3:
+                        show uszy7 zorder 15 at head_sojusznik31 
+                    $ kazuma_uszy += 1
+                
+                $ kostka = renpy.random.randint(1, 10)
+                if tarczownik_obrona <= 0 and kostka > 1 and tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                    if tarczownik_wybrany == 1:
+                        show uszy8 zorder 15 at head_sojusznik11 
+
+                    if tarczownik_wybrany == 2:
+                        show uszy8 zorder 15 at head_sojusznik21  
+
+                    if tarczownik_wybrany == 3:
+                        show uszy8 zorder 15 at head_sojusznik31 
+                    $ tarczownik_uszy += 1
+
+                if luszcz_uszy == 1 and eminem_uszy == 1 and zyd_uszy == 1:
+                    "{i}Łuszcz, Shadow i Żyd zostali zauroczeni uszami Jerzego Urban{/i}"
+                
+                else:             
+                    if luszcz_uszy == 1 and eminem_uszy == 1 and kazuma_uszy == 1:
+                        "{i}Łuszcz, Shadow i Kazuma zostali zauroczeni uszami Jerzego Urban{/i}"
+                    else:                   
+                        if luszcz_uszy == 1 and eminem_uszy == 1 and tarczownik_uszy == 1:
+                            "{i}Łuszcz, Shadow i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                        else:
+                            if luszcz_uszy == 1 and zyd_uszy == 1 and kazuma_uszy == 1:
+                                "{i}Łuszcz, Żyd i Kazuma zostali zauroczeni uszami Jerzego Urban{/i}"
+                            else:               
+                                if luszcz_uszy == 1 and zyd_uszy == 1 and tarczownik_uszy == 1:
+                                    "{i}Łuszcz, Żyd i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                else:
+                
+                                    if luszcz_uszy == 1 and kazuma_uszy == 1 and tarczownik_uszy == 1:
+                                        "{i}Łuszcz, Kazuma i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                    else:
+
+                                        if eminem_uszy == 1 and zyd_uszy == 1 and kazuma_uszy == 1:
+                                            "{i}Shadow, Żyd i Kazuma zostali zauroczeni uszami Jerzego Urban{/i}"
+                                        else:
+
+                                            if eminem_uszy == 1 and zyd_uszy == 1 and tarczownik_uszy == 1:
+                                                "{i}Shadow, Żyd i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                            else:
+
+                                                if eminem_uszy == 1 and kazuma_uszy == 1 and tarczownik_uszy == 1:
+                                                    "{i}Shadow, Kazuma i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                else:
+
+                                                    if zyd_uszy == 1 and kazuma_uszy == 1 and tarczownik_uszy == 1:
+                                                        "{i}Żyd, Kazuma i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                    else:
+                                                    
+                                                        if luszcz_uszy == 1 and eminem_uszy == 1:
+                                                            "{i}Łuszcz i Shadow zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                        else:
+
+                                                            if luszcz_uszy == 1 and zyd_uszy == 1:
+                                                                "{i}Łuszcz i Żyd zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                            else:
+
+                                                                if luszcz_uszy == 1 and kazuma_uszy == 1:
+                                                                    "{i}Łuszcz i Kazuma zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                else:
+
+                                                                    if luszcz_uszy == 1 and tarczownik_uszy == 1:
+                                                                        "{i}Łuszcz i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                    else:
+
+                                                                        if eminem_uszy == 1 and zyd_uszy == 1:
+                                                                            "{i}Shadow i Żyd zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                        else:
+
+                                                                            if eminem_uszy == 1 and kazuma_uszy == 1:
+                                                                                "{i}Shadow i Kazuma zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                            else:
+
+                                                                                if eminem_uszy == 1 and tarczownik_uszy == 1:
+                                                                                    "{i}Shadow i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                                else:
+
+                                                                                    if zyd_uszy == 1 and kazuma_uszy == 1:
+                                                                                        "{i}Żyd i Kazuma zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                                    else:
+
+                                                                                        if zyd_uszy == 1 and tarczownik_uszy == 1:
+                                                                                            "{i}Żyd i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                                        else:
+
+                                                                                            if kazuma_uszy == 1 and tarczownik_uszy == 1:
+                                                                                                "{i}Kazuma i Naofumi zostali zauroczeni uszami Jerzego Urban{/i}"
+                                                                                            else:
+                                                                                            
+                                                                                                if luszcz_uszy == 1:
+                                                                                                    "{i}Łuszcz został zauroczony uszami Jerzego Urban{/i}"
+                                                                                                else:
+
+                                                                                                    if eminem_uszy == 1:
+                                                                                                        "{i}Shadow został zauroczony uszami Jerzego Urban{/i}"
+                                                                                                    else:
+
+                                                                                                        if zyd_uszy == 1:
+                                                                                                            "{i}Żyd został zauroczony uszami Jerzego Urban{/i}"
+                                                                                                        else:
+
+                                                                                                            if kazuma_uszy == 1:
+                                                                                                                "{i}Kazuma został zauroczony uszami Jerzego Urban{/i}"
+                                                                                                            else:
+
+                                                                                                                if tarczownik_uszy == 1:
+                                                                                                                    "{i}Naofumi został zauroczony uszami Jerzego Urban{/i}"
+                                                                                                                else:
+                                                                                                                    "{i}Nikt nie został zauroczony uszami Jerzego Urbana{/i}"
+
+
+                hide uszy0
+                jump faza_fight116   
                     
         label losowanko_fight115:
             if urban_zly_weapon >= 1:
@@ -20587,6 +22600,16 @@ label fight111:
                 hide slime
 
         if urban_zly_hp_now <= 0 and urban_zly_umarty == 0:
+            $ luszcz_uszy = 0
+            $ eminem_uszy = 0
+            $ zyd_uszy = 0
+            $ kazuma_uszy = 0
+            $ tarczownik_uszy = 0
+            hide uszy4
+            hide uszy5
+            hide uszy6
+            hide uszy7
+            hide uszy8
             hide snake32
             hide snake22
             hide snake12
@@ -20651,6 +22674,8 @@ label fight111:
             hide screen luszcz1_stats
             hide screen luszcz2_stats
             hide screen luszcz3_stats
+            $ luszcz_uszy = 0
+            hide uszy4
             $ ile_sojusznikow -= 1
             $ luszcz_fighter = 0
             $ luszcz_obrona = 0
@@ -20679,6 +22704,8 @@ label fight111:
             hide screen eminem1_stats
             hide screen eminem2_stats
             hide screen eminem3_stats
+            $ eminem_uszy = 0
+            hide uszy5
             $ ile_sojusznikow -= 1
             $ eminem_fighter = 0
             $ eminem_obrona = 0
@@ -20723,6 +22750,8 @@ label fight111:
             "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            $ zyd_uszy = 0
+            hide uszy6
             hide stun7
             hide zyd_pierscien
             hide plamka4
@@ -20759,6 +22788,8 @@ label fight111:
             "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
 
         if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            $ kazuma_uszy = 0
+            hide uszy7
             hide stun8
             hide kazuma_pierscien
             hide plamka5
@@ -20787,6 +22818,8 @@ label fight111:
             "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
         
         if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            $ tarczownik_uszy = 0
+            hide uszy8
             hide stun9
             hide tarczownik_pierscien
             hide plamka6
@@ -20834,7 +22867,7 @@ label fight111:
         if jaruzel_hp_now <= 0:
             jump start_fight111  
 
-        show ruch zorder 0 at tlo_wrog2
+        show ruch zorder 1 at tlo_wrog2
 
         if jaruzel_stun == 1:
             "{i}Jaruzel jest zestunnowany{/i}"
@@ -20910,6 +22943,50 @@ label fight111:
                     "{i}Jaruzel broni się{/i}"
                     $ jaruzel_obrona += 1
                     jump start_fight111
+        
+        if jaruzel_hp_now >= 1 and jaruzel_special == 0:
+            $ kostka = renpy.random.randint(1, 5)
+            if kostka <= 2:
+                play sound "audio/sfx/stan.mp3"
+                jaruzel "Obywatelki i obywatele Polskiej Rzeczpospolitej Ludowej..."
+                $ jaruzel_special = 5
+                show czolg zorder 0 at wrog32
+
+                if urban_zly_hp > 0 and urban_zly_weapon == 1:
+                    $ urban_zly_max_attack_now = urban_zly_max_attack_now * 2
+                    $ urban_zly_min_attack_now = urban_zly_min_attack_now * 2
+                    $ urban_zly_max_attack_now_true = urban_zly_max_attack_now
+                    $ urban_zly_min_attack_now_true = urban_zly_min_attack_now
+                else:
+                    if urban_zly_hp > 0 and urban_zly_weapon == 0:
+                        $ urban_zly_max_attack_now = 4
+                        $ urban_zly_max_attack_now_true = urban_zly_max_attack_now
+
+                if girek_hp > 0 and girek_weapon == 1:
+                    $ girek_max_attack_now = girek_max_attack_now * 2
+                    $ girek_min_attack_now = girek_min_attack_now * 2
+                    $ girek_max_attack_now_true = girek_max_attack_now
+                    $ girek_min_attack_now_true = girek_min_attack_now
+                else:
+                    if girek_hp > 0 and girek_weapon == 0:
+                        $ girek_max_attack_now = girek_max_attack_now * 2
+                        $ girek_max_attack_now_true = girek_max_attack_now
+                        if girek_min_attack_now > 0:
+                            $ girek_min_attack_now = girek_min_attack_now * 2
+                            $ girek_min_attack_now_true = girek_min_attack_now
+
+                if jaruzel_hp > 0 and jaruzel_weapon == 1:
+                    $ jaruzel_max_attack_now = jaruzel_max_attack_now * 2
+                    $ jaruzel_min_attack_now = jaruzel_min_attack_now * 2
+                    $ jaruzel_max_attack_now_true = jaruzel_max_attack_now
+                    $ jaruzel_min_attack_now_true = jaruzel_min_attack_now
+                else:
+                    if jaruzel_hp > 0 and jaruzel_weapon == 0:
+                        $ jaruzel_max_attack_now = 4
+                        $ jaruzel_max_attack_now_true = urban_zly_max_attack_now
+                "{i}Jaruzel wprowadza stan wojenny. Atak wszystkich przeciwników został podwojony!{/i}"
+                jump start_fight111
+
                     
         label losowanko_fight116:    
             if jaruzel_weapon >= 1:
@@ -21779,6 +23856,13 @@ label fight111:
         hide stun7
         hide stun8
         hide stun9
+        hide uszy4
+        hide uszy5
+        hide uszy6
+        hide uszy7
+        hide uszy8
+        hide uszy0
+        hide czolg
         hide screen girek_stats
         hide screen urban_zly_stats
         hide screen jaruzel_stats
@@ -21799,6 +23883,12 @@ label fight111:
                 $ zyd_fighter = 0
                 $ kazuma_fighter = 0
                 $ tarczownik_fighter = 0
+
+                $ luszcz_uszy = 0
+                $ eminem_uszy = 0
+                $ zyd_uszy = 0
+                $ kazuma_uszy = 0
+                $ tarczownik_uszy = 0
 
                 $ luszcz_wybrany = 0
                 $ eminem_wybrany = 0
@@ -21927,6 +24017,10 @@ label fight111:
                 $ zyd_stun = 0
                 $ kazuma_stun = 0
                 $ tarczownik_stun = 0
+
+                $ jaruzel_special = 2
+                $ girek_special = 0
+                $ urban_zly_special = 2
                 play sound "audio/sfx/return.mp3"
                 jump fight111
 
@@ -21959,6 +24053,7 @@ label fight111:
         scene bg black with fade
         play sound "audio/sfx/wygranko.mp3" 
         stop music
+        hide czolg
         hide luszcz
         hide eminem
         hide kazuma
@@ -22246,5 +24341,21 @@ label fight111:
         $ jaruzel_stun = 0
         $ urban_zly_poison = 0
         $ urban_zly_stun = 0
+
+        $ jaruzel_special = 2
+
+        $ luszcz_uszy = 0
+        $ eminem_uszy = 0
+        $ zyd_uszy = 0
+        $ kazuma_uszy = 0
+        $ tarczownik_uszy = 0
+        hide uszy4
+        hide uszy5
+        hide uszy6
+        hide uszy7
+        hide uszy8
+        hide uszy0
+        $ girek_special = 0
+        $ urban_zly_special = 2
 
         jump after_fight111

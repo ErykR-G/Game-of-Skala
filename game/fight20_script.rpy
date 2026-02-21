@@ -1780,7 +1780,6 @@ label fight201:
                 hide mgla
                 "{i}Ostra Mgła się kończy{/i}"
         
-        
         if trup13_hp_now <= 0 and trup13_umarty == 0:
             hide snake31
             hide snake21
