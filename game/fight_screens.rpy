@@ -3,6 +3,32 @@
     color "#dddddd"
     outlines [(1, "#00000080", 0, 0)]
 
+screen cien_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value cien_hp_now range cien_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if cien_hp_now/cien_hp > 0.5 else
+                                "#ffcc00" if cien_hp_now/cien_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[cien_hp_now]/[cien_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [cien_min_attack_now]-[cien_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen nawrocki_stats():
     fixed:
         xpos 0.76

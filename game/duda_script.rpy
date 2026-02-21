@@ -121,7 +121,6 @@ label duda:
 
                 cien "a więc zginiesz razem z nim"
 
-        jump after_fight201
         jump fight201
         label after_fight201:
             scene bg stomatolog2
