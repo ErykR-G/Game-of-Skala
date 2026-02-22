@@ -1127,7 +1127,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu
@@ -8821,7 +8821,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu
@@ -13256,7 +13256,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu
@@ -17697,7 +17697,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu
@@ -21238,7 +21238,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu
@@ -21561,7 +21561,7 @@ label fight111:
             if urban_zly_weapon >= 1:
                 show urban_zly_weapon zorder 15 at weapon_wrog3 
             else:
-                show reka7 zorder 15 at weapon_wrog3
+                show reka10 zorder 15 at weapon_wrog3
             $ urban_zly_attack = renpy.random.randint(urban_zly_min_attack_now, urban_zly_max_attack_now)
 
             if memy == 3:
@@ -21803,7 +21803,7 @@ label fight111:
             if urban_zly_weapon >= 1:
                 show urban_zly_weapon zorder 15 at weapon_wrog3 
             else:
-                show reka7 zorder 15 at weapon_wrog3
+                show reka10 zorder 15 at weapon_wrog3
 
             $ kostka = renpy.random.randint(1, 6)
             if kostka == 1:
@@ -22554,7 +22554,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu
@@ -23782,7 +23782,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu
@@ -24103,7 +24103,7 @@ label fight111:
         hide reka4
         hide reka5
         hide reka6
-        hide reka7
+        hide reka10
         hide reka8
         hide reka9
         hide ostrza_chaosu

@@ -2075,8 +2075,8 @@ label fight131:
                 else:
                     if kostka == 3:
                         stop sound 
-                        if newspaper_zombie1_hp_now > 0 and newspaper_zombie1_gazeta == 1:
-                            if newspaper_zombie1_hp_now >= 1:
+                        if newspaper_zombie1_hp_now > 0:
+                            if newspaper_zombie1_hp_now >= 1 and newspaper_zombie1_gazeta == 1:
                                 $ newspaper_zombie1_special -= 1
                                 if newspaper_zombie1_special == 12:
                                     show newspaper_zombie1 fight3
@@ -2099,6 +2099,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             if newspaper_zombie1_obrona >= 2:
                                     queue sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Toxic Pea został zablokowany{/i}"
@@ -2119,7 +2137,8 @@ label fight131:
                             jump losowanko_toxic_fight131
     
         label after_toxic_fight131:
-            $ ado += 1
+            if newspaper_zombie1_gazeta == 0 and newspaper_zombie1_special == 0:
+                jump newspaper_zombie1_zly_fight131
         
         if zombie3_hp_now <= 0 and zombie3_umarty == 0:
             hide snake31
@@ -2397,13 +2416,13 @@ label fight131:
             if luszcz_stun == 2:
                 $ luszcz_stun -= 1
                 "{i}Łuszcz jest zestunnowany{/i}"
-                jump faza_fight1332 
+                jump faza_fight132 
             else:
                 if luszcz_stun == 1:
                     $ luszcz_stun -= 1
                     "{i}Łuszcz jest zestunnowany{/i}"
                     hide stun4
-                    jump faza_fight1332 
+                    jump faza_fight132 
             
             if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                 if zombie3_hp_now >= 1 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now >= 1 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now >= 1:
@@ -2525,6 +2544,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
@@ -2631,7 +2668,7 @@ label fight131:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1332
+                        jump faza_fight132
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -2697,7 +2734,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ zombie3_hp_now -= int(luszcz_attack / 2)
 
@@ -2733,7 +2770,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ zombie3_hp_now -= luszcz_attack
 
@@ -2753,7 +2790,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2767,7 +2804,7 @@ label fight131:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
 
-                                jump faza_fight1332
+                                jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2830,7 +2867,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ all_star_zombie2_hp_now -= int(luszcz_attack / 2)
 
@@ -2866,7 +2903,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ all_star_zombie2_hp_now -= luszcz_attack
 
@@ -2886,7 +2923,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -2899,7 +2936,7 @@ label fight131:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
@@ -2928,6 +2965,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
 
                             if newspaper_zombie1_obrona >= 2:
                                 queue sound "audio/sfx/obrona.mp3"
@@ -2986,7 +3041,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ newspaper_zombie1_hp_now -= int(luszcz_attack / 2)
 
@@ -3022,7 +3077,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ newspaper_zombie1_hp_now -= luszcz_attack
 
@@ -3042,7 +3097,7 @@ label fight131:
                                                     $ luszcz_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     "{i}Atak zadał [luszcz_attack] obrażeń{/i}"
                                     if ziemia == 2:
@@ -3055,7 +3110,7 @@ label fight131:
                                             $ luszcz_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
                     
                 "{b}Obrona{/b}" if luszcz_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -3070,7 +3125,7 @@ label fight131:
 
                     $ luszcz_obrona += 1
                     luszcz "I want sex"
-                    jump faza_fight1332
+                    jump faza_fight132
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -3225,7 +3280,7 @@ label fight131:
                                         "{i}Naofumi odzyskał 5 punktów życia{/i}"
                             
                             hide wisnia_w_rumie
-                            jump faza_fight1332
+                            jump faza_fight132
                             
                         "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
@@ -3325,7 +3380,7 @@ label fight131:
                             hide hiszpanska_mandarynka1
                             hide hiszpanska_mandarynka2
                             hide hiszpanska_mandarynka3
-                            jump faza_fight1332
+                            jump faza_fight132
         
         if eminem_fighter == 1:
             if eminem_wybrany == 1:
@@ -3340,13 +3395,13 @@ label fight131:
             if eminem_stun == 2:
                 $ eminem_stun -= 1
                 "{i}Shadow jest zestunnowany{/i}"
-                jump faza_fight1332 
+                jump faza_fight132 
             else:
                 if eminem_stun == 1:
                     $ eminem_stun -= 1
                     "{i}Shadow jest zestunnowany{/i}"
                     hide stun5
-                    jump faza_fight1332 
+                    jump faza_fight132 
 
             menu:
                 "{b}Co zrobić{/b}"
@@ -3425,7 +3480,7 @@ label fight131:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3477,7 +3532,7 @@ label fight131:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
@@ -3507,6 +3562,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
 
                             if newspaper_zombie1_obrona >= 2:
                                 queue sound "audio/sfx/obrona.mp3"
@@ -3554,7 +3627,7 @@ label fight131:
                                             $ eminem_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
                     
                 "{b}Obrona{/b}" if eminem_obrona == 0:
                     eminem "I am ..."
@@ -3570,7 +3643,7 @@ label fight131:
 
                     $ eminem_obrona += 1
                     eminem "... rzymskim legionistą"
-                    jump faza_fight1332
+                    jump faza_fight132
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -3605,7 +3678,7 @@ label fight131:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Zombie obronił się przed szlamem{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if zombie3_min_attack_now >= 28 and zombie3_min_attack_now <= 30:
@@ -3673,7 +3746,7 @@ label fight131:
                                 $ zombie3_slime += 1
                                 show slime zorder 15 at center_wrog1 
                                 "{i}Statystyki Zombie zostały osłabione{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3681,7 +3754,7 @@ label fight131:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}All-Star Zombie obronił się przed szlamem{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if all_star_zombie2_min_attack_now >= 28 and all_star_zombie2_min_attack_now <= 30:
@@ -3748,7 +3821,7 @@ label fight131:
                                 $ all_star_zombie2_slime += 1
                                 show slime zorder 15 at center_wrog3
                                 "{i}Statystyki All-Star Zombie zostały osłabione{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
@@ -3756,7 +3829,7 @@ label fight131:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
                                 "{i}Newspaper Zombie obronił się przed szlamem{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
                             else:
                                 play sound "audio/sfx/slime.mp3"
                                 if newspaper_zombie1_min_attack_now >= 28 and newspaper_zombie1_min_attack_now <= 30:
@@ -3823,7 +3896,7 @@ label fight131:
                                 $ newspaper_zombie1_slime += 1
                                 show slime zorder 15 at center_wrog2
                                 "{i}Statystyki Newspaper Zombie zostały osłabione{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
 
         if urban_fighter == 1:
             if urban_wybrany == 1:
@@ -3838,13 +3911,13 @@ label fight131:
             if urban_stun == 2:
                 $ urban_stun -= 1
                 "{i}Jerzy Urban jest zestunnowany{/i}"
-                jump faza_fight1332 
+                jump faza_fight132 
             else:
                 if urban_stun == 1:
                     $ urban_stun -= 1
                     "{i}Jerzy Urban jest zestunnowany{/i}"
                     hide stun6
-                    jump faza_fight1332 
+                    jump faza_fight132 
 
             if ostrza_chaosu == 3 and urban_weapon >= 1:
                 if zombie3_hp_now >= 1 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now >= 1 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now >= 1:
@@ -3966,6 +4039,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -4072,7 +4163,7 @@ label fight131:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1332
+                        jump faza_fight132
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4145,7 +4236,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
 
                                             $ zombie3_hp_now -= int(urban_attack / 2)
 
@@ -4181,7 +4272,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
 
                                             $ zombie3_hp_now -= urban_attack
 
@@ -4201,7 +4292,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -4214,11 +4305,11 @@ label fight131:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
-                            label urban_fight1332:
+                            label urban_fight132:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
                                 if all_star_zombie2_obrona >= 2:
@@ -4240,7 +4331,7 @@ label fight131:
                                     if urban_attack == 1 and stop == 3 or urban_attack == 3 and all_star_zombie2_obrona == 1 and stop == 3 or urban_attack == 2 and all_star_zombie2_obrona == 1 and stop == 3:
                                         play sound "audio/sfx/nie.mp3"
                                         "{i}Urban NIE pozwala sobie zadać tylko 1dmg i stara się mocniej{/i}"
-                                        jump urban_fight1332
+                                        jump urban_fight132
                                     
                                     else:
                                         if urban_weapon >= 1:
@@ -4284,7 +4375,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
 
                                             $ all_star_zombie2_hp_now -= int(urban_attack / 2)
 
@@ -4320,7 +4411,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
 
                                             $ all_star_zombie2_hp_now -= urban_attack
 
@@ -4340,7 +4431,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
                                         
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -4353,7 +4444,7 @@ label fight131:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
@@ -4381,6 +4472,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             label urban_fight133:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -4447,7 +4556,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
 
                                             $ newspaper_zombie1_hp_now -= int(urban_attack / 2)
 
@@ -4483,7 +4592,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
 
                                             $ newspaper_zombie1_hp_now -= urban_attack
 
@@ -4503,7 +4612,7 @@ label fight131:
                                                             $ urban_hp_now += kostka
                                                             queue sound "audio/sfx/heal.mp3" 
                                                             "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                                    jump faza_fight1332
+                                                    jump faza_fight132
 
                                             "{i}Atak zadał [urban_attack] obrażeń{/i}"
                                             if ziemia == 3:
@@ -4516,7 +4625,7 @@ label fight131:
                                                     $ urban_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
                     
                 "{b}Obrona{/b}" if urban_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -4531,7 +4640,7 @@ label fight131:
 
                     $ urban_obrona += 1
                     urban "A ja mam to w dupie"
-                    jump faza_fight1332
+                    jump faza_fight132
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -4616,7 +4725,7 @@ label fight131:
                                                 "{i}Niestety, ale uszy Urbana nie uwiodły nikogo{/i}"
 
                     hide uszy
-                    jump faza_fight1332   
+                    jump faza_fight132   
         if zyd_fighter == 1:
             if zyd_wybrany == 1:
                 show ruch zorder 0 at tlo_sojusznik1  
@@ -4630,13 +4739,13 @@ label fight131:
             if zyd_stun == 2:
                 $ zyd_stun -= 1
                 "{i}Żyd jest zestunnowany{/i}"
-                jump faza_fight1332 
+                jump faza_fight132 
             else:
                 if zyd_stun == 1:
                     $ zyd_stun -= 1
                     "{i}Żyd jest zestunnowany{/i}"
                     hide stun7
-                    jump faza_fight1332 
+                    jump faza_fight132 
             
             if ostrza_chaosu == 4 and zyd_weapon >= 1:
                 if zombie3_hp_now >= 1 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now >= 1 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now >= 1:
@@ -4758,6 +4867,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
@@ -4864,7 +4991,7 @@ label fight131:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1332
+                        jump faza_fight132
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -4930,7 +5057,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ zombie3_hp_now -= int(zyd_attack / 2)
 
@@ -4966,7 +5093,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ zombie3_hp_now -= zyd_attack
 
@@ -4986,7 +5113,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -5000,7 +5127,7 @@ label fight131:
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
 
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -5063,7 +5190,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ all_star_zombie2_hp_now -= int(zyd_attack / 2)
 
@@ -5099,7 +5226,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ all_star_zombie2_hp_now -= zyd_attack
 
@@ -5119,7 +5246,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -5132,7 +5259,7 @@ label fight131:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
@@ -5160,6 +5287,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -5219,7 +5364,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ newspaper_zombie1_hp_now -= int(zyd_attack / 2)
 
@@ -5255,7 +5400,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ newspaper_zombie1_hp_now -= zyd_attack
 
@@ -5275,7 +5420,7 @@ label fight131:
                                                     $ zyd_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     "{i}Atak zadał [zyd_attack] obrażeń{/i}"
                                     if ziemia == 4:
@@ -5288,7 +5433,7 @@ label fight131:
                                             $ zyd_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
                     
                 "{b}Obrona{/b}" if zyd_obrona == 0:
                     play sound "audio/sfx/shield.mp3"
@@ -5303,7 +5448,7 @@ label fight131:
 
                     $ zyd_obrona += 1
                     zyd "Nie interesuje mnie polska polityka"
-                    jump faza_fight1332
+                    jump faza_fight132
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -5341,7 +5486,7 @@ label fight131:
                             
                             "{i}Zombie kupił pager od Żyda{/i}"
 
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_hp_now >= 1 and all_star_zombie2_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -5352,7 +5497,7 @@ label fight131:
                             show pager2 zorder 15 at bok_wrog3
                             "{i}All-Star Zombie kupił pager od Żyda{/i}"
 
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_hp_now >= 1 and newspaper_zombie1_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
@@ -5363,7 +5508,7 @@ label fight131:
                             show pager3 zorder 15 at bok_wrog2
                             "{i}Newspaper Zombie kupił pager od Żyda{/i}"
 
-                            jump faza_fight1332
+                            jump faza_fight132
                 
                 "{b}Wysadź Pagery{/b}" if zombie3_pager >= 1 and pager_boom == 0 or all_star_zombie2_pager >= 1 and pager_boom == 0 or newspaper_zombie1_pager >= 1 and pager_boom == 0:
                     $ pager_boom += 1
@@ -5442,7 +5587,7 @@ label fight131:
                         luszcz "O ja pierdole, może Braun jednak miał trochę racji!"
                         $ dialog_fight1 += 1
 
-                    jump faza_fight1332
+                    jump faza_fight132
 
         if kazuma_fighter == 1:
             if kazuma_wybrany == 1:
@@ -5457,13 +5602,13 @@ label fight131:
             if kazuma_stun == 2:
                 $ kazuma_stun -= 1
                 "{i}Kazuma jest zestunnowany{/i}"
-                jump faza_fight1332 
+                jump faza_fight132 
             else:
                 if kazuma_stun == 1:
                     $ kazuma_stun -= 1
                     "{i}Kazuma jest zestunnowany{/i}"
                     hide stun8
-                    jump faza_fight1332 
+                    jump faza_fight132 
             
             if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                 if zombie3_hp_now >= 1 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now >= 1 and newspaper_zombie1_hp_now <= 0 or zombie3_hp_now <= 0 and all_star_zombie2_hp_now <= 0 and newspaper_zombie1_hp_now >= 1:
@@ -5585,6 +5730,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
@@ -5691,7 +5854,7 @@ label fight131:
                                     queue sound "audio/sfx/heal.mp3" 
                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
 
-                        jump faza_fight1332
+                        jump faza_fight132
 
                     menu:
                         "{b}Kogo zaatakować?{/b}"
@@ -5757,7 +5920,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ zombie3_hp_now -= int(kazuma_attack / 2)
 
@@ -5793,7 +5956,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ zombie3_hp_now -= kazuma_attack
 
@@ -5813,7 +5976,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5826,7 +5989,7 @@ label fight131:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5889,7 +6052,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ all_star_zombie2_hp_now -= int(kazuma_attack / 2)
 
@@ -5925,7 +6088,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ all_star_zombie2_hp_now -= kazuma_attack
 
@@ -5945,7 +6108,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -5958,7 +6121,7 @@ label fight131:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
@@ -5986,6 +6149,25 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
+
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -6045,7 +6227,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ newspaper_zombie1_hp_now -= int(kazuma_attack / 2)
 
@@ -6081,7 +6263,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
 
                                     $ newspaper_zombie1_hp_now -= kazuma_attack
 
@@ -6101,7 +6283,7 @@ label fight131:
                                                     $ kazuma_hp_now += kostka
                                                     queue sound "audio/sfx/heal.mp3" 
                                                     "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                 
                                     "{i}Atak zadał [kazuma_attack] obrażeń{/i}"
                                     if ziemia == 5:
@@ -6114,7 +6296,7 @@ label fight131:
                                             $ kazuma_hp_now += kostka
                                             queue sound "audio/sfx/heal.mp3" 
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
-                            jump faza_fight1332
+                            jump faza_fight132
     
                     
                 "{b}Obrona{/b}" if kazuma_obrona == 0:
@@ -6130,7 +6312,7 @@ label fight131:
 
                     $ kazuma_obrona += 1
                     kazuma "Nic na to nie można poradzić!"
-                    jump faza_fight1332
+                    jump faza_fight132
                 
                 "{b}Item{/b}" if ile_item >= 1:
                     play sound "audio/sfx/chest.mp3"
@@ -6165,7 +6347,7 @@ label fight131:
                             if zombie3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Zombie obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if zombie3_sex == 0:
@@ -6232,14 +6414,14 @@ label fight131:
                                         "{i}Nie udało sie ukraść broni Zombie{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1332
+                                jump faza_fight132
 
                         "{b}All-Star Zombie{/b}" if all_star_zombie2_sex == 11:
                             kazuma "Steal!"
                             if all_star_zombie2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}All-Star Zombie obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if all_star_zombie2_sex == 0:
@@ -6306,47 +6488,63 @@ label fight131:
                                         "{i}Nie udało sie ukraść broni All-Star Zombie{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1332
+                                jump faza_fight132
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie1_gazeta == 1 and newspaper_zombie1_hp_now > 0:
                             kazuma "Steal!"
                             if newspaper_zombie1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Newspaper Zombie obronił się przed umiejętnością “Steal“{/i}"
-                                jump faza_fight1332
+                                jump faza_fight132
                             else:
                                 $ kostka = renpy.random.randint(1, 11)
                                 if newspaper_zombie1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if newspaper_zombie1_max_attack_now < newspaper_zombie1_max_attack:
-                                            $ newspaper_zombie1_max_attack_now_true = 2
-                                            $ newspaper_zombie1_min_attack_now_true = 0
-                                            $ newspaper_zombie1_min_attack_now = newspaper_zombie1_min_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now = newspaper_zombie1_max_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ newspaper_zombie1_max_attack_now_true = 2
-                                            $ newspaper_zombie1_min_attack_now_true = 0
-                                            $ newspaper_zombie1_min_attack_now = newspaper_zombie1_min_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now = newspaper_zombie1_max_attack_now_true
-                                        
-                                        $ newspaper_zombie1_weapon -= 1
+                                        $ newspaper_zombie1_special == 0
+                                        $ newspaper_zombie1_gazeta = 0
+                                        show newspaper_zombie1 fight2
+                                        hide snake33
+                                        hide snake23
+                                        hide snake13
+                                        hide pager3
+                                        hide uszy3
+                                        hide tarcza8
+                                        $ newspaper_zombie1_pager = 0
+                                        $ newspaper_zombie1_poison = 0
+                                        $ newspaper_zombie1_stun = 0
+
+                                        if newspaper_zombie1_slime >= 1:
+                                            $ newspaper_zombie1_slime = 0
+                                            hide slime
+
+                                        $ newspaper_zombie1_max_attack_now = 10
+                                        $ newspaper_zombie1_min_attack_now = 5
+                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now                         
 
                                         if kazuma_wybrany == 1:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik1  
+                                            show gazeta zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik2  
+                                            show gazeta zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik3 
+                                            show gazeta zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Newspaper Zombie.  \nStatystyki Newspaper Zombie zostały stale drastycznie osłabione.{/i}"
-                                        hide newspaper_zombie1_weapon
+                                        kazuma "O patrzcie, zarąbałem mu gazetę!"
+                                        kazuma "ciekawe co tu pisze..."
+                                        kazuma "...na co umarł Stalin?"
+
+                                        luszcz "Na śmierć!"
+
+                                        kazuma "Na szczęście!"
+
+                                        luszcz "ha ha ha ha..."
+
+                                        hide gazeta
                                         hide chwyta
                                     
                                     else:
@@ -6380,7 +6578,7 @@ label fight131:
                                         "{i}Nie udało sie ukraść broni Newspaper Zombie{/i}"
                                         hide chwyta
                                         
-                                jump faza_fight1332
+                                jump faza_fight132
 
         if tarczownik_fighter == 1 and tarczownik_weapon >= 1:
             if tarczownik_hp_now >= 1:
@@ -6396,13 +6594,13 @@ label fight131:
                 if tarczownik_stun == 2:
                     $ tarczownik_stun -= 1
                     "{i}Naofumi jest zestunnowany{/i}"
-                    jump faza_fight1332 
+                    jump faza_fight132 
                 else:
                     if tarczownik_stun == 1:
                         $ tarczownik_stun -= 1
                         "{i}Naofumi jest zestunnowany{/i}"
                         hide stun9
-                        jump faza_fight1332 
+                        jump faza_fight132 
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -6453,7 +6651,7 @@ label fight131:
 
 
 
-                        jump faza_fight1332
+                        jump faza_fight132
                 
                 if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1:
                     $ kostka = renpy.random.randint(1, 2)
@@ -6498,7 +6696,7 @@ label fight131:
 
 
 
-                        jump faza_fight1332
+                        jump faza_fight132
                 
                 $ kostka = renpy.random.randint(1, 10)
 
@@ -6547,7 +6745,7 @@ label fight131:
                                     luszcz "..."
 
 
-                    jump faza_fight1332
+                    jump faza_fight132
                 
                 if tarczownik_weapon >= 1:
                     if tarczownik_wybrany == 1:
@@ -6665,6 +6863,24 @@ label fight131:
                                                 if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                     $ newspaper_zombie1_gazeta = 0
                                                     show newspaper_zombie1 fight2
+                                                    hide snake33
+                                                    hide snake23
+                                                    hide snake13
+                                                    hide pager3
+                                                    hide uszy3
+                                                    hide tarcza8
+                                                    $ newspaper_zombie1_pager = 0
+                                                    $ newspaper_zombie1_poison = 0
+                                                    $ newspaper_zombie1_stun = 0
+
+                                                    if newspaper_zombie1_slime >= 1:
+                                                        $ newspaper_zombie1_slime = 0
+                                                        hide slime
+
+                                                    $ newspaper_zombie1_max_attack_now = 10
+                                                    $ newspaper_zombie1_min_attack_now = 5
+                                                    $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                    $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                     $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
@@ -6771,7 +6987,7 @@ label fight131:
                                 queue sound "audio/sfx/heal.mp3" 
                                 "{i}Naofumi odzyskał [kostka] punkty życia{/i}"
 
-                    jump faza_fight1332
+                    jump faza_fight132
                 
                 tarczownik "Aaaaaaaaagh!"
 
@@ -6975,7 +7191,7 @@ label fight131:
                                                     $ dialog_fight2 += 1
                                                     luszcz "..."
 
-                                    jump faza_fight1332
+                                    jump faza_fight132
                                 else:
                                     jump losowanko_tarczownik_fight131
 
@@ -7172,7 +7388,7 @@ label fight131:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1332
+                                        jump faza_fight132
                                     else:
                                         jump losowanko_tarczownik_fight131
                                 
@@ -7369,7 +7585,7 @@ label fight131:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1332
+                                        jump faza_fight132
                                     else:
                                         jump losowanko_tarczownik_fight131
 
@@ -7571,7 +7787,7 @@ label fight131:
                                                         $ dialog_fight2 += 1
                                                         luszcz "..."
 
-                                        jump faza_fight1332
+                                        jump faza_fight132
                                     else:
                                         jump losowanko_tarczownik_fight131
 
@@ -7770,7 +7986,7 @@ label fight131:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                         else:
                                             jump losowanko_tarczownik_fight131
                                     
@@ -7969,7 +8185,7 @@ label fight131:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                         else:
                                             jump losowanko_tarczownik_fight131
 
@@ -8005,6 +8221,25 @@ label fight131:
                                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                                             $ newspaper_zombie1_gazeta = 0
                                                                             show newspaper_zombie1 fight2
+                                                                            hide snake33
+                                                                            hide snake23
+                                                                            hide snake13
+                                                                            hide pager3
+                                                                            hide uszy3
+                                                                            hide tarcza8
+                                                                            $ newspaper_zombie1_pager = 0
+                                                                            $ newspaper_zombie1_poison = 0
+                                                                            $ newspaper_zombie1_stun = 0
+
+                                                                            if newspaper_zombie1_slime >= 1:
+                                                                                $ newspaper_zombie1_slime = 0
+                                                                                hide slime
+
+                                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
+                                                                            
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
                                             if newspaper_zombie1_obrona >= 2:
@@ -8196,7 +8431,7 @@ label fight131:
                                                             $ dialog_fight2 += 1
                                                             luszcz "..."
 
-                                            jump faza_fight1332
+                                            jump faza_fight132
                                         else:
                                             jump losowanko_tarczownik_fight131
 
@@ -8228,6 +8463,24 @@ label fight131:
                                                                             if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                                                 $ newspaper_zombie1_gazeta = 0
                                                                                 show newspaper_zombie1 fight2
+                                                                                hide snake33
+                                                                                hide snake23
+                                                                                hide snake13
+                                                                                hide pager3
+                                                                                hide uszy3
+                                                                                hide tarcza8
+                                                                                $ newspaper_zombie1_pager = 0
+                                                                                $ newspaper_zombie1_poison = 0
+                                                                                $ newspaper_zombie1_stun = 0
+
+                                                                                if newspaper_zombie1_slime >= 1:
+                                                                                    $ newspaper_zombie1_slime = 0
+                                                                                    hide slime
+
+                                                                                $ newspaper_zombie1_max_attack_now = 10
+                                                                                $ newspaper_zombie1_min_attack_now = 5
+                                                                                $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                                                $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
                                                 if newspaper_zombie1_obrona >= 2:
@@ -8419,7 +8672,7 @@ label fight131:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza_fight1332
+                                                jump faza_fight132
                                             else:
                                                 jump losowanko_tarczownik_fight131
                                         
@@ -8450,6 +8703,24 @@ label fight131:
                                                                             if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                                                 $ newspaper_zombie1_gazeta = 0
                                                                                 show newspaper_zombie1 fight2
+                                                                                hide snake33
+                                                                                hide snake23
+                                                                                hide snake13
+                                                                                hide pager3
+                                                                                hide uszy3
+                                                                                hide tarcza8
+                                                                                $ newspaper_zombie1_pager = 0
+                                                                                $ newspaper_zombie1_poison = 0
+                                                                                $ newspaper_zombie1_stun = 0
+
+                                                                                if newspaper_zombie1_slime >= 1:
+                                                                                    $ newspaper_zombie1_slime = 0
+                                                                                    hide slime
+
+                                                                                $ newspaper_zombie1_max_attack_now = 10
+                                                                                $ newspaper_zombie1_min_attack_now = 5
+                                                                                $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                                                $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
                                                 if newspaper_zombie1_obrona >= 2:
@@ -8642,7 +8913,7 @@ label fight131:
                                                                 $ dialog_fight2 += 1
                                                                 luszcz "..."
 
-                                                jump faza_fight1332
+                                                jump faza_fight132
                                             else:
                                                 jump losowanko_tarczownik_fight131
 
@@ -8651,7 +8922,9 @@ label fight131:
                             else:
                                 jump losowanko_tarczownik_fight131
 
-    label faza_fight1332:
+    label faza_fight132:
+        if newspaper_zombie1_gazeta == 0 and newspaper_zombie1_special == 0:
+            jump newspaper_zombie1_zly_fight131
         hide reka1
         hide reka2
         hide reka3
@@ -9107,6 +9380,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
@@ -9508,6 +9799,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -10086,6 +10395,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -10544,6 +10871,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -10959,6 +11304,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             
                             label urban_fight136:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
@@ -11337,6 +11700,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
@@ -11738,6 +12119,25 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
+
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -12162,6 +12562,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
@@ -12563,6 +12981,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -12894,34 +13330,50 @@ label fight131:
                                 if newspaper_zombie1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if newspaper_zombie1_max_attack_now < newspaper_zombie1_max_attack:
-                                            $ newspaper_zombie1_max_attack_now_true = 2
-                                            $ newspaper_zombie1_min_attack_now_true = 0
-                                            $ newspaper_zombie1_min_attack_now = newspaper_zombie1_min_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now = newspaper_zombie1_max_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ newspaper_zombie1_max_attack_now_true = 2
-                                            $ newspaper_zombie1_min_attack_now_true = 0
-                                            $ newspaper_zombie1_min_attack_now = newspaper_zombie1_min_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now = newspaper_zombie1_max_attack_now_true
-                                        
-                                        $ newspaper_zombie1_weapon -= 1
+                                        $ newspaper_zombie1_special == 0
+                                        $ newspaper_zombie1_gazeta = 0
+                                        show newspaper_zombie1 fight2
+                                        hide snake33
+                                        hide snake23
+                                        hide snake13
+                                        hide pager3
+                                        hide uszy3
+                                        hide tarcza8
+                                        $ newspaper_zombie1_pager = 0
+                                        $ newspaper_zombie1_poison = 0
+                                        $ newspaper_zombie1_stun = 0
+
+                                        if newspaper_zombie1_slime >= 1:
+                                            $ newspaper_zombie1_slime = 0
+                                            hide slime
+
+                                        $ newspaper_zombie1_max_attack_now = 10
+                                        $ newspaper_zombie1_min_attack_now = 5
+                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now                         
 
                                         if kazuma_wybrany == 1:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik1  
+                                            show gazeta zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik2  
+                                            show gazeta zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik3 
+                                            show gazeta zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Newspaper Zombie.  \nStatystyki Newspaper Zombie zostały stale drastycznie osłabione.{/i}"
-                                        hide newspaper_zombie1_weapon
+                                        kazuma "O patrzcie, zarąbałem mu gazetę!"
+                                        kazuma "ciekawe co tu pisze..."
+                                        kazuma "...na co umarł Stalin?"
+
+                                        luszcz "Na śmierć!"
+
+                                        kazuma "Na szczęście!"
+
+                                        luszcz "ha ha ha ha..."
+
+                                        hide gazeta
                                         hide chwyta
                                     
                                     else:
@@ -12958,6 +13410,8 @@ label fight131:
                                 jump faza_fight133
 
     label faza_fight133:
+        if newspaper_zombie1_gazeta == 0 and newspaper_zombie1_special == 0:
+            jump newspaper_zombie1_zly_fight131
         hide reka1
         hide reka2
         hide reka3
@@ -13413,6 +13867,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
@@ -13814,6 +14286,25 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
+
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -14392,6 +14883,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -14852,6 +15361,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -15267,6 +15794,24 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                             label urban_fight139:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -15644,6 +16189,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
@@ -16045,6 +16608,25 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
+
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -16469,6 +17051,24 @@ label fight131:
                                                     if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                         $ newspaper_zombie1_gazeta = 0
                                                         show newspaper_zombie1 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie1_pager = 0
+                                                        $ newspaper_zombie1_poison = 0
+                                                        $ newspaper_zombie1_stun = 0
+
+                                                        if newspaper_zombie1_slime >= 1:
+                                                            $ newspaper_zombie1_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie1_max_attack_now = 10
+                                                        $ newspaper_zombie1_min_attack_now = 5
+                                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
@@ -16870,6 +17470,25 @@ label fight131:
                                                         if newspaper_zombie1_special == 0 and newspaper_zombie1_gazeta == 1:
                                                             $ newspaper_zombie1_gazeta = 0
                                                             show newspaper_zombie1 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie1_pager = 0
+                                                            $ newspaper_zombie1_poison = 0
+                                                            $ newspaper_zombie1_stun = 0
+
+                                                            if newspaper_zombie1_slime >= 1:
+                                                                $ newspaper_zombie1_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie1_max_attack_now = 10
+                                                            $ newspaper_zombie1_min_attack_now = 5
+                                                            $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                                            $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now
+
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if newspaper_zombie1_obrona >= 2:
@@ -17201,34 +17820,50 @@ label fight131:
                                 if newspaper_zombie1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if newspaper_zombie1_max_attack_now < newspaper_zombie1_max_attack:
-                                            $ newspaper_zombie1_max_attack_now_true = 2
-                                            $ newspaper_zombie1_min_attack_now_true = 0
-                                            $ newspaper_zombie1_min_attack_now = newspaper_zombie1_min_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now = newspaper_zombie1_max_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ newspaper_zombie1_max_attack_now_true = 2
-                                            $ newspaper_zombie1_min_attack_now_true = 0
-                                            $ newspaper_zombie1_min_attack_now = newspaper_zombie1_min_attack_now_true
-                                            $ newspaper_zombie1_max_attack_now = newspaper_zombie1_max_attack_now_true
-                                        
-                                        $ newspaper_zombie1_weapon -= 1
+                                        $ newspaper_zombie1_special == 0
+                                        $ newspaper_zombie1_gazeta = 0
+                                        show newspaper_zombie1 fight2
+                                        hide snake33
+                                        hide snake23
+                                        hide snake13
+                                        hide pager3
+                                        hide uszy3
+                                        hide tarcza8
+                                        $ newspaper_zombie1_pager = 0
+                                        $ newspaper_zombie1_poison = 0
+                                        $ newspaper_zombie1_stun = 0
+
+                                        if newspaper_zombie1_slime >= 1:
+                                            $ newspaper_zombie1_slime = 0
+                                            hide slime
+
+                                        $ newspaper_zombie1_max_attack_now = 10
+                                        $ newspaper_zombie1_min_attack_now = 5
+                                        $ newspaper_zombie1_max_attack_now_true = newspaper_zombie1_max_attack_now
+                                        $ newspaper_zombie1_min_attack_now_true = newspaper_zombie1_min_attack_now                         
 
                                         if kazuma_wybrany == 1:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik1  
+                                            show gazeta zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik2  
+                                            show gazeta zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show newspaper_zombie1_weapon zorder 15 at weapon_sojusznik3 
+                                            show gazeta zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Newspaper Zombie.  \nStatystyki Newspaper Zombie zostały stale drastycznie osłabione.{/i}"
-                                        hide newspaper_zombie1_weapon
+                                        kazuma "O patrzcie, zarąbałem mu gazetę!"
+                                        kazuma "ciekawe co tu pisze..."
+                                        kazuma "...na co umarł Stalin?"
+
+                                        luszcz "Na śmierć!"
+
+                                        kazuma "Na szczęście!"
+
+                                        luszcz "ha ha ha ha..."
+
+                                        hide gazeta
                                         hide chwyta
                                     
                                     else:
@@ -17265,6 +17900,9 @@ label fight131:
                                 jump faza_fight134
 
     label faza_fight134:
+        if newspaper_zombie1_gazeta == 0 and newspaper_zombie1_special == 0:
+            jump newspaper_zombie1_zly_fight131
+
         hide reka1
         hide reka2
         hide reka3
@@ -21788,7 +22426,7 @@ label fight131:
                                     $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                    jump start_fight131
+                                    jump newspaper_zombie1_zly_fight131
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -21812,7 +22450,7 @@ label fight131:
 
                                     "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Łuszczowi{/i}"
 
-                            jump start_fight131
+                            jump newspaper_zombie1_zly_fight131
                         else:
                             jump losowanko_fight136
 
@@ -21828,7 +22466,7 @@ label fight131:
                                         $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight131
+                                        jump newspaper_zombie1_zly_fight131
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21852,7 +22490,7 @@ label fight131:
 
                                         "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight131
+                                jump newspaper_zombie1_zly_fight131
                             else:
                                 jump losowanko_fight136
                         
@@ -21861,14 +22499,6 @@ label fight131:
                             if kostka >= 5:
                                 $ newspaper_zombie1_attack = renpy.random.randint(newspaper_zombie1_min_attack_now, newspaper_zombie1_max_attack_now)
 
-                                if memy == 2:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight131
-
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Newspaper Zombie został zablokowany{/i}"
@@ -21891,7 +22521,7 @@ label fight131:
 
                                         "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight131
+                                jump newspaper_zombie1_zly_fight131
                             else:
                                 jump losowanko_fight136
 
@@ -21911,7 +22541,7 @@ label fight131:
                                         $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight131
+                                        jump newspaper_zombie1_zly_fight131
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21935,7 +22565,7 @@ label fight131:
 
                                         "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump start_fight131
+                                jump newspaper_zombie1_zly_fight131
                             else:
                                 jump losowanko_fight136
 
@@ -21951,7 +22581,7 @@ label fight131:
                                             $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight131
+                                            jump newspaper_zombie1_zly_fight131
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21975,7 +22605,7 @@ label fight131:
 
                                             "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight131
+                                    jump newspaper_zombie1_zly_fight131
                                 else:
                                     jump losowanko_fight136
                             
@@ -21990,7 +22620,7 @@ label fight131:
                                             $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight131
+                                            jump newspaper_zombie1_zly_fight131
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -22014,7 +22644,7 @@ label fight131:
 
                                             "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight131
+                                    jump newspaper_zombie1_zly_fight131
                                 else:
                                     jump losowanko_fight136
 
@@ -22034,7 +22664,7 @@ label fight131:
                                             $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight131
+                                            jump newspaper_zombie1_zly_fight131
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -22058,7 +22688,7 @@ label fight131:
 
                                             "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Żydowi{/i}"
 
-                                    jump start_fight131
+                                    jump newspaper_zombie1_zly_fight131
                                 else:
                                     jump losowanko_fight136
 
@@ -22074,7 +22704,7 @@ label fight131:
                                                 $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight131
+                                                jump newspaper_zombie1_zly_fight131
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -22098,7 +22728,7 @@ label fight131:
 
                                                 "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight131
+                                        jump newspaper_zombie1_zly_fight131
                                     else:
                                         jump losowanko_fight136
                                 
@@ -22113,7 +22743,7 @@ label fight131:
                                                 $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight131
+                                                jump newspaper_zombie1_zly_fight131
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -22137,7 +22767,7 @@ label fight131:
 
                                                 "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight131
+                                        jump newspaper_zombie1_zly_fight131
                                     else:
                                         jump losowanko_fight136
 
@@ -22157,7 +22787,7 @@ label fight131:
                                                 $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight131
+                                                jump newspaper_zombie1_zly_fight131
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -22181,7 +22811,7 @@ label fight131:
 
                                                 "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Kazumie{/i}"
 
-                                        jump start_fight131
+                                        jump newspaper_zombie1_zly_fight131
                                     else:
                                         jump losowanko_fight136
 
@@ -22197,7 +22827,7 @@ label fight131:
                                                     $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight131
+                                                    jump newspaper_zombie1_zly_fight131
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -22221,7 +22851,7 @@ label fight131:
 
                                                     "{i}Zombie zadaje [newspaper_zombie1_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight131
+                                            jump newspaper_zombie1_zly_fight131
                                         else:
                                             jump losowanko_fight136
                                     
@@ -22236,7 +22866,7 @@ label fight131:
                                                     $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight131
+                                                    jump newspaper_zombie1_zly_fight131
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -22260,7 +22890,7 @@ label fight131:
 
                                                     "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight131
+                                            jump newspaper_zombie1_zly_fight131
                                         else:
                                             jump losowanko_fight136
 
@@ -22280,7 +22910,7 @@ label fight131:
                                                     $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight131
+                                                    jump newspaper_zombie1_zly_fight131
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -22304,7 +22934,7 @@ label fight131:
 
                                                     "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Shadowowi{/i}"
 
-                                            jump start_fight131
+                                            jump newspaper_zombie1_zly_fight131
                                         else:
                                             jump losowanko_fight136
 
@@ -22320,7 +22950,7 @@ label fight131:
                                                         $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight131
+                                                        jump newspaper_zombie1_zly_fight131
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22344,7 +22974,7 @@ label fight131:
 
                                                         "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight131
+                                                jump newspaper_zombie1_zly_fight131
                                             else:
                                                 jump losowanko_fight136
                                         
@@ -22359,7 +22989,7 @@ label fight131:
                                                         $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight131
+                                                        jump newspaper_zombie1_zly_fight131
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22383,7 +23013,7 @@ label fight131:
 
                                                         "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight131
+                                                jump newspaper_zombie1_zly_fight131
                                             else:
                                                 jump losowanko_fight136
 
@@ -22403,7 +23033,7 @@ label fight131:
                                                         $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight131
+                                                        jump newspaper_zombie1_zly_fight131
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22427,7 +23057,7 @@ label fight131:
 
                                                         "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump start_fight131
+                                                jump newspaper_zombie1_zly_fight131
                                             else:
                                                 jump losowanko_fight136
 
@@ -22443,7 +23073,7 @@ label fight131:
                                                             $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight131
+                                                            jump newspaper_zombie1_zly_fight131
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -22467,7 +23097,7 @@ label fight131:
 
                                                             "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight131
+                                                    jump newspaper_zombie1_zly_fight131
                                                 else:
                                                     jump losowanko_fight136
                                             
@@ -22482,7 +23112,7 @@ label fight131:
                                                             $ newspaper_zombie1_hp_now -= newspaper_zombie1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie1_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight131
+                                                            jump newspaper_zombie1_zly_fight131
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -22506,7 +23136,7 @@ label fight131:
 
                                                             "{i}Newspaper Zombie zadaje [newspaper_zombie1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight131
+                                                    jump newspaper_zombie1_zly_fight131
                                                 else:
                                                     jump losowanko_fight136
 
@@ -23112,3 +23742,331 @@ label fight131:
         $ newspaper_zombie1_gazeta = 1
 
         jump after_fight131
+
+
+    label newspaper_zombie1_zly_fight131:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
+        hide stop
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide zombie3_weapon
+        hide all_star_zombie2_weapon
+        hide newspaper_zombie1_weapon
+        hide ruch
+
+        if zombie3_hp_now <= 0 and zombie3_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide zombie3
+            hide tarcza6
+            hide screen zombie3_stats
+            $ zombie3_umarty = 1
+            $ ile_wrogow -= 1
+            $ zombie3_obrona = 0
+            $ zombie3_weapon = 0
+            $ zombie3_pager = 0
+            $ zombie3_poison = 0
+            $ zombie3_stun = 0
+
+            if zombie3_slime >= 1:
+                hide slime
+
+        if all_star_zombie2_hp_now <= 0 and all_star_zombie2_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide all_star_zombie2
+            hide tarcza7
+            hide screen all_star_zombie2_stats
+            $ all_star_zombie2_umarty = 1
+            $ ile_wrogow -= 1
+            $ all_star_zombie2_obrona = 0
+            $ all_star_zombie2_weapon = 0
+            $ all_star_zombie2_pager = 0
+            $ all_star_zombie2_poison = 0
+            $ all_star_zombie2_stun = 0
+
+            if all_star_zombie2_slime >= 1:
+                hide slime
+        
+        if newspaper_zombie1_hp_now <= 0 and newspaper_zombie1_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide newspaper_zombie1
+            hide tarcza8
+            hide screen newspaper_zombie1_stats
+            $ newspaper_zombie1_umarty = 1
+            $ ile_wrogow -= 1
+            $ newspaper_zombie1_obrona = 0
+            $ newspaper_zombie1_weapon = 0
+            $ newspaper_zombie1_pager = 0
+            $ newspaper_zombie1_poison = 0
+            $ newspaper_zombie1_stun = 0
+
+            if newspaper_zombie1_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight131
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
+            hide luszcz_pierscien
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
+            hide plamka1
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
+            hide eminem_pierscien
+            hide plamka2
+            hide eminem
+            hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
+            hide urban_pierscien
+            hide plamka3
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
+            hide zyd_pierscien
+            hide plamka4
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
+            hide kazuma_pierscien
+            hide plamka5
+            hide kazuma
+            hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
+            hide tarczownik_pierscien
+            hide plamka6
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
+
+            if tarczownik_air_strike_shield >= 1:
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight131
+        else:
+            $ ado += 1    
+
+        if newspaper_zombie1_hp_now <= 0:
+            jump start_fight131  
+
+        show ruch zorder 0 at tlo_wrog2
+
+        if newspaper_zombie1_gazeta == 1:
+            jump start_fight131
+        
+        else:
+            if newspaper_zombie1_gazeta == 0:
+                play music "audio/music/newspaper.mp3"
+                $ newspaper_zombie1_gazeta = 4
+                jump losowanko_fight136
+            else:
+                if newspaper_zombie1_gazeta == 4:
+                    $ newspaper_zombie1_gazeta = 3
+                    jump losowanko_fight136
+                else:
+                    if newspaper_zombie1_gazeta == 3:
+                        $ newspaper_zombie1_gazeta = 2
+                        jump losowanko_fight136
+                    else:
+                        if newspaper_zombie1_gazeta == 2:
+                            $ newspaper_zombie1_gazeta = 5
+                            play music "audio/music/toxic3.mp3"
+                            jump start_fight131
+                        else:
+                            if newspaper_zombie1_gazeta == 5:
+                                jump start_fight131
