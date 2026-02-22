@@ -24153,9 +24153,9 @@ label fight61:
                 $ gnom3_slime = 0
                 $ gnom2_slime = 0
 
-                $ gnom1_weapon = 1
-                $ gnom2_weapon = 1
-                $ gnom3_weapon = 1
+                $ gnom1_weapon = 0
+                $ gnom2_weapon = 0
+                $ gnom3_weapon = 0
 
                 $ gnom1_obrona = 0
                 $ gnom3_obrona = 0
@@ -24479,9 +24479,9 @@ label fight61:
         $ gnom3_slime = 0
         $ gnom2_slime = 0
 
-        $ gnom1_weapon = 1
-        $ gnom2_weapon = 1
-        $ gnom3_weapon = 1
+        $ gnom1_weapon = 0
+        $ gnom2_weapon = 0
+        $ gnom3_weapon = 0
 
         $ gnom1_obrona = 0
         $ gnom3_obrona = 0

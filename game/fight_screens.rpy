@@ -29,6 +29,163 @@ screen cien_stats():
 
             text "ATK: [cien_min_attack_now]-[cien_max_attack_now]" style "dmg_text" xalign 0.5
 
+screen zombie1_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value zombie1_hp_now range zombie1_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if zombie1_hp_now/zombie1_hp > 0.5 else
+                                "#ffcc00" if zombie1_hp_now/zombie1_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[zombie1_hp_now]/[zombie1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [zombie1_min_attack_now]-[zombie1_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen all_star_zombie1_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value all_star_zombie1_hp_now range all_star_zombie1_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if all_star_zombie1_hp_now/all_star_zombie1_hp > 0.5 else
+                                "#ffcc00" if all_star_zombie1_hp_now/all_star_zombie1_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[all_star_zombie1_hp_now]/[all_star_zombie1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [all_star_zombie1_min_attack_now]-[all_star_zombie1_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen zombie2_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value zombie2_hp_now range zombie2_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if zombie2_hp_now/zombie2_hp > 0.5 else
+                                "#ffcc00" if zombie2_hp_now/zombie2_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[zombie2_hp_now]/[zombie2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [zombie2_min_attack_now]-[zombie2_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen zombie3_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value zombie3_hp_now range zombie3_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if zombie3_hp_now/zombie3_hp > 0.5 else
+                                "#ffcc00" if zombie3_hp_now/zombie3_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[zombie3_hp_now]/[zombie3_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [zombie3_min_attack_now]-[zombie3_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen all_star_zombie2_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value all_star_zombie2_hp_now range all_star_zombie2_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if all_star_zombie2_hp_now/all_star_zombie2_hp > 0.5 else
+                                "#ffcc00" if all_star_zombie2_hp_now/all_star_zombie2_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[all_star_zombie2_hp_now]/[all_star_zombie2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [all_star_zombie2_min_attack_now]-[all_star_zombie2_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen newspaper_zombie1_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value newspaper_zombie1_hp_now range newspaper_zombie1_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if newspaper_zombie1_hp_now/newspaper_zombie1_hp > 0.5 else
+                                "#ffcc00" if newspaper_zombie1_hp_now/newspaper_zombie1_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[newspaper_zombie1_hp_now]/[newspaper_zombie1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [newspaper_zombie1_min_attack_now]-[newspaper_zombie1_max_attack_now]" style "dmg_text" xalign 0.5
+
+
 screen nawrocki_stats():
     fixed:
         xpos 0.76

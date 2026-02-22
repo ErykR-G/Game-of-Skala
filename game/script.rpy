@@ -342,6 +342,10 @@ label pozycje:
         transform sojusznik1:
             xalign 0.20
             yalign 0.10
+        
+        transform sojusznik1p:
+            xalign 0.03
+            yalign 0.08
 
         transform sojusznik2:
             xalign 0.20

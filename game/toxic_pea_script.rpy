@@ -29,7 +29,6 @@ label toxic_pea:
         toxic "Nie, nie ma teraz czasu na rozmowy."
         toxic "Broń w dłoń i do boju!"
 
-        jump after_fight101
         jump fight101
         label after_fight101:
             play music "audio/music/toxic2.mp3"
@@ -148,7 +147,6 @@ label toxic_pea:
         toxic "Wreszcie się ukazałeś, Maciek_Rel!"
         toxic "Chodź, dziś są jacyś pojebani!"
 
-        jump after_fight131
         jump fight131
         label after_fight131:
             play music "audio/music/toxic2.mp3"

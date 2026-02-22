@@ -23,7 +23,7 @@ label fight161_stats:
 
     default policja1_weapon = 1
     default policja2_weapon = 1
-    default trup17_weapon = 0
+    default trup17_weapon = 1
 
     default policja1_hp_now = policja1_hp
     default policja2_hp_now = policja2_hp

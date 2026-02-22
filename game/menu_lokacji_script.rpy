@@ -2639,22 +2639,7 @@ label menu_lokacji:
 
         hide luszcz
 
-        if rynek == 1:
-            jump rynek
-        if sloneczna == 1:
-            jump sloneczna 
-        if alejka == 1:
-            jump alejka 
-        if parking == 1:
-            jump parking
-        if wolbromska == 1:
-            jump wolbromska
-        if bohaterow_wrzesnia == 1:
-            jump bohaterow_wrzesnia 
-        if lipowa == 1:
-            jump lipowa 
-        if granica == 1:
-            jump granica
+        jump rynek2
 
     label raem_fight:
         scene bg raem
