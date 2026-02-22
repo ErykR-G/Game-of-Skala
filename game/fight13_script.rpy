@@ -6,7 +6,7 @@ label fight131_stats:
     default all_star_zombie2_sex = 0
 
     default zombie3_hp = 25
-    default newspaper_zombie1_hp = 50
+    default newspaper_zombie1_hp = 70
     default all_star_zombie2_hp = 40
 
     default zombie3_uszy = 0
