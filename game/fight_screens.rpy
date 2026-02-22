@@ -836,6 +836,58 @@ screen yippee2_stats():
 
             text "ATK: [yippee2_min_attack_now]-[yippee2_max_attack_now]" style "dmg_text" xalign 0.5
 
+screen gargantuar1_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value gargantuar1_hp_now range gargantuar1_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if gargantuar1_hp_now/gargantuar1_hp > 0.5 else
+                                "#ffcc00" if gargantuar1_hp_now/gargantuar1_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[gargantuar1_hp_now]/[gargantuar1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [gargantuar1_min_attack_now]-[gargantuar1_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen gargantuar2_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value gargantuar2_hp_now range gargantuar2_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if gargantuar2_hp_now/gargantuar2_hp > 0.5 else
+                                "#ffcc00" if gargantuar2_hp_now/gargantuar2_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[gargantuar2_hp_now]/[gargantuar2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [gargantuar2_min_attack_now]-[gargantuar2_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen policja1_stats():
     fixed:
         xpos 0.76

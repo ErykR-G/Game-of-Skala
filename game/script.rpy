@@ -358,6 +358,14 @@ label pozycje:
         transform wrog1:
             xalign 0.80
             yalign 0.10
+        
+        transform wrog12:
+            xalign 0.78
+            yalign 0.03
+        
+        transform wrog22:
+            xalign 0.78
+            yalign 0.90
 
         transform wrog2:
             xalign 0.80
