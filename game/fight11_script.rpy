@@ -6419,18 +6419,18 @@ label fight111:
                                         $ urban_zly_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik1  
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik2  
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik3 
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Jerzy Urban.  \nStatystyki Jerzy Urban zostały stale drastycznie osłabione.{/i}"
-                                        hide urban_zly_weapon
+                                        hide urban_zly_weapon2
                                         hide chwyta
                                     
                                     else:
@@ -13121,18 +13121,18 @@ label fight111:
                                         $ urban_zly_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik1  
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik2  
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik3 
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Jerzy Urban.  \nStatystyki Jerzy Urban zostały stale drastycznie osłabione.{/i}"
-                                        hide urban_zly_weapon
+                                        hide urban_zly_weapon2
                                         hide chwyta
                                     
                                     else:
@@ -17562,18 +17562,18 @@ label fight111:
                                         $ urban_zly_weapon -= 1
 
                                         if kazuma_wybrany == 1:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik1  
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik2  
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show urban_zly_weapon zorder 15 at weapon_sojusznik3 
+                                            show urban_zly_weapon2 zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
                                         "{i}Udało sie ukraść broń Jerzy Urban.  \nStatystyki Jerzy Urban zostały stale drastycznie osłabione.{/i}"
-                                        hide urban_zly_weapon
+                                        hide urban_zly_weapon2
                                         hide chwyta
                                     
                                     else:

@@ -6501,7 +6501,7 @@ label fight131:
                                 if newspaper_zombie1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        $ newspaper_zombie1_special == 0
+                                        $ newspaper_zombie1_special = 0
                                         $ newspaper_zombie1_gazeta = 0
                                         show newspaper_zombie1 fight2
                                         hide snake33
@@ -13330,7 +13330,7 @@ label fight131:
                                 if newspaper_zombie1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        $ newspaper_zombie1_special == 0
+                                        $ newspaper_zombie1_special = 0
                                         $ newspaper_zombie1_gazeta = 0
                                         show newspaper_zombie1 fight2
                                         hide snake33
@@ -17820,7 +17820,7 @@ label fight131:
                                 if newspaper_zombie1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        $ newspaper_zombie1_special == 0
+                                        $ newspaper_zombie1_special = 0
                                         $ newspaper_zombie1_gazeta = 0
                                         show newspaper_zombie1 fight2
                                         hide snake33
