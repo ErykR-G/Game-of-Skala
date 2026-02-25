@@ -18,7 +18,7 @@ label duda:
 
         luszcz "co się stało?"
 
-        duda "muszę napisać wzór na gaz bojowy jaki ma używać wosjko polskie"
+        duda "muszę napisać wzór na gaz bojowy jaki ma używać wojsko polskie"
         duda "miałem to w szkole w '85 ale już zapomniałem, a ty wygladasz na młodszego, więc może to wiesz"
 
         luszcz "co? nie ja cały czas ściągałem z chemii"
@@ -27,7 +27,7 @@ label duda:
         duda "ajjj no cóż, rozumiem ja też czasem ściągam"
         luszcz "no szkoła jest ciężka"
         duda "ja nie mówie o szkole"
-        duda "ja sciągałem na podpisie na księdze konndolencyjnej królowej anglii"
+        duda "ja sciągałem na podpisie na księdze kondolencyjnej królowej anglii"
         duda "pisałem jakies dys ys eee dys ys de wery..."
         duda "no nie pamiętam, dlatego miałem sciage"
         duda "niestety reporterzy zauważyli, ale no trudno wyszedłem z wprawy"
@@ -64,9 +64,9 @@ label duda:
         luszcz "jak to? a ochrona prezydencka?"
         luszcz "co to za wróg"
 
-        duda "ze niby pan wladek i Zdzichu?"
+        duda "ze niby pan Władek i Zdzichu?"
         duda "jak nie są pijani to graja w kasynie online z malty"
-        duda "nie ma co na nich liczyc"
+        duda "nie ma co na nich liczyć"
 
         nikt "koniec ukrywania herr Präsident"
 

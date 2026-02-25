@@ -552,6 +552,18 @@ label pozycje:
         transform weapon_wrog3:
             xalign 0.87
             yalign 0.45
+        
+        transform weapon_wrog1z:
+            xalign 0.71
+            yalign 0.27
+
+        transform weapon_wrog2z:
+            xalign 0.74
+            yalign 0.825
+
+        transform weapon_wrog3z:
+            xalign 0.85
+            yalign 0.53
     
     label pozycje_tarcza:
         transform tarcza_sojusznik1:

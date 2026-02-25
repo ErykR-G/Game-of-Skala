@@ -8,7 +8,7 @@ label fight91_stats:
 
     default trup9_hp = 0
     default trup10_hp = 0
-    default czarodziej_hp = 150
+    default czarodziej_hp = 111
 
     default trup9_uszy = 0
     default czarodziej_uszy = 0
@@ -19769,9 +19769,9 @@ label fight91:
                 jump faza_fight96
 
         if czarodziej_weapon == 1:
-            $ kostka = renpy.random.randint(1, 8) 
+            $ kostka = renpy.random.randint(1, 100) 
             if czarodziej_special >= 5:
-                if kostka <= 5:
+                if kostka <= 90:
                     show czarodziejka zorder 15 at weapon_wrog3 
                     czarodziej "kadabra dupa"
                     hide czarodziejka
@@ -19793,8 +19793,8 @@ label fight91:
                     $ czarodziej_special += 1
                     jump faza_fight96
             else:
-                if czarodziej_special >= 3:
-                    if kostka <= 3:
+                if czarodziej_special == 4:
+                    if kostka <= 80:
                         show czarodziejka zorder 15 at weapon_wrog3 
                         czarodziej "kadabra dupa"
                         hide czarodziejka
@@ -19816,27 +19816,90 @@ label fight91:
                         $ czarodziej_special += 1
                         jump faza_fight96
                 else:
-                    if kostka == 1:
-                        show czarodziejka zorder 15 at weapon_wrog3 
-                        czarodziej "kadabra dupa"
-                        hide czarodziejka
-                        jump losowanko_fight95
+                    if czarodziej_special == 3:
+                        if kostka <= 65:
+                            show czarodziejka zorder 15 at weapon_wrog3 
+                            czarodziej "kadabra dupa"
+                            hide czarodziejka
+                            jump losowanko_fight95
+                        else:
+                            show czarodziej_weapon zorder 15 at weapon_wrog3 
+                            hide czarodziej
+                            show czarodziej fight2 zorder 10 at wrog3 
+                            $ renpy.pause(0.1)
+                            show czarodziej fight zorder 10 at wrog3 
+                            czarodziej "abbbra... pieprzyć"
+                            play sound "audio/sfx/mana.mp3"
+                            $ kostka = renpy.random.randint(2, 3) 
+                            $ czarodziej_min_attack_now *= kostka
+                            $ czarodziej_max_attack_now *= kostka
+                            $ czarodziej_min_attack_now_true *= kostka
+                            $ czarodziej_max_attack_now_true *= kostka
+                            "{i}Statystyki Czarodzieja z Tourette'm zostały zwiększone{/i}"
+                            $ czarodziej_special += 1
+                            jump faza_fight96
                     else:
-                        show czarodziej_weapon zorder 15 at weapon_wrog3 
-                        hide czarodziej
-                        show czarodziej fight2 zorder 10 at wrog3 
-                        $ renpy.pause(0.1)
-                        show czarodziej fight zorder 10 at wrog3 
-                        czarodziej "abbbra... pieprzyć"
-                        play sound "audio/sfx/mana.mp3"
-                        $ kostka = renpy.random.randint(2, 3) 
-                        $ czarodziej_min_attack_now *= kostka
-                        $ czarodziej_max_attack_now *= kostka
-                        $ czarodziej_min_attack_now_true *= kostka
-                        $ czarodziej_max_attack_now_true *= kostka
-                        "{i}Statystyki Czarodzieja z Tourette'm zostały zwiększone{/i}"
-                        $ czarodziej_special += 1
-                        jump faza_fight96
+                        if czarodziej_special == 2:
+                            if kostka <= 8:
+                                show czarodziejka zorder 15 at weapon_wrog3 
+                                czarodziej "kadabra dupa"
+                                hide czarodziejka
+                                jump losowanko_fight95
+                            else:
+                                show czarodziej_weapon zorder 15 at weapon_wrog3 
+                                hide czarodziej
+                                show czarodziej fight2 zorder 10 at wrog3 
+                                $ renpy.pause(0.1)
+                                show czarodziej fight zorder 10 at wrog3 
+                                czarodziej "abbbra... pieprzyć"
+                                play sound "audio/sfx/mana.mp3"
+                                $ kostka = renpy.random.randint(2, 3) 
+                                $ czarodziej_min_attack_now *= kostka
+                                $ czarodziej_max_attack_now *= kostka
+                                $ czarodziej_min_attack_now_true *= kostka
+                                $ czarodziej_max_attack_now_true *= kostka
+                                "{i}Statystyki Czarodzieja z Tourette'm zostały zwiększone{/i}"
+                                $ czarodziej_special += 1
+                                jump faza_fight96
+                        else:
+                            if czarodziej_special == 1:
+                                if kostka <= 4:
+                                    show czarodziejka zorder 15 at weapon_wrog3 
+                                    czarodziej "kadabra dupa"
+                                    hide czarodziejka
+                                    jump losowanko_fight95
+                                else:
+                                    show czarodziej_weapon zorder 15 at weapon_wrog3 
+                                    hide czarodziej
+                                    show czarodziej fight2 zorder 10 at wrog3 
+                                    $ renpy.pause(0.1)
+                                    show czarodziej fight zorder 10 at wrog3 
+                                    czarodziej "abbbra... pieprzyć"
+                                    play sound "audio/sfx/mana.mp3"
+                                    $ kostka = renpy.random.randint(2, 3) 
+                                    $ czarodziej_min_attack_now *= kostka
+                                    $ czarodziej_max_attack_now *= kostka
+                                    $ czarodziej_min_attack_now_true *= kostka
+                                    $ czarodziej_max_attack_now_true *= kostka
+                                    "{i}Statystyki Czarodzieja z Tourette'm zostały zwiększone{/i}"
+                                    $ czarodziej_special += 1
+                                    jump faza_fight96
+                            else:
+                                show czarodziej_weapon zorder 15 at weapon_wrog3 
+                                hide czarodziej
+                                show czarodziej fight2 zorder 10 at wrog3 
+                                $ renpy.pause(0.1)
+                                show czarodziej fight zorder 10 at wrog3 
+                                czarodziej "abbbra... pieprzyć"
+                                play sound "audio/sfx/mana.mp3"
+                                $ kostka = renpy.random.randint(2, 3) 
+                                $ czarodziej_min_attack_now *= kostka
+                                $ czarodziej_max_attack_now *= kostka
+                                $ czarodziej_min_attack_now_true *= kostka
+                                $ czarodziej_max_attack_now_true *= kostka
+                                "{i}Statystyki Czarodzieja z Tourette'm zostały zwiększone{/i}"
+                                $ czarodziej_special += 1
+                                jump faza_fight96
 
                     
         label losowanko_fight95:
