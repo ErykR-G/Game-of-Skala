@@ -73,6 +73,19 @@ label fight151_stats:
     default gargantuar2_stun = 0
     default trup15_stun = 0
 
+    default gargantuar1_special = 0
+    default gargantuar2_special = 0
+
+    default gargantuar1_imp = 1
+    default gargantuar2_imp = 1
+
+    default luszcz_imp = 0
+    default eminem_imp = 0
+    default urban_imp = 0
+    default zyd_imp = 0
+    default kazuma_imp = 0
+    default tarczownik_imp = 0
+
 label fight151:
     $ fight_on = 1
     label wybor_fight151:
@@ -6274,13 +6287,13 @@ label fight151:
                     tarczownik "Air Strike Shield!"
 
                     if dialog_fight2 == 0:
-                            $ dialog_fight2 += 1
+                        $ dialog_fight2 += 1
 
-                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+                        luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
 
-                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
-                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
-                            luszcz "..."
+                        tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                        tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                        luszcz "..."
                     
                     else:
                         if dialog_fight2 == 1:
@@ -21139,794 +21152,130 @@ label fight151:
             "{i}Gargantuar 2 jest zestunnowany{/i}"
             jump start_fight151  
 
-        if gargantuar2_uszy >= 1 and urban_hp_now >= 1:
-            if gargantuar2_weapon >= 1:
-                show gargantuar2_weapon zorder 15 at weapon_wrog2 
-            else:
-                show reka8 zorder 15 at weapon_wrog2
-            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+        if (gargantuar2_imp == 1 and gargantuar2_hp_now > 0) and ((luszcz_hp_now > 0 and luszcz_imp == 0) or (urban_hp_now > 0 and urban_imp == 0) or (eminem_hp_now > 0 and eminem_imp == 0) or (zyd_hp_now > 0 and zyd_imp == 0) or (kazuma_hp_now > 0 and kazuma_imp == 0) or (tarczownik_hp_now > 0 and tarczownik_imp == 0)):
+            $ kostka = renpy.random.randint(1, 5)
+            if kostka <= 2:
+                show gargantuar2 fight2
 
-            if memy == 3:
-                $ kostka = renpy.random.randint(1, 20)
-                if kostka <= 3:
-                    $ gargantuar2_hp_now -= gargantuar2_attack
-                    play sound "audio/sfx/obrona.mp3"
-                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                    jump start_fight151
-
-            if urban_obrona >= 2:
-                play sound "audio/sfx/obrona.mp3"
-                "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                $ urban_obrona = 1
-
-                jump start_fight151
-                                                
-            else:
-                if gargantuar2_weapon >= 1:
-                    play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                
-                else:
-                    play sound "audio/sfx/reka.mp3"
-
-                if urban_obrona >= 1:
-                    $ urban_hp_now -= int(gargantuar2_attack / 2)
-
-                    $ dmg = int(gargantuar2_attack / 2)
-                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-
-                    jump start_fight151
-                else:
-                    $ urban_hp_now -= gargantuar2_attack
-
-                    "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                jump start_fight151
                     
         label losowanko_fight156:    
-            if gargantuar2_weapon >= 1:
-                show gargantuar2_weapon zorder 15 at weapon_wrog2 
+            if gargantuar2_imp == 1:
+                show gargantuar2 fight3
             else:
-                show reka8 zorder 15 at weapon_wrog2     
-            $ kostka = renpy.random.randint(1, 6)
-            if kostka == 1:
-                if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
-                    if luszcz_hp_now <= 3:
-                        $ kostka = renpy.random.randint(1, 5)
-                        if kostka >= 2:
-                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+                show gargantuar2 fight4
 
-                            if memy == 2:
-                                $ kostka = renpy.random.randint(1, 20)
-                                if kostka <= 3:
-                                    $ gargantuar2_hp_now -= gargantuar2_attack
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                    jump start_fight151
+            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
 
-                            if luszcz_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                $ luszcz_obrona = 1
+            if luszcz_hp_now >= 1:
+                if luszcz_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                    $ luszcz_obrona = 1
                                                     
-                            else:
-                                if gargantuar2_weapon >= 1:
-                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                
-                                else:
-                                    play sound "audio/sfx/reka.mp3"
+                else:     
+                    if luszcz_obrona == 1:
+                        $ luszcz_hp_now -= int(gargantuar2_attack / 2)
 
-                                if luszcz_obrona == 1:
-                                    $ luszcz_hp_now -= int(gargantuar2_attack / 2)
-
-                                    $ dmg = int(gargantuar2_attack / 2)
-                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
-                                else:
-                                    $ luszcz_hp_now -= gargantuar2_attack
-
-                                    "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Łuszczowi{/i}"
-
-                            jump start_fight151
-                        else:
-                            jump losowanko_fight156
-
+                        $ dmg = int(gargantuar2_attack / 2)
+                        $ luszcz_obrona = 0
                     else:
-                        if luszcz_hp_now <= 10:
-                            $ kostka = renpy.random.randint(1, 5)
-                            if kostka >= 3:
-                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                if memy == 2:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ gargantuar2_hp_now -= gargantuar2_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight151
-
-                                if luszcz_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                    $ luszcz_obrona = 1
+                        $ luszcz_hp_now -= gargantuar2_attack
+            
+            if eminem_hp_now >= 1:
+                if eminem_obrona >= 2:
+                    if luszcz_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                    $ eminem_obrona = 1
                                                     
-                                else:
-                                    if gargantuar2_weapon >= 1:
-                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
+                else:     
+                    if eminem_obrona == 1:
+                        $ eminem_hp_now -= int(gargantuar2_attack / 2)
+
+                        $ dmg = int(gargantuar2_attack / 2)
+                        $ eminem_obrona = 0
+                    else:
+                        $ eminem_hp_now -= gargantuar2_attack
+            
+            if urban_hp_now >= 1:
+                if urban_obrona >= 2:
+                    if eminem_hp_now <= 0 and luszcz_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                    $ urban_obrona = 1
                                                     
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
+                else:     
+                    if urban_obrona == 1:
+                        $ urban_hp_now -= int(gargantuar2_attack / 2)
 
-                                    if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(gargantuar2_attack / 2)
-
-                                        $ dmg = int(gargantuar2_attack / 2)
-                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
-                                    else:
-                                        $ luszcz_hp_now -= gargantuar2_attack
-
-                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Łuszczowi{/i}"
-
-                                jump start_fight151
-                            else:
-                                jump losowanko_fight156
-                        
-                        else:
-                            $ kostka = renpy.random.randint(1, 5)
-                            if kostka >= 5:
-                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                if memy == 2:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ gargantuar2_hp_now -= gargantuar2_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight151
-
-                                if luszcz_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                    $ luszcz_obrona = 1
+                        $ dmg = int(gargantuar2_attack / 2)
+                        $ urban_obrona = 0
+                    else:
+                        $ urban_hp_now -= gargantuar2_attack
+            
+            if zyd_hp_now >= 1:
+                if zyd_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and luszcz_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                    $ zyd_obrona = 1
                                                     
-                                else:
-                                    if gargantuar2_weapon >= 1:
-                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
+                else:     
+                    if zyd_obrona == 1:
+                        $ zyd_hp_now -= int(gargantuar2_attack / 2)
+
+                        $ dmg = int(gargantuar2_attack / 2)
+                        $ zyd_obrona = 0
+                    else:
+                        $ zyd_hp_now -= gargantuar2_attack
+            
+            if kazuma_hp_now >= 1:
+                if kazuma_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and luszcz_hp_now <= 0 and tarczownik_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                    $ kazuma_obrona = 1
                                                     
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
+                else:     
+                    if kazuma_obrona == 1:
+                        $ kazuma_hp_now -= int(gargantuar2_attack / 2)
 
-                                    if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(gargantuar2_attack / 2)
+                        $ dmg = int(gargantuar2_attack / 2)
+                        $ kazuma_obrona = 0
+                    else:
+                        $ kazuma_hp_now -= gargantuar2_attack
+            
+            if tarczownik_hp_now >= 1:
+                if tarczownik_obrona >= 2:
+                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and luszcz_hp_now <= 0:
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                    $ tarczownik_obrona = 1
+                                                    
+                else:     
+                    if tarczownik_obrona == 1:
+                        $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
 
-                                        $ dmg = int(gargantuar2_attack / 2)
-                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
-                                    else:
-                                        $ luszcz_hp_now -= gargantuar2_attack
-
-                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Łuszczowi{/i}"
-
-                                jump start_fight151
-                            else:
-                                jump losowanko_fight156
-
-                else:
-                    jump losowanko_fight156
+                        $ dmg = int(gargantuar2_attack / 2)
+                        $ tarczownik_obrona = 0
+                    else:
+                        $ tarczownik_hp_now -= gargantuar2_attack
+            
+            if luszcz_hp_now >= 1 and luszcz_obrona <= 1 or eminem_hp_now >= 1 and eminem_obrona <= 1 or urban_hp_now >= 1 and urban_obrona <= 1 and zyd_hp_now >= 1 and zyd_obrona <= 1 or kazuma_hp_now >= 1 and kazuma_obrona <= 1 or tarczownik_hp_now >= 1 and tarczownik_obrona <= 1:
+                play sound "audio/sfx/gargantuar2_weapon.mp3"
+                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń wszystkim sojusznikom{/i}"
+            
             else:
-                if kostka == 2:
-                    if urban_hp_now >= 1 and urban_wybrany >= 1:
-                        if urban_hp_now <= 3:
-                            $ kostka = renpy.random.randint(1, 5)
-                            if kostka >= 2:
-                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                if memy == 3:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ gargantuar2_hp_now -= gargantuar2_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight151
-
-                                if urban_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                    $ urban_obrona = 1
-
-                                else:
-                                    if gargantuar2_weapon >= 1:
-                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                    
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
-
-                                    if urban_obrona == 1:
-                                        $ urban_hp_now -= int(gargantuar2_attack / 2)
-
-                                        $ dmg = int(gargantuar2_attack / 2)
-                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-                                    else:
-                                        $ urban_hp_now -= gargantuar2_attack
-
-                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                                jump start_fight151
-                            else:
-                                jump losowanko_fight156
-
-                        else:
-                            if urban_hp_now <= 10:
-                                $ kostka = renpy.random.randint(1, 5)
-                                if kostka >= 3:
-                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                    if memy == 3:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ gargantuar2_hp_now -= gargantuar2_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight151
-
-                                    if urban_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                        $ urban_obrona = 1
-
-                                    else:
-                                        if gargantuar2_weapon >= 1:
-                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-
-                                        if urban_obrona == 1:
-                                            $ urban_hp_now -= int(gargantuar2_attack / 2)
-
-                                            $ dmg = int(gargantuar2_attack / 2)
-                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-                                        else:
-                                            $ urban_hp_now -= gargantuar2_attack
-
-                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                                    jump start_fight151
-                                else:
-                                    jump losowanko_fight156
-                            
-                            else:
-                                $ kostka = renpy.random.randint(1, 5)
-                                if kostka >= 5:
-                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                    if memy == 3:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ gargantuar2_hp_now -= gargantuar2_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight151
-
-                                    if urban_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                        $ urban_obrona = 1
-                                    
-                                    else:
-                                        if gargantuar2_weapon >= 1:
-                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-
-                                        if urban_obrona == 1:
-                                            $ urban_hp_now -= int(gargantuar2_attack / 2)
-
-                                            $ dmg = int(gargantuar2_attack / 2)
-                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-                                        else:
-                                            $ urban_hp_now -= gargantuar2_attack
-
-                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                                    jump start_fight151
-                                else:
-                                    jump losowanko_fight156
-
-                    else:
-                        jump losowanko_fight156
-                else:
-                    if kostka == 3:
-                        if zyd_hp_now >= 1 and zyd_wybrany >= 1:
-                            if zyd_hp_now <= 3:
-                                $ kostka = renpy.random.randint(1, 5)
-                                if kostka >= 2:
-                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                    if memy == 4:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ gargantuar2_hp_now -= gargantuar2_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight151
-
-                                    if zyd_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                        $ zyd_obrona = 1
-                                    
-                                    else:
-                                        if gargantuar2_weapon >= 1:
-                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-
-                                        if zyd_obrona == 1:
-                                            $ zyd_hp_now -= int(gargantuar2_attack / 2)
-
-                                            $ dmg = int(gargantuar2_attack / 2)
-                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Żydowi{/i}"
-                                        else:
-                                            $ zyd_hp_now -= gargantuar2_attack
-
-                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Żydowi{/i}"
-
-                                    jump start_fight151
-                                else:
-                                    jump losowanko_fight156
-
-                            else:
-                                if zyd_hp_now <= 10:
-                                    $ kostka = renpy.random.randint(1, 5)
-                                    if kostka >= 3:
-                                        $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                        if memy == 4:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ gargantuar2_hp_now -= gargantuar2_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight151
-
-                                        if zyd_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                            $ zyd_obrona = 1
-                                        
-                                        else:
-                                            if gargantuar2_weapon >= 1:
-                                                play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
-                                            if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(gargantuar2_attack / 2)
-
-                                                $ dmg = int(gargantuar2_attack / 2)
-                                                "{i}Gargantuar 2 zadaje [dmg] obrażeń Żydowi{/i}"
-                                            else:
-                                                $ zyd_hp_now -= gargantuar2_attack
-
-                                                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Żydowi{/i}"
-
-                                        jump start_fight151
-                                    else:
-                                        jump losowanko_fight156
-                                
-                                else:
-                                    $ kostka = renpy.random.randint(1, 5)
-                                    if kostka >= 5:
-                                        $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                        if memy == 4:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ gargantuar2_hp_now -= gargantuar2_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight151
-
-                                        if zyd_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                            $ zyd_obrona = 1
-                                        
-                                        else:
-                                            if gargantuar2_weapon >= 1:
-                                                play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
-                                            if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(gargantuar2_attack / 2)
-
-                                                $ dmg = int(gargantuar2_attack / 2)
-                                                "{i}Gargantuar 2 zadaje [dmg] obrażeń Żydowi{/i}"
-                                            else:
-                                                $ zyd_hp_now -= gargantuar2_attack
-
-                                                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Żydowi{/i}"
-
-                                        jump start_fight151
-                                    else:
-                                        jump losowanko_fight156
-
-                        else:
-                            jump losowanko_fight156
-                    else:
-                        if kostka == 4:
-                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
-                                if kazuma_hp_now <= 3:
-                                    $ kostka = renpy.random.randint(1, 5)
-                                    if kostka >= 2:
-                                        $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                        if memy == 5:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ gargantuar2_hp_now -= gargantuar2_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight151
-
-                                        if kazuma_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                            $ kazuma_obrona = 1
-                                        
-                                        else:
-                                            if gargantuar2_weapon >= 1:
-                                                play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
-                                            if kazuma_obrona == 1:
-                                                $ kazuma_hp_now -= int(gargantuar2_attack / 2)
-
-                                                $ dmg = int(gargantuar2_attack / 2)
-                                                "{i}Gargantuar 2 zadaje [dmg] obrażeń Kazumie{/i}"
-                                            else:
-                                                $ kazuma_hp_now -= gargantuar2_attack
-
-                                                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Kazumie{/i}"
-
-                                        jump start_fight151
-                                    else:
-                                        jump losowanko_fight156
-
-                                else:
-                                    if kazuma_hp_now <= 10:
-                                        $ kostka = renpy.random.randint(1, 5)
-                                        if kostka >= 3:
-                                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                            if memy == 5:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ gargantuar2_hp_now -= gargantuar2_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight151
-
-                                            if kazuma_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                $ kazuma_obrona = 1
-                                            
-                                            else:
-                                                if gargantuar2_weapon >= 1:
-                                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
-                                                if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(gargantuar2_attack / 2)
-
-                                                    $ dmg = int(gargantuar2_attack / 2)
-                                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Kazumie{/i}"
-                                                else:
-                                                    $ kazuma_hp_now -= gargantuar2_attack
-
-                                                    "{i}Gargantuar 1 zadaje [gargantuar2_attack] obrażeń Kazumie{/i}"
-
-                                            jump start_fight151
-                                        else:
-                                            jump losowanko_fight156
-                                    
-                                    else:
-                                        $ kostka = renpy.random.randint(1, 5)
-                                        if kostka >= 5:
-                                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                            if memy == 5:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ gargantuar2_hp_now -= gargantuar2_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight151
-
-                                            if kazuma_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                $ kazuma_obrona = 1
-                                            
-                                            else:
-                                                if gargantuar2_weapon >= 1:
-                                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
-                                                if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(gargantuar2_attack / 2)
-
-                                                    $ dmg = int(gargantuar2_attack / 2)
-                                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Kazumie{/i}"
-                                                else:
-                                                    $ kazuma_hp_now -= gargantuar2_attack
-
-                                                    "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Kazumie{/i}"
-
-                                            jump start_fight151
-                                        else:
-                                            jump losowanko_fight156
-
-                            else:
-                                jump losowanko_fight156
-                        else:
-                            if kostka == 5:
-                                if eminem_hp_now >= 1 and eminem_wybrany >= 1:
-                                    if eminem_hp_now <= 3:
-                                        $ kostka = renpy.random.randint(1, 5)
-                                        if kostka >= 2:
-                                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                            if memy == 7:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ gargantuar2_hp_now -= gargantuar2_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight151
-
-                                            if eminem_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                $ eminem_obrona = 1  
-                                            
-                                            else:
-                                                if gargantuar2_weapon >= 1:
-                                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
-                                                if eminem_obrona == 1:
-                                                    $ eminem_hp_now -= int(gargantuar2_attack / 2)
-
-                                                    $ dmg = int(gargantuar2_attack / 2)
-                                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Shadowowi{/i}"
-                                                else:
-                                                    $ eminem_hp_now -= gargantuar2_attack
-
-                                                    "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Shadowowi{/i}"
-
-                                            jump start_fight151
-                                        else:
-                                            jump losowanko_fight156
-
-                                    else:
-                                        if eminem_hp_now <= 10:
-                                            $ kostka = renpy.random.randint(1, 5)
-                                            if kostka >= 3:
-                                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                                if memy == 7:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ gargantuar2_hp_now -= gargantuar2_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight151
-
-                                                if eminem_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                    $ eminem_obrona = 1
-                                                
-                                                else:
-                                                    if gargantuar2_weapon >= 1:
-                                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
-                                                    if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(gargantuar2_attack / 2)
-
-                                                        $ dmg = int(gargantuar2_attack / 2)
-                                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Shadowowi{/i}"
-                                                    else:
-                                                        $ eminem_hp_now -= gargantuar2_attack
-
-                                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Shadowowi{/i}"
-
-                                                jump start_fight151
-                                            else:
-                                                jump losowanko_fight156
-                                        
-                                        else:
-                                            $ kostka = renpy.random.randint(1, 5)
-                                            if kostka >= 5:
-                                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                                if memy == 7:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ gargantuar2_hp_now -= gargantuar2_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight151
-
-                                                if eminem_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                    $ eminem_obrona = 1
-                                                
-                                                else:
-                                                    if gargantuar2_weapon >= 1:
-                                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
-                                                    if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(gargantuar2_attack / 2)
-
-                                                        $ dmg = int(gargantuar2_attack / 2)
-                                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Shadowowi{/i}"
-                                                    else:
-                                                        $ eminem_hp_now -= gargantuar2_attack
-
-                                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Shadowowi{/i}"
-
-                                                jump start_fight151
-                                            else:
-                                                jump losowanko_fight156
-
-                                else:
-                                    jump losowanko_fight156
-                            else:
-                                if kostka == 6:
-                                    if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
-                                        if tarczownik_hp_now <= 3:
-                                            $ kostka = renpy.random.randint(1, 5)
-                                            if kostka >= 2:
-                                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                                if memy == 6:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ gargantuar2_hp_now -= gargantuar2_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight151
-
-                                                if tarczownik_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                    $ tarczownik_obrona = 1
-                                                
-                                                else:
-                                                    if gargantuar2_weapon >= 1:
-                                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
-                                                    if tarczownik_obrona == 1:
-                                                        $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
-
-                                                        $ dmg = int(gargantuar2_attack / 2)
-                                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
-                                                    else:
-                                                        $ tarczownik_hp_now -= gargantuar2_attack
-
-                                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Naofumiemu{/i}"
-
-                                                jump start_fight151
-                                            else:
-                                                jump losowanko_fight156
-
-                                        else:
-                                            if tarczownik_hp_now <= 10:
-                                                $ kostka = renpy.random.randint(1, 5)
-                                                if kostka >= 3:
-                                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                                    if memy == 6:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            $ gargantuar2_hp_now -= gargantuar2_attack
-                                                            play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight151
-
-                                                    if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
-                                                
-                                                    else:
-                                                        if gargantuar2_weapon >= 1:
-                                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
-                                                        if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
-
-                                                            $ dmg = int(gargantuar2_attack / 2)
-                                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
-                                                        else:
-                                                            $ tarczownik_hp_now -= gargantuar2_attack
-
-                                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Naofumiemu{/i}"
-
-                                                    jump start_fight151
-                                                else:
-                                                    jump losowanko_fight156
-                                            
-                                            else:
-                                                $ kostka = renpy.random.randint(1, 5)
-                                                if kostka >= 5:
-                                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
-
-                                                    if memy == 6:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            $ gargantuar2_hp_now -= gargantuar2_attack
-                                                            play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight151
-
-                                                    if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
-                                                
-                                                    else:
-                                                        if gargantuar2_weapon >= 1:
-                                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
-                                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
-                                                        if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
-
-                                                            $ dmg = int(gargantuar2_attack / 2)
-                                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
-                                                        else:
-                                                            $ tarczownik_hp_now -= gargantuar2_attack
-
-                                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Naofumiemu{/i}"
-
-                                                    jump start_fight151
-                                                else:
-                                                    jump losowanko_fight156
-
-                                    else:
-                                        jump losowanko_fight156
-                                else: 
-                                    jump losowanko_fight156                
+                play sound "audio/sfx/obrona.mp3"
+                "{i}Atak Gargantuar 2 został zablokowany{/i}"
+
+            if gargantuar2_imp == 1:
+                show gargantuar2 fight
+            else:
+                show gargantuar2 fight1
+
+            jump start_fight151
 
     label przegranko_fight151:
         scene bg dead

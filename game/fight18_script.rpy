@@ -7467,13 +7467,13 @@ label fight181:
                     tarczownik "Air Strike Shield!"
 
                     if dialog_fight2 == 0:
-                            $ dialog_fight2 += 1
+                        $ dialog_fight2 += 1
 
-                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+                        luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
 
-                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
-                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
-                            luszcz "..."
+                        tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                        tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                        luszcz "..."
                     
                     else:
                         if dialog_fight2 == 1:

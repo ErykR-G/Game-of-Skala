@@ -1156,6 +1156,8 @@ label fight131:
         hide stun1
         hide stun2
         hide stun3
+        $ tarczownik_ass = 0
+        $ tarczownik_sp = 0
 
         if zombie3_hp_now <= 0 and zombie3_umarty == 0:
             hide snake31
@@ -6612,6 +6614,7 @@ label fight131:
                         $ zyd_obrona += 1
                         $ kazuma_obrona += 1
                         $ tarczownik_obrona += 1
+                        $ tarczownik_ass = 1
                         play sound "audio/sfx/air_strike_shield.mp3"
 
                         if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
@@ -6657,6 +6660,7 @@ label fight131:
                     $ kostka = renpy.random.randint(1, 2)
 
                     if kostka == 1:
+                        $ tarczownik_sp = 1
                         $ tarczownik_obrona += 2
                         play sound "audio/sfx/shield_prison.mp3"
                         if tarczownik_wybrany == 1:
@@ -6707,6 +6711,7 @@ label fight131:
                     $ zyd_obrona += 1
                     $ kazuma_obrona += 1
                     $ tarczownik_obrona += 1
+                    $ tarczownik_ass = 1
                     play sound "audio/sfx/air_strike_shield.mp3"
 
                     if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
@@ -6721,13 +6726,13 @@ label fight131:
                     tarczownik "Air Strike Shield!"
 
                     if dialog_fight2 == 0:
-                            $ dialog_fight2 += 1
+                        $ dialog_fight2 += 1
 
-                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+                        luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
 
-                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
-                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
-                            luszcz "..."
+                        tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                        tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                        luszcz "..."
                     
                     else:
                         if dialog_fight2 == 1:
@@ -21439,27 +21444,43 @@ label fight131:
             $ all_star_zombie2_attack = renpy.random.randint(all_star_zombie2_min_attack_now, all_star_zombie2_max_attack_now)
 
             if urban_obrona >= 2:
-                play sound "audio/sfx/obrona.mp3"
-                "{i}Atak All-Star Zombie został zablokowany{/i}"
-                $ urban_obrona = 1
+                play sound "audio/sfx/rzut.mp3"
+                $ urban_hp_now -= all_star_zombie2_attack
+                $ urban_obrona = 0
+                hide tarcza3
+                if tarczownik_ass == 1:
+                    if urban_wybrany == 1:
+                        hide air_strike_shield1
+
+                    if urban_wybrany == 2:
+                        hide air_strike_shield2
+
+                    if urban_wybrany == 3:
+                        hide air_strike_shield3  
+                "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                 jump faza_fight136
                                                 
             else:
-                if all_star_zombie2_weapon >= 1:
-                    play sound "audio/sfx/all_star_zombie2_weapon.mp3"
-                                
-                else:
-                    play sound "audio/sfx/reka.mp3"
-
                 if urban_obrona == 1:
-                    $ urban_hp_now -= int(all_star_zombie2_attack / 2)
+                    play sound "audio/sfx/rzut.mp3"
+                    $ urban_hp_now -= all_star_zombie2_attack
+                    $ urban_obrona = 0
+                    hide tarcza3
+                    if tarczownik_ass == 1:
+                        if urban_wybrany == 1:
+                            hide air_strike_shield1
 
-                    $ dmg = int(all_star_zombie2_attack / 2)
-                    "{i}All-Star Zombie zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                        if urban_wybrany == 2:
+                            hide air_strike_shield2
+
+                        if urban_wybrany == 3:
+                            hide air_strike_shield3  
+                    "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                     jump faza_fight136
                 else:
+                    play sound "audio/sfx/all_star_zombie2_weapon.mp3"
                     $ urban_hp_now -= all_star_zombie2_attack
 
                     "{i}All-Star Zombie zadaje [all_star_zombie2_attack] obrażeń Jerzemu Urbanowi{/i}"
@@ -21485,6 +21506,15 @@ label fight131:
                                 $ luszcz_hp_now -= all_star_zombie2_attack
                                 $ luszcz_obrona = 0
                                 hide tarcza1
+                                if tarczownik_ass == 1:
+                                    if luszcz_wybrany == 1:
+                                        hide air_strike_shield1
+
+                                    if luszcz_wybrany == 2:
+                                        hide air_strike_shield2
+
+                                    if luszcz_wybrany == 3:
+                                        hide air_strike_shield3
                                 "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                     
                             else:
@@ -21493,6 +21523,15 @@ label fight131:
                                     $ luszcz_hp_now -= all_star_zombie2_attack
                                     $ luszcz_obrona = 0
                                     hide tarcza1
+                                    if tarczownik_ass == 1:
+                                        if luszcz_wybrany == 1:
+                                            hide air_strike_shield1
+
+                                        if luszcz_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if luszcz_wybrany == 3:
+                                            hide air_strike_shield3
                                     "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                 else:
                                     play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21515,6 +21554,15 @@ label fight131:
                                     $ luszcz_hp_now -= all_star_zombie2_attack
                                     $ luszcz_obrona = 0
                                     hide tarcza1
+                                    if tarczownik_ass == 1:
+                                        if luszcz_wybrany == 1:
+                                            hide air_strike_shield1
+
+                                        if luszcz_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if luszcz_wybrany == 3:
+                                            hide air_strike_shield3
                                     "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                         
                                 else:
@@ -21523,6 +21571,15 @@ label fight131:
                                         $ luszcz_hp_now -= all_star_zombie2_attack
                                         $ luszcz_obrona = 0
                                         hide tarcza1
+                                        if tarczownik_ass == 1:
+                                            if luszcz_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if luszcz_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if luszcz_wybrany == 3:
+                                                hide air_strike_shield3
                                         "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                     else:
                                         play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21544,6 +21601,15 @@ label fight131:
                                     $ luszcz_hp_now -= all_star_zombie2_attack
                                     $ luszcz_obrona = 0
                                     hide tarcza1
+                                    if tarczownik_ass == 1:
+                                        if luszcz_wybrany == 1:
+                                            hide air_strike_shield1
+
+                                        if luszcz_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if luszcz_wybrany == 3:
+                                            hide air_strike_shield3
                                     "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                         
                                 else:
@@ -21552,6 +21618,15 @@ label fight131:
                                         $ luszcz_hp_now -= all_star_zombie2_attack
                                         $ luszcz_obrona = 0
                                         hide tarcza1
+                                        if tarczownik_ass == 1:
+                                            if luszcz_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if luszcz_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if luszcz_wybrany == 3:
+                                                hide air_strike_shield3
                                         "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                     else:
                                         play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21578,6 +21653,15 @@ label fight131:
                                     $ urban_hp_now -= all_star_zombie2_attack
                                     $ urban_obrona = 0
                                     hide tarcza3
+                                    if tarczownik_ass == 1:
+                                        if urban_wybrany == 1:
+                                            hide air_strike_shield1
+
+                                        if urban_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if urban_wybrany == 3:
+                                            hide air_strike_shield3  
                                     "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                 else:
@@ -21586,6 +21670,15 @@ label fight131:
                                         $ urban_hp_now -= all_star_zombie2_attack
                                         $ urban_obrona = 0
                                         hide tarcza3
+                                        if tarczownik_ass == 1:
+                                            if urban_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if urban_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if urban_wybrany == 3:
+                                                hide air_strike_shield3  
                                         "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                     else:
                                         play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21608,6 +21701,15 @@ label fight131:
                                         $ urban_hp_now -= all_star_zombie2_attack
                                         $ urban_obrona = 0
                                         hide tarcza3
+                                        if tarczownik_ass == 1:
+                                            if urban_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if urban_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if urban_wybrany == 3:
+                                                hide air_strike_shield3  
                                         "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                     else:
@@ -21617,6 +21719,15 @@ label fight131:
                                             $ urban_hp_now -= all_star_zombie2_attack
                                             $ urban_obrona = 0
                                             hide tarcza3
+                                            if tarczownik_ass == 1:
+                                                if urban_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if urban_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if urban_wybrany == 3:
+                                                    hide air_strike_shield3  
                                             "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                         else:
                                             play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21638,6 +21749,15 @@ label fight131:
                                         $ urban_hp_now -= all_star_zombie2_attack
                                         $ urban_obrona = 0
                                         hide tarcza3
+                                        if tarczownik_ass == 1:
+                                            if urban_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if urban_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if urban_wybrany == 3:
+                                                hide air_strike_shield3  
                                         "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                     else:
@@ -21647,6 +21767,15 @@ label fight131:
                                             $ urban_hp_now -= all_star_zombie2_attack
                                             $ urban_obrona = 0
                                             hide tarcza3
+                                            if tarczownik_ass == 1:
+                                                if urban_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if urban_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if urban_wybrany == 3:
+                                                    hide air_strike_shield3  
                                             "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                         else:
                                             play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21673,6 +21802,15 @@ label fight131:
                                         $ zyd_hp_now -= all_star_zombie2_attack
                                         $ zyd_obrona = 0
                                         hide tarcza4
+                                        if tarczownik_ass == 1:
+                                            if zyd_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if zyd_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if zyd_wybrany == 3:
+                                                hide air_strike_shield3
                                         "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                     else:
@@ -21682,6 +21820,15 @@ label fight131:
                                             $ zyd_hp_now -= all_star_zombie2_attack
                                             $ zyd_obrona = 0
                                             hide tarcza4
+                                            if tarczownik_ass == 1:
+                                                if zyd_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if zyd_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if zyd_wybrany == 3:
+                                                    hide air_strike_shield3
                                             "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                         else:
                                             play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21704,6 +21851,15 @@ label fight131:
                                             $ zyd_hp_now -= all_star_zombie2_attack
                                             $ zyd_obrona = 0
                                             hide tarcza4
+                                            if tarczownik_ass == 1:
+                                                if zyd_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if zyd_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if zyd_wybrany == 3:
+                                                    hide air_strike_shield3
                                             "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                         else:
@@ -21712,6 +21868,15 @@ label fight131:
                                                 $ zyd_hp_now -= all_star_zombie2_attack
                                                 $ zyd_obrona = 0
                                                 hide tarcza4
+                                                if tarczownik_ass == 1:
+                                                    if zyd_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if zyd_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if zyd_wybrany == 3:
+                                                        hide air_strike_shield3
                                                 "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                             else:
                                                 play sound "audio/sfx/all_star_zombie2_weapon.mp3"
@@ -21733,6 +21898,15 @@ label fight131:
                                             $ zyd_hp_now -= all_star_zombie2_attack
                                             $ zyd_obrona = 0
                                             hide tarcza4
+                                            if tarczownik_ass == 1:
+                                                if zyd_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if zyd_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if zyd_wybrany == 3:
+                                                    hide air_strike_shield3
                                             "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                         else:
@@ -21742,6 +21916,15 @@ label fight131:
                                                 $ zyd_hp_now -= all_star_zombie2_attack
                                                 $ zyd_obrona = 0
                                                 hide tarcza4
+                                                if tarczownik_ass == 1:
+                                                    if zyd_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if zyd_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if zyd_wybrany == 3:
+                                                        hide air_strike_shield3
                                                 "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                             else:
@@ -21770,6 +21953,15 @@ label fight131:
                                             $ kazuma_hp_now -= all_star_zombie2_attack
                                             $ kazuma_obrona = 0
                                             hide tarcza5
+                                            if tarczownik_ass == 1:
+                                                if kazuma_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if kazuma_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if kazuma_wybrany == 3:
+                                                    hide air_strike_shield3
                                             "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                         
                                         else:
@@ -21779,6 +21971,15 @@ label fight131:
                                                 $ kazuma_hp_now -= all_star_zombie2_attack
                                                 $ kazuma_obrona = 0
                                                 hide tarcza5
+                                                if tarczownik_ass == 1:
+                                                    if kazuma_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if kazuma_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if kazuma_wybrany == 3:
+                                                        hide air_strike_shield3
                                                 "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                             else:
@@ -21802,6 +22003,15 @@ label fight131:
                                                 $ kazuma_hp_now -= all_star_zombie2_attack
                                                 $ kazuma_obrona = 0
                                                 hide tarcza5
+                                                if tarczownik_ass == 1:
+                                                    if kazuma_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if kazuma_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if kazuma_wybrany == 3:
+                                                        hide air_strike_shield3
                                                 "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                             
                                             else:
@@ -21811,6 +22021,15 @@ label fight131:
                                                     $ kazuma_hp_now -= all_star_zombie2_attack
                                                     $ kazuma_obrona = 0
                                                     hide tarcza5
+                                                    if tarczownik_ass == 1:
+                                                        if kazuma_wybrany == 1:
+                                                            hide air_strike_shield1
+
+                                                        if kazuma_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if kazuma_wybrany == 3:
+                                                            hide air_strike_shield3
                                                     "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                                 else:
@@ -21834,6 +22053,15 @@ label fight131:
                                                 $ kazuma_hp_now -= all_star_zombie2_attack
                                                 $ kazuma_obrona = 0
                                                 hide tarcza5
+                                                if tarczownik_ass == 1:
+                                                    if kazuma_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if kazuma_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if kazuma_wybrany == 3:
+                                                        hide air_strike_shield3
                                                 "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                             
                                             else:
@@ -21843,6 +22071,15 @@ label fight131:
                                                     $ kazuma_hp_now -= all_star_zombie2_attack
                                                     $ kazuma_obrona = 0
                                                     hide tarcza5
+                                                    if tarczownik_ass == 1:
+                                                        if kazuma_wybrany == 1:
+                                                            hide air_strike_shield1
+
+                                                        if kazuma_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if kazuma_wybrany == 3:
+                                                            hide air_strike_shield3
                                                     "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                                 else:
@@ -21870,6 +22107,15 @@ label fight131:
                                                 $ eminem_hp_now -= all_star_zombie2_attack
                                                 $ eminem_obrona = 0
                                                 hide tarcza2
+                                                if tarczownik_ass == 1:
+                                                    if eminem_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if eminem_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if eminem_wybrany == 3:
+                                                        hide air_strike_shield3
                                                 "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                 
                                             else:
@@ -21878,6 +22124,15 @@ label fight131:
                                                     $ eminem_hp_now -= all_star_zombie2_attack
                                                     $ eminem_obrona = 0
                                                     hide tarcza2
+                                                    if tarczownik_ass == 1:
+                                                        if eminem_wybrany == 1:
+                                                            hide air_strike_shield1
+
+                                                        if eminem_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if eminem_wybrany == 3:
+                                                            hide air_strike_shield3
                                                     "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                                 else:
@@ -21901,6 +22156,15 @@ label fight131:
                                                     $ eminem_hp_now -= all_star_zombie2_attack
                                                     $ eminem_obrona = 0
                                                     hide tarcza2
+                                                    if tarczownik_ass == 1:
+                                                        if eminem_wybrany == 1:
+                                                            hide air_strike_shield1
+
+                                                        if eminem_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if eminem_wybrany == 3:
+                                                            hide air_strike_shield3
                                                     "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                 
                                                 else:
@@ -21910,6 +22174,15 @@ label fight131:
                                                         $ eminem_hp_now -= all_star_zombie2_attack
                                                         $ eminem_obrona = 0
                                                         hide tarcza2
+                                                        if tarczownik_ass == 1:
+                                                            if eminem_wybrany == 1:
+                                                                hide air_strike_shield1
+
+                                                            if eminem_wybrany == 2:
+                                                                hide air_strike_shield2
+
+                                                            if eminem_wybrany == 3:
+                                                                hide air_strike_shield3
                                                         "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                                     else:
@@ -21932,6 +22205,15 @@ label fight131:
                                                     $ eminem_hp_now -= all_star_zombie2_attack
                                                     $ eminem_obrona = 0
                                                     hide tarcza2
+                                                    if tarczownik_ass == 1:
+                                                        if eminem_wybrany == 1:
+                                                            hide air_strike_shield1
+
+                                                        if eminem_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if eminem_wybrany == 3:
+                                                            hide air_strike_shield3
                                                     "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                 
                                                 else:
@@ -21941,6 +22223,15 @@ label fight131:
                                                         $ eminem_hp_now -= all_star_zombie2_attack
                                                         $ eminem_obrona = 0
                                                         hide tarcza2
+                                                        if tarczownik_ass == 1:
+                                                            if eminem_wybrany == 1:
+                                                                hide air_strike_shield1
+
+                                                            if eminem_wybrany == 2:
+                                                                hide air_strike_shield2
+
+                                                            if eminem_wybrany == 3:
+                                                                hide air_strike_shield3
                                                         "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
 
                                                     else:
@@ -21964,23 +22255,49 @@ label fight131:
                                                 $ all_star_zombie2_attack = renpy.random.randint(all_star_zombie2_min_attack_now, all_star_zombie2_max_attack_now)
 
                                                 if tarczownik_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                    $ tarczownik_obrona = 1
+                                                    if tarczownik_sp == 1:
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
+                                                    else:
+                                                        play sound "audio/sfx/rzut.mp3"
+                                                        $ tarczownik_hp_now -= all_star_zombie2_attack
+                                                        $ tarczownik_obrona = 0
+                                                        hide tarcza6
+                                                        if tarczownik_ass == 1:
+                                                            if tarczownik_wybrany == 1:
+                                                                hide air_strike_shield1
+
+                                                            if tarczownik_wybrany == 2:
+                                                                hide air_strike_shield2
+
+                                                            if tarczownik_wybrany == 3:
+                                                                hide air_strike_shield3
+                                                        "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                 
                                                 else:
-                                                    if all_star_zombie2_weapon >= 1:
-                                                        play sound "audio/sfx/all_star_zombie2_weapon.mp3"
-                                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
                                                     if tarczownik_obrona == 1:
-                                                        $ tarczownik_hp_now -= int(all_star_zombie2_attack / 2)
+                                                        if tarczownik_sp == 1:
+                                                            $ tarczownik_hp_now -= int(all_star_zombie2_attack / 2)
+                                                            $ dmg = int(all_star_zombie2_attack / 2)
+                                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            play sound "audio/sfx/rzut.mp3"
+                                                            $ tarczownik_hp_now -= all_star_zombie2_attack
+                                                            $ tarczownik_obrona = 0
+                                                            hide tarcza6
+                                                            if tarczownik_ass == 1:
+                                                                if tarczownik_wybrany == 1:
+                                                                    hide air_strike_shield1
 
-                                                        $ dmg = int(all_star_zombie2_attack / 2)
-                                                        "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                                if tarczownik_wybrany == 2:
+                                                                    hide air_strike_shield2
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    hide air_strike_shield3
+                                                            "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                     else:
+                                                        play sound "audio/sfx/all_star_zombie2_weapon.mp3"
                                                         $ tarczownik_hp_now -= all_star_zombie2_attack
 
                                                         "{i}All-Star Zombie zadaje [all_star_zombie2_attack] obrażeń Naofumiemu{/i}"
@@ -21996,23 +22313,49 @@ label fight131:
                                                     $ all_star_zombie2_attack = renpy.random.randint(all_star_zombie2_min_attack_now, all_star_zombie2_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
+                                                        if tarczownik_sp == 1:
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak All-Star Zombie został zablokowany{/i}"
+                                                            $ tarczownik_obrona = 1
+                                                        else:
+                                                            play sound "audio/sfx/rzut.mp3"
+                                                            $ tarczownik_hp_now -= all_star_zombie2_attack
+                                                            $ tarczownik_obrona = 0
+                                                            hide tarcza6
+                                                            if tarczownik_ass == 1:
+                                                                if tarczownik_wybrany == 1:
+                                                                    hide air_strike_shield1
+
+                                                                if tarczownik_wybrany == 2:
+                                                                    hide air_strike_shield2
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    hide air_strike_shield3
+                                                            "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                 
                                                     else:
-                                                        if all_star_zombie2_weapon >= 1:
-                                                            play sound "audio/sfx/all_star_zombie2_weapon.mp3"
-                                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(all_star_zombie2_attack / 2)
+                                                            if tarczownik_sp == 1:
+                                                                $ tarczownik_hp_now -= int(all_star_zombie2_attack / 2)
+                                                                $ dmg = int(all_star_zombie2_attack / 2)
+                                                                "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            else:
+                                                                play sound "audio/sfx/rzut.mp3"
+                                                                $ tarczownik_hp_now -= all_star_zombie2_attack
+                                                                $ tarczownik_obrona = 0
+                                                                hide tarcza6
+                                                                if tarczownik_ass == 1:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        hide air_strike_shield1
 
-                                                            $ dmg = int(all_star_zombie2_attack / 2)
-                                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                                    if tarczownik_wybrany == 2:
+                                                                        hide air_strike_shield2
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        hide air_strike_shield3
+                                                                "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                         else:
+                                                            play sound "audio/sfx/all_star_zombie2_weapon.mp3"
                                                             $ tarczownik_hp_now -= all_star_zombie2_attack
 
                                                             "{i}All-Star Zombie zadaje [all_star_zombie2_attack] obrażeń Naofumiemu{/i}"
@@ -22027,23 +22370,49 @@ label fight131:
                                                     $ all_star_zombie2_attack = renpy.random.randint(all_star_zombie2_min_attack_now, all_star_zombie2_max_attack_now)
 
                                                     if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
+                                                        if tarczownik_sp == 1:
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak All-Star Zombie został zablokowany{/i}"
+                                                            $ tarczownik_obrona = 1
+                                                        else:
+                                                            play sound "audio/sfx/rzut.mp3"
+                                                            $ tarczownik_hp_now -= all_star_zombie2_attack
+                                                            $ tarczownik_obrona = 0
+                                                            hide tarcza6
+                                                            if tarczownik_ass == 1:
+                                                                if tarczownik_wybrany == 1:
+                                                                    hide air_strike_shield1
+
+                                                                if tarczownik_wybrany == 2:
+                                                                    hide air_strike_shield2
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    hide air_strike_shield3
+                                                            "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                 
                                                     else:
-                                                        if all_star_zombie2_weapon >= 1:
-                                                            play sound "audio/sfx/all_star_zombie2_weapon.mp3"
-                                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(all_star_zombie2_attack / 2)
+                                                            if tarczownik_sp == 1:
+                                                                $ tarczownik_hp_now -= int(all_star_zombie2_attack / 2)
+                                                                $ dmg = int(all_star_zombie2_attack / 2)
+                                                                "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            else:
+                                                                play sound "audio/sfx/rzut.mp3"
+                                                                $ tarczownik_hp_now -= all_star_zombie2_attack
+                                                                $ tarczownik_obrona = 0
+                                                                hide tarcza6
+                                                                if tarczownik_ass == 1:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        hide air_strike_shield1
 
-                                                            $ dmg = int(all_star_zombie2_attack / 2)
-                                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                                    if tarczownik_wybrany == 2:
+                                                                        hide air_strike_shield2
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        hide air_strike_shield3
+                                                                "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie2_attack] obrażeń{/i}"
                                                         else:
+                                                            play sound "audio/sfx/all_star_zombie2_weapon.mp3"
                                                             $ tarczownik_hp_now -= all_star_zombie2_attack
 
                                                             "{i}All-Star Zombie zadaje [all_star_zombie2_attack] obrażeń Naofumiemu{/i}"

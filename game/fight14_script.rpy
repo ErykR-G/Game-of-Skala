@@ -73,6 +73,10 @@ label fight141_stats:
     default newspaper_zombie2_stun = 0
     default engineer1_stun = 0
 
+    default tarczownik_ass = 0
+
+    default tarczownik_sp = 0
+
 label fight141:
     $ fight_on = 1
     label wybor_fight141:
@@ -1153,6 +1157,8 @@ label fight141:
         hide stun1
         hide stun2
         hide stun3
+        $ tarczownik_ass = 0
+        $ tarczownik_sp = 0
 
         if all_star_zombie3_hp_now <= 0 and all_star_zombie3_umarty == 0:
             hide snake31
@@ -6170,6 +6176,7 @@ label fight141:
                         $ zyd_obrona += 1
                         $ kazuma_obrona += 1
                         $ tarczownik_obrona += 1
+                        $ tarczownik_ass = 1
                         play sound "audio/sfx/air_strike_shield.mp3"
 
                         if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
@@ -6215,6 +6222,7 @@ label fight141:
                     $ kostka = renpy.random.randint(1, 2)
 
                     if kostka == 1:
+                        $ tarczownik_sp = 1
                         $ tarczownik_obrona += 2
                         play sound "audio/sfx/shield_prison.mp3"
                         if tarczownik_wybrany == 1:
@@ -6265,6 +6273,7 @@ label fight141:
                     $ zyd_obrona += 1
                     $ kazuma_obrona += 1
                     $ tarczownik_obrona += 1
+                    $ tarczownik_ass = 1
                     play sound "audio/sfx/air_strike_shield.mp3"
 
                     if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
@@ -6279,13 +6288,13 @@ label fight141:
                     tarczownik "Air Strike Shield!"
 
                     if dialog_fight2 == 0:
-                            $ dialog_fight2 += 1
+                        $ dialog_fight2 += 1
 
-                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+                        luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
 
-                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
-                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
-                            luszcz "..."
+                        tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                        tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                        luszcz "..."
                     
                     else:
                         if dialog_fight2 == 1:
@@ -18935,63 +18944,49 @@ label fight141:
             
             $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-            if memy == 3:
-                $ kostka = renpy.random.randint(1, 20)
-                if kostka <= 3:
-                    $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                    play sound "audio/sfx/obrona.mp3"
-                    "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                    jump faza_fight145
-
             if urban_obrona >= 2:
-                play sound "audio/sfx/obrona.mp3"
-                "{i}Atak All-Star Zombie został zablokowany{/i}"
-                $ urban_obrona = 1
+                play sound "audio/sfx/rzut.mp3"
+                $ urban_hp_now -= all_star_zombie3_attack
+                $ urban_obrona = 0
+                hide tarcza3
+                if tarczownik_ass == 1:
+                    if urban_wybrany == 1:
+                        hide air_strike_shield1
+
+                    if urban_wybrany == 2:                                                                                            
+                        hide air_strike_shield2
+
+                    if urban_wybrany == 3:
+                        hide air_strike_shield3
+                "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
 
                 jump faza_fight145
                                                 
             else:
-                play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                 if urban_obrona == 1:
-                    $ urban_hp_now -= int(all_star_zombie3_attack / 2)
+                    play sound "audio/sfx/rzut.mp3"
+                    $ urban_hp_now -= all_star_zombie3_attack
+                    $ urban_obrona = 0
+                    hide tarcza3
+                    if tarczownik_ass == 1:
+                        if urban_wybrany == 1:
+                            hide air_strike_shield1
 
-                    $ dmg = int(all_star_zombie3_attack / 2)
-                    "{i}All-Star Zombie zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                        if urban_wybrany == 2:
+                            hide air_strike_shield2
+
+                        if urban_wybrany == 3:
+                            hide air_strike_shield3                  
+                        
+                    "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
 
                     jump faza_fight145
                 else:
+                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                     $ urban_hp_now -= all_star_zombie3_attack
 
                     "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump faza_fight145
-        
-        if all_star_zombie3_max_attack_now <= 0 and all_star_zombie3_obrona == 0:
-            show tarcza6 zorder 15 at weapon_wrog1  
-            play sound "audio/sfx/shield.mp3"
-            "{i}All-Star Zombie broni się{/i}"
-            $ all_star_zombie3_obrona += 1
-            jump faza_fight145
-
-        if all_star_zombie3_hp_now >= 1 and all_star_zombie3_obrona == 0:
-            if all_star_zombie3_hp_now <= 3:
-                $ kostka = renpy.random.randint(1, 3)
-
-                if kostka >= 2:
-                    show tarcza6 zorder 15 at weapon_wrog1  
-                    play sound "audio/sfx/shield.mp3"
-                    "{i}All-Star Zombie broni się{/i}"
-                    $ all_star_zombie3_obrona += 1
-                    jump faza_fight145
-            
-            else:
-                $ kostka = renpy.random.randint(1, 10)
-
-                if kostka == 10:
-                    show tarcza6 zorder 15 at weapon_wrog1  
-                    play sound "audio/sfx/shield.mp3"
-                    "{i}All-Star Zombie broni się{/i}"
-                    $ all_star_zombie3_obrona += 1
                     jump faza_fight145
                     
         label losowanko_fight144:   
@@ -19007,32 +19002,40 @@ label fight141:
                         if kostka >= 2:
                             $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                            if memy == 2:
-                                $ kostka = renpy.random.randint(1, 20)
-                                if kostka <= 3:
-                                    $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                    jump faza_fight145
-
                             if luszcz_obrona >= 2:
-                                play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                $ luszcz_obrona = 1
+                                play sound "audio/sfx/rzut.mp3"
+                                $ luszcz_hp_now -= all_star_zombie3_attack
+                                $ luszcz_obrona = 0
+                                hide tarcza1
+                                if tarczownik_ass == 1:
+                                    if luszcz_wybrany == 1:
+                                        hide air_strike_shield1
+
+                                    if luszcz_wybrany == 2:
+                                        hide air_strike_shield2
+
+                                    if luszcz_wybrany == 3:
+                                        hide air_strike_shield3
+                                "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 
                             else:
-                                if all_star_zombie3_weapon >= 1:
-                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                
-                                else:
-                                    play sound "audio/sfx/reka.mp3"
-
                                 if luszcz_obrona == 1:
-                                    $ luszcz_hp_now -= int(all_star_zombie3_attack / 2)
+                                    play sound "audio/sfx/rzut.mp3"
+                                    $ luszcz_hp_now -= all_star_zombie3_attack
+                                    $ luszcz_obrona = 0
+                                    hide tarcza1
+                                    if tarczownik_ass == 1:
+                                        if luszcz_wybrany == 1:
+                                            hide air_strike_shield1
 
-                                    $ dmg = int(all_star_zombie3_attack / 2)
-                                    "{i}All-Star Zombie zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                        if luszcz_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if luszcz_wybrany == 3:
+                                            hide air_strike_shield3
+                                    "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                 else:
+                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                     $ luszcz_hp_now -= all_star_zombie3_attack
 
                                     "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Łuszczowi{/i}"
@@ -19047,32 +19050,40 @@ label fight141:
                             if kostka >= 3:
                                 $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                if memy == 2:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight145
-
                                 if luszcz_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                    $ luszcz_obrona = 1
+                                    play sound "audio/sfx/rzut.mp3"
+                                    $ luszcz_hp_now -= all_star_zombie3_attack
+                                    $ luszcz_obrona = 0
+                                    hide tarcza1
+                                    if tarczownik_ass == 1:
+                                        if luszcz_wybrany == 1:
+                                            hide air_strike_shield1
+
+                                        if luszcz_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if luszcz_wybrany == 3:
+                                            hide air_strike_shield3
+                                    "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                     
                                 else:
-                                    if all_star_zombie3_weapon >= 1:
-                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                    
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
-
                                     if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(all_star_zombie3_attack / 2)
+                                        play sound "audio/sfx/rzut.mp3"
+                                        $ luszcz_hp_now -= all_star_zombie3_attack
+                                        $ luszcz_obrona = 0
+                                        hide tarcza1
+                                        if tarczownik_ass == 1:
+                                            if luszcz_wybrany == 1:
+                                                hide air_strike_shield1
 
-                                        $ dmg = int(all_star_zombie3_attack / 2)
-                                        "{i}All-Star Zombie zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                            if luszcz_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if luszcz_wybrany == 3:
+                                                hide air_strike_shield3
+                                        "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                     else:
+                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                         $ luszcz_hp_now -= all_star_zombie3_attack
 
                                         "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Łuszczowi{/i}"
@@ -19085,33 +19096,41 @@ label fight141:
                             $ kostka = renpy.random.randint(1, 5)
                             if kostka >= 5:
                                 $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
-
-                                if memy == 2:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight145
                             
                                 if luszcz_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                    $ luszcz_obrona = 1
+                                    play sound "audio/sfx/rzut.mp3"
+                                    $ luszcz_hp_now -= all_star_zombie3_attack
+                                    $ luszcz_obrona = 0
+                                    hide tarcza1
+                                    if tarczownik_ass == 1:
+                                        if luszcz_wybrany == 1:
+                                            hide air_strike_shield1
+
+                                        if luszcz_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if luszcz_wybrany == 3:
+                                            hide air_strike_shield3
+                                    "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                     
                                 else:
-                                    if all_star_zombie3_weapon >= 1:
-                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                    
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
-
                                     if luszcz_obrona == 1:
-                                        $ luszcz_hp_now -= int(all_star_zombie3_attack / 2)
+                                        play sound "audio/sfx/rzut.mp3"
+                                        $ luszcz_hp_now -= all_star_zombie3_attack
+                                        $ luszcz_obrona = 0
+                                        hide tarcza1
+                                        if tarczownik_ass == 1:
+                                            if luszcz_wybrany == 1:
+                                                hide air_strike_shield1
 
-                                        $ dmg = int(all_star_zombie3_attack / 2)
-                                        "{i}All-Star Zombie zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                            if luszcz_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if luszcz_wybrany == 3:
+                                                hide air_strike_shield3
+                                        "{i}All-Star Zombie rozbił tarczę Łuszcza i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                     else:
+                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                         $ luszcz_hp_now -= all_star_zombie3_attack
 
                                         "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Łuszczowi{/i}"
@@ -19130,32 +19149,40 @@ label fight141:
                             if kostka >= 2:
                                 $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                if memy == 3:
-                                    $ kostka = renpy.random.randint(1, 20)
-                                    if kostka <= 3:
-                                        $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight145
-
                                 if urban_obrona >= 2:
-                                    play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                    $ urban_obrona = 1
+                                    play sound "audio/sfx/rzut.mp3"
+                                    $ urban_hp_now -= all_star_zombie3_attack
+                                    $ urban_obrona = 0
+                                    hide tarcza3
+                                    if tarczownik_ass == 1:
+                                        if urban_wybrany == 1:
+                                            hide air_strike_shield1
+
+                                        if urban_wybrany == 2:
+                                            hide air_strike_shield2
+
+                                        if urban_wybrany == 3:
+                                            hide air_strike_shield3
+                                    "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
 
                                 else:
-                                    if all_star_zombie3_weapon >= 1:
-                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                    
-                                    else:
-                                        play sound "audio/sfx/reka.mp3"
-
                                     if urban_obrona == 1:
-                                        $ urban_hp_now -= int(all_star_zombie3_attack / 2)
+                                        play sound "audio/sfx/rzut.mp3"
+                                        $ urban_hp_now -= all_star_zombie3_attack
+                                        $ urban_obrona = 0
+                                        hide tarcza3
+                                        if tarczownik_ass == 1:
+                                            if urban_wybrany == 1:
+                                                hide air_strike_shield1
 
-                                        $ dmg = int(all_star_zombie3_attack / 2)
-                                        "{i}All-Star Zombie zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                            if urban_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if urban_wybrany == 3:
+                                                hide air_strike_shield3
+                                        "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                     else:
+                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                         $ urban_hp_now -= all_star_zombie3_attack
 
                                         "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Jerzemu Urbanowi{/i}"
@@ -19170,32 +19197,40 @@ label fight141:
                                 if kostka >= 3:
                                     $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                    if memy == 3:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight145
-
                                     if urban_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                        $ urban_obrona = 1
+                                        play sound "audio/sfx/rzut.mp3"
+                                        $ urban_hp_now -= all_star_zombie3_attack
+                                        $ urban_obrona = 0
+                                        hide tarcza3
+                                        if tarczownik_ass == 1:
+                                            if urban_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if urban_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if urban_wybrany == 3:
+                                                hide air_strike_shield3
+                                        "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
 
                                     else:
-                                        if all_star_zombie3_weapon >= 1:
-                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-
                                         if urban_obrona == 1:
-                                            $ urban_hp_now -= int(all_star_zombie3_attack / 2)
+                                            play sound "audio/sfx/rzut.mp3"
+                                            $ urban_hp_now -= all_star_zombie3_attack
+                                            $ urban_obrona = 0
+                                            hide tarcza3
+                                            if tarczownik_ass == 1:
+                                                if urban_wybrany == 1:
+                                                    hide air_strike_shield1
 
-                                            $ dmg = int(all_star_zombie3_attack / 2)
-                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                                if urban_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if urban_wybrany == 3:
+                                                    hide air_strike_shield3
+                                            "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                         else:
+                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                             $ urban_hp_now -= all_star_zombie3_attack
 
                                             "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Jerzemu Urbanowi{/i}"
@@ -19209,32 +19244,40 @@ label fight141:
                                 if kostka >= 5:
                                     $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                    if memy == 3:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight145
-
                                     if urban_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                        $ urban_obrona = 1
+                                        play sound "audio/sfx/rzut.mp3"
+                                        $ urban_hp_now -= all_star_zombie3_attack
+                                        $ urban_obrona = 0
+                                        hide tarcza3
+                                        if tarczownik_ass == 1:
+                                            if urban_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if urban_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if urban_wybrany == 3:
+                                                hide air_strike_shield3
+                                        "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
 
                                     else:
-                                        if all_star_zombie3_weapon >= 1:
-                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-                                    
                                         if urban_obrona == 1:
-                                            $ urban_hp_now -= int(all_star_zombie3_attack / 2)
+                                            play sound "audio/sfx/rzut.mp3"
+                                            $ urban_hp_now -= all_star_zombie3_attack
+                                            $ urban_obrona = 0
+                                            hide tarcza3
+                                            if tarczownik_ass == 1:
+                                                if urban_wybrany == 1:
+                                                    hide air_strike_shield1
 
-                                            $ dmg = int(all_star_zombie3_attack / 2)
-                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                                if urban_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if urban_wybrany == 3:
+                                                    hide air_strike_shield3
+                                            "{i}All-Star Zombie rozbił tarczę Jerzego Urban i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                         else:
+                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                             $ urban_hp_now -= all_star_zombie3_attack
 
                                             "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Jerzemu Urbanowi{/i}"
@@ -19253,32 +19296,40 @@ label fight141:
                                 if kostka >= 2:
                                     $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                    if memy == 4:
-                                        $ kostka = renpy.random.randint(1, 20)
-                                        if kostka <= 3:
-                                            $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight145
-
                                     if zyd_obrona >= 2:
-                                        play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                        $ zyd_obrona = 1
+                                        play sound "audio/sfx/rzut.mp3"
+                                        $ zyd_hp_now -= all_star_zombie3_attack
+                                        $ zyd_obrona = 0
+                                        hide tarcza4
+                                        if tarczownik_ass == 1:
+                                            if zyd_wybrany == 1:
+                                                hide air_strike_shield1
+
+                                            if zyd_wybrany == 2:
+                                                hide air_strike_shield2
+
+                                            if zyd_wybrany == 3:
+                                                hide air_strike_shield3
+                                        "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                         
                                     else:
-                                        if all_star_zombie3_weapon >= 1:
-                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                        
-                                        else:
-                                            play sound "audio/sfx/reka.mp3"
-
                                         if zyd_obrona == 1:
-                                            $ zyd_hp_now -= int(all_star_zombie3_attack / 2)
+                                            play sound "audio/sfx/rzut.mp3"
+                                            $ zyd_hp_now -= all_star_zombie3_attack
+                                            $ zyd_obrona = 0
+                                            hide tarcza4
+                                            if tarczownik_ass == 1:
+                                                if zyd_wybrany == 1:
+                                                    hide air_strike_shield1
 
-                                            $ dmg = int(all_star_zombie3_attack / 2)
-                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Żydowi{/i}"
+                                                if zyd_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if zyd_wybrany == 3:
+                                                    hide air_strike_shield3
+                                            "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                         else:
+                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                             $ zyd_hp_now -= all_star_zombie3_attack
 
                                             "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Żydowi{/i}"
@@ -19293,32 +19344,40 @@ label fight141:
                                     if kostka >= 3:
                                         $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                        if memy == 4:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight145
-
                                         if zyd_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                            $ zyd_obrona = 1
+                                            play sound "audio/sfx/rzut.mp3"
+                                            $ zyd_hp_now -= all_star_zombie3_attack
+                                            $ zyd_obrona = 0
+                                            hide tarcza4
+                                            if tarczownik_ass == 1:
+                                                if zyd_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if zyd_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if zyd_wybrany == 3:
+                                                    hide air_strike_shield3
+                                            "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
 
                                         else:
-                                            if all_star_zombie3_weapon >= 1:
-                                                play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
                                             if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(all_star_zombie3_attack / 2)
+                                                play sound "audio/sfx/rzut.mp3"
+                                                $ zyd_hp_now -= all_star_zombie3_attack
+                                                $ zyd_obrona = 0
+                                                hide tarcza4
+                                                if tarczownik_ass == 1:
+                                                    if zyd_wybrany == 1:
+                                                        hide air_strike_shield1
 
-                                                $ dmg = int(all_star_zombie3_attack / 2)
-                                                "{i}All-Star Zombie zadaje [dmg] obrażeń Żydowi{/i}"
+                                                    if zyd_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if zyd_wybrany == 3:
+                                                        hide air_strike_shield3
+                                                "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                             else:
+                                                play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                 $ zyd_hp_now -= all_star_zombie3_attack
 
                                                 "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Żydowi{/i}"
@@ -19331,33 +19390,41 @@ label fight141:
                                     $ kostka = renpy.random.randint(1, 5)
                                     if kostka >= 5:
                                         $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
-
-                                        if memy == 4:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight145
                                         
                                         if zyd_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                            $ zyd_obrona = 1
+                                            play sound "audio/sfx/rzut.mp3"
+                                            $ zyd_hp_now -= all_star_zombie3_attack
+                                            $ zyd_obrona = 0
+                                            hide tarcza4
+                                            if tarczownik_ass == 1:
+                                                if zyd_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if zyd_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if zyd_wybrany == 3:
+                                                    hide air_strike_shield3
+                                            "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
 
                                         else:
-                                            if all_star_zombie3_weapon >= 1:
-                                                play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
                                             if zyd_obrona == 1:
-                                                $ zyd_hp_now -= int(all_star_zombie3_attack / 2)
+                                                play sound "audio/sfx/rzut.mp3"
+                                                $ zyd_hp_now -= all_star_zombie3_attack
+                                                $ zyd_obrona = 0
+                                                hide tarcza4
+                                                if tarczownik_ass == 1:
+                                                    if zyd_wybrany == 1:
+                                                        hide air_strike_shield1
 
-                                                $ dmg = int(all_star_zombie3_attack / 2)
-                                                "{i}All-Star Zombie zadaje [dmg] obrażeń Żydowi{/i}"
+                                                    if zyd_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if zyd_wybrany == 3:
+                                                        hide air_strike_shield3
+                                                "{i}All-Star Zombie rozbił tarczę Żyda i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                             else:
+                                                play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                 $ zyd_hp_now -= all_star_zombie3_attack
 
                                                 "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Żydowi{/i}"
@@ -19376,32 +19443,40 @@ label fight141:
                                     if kostka >= 2:
                                         $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                        if memy == 5:
-                                            $ kostka = renpy.random.randint(1, 20)
-                                            if kostka <= 3:
-                                                $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight145
-
                                         if kazuma_obrona >= 2:
-                                            play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                            $ kazuma_obrona = 1
+                                            play sound "audio/sfx/rzut.mp3"
+                                            $ kazuma_hp_now -= all_star_zombie3_attack
+                                            $ kazuma_obrona = 0
+                                            hide tarcza5
+                                            if tarczownik_ass == 1:
+                                                if kazuma_wybrany == 1:
+                                                    hide air_strike_shield1
+
+                                                if kazuma_wybrany == 2:
+                                                    hide air_strike_shield2
+
+                                                if kazuma_wybrany == 3:
+                                                    hide air_strike_shield3
+                                            "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                         
                                         else:
-                                            if all_star_zombie3_weapon >= 1:
-                                                play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                            
-                                            else:
-                                                play sound "audio/sfx/reka.mp3"
-
                                             if kazuma_obrona == 1:
-                                                $ kazuma_hp_now -= int(all_star_zombie3_attack / 2)
+                                                play sound "audio/sfx/rzut.mp3"
+                                                $ kazuma_hp_now -= all_star_zombie3_attack
+                                                $ kazuma_obrona = 0
+                                                hide tarcza5
+                                                if tarczownik_ass == 1:
+                                                    if kazuma_wybrany == 1:
+                                                        hide air_strike_shield1
 
-                                                $ dmg = int(all_star_zombie3_attack / 2)
-                                                "{i}All-Star Zombie zadaje [dmg] obrażeń Kazumie{/i}"
+                                                    if kazuma_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if kazuma_wybrany == 3:
+                                                        hide air_strike_shield3
+                                                "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                             else:
+                                                play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                 $ kazuma_hp_now -= all_star_zombie3_attack
 
                                                 "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Kazumie{/i}"
@@ -19416,32 +19491,40 @@ label fight141:
                                         if kostka >= 3:
                                             $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                            if memy == 5:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight145
-
                                             if kazuma_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                $ kazuma_obrona = 1
+                                                play sound "audio/sfx/rzut.mp3"
+                                                $ kazuma_hp_now -= all_star_zombie3_attack
+                                                $ kazuma_obrona = 0
+                                                hide tarcza5
+                                                if tarczownik_ass == 1:
+                                                    if kazuma_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if kazuma_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if kazuma_wybrany == 3:
+                                                        hide air_strike_shield3
+                                                "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                             
                                             else:
-                                                if all_star_zombie3_weapon >= 1:
-                                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
                                                 if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(all_star_zombie3_attack / 2)
+                                                    play sound "audio/sfx/rzut.mp3"
+                                                    $ kazuma_hp_now -= all_star_zombie3_attack
+                                                    $ kazuma_obrona = 0
+                                                    hide tarcza5
+                                                    if tarczownik_ass == 1:
+                                                        if kazuma_wybrany == 1:
+                                                            hide air_strike_shield1
 
-                                                    $ dmg = int(all_star_zombie3_attack / 2)
-                                                    "{i}All-Star Zombie zadaje [dmg] obrażeń Kazumie{/i}"
+                                                        if kazuma_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if kazuma_wybrany == 3:
+                                                            hide air_strike_shield3
+                                                    "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 else:
+                                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                     $ kazuma_hp_now -= all_star_zombie3_attack
 
                                                     "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Kazumie{/i}"
@@ -19455,32 +19538,40 @@ label fight141:
                                         if kostka >= 5:
                                             $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                            if memy == 5:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight145
-
                                             if kazuma_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                $ kazuma_obrona = 1
+                                                play sound "audio/sfx/rzut.mp3"
+                                                $ kazuma_hp_now -= all_star_zombie3_attack
+                                                $ kazuma_obrona = 0
+                                                hide tarcza5
+                                                if tarczownik_ass == 1:
+                                                    if kazuma_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if kazuma_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if kazuma_wybrany == 3:
+                                                        hide air_strike_shield3
+                                                "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                             
                                             else:
-                                                if all_star_zombie3_weapon >= 1:
-                                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
                                                 if kazuma_obrona == 1:
-                                                    $ kazuma_hp_now -= int(all_star_zombie3_attack / 2)
+                                                    play sound "audio/sfx/rzut.mp3"
+                                                    $ kazuma_hp_now -= all_star_zombie3_attack
+                                                    $ kazuma_obrona = 0
+                                                    hide tarcza5
+                                                    if tarczownik_ass == 1:
+                                                        if kazuma_wybrany == 1:
+                                                            hide air_strike_shield1
 
-                                                    $ dmg = int(all_star_zombie3_attack / 2)
-                                                    "{i}All-Star Zombie zadaje [dmg] obrażeń Kazumie{/i}"
+                                                        if kazuma_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if kazuma_wybrany == 3:
+                                                            hide air_strike_shield3
+                                                    "{i}All-Star Zombie rozbił tarczę Kazumy i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 else:
+                                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                     $ kazuma_hp_now -= all_star_zombie3_attack
 
                                                     "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Kazumie{/i}"
@@ -19499,32 +19590,40 @@ label fight141:
                                         if kostka >= 2:
                                             $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                            if memy == 7:
-                                                $ kostka = renpy.random.randint(1, 20)
-                                                if kostka <= 3:
-                                                    $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight145
-
                                             if eminem_obrona >= 2:
-                                                play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                $ eminem_obrona = 1
+                                                play sound "audio/sfx/rzut.mp3"
+                                                $ eminem_hp_now -= all_star_zombie3_attack
+                                                $ eminem_obrona = 0
+                                                hide tarcza2
+                                                if tarczownik_ass == 1:
+                                                    if eminem_wybrany == 1:
+                                                        hide air_strike_shield1
+
+                                                    if eminem_wybrany == 2:
+                                                        hide air_strike_shield2
+
+                                                    if eminem_wybrany == 3:
+                                                        hide air_strike_shield3
+                                                "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                             
                                             else:
-                                                if all_star_zombie3_weapon >= 1:
-                                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                
-                                                else:
-                                                    play sound "audio/sfx/reka.mp3"
-
                                                 if eminem_obrona == 1:
-                                                    $ eminem_hp_now -= int(all_star_zombie3_attack / 2)
+                                                    play sound "audio/sfx/rzut.mp3"
+                                                    $ eminem_hp_now -= all_star_zombie3_attack
+                                                    $ eminem_obrona = 0
+                                                    hide tarcza2
+                                                    if tarczownik_ass == 1:
+                                                        if eminem_wybrany == 1:
+                                                            hide air_strike_shield1
 
-                                                    $ dmg = int(all_star_zombie3_attack / 2)
-                                                    "{i}All-Star Zombie zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                        if eminem_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if eminem_wybrany == 3:
+                                                            hide air_strike_shield3
+                                                    "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 else:
+                                                    play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                     $ eminem_hp_now -= all_star_zombie3_attack
 
                                                     "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Shadowowi{/i}"
@@ -19539,35 +19638,43 @@ label fight141:
                                             if kostka >= 3:
                                                 $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                                if memy == 7:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight145
-
                                                 if eminem_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                    $ eminem_obrona = 1
+                                                    play sound "audio/sfx/rzut.mp3"
+                                                    $ eminem_hp_now -= all_star_zombie3_attack
+                                                    $ eminem_obrona = 0
+                                                    hide tarcza2
+                                                    if tarczownik_ass == 1:
+                                                        if eminem_wybrany == 1:
+                                                            hide air_strike_shield1
+
+                                                        if eminem_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if eminem_wybrany == 3:
+                                                            hide air_strike_shield3
+                                                    "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 
                                                 else:
-                                                    if all_star_zombie3_weapon >= 1:
-                                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
                                                     if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(all_star_zombie3_attack / 2)
+                                                        play sound "audio/sfx/rzut.mp3"
+                                                        $ eminem_hp_now -= all_star_zombie3_attack
+                                                        $ eminem_obrona = 0
+                                                        hide tarcza2
+                                                        if tarczownik_ass == 1:
+                                                            if eminem_wybrany == 1:
+                                                                hide air_strike_shield1
 
-                                                        $ dmg = int(all_star_zombie3_attack / 2)
-                                                        "{i}All-Star Zombie zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                            if eminem_wybrany == 2:
+                                                                hide air_strike_shield2
+
+                                                            if eminem_wybrany == 3:
+                                                                hide air_strike_shield3
+                                                        "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                     else:
+                                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                         $ eminem_hp_now -= all_star_zombie3_attack
 
-                                                        "{i} [all_star_zombie3_attack] obrażeń Shadowowi{/i}"
+                                                        "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza_fight145
                                             else:
@@ -19578,32 +19685,40 @@ label fight141:
                                             if kostka >= 5:
                                                 $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                                if memy == 7:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight145
-
                                                 if eminem_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                    $ eminem_obrona = 1
+                                                    play sound "audio/sfx/rzut.mp3"
+                                                    $ eminem_hp_now -= all_star_zombie3_attack
+                                                    $ eminem_obrona = 0
+                                                    hide tarcza2
+                                                    if tarczownik_ass == 1:
+                                                        if eminem_wybrany == 1:
+                                                            hide air_strike_shield1
+
+                                                        if eminem_wybrany == 2:
+                                                            hide air_strike_shield2
+
+                                                        if eminem_wybrany == 3:
+                                                            hide air_strike_shield3
+                                                    "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 
                                                 else:
-                                                    if all_star_zombie3_weapon >= 1:
-                                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
                                                     if eminem_obrona == 1:
-                                                        $ eminem_hp_now -= int(all_star_zombie3_attack / 2)
+                                                        play sound "audio/sfx/rzut.mp3"
+                                                        $ eminem_hp_now -= all_star_zombie3_attack
+                                                        $ eminem_obrona = 0
+                                                        hide tarcza2
+                                                        if tarczownik_ass == 1:
+                                                            if eminem_wybrany == 1:
+                                                                hide air_strike_shield1
 
-                                                        $ dmg = int(all_star_zombie3_attack / 2)
-                                                        "{i}All-Star Zombie zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                            if eminem_wybrany == 2:
+                                                                hide air_strike_shield2
+
+                                                            if eminem_wybrany == 3:
+                                                                hide air_strike_shield3
+                                                        "{i}All-Star Zombie rozbił tarczę Shadowa i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                     else:
+                                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                         $ eminem_hp_now -= all_star_zombie3_attack
 
                                                         "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Shadowowi{/i}"
@@ -19622,32 +19737,50 @@ label fight141:
                                             if kostka >= 2:
                                                 $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                                if memy == 6:
-                                                    $ kostka = renpy.random.randint(1, 20)
-                                                    if kostka <= 3:
-                                                        $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight145
-
                                                 if tarczownik_obrona >= 2:
-                                                    play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                    $ tarczownik_obrona = 1
+                                                    if tarczownik_sp == 1:
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
+                                                    else:
+                                                        play sound "audio/sfx/rzut.mp3"
+                                                        $ tarczownik_hp_now -= all_star_zombie3_attack
+                                                        $ tarczownik_obrona = 0
+                                                        hide tarcza6
+                                                        if tarczownik_ass == 1:
+                                                            if tarczownik_wybrany == 1:
+                                                                hide air_strike_shield1
+
+                                                            if tarczownik_wybrany == 2:
+                                                                hide air_strike_shield2
+
+                                                            if tarczownik_wybrany == 3:
+                                                                hide air_strike_shield3
+                                                        "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 
                                                 else:
-                                                    if all_star_zombie3_weapon >= 1:
-                                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                    
-                                                    else:
-                                                        play sound "audio/sfx/reka.mp3"
-
                                                     if tarczownik_obrona == 1:
-                                                        $ tarczownik_hp_now -= int(all_star_zombie3_attack / 2)
+                                                        if tarczownik_sp == 1:
+                                                            $ tarczownik_hp_now -= int(all_star_zombie3_attack / 2)
+                                                            $ dmg = int(all_star_zombie3_attack / 2)
+                                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            play sound "audio/sfx/rzut.mp3"
+                                                            $ tarczownik_hp_now -= all_star_zombie3_attack
+                                                            $ tarczownik_obrona = 0
+                                                            hide tarcza6
+                                                            if tarczownik_ass == 1:
+                                                                if tarczownik_wybrany == 1:
+                                                                    hide air_strike_shield1
 
-                                                        $ dmg = int(all_star_zombie3_attack / 2)
-                                                        "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                                if tarczownik_wybrany == 2:
+                                                                    hide air_strike_shield2
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    hide air_strike_shield3
+                                                            "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                     else:
+                                                        play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                         $ tarczownik_hp_now -= all_star_zombie3_attack
 
                                                         "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Naofumiemu{/i}"
@@ -19662,32 +19795,50 @@ label fight141:
                                                 if kostka >= 3:
                                                     $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                                    if memy == 6:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                            play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight145
-
                                                     if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
+                                                        if tarczownik_sp == 1:
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak All-Star Zombie został zablokowany{/i}"
+                                                            $ tarczownik_obrona = 1
+                                                        else:
+                                                            play sound "audio/sfx/rzut.mp3"
+                                                            $ tarczownik_hp_now -= all_star_zombie3_attack
+                                                            $ tarczownik_obrona = 0
+                                                            hide tarcza6
+                                                            if tarczownik_ass == 1:
+                                                                if tarczownik_wybrany == 1:
+                                                                    hide air_strike_shield1
+
+                                                                if tarczownik_wybrany == 2:
+                                                                    hide air_strike_shield2
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    hide air_strike_shield3
+                                                            "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 
                                                     else:
-                                                        if all_star_zombie3_weapon >= 1:
-                                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(all_star_zombie3_attack / 2)
+                                                            if tarczownik_sp == 1:
+                                                                $ tarczownik_hp_now -= int(all_star_zombie3_attack / 2)
+                                                                $ dmg = int(all_star_zombie3_attack / 2)
+                                                                "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            else:
+                                                                play sound "audio/sfx/rzut.mp3"
+                                                                $ tarczownik_hp_now -= all_star_zombie3_attack
+                                                                $ tarczownik_obrona = 0
+                                                                hide tarcza6
+                                                                if tarczownik_ass == 1:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        hide air_strike_shield1
 
-                                                            $ dmg = int(all_star_zombie3_attack / 2)
-                                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                                    if tarczownik_wybrany == 2:
+                                                                        hide air_strike_shield2
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        hide air_strike_shield3
+                                                                "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                         else:
+                                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                             $ tarczownik_hp_now -= all_star_zombie3_attack
 
                                                             "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Naofumiemu{/i}"
@@ -19701,32 +19852,50 @@ label fight141:
                                                 if kostka >= 5:
                                                     $ all_star_zombie3_attack = renpy.random.randint(all_star_zombie3_min_attack_now, all_star_zombie3_max_attack_now)
 
-                                                    if memy == 6:
-                                                        $ kostka = renpy.random.randint(1, 20)
-                                                        if kostka <= 3:
-                                                            $ all_star_zombie3_hp_now -= all_star_zombie3_attack
-                                                            play sound "audio/sfx/obrona.mp3"
-                                                            "{i}Atak All-Star Zombie odbił się od Szalika z Memów i zadał [all_star_zombie3_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight145
-
                                                     if tarczownik_obrona >= 2:
-                                                        play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak All-Star Zombie został zablokowany{/i}"
-                                                        $ tarczownik_obrona = 1
+                                                        if tarczownik_sp == 1:
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak All-Star Zombie został zablokowany{/i}"
+                                                            $ tarczownik_obrona = 1
+                                                        else:
+                                                            play sound "audio/sfx/rzut.mp3"
+                                                            $ tarczownik_hp_now -= all_star_zombie3_attack
+                                                            $ tarczownik_obrona = 0
+                                                            hide tarcza6
+                                                            if tarczownik_ass == 1:
+                                                                if tarczownik_wybrany == 1:
+                                                                    hide air_strike_shield1
+
+                                                                if tarczownik_wybrany == 2:
+                                                                    hide air_strike_shield2
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    hide air_strike_shield3
+                                                            "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                 
                                                     else:
-                                                        if all_star_zombie3_weapon >= 1:
-                                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
-                                                        
-                                                        else:
-                                                            play sound "audio/sfx/reka.mp3"
-
                                                         if tarczownik_obrona == 1:
-                                                            $ tarczownik_hp_now -= int(all_star_zombie3_attack / 2)
+                                                            if tarczownik_sp == 1:
+                                                                $ tarczownik_hp_now -= int(all_star_zombie3_attack / 2)
+                                                                $ dmg = int(all_star_zombie3_attack / 2)
+                                                                "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                            else:
+                                                                play sound "audio/sfx/rzut.mp3"
+                                                                $ tarczownik_hp_now -= all_star_zombie3_attack
+                                                                $ tarczownik_obrona = 0
+                                                                hide tarcza6
+                                                                if tarczownik_ass == 1:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        hide air_strike_shield1
 
-                                                            $ dmg = int(all_star_zombie3_attack / 2)
-                                                            "{i}All-Star Zombie zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                                    if tarczownik_wybrany == 2:
+                                                                        hide air_strike_shield2
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        hide air_strike_shield3
+                                                                "{i}All-Star Zombie rozbił tarczę Naofumiego i zadał mu [all_star_zombie3_attack] obrażeń{/i}"
                                                         else:
+                                                            play sound "audio/sfx/all_star_zombie3_weapon.mp3"
                                                             $ tarczownik_hp_now -= all_star_zombie3_attack
 
                                                             "{i}All-Star Zombie zadaje [all_star_zombie3_attack] obrażeń Naofumiemu{/i}"
