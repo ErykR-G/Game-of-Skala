@@ -784,6 +784,84 @@ screen gnom3_stats():
 
             text "ATK: [gnom3_min_attack_now]-[gnom3_max_attack_now]" style "dmg_text" xalign 0.5
 
+screen all_star_zombie3_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.44  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value all_star_zombie3_hp_now range all_star_zombie3_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if all_star_zombie3_hp_now/all_star_zombie3_hp > 0.5 else
+                                "#ffcc00" if all_star_zombie3_hp_now/all_star_zombie3_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[all_star_zombie3_hp_now]/[all_star_zombie3_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [all_star_zombie3_min_attack_now]-[all_star_zombie3_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen engineer1_stats():
+    fixed:
+        xpos 0.89
+        ypos 0.695  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value engineer1_hp_now range engineer1_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if engineer1_hp_now/engineer1_hp > 0.5 else
+                                "#ffcc00" if engineer1_hp_now/engineer1_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[engineer1_hp_now]/[engineer1_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [engineer1_min_attack_now]-[engineer1_max_attack_now]" style "dmg_text" xalign 0.5
+
+screen newspaper_zombie2_stats():
+    fixed:
+        xpos 0.76
+        ypos 0.945  
+        xanchor 0.5
+
+        vbox:
+            spacing 4
+            xalign 0.5
+
+            fixed:
+                xalign 0.5
+                xsize 200 
+                ysize 14
+
+                bar value newspaper_zombie2_hp_now range newspaper_zombie2_hp xsize 200 ysize 14:
+                    left_bar Solid(
+                                "#00cc00" if newspaper_zombie2_hp_now/newspaper_zombie2_hp > 0.5 else
+                                "#ffcc00" if newspaper_zombie2_hp_now/newspaper_zombie2_hp > 0.2 else
+                                "#ff0000"
+                            )
+
+                text "[newspaper_zombie2_hp_now]/[newspaper_zombie2_hp]" size 12 color "#ffffff" outlines [(1, "#00000080", 0, 0)] xalign 0.5 yalign 0.5
+
+            text "ATK: [newspaper_zombie2_min_attack_now]-[newspaper_zombie2_max_attack_now]" style "dmg_text" xalign 0.5
+
 screen yippee1_stats():
     fixed:
         xpos 0.76

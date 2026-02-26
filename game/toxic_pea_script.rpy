@@ -309,7 +309,6 @@ label toxic_pea:
         toxic "Podoba mi się twoja dedykacja."
         toxic "To co, do roboty!"
 
-        jump after_fight141
         jump fight141
         label after_fight141:
             play music "audio/music/toxic2.mp3"
