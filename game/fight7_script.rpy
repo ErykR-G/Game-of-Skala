@@ -6,7 +6,7 @@ label fight71_stats:
 
     default kartaginczyk1_hp = 20
     default kartaginczyk2_hp = 20
-    default tanya_hp = 80
+    default tanya_hp = 60
 
     default kartaginczyk1_uszy = 0
     default tanya_uszy = 0

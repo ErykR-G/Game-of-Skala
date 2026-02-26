@@ -6,8 +6,8 @@ label fight141_stats:
     default engineer1_sex = 0
 
     default all_star_zombie3_hp = 40
-    default newspaper_zombie2_hp = 15
-    default engineer1_hp = 70
+    default newspaper_zombie2_hp = 70
+    default engineer1_hp = 10
 
     default all_star_zombie3_uszy = 0
     default engineer1_uszy = 0

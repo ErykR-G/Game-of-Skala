@@ -585,7 +585,7 @@ label burmistrz:
         show kartaginczyk1 neutral at right
         show kartaginczyk2 neutral at slightright
 
-        tanya "żołnierze! Przygotować się do blitzkriegu! Musimy dotrzeć ich stolicy zanim ktokol…."
+        tanya "żołnierze! Przygotować się do blitzkriegu! Musimy dotrzeć do ich stolicy zanim ktokol…."
 
         show tanya neutral at center
 
