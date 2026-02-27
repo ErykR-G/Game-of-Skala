@@ -1138,7 +1138,7 @@ label kazuma3:
                         gamma "I i i do tego nigdy przenigdy nie zapomniałby mojego imienia!"
 
                         cid "Ej no weź no czasami się to zdarza..."
-                        cid "Nie masz czasami tak, że podchodzisz do kogoś zagadać, ale akurat wyleciał ci jego numer z głowy więc krzyczysz jakieś cool niemieckie słówko typu “erschießen!” i odchodzisz?"
+                        cid "Nie masz czasami tak, że podchodzisz do kogoś zagadać, ale akurat wyleciał ci jego numer z głowy więc krzyczysz jakieś cool niemieckie słówko typu “Arbeiten!” i odchodzisz?"
 
                         gamma "..."
                         gamma "Nie? Ktoś tak ma na seriO!?"

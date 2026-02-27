@@ -18602,9 +18602,9 @@ label fight61:
 
         if gnom1_uszy >= 1 and urban_hp_now >= 1:
             if gnom1_weapon >= 1:
-                show gnom1_weapon zorder 15 at weapon_wrog1  
+                show gnom1_weapon zorder 15 at weapon_wrog1z  
             else:
-                show reka6 zorder 15 at weapon_wrog1
+                show reka6 zorder 15 at weapon_wrog1z
             
             $ gnom1_attack = renpy.random.randint(gnom1_min_attack_now, gnom1_max_attack_now)
 
@@ -18717,7 +18717,7 @@ label fight61:
                     jump faza_fight65
         
         if gnom1_max_attack_now <= 0 and gnom1_obrona == 0:
-            show tarcza6 zorder 15 at weapon_wrog1  
+            show tarcza6 zorder 15 at weapon_wrog1z  
             play sound "audio/sfx/shield.mp3"
             "{i}Noggin Gnome 1 broni się{/i}"
             $ gnom1_obrona += 1
@@ -18728,7 +18728,7 @@ label fight61:
                 $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
-                    show tarcza6 zorder 15 at weapon_wrog1  
+                    show tarcza6 zorder 15 at weapon_wrog1z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Noggin Gnome 1 broni się{/i}"
                     $ gnom1_obrona += 1
@@ -18738,7 +18738,7 @@ label fight61:
                 $ kostka = renpy.random.randint(1, 10)
 
                 if kostka == 10:
-                    show tarcza6 zorder 15 at weapon_wrog1  
+                    show tarcza6 zorder 15 at weapon_wrog1z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Noggin Gnome 1 broni się{/i}"
                     $ gnom1_obrona += 1
@@ -18746,9 +18746,9 @@ label fight61:
                     
         label losowanko_fight64:   
             if gnom1_weapon >= 1:
-                show gnom1_weapon zorder 15 at weapon_wrog1  
+                show gnom1_weapon zorder 15 at weapon_wrog1z  
             else:
-                show reka6 zorder 15 at weapon_wrog1    
+                show reka6 zorder 15 at weapon_wrog1z    
             $ kostka = renpy.random.randint(1, 6)
             if kostka == 1:
                 if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
@@ -20465,9 +20465,9 @@ label fight61:
 
         if gnom2_uszy >= 1 and urban_hp_now >= 1:
             if gnom2_weapon >= 1:
-                show gnom2_weapon zorder 15 at weapon_wrog3 
+                show gnom2_weapon zorder 15 at weapon_wrog3z 
             else:
-                show reka7 zorder 15 at weapon_wrog3
+                show reka7 zorder 15 at weapon_wrog3z
             $ gnom2_attack = renpy.random.randint(gnom2_min_attack_now, gnom2_max_attack_now)
 
             if memy == 3:
@@ -20581,7 +20581,7 @@ label fight61:
                 jump faza_fight66
 
         if gnom2_max_attack_now <= 0 and gnom2_obrona == 0:
-            show tarcza7 zorder 15 at weapon_wrog3  
+            show tarcza7 zorder 15 at weapon_wrog3z  
             play sound "audio/sfx/shield.mp3"
             "{i}Noggin Gnome 2 broni się{/i}"
             $ gnom2_obrona += 1
@@ -20592,7 +20592,7 @@ label fight61:
                 $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
-                    show tarcza7 zorder 15 at weapon_wrog3  
+                    show tarcza7 zorder 15 at weapon_wrog3z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Noggin Gnome 2 broni się{/i}"
                     $ gnom2_obrona += 1
@@ -20602,7 +20602,7 @@ label fight61:
                 $ kostka = renpy.random.randint(1, 10)
 
                 if kostka == 10:
-                    show tarcza7 zorder 15 at weapon_wrog3  
+                    show tarcza7 zorder 15 at weapon_wrog3z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Noggin Gnome 2 broni się{/i}"
                     $ gnom2_obrona += 1
@@ -20610,9 +20610,9 @@ label fight61:
                     
         label losowanko_fight65:
             if gnom2_weapon >= 1:
-                show gnom2_weapon zorder 15 at weapon_wrog3 
+                show gnom2_weapon zorder 15 at weapon_wrog3z 
             else:
-                show reka7 zorder 15 at weapon_wrog3
+                show reka7 zorder 15 at weapon_wrog3z
 
             $ kostka = renpy.random.randint(1, 6)
             if kostka == 1:
@@ -22330,9 +22330,9 @@ label fight61:
 
         if gnom3_uszy >= 1 and urban_hp_now >= 1:
             if gnom3_weapon >= 1:
-                show gnom3_weapon zorder 15 at weapon_wrog2 
+                show gnom3_weapon zorder 15 at weapon_wrog2z 
             else:
-                show reka8 zorder 15 at weapon_wrog2
+                show reka8 zorder 15 at weapon_wrog2z
             $ gnom3_attack = renpy.random.randint(gnom3_min_attack_now, gnom3_max_attack_now)
 
             if memy == 3:
@@ -22469,7 +22469,7 @@ label fight61:
                 jump start_fight61
 
         if gnom3_max_attack_now <= 0 and gnom3_obrona == 0:
-            show tarcza8 zorder 15 at weapon_wrog2  
+            show tarcza8 zorder 15 at weapon_wrog2z  
             play sound "audio/sfx/shield.mp3"
             "{i}Noggin Gnome 3 broni się{/i}"
             $ gnom3_obrona += 1
@@ -22480,7 +22480,7 @@ label fight61:
                 $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
-                    show tarcza8 zorder 15 at weapon_wrog2  
+                    show tarcza8 zorder 15 at weapon_wrog2z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Noggin Gnome 3 broni się{/i}"
                     $ gnom3_obrona += 1
@@ -22490,7 +22490,7 @@ label fight61:
                 $ kostka = renpy.random.randint(1, 10)
 
                 if kostka == 10:
-                    show tarcza8 zorder 15 at weapon_wrog2  
+                    show tarcza8 zorder 15 at weapon_wrog2z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Noggin Gnome 3 broni się{/i}"
                     $ gnom3_obrona += 1
@@ -22498,9 +22498,9 @@ label fight61:
                     
         label losowanko_fight66:    
             if gnom3_weapon >= 1:
-                show gnom3_weapon zorder 15 at weapon_wrog2 
+                show gnom3_weapon zorder 15 at weapon_wrog2z 
             else:
-                show reka8 zorder 15 at weapon_wrog2     
+                show reka8 zorder 15 at weapon_wrog2z     
             $ kostka = renpy.random.randint(1, 6)
             if kostka == 1:
                 if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:

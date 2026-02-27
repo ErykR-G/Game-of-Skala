@@ -18394,9 +18394,9 @@ label fight01:
 
         if trup1_uszy >= 1 and urban_hp_now >= 1:
             if trup1_weapon >= 1:
-                show trup1_weapon zorder 15 at weapon_wrog1  
+                show trup1_weapon zorder 15 at weapon_wrog1z  
             else:
-                show reka6 zorder 15 at weapon_wrog1
+                show reka6 zorder 15 at weapon_wrog1z
             
             $ trup1_attack = renpy.random.randint(trup1_min_attack_now, trup1_max_attack_now)
 
@@ -18432,7 +18432,7 @@ label fight01:
                     jump faza_fight05
         
         if trup1_max_attack_now <= 0 and trup1_obrona == 0:
-            show tarcza6 zorder 15 at weapon_wrog1  
+            show tarcza6 zorder 15 at weapon_wrog1z  
             play sound "audio/sfx/shield.mp3"
             "{i}Kibol 1 broni się{/i}"
             $ trup1_obrona += 1
@@ -18443,7 +18443,7 @@ label fight01:
                 $ kostka = renpy.random.randint(1, 3)
 
                 if kostka >= 2:
-                    show tarcza6 zorder 15 at weapon_wrog1  
+                    show tarcza6 zorder 15 at weapon_wrog1z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 1 broni się{/i}"
                     $ trup1_obrona += 1
@@ -18453,7 +18453,7 @@ label fight01:
                 $ kostka = renpy.random.randint(1, 10)
 
                 if kostka == 10:
-                    show tarcza6 zorder 15 at weapon_wrog1  
+                    show tarcza6 zorder 15 at weapon_wrog1z  
                     play sound "audio/sfx/shield.mp3"
                     "{i}Kibol 1 broni się{/i}"
                     $ trup1_obrona += 1
@@ -18461,9 +18461,9 @@ label fight01:
                     
         label losowanko_fight04:   
             if trup1_weapon >= 1:
-                show trup1_weapon zorder 15 at weapon_wrog1  
+                show trup1_weapon zorder 15 at weapon_wrog1z  
             else:
-                show reka6 zorder 15 at weapon_wrog1    
+                show reka6 zorder 15 at weapon_wrog1z    
             $ kostka = renpy.random.randint(1, 6)
             if kostka == 1:
                 if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:

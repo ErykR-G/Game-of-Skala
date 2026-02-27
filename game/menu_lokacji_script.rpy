@@ -30,6 +30,10 @@ default info = 0
 default muzyczka = 0
 default kamala = 0
 
+default raem_wu = 0
+default gnoms_wu = 0
+default zul_wu = 0
+
 label menu_lokacji:
     label rynek:
         play sound "audio/sfx/traveling.mp3" 
@@ -78,7 +82,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=a} Alejka (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -88,19 +92,12 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump alejka
 
                 "{i}{image=wa} Słoneczna (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 1
@@ -110,19 +107,12 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump sloneczna
                 
                 "{i}{image=d} Parking (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -132,19 +122,12 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump parking
 
                 "{i}{image=sd} Bohaterów Września (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -154,14 +137,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 1
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump bohaterow_wrzesnia
                 
                 "{b}🏛️ Urząd Gminy | 7-15{/b}": 
@@ -340,7 +316,7 @@ label menu_lokacji:
             menu:      
                 "{i}{image=sd} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -350,14 +326,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump rynek
                 
                 "{b}🏗️ Plac Budowy | 6-18 {/b}":
@@ -625,7 +594,7 @@ label menu_lokacji:
             menu:      
                 "{i}{image=d} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -635,14 +604,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump rynek
                 
                 "{b}🛒 Sklep Monopolowy (60min) | 6-23{/b}" if zyd_social_link == 0:
@@ -854,7 +816,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=wa} Wolbromska (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -864,19 +826,12 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump wolbromska
                 
                 "{i}{image=a} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -886,14 +841,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump rynek
                 
                 "{b}🩺 Apteka (15min) | 8-20{/b}":
@@ -1244,7 +1192,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=sd} Parking (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -1254,14 +1202,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump parking
                 
                 "{b}🏡 Dom Toxic Pea | 20–24{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
@@ -1622,7 +1563,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=wa} Rynek (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 1
                         $ sloneczna = 0
@@ -1632,19 +1573,12 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump rynek
 
                 "{i}{image=sa} Lipowa (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -1654,14 +1588,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 1
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump lipowa
         
                 "{b}🛒 Kebab (15min) | 11–23{/b}":
@@ -1952,7 +1879,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=wd} Bohaterów Września (10min){/i}":
                     $ timer += 10
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -1962,19 +1889,12 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 1
                         $ lipowa = 0
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump bohaterow_wrzesnia
 
                 "{i}{image=s} Granica Skały (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -1984,14 +1904,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 0
                         $ granica = 1
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump granica
                 
                 "{b}🪦 Cmentarz | 24/7{/b}":
@@ -2434,7 +2347,7 @@ label menu_lokacji:
             menu:
                 "{i}{image=w} Lipowa (20min){/i}":
                     $ timer += 20
-                    $ kostka = renpy.random.randint(1, 15)
+                    $ kostka = renpy.random.randint(1, 20)
                     if kostka == 1:
                         $ rynek = 0
                         $ sloneczna = 0
@@ -2444,14 +2357,7 @@ label menu_lokacji:
                         $ bohaterow_wrzesnia = 0
                         $ lipowa = 1
                         $ granica = 0
-                        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
-                        $ kostka = renpy.random.randint(1, 3)
-                        if kostka == 1:
-                            jump raem_fight
-                        if kostka == 2:
-                            jump gnoms_fight
-                        if kostka == 3:
-                            jump fightx3
+                        jump walka_uliczna
                     jump lipowa    
                 
                 "{b}🛒 Chiński Market (15min) | 9–19{/b}":
@@ -2618,6 +2524,47 @@ label menu_lokacji:
                                             luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                             jump granica2
 
+    label walka_uliczna:
+        "{i}Podczas podróży napotykasz na niespodziewaną przeszkodę{/i}"
+        if zul_wu == 0 and gnoms_wu == 0 and raem_wu == 0 or zul_wu == 1 and gnoms_wu == 1 and raem_wu == 1:
+            $ kostka = renpy.random.randint(1, 3)
+            if kostka == 1:
+                jump raem_fight
+            if kostka == 2:
+                jump gnoms_fight
+            if kostka == 3:
+                jump zul_fight
+        else:
+            if zul_wu == 1 and gnoms_wu == 0 and raem_wu == 0:
+                $ kostka = renpy.random.randint(1, 2)
+                if kostka == 1:
+                    jump raem_fight
+                if kostka == 2:
+                    jump gnoms_fight
+            else:
+                if zul_wu == 0 and gnoms_wu == 1 and raem_wu == 0:
+                    $ kostka = renpy.random.randint(1, 2)
+                    if kostka == 1:
+                        jump raem_fight
+                    if kostka == 2:
+                        jump zul_fight
+                else:
+                    if zul_wu == 0 and gnoms_wu == 0 and raem_wu == 1:
+                        $ kostka = renpy.random.randint(1, 2)
+                        if kostka == 2:
+                            jump gnoms_fight
+                        if kostka == 1:
+                            jump zul_fight
+                    else:
+                        if zul_wu == 1 and gnoms_wu == 1 and raem_wu == 0:
+                            jump raem_fight
+                        else:
+                            if zul_wu == 1 and gnoms_wu == 0 and raem_wu == 1:
+                                jump gnoms_fight
+                            else:
+                                if zul_wu == 0 and gnoms_wu == 1 and raem_wu == 1:
+                                    jump zul_fight
+
     label kamala:
         play sound "audio/sfx/godlewska.mp3"
         show luszcz neutral at left
@@ -2642,6 +2589,7 @@ label menu_lokacji:
         jump rynek2
 
     label raem_fight:
+        $ raem_wu = 1
         scene bg raem
         play music "audio/music/rezero.mp3"
         show luszcz freaky at left
@@ -2707,6 +2655,7 @@ label menu_lokacji:
             jump granica
 
     label gnoms_fight:
+        $ gnoms_wu = 1
         scene bg gnoms
         stop music
         show luszcz neutral at left
@@ -2761,7 +2710,8 @@ label menu_lokacji:
         if granica == 1:
             jump granica
     
-    label fightx3:
+    label zul_fight:
+        $ zul_wu = 1
         "po walce 3"
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
             play music "audio/music/pole.mp3"
