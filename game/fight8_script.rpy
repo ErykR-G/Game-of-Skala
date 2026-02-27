@@ -29,13 +29,13 @@ label fight81_stats:
     default prymon_hp_now = prymon_hp
     default kononowicz_hp_now = kononowicz_hp
 
-    default obama_min_attack = 1
-    default prymon_min_attack = 1
-    default kononowicz_min_attack = 1
+    default obama_min_attack = 2
+    default prymon_min_attack = 2
+    default kononowicz_min_attack = 2
 
-    default obama_max_attack = 3
-    default prymon_max_attack = 4
-    default kononowicz_max_attack = 3
+    default obama_max_attack = 4
+    default prymon_max_attack = 5
+    default kononowicz_max_attack = 4
 
     default obama_max_attack_now = obama_max_attack
     default prymon_max_attack_now = prymon_max_attack
@@ -1426,109 +1426,109 @@ label fight81:
 
             luszcz "Dobra, dobra niech ci będzie"
         
-        if potwor >= 4 and kontrolka == 0:
+        if potwor >= 6 and kontrolka == 0:
             play sound "audio/sfx/przywolanie.mp3"
             $ kontrolka += 1
             show bg dziady3 zorder 1
             "{i}Hentai Tentakle potwor wychyla się bardziej z wyrwy w podlodze{/i}"
-            "{i}Wszyscy kultyści odzyskują po 5 punktów, życia i wzmacniają atak{/i}"
+            "{i}Wszyscy kultyści odzyskują po 3 punkty, życia i wzmacniają atak{/i}"
             if prymon_hp_now > 0:
                 $ prymon_max_attack_now_true += 1
                 $ prymon_max_attack_now += 1
-                if prymon_hp_now + 5 >= prymon_hp:
+                if prymon_hp_now + 3 >= prymon_hp:
                     $ prymon_hp_now = prymon_hp
                 
                 else:
-                    $ prymon_hp_now += 5
+                    $ prymon_hp_now += 3
             
             if obama_hp_now > 0:
                 $ obama_max_attack_now_true += 1
                 $ obama_max_attack_now += 1
-                if obama_hp_now + 5 >= obama_hp:
+                if obama_hp_now + 3 >= obama_hp:
                     $ obama_hp_now = obama_hp
                 
                 else:
-                    $ obama_hp_now += 5
+                    $ obama_hp_now += 3
             
             if kononowicz_hp_now > 0:
                 $ kononowicz_max_attack_now_true += 1
                 $ kononowicz_max_attack_now += 1
-                if kononowicz_hp_now + 5 >= kononowicz_hp:
+                if kononowicz_hp_now + 3 >= kononowicz_hp:
                     $ kononowicz_hp_now = kononowicz_hp
                 
                 else:
-                    $ kononowicz_hp_now += 5
+                    $ kononowicz_hp_now += 3
         
         else:
-            if potwor >= 8 and kontrolka == 1:
+            if potwor >= 12 and kontrolka == 1:
                 play sound "audio/sfx/przywolanie.mp3"
                 $ kontrolka += 1
                 show bg dziady4 zorder 1
                 "{i}Hentai Tentakle potwor wychyla się bardziej z wyrwy w podlodze{/i}"
-                "{i}Wszyscy kultyści odzyskują po 5 punktów, życia i wzmacniają atak{/i}"
+                "{i}Wszyscy kultyści odzyskują po 3 punkty, życia i wzmacniają atak{/i}"
                 if prymon_hp_now > 0:
                     $ prymon_min_attack_now_true += 1
                     $ prymon_min_attack_now += 1
-                    if prymon_hp_now + 5 >= prymon_hp:
+                    if prymon_hp_now + 3 >= prymon_hp:
                         $ prymon_hp_now = prymon_hp
                     
                     else:
-                        $ prymon_hp_now += 5
+                        $ prymon_hp_now += 3
                 
                 if obama_hp_now > 0:
                     $ obama_min_attack_now_true += 1
                     $ obama_min_attack_now += 1
-                    if obama_hp_now + 5 >= obama_hp:
+                    if obama_hp_now + 3 >= obama_hp:
                         $ obama_hp_now = obama_hp
                     
                     else:
-                        $ obama_hp_now += 5
+                        $ obama_hp_now += 3
                 
                 if kononowicz_hp_now > 0:
                     $ kononowicz_min_attack_now_true += 1
                     $ kononowicz_min_attack_now += 1
-                    if kononowicz_hp_now + 5 >= kononowicz_hp:
+                    if kononowicz_hp_now + 3 >= kononowicz_hp:
                         $ kononowicz_hp_now = kononowicz_hp
                     
                     else:
-                        $ kononowicz_hp_now += 5
+                        $ kononowicz_hp_now += 3
             
             else:
-                if potwor >= 12 and kontrolka == 2:
+                if potwor >= 18 and kontrolka == 2:
                     play sound "audio/sfx/przywolanie.mp3"
                     $ kontrolka += 1
                     show bg dziady5 zorder 1
                     "{i}Hentai Tentakle potwor wychyla się bardziej z wyrwy w podlodze{/i}"
-                    "{i}Wszyscy kultyści odzyskują po 5 punktów, życia i wzmacniają atak{/i}"
+                    "{i}Wszyscy kultyści odzyskują po 3 punkty, życia i wzmacniają atak{/i}"
                     if prymon_hp_now > 0:
                         $ prymon_max_attack_now_true += 1
                         $ prymon_max_attack_now += 1
-                        if prymon_hp_now + 5 >= prymon_hp:
+                        if prymon_hp_now + 3 >= prymon_hp:
                             $ prymon_hp_now = prymon_hp
                         
                         else:
-                            $ prymon_hp_now += 5
+                            $ prymon_hp_now += 3
                     
                     if obama_hp_now > 0:
                         $ obama_max_attack_now_true += 1
                         $ obama_max_attack_now += 1
-                        if obama_hp_now + 5 >= obama_hp:
+                        if obama_hp_now + 3 >= obama_hp:
                             $ obama_hp_now = obama_hp
                         
                         else:
-                            $ obama_hp_now += 5
+                            $ obama_hp_now += 3
                     
                     if kononowicz_hp_now > 0:
                         $ kononowicz_max_attack_now_true += 1
                         $ kononowicz_max_attack_now += 1
-                        if kononowicz_hp_now + 5 >= kononowicz_hp:
+                        if kononowicz_hp_now + 3 >= kononowicz_hp:
                             $ kononowicz_hp_now = kononowicz_hp
                         
                         else:
-                            $ kononowicz_hp_now += 5
+                            $ kononowicz_hp_now += 3
                 
                 else:
-                    if potwor >= 16 and kontrolka == 3:
+                    if potwor >= 24 and kontrolka == 3:
                         play sound "audio/sfx/przywolanie.mp3"
                         $ kontrolka += 1
                         scene bg black
@@ -18785,7 +18785,7 @@ label fight81:
 
                     jump faza_fight85
         
-        $ kostka = renpy.random.randint(1, 2)
+        $ kostka = renpy.random.randint(1, 3)
         if kostka == 1:
             play sound "audio/sfx/zaklinanie.mp3"
             obama "Ciemno wszędzie, głucho wszędzie, Co to będzie, co to będzie?"
@@ -20049,7 +20049,7 @@ label fight81:
 
                 jump faza_fight86
         
-        $ kostka = renpy.random.randint(1, 2)
+        $ kostka = renpy.random.randint(1, 3)
         if kostka == 1:
             play sound "audio/sfx/zaklinanie.mp3"
             kononowicz "Ciemno wszędzie, głucho wszędzie, Co to będzie, co to będzie?"
@@ -21313,7 +21313,7 @@ label fight81:
 
                 jump start_fight81
 
-        $ kostka = renpy.random.randint(1, 2)
+        $ kostka = renpy.random.randint(1, 3)
         if kostka == 1:
             play sound "audio/sfx/zaklinanie.mp3"
             prymon "Ciemno wszędzie, głucho wszędzie, Co to będzie, co to będzie?"

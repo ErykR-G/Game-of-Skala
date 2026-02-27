@@ -1245,7 +1245,7 @@ label start:
 
         nikt "STOP!!!" with vpunch
 
-        show eminem neutral right at slightleft
+        show eminem neutral reka right at slightleft
 
         nikt "Fuck you!"
 

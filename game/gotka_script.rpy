@@ -153,7 +153,7 @@ label gotka:
             scene bg klinika2
             show luszcz neutral right at right
             show eminem neutral at center
-            show gotka neutral at left
+            show gotka neutral at slightleft2
 
             gotka "... więc odciął sobie rękę rzucając się na Twój miecz świetlny?"
 
@@ -397,7 +397,7 @@ label gotka:
             if tarczownik_sojusznik >= 1:
                 show luszcz neutral right at center
                 show tarczownik neutral at right
-                show gotka neutral at left
+                show gotka neutral at slightleft2
                 gotka "...czyli ten pan uderzył cię krawędzią tarczy w kostkę?"
 
                 tarczownik "Sory bracie to było dla twojego dobra"
@@ -437,6 +437,8 @@ label gotka:
                 luszcz "Dowiedzenia.."
             
             else:
+                show luszcz neutral right at slightright
+                show gotka neutral at slightleft
                 luszcz "Widzi pani, jakiś głópi cwel walnął mnie bokiem tarczy w kostkę."
 
                 gotka "Boże nienawidze"
@@ -659,7 +661,7 @@ label gotka:
             play music "audio/music/klinika.mp3"
             $ gotka_social_link += 1
             show luszcz neutral right at right
-            show gotka neutral at left
+            show gotka neutral at center
             if luszcz_nic == 2:
                 $ luszcz_nic = 1
             if luszcz_klata == 2:
@@ -896,7 +898,7 @@ label gotka:
             play music "audio/music/klinika.mp3"
             show luszcz neutral right at right
             show kazuma strzal at center
-            show gotka neutral at left
+            show gotka neutral at slightleft2
 
             kazuma "Ałaaaa ale boli ała ała krewka"
 
@@ -929,7 +931,7 @@ label gotka:
 
             $ renpy.pause(0.5)
 
-            show gotka neutral at left
+            show gotka neutral at slightleft2
 
             gotka "A ty do końca po-jutra masz mi znaleźć księgę czarnej magii albo cię wykastruje!"
 
@@ -945,6 +947,8 @@ label gotka:
                 luszcz "A dziękuję dziękuję"
 
                 gotka "Dobra to poczekaj"
+
+                $ ailbib = 0
 
                 show luszcz neutral zorder 15 at left
                 show kazuma lody zorder 15 at right
@@ -1037,6 +1041,9 @@ label gotka:
                 kazuma "dobrze gotki zawsze posłucham"
 
                 gotka "To idźcie już stąd"
+
+                show gotka neutral
+                $ ailbib = 1
 
                 show luszcz neutral right
 
@@ -1355,6 +1362,8 @@ label gotka:
 
                 gotka "Dobra to poczekaj"
 
+                $ ailbib = 0
+
                 show gotka ailbib zorder 15 at center
 
                 gotka "ꖎ𝙹⍊ᒷ  ⊣╎⊣ᔑリℸ ̣ ╎ᓵ  ᒲᔑꖎᒷ  ᓵ𝙹ᓵꖌᓭ  ╎  リᒷᒷ↸  ⊣╎⊣ᔑリℸ ̣ ╎ᓵ  ᒲᔑꖎᒷ  ᓵ𝙹ᓵꖌᓭ"
@@ -1409,7 +1418,7 @@ label gotka:
 
                 show luszcz neutral zorder 15 at center
                 show kazuma neutral zorder 15 at right
-                show gotka ailbib zorder 15 at left
+                show gotka ailbib zorder 15 at slightleft2
 
                 luszcz "Kazóma rzyjesz?"
 
@@ -1444,6 +1453,9 @@ label gotka:
                 kazuma "dobrze gotki zawsze posłucham"
 
                 gotka "To idźcie już stąd"
+
+                show gotka neutral
+                $ ailbib = 1
 
                 show luszcz neutral right
 
@@ -1625,7 +1637,7 @@ label gotka:
             scene bg klinika2 with fade
             play music "audio/music/klinika.mp3"
             $ gotka_social_link += 1
-            show luszcz neutral right at right
+            show luszcz neutral right at slightright
             show gotka neutral at slightleft
 
             gotka "… więc mówisz, że nagle obudziłeś się i zobaczyłeś kobietę w swoim łóżku i zamiast ją wygonić upiekliście tort?"
