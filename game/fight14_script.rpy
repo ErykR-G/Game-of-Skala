@@ -77,6 +77,9 @@ label fight141_stats:
 
     default tarczownik_sp = 0
 
+    default newspaper_zombie2_special = 14
+    default newspaper_zombie2_gazeta = 1
+
 label fight141:
     $ fight_on = 1
     label wybor_fight141:
@@ -2078,6 +2081,47 @@ label fight141:
                 else:
                     if kostka == 3:
                         if newspaper_zombie2_hp_now > 0:
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             if newspaper_zombie2_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Toxic Pea został zablokowany{/i}"
@@ -2098,7 +2142,8 @@ label fight141:
                             jump losowanko_toxic_fight141
     
         label after_toxic_fight141:
-            $ ado += 1
+            if newspaper_zombie2_gazeta == 0 and newspaper_zombie2_special == 0:
+                jump newspaper_zombie2_zly_fight141
         
         if all_star_zombie3_hp_now <= 0 and all_star_zombie3_umarty == 0:
             hide snake31
@@ -2480,6 +2525,48 @@ label fight141:
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
@@ -2859,6 +2946,48 @@ label fight141:
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
 
                             if newspaper_zombie2_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -3414,6 +3543,48 @@ label fight141:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
+
                             if newspaper_zombie2_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
                                 "{i}Atak Shadowa został zablokowany{/i}"
@@ -3848,6 +4019,90 @@ label fight141:
                     
                     if ostrza_chaosu == 3 and urban_weapon >= 1:
                         urban "i Ci kutasa obetnie"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -4239,6 +4494,49 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
+
                             label urban_fight143:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -4592,6 +4890,48 @@ label fight141:
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:    
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
@@ -4970,6 +5310,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -5371,6 +5753,48 @@ label fight141:
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:   
                         kazuma "Tak, jestem Kazuma"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
@@ -5748,6 +6172,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -6405,6 +6871,48 @@ label fight141:
                         $ tarczownik_min_attack_now += 1
                         
                     tarczownik "Aaaaaaaaagh!"
+
+                    if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                        $ newspaper_zombie2_special -= 1
+                        if newspaper_zombie2_special == 12:
+                            show newspaper_zombie2 fight3
+                        else:
+                            if newspaper_zombie2_special == 10:
+                                show newspaper_zombie2 fight4
+                            else:
+                                if newspaper_zombie2_special == 8:
+                                    show newspaper_zombie2 fight5
+                                else:
+                                    if newspaper_zombie2_special == 6:
+                                        show newspaper_zombie2 fight6
+                                    else:
+                                        if newspaper_zombie2_special == 4:
+                                            show newspaper_zombie2 fight7
+                                        else:
+                                            if newspaper_zombie2_special == 2:
+                                                show newspaper_zombie2 fight8
+                                            else:
+                                                if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                    $ newspaper_zombie2_gazeta = 0
+                                                    show newspaper_zombie2 fight2
+                                                    hide snake33
+                                                    hide snake23
+                                                    hide snake13
+                                                    hide pager3
+                                                    hide uszy3
+                                                    hide tarcza8
+                                                    $ newspaper_zombie2_pager = 0
+                                                    $ newspaper_zombie2_poison = 0
+                                                    $ newspaper_zombie2_stun = 0
+
+                                                    if newspaper_zombie2_slime >= 1:
+                                                        $ newspaper_zombie2_slime = 0
+                                                        hide slime
+
+                                                    $ newspaper_zombie2_max_attack_now = 10
+                                                    $ newspaper_zombie2_min_attack_now = 5
+                                                    $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                    $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                     $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
@@ -7721,6 +8229,47 @@ label fight141:
                                     if newspaper_zombie2_hp_now <= 3:
                                         $ kostka = renpy.random.randint(1, 5)
                                         if kostka >= 2:
+                                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                                $ newspaper_zombie2_special -= 1
+                                                if newspaper_zombie2_special == 12:
+                                                    show newspaper_zombie2 fight3
+                                                else:
+                                                    if newspaper_zombie2_special == 10:
+                                                        show newspaper_zombie2 fight4
+                                                    else:
+                                                        if newspaper_zombie2_special == 8:
+                                                            show newspaper_zombie2 fight5
+                                                        else:
+                                                            if newspaper_zombie2_special == 6:
+                                                                show newspaper_zombie2 fight6
+                                                            else:
+                                                                if newspaper_zombie2_special == 4:
+                                                                    show newspaper_zombie2 fight7
+                                                                else:
+                                                                    if newspaper_zombie2_special == 2:
+                                                                        show newspaper_zombie2 fight8
+                                                                    else:
+                                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                                            $ newspaper_zombie2_gazeta = 0
+                                                                            show newspaper_zombie2 fight2
+                                                                            hide snake33
+                                                                            hide snake23
+                                                                            hide snake13
+                                                                            hide pager3
+                                                                            hide uszy3
+                                                                            hide tarcza8
+                                                                            $ newspaper_zombie2_pager = 0
+                                                                            $ newspaper_zombie2_poison = 0
+                                                                            $ newspaper_zombie2_stun = 0
+
+                                                                            if newspaper_zombie2_slime >= 1:
+                                                                                $ newspaper_zombie2_slime = 0
+                                                                                hide slime
+
+                                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                                             $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
                                             if newspaper_zombie2_obrona >= 2:
@@ -7920,6 +8469,47 @@ label fight141:
                                         if newspaper_zombie2_hp_now <= 10:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 3:
+                                                if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                                    $ newspaper_zombie2_special -= 1
+                                                    if newspaper_zombie2_special == 12:
+                                                        show newspaper_zombie2 fight3
+                                                    else:
+                                                        if newspaper_zombie2_special == 10:
+                                                            show newspaper_zombie2 fight4
+                                                        else:
+                                                            if newspaper_zombie2_special == 8:
+                                                                show newspaper_zombie2 fight5
+                                                            else:
+                                                                if newspaper_zombie2_special == 6:
+                                                                    show newspaper_zombie2 fight6
+                                                                else:
+                                                                    if newspaper_zombie2_special == 4:
+                                                                        show newspaper_zombie2 fight7
+                                                                    else:
+                                                                        if newspaper_zombie2_special == 2:
+                                                                            show newspaper_zombie2 fight8
+                                                                        else:
+                                                                            if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                                                $ newspaper_zombie2_gazeta = 0
+                                                                                show newspaper_zombie2 fight2
+                                                                                hide snake33
+                                                                                hide snake23
+                                                                                hide snake13
+                                                                                hide pager3
+                                                                                hide uszy3
+                                                                                hide tarcza8
+                                                                                $ newspaper_zombie2_pager = 0
+                                                                                $ newspaper_zombie2_poison = 0
+                                                                                $ newspaper_zombie2_stun = 0
+
+                                                                                if newspaper_zombie2_slime >= 1:
+                                                                                    $ newspaper_zombie2_slime = 0
+                                                                                    hide slime
+
+                                                                                $ newspaper_zombie2_max_attack_now = 10
+                                                                                $ newspaper_zombie2_min_attack_now = 5
+                                                                                $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                                                $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
                                                 if newspaper_zombie2_obrona >= 2:
@@ -8118,6 +8708,47 @@ label fight141:
                                         else:
                                             $ kostka = renpy.random.randint(1, 5)
                                             if kostka >= 5:
+                                                if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                                    $ newspaper_zombie2_special -= 1
+                                                    if newspaper_zombie2_special == 12:
+                                                        show newspaper_zombie2 fight3
+                                                    else:
+                                                        if newspaper_zombie2_special == 10:
+                                                            show newspaper_zombie2 fight4
+                                                        else:
+                                                            if newspaper_zombie2_special == 8:
+                                                                show newspaper_zombie2 fight5
+                                                            else:
+                                                                if newspaper_zombie2_special == 6:
+                                                                    show newspaper_zombie2 fight6
+                                                                else:
+                                                                    if newspaper_zombie2_special == 4:
+                                                                        show newspaper_zombie2 fight7
+                                                                    else:
+                                                                        if newspaper_zombie2_special == 2:
+                                                                            show newspaper_zombie2 fight8
+                                                                        else:
+                                                                            if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                                                $ newspaper_zombie2_gazeta = 0
+                                                                                show newspaper_zombie2 fight2
+                                                                                hide snake33
+                                                                                hide snake23
+                                                                                hide snake13
+                                                                                hide pager3
+                                                                                hide uszy3
+                                                                                hide tarcza8
+                                                                                $ newspaper_zombie2_pager = 0
+                                                                                $ newspaper_zombie2_poison = 0
+                                                                                $ newspaper_zombie2_stun = 0
+
+                                                                                if newspaper_zombie2_slime >= 1:
+                                                                                    $ newspaper_zombie2_slime = 0
+                                                                                    hide slime
+
+                                                                                $ newspaper_zombie2_max_attack_now = 10
+                                                                                $ newspaper_zombie2_min_attack_now = 5
+                                                                                $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                                                $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                                                 $ tarczownik_attack = renpy.random.randint(tarczownik_min_attack_now, tarczownik_max_attack_now)
 
                                                 if newspaper_zombie2_obrona >= 2:
@@ -8320,6 +8951,8 @@ label fight141:
                                 jump losowanko_tarczownik_fight141
 
     label faza_fight142:
+        if newspaper_zombie2_gazeta == 0 and newspaper_zombie2_special == 0:
+            jump newspaper_zombie2_zly_fight141
         hide reka1
         hide reka2
         hide reka3
@@ -8751,6 +9384,48 @@ label fight141:
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
@@ -9128,6 +9803,49 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
+
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -9682,6 +10400,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -10116,6 +10876,48 @@ label fight141:
                     
                     if ostrza_chaosu == 3 and urban_weapon >= 1:                  
                         urban "i Ci kutasa obetnie"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -10507,6 +11309,49 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
+
                             label urban_fight146:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -10860,6 +11705,48 @@ label fight141:
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
@@ -11237,6 +12124,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -11637,6 +12566,48 @@ label fight141:
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                         kazuma "Tak, jestem Kazuma"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
@@ -12014,6 +12985,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -12409,6 +13422,8 @@ label fight141:
                                 jump faza_fight143
 
     label faza_fight143:
+        if newspaper_zombie2_gazeta == 0 and newspaper_zombie2_special == 0:
+            jump newspaper_zombie2_zly_fight141
         hide reka1
         hide reka2
         hide reka3
@@ -12840,6 +13855,48 @@ label fight141:
                     
                     if ostrza_chaosu == 2 and luszcz_weapon >= 1:                     
                         luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
@@ -13217,6 +14274,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             luszcz "Jesli mialbym kogos zabic to bym uzyl mojego 30 cm potwora"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ luszcz_attack = renpy.random.randint(luszcz_min_attack_now, luszcz_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -13771,6 +14870,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             eminem "Moje imię to Cień. \nTen, kto czai się w cieniu, aby upolować cień"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ eminem_attack = renpy.random.randint(eminem_min_attack_now, eminem_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -14207,6 +15348,48 @@ label fight141:
                     
                     if ostrza_chaosu == 3 and urban_weapon >= 1:                    
                         urban "i Ci kutasa obetnie"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -14598,6 +15781,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             urban "i Ci kutasa obetnie"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             label urban_fight149:
                                 $ urban_attack = renpy.random.randint(urban_min_attack_now, urban_max_attack_now)
 
@@ -14951,6 +16176,48 @@ label fight141:
                     
                     if ostrza_chaosu == 4 and zyd_weapon >= 1:
                         zyd "Proszę pana, oni są zakałą tej ziemi!"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
@@ -15328,6 +16595,48 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             zyd "Proszę pana, oni są zakałą tej ziemi!"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                             $ zyd_attack = renpy.random.randint(zyd_min_attack_now, zyd_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -15728,6 +17037,48 @@ label fight141:
                     
                     if ostrza_chaosu == 5 and kazuma_weapon >= 1:
                         kazuma "Tak, jestem Kazuma"
+
+                        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                            $ newspaper_zombie2_special -= 1
+                            if newspaper_zombie2_special == 12:
+                                show newspaper_zombie2 fight3
+                            else:
+                                if newspaper_zombie2_special == 10:
+                                    show newspaper_zombie2 fight4
+                                else:
+                                    if newspaper_zombie2_special == 8:
+                                        show newspaper_zombie2 fight5
+                                    else:
+                                        if newspaper_zombie2_special == 6:
+                                            show newspaper_zombie2 fight6
+                                        else:
+                                            if newspaper_zombie2_special == 4:
+                                                show newspaper_zombie2 fight7
+                                            else:
+                                                if newspaper_zombie2_special == 2:
+                                                    show newspaper_zombie2 fight8
+                                                else:
+                                                    if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                        $ newspaper_zombie2_gazeta = 0
+                                                        show newspaper_zombie2 fight2
+                                                        hide snake33
+                                                        hide snake23
+                                                        hide snake13
+                                                        hide pager3
+                                                        hide uszy3
+                                                        hide tarcza8
+                                                        $ newspaper_zombie2_pager = 0
+                                                        $ newspaper_zombie2_poison = 0
+                                                        $ newspaper_zombie2_stun = 0
+
+                                                        if newspaper_zombie2_slime >= 1:
+                                                            $ newspaper_zombie2_slime = 0
+                                                            hide slime
+
+                                                        $ newspaper_zombie2_max_attack_now = 10
+                                                        $ newspaper_zombie2_min_attack_now = 5
+                                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
                     
                         $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
@@ -16105,6 +17456,49 @@ label fight141:
 
                         "{b}Newspaper Zombie{/b}" if newspaper_zombie2_hp_now >= 1:
                             kazuma "Tak, jestem Kazuma"
+
+                            if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_gazeta == 1:
+                                $ newspaper_zombie2_special -= 1
+                                if newspaper_zombie2_special == 12:
+                                    show newspaper_zombie2 fight3
+                                else:
+                                    if newspaper_zombie2_special == 10:
+                                        show newspaper_zombie2 fight4
+                                    else:
+                                        if newspaper_zombie2_special == 8:
+                                            show newspaper_zombie2 fight5
+                                        else:
+                                            if newspaper_zombie2_special == 6:
+                                                show newspaper_zombie2 fight6
+                                            else:
+                                                if newspaper_zombie2_special == 4:
+                                                    show newspaper_zombie2 fight7
+                                                else:
+                                                    if newspaper_zombie2_special == 2:
+                                                        show newspaper_zombie2 fight8
+                                                    else:
+                                                        if newspaper_zombie2_special == 0 and newspaper_zombie2_gazeta == 1:
+                                                            $ newspaper_zombie2_gazeta = 0
+                                                            show newspaper_zombie2 fight2
+                                                            hide snake33
+                                                            hide snake23
+                                                            hide snake13
+                                                            hide pager3
+                                                            hide uszy3
+                                                            hide tarcza8
+                                                            $ newspaper_zombie2_pager = 0
+                                                            $ newspaper_zombie2_poison = 0
+                                                            $ newspaper_zombie2_stun = 0
+
+                                                            if newspaper_zombie2_slime >= 1:
+                                                                $ newspaper_zombie2_slime = 0
+                                                                hide slime
+
+                                                            $ newspaper_zombie2_max_attack_now = 10
+                                                            $ newspaper_zombie2_min_attack_now = 5
+                                                            $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                                            $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now
+
                             $ kazuma_attack = renpy.random.randint(kazuma_min_attack_now, kazuma_max_attack_now)
 
                             if newspaper_zombie2_obrona >= 2:
@@ -16500,6 +17894,8 @@ label fight141:
                                 jump faza_fight144
 
     label faza_fight144:
+        if newspaper_zombie2_gazeta == 0 and newspaper_zombie2_special == 0:
+            jump newspaper_zombie2_zly_fight141
         hide reka1
         hide reka2
         hide reka3
@@ -20259,34 +21655,6 @@ label fight141:
 
                 jump faza_fight146
 
-        if engineer1_max_attack_now <= 0 and engineer1_obrona == 0:
-            show tarcza7 zorder 15 at weapon_wrog3  
-            play sound "audio/sfx/shield.mp3"
-            "{i}Engineer broni się{/i}"
-            $ engineer1_obrona += 1
-            jump faza_fight146
-
-        if engineer1_hp_now >= 1 and engineer1_obrona == 0:
-            if engineer1_hp_now <= 3:
-                $ kostka = renpy.random.randint(1, 3)
-
-                if kostka >= 2:
-                    show tarcza7 zorder 15 at weapon_wrog3  
-                    play sound "audio/sfx/shield.mp3"
-                    "{i}Engineer broni się{/i}"
-                    $ engineer1_obrona += 1
-                    jump faza_fight146
-            
-            else:
-                $ kostka = renpy.random.randint(1, 10)
-
-                if kostka == 10:
-                    show tarcza7 zorder 15 at weapon_wrog3  
-                    play sound "audio/sfx/shield.mp3"
-                    "{i}Engineer broni się{/i}"
-                    $ engineer1_obrona += 1
-                    jump faza_fight146
-                    
         label losowanko_fight145:
             if engineer1_weapon >= 1:
                 show engineer1_weapon zorder 15 at weapon_wrog3 
@@ -21354,14 +22722,14 @@ label fight141:
                     $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                     play sound "audio/sfx/obrona.mp3"
                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                    jump start_fight141
+                    jump newspaper_zombie2_zly_fight141
 
             if urban_obrona >= 2:
                 play sound "audio/sfx/obrona.mp3"
                 "{i}Atak Newspaper Zombie został zablokowany{/i}"
                 $ urban_obrona = 1
 
-                jump start_fight141
+                jump newspaper_zombie2_zly_fight141
                                                 
             else:
                 if newspaper_zombie2_weapon >= 1:
@@ -21376,41 +22744,13 @@ label fight141:
                     $ dmg = int(newspaper_zombie2_attack / 2)
                     "{i}Newspaper Zombie zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
 
-                    jump start_fight141
+                    jump newspaper_zombie2_zly_fight141
                 else:
                     $ urban_hp_now -= newspaper_zombie2_attack
 
                     "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                jump start_fight141
-
-        if newspaper_zombie2_max_attack_now <= 0 and newspaper_zombie2_obrona == 0:
-            show tarcza8 zorder 15 at weapon_wrog2  
-            play sound "audio/sfx/shield.mp3"
-            "{i}Newspaper Zombie broni się{/i}"
-            $ newspaper_zombie2_obrona += 1
-            jump start_fight141
-
-        if newspaper_zombie2_hp_now >= 1 and newspaper_zombie2_obrona == 0:
-            if newspaper_zombie2_hp_now <= 3:
-                $ kostka = renpy.random.randint(1, 3)
-
-                if kostka >= 2:
-                    show tarcza8 zorder 15 at weapon_wrog2  
-                    play sound "audio/sfx/shield.mp3"
-                    "{i}Newspaper Zombie broni się{/i}"
-                    $ newspaper_zombie2_obrona += 1
-                    jump start_fight141
-            
-            else:
-                $ kostka = renpy.random.randint(1, 10)
-
-                if kostka == 10:
-                    show tarcza8 zorder 15 at weapon_wrog2  
-                    play sound "audio/sfx/shield.mp3"
-                    "{i}Newspaper Zombie broni się{/i}"
-                    $ newspaper_zombie2_obrona += 1
-                    jump start_fight141
+                jump newspaper_zombie2_zly_fight141
                     
         label losowanko_fight146:    
             if newspaper_zombie2_weapon >= 1:
@@ -21431,7 +22771,7 @@ label fight141:
                                     $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                    jump start_fight141
+                                    jump newspaper_zombie2_zly_fight141
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -21455,7 +22795,7 @@ label fight141:
 
                                     "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Łuszczowi{/i}"
 
-                            jump start_fight141
+                            jump newspaper_zombie2_zly_fight141
                         else:
                             jump losowanko_fight146
 
@@ -21471,7 +22811,7 @@ label fight141:
                                         $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight141
+                                        jump newspaper_zombie2_zly_fight141
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21495,7 +22835,7 @@ label fight141:
 
                                         "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight141
+                                jump newspaper_zombie2_zly_fight141
                             else:
                                 jump losowanko_fight146
                         
@@ -21510,7 +22850,7 @@ label fight141:
                                         $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight141
+                                        jump newspaper_zombie2_zly_fight141
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21534,7 +22874,7 @@ label fight141:
 
                                         "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Łuszczowi{/i}"
 
-                                jump start_fight141
+                                jump newspaper_zombie2_zly_fight141
                             else:
                                 jump losowanko_fight146
 
@@ -21554,7 +22894,7 @@ label fight141:
                                         $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                        jump start_fight141
+                                        jump newspaper_zombie2_zly_fight141
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21578,7 +22918,7 @@ label fight141:
 
                                         "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump start_fight141
+                                jump newspaper_zombie2_zly_fight141
                             else:
                                 jump losowanko_fight146
 
@@ -21594,7 +22934,7 @@ label fight141:
                                             $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight141
+                                            jump newspaper_zombie2_zly_fight141
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21618,7 +22958,7 @@ label fight141:
 
                                             "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight141
+                                    jump newspaper_zombie2_zly_fight141
                                 else:
                                     jump losowanko_fight146
                             
@@ -21633,7 +22973,7 @@ label fight141:
                                             $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight141
+                                            jump newspaper_zombie2_zly_fight141
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21657,7 +22997,7 @@ label fight141:
 
                                             "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump start_fight141
+                                    jump newspaper_zombie2_zly_fight141
                                 else:
                                     jump losowanko_fight146
 
@@ -21677,7 +23017,7 @@ label fight141:
                                             $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                            jump start_fight141
+                                            jump newspaper_zombie2_zly_fight141
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21701,7 +23041,7 @@ label fight141:
 
                                             "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Żydowi{/i}"
 
-                                    jump start_fight141
+                                    jump newspaper_zombie2_zly_fight141
                                 else:
                                     jump losowanko_fight146
 
@@ -21717,7 +23057,7 @@ label fight141:
                                                 $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight141
+                                                jump newspaper_zombie2_zly_fight141
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -21741,7 +23081,7 @@ label fight141:
 
                                                 "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight141
+                                        jump newspaper_zombie2_zly_fight141
                                     else:
                                         jump losowanko_fight146
                                 
@@ -21756,7 +23096,7 @@ label fight141:
                                                 $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight141
+                                                jump newspaper_zombie2_zly_fight141
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -21780,7 +23120,7 @@ label fight141:
 
                                                 "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Żydowi{/i}"
 
-                                        jump start_fight141
+                                        jump newspaper_zombie2_zly_fight141
                                     else:
                                         jump losowanko_fight146
 
@@ -21800,7 +23140,7 @@ label fight141:
                                                 $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                jump start_fight141
+                                                jump newspaper_zombie2_zly_fight141
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -21824,7 +23164,7 @@ label fight141:
 
                                                 "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Kazumie{/i}"
 
-                                        jump start_fight141
+                                        jump newspaper_zombie2_zly_fight141
                                     else:
                                         jump losowanko_fight146
 
@@ -21840,7 +23180,7 @@ label fight141:
                                                     $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight141
+                                                    jump newspaper_zombie2_zly_fight141
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -21864,7 +23204,7 @@ label fight141:
 
                                                     "{i}All-Star Zombie zadaje [newspaper_zombie2_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight141
+                                            jump newspaper_zombie2_zly_fight141
                                         else:
                                             jump losowanko_fight146
                                     
@@ -21879,7 +23219,7 @@ label fight141:
                                                     $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight141
+                                                    jump newspaper_zombie2_zly_fight141
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -21903,7 +23243,7 @@ label fight141:
 
                                                     "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Kazumie{/i}"
 
-                                            jump start_fight141
+                                            jump newspaper_zombie2_zly_fight141
                                         else:
                                             jump losowanko_fight146
 
@@ -21923,7 +23263,7 @@ label fight141:
                                                     $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                    jump start_fight141
+                                                    jump newspaper_zombie2_zly_fight141
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -21947,7 +23287,7 @@ label fight141:
 
                                                     "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Shadowowi{/i}"
 
-                                            jump start_fight141
+                                            jump newspaper_zombie2_zly_fight141
                                         else:
                                             jump losowanko_fight146
 
@@ -21963,7 +23303,7 @@ label fight141:
                                                         $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight141
+                                                        jump newspaper_zombie2_zly_fight141
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -21987,7 +23327,7 @@ label fight141:
 
                                                         "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight141
+                                                jump newspaper_zombie2_zly_fight141
                                             else:
                                                 jump losowanko_fight146
                                         
@@ -22002,7 +23342,7 @@ label fight141:
                                                         $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight141
+                                                        jump newspaper_zombie2_zly_fight141
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22026,7 +23366,7 @@ label fight141:
 
                                                         "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Shadowowi{/i}"
 
-                                                jump start_fight141
+                                                jump newspaper_zombie2_zly_fight141
                                             else:
                                                 jump losowanko_fight146
 
@@ -22046,7 +23386,7 @@ label fight141:
                                                         $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                        jump start_fight141
+                                                        jump newspaper_zombie2_zly_fight141
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22070,7 +23410,7 @@ label fight141:
 
                                                         "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump start_fight141
+                                                jump newspaper_zombie2_zly_fight141
                                             else:
                                                 jump losowanko_fight146
 
@@ -22086,7 +23426,7 @@ label fight141:
                                                             $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight141
+                                                            jump newspaper_zombie2_zly_fight141
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -22110,7 +23450,7 @@ label fight141:
 
                                                             "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight141
+                                                    jump newspaper_zombie2_zly_fight141
                                                 else:
                                                     jump losowanko_fight146
                                             
@@ -22125,7 +23465,7 @@ label fight141:
                                                             $ newspaper_zombie2_hp_now -= newspaper_zombie2_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Newspaper Zombie odbił się od Szalika z Memów i zadał [newspaper_zombie2_attack] obrażeń nadawcy{/i}"
-                                                            jump start_fight141
+                                                            jump newspaper_zombie2_zly_fight141
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -22149,7 +23489,7 @@ label fight141:
 
                                                             "{i}Newspaper Zombie zadaje [newspaper_zombie2_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump start_fight141
+                                                    jump newspaper_zombie2_zly_fight141
                                                 else:
                                                     jump losowanko_fight146
 
@@ -22428,6 +23768,10 @@ label fight141:
                 $ zyd_stun = 0
                 $ kazuma_stun = 0
                 $ tarczownik_stun = 0
+
+                $ newspaper_zombie2_special = 14
+                $ newspaper_zombie2_gazeta = 1
+
                 play sound "audio/sfx/return.mp3"
                 jump fight141
 
@@ -22748,4 +24092,334 @@ label fight141:
         $ engineer1_poison = 0
         $ engineer1_stun = 0
 
+        $ newspaper_zombie2_special = 14
+        $ newspaper_zombie2_gazeta = 1
+
         jump after_fight141
+
+    label newspaper_zombie2_zly_fight141:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
+        hide stop
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide all_star_zombie3_weapon
+        hide engineer1_weapon
+        hide newspaper_zombie2_weapon
+        hide ruch
+
+        if all_star_zombie3_hp_now <= 0 and all_star_zombie3_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide all_star_zombie3
+            hide tarcza6
+            hide screen all_star_zombie3_stats
+            $ all_star_zombie3_umarty = 1
+            $ ile_wrogow -= 1
+            $ all_star_zombie3_obrona = 0
+            $ all_star_zombie3_weapon = 0
+            $ all_star_zombie3_pager = 0
+            $ all_star_zombie3_poison = 0
+            $ all_star_zombie3_stun = 0
+
+            if all_star_zombie3_slime >= 1:
+                hide slime
+
+        if engineer1_hp_now <= 0 and engineer1_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide engineer1
+            hide tarcza7
+            hide screen engineer1_stats
+            $ engineer1_umarty = 1
+            $ ile_wrogow -= 1
+            $ engineer1_obrona = 0
+            $ engineer1_weapon = 0
+            $ engineer1_pager = 0
+            $ engineer1_poison = 0
+            $ engineer1_stun = 0
+
+            if engineer1_slime >= 1:
+                hide slime
+        
+        if newspaper_zombie2_hp_now <= 0 and newspaper_zombie2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide newspaper_zombie2
+            hide tarcza8
+            hide screen newspaper_zombie2_stats
+            $ newspaper_zombie2_umarty = 1
+            $ ile_wrogow -= 1
+            $ newspaper_zombie2_obrona = 0
+            $ newspaper_zombie2_weapon = 0
+            $ newspaper_zombie2_pager = 0
+            $ newspaper_zombie2_poison = 0
+            $ newspaper_zombie2_stun = 0
+
+            if newspaper_zombie2_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight141
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
+            hide luszcz_pierscien
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
+            hide plamka1
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
+            hide eminem_pierscien
+            hide plamka2
+            hide eminem
+            hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
+            hide urban_pierscien
+            hide plamka3
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
+            hide zyd_pierscien
+            hide plamka4
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
+            hide kazuma_pierscien
+            hide plamka5
+            hide kazuma
+            hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
+            hide tarczownik_pierscien
+            hide plamka6
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
+
+            if tarczownik_air_strike_shield >= 1:
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight141
+        else:
+            $ ado += 1    
+
+        if newspaper_zombie2_hp_now <= 0:
+            jump start_fight141  
+
+        show ruch zorder 0 at tlo_wrog2
+
+        if newspaper_zombie2_gazeta == 1:
+            jump start_fight141
+        
+        else:
+            if newspaper_zombie2_gazeta == 0:
+                play music "audio/music/newspaper.mp3"
+                $ newspaper_zombie2_gazeta = 4
+                jump losowanko_fight146
+            else:
+                if newspaper_zombie2_gazeta == 4:
+                    $ newspaper_zombie2_gazeta = 3
+                    jump losowanko_fight146
+                else:
+                    if newspaper_zombie2_gazeta == 3:
+                        $ newspaper_zombie2_gazeta = 2
+                        jump losowanko_fight146
+                    else:
+                        if newspaper_zombie2_gazeta == 2:
+                            $ newspaper_zombie2_gazeta = 5
+                            play music "audio/music/toxic3.mp3"
+                            jump start_fight141
+                        else:
+                            if newspaper_zombie2_gazeta == 5:
+                                jump start_fight141
