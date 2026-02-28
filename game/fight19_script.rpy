@@ -76,8 +76,8 @@ label fight191_stats:
 label fight191:
     $ fight_on = 1
     label wybor_fight191:
-        play music "audio/music/fight.mp3"
-        scene bg korytarz
+        play music "audio/music/zul_fight.mp3"
+        scene bg zul
         $ ile_wrogow = 1
         show zul fight zorder 10 at wrog3
         show screen zul_stats
