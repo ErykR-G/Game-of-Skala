@@ -7,7 +7,7 @@ label fight31_stats:
 
     default yippee1_hp = 50
     default yippee2_hp = 50
-    default trup5_hp = 30
+    default trup5_hp = 0
 
     default yippee1_uszy = 0
     default trup5_uszy = 0
@@ -31,11 +31,11 @@ label fight31_stats:
 
     default yippee1_min_attack = 4
     default yippee2_min_attack = 4
-    default trup5_min_attack = 3
+    default trup5_min_attack = 0
 
     default yippee1_max_attack = 7
     default yippee2_max_attack = 7
-    default trup5_max_attack = 8
+    default trup5_max_attack = 0
 
     default yippee1_max_attack_now = yippee1_max_attack
     default yippee2_max_attack_now = yippee2_max_attack

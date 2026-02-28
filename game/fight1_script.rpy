@@ -78,7 +78,7 @@ label fight11:
     label wybor_fight11:
         play music "audio/music/fight.mp3"
         scene bg korytarz
-        $ ile_wrogow += 3
+        $ ile_wrogow = 3
         show kibol1 fight zorder 10 at wrog1
         show screen kibol1_stats
         show akane fight zorder 10 at wrog3

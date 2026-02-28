@@ -106,9 +106,9 @@ label fight111:
         if urban_sojusznik == 1:
             $ urban_zly_hp_now = 0
             $ urban_zly_umarty = 1
-            $ ile_wrogow += 2
+            $ ile_wrogow = 2
         else:
-            $ ile_wrogow += 3
+            $ ile_wrogow = 3
             show urban_zly fight zorder 10 at wrog3
             show screen urban_zly_stats
             $ urban_zly_hp_now = urban_zly_hp

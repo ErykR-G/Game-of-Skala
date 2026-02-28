@@ -146,7 +146,7 @@ label fight171:
             scene bg granica8_noc 
         show auto zorder 1
 
-        $ ile_wrogow += 3
+        $ ile_wrogow = 3
         show delta fight zorder 10 at wrog1
         show screen delta_stats
         show gamma fight zorder 10 at wrog3

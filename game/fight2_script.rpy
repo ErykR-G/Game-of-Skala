@@ -5,8 +5,8 @@ label fight21_stats:
     default trup4_sex = 0
     default braun_sex = 0
 
-    default trup3_hp = 15
-    default trup4_hp = 15
+    default trup3_hp = 0
+    default trup4_hp = 0
     default braun_hp = 70
 
     default trup3_uszy = 0
@@ -29,12 +29,12 @@ label fight21_stats:
     default trup4_hp_now = trup4_hp
     default braun_hp_now = braun_hp
 
-    default trup3_min_attack = 1
-    default trup4_min_attack = 1
+    default trup3_min_attack = 0
+    default trup4_min_attack = 0
     default braun_min_attack = 5
 
-    default trup3_max_attack = 4
-    default trup4_max_attack = 4
+    default trup3_max_attack = 0
+    default trup4_max_attack = 0
     default braun_max_attack = 9
 
     default trup3_max_attack_now = trup3_max_attack

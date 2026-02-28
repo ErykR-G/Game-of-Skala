@@ -30,12 +30,12 @@ label fight91_stats:
     default trup10_hp_now = trup10_hp
     default czarodziej_hp_now = czarodziej_hp
 
-    default trup9_min_attack = 1
-    default trup10_min_attack = 1
+    default trup9_min_attack = 0
+    default trup10_min_attack = 0
     default czarodziej_min_attack = 3
 
-    default trup9_max_attack = 4
-    default trup10_max_attack = 4
+    default trup9_max_attack = 0
+    default trup10_max_attack = 0
     default czarodziej_max_attack = 3
 
     default trup9_max_attack_now = trup9_max_attack

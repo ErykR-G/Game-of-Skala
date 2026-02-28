@@ -5,8 +5,8 @@ label fight201_stats:
     default trup14_sex = 0
     default cien_sex = 0
 
-    default trup13_hp = 15
-    default trup14_hp = 15
+    default trup13_hp = 0
+    default trup14_hp = 0
     default cien_hp = 45
 
     default trup13_uszy = 0
@@ -29,12 +29,12 @@ label fight201_stats:
     default trup14_hp_now = trup14_hp
     default cien_hp_now = cien_hp
 
-    default trup13_min_attack = 1
-    default trup14_min_attack = 1
+    default trup13_min_attack = 0
+    default trup14_min_attack = 0
     default cien_min_attack = 4
 
-    default trup13_max_attack = 4
-    default trup14_max_attack = 4
+    default trup13_max_attack = 0
+    default trup14_max_attack = 0
     default cien_max_attack = 7
 
     default trup13_max_attack_now = trup13_max_attack
@@ -61,8 +61,8 @@ label fight201_stats:
     default trup14_obrona = 0
     default cien_obrona = 0
 
-    default trup13_umarty = 0
-    default trup14_umarty = 0
+    default trup13_umarty = 1
+    default trup14_umarty = 1
     default cien_umarty = 0
 
     default trup13_poison = 0
@@ -80,7 +80,7 @@ label fight201:
     label wybor_fight201:
         play music "audio/music/duda_fight.mp3"
         scene bg stomatolog2
-        $ ile_wrogow += 1
+        $ ile_wrogow = 1
         show cien fight zorder 10 at wrog3
         show screen cien_stats
         $ eminem_weapon = 0

@@ -81,7 +81,6 @@ label menu_lokacji:
         label rynek2:
             menu:
                 "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
-                    "MASZ HIV"
                     $ liczba_sojusznikow = 6
                     $ urban_sojusznik = 1
                     $ zyd_sojusznik = 1
@@ -120,6 +119,7 @@ label menu_lokacji:
                     $ banany = 10
                     $ skalka = 10
                     $ granat = 10
+                    "MASZ HIV"
                     jump rynek2
 
                 "{i}{image=a} Alejka (10min){/i}":

@@ -88,7 +88,7 @@ label fight71:
             scene bg polnoc
         else:
             scene bg polnoc_noc
-        $ ile_wrogow += 3
+        $ ile_wrogow = 3
         show kartaginczyk1 fight zorder 10 at wrog1
         show screen kartaginczyk1_stats
         show tanya fight zorder 10 at wrog3

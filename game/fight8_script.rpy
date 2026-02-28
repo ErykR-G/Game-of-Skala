@@ -81,7 +81,7 @@ label fight81:
     label wybor_fight81:
         play music "audio/music/cult_fight.mp3"
         scene bg dziady2
-        $ ile_wrogow += 3
+        $ ile_wrogow = 3
         show obama fight zorder 10 at wrog1
         show screen obama_stats
         show kononowicz fight zorder 10 at wrog3

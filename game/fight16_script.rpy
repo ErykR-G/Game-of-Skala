@@ -7,7 +7,7 @@ label fight161_stats:
 
     default policja1_hp = 40
     default policja2_hp = 40
-    default trup17_hp = 30
+    default trup17_hp = 0
 
     default policja1_uszy = 0
     default trup17_uszy = 0
@@ -31,11 +31,11 @@ label fight161_stats:
 
     default policja1_min_attack = 6
     default policja2_min_attack = 6
-    default trup17_min_attack = 3
+    default trup17_min_attack = 0
 
     default policja1_max_attack = 9
     default policja2_max_attack = 9
-    default trup17_max_attack = 8
+    default trup17_max_attack = 0
 
     default policja1_max_attack_now = policja1_max_attack
     default policja2_max_attack_now = policja2_max_attack
@@ -81,7 +81,7 @@ label fight161:
             scene bg jezioro_fight
         else:
             scene bg jezioro_fight_noc
-        $ ile_wrogow += 2
+        $ ile_wrogow = 2
         show policja1 fight zorder 10 at wrog1
         show screen policja1_stats
         show policja2 fight zorder 10 at wrog2

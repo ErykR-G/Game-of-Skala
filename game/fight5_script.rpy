@@ -7,7 +7,7 @@ label fight51_stats:
 
     default ram_hp = 35
     default rem_hp = 35
-    default trup8_hp = 30
+    default trup8_hp = 0
 
     default ram_uszy = 0
     default trup8_uszy = 0
@@ -31,11 +31,11 @@ label fight51_stats:
 
     default ram_min_attack = 2
     default rem_min_attack = 2
-    default trup8_min_attack = 3
+    default trup8_min_attack = 0
 
     default ram_max_attack = 5
     default rem_max_attack = 5
-    default trup8_max_attack = 8
+    default trup8_max_attack = 0
 
     default ram_max_attack_now = ram_max_attack
     default rem_max_attack_now = rem_max_attack
@@ -78,7 +78,7 @@ label fight51:
     label wybor_fight51:
         play music "audio/music/raem_fight.mp3"
         scene bg raem
-        $ ile_wrogow += 2
+        $ ile_wrogow = 2
         show ram fight zorder 10 at wrog1
         show screen ram_stats
         show rem fight zorder 10 at wrog2

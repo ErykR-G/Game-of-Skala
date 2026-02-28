@@ -4,8 +4,8 @@ label fight01_stats:
     default trup2_sex = 0
     default emina_sex = 0
 
-    default trup1_hp = 15
-    default trup2_hp = 15
+    default trup1_hp = 0
+    default trup2_hp = 0
     default emina_hp = 40
 
     default trup1_uszy = 0
@@ -28,12 +28,12 @@ label fight01_stats:
     default trup2_hp_now = trup2_hp
     default emina_hp_now = emina_hp
 
-    default trup1_min_attack = 1
-    default trup2_min_attack = 1
+    default trup1_min_attack = 0
+    default trup2_min_attack = 0
     default emina_min_attack = 2
 
-    default trup1_max_attack = 4
-    default trup2_max_attack = 4
+    default trup1_max_attack = 0
+    default trup2_max_attack = 0
     default emina_max_attack = 5
 
     default trup1_max_attack_now = trup1_max_attack

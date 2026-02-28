@@ -5,8 +5,8 @@ label fight41_stats:
     default trup7_sex = 0
     default czarny_sex = 0
 
-    default trup6_hp = 15
-    default trup7_hp = 15
+    default trup6_hp = 0
+    default trup7_hp = 0
     default czarny_hp = 100
 
     default trup6_uszy = 0
@@ -29,12 +29,12 @@ label fight41_stats:
     default trup7_hp_now = trup7_hp
     default czarny_hp_now = czarny_hp
 
-    default trup6_min_attack = 1
-    default trup7_min_attack = 1
+    default trup6_min_attack = 0
+    default trup7_min_attack = 0
     default czarny_min_attack = "?"
 
-    default trup6_max_attack = 4
-    default trup7_max_attack = 4
+    default trup6_max_attack = 0
+    default trup7_max_attack = 0
     default czarny_max_attack = "?"
 
     default trup6_max_attack_now = trup6_max_attack
@@ -88,7 +88,7 @@ label fight41:
     label wybor_fight41:
         play music "audio/music/czarny_fight.mp3"
         scene bg lethal17
-        $ ile_wrogow += 1
+        $ ile_wrogow = 1
         show czarny fight zorder 10 at wrog3
         show screen czarny_stats
         $ trup6_umarty = 1

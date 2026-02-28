@@ -90,7 +90,7 @@ label fight141:
     label wybor_fight141:
         play music "audio/music/toxic3.mp3"
         scene bg toxic_pea
-        $ ile_wrogow += 3
+        $ ile_wrogow = 3
         show all_star_zombie3 fight zorder 10 at wrog1
         show screen all_star_zombie3_stats
         show engineer1 fight zorder 10 at wrog3

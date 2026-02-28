@@ -114,7 +114,7 @@ label fight121:
         
         else:
             if gole_rence == 2:
-                $ ile_wrogow += 3
+                $ ile_wrogow = 3
                 show krystian fight zorder 10 at wrog3
                 show screen krystian_stats
                 show nawrocki fight zorder 10 at wrog1
@@ -236,7 +236,7 @@ label fight121:
                     $ gole_rence = 4
                 else:
                     if gole_rence == 4:
-                        $ ile_wrogow += 3
+                        $ ile_wrogow = 3
                         show krystian fight zorder 10 at wrog3
                         show screen krystian_stats
                         show nawrocki fight zorder 10 at wrog1

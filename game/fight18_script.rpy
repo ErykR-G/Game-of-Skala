@@ -5,8 +5,8 @@ label fight181_stats:
     default trup12_sex = 0
     default fanatyk_sex = 0
 
-    default trup11_hp = 15
-    default trup12_hp = 15
+    default trup11_hp = 0
+    default trup12_hp = 0
     default fanatyk_hp = 70
 
     default trup11_uszy = 0
@@ -29,12 +29,12 @@ label fight181_stats:
     default trup12_hp_now = trup12_hp
     default fanatyk_hp_now = fanatyk_hp
 
-    default trup11_min_attack = 1
-    default trup12_min_attack = 1
+    default trup11_min_attack = 0
+    default trup12_min_attack = 0
     default fanatyk_min_attack = 4
 
-    default trup11_max_attack = 4
-    default trup12_max_attack = 4
+    default trup11_max_attack = 0
+    default trup12_max_attack = 0
     default fanatyk_max_attack = 8
 
     default trup11_max_attack_now = trup11_max_attack
@@ -87,7 +87,7 @@ label fight181:
     label wybor_fight181:
         play music "audio/music/fanatyk_fight.mp3"
         scene bg jezioro_fight
-        $ ile_wrogow += 1
+        $ ile_wrogow = 1
         show fanatyk fight zorder 10 at wrog3
         show screen fanatyk_stats
         $ eminem_weapon = 0
