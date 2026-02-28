@@ -18353,13 +18353,103 @@ label fight111:
         else:
             if vr == 2 and luszcz_obrona == 0 and luszcz_hp_now > 0 and luszcz_wybrany > 0:
                 label losowanko_luszcz_rzygi_fight111:
-                if luszcz_wybrany == 1:
+                    if luszcz_wybrany == 1:
+                        show rzyg zorder 15 at rzygi_sojusznik1
+                    
+                    if luszcz_wybrany == 2:
+                        show rzyg zorder 15 at rzygi_sojusznik2
+                    
+                    if luszcz_wybrany == 3:
+                        show rzyg zorder 15 at rzygi_sojusznik3
+
+                    $ kostka2 = renpy.random.randint(1, 3)
+                    if kostka2 == 1:
+                        if girek_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if girek_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
+                                hide rzyg
+                            else:
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Łuszcz zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Łuszcz zrzygał się na Girek zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
+                        else:
+                            jump losowanko_luszcz_rzygi_fight111
+                    
+                    if kostka2 == 2:
+                        if urban_zly_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if urban_zly_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
+                                hide rzyg
+                            else:
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Łuszcz zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if urban_zly_obrona == 0:
+                                    $ urban_zly_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Łuszcz zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
+                        else:
+                            jump losowanko_luszcz_rzygi_fight111
+
+                    if kostka2 == 3:
+                        if jaruzel_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if jaruzel_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
+                                hide rzyg
+                            else:   
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Łuszcz zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Łuszcz zrzygał się na Jaruzel zadając [kostka] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                        else:
+                            jump losowanko_luszcz_rzygi_fight111
+
+        if vr == 7 and eminem_obrona == 0 and eminem_hp_now > 0 and eminem_wybrany > 0:
+            label losowanko_eminem_rzygi_fight111:
+                if eminem_wybrany == 1:
                     show rzyg zorder 15 at rzygi_sojusznik1
                 
-                if luszcz_wybrany == 2:
+                if eminem_wybrany == 2:
                     show rzyg zorder 15 at rzygi_sojusznik2
                 
-                if luszcz_wybrany == 3:
+                if eminem_wybrany == 3:
                     show rzyg zorder 15 at rzygi_sojusznik3
 
                 $ kostka2 = renpy.random.randint(1, 3)
@@ -18375,7 +18465,7 @@ label fight111:
                                 $ girek_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
+                                "{i}Shadow zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                             
@@ -18383,11 +18473,11 @@ label fight111:
                                 $ girek_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog1
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Girek zadając [kostka] obrażeń{/i}"
+                                "{i}Shadow zrzygał się na Girek zadając [kostka] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi_fight111
+                        jump losowanko_eminem_rzygi_fight111
                 
                 if kostka2 == 2:
                     if urban_zly_hp_now >= 1:
@@ -18401,7 +18491,7 @@ label fight111:
                                 $ urban_zly_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog3
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
+                                "{i}Shadow zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                             
@@ -18409,11 +18499,11 @@ label fight111:
                                 $ urban_zly_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog3
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
+                                "{i}Shadow zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi_fight111
+                        jump losowanko_eminem_rzygi_fight111
 
                 if kostka2 == 3:
                     if jaruzel_hp_now >= 1:
@@ -18427,7 +18517,7 @@ label fight111:
                                 $ jaruzel_hp_now -= int(kostka / 2)
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
+                                "{i}Shadow zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                             
@@ -18435,101 +18525,11 @@ label fight111:
                                 $ jaruzel_hp_now -= kostka
                                 show rzygowina zorder 15 at center_wrog2
                                 play sound "audio/sfx/rzygi.mp3"
-                                "{i}Łuszcz zrzygał się na Jaruzel zadając [kostka] obrażeń"
+                                "{i}Shadow zrzygał się na Jaruzel zadając [kostka] obrażeń"
                                 hide rzygowina
                                 hide rzyg
                     else:
-                        jump losowanko_luszcz_rzygi_fight111
-
-        if vr == 7 and eminem_obrona == 0 and eminem_hp_now > 0 and eminem_wybrany > 0:
-            label losowanko_eminem_rzygi_fight111:
-            if eminem_wybrany == 1:
-                show rzyg zorder 15 at rzygi_sojusznik1
-            
-            if eminem_wybrany == 2:
-                show rzyg zorder 15 at rzygi_sojusznik2
-            
-            if eminem_wybrany == 3:
-                show rzyg zorder 15 at rzygi_sojusznik3
-
-            $ kostka2 = renpy.random.randint(1, 3)
-            if kostka2 == 1:
-                if girek_hp_now >= 1:
-                    $ kostka = renpy.random.randint(1, 2)
-                    if girek_obrona == 2:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Rzygi zostały zablokowane{/i}"
-                        hide rzyg
-                    else:
-                        if girek_obrona == 1:
-                            $ girek_hp_now -= int(kostka / 2)
-                            show rzygowina zorder 15 at center_wrog1
-                            play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
-                            hide rzygowina
-                            hide rzyg
-                        
-                        if girek_obrona == 0:
-                            $ girek_hp_now -= kostka
-                            show rzygowina zorder 15 at center_wrog1
-                            play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Girek zadając [kostka] obrażeń{/i}"
-                            hide rzygowina
-                            hide rzyg
-                else:
-                    jump losowanko_eminem_rzygi_fight111
-            
-            if kostka2 == 2:
-                if urban_zly_hp_now >= 1:
-                    $ kostka = renpy.random.randint(1, 2)
-                    if urban_zly_obrona == 2:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Rzygi zostały zablokowane{/i}"
-                        hide rzyg
-                    else:
-                        if urban_zly_obrona == 1:
-                            $ urban_zly_hp_now -= int(kostka / 2)
-                            show rzygowina zorder 15 at center_wrog3
-                            play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
-                            hide rzygowina
-                            hide rzyg
-                        
-                        if urban_zly_obrona == 0:
-                            $ urban_zly_hp_now -= kostka
-                            show rzygowina zorder 15 at center_wrog3
-                            play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
-                            hide rzygowina
-                            hide rzyg
-                else:
-                    jump losowanko_eminem_rzygi_fight111
-
-            if kostka2 == 3:
-                if jaruzel_hp_now >= 1:
-                    $ kostka = renpy.random.randint(1, 2)
-                    if jaruzel_obrona == 2:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Rzygi zostały zablokowane{/i}"
-                        hide rzyg
-                    else:   
-                        if jaruzel_obrona == 1:
-                            $ jaruzel_hp_now -= int(kostka / 2)
-                            show rzygowina zorder 15 at center_wrog2
-                            play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
-                            hide rzygowina
-                            hide rzyg
-                        
-                        if jaruzel_obrona == 0:
-                            $ jaruzel_hp_now -= kostka
-                            show rzygowina zorder 15 at center_wrog2
-                            play sound "audio/sfx/rzygi.mp3"
-                            "{i}Shadow zrzygał się na Jaruzel zadając [kostka] obrażeń"
-                            hide rzygowina
-                            hide rzyg
-                else:
-                    jump losowanko_eminem_rzygi_fight111
+                        jump losowanko_eminem_rzygi_fight111
 
 
         
@@ -18775,94 +18775,94 @@ label fight111:
         else:
             if vr == 3 and urban_obrona == 0 and urban_hp_now > 0 and urban_wybrany > 0:
                 label losowanko_urban_rzygi_fight111:
-                if urban_wybrany == 1:
-                    show rzyg zorder 15 at rzygi_sojusznik1
-                
-                if urban_wybrany == 2:
-                    show rzyg zorder 15 at rzygi_sojusznik2
-                
-                if urban_wybrany == 3:
-                    show rzyg zorder 15 at rzygi_sojusznik3
+                    if urban_wybrany == 1:
+                        show rzyg zorder 15 at rzygi_sojusznik1
+                    
+                    if urban_wybrany == 2:
+                        show rzyg zorder 15 at rzygi_sojusznik2
+                    
+                    if urban_wybrany == 3:
+                        show rzyg zorder 15 at rzygi_sojusznik3
 
-                $ kostka2 = renpy.random.randint(1, 3)
-                if kostka2 == 1:
-                    if girek_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                    $ kostka2 = renpy.random.randint(1, 3)
+                    if kostka2 == 1:
+                        if girek_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if girek_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
+                                hide rzyg
+                            else:
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Jerzy Urban zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Jerzy Urban zrzygał się na Girek zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
-                                hide rzygowina
+                            jump losowanko_urban_rzygi_fight111
+                    
+                    if kostka2 == 2:
+                        if urban_zly_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if urban_zly_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Girek zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_urban_rzygi_fight111
-                
-                if kostka2 == 2:
-                    if urban_zly_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if urban_zly_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                            else:
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Jerzy Urban zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if urban_zly_obrona == 0:
+                                    $ urban_zly_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Jerzy Urban zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if urban_zly_obrona == 1:
-                                $ urban_zly_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                            
-                            if urban_zly_obrona == 0:
-                                $ urban_zly_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_urban_rzygi_fight111
+                            jump losowanko_urban_rzygi_fight111
 
-                if kostka2 == 3:
-                    if jaruzel_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
-                        else:   
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
+                    if kostka2 == 3:
+                        if jaruzel_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if jaruzel_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Jerzy Urban zrzygał się na Jaruzel zadając [kostka] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_urban_rzygi_fight111
-        
+                            else:   
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Jerzy Urban zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Jerzy Urban zrzygał się na Jaruzel zadając [kostka] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                        else:
+                            jump losowanko_urban_rzygi_fight111
+            
 
 
         if vr == 4 and miecz_swietlny == 4 and zyd_weapon >= 1 and zyd_obrona == 0 and zyd_hp_now > 0 and zyd_wybrany > 0:
@@ -19107,93 +19107,93 @@ label fight111:
         else:
             if vr == 4 and zyd_obrona == 0 and zyd_hp_now > 0 and zyd_wybrany > 0:
                 label losowanko_zyd_rzygi_fight111:
-                if zyd_wybrany == 1:
-                    show rzyg zorder 15 at rzygi_sojusznik1
-                
-                if zyd_wybrany == 2:
-                    show rzyg zorder 15 at rzygi_sojusznik2
-                
-                if zyd_wybrany == 3:
-                    show rzyg zorder 15 at rzygi_sojusznik3
+                    if zyd_wybrany == 1:
+                        show rzyg zorder 15 at rzygi_sojusznik1
+                    
+                    if zyd_wybrany == 2:
+                        show rzyg zorder 15 at rzygi_sojusznik2
+                    
+                    if zyd_wybrany == 3:
+                        show rzyg zorder 15 at rzygi_sojusznik3
 
-                $ kostka2 = renpy.random.randint(1, 3)
-                if kostka2 == 1:
-                    if girek_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                    $ kostka2 = renpy.random.randint(1, 3)
+                    if kostka2 == 1:
+                        if girek_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if girek_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
+                                hide rzyg
+                            else:
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Żyd zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Żyd zrzygał się na Girek zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
-                                hide rzygowina
+                            jump losowanko_zyd_rzygi_fight111
+                    
+                    if kostka2 == 2:
+                        if urban_zly_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if urban_zly_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Girek zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_zyd_rzygi_fight111
-                
-                if kostka2 == 2:
-                    if urban_zly_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if urban_zly_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                            else:
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Żyd zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if urban_zly_obrona == 0:
+                                    $ urban_zly_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Żyd zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if urban_zly_obrona == 1:
-                                $ urban_zly_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                            
-                            if urban_zly_obrona == 0:
-                                $ urban_zly_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_zyd_rzygi_fight111
+                            jump losowanko_zyd_rzygi_fight111
 
-                if kostka2 == 3:
-                    if jaruzel_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
-                        else:   
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
+                    if kostka2 == 3:
+                        if jaruzel_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if jaruzel_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Żyd zrzygał się na Jaruzel zadając [kostka] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_zyd_rzygi_fight111
+                            else:   
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Żyd zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Żyd zrzygał się na Jaruzel zadając [kostka] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                        else:
+                            jump losowanko_zyd_rzygi_fight111
 
 
         
@@ -19439,93 +19439,93 @@ label fight111:
         else:
             if vr == 5 and kazuma_obrona == 0 and kazuma_hp_now > 0 and kazuma_wybrany > 0:
                 label losowanko_kazuma_rzygi_fight111:
-                if kazuma_wybrany == 1:
-                    show rzyg zorder 15 at rzygi_sojusznik1
-                
-                if kazuma_wybrany == 2:
-                    show rzyg zorder 15 at rzygi_sojusznik2
-                
-                if kazuma_wybrany == 3:
-                    show rzyg zorder 15 at rzygi_sojusznik3
+                    if kazuma_wybrany == 1:
+                        show rzyg zorder 15 at rzygi_sojusznik1
+                    
+                    if kazuma_wybrany == 2:
+                        show rzyg zorder 15 at rzygi_sojusznik2
+                    
+                    if kazuma_wybrany == 3:
+                        show rzyg zorder 15 at rzygi_sojusznik3
 
-                $ kostka2 = renpy.random.randint(1, 3)
-                if kostka2 == 1:
-                    if girek_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                    $ kostka2 = renpy.random.randint(1, 3)
+                    if kostka2 == 1:
+                        if girek_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if girek_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
+                                hide rzyg
+                            else:
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Kazuma zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Kazuma zrzygał się na Girek zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
-                                hide rzygowina
+                            jump losowanko_kazuma_rzygi_fight111
+                    
+                    if kostka2 == 2:
+                        if urban_zly_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if urban_zly_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Girek zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_kazuma_rzygi_fight111
-                
-                if kostka2 == 2:
-                    if urban_zly_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if urban_zly_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                            else:
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Kazuma zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if urban_zly_obrona == 0:
+                                    $ urban_zly_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Kazuma zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if urban_zly_obrona == 1:
-                                $ urban_zly_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                            
-                            if urban_zly_obrona == 0:
-                                $ urban_zly_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_kazuma_rzygi_fight111
+                            jump losowanko_kazuma_rzygi_fight111
 
-                if kostka2 == 3:
-                    if jaruzel_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
-                        else:   
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
+                    if kostka2 == 3:
+                        if jaruzel_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if jaruzel_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Kazuma zrzygał się na Jaruzel zadając [kostka] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_kazuma_rzygi_fight111
+                            else:   
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Kazuma zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Kazuma zrzygał się na Jaruzel zadając [kostka] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                        else:
+                            jump losowanko_kazuma_rzygi_fight111
 
 
         
@@ -19771,93 +19771,93 @@ label fight111:
         else:
             if vr == 2 and tarczownik_obrona == 0 and tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
                 label losowanko_tarczownik_rzygi_fight111:
-                if tarczownik_wybrany == 1:
-                    show rzyg zorder 15 at rzygi_sojusznik1
-                
-                if tarczownik_wybrany == 2:
-                    show rzyg zorder 15 at rzygi_sojusznik2
-                
-                if tarczownik_wybrany == 3:
-                    show rzyg zorder 15 at rzygi_sojusznik3
+                    if tarczownik_wybrany == 1:
+                        show rzyg zorder 15 at rzygi_sojusznik1
+                    
+                    if tarczownik_wybrany == 2:
+                        show rzyg zorder 15 at rzygi_sojusznik2
+                    
+                    if tarczownik_wybrany == 3:
+                        show rzyg zorder 15 at rzygi_sojusznik3
 
-                $ kostka2 = renpy.random.randint(1, 3)
-                if kostka2 == 1:
-                    if girek_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if girek_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                    $ kostka2 = renpy.random.randint(1, 3)
+                    if kostka2 == 1:
+                        if girek_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if girek_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
+                                hide rzyg
+                            else:
+                                if girek_obrona == 1:
+                                    $ girek_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Naofumi zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if girek_obrona == 0:
+                                    $ girek_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog1
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Naofumi zrzygał się na Girek zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if girek_obrona == 1:
-                                $ girek_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Girek zadając [int(kostka / 2)] obrażeń{/i}"
-                                hide rzygowina
+                            jump losowanko_tarczownik_rzygi_fight111
+                    
+                    if kostka2 == 2:
+                        if urban_zly_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if urban_zly_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if girek_obrona == 0:
-                                $ girek_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog1
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Girek zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_tarczownik_rzygi_fight111
-                
-                if kostka2 == 2:
-                    if urban_zly_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if urban_zly_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
+                            else:
+                                if urban_zly_obrona == 1:
+                                    $ urban_zly_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Naofumi zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if urban_zly_obrona == 0:
+                                    $ urban_zly_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog3
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Naofumi zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
+                                    hide rzygowina
+                                    hide rzyg
                         else:
-                            if urban_zly_obrona == 1:
-                                $ urban_zly_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Jerzy Urban zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                            
-                            if urban_zly_obrona == 0:
-                                $ urban_zly_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog3
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Jerzy Urban zadając [kostka] obrażeń{/i}"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_tarczownik_rzygi_fight111
+                            jump losowanko_tarczownik_rzygi_fight111
 
-                if kostka2 == 3:
-                    if jaruzel_hp_now >= 1:
-                        $ kostka = renpy.random.randint(1, 2)
-                        if jaruzel_obrona == 2:
-                            play sound "audio/sfx/obrona.mp3"
-                            "{i}Rzygi zostały zablokowane{/i}"
-                            hide rzyg
-                        else:   
-                            if jaruzel_obrona == 1:
-                                $ jaruzel_hp_now -= int(kostka / 2)
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
-                                hide rzygowina
+                    if kostka2 == 3:
+                        if jaruzel_hp_now >= 1:
+                            $ kostka = renpy.random.randint(1, 2)
+                            if jaruzel_obrona == 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Rzygi zostały zablokowane{/i}"
                                 hide rzyg
-                            
-                            if jaruzel_obrona == 0:
-                                $ jaruzel_hp_now -= kostka
-                                show rzygowina zorder 15 at center_wrog2
-                                play sound "audio/sfx/rzygi.mp3"
-                                "{i}Naofumi zrzygał się na Jaruzel zadając [kostka] obrażeń"
-                                hide rzygowina
-                                hide rzyg
-                    else:
-                        jump losowanko_tarczownik_rzygi_fight111
+                            else:   
+                                if jaruzel_obrona == 1:
+                                    $ jaruzel_hp_now -= int(kostka / 2)
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Naofumi zrzygał się na Jaruzel zadając [int(kostka / 2)] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                                
+                                if jaruzel_obrona == 0:
+                                    $ jaruzel_hp_now -= kostka
+                                    show rzygowina zorder 15 at center_wrog2
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    "{i}Naofumi zrzygał się na Jaruzel zadając [kostka] obrażeń"
+                                    hide rzygowina
+                                    hide rzyg
+                        else:
+                            jump losowanko_tarczownik_rzygi_fight111
 
         $ luszcz_uszy = 0
         $ eminem_uszy = 0

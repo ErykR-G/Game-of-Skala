@@ -901,7 +901,7 @@ label menu_lokacji:
                         jump gotka8
                     else:
                         if kazuma_strzal <= 2 and kazuma_strzal > 0 and ailbib == 0:
-                            "{i}Żeby uratować Kazumę muszę znaleźć księgę czarnej magii{/i}"
+                            "{i}Żeby uratować Kazume muszę znaleźć księgę czarnej magii{/i}"
                             "{i}Niestety nadal jej nie znalazłem...{/i}"
                             jump parking2
                         else:

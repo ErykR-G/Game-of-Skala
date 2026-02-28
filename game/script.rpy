@@ -319,6 +319,10 @@ label pozycje:
         transform rzygi_sojusznik3:
             xalign 0.115
             yalign 0.50
+        
+        transform rzygi_wrog3:
+            xalign 0.885
+            yalign 0.51
             
 
 
