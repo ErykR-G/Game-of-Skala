@@ -80,6 +80,47 @@ label menu_lokacji:
 
         label rynek2:
             menu:
+                "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
+                    $ liczba_sojusznikow = 6
+                    $ urban_sojusznik = 1
+                    $ zyd_sojusznik = 1
+                    $ eminem_sojusznik = 1
+                    $ kazuma_sojusznik = 1
+                    $ tarczownik_sojusznik = 1
+                    $ gitara = 2
+                    $ fuck = 3
+                    $ chanuka = 4
+                    $ chunchunmaru = 5
+                    $ legendary_shield = 6
+                    $ stop = 1
+                    $ miecz_swietlny = 1
+                    $ ostrza_chaosu = 1
+                    $ patyk = 1
+                    $ bazooka = 1
+                    $ miecz3d = 1
+                    $ przepychaczka_liczba = 6
+                    $ klata_liczba = 6
+                    $ ring = 1
+                    $ vr = 1
+                    $ memy = 1
+                    $ ziemia = 1
+                    $ nogi = 1
+                    $ zloty = 1
+                    $ piknik = 1
+                    $ cake = 1
+                    $ pills = 20
+                    $ woda = 10
+                    $ ostry = 10
+                    $ lagodny = 10
+                    $ drpepper = 10
+                    $ jabole = 10
+                    $ royal = 10
+                    $ warzywo = 10
+                    $ banany = 10
+                    $ skalka = 10
+                    $ granat = 10
+                    jump rynek2
+
                 "{i}{image=a} Alejka (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
