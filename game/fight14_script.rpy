@@ -31,11 +31,11 @@ label fight141_stats:
 
     default all_star_zombie3_min_attack = 2
     default newspaper_zombie2_min_attack = 1
-    default engineer1_min_attack = 2
+    default engineer1_min_attack = 3
 
     default all_star_zombie3_max_attack = 5
     default newspaper_zombie2_max_attack = 6
-    default engineer1_max_attack = 6
+    default engineer1_max_attack = 4
 
     default all_star_zombie3_max_attack_now = all_star_zombie3_max_attack
     default newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack
@@ -83,6 +83,7 @@ label fight141_stats:
     default engineer1_turret = 0
     default engineer1_special = 0
     default engineer1_tuba = 0
+    default wtfy = 0
 
 label fight141:
     $ fight_on = 1
@@ -21805,9 +21806,40 @@ label fight141:
                                     $ dmg = int(engineer1_attack / 2)
                                     "{i}Engineer zadaje [dmg] obrażeń Łuszczowi{/i}"
                                 else:
+                                    if engineer1_weapon == 1 and luszcz_stun < 2:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if engineer1_turret == 1:
+                                            if kostka == 1:
+                                                if luszcz_wybrany == 1:
+                                                    show stun4 zorder 15 at head_sojusznik1 
+
+                                                if luszcz_wybrany == 2:
+                                                    show stun4 zorder 15 at head_sojusznik2  
+
+                                                if luszcz_wybrany == 3:
+                                                    show stun4 zorder 15 at head_sojusznik3 
+                                                $ wtfy = 1
+                                                $ luszcz_stun = 2                                       
+                                        else:
+                                            if kostka <= 3:
+                                                if luszcz_wybrany == 1:
+                                                    show stun4 zorder 15 at head_sojusznik1 
+
+                                                if luszcz_wybrany == 2:
+                                                    show stun4 zorder 15 at head_sojusznik2  
+
+                                                if luszcz_wybrany == 3:
+                                                    show stun4 zorder 15 at head_sojusznik3 
+                                                $ luszcz_stun = 2
+                                                $ wtfy = 1
+
                                     $ luszcz_hp_now -= engineer1_attack
 
-                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
+                                    if luszcz_stun == 2 and wtfy == 1:
+                                        $ wtfy = 0
+                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi i go stunnuje{/i}"
+                                    else:
+                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
 
                             jump engineer1_fight141
                         else:
@@ -21849,9 +21881,40 @@ label fight141:
                                         $ dmg = int(engineer1_attack / 2)
                                         "{i}Engineer zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
+                                        if engineer1_weapon == 1 and luszcz_stun < 2:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if engineer1_turret == 1:
+                                                if kostka == 1:
+                                                    if luszcz_wybrany == 1:
+                                                        show stun4 zorder 15 at head_sojusznik1 
+
+                                                    if luszcz_wybrany == 2:
+                                                        show stun4 zorder 15 at head_sojusznik2  
+
+                                                    if luszcz_wybrany == 3:
+                                                        show stun4 zorder 15 at head_sojusznik3 
+                                                    $ luszcz_stun = 2   
+                                                    $ wtfy = 1                                    
+                                            else:
+                                                if kostka <= 3:
+                                                    if luszcz_wybrany == 1:
+                                                        show stun4 zorder 15 at head_sojusznik1 
+
+                                                    if luszcz_wybrany == 2:
+                                                        show stun4 zorder 15 at head_sojusznik2  
+
+                                                    if luszcz_wybrany == 3:
+                                                        show stun4 zorder 15 at head_sojusznik3 
+                                                    $ luszcz_stun = 2
+                                                    $ wtfy = 1
+
                                         $ luszcz_hp_now -= engineer1_attack
 
-                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
+                                        if luszcz_stun == 2 and wtfy == 1:
+                                            $ wtfy = 0
+                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi i go stunnuje{/i}"
+                                        else:
+                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
 
                                 jump engineer1_fight141
                             else:
@@ -21892,9 +21955,40 @@ label fight141:
                                         $ dmg = int(engineer1_attack / 2)
                                         "{i}Engineer zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
+                                        if engineer1_weapon == 1 and luszcz_stun < 2:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if engineer1_turret == 1:
+                                                if kostka == 1:
+                                                    if luszcz_wybrany == 1:
+                                                        show stun4 zorder 15 at head_sojusznik1 
+
+                                                    if luszcz_wybrany == 2:
+                                                        show stun4 zorder 15 at head_sojusznik2  
+
+                                                    if luszcz_wybrany == 3:
+                                                        show stun4 zorder 15 at head_sojusznik3 
+                                                    $ luszcz_stun = 2 
+                                                    $ wtfy = 1                                      
+                                            else:
+                                                if kostka <= 3:
+                                                    if luszcz_wybrany == 1:
+                                                        show stun4 zorder 15 at head_sojusznik1 
+
+                                                    if luszcz_wybrany == 2:
+                                                        show stun4 zorder 15 at head_sojusznik2  
+
+                                                    if luszcz_wybrany == 3:
+                                                        show stun4 zorder 15 at head_sojusznik3 
+                                                    $ luszcz_stun = 2
+                                                    $ wtfy = 1
+
                                         $ luszcz_hp_now -= engineer1_attack
 
-                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
+                                        if luszcz_stun == 2 and wtfy == 1:
+                                            $ wtfy = 0
+                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi i go stunnuje{/i}"
+                                        else:
+                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
 
                                 jump engineer1_fight141
                             else:
@@ -21940,9 +22034,40 @@ label fight141:
                                         $ dmg = int(engineer1_attack / 2)
                                         "{i}Engineer zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
+                                        if engineer1_weapon == 1 and urban_stun < 2:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if engineer1_turret == 1:
+                                                if kostka == 1:
+                                                    if urban_wybrany == 1:
+                                                        show stun6 zorder 15 at head_sojusznik1 
+
+                                                    if urban_wybrany == 2:
+                                                        show stun6 zorder 15 at head_sojusznik2  
+
+                                                    if urban_wybrany == 3:
+                                                        show stun6 zorder 15 at head_sojusznik3 
+                                                    $ urban_stun = 2      
+                                                    $ wtfy = 1                                 
+                                            else:
+                                                if kostka <= 3:
+                                                    if urban_wybrany == 1:
+                                                        show stun6 zorder 15 at head_sojusznik1 
+
+                                                    if urban_wybrany == 2:
+                                                        show stun6 zorder 15 at head_sojusznik2  
+
+                                                    if urban_wybrany == 3:
+                                                        show stun6 zorder 15 at head_sojusznik3 
+                                                    $ urban_stun = 2
+                                                    $ wtfy = 1
+
                                         $ urban_hp_now -= engineer1_attack
 
-                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                        if urban_stun == 2 and wtfy == 1:
+                                            $ wtfy = 0
+                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi i go stunnuje{/i}"
+                                        else:
+                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                 jump engineer1_fight141
                             else:
@@ -21984,9 +22109,40 @@ label fight141:
                                             $ dmg = int(engineer1_attack / 2)
                                             "{i}Engineer zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
+                                            if engineer1_weapon == 1 and urban_stun < 2:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if engineer1_turret == 1:
+                                                    if kostka == 1:
+                                                        if urban_wybrany == 1:
+                                                            show stun6 zorder 15 at head_sojusznik1 
+
+                                                        if urban_wybrany == 2:
+                                                            show stun6 zorder 15 at head_sojusznik2  
+
+                                                        if urban_wybrany == 3:
+                                                            show stun6 zorder 15 at head_sojusznik3 
+                                                        $ urban_stun = 2  
+                                                        $ wtfy = 1                                     
+                                                else:
+                                                    if kostka <= 3:
+                                                        if urban_wybrany == 1:
+                                                            show stun6 zorder 15 at head_sojusznik1 
+
+                                                        if urban_wybrany == 2:
+                                                            show stun6 zorder 15 at head_sojusznik2  
+
+                                                        if urban_wybrany == 3:
+                                                            show stun6 zorder 15 at head_sojusznik3 
+                                                        $ urban_stun = 2
+                                                        $ wtfy = 1
+
                                             $ urban_hp_now -= engineer1_attack
 
-                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            if urban_stun == 2 and wtfy == 1:
+                                                $ wtfy = 0
+                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi i go stunnuje{/i}"
+                                            else:
+                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump engineer1_fight141
                                 else:
@@ -22027,9 +22183,40 @@ label fight141:
                                             $ dmg = int(engineer1_attack / 2)
                                             "{i}Engineer zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
+                                            if engineer1_weapon == 1 and urban_stun < 2:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if engineer1_turret == 1:
+                                                    if kostka == 1:
+                                                        if urban_wybrany == 1:
+                                                            show stun6 zorder 15 at head_sojusznik1 
+
+                                                        if urban_wybrany == 2:
+                                                            show stun6 zorder 15 at head_sojusznik2  
+
+                                                        if urban_wybrany == 3:
+                                                            show stun6 zorder 15 at head_sojusznik3 
+                                                        $ urban_stun = 2   
+                                                        $ wtfy = 1                                    
+                                                else:
+                                                    if kostka <= 3:
+                                                        if urban_wybrany == 1:
+                                                            show stun6 zorder 15 at head_sojusznik1 
+
+                                                        if urban_wybrany == 2:
+                                                            show stun6 zorder 15 at head_sojusznik2  
+
+                                                        if urban_wybrany == 3:
+                                                            show stun6 zorder 15 at head_sojusznik3 
+                                                        $ urban_stun = 2
+                                                        $ wtfy = 1
+
                                             $ urban_hp_now -= engineer1_attack
 
-                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            if urban_stun == 2 and wtfy == 1:
+                                                $ wtfy = 0
+                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi i go stunnuje{/i}"
+                                            else:
+                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump engineer1_fight141
                                 else:
@@ -22075,9 +22262,40 @@ label fight141:
                                             $ dmg = int(engineer1_attack / 2)
                                             "{i}Engineer zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
+                                            if engineer1_weapon == 1 and zyd_stun < 2:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if engineer1_turret == 1:
+                                                    if kostka == 1:
+                                                        if zyd_wybrany == 1:
+                                                            show stun7 zorder 15 at head_sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show stun7 zorder 15 at head_sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show stun7 zorder 15 at head_sojusznik3 
+                                                        $ zyd_stun = 2 
+                                                        $ wtfy = 1                                      
+                                                else:
+                                                    if kostka <= 3:
+                                                        if zyd_wybrany == 1:
+                                                            show stun7 zorder 15 at head_sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show stun7 zorder 15 at head_sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show stun7 zorder 15 at head_sojusznik3 
+                                                        $ zyd_stun = 2
+                                                        $ wtfy = 1
+
                                             $ zyd_hp_now -= engineer1_attack
 
-                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
+                                            if zyd_stun == 2 and wtfy == 1:
+                                                $ wtfy = 0
+                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi i go stunnuje{/i}"
+                                            else:
+                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
 
                                     jump engineer1_fight141
                                 else:
@@ -22119,9 +22337,40 @@ label fight141:
                                                 $ dmg = int(engineer1_attack / 2)
                                                 "{i}Engineer zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
+                                                if engineer1_weapon == 1 and zyd_stun < 2:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if engineer1_turret == 1:
+                                                        if kostka == 1:
+                                                            if zyd_wybrany == 1:
+                                                                show stun7 zorder 15 at head_sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show stun7 zorder 15 at head_sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show stun7 zorder 15 at head_sojusznik3 
+                                                            $ zyd_stun = 2 
+                                                            $ wtfy = 1                                      
+                                                    else:
+                                                        if kostka <= 3:
+                                                            if zyd_wybrany == 1:
+                                                                show stun7 zorder 15 at head_sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show stun7 zorder 15 at head_sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show stun7 zorder 15 at head_sojusznik3 
+                                                            $ zyd_stun = 2
+                                                            $ wtfy = 1
+
                                                 $ zyd_hp_now -= engineer1_attack
 
-                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
+                                                if zyd_stun == 2 and wtfy == 1:
+                                                    $ wtfy = 0
+                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi i go stunnuje{/i}"
+                                                else:
+                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
 
                                         jump engineer1_fight141
                                     else:
@@ -22162,9 +22411,40 @@ label fight141:
                                                 $ dmg = int(engineer1_attack / 2)
                                                 "{i}Engineer zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
+                                                if engineer1_weapon == 1 and zyd_stun < 2:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if engineer1_turret == 1:
+                                                        if kostka == 1:
+                                                            if zyd_wybrany == 1:
+                                                                show stun7 zorder 15 at head_sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show stun7 zorder 15 at head_sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show stun7 zorder 15 at head_sojusznik3 
+                                                            $ zyd_stun = 2  
+                                                            $ wtfy = 1                                     
+                                                    else:
+                                                        if kostka <= 3:
+                                                            if zyd_wybrany == 1:
+                                                                show stun7 zorder 15 at head_sojusznik1 
+
+                                                            if zyd_wybrany == 2:
+                                                                show stun7 zorder 15 at head_sojusznik2  
+
+                                                            if zyd_wybrany == 3:
+                                                                show stun7 zorder 15 at head_sojusznik3 
+                                                            $ zyd_stun = 2
+                                                            $ wtfy = 1
+
                                                 $ zyd_hp_now -= engineer1_attack
 
-                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
+                                                if zyd_stun == 2 and wtfy == 1:
+                                                    $ wtfy = 0
+                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi i go stunnuje{/i}"
+                                                else:
+                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
 
                                         jump engineer1_fight141
                                     else:
@@ -22210,9 +22490,40 @@ label fight141:
                                                 $ dmg = int(engineer1_attack / 2)
                                                 "{i}Engineer zadaje [dmg] obrażeń Kazumie{/i}"
                                             else:
+                                                if engineer1_weapon == 1 and kazuma_stun < 2:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if engineer1_turret == 1:
+                                                        if kostka == 1:
+                                                            if kazuma_wybrany == 1:
+                                                                show stun8 zorder 15 at head_sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show stun8 zorder 15 at head_sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show stun8 zorder 15 at head_sojusznik3 
+                                                            $ kazuma_stun = 2    
+                                                            $ wtfy = 1                                   
+                                                    else:
+                                                        if kostka <= 3:
+                                                            if kazuma_wybrany == 1:
+                                                                show stun8 zorder 15 at head_sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show stun8 zorder 15 at head_sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show stun8 zorder 15 at head_sojusznik3 
+                                                            $ kazuma_stun = 2
+                                                            $ wtfy = 1
+
                                                 $ kazuma_hp_now -= engineer1_attack
 
-                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
+                                                if kazuma_stun == 2 and wtfy == 1:
+                                                    $ wtfy = 0
+                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie i go stunnuje{/i}"
+                                                else:
+                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
 
                                         jump engineer1_fight141
                                     else:
@@ -22254,9 +22565,40 @@ label fight141:
                                                     $ dmg = int(engineer1_attack / 2)
                                                     "{i}Engineer zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
+                                                    if engineer1_weapon == 1 and kazuma_stun < 2:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if engineer1_turret == 1:
+                                                            if kostka == 1:
+                                                                if kazuma_wybrany == 1:
+                                                                    show stun8 zorder 15 at head_sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show stun8 zorder 15 at head_sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show stun8 zorder 15 at head_sojusznik3 
+                                                                $ kazuma_stun = 2   
+                                                                $ wtfy = 1                                    
+                                                        else:
+                                                            if kostka <= 3:
+                                                                if kazuma_wybrany == 1:
+                                                                    show stun8 zorder 15 at head_sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show stun8 zorder 15 at head_sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show stun8 zorder 15 at head_sojusznik3 
+                                                                $ kazuma_stun = 2
+                                                                $ wtfy = 1
+
                                                     $ kazuma_hp_now -= engineer1_attack
 
-                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
+                                                    if kazuma_stun == 2 and wtfy == 1:
+                                                        $ wtfy = 0
+                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie i go stunnuje{/i}"
+                                                    else:
+                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
 
                                             jump engineer1_fight141
                                         else:
@@ -22297,9 +22639,40 @@ label fight141:
                                                     $ dmg = int(engineer1_attack / 2)
                                                     "{i}Engineer zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
+                                                    if engineer1_weapon == 1 and kazuma_stun < 2:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if engineer1_turret == 1:
+                                                            if kostka == 1:
+                                                                if kazuma_wybrany == 1:
+                                                                    show stun8 zorder 15 at head_sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show stun8 zorder 15 at head_sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show stun8 zorder 15 at head_sojusznik3 
+                                                                $ kazuma_stun = 2    
+                                                                $ wtfy = 1                                   
+                                                        else:
+                                                            if kostka <= 3:
+                                                                if kazuma_wybrany == 1:
+                                                                    show stun8 zorder 15 at head_sojusznik1 
+
+                                                                if kazuma_wybrany == 2:
+                                                                    show stun8 zorder 15 at head_sojusznik2  
+
+                                                                if kazuma_wybrany == 3:
+                                                                    show stun8 zorder 15 at head_sojusznik3 
+                                                                $ kazuma_stun = 2
+                                                                $ wtfy = 1
+
                                                     $ kazuma_hp_now -= engineer1_attack
 
-                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
+                                                    if kazuma_stun == 2 and wtfy == 1:
+                                                        $ wtfy = 0
+                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie i go stunnuje{/i}"
+                                                    else:
+                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
 
                                             jump engineer1_fight141
                                         else:
@@ -22345,9 +22718,40 @@ label fight141:
                                                     $ dmg = int(engineer1_attack / 2)
                                                     "{i}Engineer zadaje [dmg] obrażeń Shadowowi{/i}"
                                                 else:
+                                                    if engineer1_weapon == 1 and eminem_stun < 2:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if engineer1_turret == 1:
+                                                            if kostka == 1:
+                                                                if eminem_wybrany == 1:
+                                                                    show stun5 zorder 15 at head_sojusznik1 
+
+                                                                if eminem_wybrany == 2:
+                                                                    show stun5 zorder 15 at head_sojusznik2  
+
+                                                                if eminem_wybrany == 3:
+                                                                    show stun5 zorder 15 at head_sojusznik3 
+                                                                $ eminem_stun = 2
+                                                                $ wtfy = 1                                       
+                                                        else:
+                                                            if kostka <= 3:
+                                                                if eminem_wybrany == 1:
+                                                                    show stun5 zorder 15 at head_sojusznik1 
+
+                                                                if eminem_wybrany == 2:
+                                                                    show stun5 zorder 15 at head_sojusznik2  
+
+                                                                if eminem_wybrany == 3:
+                                                                    show stun5 zorder 15 at head_sojusznik3 
+                                                                $ eminem_stun = 2
+                                                                $ wtfy = 1
+
                                                     $ eminem_hp_now -= engineer1_attack
 
-                                                    "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
+                                                    if eminem_stun == 2 and wtfy == 1:
+                                                        $ wtfy = 0
+                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi i go stunnuje{/i}"
+                                                    else:
+                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
 
                                             jump engineer1_fight141
                                         else:
@@ -22389,9 +22793,40 @@ label fight141:
                                                         $ dmg = int(engineer1_attack / 2)
                                                         "{i}Engineer zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
+                                                        if engineer1_weapon == 1 and eminem_stun < 2:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if engineer1_turret == 1:
+                                                                if kostka == 1:
+                                                                    if eminem_wybrany == 1:
+                                                                        show stun5 zorder 15 at head_sojusznik1 
+
+                                                                    if eminem_wybrany == 2:
+                                                                        show stun5 zorder 15 at head_sojusznik2  
+
+                                                                    if eminem_wybrany == 3:
+                                                                        show stun5 zorder 15 at head_sojusznik3 
+                                                                    $ eminem_stun = 2  
+                                                                    $ wtfy = 1                                     
+                                                            else:
+                                                                if kostka <= 3:
+                                                                    if eminem_wybrany == 1:
+                                                                        show stun5 zorder 15 at head_sojusznik1 
+
+                                                                    if eminem_wybrany == 2:
+                                                                        show stun5 zorder 15 at head_sojusznik2  
+
+                                                                    if eminem_wybrany == 3:
+                                                                        show stun5 zorder 15 at head_sojusznik3 
+                                                                    $ eminem_stun = 2
+                                                                    $ wtfy = 1
+
                                                         $ eminem_hp_now -= engineer1_attack
 
-                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
+                                                        if eminem_stun == 2 and wtfy == 1:
+                                                            $ wtfy = 0
+                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi i go stunnuje{/i}"
+                                                        else:
+                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
 
                                                 jump engineer1_fight141
                                             else:
@@ -22432,9 +22867,40 @@ label fight141:
                                                         $ dmg = int(engineer1_attack / 2)
                                                         "{i}Engineer zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
+                                                        if engineer1_weapon == 1 and eminem_stun < 2:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if engineer1_turret == 1:
+                                                                if kostka == 1:
+                                                                    if eminem_wybrany == 1:
+                                                                        show stun5 zorder 15 at head_sojusznik1 
+
+                                                                    if eminem_wybrany == 2:
+                                                                        show stun5 zorder 15 at head_sojusznik2  
+
+                                                                    if eminem_wybrany == 3:
+                                                                        show stun5 zorder 15 at head_sojusznik3 
+                                                                    $ eminem_stun = 2 
+                                                                    $ wtfy = 1                                      
+                                                            else:
+                                                                if kostka <= 3:
+                                                                    if eminem_wybrany == 1:
+                                                                        show stun5 zorder 15 at head_sojusznik1 
+
+                                                                    if eminem_wybrany == 2:
+                                                                        show stun5 zorder 15 at head_sojusznik2  
+
+                                                                    if eminem_wybrany == 3:
+                                                                        show stun5 zorder 15 at head_sojusznik3 
+                                                                    $ eminem_stun = 2
+                                                                    $ wtfy = 1
+
                                                         $ eminem_hp_now -= engineer1_attack
 
-                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
+                                                        if eminem_stun == 2 and wtfy == 1:
+                                                            $ wtfy = 0
+                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi i go stunnuje{/i}"
+                                                        else:
+                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
 
                                                 jump engineer1_fight141
                                             else:
@@ -22480,9 +22946,40 @@ label fight141:
                                                         $ dmg = int(engineer1_attack / 2)
                                                         "{i}Engineer zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                     else:
+                                                        if engineer1_weapon == 1 and tarczownik_stun < 2:
+                                                            $ kostka = renpy.random.randint(1, 20)
+                                                            if engineer1_turret == 1:
+                                                                if kostka == 1:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        show stun9 zorder 15 at head_sojusznik1 
+
+                                                                    if tarczownik_wybrany == 2:
+                                                                        show stun9 zorder 15 at head_sojusznik2  
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        show stun9 zorder 15 at head_sojusznik3 
+                                                                    $ tarczownik_stun = 2 
+                                                                    $ wtfy = 1                                      
+                                                            else:
+                                                                if kostka <= 3:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        show stun9 zorder 15 at head_sojusznik1 
+
+                                                                    if tarczownik_wybrany == 2:
+                                                                        show stun9 zorder 15 at head_sojusznik2  
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        show stun9 zorder 15 at head_sojusznik3 
+                                                                    $ tarczownik_stun = 2
+                                                                    $ wtfy = 1
+                                                                
                                                         $ tarczownik_hp_now -= engineer1_attack
 
-                                                        "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
+                                                        if tarczownik_stun == 2 and wtfy == 1:
+                                                            $ wtfy = 0
+                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu i go stunnuje{/i}"
+                                                        else:
+                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
 
                                                 jump engineer1_fight141
                                             else:
@@ -22524,9 +23021,40 @@ label fight141:
                                                             $ dmg = int(engineer1_attack / 2)
                                                             "{i}Engineer zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
+                                                            if engineer1_weapon == 1 and tarczownik_stun < 2:
+                                                                $ kostka = renpy.random.randint(1, 20)
+                                                                if engineer1_turret == 1:
+                                                                    if kostka == 1:
+                                                                        if tarczownik_wybrany == 1:
+                                                                            show stun9 zorder 15 at head_sojusznik1 
+
+                                                                        if tarczownik_wybrany == 2:
+                                                                            show stun9 zorder 15 at head_sojusznik2  
+
+                                                                        if tarczownik_wybrany == 3:
+                                                                            show stun9 zorder 15 at head_sojusznik3 
+                                                                        $ tarczownik_stun = 2 
+                                                                        $ wtfy = 1                                      
+                                                                else:
+                                                                    if kostka <= 3:
+                                                                        if tarczownik_wybrany == 1:
+                                                                            show stun9 zorder 15 at head_sojusznik1 
+
+                                                                        if tarczownik_wybrany == 2:
+                                                                            show stun9 zorder 15 at head_sojusznik2  
+
+                                                                        if tarczownik_wybrany == 3:
+                                                                            show stun9 zorder 15 at head_sojusznik3 
+                                                                        $ tarczownik_stun = 2
+                                                                        $ wtfy = 1
+
                                                             $ tarczownik_hp_now -= engineer1_attack
 
-                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
+                                                            if tarczownik_stun == 2 and wtfy == 1:
+                                                                $ wtfy = 0
+                                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu i go stunnuje{/i}"
+                                                            else:
+                                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump engineer1_fight141
                                                 else:
@@ -22567,9 +23095,40 @@ label fight141:
                                                             $ dmg = int(engineer1_attack / 2)
                                                             "{i}Engineer zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
+                                                            if engineer1_weapon == 1 and tarczownik_stun < 2:
+                                                                $ kostka = renpy.random.randint(1, 20)
+                                                                if engineer1_turret == 1:
+                                                                    if kostka == 1:
+                                                                        if tarczownik_wybrany == 1:
+                                                                            show stun9 zorder 15 at head_sojusznik1 
+
+                                                                        if tarczownik_wybrany == 2:
+                                                                            show stun9 zorder 15 at head_sojusznik2  
+
+                                                                        if tarczownik_wybrany == 3:
+                                                                            show stun9 zorder 15 at head_sojusznik3 
+                                                                        $ tarczownik_stun = 2   
+                                                                        $ wtfy = 1                                    
+                                                                else:
+                                                                    if kostka <= 3:
+                                                                        if tarczownik_wybrany == 1:
+                                                                            show stun9 zorder 15 at head_sojusznik1 
+
+                                                                        if tarczownik_wybrany == 2:
+                                                                            show stun9 zorder 15 at head_sojusznik2  
+
+                                                                        if tarczownik_wybrany == 3:
+                                                                            show stun9 zorder 15 at head_sojusznik3 
+                                                                        $ tarczownik_stun = 2
+                                                                        $ wtfy = 1
+
                                                             $ tarczownik_hp_now -= engineer1_attack
 
-                                                            "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
+                                                            if tarczownik_stun == 2 and wtfy == 1:
+                                                                $ wtfy = 0
+                                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu i go stunnuje{/i}"
+                                                            else:
+                                                                "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump engineer1_fight141
                                                 else:

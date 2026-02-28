@@ -21081,7 +21081,7 @@ label fight51:
                         $ luszcz_hp_now -= 4
                     
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka < 4 and luszcz_obrona < 2:
+                    if kostka < 4 and luszcz_obrona < 1:
                         if luszcz_wybrany == 1:
                             show stun4 zorder 15 at head_sojusznik1 
 
@@ -21099,7 +21099,7 @@ label fight51:
                         $ eminem_hp_now -= 4
                     
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka < 4 and eminem_obrona < 2:
+                    if kostka < 4 and eminem_obrona < 1:
                         if eminem_wybrany == 1:
                             show stun5 zorder 15 at head_sojusznik1 
 
@@ -21117,7 +21117,7 @@ label fight51:
                         $ urban_hp_now -= 4
                     
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka < 4 and urban_obrona < 2:
+                    if kostka < 4 and urban_obrona < 1:
                         if urban_wybrany == 1:
                             show stun6 zorder 15 at head_sojusznik1 
 
@@ -21135,7 +21135,7 @@ label fight51:
                         $ zyd_hp_now -= 4
                     
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka < 4 and zyd_obrona < 2:
+                    if kostka < 4 and zyd_obrona < 1:
                         if zyd_wybrany == 1:
                             show stun7 zorder 15 at head_sojusznik1 
 
@@ -21153,7 +21153,7 @@ label fight51:
                         $ kazuma_hp_now -= 4
                     
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka < 4 and kazuma_obrona < 2:
+                    if kostka < 4 and kazuma_obrona < 1:
                         if kazuma_wybrany == 1:
                             show stun8 zorder 15 at head_sojusznik1 
 
@@ -21171,7 +21171,7 @@ label fight51:
                         $ tarczownik_hp_now -= 4
                     
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka < 4 and tarczownik_obrona < 2:
+                    if kostka < 4 and tarczownik_obrona < 1:
                         if tarczownik_wybrany == 1:
                             show stun9 zorder 15 at head_sojusznik1 
 
