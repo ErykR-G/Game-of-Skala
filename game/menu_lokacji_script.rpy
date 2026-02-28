@@ -2753,8 +2753,122 @@ label menu_lokacji:
             jump granica
     
     label zul_fight:
-        $ zul_wu = 1
-        "po walce 3"
+        scene bg zul
+        play music "audio/music/zul.mp3"
+        show luszcz neutral at left
+        show zul neutral at slightright
+        
+        zul "Panie dej no 2 złote"
+
+        menu:
+            "{b}Dej (1 💰){/b}" if money >= 1:
+                $ money -= 1
+                luszcz "masz"
+
+                zul "To dej no jeszcze 5 złoty"
+
+                luszcz "Ale chciałeś 2 złote!"
+
+                zul "To daj 3"
+
+                menu:
+                    "{b}Dej (1 💰){/b}" if money >= 1:
+                        $ money -= 1
+
+                        luszcz "masz"
+
+                        zul "No, interesy z tobą panie prezesie to czysta przyjemność"
+
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        if rynek == 1:
+                            jump rynek
+                        if sloneczna == 1:
+                            jump sloneczna 
+                        if alejka == 1:
+                            jump alejka 
+                        if parking == 1:
+                            jump parking
+                        if wolbromska == 1:
+                            jump wolbromska
+                        if bohaterow_wrzesnia == 1:
+                            jump bohaterow_wrzesnia 
+                        if lipowa == 1:
+                            jump lipowa 
+                        if granica == 1:
+                            jump granica
+                    
+                    "{b}Nie dam{/b}":
+                        luszcz "Nie dam"
+
+                        zul "o ty kurwa dziadzie!"
+
+                        jump fight191
+
+            "{b}Nie dam{/b}":
+                luszcz "Nie dam"
+
+                zul "To dej 5 złoty"
+
+                luszcz "Ale chciałeś 2 złote!"
+
+                zul "To daj 3"
+
+                menu:
+                    "{b}Dej (1 💰){/b}" if money >= 1:
+                        $ money -= 1
+
+                        luszcz "masz"
+
+                        zul "No, interesy z tobą panie prezesie to czysta przyjemność"
+
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        if rynek == 1:
+                            jump rynek
+                        if sloneczna == 1:
+                            jump sloneczna 
+                        if alejka == 1:
+                            jump alejka 
+                        if parking == 1:
+                            jump parking
+                        if wolbromska == 1:
+                            jump wolbromska
+                        if bohaterow_wrzesnia == 1:
+                            jump bohaterow_wrzesnia 
+                        if lipowa == 1:
+                            jump lipowa 
+                        if granica == 1:
+                            jump granica
+                        
+                    "{b}Nie dam{/b}":
+                        luszcz "Mówiłem, że nie dam"
+
+                        zul "o ty kurwa dziadzie!"
+
+                        jump fight191
+
+
+
+
+
+    
+    label after_fight191:
+        scene bg zul
+        play music "audio/music/zul.mp3"
+        show luszcz neutral at left
+        show zul neutral at slightright
+
+        play sound "audio/sfx/rzygi.mp3"
+
+        zul "Kurłeeeee"
+
+        luszcz "..."
+
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
             play music "audio/music/pole.mp3"
         else:

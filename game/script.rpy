@@ -143,6 +143,8 @@ label postacie:
 
     define ares = Character("Ares", color="#910909")
 
+    define zul = Character("Żul", color="#664b22")
+
     define arteuszek = Character("Arteuszek", color="#776767")
 
     define prymon = Character("Pan Prymon", color="#e95e54")
