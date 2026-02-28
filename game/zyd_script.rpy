@@ -133,7 +133,7 @@ label zyd:
 
             $ jabole += 2
 
-            "{i}*2 Jabole zostały dodane do twojego ekwipunku*{/i}"
+            "{i}*2 Jabole zostały dodane do ekwipunku*{/i}"
 
             luszcz "Dzięki"
 

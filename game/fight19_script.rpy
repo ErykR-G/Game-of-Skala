@@ -7,7 +7,7 @@ label fight191_stats:
 
     default trup16_hp = 0
     default trup18_hp = 0
-    default zul_hp = 30
+    default zul_hp = 35
 
     default trup16_uszy = 0
     default zul_uszy = 0
@@ -31,11 +31,11 @@ label fight191_stats:
 
     default trup16_min_attack = 0
     default trup18_min_attack = 0
-    default zul_min_attack = 3
+    default zul_min_attack = 2
 
     default trup16_max_attack = 0
     default trup18_max_attack = 0
-    default zul_max_attack = 8
+    default zul_max_attack = 6
 
     default trup16_max_attack_now = trup16_max_attack
     default trup18_max_attack_now = trup18_max_attack
@@ -72,6 +72,8 @@ label fight191_stats:
     default trup16_stun = 0
     default trup18_stun = 0
     default zul_stun = 0
+
+    default zul_jabole = 6
 
 label fight191:
     $ fight_on = 1
@@ -5652,35 +5654,80 @@ label fight191:
                                 if zul_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if zul_max_attack_now < zul_max_attack:
-                                            $ zul_max_attack_now_true = 2
-                                            $ zul_min_attack_now_true = 0
-                                            $ zul_min_attack_now = zul_min_attack_now_true
-                                            $ zul_max_attack_now = zul_max_attack_now_true
-                                            $ zul_max_attack_now -= 2
+                                        if zul_jabole > 1:
+                                            if kazuma_wybrany == 1:
+                                                show zul_weapon zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show zul_weapon zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show zul_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "Jooo patrzcie! zarąbałem mu jabola!"
+
+                                            luszcz "Gratuluję, staczasz sie jak Janiak"
+
+                                            kazuma "..."
+
+                                            luszcz "Pewnie i tak ma jeszcze kilka jaboli więc no w walce nam to za bardzo nie pomoże"
+
+                                            kazuma "Ale przynajmniej jabol dla nas, co nie?"
+
+                                            if jabole == 0:
+                                                $ ile_item += 1
+                                            $ jabole += 1
+                                            $ zul_jabole -= 1
+
+                                            "{i}*Jabol został dodany do ekwipunku*{/i}"
+                                            hide zul_weapon
+                                            hide chwyta
                                         
                                         else:
-                                            $ zul_max_attack_now_true = 2
-                                            $ zul_min_attack_now_true = 0
-                                            $ zul_min_attack_now = zul_min_attack_now_true
-                                            $ zul_max_attack_now = zul_max_attack_now_true
-                                        
-                                        $ zul_weapon -= 1
+                                            if zul_max_attack_now < zul_max_attack:
+                                                $ zul_max_attack_now_true = 2
+                                                $ zul_min_attack_now_true = 0
+                                                $ zul_min_attack_now = zul_min_attack_now_true
+                                                $ zul_max_attack_now = zul_max_attack_now_true
+                                                $ zul_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ zul_max_attack_now_true = 2
+                                                $ zul_min_attack_now_true = 0
+                                                $ zul_min_attack_now = zul_min_attack_now_true
+                                                $ zul_max_attack_now = zul_max_attack_now_true
+                                            
+                                            $ zul_weapon -= 1
 
-                                        if kazuma_wybrany == 1:
-                                            show zul_weapon zorder 15 at weapon_sojusznik1  
+                                            if kazuma_wybrany == 1:
+                                                show zul_weapon zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show zul_weapon zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show zul_weapon zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show zul_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            if kazuma_wybrany == 3:
+                                                show zul_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Żul.  \nStatystyki Żul zostały stale drastycznie osłabione.{/i}"
-                                        hide zul_weapon
-                                        hide chwyta
+                                            kazuma "Ej chłopaki to chyba już ostatni..."
+
+                                            luszcz "Gratulacje nie ma to jak okraść bezdomnego z jego ostatnich zapasów!"
+
+                                            kazuma "..."
+
+                                            luszcz "..."
+
+                                            if jabole == 0:
+                                                $ ile_item += 1
+                                            $ jabole += 1
+                                            $ zul_jabole -= 1
+
+                                            "{i}Udało sie ukraść wszystkie jabole. \nStatystyki Żula zostały stale drastycznie osłabione.{/i}"
+                                            hide zul_weapon
+                                            hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -11913,35 +11960,80 @@ label fight191:
                                 if zul_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if zul_max_attack_now < zul_max_attack:
-                                            $ zul_max_attack_now_true = 2
-                                            $ zul_min_attack_now_true = 0
-                                            $ zul_min_attack_now = zul_min_attack_now_true
-                                            $ zul_max_attack_now = zul_max_attack_now_true
-                                            $ zul_max_attack_now -= 2
+                                        if zul_jabole > 1:
+                                            if kazuma_wybrany == 1:
+                                                show zul_weapon zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show zul_weapon zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show zul_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "Jooo patrzcie! zarąbałem mu jabola!"
+
+                                            luszcz "Gratuluję, staczasz sie jak Janiak"
+
+                                            kazuma "..."
+
+                                            luszcz "Pewnie i tak ma jeszcze kilka jaboli więc no w walce nam to za bardzo nie pomoże"
+
+                                            kazuma "Ale przynajmniej jabol dla nas, co nie?"
+
+                                            if jabole == 0:
+                                                $ ile_item += 1
+                                            $ jabole += 1
+                                            $ zul_jabole -= 1
+
+                                            "{i}*Jabol został dodany do ekwipunku*{/i}"
+                                            hide zul_weapon
+                                            hide chwyta
                                         
                                         else:
-                                            $ zul_max_attack_now_true = 2
-                                            $ zul_min_attack_now_true = 0
-                                            $ zul_min_attack_now = zul_min_attack_now_true
-                                            $ zul_max_attack_now = zul_max_attack_now_true
-                                        
-                                        $ zul_weapon -= 1
+                                            if zul_max_attack_now < zul_max_attack:
+                                                $ zul_max_attack_now_true = 2
+                                                $ zul_min_attack_now_true = 0
+                                                $ zul_min_attack_now = zul_min_attack_now_true
+                                                $ zul_max_attack_now = zul_max_attack_now_true
+                                                $ zul_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ zul_max_attack_now_true = 2
+                                                $ zul_min_attack_now_true = 0
+                                                $ zul_min_attack_now = zul_min_attack_now_true
+                                                $ zul_max_attack_now = zul_max_attack_now_true
+                                            
+                                            $ zul_weapon -= 1
 
-                                        if kazuma_wybrany == 1:
-                                            show zul_weapon zorder 15 at weapon_sojusznik1  
+                                            if kazuma_wybrany == 1:
+                                                show zul_weapon zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show zul_weapon zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show zul_weapon zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show zul_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            if kazuma_wybrany == 3:
+                                                show zul_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Żul.  \nStatystyki Żul zostały stale drastycznie osłabione.{/i}"
-                                        hide zul_weapon
-                                        hide chwyta
+                                            kazuma "Ej chłopaki to chyba już ostatni..."
+
+                                            luszcz "Gratulacje nie ma to jak okraść bezdomnego z jego ostatnich zapasów!"
+
+                                            kazuma "..."
+
+                                            luszcz "..."
+
+                                            if jabole == 0:
+                                                $ ile_item += 1
+                                            $ jabole += 1
+                                            $ zul_jabole -= 1
+
+                                            "{i}Udało sie ukraść wszystkie jabole. \nStatystyki Żula zostały stale drastycznie osłabione.{/i}"
+                                            hide zul_weapon
+                                            hide chwyta
                                     
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -16004,61 +16096,80 @@ label fight191:
                                 if zul_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if zul_max_attack_now < zul_max_attack:
-                                            $ zul_max_attack_now_true = 2
-                                            $ zul_min_attack_now_true = 0
-                                            $ zul_min_attack_now = zul_min_attack_now_true
-                                            $ zul_max_attack_now = zul_max_attack_now_true
-                                            $ zul_max_attack_now -= 2
+                                        if zul_jabole > 1:
+                                            if kazuma_wybrany == 1:
+                                                show zul_weapon zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show zul_weapon zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show zul_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            kazuma "Jooo patrzcie! zarąbałem mu jabola!"
+
+                                            luszcz "Gratuluję, staczasz sie jak Janiak"
+
+                                            kazuma "..."
+
+                                            luszcz "Pewnie i tak ma jeszcze kilka jaboli więc no w walce nam to za bardzo nie pomoże"
+
+                                            kazuma "Ale przynajmniej jabol dla nas, co nie?"
+
+                                            if jabole == 0:
+                                                $ ile_item += 1
+                                            $ jabole += 1
+                                            $ zul_jabole -= 1
+
+                                            "{i}*Jabol został dodany do ekwipunku*{/i}"
+                                            hide zul_weapon
+                                            hide chwyta
                                         
                                         else:
-                                            $ zul_max_attack_now_true = 2
-                                            $ zul_min_attack_now_true = 0
-                                            $ zul_min_attack_now = zul_min_attack_now_true
-                                            $ zul_max_attack_now = zul_max_attack_now_true
-                                        
-                                        $ zul_weapon -= 1
+                                            if zul_max_attack_now < zul_max_attack:
+                                                $ zul_max_attack_now_true = 2
+                                                $ zul_min_attack_now_true = 0
+                                                $ zul_min_attack_now = zul_min_attack_now_true
+                                                $ zul_max_attack_now = zul_max_attack_now_true
+                                                $ zul_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ zul_max_attack_now_true = 2
+                                                $ zul_min_attack_now_true = 0
+                                                $ zul_min_attack_now = zul_min_attack_now_true
+                                                $ zul_max_attack_now = zul_max_attack_now_true
+                                            
+                                            $ zul_weapon -= 1
 
-                                        if kazuma_wybrany == 1:
-                                            show zul_weapon zorder 15 at weapon_sojusznik1  
+                                            if kazuma_wybrany == 1:
+                                                show zul_weapon zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show zul_weapon zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show zul_weapon zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show zul_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            if kazuma_wybrany == 3:
+                                                show zul_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Żul.  \nStatystyki Żul zostały stale drastycznie osłabione.{/i}"
-                                        hide zul_weapon
-                                        hide chwyta
-                                    
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Żul{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                            kazuma "Ej chłopaki to chyba już ostatni..."
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                            luszcz "Gratulacje nie ma to jak okraść bezdomnego z jego ostatnich zapasów!"
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            kazuma "..."
 
-                                        kazuma "Trafiłem jackpota!"
-                                        zul "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Żul.  \nŻul poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ zul_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
+                                            luszcz "..."
+
+                                            if jabole == 0:
+                                                $ ile_item += 1
+                                            $ jabole += 1
+                                            $ zul_jabole -= 1
+
+                                            "{i}Udało sie ukraść wszystkie jabole. \nStatystyki Żula zostały stale drastycznie osłabione.{/i}"
+                                            hide zul_weapon
+                                            hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -19809,9 +19920,25 @@ label fight191:
                                     $ dmg = int(zul_attack / 2)
                                     "{i}Żul zadaje [dmg] obrażeń Łuszczowi{/i}"
                                 else:
+                                    if zul_weapon == 1:
+                                        $ kostka = renpy.random.randint(1, 10)
+                                        if kostka > 2:
+                                            if luszcz_wybrany == 1:
+                                                show stun4 zorder 15 at head_sojusznik1 
+
+                                            if luszcz_wybrany == 2:
+                                                show stun4 zorder 15 at head_sojusznik2  
+
+                                            if luszcz_wybrany == 3:
+                                                show stun4 zorder 15 at head_sojusznik3 
+                                            $ luszcz_stun = 1 
+
                                     $ luszcz_hp_now -= zul_attack
 
-                                    "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi{/i}"
+                                    if luszcz_stun == 1:
+                                        "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi i go stunnuje{/i}"
+                                    else:
+                                        "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi{/i}"
 
                             jump faza_fight196
                         else:
@@ -19849,10 +19976,25 @@ label fight191:
                                         $ dmg = int(zul_attack / 2)
                                         "{i}Żul zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
+                                        if zul_weapon == 1:
+                                            $ kostka = renpy.random.randint(1, 10)
+                                            if kostka > 2:
+                                                if luszcz_wybrany == 1:
+                                                    show stun4 zorder 15 at head_sojusznik1 
+
+                                                if luszcz_wybrany == 2:
+                                                    show stun4 zorder 15 at head_sojusznik2  
+
+                                                if luszcz_wybrany == 3:
+                                                    show stun4 zorder 15 at head_sojusznik3 
+                                                $ luszcz_stun = 1 
+
                                         $ luszcz_hp_now -= zul_attack
 
-                                        "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi{/i}"
-
+                                        if luszcz_stun == 1:
+                                            "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi i go stunnuje{/i}"
+                                        else:
+                                            "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi{/i}"
                                 jump faza_fight196
                             else:
                                 jump losowanko_fight195
@@ -19888,9 +20030,25 @@ label fight191:
                                         $ dmg = int(zul_attack / 2)
                                         "{i}Żul zadaje [dmg] obrażeń Łuszczowi{/i}"
                                     else:
+                                        if zul_weapon == 1:
+                                            $ kostka = renpy.random.randint(1, 10)
+                                            if kostka > 2:
+                                                if luszcz_wybrany == 1:
+                                                    show stun4 zorder 15 at head_sojusznik1 
+
+                                                if luszcz_wybrany == 2:
+                                                    show stun4 zorder 15 at head_sojusznik2  
+
+                                                if luszcz_wybrany == 3:
+                                                    show stun4 zorder 15 at head_sojusznik3 
+                                                $ luszcz_stun = 1 
+
                                         $ luszcz_hp_now -= zul_attack
 
-                                        "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi{/i}"
+                                        if luszcz_stun == 1:
+                                            "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi i go stunnuje{/i}"
+                                        else:
+                                            "{i}Żul zadaje [zul_attack] obrażeń Łuszczowi{/i}"
 
                                 jump faza_fight196
                             else:
@@ -19932,9 +20090,25 @@ label fight191:
                                         $ dmg = int(zul_attack / 2)
                                         "{i}Żul zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                     else:
+                                        if zul_weapon == 1:
+                                            $ kostka = renpy.random.randint(1, 10)
+                                            if kostka > 2:
+                                                if urban_wybrany == 1:
+                                                    show stun6 zorder 15 at head_sojusznik1 
+
+                                                if urban_wybrany == 2:
+                                                    show stun6 zorder 15 at head_sojusznik2  
+
+                                                if urban_wybrany == 3:
+                                                    show stun6 zorder 15 at head_sojusznik3 
+                                                $ urban_stun = 1 
+
                                         $ urban_hp_now -= zul_attack
 
-                                        "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                        if urban_stun == 1:
+                                            "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi i go stunnuje{/i}"
+                                        else:
+                                            "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                 jump faza_fight196
                             else:
@@ -19972,9 +20146,25 @@ label fight191:
                                             $ dmg = int(zul_attack / 2)
                                             "{i}Żul zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
+                                            if zul_weapon == 1:
+                                                $ kostka = renpy.random.randint(1, 10)
+                                                if kostka > 2:
+                                                    if urban_wybrany == 1:
+                                                        show stun6 zorder 15 at head_sojusznik1 
+
+                                                    if urban_wybrany == 2:
+                                                        show stun6 zorder 15 at head_sojusznik2  
+
+                                                    if urban_wybrany == 3:
+                                                        show stun6 zorder 15 at head_sojusznik3 
+                                                    $ urban_stun = 1 
+
                                             $ urban_hp_now -= zul_attack
 
-                                            "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            if urban_stun == 1:
+                                                "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi i go stunnuje{/i}"
+                                            else:
+                                                "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza_fight196
                                 else:
@@ -20011,9 +20201,25 @@ label fight191:
                                             $ dmg = int(zul_attack / 2)
                                             "{i}Żul zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
                                         else:
+                                            if zul_weapon == 1:
+                                                $ kostka = renpy.random.randint(1, 10)
+                                                if kostka > 2:
+                                                    if urban_wybrany == 1:
+                                                        show stun6 zorder 15 at head_sojusznik1 
+
+                                                    if urban_wybrany == 2:
+                                                        show stun6 zorder 15 at head_sojusznik2  
+
+                                                    if urban_wybrany == 3:
+                                                        show stun6 zorder 15 at head_sojusznik3 
+                                                    $ urban_stun = 1 
+
                                             $ urban_hp_now -= zul_attack
 
-                                            "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                            if urban_stun == 1:
+                                                "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi i go stunnuje{/i}"
+                                            else:
+                                                "{i}Żul zadaje [zul_attack] obrażeń Jerzemu Urbanowi{/i}"
 
                                     jump faza_fight196
                                 else:
@@ -20055,9 +20261,25 @@ label fight191:
                                             $ dmg = int(zul_attack / 2)
                                             "{i}Żul zadaje [dmg] obrażeń Żydowi{/i}"
                                         else:
+                                            if zul_weapon == 1:
+                                                $ kostka = renpy.random.randint(1, 10)
+                                                if kostka > 2:
+                                                    if zyd_wybrany == 1:
+                                                        show stun7 zorder 15 at head_sojusznik1 
+
+                                                    if zyd_wybrany == 2:
+                                                        show stun7 zorder 15 at head_sojusznik2  
+
+                                                    if zyd_wybrany == 3:
+                                                        show stun7 zorder 15 at head_sojusznik3 
+                                                    $ zyd_stun = 1 
+
                                             $ zyd_hp_now -= zul_attack
 
-                                            "{i}Żul zadaje [zul_attack] obrażeń Żydowi{/i}"
+                                            if zyd_stun == 1:
+                                                "{i}Żul zadaje [zul_attack] obrażeń Żydowi i go stunnuje{/i}"
+                                            else:
+                                                "{i}Żul zadaje [zul_attack] obrażeń Żydowi{/i}"
 
                                     jump faza_fight196
                                 else:
@@ -20095,9 +20317,25 @@ label fight191:
                                                 $ dmg = int(zul_attack / 2)
                                                 "{i}Żul zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
+                                                if zul_weapon == 1:
+                                                    $ kostka = renpy.random.randint(1, 10)
+                                                    if kostka > 2:
+                                                        if zyd_wybrany == 1:
+                                                            show stun7 zorder 15 at head_sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show stun7 zorder 15 at head_sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show stun7 zorder 15 at head_sojusznik3 
+                                                        $ zyd_stun = 1 
+
                                                 $ zyd_hp_now -= zul_attack
 
-                                                "{i}Żul zadaje [zul_attack] obrażeń Żydowi{/i}"
+                                                if zyd_stun == 1:
+                                                    "{i}Żul zadaje [zul_attack] obrażeń Żydowi i go stunnuje{/i}"
+                                                else:
+                                                    "{i}Żul zadaje [zul_attack] obrażeń Żydowi{/i}"
 
                                         jump faza_fight196
                                     else:
@@ -20134,9 +20372,25 @@ label fight191:
                                                 $ dmg = int(zul_attack / 2)
                                                 "{i}Żul zadaje [dmg] obrażeń Żydowi{/i}"
                                             else:
+                                                if zul_weapon == 1:
+                                                    $ kostka = renpy.random.randint(1, 10)
+                                                    if kostka > 2:
+                                                        if zyd_wybrany == 1:
+                                                            show stun7 zorder 15 at head_sojusznik1 
+
+                                                        if zyd_wybrany == 2:
+                                                            show stun7 zorder 15 at head_sojusznik2  
+
+                                                        if zyd_wybrany == 3:
+                                                            show stun7 zorder 15 at head_sojusznik3 
+                                                        $ zyd_stun = 1 
+
                                                 $ zyd_hp_now -= zul_attack
 
-                                                "{i}Żul zadaje [zul_attack] obrażeń Żydowi{/i}"
+                                                if zyd_stun == 1:
+                                                    "{i}Żul zadaje [zul_attack] obrażeń Żydowi i go stunnuje{/i}"
+                                                else:
+                                                    "{i}Żul zadaje [zul_attack] obrażeń Żydowi{/i}"
 
                                         jump faza_fight196
                                     else:
@@ -20178,9 +20432,25 @@ label fight191:
                                                 $ dmg = int(zul_attack / 2)
                                                 "{i}Żul zadaje [dmg] obrażeń Kazumie{/i}"
                                             else:
+                                                if zul_weapon == 1:
+                                                    $ kostka = renpy.random.randint(1, 10)
+                                                    if kostka > 2:
+                                                        if kazuma_wybrany == 1:
+                                                            show stun8 zorder 15 at head_sojusznik1 
+
+                                                        if kazuma_wybrany == 2:
+                                                            show stun8 zorder 15 at head_sojusznik2  
+
+                                                        if kazuma_wybrany == 3:
+                                                            show stun8 zorder 15 at head_sojusznik3 
+                                                        $ kazuma_stun = 1 
+
                                                 $ kazuma_hp_now -= zul_attack
 
-                                                "{i}Żul zadaje [zul_attack] obrażeń Kazumie{/i}"
+                                                if kazuma_stun == 1:
+                                                    "{i}Żul zadaje [zul_attack] obrażeń Kazumie i go stunnuje{/i}"
+                                                else:
+                                                    "{i}Żul zadaje [zul_attack] obrażeń Kazumie{/i}"
 
                                         jump faza_fight196
                                     else:
@@ -20218,9 +20488,25 @@ label fight191:
                                                     $ dmg = int(zul_attack / 2)
                                                     "{i}Żul zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
+                                                    if zul_weapon == 1:
+                                                        $ kostka = renpy.random.randint(1, 10)
+                                                        if kostka > 2:
+                                                            if kazuma_wybrany == 1:
+                                                                show stun8 zorder 15 at head_sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show stun8 zorder 15 at head_sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show stun8 zorder 15 at head_sojusznik3 
+                                                            $ kazuma_stun = 1 
+
                                                     $ kazuma_hp_now -= zul_attack
 
-                                                    "{i}Żul zadaje [zul_attack] obrażeń Kazumie{/i}"
+                                                    if kazuma_stun == 1:
+                                                        "{i}Żul zadaje [zul_attack] obrażeń Kazumie i go stunnuje{/i}"
+                                                    else:
+                                                        "{i}Żul zadaje [zul_attack] obrażeń Kazumie{/i}"
 
                                             jump faza_fight196
                                         else:
@@ -20257,9 +20543,25 @@ label fight191:
                                                     $ dmg = int(zul_attack / 2)
                                                     "{i}Żul zadaje [dmg] obrażeń Kazumie{/i}"
                                                 else:
+                                                    if zul_weapon == 1:
+                                                        $ kostka = renpy.random.randint(1, 10)
+                                                        if kostka > 2:
+                                                            if kazuma_wybrany == 1:
+                                                                show stun8 zorder 15 at head_sojusznik1 
+
+                                                            if kazuma_wybrany == 2:
+                                                                show stun8 zorder 15 at head_sojusznik2  
+
+                                                            if kazuma_wybrany == 3:
+                                                                show stun8 zorder 15 at head_sojusznik3 
+                                                            $ kazuma_stun = 1 
+
                                                     $ kazuma_hp_now -= zul_attack
 
-                                                    "{i}Żul zadaje [zul_attack] obrażeń Kazumie{/i}"
+                                                    if kazuma_stun == 1:
+                                                        "{i}Żul zadaje [zul_attack] obrażeń Kazumie i go stunnuje{/i}"
+                                                    else:
+                                                        "{i}Żul zadaje [zul_attack] obrażeń Kazumie{/i}"
 
                                             jump faza_fight196
                                         else:
@@ -20301,9 +20603,25 @@ label fight191:
                                                     $ dmg = int(zul_attack / 2)
                                                     "{i}Żul zadaje [dmg] obrażeń Shadowowi{/i}"
                                                 else:
+                                                    if zul_weapon == 1:
+                                                        $ kostka = renpy.random.randint(1, 10)
+                                                        if kostka > 2:
+                                                            if eminem_wybrany == 1:
+                                                                show stun5 zorder 15 at head_sojusznik1 
+
+                                                            if eminem_wybrany == 2:
+                                                                show stun5 zorder 15 at head_sojusznik2  
+
+                                                            if eminem_wybrany == 3:
+                                                                show stun5 zorder 15 at head_sojusznik3 
+                                                            $ eminem_stun = 1 
+
                                                     $ eminem_hp_now -= zul_attack
 
-                                                    "{i}Żul zadaje [zul_attack] obrażeń Shadowowi{/i}"
+                                                    if eminem_stun == 1:
+                                                        "{i}Żul zadaje [zul_attack] obrażeń Shadowowi i go stunnuje{/i}"
+                                                    else:
+                                                        "{i}Żul zadaje [zul_attack] obrażeń Shadowowi{/i}"
 
                                             jump faza_fight196
                                         else:
@@ -20341,9 +20659,25 @@ label fight191:
                                                         $ dmg = int(zul_attack / 2)
                                                         "{i}Żul zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
+                                                        if zul_weapon == 1:
+                                                            $ kostka = renpy.random.randint(1, 10)
+                                                            if kostka > 2:
+                                                                if eminem_wybrany == 1:
+                                                                    show stun5 zorder 15 at head_sojusznik1 
+
+                                                                if eminem_wybrany == 2:
+                                                                    show stun5 zorder 15 at head_sojusznik2  
+
+                                                                if eminem_wybrany == 3:
+                                                                    show stun5 zorder 15 at head_sojusznik3 
+                                                                $ eminem_stun = 1 
+
                                                         $ eminem_hp_now -= zul_attack
 
-                                                        "{i}Żul zadaje [zul_attack] obrażeń Shadowowi{/i}"
+                                                        if eminem_stun == 1:
+                                                            "{i}Żul zadaje [zul_attack] obrażeń Shadowowi i go stunnuje{/i}"
+                                                        else:
+                                                            "{i}Żul zadaje [zul_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza_fight196
                                             else:
@@ -20380,9 +20714,25 @@ label fight191:
                                                         $ dmg = int(zul_attack / 2)
                                                         "{i}Żul zadaje [dmg] obrażeń Shadowowi{/i}"
                                                     else:
+                                                        if zul_weapon == 1:
+                                                            $ kostka = renpy.random.randint(1, 10)
+                                                            if kostka > 2:
+                                                                if eminem_wybrany == 1:
+                                                                    show stun5 zorder 15 at head_sojusznik1 
+
+                                                                if eminem_wybrany == 2:
+                                                                    show stun5 zorder 15 at head_sojusznik2  
+
+                                                                if eminem_wybrany == 3:
+                                                                    show stun5 zorder 15 at head_sojusznik3 
+                                                                $ eminem_stun = 1 
+
                                                         $ eminem_hp_now -= zul_attack
 
-                                                        "{i}Żul zadaje [zul_attack] obrażeń Shadowowi{/i}"
+                                                        if eminem_stun == 1:
+                                                            "{i}Żul zadaje [zul_attack] obrażeń Shadowowi i go stunnuje{/i}"
+                                                        else:
+                                                            "{i}Żul zadaje [zul_attack] obrażeń Shadowowi{/i}"
 
                                                 jump faza_fight196
                                             else:
@@ -20424,9 +20774,25 @@ label fight191:
                                                         $ dmg = int(zul_attack / 2)
                                                         "{i}Żul zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                     else:
+                                                        if zul_weapon == 1:
+                                                            $ kostka = renpy.random.randint(1, 10)
+                                                            if kostka > 2:
+                                                                if tarczownik_wybrany == 1:
+                                                                    show stun9 zorder 15 at head_sojusznik1 
+
+                                                                if tarczownik_wybrany == 2:
+                                                                    show stun9 zorder 15 at head_sojusznik2  
+
+                                                                if tarczownik_wybrany == 3:
+                                                                    show stun9 zorder 15 at head_sojusznik3 
+                                                                $ tarczownik_stun = 1 
+
                                                         $ tarczownik_hp_now -= zul_attack
 
-                                                        "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu{/i}"
+                                                        if tarczownik_stun == 1:
+                                                            "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu i go stunnuje{/i}"
+                                                        else:
+                                                            "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu{/i}"
 
                                                 jump faza_fight196
                                             else:
@@ -20464,9 +20830,25 @@ label fight191:
                                                             $ dmg = int(zul_attack / 2)
                                                             "{i}Żul zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
+                                                            if zul_weapon == 1:
+                                                                $ kostka = renpy.random.randint(1, 10)
+                                                                if kostka > 2:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        show stun9 zorder 15 at head_sojusznik1 
+
+                                                                    if tarczownik_wybrany == 2:
+                                                                        show stun9 zorder 15 at head_sojusznik2  
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        show stun9 zorder 15 at head_sojusznik3 
+                                                                    $ tarczownik_stun = 1 
+
                                                             $ tarczownik_hp_now -= zul_attack
 
-                                                            "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu{/i}"
+                                                            if tarczownik_stun == 1:
+                                                                "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu i go stunnuje{/i}"
+                                                            else:
+                                                                "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump faza_fight196
                                                 else:
@@ -20503,9 +20885,25 @@ label fight191:
                                                             $ dmg = int(zul_attack / 2)
                                                             "{i}Żul zadaje [dmg] obrażeń Naofumiemu{/i}"
                                                         else:
+                                                            if zul_weapon == 1:
+                                                                $ kostka = renpy.random.randint(1, 10)
+                                                                if kostka > 2:
+                                                                    if tarczownik_wybrany == 1:
+                                                                        show stun9 zorder 15 at head_sojusznik1 
+
+                                                                    if tarczownik_wybrany == 2:
+                                                                        show stun9 zorder 15 at head_sojusznik2  
+
+                                                                    if tarczownik_wybrany == 3:
+                                                                        show stun9 zorder 15 at head_sojusznik3 
+                                                                    $ tarczownik_stun = 1 
+
                                                             $ tarczownik_hp_now -= zul_attack
 
-                                                            "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu{/i}"
+                                                            if tarczownik_stun == 1:
+                                                                "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu i go stunnuje{/i}"
+                                                            else:
+                                                                "{i}Żul zadaje [zul_attack] obrażeń Naofumiemu{/i}"
 
                                                     jump faza_fight196
                                                 else:
@@ -22160,6 +22558,9 @@ label fight191:
                 $ zyd_stun = 0
                 $ kazuma_stun = 0
                 $ tarczownik_stun = 0
+
+                if zul_jabole == 0:
+                    $ zul_jabole = 1
                 play sound "audio/sfx/return.mp3"
                 jump fight191
 
@@ -22339,6 +22740,8 @@ label fight191:
         hide screen tarczownik1_stats
         hide screen tarczownik2_stats
         hide screen tarczownik3_stats
+
+        $ zul_jabole = 6
 
         $ luszcz_stun = 0
         $ eminem_stun = 0

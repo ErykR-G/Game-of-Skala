@@ -83,7 +83,7 @@ label sklepy:
                     $ monopolowy_jabole -= 1
                     $ money -= 1
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Jabole x 4 zostały dodane do twojego ekwipunku*{/i}"
+                    "{i}*Jabole x 4 zostały dodane do ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
                 "{b}DrPepper x 2 (1 💰){/b}" if monopolowy_drpepper > 0 and money >= 1:
@@ -93,7 +93,7 @@ label sklepy:
                     $ monopolowy_drpepper -= 1
                     $ money -= 1
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*DrPepper x 2 został dodany do twojego ekwipunku*{/i}"
+                    "{i}*DrPepper x 2 został dodany do ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
                 "{b}Royal Cola x 2 (1 💰){/b}" if monopolowy_royal > 0 and money >= 1:
@@ -103,7 +103,7 @@ label sklepy:
                     $ monopolowy_royal -= 1
                     $ money -= 1
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Royal Cola x 2 została dodana do twojego ekwipunku*{/i}"
+                    "{i}*Royal Cola x 2 została dodana do ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
                 "{b}Granat x 2 (2 💰){/b}" if monopolowy_granat > 0 and money >= 2:
@@ -113,7 +113,7 @@ label sklepy:
                     $ monopolowy_granat -= 1
                     $ money -= 2
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Granat x 2 został dodany do twojego ekwipunku*{/i}"
+                    "{i}*Granat x 2 został dodany do ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
                 "{i}Powrót{/i}":
@@ -334,7 +334,7 @@ label sklepy:
                     $ chinczyk_banany -= 1
                     $ money -= 2
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Kiść Bananów x 3 została dodana do twojego ekwipunku*{/i}"
+                    "{i}*Kiść Bananów x 3 została dodana do ekwipunku*{/i}"
                     jump chinczyk2
                 
                 "{b}Przepychaczka x 1 (4 💰){/b}" if chinczyk_przepychaczka > 0 and money >= 4:
@@ -349,7 +349,7 @@ label sklepy:
                     $ chinczyk_przepychaczka -= 1
                     $ money -= 4
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Przepychaczka x 1 została dodana do twojego ekwipunku*{/i}"
+                    "{i}*Przepychaczka x 1 została dodana do ekwipunku*{/i}"
                     jump chinczyk2
                 
                 "{b}Diamentowa Klata x 1 (4 💰){/b}" if chinczyk_klata > 0 and money >= 4:
@@ -364,7 +364,7 @@ label sklepy:
                     $ chinczyk_klata -= 1
                     $ money -= 4
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Diamentowa Klata x 1 została dodana do twojego ekwipunku*{/i}"
+                    "{i}*Diamentowa Klata x 1 została dodana do ekwipunku*{/i}"
                     jump chinczyk2
                 
                 "{i}Powrót{/i}":
