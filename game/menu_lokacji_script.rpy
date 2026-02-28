@@ -81,6 +81,7 @@ label menu_lokacji:
         label rynek2:
             menu:
                 "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
+                    "MASZ HIV"
                     $ liczba_sojusznikow = 6
                     $ urban_sojusznik = 1
                     $ zyd_sojusznik = 1
