@@ -12,6 +12,10 @@
 ##
 ## Znak _() otaczający ciąg znaków oznacza go jako kwalifikujący się do
 ## tłumaczenia.
+
+init -1 python:
+    config.menu_include_disabled = False
+    
 define config.main_menu_music = "audio/music/menu.mp3"
 
 define config.name = _("Game of Skala")

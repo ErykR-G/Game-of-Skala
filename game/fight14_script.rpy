@@ -7,7 +7,7 @@ label fight141_stats:
 
     default all_star_zombie3_hp = 40
     default newspaper_zombie2_hp = 70
-    default engineer1_hp = 10
+    default engineer1_hp = 50
 
     default all_star_zombie3_uszy = 0
     default engineer1_uszy = 0
@@ -31,11 +31,11 @@ label fight141_stats:
 
     default all_star_zombie3_min_attack = 2
     default newspaper_zombie2_min_attack = 1
-    default engineer1_min_attack = 0
+    default engineer1_min_attack = 2
 
     default all_star_zombie3_max_attack = 5
     default newspaper_zombie2_max_attack = 6
-    default engineer1_max_attack = 0
+    default engineer1_max_attack = 6
 
     default all_star_zombie3_max_attack_now = all_star_zombie3_max_attack
     default newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack
@@ -79,6 +79,10 @@ label fight141_stats:
 
     default newspaper_zombie2_special = 14
     default newspaper_zombie2_gazeta = 1
+
+    default engineer1_turret = 0
+    default engineer1_special = 0
+    default engineer1_tuba = 0
 
 label fight141:
     $ fight_on = 1
@@ -6374,7 +6378,7 @@ label fight141:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight141
 
-                "{b}Steal{/b}" if all_star_zombie3_sex == 0 and all_star_zombie3_weapon >= 1 and all_star_zombie3_hp_now > 0 or engineer1_sex == 0 and engineer1_weapon >= 1 and engineer1_hp_now > 0 or newspaper_zombie2_sex == 0 and newspaper_zombie2_weapon >= 1 and newspaper_zombie2_hp_now > 0 or all_star_zombie3_sex == 1 and all_star_zombie3_hp_now > 0 or engineer1_sex == 1 and engineer1_hp_now > 0 or newspaper_zombie2_sex == 1 and newspaper_zombie2_hp_now > 0:
+                "{b}Steal{/b}" if newspaper_zombie2_gazeta == 1 and newspaper_zombie2_hp_now > 0 or engineer1_weapon >= 1 and engineer1_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -6387,7 +6391,7 @@ label fight141:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}All-Star Zombie{/b}" if all_star_zombie3_sex == 0 and all_star_zombie3_weapon >= 1 and all_star_zombie3_hp_now > 0 or all_star_zombie3_sex == 1 and all_star_zombie3_hp_now > 0:
+                        "{b}All-Star Zombie{/b}" if all_star_zombie3_sex == 3:
                             kazuma "Steal!"
 
                             if all_star_zombie3_obrona >= 1:
@@ -6462,81 +6466,87 @@ label fight141:
                                         
                                 jump faza_fight142
 
-                        "{b}Engineer{/b}" if engineer1_sex == 0 and engineer1_weapon >= 1 and engineer1_hp_now > 0 or engineer1_sex == 1 and engineer1_hp_now > 0:
+                        "{b}Engineer{/b}" if engineer1_weapon >= 1 and engineer1_hp_now > 0:
                             kazuma "Steal!"
                             if engineer1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Engineer obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight142
                             else:
-                                $ kostka = renpy.random.randint(1, 11)
-                                if engineer1_sex == 0:
-                                    
-                                    if kostka >= 9:
-                                        if engineer1_max_attack_now < engineer1_max_attack:
-                                            $ engineer1_max_attack_now_true = 2
-                                            $ engineer1_min_attack_now_true = 0
-                                            $ engineer1_min_attack_now = engineer1_min_attack_now_true
-                                            $ engineer1_max_attack_now = engineer1_max_attack_now_true
-                                            $ engineer1_max_attack_now -= 2
+                                if engineer1_turret == 1:
+                                    play sound "audio/sfx/stel.mp3"
+                                    "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                    hide chwyta
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 11)
+                                    if engineer1_sex == 0:
+                                        
+                                        if kostka >= 9:
+                                            if engineer1_max_attack_now < engineer1_max_attack:
+                                                $ engineer1_max_attack_now_true = 2
+                                                $ engineer1_min_attack_now_true = 0
+                                                $ engineer1_min_attack_now = engineer1_min_attack_now_true
+                                                $ engineer1_max_attack_now = engineer1_max_attack_now_true
+                                                $ engineer1_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ engineer1_max_attack_now_true = 2
+                                                $ engineer1_min_attack_now_true = 0
+                                                $ engineer1_min_attack_now = engineer1_min_attack_now_true
+                                                $ engineer1_max_attack_now = engineer1_max_attack_now_true
+                                            
+                                            $ engineer1_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Engineer.  \nStatystyki Engineer zostały stale drastycznie osłabione.{/i}"
+                                            hide engineer1_weapon
+                                            hide chwyta
                                         
                                         else:
-                                            $ engineer1_max_attack_now_true = 2
-                                            $ engineer1_min_attack_now_true = 0
-                                            $ engineer1_min_attack_now = engineer1_min_attack_now_true
-                                            $ engineer1_max_attack_now = engineer1_max_attack_now_true
-                                        
-                                        $ engineer1_weapon -= 1
-
-                                        if kazuma_wybrany == 1:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik1  
-
-                                        if kazuma_wybrany == 2:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik2  
-
-                                        if kazuma_wybrany == 3:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
-
-                                        "{i}Udało sie ukraść broń Engineer.  \nStatystyki Engineer zostały stale drastycznie osłabione.{/i}"
-                                        hide engineer1_weapon
-                                        hide chwyta
-                                    
+                                            play sound "audio/sfx/stel.mp3"
+                                            "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                            hide chwyta
+                            
                                     else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Engineer{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        if kostka >= 6:
+                                            if kazuma_wybrany == 1:
+                                                show majtki zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show majtki zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            if kazuma_wybrany == 3:
+                                                show majtki zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
 
-                                        kazuma "Trafiłem jackpota!"
-                                        engineer1 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Engineer.  \nEngineer poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ engineer1_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Engineer{/i}"
-                                        hide chwyta
+                                            kazuma "Trafiłem jackpota!"
+                                            engineer1 "Nie! Oddaj mi moje majtki!"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Engineer.  \nEngineer poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ engineer1_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
+                                        else:
+                                            play sound "audio/sfx/stel.mp3"
+                                            "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                            hide chwyta
                                         
                                 jump faza_fight142
 
-                        "{b}Newspaper Zombie{/b}" if newspaper_zombie2_sex == 0 and newspaper_zombie2_weapon >= 1 and newspaper_zombie2_hp_now > 0 or newspaper_zombie2_sex == 1 and newspaper_zombie2_hp_now > 0:
+                        "{b}Newspaper Zombie{/b}" if newspaper_zombie2_gazeta == 1 and newspaper_zombie2_hp_now > 0:
                             kazuma "Steal!"
                             if newspaper_zombie2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -6547,34 +6557,50 @@ label fight141:
                                 if newspaper_zombie2_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if newspaper_zombie2_max_attack_now < newspaper_zombie2_max_attack:
-                                            $ newspaper_zombie2_max_attack_now_true = 2
-                                            $ newspaper_zombie2_min_attack_now_true = 0
-                                            $ newspaper_zombie2_min_attack_now = newspaper_zombie2_min_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ newspaper_zombie2_max_attack_now_true = 2
-                                            $ newspaper_zombie2_min_attack_now_true = 0
-                                            $ newspaper_zombie2_min_attack_now = newspaper_zombie2_min_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack_now_true
-                                        
-                                        $ newspaper_zombie2_weapon -= 1
+                                        $ newspaper_zombie2_special = 0
+                                        $ newspaper_zombie2_gazeta = 0
+                                        show newspaper_zombie2 fight2
+                                        hide snake33
+                                        hide snake23
+                                        hide snake13
+                                        hide pager3
+                                        hide uszy3
+                                        hide tarcza8
+                                        $ newspaper_zombie2_pager = 0
+                                        $ newspaper_zombie2_poison = 0
+                                        $ newspaper_zombie2_stun = 0
+
+                                        if newspaper_zombie2_slime >= 1:
+                                            $ newspaper_zombie2_slime = 0
+                                            hide slime
+
+                                        $ newspaper_zombie2_max_attack_now = 10
+                                        $ newspaper_zombie2_min_attack_now = 5
+                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now                         
 
                                         if kazuma_wybrany == 1:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik1  
+                                            show gazeta zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik2  
+                                            show gazeta zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik3 
+                                            show gazeta zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Newspaper Zombie.  \nStatystyki Newspaper Zombie zostały stale drastycznie osłabione.{/i}"
-                                        hide newspaper_zombie2_weapon
+                                        kazuma "O patrzcie, zarąbałem mu gazetę!"
+                                        kazuma "ciekawe co tu pisze..."
+                                        kazuma "...na co umarł Stalin?"
+
+                                        luszcz "Na śmierć!"
+
+                                        kazuma "Na szczęście!"
+
+                                        luszcz "ha ha ha ha..."
+
+                                        hide gazeta
                                         hide chwyta
                                     
                                     else:
@@ -13186,7 +13212,7 @@ label fight141:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight143
 
-                "{b}Steal{/b}" if all_star_zombie3_sex == 0 and all_star_zombie3_weapon >= 1 and all_star_zombie3_hp_now > 0 or engineer1_sex == 0 and engineer1_weapon >= 1 and engineer1_hp_now > 0 or newspaper_zombie2_sex == 0 and newspaper_zombie2_weapon >= 1 and newspaper_zombie2_hp_now > 0 or all_star_zombie3_sex == 1 and all_star_zombie3_hp_now > 0 or engineer1_sex == 1 and engineer1_hp_now > 0 or newspaper_zombie2_sex == 1 and newspaper_zombie2_hp_now > 0:
+                "{b}Steal{/b}" if newspaper_zombie2_gazeta == 1 and newspaper_zombie2_hp_now > 0 or engineer1_weapon >= 1 and engineer1_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -13199,7 +13225,7 @@ label fight141:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}All-Star Zombie{/b}" if all_star_zombie3_sex == 0 and all_star_zombie3_weapon >= 1 and all_star_zombie3_hp_now > 0 or all_star_zombie3_sex == 1 and all_star_zombie3_hp_now > 0:
+                        "{b}All-Star Zombie{/b}" if all_star_zombie3_sex == 3:
                             kazuma "Steal!"
                             if all_star_zombie3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -13273,81 +13299,87 @@ label fight141:
                                         
                                 jump faza_fight143
 
-                        "{b}Engineer{/b}" if engineer1_sex == 0 and engineer1_weapon >= 1 and engineer1_hp_now > 0 or engineer1_sex == 1 and engineer1_hp_now > 0:
+                        "{b}Engineer{/b}" if engineer1_weapon >= 1 and engineer1_hp_now > 0:
                             kazuma "Steal!"
                             if engineer1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Engineer obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight143
                             else:
-                                $ kostka = renpy.random.randint(1, 11)
-                                if engineer1_sex == 0:
-                                    
-                                    if kostka >= 9:
-                                        if engineer1_max_attack_now < engineer1_max_attack:
-                                            $ engineer1_max_attack_now_true = 2
-                                            $ engineer1_min_attack_now_true = 0
-                                            $ engineer1_min_attack_now = engineer1_min_attack_now_true
-                                            $ engineer1_max_attack_now = engineer1_max_attack_now_true
-                                            $ engineer1_max_attack_now -= 2
+                                if engineer1_turret == 1:
+                                    play sound "audio/sfx/stel.mp3"
+                                    "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                    hide chwyta
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 11)
+                                    if engineer1_sex == 0:
+                                        
+                                        if kostka >= 9:
+                                            if engineer1_max_attack_now < engineer1_max_attack:
+                                                $ engineer1_max_attack_now_true = 2
+                                                $ engineer1_min_attack_now_true = 0
+                                                $ engineer1_min_attack_now = engineer1_min_attack_now_true
+                                                $ engineer1_max_attack_now = engineer1_max_attack_now_true
+                                                $ engineer1_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ engineer1_max_attack_now_true = 2
+                                                $ engineer1_min_attack_now_true = 0
+                                                $ engineer1_min_attack_now = engineer1_min_attack_now_true
+                                                $ engineer1_max_attack_now = engineer1_max_attack_now_true
+                                            
+                                            $ engineer1_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Engineer.  \nStatystyki Engineer zostały stale drastycznie osłabione.{/i}"
+                                            hide engineer1_weapon
+                                            hide chwyta
                                         
                                         else:
-                                            $ engineer1_max_attack_now_true = 2
-                                            $ engineer1_min_attack_now_true = 0
-                                            $ engineer1_min_attack_now = engineer1_min_attack_now_true
-                                            $ engineer1_max_attack_now = engineer1_max_attack_now_true
-                                        
-                                        $ engineer1_weapon -= 1
-
-                                        if kazuma_wybrany == 1:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik1  
-
-                                        if kazuma_wybrany == 2:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik2  
-
-                                        if kazuma_wybrany == 3:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
-
-                                        "{i}Udało sie ukraść broń Engineer.  \nStatystyki Engineer zostały stale drastycznie osłabione.{/i}"
-                                        hide engineer1_weapon
-                                        hide chwyta
-                                    
+                                            play sound "audio/sfx/stel.mp3"
+                                            "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                            hide chwyta
+                            
                                     else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Engineer{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        if kostka >= 6:
+                                            if kazuma_wybrany == 1:
+                                                show majtki zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show majtki zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            if kazuma_wybrany == 3:
+                                                show majtki zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
 
-                                        kazuma "Trafiłem jackpota!"
-                                        engineer1 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Engineer.  \nEngineer poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ engineer1_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Engineer{/i}"
-                                        hide chwyta
+                                            kazuma "Trafiłem jackpota!"
+                                            engineer1 "Nie! Oddaj mi moje majtki!"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Engineer.  \nEngineer poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ engineer1_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
+                                        else:
+                                            play sound "audio/sfx/stel.mp3"
+                                            "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                            hide chwyta
                                         
                                 jump faza_fight143
 
-                        "{b}Newspaper Zombie{/b}" if newspaper_zombie2_sex == 0 and newspaper_zombie2_weapon >= 1 and newspaper_zombie2_hp_now > 0 or newspaper_zombie2_sex == 1 and newspaper_zombie2_hp_now > 0:
+                        "{b}Newspaper Zombie{/b}" if newspaper_zombie2_gazeta == 1 and newspaper_zombie2_hp_now > 0:
                             kazuma "Steal!"
                             if newspaper_zombie2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -13358,34 +13390,50 @@ label fight141:
                                 if newspaper_zombie2_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if newspaper_zombie2_max_attack_now < newspaper_zombie2_max_attack:
-                                            $ newspaper_zombie2_max_attack_now_true = 2
-                                            $ newspaper_zombie2_min_attack_now_true = 0
-                                            $ newspaper_zombie2_min_attack_now = newspaper_zombie2_min_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ newspaper_zombie2_max_attack_now_true = 2
-                                            $ newspaper_zombie2_min_attack_now_true = 0
-                                            $ newspaper_zombie2_min_attack_now = newspaper_zombie2_min_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack_now_true
-                                        
-                                        $ newspaper_zombie2_weapon -= 1
+                                        $ newspaper_zombie2_special = 0
+                                        $ newspaper_zombie2_gazeta = 0
+                                        show newspaper_zombie2 fight2
+                                        hide snake33
+                                        hide snake23
+                                        hide snake13
+                                        hide pager3
+                                        hide uszy3
+                                        hide tarcza8
+                                        $ newspaper_zombie2_pager = 0
+                                        $ newspaper_zombie2_poison = 0
+                                        $ newspaper_zombie2_stun = 0
+
+                                        if newspaper_zombie2_slime >= 1:
+                                            $ newspaper_zombie2_slime = 0
+                                            hide slime
+
+                                        $ newspaper_zombie2_max_attack_now = 10
+                                        $ newspaper_zombie2_min_attack_now = 5
+                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now                         
 
                                         if kazuma_wybrany == 1:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik1  
+                                            show gazeta zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik2  
+                                            show gazeta zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik3 
+                                            show gazeta zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Newspaper Zombie.  \nStatystyki Newspaper Zombie zostały stale drastycznie osłabione.{/i}"
-                                        hide newspaper_zombie2_weapon
+                                        kazuma "O patrzcie, zarąbałem mu gazetę!"
+                                        kazuma "ciekawe co tu pisze..."
+                                        kazuma "...na co umarł Stalin?"
+
+                                        luszcz "Na śmierć!"
+
+                                        kazuma "Na szczęście!"
+
+                                        luszcz "ha ha ha ha..."
+
+                                        hide gazeta
                                         hide chwyta
                                     
                                     else:
@@ -17658,7 +17706,7 @@ label fight141:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight145
 
-                "{b}Steal{/b}" if all_star_zombie3_sex == 0 and all_star_zombie3_weapon >= 1 and all_star_zombie3_hp_now > 0 or engineer1_sex == 0 and engineer1_weapon >= 1 and engineer1_hp_now > 0 or newspaper_zombie2_sex == 0 and newspaper_zombie2_weapon >= 1 and newspaper_zombie2_hp_now > 0 or all_star_zombie3_sex == 1 and all_star_zombie3_hp_now > 0 or engineer1_sex == 1 and engineer1_hp_now > 0 or newspaper_zombie2_sex == 1 and newspaper_zombie2_hp_now > 0:
+                "{b}Steal{/b}" if newspaper_zombie2_gazeta == 1 and newspaper_zombie2_hp_now > 0 or engineer1_weapon >= 1 and engineer1_hp_now > 0:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -17671,7 +17719,7 @@ label fight141:
                     menu:
                         "{b}Na kim użyć?{/b}"
 
-                        "{b}All-Star Zombie{/b}" if all_star_zombie3_sex == 0 and all_star_zombie3_weapon >= 1 and all_star_zombie3_hp_now > 0 or all_star_zombie3_sex == 1 and all_star_zombie3_hp_now > 0:
+                        "{b}All-Star Zombie{/b}" if all_star_zombie3_sex == 3:
                             kazuma "Steal!"
                             if all_star_zombie3_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -17745,81 +17793,87 @@ label fight141:
                                         
                                 jump faza_fight144
 
-                        "{b}Engineer{/b}" if engineer1_sex == 0 and engineer1_weapon >= 1 and engineer1_hp_now > 0 or engineer1_sex == 1 and engineer1_hp_now > 0:
+                        "{b}Engineer{/b}" if engineer1_weapon >= 1 and engineer1_hp_now > 0:
                             kazuma "Steal!"
                             if engineer1_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Engineer obronił się przed umiejętnością “Steal“{/i}"
                                 jump faza_fight144
                             else:
-                                $ kostka = renpy.random.randint(1, 11)
-                                if engineer1_sex == 0:
-                                    
-                                    if kostka >= 9:
-                                        if engineer1_max_attack_now < engineer1_max_attack:
-                                            $ engineer1_max_attack_now_true = 2
-                                            $ engineer1_min_attack_now_true = 0
-                                            $ engineer1_min_attack_now = engineer1_min_attack_now_true
-                                            $ engineer1_max_attack_now = engineer1_max_attack_now_true
-                                            $ engineer1_max_attack_now -= 2
+                                if engineer1_turret == 1:
+                                    play sound "audio/sfx/stel.mp3"
+                                    "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                    hide chwyta
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 11)
+                                    if engineer1_sex == 0:
+                                        
+                                        if kostka >= 9:
+                                            if engineer1_max_attack_now < engineer1_max_attack:
+                                                $ engineer1_max_attack_now_true = 2
+                                                $ engineer1_min_attack_now_true = 0
+                                                $ engineer1_min_attack_now = engineer1_min_attack_now_true
+                                                $ engineer1_max_attack_now = engineer1_max_attack_now_true
+                                                $ engineer1_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ engineer1_max_attack_now_true = 2
+                                                $ engineer1_min_attack_now_true = 0
+                                                $ engineer1_min_attack_now = engineer1_min_attack_now_true
+                                                $ engineer1_max_attack_now = engineer1_max_attack_now_true
+                                            
+                                            $ engineer1_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show engineer1_weapon zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Engineer.  \nStatystyki Engineer zostały stale drastycznie osłabione.{/i}"
+                                            hide engineer1_weapon
+                                            hide chwyta
                                         
                                         else:
-                                            $ engineer1_max_attack_now_true = 2
-                                            $ engineer1_min_attack_now_true = 0
-                                            $ engineer1_min_attack_now = engineer1_min_attack_now_true
-                                            $ engineer1_max_attack_now = engineer1_max_attack_now_true
-                                        
-                                        $ engineer1_weapon -= 1
-
-                                        if kazuma_wybrany == 1:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik1  
-
-                                        if kazuma_wybrany == 2:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik2  
-
-                                        if kazuma_wybrany == 3:
-                                            show engineer1_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
-
-                                        "{i}Udało sie ukraść broń Engineer.  \nStatystyki Engineer zostały stale drastycznie osłabione.{/i}"
-                                        hide engineer1_weapon
-                                        hide chwyta
-                                    
+                                            play sound "audio/sfx/stel.mp3"
+                                            "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                            hide chwyta
+                            
                                     else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Engineer{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                        if kostka >= 6:
+                                            if kazuma_wybrany == 1:
+                                                show majtki zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                            if kazuma_wybrany == 2:
+                                                show majtki zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                            if kazuma_wybrany == 3:
+                                                show majtki zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
 
-                                        kazuma "Trafiłem jackpota!"
-                                        engineer1 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Engineer.  \nEngineer poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ engineer1_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Engineer{/i}"
-                                        hide chwyta
-                                        
+                                            kazuma "Trafiłem jackpota!"
+                                            engineer1 "Nie! Oddaj mi moje majtki!"
+                                            kazuma "Uuuoohohoho!"
+                                            "{i}Udało sie ukraść bieliznę Engineer.  \nEngineer poddaje sie wzamian za jej zwrócenie.{/i}"
+                                            $ engineer1_hp_now = 0
+                                            hide majtki
+                                            hide chwyta
+                                            
+                                        else:
+                                            play sound "audio/sfx/stel.mp3"
+                                            "{i}Nie udało sie ukraść broni Engineer{/i}"
+                                            hide chwyta
+                                            
                                 jump faza_fight144
 
-                        "{b}Newspaper Zombie{/b}" if newspaper_zombie2_sex == 0 and newspaper_zombie2_weapon >= 1 and newspaper_zombie2_hp_now > 0 or newspaper_zombie2_sex == 1 and newspaper_zombie2_hp_now > 0:
+                        "{b}Newspaper Zombie{/b}" if newspaper_zombie2_gazeta == 1 and newspaper_zombie2_hp_now > 0:
                             kazuma "Steal!"
                             if newspaper_zombie2_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -17830,34 +17884,50 @@ label fight141:
                                 if newspaper_zombie2_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if newspaper_zombie2_max_attack_now < newspaper_zombie2_max_attack:
-                                            $ newspaper_zombie2_max_attack_now_true = 2
-                                            $ newspaper_zombie2_min_attack_now_true = 0
-                                            $ newspaper_zombie2_min_attack_now = newspaper_zombie2_min_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ newspaper_zombie2_max_attack_now_true = 2
-                                            $ newspaper_zombie2_min_attack_now_true = 0
-                                            $ newspaper_zombie2_min_attack_now = newspaper_zombie2_min_attack_now_true
-                                            $ newspaper_zombie2_max_attack_now = newspaper_zombie2_max_attack_now_true
-                                        
-                                        $ newspaper_zombie2_weapon -= 1
+                                        $ newspaper_zombie2_special = 0
+                                        $ newspaper_zombie2_gazeta = 0
+                                        show newspaper_zombie2 fight2
+                                        hide snake33
+                                        hide snake23
+                                        hide snake13
+                                        hide pager3
+                                        hide uszy3
+                                        hide tarcza8
+                                        $ newspaper_zombie2_pager = 0
+                                        $ newspaper_zombie2_poison = 0
+                                        $ newspaper_zombie2_stun = 0
+
+                                        if newspaper_zombie2_slime >= 1:
+                                            $ newspaper_zombie2_slime = 0
+                                            hide slime
+
+                                        $ newspaper_zombie2_max_attack_now = 10
+                                        $ newspaper_zombie2_min_attack_now = 5
+                                        $ newspaper_zombie2_max_attack_now_true = newspaper_zombie2_max_attack_now
+                                        $ newspaper_zombie2_min_attack_now_true = newspaper_zombie2_min_attack_now                         
 
                                         if kazuma_wybrany == 1:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik1  
+                                            show gazeta zorder 15 at weapon_sojusznik1  
 
                                         if kazuma_wybrany == 2:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik2  
+                                            show gazeta zorder 15 at weapon_sojusznik2  
 
                                         if kazuma_wybrany == 3:
-                                            show newspaper_zombie2_weapon zorder 15 at weapon_sojusznik3 
+                                            show gazeta zorder 15 at weapon_sojusznik3 
                                         
                                         play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Newspaper Zombie.  \nStatystyki Newspaper Zombie zostały stale drastycznie osłabione.{/i}"
-                                        hide newspaper_zombie2_weapon
+                                        kazuma "O patrzcie, zarąbałem mu gazetę!"
+                                        kazuma "ciekawe co tu pisze..."
+                                        kazuma "...na co umarł Stalin?"
+
+                                        luszcz "Na śmierć!"
+
+                                        kazuma "Na szczęście!"
+
+                                        luszcz "ha ha ha ha..."
+
+                                        hide gazeta
                                         hide chwyta
                                     
                                     else:
@@ -21610,56 +21680,92 @@ label fight141:
 
         if engineer1_stun == 1:
             "{i}Engineer jest zestunnowany{/i}"
+            if engineer1_turret == 0:
+                if engineer1_special == 0:
+                    $ engineer1_special == 1
+                else:
+                    if engineer1_special == 1:
+                        $ engineer1_special == 2
             jump faza_fight146 
 
-        if engineer1_uszy >= 1 and urban_hp_now >= 1:
-            if engineer1_weapon >= 1:
-                show engineer1_weapon zorder 15 at weapon_wrog3 
-            else:
-                show reka7 zorder 15 at weapon_wrog3
-            $ engineer1_attack = renpy.random.randint(engineer1_min_attack_now, engineer1_max_attack_now)
-
-            if memy == 3:
-                $ kostka = renpy.random.randint(1, 20)
-                if kostka <= 3:
-                    $ engineer1_hp_now -= engineer1_attack
-                    play sound "audio/sfx/obrona.mp3"
-                    "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                    jump faza_fight146
-
-            if urban_obrona >= 2:
-                play sound "audio/sfx/obrona.mp3"
-                "{i}Atak Engineer został zablokowany{/i}"
-                $ urban_obrona = 1
-
-                jump faza_fight146
-                                                
-            else:
+        label enginner1_urban:
+            if engineer1_uszy >= 1 and urban_hp_now >= 1:
                 if engineer1_weapon >= 1:
-                    play sound "audio/sfx/engineer1_weapon.mp3"
+                    if engineer1_turret == 1:
+                        show engineer1 fight3
+                    
+                    else:
+                        show engineer1 fight2
                                 
                 else:
-                    play sound "audio/sfx/reka.mp3"
+                    show engineer1 fight
+                $ engineer1_attack = renpy.random.randint(engineer1_min_attack_now, engineer1_max_attack_now)
 
-                if urban_obrona == 1:
-                    $ urban_hp_now -= int(engineer1_attack / 2)
+                if memy == 3:
+                    $ kostka = renpy.random.randint(1, 20)
+                    if kostka <= 3:
+                        $ engineer1_hp_now -= engineer1_attack
+                        play sound "audio/sfx/obrona.mp3"
+                        "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
+                        jump engineer1_fight141
 
-                    $ dmg = int(engineer1_attack / 2)
-                    "{i}Engineer zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                if urban_obrona >= 2:
+                    play sound "audio/sfx/obrona.mp3"
+                    "{i}Atak Engineer został zablokowany{/i}"
+                    $ urban_obrona = 1
 
-                    jump faza_fight146
+                    jump engineer1_fight141
+                                                    
                 else:
-                    $ urban_hp_now -= engineer1_attack
+                    if engineer1_weapon >= 1:
+                        if engineer1_turret == 1:
+                            play sound "audio/sfx/engineer1_weapon2.mp3"
+                        
+                        else:
+                            play sound "audio/sfx/engineer1_weapon.mp3"
+                                    
+                    else:
+                        play sound "audio/sfx/engineer1_weapon0.mp3"
 
-                    "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                    if urban_obrona == 1:
+                        $ urban_hp_now -= int(engineer1_attack / 2)
 
-                jump faza_fight146
+                        $ dmg = int(engineer1_attack / 2)
+                        "{i}Engineer zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+
+                        jump engineer1_fight141
+                    else:
+                        $ urban_hp_now -= engineer1_attack
+
+                        "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
+
+                    jump engineer1_fight141
+        
+        if engineer1_special == 2 and engineer1_weapon == 1 and engineer1_turret == 0:
+            $ engineer1_turret = 1 
+            $ engineer1_tuba = 5
+            play sound "audio/sfx/mam_turreta.mp3"
+            $ engineer1_max_attack_now = 4
+            $ engineer1_min_attack_now = 1
+            $ engineer1_max_attack_now_true = engineer1_max_attack_now
+            $ engineer1_min_attack_now_true = engineer1_min_attack_now
+            show engineer1 fight3
+
+            "{i}Enginner złożył Big Beautiful Bolt Blaster{/i}"
+
+            jump faza_fight146
+
 
         label losowanko_fight145:
             if engineer1_weapon >= 1:
-                show engineer1_weapon zorder 15 at weapon_wrog3 
+                if engineer1_turret == 1:
+                    show engineer1 fight3
+                
+                else:
+                    show engineer1 fight2
+                            
             else:
-                show reka7 zorder 15 at weapon_wrog3
+                show engineer1 fight
 
             $ kostka = renpy.random.randint(1, 6)
             if kostka == 1:
@@ -21675,7 +21781,7 @@ label fight141:
                                     $ engineer1_hp_now -= engineer1_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                    jump faza_fight146
+                                    jump engineer1_fight141
 
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
@@ -21684,10 +21790,14 @@ label fight141:
                                                     
                             else:
                                 if engineer1_weapon >= 1:
-                                    play sound "audio/sfx/engineer1_weapon.mp3"
+                                    if engineer1_turret == 1:
+                                        play sound "audio/sfx/engineer1_weapon2.mp3"
+                                    
+                                    else:
+                                        play sound "audio/sfx/engineer1_weapon.mp3"
                                                 
                                 else:
-                                    play sound "audio/sfx/reka.mp3"
+                                    play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                 if luszcz_obrona == 1:
                                     $ luszcz_hp_now -= int(engineer1_attack / 2)
@@ -21699,7 +21809,7 @@ label fight141:
 
                                     "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
 
-                            jump faza_fight146
+                            jump engineer1_fight141
                         else:
                             jump losowanko_fight145
 
@@ -21715,7 +21825,7 @@ label fight141:
                                         $ engineer1_hp_now -= engineer1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight146
+                                        jump engineer1_fight141
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21724,10 +21834,14 @@ label fight141:
                                                         
                                 else:
                                     if engineer1_weapon >= 1:
-                                        play sound "audio/sfx/engineer1_weapon.mp3"
+                                        if engineer1_turret == 1:
+                                            play sound "audio/sfx/engineer1_weapon2.mp3"
+                                        
+                                        else:
+                                            play sound "audio/sfx/engineer1_weapon.mp3"
                                                     
                                     else:
-                                        play sound "audio/sfx/reka.mp3"
+                                        play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(engineer1_attack / 2)
@@ -21739,7 +21853,7 @@ label fight141:
 
                                         "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza_fight146
+                                jump engineer1_fight141
                             else:
                                 jump losowanko_fight145
                         
@@ -21754,7 +21868,7 @@ label fight141:
                                         $ engineer1_hp_now -= engineer1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight146
+                                        jump engineer1_fight141
 
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21763,10 +21877,14 @@ label fight141:
                                                         
                                 else:
                                     if engineer1_weapon >= 1:
-                                        play sound "audio/sfx/engineer1_weapon.mp3"
+                                        if engineer1_turret == 1:
+                                            play sound "audio/sfx/engineer1_weapon2.mp3"
+                                        
+                                        else:
+                                            play sound "audio/sfx/engineer1_weapon.mp3"
                                                     
                                     else:
-                                        play sound "audio/sfx/reka.mp3"
+                                        play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                     if luszcz_obrona == 1:
                                         $ luszcz_hp_now -= int(engineer1_attack / 2)
@@ -21778,7 +21896,7 @@ label fight141:
 
                                         "{i}Engineer zadaje [engineer1_attack] obrażeń Łuszczowi{/i}"
 
-                                jump faza_fight146
+                                jump engineer1_fight141
                             else:
                                 jump losowanko_fight145
 
@@ -21798,7 +21916,7 @@ label fight141:
                                         $ engineer1_hp_now -= engineer1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                        jump faza_fight146
+                                        jump engineer1_fight141
 
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
@@ -21807,10 +21925,14 @@ label fight141:
 
                                 else:
                                     if engineer1_weapon >= 1:
-                                        play sound "audio/sfx/engineer1_weapon.mp3"
+                                        if engineer1_turret == 1:
+                                            play sound "audio/sfx/engineer1_weapon2.mp3"
+                                        
+                                        else:
+                                            play sound "audio/sfx/engineer1_weapon.mp3"
                                                     
                                     else:
-                                        play sound "audio/sfx/reka.mp3"
+                                        play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                     if urban_obrona == 1:
                                         $ urban_hp_now -= int(engineer1_attack / 2)
@@ -21822,7 +21944,7 @@ label fight141:
 
                                         "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                jump faza_fight146
+                                jump engineer1_fight141
                             else:
                                 jump losowanko_fight145
 
@@ -21838,7 +21960,7 @@ label fight141:
                                             $ engineer1_hp_now -= engineer1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight146
+                                            jump engineer1_fight141
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21847,10 +21969,14 @@ label fight141:
 
                                     else:
                                         if engineer1_weapon >= 1:
-                                            play sound "audio/sfx/engineer1_weapon.mp3"
+                                            if engineer1_turret == 1:
+                                                play sound "audio/sfx/engineer1_weapon2.mp3"
+                                            
+                                            else:
+                                                play sound "audio/sfx/engineer1_weapon.mp3"
                                                         
                                         else:
-                                            play sound "audio/sfx/reka.mp3"
+                                            play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(engineer1_attack / 2)
@@ -21862,7 +21988,7 @@ label fight141:
 
                                             "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza_fight146
+                                    jump engineer1_fight141
                                 else:
                                     jump losowanko_fight145
                             
@@ -21877,7 +22003,7 @@ label fight141:
                                             $ engineer1_hp_now -= engineer1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight146
+                                            jump engineer1_fight141
 
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21886,10 +22012,14 @@ label fight141:
 
                                     else:
                                         if engineer1_weapon >= 1:
-                                            play sound "audio/sfx/engineer1_weapon.mp3"
+                                            if engineer1_turret == 1:
+                                                play sound "audio/sfx/engineer1_weapon2.mp3"
+                                            
+                                            else:
+                                                play sound "audio/sfx/engineer1_weapon.mp3"
                                                         
                                         else:
-                                            play sound "audio/sfx/reka.mp3"
+                                            play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                         if urban_obrona == 1:
                                             $ urban_hp_now -= int(engineer1_attack / 2)
@@ -21901,7 +22031,7 @@ label fight141:
 
                                             "{i}Engineer zadaje [engineer1_attack] obrażeń Jerzemu Urbanowi{/i}"
 
-                                    jump faza_fight146
+                                    jump engineer1_fight141
                                 else:
                                     jump losowanko_fight145
 
@@ -21921,7 +22051,7 @@ label fight141:
                                             $ engineer1_hp_now -= engineer1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                            jump faza_fight146
+                                            jump engineer1_fight141
 
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
@@ -21930,10 +22060,14 @@ label fight141:
 
                                     else:
                                         if engineer1_weapon >= 1:
-                                            play sound "audio/sfx/engineer1_weapon.mp3"
+                                            if engineer1_turret == 1:
+                                                play sound "audio/sfx/engineer1_weapon2.mp3"
+                                            
+                                            else:
+                                                play sound "audio/sfx/engineer1_weapon.mp3"
                                                         
                                         else:
-                                            play sound "audio/sfx/reka.mp3"
+                                            play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                         if zyd_obrona == 1:
                                             $ zyd_hp_now -= int(engineer1_attack / 2)
@@ -21945,7 +22079,7 @@ label fight141:
 
                                             "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
 
-                                    jump faza_fight146
+                                    jump engineer1_fight141
                                 else:
                                     jump losowanko_fight145
 
@@ -21961,7 +22095,7 @@ label fight141:
                                                 $ engineer1_hp_now -= engineer1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight146
+                                                jump engineer1_fight141
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -21970,10 +22104,14 @@ label fight141:
 
                                         else:
                                             if engineer1_weapon >= 1:
-                                                play sound "audio/sfx/engineer1_weapon.mp3"
+                                                if engineer1_turret == 1:
+                                                    play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                
+                                                else:
+                                                    play sound "audio/sfx/engineer1_weapon.mp3"
                                                             
                                             else:
-                                                play sound "audio/sfx/reka.mp3"
+                                                play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(engineer1_attack / 2)
@@ -21985,7 +22123,7 @@ label fight141:
 
                                                 "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza_fight146
+                                        jump engineer1_fight141
                                     else:
                                         jump losowanko_fight145
                                 
@@ -22000,7 +22138,7 @@ label fight141:
                                                 $ engineer1_hp_now -= engineer1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight146
+                                                jump engineer1_fight141
 
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -22009,10 +22147,14 @@ label fight141:
 
                                         else:
                                             if engineer1_weapon >= 1:
-                                                play sound "audio/sfx/engineer1_weapon.mp3"
+                                                if engineer1_turret == 1:
+                                                    play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                
+                                                else:
+                                                    play sound "audio/sfx/engineer1_weapon.mp3"
                                                             
                                             else:
-                                                play sound "audio/sfx/reka.mp3"
+                                                play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                             if zyd_obrona == 1:
                                                 $ zyd_hp_now -= int(engineer1_attack / 2)
@@ -22024,7 +22166,7 @@ label fight141:
 
                                                 "{i}Engineer zadaje [engineer1_attack] obrażeń Żydowi{/i}"
 
-                                        jump faza_fight146
+                                        jump engineer1_fight141
                                     else:
                                         jump losowanko_fight145
 
@@ -22044,7 +22186,7 @@ label fight141:
                                                 $ engineer1_hp_now -= engineer1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                jump faza_fight146
+                                                jump engineer1_fight141
 
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
@@ -22053,10 +22195,14 @@ label fight141:
                                         
                                         else:
                                             if engineer1_weapon >= 1:
-                                                play sound "audio/sfx/engineer1_weapon.mp3"
+                                                if engineer1_turret == 1:
+                                                    play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                
+                                                else:
+                                                    play sound "audio/sfx/engineer1_weapon.mp3"
                                                             
                                             else:
-                                                play sound "audio/sfx/reka.mp3"
+                                                play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                             if kazuma_obrona == 1:
                                                 $ kazuma_hp_now -= int(engineer1_attack / 2)
@@ -22068,7 +22214,7 @@ label fight141:
 
                                                 "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
 
-                                        jump faza_fight146
+                                        jump engineer1_fight141
                                     else:
                                         jump losowanko_fight145
 
@@ -22084,7 +22230,7 @@ label fight141:
                                                     $ engineer1_hp_now -= engineer1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight146
+                                                    jump engineer1_fight141
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -22093,10 +22239,14 @@ label fight141:
                                             
                                             else:
                                                 if engineer1_weapon >= 1:
-                                                    play sound "audio/sfx/engineer1_weapon.mp3"
+                                                    if engineer1_turret == 1:
+                                                        play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                    
+                                                    else:
+                                                        play sound "audio/sfx/engineer1_weapon.mp3"
                                                                 
                                                 else:
-                                                    play sound "audio/sfx/reka.mp3"
+                                                    play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(engineer1_attack / 2)
@@ -22108,7 +22258,7 @@ label fight141:
 
                                                     "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza_fight146
+                                            jump engineer1_fight141
                                         else:
                                             jump losowanko_fight145
                                     
@@ -22123,7 +22273,7 @@ label fight141:
                                                     $ engineer1_hp_now -= engineer1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight146
+                                                    jump engineer1_fight141
 
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -22132,10 +22282,14 @@ label fight141:
                                             
                                             else:
                                                 if engineer1_weapon >= 1:
-                                                    play sound "audio/sfx/engineer1_weapon.mp3"
+                                                    if engineer1_turret == 1:
+                                                        play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                    
+                                                    else:
+                                                        play sound "audio/sfx/engineer1_weapon.mp3"
                                                                 
                                                 else:
-                                                    play sound "audio/sfx/reka.mp3"
+                                                    play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                 if kazuma_obrona == 1:
                                                     $ kazuma_hp_now -= int(engineer1_attack / 2)
@@ -22147,7 +22301,7 @@ label fight141:
 
                                                     "{i}Engineer zadaje [engineer1_attack] obrażeń Kazumie{/i}"
 
-                                            jump faza_fight146
+                                            jump engineer1_fight141
                                         else:
                                             jump losowanko_fight145
 
@@ -22167,7 +22321,7 @@ label fight141:
                                                     $ engineer1_hp_now -= engineer1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                    jump faza_fight146
+                                                    jump engineer1_fight141
 
                                             if eminem_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
@@ -22176,10 +22330,14 @@ label fight141:
                                                 
                                             else:
                                                 if engineer1_weapon >= 1:
-                                                    play sound "audio/sfx/engineer1_weapon.mp3"
+                                                    if engineer1_turret == 1:
+                                                        play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                    
+                                                    else:
+                                                        play sound "audio/sfx/engineer1_weapon.mp3"
                                                                 
                                                 else:
-                                                    play sound "audio/sfx/reka.mp3"
+                                                    play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                 if eminem_obrona == 1:
                                                     $ eminem_hp_now -= int(engineer1_attack / 2)
@@ -22191,7 +22349,7 @@ label fight141:
 
                                                     "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
 
-                                            jump faza_fight146
+                                            jump engineer1_fight141
                                         else:
                                             jump losowanko_fight145
 
@@ -22207,7 +22365,7 @@ label fight141:
                                                         $ engineer1_hp_now -= engineer1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight146
+                                                        jump engineer1_fight141
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22216,10 +22374,14 @@ label fight141:
                                                 
                                                 else:
                                                     if engineer1_weapon >= 1:
-                                                        play sound "audio/sfx/engineer1_weapon.mp3"
+                                                        if engineer1_turret == 1:
+                                                            play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                        
+                                                        else:
+                                                            play sound "audio/sfx/engineer1_weapon.mp3"
                                                                     
                                                     else:
-                                                        play sound "audio/sfx/reka.mp3"
+                                                        play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(engineer1_attack / 2)
@@ -22231,7 +22393,7 @@ label fight141:
 
                                                         "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza_fight146
+                                                jump engineer1_fight141
                                             else:
                                                 jump losowanko_fight145
                                         
@@ -22246,7 +22408,7 @@ label fight141:
                                                         $ engineer1_hp_now -= engineer1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight146
+                                                        jump engineer1_fight141
 
                                                 if eminem_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22255,10 +22417,14 @@ label fight141:
                                                 
                                                 else:
                                                     if engineer1_weapon >= 1:
-                                                        play sound "audio/sfx/engineer1_weapon.mp3"
+                                                        if engineer1_turret == 1:
+                                                            play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                        
+                                                        else:
+                                                            play sound "audio/sfx/engineer1_weapon.mp3"
                                                                     
                                                     else:
-                                                        play sound "audio/sfx/reka.mp3"
+                                                        play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                     if eminem_obrona == 1:
                                                         $ eminem_hp_now -= int(engineer1_attack / 2)
@@ -22270,7 +22436,7 @@ label fight141:
 
                                                         "{i}Engineer zadaje [engineer1_attack] obrażeń Shadowowi{/i}"
 
-                                                jump faza_fight146
+                                                jump engineer1_fight141
                                             else:
                                                 jump losowanko_fight145
 
@@ -22290,7 +22456,7 @@ label fight141:
                                                         $ engineer1_hp_now -= engineer1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                        jump faza_fight146
+                                                        jump engineer1_fight141
 
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
@@ -22299,10 +22465,14 @@ label fight141:
                                                 
                                                 else:
                                                     if engineer1_weapon >= 1:
-                                                        play sound "audio/sfx/engineer1_weapon.mp3"
+                                                        if engineer1_turret == 1:
+                                                            play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                        
+                                                        else:
+                                                            play sound "audio/sfx/engineer1_weapon.mp3"
                                                                     
                                                     else:
-                                                        play sound "audio/sfx/reka.mp3"
+                                                        play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                     if tarczownik_obrona == 1:
                                                         $ tarczownik_hp_now -= int(engineer1_attack / 2)
@@ -22314,7 +22484,7 @@ label fight141:
 
                                                         "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
 
-                                                jump faza_fight146
+                                                jump engineer1_fight141
                                             else:
                                                 jump losowanko_fight145
 
@@ -22330,7 +22500,7 @@ label fight141:
                                                             $ engineer1_hp_now -= engineer1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight146
+                                                            jump engineer1_fight141
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -22339,10 +22509,14 @@ label fight141:
                                                 
                                                     else:
                                                         if engineer1_weapon >= 1:
-                                                            play sound "audio/sfx/engineer1_weapon.mp3"
+                                                            if engineer1_turret == 1:
+                                                                play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                            
+                                                            else:
+                                                                play sound "audio/sfx/engineer1_weapon.mp3"
                                                                         
                                                         else:
-                                                            play sound "audio/sfx/reka.mp3"
+                                                            play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(engineer1_attack / 2)
@@ -22354,7 +22528,7 @@ label fight141:
 
                                                             "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza_fight146
+                                                    jump engineer1_fight141
                                                 else:
                                                     jump losowanko_fight145
                                             
@@ -22369,7 +22543,7 @@ label fight141:
                                                             $ engineer1_hp_now -= engineer1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Engineer odbił się od Szalika z Memów i zadał [engineer1_attack] obrażeń nadawcy{/i}"
-                                                            jump faza_fight146
+                                                            jump engineer1_fight141
 
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
@@ -22378,10 +22552,14 @@ label fight141:
                                                 
                                                     else:
                                                         if engineer1_weapon >= 1:
-                                                            play sound "audio/sfx/engineer1_weapon.mp3"
+                                                            if engineer1_turret == 1:
+                                                                play sound "audio/sfx/engineer1_weapon2.mp3"
+                                                            
+                                                            else:
+                                                                play sound "audio/sfx/engineer1_weapon.mp3"
                                                                         
                                                         else:
-                                                            play sound "audio/sfx/reka.mp3"
+                                                            play sound "audio/sfx/engineer1_weapon0.mp3"
 
                                                         if tarczownik_obrona == 1:
                                                             $ tarczownik_hp_now -= int(engineer1_attack / 2)
@@ -22393,7 +22571,7 @@ label fight141:
 
                                                             "{i}Engineer zadaje [engineer1_attack] obrażeń Naofumiemu{/i}"
 
-                                                    jump faza_fight146
+                                                    jump engineer1_fight141
                                                 else:
                                                     jump losowanko_fight145
 
@@ -23772,6 +23950,10 @@ label fight141:
                 $ newspaper_zombie2_special = 14
                 $ newspaper_zombie2_gazeta = 1
 
+                $ engineer1_turret = 0
+                $ engineer1_special = 0
+                $ engineer1_tuba = 0
+
                 play sound "audio/sfx/return.mp3"
                 jump fight141
 
@@ -24094,6 +24276,10 @@ label fight141:
 
         $ newspaper_zombie2_special = 14
         $ newspaper_zombie2_gazeta = 1
+
+        $ engineer1_turret = 0
+        $ engineer1_special = 0
+        $ engineer1_tuba = 0
 
         jump after_fight141
 
@@ -24423,3 +24609,364 @@ label fight141:
                         else:
                             if newspaper_zombie2_gazeta == 5:
                                 jump start_fight141
+    
+
+
+    label engineer1_fight141:
+        hide reka1
+        hide reka2
+        hide reka3
+        hide reka4
+        hide reka5
+        hide reka6
+        hide reka7
+        hide reka8
+        hide reka9
+        hide ostrza_chaosu
+        hide miecz_swietlny
+        hide bazooka
+        hide miecz3d
+        hide patyk
+        hide stop
+        hide luszcz_przepychaczka
+        hide urban_przepychaczka
+        hide zyd_przepychaczka
+        hide kazuma_przepychaczka
+        hide tarczownik_przepychaczka
+        hide luszcz_weapon
+        hide eminem_weapon
+        hide urban_weapon
+        hide zyd_weapon
+        hide kazuma_weapon
+        hide tarczownik_weapon
+        hide all_star_zombie3_weapon
+        hide engineer1_weapon
+        hide newspaper_zombie2_weapon
+        hide ruch
+
+        if all_star_zombie3_hp_now <= 0 and all_star_zombie3_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide all_star_zombie3
+            hide tarcza6
+            hide screen all_star_zombie3_stats
+            $ all_star_zombie3_umarty = 1
+            $ ile_wrogow -= 1
+            $ all_star_zombie3_obrona = 0
+            $ all_star_zombie3_weapon = 0
+            $ all_star_zombie3_pager = 0
+            $ all_star_zombie3_poison = 0
+            $ all_star_zombie3_stun = 0
+
+            if all_star_zombie3_slime >= 1:
+                hide slime
+
+        if engineer1_hp_now <= 0 and engineer1_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide engineer1
+            hide tarcza7
+            hide screen engineer1_stats
+            $ engineer1_umarty = 1
+            $ ile_wrogow -= 1
+            $ engineer1_obrona = 0
+            $ engineer1_weapon = 0
+            $ engineer1_pager = 0
+            $ engineer1_poison = 0
+            $ engineer1_stun = 0
+
+            if engineer1_slime >= 1:
+                hide slime
+        
+        if newspaper_zombie2_hp_now <= 0 and newspaper_zombie2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide newspaper_zombie2
+            hide tarcza8
+            hide screen newspaper_zombie2_stats
+            $ newspaper_zombie2_umarty = 1
+            $ ile_wrogow -= 1
+            $ newspaper_zombie2_obrona = 0
+            $ newspaper_zombie2_weapon = 0
+            $ newspaper_zombie2_pager = 0
+            $ newspaper_zombie2_poison = 0
+            $ newspaper_zombie2_stun = 0
+
+            if newspaper_zombie2_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight141
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
+            hide luszcz_pierscien
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
+            hide plamka1
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+        
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
+            hide eminem_pierscien
+            hide plamka2
+            hide eminem
+            hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
+            hide urban_pierscien
+            hide plamka3
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
+            hide zyd_pierscien
+            hide plamka4
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide eksplozja3
+            hide zyd
+            hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
+            hide kazuma_pierscien
+            hide plamka5
+            hide kazuma
+            hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
+            hide tarczownik_pierscien
+            hide plamka6
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
+
+            if tarczownik_air_strike_shield >= 1:
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
+
+            hide tarczownik
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+        
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight141
+        else:
+            $ ado += 1    
+
+        if engineer1_hp_now <= 0:
+            jump faza_fight146 
+
+        show ruch zorder 0 at tlo_wrog3
+
+        if engineer1_turret == 0:
+            if engineer1_special == 0:
+                $ engineer1_special = 1
+            else:
+                if engineer1_special == 1:
+                    $ engineer1_special = 2
+            
+            show engineer1 fight
+
+            jump faza_fight146
+        
+        else:
+            if engineer1_turret == 1:
+                if engineer1_tuba == 5:
+                    if engineer1_uszy == 0:
+                        $ engineer1_tuba = 4
+                        jump losowanko_fight145
+                    else:
+                        $ engineer1_tuba = 4
+                        jump enginner1_urban
+                else:
+                    if engineer1_tuba == 4:
+                        if engineer1_uszy == 0:
+                            $ engineer1_tuba = 3
+                            jump losowanko_fight145
+                        else:
+                            $ engineer1_tuba = 3
+                            jump enginner1_urban
+                    else:
+                        if engineer1_tuba == 3:
+                            if engineer1_uszy == 0:
+                                $ engineer1_tuba = 2
+                                jump losowanko_fight145
+                            else:
+                                $ engineer1_tuba = 2
+                                jump enginner1_urban
+                        else:
+                            if engineer1_tuba == 2:
+                                if engineer1_uszy == 0:
+                                    $ engineer1_tuba = 1
+                                    jump losowanko_fight145
+                                else:
+                                    $ engineer1_tuba = 1
+                                    jump enginner1_urban
+                            else:
+                                if engineer1_tuba == 1:
+                                    $ engineer1_tuba = 0
+                                    $ engineer1_turret = 0
+                                    $ engineer1_special = 0
+                                    show engineer1 fight
+                                    $ engineer1_max_attack_now = engineer1_max_attack
+                                    $ engineer1_min_attack_now = engineer1_min_attack
+                                    $ engineer1_max_attack_now_true = engineer1_max_attack_now
+                                    $ engineer1_min_attack_now_true = engineer1_min_attack_now
+
+                                    jump faza_fight146
