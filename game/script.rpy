@@ -91,6 +91,9 @@ label postacie:
 
     define papaj = Character("Jan Paweł II", color="#fff345")
 
+    define gargantuar2 = Character("Gargantuar 2", color="#08993f")
+    define gargantuar1 = Character("Gargantuar 1", color="#08993f")
+
     define duchs = Character("Duch Święty", color="#fffbc0")
 
     define tanya = Character("Tanya", color="#215f36")
@@ -396,6 +399,18 @@ label pozycje:
 
         transform center_sojusznik3:
             xalign 0.085
+            yalign 0.47
+
+        transform center_sojusznik1r:
+            xalign 0.235
+            yalign 0.18
+
+        transform center_sojusznik2r:
+            xalign 0.235
+            yalign 0.75
+
+        transform center_sojusznik3r:
+            xalign 0.1
             yalign 0.47
 
         transform center_wrog1:

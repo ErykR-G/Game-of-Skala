@@ -74,7 +74,6 @@ label fight161_stats:
     default trup17_stun = 0
 
 label fight161:
-    $ fight_on = 1
     label wybor_fight161:
         play music "audio/music/policja_fight.mp3"
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
@@ -99,6 +98,10 @@ label fight161:
         $ policja2_max_attack_now_true = policja2_max_attack
         $ trup17_umarty = 1
         $ trup17_hp_now = 0
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight161:
             if liczba_sojusznikow >= 3:

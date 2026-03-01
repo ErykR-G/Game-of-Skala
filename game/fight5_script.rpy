@@ -74,7 +74,6 @@ label fight51_stats:
     default trup8_stun = 0
 
 label fight51:
-    $ fight_on = 1
     label wybor_fight51:
         play music "audio/music/raem_fight.mp3"
         scene bg raem
@@ -96,6 +95,10 @@ label fight51:
         $ rem_max_attack_now_true = rem_max_attack
         $ trup8_hp_now = 0
         $ trup8_umarty = 1
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight51:
             if liczba_sojusznikow >= 3:

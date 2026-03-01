@@ -81,7 +81,6 @@ label fight71_stats:
     default tarczownik_fokus = 0
 
 label fight71:
-    $ fight_on = 1
     label wybor_fight71:
         play music "audio/music/tanya_fight.mp3"
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
@@ -111,6 +110,10 @@ label fight71:
         $ tanya_max_attack_now = tanya_max_attack
         $ tanya_min_attack_now_true = tanya_min_attack
         $ tanya_max_attack_now_true = tanya_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight71:
             if liczba_sojusznikow >= 3:
@@ -19777,7 +19780,7 @@ label fight71:
                         $ luszcz_fokus = 2
                         if luszcz_obrona >= 2:
                             play sound "audio/sfx/obrona.mp3"
-                            "{i}Atak Tani został zablokowany{/i}"
+                            "{i}Atak Tanyi został zablokowany{/i}"
                             $ luszcz_obrona = 1
 
                             $ tanya_special = 2
@@ -19811,7 +19814,7 @@ label fight71:
                             $ eminem_fokus = 2
                             if eminem_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Tani został zablokowany{/i}"
+                                "{i}Atak Tanyi został zablokowany{/i}"
                                 $ eminem_obrona = 1
 
                                 $ tanya_special = 2
@@ -19846,7 +19849,7 @@ label fight71:
                                 $ tanya_special = 2
                                 if urban_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Tani został zablokowany{/i}"
+                                    "{i}Atak Tanyi został zablokowany{/i}"
                                     $ urban_obrona = 1
 
                                     jump faza_fight76
@@ -19875,7 +19878,7 @@ label fight71:
                                     $ tanya_special = 2
                                     if zyd_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Tani został zablokowany{/i}"
+                                        "{i}Atak Tanyi został zablokowany{/i}"
                                         $ zyd_obrona = 1
 
                                         jump faza_fight76
@@ -19904,7 +19907,7 @@ label fight71:
                                         $ tanya_special = 2
                                         if kazuma_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Tani został zablokowany{/i}"
+                                            "{i}Atak Tanyi został zablokowany{/i}"
                                             $ kazuma_obrona = 1
 
                                             jump faza_fight76
@@ -19933,7 +19936,7 @@ label fight71:
                                             $ tarczownik_fokus = 2
                                             if tarczownik_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Tani został zablokowany{/i}"
+                                                "{i}Atak Tanyi został zablokowany{/i}"
                                                 $ tarczownik_obrona = 1
 
                                                 jump faza_fight76
@@ -19969,7 +19972,7 @@ label fight71:
                             $ luszcz_fokus = 1
                             if luszcz_obrona >= 2:
                                 play sound "audio/sfx/obrona.mp3"
-                                "{i}Atak Tani został zablokowany{/i}"
+                                "{i}Atak Tanyi został zablokowany{/i}"
                                 $ luszcz_obrona = 1
 
                                 $ tanya_special = 1
@@ -20003,7 +20006,7 @@ label fight71:
                                 $ eminem_fokus = 1
                                 if eminem_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Tani został zablokowany{/i}"
+                                    "{i}Atak Tanyi został zablokowany{/i}"
                                     $ eminem_obrona = 1
 
                                     $ tanya_special = 1
@@ -20037,7 +20040,7 @@ label fight71:
                                     $ urban_fokus = 1
                                     if urban_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Tani został zablokowany{/i}"
+                                        "{i}Atak Tanyi został zablokowany{/i}"
                                         $ urban_obrona = 1
 
                                         $ tanya_special = 1
@@ -20071,7 +20074,7 @@ label fight71:
                                         $ zyd_fokus = 1
                                         if zyd_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Tani został zablokowany{/i}"
+                                            "{i}Atak Tanyi został zablokowany{/i}"
                                             $ zyd_obrona = 1
 
                                             $ tanya_special = 1
@@ -20105,7 +20108,7 @@ label fight71:
                                             $ kazuma_fokus = 1
                                             if kazuma_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Tani został zablokowany{/i}"
+                                                "{i}Atak Tanyi został zablokowany{/i}"
                                                 $ kazuma_obrona = 1
 
                                                 $ tanya_special = 1
@@ -20139,7 +20142,7 @@ label fight71:
                                                 $ tarczownik_fokus = 1
                                                 if tarczownik_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Tani został zablokowany{/i}"
+                                                    "{i}Atak Tanyi został zablokowany{/i}"
                                                     $ tarczownik_obrona = 1
 
                                                     $ tanya_special = 1
@@ -20181,7 +20184,7 @@ label fight71:
                                 $ luszcz_fokus = 0
                                 if luszcz_obrona >= 2:
                                     play sound "audio/sfx/obrona.mp3"
-                                    "{i}Atak Tani został zablokowany{/i}"
+                                    "{i}Atak Tanyi został zablokowany{/i}"
                                     $ luszcz_obrona = 1
 
                                     $ tanya_special = 5
@@ -20223,7 +20226,7 @@ label fight71:
                                     $ eminem_fokus = 0
                                     if eminem_obrona >= 2:
                                         play sound "audio/sfx/obrona.mp3"
-                                        "{i}Atak Tani został zablokowany{/i}"
+                                        "{i}Atak Tanyi został zablokowany{/i}"
                                         $ eminem_obrona = 1
 
                                         $ tanya_special = 5
@@ -20266,7 +20269,7 @@ label fight71:
                                         $ urban_fokus = 0
                                         if urban_obrona >= 2:
                                             play sound "audio/sfx/obrona.mp3"
-                                            "{i}Atak Tani został zablokowany{/i}"
+                                            "{i}Atak Tanyi został zablokowany{/i}"
                                             $ urban_obrona = 1
 
                                             $ tanya_special = 5
@@ -20309,7 +20312,7 @@ label fight71:
                                             $ zyd_fokus = 0
                                             if zyd_obrona >= 2:
                                                 play sound "audio/sfx/obrona.mp3"
-                                                "{i}Atak Tani został zablokowany{/i}"
+                                                "{i}Atak Tanyi został zablokowany{/i}"
                                                 $ zyd_obrona = 1
 
                                                 $ tanya_special = 5
@@ -20352,7 +20355,7 @@ label fight71:
                                                 $ kazuma_fokus = 0
                                                 if kazuma_obrona >= 2:
                                                     play sound "audio/sfx/obrona.mp3"
-                                                    "{i}Atak Tani został zablokowany{/i}"
+                                                    "{i}Atak Tanyi został zablokowany{/i}"
                                                     $ kazuma_obrona = 1
 
                                                     $ tanya_special = 5
@@ -20395,7 +20398,7 @@ label fight71:
                                                     $ tarczownik_fokus = 0
                                                     if tarczownik_obrona >= 2:
                                                         play sound "audio/sfx/obrona.mp3"
-                                                        "{i}Atak Tani został zablokowany{/i}"
+                                                        "{i}Atak Tanyi został zablokowany{/i}"
                                                         $ tarczownik_obrona = 1
 
                                                         $ tanya_special = 5

@@ -81,7 +81,6 @@ label fight121_stats:
     default tarczownik_horn = 0
 
 label fight121:
-    $ fight_on = 1
     play music "audio/music/krystian_fight.mp3"
     if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
         scene bg krystian_fight
@@ -110,6 +109,7 @@ label fight121:
             $ tusk_umarty = 1
             $ nawrocki_hp_now = 0
             $ nawrocki_umarty = 1
+            $ fight_on = 1
             jump samsam
         
         else:
@@ -158,6 +158,8 @@ label fight121:
                 tusk "Młody, zaraz poczujesz się jak małe warszawskie dziecko we wrześniu 1944r."
                 tusk "FUR DEUTSCHLAND!"
 
+                $ fight_on = 1
+
                 hide tusk_weapon
                 hide nawrocki_weapon
                 hide krystian_weapon
@@ -191,6 +193,7 @@ label fight121:
                     $ tusk_max_attack_now = tusk_max_attack
                     $ tusk_min_attack_now_true = tusk_min_attack
                     $ tusk_max_attack_now_true = tusk_max_attack
+                    $ fight_on = 0
                     luszcz "Panie prezydencie!?? Panie premierze!??"
                     luszcz "Co wy tu robicie?"
                     luszcz "Nie mówił Pan, Panie prezydencie, że walki to tylko bez sprzętu, honorowe takie!?!?"
@@ -211,6 +214,8 @@ label fight121:
 
                     luszcz "..."
                     luszcz "Chyba sobię nie poradzę bez dopingu..."
+
+                    $ fight_on = 1
                     hide stun4
                     hide luszcz_pierscien
                     hide luszcz_vr
@@ -259,6 +264,10 @@ label fight121:
                         $ tusk_max_attack_now = tusk_max_attack
                         $ tusk_min_attack_now_true = tusk_min_attack
                         $ tusk_max_attack_now_true = tusk_max_attack
+
+                        $ fight_on = 0
+                        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+                        $ fight_on = 1
 
         label team_fight121:
             if liczba_sojusznikow >= 3:

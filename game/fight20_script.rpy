@@ -76,7 +76,6 @@ label fight201_stats:
     default cien_special = 2
 
 label fight201:
-    $ fight_on = 1
     label wybor_fight201:
         play music "audio/music/duda_fight.mp3"
         scene bg stomatolog2
@@ -93,6 +92,10 @@ label fight201:
         $ cien_max_attack_now = cien_max_attack
         $ cien_min_attack_now_true = cien_min_attack
         $ cien_max_attack_now_true = cien_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight201:
             if liczba_sojusznikow >= 3:

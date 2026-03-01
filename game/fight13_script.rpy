@@ -77,7 +77,6 @@ label fight131_stats:
     default newspaper_zombie1_gazeta = 1
 
 label fight131:
-    $ fight_on = 1
     label wybor_fight131:
         play music "audio/music/toxic3.mp3"
         scene bg toxic_pea
@@ -113,6 +112,10 @@ label fight131:
         $ all_star_zombie2_max_attack_now = all_star_zombie2_max_attack
         $ all_star_zombie2_min_attack_now_true = all_star_zombie2_min_attack
         $ all_star_zombie2_max_attack_now_true = all_star_zombie2_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight131:
             if liczba_sojusznikow >= 3:

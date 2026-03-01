@@ -5,8 +5,8 @@ label fight151_stats:
     default gargantuar2_sex = 0
     default trup15_sex = 0
 
-    default gargantuar1_hp = 15
-    default gargantuar2_hp = 15
+    default gargantuar1_hp = 80
+    default gargantuar2_hp = 80
     default trup15_hp = 0
 
     default gargantuar1_uszy = 0
@@ -29,12 +29,12 @@ label fight151_stats:
     default gargantuar2_hp_now = gargantuar2_hp
     default trup15_hp_now = trup15_hp
 
-    default gargantuar1_min_attack = 1
-    default gargantuar2_min_attack = 1
+    default gargantuar1_min_attack = 10
+    default gargantuar2_min_attack = 10
     default trup15_min_attack = 0
 
-    default gargantuar1_max_attack = 4
-    default gargantuar2_max_attack = 4
+    default gargantuar1_max_attack = 20
+    default gargantuar2_max_attack = 20
     default trup15_max_attack = 0
 
     default gargantuar1_max_attack_now = gargantuar1_max_attack
@@ -63,7 +63,7 @@ label fight151_stats:
 
     default gargantuar1_umarty = 0
     default gargantuar2_umarty = 0
-    default trup15_umarty = 0
+    default trup15_umarty = 1
 
     default gargantuar1_poison = 0
     default gargantuar2_poison = 0
@@ -86,8 +86,21 @@ label fight151_stats:
     default kazuma_imp = 0
     default tarczownik_imp = 0
 
+    default luszcz_fok1 = 0
+    default eminem_fok1 = 0
+    default urban_fok1 = 0
+    default zyd_fok1 = 0
+    default kazuma_fok1 = 0
+    default tarczownik_fok1 = 0
+
+    default luszcz_fok2 = 0
+    default eminem_fok2 = 0
+    default urban_fok2 = 0
+    default zyd_fok2 = 0
+    default kazuma_fok2 = 0
+    default tarczownik_fok2 = 0
+
 label fight151:
-    $ fight_on = 1
     label wybor_fight151:
         play music "audio/music/toxic4.mp3"
         scene bg toxic_pea
@@ -116,8 +129,12 @@ label fight151:
         $ gargantuar2_max_attack_now = gargantuar2_max_attack
         $ gargantuar2_min_attack_now_true = gargantuar2_min_attack
         $ gargantuar2_max_attack_now_true = gargantuar2_max_attack
-        $ trup15umarty = 1
+        $ trup15_umarty = 1
         $ trup15_hp_now = 0
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight151:
             if liczba_sojusznikow >= 3:
@@ -1252,6 +1269,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -1280,6 +1305,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -1311,6 +1344,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -1347,6 +1388,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -1375,6 +1424,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -1398,6 +1455,593 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
+
+            if tarczownik_air_strike_shield >= 1:
+                if luszcz_obrona - 1 >= 0:
+                    $ luszcz_obrona -= 1
+                if eminem_obrona - 1 >= 0:
+                    $ eminem_obrona -= 1
+                if urban_obrona - 1 >= 0:
+                    $ urban_obrona -= 1
+                if zyd_obrona - 1 >= 0:
+                    $ zyd_obrona -= 1
+                if kazuma_obrona - 1 >= 0:
+                    $ kazuma_obrona -= 1
+                if tarczownik_obrona - 1 >= 0:
+                    $ tarczownik_obrona -= 1
+
+            hide screen tarczownik1_stats
+            hide screen tarczownik2_stats
+            hide screen tarczownik3_stats
+            $ ile_sojusznikow -= 1
+            $ tarczownik_fighter = 0
+            $ tarczownik_obrona = 0
+            $ tarczownik_wybrany = 0
+            $ tarczownik_weapon = 0
+
+        if ile_sojusznikow <= 0:
+            jump przegranko_fight151
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            "{i}Imp zadaje Łuszczowi 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            "{i}Imp zadaje Shadowowi 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ urban_hp_now -= 4
+            "{i}Imp zadaje Jerzemu Urbanowi 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ zyd_hp_now -= 4
+            "{i}Imp zadaje Żydowi 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ kazuma_hp_now -= 4
+            "{i}Imp zadaje Kazumie 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ tarczownik_hp_now -= 4
+            "{i}Imp zadaje Naofumiemu 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ eminem_hp_now -= 4
+            "{i}Impy zadają Łuszczowi i Shadowowi po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ urban_hp_now -= 4
+            "{i}Impy zadają Łuszczowi i Jerzemu Urbanowi po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ zyd_hp_now -= 4
+            "{i}Impy zadają Łuszczowi i Żydowi po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Łuszczowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Łuszczowi i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ urban_hp_now -= 4
+            "{i}Impy zadają Shadowowi i Jerzemu Urbanowi po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ zyd_hp_now -= 4
+            "{i}Impy zadają Shadowowi i Żydowi po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Shadowowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Shadowowi i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ urban_hp_now -= 4
+            $ zyd_hp_now -= 4
+            "{i}Impy zadają Jerzemu Urbanowi i Żydowi po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ urban_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Jerzemu Urbanowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ urban_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Jerzemu Urbanowi i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ zyd_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Żydowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ zyd_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Żydowi i Naofumiemu po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ kazuma_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Kazumie i Naofumiemu po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 1 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ eminem_hp_now -= 4
+            $ urban_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Shadowowi i Jerzemu Urbanowi po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ eminem_hp_now -= 4
+            $ zyd_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Shadowowi i Żydowi po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ eminem_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Shadowowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ eminem_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Shadowowi i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ urban_hp_now -= 4
+            $ zyd_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Jerzemu Urbanowi i Żydowi po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ urban_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Jerzemu Urbanowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ urban_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Jerzemu Urbanowi i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ zyd_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Żydowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ zyd_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Żydowi i Naofumiemu po 4 obrażenia"
+
+        if luszcz_imp == 1 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ luszcz_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Łuszczowi, Kazumie i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 1 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ urban_hp_now -= 4
+            $ zyd_hp_now -= 4
+            "{i}Impy zadają Shadowowi, Jerzemu Urbanowi i Żydowi po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ urban_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Shadowowi, Jerzemu Urbanowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ urban_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Shadowowi, Jerzemu Urbanowi i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ zyd_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Shadowowi, Żydowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ zyd_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Shadowowi, Żydowi i Naofumiemu po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 1 and urban_imp == 0 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ eminem_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Shadowowi, Kazumie i Naofumiemu po 4 obrażenia"
+
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 1 and kazuma_imp == 1 and tarczownik_imp == 0:
+            play sound "audio/sfx/imp2.mp3"
+            $ urban_hp_now -= 4
+            $ zyd_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            "{i}Impy zadają Jerzemu Urbanowi, Żydowi i Kazumie po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 1 and kazuma_imp == 0 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ urban_hp_now -= 4
+            $ zyd_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Jerzemu Urbanowi, Żydowi i Naofumiemu po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 1 and zyd_imp == 0 and kazuma_imp == 1 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ urban_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Jerzemu Urbanowi, Kazumie i Naofumiemu po 4 obrażenia"
+
+        if luszcz_imp == 0 and eminem_imp == 0 and urban_imp == 0 and zyd_imp == 1 and kazuma_imp == 1 and tarczownik_imp == 1:
+            play sound "audio/sfx/imp2.mp3"
+            $ zyd_hp_now -= 4
+            $ kazuma_hp_now -= 4
+            $ tarczownik_hp_now -= 4
+            "{i}Impy zadają Żydowi, Kazumie i Naofumiemu po 4 obrażenia"
+        
+        if gargantuar1_hp_now <= 0 and gargantuar1_umarty == 0:
+            hide snake31
+            hide snake21
+            hide snake11
+            hide pager1
+            hide uszy1
+            hide gargantuar1
+            hide tarcza6
+            hide screen gargantuar1_stats
+            $ gargantuar1_umarty = 1
+            $ ile_wrogow -= 1
+            $ gargantuar1_obrona = 0
+            $ gargantuar1_weapon = 0
+            $ gargantuar1_pager = 0
+            $ gargantuar1_poison = 0
+            $ gargantuar1_stun = 0
+
+            if gargantuar1_slime >= 1:
+                hide slime
+
+        if trup15_hp_now <= 0 and trup15_umarty == 0:
+            hide snake32
+            hide snake22
+            hide snake12
+            hide pager2
+            hide uszy2
+            hide trup15
+            hide tarcza7
+            hide screen trup15_stats
+            $ trup15_umarty = 1
+            $ ile_wrogow -= 1
+            $ trup15_obrona = 0
+            $ trup15_weapon = 0
+            $ trup15_pager = 0
+            $ trup15_poison = 0
+            $ trup15_stun = 0
+
+            if trup15_slime >= 1:
+                hide slime
+        
+        if gargantuar2_hp_now <= 0 and gargantuar2_umarty == 0:
+            hide snake33
+            hide snake23
+            hide snake13
+            hide pager3
+            hide uszy3
+            hide gargantuar2
+            hide tarcza8
+            hide screen gargantuar2_stats
+            $ gargantuar2_umarty = 1
+            $ ile_wrogow -= 1
+            $ gargantuar2_obrona = 0
+            $ gargantuar2_weapon = 0
+            $ gargantuar2_pager = 0
+            $ gargantuar2_poison = 0
+            $ gargantuar2_stun = 0
+
+            if gargantuar2_slime >= 1:
+                hide slime
+        
+        if ile_wrogow <= 0:
+            jump wygranko_fight151
+        
+        if luszcz_zloty_czlowiek == 1 and luszcz_hp_now <= 0:
+            hide luszcz_zloty
+            $ luszcz_zloty_czlowiek = 0
+            $ luszcz_hp_now = luszcz_hp
+            "{i}Łuszcz uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if luszcz_hp_now <= 0 and luszcz_fighter >= 1:
+            hide stun4
+            hide luszcz_pierscien
+            hide luszcz_vr
+            hide luszcz_klata
+            hide luszcz_memy
+            hide luszcz_ring
+            hide luszcz_ziemia
+            hide luszcz_nogi
+            hide luszcz_zloty
+            hide plamka1
+            hide luszcz
+            hide tarcza1
+            hide screen luszcz1_stats
+            hide screen luszcz2_stats
+            hide screen luszcz3_stats
+            $ ile_sojusznikow -= 1
+            $ luszcz_fighter = 0
+            $ luszcz_obrona = 0
+            $ luszcz_wybrany = 0
+            $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
+        
+        if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
+            hide eminem_zloty
+            $ eminem_zloty_czlowiek = 0
+            $ eminem_hp_now = eminem_hp
+            "{i}Shadow uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if eminem_hp_now <= 0 and eminem_fighter >= 1:
+            hide stun5
+            hide eminem_pierscien
+            hide plamka2
+            hide eminem
+            hide tarcza2
+            hide eminem_vr
+            hide eminem_klata
+            hide eminem_memy
+            hide eminem_ring
+            hide eminem_ziemia
+            hide eminem_nogi
+            hide eminem_zloty
+            hide screen eminem1_stats
+            hide screen eminem2_stats
+            hide screen eminem3_stats
+            $ ile_sojusznikow -= 1
+            $ eminem_fighter = 0
+            $ eminem_obrona = 0
+            $ eminem_wybrany = 0
+            $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
+        
+        if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
+            hide urban_zloty
+            $ urban_zloty_czlowiek = 0
+            $ urban_hp_now = urban_hp
+            "{i}Jerzy Urban uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if urban_hp_now <= 0 and urban_fighter >= 1:
+            hide stun6
+            hide urban_pierscien
+            hide plamka3
+            hide uszy1
+            hide uszy2
+            hide uszy3
+            hide urban
+            hide tarcza3
+            hide urban_vr
+            hide urban_klata
+            hide urban_memy
+            hide urban_ring
+            hide urban_ziemia
+            hide urban_nogi
+            hide urban_zloty
+            hide screen urban1_stats
+            hide screen urban2_stats
+            hide screen urban3_stats
+            $ ile_sojusznikow -= 1
+            $ urban_fighter = 0
+            $ urban_obrona = 0
+            $ urban_wybrany = 0
+            $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
+        
+        if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
+            hide zyd_zloty
+            $ zyd_zloty_czlowiek = 0
+            $ zyd_hp_now = zyd_hp
+            "{i}Żyd uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if zyd_hp_now <= 0 and zyd_fighter >= 1:
+            hide stun7
+            hide zyd_pierscien
+            hide plamka4
+            hide red_button
+            hide pager1
+            hide pager2
+            hide pager3
+            hide pager
+            hide eksplozja1
+            hide eksplozja2
+            hide ekdplozja3
+            hide zyd
+            hide tarcza4
+            hide zyd_vr
+            hide zyd_klata
+            hide zyd_memy
+            hide zyd_ring
+            hide zyd_ziemia
+            hide zyd_nogi
+            hide zyd_zloty
+            hide screen zyd1_stats
+            hide screen zyd2_stats
+            hide screen zyd3_stats
+            $ ile_sojusznikow -= 1
+            $ zyd_fighter = 0
+            $ zyd_obrona = 0
+            $ zyd_wybrany = 0
+            $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
+        
+        if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
+            hide kazuma_zloty
+            $ kazuma_zloty_czlowiek = 0
+            $ kazuma_hp_now = kazuma_hp
+            "{i}Kazuma uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+
+        if kazuma_hp_now <= 0 and kazuma_fighter >= 1:
+            hide stun8
+            hide kazuma_pierscien
+            hide plamka5
+            hide kazuma
+            hide tarcza5
+            hide kazuma_vr
+            hide kazuma_klata
+            hide kazuma_memy
+            hide kazuma_ring
+            hide kazuma_ziemia
+            hide kazuma_nogi
+            hide kazuma_zloty
+            hide screen kazuma1_stats
+            hide screen kazuma2_stats
+            hide screen kazuma3_stats
+            $ ile_sojusznikow -= 1
+            $ kazuma_fighter = 0
+            $ kazuma_obrona = 0
+            $ kazuma_wybrany = 0
+            $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
+        
+        if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
+            hide tarczownik_zloty
+            $ tarczownik_zloty_czlowiek = 0
+            $ tarczownik_hp_now = tarczownik_hp
+            "{i}Naofumi uniknął śmierci, dzięki mocy złotego człowieka{/i}"
+        
+        if tarczownik_hp_now <= 0 and tarczownik_fighter >= 1:
+            hide stun9
+            hide tarczownik_pierscien
+            hide plamka6
+            hide air_strike_shield1
+            hide air_strike_shield2
+            hide air_strike_shield3
+            hide shield_prison
+            hide tarczownik
+            hide tarczownik_vr
+            hide tarczownik_klata
+            hide tarczownik_memy
+            hide tarczownik_ring
+            hide tarczownik_ziemia
+            hide tarczownik_nogi
+            hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -1625,6 +2269,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -1653,6 +2305,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -1684,6 +2344,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -1720,6 +2388,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -1748,6 +2424,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -1771,6 +2455,14 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -2192,6 +2884,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -2220,6 +2920,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -2251,6 +2959,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -2287,6 +3003,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -2315,6 +3039,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -2338,6 +3070,14 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -2990,19 +3730,26 @@ label fight151:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight152
                     
-                "{b}Obrona{/b}" if luszcz_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if luszcz_wybrany == 1:
-                        show tarcza1 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if luszcz_obrona == 0 or luszcz_imp == 1:
+                    if luszcz_imp == 1:
+                        $ luszcz_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp1
+                        "{i}Łuszcz zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if luszcz_wybrany == 1:
+                            show tarcza1 zorder 15 at weapon_sojusznik1  
 
-                    if luszcz_wybrany == 2:
-                        show tarcza1 zorder 15 at weapon_sojusznik2  
+                        if luszcz_wybrany == 2:
+                            show tarcza1 zorder 15 at weapon_sojusznik2  
 
-                    if luszcz_wybrany == 3:
-                        show tarcza1 zorder 15 at weapon_sojusznik3 
+                        if luszcz_wybrany == 3:
+                            show tarcza1 zorder 15 at weapon_sojusznik3 
 
-                    $ luszcz_obrona += 1
-                    luszcz "I want sex"
+                        $ luszcz_obrona += 1
+                        luszcz "I want sex"
                     jump faza_fight152
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -3464,20 +4211,28 @@ label fight151:
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight152
                     
-                "{b}Obrona{/b}" if eminem_obrona == 0:
-                    eminem "I am ..."
-                    play sound "audio/sfx/shield.mp3"
-                    if eminem_wybrany == 1:
-                        show tarcza2 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if eminem_obrona == 0 or eminem_imp == 1:
+                    if eminem_imp == 1:
+                        $ eminem_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp2
+                        "{i}Shadow zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        eminem "I am ..."
+                        play sound "audio/sfx/shield.mp3"
+                        if eminem_wybrany == 1:
+                            show tarcza2 zorder 15 at weapon_sojusznik1  
 
-                    if eminem_wybrany == 2:
-                        show tarcza2 zorder 15 at weapon_sojusznik2  
+                        if eminem_wybrany == 2:
+                            show tarcza2 zorder 15 at weapon_sojusznik2  
 
-                    if eminem_wybrany == 3:
-                        show tarcza2 zorder 15 at weapon_sojusznik3 
+                        if eminem_wybrany == 3:
+                            show tarcza2 zorder 15 at weapon_sojusznik3 
 
-                    $ eminem_obrona += 1
-                    eminem "... rzymskim legionistą"
+                        $ eminem_obrona += 1
+                        eminem "... rzymskim legionistą"
+
                     jump faza_fight152
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -4378,19 +5133,27 @@ label fight151:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                 jump faza_fight152
                     
-                "{b}Obrona{/b}" if urban_obrona == 0:
+                "{b}Obrona{/b}" if urban_obrona == 0 or urban_imp == 1:
                     play sound "audio/sfx/shield.mp3"
-                    if urban_wybrany == 1:
-                        show tarcza3 zorder 15 at weapon_sojusznik1  
+                    if urban_imp == 1:
+                        $ urban_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp3
+                        "{i}Jerzy Urban zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if urban_wybrany == 1:
+                            show tarcza3 zorder 15 at weapon_sojusznik1  
 
-                    if urban_wybrany == 2:
-                        show tarcza3 zorder 15 at weapon_sojusznik2  
+                        if urban_wybrany == 2:
+                            show tarcza3 zorder 15 at weapon_sojusznik2  
 
-                    if urban_wybrany == 3:
-                        show tarcza3 zorder 15 at weapon_sojusznik3 
+                        if urban_wybrany == 3:
+                            show tarcza3 zorder 15 at weapon_sojusznik3 
 
-                    $ urban_obrona += 1
-                    urban "A ja mam to w dupie"
+                        $ urban_obrona += 1
+                        urban "A ja mam to w dupie"
                     jump faza_fight152
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -4421,16 +5184,18 @@ label fight151:
                     play sound "audio/sfx/uszy.mp3" 
 
                     $ kostka = renpy.random.randint(1, 10)
-                    if gargantuar1_obrona <= 0 and kostka > 1:
+                    if gargantuar1_obrona <= 0 and kostka > 1 and gargantuar1_special == 0:
                         $ gargantuar1_uszy += 1
+                        $ urban_fok1 = 1
                     
                     $ kostka = renpy.random.randint(1, 10)
                     if trup15_obrona <= 0 and kostka > 1:
                         $ trup15_uszy += 1
                     
                     $ kostka = renpy.random.randint(1, 10)
-                    if gargantuar2_obrona <= 0 and kostka > 1:
+                    if gargantuar2_obrona <= 0 and kostka > 1 and gargantuar2_special == 0:
                         $ gargantuar2_uszy += 1
+                        $ urban_fok2 = 1
 
                     if gargantuar1_uszy == 1 and trup15_uszy == 1 and gargantuar2_uszy == 1 and gargantuar1_hp_now >= 1 and trup15_hp_now >= 1 and gargantuar2_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
@@ -5102,19 +5867,27 @@ label fight151:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight152
                     
-                "{b}Obrona{/b}" if zyd_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if zyd_wybrany == 1:
-                        show tarcza4 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if zyd_obrona == 0 or zyd_imp == 1:
+                    if zyd_imp == 1:
+                        $ zyd_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp4
+                        "{i}Żyd zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if zyd_wybrany == 1:
+                            show tarcza4 zorder 15 at weapon_sojusznik1  
 
-                    if zyd_wybrany == 2:
-                        show tarcza4 zorder 15 at weapon_sojusznik2  
+                        if zyd_wybrany == 2:
+                            show tarcza4 zorder 15 at weapon_sojusznik2  
 
-                    if zyd_wybrany == 3:
-                        show tarcza4 zorder 15 at weapon_sojusznik3 
+                        if zyd_wybrany == 3:
+                            show tarcza4 zorder 15 at weapon_sojusznik3 
 
-                    $ zyd_obrona += 1
-                    zyd "Nie interesuje mnie polska polityka"
+                        $ zyd_obrona += 1
+                        zyd "Nie interesuje mnie polska polityka"
+
                     jump faza_fight152
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -5881,19 +6654,27 @@ label fight151:
                             jump faza_fight152
     
                     
-                "{b}Obrona{/b}" if kazuma_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if kazuma_wybrany == 1:
-                        show tarcza5 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if kazuma_obrona == 0 or kazuma_imp == 1:
+                    if kazuma_imp == 1:
+                        $ kazuma_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp5
+                        "{i}Kazuma zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if kazuma_wybrany == 1:
+                            show tarcza5 zorder 15 at weapon_sojusznik1  
 
-                    if kazuma_wybrany == 2:
-                        show tarcza5 zorder 15 at weapon_sojusznik2  
+                        if kazuma_wybrany == 2:
+                            show tarcza5 zorder 15 at weapon_sojusznik2  
 
-                    if kazuma_wybrany == 3:
-                        show tarcza5 zorder 15 at weapon_sojusznik3 
+                        if kazuma_wybrany == 3:
+                            show tarcza5 zorder 15 at weapon_sojusznik3 
 
-                    $ kazuma_obrona += 1
-                    kazuma "Nic na to nie można poradzić!"
+                        $ kazuma_obrona += 1
+                        kazuma "Nic na to nie można poradzić!"
+
                     jump faza_fight152
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -5935,68 +6716,82 @@ label fight151:
                                 if gargantuar1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if gargantuar1_max_attack_now < gargantuar1_max_attack:
-                                            $ gargantuar1_max_attack_now_true = 2
-                                            $ gargantuar1_min_attack_now_true = 0
-                                            $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
-                                            $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
-                                            $ gargantuar1_max_attack_now -= 2
+                                        if gargantuar1_imp == 1:
+                                            if kazuma_imp == 1:
+                                                play sound "audio/sfx/stel.mp3"
+                                                "{i}Nie udało sie ukraść broni Gargantuar 1{/i}"
+                                                hide chwyta
+                                            
+                                            else:
+                                                show gargantuar1 fight1
+                                                $ gargantuar1_imp = 1
+
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at weapon_sojusznik1  
+
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at weapon_sojusznik2  
+
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at weapon_sojusznik3 
+                                                
+                                                play sound "audio/sfx/steal.mp3"
+
+                                                kazuma "A nieeeee, a zostaw mnie!"
+                                                kazuma "To nie ciebie chciałem aaaaaaagagghh nie za suty!"
+
+                                                play sound "audio/sfx/imp.mp3"
+                                                $ kazuma_imp = 1
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at center_sojusznik1r 
+
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at center_sojusznik2r  
+
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at center_sojusznik3r 
+                                                
+                                                hide chwyta
+                                                "{i}Imp przyczepia się do Kazumy{/i}"
+
+                                        else:      
+                                            if gargantuar1_max_attack_now < gargantuar1_max_attack:
+                                                $ gargantuar1_max_attack_now_true = 2
+                                                $ gargantuar1_min_attack_now_true = 0
+                                                $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
+                                                $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
+                                                $ gargantuar1_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ gargantuar1_max_attack_now_true = 2
+                                                $ gargantuar1_min_attack_now_true = 0
+                                                $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
+                                                $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
+                                            
+                                            $ gargantuar1_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show krzyz zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show krzyz zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show krzyz zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Gargantuar 1.  \nStatystyki Gargantuar 1 zostały stale drastycznie osłabione.{/i}"
+                                            hide krzyz
+                                            hide chwyta
                                         
-                                        else:
-                                            $ gargantuar1_max_attack_now_true = 2
-                                            $ gargantuar1_min_attack_now_true = 0
-                                            $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
-                                            $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
-                                        
-                                        $ gargantuar1_weapon -= 1
-
-                                        if kazuma_wybrany == 1:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik1  
-
-                                        if kazuma_wybrany == 2:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik2  
-
-                                        if kazuma_wybrany == 3:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
-
-                                        "{i}Udało sie ukraść broń Gargantuar 1.  \nStatystyki Gargantuar 1 zostały stale drastycznie osłabione.{/i}"
-                                        hide gargantuar1_weapon
-                                        hide chwyta
-                                    
                                     else:
                                         play sound "audio/sfx/stel.mp3"
                                         "{i}Nie udało sie ukraść broni Gargantuar 1{/i}"
                                         hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
-
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
-
-                                        kazuma "Trafiłem jackpota!"
-                                        gargantuar1 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gargantuar 1.  \nGargantuar 1 poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gargantuar1_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
-                                        
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Gargantuar 1{/i}"
-                                        hide chwyta
-                                        
                                 jump faza_fight152
+
 
                         "{b}Akane{/b}" if trup15_sex == 0 and trup15_weapon >= 1 and trup15_hp_now > 0 or trup15_sex == 1 and trup15_hp_now > 0:
                             kazuma "Steal!"
@@ -6083,61 +6878,74 @@ label fight151:
                                 if gargantuar2_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if gargantuar2_max_attack_now < gargantuar2_max_attack:
-                                            $ gargantuar2_max_attack_now_true = 2
-                                            $ gargantuar2_min_attack_now_true = 0
-                                            $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
-                                            $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
-                                            $ gargantuar2_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ gargantuar2_max_attack_now_true = 2
-                                            $ gargantuar2_min_attack_now_true = 0
-                                            $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
-                                            $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
-                                        
-                                        $ gargantuar2_weapon -= 1
+                                        if gargantuar2_imp == 1:
+                                            if kazuma_imp == 1:
+                                                play sound "audio/sfx/stel.mp3"
+                                                "{i}Nie udało sie ukraść broni Gargantuar 2{/i}"
+                                                hide chwyta
+                                            
+                                            else:
+                                                show gargantuar2 fight1
+                                                $ gargantuar2_imp = 1
 
-                                        if kazuma_wybrany == 1:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik1  
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik2  
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at weapon_sojusznik3 
+                                                
+                                                play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Gargantuar 2.  \nStatystyki Gargantuar 2 zostały stale drastycznie osłabione.{/i}"
-                                        hide gargantuar2_weapon
-                                        hide chwyta
-                                    
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Gargantuar 2{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                                kazuma "A nieeeee, a zostaw mnie!"
+                                                kazuma "To nie ciebie chciałem aaaaaaagagghh nie za suty!"
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                                play sound "audio/sfx/imp.mp3"
+                                                $ kazuma_imp = 1
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at center_sojusznik1r 
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at center_sojusznik2r  
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gargantuar2 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gargantuar 2.  \nGargantuar 2 poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gargantuar2_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at center_sojusznik3r 
+                                                
+                                                hide chwyta
+                                                "{i}Imp przyczepia się do Kazumy{/i}"
+
+                                        else:      
+                                            if gargantuar2_max_attack_now < gargantuar2_max_attack:
+                                                $ gargantuar2_max_attack_now_true = 2
+                                                $ gargantuar2_min_attack_now_true = 0
+                                                $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
+                                                $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
+                                                $ gargantuar2_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ gargantuar2_max_attack_now_true = 2
+                                                $ gargantuar2_min_attack_now_true = 0
+                                                $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
+                                                $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
+                                            
+                                            $ gargantuar2_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show krzyz zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show krzyz zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show krzyz zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Gargantuar 2.  \nStatystyki Gargantuar 2 zostały stale drastycznie osłabione.{/i}"
+                                            hide krzyz
+                                            hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -6167,6 +6975,58 @@ label fight151:
                         "{i}Naofumi jest zestunnowany{/i}"
                         hide stun9
                         jump faza_fight152 
+                
+                if tarczownik_imp == 1:
+                    $ kostka = renpy.random.randint(1, 2)
+
+                    if kostka == 1:
+                        if tarczownik_wybrany == 1:
+                            show shield_prison zorder 18 at prison_sojusznik1
+
+                        if tarczownik_wybrany == 2:
+                            show shield_prison zorder 18 at prison_sojusznik2  
+
+                        if tarczownik_wybrany == 3:
+                            show shield_prison zorder 18 at prison_sojusznik3 
+
+                        if tarczownik_imp == 1:
+                            $ tarczownik_imp = 0
+                            $ tarczownik_obrona += 1
+                            hide imp6
+                            play sound "audio/sfx/shield_prison.mp3"
+                        
+                        else:
+                            $ tarczownik_obrona += 2
+                            play sound "audio/sfx/shield_prison.mp3"
+
+                        tarczownik "Shield Prison!"
+
+                        if dialog_fight2 == 0:
+                            $ dialog_fight2 += 1
+
+                            luszcz "Ej co ty odpierdalasz? To ja tutaj dowodzę i masz się mnie słuchać"
+
+                            tarczownik "Wal się na ryj, ty to co najwyżej możesz mi buty wylizać"
+                            tarczownik "Pewnie też mnie zdradzisz CO?. Całe pierdolone życie w kłamstwie!"
+                            luszcz "..."
+                        
+                        else:
+                            if dialog_fight2 == 1:
+                                $ dialog_fight2 += 1
+                                luszcz "Ja jebie co za debil"
+                            
+                            else:
+                                if dialog_fight2 == 2:
+                                    $ dialog_fight2 += 1
+                                    luszcz "Zajębię tego huja zaraz"
+                            
+                                else:
+                                    if dialog_fight2 >= 3:
+                                        $ dialog_fight2 += 1
+                                        luszcz "..."
+
+                        jump faza_fight152
+
 
                 if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
                     $ kostka = renpy.random.randint(1, 10)
@@ -6223,8 +7083,6 @@ label fight151:
                     $ kostka = renpy.random.randint(1, 2)
 
                     if kostka == 1:
-                        $ tarczownik_obrona += 2
-                        play sound "audio/sfx/shield_prison.mp3"
                         if tarczownik_wybrany == 1:
                             show shield_prison zorder 18 at prison_sojusznik1
 
@@ -6233,6 +7091,16 @@ label fight151:
 
                         if tarczownik_wybrany == 3:
                             show shield_prison zorder 18 at prison_sojusznik3 
+
+                        if tarczownik_imp == 1:
+                            $ tarczownik_imp = 0
+                            $ tarczownik_obrona += 1
+                            hide imp6
+                            play sound "audio/sfx/shield_prison.mp3"
+                        
+                        else:
+                            $ tarczownik_obrona += 2
+                            play sound "audio/sfx/shield_prison.mp3"
 
                         tarczownik "Shield Prison!"
 
@@ -6259,8 +7127,6 @@ label fight151:
                                     if dialog_fight2 >= 3:
                                         $ dialog_fight2 += 1
                                         luszcz "..."
-
-
 
                         jump faza_fight152
                 
@@ -8440,6 +9306,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -8468,6 +9342,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -8499,6 +9381,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -8535,6 +9425,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -8563,6 +9461,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -8585,6 +9491,14 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -9257,19 +10171,26 @@ label fight151:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight153
                     
-                "{b}Obrona{/b}" if luszcz_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if luszcz_wybrany == 1:
-                        show tarcza1 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if luszcz_obrona == 0 or luszcz_imp == 1:
+                    if luszcz_imp == 1:
+                        $ luszcz_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp1
+                        "{i}Łuszcz zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if luszcz_wybrany == 1:
+                            show tarcza1 zorder 15 at weapon_sojusznik1  
 
-                    if luszcz_wybrany == 2:
-                        show tarcza1 zorder 15 at weapon_sojusznik2  
+                        if luszcz_wybrany == 2:
+                            show tarcza1 zorder 15 at weapon_sojusznik2  
 
-                    if luszcz_wybrany == 3:
-                        show tarcza1 zorder 15 at weapon_sojusznik3 
+                        if luszcz_wybrany == 3:
+                            show tarcza1 zorder 15 at weapon_sojusznik3 
 
-                    $ luszcz_obrona += 1
-                    luszcz "I want sex"
+                        $ luszcz_obrona += 1
+                        luszcz "I want sex"
                     jump faza_fight153
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -9731,20 +10652,27 @@ label fight151:
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight153
                     
-                "{b}Obrona{/b}" if eminem_obrona == 0:
-                    eminem "I am ..."
-                    play sound "audio/sfx/shield.mp3"
-                    if eminem_wybrany == 1:
-                        show tarcza2 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if eminem_obrona == 0 or eminem_imp == 1:
+                    if eminem_imp == 1:
+                        $ eminem_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp2
+                        "{i}Shadow zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        eminem "I am ..."
+                        play sound "audio/sfx/shield.mp3"
+                        if eminem_wybrany == 1:
+                            show tarcza2 zorder 15 at weapon_sojusznik1  
 
-                    if eminem_wybrany == 2:
-                        show tarcza2 zorder 15 at weapon_sojusznik2  
+                        if eminem_wybrany == 2:
+                            show tarcza2 zorder 15 at weapon_sojusznik2  
 
-                    if eminem_wybrany == 3:
-                        show tarcza2 zorder 15 at weapon_sojusznik3 
+                        if eminem_wybrany == 3:
+                            show tarcza2 zorder 15 at weapon_sojusznik3 
 
-                    $ eminem_obrona += 1
-                    eminem "... rzymskim legionistą"
+                        $ eminem_obrona += 1
+                        eminem "... rzymskim legionistą"
                     jump faza_fight153
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -10643,19 +11571,27 @@ label fight151:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                 jump faza_fight153
                     
-                "{b}Obrona{/b}" if urban_obrona == 0:
+                "{b}Obrona{/b}" if urban_obrona == 0 or urban_imp == 1:
                     play sound "audio/sfx/shield.mp3"
-                    if urban_wybrany == 1:
-                        show tarcza3 zorder 15 at weapon_sojusznik1  
+                    if urban_imp == 1:
+                        $ urban_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp3
+                        "{i}Jerzy Urban zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if urban_wybrany == 1:
+                            show tarcza3 zorder 15 at weapon_sojusznik1  
 
-                    if urban_wybrany == 2:
-                        show tarcza3 zorder 15 at weapon_sojusznik2  
+                        if urban_wybrany == 2:
+                            show tarcza3 zorder 15 at weapon_sojusznik2  
 
-                    if urban_wybrany == 3:
-                        show tarcza3 zorder 15 at weapon_sojusznik3 
+                        if urban_wybrany == 3:
+                            show tarcza3 zorder 15 at weapon_sojusznik3 
 
-                    $ urban_obrona += 1
-                    urban "A ja mam to w dupie"
+                        $ urban_obrona += 1
+                        urban "A ja mam to w dupie"
                     jump faza_fight153
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -10686,16 +11622,18 @@ label fight151:
                     play sound "audio/sfx/uszy.mp3" 
 
                     $ kostka = renpy.random.randint(1, 10)
-                    if gargantuar1_obrona <= 0 and kostka > 1:
+                    if gargantuar1_obrona <= 0 and kostka > 1 and gargantuar1_special == 0:
                         $ gargantuar1_uszy += 1
+                        $ urban_fok1 = 1
                     
                     $ kostka = renpy.random.randint(1, 10)
                     if trup15_obrona <= 0 and kostka > 1:
                         $ trup15_uszy += 1
                     
                     $ kostka = renpy.random.randint(1, 10)
-                    if gargantuar2_obrona <= 0 and kostka > 1:
+                    if gargantuar2_obrona <= 0 and kostka > 1 and gargantuar2_special == 0:
                         $ gargantuar2_uszy += 1
+                        $ urban_fok2 = 1
 
                     if gargantuar1_uszy == 1 and trup15_uszy == 1 and gargantuar2_uszy == 1 and gargantuar1_hp_now >= 1 and trup15_hp_now >= 1 and gargantuar2_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
@@ -11366,19 +12304,26 @@ label fight151:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight153
                     
-                "{b}Obrona{/b}" if zyd_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if zyd_wybrany == 1:
-                        show tarcza4 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if zyd_obrona == 0 or zyd_imp == 1:
+                    if zyd_imp == 1:
+                        $ zyd_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp4
+                        "{i}Żyd zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if zyd_wybrany == 1:
+                            show tarcza4 zorder 15 at weapon_sojusznik1  
 
-                    if zyd_wybrany == 2:
-                        show tarcza4 zorder 15 at weapon_sojusznik2  
+                        if zyd_wybrany == 2:
+                            show tarcza4 zorder 15 at weapon_sojusznik2  
 
-                    if zyd_wybrany == 3:
-                        show tarcza4 zorder 15 at weapon_sojusznik3 
+                        if zyd_wybrany == 3:
+                            show tarcza4 zorder 15 at weapon_sojusznik3 
 
-                    $ zyd_obrona += 1
-                    zyd "Nie interesuje mnie polska polityka"
+                        $ zyd_obrona += 1
+                        zyd "Nie interesuje mnie polska polityka"
                     jump faza_fight153
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -12143,19 +13088,27 @@ label fight151:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight153
                     
-                "{b}Obrona{/b}" if kazuma_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if kazuma_wybrany == 1:
-                        show tarcza5 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if kazuma_obrona == 0 or kazuma_imp == 1:
+                    if kazuma_imp == 1:
+                        $ kazuma_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp5
+                        "{i}Kazuma zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if kazuma_wybrany == 1:
+                            show tarcza5 zorder 15 at weapon_sojusznik1  
 
-                    if kazuma_wybrany == 2:
-                        show tarcza5 zorder 15 at weapon_sojusznik2  
+                        if kazuma_wybrany == 2:
+                            show tarcza5 zorder 15 at weapon_sojusznik2  
 
-                    if kazuma_wybrany == 3:
-                        show tarcza5 zorder 15 at weapon_sojusznik3 
+                        if kazuma_wybrany == 3:
+                            show tarcza5 zorder 15 at weapon_sojusznik3 
 
-                    $ kazuma_obrona += 1
-                    kazuma "Nic na to nie można poradzić!"
+                        $ kazuma_obrona += 1
+                        kazuma "Nic na to nie można poradzić!"
+
                     jump faza_fight153
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -12196,61 +13149,74 @@ label fight151:
                                 if gargantuar1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if gargantuar1_max_attack_now < gargantuar1_max_attack:
-                                            $ gargantuar1_max_attack_now_true = 2
-                                            $ gargantuar1_min_attack_now_true = 0
-                                            $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
-                                            $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
-                                            $ gargantuar1_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ gargantuar1_max_attack_now_true = 2
-                                            $ gargantuar1_min_attack_now_true = 0
-                                            $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
-                                            $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
+                                        if gargantuar1_imp == 1:
+                                            if kazuma_imp == 1:
+                                                play sound "audio/sfx/stel.mp3"
+                                                "{i}Nie udało sie ukraść broni Gargantuar 1{/i}"
+                                                hide chwyta
+                                            
+                                            else:
+                                                show gargantuar1 fight1
+                                                $ gargantuar1_imp = 1
 
-                                        $ gargantuar1_weapon -= 1
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 1:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik1  
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 2:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik2  
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at weapon_sojusznik3 
+                                                
+                                                play sound "audio/sfx/steal.mp3"
 
-                                        if kazuma_wybrany == 3:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                kazuma "A nieeeee, a zostaw mnie!"
+                                                kazuma "To nie ciebie chciałem aaaaaaagagghh nie za suty!"
 
-                                        "{i}Udało sie ukraść broń Gargantuar 1.  \nStatystyki Gargantuar 1 zostały stale drastycznie osłabione.{/i}"
-                                        hide gargantuar1_weapon
-                                        hide chwyta
-                                    
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Gargantuar 1{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                                play sound "audio/sfx/imp.mp3"
+                                                $ kazuma_imp = 1
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at center_sojusznik1r 
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at center_sojusznik2r  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at center_sojusznik3r 
+                                                
+                                                hide chwyta
+                                                "{i}Imp przyczepia się do Kazumy{/i}"
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gargantuar1 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gargantuar 1.  \nGargantuar 1 poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gargantuar1_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
+                                        else:      
+                                            if gargantuar1_max_attack_now < gargantuar1_max_attack:
+                                                $ gargantuar1_max_attack_now_true = 2
+                                                $ gargantuar1_min_attack_now_true = 0
+                                                $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
+                                                $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
+                                                $ gargantuar1_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ gargantuar1_max_attack_now_true = 2
+                                                $ gargantuar1_min_attack_now_true = 0
+                                                $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
+                                                $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
+                                            
+                                            $ gargantuar1_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show krzyz zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show krzyz zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show krzyz zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Gargantuar 1.  \nStatystyki Gargantuar 1 zostały stale drastycznie osłabione.{/i}"
+                                            hide krzyz
+                                            hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -12344,61 +13310,74 @@ label fight151:
                                 if gargantuar2_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if gargantuar2_max_attack_now < gargantuar2_max_attack:
-                                            $ gargantuar2_max_attack_now_true = 2
-                                            $ gargantuar2_min_attack_now_true = 0
-                                            $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
-                                            $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
-                                            $ gargantuar2_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ gargantuar2_max_attack_now_true = 2
-                                            $ gargantuar2_min_attack_now_true = 0
-                                            $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
-                                            $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
-                                        
-                                        $ gargantuar2_weapon -= 1
+                                        if gargantuar2_imp == 1:
+                                            if kazuma_imp == 1:
+                                                play sound "audio/sfx/stel.mp3"
+                                                "{i}Nie udało sie ukraść broni Gargantuar 2{/i}"
+                                                hide chwyta
+                                            
+                                            else:
+                                                show gargantuar2 fight1
+                                                $ gargantuar2_imp = 1
 
-                                        if kazuma_wybrany == 1:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik1  
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik2  
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at weapon_sojusznik3 
+                                                
+                                                play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Gargantuar 2.  \nStatystyki Gargantuar 2 zostały stale drastycznie osłabione.{/i}"
-                                        hide gargantuar2_weapon
-                                        hide chwyta
-                                    
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Gargantuar 2{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                                kazuma "A nieeeee, a zostaw mnie!"
+                                                kazuma "To nie ciebie chciałem aaaaaaagagghh nie za suty!"
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                                play sound "audio/sfx/imp.mp3"
+                                                $ kazuma_imp = 1
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at center_sojusznik1r 
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at center_sojusznik2r  
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gargantuar2 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gargantuar 2.  \nGargantuar 2 poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gargantuar2_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at center_sojusznik3r 
+                                                
+                                                hide chwyta
+                                                "{i}Imp przyczepia się do Kazumy{/i}"
+
+                                        else:      
+                                            if gargantuar2_max_attack_now < gargantuar2_max_attack:
+                                                $ gargantuar2_max_attack_now_true = 2
+                                                $ gargantuar2_min_attack_now_true = 0
+                                                $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
+                                                $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
+                                                $ gargantuar2_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ gargantuar2_max_attack_now_true = 2
+                                                $ gargantuar2_min_attack_now_true = 0
+                                                $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
+                                                $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
+                                            
+                                            $ gargantuar2_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show krzyz zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show krzyz zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show krzyz zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Gargantuar 2.  \nStatystyki Gargantuar 2 zostały stale drastycznie osłabione.{/i}"
+                                            hide krzyz
+                                            hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -12529,6 +13508,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -12557,6 +13544,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -12588,6 +13583,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -12624,6 +13627,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -12652,6 +13663,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -12674,6 +13693,14 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -13346,19 +14373,26 @@ label fight151:
                                             "{i}Łuszcz odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight154
                     
-                "{b}Obrona{/b}" if luszcz_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if luszcz_wybrany == 1:
-                        show tarcza1 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if luszcz_obrona == 0 or luszcz_imp == 1:
+                    if luszcz_imp == 1:
+                        $ luszcz_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp1
+                        "{i}Łuszcz zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if luszcz_wybrany == 1:
+                            show tarcza1 zorder 15 at weapon_sojusznik1  
 
-                    if luszcz_wybrany == 2:
-                        show tarcza1 zorder 15 at weapon_sojusznik2  
+                        if luszcz_wybrany == 2:
+                            show tarcza1 zorder 15 at weapon_sojusznik2  
 
-                    if luszcz_wybrany == 3:
-                        show tarcza1 zorder 15 at weapon_sojusznik3 
+                        if luszcz_wybrany == 3:
+                            show tarcza1 zorder 15 at weapon_sojusznik3 
 
-                    $ luszcz_obrona += 1
-                    luszcz "I want sex"
+                        $ luszcz_obrona += 1
+                        luszcz "I want sex"
                     jump faza_fight154
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -13820,20 +14854,27 @@ label fight151:
                                             "{i}Shadow odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight154
                     
-                "{b}Obrona{/b}" if eminem_obrona == 0:
-                    eminem "I am ..."
-                    play sound "audio/sfx/shield.mp3"
-                    if eminem_wybrany == 1:
-                        show tarcza2 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if eminem_obrona == 0 or eminem_imp == 1:
+                    if eminem_imp == 1:
+                        $ eminem_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp2
+                        "{i}Shadow zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        eminem "I am ..."
+                        play sound "audio/sfx/shield.mp3"
+                        if eminem_wybrany == 1:
+                            show tarcza2 zorder 15 at weapon_sojusznik1  
 
-                    if eminem_wybrany == 2:
-                        show tarcza2 zorder 15 at weapon_sojusznik2  
+                        if eminem_wybrany == 2:
+                            show tarcza2 zorder 15 at weapon_sojusznik2  
 
-                    if eminem_wybrany == 3:
-                        show tarcza2 zorder 15 at weapon_sojusznik3 
+                        if eminem_wybrany == 3:
+                            show tarcza2 zorder 15 at weapon_sojusznik3 
 
-                    $ eminem_obrona += 1
-                    eminem "... rzymskim legionistą"
+                        $ eminem_obrona += 1
+                        eminem "... rzymskim legionistą"
                     jump faza_fight154
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -14734,19 +15775,27 @@ label fight151:
                                                     "{i}Jerzy Urban odzyskał [kostka] punkty życia{/i}"
                                 jump faza_fight154
                     
-                "{b}Obrona{/b}" if urban_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if urban_wybrany == 1:
-                        show tarcza3 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if urban_obrona == 0 or urban_imp == 1:
+                    if urban_imp == 1:
+                        $ urban_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp3
+                        "{i}Jerzy Urban zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if urban_wybrany == 1:
+                            show tarcza3 zorder 15 at weapon_sojusznik1  
 
-                    if urban_wybrany == 2:
-                        show tarcza3 zorder 15 at weapon_sojusznik2  
+                        if urban_wybrany == 2:
+                            show tarcza3 zorder 15 at weapon_sojusznik2  
 
-                    if urban_wybrany == 3:
-                        show tarcza3 zorder 15 at weapon_sojusznik3 
+                        if urban_wybrany == 3:
+                            show tarcza3 zorder 15 at weapon_sojusznik3 
 
-                    $ urban_obrona += 1
-                    urban "A ja mam to w dupie"
+                        $ urban_obrona += 1
+                        urban "A ja mam to w dupie"
+
                     jump faza_fight154
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -14777,16 +15826,18 @@ label fight151:
                     play sound "audio/sfx/uszy.mp3" 
 
                     $ kostka = renpy.random.randint(1, 10)
-                    if gargantuar1_obrona <= 0 and kostka > 1:
+                    if gargantuar1_obrona <= 0 and kostka > 1 and gargantuar1_special == 0:
                         $ gargantuar1_uszy += 1
+                        $ urban_fok1 = 1
                     
                     $ kostka = renpy.random.randint(1, 10)
                     if trup15_obrona <= 0 and kostka > 1:
                         $ trup15_uszy += 1
                     
                     $ kostka = renpy.random.randint(1, 10)
-                    if gargantuar2_obrona <= 0 and kostka > 1:
+                    if gargantuar2_obrona <= 0 and kostka > 1 and gargantuar2_special == 0:
                         $ gargantuar2_uszy += 1
+                        $ urban_fok2 = 1
 
                     if gargantuar1_uszy == 1 and trup15_uszy == 1 and gargantuar2_uszy == 1 and gargantuar1_hp_now >= 1 and trup15_hp_now >= 1 and gargantuar2_hp_now >= 1:
                         show uszy2 zorder 15 at head_wrog3
@@ -15457,19 +16508,26 @@ label fight151:
                                             "{i}Żyd odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight154
                     
-                "{b}Obrona{/b}" if zyd_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if zyd_wybrany == 1:
-                        show tarcza4 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if zyd_obrona == 0 or zyd_imp == 1:
+                    if zyd_imp == 1:
+                        $ zyd_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp4
+                        "{i}Żyd zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if zyd_wybrany == 1:
+                            show tarcza4 zorder 15 at weapon_sojusznik1  
 
-                    if zyd_wybrany == 2:
-                        show tarcza4 zorder 15 at weapon_sojusznik2  
+                        if zyd_wybrany == 2:
+                            show tarcza4 zorder 15 at weapon_sojusznik2  
 
-                    if zyd_wybrany == 3:
-                        show tarcza4 zorder 15 at weapon_sojusznik3 
+                        if zyd_wybrany == 3:
+                            show tarcza4 zorder 15 at weapon_sojusznik3 
 
-                    $ zyd_obrona += 1
-                    zyd "Nie interesuje mnie polska polityka"
+                        $ zyd_obrona += 1
+                        zyd "Nie interesuje mnie polska polityka"
                     jump faza_fight154
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -16234,19 +17292,27 @@ label fight151:
                                             "{i}Kazuma odzyskał [kostka] punkty życia{/i}"
                             jump faza_fight154
                     
-                "{b}Obrona{/b}" if kazuma_obrona == 0:
-                    play sound "audio/sfx/shield.mp3"
-                    if kazuma_wybrany == 1:
-                        show tarcza5 zorder 15 at weapon_sojusznik1  
+                "{b}Obrona{/b}" if kazuma_obrona == 0 or kazuma_imp == 1:
+                    if kazuma_imp == 1:
+                        $ kazuma_imp = 0
+                        play sound "audio/sfx/imp3.mp3"
+                        hide imp5
+                        "{i}Kazuma zrzuca z siebie Impa{/i}"
+                    
+                    else:
+                        play sound "audio/sfx/shield.mp3"
+                        if kazuma_wybrany == 1:
+                            show tarcza5 zorder 15 at weapon_sojusznik1  
 
-                    if kazuma_wybrany == 2:
-                        show tarcza5 zorder 15 at weapon_sojusznik2  
+                        if kazuma_wybrany == 2:
+                            show tarcza5 zorder 15 at weapon_sojusznik2  
 
-                    if kazuma_wybrany == 3:
-                        show tarcza5 zorder 15 at weapon_sojusznik3 
+                        if kazuma_wybrany == 3:
+                            show tarcza5 zorder 15 at weapon_sojusznik3 
 
-                    $ kazuma_obrona += 1
-                    kazuma "Nic na to nie można poradzić!"
+                        $ kazuma_obrona += 1
+                        kazuma "Nic na to nie można poradzić!"
+
                     jump faza_fight154
                 
                 "{b}Item{/b}" if ile_item >= 1:
@@ -16287,61 +17353,74 @@ label fight151:
                                 if gargantuar1_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if gargantuar1_max_attack_now < gargantuar1_max_attack:
-                                            $ gargantuar1_max_attack_now_true = 2
-                                            $ gargantuar1_min_attack_now_true = 0
-                                            $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
-                                            $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
-                                            $ gargantuar1_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ gargantuar1_max_attack_now_true = 2
-                                            $ gargantuar1_min_attack_now_true = 0
-                                            $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
-                                            $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
-                                        
-                                        $ gargantuar1_weapon -= 1
+                                        if gargantuar1_imp == 1:
+                                            if kazuma_imp == 1:
+                                                play sound "audio/sfx/stel.mp3"
+                                                "{i}Nie udało sie ukraść broni Gargantuar 1{/i}"
+                                                hide chwyta
+                                            
+                                            else:
+                                                show gargantuar1 fight1
+                                                $ gargantuar1_imp = 1
 
-                                        if kazuma_wybrany == 1:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik1  
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik2  
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show gargantuar1_weapon zorder 15 at weapon_sojusznik3 
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at weapon_sojusznik3 
+                                                
+                                                play sound "audio/sfx/steal.mp3"
 
-                                        play sound "audio/sfx/steal.mp3"
+                                                kazuma "A nieeeee, a zostaw mnie!"
+                                                kazuma "To nie ciebie chciałem aaaaaaagagghh nie za suty!"
 
-                                        "{i}Udało sie ukraść broń Gargantuar 1.  \nStatystyki Gargantuar 1 zostały stale drastycznie osłabione.{/i}"
-                                        hide gargantuar1_weapon
-                                        hide chwyta
-                                    
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Gargantuar 1{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                                play sound "audio/sfx/imp.mp3"
+                                                $ kazuma_imp = 1
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at center_sojusznik1r 
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at center_sojusznik2r  
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at center_sojusznik3r 
+                                                
+                                                hide chwyta
+                                                "{i}Imp przyczepia się do Kazumy{/i}"
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gargantuar1 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gargantuar 1.  \nGargantuar 1 poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gargantuar1_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
+                                        else:      
+                                            if gargantuar1_max_attack_now < gargantuar1_max_attack:
+                                                $ gargantuar1_max_attack_now_true = 2
+                                                $ gargantuar1_min_attack_now_true = 0
+                                                $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
+                                                $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
+                                                $ gargantuar1_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ gargantuar1_max_attack_now_true = 2
+                                                $ gargantuar1_min_attack_now_true = 0
+                                                $ gargantuar1_min_attack_now = gargantuar1_min_attack_now_true
+                                                $ gargantuar1_max_attack_now = gargantuar1_max_attack_now_true
+                                            
+                                            $ gargantuar1_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show krzyz zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show krzyz zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show krzyz zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Gargantuar 1.  \nStatystyki Gargantuar 1 zostały stale drastycznie osłabione.{/i}"
+                                            hide krzyz
+                                            hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -16435,61 +17514,74 @@ label fight151:
                                 if gargantuar2_sex == 0:
                                     
                                     if kostka >= 9:
-                                        if gargantuar2_max_attack_now < gargantuar2_max_attack:
-                                            $ gargantuar2_max_attack_now_true = 2
-                                            $ gargantuar2_min_attack_now_true = 0
-                                            $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
-                                            $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
-                                            $ gargantuar2_max_attack_now -= 2
-                                        
-                                        else:
-                                            $ gargantuar2_max_attack_now_true = 2
-                                            $ gargantuar2_min_attack_now_true = 0
-                                            $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
-                                            $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
-                                        
-                                        $ gargantuar2_weapon -= 1
+                                        if gargantuar2_imp == 1:
+                                            if kazuma_imp == 1:
+                                                play sound "audio/sfx/stel.mp3"
+                                                "{i}Nie udało sie ukraść broni Gargantuar 2{/i}"
+                                                hide chwyta
+                                            
+                                            else:
+                                                show gargantuar2 fight1
+                                                $ gargantuar2_imp = 1
 
-                                        if kazuma_wybrany == 1:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik1  
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at weapon_sojusznik1  
 
-                                        if kazuma_wybrany == 2:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik2  
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at weapon_sojusznik2  
 
-                                        if kazuma_wybrany == 3:
-                                            show gargantuar2_weapon zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at weapon_sojusznik3 
+                                                
+                                                play sound "audio/sfx/steal.mp3"
 
-                                        "{i}Udało sie ukraść broń Gargantuar 2.  \nStatystyki Gargantuar 2 zostały stale drastycznie osłabione.{/i}"
-                                        hide gargantuar2_weapon
-                                        hide chwyta
-                                    
-                                    else:
-                                        play sound "audio/sfx/stel.mp3"
-                                        "{i}Nie udało sie ukraść broni Gargantuar 2{/i}"
-                                        hide chwyta
-                        
-                                else:
-                                    if kostka >= 6:
-                                        if kazuma_wybrany == 1:
-                                            show majtki zorder 15 at weapon_sojusznik1  
+                                                kazuma "A nieeeee, a zostaw mnie!"
+                                                kazuma "To nie ciebie chciałem aaaaaaagagghh nie za suty!"
 
-                                        if kazuma_wybrany == 2:
-                                            show majtki zorder 15 at weapon_sojusznik2  
+                                                play sound "audio/sfx/imp.mp3"
+                                                $ kazuma_imp = 1
+                                                if kazuma_wybrany == 1:
+                                                    show imp5 zorder 15 at center_sojusznik1r 
 
-                                        if kazuma_wybrany == 3:
-                                            show majtki zorder 15 at weapon_sojusznik3 
-                                        
-                                        play sound "audio/sfx/steal.mp3"
+                                                if kazuma_wybrany == 2:
+                                                    show imp5 zorder 15 at center_sojusznik2r  
 
-                                        kazuma "Trafiłem jackpota!"
-                                        gargantuar2 "Nie! Oddaj mi moje majtki!"
-                                        kazuma "Uuuoohohoho!"
-                                        "{i}Udało sie ukraść bieliznę Gargantuar 2.  \nGargantuar 2 poddaje sie wzamian za jej zwrócenie.{/i}"
-                                        $ gargantuar2_hp_now = 0
-                                        hide majtki
-                                        hide chwyta
+                                                if kazuma_wybrany == 3:
+                                                    show imp5 zorder 15 at center_sojusznik3r 
+                                                
+                                                hide chwyta
+                                                "{i}Imp przyczepia się do Kazumy{/i}"
+
+                                        else:      
+                                            if gargantuar2_max_attack_now < gargantuar2_max_attack:
+                                                $ gargantuar2_max_attack_now_true = 2
+                                                $ gargantuar2_min_attack_now_true = 0
+                                                $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
+                                                $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
+                                                $ gargantuar2_max_attack_now -= 2
+                                            
+                                            else:
+                                                $ gargantuar2_max_attack_now_true = 2
+                                                $ gargantuar2_min_attack_now_true = 0
+                                                $ gargantuar2_min_attack_now = gargantuar2_min_attack_now_true
+                                                $ gargantuar2_max_attack_now = gargantuar2_max_attack_now_true
+                                            
+                                            $ gargantuar2_weapon -= 1
+
+                                            if kazuma_wybrany == 1:
+                                                show krzyz zorder 15 at weapon_sojusznik1  
+
+                                            if kazuma_wybrany == 2:
+                                                show krzyz zorder 15 at weapon_sojusznik2  
+
+                                            if kazuma_wybrany == 3:
+                                                show krzyz zorder 15 at weapon_sojusznik3 
+                                            
+                                            play sound "audio/sfx/steal.mp3"
+
+                                            "{i}Udało sie ukraść broń Gargantuar 2.  \nStatystyki Gargantuar 2 zostały stale drastycznie osłabione.{/i}"
+                                            hide krzyz
+                                            hide chwyta
                                         
                                     else:
                                         play sound "audio/sfx/stel.mp3"
@@ -16623,6 +17715,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -16651,6 +17751,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -16682,6 +17790,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -16718,6 +17834,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -16746,6 +17870,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -16768,6 +17900,14 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -18737,6 +19877,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -18765,6 +19913,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -18796,6 +19952,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -18832,6 +19996,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -18860,6 +20032,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -18882,6 +20062,14 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -18934,53 +20122,242 @@ label fight151:
         if gargantuar1_stun == 1:
             "{i}Gargantuar 1 jest zestunnowany{/i}"
             jump faza_fight155  
+        
+        if urban_fok1 == 1 and urban_hp_now > 0 and urban_imp == 1 and urban_fighter > 0:
+            $ ado += 1
+        else:
+            if (gargantuar1_imp == 1 and gargantuar1_hp_now > 0 and gargantuar1_special == 0) and ((luszcz_hp_now > 0 and luszcz_imp == 0 and luszcz_fighter > 0) or (urban_hp_now > 0 and urban_imp == 0 and urban_fighter > 0) or (eminem_hp_now > 0 and eminem_imp == 0 and eminem_fighter > 0) or (zyd_hp_now > 0 and zyd_imp == 0 and zyd_fighter > 0) or (kazuma_hp_now > 0 and kazuma_imp == 0 and kazuma_fighter > 0) or (tarczownik_hp_now > 0 and tarczownik_imp == 0 and tarczownik_fighter > 0)):
+                $ kostka = renpy.random.randint(1, 2)
+                if kostka == 1:
+                    $ gargantuar1_imp = 0
+                    show gargantuar1 fight2
+                    gargantuar1 "Yhhheee"
+                    show gargantuar1 fight1
+                    label gargantuar1_losowanie:
+                        $ kostka = renpy.random.randint(1, 6)
+                        if urban_fok1 == 1:
+                            if urban_hp_now > 0 and urban_imp == 0 and urban_fighter > 0:
+                                if urban_obrona >= 1:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Imp został zablokowany{/i}"
 
-        if gargantuar1_uszy >= 1 and urban_hp_now >= 1:
-            if gargantuar1_weapon >= 1:
-                show gargantuar1_weapon zorder 15 at weapon_wrog1  
-            else:
-                show reka6 zorder 15 at weapon_wrog1
-            
-            $ gargantuar1_attack = renpy.random.randint(gargantuar1_min_attack_now, gargantuar1_max_attack_now)
+                                else:
+                                    play sound "audio/sfx/imp.mp3"
+                                    $ urban_imp = 1
+                                    if urban_wybrany == 1:
+                                        show imp3 zorder 15 at center_sojusznik1r 
 
-            if memy == 3:
-                $ kostka = renpy.random.randint(1, 20)
-                if kostka <= 3:
-                    $ gargantuar1_hp_now -= gargantuar1_attack
-                    play sound "audio/sfx/obrona.mp3"
-                    "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                    if urban_wybrany == 2:
+                                        show imp3 zorder 15 at center_sojusznik2r  
+
+                                    if urban_wybrany == 3:
+                                        show imp3 zorder 15 at center_sojusznik3r 
+
+                                    "{i}Imp przyczepia się do Jerzego Urbana{/i}"
+                                    $ urban_fok1 = 0
+                            else:
+                                jump gargantuar1_losowanie
+                        else:
+                            if kostka == 1:
+                                if luszcz_hp_now > 0 and luszcz_imp == 0 and luszcz_fighter > 0:
+                                    if luszcz_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ luszcz_imp = 1
+                                        if luszcz_wybrany == 1:
+                                            show imp1 zorder 15 at center_sojusznik1r 
+
+                                        if luszcz_wybrany == 2:
+                                            show imp1 zorder 15 at center_sojusznik2r  
+
+                                        if luszcz_wybrany == 3:
+                                            show imp1 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Łuszcza{/i}"
+                                else:
+                                    jump gargantuar1_losowanie
+                            
+                            if kostka == 2:
+                                if eminem_hp_now > 0 and eminem_imp == 0 and eminem_fighter > 0:
+                                    if eminem_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ eminem_imp = 1
+                                        if eminem_wybrany == 1:
+                                            show imp2 zorder 15 at center_sojusznik1r 
+
+                                        if eminem_wybrany == 2:
+                                            show imp2 zorder 15 at center_sojusznik2r  
+
+                                        if eminem_wybrany == 3:
+                                            show imp2 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Shadowa{/i}"
+                                else:
+                                    jump gargantuar1_losowanie
+
+                            if kostka == 3:
+                                if urban_hp_now > 0 and urban_imp == 0 and urban_fighter > 0:
+                                    if urban_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ urban_imp = 1
+                                        if urban_wybrany == 1:
+                                            show imp3 zorder 15 at center_sojusznik1r 
+
+                                        if urban_wybrany == 2:
+                                            show imp3 zorder 15 at center_sojusznik2r  
+
+                                        if urban_wybrany == 3:
+                                            show imp3 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Jerzego Urbana{/i}"
+                                else:
+                                    jump gargantuar1_losowanie
+                            
+                            if kostka == 4:
+                                if zyd_hp_now > 0 and zyd_imp == 0 and zyd_fighter > 0:
+                                    if zyd_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ zyd_imp = 1
+                                        if zyd_wybrany == 1:
+                                            show imp4 zorder 15 at center_sojusznik1r 
+
+                                        if zyd_wybrany == 2:
+                                            show imp4 zorder 15 at center_sojusznik2r  
+
+                                        if zyd_wybrany == 3:
+                                            show imp4 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Żyda{/i}"
+                                else:
+                                    jump gargantuar1_losowanie
+                            
+                            if kostka == 5:
+                                if kazuma_hp_now > 0 and kazuma_imp == 0 and kazuma_fighter > 0:
+                                    if kazuma_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ kazuma_imp = 1
+                                        if kazuma_wybrany == 1:
+                                            show imp5 zorder 15 at center_sojusznik1r 
+
+                                        if kazuma_wybrany == 2:
+                                            show imp5 zorder 15 at center_sojusznik2r  
+
+                                        if kazuma_wybrany == 3:
+                                            show imp5 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Kazumy{/i}"
+                                else:
+                                    jump gargantuar1_losowanie
+                            
+                            if kostka == 6:
+                                if tarczownik_hp_now > 0 and tarczownik_imp == 0 and tarczownik_fighter > 0:
+                                    if tarczownik_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ tarczownik_imp = 1
+                                        if tarczownik_wybrany == 1:
+                                            show imp6 zorder 15 at center_sojusznik1r 
+
+                                        if tarczownik_wybrany == 2:
+                                            show imp6 zorder 15 at center_sojusznik2r  
+
+                                        if tarczownik_wybrany == 3:
+                                            show imp6 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Naofumiego{/i}"
+                                else:
+                                    jump gargantuar1_losowanie
+                        
                     jump faza_fight155
 
-            if urban_obrona >= 2:
-                play sound "audio/sfx/obrona.mp3"
-                "{i}Atak Gargantuar 1 został zablokowany{/i}"
-                $ urban_obrona = 1
-
-                jump faza_fight155
-                                                
-            else:
-                play sound "audio/sfx/gargantuar1_weapon.mp3"
-                if urban_obrona == 1:
-                    $ urban_hp_now -= int(gargantuar1_attack / 2)
-
-                    $ dmg = int(gargantuar1_attack / 2)
-                    "{i}Gargantuar 1 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
-
-                    jump faza_fight155
+        if gargantuar2_imp == 0 and gargantuar1_hp_now > 0:
+            $ gargantuar1_imp = 1
+            show gargantuar1 fight
+        
+        if gargantuar1_special == 0 and gargantuar1_weapon == 1:
+            $ gargantuar1_special = 1
+            play sound "audio/sfx/ladow.mp3"
+            "{i}Gargantuar 1 szykuje się do ataku{/b}"
+            label gargantuar1_losuje:
+                $ kostka = renpy.random.randint(1, 6)
+                if urban_fok1 == 1 and urban_wybrany > 0 and urban_hp_now > 0:
+                    $ urban_fok1 = 1
+                    "{i}Jego wzrok skupiony jest na Jerzym Urbanie...{/i}"
                 else:
-                    $ urban_hp_now -= gargantuar1_attack
+                    if kostka == 1 and luszcz_wybrany > 0 and luszcz_hp_now > 0:
+                        $ luszcz_fok1 = 1
+                        "{i}Jego wzrok skupiony jest na Łuszczu...{/i}"
+                    else:
+                        if kostka == 2 and eminem_wybrany > 0 and eminem_hp_now > 0:
+                            $ eminem_fok1 = 1
+                            "{i}Jego wzrok skupiony jest na Shadowie...{/i}"
+                        else:
+                            if kostka == 3 and urban_wybrany > 0 and urban_hp_now > 0:
+                                $ urban_fok1 = 1
+                                "{i}Jego wzrok skupiony jest na Jerzym Urbanie...{/i}"
+                            else:
+                                if kostka == 4 and zyd_wybrany > 0 and zyd_hp_now > 0:
+                                    $ zyd_fok1 = 1
+                                    "{i}Jego wzrok skupiony jest na Żydzie...{/i}"
+                                else:
+                                    if kostka == 5 and kazuma_wybrany > 0 and kazuma_hp_now > 0:
+                                        $ kazuma_fok1 = 1
+                                        "{i}Jego wzrok skupiony jest na Kazumie...{/i}"
+                                    else:
+                                        if kostka == 6 and tarczownik_wybrany > 0 and tarczownik_hp_now > 0:
+                                            $ tarczownik_fok1 = 1
+                                            "{i}Jego wzrok skupiony jest na Naofumim...{/i}"
+                                        else:
+                                            jump gargantuar1_losuje
+            jump faza_fight155
 
-                    "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Jerzemu Urbanowi{/i}"
-
-                    jump faza_fight155
+        if gargantuar1_special == 0 and gargantuar1_weapon == 0:
+            if gargantuar1_uszy == 0:
+                $ gargantuar1_special = 1
+                $ luszcz_fok1 = 1
+                $ urban_fok1 = 1
+                $ zyd_fok1 = 1
+                $ kazuma_fok1 = 1
+                $ tarczownik_fok1 = 1
+            else:
+                $ gargantuar1_special = 1
+                $ urban_fok1 = 1
 
         label losowanko_fight154:   
             if gargantuar1_weapon >= 1:
-                show gargantuar1_weapon zorder 15 at weapon_wrog1  
+                if gargantuar1_imp == 1:
+                    show gargantuar1 fight3               
+                else:
+                    show gargantuar1 fight4
             else:
-                show reka6 zorder 15 at weapon_wrog1    
+                if gargantuar1_imp == 1:
+                    show gargantuar1 fight              
+                else:
+                    show gargantuar1 fight1  
             $ kostka = renpy.random.randint(1, 6)
-            if kostka == 1:
+            if kostka == 1 and luszcz_fok1 == 1:
                 if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
                     if luszcz_hp_now <= 3:
                         $ kostka = renpy.random.randint(1, 5)
@@ -18993,6 +20370,17 @@ label fight151:
                                     $ gargantuar1_hp_now -= gargantuar1_attack
                                     play sound "audio/sfx/obrona.mp3"
                                     "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                    $ gargantuar1_special = 0
+                                    $ luszcz_fok1 = 0
+                                    $ urban_fok1 = 0
+                                    $ zyd_fok1 = 0
+                                    $ kazuma_fok1 = 0
+                                    $ tarczownik_fok1 = 0
+                                    if gargantuar1_weapon >= 1:
+                                        if gargantuar1_imp == 1:
+                                            show gargantuar1 fight             
+                                        else:
+                                            show gargantuar1 fight1
                                     jump faza_fight155
 
                             if luszcz_obrona >= 2:
@@ -19017,6 +20405,17 @@ label fight151:
 
                                     "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Łuszczowi{/i}"
 
+                            $ gargantuar1_special = 0
+                            $ luszcz_fok1 = 0
+                            $ urban_fok1 = 0
+                            $ zyd_fok1 = 0
+                            $ kazuma_fok1 = 0
+                            $ tarczownik_fok1 = 0
+                            if gargantuar1_weapon >= 1:
+                                if gargantuar1_imp == 1:
+                                    show gargantuar1 fight             
+                                else:
+                                    show gargantuar1 fight1
                             jump faza_fight155
                         else:
                             jump losowanko_fight154
@@ -19033,6 +20432,17 @@ label fight151:
                                         $ gargantuar1_hp_now -= gargantuar1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                        $ gargantuar1_special = 0
+                                        $ luszcz_fok1 = 0
+                                        $ urban_fok1 = 0
+                                        $ zyd_fok1 = 0
+                                        $ kazuma_fok1 = 0
+                                        $ tarczownik_fok1 = 0
+                                        if gargantuar1_weapon >= 1:
+                                            if gargantuar1_imp == 1:
+                                                show gargantuar1 fight             
+                                            else:
+                                                show gargantuar1 fight1
                                         jump faza_fight155
 
                                 if luszcz_obrona >= 2:
@@ -19056,7 +20466,18 @@ label fight151:
                                         $ luszcz_hp_now -= gargantuar1_attack
 
                                         "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Łuszczowi{/i}"
-
+                                
+                                $ gargantuar1_special = 0
+                                $ luszcz_fok1 = 0
+                                $ urban_fok1 = 0
+                                $ zyd_fok1 = 0
+                                $ kazuma_fok1 = 0
+                                $ tarczownik_fok1 = 0
+                                if gargantuar1_weapon >= 1:
+                                    if gargantuar1_imp == 1:
+                                        show gargantuar1 fight             
+                                    else:
+                                        show gargantuar1 fight1
                                 jump faza_fight155
                             else:
                                 jump losowanko_fight154
@@ -19072,6 +20493,17 @@ label fight151:
                                         $ gargantuar1_hp_now -= gargantuar1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                        $ gargantuar1_special = 0
+                                        $ luszcz_fok1 = 0
+                                        $ urban_fok1 = 0
+                                        $ zyd_fok1 = 0
+                                        $ kazuma_fok1 = 0
+                                        $ tarczownik_fok1 = 0
+                                        if gargantuar1_weapon >= 1:
+                                            if gargantuar1_imp == 1:
+                                                show gargantuar1 fight             
+                                            else:
+                                                show gargantuar1 fight1
                                         jump faza_fight155
                             
                                 if luszcz_obrona >= 2:
@@ -19095,6 +20527,18 @@ label fight151:
                                         $ luszcz_hp_now -= gargantuar1_attack
 
                                         "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Łuszczowi{/i}"
+                                
+                                $ gargantuar1_special = 0
+                                $ luszcz_fok1 = 0
+                                $ urban_fok1 = 0
+                                $ zyd_fok1 = 0
+                                $ kazuma_fok1 = 0
+                                $ tarczownik_fok1 = 0
+                                if gargantuar1_weapon >= 1:
+                                    if gargantuar1_imp == 1:
+                                        show gargantuar1 fight             
+                                    else:
+                                        show gargantuar1 fight1
 
                                 jump faza_fight155
                             else:
@@ -19103,7 +20547,7 @@ label fight151:
                 else:
                     jump losowanko_fight154
             else:
-                if kostka == 2:
+                if kostka == 2 and urban_fok1 == 1:
                     if urban_hp_now >= 1 and urban_wybrany >= 1:
                         if urban_hp_now <= 3:
                             $ kostka = renpy.random.randint(1, 5)
@@ -19116,6 +20560,17 @@ label fight151:
                                         $ gargantuar1_hp_now -= gargantuar1_attack
                                         play sound "audio/sfx/obrona.mp3"
                                         "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                        $ gargantuar1_special = 0
+                                        $ luszcz_fok1 = 0
+                                        $ urban_fok1 = 0
+                                        $ zyd_fok1 = 0
+                                        $ kazuma_fok1 = 0
+                                        $ tarczownik_fok1 = 0
+                                        if gargantuar1_weapon >= 1:
+                                            if gargantuar1_imp == 1:
+                                                show gargantuar1 fight             
+                                            else:
+                                                show gargantuar1 fight1
                                         jump faza_fight155
 
                                 if urban_obrona >= 2:
@@ -19139,6 +20594,18 @@ label fight151:
                                         $ urban_hp_now -= gargantuar1_attack
 
                                         "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                
+                                $ gargantuar1_special = 0
+                                $ luszcz_fok1 = 0
+                                $ urban_fok1 = 0
+                                $ zyd_fok1 = 0
+                                $ kazuma_fok1 = 0
+                                $ tarczownik_fok1 = 0
+                                if gargantuar1_weapon >= 1:
+                                    if gargantuar1_imp == 1:
+                                        show gargantuar1 fight             
+                                    else:
+                                        show gargantuar1 fight1
 
                                 jump faza_fight155
                             else:
@@ -19156,6 +20623,17 @@ label fight151:
                                             $ gargantuar1_hp_now -= gargantuar1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                            $ gargantuar1_special = 0
+                                            $ luszcz_fok1 = 0
+                                            $ urban_fok1 = 0
+                                            $ zyd_fok1 = 0
+                                            $ kazuma_fok1 = 0
+                                            $ tarczownik_fok1 = 0
+                                            if gargantuar1_weapon >= 1:
+                                                if gargantuar1_imp == 1:
+                                                    show gargantuar1 fight             
+                                                else:
+                                                    show gargantuar1 fight1
                                             jump faza_fight155
 
                                     if urban_obrona >= 2:
@@ -19179,6 +20657,18 @@ label fight151:
                                             $ urban_hp_now -= gargantuar1_attack
 
                                             "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                    
+                                    $ gargantuar1_special = 0
+                                    $ luszcz_fok1 = 0
+                                    $ urban_fok1 = 0
+                                    $ zyd_fok1 = 0
+                                    $ kazuma_fok1 = 0
+                                    $ tarczownik_fok1 = 0
+                                    if gargantuar1_weapon >= 1:
+                                        if gargantuar1_imp == 1:
+                                            show gargantuar1 fight             
+                                        else:
+                                            show gargantuar1 fight1
 
                                     jump faza_fight155
                                 else:
@@ -19195,6 +20685,17 @@ label fight151:
                                             $ gargantuar1_hp_now -= gargantuar1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                            $ gargantuar1_special = 0
+                                            $ luszcz_fok1 = 0
+                                            $ urban_fok1 = 0
+                                            $ zyd_fok1 = 0
+                                            $ kazuma_fok1 = 0
+                                            $ tarczownik_fok1 = 0
+                                            if gargantuar1_weapon >= 1:
+                                                if gargantuar1_imp == 1:
+                                                    show gargantuar1 fight             
+                                                else:
+                                                    show gargantuar1 fight1
                                             jump faza_fight155
 
                                     if urban_obrona >= 2:
@@ -19218,6 +20719,18 @@ label fight151:
                                             $ urban_hp_now -= gargantuar1_attack
 
                                             "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                    
+                                    $ gargantuar1_special = 0
+                                    $ luszcz_fok1 = 0
+                                    $ urban_fok1 = 0
+                                    $ zyd_fok1 = 0
+                                    $ kazuma_fok1 = 0
+                                    $ tarczownik_fok1 = 0
+                                    if gargantuar1_weapon >= 1:
+                                        if gargantuar1_imp == 1:
+                                            show gargantuar1 fight             
+                                        else:
+                                            show gargantuar1 fight1
 
                                     jump faza_fight155
                                 else:
@@ -19226,7 +20739,7 @@ label fight151:
                     else:
                         jump losowanko_fight154
                 else:
-                    if kostka == 3:
+                    if kostka == 3 and zyd_fok1 == 1:
                         if zyd_hp_now >= 1 and zyd_wybrany >= 1:
                             if zyd_hp_now <= 3:
                                 $ kostka = renpy.random.randint(1, 5)
@@ -19239,6 +20752,17 @@ label fight151:
                                             $ gargantuar1_hp_now -= gargantuar1_attack
                                             play sound "audio/sfx/obrona.mp3"
                                             "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                            $ gargantuar1_special = 0
+                                            $ luszcz_fok1 = 0
+                                            $ urban_fok1 = 0
+                                            $ zyd_fok1 = 0
+                                            $ kazuma_fok1 = 0
+                                            $ tarczownik_fok1 = 0
+                                            if gargantuar1_weapon >= 1:
+                                                if gargantuar1_imp == 1:
+                                                    show gargantuar1 fight             
+                                                else:
+                                                    show gargantuar1 fight1
                                             jump faza_fight155
 
                                     if zyd_obrona >= 2:
@@ -19262,6 +20786,18 @@ label fight151:
                                             $ zyd_hp_now -= gargantuar1_attack
 
                                             "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Żydowi{/i}"
+                                    
+                                    $ gargantuar1_special = 0
+                                    $ luszcz_fok1 = 0
+                                    $ urban_fok1 = 0
+                                    $ zyd_fok1 = 0
+                                    $ kazuma_fok1 = 0
+                                    $ tarczownik_fok1 = 0
+                                    if gargantuar1_weapon >= 1:
+                                        if gargantuar1_imp == 1:
+                                            show gargantuar1 fight             
+                                        else:
+                                            show gargantuar1 fight1
 
                                     jump faza_fight155
                                 else:
@@ -19279,6 +20815,17 @@ label fight151:
                                                 $ gargantuar1_hp_now -= gargantuar1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                $ gargantuar1_special = 0
+                                                $ luszcz_fok1 = 0
+                                                $ urban_fok1 = 0
+                                                $ zyd_fok1 = 0
+                                                $ kazuma_fok1 = 0
+                                                $ tarczownik_fok1 = 0
+                                                if gargantuar1_weapon >= 1:
+                                                    if gargantuar1_imp == 1:
+                                                        show gargantuar1 fight             
+                                                    else:
+                                                        show gargantuar1 fight1
                                                 jump faza_fight155
 
                                         if zyd_obrona >= 2:
@@ -19302,6 +20849,18 @@ label fight151:
                                                 $ zyd_hp_now -= gargantuar1_attack
 
                                                 "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Żydowi{/i}"
+                                        
+                                        $ gargantuar1_special = 0
+                                        $ luszcz_fok1 = 0
+                                        $ urban_fok1 = 0
+                                        $ zyd_fok1 = 0
+                                        $ kazuma_fok1 = 0
+                                        $ tarczownik_fok1 = 0
+                                        if gargantuar1_weapon >= 1:
+                                            if gargantuar1_imp == 1:
+                                                show gargantuar1 fight             
+                                            else:
+                                                show gargantuar1 fight1
 
                                         jump faza_fight155
                                     else:
@@ -19318,6 +20877,17 @@ label fight151:
                                                 $ gargantuar1_hp_now -= gargantuar1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                $ gargantuar1_special = 0
+                                                $ luszcz_fok1 = 0
+                                                $ urban_fok1 = 0
+                                                $ zyd_fok1 = 0
+                                                $ kazuma_fok1 = 0
+                                                $ tarczownik_fok1 = 0
+                                                if gargantuar1_weapon >= 1:
+                                                    if gargantuar1_imp == 1:
+                                                        show gargantuar1 fight             
+                                                    else:
+                                                        show gargantuar1 fight1
                                                 jump faza_fight155
                                         
                                         if zyd_obrona >= 2:
@@ -19341,6 +20911,18 @@ label fight151:
                                                 $ zyd_hp_now -= gargantuar1_attack
 
                                                 "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Żydowi{/i}"
+                                        
+                                        $ gargantuar1_special = 0
+                                        $ luszcz_fok1 = 0
+                                        $ urban_fok1 = 0
+                                        $ zyd_fok1 = 0
+                                        $ kazuma_fok1 = 0
+                                        $ tarczownik_fok1 = 0
+                                        if gargantuar1_weapon >= 1:
+                                            if gargantuar1_imp == 1:
+                                                show gargantuar1 fight             
+                                            else:
+                                                show gargantuar1 fight1
 
                                         jump faza_fight155
                                     else:
@@ -19349,7 +20931,7 @@ label fight151:
                         else:
                             jump losowanko_fight154
                     else:
-                        if kostka == 4:
+                        if kostka == 4 and kazuma_fok1 == 1:
                             if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
                                 if kazuma_hp_now <= 3:
                                     $ kostka = renpy.random.randint(1, 5)
@@ -19362,6 +20944,17 @@ label fight151:
                                                 $ gargantuar1_hp_now -= gargantuar1_attack
                                                 play sound "audio/sfx/obrona.mp3"
                                                 "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                $ gargantuar1_special = 0
+                                                $ luszcz_fok1 = 0
+                                                $ urban_fok1 = 0
+                                                $ zyd_fok1 = 0
+                                                $ kazuma_fok1 = 0
+                                                $ tarczownik_fok1 = 0
+                                                if gargantuar1_weapon >= 1:
+                                                    if gargantuar1_imp == 1:
+                                                        show gargantuar1 fight             
+                                                    else:
+                                                        show gargantuar1 fight1
                                                 jump faza_fight155
 
                                         if kazuma_obrona >= 2:
@@ -19385,6 +20978,18 @@ label fight151:
                                                 $ kazuma_hp_now -= gargantuar1_attack
 
                                                 "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Kazumie{/i}"
+                                        
+                                        $ gargantuar1_special = 0
+                                        $ luszcz_fok1 = 0
+                                        $ urban_fok1 = 0
+                                        $ zyd_fok1 = 0
+                                        $ kazuma_fok1 = 0
+                                        $ tarczownik_fok1 = 0
+                                        if gargantuar1_weapon >= 1:
+                                            if gargantuar1_imp == 1:
+                                                show gargantuar1 fight             
+                                            else:
+                                                show gargantuar1 fight1
 
                                         jump faza_fight155
                                     else:
@@ -19402,6 +21007,17 @@ label fight151:
                                                     $ gargantuar1_hp_now -= gargantuar1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                    $ gargantuar1_special = 0
+                                                    $ luszcz_fok1 = 0
+                                                    $ urban_fok1 = 0
+                                                    $ zyd_fok1 = 0
+                                                    $ kazuma_fok1 = 0
+                                                    $ tarczownik_fok1 = 0
+                                                    if gargantuar1_weapon >= 1:
+                                                        if gargantuar1_imp == 1:
+                                                            show gargantuar1 fight             
+                                                        else:
+                                                            show gargantuar1 fight1
                                                     jump faza_fight155
 
                                             if kazuma_obrona >= 2:
@@ -19425,6 +21041,18 @@ label fight151:
                                                     $ kazuma_hp_now -= gargantuar1_attack
 
                                                     "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Kazumie{/i}"
+                                            
+                                            $ gargantuar1_special = 0
+                                            $ luszcz_fok1 = 0
+                                            $ urban_fok1 = 0
+                                            $ zyd_fok1 = 0
+                                            $ kazuma_fok1 = 0
+                                            $ tarczownik_fok1 = 0
+                                            if gargantuar1_weapon >= 1:
+                                                if gargantuar1_imp == 1:
+                                                    show gargantuar1 fight             
+                                                else:
+                                                    show gargantuar1 fight1
 
                                             jump faza_fight155
                                         else:
@@ -19441,6 +21069,17 @@ label fight151:
                                                     $ gargantuar1_hp_now -= gargantuar1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                    $ gargantuar1_special = 0
+                                                    $ luszcz_fok1 = 0
+                                                    $ urban_fok1 = 0
+                                                    $ zyd_fok1 = 0
+                                                    $ kazuma_fok1 = 0
+                                                    $ tarczownik_fok1 = 0
+                                                    if gargantuar1_weapon >= 1:
+                                                        if gargantuar1_imp == 1:
+                                                            show gargantuar1 fight             
+                                                        else:
+                                                            show gargantuar1 fight1
                                                     jump faza_fight155
 
                                             if kazuma_obrona >= 2:
@@ -19464,6 +21103,18 @@ label fight151:
                                                     $ kazuma_hp_now -= gargantuar1_attack
 
                                                     "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Kazumie{/i}"
+                                            
+                                            $ gargantuar1_special = 0
+                                            $ luszcz_fok1 = 0
+                                            $ urban_fok1 = 0
+                                            $ zyd_fok1 = 0
+                                            $ kazuma_fok1 = 0
+                                            $ tarczownik_fok1 = 0
+                                            if gargantuar1_weapon >= 1:
+                                                if gargantuar1_imp == 1:
+                                                    show gargantuar1 fight             
+                                                else:
+                                                    show gargantuar1 fight1
 
                                             jump faza_fight155
                                         else:
@@ -19472,7 +21123,7 @@ label fight151:
                             else:
                                 jump losowanko_fight154
                         else:
-                            if kostka == 5:
+                            if kostka == 5 and eminem_fok1 == 1:
                                 if eminem_hp_now >= 1 and eminem_wybrany >= 1:
                                     if eminem_hp_now <= 3:
                                         $ kostka = renpy.random.randint(1, 5)
@@ -19485,6 +21136,17 @@ label fight151:
                                                     $ gargantuar1_hp_now -= gargantuar1_attack
                                                     play sound "audio/sfx/obrona.mp3"
                                                     "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                    $ gargantuar1_special = 0
+                                                    $ luszcz_fok1 = 0
+                                                    $ urban_fok1 = 0
+                                                    $ zyd_fok1 = 0
+                                                    $ kazuma_fok1 = 0
+                                                    $ tarczownik_fok1 = 0
+                                                    if gargantuar1_weapon >= 1:
+                                                        if gargantuar1_imp == 1:
+                                                            show gargantuar1 fight             
+                                                        else:
+                                                            show gargantuar1 fight1
                                                     jump faza_fight155
 
                                             if eminem_obrona >= 2:
@@ -19508,6 +21170,18 @@ label fight151:
                                                     $ eminem_hp_now -= gargantuar1_attack
 
                                                     "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Shadowowi{/i}"
+                                            
+                                            $ gargantuar1_special = 0
+                                            $ luszcz_fok1 = 0
+                                            $ urban_fok1 = 0
+                                            $ zyd_fok1 = 0
+                                            $ kazuma_fok1 = 0
+                                            $ tarczownik_fok1 = 0
+                                            if gargantuar1_weapon >= 1:
+                                                if gargantuar1_imp == 1:
+                                                    show gargantuar1 fight             
+                                                else:
+                                                    show gargantuar1 fight1
 
                                             jump faza_fight155
                                         else:
@@ -19525,6 +21199,17 @@ label fight151:
                                                         $ gargantuar1_hp_now -= gargantuar1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                        $ gargantuar1_special = 0
+                                                        $ luszcz_fok1 = 0
+                                                        $ urban_fok1 = 0
+                                                        $ zyd_fok1 = 0
+                                                        $ kazuma_fok1 = 0
+                                                        $ tarczownik_fok1 = 0
+                                                        if gargantuar1_weapon >= 1:
+                                                            if gargantuar1_imp == 1:
+                                                                show gargantuar1 fight             
+                                                            else:
+                                                                show gargantuar1 fight1
                                                         jump faza_fight155
 
                                                 if eminem_obrona >= 2:
@@ -19548,6 +21233,18 @@ label fight151:
                                                         $ eminem_hp_now -= gargantuar1_attack
 
                                                         "{i} [gargantuar1_attack] obrażeń Shadowowi{/i}"
+                                                
+                                                $ gargantuar1_special = 0
+                                                $ luszcz_fok1 = 0
+                                                $ urban_fok1 = 0
+                                                $ zyd_fok1 = 0
+                                                $ kazuma_fok1 = 0
+                                                $ tarczownik_fok1 = 0
+                                                if gargantuar1_weapon >= 1:
+                                                    if gargantuar1_imp == 1:
+                                                        show gargantuar1 fight             
+                                                    else:
+                                                        show gargantuar1 fight1
 
                                                 jump faza_fight155
                                             else:
@@ -19564,6 +21261,17 @@ label fight151:
                                                         $ gargantuar1_hp_now -= gargantuar1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                        $ gargantuar1_special = 0
+                                                        $ luszcz_fok1 = 0
+                                                        $ urban_fok1 = 0
+                                                        $ zyd_fok1 = 0
+                                                        $ kazuma_fok1 = 0
+                                                        $ tarczownik_fok1 = 0
+                                                        if gargantuar1_weapon >= 1:
+                                                            if gargantuar1_imp == 1:
+                                                                show gargantuar1 fight             
+                                                            else:
+                                                                show gargantuar1 fight1
                                                         jump faza_fight155
 
                                                 if eminem_obrona >= 2:
@@ -19587,6 +21295,18 @@ label fight151:
                                                         $ eminem_hp_now -= gargantuar1_attack
 
                                                         "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Shadowowi{/i}"
+                                                
+                                                $ gargantuar1_special = 0
+                                                $ luszcz_fok1 = 0
+                                                $ urban_fok1 = 0
+                                                $ zyd_fok1 = 0
+                                                $ kazuma_fok1 = 0
+                                                $ tarczownik_fok1 = 0
+                                                if gargantuar1_weapon >= 1:
+                                                    if gargantuar1_imp == 1:
+                                                        show gargantuar1 fight             
+                                                    else:
+                                                        show gargantuar1 fight1
 
                                                 jump faza_fight155
                                             else:
@@ -19595,7 +21315,7 @@ label fight151:
                                 else:
                                     jump losowanko_fight154
                             else:
-                                if kostka == 6:
+                                if kostka == 6 and tarczownik_fok1 == 1:
                                     if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
                                         if tarczownik_hp_now <= 3:
                                             $ kostka = renpy.random.randint(1, 5)
@@ -19608,6 +21328,17 @@ label fight151:
                                                         $ gargantuar1_hp_now -= gargantuar1_attack
                                                         play sound "audio/sfx/obrona.mp3"
                                                         "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                        $ gargantuar1_special = 0
+                                                        $ luszcz_fok1 = 0
+                                                        $ urban_fok1 = 0
+                                                        $ zyd_fok1 = 0
+                                                        $ kazuma_fok1 = 0
+                                                        $ tarczownik_fok1 = 0
+                                                        if gargantuar1_weapon >= 1:
+                                                            if gargantuar1_imp == 1:
+                                                                show gargantuar1 fight             
+                                                            else:
+                                                                show gargantuar1 fight1
                                                         jump faza_fight155
 
                                                 if tarczownik_obrona >= 2:
@@ -19631,6 +21362,18 @@ label fight151:
                                                         $ tarczownik_hp_now -= gargantuar1_attack
 
                                                         "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Naofumiemu{/i}"
+                                                
+                                                $ gargantuar1_special = 0
+                                                $ luszcz_fok1 = 0
+                                                $ urban_fok1 = 0
+                                                $ zyd_fok1 = 0
+                                                $ kazuma_fok1 = 0
+                                                $ tarczownik_fok1 = 0
+                                                if gargantuar1_weapon >= 1:
+                                                    if gargantuar1_imp == 1:
+                                                        show gargantuar1 fight             
+                                                    else:
+                                                        show gargantuar1 fight1
 
                                                 jump faza_fight155
                                             else:
@@ -19648,6 +21391,17 @@ label fight151:
                                                             $ gargantuar1_hp_now -= gargantuar1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                            $ gargantuar1_special = 0
+                                                            $ luszcz_fok1 = 0
+                                                            $ urban_fok1 = 0
+                                                            $ zyd_fok1 = 0
+                                                            $ kazuma_fok1 = 0
+                                                            $ tarczownik_fok1 = 0
+                                                            if gargantuar1_weapon >= 1:
+                                                                if gargantuar1_imp == 1:
+                                                                    show gargantuar1 fight             
+                                                                else:
+                                                                    show gargantuar1 fight1
                                                             jump faza_fight155
 
                                                     if tarczownik_obrona >= 2:
@@ -19671,6 +21425,18 @@ label fight151:
                                                             $ tarczownik_hp_now -= gargantuar1_attack
 
                                                             "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Naofumiemu{/i}"
+
+                                                    $ gargantuar1_special = 0
+                                                    $ luszcz_fok1 = 0
+                                                    $ urban_fok1 = 0
+                                                    $ zyd_fok1 = 0
+                                                    $ kazuma_fok1 = 0
+                                                    $ tarczownik_fok1 = 0
+                                                    if gargantuar1_weapon >= 1:
+                                                        if gargantuar1_imp == 1:
+                                                            show gargantuar1 fight             
+                                                        else:
+                                                            show gargantuar1 fight1
 
                                                     jump faza_fight155
                                                 else:
@@ -19687,6 +21453,17 @@ label fight151:
                                                             $ gargantuar1_hp_now -= gargantuar1_attack
                                                             play sound "audio/sfx/obrona.mp3"
                                                             "{i}Atak Gargantuar 1 odbił się od Szalika z Memów i zadał [gargantuar1_attack] obrażeń nadawcy{/i}"
+                                                            $ gargantuar1_special = 0
+                                                            $ luszcz_fok1 = 0
+                                                            $ urban_fok1 = 0
+                                                            $ zyd_fok1 = 0
+                                                            $ kazuma_fok1 = 0
+                                                            $ tarczownik_fok1 = 0
+                                                            if gargantuar1_weapon >= 1:
+                                                                if gargantuar1_imp == 1:
+                                                                    show gargantuar1 fight             
+                                                                else:
+                                                                    show gargantuar1 fight1
                                                             jump faza_fight155
 
                                                     if tarczownik_obrona >= 2:
@@ -19710,6 +21487,18 @@ label fight151:
                                                             $ tarczownik_hp_now -= gargantuar1_attack
 
                                                             "{i}Gargantuar 1 zadaje [gargantuar1_attack] obrażeń Naofumiemu{/i}"
+                                                    
+                                                    $ gargantuar1_special = 0
+                                                    $ luszcz_fok1 = 0
+                                                    $ urban_fok1 = 0
+                                                    $ zyd_fok1 = 0
+                                                    $ kazuma_fok1 = 0
+                                                    $ tarczownik_fok1 = 0
+                                                    if gargantuar1_weapon >= 1:
+                                                        if gargantuar1_imp == 1:
+                                                            show gargantuar1 fight             
+                                                        else:
+                                                            show gargantuar1 fight1
 
                                                     jump faza_fight155
                                                 else:
@@ -19843,6 +21632,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -19871,6 +21668,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -19902,6 +21707,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -19938,6 +21751,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -19966,6 +21787,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -19988,6 +21817,14 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -20968,6 +22805,14 @@ label fight151:
             $ luszcz_obrona = 0
             $ luszcz_wybrany = 0
             $ luszcz_weapon = 0
+            hide imp1
+            $ luszcz_imp = 0
+            if luszcz_fok2 == 1:
+                $ luszcz_fok2 = 0
+                $ gargantuar2_special = 0
+            if luszcz_fok1 == 1:
+                $ luszcz_fok1 = 0
+                $ gargantuar1_special = 0
         
         if eminem_zloty_czlowiek == 1 and eminem_hp_now <= 0:
             hide eminem_zloty
@@ -20996,6 +22841,14 @@ label fight151:
             $ eminem_obrona = 0
             $ eminem_wybrany = 0
             $ eminem_weapon = 0
+            hide imp2
+            $ eminem_imp = 0
+            if eminem_fok2 == 1:
+                $ eminem_fok2 = 0
+                $ gargantuar2_special = 0
+            if eminem_fok1 == 1:
+                $ eminem_fok1 = 0
+                $ gargantuar1_special = 0
         
         if urban_zloty_czlowiek == 1 and urban_hp_now <= 0:
             hide urban_zloty
@@ -21027,6 +22880,14 @@ label fight151:
             $ urban_obrona = 0
             $ urban_wybrany = 0
             $ urban_weapon = 0
+            hide imp3
+            $ urban_imp = 0
+            if urban_fok2 == 1:
+                $ urban_fok2 = 0
+                $ gargantuar2_special = 0
+            if urban_fok1 == 1:
+                $ urban_fok1 = 0
+                $ gargantuar1_special = 0
         
         if zyd_zloty_czlowiek == 1 and zyd_hp_now <= 0:
             hide zyd_zloty
@@ -21063,6 +22924,14 @@ label fight151:
             $ zyd_obrona = 0
             $ zyd_wybrany = 0
             $ zyd_weapon = 0
+            hide imp4
+            $ zyd_imp = 0
+            if zyd_fok2 == 1:
+                $ zyd_fok2 = 0
+                $ gargantuar2_special = 0
+            if zyd_fok1 == 1:
+                $ zyd_fok1 = 0
+                $ gargantuar1_special = 0
         
         if kazuma_zloty_czlowiek == 1 and kazuma_hp_now <= 0:
             hide kazuma_zloty
@@ -21091,6 +22960,14 @@ label fight151:
             $ kazuma_obrona = 0
             $ kazuma_wybrany = 0
             $ kazuma_weapon = 0
+            hide imp5
+            $ kazuma_imp = 0
+            if kazuma_fok2 == 1:
+                $ kazuma_fok2 = 0
+                $ gargantuar2_special = 0
+            if kazuma_fok1 == 1:
+                $ kazuma_fok1 = 0
+                $ gargantuar1_special = 0
         
         if tarczownik_zloty_czlowiek == 1 and tarczownik_hp_now <= 0:
             hide tarczownik_zloty
@@ -21113,6 +22990,15 @@ label fight151:
             hide tarczownik_ziemia
             hide tarczownik_nogi
             hide tarczownik_zloty
+            hide imp6
+            $ tarczownik_imp = 0
+            if tarczownik_fok2 == 1:
+                $ tarczownik_fok2 = 0
+                $ gargantuar2_special = 0
+            if tarczownik_fok1 == 1:
+                $ tarczownik_fok1 = 0
+                $ gargantuar1_special = 0
+
 
             if tarczownik_air_strike_shield >= 1:
                 if luszcz_obrona - 1 >= 0:
@@ -21152,130 +23038,1389 @@ label fight151:
             "{i}Gargantuar 2 jest zestunnowany{/i}"
             jump start_fight151  
 
-        if (gargantuar2_imp == 1 and gargantuar2_hp_now > 0) and ((luszcz_hp_now > 0 and luszcz_imp == 0) or (urban_hp_now > 0 and urban_imp == 0) or (eminem_hp_now > 0 and eminem_imp == 0) or (zyd_hp_now > 0 and zyd_imp == 0) or (kazuma_hp_now > 0 and kazuma_imp == 0) or (tarczownik_hp_now > 0 and tarczownik_imp == 0)):
-            $ kostka = renpy.random.randint(1, 5)
-            if kostka <= 2:
-                show gargantuar2 fight2
+        if urban_fok2 == 1 and urban_hp_now > 0 and urban_imp == 1 and urban_fighter > 0:
+            $ ado += 1
+        else:
+            if (gargantuar2_imp == 1 and gargantuar2_hp_now > 0 and gargantuar2_special == 0) and ((luszcz_hp_now > 0 and luszcz_imp == 0 and luszcz_fighter > 0) or (urban_hp_now > 0 and urban_imp == 0 and urban_fighter > 0) or (eminem_hp_now > 0 and eminem_imp == 0 and eminem_fighter > 0) or (zyd_hp_now > 0 and zyd_imp == 0 and zyd_fighter > 0) or (kazuma_hp_now > 0 and kazuma_imp == 0 and kazuma_fighter > 0) or (tarczownik_hp_now > 0 and tarczownik_imp == 0 and tarczownik_fighter > 0)):
+                $ kostka = renpy.random.randint(1, 2)
+                if kostka == 1:
+                    $ gargantuar2_imp = 0
+                    show gargantuar2 fight2
+                    gargantuar2 "Yhhheee"
+                    show gargantuar2 fight1
+                    label gargantuar2_losowanie:
+                        $ kostka = renpy.random.randint(1, 6)
+                        if urban_fok2 == 1:
+                            if urban_hp_now > 0 and urban_imp == 0 and urban_fighter > 0:
+                                if urban_obrona >= 1:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Imp został zablokowany{/i}"
 
+                                else:
+                                    play sound "audio/sfx/imp.mp3"
+                                    $ urban_imp = 1
+                                    if urban_wybrany == 1:
+                                        show imp3 zorder 15 at center_sojusznik1r 
+
+                                    if urban_wybrany == 2:
+                                        show imp3 zorder 15 at center_sojusznik2r  
+
+                                    if urban_wybrany == 3:
+                                        show imp3 zorder 15 at center_sojusznik3r 
+
+                                    "{i}Imp przyczepia się do Jerzego Urbana{/i}"
+                                    $ urban_fok2 = 0
+                            else:
+                                jump gargantuar2_losowanie
+                        else:
+                            if kostka == 1:
+                                if luszcz_hp_now > 0 and luszcz_imp == 0 and luszcz_fighter > 0:
+                                    if luszcz_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ luszcz_imp = 1
+                                        if luszcz_wybrany == 1:
+                                            show imp1 zorder 15 at center_sojusznik1r 
+
+                                        if luszcz_wybrany == 2:
+                                            show imp1 zorder 15 at center_sojusznik2r  
+
+                                        if luszcz_wybrany == 3:
+                                            show imp1 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Łuszcza{/i}"
+                                else:
+                                    jump gargantuar2_losowanie
+                            
+                            if kostka == 2:
+                                if eminem_hp_now > 0 and eminem_imp == 0 and eminem_fighter > 0:
+                                    if eminem_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ eminem_imp = 1
+                                        if eminem_wybrany == 1:
+                                            show imp2 zorder 15 at center_sojusznik1r 
+
+                                        if eminem_wybrany == 2:
+                                            show imp2 zorder 15 at center_sojusznik2r  
+
+                                        if eminem_wybrany == 3:
+                                            show imp2 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Shadowa{/i}"
+                                else:
+                                    jump gargantuar2_losowanie
+
+                            if kostka == 3:
+                                if urban_hp_now > 0 and urban_imp == 0 and urban_fighter > 0:
+                                    if urban_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ urban_imp = 1
+                                        if urban_wybrany == 1:
+                                            show imp3 zorder 15 at center_sojusznik1r 
+
+                                        if urban_wybrany == 2:
+                                            show imp3 zorder 15 at center_sojusznik2r  
+
+                                        if urban_wybrany == 3:
+                                            show imp3 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Jerzego Urbana{/i}"
+                                else:
+                                    jump gargantuar2_losowanie
+                            
+                            if kostka == 4:
+                                if zyd_hp_now > 0 and zyd_imp == 0 and zyd_fighter > 0:
+                                    if zyd_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ zyd_imp = 1
+                                        if zyd_wybrany == 1:
+                                            show imp4 zorder 15 at center_sojusznik1r 
+
+                                        if zyd_wybrany == 2:
+                                            show imp4 zorder 15 at center_sojusznik2r  
+
+                                        if zyd_wybrany == 3:
+                                            show imp4 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Żyda{/i}"
+                                else:
+                                    jump gargantuar2_losowanie
+                            
+                            if kostka == 5:
+                                if kazuma_hp_now > 0 and kazuma_imp == 0 and kazuma_fighter > 0:
+                                    if kazuma_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ kazuma_imp = 1
+                                        if kazuma_wybrany == 1:
+                                            show imp5 zorder 15 at center_sojusznik1r 
+
+                                        if kazuma_wybrany == 2:
+                                            show imp5 zorder 15 at center_sojusznik2r  
+
+                                        if kazuma_wybrany == 3:
+                                            show imp5 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Kazumy{/i}"
+                                else:
+                                    jump gargantuar2_losowanie
+                            
+                            if kostka == 6:
+                                if tarczownik_hp_now > 0 and tarczownik_imp == 0 and tarczownik_fighter > 0:
+                                    if tarczownik_obrona >= 1:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Imp został zablokowany{/i}"
+
+                                    else:
+                                        play sound "audio/sfx/imp.mp3"
+                                        $ tarczownik_imp = 1
+                                        if tarczownik_wybrany == 1:
+                                            show imp6 zorder 15 at center_sojusznik1r 
+
+                                        if tarczownik_wybrany == 2:
+                                            show imp6 zorder 15 at center_sojusznik2r  
+
+                                        if tarczownik_wybrany == 3:
+                                            show imp6 zorder 15 at center_sojusznik3r 
+
+                                        "{i}Imp przyczepia się do Naofumiego{/i}"
+                                else:
+                                    jump gargantuar2_losowanie
+                        
+                    jump start_fight151
+
+        if gargantuar2_imp == 0 and gargantuar2_hp_now > 0:
+            $ gargantuar2_imp = 1
+            show gargantuar2 fight
+        
+        if gargantuar2_special == 0 and gargantuar2_weapon == 1:
+            $ gargantuar2_special = 1
+            play sound "audio/sfx/ladow.mp3"
+            "{i}Gargantuar 2 szykuje się do ataku{/b}"
+            label gargantuar2_losuje:
+                $ kostka = renpy.random.randint(1, 6)
+                if urban_fok2 == 1 and urban_wybrany > 0 and urban_hp_now > 0:
+                    $ urban_fok2 = 1
+                    "{i}Jego wzrok skupiony jest na Jerzym Urbanie...{/i}"
+                else:
+                    if kostka == 1 and luszcz_wybrany > 0 and luszcz_hp_now > 0:
+                        $ luszcz_fok2 = 1
+                        "{i}Jego wzrok skupiony jest na Łuszczu...{/i}"
+                    else:
+                        if kostka == 2 and eminem_wybrany > 0 and eminem_hp_now > 0:
+                            $ eminem_fok2 = 1
+                            "{i}Jego wzrok skupiony jest na Shadowie...{/i}"
+                        else:
+                            if kostka == 3 and urban_wybrany > 0 and urban_hp_now > 0:
+                                $ urban_fok2 = 1
+                                "{i}Jego wzrok skupiony jest na Jerzym Urbanie...{/i}"
+                            else:
+                                if kostka == 4 and zyd_wybrany > 0 and zyd_hp_now > 0:
+                                    $ zyd_fok2 = 1
+                                    "{i}Jego wzrok skupiony jest na Żydzie...{/i}"
+                                else:
+                                    if kostka == 5 and kazuma_wybrany > 0 and kazuma_hp_now > 0:
+                                        $ kazuma_fok2 = 1
+                                        "{i}Jego wzrok skupiony jest na Kazumie...{/i}"
+                                    else:
+                                        if kostka == 6 and tarczownik_wybrany > 0 and tarczownik_hp_now > 0:
+                                            $ tarczownik_fok2 = 1
+                                            "{i}Jego wzrok skupiony jest na Naofumim...{/i}"
+                                        else:
+                                            jump gargantuar2_losuje
+            jump start_fight151
+
+        if gargantuar2_special == 0 and gargantuar2_weapon == 0:
+            if gargantuar2_uszy == 0:
+                $ gargantuar2_special = 1
+                $ luszcz_fok2 = 1
+                $ urban_fok2 = 1
+                $ zyd_fok2 = 1
+                $ kazuma_fok2 = 1
+                $ tarczownik_fok2 = 1
+            else:
+                $ gargantuar2_special = 1
+                $ urban_fok2 = 1
                     
         label losowanko_fight156:    
-            if gargantuar2_imp == 1:
-                show gargantuar2 fight3
+            if gargantuar2_weapon >= 1:
+                if gargantuar2_imp == 1:
+                    show gargantuar2 fight3               
+                else:
+                    show gargantuar2 fight4
             else:
-                show gargantuar2 fight4
+                if gargantuar2_imp == 1:
+                    show gargantuar2 fight              
+                else:
+                    show gargantuar2 fight1 
+            $ kostka = renpy.random.randint(1, 6)
+            if kostka == 1 and luszcz_fok2 == 1:
+                if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                    if luszcz_hp_now <= 3:
+                        $ kostka = renpy.random.randint(1, 5)
+                        if kostka >= 2:
+                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
 
-            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+                            if memy == 2:
+                                $ kostka = renpy.random.randint(1, 20)
+                                if kostka <= 3:
+                                    $ gargantuar2_hp_now -= gargantuar2_attack
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                    $ gargantuar2_special = 0
+                                    $ luszcz_fok2 = 0
+                                    $ urban_fok2 = 0
+                                    $ zyd_fok2 = 0
+                                    $ kazuma_fok2 = 0
+                                    $ tarczownik_fok2 = 0
+                                    if gargantuar2_weapon >= 1:
+                                        if gargantuar2_imp == 1:
+                                            show gargantuar2 fight             
+                                        else:
+                                            show gargantuar2 fight1
+                                    jump start_fight151
 
-            if luszcz_hp_now >= 1:
-                if luszcz_obrona >= 2:
-                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                    $ luszcz_obrona = 1
+                            if luszcz_obrona >= 2:
+                                play sound "audio/sfx/obrona.mp3"
+                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                $ luszcz_obrona = 1
                                                     
-                else:     
-                    if luszcz_obrona == 1:
-                        $ luszcz_hp_now -= int(gargantuar2_attack / 2)
+                            else:
+                                if gargantuar2_weapon >= 1:
+                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                
+                                else:
+                                    play sound "audio/sfx/reka.mp3"
 
-                        $ dmg = int(gargantuar2_attack / 2)
-                        $ luszcz_obrona = 0
+                                if luszcz_obrona == 1:
+                                    $ luszcz_hp_now -= int(gargantuar2_attack / 2)
+
+                                    $ dmg = int(gargantuar2_attack / 2)
+                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                else:
+                                    $ luszcz_hp_now -= gargantuar2_attack
+
+                                    "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Łuszczowi{/i}"
+
+                            $ gargantuar2_special = 0
+                            $ luszcz_fok2 = 0
+                            $ urban_fok2 = 0
+                            $ zyd_fok2 = 0
+                            $ kazuma_fok2 = 0
+                            $ tarczownik_fok2 = 0
+                            if gargantuar2_weapon >= 1:
+                                if gargantuar2_imp == 1:
+                                    show gargantuar2 fight             
+                                else:
+                                    show gargantuar2 fight1
+                            jump start_fight151
+                        else:
+                            jump losowanko_fight156
+
                     else:
-                        $ luszcz_hp_now -= gargantuar2_attack
-            
-            if eminem_hp_now >= 1:
-                if eminem_obrona >= 2:
-                    if luszcz_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                    $ eminem_obrona = 1
+                        if luszcz_hp_now <= 10:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 3:
+                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ gargantuar2_hp_now -= gargantuar2_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                        $ gargantuar2_special = 0
+                                        $ luszcz_fok2 = 0
+                                        $ urban_fok2 = 0
+                                        $ zyd_fok2 = 0
+                                        $ kazuma_fok2 = 0
+                                        $ tarczownik_fok2 = 0
+                                        if gargantuar2_weapon >= 1:
+                                            if gargantuar2_imp == 1:
+                                                show gargantuar2 fight             
+                                            else:
+                                                show gargantuar2 fight1
+                                        jump start_fight151
+
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
                                                     
-                else:     
-                    if eminem_obrona == 1:
-                        $ eminem_hp_now -= int(gargantuar2_attack / 2)
-
-                        $ dmg = int(gargantuar2_attack / 2)
-                        $ eminem_obrona = 0
-                    else:
-                        $ eminem_hp_now -= gargantuar2_attack
-            
-            if urban_hp_now >= 1:
-                if urban_obrona >= 2:
-                    if eminem_hp_now <= 0 and luszcz_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                    $ urban_obrona = 1
+                                else:
+                                    if gargantuar2_weapon >= 1:
+                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
                                                     
-                else:     
-                    if urban_obrona == 1:
-                        $ urban_hp_now -= int(gargantuar2_attack / 2)
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
 
-                        $ dmg = int(gargantuar2_attack / 2)
-                        $ urban_obrona = 0
-                    else:
-                        $ urban_hp_now -= gargantuar2_attack
-            
-            if zyd_hp_now >= 1:
-                if zyd_obrona >= 2:
-                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and luszcz_hp_now <= 0 and kazuma_hp_now <= 0 and tarczownik_hp_now <= 0:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                    $ zyd_obrona = 1
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(gargantuar2_attack / 2)
+
+                                        $ dmg = int(gargantuar2_attack / 2)
+                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= gargantuar2_attack
+
+                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Łuszczowi{/i}"
+
+                                $ gargantuar2_special = 0
+                                $ luszcz_fok2 = 0
+                                $ urban_fok2 = 0
+                                $ zyd_fok2 = 0
+                                $ kazuma_fok2 = 0
+                                $ tarczownik_fok2 = 0
+                                if gargantuar2_weapon >= 1:
+                                    if gargantuar2_imp == 1:
+                                        show gargantuar2 fight             
+                                    else:
+                                        show gargantuar2 fight1
+                                jump start_fight151
+                            else:
+                                jump losowanko_fight156
+                        
+                        else:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 5:
+                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                if memy == 2:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ gargantuar2_hp_now -= gargantuar2_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                        $ gargantuar2_special = 0
+                                        $ luszcz_fok2 = 0
+                                        $ urban_fok2 = 0
+                                        $ zyd_fok2 = 0
+                                        $ kazuma_fok2 = 0
+                                        $ tarczownik_fok2 = 0
+                                        if gargantuar2_weapon >= 1:
+                                            if gargantuar2_imp == 1:
+                                                show gargantuar2 fight             
+                                            else:
+                                                show gargantuar2 fight1
+                                        jump start_fight151
+
+                                if luszcz_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                    $ luszcz_obrona = 1
                                                     
-                else:     
-                    if zyd_obrona == 1:
-                        $ zyd_hp_now -= int(gargantuar2_attack / 2)
-
-                        $ dmg = int(gargantuar2_attack / 2)
-                        $ zyd_obrona = 0
-                    else:
-                        $ zyd_hp_now -= gargantuar2_attack
-            
-            if kazuma_hp_now >= 1:
-                if kazuma_obrona >= 2:
-                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and luszcz_hp_now <= 0 and tarczownik_hp_now <= 0:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                    $ kazuma_obrona = 1
+                                else:
+                                    if gargantuar2_weapon >= 1:
+                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
                                                     
-                else:     
-                    if kazuma_obrona == 1:
-                        $ kazuma_hp_now -= int(gargantuar2_attack / 2)
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
 
-                        $ dmg = int(gargantuar2_attack / 2)
-                        $ kazuma_obrona = 0
-                    else:
-                        $ kazuma_hp_now -= gargantuar2_attack
-            
-            if tarczownik_hp_now >= 1:
-                if tarczownik_obrona >= 2:
-                    if eminem_hp_now <= 0 and urban_hp_now <= 0 and zyd_hp_now <= 0 and kazuma_hp_now <= 0 and luszcz_hp_now <= 0:
-                        play sound "audio/sfx/obrona.mp3"
-                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
-                    $ tarczownik_obrona = 1
-                                                    
-                else:     
-                    if tarczownik_obrona == 1:
-                        $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
+                                    if luszcz_obrona == 1:
+                                        $ luszcz_hp_now -= int(gargantuar2_attack / 2)
 
-                        $ dmg = int(gargantuar2_attack / 2)
-                        $ tarczownik_obrona = 0
-                    else:
-                        $ tarczownik_hp_now -= gargantuar2_attack
-            
-            if luszcz_hp_now >= 1 and luszcz_obrona <= 1 or eminem_hp_now >= 1 and eminem_obrona <= 1 or urban_hp_now >= 1 and urban_obrona <= 1 and zyd_hp_now >= 1 and zyd_obrona <= 1 or kazuma_hp_now >= 1 and kazuma_obrona <= 1 or tarczownik_hp_now >= 1 and tarczownik_obrona <= 1:
-                play sound "audio/sfx/gargantuar2_weapon.mp3"
-                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń wszystkim sojusznikom{/i}"
-            
+                                        $ dmg = int(gargantuar2_attack / 2)
+                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Łuszczowi{/i}"
+                                    else:
+                                        $ luszcz_hp_now -= gargantuar2_attack
+
+                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Łuszczowi{/i}"
+                                
+                                $ gargantuar2_special = 0
+                                $ luszcz_fok2 = 0
+                                $ urban_fok2 = 0
+                                $ zyd_fok2 = 0
+                                $ kazuma_fok2 = 0
+                                $ tarczownik_fok2 = 0
+                                if gargantuar2_weapon >= 1:
+                                    if gargantuar2_imp == 1:
+                                        show gargantuar2 fight             
+                                    else:
+                                        show gargantuar2 fight1
+                                jump start_fight151
+                            else:
+                                jump losowanko_fight156
+
+                else:
+                    jump losowanko_fight156
             else:
-                play sound "audio/sfx/obrona.mp3"
-                "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                if kostka == 2 and urban_fok2 == 1:
+                    if urban_hp_now >= 1 and urban_wybrany >= 1:
+                        if urban_hp_now <= 3:
+                            $ kostka = renpy.random.randint(1, 5)
+                            if kostka >= 2:
+                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
 
-            if gargantuar2_imp == 1:
-                show gargantuar2 fight
-            else:
-                show gargantuar2 fight1
+                                if memy == 3:
+                                    $ kostka = renpy.random.randint(1, 20)
+                                    if kostka <= 3:
+                                        $ gargantuar2_hp_now -= gargantuar2_attack
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                        $ gargantuar2_special = 0
+                                        $ luszcz_fok2 = 0
+                                        $ urban_fok2 = 0
+                                        $ zyd_fok2 = 0
+                                        $ kazuma_fok2 = 0
+                                        $ tarczownik_fok2 = 0
+                                        if gargantuar2_weapon >= 1:
+                                            if gargantuar2_imp == 1:
+                                                show gargantuar2 fight             
+                                            else:
+                                                show gargantuar2 fight1
+                                        jump start_fight151
 
-            jump start_fight151
+                                if urban_obrona >= 2:
+                                    play sound "audio/sfx/obrona.mp3"
+                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                    $ urban_obrona = 1
+
+                                else:
+                                    if gargantuar2_weapon >= 1:
+                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                    
+                                    else:
+                                        play sound "audio/sfx/reka.mp3"
+
+                                    if urban_obrona == 1:
+                                        $ urban_hp_now -= int(gargantuar2_attack / 2)
+
+                                        $ dmg = int(gargantuar2_attack / 2)
+                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                    else:
+                                        $ urban_hp_now -= gargantuar2_attack
+
+                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                
+                                $ gargantuar2_special = 0
+                                $ luszcz_fok2 = 0
+                                $ urban_fok2 = 0
+                                $ zyd_fok2 = 0
+                                $ kazuma_fok2 = 0
+                                $ tarczownik_fok2 = 0
+                                if gargantuar2_weapon >= 1:
+                                    if gargantuar2_imp == 1:
+                                        show gargantuar2 fight             
+                                    else:
+                                        show gargantuar2 fight1
+                                jump start_fight151
+                            else:
+                                jump losowanko_fight156
+
+                        else:
+                            if urban_hp_now <= 10:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 3:
+                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ gargantuar2_hp_now -= gargantuar2_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                            $ gargantuar2_special = 0
+                                            $ luszcz_fok2 = 0
+                                            $ urban_fok2 = 0
+                                            $ zyd_fok2 = 0
+                                            $ kazuma_fok2 = 0
+                                            $ tarczownik_fok2 = 0
+                                            if gargantuar2_weapon >= 1:
+                                                if gargantuar2_imp == 1:
+                                                    show gargantuar2 fight             
+                                                else:
+                                                    show gargantuar2 fight1
+                                            jump start_fight151
+
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                        $ urban_obrona = 1
+
+                                    else:
+                                        if gargantuar2_weapon >= 1:
+                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(gargantuar2_attack / 2)
+
+                                            $ dmg = int(gargantuar2_attack / 2)
+                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= gargantuar2_attack
+
+                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                    
+                                    $ gargantuar2_special = 0
+                                    $ luszcz_fok2 = 0
+                                    $ urban_fok2 = 0
+                                    $ zyd_fok2 = 0
+                                    $ kazuma_fok2 = 0
+                                    $ tarczownik_fok2 = 0
+                                    if gargantuar2_weapon >= 1:
+                                        if gargantuar2_imp == 1:
+                                            show gargantuar2 fight             
+                                        else:
+                                            show gargantuar2 fight1
+                                    jump start_fight151
+                                else:
+                                    jump losowanko_fight156
+                            
+                            else:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 5:
+                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                    if memy == 3:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ gargantuar2_hp_now -= gargantuar2_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                            $ gargantuar2_special = 0
+                                            $ luszcz_fok2 = 0
+                                            $ urban_fok2 = 0
+                                            $ zyd_fok2 = 0
+                                            $ kazuma_fok2 = 0
+                                            $ tarczownik_fok2 = 0
+                                            if gargantuar2_weapon >= 1:
+                                                if gargantuar2_imp == 1:
+                                                    show gargantuar2 fight             
+                                                else:
+                                                    show gargantuar2 fight1
+                                            jump start_fight151
+
+                                    if urban_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                        $ urban_obrona = 1
+                                    
+                                    else:
+                                        if gargantuar2_weapon >= 1:
+                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
+                                        if urban_obrona == 1:
+                                            $ urban_hp_now -= int(gargantuar2_attack / 2)
+
+                                            $ dmg = int(gargantuar2_attack / 2)
+                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Jerzemu Urbanowi{/i}"
+                                        else:
+                                            $ urban_hp_now -= gargantuar2_attack
+
+                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Jerzemu Urbanowi{/i}"
+                                    
+                                    $ gargantuar2_special = 0
+                                    $ luszcz_fok2 = 0
+                                    $ urban_fok2 = 0
+                                    $ zyd_fok2 = 0
+                                    $ kazuma_fok2 = 0
+                                    $ tarczownik_fok2 = 0
+                                    if gargantuar2_weapon >= 1:
+                                        if gargantuar2_imp == 1:
+                                            show gargantuar2 fight             
+                                        else:
+                                            show gargantuar2 fight1
+
+                                    jump start_fight151
+                                else:
+                                    jump losowanko_fight156
+
+                    else:
+                        jump losowanko_fight156
+                else:
+                    if kostka == 3 and zyd_fok2 == 1:
+                        if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                            if zyd_hp_now <= 3:
+                                $ kostka = renpy.random.randint(1, 5)
+                                if kostka >= 2:
+                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                    if memy == 4:
+                                        $ kostka = renpy.random.randint(1, 20)
+                                        if kostka <= 3:
+                                            $ gargantuar2_hp_now -= gargantuar2_attack
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                            $ gargantuar2_special = 0
+                                            $ luszcz_fok2 = 0
+                                            $ urban_fok2 = 0
+                                            $ zyd_fok2 = 0
+                                            $ kazuma_fok2 = 0
+                                            $ tarczownik_fok2 = 0
+                                            if gargantuar2_weapon >= 1:
+                                                if gargantuar2_imp == 1:
+                                                    show gargantuar2 fight             
+                                                else:
+                                                    show gargantuar2 fight1
+                                            jump start_fight151
+
+                                    if zyd_obrona >= 2:
+                                        play sound "audio/sfx/obrona.mp3"
+                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                        $ zyd_obrona = 1
+                                    
+                                    else:
+                                        if gargantuar2_weapon >= 1:
+                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                        
+                                        else:
+                                            play sound "audio/sfx/reka.mp3"
+
+                                        if zyd_obrona == 1:
+                                            $ zyd_hp_now -= int(gargantuar2_attack / 2)
+
+                                            $ dmg = int(gargantuar2_attack / 2)
+                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                        else:
+                                            $ zyd_hp_now -= gargantuar2_attack
+
+                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Żydowi{/i}"
+                                    
+                                    $ gargantuar2_special = 0
+                                    $ luszcz_fok2 = 0
+                                    $ urban_fok2 = 0
+                                    $ zyd_fok2 = 0
+                                    $ kazuma_fok2 = 0
+                                    $ tarczownik_fok2 = 0
+                                    if gargantuar2_weapon >= 1:
+                                        if gargantuar2_imp == 1:
+                                            show gargantuar2 fight             
+                                        else:
+                                            show gargantuar2 fight1
+
+                                    jump start_fight151
+                                else:
+                                    jump losowanko_fight156
+
+                            else:
+                                if zyd_hp_now <= 10:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 3:
+                                        $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ gargantuar2_hp_now -= gargantuar2_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+
+                                                $ gargantuar2_special = 0
+                                                $ luszcz_fok2 = 0
+                                                $ urban_fok2 = 0
+                                                $ zyd_fok2 = 0
+                                                $ kazuma_fok2 = 0
+                                                $ tarczownik_fok2 = 0
+                                                if gargantuar2_weapon >= 1:
+                                                    if gargantuar2_imp == 1:
+                                                        show gargantuar2 fight             
+                                                    else:
+                                                        show gargantuar2 fight1
+                                                jump start_fight151
+
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                            $ zyd_obrona = 1
+                                        
+                                        else:
+                                            if gargantuar2_weapon >= 1:
+                                                play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(gargantuar2_attack / 2)
+
+                                                $ dmg = int(gargantuar2_attack / 2)
+                                                "{i}Gargantuar 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= gargantuar2_attack
+
+                                                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Żydowi{/i}"
+                                        
+                                        $ gargantuar2_special = 0
+                                        $ luszcz_fok2 = 0
+                                        $ urban_fok2 = 0
+                                        $ zyd_fok2 = 0
+                                        $ kazuma_fok2 = 0
+                                        $ tarczownik_fok2 = 0
+                                        if gargantuar2_weapon >= 1:
+                                            if gargantuar2_imp == 1:
+                                                show gargantuar2 fight             
+                                            else:
+                                                show gargantuar2 fight1
+
+                                        jump start_fight151
+                                    else:
+                                        jump losowanko_fight156
+                                
+                                else:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 5:
+                                        $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                        if memy == 4:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ gargantuar2_hp_now -= gargantuar2_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                $ gargantuar2_special = 0
+                                                $ luszcz_fok2 = 0
+                                                $ urban_fok2 = 0
+                                                $ zyd_fok2 = 0
+                                                $ kazuma_fok2 = 0
+                                                $ tarczownik_fok2 = 0
+                                                if gargantuar2_weapon >= 1:
+                                                    if gargantuar2_imp == 1:
+                                                        show gargantuar2 fight             
+                                                    else:
+                                                        show gargantuar2 fight1
+                                                jump start_fight151
+
+                                        if zyd_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                            $ zyd_obrona = 1
+                                        
+                                        else:
+                                            if gargantuar2_weapon >= 1:
+                                                play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
+                                            if zyd_obrona == 1:
+                                                $ zyd_hp_now -= int(gargantuar2_attack / 2)
+
+                                                $ dmg = int(gargantuar2_attack / 2)
+                                                "{i}Gargantuar 2 zadaje [dmg] obrażeń Żydowi{/i}"
+                                            else:
+                                                $ zyd_hp_now -= gargantuar2_attack
+
+                                                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Żydowi{/i}"
+                                        
+                                        $ gargantuar2_special = 0
+                                        $ luszcz_fok2 = 0
+                                        $ urban_fok2 = 0
+                                        $ zyd_fok2 = 0
+                                        $ kazuma_fok2 = 0
+                                        $ tarczownik_fok2 = 0
+                                        if gargantuar2_weapon >= 1:
+                                            if gargantuar2_imp == 1:
+                                                show gargantuar2 fight             
+                                            else:
+                                                show gargantuar2 fight1
+
+                                        jump start_fight151
+                                    else:
+                                        jump losowanko_fight156
+
+                        else:
+                            jump losowanko_fight156
+                    else:
+                        if kostka == 4 and kazuma_fok2 == 1:
+                            if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                if kazuma_hp_now <= 3:
+                                    $ kostka = renpy.random.randint(1, 5)
+                                    if kostka >= 2:
+                                        $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                        if memy == 5:
+                                            $ kostka = renpy.random.randint(1, 20)
+                                            if kostka <= 3:
+                                                $ gargantuar2_hp_now -= gargantuar2_attack
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                $ gargantuar2_special = 0
+                                                $ luszcz_fok2 = 0
+                                                $ urban_fok2 = 0
+                                                $ zyd_fok2 = 0
+                                                $ kazuma_fok2 = 0
+                                                $ tarczownik_fok2 = 0
+                                                if gargantuar2_weapon >= 1:
+                                                    if gargantuar2_imp == 1:
+                                                        show gargantuar2 fight             
+                                                    else:
+                                                        show gargantuar2 fight1
+                                                jump start_fight151
+
+                                        if kazuma_obrona >= 2:
+                                            play sound "audio/sfx/obrona.mp3"
+                                            "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                            $ kazuma_obrona = 1
+                                        
+                                        else:
+                                            if gargantuar2_weapon >= 1:
+                                                play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                            
+                                            else:
+                                                play sound "audio/sfx/reka.mp3"
+
+                                            if kazuma_obrona == 1:
+                                                $ kazuma_hp_now -= int(gargantuar2_attack / 2)
+
+                                                $ dmg = int(gargantuar2_attack / 2)
+                                                "{i}Gargantuar 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                            else:
+                                                $ kazuma_hp_now -= gargantuar2_attack
+
+                                                "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Kazumie{/i}"
+                                        
+                                        $ gargantuar2_special = 0
+                                        $ luszcz_fok2 = 0
+                                        $ urban_fok2 = 0
+                                        $ zyd_fok2 = 0
+                                        $ kazuma_fok2 = 0
+                                        $ tarczownik_fok2 = 0
+                                        if gargantuar2_weapon >= 1:
+                                            if gargantuar2_imp == 1:
+                                                show gargantuar2 fight             
+                                            else:
+                                                show gargantuar2 fight1
+
+                                        jump start_fight151
+                                    else:
+                                        jump losowanko_fight156
+
+                                else:
+                                    if kazuma_hp_now <= 10:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 3:
+                                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ gargantuar2_hp_now -= gargantuar2_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                    $ gargantuar2_special = 0
+                                                    $ luszcz_fok2 = 0
+                                                    $ urban_fok2 = 0
+                                                    $ zyd_fok2 = 0
+                                                    $ kazuma_fok2 = 0
+                                                    $ tarczownik_fok2 = 0
+                                                    if gargantuar2_weapon >= 1:
+                                                        if gargantuar2_imp == 1:
+                                                            show gargantuar2 fight             
+                                                        else:
+                                                            show gargantuar2 fight1
+                                                    jump start_fight151
+
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
+                                            else:
+                                                if gargantuar2_weapon >= 1:
+                                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(gargantuar2_attack / 2)
+
+                                                    $ dmg = int(gargantuar2_attack / 2)
+                                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= gargantuar2_attack
+
+                                                    "{i}Kibol 1 zadaje [gargantuar2_attack] obrażeń Kazumie{/i}"
+                                            
+                                            $ gargantuar2_special = 0
+                                            $ luszcz_fok2 = 0
+                                            $ urban_fok2 = 0
+                                            $ zyd_fok2 = 0
+                                            $ kazuma_fok2 = 0
+                                            $ tarczownik_fok2 = 0
+                                            if gargantuar2_weapon >= 1:
+                                                if gargantuar2_imp == 1:
+                                                    show gargantuar2 fight             
+                                                else:
+                                                    show gargantuar2 fight1
+
+                                            jump start_fight151
+                                        else:
+                                            jump losowanko_fight156
+                                    
+                                    else:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 5:
+                                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                            if memy == 5:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ gargantuar2_hp_now -= gargantuar2_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                    $ gargantuar2_special = 0
+                                                    $ luszcz_fok2 = 0
+                                                    $ urban_fok2 = 0
+                                                    $ zyd_fok2 = 0
+                                                    $ kazuma_fok2 = 0
+                                                    $ tarczownik_fok2 = 0
+                                                    if gargantuar2_weapon >= 1:
+                                                        if gargantuar2_imp == 1:
+                                                            show gargantuar2 fight             
+                                                        else:
+                                                            show gargantuar2 fight1
+                                                    jump start_fight151
+
+                                            if kazuma_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                $ kazuma_obrona = 1
+                                            
+                                            else:
+                                                if gargantuar2_weapon >= 1:
+                                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
+                                                if kazuma_obrona == 1:
+                                                    $ kazuma_hp_now -= int(gargantuar2_attack / 2)
+
+                                                    $ dmg = int(gargantuar2_attack / 2)
+                                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Kazumie{/i}"
+                                                else:
+                                                    $ kazuma_hp_now -= gargantuar2_attack
+
+                                                    "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Kazumie{/i}"
+                                            
+                                            $ gargantuar2_special = 0
+                                            $ luszcz_fok2 = 0
+                                            $ urban_fok2 = 0
+                                            $ zyd_fok2 = 0
+                                            $ kazuma_fok2 = 0
+                                            $ tarczownik_fok2 = 0
+                                            if gargantuar2_weapon >= 1:
+                                                if gargantuar2_imp == 1:
+                                                    show gargantuar2 fight             
+                                                else:
+                                                    show gargantuar2 fight1
+
+                                            jump start_fight151
+                                        else:
+                                            jump losowanko_fight156
+
+                            else:
+                                jump losowanko_fight156
+                        else:
+                            if kostka == 5 and eminem_fok2 == 1:
+                                if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                    if eminem_hp_now <= 3:
+                                        $ kostka = renpy.random.randint(1, 5)
+                                        if kostka >= 2:
+                                            $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                            if memy == 7:
+                                                $ kostka = renpy.random.randint(1, 20)
+                                                if kostka <= 3:
+                                                    $ gargantuar2_hp_now -= gargantuar2_attack
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                    $ gargantuar2_special = 0
+                                                    $ luszcz_fok2 = 0
+                                                    $ urban_fok2 = 0
+                                                    $ zyd_fok2 = 0
+                                                    $ kazuma_fok2 = 0
+                                                    $ tarczownik_fok2 = 0
+                                                    if gargantuar2_weapon >= 1:
+                                                        if gargantuar2_imp == 1:
+                                                            show gargantuar2 fight             
+                                                        else:
+                                                            show gargantuar2 fight1
+                                                    jump start_fight151
+
+                                            if eminem_obrona >= 2:
+                                                play sound "audio/sfx/obrona.mp3"
+                                                "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                $ eminem_obrona = 1  
+                                            
+                                            else:
+                                                if gargantuar2_weapon >= 1:
+                                                    play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                
+                                                else:
+                                                    play sound "audio/sfx/reka.mp3"
+
+                                                if eminem_obrona == 1:
+                                                    $ eminem_hp_now -= int(gargantuar2_attack / 2)
+
+                                                    $ dmg = int(gargantuar2_attack / 2)
+                                                    "{i}Gargantuar 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                else:
+                                                    $ eminem_hp_now -= gargantuar2_attack
+
+                                                    "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Shadowowi{/i}"
+
+                                            $ gargantuar2_special = 0
+                                            $ luszcz_fok2 = 0
+                                            $ urban_fok2 = 0
+                                            $ zyd_fok2 = 0
+                                            $ kazuma_fok2 = 0
+                                            $ tarczownik_fok2 = 0
+                                            if gargantuar2_weapon >= 1:
+                                                if gargantuar2_imp == 1:
+                                                    show gargantuar2 fight             
+                                                else:
+                                                    show gargantuar2 fight1
+
+                                            jump start_fight151
+                                        else:
+                                            jump losowanko_fight156
+
+                                    else:
+                                        if eminem_hp_now <= 10:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 3:
+                                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ gargantuar2_hp_now -= gargantuar2_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                        $ gargantuar2_special = 0
+                                                        $ luszcz_fok2 = 0
+                                                        $ urban_fok2 = 0
+                                                        $ zyd_fok2 = 0
+                                                        $ kazuma_fok2 = 0
+                                                        $ tarczownik_fok2 = 0
+                                                        if gargantuar2_weapon >= 1:
+                                                            if gargantuar2_imp == 1:
+                                                                show gargantuar2 fight             
+                                                            else:
+                                                                show gargantuar2 fight1
+                                                        jump start_fight151
+
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
+                                                else:
+                                                    if gargantuar2_weapon >= 1:
+                                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(gargantuar2_attack / 2)
+
+                                                        $ dmg = int(gargantuar2_attack / 2)
+                                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= gargantuar2_attack
+
+                                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Shadowowi{/i}"
+                                                
+                                                $ gargantuar2_special = 0
+                                                $ luszcz_fok2 = 0
+                                                $ urban_fok2 = 0
+                                                $ zyd_fok2 = 0
+                                                $ kazuma_fok2 = 0
+                                                $ tarczownik_fok2 = 0
+                                                if gargantuar2_weapon >= 1:
+                                                    if gargantuar2_imp == 1:
+                                                        show gargantuar2 fight             
+                                                    else:
+                                                        show gargantuar2 fight1
+
+                                                jump start_fight151
+                                            else:
+                                                jump losowanko_fight156
+                                        
+                                        else:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 5:
+                                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                                if memy == 7:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ gargantuar2_hp_now -= gargantuar2_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                        $ gargantuar2_special = 0
+                                                        $ luszcz_fok2 = 0
+                                                        $ urban_fok2 = 0
+                                                        $ zyd_fok2 = 0
+                                                        $ kazuma_fok2 = 0
+                                                        $ tarczownik_fok2 = 0
+                                                        if gargantuar2_weapon >= 1:
+                                                            if gargantuar2_imp == 1:
+                                                                show gargantuar2 fight             
+                                                            else:
+                                                                show gargantuar2 fight1
+                                                        jump start_fight151
+
+                                                if eminem_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                    $ eminem_obrona = 1
+                                                
+                                                else:
+                                                    if gargantuar2_weapon >= 1:
+                                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
+                                                    if eminem_obrona == 1:
+                                                        $ eminem_hp_now -= int(gargantuar2_attack / 2)
+
+                                                        $ dmg = int(gargantuar2_attack / 2)
+                                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Shadowowi{/i}"
+                                                    else:
+                                                        $ eminem_hp_now -= gargantuar2_attack
+
+                                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Shadowowi{/i}"
+                                                
+                                                $ gargantuar2_special = 0
+                                                $ luszcz_fok2 = 0
+                                                $ urban_fok2 = 0
+                                                $ zyd_fok2 = 0
+                                                $ kazuma_fok2 = 0
+                                                $ tarczownik_fok2 = 0
+                                                if gargantuar2_weapon >= 1:
+                                                    if gargantuar2_imp == 1:
+                                                        show gargantuar2 fight             
+                                                    else:
+                                                        show gargantuar2 fight1
+
+                                                jump start_fight151
+                                            else:
+                                                jump losowanko_fight156
+
+                                else:
+                                    jump losowanko_fight156
+                            else:
+                                if kostka == 6 and tarczownik_fok2 == 1:
+                                    if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                        if tarczownik_hp_now <= 3:
+                                            $ kostka = renpy.random.randint(1, 5)
+                                            if kostka >= 2:
+                                                $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                                if memy == 6:
+                                                    $ kostka = renpy.random.randint(1, 20)
+                                                    if kostka <= 3:
+                                                        $ gargantuar2_hp_now -= gargantuar2_attack
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                        $ gargantuar2_special = 0
+                                                        $ luszcz_fok2 = 0
+                                                        $ urban_fok2 = 0
+                                                        $ zyd_fok2 = 0
+                                                        $ kazuma_fok2 = 0
+                                                        $ tarczownik_fok2 = 0
+                                                        if gargantuar2_weapon >= 1:
+                                                            if gargantuar2_imp == 1:
+                                                                show gargantuar2 fight             
+                                                            else:
+                                                                show gargantuar2 fight1
+                                                        jump start_fight151
+
+                                                if tarczownik_obrona >= 2:
+                                                    play sound "audio/sfx/obrona.mp3"
+                                                    "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                    $ tarczownik_obrona = 1
+                                                
+                                                else:
+                                                    if gargantuar2_weapon >= 1:
+                                                        play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                    
+                                                    else:
+                                                        play sound "audio/sfx/reka.mp3"
+
+                                                    if tarczownik_obrona == 1:
+                                                        $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
+
+                                                        $ dmg = int(gargantuar2_attack / 2)
+                                                        "{i}Gargantuar 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                    else:
+                                                        $ tarczownik_hp_now -= gargantuar2_attack
+
+                                                        "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Naofumiemu{/i}"
+                                                
+                                                $ gargantuar2_special = 0
+                                                $ luszcz_fok2 = 0
+                                                $ urban_fok2 = 0
+                                                $ zyd_fok2 = 0
+                                                $ kazuma_fok2 = 0
+                                                $ tarczownik_fok2 = 0
+                                                if gargantuar2_weapon >= 1:
+                                                    if gargantuar2_imp == 1:
+                                                        show gargantuar2 fight             
+                                                    else:
+                                                        show gargantuar2 fight1
+
+                                                jump start_fight151
+                                            else:
+                                                jump losowanko_fight156
+
+                                        else:
+                                            if tarczownik_hp_now <= 10:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 3:
+                                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ gargantuar2_hp_now -= gargantuar2_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                            $ gargantuar2_special = 0
+                                                            $ luszcz_fok2 = 0
+                                                            $ urban_fok2 = 0
+                                                            $ zyd_fok2 = 0
+                                                            $ kazuma_fok2 = 0
+                                                            $ tarczownik_fok2 = 0
+                                                            if gargantuar2_weapon >= 1:
+                                                                if gargantuar2_imp == 1:
+                                                                    show gargantuar2 fight             
+                                                                else:
+                                                                    show gargantuar2 fight1
+                                                            jump start_fight151
+
+                                                    if tarczownik_obrona >= 2:
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
+                                                
+                                                    else:
+                                                        if gargantuar2_weapon >= 1:
+                                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
+
+                                                            $ dmg = int(gargantuar2_attack / 2)
+                                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= gargantuar2_attack
+
+                                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Naofumiemu{/i}"
+                                                    
+                                                    $ gargantuar2_special = 0
+                                                    $ luszcz_fok2 = 0
+                                                    $ urban_fok2 = 0
+                                                    $ zyd_fok2 = 0
+                                                    $ kazuma_fok2 = 0
+                                                    $ tarczownik_fok2 = 0
+                                                    if gargantuar2_weapon >= 1:
+                                                        if gargantuar2_imp == 1:
+                                                            show gargantuar2 fight             
+                                                        else:
+                                                            show gargantuar2 fight1
+
+                                                    jump start_fight151
+                                                else:
+                                                    jump losowanko_fight156
+                                            
+                                            else:
+                                                $ kostka = renpy.random.randint(1, 5)
+                                                if kostka >= 5:
+                                                    $ gargantuar2_attack = renpy.random.randint(gargantuar2_min_attack_now, gargantuar2_max_attack_now)
+
+                                                    if memy == 6:
+                                                        $ kostka = renpy.random.randint(1, 20)
+                                                        if kostka <= 3:
+                                                            $ gargantuar2_hp_now -= gargantuar2_attack
+                                                            play sound "audio/sfx/obrona.mp3"
+                                                            "{i}Atak Gargantuar 2 odbił się od Szalika z Memów i zadał [gargantuar2_attack] obrażeń nadawcy{/i}"
+                                                            $ gargantuar2_special = 0
+                                                            $ luszcz_fok2 = 0
+                                                            $ urban_fok2 = 0
+                                                            $ zyd_fok2 = 0
+                                                            $ kazuma_fok2 = 0
+                                                            $ tarczownik_fok2 = 0
+                                                            if gargantuar2_weapon >= 1:
+                                                                if gargantuar2_imp == 1:
+                                                                    show gargantuar2 fight             
+                                                                else:
+                                                                    show gargantuar2 fight1
+                                                            jump start_fight151
+
+                                                    if tarczownik_obrona >= 2:
+                                                        play sound "audio/sfx/obrona.mp3"
+                                                        "{i}Atak Gargantuar 2 został zablokowany{/i}"
+                                                        $ tarczownik_obrona = 1
+                                                
+                                                    else:
+                                                        if gargantuar2_weapon >= 1:
+                                                            play sound "audio/sfx/gargantuar2_weapon.mp3"
+                                                                        
+                                                        else:
+                                                            play sound "audio/sfx/reka.mp3"
+
+                                                        if tarczownik_obrona == 1:
+                                                            $ tarczownik_hp_now -= int(gargantuar2_attack / 2)
+
+                                                            $ dmg = int(gargantuar2_attack / 2)
+                                                            "{i}Gargantuar 2 zadaje [dmg] obrażeń Naofumiemu{/i}"
+                                                        else:
+                                                            $ tarczownik_hp_now -= gargantuar2_attack
+
+                                                            "{i}Gargantuar 2 zadaje [gargantuar2_attack] obrażeń Naofumiemu{/i}"
+                                                    
+                                                    $ gargantuar2_special = 0
+                                                    $ luszcz_fok2 = 0
+                                                    $ urban_fok2 = 0
+                                                    $ zyd_fok2 = 0
+                                                    $ kazuma_fok2 = 0
+                                                    $ tarczownik_fok2 = 0
+                                                    if gargantuar2_weapon >= 1:
+                                                        if gargantuar2_imp == 1:
+                                                            show gargantuar2 fight             
+                                                        else:
+                                                            show gargantuar2 fight1
+
+                                                    jump start_fight151
+                                                else:
+                                                    jump losowanko_fight156
+
+                                    else:
+                                        jump losowanko_fight156
+                                else: 
+                                    jump losowanko_fight156  
 
     label przegranko_fight151:
         scene bg dead
@@ -21399,6 +24544,12 @@ label fight151:
         hide stun7
         hide stun8
         hide stun9
+        hide imp6
+        hide imp5
+        hide imp1
+        hide imp2
+        hide imp3        
+        hide imp4
         hide screen gargantuar1_stats
         hide screen trup15_stats
         hide screen gargantuar2_stats
@@ -21419,6 +24570,33 @@ label fight151:
                 $ zyd_fighter = 0
                 $ kazuma_fighter = 0
                 $ tarczownik_fighter = 0
+
+                $ gargantuar1_special = 0
+                $ gargantuar2_special = 0
+
+                $ gargantuar1_imp = 1
+                $ gargantuar2_imp = 1
+
+                $ luszcz_imp = 0
+                $ eminem_imp = 0
+                $ urban_imp = 0
+                $ zyd_imp = 0
+                $ kazuma_imp = 0
+                $ tarczownik_imp = 0
+
+                $ luszcz_fok1 = 0
+                $ eminem_fok1 = 0
+                $ urban_fok1 = 0
+                $ zyd_fok1 = 0
+                $ kazuma_fok1 = 0
+                $ tarczownik_fok1 = 0
+
+                $ luszcz_fok2 = 0
+                $ eminem_fok2 = 0
+                $ urban_fok2 = 0
+                $ zyd_fok2 = 0
+                $ kazuma_fok2 = 0
+                $ tarczownik_fok2 = 0
 
                 $ luszcz_wybrany = 0
                 $ eminem_wybrany = 0
@@ -21702,6 +24880,12 @@ label fight151:
         hide stun7
         hide stun8
         hide stun9
+        hide imp6
+        hide imp5
+        hide imp1
+        hide imp2
+        hide imp3
+        hide imp4
 
         hide screen luszcz1_stats
         hide screen luszcz2_stats
@@ -21759,6 +24943,33 @@ label fight151:
         $ zyd_wybrany = 0
         $ kazuma_wybrany = 0
         $ tarczownik_wybrany = 0
+
+        $ gargantuar1_special = 0
+        $ gargantuar2_special = 0
+
+        $ gargantuar1_imp = 1
+        $ gargantuar2_imp = 1
+
+        $ luszcz_imp = 0
+        $ eminem_imp = 0
+        $ urban_imp = 0
+        $ zyd_imp = 0
+        $ kazuma_imp = 0
+        $ tarczownik_imp = 0
+
+        $ luszcz_fok1 = 0
+        $ eminem_fok1 = 0
+        $ urban_fok1 = 0
+        $ zyd_fok1 = 0
+        $ kazuma_fok1 = 0
+        $ tarczownik_fok1 = 0
+
+        $ luszcz_fok2 = 0
+        $ eminem_fok2 = 0
+        $ urban_fok2 = 0
+        $ zyd_fok2 = 0
+        $ kazuma_fok2 = 0
+        $ tarczownik_fok2 = 0
 
         $ luszcz_weapon = 1
         $ eminem_weapon = 1

@@ -86,7 +86,6 @@ label fight141_stats:
     default wtfy = 0
 
 label fight141:
-    $ fight_on = 1
     label wybor_fight141:
         play music "audio/music/toxic3.mp3"
         scene bg toxic_pea
@@ -122,6 +121,10 @@ label fight141:
         $ engineer1_max_attack_now = engineer1_max_attack
         $ engineer1_min_attack_now_true = engineer1_min_attack
         $ engineer1_max_attack_now_true = engineer1_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight141:
             if liczba_sojusznikow >= 3:

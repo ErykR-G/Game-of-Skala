@@ -74,7 +74,6 @@ label fight61_stats:
     default gnom2_stun = 0
 
 label fight61:
-    $ fight_on = 1
     label wybor_fight61:
         play music "audio/music/gnoms_fight.mp3"
         scene bg gnoms
@@ -104,6 +103,10 @@ label fight61:
         $ gnom1_weapon = 0
         $ gnom3_weapon = 0
         $ gnom2_weapon = 0
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight61:
             if liczba_sojusznikow >= 3:

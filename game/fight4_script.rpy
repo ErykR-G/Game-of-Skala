@@ -84,7 +84,6 @@ label fight41_stats:
     default czarny_atak = 1
 
 label fight41:
-    $ fight_on = 1
     label wybor_fight41:
         play music "audio/music/czarny_fight.mp3"
         scene bg lethal17
@@ -101,6 +100,10 @@ label fight41:
         $ czarny_max_attack_now = czarny_max_attack
         $ czarny_min_attack_now_true = czarny_min_attack
         $ czarny_max_attack_now_true = czarny_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight41:
             if liczba_sojusznikow >= 3:

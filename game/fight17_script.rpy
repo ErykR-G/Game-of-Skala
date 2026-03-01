@@ -78,7 +78,6 @@ label fight171_stats:
     default gamma_stun = 0
 
 label fight171:
-    $ fight_on = 1
     label wybor_fight171:
         play music "audio/music/eis_fight.mp3"
         if timer >= 360 and timer <= 1200:       
@@ -169,6 +168,11 @@ label fight171:
         $ gamma_max_attack_now = gamma_max_attack
         $ gamma_min_attack_now_true = gamma_min_attack
         $ gamma_max_attack_now_true = gamma_max_attack
+        if dialog17p == 1:
+            $ fight_on = 0
+            luszcz "{b}O BOGOWIE, WALKA!{/b}"
+            $ fight_on = 1
+
         if eminem_sojusznik == 1 and dialog17p == 0:
             $ dialog17p = 1
             eminem "O chwila was też kojarzę!"
@@ -177,6 +181,7 @@ label fight171:
 
             gamma "Delta i Epsilon"
             gamma "A ty zaraz dołączysz do mojego mistrza w zaświatach!"
+            $ fight_on = 1
         else:
             if dialog17p == 0:
                 $ dialog17p = 1
@@ -192,6 +197,7 @@ label fight171:
 
                 gamma "..."
                 gamma "może po prostu walczmy"
+                $ fight_on = 1
 
         label team_fight171:
             if liczba_sojusznikow >= 3:

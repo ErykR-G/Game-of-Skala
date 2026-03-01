@@ -8,7 +8,7 @@ label fight91_stats:
 
     default trup9_hp = 0
     default trup10_hp = 0
-    default czarodziej_hp = 111
+    default czarodziej_hp = 120
 
     default trup9_uszy = 0
     default czarodziej_uszy = 0
@@ -75,7 +75,6 @@ label fight91_stats:
     default czarodziej_stun = 0
 
 label fight91:
-    $ fight_on = 1
     label wybor_fight91:
         play music "audio/music/fight.mp3"
         scene bg dom_kultury
@@ -92,6 +91,10 @@ label fight91:
         $ czarodziej_max_attack_now = czarodziej_max_attack
         $ czarodziej_min_attack_now_true = czarodziej_min_attack
         $ czarodziej_max_attack_now_true = czarodziej_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight91:
             if liczba_sojusznikow >= 3:

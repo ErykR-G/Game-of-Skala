@@ -83,7 +83,6 @@ label fight181_stats:
     default tarczownik_haczyki = 0
                 
 label fight181:
-    $ fight_on = 1
     label wybor_fight181:
         play music "audio/music/fanatyk_fight.mp3"
         scene bg jezioro_fight
@@ -101,6 +100,10 @@ label fight181:
         $ fanatyk_min_attack_now_true = fanatyk_min_attack
         $ fanatyk_max_attack_now_true = fanatyk_max_attack
         $ fanatyk_special = 3
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight181:
             if liczba_sojusznikow >= 3:

@@ -74,7 +74,6 @@ label fight101_stats:
     default all_star_zombie1_stun = 0
 
 label fight101:
-    $ fight_on = 1
     label wybor_fight101:
         play music "audio/music/toxic3.mp3"
         scene bg toxic_pea
@@ -110,6 +109,10 @@ label fight101:
         $ all_star_zombie1_max_attack_now = all_star_zombie1_max_attack
         $ all_star_zombie1_min_attack_now_true = all_star_zombie1_min_attack
         $ all_star_zombie1_max_attack_now_true = all_star_zombie1_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight101:
             if liczba_sojusznikow >= 3:

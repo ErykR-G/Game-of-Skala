@@ -433,7 +433,6 @@ label toxic_pea:
         toxic "CZEKAJCIE, PRZYSZŁO WSPARCIE!"
         toxic "EJ DAWAJ TU SZYBKO, MAMY KURWA GIGANTY!"
 
-        jump after_fight151
         jump fight151
         label after_fight151:
             play music "audio/music/toxic2.mp3"

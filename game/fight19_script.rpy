@@ -76,7 +76,6 @@ label fight191_stats:
     default zul_jabole = 6
 
 label fight191:
-    $ fight_on = 1
     label wybor_fight191:
         play music "audio/music/zul_fight.mp3"
         scene bg zul
@@ -93,6 +92,10 @@ label fight191:
         $ zul_max_attack_now = zul_max_attack
         $ zul_min_attack_now_true = zul_min_attack
         $ zul_max_attack_now_true = zul_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight191:
             if liczba_sojusznikow >= 3:

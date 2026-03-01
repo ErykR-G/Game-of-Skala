@@ -74,7 +74,6 @@ label fight11_stats:
     default akane_stun = 0
 
 label fight11:
-    $ fight_on = 1
     label wybor_fight11:
         play music "audio/music/fight.mp3"
         scene bg korytarz
@@ -101,6 +100,10 @@ label fight11:
         $ akane_max_attack_now = akane_max_attack
         $ akane_min_attack_now_true = akane_min_attack
         $ akane_max_attack_now_true = akane_max_attack
+
+        $ fight_on = 0
+        luszcz "{b}O BOGOWIE, WALKA!{/b}"
+        $ fight_on = 1
 
         label team_fight11:
             if liczba_sojusznikow >= 3:
