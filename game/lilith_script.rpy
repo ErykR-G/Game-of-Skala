@@ -8,13 +8,19 @@ label lilith:
 
         scene bg gnoms with fade
         play music "audio/music/lilith1.mp3"
-        scene bg lilith1 with fade
+        scene bg lilith2 with fade
 
         lilith "..."
+
+        show bg lilith1
 
         luszcz "..?"
 
+        show bg lilith2
+
         lilith "..."
+
+        show bg lilith1
 
         siostra "Słuchaj Joanna, nie uwierzysz co się stało!"
         siostra "znowu to zrobiliśmy…"
@@ -28,9 +34,12 @@ label lilith:
             "{b}...{/b}":
                 $ ado += 1
                 luszcz "..."
+                show bg lilith2
                 lilith "..."
             "{b}Kim jesteś?{/b}":
                 jump after_yapping
+
+        show bg lilith1
 
         siostra "i na początku było jeszcze git"
         siostra "zrobiłam przygotowania, znalazłam sobie przyjaciela ze wschodu i szukałam też z północy"
@@ -47,9 +56,12 @@ label lilith:
             "{b}...{/b}":
                 $ ado += 1
                 luszcz "..."
+                show bg lilith2
                 lilith "..."
             "{b}Kim jesteś?{/b}":
                 jump after_yapping
+        
+        show bg lilith1
 
         siostra "więc zacząłam szukać innych opcji"
         siostra "I wtedy odezwał się do mnie ten inny przyjaciel co gwałcił tego typa z północy"
@@ -69,9 +81,12 @@ label lilith:
             "{b}...{/b}":
                 $ ado += 1
                 luszcz "..."
+                show bg lilith2
                 lilith "..."
             "{b}Kim jesteś?{/b}":
                 jump after_yapping
+
+        show bg lilith1
 
         siostra "Ten gość z zachodu był silny"
         siostra "Bardzo silny"
@@ -92,9 +107,12 @@ label lilith:
             "{b}...{/b}":
                 $ ado += 1
                 luszcz "..."
+                show bg lilith2
                 lilith "..."
             "{b}Kim jesteś?{/b}":
                 jump after_yapping
+
+        show bg lilith1
 
         siostra "Znaczy mnie nie"
         siostra "Jedynie tego mojego przyjaciela co mnie zmusił do próby kontrgwałtu"
@@ -151,17 +169,40 @@ label lilith:
                         else:
                             scene bg pokoj with fade
 
-
             show luszcz neutral right at slightright
-            show lilith neutral1 at left
+            show lilith neutral2 at left
+            play music "audio/music/lilith2.mp3"
 
             luszcz "Kim ty do kurwy jesteś? I jak dostałaś się do mojego domu?"
 
             lilith "Naprawdę chcesz to wiedzieć? Przecież to jest tylko gra komputerowa…."
 
-            # krzeslo Panie ona się Ciebie nie słucha
+            show layer master:
+                zoom 1.0
+                xalign 0.95 yalign 0.35
+                linear 0.1 zoom 3.5
 
-            # szafka Na pewno coś ukrywa! 
+            gwiazda "Panie ona się Ciebie nie słucha"
+
+            show layer master:
+                zoom 3.5
+                xalign 0.95 yalign 0.35
+                easeout 0.1 zoom 3.5 xalign 1.0 yalign 0.82
+
+            drukarka "Na pewno coś ukrywa!"
+
+            show lilith neutral5
+
+            show layer master:
+                linear 0.1 zoom 1.0 xalign 0.5 yalign 0.5
+
+            lilith "Haloo, ziemia do Łuszcza!"
+
+            luszcz "...?"
+
+            show lilith neutral3
+
+            lilith "..."
 
             menu:
                 "{b}Jesteś prostytutką?{/b}":
@@ -256,63 +297,78 @@ label lilith:
                 "{b}Japierdole znów mam zwidy{/b}":
                     luszcz "Japierdole znów mam zwidy, mogłem nie wdychać tyle kadzidła podczas mszy…"
 
-                    #krzesło Panie, nic panu nie jest … to normalne w tym wieku
+                    show layer master:
+                        zoom 1.0
+                        xalign 0.95 yalign 0.35
+                        linear 0.1 zoom 3.5
 
-                    #szafka dokładnie, dokładnie jest pan całkowicie normalny
+                    gwiazda "Panie, nic panu nie jest … to normalne w tym wieku"
+
+                    show layer master:
+                        zoom 3.5
+                        xalign 0.95 yalign 0.35
+                        easeout 0.1 zoom 3.5 xalign 1.0 yalign 0.82
+
+                    drukarka "dokładnie, dokładnie jest pan całkowicie normalny"
+
+
+                    show layer master:
+                        linear 0.1 zoom 1.0 xalign 0.5 yalign 0.5
 
                     luszcz "a okej"
+                    luszcz "to jak masz na imię?"
+
+                    lilith "Lilith"
+
+                    luszcz "spoko"
+
 
             "{i}…{/i}"
 
-            luszcz "dobra skoro już wiem kim jesteś to:"
+            lilith "Dobra to skoro już się poznaliśmy to opowiedz coś o sobie"
 
+            luszcz "A moze być ciekawostka z wiedzy ogólnej?"
+
+            lilith "Jeżeli to jest to co chcesz mi powiedzieć to powiedz"
+
+            luszcz "to w takim razie czy wiesz, że..."
             menu:
-                "{b}Wiesz, że w skyblocku lvl 2137…{/b}":
-                    luszcz "Wiedziałqś, że aby osiągnąć 2137 lvl exp. w minecrafcie"
-                    luszcz "potrzebujesz 22 318 169 pkt. expa"
-                    luszcz "?"
-                    luszcz "a zatem dzięki temu obliczyłem"
-                    luszcz "że na Skyblocku na hypixelu"
-                    luszcz "przy moim obecnym lvl. enchantingu"
-                    luszcz "i przy użyciu najlepszej potki expa, która przy 38 lvl. enchantingu daje 1 450 000 pkt. expa"
-                    luszcz "potrzebowałbym 16 pełnych potek"
-                    luszcz "i musiałbym wydać nadmierne lvl."
-                    luszcz "przy obecnym stanie rynkowym"
-                    luszcz "gdzie taka potka expa kosztuje mniej więcej 1 200 000"
-                    luszcz "koszt takiego przedsięwzięcia wynosi +/- 19 200 000"
-                    luszcz "Jednakże"
-                    luszcz "jako iż posiadam już 450 lvl expa na moim koncie"
-                    luszcz "ilośc pkt exp, których mi brakuje, wynosi 21 411 404"
-                    luszcz "a zatem potrzebuję jednie 15 pełnych potek a następnie wydanie nadmiernych lvlów"
-                    luszcz "co zmniejsza wydatek takiego przedsięwzięcia do 18 000 000"
-                    luszcz "+/-"
-                    luszcz "Według strony SkyCryp, która przelicza Networth graczy"
-                    luszcz "mój profil, na którym gram, ma wartość: 2 000 158 093"
-                    luszcz "a zatem przedsięwzięcie, którym jest zdobycie 2137 lvl expa wynosi 0,89992886% wartości mojego całego konta"
-                    luszcz "Czy uważasz, że osiągnięcie tego celu jest tego warte?"
-                    luszcz "alternatywnie, mógłbym zamordować 80 bossów zombie na najwyższym poziomie"
-                    luszcz "którego aby zespawnić wymaga odemnie masowego mordu na nieumarłych zombiakach"
-                    luszcz "od ponad 150 do tylko 3, w zależności od typu i lvl danego zombie"
-                    luszcz "co więcej aby podjąć się zabicia jednego bosa, należy zapłacić 200 000"
-                    luszcz "a zatem, musiałbym zapłacić dodatkowe 16 000 000 aby ukończyć poziom 8 tego bossa"
-                    luszcz "i go zabić te 80 razy więcej"
-                    luszcz "dzięki temu odblokuję hełm, który jest uważany za najlepszy hełm pod obrażenia w całej grze"
-                    luszcz "i jego koszt wynosi coś w okolicach 100 000 000"
-                    luszcz "a zatem, aby go posiąść, musiałbym wydać coś koło 116 000 000"
-                    luszcz "jak już wcześniej wspomniałem, mój networth wynosi 2 000 158 093"
-                    luszcz "a zatem wyniosłoby to 5,79954157% całej wartośmy mojego konta"
+                "{b}...Adolf Hitler tak naprawdę uciekł do Argentyny?{/b}":
+                    luszcz "Bo ja grałem w Hoia i tam właśnie jest specjalna droga na Argentyne"
+                    luszcz ", że jak Hitlera obalą to możesz go sobie na lidera kraju wybrać"
+                    luszcz 'Więć jest to niezbity dowud na to, że Hitler uciekl do Argentyny'
+                    luszcz "Trust me bro"
                 
-                "{b}Czy ty też uważasz, że kraje pierwszego świata…{/b}":
-                    luszcz "Czy ty też uważasz, że kraje pierwszego świata to tylko te kraje, które korzystają z blika?"
-                    luszcz "No bo przeciesz to jest podstawa każdego rozwiniętego społeczeństwa"
-                    luszcz "Nie da się inaczej płacić niż blikiem"
-                    luszcz "Dlatego właśnie muszę powstrzymać księdza i przywrócić u nas płatność blikiem"
-                    luszcz "Inaczej staniemy się jak te dzikusy co gadajom po jakimś Maoryskim czy czymś takim i robią uga buga…"
+                "{b}...Wielko Lechici podpisali pakt z Kosmitami?{/b}":
+                    luszcz "No, bo lechici są Bogami tak btw"
+                    luszcz "I kosmitą to mega imponowało"
+                    luszcz "I stwierdzili, że oni chcą być z tak potężnym narodem w sojuszu"
+                    luszcz "I podpisali, dlatego pakt z Wielką Lechią"
 
+                "{b}...na Placu Tiananmen w 1989r. nic się nie stało?{/b}":
+                    luszcz "No bo jakby co niby miałoby się wydarzyć?"
+                    luszcz "gdyby coś się wydarzyło to napewno ktoś, by o tym mówił co nie!?"
+                    luszcz "Ja naprzykład ostatnio spytałem o to DeepSeek AI"
+                    luszcz "I to go aż tak bardzo znudziło, że w połowie pisania stwierdził, że mi oszczędzi nudów i usunął wiadomość"
+                    luszcz "więc no literalnie nic się tam nie stało"
+                
+                "{b}...Jezus tak naprawdę nie umarł na krzyżu?{/b}":
+                    luszcz "no, bo jakby to miało niby działać?"
+                    luszcz "Przecież on jest synem Boga, a Bóg jest nieśmiertelny"
+                    luszcz "więc Jezus też musi być"
+                    luszcz "Pewnie fake'ował pod publikę"
+                    luszcz "No, ale chyba był w tym dobry skoro wszyscy mu do dziś wierzą"
+
+                "{b}...Stalin tak naprawdę nie umarł na udar?{/b}":
+                    luszcz "Bo ja oglądałem taki film dokumentalny o tym"
+                    luszcz "I tam była właśnie taka scena, że Stalin dostał liścik z pogruszkami"
+                    luszcz "I sie zaczoł śmiac tak glośno"
+                    luszcz "I się niestety zakrztusił i umarł"
+                    luszcz "ale nie na udar tak jak się mówi tylko na szczęście"
 
             lilith "eeeee"
             lilith "hehehe"
-            lilith "fajnie"
+            lilith "cool"
             lilith "…"
             lilith "Upieczmy tort!"
 
@@ -365,13 +421,64 @@ label lilith:
 
             menu:
                 "{b}Powtórzyć{/b}":
-                    "DODAĆ"
+                    lilith "Na początku oddziel 蛋 na 蛋白質 i 蛋黃. 蛋白質 ubij na sztywną 泡棉 ze szczyptą 鹽, następnie stopniowo dodawaj 糖, cały czas miksując."
+
+                    luszcz "Aww shit, co to za chińskie znaczki!?"
+                    luszcz "Jak ja mam to niby zrozumieć!?"
+
+                    if slownik == 1:
+                        luszcz "Chwila wait przecież mam rozmówki polsko chińskie!"
+                        show luszcz slownik
+                        luszcz "Ej możesz zacząć od początku, bo trochę nie słuchałem?"
+                        lilith "strzelam! gr gr grrr"
+
+                        lilith "Na początku oddziel jajka na białko i żółtko. Białka ubij na sztywną pianę ze szczyptą soli, następnie stopniowo dodawaj cukru, cały czas miksując.{nw=0.5}{/cps}"
+                        lilith "Gdy masa będzie lśniąca i gęsta, dodawaj po jednym żółtku, delikatnie miksując na niskich obrotach. Na koniec przesiej do masy 150 g mąki pszennej i delikatnie wymieszaj szpatułką, aby nie zniszczyć piany.{nw=0.5}{/cps}"
+                        lilith "Przelej ciasto do tortownicy o średnicy około 24 cm wyłożonej papierem do pieczenia i piecz w temperaturze 170–175°C przez około 30–35 minut, do suchego patyczka. W międzyczasie przygotuj krem. Ubij 500 ml dobrze schłodzonej śmietanki kremówki z 2–3 łyżkami cukru pudru.{nw=0.5}{/cps}"
+                        lilith "Pod koniec ubijania dodaj serka mascarpone i krótko zmiksuj do połączenia składników. Jeśli chcesz, możesz dodać łyżeczkę ekstraktu waniliowego. Przygotuj około 500–700 g świeżych truskawek – umyj je, usuń szypułki i pokrój większe truskawki na połówki lub plasterki.{nw=0.5}{/cps}"
+                        lilith "Aby złożyć tort, pierwszy blat biszkoptu nasącz delikatnie ostudzoną wodą z odrobiną soku z cytryny, następnie wyłóż część kremu i równomiernie rozprowadź. Na kremie ułóż warstwę truskawek.{nw=0.5}{/cps}"
+                        lilith "Przykryj kolejnym blatem i powtórz czynność. Wierzch oraz boki tortu posmaruj pozostałym kremem i udekoruj świeżymi truskawkami według uznania.{nw=0.5}{/cps}"
+
+                    else:
+                        luszcz "Przecież nie ma tu Eryka, żeby to przetłumaczył!"
+
+                        lilith "Ale typie to jest Chiński Tradycyjny, a nie Japoński więc Eryk i tak go nie zna!"
+                        lilith "Więc sklej japę i się skup, bo powtarzać nie będę!"
+
+                        lilith "{cps=50}Gdy 大量的 będzie lśniąca i gęsta, dodawaj po jednym 蛋黃, delikatnie miksując na niskich obrotach. Na koniec przesiej do 大量的 150 g 麵粉 i delikatnie wymieszaj szpatułką, aby nie zniszczyć 泡棉.{nw=0.5}{/cps}"
+                        lilith "{cps=50}Przelej 蛋糕 do 蛋糕罐 o średnicy około 24 cm wyłożonej 烘焙紙 i piecz w temperaturze 170–175°C przez około 30–35 minut, do suchego patyczka. W międzyczasie przygotuj 奶油. Ubij 500 ml dobrze schłodzonej 鮮奶油 z 2–3 łyżkami 糖粉.{nw=0.5}{/cps}"
+                        lilith "{cps=50}Pod koniec ubijania dodaj 馬斯卡彭起司 i krótko zmiksuj do połączenia składników. Przygotuj około 500–700 g świeżych 草莓 – umyj je, usuń szypułki i pokrój większe 草莓  na połówki lub plasterki.{nw=0.5}{/cps}"
+                        lilith "{cps=50}Aby złożyć tort, pierwszy blat 海綿蛋糕 nasącz delikatnie ostudzoną 水 z odrobiną 檸檬汁, następnie wyłóż część 奶油  i równomiernie rozprowadź. Na 奶油 ułóż warstwę 草莓.{nw=0.5}{/cps}" 
+                        lilith "{cps=50}Przykryj kolejnym blatem i powtórz czynność. Wierzch oraz boki 蛋糕 posmaruj pozostałym 奶油 i udekoruj świeżymi 奶油 według uznania.{nw=0.5}{/cps}"
+
+                    lilith "No i na koniec dodaj trochę miłości ❤️"
+
+                    luszcz "yyyeeeh"
+                    luszcz "a może byś powtórzyła jeszcze raz?"
+
+                    lilith "Nie, nie tak nie można!"
+                    lilith "Gdybym powtórzyła to moja cała wcześniejsza wypowiedź straciłaby sens!"
+
+                    luszcz "ale przecież teraz też powtarzałaś przepis!?"
+
+                    lilith "oh no ale ty/gracz nie widziałeś jak mówiłam przepis za pierwszym razem"
+                    lilith "bo autor tej gry stwierdził, że będzie zabawnie jeśli skipniesz powtórzenie i będziesz musiał gotować po chińsku w ciemno"
+                    lilith "ale akurat ty byłeś tak przenikliwy, że się tego domyśliłeś i poprosiłeś mnie bym powtórzyła"
+                    lilith "lub ewentualnie oszukałeś i wczytałeś save’a!"
+                    lilith "tak czy siak nie powtórzę, bo nie i elo"
+
+                    luszcz "…"
+                    luszcz "Nie łam 4 ściany"
+
+                    lilith "…"
+
+                    luszcz "…"
+                    luszcz "dobra to gotuję"
 
                 "{b}Zaczynajmny{/b}":
                     luszcz "zaczynajmy"
 
-
-
+            luszcz "(Na początku muszę dodać)"
 
 
 

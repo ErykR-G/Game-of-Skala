@@ -87,7 +87,7 @@ label items_fabularne:
     default wazon_wezy = 0
     default glowa = 0
     default zielona_kula = 0
-    default aparat = 0
+    default slownik = 0
     default kartka = 0
     default dinozaur = 0
     default cialo = 0
@@ -105,7 +105,7 @@ label items_fabularne:
     default wazon_wezyx = 0
     default glowax = 0
     default zielona_kulax = 0
-    default aparatx = 0
+    default slownikx = 0
     default kartkax = 0
     default dinozaurx = 0
     default cialox = 0
@@ -7518,7 +7518,7 @@ label eq:
             $ wazon_wezyx = 0
             $ glowax = 0
             $ zielona_kulax = 0
-            $ aparatx = 0
+            $ slownikx = 0
             $ kartkax = 0
             $ dinozaurx = 0
             $ cialox = 0
@@ -7578,13 +7578,13 @@ label eq:
                     $ zielona_kulax += 2
                     $ stronaf2 += 1
                 
-            if aparat >= 1 and stronaf1 < 6:
+            if slownik >= 1 and stronaf1 < 6:
                 $ stronaf1 += 1
-                $ aparatx += 1
+                $ slownikx += 1
 
             else:
-                if aparat >= 1:
-                    $ aparatx += 2
+                if slownik >= 1:
+                    $ slownikx += 2
                     $ stronaf2 += 1
                 
             if kartka >= 1 and stronaf1 < 6:
@@ -7745,9 +7745,9 @@ label eq:
 
                         jump itemy_fabularne
                     
-                    "{b}Aparat{/b}" if aparatx == 1:
+                    "{b}Rozmówki polsko-chińskie{/b}" if slownikx == 1:
                         window show
-                        "{i}Aparat jest fajny{/i}"
+                        "{i}Rozmówki polsko-chińskie jest fajny{/i}"
                         window hide
 
                         jump itemy_fabularne
@@ -8100,9 +8100,9 @@ label itemy_fabularne2:
 
             jump itemy_fabularne
         
-        "{b}Aparat{/b}" if aparatx == 2:
+        "{b}Rozmówki polsko-chińskie{/b}" if slownikx == 2:
             window show
-            "{i}Aparat jest fajny{/i}"
+            "{i}Rozmówki polsko-chińskie jest fajny{/i}"
             window hide
 
             jump itemy_fabularne

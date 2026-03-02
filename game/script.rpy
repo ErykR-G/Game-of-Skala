@@ -59,6 +59,10 @@ label postacie:
 
     define pies = Character("Raphtalia", color="#d87829")
 
+    define gwiazda = Character("Gwiazda Śmierci", color="#3b3b3b")
+
+    define drukarka = Character("Drukarka 3D", color="#1a188b")
+
     define duda = Character("Andrzej Duda", color="#a17c5c")
     image duda neutral right = Transform("duda neutral", xzoom=-1) 
 
