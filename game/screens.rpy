@@ -102,6 +102,32 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+screen oven_text_game():
+
+    timer 0.1 repeat True action Function(update_texts)
+    timer 0.6 repeat True action Function(spawn_text)
+    timer 0.1 repeat True action SetVariable("game_time", game_time - 0.1)
+
+    if game_time <= 0:
+        timer 0.1 action Return()
+
+    # 🔥 PROCENT NA ŚRODKU
+    $ percentage = min(100, int((score / max_time) * 100))
+
+    text "Dywergencja: [percentage]%":
+        xalign 0.5
+        yalign 0.0
+        size 50
+
+    for t in texts:
+
+        textbutton t["label"]:
+            xpos t["x"]
+            ypos t["y"]
+            style "oven_button"
+            text_style "oven_button_text"
+            action Function(click_text, t)
+
 screen say(who, what):
 
     window:

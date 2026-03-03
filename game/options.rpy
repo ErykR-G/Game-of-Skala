@@ -20,6 +20,8 @@ define config.main_menu_music = "audio/music/menu.mp3"
 
 define config.name = _("Game of Skala")
 
+define config.hw_video = True
+
 define config.layers = [
     "background",
     "effects",

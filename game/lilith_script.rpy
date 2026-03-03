@@ -2,6 +2,89 @@ define fast_push = PushMove(0.45, "pushleft")
 default powtor = 0
 default ciastol = 0
 
+default texts = []
+default score = 0
+default max_time = 50.0
+default game_time = 50.0
+
+default hitlerlil = 0
+default stalinlil = 0
+default lechialil = 0
+default kennedylil = 0
+default placlil = 0
+default jezuslil = 0
+
+init python:
+    import random
+
+    true_texts = [
+        "Jesteś wehikułem czasu",
+        "Możliwe, że nie jesteś piekarnikiem",
+        "Nie jest wykluczone, że jesteś maszyną czasu",
+        "Nie ma takie dowodu, że jesteś piekarnikiem",
+        "Oczywiście, że jesteś maszyna czasu",
+        "Oczywiście, ze nie jesteś piekarnikiem"
+    ]
+
+    false_texts = [
+        "Nie jesteś wehikułem czasu",
+        "Jesteś piekarnikiem",
+        "Czym innym jesteś jak nie piekarnikiem",
+        "Napewno nie jesteś wehikułem czasu",
+        "Nie ma dowodu, że jesteś wehikułem czasu",
+        "Piekarnik to ty"
+    ]
+
+    def spawn_text():
+        is_true = renpy.random.choice([True, False])
+
+        if is_true:
+            label_text = renpy.random.choice(true_texts)
+        else:
+            label_text = renpy.random.choice(false_texts)
+
+        texts.append({
+            "id": renpy.random.randint(1000, 9999),
+            "x": renpy.random.randint(50, 1250),
+            "y": renpy.random.randint(150, 900),
+            "time": 3.0,
+            "correct": not is_true,  # poprawne = zaprzeczenie
+            "label": label_text
+        })
+
+    def update_texts():
+        global texts
+        for t in texts[:]:
+            t["time"] -= 0.1
+            if t["time"] <= 0:
+                texts.remove(t)
+
+    def click_text(t):
+        global score
+
+        if t["correct"]:
+            score += 1
+        else:
+            if score > 0:
+                score -= 1
+
+        if t in texts:
+            texts.remove(t)
+
+init:
+
+    style oven_button_text:
+        size 28
+        color "#ffffff"
+        hover_color "#ffff66"
+        insensitive_color "#888888"
+
+    style oven_button:
+        background "#222222cc"
+        hover_background "#444444dd"
+        selected_background "#666666dd"
+        padding (15, 10)
+
 label lilith:
     label lilith1:
         "{i}{/i}"
@@ -376,6 +459,7 @@ label lilith:
                 "{b}Czy wiesz, że...{/b}"
 
                 "{b}...Adolf Hitler tak naprawdę uciekł do Argentyny?{/b}":
+                    $ hitlerlil = 1
                     luszcz "...Adolf Hitler tak naprawdę uciekł do Argentyny?"
                     luszcz "Bo ja grałem w Hoia i tam właśnie jest specjalna droga na Argentyne"
                     luszcz ", że jak Hitlera obalą to możesz go sobie na lidera kraju wybrać"
@@ -383,6 +467,7 @@ label lilith:
                     luszcz "Trust me bro"
                 
                 "{b}...Wielko Lechici podpisali pakt z Kosmitami?{/b}":
+                    $ lechialil = 1
                     luszcz "...Wielko Lechici podpisali pakt z Kosmitami?"
                     luszcz "No, bo lechici są Bogami tak btw"
                     luszcz "I kosmitą to mega imponowało"
@@ -390,6 +475,7 @@ label lilith:
                     luszcz "I podpisali, dlatego pakt z Wielką Lechią"
 
                 "{b}...na Placu Tiananmen w 1989r. nic się nie stało?{/b}":
+                    $ placlil = 1
                     luszcz "...na Placu Tiananmen w 1989r. nic się nie stało?"
                     luszcz "No bo jakby co niby miałoby się wydarzyć?"
                     luszcz "gdyby coś się wydarzyło to napewno ktoś, by o tym mówił co nie!?"
@@ -398,6 +484,7 @@ label lilith:
                     luszcz "więc no literalnie nic się tam nie stało"
                 
                 "{b}...Jezus tak naprawdę nie umarł na krzyżu?{/b}":
+                    $ jezuslil = 1
                     luszcz "...Jezus tak naprawdę nie umarł na krzyżu?"
                     luszcz "no, bo jakby to miało niby działać?"
                     luszcz "Przecież on jest synem Boga, a Bóg jest nieśmiertelny"
@@ -406,6 +493,7 @@ label lilith:
                     luszcz "No, ale chyba był w tym dobry skoro wszyscy mu do dziś wierzą"
 
                 "{b}...Stalin tak naprawdę nie umarł na udar?{/b}":
+                    $ stalinlil = 1
                     luszcz "...Stalin tak naprawdę nie umarł na udar?"
                     luszcz "Bo ja oglądałem taki film dokumentalny o tym"
                     luszcz "I tam była właśnie taka scena, że Stalin dostał liścik z pogruszkami"
@@ -832,7 +920,7 @@ label lilith:
 
             luszcz "Dobra, chyba wszystko"
 
-            show lilith neutral2:
+            show lilith neutral3:
                 yoffset 0
                 linear 0.15 yoffset -50
                 linear 0.15 yoffset 0
@@ -843,6 +931,68 @@ label lilith:
 
             luszcz "Tak, tak dodałam na pewno, na pewno, pewnie, jasne, zobaczymy, czas pokaże"
 
+            show lilith neutral2
+
+            lilith "...?"
+
+            luszcz "No dodałem no mówie, że dodałem"
+
+            show lilith neutral5
+
+            lilith "hmmmm"
+
+            show lilith neutral3
+
+            lilith "No dobra to teraz do piekarnika i poczekać 30 min i gotowe"
+
+            menu:
+                "{b}Włóż ciasto do piekarnika{/b}":
+                    $ ado += 1
+
+            hide luszcz 
+            hide lilith 
+            window hide
+            show layer master:
+                zoom 1.0
+                xalign 0.34 yalign 0.865
+                linear 0.0 zoom 3.4
+
+            play music "audio/music/lilith4.mp3"
+
+            call screen oven_text_game
+
+            window show
+            stop music
+            play sound "audio/sfx/ding.mp3"
+            "{i}*Ding*{/i}"
+
+            menu:
+                "{b}Otwórz piekarnik{b}":
+                    $ ado += 1
+
+            if score >= 25:
+                "Udało się!"
+            else:
+                window hide
+                hide screen clock
+                if hitlerlil == 1:
+                    scene hitlert
+                if stalinlil == 1:
+                    scene stalint
+                if placlil == 1:
+                    scene plact
+                if lechialil == 1:
+                    scene lechiat
+                if jezuslil == 1:
+                    scene jezust
+                if kennedylil == 1:
+                    scene kennedyt
+                $ renpy.movie_cutscene("timee.webm")
+
+                "{nw=0.5}"
+                window show
+                scene bg black with fade
+                "lldlds"
 
 
 
