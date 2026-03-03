@@ -891,13 +891,13 @@ label yusuke:
                                 label gumball_wybory2:
                                     menu:
                                         "{b}Otwórz lodówkę{/b}" if glodowka == 0:
-                                            luszcz "*otwieranko*"
+                                            "{i}*otwieranko*{/i}"
                                             luszcz "Dużo bekonu. Nic więcej."
                                             $ glodowka = 1
                                             jump gumball_wybory2
 
                                         "{b}Otwórz szafkę{/b}" if gszafka == 0:
-                                            luszcz "*otwieranko*"
+                                            "{i}*otwieranko*{/i}"
                                             luszcz "Dużo gier wideo. Nic więcej."
                                             $ gszafka = 1
                                             jump gumball_wybory2
@@ -1215,9 +1215,9 @@ label yusuke:
                     luszcz "Okej daj mi się przygotować…"
                     luszcz "…"
                     luszcz "Hm…"
-                    luszcz "*wdech*"
+                    "{i}*wdech*{/i}"
                     luszcz "…"
-                    luszcz "*wydech*"
+                    "{i}*wydech*{/i}"
 
                     yusuke "Jesteś gotów?"
 

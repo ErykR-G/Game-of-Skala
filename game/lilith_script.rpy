@@ -992,7 +992,13 @@ label lilith:
                 "{nw=0.5}"
                 window show
                 scene bg black with fade
-                "lldlds"
+                "{i}...{/i}"
+                if hitlerlil == 1:
+                    luszcz "(Jezu gdzie ja jestem)"
+                    luszcz "(nic nie widzę)"
+                    luszcz "(Moja głowa, moje oczy piekielnie bolą)"
+        
+
 
 
 
