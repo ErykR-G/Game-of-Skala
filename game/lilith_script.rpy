@@ -1,4 +1,6 @@
 define fast_push = PushMove(0.45, "pushleft")
+default powtor = 0
+default ciastol = 0
 
 label lilith:
     label lilith1:
@@ -598,6 +600,7 @@ label lilith:
 
             menu:
                 "{b}Powtórzyć{/b}":
+                    $ powtor = 1
                     show lilith neutral3
 
                     lilith "Na początku oddziel {font=fonts/NotoSansTC-Regular.ttf}蛋{/font} na {font=fonts/NotoSansTC-Regular.ttf}蛋白質{/font} i {font=fonts/NotoSansTC-Regular.ttf}蛋黃{/font}. {font=fonts/NotoSansTC-Regular.ttf}蛋白質{/font} ubij na sztywną {font=fonts/NotoSansTC-Regular.ttf}泡棉{/font} ze szczyptą {font=fonts/NotoSansTC-Regular.ttf}鹽{/font}, następnie stopniowo dodawaj {font=fonts/NotoSansTC-Regular.ttf}糖{/font}, cały czas miksując."
@@ -676,8 +679,169 @@ label lilith:
                 "{b}Zaczynajmny{/b}":
                     luszcz "zaczynajmy"
 
-            luszcz "(Na początku muszę dodać)"
+            luszcz "Na początku muszę..."
 
+            if powtor == 1 and slownik == 1:
+                menu:
+                    "{b}Na początku muszę oddzielić...{/b}"
+
+                    "{b}Jajka na białko i żółtko{/b}":
+                        $ ciastol += 1
+
+                    "{b}Składniki na cukier i masło{/b}":
+                        $ ciastol += 0
+            
+            else:
+                menu:
+                    "{b}Na początku muszę oddzielić...{/b}"
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}蛋{/font} na {font=fonts/NotoSansTC-Regular.ttf}蛋白質{/font} i {font=fonts/NotoSansTC-Regular.ttf}蛋黃{/font}{/b}":
+                        $ ciastol += 1
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}原料{/font} na {font=fonts/NotoSansTC-Regular.ttf}糖{/font} i {font=fonts/NotoSansTC-Regular.ttf}黄油{/font}{/b}":
+                        $ ciastol += 0
+            
+            if powtor == 0:
+                luszcz "Aww shit, co to za chińskie znaczki!?"
+                luszcz "Jak ja mam to niby zrozumieć!?"
+
+                if slownik == 1:
+                    luszcz "Chwila wait przecież mam rozmówki polsko chińskie!"
+                    show luszcz slownik
+                else:
+                    luszcz "Przecież nie ma tu Eryka, żeby to przetłumaczył!"
+
+                    show lilith neutral5
+
+                    lilith "Ale typie to jest Chiński Tradycyjny, a nie Japoński więc Eryk i tak go nie zna!"
+                    lilith "Więc sklej japę i się skup, przecież upieczenie tortu nie jest takie trudne!"
+
+                    show lilith neutral3
+            
+            else:
+                luszcz "Dobra, chyba to jest to"
+
+
+            if slownik == 1:
+                menu:
+                    "{b}Następnie muszę ubić to na...{/b}"
+
+                    "{b}Pianę ze szczyptą soli i dodać cukier{/b}":
+                        $ ciastol += 1
+
+                    "{b}Ciasto ze sodą i dodać miód{/b}":
+                        $ ciastol += 0
+            
+            else:
+                menu:
+                    "{b}Następnie muszę ubić to na...{/b}"
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}泡棉{/font} ze {font=fonts/NotoSansTC-Regular.ttf}鹽{/font} i dodać {font=fonts/NotoSansTC-Regular.ttf}糖{/font}{/b}":
+                        $ ciastol += 1
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}蛋糕{/font} ze {font=fonts/NotoSansTC-Regular.ttf}蘇打{/font} i dodać {font=fonts/NotoSansTC-Regular.ttf}蜂蜜{/font}{/b}":
+                        $ ciastol += 0
+            
+            luszcz "Dobra, chyba to jest to"
+
+            if slownik == 1:
+                menu:
+                    "{b}Potem muszę przesiać...{/b}"
+                    
+                    "{b}150g mąki pszennej do masła{/b}":
+                        $ ciastol += 0
+
+                    "{b}150g mąki pszennej do masy{/b}":
+                        $ ciastol += 1
+            
+            else:
+                menu:
+                    "{b}Potem muszę przesiać...{/b}"
+
+                    "{b}150g {font=fonts/NotoSansTC-Regular.ttf} 麵粉{/font} do {font=fonts/NotoSansTC-Regular.ttf}黄油{/font}{/b}":
+                        $ ciastol += 0
+
+                    "{b}150g {font=fonts/NotoSansTC-Regular.ttf} 麵粉{/font} do {font=fonts/NotoSansTC-Regular.ttf}大量的{/font}{/b}":
+                        $ ciastol += 1
+            
+            luszcz "Dobra, chyba to jest to"
+
+            if slownik == 1:
+                menu:
+                    "{b}W międzyczasie muszę ubić...{/b}"
+                    
+                    "{b}Śmietankę kremówkę z cukrem pudrem{/b}":
+                        $ ciastol += 1
+
+                    "{b}Masę z kakao{/b}":
+                        $ ciastol += 0
+            
+            else:
+                menu:
+                    "{b}W międzyczasie muszę ubić...{/b}"
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}鮮奶油{/font} z {font=fonts/NotoSansTC-Regular.ttf}糖粉{/font}{/b}":
+                        $ ciastol += 1
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}大量的{/font} z {font=fonts/NotoSansTC-Regular.ttf}可可{/font}{/b}":
+                        $ ciastol += 0
+            
+            luszcz "Dobra, chyba to jest to"
+
+            if slownik == 1:
+                menu:
+                    "{b}W dalszej kolejności muszę nasączyć...{/b}"
+                    
+                    "{b}Ciasto za pomocą mokrych składników z przyprawą do pieczenia{/b}":
+                        $ ciastol += 0
+
+                    "{b}Biszkopt za pomocą wody z sokiem z cytryny{/b}":
+                        $ ciastol += 1
+            
+            else:
+                menu:
+                    "{b}W dalszej kolejności muszę nasączyć ...{/b}"
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}蛋糕{/font} za pomocą {font=fonts/NotoSansTC-Regular.ttf}濕成分{/font} z {font=fonts/NotoSansTC-Regular.ttf}烘焙香料{/font}{/b}":
+                        $ ciastol += 0
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}海綿蛋糕{/font} za pomocą {font=fonts/NotoSansTC-Regular.ttf}水{/font} z {font=fonts/NotoSansTC-Regular.ttf}檸檬汁{/font}{/b}":
+                        $ ciastol += 1
+            
+            luszcz "Dobra, chyba to jest to"
+
+            if slownik == 1:
+                menu:
+                    "{b}I na koniec muszę udekorować...{/b}"
+                    
+                    "{b}Lukrem{/b}":
+                        $ ciastol += 0
+
+                    "{b}Truskawkami{/b}":
+                        $ ciastol += 1
+            
+            else:
+                menu:
+                    "{b}I na koniec muszę udekorować...{/b}"
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}糖霜{/font}{/b}":
+                        $ ciastol += 0
+
+                    "{b}{font=fonts/NotoSansTC-Regular.ttf}奶油{/font}{/b}":
+                        $ ciastol += 1
+
+            luszcz "Dobra, chyba wszystko"
+
+            show lilith neutral2:
+                yoffset 0
+                linear 0.15 yoffset -50
+                linear 0.15 yoffset 0
+
+            lilith "Nie zapomnij dodać trochę miłości ❤️!"
+
+            show luszcz neutral right
+
+            luszcz "Tak, tak dodałam na pewno, na pewno, pewnie, jasne, zobaczymy, czas pokaże"
 
 
 
