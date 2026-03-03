@@ -7638,17 +7638,17 @@ label eq:
                         $ cybertruckx += 3
                         $ stronaf3 += 1
             
-            if okulary >= 1 and stronaf1 < 6:
+            if leki >= 1 and stronaf1 < 6:
                 $ stronaf1 += 1
                 $ lekix += 1
 
             else: 
-                if okulary >= 1 and stronaf2 < 5:
+                if leki >= 1 and stronaf2 < 5:
                     $ lekix += 2
                     $ stronaf2 += 1
                 
                 else: 
-                    if okulary >= 1:
+                    if leki >= 1:
                         $ lekix += 3
                         $ stronaf3 += 1
             

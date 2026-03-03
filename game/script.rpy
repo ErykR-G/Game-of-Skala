@@ -39,6 +39,8 @@ label postacie:
     image luszcz zmentzony right = Transform("luszcz zmentzony", xzoom=-1) 
     image luszcz neutral right = Transform("luszcz neutral", xzoom=-1) 
     image luszcz sigma right = Transform("luszcz sigma", xzoom=-1) 
+    image luszcz wtf right = Transform("luszcz wtf", xzoom=-1) 
+    image luszcz blush right = Transform("luszcz blush", xzoom=-1) 
 
     define owca = Character("Owca", color="#382a17")
 

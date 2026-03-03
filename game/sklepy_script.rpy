@@ -12,6 +12,7 @@ label sklepy_define:
     default chinczyk_banany = 0
     default chinczyk_przepychaczka = 6
     default chinczyk_klata = 6
+    default chinczyk_slownik = 1
 
 
 label sklepy:
@@ -297,9 +298,6 @@ label sklepy:
 
         label chinczyk2:
             $ config.menu_include_disabled = True
-            if chinczyk_den == 0:
-                $ chinczyk_przepychaczka = 6
-                $ chinczyk_klata = 6
             if timer >= 0 and timer <= 1440 and chinczyk_den == 0: 
                 $ chinczyk_den = 1
                 $ chinczyk_banany = 2
@@ -365,6 +363,15 @@ label sklepy:
                     $ money -= 4
                     play sound "audio/sfx/kupno.mp3"
                     "{i}*Diamentowa Klata x 1 została dodana do ekwipunku*{/i}"
+                    jump chinczyk2
+
+                "{b}Rozmówki polsko-chińskie (1 💰){/b}" if chinczyk_slownik > 0 and money >= 1:
+                    $ ile_item_fabularne += 1
+                    $ slownik = 1
+                    $ chinczyk_slownik -= 1
+                    $ money -= 1
+                    play sound "audio/sfx/kupno.mp3"
+                    "{i}*Rozmówki polsko-chińskie zostały dodane do ekwipunku*{/i}"
                     jump chinczyk2
                 
                 "{i}Powrót{/i}":
