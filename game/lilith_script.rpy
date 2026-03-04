@@ -997,6 +997,144 @@ label lilith:
                     luszcz "(Jezu gdzie ja jestem)"
                     luszcz "(nic nie widzę)"
                     luszcz "(Moja głowa, moje oczy piekielnie bolą)"
+
+                    glos "Wujku, wujku zobacz"
+
+                    luszcz "(jaki wujku?)"
+
+                    nikt "Już, już patrzę"
+
+                    window hide
+                    scene bg gnoms with fade
+                    play music "audio/music/erika.mp3"
+                    scene bg argentyna with fade
+                    window show
+
+                    show hitlerli at slightright
+                    show wnuk at slightleft
+
+                    adolf "co takiego chcesz pokazać wujkowi?"
+
+                    chlopiec "patrz jaki obrazek narysowałem"
+
+                    show holokaust zorder 50 at center
+                    ""
+                    hide holokaust
+
+                    adolf "piękny, piękny, ale pamiętaj, żeby nie pokazywać nikomu innemu tego obrazka!"
+
+                    chlopiec "czemó?"
+
+                    adolf "bo świat nie jest jeszcze gotowy na takie arcydzieło"
+
+                    chlopiec "dobrze wujku!"
+
+                    hide wnuk
+                    show hitlerli at center
+
+                    adolf "ehhh jak te dzieci szybko rosną"
+
+                    luszcz "(chwila, chwila co się dzieje czemu jestem w ciele Adolfa Hitlera?)"
+
+                    luszcz "(I czemu jestem w Argentynie?)"
+
+                    show mosad1 at left
+                    show mosad2 at slightleft
+                    show mosad3 at right
+                    show hitlerli at center
+
+                    mosad "Panie Adolfie, pan pójdzie z nami!"
+
+                    adolf "Scheiße, nein, nein, nein! Ich gehe nirgendwohin!"
+
+                    mosad "Nie ma tak, że nie! Pójdzie pan z nami nawet jeśli pan nie chce!"
+
+                    play sound "audio/sfx/neck.mp3"
+                    scene bg black
+                    stop music
+
+                    luszcz "(Ała, to bolało)"
+
+                    mosad "Szefie co z nim robimy?"
+
+                    glos "Przywieźcie go do Skały i zamknijcie w naszym skarbcu pod cmentarzem!"
+
+                    glos "{cps=65}od teraz spędzi tam wieczność pilnując naszych skar…{/cps}{nw=0.2}"
+                
+                if jezuslil == 1:
+                    luszcz "(Jezu gdzie ja jestem)"
+                    luszcz "(czemu, czemu nic nie widzę?)"
+                    luszcz "(moje oczy, bolą, piekielnie bolą)"
+
+                    glos "ruszaj się, nie mamy całego dnia!"
+
+                    luszcz "(dobra już idę)"
+
+                    nikt "idę, idę!"
+
+                    luszcz "(….?)"
+
+                    "{i}*kilka minut później*{/i}"
+
+                    glos "dobra kładź się tutaj"
+
+                    glos "i rozłóż ręce na boki"
+
+                    nikt "A to będzie boleć"
+
+                    luszcz "(chwila co ma boleć?)"
+
+                    glos "nie nie skądże?"
+                    glos "ledwo poczujesz"
+
+                    luszcz "(a to git)"
+
+                    glos "dobra, zaczynam!"
+
+                    lunikt "Ała kurwaaaaaaaa japierdole, ale boli"
+
+                    glos "dobra teraz druga"
+
+                    lunikt "Jaka niby druga!?"
+
+                    glos "no przykro mi ziomuś ale masz 2 ręce"
+
+                    nikt "😢"
+
+                    glos "dobra zaczynam"
+
+                    lunikt "Japierdole boli jak diabli kurwa kurwa aaaaaaa w chój +1"
+
+                    glos "no a teraz nogi"
+
+                    lunikt "że co kurwa!?"
+
+                    lunikt "Ała kurwa boli jak cholera"
+
+                    glos "no a teraz podnosimy"
+                    glos "raz, dwa, trzy i hop"
+
+                    window hide
+                    scene bg gnoms with fade
+                    play music "audio/music/erika.mp3"
+                    scene bg krzyz with fade
+                    window show
+
+                    ""
+
+
+
+                scene dzis
+                stop music
+                $ renpy.movie_cutscene("timee.webm")
+
+                "{nw=0.5}"
+                window show
+                scene bg kuchnia with fade
+                show lilith neutral4 at slightleft
+                show luszcz neutral right at slightright
+                lilith "aaaaa"
+
         
 
 

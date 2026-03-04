@@ -238,6 +238,7 @@ label spanko:
         
         else:
             if lilith_social_link == 1:
+                $ timer += 120
                 jump lilith2
             
             else:

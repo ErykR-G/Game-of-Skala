@@ -216,6 +216,8 @@ label postacie:
 
     define luszcz2 = Character("Maciej_Rel", color="#1d0cbb")
 
+    define adolf = Character("Adolf Hitler", color="#444444")
+
     define sunflower = Character("Sunflower", color="#D59F1F")
 
     define grucha = Character("Grucha", color="#507E03")
@@ -279,6 +281,10 @@ label postacie:
     define epsilon = Character("Epsilon", color="#BEE0E0")
 
     define delta = Character("Delta", color="#A8A4BE")
+
+    define mosad = Character("Agenci Mosadu", color="#2e10d8")
+
+    define lunikt = Character("Łuszcz i ???", color="#1a547a")
 
 
 label pozycje:
