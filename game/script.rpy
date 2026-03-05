@@ -272,6 +272,8 @@ label postacie:
      
     define glos = Character("Głos", color="#497516")
 
+    define glosy = Character("Wiele głosów", color="#8c8d8a")
+
     define pingwin = Character("Pingwin z aparatem", color="#a2a79d")
 
     define vergil = Character("Vergil", color="#430e80")
@@ -285,7 +287,12 @@ label postacie:
     define mosad = Character("Agenci Mosadu", color="#2e10d8")
 
     define lunikt = Character("Łuszcz i ???", color="#1a547a")
+    
+    define lechv = Character("Lech V", color="#cfbb45")
 
+    define lechvi = Character("Lech VI", color="#6a8f13")
+
+    define kunegunda = Character("Kunegunda", color="#9315ac")
 
 label pozycje:
     transform haczyki:
@@ -354,6 +361,10 @@ label pozycje:
         
         transform slightright:
             xalign 0.75
+            yalign 1.0
+        
+        transform slightright2:
+            xalign 0.85
             yalign 1.0
 
         transform time:

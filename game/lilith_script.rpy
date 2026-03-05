@@ -1091,6 +1091,10 @@ label lilith:
 
                     glos "dobra, zaczynam!"
 
+                    play sound "audio/sfx/mlotek.mp3"
+                    queue sound "audio/sfx/krzyk.mp3"
+                    $ renpy.pause(1.0)
+
                     lunikt "Ała kurwaaaaaaaa japierdole, ale boli"
 
                     glos "dobra teraz druga"
@@ -1103,24 +1107,75 @@ label lilith:
 
                     glos "dobra zaczynam"
 
+                    play sound "audio/sfx/mlotek.mp3"
+                    queue sound "audio/sfx/krzyk.mp3"
+                    $ renpy.pause(1.0)
+
                     lunikt "Japierdole boli jak diabli kurwa kurwa aaaaaaa w chój +1"
 
                     glos "no a teraz nogi"
 
                     lunikt "że co kurwa!?"
 
-                    lunikt "Ała kurwa boli jak cholera"
+                    play sound "audio/sfx/mlotek.mp3"
+                    queue sound "audio/sfx/krzyk.mp3"
+                    $ renpy.pause(1.0)
+
+                    lunikt "Ahhhhh kurwa ty matko jebco pieerdolony, zajębię Cię, zajebię!!!"
 
                     glos "no a teraz podnosimy"
                     glos "raz, dwa, trzy i hop"
 
                     window hide
                     scene bg gnoms with fade
-                    play music "audio/music/erika.mp3"
+                    play music "audio/music/krzyz.mp3"
                     scene bg krzyz with fade
                     window show
 
                     ""
+
+                if lechialil == 1:
+                    luszcz "(Auuuu co się staneło?)"
+                    luszcz "(Głowa, głowa boli od pizzy)"
+                    luszcz "(I oczy, nic nie widzę!)"
+
+                    glos "…dlatego w imieniu Imperium Lechitów ja Lech V zawieram święty i nierozerwalny sojusz z kosmitami!"
+
+                    glosy "…brawo niech żyje wielka lechia!"
+
+                    glos "…i aby przypieczętować ten sojusz mój syn Lech VI pojmie za żonę tę oto córkę kosmitów Kunegundę!"
+
+                    window hide
+                    scene bg gnoms with fade
+                    play music "audio/music/lechia.mp3"
+                    scene bg sala_tronowa with fade
+                    window show
+
+                    show lechv at center
+                    show lechvi at slightleft2
+                    show kunegunda at slightright2
+
+                    lechv "Lechu czy przyjmujesz tą oto Kunegundę za żonę?"
+
+                    lechvi "Tak przyjmuję"
+
+                    luszcz "(Łot de hel!?)"
+                    luszcz "(Czemu jestem w ciele księcia lechitów!? 🤯)"
+
+                    lechv "A czy ty Kunegundą przyjmujesz tego oto Lecha VI  za męża?"
+
+                    kunegunda "||ᒷᓭ  ╎  ᔑᓵᓵᒷ!¡ℸ ̣"
+
+                    lechv "nie wiem co ta jaszczura powiedziała, ale uznajmy, że tak!"
+
+                    lechv "w takim razie ogłaszam was mężem i żoną! Możecie się bzyknąć"
+
+                    lechvi "No i sigma"
+                    lechvi "dobra jaszczur pakuj manatki i zapraszam na morenke u mnie"
+
+                    luszcz "(!!!) "
+                    luszcz "(Zaliczę!?!??!? 🤯🤯🤯)"
+
 
 
 
