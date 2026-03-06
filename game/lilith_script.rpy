@@ -1244,30 +1244,57 @@ label lilith:
                     "{i}…{/i}"
                     "{i}…{/i}"
 
+                    window hide
+                    scene bg gnoms with fade
                     scene bg droga with fade
-                    play music "audio/music/chrab.mp3"`
+                    window show
 
                     luszcz "(Co to za śmieszne miejsce?)"
                     luszcz "(I czemu tu jest tak cicho?)"
                     luszcz "(I dlaczego jestem w ciele jakiegoś bing chillinga!?)"
 
                     "{i}…{/i}"
+
+                    play music "audio/music/tank.mp3" volume 1.0
+                    $ renpy.music.set_volume(0.1, delay=0.0)
+
                     "{i}…{/i}"
+
+                    $ renpy.music.set_volume(0.2, delay=0.3)
+                    
                     "{i}…{/i}"
 
                     luszcz "(Coś słyszę jakby się zbliżało)"
 
+                    $ renpy.music.set_volume(0.3, delay=0.3)
+
                     "{i}…{/i}"
+
+                    $ renpy.music.set_volume(0.4, delay=0.3)
+
                     "{i}…{/i}"
+
+                    $ renpy.music.set_volume(0.5, delay=0.3)
+
                     "{i}…{/i}"
 
                     luszcz "(Ej bo coś tu jedzie!)"
 
+                    $ renpy.music.set_volume(0.6, delay=0.3)
+
                     "{i}…{/i}"
+
+                    $ renpy.music.set_volume(0.7, delay=0.3)
+
                     "{i}…{/i}"
+
+                    $ renpy.music.set_volume(0.8, delay=0.3)
+
                     "{i}…{/i}"
 
                     show czolg
+
+                    $ renpy.music.set_volume(1.0, delay=0.3)
 
                     luszcz "(Jezus maria to czołg!)"
                     luszcz "(Nie zostaw mnie! Czemu jedziesz w moim kierunku!?)"
