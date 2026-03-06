@@ -1175,6 +1175,113 @@ label lilith:
 
                     luszcz "(!!!) "
                     luszcz "(Zaliczę!?!??!? 🤯🤯🤯)"
+                    
+                    scene bg black with fade
+                    stop music
+
+                    "{i}*15 minut później*{/i}"
+
+                    play music "audio/music/sex.mp3"
+                    scene bg lechon with fade
+                    show lechvi at center
+
+                    lechvi "ahhh i gdzie ona jest!?"
+
+                    luszcz "(właśnie, gdzie ona się szwęda!?)"
+
+                    show lechvi at slightleft
+                    show kunegunda at slightright
+
+                    kunegunda "ᓭ𝙹∷∷||  ╎'ᒲ  ꖎᔑℸ ̣ ᒷ,  ╎  ∴ᔑᓭ  ᓭ⍑╎ℸ ̣ ℸ ̣ ╎リ⊣"
+
+                    lechvi "W końcu jesteś? Gdzieś ty była?"
+
+                    kunegunda "∴ᒷꖎꖎ,  ╎'ᒲ  ℸ ̣ ᒷꖎꖎ╎リ⊣  ||𝙹⚍,  ╎  ᓭ⍑╎ℸ ̣"
+
+                    lechvi "Nic nie rozumiem. Nie możesz gadać po ludzku?"
+
+                    kunegunda "╎  ᓵᔑリ'ℸ ̣ ,  ʖ⚍ℸ ̣   ╎  ⍑ᔑ⍊ᒷ  ᓭ𝙹ᒲᒷℸ ̣ ⍑╎リ⊣  ℸ ̣ ⍑ᔑℸ ̣   ∴╎ꖎꖎ  ⍑ᒷꖎ!¡  ||𝙹⚍  ⚍リ↸ᒷ∷ᓭℸ ̣ ᔑリ↸  ᒲᒷ"
+
+                    show kunegunda zorder 1:
+                        xalign 0.75
+                        yalign 1.0
+                        easeout 0.2 xalign 0.50
+                    show lechvi zorder 2
+
+                    $ renpy.pause(0.2)
+                    show lechvi ailbib zorder 2
+                    $ renpy.pause(0.1)
+
+                    show kunegunda:
+                        xalign 0.50
+                        yalign 1.0
+                        easeout 0.2 xalign 0.75
+
+                    "{i}*Kunegunda wręcza Lechowi VI tajemniczą książkę*{/i}"
+
+                    lechvi "chwila co to jest?"
+
+                    kunegunda "To księga spisana w języku mojego ludu. Kiedy masz ją w rękach to rozumiesz naszą mowę."
+
+                    lechvi "Jezus maria ty mówisz!?"
+
+                    kunegunda "No tak, a co myślałeś?"
+
+                    lechvi "Nie wiem, nieważne chodźmy się ruchać"
+
+                    kunegunda "z przyjemnością"
+
+                    scene bg black with fade
+
+                    ""
+                
+                if placlil == 1:
+                    luszcz "(Jezu co się staneło?)"
+                    luszcz "(I czemu, czemu nic nie widzę?)"
+                    luszcz "(moje oczy bolą, bolą strasznie)"
+
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+
+                    scene bg droga with fade
+                    play music "audio/music/chrab.mp3"`
+
+                    luszcz "(Co to za śmieszne miejsce?)"
+                    luszcz "(I czemu tu jest tak cicho?)"
+                    luszcz "(I dlaczego jestem w ciele jakiegoś bing chillinga!?)"
+
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+
+                    luszcz "(Coś słyszę jakby się zbliżało)"
+
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+
+                    luszcz "(Ej bo coś tu jedzie!)"
+
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+                    "{i}…{/i}"
+
+                    show czolg
+
+                    luszcz "(Jezus maria to czołg!)"
+                    luszcz "(Nie zostaw mnie! Czemu jedziesz w moim kierunku!?)"
+                    luszcz "(Siad, siad dobry czołg stój!)"
+                    luszcz "(Chinolu spieprzaj stąd, bo nas zaraz rozjedzie!)"
+
+                    luszcz "(Rusz dupe kurwa, bo umrzemy razem!)"
+
+                    luszcz "(Aaaaa kurwa aaaaaa)"
+                    luszcz "(Moja noga japierdole jak boli kurwa!)"
+                    luszcz "(A kurwa nie! wciąga drugą aaaaaa japierdole aaa!!!)"
+
+                    luszcz "(Japierdole nie moje jądra nie zostaw je tylko nie one aaaaaa kurwa aaaaaa…)"
+
 
 
 
