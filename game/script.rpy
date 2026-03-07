@@ -292,6 +292,8 @@ label postacie:
 
     define lechvi = Character("Lech VI", color="#6a8f13")
 
+    define llechvi = Character("Łuszcz i Lech VI", color="#249cb1")
+
     define kunegunda = Character("Kunegunda", color="#9315ac")
 
 label pozycje:

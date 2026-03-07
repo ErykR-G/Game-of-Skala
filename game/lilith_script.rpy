@@ -13,6 +13,7 @@ default lechialil = 0
 default kennedylil = 0
 default placlil = 0
 default jezuslil = 0
+default smolensklil = 0
 
 init python:
     import random
@@ -500,6 +501,15 @@ label lilith:
                     luszcz "I sie zaczoł śmiac tak glośno"
                     luszcz "I się niestety zaksztusił i ómarł"
                     luszcz "ale nie na udar tak jak się mówi tylko na szczęście"
+                
+                "{b}...w Smoleńsku to był tak naprawdę zamach?{/b}":
+                    $ smolensklil = 1
+                    luszcz "...w Smoleńsku to był tak naprawdę zamach?"
+                    luszcz "Bo ja oglądałem kiedyś w TVP taki reportaż"
+                    luszcz "I tam był taki śmieszny pan co się chyba nazywał jakoś na m"
+                    luszcz "mmmmmMario tak to był Mario"
+                    luszcz "No i Mario właśnie mówił, że jego komisja zbadała sprawę"
+                    luszcz "i, rze to był tak naprawdę zamach zaplanowany przez Tuska!"
             
             show lilith neutral4
 
@@ -987,6 +997,8 @@ label lilith:
                     scene jezust
                 if kennedylil == 1:
                     scene kennedyt
+                if smolensklil == 1:
+                    scene smolenskt
                 $ renpy.movie_cutscene("timee.webm")
 
                 "{nw=0.5}"
@@ -1233,7 +1245,33 @@ label lilith:
 
                     scene bg black with fade
 
-                    ""
+                    kunegunda "Ahhh, jak dobrze ahhhh"
+
+                    kunegunda "Ohh, ohhhh, Nie tutaj nie wkłada!"
+
+                    play sound "audio/sfx/krzyk.mp3"
+                    
+                    llechvi "Aaaaghhhh!"
+
+                    kunegunda "Tu mam trującego kolca w dupie..."
+
+                    llechvi "Aarggghh czeeemu niee mówiłaś wczeeeśniej!?"
+
+                    play sound "audio/sfx/spadek.mp3"
+
+                    glos "Książe, co się dzieje!?"
+
+                    glos "Jezus maria, jaszczur zabił księcia!"
+
+                    kunegunda "Nie to nie tak, on sam sobie to zrobił"
+
+                    glos "Zamilcz potworze i tak nie rozumiem co ty mówisz!"
+                    glos "Wystarczy mi to co widzę, a widzę nagiego martwego księcia z jakąś skibidi książką pod pachą i z trującym kolcem wbitym w jego maczugę herkulesa!"
+
+                    kunegunda "..."
+                    kunegunda "No wiem, że to źle wygląda, ale no to jego wina"
+
+                    glos "{cps=65}Straże, zabijcie ją i wyrzućcie tą piekielną księgę do jezio...{/cps}{nw=0.2}"
                 
                 if placlil == 1:
                     luszcz "(Jezu co się staneło?)"
@@ -1292,23 +1330,115 @@ label lilith:
 
                     "{i}…{/i}"
 
-                    show czolg
+                    scene bg droga2
 
                     $ renpy.music.set_volume(1.0, delay=0.3)
 
                     luszcz "(Jezus maria to czołg!)"
+
+                    scene bg droga3
+
                     luszcz "(Nie zostaw mnie! Czemu jedziesz w moim kierunku!?)"
+
+                    scene bg droga4
+
                     luszcz "(Siad, siad dobry czołg stój!)"
+
+                    scene bg droga5
+
                     luszcz "(Chinolu spieprzaj stąd, bo nas zaraz rozjedzie!)"
+
+                    scene bg droga6
 
                     luszcz "(Rusz dupe kurwa, bo umrzemy razem!)"
 
+                    scene bg bloody
+
+                    play sound "audio/sfx/krzyk.mp3"
+
                     luszcz "(Aaaaa kurwa aaaaaa)"
                     luszcz "(Moja noga japierdole jak boli kurwa!)"
+
+                    play sound "audio/sfx/krzyk.mp3"
+
                     luszcz "(A kurwa nie! wciąga drugą aaaaaa japierdole aaa!!!)"
+                    luszcz "{cps=65}(Japierdole nie moje jądra nie zostaw je tylko nie one aaaaaa kurwa aaaaaa…){/cps}{nw=0.2}"
 
-                    luszcz "(Japierdole nie moje jądra nie zostaw je tylko nie one aaaaaa kurwa aaaaaa…)"
+                if smolensklil == 1:
+                    luszcz "(Jezu co się wydarzyło!?)"
+                    luszcz "(I czemu, czemu nic nie widzę?)"
+                    luszcz "(moje oczy, bolą, piekielnie bolą)"
 
+                    nikt "I tutaj jeszcze jedną zasadzić"
+                    nikt "i tam kolejną można"
+
+                    luszcz "(???)"
+
+                    nikt "Oby tym razem mi się udało!"
+
+                    window hide
+                    scene bg gnoms with fade
+                    play music "audio/music/natura.mp3"
+                    scene bg las0 with fade
+                    window show
+                    show tusk at slightright
+
+                    luszcz "(Gdzie ja jestem!?)"
+                    luszcz "(Co to za skibidi las!?)"
+                    luszcz "(I czemu jestem w ciele Donalda Tuska!?)"
+
+                    tusk "Dobra tyle starczy, teraz wystarczy tylko czekać"
+
+                    luszcz "(na co?)"
+
+                    tusk "♪ Was ist des Deutschen Vaterland? ♪"
+                    tusk "♪ Ist's Schlesierland? Mazowienland? ♪"
+                    tusk "♪ Ist's wo am Bug die Rebe blüht? ♪"
+                    tusk "♪ Ist's wo am San die Möwe zieht? ♪"
+
+                    scene bg black with fade
+
+                    "{i}*15 minut później*{/i}"
+
+                    scene bg las0 with fade
+                    show tusk at slightright
+
+                    tusk "♪ O nein, nein, nein! ♪"
+
+                    scene bg las2
+                    show tusk at slightright
+                    play sound "audio/sfx/lot.mp3" 
+
+                    tusk "O leci!"
+
+                    scene bg las3
+                    show tusk at slightright
+
+                    luszcz "(Nie panie pilocie niech pan nie leci tutaj, bo ma pan dziurę w samolocie!)"
+
+                    play sound "audio/sfx/boom.mp3" 
+                    show bu2 zorder 10:
+                        xalign 1.0
+                        yalign 1.0
+
+                    $ renpy.pause(0.2)
+                    scene bg las4
+                    show tusk at slightright
+                    hide bu2
+
+                    luszcz "(awww shit to już nie jest dziura, z tego to nie ma co zbierać)"
+
+                    scene bg las5
+                    show tusk at slightright
+                    $ renpy.pause(0.8)
+                    play sound "audio/sfx/boom.mp3"
+                    scene bg las0
+                    show tusk at slightright
+
+                    tusk "Ich habe gewonnen!"
+                    tusk "Niewidzialne brzozy zadziałały!!!"
+                    tusk "Po tylu latach nareszcie Niemcy odzyskają chwałę!"
+                    tusk "{cps=65}A ja będę mógł znów jak za starych dobrych lat, pobić się w jakiejś usta...{/cps}{nw=0.2}"
 
 
 
@@ -1320,7 +1450,8 @@ label lilith:
                 "{nw=0.5}"
                 window show
                 scene bg kuchnia with fade
-                show lilith neutral4 at slightleft
+                show screen clock
+                show lilith neutral4 at left
                 show luszcz neutral right at slightright
                 lilith "aaaaa"
 
