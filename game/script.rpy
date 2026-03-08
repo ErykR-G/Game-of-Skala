@@ -287,6 +287,10 @@ label postacie:
     define mosad = Character("Agenci Mosadu", color="#2e10d8")
 
     define lunikt = Character("Łuszcz i ???", color="#1a547a")
+
+    define lujezus = Character("Łuszcz i Jezus", color="#1a547a")
+
+    define jezus = Character("Jezus", color="#2c9e3b")
     
     define lechv = Character("Lech V", color="#cfbb45")
 
@@ -295,6 +299,9 @@ label postacie:
     define llechvi = Character("Łuszcz i Lech VI", color="#249cb1")
 
     define kunegunda = Character("Kunegunda", color="#9315ac")
+
+    define legionista1 = Character("Legionista 1", color="#d62d2d")
+    define legionista2 = Character("Legionista 2", color="#d37924")
 
 label pozycje:
     transform haczyki:

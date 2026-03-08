@@ -1142,9 +1142,121 @@ label lilith:
                     scene bg gnoms with fade
                     play music "audio/music/krzyz.mp3"
                     scene bg krzyz with fade
+                    show legionista1 at left
                     window show
 
-                    ""
+                    luszcz "(Jezu, gdzie ja jestem?)"
+                    luszcz "(I czemu wiszę na krzyżu w ciele Jezusa!?)"
+
+                    show legionista2 at right
+
+                    legionista2 "I jak, skończyłeś?"
+
+                    legionista1 "No niby tak, ale trochę krzywo mi się wydaję"
+
+                    legionista2 "hmmm, no możę jak się lepiej przyglądnie to coś tam widać"
+
+                    legionista1 "Widzisz! Mówiłem, że jest krzywo!"
+
+                    legionista1 "Trzba, będzie to poprawić!"
+
+                    lujezus "Nie kurwa, nie ruszajcie mnie, błagam tak jest dobrze!"
+                    
+                    jezus 'Ja się sam przesunę patrzcie, już bioderko lekko w lewo dam i będzie prosto!'
+
+                    legionista1 "Nie no teraz to jest jeszcze gorzej!"
+                    legionista2 "Sorry ziomuś, ale bez poprawki się nie obejdzie"
+
+                    jezus "😢"
+
+                    scene bg black with fade
+                    play sound "audio/sfx/krzyk.mp3"
+                    "{i}*kilka minut jęków później*{/i}"
+                    scene bg krzyz with fade
+                    show legionista1 at left
+                    show legionista2 at right
+
+                    legionista1 "No dobra, teraz to już jest prosto"
+                    legionista2 "hmmm, no niby choć ta prawa noga tak lekko odcho.."
+
+                    lujezus "Dość, jest git, nie ruszajcie mnie już, błagam!"
+
+                    legionista1 "..."
+
+                    legionista2 "..."
+
+                    legionista1 "No dobra, niech Ci będzie"
+                    
+                    legionista1 "To co teraz robimy?"
+
+                    legionista2 "Hmmm, chodźmy się nachlać!"
+
+                    legionista1 "Marian, ty to masz łeb!"
+
+                    hide legionista1
+                    hide legionista2
+
+                    luszcz "(...)"
+
+                    jezus "..."
+
+                    luszcz "(Ciekawe ile czasu będę tu wisiał zanim umrę?)"
+
+                    jezus "około 6 godzin"
+
+                    luszcz "(Jezus, maria!)"
+
+                    jezus 'Skąd znasz moją matke?'
+
+                    luszcz "(Ty mnie słyszysz!!!?)"
+
+                    jezus "No tak, jestem synem Boga, oczywiście, że cię słyszę"
+
+                    luszcz "(To czemu nie mówiłeś wcześniej!?)"
+
+                    jezus "No, bo myślałem, że jesteś z ekipy filmowej czy coś"
+
+                    luszcz "(Jakiej niby ekipy filmowej!?)"
+
+                    jezus "No, nie wiem no myślałem, że w przyszłości stanę sie popularny i ktoś będzie chciał nakręcić film dokumentalny o mnie"
+                    jezus "I nie chciałem zepsuć żadnego ujęcią więc nic nie mówiłem do Ciebie"
+
+                    luszcz "(...)"
+                    luszcz "(Nie jesteś w żadnym filmie)"
+
+                    jezus "Wiem, ale ty jesteś"
+
+                    luszcz "(Co?)"
+
+                    jezus "Jajco boom"
+
+                    luszcz "(...)"
+
+                    jezus "..."
+                    jezus "masz pomysł co możemy porobić?"
+
+                    luszcz "(Wiem! Mam pomysł!)"
+
+                    jezus "jaki!?"
+
+                    luszcz "(Możemy powisieć na krzyżu)"
+                    
+                    jezus "hahaha mega zabawne"
+                    jezus "A coś co możemy zrobić OPRÓCZ wiszenia na krzyżu?"
+
+                    luszcz "(A to nie)"
+
+                    jezus "wybornie"
+
+                    luszcz "(...)"
+
+                    jezus "..."
+
+                    luszcz "(...)"
+
+                    jezus "..."
+
+                    luszcz "(...)"
 
                 if lechialil == 1:
                     luszcz "(Auuuu co się staneło?)"
