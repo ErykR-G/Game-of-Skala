@@ -7924,7 +7924,7 @@ label eq:
 
                         jump itemy_do_walki
 
-                    "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+                    "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
                         window show
                         "{i}Ciasto truskawkowe, które upiekłeś z Lilith. Leczy +15HP jedenej osbie lub wszystkich po +5HP{/i}"
                         window hide

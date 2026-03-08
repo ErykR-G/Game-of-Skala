@@ -41,6 +41,8 @@ label postacie:
     image luszcz sigma right = Transform("luszcz sigma", xzoom=-1) 
     image luszcz wtf right = Transform("luszcz wtf", xzoom=-1) 
     image luszcz blush right = Transform("luszcz blush", xzoom=-1) 
+    image luszcz piernik right = Transform("luszcz piernik", xzoom=-1) 
+    image luszcz ciasto right = Transform("luszcz ciasto", xzoom=-1) 
 
     define owca = Character("Owca", color="#382a17")
 
@@ -95,19 +97,19 @@ label postacie:
     define burmistrz = Character("Burmistrz", color="#f8bf44")
     image burmistrz neutral right = Transform("burmistrz neutral", xzoom=-1) 
 
-    define papaj = Character("Jan Paweł II", color="#fff345")
+    define papaj = Character("Jan Paweł II", color="#575719")
 
     define gargantuar2 = Character("Gargantuar 2", color="#08993f")
     define gargantuar1 = Character("Gargantuar 1", color="#08993f")
 
     define duchs = Character("Duch Święty", color="#fffbc0")
 
-    define tanya = Character("Tanya", color="#215f36")
+    define tanya = Character("Tanya", color="#034713")
     image tanya neutral right = Transform("tanya neutral", xzoom=-1) 
 
     define lb = Character("Łuszcz i Burmistrz", color="#9e9e9e")
 
-    define braun = Character("Braun", color="#412607")
+    define braun = Character("Grzegorz Braun", color="#4d2d0d")
     image braun neutral right = Transform("braun neutral", xzoom=-1) 
     image braun shock right = Transform("braun schock", xzoom=-1) 
     image braun smile right = Transform("braun smile", xzoom=-1) 
@@ -302,6 +304,17 @@ label postacie:
 
     define legionista1 = Character("Legionista 1", color="#d62d2d")
     define legionista2 = Character("Legionista 2", color="#d37924")
+
+    define beria = Character("Ławrientij Beria", color="#dd12e4")
+
+    define chruszczow = Character("Nikita Chruszczow", color="#d855a6")
+
+    define malenkov = Character("Gieorgij Malenkow", color="#9c3ee9")
+
+    define stalin = Character("Józef Stalin", color="#fa0000")
+    image stalin duch right = Transform("stalin duch", xzoom=-1) 
+
+    define mac = Character("Maciek Maciak", color="#ff0000")
 
 label pozycje:
     transform haczyki:

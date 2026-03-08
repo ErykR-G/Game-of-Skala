@@ -167,7 +167,7 @@ label items_fight171:
                 $ ile_item -= 1
             jump faza_fight172
 
-        "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+        "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
 
             if luszcz_fighter == 1:
@@ -7280,7 +7280,7 @@ label items_fight173:
                 $ ile_item -= 1
             jump faza_fight173
 
-        "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+        "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
 
             if luszcz_fighter == 2:
@@ -14394,7 +14394,7 @@ label items_fight175:
                 $ ile_item -= 1
             jump faza_fight174
 
-        "{b}Strawberry Cake (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+        "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
 
             if luszcz_fighter == 3:

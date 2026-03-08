@@ -1247,9 +1247,9 @@ label gotka:
                 luszcz "Huh??"
                 luszcz "Jakiej czarnej magii co??"
 
-                gotka "No w nastoletnich latach miałam taką książkę do czarów ale potem mama mi wyrzuciła i w sumie nie wiem gdzie jest"
+                gotka "No w nastoletnich latach miałam taką książkę do czarów, ale ją komuś sprzedałam za dużo pieniędzy"
                 gotka "Ale było tam coś na rany postrzałowe"
-                gotka "Jeśli chcesz żeby kolega przeżył to musisz mi to znaleźć zanim lody ze Skały stopnieją!"
+                gotka "Jeśli chcesz żeby kolega przeżył to musisz mi znaleźć podobny egzemplarz zanim lody ze Skały stopnieją!"
 
                 luszcz "Jak są ze skały to raczej będą długo trzymać"
 
@@ -1291,7 +1291,7 @@ label gotka:
                 else:
                     play music "audio/music/pole_noc.mp3"
                 jump parking
-
+ 
         label gotka8:
             play music "audio/music/klinika.mp3"
             if kazuma_strzal == 0:

@@ -981,7 +981,11 @@ label lilith:
                     $ ado += 1
 
             if score >= 25:
-                "Udało się!"
+                show layer master:
+                    linear 0.1 zoom 1.0 xalign 0.5 yalign 0.5
+
+                show lilith neutral3 at left
+                show luszcz neutral right at slightright
             else:
                 window hide
                 hide screen clock
@@ -1552,6 +1556,204 @@ label lilith:
                     tusk "Po tylu latach nareszcie Niemcy odzyskają chwałę!"
                     tusk "{cps=65}A ja będę mógł znów jak za starych dobrych lat, pobić się w jakiejś usta...{/cps}{nw=0.2}"
 
+                if stalinlil == 1:
+                    luszcz "(Jezu co się wydarzyło!?)"
+                    luszcz "(I czemu, czemu nic nie widzę?)"
+                    luszcz "(moje oczy, bolą, piekielnie bolą)"
+
+                    nikt "Heh… heh… heh…"
+                    nikt "Hheh–khh… khh…"
+                    nikt "HAA—khhhh—"
+
+                    play sound "audio/sfx/kaszel.mp3"
+                    queue sound "audio/sfx/spadek.mp3"
+
+                    nikt "khh… ghh…"
+
+                    luszcz "(???)"
+                    luszcz "(Haloo, czy coś się stało?)"
+
+                    "{i}...{/i}"
+                    "{i}...{/i}"
+                    "{i}...{/i}"
+
+                    scene bg black with fade
+
+                    "{i}*Kilka godzin później*{/i}"
+
+                    glos "Jezu, ale jebie"
+                    
+                    luszcz "(..?)"
+
+                    "{i}*szmery*{/i}"
+
+                    window hide
+                    scene bg gnoms with fade
+                    play music "audio/music/sralin.mp3"
+                    scene bg stalinka with fade
+                    window show
+                    show stalin duch right at left
+                    show sralin dead at center
+                    show beria neutral at right
+
+                    luszcz "(Chwila, co się dzieje!?)"
+                    luszcz "(Czemu jestem w ciele Józefa Stalina!?)"
+                    luszcz "(I czemu Stalin nie żyje i żyje jednocześnie!?)"
+
+                    stalin "(Ekhhh, gdybym nadał żył to on, by już wąchał kwiatki od dołu)"
+                    stalin "(Choć w piekle to chyba nie ma za dużo kwiatków, więc no)"
+                    stalin "(Tak czy siak jak śmiał mnie nie wpuścić do piekła!?)"
+                    stalin "(No, bo tego, że Św. Piotr na sam widok mnie przed bramą wezwie cały hufiec aniołów i zarygluje bramę na 67 rygli to się spodziewałem)"
+                    stalin "(Ale, że szatan mnie nie wpuści do piekła, bo obawia się o swoją posadę to się nie spodziewałem)"
+                    stalin "(No nic, będę musiał tu zostać na trochę dłużej)"
+
+                    luszcz "(Chwila, wtf co!?)"
+                    luszcz "(Co tu się odwala!?)"
+                    luszcz "(Stalin umarł, ale nie wpuścili go do nieba ani piekła, więc jest duchem, w którego ciela teraz jestem!?)"
+                    luszcz "(crazy)"
+
+                    with hpunch
+                    beria "No gdzie one są! Gdzie są te pieprzone papiery!?"
+                    beria "Gdzieś je ukrył stary cepie, nie mam dużo czasu zanim przyjedzie reszta!"
+
+                    "{i}*puk puk*{/i}"
+
+                    beria "Kto tam!?"
+
+                    glos "Hipopotam, wpuszczaj Beria wszyscy jesteśmy w żałobie!"
+
+                    beria "Ahhhh kurwa jest źle"
+
+                    beria "gdzie one są!???"
+
+                    glos "Beria! Bo wyważę drzwi!"
+
+                    beria "Mam! Mam je! Mam te papiery!"
+                    
+                    beria "Już, już otwieram!"
+
+                    play sound "audio/sfx/door.mp3"
+                    show chruszczow neutral zorder 5 at slightright
+                    show beria neutral zorder 5 at slightleft
+                    show stalin duch right zorder 6 at left
+                    show sralin dead zorder 10 at center 
+
+                    show malenkov neutral zorder 6 at right
+
+                    malenkov "Jezus maria, co tu sie staneło!?"
+
+                    beria "Towarzysz Stalin odszedł dziś z naszego świata"
+
+                    chruszczow "O nieeee to tragedia co, co my teraz zrobimy!?"
+
+                    beria "Trzeba, trzeba go położyć na łóżku i wezwać lekarza"
+
+                    chruszczow "Chwila nie wezwałeś jeszcze lekarza!?"
+
+                    beria "No, bo wszyscy są martwi albo na syberii"
+
+                    malenkov "Bo spiskowali przeciwko Towarzyszowi Stalinowi!"
+
+                    chruszczow "Tak, tak oczywiście to sprowadźcie tych z syberii, ale szybko!"
+
+                    beria "Dobra, dobra powiem moim ludzią, ale najpierw trzeba go położyć na łóżku"
+
+                    malenkov "On ma rację, ja biorę za głowę!"
+
+                    chruszczow "To ja zajmuję suty!"
+
+                    chruszczow "Ty Beria masz dół"
+
+                    beria "Czemu!? Ja nie chcę zamieńmy się!"
+
+                    chruszczow "Nuh uh pierwsze słowo do dziennika drugie słowo do śmietnika!"
+
+                    beria "Grrr, zobaczymy czy też tak będzie uważał jak ktoś przypadkiem zezna na Ciebie podczas przesłuchania!"
+
+                    chruszczow "Nie strasz, nie strasz, bo się no wiesz co zrobisz..."
+
+                    beria "..."
+
+                    beria "za późno"
+
+                    malenkov "Skończcie tą bezowocną dyskusję i pomóżcie mi go przenieść"
+
+                    chruszczow "Dobra to na trzy"
+
+                    chruszczow "raz, dwa, trzy..."
+
+                    scene bg black with fade
+
+                    beria "Jezu, ale on ciężki"
+
+                    malenkov "Ciężki jak złoto, z którego było zrobione jego serce!"
+
+                    chruszczow "To te serce musiał mieć zajebiście wielkie, bo moje plecy bolą w ciul"
+
+                    beria "Nie chłopaki ja nie dam rady, muszę chwilę przerwy"
+
+                    play sound "audio/sfx/spadek.mp3"
+
+                    stalin "(Jezus, maria co oni robią z moim ciałem!???)"
+                    stalin "(Rzygać mi się chcę jak widzę ich mordy!)"
+                    stalin "(Nie, idę stąd tego już za dużo!)"
+
+                    scene bg black with fade
+                    stop music
+
+                    "{i}*Kilkadziesiąt lat później*{/i}"
+
+                    scene bg cmentarz_noc with fade
+                    play music "audio/music/natura.mp3"
+                    show stalin duch right at slightleft
+                    show harambe duch at right
+
+                    stalin "Uno!!!"
+
+                    harambe "Dobierać"
+
+                    stalin "I po unie! Bang widzisz Harambe!? To jest prawdziwa siła towarzysza Stalina!"
+
+                    harambe "Stalin wygrać, stalin być nie miły"
+
+                    stalin "Bo ty jesteś tylko głupią małpą Harambe, my w ZSRR takie małpy to wysyłamy w komos, by zdechły!"
+
+                    harambe "Harambe smutny. Harambe mieć wyrzuty sumienia."
+                    harambe "Harambe przestać mieć wyrzuty sumienia."
+
+                    stalin "Chwila jakie wyrzuty sumienia!?"
+                    
+                    show gotka teen at left
+                    show stalin duch at center
+                    with vpunch
+
+                    gotka "Oooo wielki Stalinie, dni twojej bezowocnej tułaczki nadeszły końca!"
+                    gotka "Od teraz będziesz mieszkał w tej oto księdze strzeżąc historii!!!"
+
+                    gotka "ꖎ𝙹⍊ᒷ  ⊣╎⊣ᔑリℸ ̣ ╎ᓵ  ᒲᔑꖎᒷ  ᓵ𝙹ᓵꖌᓭ  ╎  リᒷᒷ↸  ⊣╎⊣ᔑリℸ ̣ ╎ᓵ  ᒲᔑꖎᒷ  ᓵ𝙹ᓵꖌᓭ"
+
+                    stalin "Aaaaaa, co ty ze mną robisz aaaa zostaw!?"
+
+                    gotka "ᓭꖌ╎ʖ╎↸╎  !¡ꖎ𝙹"
+
+                    scene bg black
+                    stop music
+
+                    luszcz "(Co się staneło, czemu nic nie widzę!?)"
+
+                    gotka "Towarzyszu Macieju, może pan już wyjść z krzaków!"
+
+                    mac "Ohhh nareszczcie, nogi mnie już zaczynały boleć od kucania"
+
+                    mac "Udało się!?"
+
+                    luszcz "(Chwila, co robi Maciek Maciak w Skale i co miało się udać!?)"
+
+                    gotka "Udało, duch Stalina został zaklęty w tej księdze!"
+
+                    mac "{cps=65}Wyśmienicie, teraz wreszcie będę mógł nauczać ludzi księgą opartą na PRAWDZIWEJ histor...{/cps}{nw=0.2}"
+
+
 
 
 
@@ -1562,12 +1764,150 @@ label lilith:
                 "{nw=0.5}"
                 window show
                 scene bg kuchnia with fade
+                play music "audio/music/lilith5.mp3"
                 show screen clock
                 show lilith neutral4 at left
                 show luszcz neutral right at slightright
-                lilith "aaaaa"
+                luszcz "AAaaaaaaaaaa"
 
-        
+                lilith "Aaaaaa, jezus maria nie strasz!"
+
+                luszcz "Ale, ale ja dopiero co..."
+
+                show lilith neutral5
+
+                lilith "Mam to gdzieś, ja prawie zawału przez Ciebie dostałam!"
+
+                luszcz "ale"
+
+                lilith "Za ale to w morde wale!"
+
+                luszcz "dobrze"
+
+                lilith "..."
+
+                show lilith neutral3
+
+                lilith "Dobra to ja już wróciłeś ze swojej małej podróży w czasie to zobaczmy nasz tort! ❤️"
+
+                luszcz "Jej, zróbmy to!"
+            
+                menu:
+                    "{b}Wyjmij wypiek z piekarnika{/b}":
+                        $ ado += 1
+            
+            if ciastol >= 5:
+                show luszcz ciasto 
+                luszcz "Tadaaa"
+
+                lilith "Jo udało Ci się!"
+                lilith "Tak szczerzę to myślałam, że Ci sie nie uda więc kupiłam na wszelki zapas jeden torcik z cukierni z kotodziewczynkami, ale skoro Ci się udało..."
+
+                luszcz "Aha, czyli masz, aż tak małą wiarę we mnie!?"
+
+                show lilith neutral4
+
+                lilith "To nie tak w sensie no spójrz na siebię."
+
+                luszcz "Chwila co to miało znaczyć!?"
+
+                lilith "Nie nic nie w sensie chodziło mi o to, że..."
+
+                with vpunch
+
+                luszcz "Co to ma znaczyć!?"
+            else:
+                show luszcz piernik 
+                luszcz "Eeeeeeeee, to chyba nie jest tort..."
+
+                show lilith neutral5
+
+                lilith "Niemożliwe, geniusz się znalazł!"
+                lilith "A ja myślałam, że to właśnie JEST tort, bo wygląda identycznie!!!"
+
+                luszcz "Dobra no sorki, coś w przepisie musiałem lekko pomyleć"
+
+                show lilith neutral5:
+                    yoffset 0
+                    linear 0.15 yoffset -50
+                    linear 0.15 yoffset 0
+
+                lilith "Lekko!??? Miałeś upiec tort a wyszedł Ci pieprzony piernik!"
+
+                lilith "Szkoda, szkoda strzępić ryja"
+
+            show tata neutral at right
+            hide lilith
+            show luszcz neutral at center
+            with vpunch
+
+            tata "Synu zamknij mordę wiesz, która jest godzina!?"
+
+            luszcz "Wiem Tato, ale do mojego pokoju przyszła Lilith i bardzo nalegała bym upiekł z nią tort i nie chciałem jej wysta..."
+
+            tata "Jaka kurwa Lilith!? Jedyna Lilith jaką znam to Lilith z gry Paper Lily - Chapter 1"
+            tata "Fire gra tak btw zagraj w wolnym czasie"
+
+            luszcz "No to to nie ta Lilith!"
+
+            show luszcz neutral right
+
+            luszcz "Chodzi mi o Lilith z gry The NOexistenceN of you AND me, która stoi właśnie za mną..."
+
+            with vpunch
+            luszcz "Chwila, gdzie ona znikneła!?"
+
+            tata "Synu, byłeś tutaj sam przez cała czas..."
+
+            show luszcz neutral
+
+            luszcz "Nie tato na serio ona tutaj BYŁA ja to wie..."
+
+            tata "Synu, synu"
+
+            luszcz "Tak tato!?"
+
+            tata "Obiecasz mi jedno?"
+
+            luszcz "Ale co?"
+
+            tata "obiecaj, że pójdziesz do gotki po leki na twoje schorzenie!"
+
+            luszcz "ehhh dobrze obiecuję"
+
+            tata "dobre dziecko"
+            tata "A teraz do spania i pamiętaj, że jakby co zawsze będę przy tobie"
+
+            luszcz "Tak, tato wiem"
+
+            tata "No to dobranoc"
+
+            luszcz "dobranoc"
+            
+            hide tata 
+
+            luszcz "Głupiec, myśli, że że ja zwwwaaariooowałem czy coź!????"
+            luszcz "Jaaaa jaaaa mu uddoooowodnie, rzeee Lilith istnieje!"
+
+            luszcz "Ale najpierw chyba rzeczywiście pójdę spać"
+
+            scene bg black with fade
+            stop music
+
+            if ciastol >= 5:
+                $ cake += 1
+                $ ile_item += 1
+
+                "{i}*Ciasto Truskawkowe zostało dodane do ekwipunku*{/i}"
+
+            else:
+                $ piernik += 1
+                $ ile_item_fabularne += 1
+
+                "{i}*Piernik został dodany do ekwipunku*{/i}"
+
+            $ lilith_social_link = 1
+            jump spanko_bed
 
 
 
