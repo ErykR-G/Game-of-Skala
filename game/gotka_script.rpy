@@ -3,6 +3,7 @@ default wypadek1 = 0
 default wypadek2 = 0
 default wypadek3 = 0
 default kazuma_strzal = 20
+default gotka_szpont = 0
 
 label gotka:
     label gotka1:
@@ -214,7 +215,7 @@ label gotka:
                 hide eminem 
                 show luszcz neutral right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
-                luszcz "lbo do gardła..."
+                luszcz "albo do gardła..."
                 luszcz "Potrzebuję gotki lekarza dziewczyny"
                 luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
@@ -267,6 +268,8 @@ label gotka:
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
                         gotka "10) Przestajesz myśleć o męskich siurach"
+                        if wypadek3 == 2 and lilith_social_link == 1:
+                            gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
 
                         luszcz "(cholera…)"
 
@@ -274,6 +277,7 @@ label gotka:
 
                         menu:
                             "{b}Tak alfa wilku{/b}":
+                                $ gotka_szpont = 1
                                 luszcz "Zgadzam się Alfa Wilku"
 
                                 gotka "Słusznie świnko morska"
@@ -293,6 +297,8 @@ label gotka:
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
                                 gotka "A potem pogramy w jakiś gay seks"
+                                if wypadek3 == 2 and lilith_social_link == 1:
+                                    gotka "A i pamietaj jak zobaczę Cię z tą całą Lilith to zabiję ją, Ciebie, jeszcze raz ją, a potem wytnę wam suty i dodam je do paróweczek!"
 
                                 luszcz "Dobrze Gigasigmo"
 
@@ -479,7 +485,7 @@ label gotka:
                 hide tarczownik
                 show luszcz neutral right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
-                luszcz "lbo do gardła..."
+                luszcz "albo do gardła..."
                 luszcz "Potrzebuję gotki lekarza dziewczyny"
                 luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
@@ -532,6 +538,8 @@ label gotka:
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
                         gotka "10) Przestajesz myśleć o męskich siurach"
+                        if wypadek3 == 2 and lilith_social_link == 1:
+                            gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
 
                         luszcz "(cholera…)"
 
@@ -539,6 +547,7 @@ label gotka:
 
                         menu:
                             "{b}Tak alfa wilku{/b}":
+                                $ gotka_szpont = 1
                                 luszcz "Zgadzam się Alfa Wilku"
 
                                 gotka "Słusznie świnko morska"
@@ -558,6 +567,8 @@ label gotka:
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
                                 gotka "A potem pogramy w jakiś gay seks"
+                                if wypadek3 == 2 and lilith_social_link == 1:
+                                    gotka "A i pamietaj jak zobaczę Cię z tą całą Lilith to zabiję ją, Ciebie, jeszcze raz ją, a potem wytnę wam suty i dodam je do paróweczek!"
 
                                 luszcz "Dobrze Gigasigmo"
 
@@ -714,7 +725,7 @@ label gotka:
                 hide gotka 
                 show luszcz neutral  right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
-                luszcz "lbo do gardła..."
+                luszcz "albo do gardła..."
                 luszcz "Potrzebuję gotki lekarza dziewczyny"
                 luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
@@ -767,6 +778,8 @@ label gotka:
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
                         gotka "10) Przestajesz myśleć o męskich siurach"
+                        if wypadek3 == 2 and lilith_social_link == 1:
+                            gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
 
                         luszcz "(cholera…)"
 
@@ -774,6 +787,7 @@ label gotka:
 
                         menu:
                             "{b}Tak alfa wilku{/b}":
+                                $ gotka_szpont = 1
                                 luszcz "Zgadzam się Alfa Wilku"
 
                                 gotka "Słusznie świnko morska"
@@ -793,6 +807,8 @@ label gotka:
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
                                 gotka "A potem pogramy w jakiś gay seks"
+                                if wypadek3 == 2 and lilith_social_link == 1:
+                                    gotka "A i pamietaj jak zobaczę Cię z tą całą Lilith to zabiję ją, Ciebie, jeszcze raz ją, a potem wytnę wam suty i dodam je do paróweczek!"
 
                                 luszcz "Dobrze Gigasigmo"
 
@@ -1063,7 +1079,7 @@ label gotka:
                     hide gotka 
                     show luszcz neutral  right at center
                     luszcz "Sposób w jaki patrzyła mi w oczy..."
-                    luszcz "lbo do gardła..."
+                    luszcz "albo do gardła..."
                     luszcz "Potrzebuję gotki lekarza dziewczyny"
                     luszcz "Ona mnie naprawi"
                     luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
@@ -1116,6 +1132,8 @@ label gotka:
                             gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                             gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
                             gotka "10) Przestajesz myśleć o męskich siurach"
+                            if wypadek3 == 2 and lilith_social_link == 1:
+                                gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
 
                             luszcz "(cholera…)"
 
@@ -1123,6 +1141,7 @@ label gotka:
 
                             menu:
                                 "{b}Tak alfa wilku{/b}":
+                                    $ gotka_szpont = 1
                                     luszcz "Zgadzam się Alfa Wilku"
 
                                     gotka "Słusznie świnko morska"
@@ -1142,6 +1161,8 @@ label gotka:
                                     gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                     gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
                                     gotka "A potem pogramy w jakiś gay seks"
+                                    if wypadek3 == 2 and lilith_social_link == 1:
+                                        gotka "A i pamietaj jak zobaczę Cię z tą całą Lilith to zabiję ją, Ciebie, jeszcze raz ją, a potem wytnę wam suty i dodam je do paróweczek!"
 
                                     luszcz "Dobrze Gigasigmo"
 
@@ -1278,7 +1299,7 @@ label gotka:
                     hide gotka 
                     show luszcz neutral  right at center
                     luszcz "Sposób w jaki patrzyła mi w oczy..."
-                    luszcz "lbo do gardła..."
+                    luszcz "albo do gardła..."
                     luszcz "Potrzebuję gotki lekarza dziewczyny"
                     luszcz "Ona mnie naprawi"
                     luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
@@ -1508,6 +1529,8 @@ label gotka:
                             gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                             gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
                             gotka "10) Przestajesz myśleć o męskich siurach"
+                            if wypadek3 == 2 and lilith_social_link == 1:
+                                gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
 
                             luszcz "(cholera…)"
 
@@ -1515,6 +1538,7 @@ label gotka:
 
                             menu:
                                 "{b}Tak alfa wilku{/b}":
+                                    $ gotka_szpont = 1
                                     luszcz "Zgadzam się Alfa Wilku"
 
                                     gotka "Słusznie świnko morska"
@@ -1534,6 +1558,8 @@ label gotka:
                                     gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                     gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
                                     gotka "A potem pogramy w jakiś gay seks"
+                                    if wypadek3 == 2 and lilith_social_link == 1:
+                                        gotka "A i pamietaj jak zobaczę Cię z tą całą Lilith to zabiję ją, Ciebie, jeszcze raz ją, a potem wytnę wam suty i dodam je do paróweczek!"
 
                                     luszcz "Dobrze Gigasigmo"
 
@@ -1636,51 +1662,119 @@ label gotka:
         label gotka9:
             scene bg klinika2 with fade
             play music "audio/music/klinika.mp3"
-            $ gotka_social_link += 1
             show luszcz neutral right at slightright
             show gotka neutral at slightleft
 
-            gotka "… więc mówisz, że nagle obudziłeś się i zobaczyłeś kobietę w swoim łóżku i zamiast ją wygonić upiekliście tort?"
+            if gotka_szpont == 1:
+                with vpunch
+                gotka "Co to znaczy, że obudziłeś się w nocy i zobaczyłeś kobietę w swoim łóżku?!"
 
-            luszcz "truskawkowy"
+                luszcz "No mówię, no jakieś zwidy mam czy schizofremię czy coś"
 
-            gotka "..?"
+                with vpunch
+                gotka "I ty oczekujesz, że w to uwierzę!?"
 
-            luszcz "To był tort truskawkowy"
+                gotka "Zdradziłeś mnie z jakąś pierwszą lepszą dziwką, która weszła do twojego łóżka, a teraz mi wmawiasz, że to dlatego, że jesteś chory!?"
 
-            gotka "…upiekliście tort TRUSKAWKOWY"
+                luszcz "ale, ale to jest prawda, bo jak mój tata wszedł do kuchni"
 
-            luszcz "No tak, ale ona tylko w mojej głowie była, bo jak mój tata wbił do kuchni na mnie nakrzyczeć to jej już nie było!"
+                with vpunch
+                gotka "GÓWNO mnie obchodzi twój tata!"            
 
-            gotka "Może szybko biega?"
+                gotka "A ta lafirynda już jest martwa, zajebię ją jak tylko znów dotknie moją świnkę doświadczalną!"    
 
-            luszcz "NIE! Mówię pani ona nie istnieje!"
+                play sound "audio/sfx/flos.mp3"
+                hide gotka 
+                show luszcz neutral right at center
+                with vpunch
 
-            gotka "No to jak nie istnieje to nie ma problemu do widzenia"
+                luszcz "Jezus, maria domyślałem się, że nie będzie szczęśliwa, ale, że aż tak?"
+                luszcz "no nic, oby jak się nastepny raz spotkamy była w lepszym nastroju"
+                luszcz "A teraz czas na mnie..."
 
-            luszcz "do widzenia"
-            luszcz "znaczy chwila nie wróć ona jakby nie jest prawdziwa, ale ja ją widze"
+            else:
+                gotka "… więc mówisz, że nagle obudziłeś się i zobaczyłeś kobietę w swoim łóżku i zamiast ją wygonić upiekliście tort?"
 
-            gotka "czyli twierdzisz, że masz schizofrenie?"
+                if piernik == 1:
+                    if slownik == 0:
+                        luszcz "W sensie taki był plan, ale wszystko było po chińsku i wyszedł mi piernik"
 
-            luszcz "TAK Mam mega zaawansowaną schizofrenie i pilnie potrzebuję leczenia!"
+                        gotka "A po chińskim tradycyjnym czy uproszczonym?"
 
-            gotka "…"
-            gotka "Ehhhh niech Ci będzie"
+                        luszcz "To nie jest ważne, jedyne co się liczy to to, że to jest jej wina, a nie moja!"
 
-            luszcz "Lets go!"
-            luszcz "znaczy ummn o nie jezu jestem taki chory ohhh biedny ja pora umierać"
+                        gotka "Hmmm, no dobra to pokaż chociaż piernika"
 
-            gotka "…"
-            gotka "Masz te tabletki i jak następnym razem zobaczysz seksowną kobietę, która od ciebie nie ucieka to je zażyj"
+                    else:
+                        luszcz "W sensie taki był plan, ale no coś mi się leciutko pomieszało i no wyszedł mi piernik"
 
-            $ leki = 1
-            $ ile_item_fabularne += 1
-            "{i}*Leki na Schizofrenię zostały dodane do ekwipunku*{/i}" 
+                        gotka "Hmmm, no dobra to pokaż tego piernika"
+                    
+                    show luszcz piernik
 
-            gotka "Do widzenia"
+                    luszcz "Tadaaaam!"
 
-            luszcz "Do widzenia proszę pani i dziękuję!"
+                    gotka "Ładny, ładny możnaby na nim przeprowadzać eksperymenty medyczne..."
+
+                    luszcz "..?"
+
+                    gotka "No wiesz takie jak Lord Farquaad przeprowadzał w pierwszej części Shreka"
+
+                    luszcz "..."
+
+                    show luszcz neutral right
+
+                    luszcz "To były tortury..."
+
+                    gotka "Oj tam, oj tam nie czepiajmy się już słówek"
+
+                    luszcz "..."
+                    luszcz "To pomożesz mi z moim schorzeniem?"
+
+                    gotka "Ale, ty nie jestes chory."
+                    
+                    luszcz "Jak nie jestem przecież widzę kobiete w nocy, która nie istnieje, gdy pojawia się mój tata!"
+                
+                else:
+                    luszcz "truskawkowy"
+
+                    gotka "..?"
+
+                    luszcz "To był tort truskawkowy"
+
+                    gotka "…upiekliście tort TRUSKAWKOWY"
+
+                    luszcz "No tak, ale ona tylko w mojej głowie była, bo jak mój tata wbił do kuchni na mnie nakrzyczeć to jej już nie było!"
+
+                    gotka "Może szybko biega?"
+
+                    luszcz "NIE! Mówię pani ona nie istnieje!"
+
+                gotka "No to jak nie istnieje to nie ma problemu do widzenia"
+
+                luszcz "do widzenia"
+                luszcz "znaczy chwila nie wróć ona jakby nie jest prawdziwa, ale ja ją widze"
+
+                gotka "czyli twierdzisz, że masz schizofrenie?"
+
+                luszcz "TAK Mam mega zaawansowaną schizofrenie i pilnie potrzebuję leczenia!"
+
+                gotka "…"
+                gotka "Ehhhh niech Ci będzie"
+
+                luszcz "Lets go!"
+                luszcz "znaczy ummn o nie jezu jestem taki chory ohhh biedny ja pora umierać"
+
+                gotka "…"
+                gotka "Masz te tabletki i jak następnym razem zobaczysz seksowną kobietę, która od ciebie nie ucieka to je zażyj"
+
+                $ leki = 1
+                $ ile_item_fabularne += 1
+                "{i}*Leki na Schizofrenię zostały dodane do ekwipunku*{/i}" 
+
+                gotka "Do widzenia"
+
+                luszcz "Do widzenia proszę pani i dziękuję!"
 
             if gotka_social_link == 1:
                 if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
@@ -1694,7 +1788,7 @@ label gotka:
                 hide gotka 
                 show luszcz neutral  right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
-                luszcz "lbo do gardła..."
+                luszcz "albo do gardła..."
                 luszcz "Potrzebuję gotki lekarza dziewczyny"
                 luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
@@ -1747,6 +1841,7 @@ label gotka:
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
                         gotka "10) Przestajesz myśleć o męskich siurach"
+                        gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi dziś mówiłeś"
 
                         luszcz "(cholera…)"
 
@@ -1754,6 +1849,7 @@ label gotka:
 
                         menu:
                             "{b}Tak alfa wilku{/b}":
+                                $ gotka_szpont = 1
                                 luszcz "Zgadzam się Alfa Wilku"
 
                                 gotka "Słusznie świnko morska"
@@ -1773,6 +1869,7 @@ label gotka:
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
                                 gotka "A potem pogramy w jakiś gay seks"
+                                gotka "A i pamietaj jak zobaczę Cię z tą całą Lilith to zabiję ją, Ciebie, jeszcze raz ją, a potem wytnę wam suty i dodam je do paróweczek!"
 
                                 luszcz "Dobrze Gigasigmo"
 

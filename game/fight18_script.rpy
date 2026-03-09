@@ -23310,7 +23310,7 @@ label fight181:
                             jump losowanko_tarczownik_vr_fight181
 
         else:
-            if vr == 2 and tarczownik_obrona == 0 and tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
+            if vr == 6 and tarczownik_obrona == 0 and tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
                 label losowanko_tarczownik_rzygi_fight181:
                     if tarczownik_wybrany == 1:
                         show rzyg zorder 15 at rzygi_sojusznik1

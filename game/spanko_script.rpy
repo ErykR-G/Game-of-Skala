@@ -1,6 +1,8 @@
 default drukowanko = 0
 default tasma_spotkanko = 0
 default czasd = 0
+default nocka = 1
+default ltite = 0
 
 label spanko:
     if yusuke_social_link == 0:
@@ -226,6 +228,28 @@ label spanko:
 
     scene bg black with fade
     stop music
+    if nocka == 4 and lilith_social_link == 0:
+        $ kostka = renpy.random.randint(1, 3)
+        if kostka >= 2:
+            $ ltite = 2
+            $ timer += 120
+            jump lilith1
+    
+    if nocka >= 5 and lilith_social_link == 0:
+        $ ltite = 2
+        $ timer += 120
+        jump lilith1
+    
+    if nocka == 6 and lilith_social_link == 1 and ltite == 0:
+        $ kostka = renpy.random.randint(1, 3)
+        if kostka >= 2:
+            $ timer += 120
+            jump lilith2
+    
+    if nocka == 7 and lilith_social_link == 1 and ltite == 0:
+        $ timer += 120
+        jump lilith2
+
     $ kostka = renpy.random.randint(1, 2)
     if kostka == 1:
         "{i}Łuszcz położył się spać{/i}"
@@ -233,12 +257,13 @@ label spanko:
         "{i}Niestety, po obudzeniu stracił wszystkie, które kochał{/i}"
     
     else:
-        if lilith_social_link == 0:
+        if lilith_social_link == 0 and nocka > 1:
+            $ ltite = 2
             $ timer += 120
             jump lilith1
         
         else:
-            if lilith_social_link == 1:
+            if lilith_social_link == 1 and nocka > 3 and ltite == 0:
                 $ timer += 120
                 jump lilith2
             
@@ -327,6 +352,9 @@ label spanko:
         $ krowko_limit = 0
         $ toxic_limit = 0
         $ czasd -= 1
+        $ nocka += 1
+        if ltite > 0:
+            $ ltite -= 1
         if kazuma_strzal > 0:
             $ kazuma_strzal -= 1
         if tasma_spotkanko == 2:
@@ -410,6 +438,9 @@ label spanko2:
     $ krowko_limit = 0
     $ toxic_limit = 0
     $ czasd -= 1
+    $ nocka += 1
+    if ltite > 0:
+        $ ltite -= 1
     if kazuma_strzal > 0:
             $ kazuma_strzal -= 1
     if tasma_spotkanko == 2:

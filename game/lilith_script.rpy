@@ -974,7 +974,7 @@ label lilith:
             window show
             stop music
             play sound "audio/sfx/ding.mp3"
-            "{i}*Ding*{/i}"
+            "{i}*Ding*{/i}{nw=1.0}"
 
             menu:
                 "{b}Otwórz piekarnik{b}":
@@ -986,6 +986,7 @@ label lilith:
 
                 show lilith neutral3 at left
                 show luszcz neutral right at slightright
+                play music "audio/music/lilith5.mp3"
             else:
                 window hide
                 hide screen clock
@@ -1889,7 +1890,12 @@ label lilith:
             luszcz "Głupiec, myśli, że że ja zwwwaaariooowałem czy coź!????"
             luszcz "Jaaaa jaaaa mu uddoooowodnie, rzeee Lilith istnieje!"
 
+            if gotka_szpan > 0 or gotka_social_link > 0:
+                luszcz "(hm…. Choć z drugiej strony mam pretekst, by iść do gotki hehe)"
+
             luszcz "Ale najpierw chyba rzeczywiście pójdę spać"
+
+            $ wypadek3 = 1
 
             scene bg black with fade
             stop music
