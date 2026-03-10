@@ -156,6 +156,78 @@ label kazuma:
     label after_fight161:
         $ kazuma_sojusznik = 0
         $ liczba_sojusznikow -= 1
+        $ kazuma_nic = 5
+        if kazuma_klata == 5:
+            $ kazuma_klata = 1
+            $ klata_liczba += 1
+        if ring == 5:
+            $ ring = 1
+        if vr == 5:
+            $ vr = 1
+        if memy == 5:
+            $ memy = 1
+        if ziemia == 5:
+            $ ziemia = 1
+        if zloty == 5:
+            $ zloty = 1
+        
+        if kazuma_przepychaczka == 5:
+            $ kazuma_min_attack -= 2
+            $ kazuma_max_attack -= 2
+            $ kazuma_przepychaczka = 1
+            $ przepychaczka_liczba += 1
+            $ chunchunmaru = 5
+            $ kazuma_min_attack += 0
+            $ kazuma_max_attack += 6
+        
+        if stop == 5:
+            $ kazuma_min_attack -= 1
+            $ kazuma_max_attack -= 4
+            $ stop = 1
+            $ chunchunmaru = 5
+            $ kazuma_min_attack += 0
+            $ kazuma_max_attack += 6
+        
+        if miecz_swietlny == 5:
+            $ kazuma_min_attack -= 3
+            $ kazuma_max_attack -= 2
+            $ miecz_swietlny = 1
+            $ chunchunmaru = 5
+            $ kazuma_min_attack += 0
+            $ kazuma_max_attack += 6
+        
+        if ostrza_chaosu == 5:
+            $ kazuma_min_attack -= 0
+            $ kazuma_max_attack -= 1
+            $ ostrza_chaosu = 1
+            $ chunchunmaru = 5
+            $ kazuma_min_attack += 0
+            $ kazuma_max_attack += 6
+        
+        if patyk == 5:
+            $ kazuma_min_attack -= 1
+            $ kazuma_max_attack -= 3
+            $ patyk = 1
+            $ chunchunmaru = 5
+            $ kazuma_min_attack += 0
+            $ kazuma_max_attack += 6
+        
+        if bazooka == 5:
+            $ kazuma_min_attack -= 1
+            $ kazuma_max_attack -= 1
+            $ bazooka = 1
+            $ chunchunmaru = 5
+            $ kazuma_min_attack += 0
+            $ kazuma_max_attack += 6
+        
+        if miecz3d == 5:
+            $ kazuma_min_attack -= 2
+            $ kazuma_max_attack -= 3
+            $ miecz3d = 1
+            $ chunchunmaru = 5
+            $ kazuma_min_attack += 0
+            $ kazuma_max_attack += 6
+
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
             scene bg jezioro
         else:
@@ -1167,6 +1239,78 @@ label kazuma3:
                     label after_fight171:
                         $ kazuma_sojusznik = 0
                         $ liczba_sojusznikow -= 1
+                        $ kazuma_nic = 5
+                        if kazuma_klata == 5:
+                            $ kazuma_klata = 1
+                            $ klata_liczba += 1
+                        if ring == 5:
+                            $ ring = 1
+                        if vr == 5:
+                            $ vr = 1
+                        if memy == 5:
+                            $ memy = 1
+                        if ziemia == 5:
+                            $ ziemia = 1
+                        if zloty == 5:
+                            $ zloty = 1
+                        
+                        if kazuma_przepychaczka == 5:
+                            $ kazuma_min_attack -= 2
+                            $ kazuma_max_attack -= 2
+                            $ kazuma_przepychaczka = 1
+                            $ przepychaczka_liczba += 1
+                            $ chunchunmaru = 5
+                            $ kazuma_min_attack += 0
+                            $ kazuma_max_attack += 6
+                        
+                        if stop == 5:
+                            $ kazuma_min_attack -= 1
+                            $ kazuma_max_attack -= 4
+                            $ stop = 1
+                            $ chunchunmaru = 5
+                            $ kazuma_min_attack += 0
+                            $ kazuma_max_attack += 6
+                        
+                        if miecz_swietlny == 5:
+                            $ kazuma_min_attack -= 3
+                            $ kazuma_max_attack -= 2
+                            $ miecz_swietlny = 1
+                            $ chunchunmaru = 5
+                            $ kazuma_min_attack += 0
+                            $ kazuma_max_attack += 6
+                        
+                        if ostrza_chaosu == 5:
+                            $ kazuma_min_attack -= 0
+                            $ kazuma_max_attack -= 1
+                            $ ostrza_chaosu = 1
+                            $ chunchunmaru = 5
+                            $ kazuma_min_attack += 0
+                            $ kazuma_max_attack += 6
+                        
+                        if patyk == 5:
+                            $ kazuma_min_attack -= 1
+                            $ kazuma_max_attack -= 3
+                            $ patyk = 1
+                            $ chunchunmaru = 5
+                            $ kazuma_min_attack += 0
+                            $ kazuma_max_attack += 6
+                        
+                        if bazooka == 5:
+                            $ kazuma_min_attack -= 1
+                            $ kazuma_max_attack -= 1
+                            $ bazooka = 1
+                            $ chunchunmaru = 5
+                            $ kazuma_min_attack += 0
+                            $ kazuma_max_attack += 6
+                        
+                        if miecz3d == 5:
+                            $ kazuma_min_attack -= 2
+                            $ kazuma_max_attack -= 3
+                            $ miecz3d = 1
+                            $ chunchunmaru = 5
+                            $ kazuma_min_attack += 0
+                            $ kazuma_max_attack += 6
+
                         $ rynek = 0
                         $ sloneczna = 0
                         $ alejka = 0

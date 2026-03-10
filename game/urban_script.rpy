@@ -192,6 +192,78 @@ label urban:
             scene bg dom_kultury
             $ urban_sojusznik = 0
             $ liczba_sojusznikow -= 1
+            $ urban_nic = 3
+            if urban_klata == 3:
+                $ urban_klata = 1
+                $ klata_liczba += 1
+            if ring == 3:
+                $ ring = 1
+            if vr == 3:
+                $ vr = 1
+            if memy == 3:
+                $ memy = 1
+            if ziemia == 3:
+                $ ziemia = 1
+            if zloty == 3:
+                $ zloty = 1
+            
+            if urban_przepychaczka == 3:
+                $ urban_min_attack -= 2
+                $ urban_max_attack -= 2
+                $ urban_przepychaczka = 1
+                $ przepychaczka_liczba += 1
+                $ fuck = 3
+                $ urban_min_attack += 0
+                $ urban_max_attack += 2
+            
+            if stop == 3:
+                $ urban_min_attack -= 1
+                $ urban_max_attack -= 4
+                $ stop = 1
+                $ fuck = 3
+                $ urban_min_attack += 0
+                $ urban_max_attack += 2
+            
+            if miecz_swietlny == 3:
+                $ urban_min_attack -= 3
+                $ urban_max_attack -= 2
+                $ miecz_swietlny = 1
+                $ fuck = 3
+                $ urban_min_attack += 0
+                $ urban_max_attack += 2
+            
+            if ostrza_chaosu == 3:
+                $ urban_min_attack -= 0
+                $ urban_max_attack -= 1
+                $ ostrza_chaosu = 1
+                $ fuck = 3
+                $ urban_min_attack += 0
+                $ urban_max_attack += 2
+            
+            if patyk == 3:
+                $ urban_min_attack -= 1
+                $ urban_max_attack -= 3
+                $ patyk = 1
+                $ fuck = 3
+                $ urban_min_attack += 0
+                $ urban_max_attack += 2
+            
+            if bazooka == 3:
+                $ urban_min_attack -= 1
+                $ urban_max_attack -= 1
+                $ bazooka = 1
+                $ fuck = 3
+                $ urban_min_attack += 0
+                $ urban_max_attack += 2
+            
+            if miecz3d == 3:
+                $ urban_min_attack -= 2
+                $ urban_max_attack -= 3
+                $ miecz3d = 1
+                $ fuck = 3
+                $ urban_min_attack += 0
+                $ urban_max_attack += 2
+
             show luszcz neutral at slightleft
             show urban neutral at slightright
             luszcz "o jacie jacie, ale ma pan wielkie usz.... eeee znaczy dziekuje za pomoc"
@@ -457,6 +529,77 @@ label urban:
 
                         $ urban_sojusznik = 0
                         $ liczba_sojusznikow -= 1
+                        $ urban_nic = 3
+                        if urban_klata == 3:
+                            $ urban_klata = 1
+                            $ klata_liczba += 1
+                        if ring == 3:
+                            $ ring = 1
+                        if vr == 3:
+                            $ vr = 1
+                        if memy == 3:
+                            $ memy = 1
+                        if ziemia == 3:
+                            $ ziemia = 1
+                        if zloty == 3:
+                            $ zloty = 1
+                        
+                        if urban_przepychaczka == 3:
+                            $ urban_min_attack -= 2
+                            $ urban_max_attack -= 2
+                            $ urban_przepychaczka = 1
+                            $ przepychaczka_liczba += 1
+                            $ fuck = 3
+                            $ urban_min_attack += 0
+                            $ urban_max_attack += 2
+                        
+                        if stop == 3:
+                            $ urban_min_attack -= 1
+                            $ urban_max_attack -= 4
+                            $ stop = 1
+                            $ fuck = 3
+                            $ urban_min_attack += 0
+                            $ urban_max_attack += 2
+                        
+                        if miecz_swietlny == 3:
+                            $ urban_min_attack -= 3
+                            $ urban_max_attack -= 2
+                            $ miecz_swietlny = 1
+                            $ fuck = 3
+                            $ urban_min_attack += 0
+                            $ urban_max_attack += 2
+                        
+                        if ostrza_chaosu == 3:
+                            $ urban_min_attack -= 0
+                            $ urban_max_attack -= 1
+                            $ ostrza_chaosu = 1
+                            $ fuck = 3
+                            $ urban_min_attack += 0
+                            $ urban_max_attack += 2
+                        
+                        if patyk == 3:
+                            $ urban_min_attack -= 1
+                            $ urban_max_attack -= 3
+                            $ patyk = 1
+                            $ fuck = 3
+                            $ urban_min_attack += 0
+                            $ urban_max_attack += 2
+                        
+                        if bazooka == 3:
+                            $ urban_min_attack -= 1
+                            $ urban_max_attack -= 1
+                            $ bazooka = 1
+                            $ fuck = 3
+                            $ urban_min_attack += 0
+                            $ urban_max_attack += 2
+                        
+                        if miecz3d == 3:
+                            $ urban_min_attack -= 2
+                            $ urban_max_attack -= 3
+                            $ miecz3d = 1
+                            $ fuck = 3
+                            $ urban_min_attack += 0
+                            $ urban_max_attack += 2
 
                         urban "dziekuje ci, dzięki tobie światowa rewolucja będzie mogla rokwitnac na całym swiecie"
 

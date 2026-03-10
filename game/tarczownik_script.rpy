@@ -477,6 +477,78 @@ label tarczownik:
                 label after_fight81:
                     $ tarczownik_sojusznik = 0
                     $ liczba_sojusznikow -= 1
+                    $ tarczownik_nic = 6
+                    if tarczownik_klata == 6:
+                        $ tarczownik_klata = 1
+                        $ klata_liczba += 1
+                    if ring == 6:
+                        $ ring = 1
+                    if vr == 6:
+                        $ vr = 1
+                    if memy == 6:
+                        $ memy = 1
+                    if ziemia == 6:
+                        $ ziemia = 1
+                    if zloty == 6:
+                        $ zloty = 1
+                    
+                    if tarczownik_przepychaczka == 6:
+                        $ tarczownik_min_attack -= 2
+                        $ tarczownik_max_attack -= 2
+                        $ tarczownik_przepychaczka = 1
+                        $ przepychaczka_liczba += 1
+                        $ legendary_shield = 6
+                        $ tarczownik_min_attack += 1
+                        $ tarczownik_max_attack += 3
+                    
+                    if stop == 6:
+                        $ tarczownik_min_attack -= 1
+                        $ tarczownik_max_attack -= 4
+                        $ stop = 1
+                        $ legendary_shield = 6
+                        $ tarczownik_min_attack += 1
+                        $ tarczownik_max_attack += 3
+                    
+                    if miecz_swietlny == 6:
+                        $ tarczownik_min_attack -= 3
+                        $ tarczownik_max_attack -= 2
+                        $ miecz_swietlny = 1
+                        $ legendary_shield = 6
+                        $ tarczownik_min_attack += 1
+                        $ tarczownik_max_attack += 3
+                    
+                    if ostrza_chaosu == 6:
+                        $ tarczownik_min_attack -= 0
+                        $ tarczownik_max_attack -= 1
+                        $ ostrza_chaosu = 1
+                        $ legendary_shield = 6
+                        $ tarczownik_min_attack += 1
+                        $ tarczownik_max_attack += 3
+                    
+                    if patyk == 6:
+                        $ tarczownik_min_attack -= 1
+                        $ tarczownik_max_attack -= 3
+                        $ patyk = 1
+                        $ legendary_shield = 6
+                        $ tarczownik_min_attack += 1
+                        $ tarczownik_max_attack += 3
+                    
+                    if bazooka == 6:
+                        $ tarczownik_min_attack -= 1
+                        $ tarczownik_max_attack -= 1
+                        $ bazooka = 1
+                        $ legendary_shield = 6
+                        $ tarczownik_min_attack += 1
+                        $ tarczownik_max_attack += 3
+                    
+                    if miecz3d == 6:
+                        $ tarczownik_min_attack -= 2
+                        $ tarczownik_max_attack -= 3
+                        $ miecz3d = 1
+                        $ legendary_shield = 6
+                        $ tarczownik_min_attack += 1
+                        $ tarczownik_max_attack += 3
+
                     scene bg dziady2
                     play music "audio/music/dziady.mp3"
                     show luszcz neutral at slightleft
