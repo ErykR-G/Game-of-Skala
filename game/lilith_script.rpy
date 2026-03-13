@@ -92,7 +92,7 @@ label lilith:
         "{i}Tej nocy pojawiła się Lilith{/i}"
         "{i}Leżę na łóżku, zagubiony w czasie-Nie wiem, jak długo próbowałem zasnąć i nawet nie pamiętam, kiedy ostatnio farmiłem na skyblocku{/i}"
         "{i}Jedyne co mi pozostało to umrzeć tutaj... i czekać aż moje ciało się rozłoży{/i}"
-        "{i}i wtedy... ona pojawiła się obok mnie{/i}"
+        "{i}i wtedy... ONA pojawiła się obok mnie{/i}"
 
         scene bg gnoms with fade
         play music "audio/music/lilith1.mp3"
@@ -1914,6 +1914,60 @@ label lilith:
 
             $ lilith_social_link = 1
             jump spanko_bed
+
+    label lilith2:
+        "{i}{/i}"
+        "{i}Tej nocy Łuszcza piekielnie bolał brzuch{/i}"
+        "{i}Zjadł za dużo pizzy zapewne powiecie?{/i}"
+        "{i}I będziecie mieć racje, Łuszczu zjadł na kolacje dużo za dużo pizzy{/i}"
+        "{i}i dlatego teraz rozbolał go brzuszek{/i}"
+        "{i}Z tego powodu Łuszczu postanowił udać się do toalety i ”srać”{/i}"
+        "{i}Lecz, gdy już miał to uczynić pojawiła się ONA...{/i}"
+
+        scene bg gnoms with fade
+        play music "audio/music/lilith5.mp3"
+        scene bg lilith6 with fade
+
+        lilith "Ojoj, chyba ktoś tu zjadł za dużo pizzy"
+
+        luszcz "Zejdź ze mnie kobieto! Muszę, muszę się szybko dostać do sracza."
+
+        show bg lilith5
+
+        lilith "Ahhh, nie przejmuj się tym, mam coś co Ci bardziej pomoże"
+
+        show bg lilith3
+
+        lilith "Ta daaa!"
+
+        luszcz "Co to za piguły!? To dzięki nim Ciebie widzę!?"
+
+        lilith "Spokojnie, spokojnie to nic groźnego"
+        lilith "To piguły oczyszczające, które uleczą twój organizm"
+
+        luszcz "Na serio!? To dawaj je szybko, bo zaraz się tu zesram!"
+
+        lilith "Dam, ale najpierw musisz pamiętać, że co za dużo to nie zdrowo"
+        lilith "I zarzycie więcej niż 3 pigułek na dzień może grozić nawet śmiercią!"
+        lilith "Zrozumianio!?"
+
+        luszcz "Tak, tak daj te piguły szybko błagam, bo już nie daję rady!!!"
+
+        lilith "Dobrze w takim razie..."
+
+        show bg lilith7
+
+        lilith "...pierwsza za mamusie!"
+
+        luszcz "wooof"
+
+        play sound "audio/sfx/lyk.mp3"
+        show bg lilith3
+
+        "{i}Łuszcz połknął pierwszą pigułkę i od razu poczuł rozluźnienie w jego dolnej części ciała{/i}"
+
+        luszcz "Ohhhhhh, jaka ulga czuję jakby z mojego ciała uciekło pół kilo"
+
 
 
 
