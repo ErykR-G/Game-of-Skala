@@ -2725,7 +2725,7 @@ label eq:
                                     $ kazuma_max_attack -= 4
                                     $ stop = 1
                                     $ chunchunmaru = 5
-                                    $ kazuma_min_attack += 6
+                                    $ kazuma_min_attack += 0
                                     $ kazuma_max_attack += 6
                                     jump bron
                                 
