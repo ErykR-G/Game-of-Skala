@@ -94,9 +94,11 @@ label lilith:
         "{i}Jedyne co mi pozostało to umrzeć tutaj... i czekać aż moje ciało się rozłoży{/i}"
         "{i}i wtedy... ONA pojawiła się obok mnie{/i}"
 
+        window hide
         scene bg gnoms with fade
         play music "audio/music/lilith1.mp3"
         scene bg lilith2 with fade
+        window show
 
         lilith "..."
 
@@ -1924,9 +1926,11 @@ label lilith:
         "{i}Z tego powodu Łuszczu postanowił udać się do toalety i ”srać”{/i}"
         "{i}Lecz, gdy już miał to uczynić pojawiła się ONA...{/i}"
 
+        window hide
         scene bg gnoms with fade
         play music "audio/music/lilith5.mp3"
         scene bg lilith6 with fade
+        window show
 
         lilith "Ojoj, chyba ktoś tu zjadł za dużo pizzy"
 
@@ -1945,19 +1949,19 @@ label lilith:
         lilith "Spokojnie, spokojnie to nic groźnego"
         lilith "To piguły oczyszczające, które uleczą twój organizm"
 
-        luszcz "Na serio!? To dawaj je szybko, bo zaraz się tu zesram!"
+        luszcz "Na serio!? To dawaj je szybko, bo już się zbliża!"
 
         lilith "Dam, ale najpierw musisz pamiętać, że co za dużo to nie zdrowo"
         lilith "I zarzycie więcej niż 3 pigułek na dzień może grozić nawet śmiercią!"
         lilith "Zrozumianio!?"
 
-        luszcz "Tak, tak daj te piguły szybko błagam, bo już nie daję rady!!!"
+        luszcz "Tak, skończ już pierdolić i daj te piguły szybko błagam, bo już nie daję rady!!!"
 
         lilith "Dobrze w takim razie..."
 
         show bg lilith7
 
-        lilith "...pierwsza za mamusie!"
+        lilith "...za mamusie!"
 
         luszcz "wooof"
 
@@ -1966,8 +1970,14 @@ label lilith:
 
         "{i}Łuszcz połknął pierwszą pigułkę i od razu poczuł rozluźnienie w jego dolnej części ciała{/i}"
 
-        luszcz "Ohhhhhh, jaka ulga czuję jakby z mojego ciała uciekło pół kilo"
+        luszcz "Ohhhhhh, jak dobrze ohhhhhh!"
+        luszcz "Daj jeszcze jedną, jeszcze jedną!"
 
+        lilith "No dobrze, ale pamiętaj, że to już druga!"
+
+        luszcz "woof, woof!"
+
+        lilith "No, to teraz za"
 
 
 
