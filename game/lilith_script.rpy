@@ -624,7 +624,7 @@ label lilith:
                                 yalign 1.0
                                 easeout 0.3 xalign 0.0
 
-                            luszcz "o kurwa coś ty odjebala!"
+                            luszcz "o kurwa coś ty odjebała!"
 
                             lilith "nic… to twoja ręka trzymała nóż"
 
@@ -1968,7 +1968,7 @@ label lilith:
         play sound "audio/sfx/lyk.mp3"
         show bg lilith3
 
-        "{i}Łuszcz połknął pierwszą pigułkę i od razu poczuł rozluźnienie w jego dolnej części ciała{/i}"
+        "{i}Łuszcz połknął PIERWSZĄ pigułkę i od razu poczuł rozluźnienie w jego dolnej części ciała{/i}"
 
         luszcz "Ohhhhhh, jak dobrze ohhhhhh!"
         luszcz "Daj jeszcze jedną, jeszcze jedną!"
@@ -1977,7 +1977,45 @@ label lilith:
 
         luszcz "woof, woof!"
 
-        lilith "No, to teraz za"
+        show bg lilith8
+
+        lilith "No, to teraz za najlepszą gotkę na świecie!"
+
+        luszcz "woof, woof!"
+
+        play sound "audio/sfx/lyk.mp3"
+        show bg lilith3
+
+        "{i}Łuszcz połknął DRUGĄ pigułkę i po raz kolejny przez jego ciało przetoczyła się fala ulgi{/i}"
+
+        luszcz "Ohhhhh, ale bosko ahhhh"
+        luszcz "Rób mi tak dalej!"
+
+        lilith "Dobrze, ale pamiętaj że to już ostatnia!"
+
+        luszcz "Tak jest Proszę Pani!"
+
+        show bg lilith8
+
+        lilith "No, to teraz za twoją najlepszą panią doktor!"
+
+        luszcz "woof, woof pani aptekarko!"
+
+        play sound "audio/sfx/lyk.mp3"
+        show bg lilith5
+
+        "{i}Łuszcz połknął TRZECIĄ pigułkę i poczuł jak niepowstrzymana siła przebija się prze niepowstrzymalne obiekty w jego jelitach i wyrzuca je na zewnątrz{/i}"
+
+        if gotka_szpont == 1:
+            with vpunch
+            gotka "Co tu się odpierdala!?"     
+        else:
+            with vpunch
+            lilith "Coś ty właśnie powiedział!?"
+
+
+
+
 
 
 
