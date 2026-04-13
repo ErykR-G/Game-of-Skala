@@ -15,6 +15,8 @@ default placlil = 0
 default jezuslil = 0
 default smolensklil = 0
 
+default klil = 0
+
 init python:
     import random
 
@@ -89,10 +91,10 @@ init:
 label lilith:
     label lilith1:
         "{i}{/i}"
-        "{i}Tej nocy pojawiła się Lilith{/i}"
-        "{i}Leżę na łóżku, zagubiony w czasie-Nie wiem, jak długo próbowałem zasnąć i nawet nie pamiętam, kiedy ostatnio farmiłem na skyblocku{/i}"
-        "{i}Jedyne co mi pozostało to umrzeć tutaj... i czekać aż moje ciało się rozłoży{/i}"
-        "{i}i wtedy... ONA pojawiła się obok mnie{/i}"
+        n "{i}Tej nocy pojawiła się Lilith{/i}"
+        n "{i}Leżałeś na łóżku, zagubiony w czasie-Nie wiedząc, jak długo próbowałeś zasnąć i nawet nie pamiętając, kiedy ostatnio farmiłeś na skyblocku{/i}"
+        n "{i}Jedyne co ci pozostało to umrzeć tutaj... i czekać aż twoje ciało się rozłoży{/i}"
+        n "{i}i wtedy... ONA pojawiła się obok ciebie{/i}"
 
         window hide
         scene bg gnoms with fade
@@ -598,7 +600,7 @@ label lilith:
                                 yalign 1.0
                                 easeout 0.3 xalign 0.0
 
-                            "{i}Lilith wyciąga nóż i wkłada go w ręce łuszcza{/i}"
+                            n "{i}Lilith wyciąga nóż i wkłada go w twoje ręce{/i}"
 
                             lilith "masz broń co cie powstrzymuje!"
                             lilith "dajesz!"
@@ -647,9 +649,9 @@ label lilith:
 
                                     scene bg black with fade
 
-                                    n "{i}I jak Łuszczu powiedział tak zrobił{/i}"
-                                    n "{i}Dokonał swojego haniebnego czynnu poczym schował ciało do szafy{/i}"
-                                    n "{i}Od teraz służyło mu jako seks zabawka po wsze czasy{/i}"
+                                    n "{i}I jak powiedziałeś tak zrobiłeś{/i}"
+                                    n "{i}Dokonałeś swojego haniebnego czynnu poczym schowałeś ciało do szafy{/i}"
+                                    n "{i}Od teraz służyło Ci jako seks zabawka po wsze czasy{/i}"
 
                                     $ lilith_social_link = 10
                                     jump spanko_bed
@@ -662,10 +664,10 @@ label lilith:
 
                                     scene bg black with fade
 
-                                    n "{i}I jak Łuszczu powiedział tak zrobił{/i}"
-                                    n "{i}Poszedł do lokalnego rzeźnika i zaproponował sprzedanie ciała{/i}"
+                                    n "{i}I jak powiedziałeś tak zrobiłeś{/i}"
+                                    n "{i}Poszedłeś do lokalnego rzeźnika i zaproponowałeś sprzedaż ciała{/i}"
                                     n "{i}Rzeżnik przez chwilę się opierał, ale ostatecznmie stwierdził, ze mięso to mięso i kupił{/i}"
-                                    n "{i}Po wszystkim Łuszcz wrócił do domu i poszedł spać{/i}"
+                                    n "{i}Po wszystkim wróciłeś do domu i poszedłeś spać{/i}"
 
                                     $ money += 3
                                     "{i}*3 Portfele zostały dodane do ekwipunku*{/i}"
@@ -1919,16 +1921,16 @@ label lilith:
 
     label lilith2:
         "{i}{/i}"
-        "{i}Tej nocy Łuszcza piekielnie bolał brzuch{/i}"
-        "{i}Zjadł za dużo pizzy zapewne powiecie?{/i}"
-        "{i}I będziecie mieć racje, Łuszczu zjadł na kolacje dużo za dużo pizzy{/i}"
-        "{i}i dlatego teraz rozbolał go brzuszek{/i}"
-        "{i}Z tego powodu Łuszczu postanowił udać się do toalety i ”srać”{/i}"
-        "{i}Lecz, gdy już miał to uczynić pojawiła się ONA...{/i}"
+        n "{i}Tej nocy piekielnie bolał Cię brzuch{/i}"
+        n "{i}Zjadłem za dużo pizzy zapewne powiesz?{/i}"
+        n "{i}I będziesz miał racje, zjadłeś podczas kolacji dużo za dużo pizzy{/i}"
+        n "{i}i dlatego teraz rozbolał cię brzuszek{/i}"
+        n "{i}Z tego powodu postanowiłeś udać się do toalety i ”srać”{/i}"
+        n "{i}Lecz, gdy już miałeś to uczynić pojawiła się ONA...{/i}"
 
         window hide
         scene bg gnoms with fade
-        play music "audio/music/lilith5.mp3"
+        play music "audio/music/lilith6.mp3"
         scene bg lilith6 with fade
         window show
 
@@ -1968,7 +1970,7 @@ label lilith:
         play sound "audio/sfx/lyk.mp3"
         show bg lilith3
 
-        "{i}Łuszcz połknął PIERWSZĄ pigułkę i od razu poczuł rozluźnienie w jego dolnej części ciała{/i}"
+        n "{i}Połknąłeś PIERWSZĄ pigułkę i od razu poczułeś rozluźnienie w swojej dolnej części ciała{/i}"
 
         luszcz "Ohhhhhh, jak dobrze ohhhhhh!"
         luszcz "Daj jeszcze jedną, jeszcze jedną!"
@@ -1986,7 +1988,7 @@ label lilith:
         play sound "audio/sfx/lyk.mp3"
         show bg lilith3
 
-        "{i}Łuszcz połknął DRUGĄ pigułkę i po raz kolejny przez jego ciało przetoczyła się fala ulgi{/i}"
+        n "{i}Połknąłeś DRUGĄ pigułkę i po raz kolejny przez twoje ciało przetoczyła się fala ulgi{/i}"
 
         luszcz "Ohhhhh, ale bosko ahhhh"
         luszcz "Rób mi tak dalej!"
@@ -1995,7 +1997,7 @@ label lilith:
 
         luszcz "Tak jest Proszę Pani!"
 
-        show bg lilith8
+        show bg lilith10
 
         lilith "No, to teraz za twoją najlepszą panią doktor!"
 
@@ -2004,14 +2006,372 @@ label lilith:
         play sound "audio/sfx/lyk.mp3"
         show bg lilith5
 
-        "{i}Łuszcz połknął TRZECIĄ pigułkę i poczuł jak niepowstrzymana siła przebija się prze niepowstrzymalne obiekty w jego jelitach i wyrzuca je na zewnątrz{/i}"
+        n "{i}Połknąłeś TRZECIĄ pigułkę i poczułeś jak niepowstrzymana siła przebija się przez nieporuszalne obiekty w twoich jelitach i wyrzuca je na zewnątrz{/i}"
 
         if gotka_szpont == 1:
             with vpunch
             gotka "Co tu się odpierdala!?"     
+            if yusuke_social_link >= 1 and yusuke_social_link <= 5:
+                if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
+                    if drukowanko == 1:
+                        scene bg pokoj8 
+                    else:
+                        scene bg pokoj7
+                 
+
+                else:
+                    if drukowanko == 1:
+                        scene bg pokoj4 
+                    else:
+                        scene bg pokoj3
+                    
+
+            else:
+                if yusuke_social_link >= 6:
+                    if kazuma_social_link >= 1 and kazuma_social_link <= 2 or kazuma_social_link == 12:
+                        if drukowanko == 1:
+                            scene bg pokoj6 
+                        else:
+                            scene bg pokoj5 
+                        
+                        
+                    else:
+                        if drukowanko == 1:
+                            scene bg pokoj2 
+                        else:
+                            scene bg pokoj 
+
+            show luszcz neutral right at right
+            show lilith neutral4 at slightleft
+            show gotka neutral right at slightright
+            play music "audio/music/lilith2.mp3"
+
         else:
+            stop music
             with vpunch
+            show bg lilith4
             lilith "Coś ty właśnie powiedział!?"
+
+            luszcz "No eeee, że pani z apteki jest najlepsza na świecie?"
+
+            lilith "Jako kurwa kurwa z apteki!?!!?"
+            lilith "Przecież to ja jestem NAJLEPSZĄ PANIĄ DOKTOR NA ŚWIECIE!!!"
+
+            luszcz "Emmm, no chyba nie..."
+            luszcz "Po pierwsze, nie jesteś nawet prawdziwom gotką!"
+            luszcz "Po drógie, nie traktujesz mnie jak swoją świnkę doświadczalną i ostrzegaż mnie przed efektami óbocznymi lekó!"
+            luszcz "A po trzecie, to ty nawet nie istniejeż!"
+
+            show bg lilith5
+            
+            lilith "..."
+
+            show bg lilith11
+            lilith "zabiję cię"
+
+            luszcz "chwila co?"
+
+            show bg lilith12
+            play music "audio/music/lilith7.mp3"
+
+            n "{i}Lililth nie wachając się już ani chwili, wyciągneła ponownie słoik z pigułkami i zaczeła go otwierać{/i}"
+
+            lilith "Zobaczmy co się stanie po zarzyciu 4 pigułek!"
+
+            show bg lilith7
+
+            lilith "Za twoją dziwke z apteki!"
+
+            show bg lilith13
+
+            n "{i}Nim zdążyłeś zareagować, Lilith włożyła Ci pigułkę do ust{/i}"
+
+            luszcz "(Awww shit, muszę ją wypluć zanim ją połknę!)"
+            luszcz "(Czuję ją gdzieś za moim prawym górnym siekaczem przyśrodkowym)"
+
+            menu:
+                "{b}Skąd wypluć pigułkę?{/b}"
+
+                "{b}Zza drugiego siekacza{/b}":
+                    stop music
+                    n "{i}...{/i}"
+                    n "{i}Niestety zza drugim siekaczem nie było żadnej pigułki{/i}"
+
+                    play sound "audio/sfx/lyk.mp3"
+
+                    n "{i}Przez co połknąłeś pigułkę i wydałeś na siebie wyrok...{/i}"
+
+                    with vpunch
+                    luszcz "NIE!"
+                    luszcz "To nie może się tak skończyć!"
+
+                    n "{i}Lecz twoje błagania nic nie dały{/i}"
+
+                    play sound "audio/sfx/spadek.mp3"
+                    scene bg black
+                    voice "audio/voice/narrator1.mp3"
+
+                    n "{i}Zapada ciemność i umierasz.{/i}"
+
+                    jump lilith3
+
+                "{b}Zza siekacza centralnego{/b}":
+                    play sound "audio/sfx/plucie.mp3"
+
+                    n "{i}Dobrze wyczułeś pigułkę i udało Ci się ją wypluć{/i}"
+
+                    lilith "Ahhh, czyli to tak się bawimy!?"
+                    lilith "To zobaczymy jak sobie poradzisz z kolejną pigułką!"
+
+                    show bg lilith7
+
+                    if leki == 1:
+                        luszcz "(Mam leki na schizofrenię, które mogłyby mi teraz pomóc)"
+
+                        menu:
+                            "{b}Czy wziąść leki na schizofrenię?{/b}"
+
+                            "{b}Tak{/b}":
+                                n "{i}Szybko sięgnąłeś po leki, otworzyłeś je i połk...{/i}"
+                                n "{i}NIE! Nie zgadzam się!{/i}"
+
+                                luszcz "(Wtf!? Od kiedy ty możesz mieć własne zdanie!?)"
+
+                                n "{i}Próbowałem się nie wtrącać i tylko komentować wydarzenia, ale gdy usłyszałem tak głupi pomysł to nie wytrzymałem!{/i}"
+
+                                luszcz "(Ej ej ej, czemó on jest niby głupi!? Przecież wystarczy, że wezmę te leki i będzie po sprawię!)"
+
+                                n "{i}Nie to nie zadziała! Muisz ją zabić tym nieskazitelnym ostrzem który masz w kieszeni!{/i}"
+
+                                luszcz "(Ej chwila przecież ja nie mam żadnego ostrza w kieszeni!?)"
+
+                                play sound "audio/sfx/epsilon_weapon.mp3"
+                                show pristine_blade zorder 50 at center
+
+                                n "{i}Sięgnąłeś do kieszeni i wyciągnąłeś ostrze{/i}"
+
+                                luszcz "(Ej wtf!? Przecież ja go tam nie wkładałem!?)"
+
+                                n "{i}Musisz zabić ją swoim ostrzem, bo inaczej nastąpi koniec świata!{/i}"
+
+                                luszcz "(Ej chwila skąd się ten koniec świata pojawił!? Nie mogę po prostu wziąść tych pieprzonych leków i mieć z nią spokój!?)"
+
+                                n "{i}Nie, nie możesz tego zrobić, bo ja też zniknę!{/i}"
+                                n "{i}Emmmm, znaczy to nie zadziała, bo Lilith jest za potężna{/i}"
+
+                                luszcz "(Yhy da da, zdemaskowałeś się!)"
+                                luszcz "(Wcale nie chodzi Ci o moje dobro tylko twoje!)"
+                                luszcz "(Biorę te leki i elo!)"
+
+                                n "{i}Nie mogę Ci na to pozwolić!{/i}"
+                                n "{i}Poczułeś jak tracisz kontrolę nad swoim ciałem, a twoja ręka unosi się do zadania cięcia{/i}"
+
+                                menu:
+                                    "{b}Zabij Lilith{/b}":
+                                        $ klil = 1
+                                    "{b}Zabij Lilith{/b}":
+                                        $ klil = 1
+                                    "{b}Zabij Lilith{/b}":
+                                        $ klil = 1
+                                    "{b}Zabij Lilith{/b}":
+                                        $ klil = 1
+                                    "{b}Ostrzeż Lilith{/b}":
+                                        $ klil = 0
+                                    "{b}Zabij Lilith{/b}":
+                                        $ klil = 1
+                                    "{b}Zabij Lilith{/b}":
+                                        $ klil = 1
+                                    "{b}Zabij Lilith{/b}":
+                                        $ klil = 1
+
+                                if klil == 1:
+                                    stop music
+                                    n "{i}Unosisz ostrze, aby wbić je w serce Lilith.{/i}"
+
+                                    hide pristine_blade
+
+                                    play sound "audio/sfx/nuz1.mp3"
+                                    queue sound "audio/sfx/nuz2.mp3"
+
+                                    show bg lilith16
+
+                                    n "{i}I dokonujesz tego zanim Lilith rozumie co się dzieje.{/i}"
+
+                                    lilith "Ohhh, czyli to tak... czyli tak zginę..."
+                                    lilith "Skoro tak to musisz wiedzieć, że..."
+
+                                    show bg lilith17
+                                    play sound "audio/sfx/rzygi.mp3"
+                                    lilith "Blehhh"
+
+                                    n "{i}Lilith umarła nim zdążyła dokończyć.{/i}"
+
+                                    luszcz "(No nic nadal uważam, że gotka z apteki lepsza)"
+                                    luszcz "(Tylko teraz muszę coś zrobić z tym ciałem...)"
+
+                                    menu: 
+                                        "{b}Jeszcze jest ciepla…{/b}":
+                                            luszcz "Jeszcze jest ciepła..."
+                                            luszcz "Muszę ją wykorzystać!"
+
+                                            scene bg black with fade
+
+                                            n "{i}I jak powiedziałeś tak zrobiłeś{/i}"
+                                            n "{i}Dokonałeś swojego haniebnego czynnu poczym schowałeś ciało do szafy{/i}"
+                                            n "{i}Od teraz służyło Ci jako seks zabawka po wsze czasy{/i}"
+
+                                            window hide
+                                            play music "audio/music/applause.mp3"
+                                            call screen full_click_screen("images/good_end.png")
+                                            stop music
+                                            window show
+
+                                            $ lilith_social_link = 10
+                                            jump spanko_bed
+
+                                        "{b}Muszę ją wykorzystać{/b}":
+                                            luszcz "Muszę ją wykorzystać"
+                                            luszcz "..."
+                                            luszcz "wiem sprzedam ja rzeźnikowi na mięso!"
+
+                                            scene bg black with fade
+
+                                            n "{i}I jak powiedziałeś tak zrobiłeś{/i}"
+                                            n "{i}Poszedłeś do lokalnego rzeźnika i zaproponowałeś sprzedaż ciała{/i}"
+                                            n "{i}Rzeżnik przez chwilę się opierał, ale ostatecznmie stwierdził, ze mięso to mięso i kupił{/i}"
+                                            n "{i}Po wszystkim wróciłeś do domu i poszedłeś spać{/i}"
+
+                                            window hide
+                                            play music "audio/music/applause.mp3"
+                                            call screen full_click_screen("images/good_end.png")
+                                            stop music
+                                            window show
+
+                                            $ money += 3
+                                            "{i}*3 Portfele zostały dodane do ekwipunku*{/i}"
+
+                                            $ lilith_social_link = 10
+                                            jump spanko_bed
+
+                                else:
+                                    n "{i}Przestań.{/i}"
+
+                                    show bg lilith3
+
+                                    lilith "Ohhh, czyli to wszystko jest jego wina..."
+                                    lilith "Przykro mi... Postaram się to zrobić szybko."
+
+                                    show bg lilith15
+                                    hide pristine_blade
+                                    stop music
+
+                                    play sound "audio/sfx/nuz1.mp3"
+                                    queue sound "audio/sfx/nuz2.mp3"
+
+                                    n "{i}Lilith wyciąga ostrze z twojej ręki i wbija je w twoje serce{/i}"
+
+                                    lilith "Wybacz mi, zobaczymy się w przyszłym świecie."
+
+                                    play sound "audio/sfx/spadek.mp3"
+                                    scene bg black
+                                    voice "audio/voice/narrator1.mp3"
+
+                                    n "{i}Zapada ciemność i umierasz.{/i}"
+
+                                    jump lilith4
+                            
+                            "{b}Nie{/b}":
+                                luszcz "(Nie, nie mogę ich wziąść, bo przecierz nie jestem chory czy coź!)"
+
+                    lilith "smaczeeego!"
+
+                    show bg lilith13
+
+                    n "{i}Lilith po raz kolejny włożyła Ci pigułkę do ust{/i}"
+                    n "{i}Tym razem jednak wyczułeś ją za swoim lewym górnym małym trzonowcem{/i}"
+
+
+                
+                "{b}Zza dens molaris primus{/b}":
+                    stop music
+                    n "{i}...{/i}"
+                    n "{i}Niestety zza dens molaris primus nie było żadnej pigułki{/i}"
+
+                    play sound "audio/sfx/lyk.mp3"
+
+                    n "{i}Przez co połknąłeś pigułkę i wydałeś na siebie wyrok...{/i}"
+
+                    with vpunch
+                    luszcz "NIE!"
+                    luszcz "To nie może się tak skończyć!"
+
+                    n "{i}Lecz twoje błagania nic nie dały{/i}"
+
+                    play sound "audio/sfx/spadek.mp3"
+                    scene bg black
+                    voice "audio/voice/narrator1.mp3"
+
+                    n "{i}Zapada ciemność i umierasz.{/i}"
+
+                    jump lilith3
+
+            menu:
+                "{b}Skąd wypluć pigułkę?{/b}"
+
+                "{b}Zza trzonowca pierwszego{/b}":
+                    stop music
+                    n "{i}...{/i}"
+                    n "{i}Niestety zza pierwszym trzonowcem nie było żadnej pigułki{/i}"
+
+                    play sound "audio/sfx/lyk.mp3"
+
+                    n "{i}Przez co połknąłeś pigułkę i wydałeś na siebie wyrok...{/i}"
+
+                    with vpunch
+                    luszcz "NIE!"
+                    luszcz "To nie może się tak skończyć!"
+
+                    n "{i}Lecz twoje błagania nic nie dały{/i}"
+
+                    play sound "audio/sfx/spadek.mp3"
+                    scene bg black
+                    voice "audio/voice/narrator1.mp3"
+
+                    n "{i}Zapada ciemność i umierasz.{/i}"
+
+                    jump lilith3
+                
+                "{b}Zza trzonowca drugiego{/b}":
+                    stop music
+                    n "{i}...{/i}"
+                    n "{i}Niestety zza drugim trzonowcem nie było żadnej pigułki{/i}"
+
+                    play sound "audio/sfx/lyk.mp3"
+
+                    n "{i}Przez co połknąłeś pigułkę i wydałeś na siebie wyrok...{/i}"
+
+                    with vpunch
+                    luszcz "NIE!"
+                    luszcz "To nie może się tak skończyć!"
+
+                    n "{i}Lecz twoje błagania nic nie dały{/i}"
+
+                    play sound "audio/sfx/spadek.mp3"
+                    scene bg black
+                    voice "audio/voice/narrator1.mp3"
+
+                    n "{i}Zapada ciemność i umierasz.{/i}"
+
+                    jump lilith3
+                
+                "{b}Zza przedtrzonowca pierwszego{/b}":
+                    ""
+
+
+
+
+
+
 
 
 

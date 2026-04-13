@@ -79,6 +79,7 @@ label menu_lokacji:
                 jump kamala
 
         label rynek2:
+            window hide
             menu:
                 "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
                     $ liczba_sojusznikow = 6
@@ -355,6 +356,7 @@ label menu_lokacji:
                             jump spanko2  
 
         label sloneczna2:
+            window hide
             menu:      
                 "{i}{image=sd} Rynek (10min){/i}":
                     $ timer += 10
@@ -633,6 +635,7 @@ label menu_lokacji:
                             jump spanko2  
 
         label alejka2:
+            window hide
             menu:      
                 "{i}{image=d} Rynek (10min){/i}":
                     $ timer += 10
@@ -855,6 +858,7 @@ label menu_lokacji:
                             luszcz "Nie, nie dam rady"
                             jump spanko2          
         label parking2:
+            window hide
             menu:
                 "{i}{image=wa} Wolbromska (20min){/i}":
                     $ timer += 20
@@ -1231,6 +1235,7 @@ label menu_lokacji:
                             jump spanko2          
         
         label wolbromska2:
+            window hide
             menu:
                 "{i}{image=sd} Parking (20min){/i}":
                     $ timer += 20
@@ -1602,6 +1607,7 @@ label menu_lokacji:
                             jump spanko2  
 
         label bohaterow_wrzesnia2:
+            window hide
             menu:
                 "{i}{image=wa} Rynek (10min){/i}":
                     $ timer += 10
@@ -1918,6 +1924,7 @@ label menu_lokacji:
                             jump spanko2  
 
         label lipowa2:
+            window hide
             menu:
                 "{i}{image=wd} Bohaterów Września (10min){/i}":
                     $ timer += 10
@@ -2386,6 +2393,7 @@ label menu_lokacji:
                 jump trump2
 
         label granica2:
+            window hide
             menu:
                 "{i}{image=w} Lipowa (20min){/i}":
                     $ timer += 20
