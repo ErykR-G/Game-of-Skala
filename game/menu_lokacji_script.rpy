@@ -2761,6 +2761,7 @@ label menu_lokacji:
             jump granica
     
     label zul_fight:
+        $ zul_wu = 1
         scene bg zul
         play music "audio/music/zul.mp3"
         show luszcz neutral at left

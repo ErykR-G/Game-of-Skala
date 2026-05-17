@@ -44,6 +44,10 @@ label postacie:
     image luszcz piernik right = Transform("luszcz piernik", xzoom=-1) 
     image luszcz ciasto right = Transform("luszcz ciasto", xzoom=-1) 
 
+    define rizzler = Character("Głos Rizzlera", color="#6357cf")
+    define dentysta = Character("Głos Dentysty", color="#9691c9")
+    define stomatolog = Character("Głos Stomatologa", color="#3b328a")
+
     define owca = Character("Owca", color="#382a17")
 
     define mleczarz = Character("Mleczarz", color="#807e7c")
