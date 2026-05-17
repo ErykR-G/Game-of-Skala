@@ -2033,13 +2033,18 @@ label lilith:
             menu:
                 "{b}Wyznaj miłość Lilith{/b}":
                     stop music
+                    luszcz "Dobrze niech będzie, zostanę twoim chłopakiem."
+                    
+                    lilith "Yuppi..."
+
+                    luszcz "Ale mam swoje warunki"
 
                 "{b}Odrzuć zaloty Lilith{/b}":
                     stop music
                     luszcz "Sory babe, ale nie jestem zainteresowany"
                     show bg lilith4
                     lilith "eeeeee chwila cooooooooooooooooooooooooooooo"
-                    lilith "ooooooooooooooooooooooooooo"
+                    lilith "oooooooooooooooooooooooooooooo"
                     play music "audio/music/mucha.mp3"
                     show mucha:
                         xalign 0.98
