@@ -223,7 +223,7 @@ label gotka:
 
                 jump parking
             
-            if gotka_social_link == 4:
+            if gotka_social_link == 3:
                 scene bg klinika with fade
 
                 gotka "Ej czekaj!"
@@ -493,7 +493,7 @@ label gotka:
 
                 jump parking
             
-            if gotka_social_link == 4:
+            if gotka_social_link == 3:
                 scene bg klinika with fade
 
                 gotka "Ej czekaj!"
@@ -733,7 +733,7 @@ label gotka:
 
                 jump parking
             
-            if gotka_social_link == 4:
+            if gotka_social_link == 3:
                 scene bg klinika with fade
 
                 gotka "Ej czekaj!"
@@ -1087,7 +1087,7 @@ label gotka:
 
                     jump parking
 
-                if gotka_social_link == 4:
+                if gotka_social_link == 3:
                     scene bg klinika with fade
 
                     gotka "Ej czekaj!"
@@ -1484,7 +1484,7 @@ label gotka:
 
                 kazuma "Dowidzenia"
 
-                if gotka_social_link == 4:
+                if gotka_social_link == 3:
                     scene bg klinika with fade
 
                     gotka "Ej czekaj!"
@@ -1796,7 +1796,7 @@ label gotka:
 
                 jump parking
             
-            if gotka_social_link == 4:
+            if gotka_social_link == 3:
                 scene bg klinika with fade
 
                 gotka "Ej czekaj!"

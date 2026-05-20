@@ -160,6 +160,8 @@ label postacie:
 
     define zul = Character("Żul", color="#664b22")
 
+    define rydz_ryzyk = Character("Rydz-Ryzyk", color="#801b1b")
+
     define arteuszek = Character("Arteuszek", color="#776767")
 
     define prymon = Character("Pan Prymon", color="#e95e54")

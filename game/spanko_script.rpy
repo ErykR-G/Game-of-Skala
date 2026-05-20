@@ -3,6 +3,7 @@ default tasma_spotkanko = 0
 default czasd = 0
 default nocka = 1
 default ltite = 0
+default gdzie_spisz = 0
 
 label spanko:
     if yusuke_social_link == 0:
@@ -340,6 +341,7 @@ label spanko:
         luszcz "Kurwa znowu w tej Polsce"
         luszcz "Nienawidzę tego syfu, tego państwa..."
         luszcz "Ehh dobra, czas brać się do roboty"
+        $ gdzie_spisz = 0
 
         $ luszcz_piguly = 0
         $ eminem_piguly = 0
@@ -352,6 +354,7 @@ label spanko:
         $ krowko_limit = 0
         $ toxic_limit = 0
         $ czasd -= 1
+        $ duda_timer -= 1
         $ nocka += 1
         if ltite > 0:
             $ ltite -= 1
@@ -439,6 +442,7 @@ label spanko2:
     $ toxic_limit = 0
     $ czasd -= 1
     $ nocka += 1
+    $ duda_timer -= 1
     if ltite > 0:
         $ ltite -= 1
     if kazuma_strzal > 0:
@@ -472,6 +476,7 @@ label spanko2:
 
     show luszcz neutral at center
     
+    $ gdzie_spisz = 1
     luszcz "Ała, ale mnie dupa napierdala"
     luszcz "kurwa, ała japierdole wsyztsko boli"
     luszcz "japierdole dobra już muszę brać się do roboty..."

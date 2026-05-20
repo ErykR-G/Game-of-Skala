@@ -52,6 +52,9 @@ label menu_lokacji:
             scene bg black with fade
             scene bg rynek_noc with fade
         
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
+        
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
 
@@ -335,6 +338,9 @@ label menu_lokacji:
             scene bg black with fade
             scene bg sloneczna_noc with fade
         
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
+        
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
@@ -614,6 +620,9 @@ label menu_lokacji:
             scene bg black with fade
             scene bg alejka_noc with fade
         
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
+        
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
@@ -832,6 +841,9 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg parking_noc with fade
+        
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
         
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
@@ -1214,6 +1226,9 @@ label menu_lokacji:
             scene bg black with fade
             scene bg wolbromska_noc with fade
         
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
+        
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
@@ -1586,6 +1601,9 @@ label menu_lokacji:
             scene bg black with fade
             scene bg bohaterow_wrzesnia_noc with fade
         
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
+        
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
@@ -1902,6 +1920,9 @@ label menu_lokacji:
         else:
             scene bg black with fade
             scene bg lipowa_noc with fade
+        
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
         
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
@@ -2355,6 +2376,9 @@ label menu_lokacji:
         if  timer > 11280:
             scene bg black with fade
             scene bg granica8_noc with fade
+        
+        if duda_timer == 0 and duda_miecz == 0:
+            jump duda_ceremonia
 
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc

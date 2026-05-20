@@ -1,5 +1,6 @@
 label fight201_stats:
     default fight201_przegranko = 0
+    default lkop = 1
     
     default trup13_sex = 0
     default trup14_sex = 0
@@ -1779,9 +1780,11 @@ label fight201:
 
         if cien_special > 0:
             $ cien_special -= 1
-            if cien_special == 1:
+            if cien_special == 1 and lkop == 0:
                 hide mgla
                 "{i}Ostra Mgła się kończy{/i}"
+        
+        $ lkop = 0
         
         if trup13_hp_now <= 0 and trup13_umarty == 0:
             hide snake31

@@ -1,3 +1,5 @@
+default duda_miecz = 0
+default duda_timer = 1000
 
 label duda:
     label duda1:
@@ -167,12 +169,35 @@ label duda:
                     luszcz "oczywiście, że kocham prezydenta dude i morawieckiego!"
 
                     duda "no i to się nazywa prawdziwy polak patriota"
-                    duda "za pomoc jestem ci w stanie dać trochę itemków od ochrony"
+                    if timer >= 10080:
+                        duda "wiesz co? za pomoc jestem ci w stanie wręczyć drogocenny miecz, który miałem przekazać tutejszemu księdzu za to, aby nadal nas chwlił mówiąc, że to bóg tak mówi"
 
-                    #[dostajesz jakieś itemy]
+                        luszcz "Yuppi!"
 
-                    luszcz "bardzo dziekuje ale miałem nadzieje na cos innego"
-                    luszcz "czy pomogl by pan walczyc z ksiedzem"
+                        duda "proszę oto on"
+
+                        $ miecz_swietlny = 1
+
+                        "{i}*Miecz Świetlny został dodany do ekwipunku*{/i}"
+
+                        luszcz "jooo dziękuję bardzo panie Duda"
+                        luszcz "ale wracając do księdza..."
+                        luszcz "to czy pomogl by pan w walce z nim?"
+                    else:
+                        if timer >= 2880 and timer <= 4260 or timer >= 5760 and timer <= 7140 or timer >= 8640 and timer <= 10020:
+                            $ duda_timer = 1
+                        else:
+                            $ duda_timer = 2
+
+                        duda "wiesz co? za pomoc jestem ci w stanie wręczyć drogocenny miecz, który miałem przekazać tutejszemu księdzu za to, aby nadal nas chwlił mówiąc, że to bóg tak mówi"
+
+                        luszcz "Yuppi!"
+
+                        duda "a ale jakby co to go nie mam teraz przy sobie więc eeee kiedyś tam przyjdę i ci go dam"
+
+                        luszcz "mhhhh no okej"
+                        luszcz "ale wracając do księdza..."
+                        luszcz "to czy pomogl by pan w walce z nim?"
 
                     duda "nie"
                     duda "walcze z ostatnim pokoleniem"
@@ -199,9 +224,116 @@ label duda:
                     
                     $ duda_social_link = 1
                     $ duda_wybory = 2
+                    $ duda_miecz = 0
 
                     if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
                         play music "audio/music/pole.mp3"
                     else:
                         play music "audio/music/pole_noc.mp3"
                     jump parking
+    
+    label duda_ceremonia:
+        $ duda_miecz = 1
+        show luszcz neutral at slightleft
+        show duda neutral at slightright
+
+        duda "O Łuszczu, dobrze że jesteś!"
+        duda "Wszędzie Cię szukałem, ale nie mogłem znaleźć"
+
+        luszcz "..?"
+
+        duda "No wiesz, miałem Ci przekazać ten miecz pamiętasz?"
+
+        luszcz "Aaaaa jezu tak dobra pamiętam pamiętam"
+
+        duda "Dobra to możemy zaczynać"
+
+        show luszcz neutral at left
+        show duda neutral at center
+
+        duda "dziękuje wszystkim za przybycie"
+        duda "powstańmy wszyscy na baczność!"
+
+        label duda2:
+            menu:
+                "{b}nie stawaj{/b}":
+                    duda ".................................?"
+                    duda ".......................?"
+                    duda "................................................?"
+                    duda "............................?"
+                    duda "......................................?"
+                    duda "..........................................................?"
+                    duda "............................?"
+                    duda "................................................?"
+                    duda ".......................?"
+                    duda "...........................................?"
+                    duda "..................?"
+                    duda "......................................?"
+                    duda ".....................................................?"
+                    duda "debil"
+                    duda ".......................?"
+                    duda ".................................?"
+                    duda "............................?"
+                    duda "....................................................................?"
+                    duda ".................................?"
+                    duda "......................?"
+                    duda "............................?"
+                    duda "..................?"
+                    duda "no debil"
+                    duda "..........................................................?"
+                    duda "...........................................?"
+                    duda "..................?"
+                    duda "no dobra to jeszcze raz"
+                    duda "na baczność!"
+                    jump duda2
+                
+                "{b}stań{/b}":
+                    show luszcz bacznosc
+                    duda "zebraliśmy się tu wszyscy, tu gdzie rozgrywają się wydarzenia, które przejdą do historii"
+                    duda "Przypomina mi to kiedy w 1980 roku miejsce mia....."
+
+                    show luszcz neutral
+
+                    luszcz "Duda skończ pierdolić!"
+                    luszcz "ja tu przyszedłem po miecz a nie jakieś wspominki"
+
+                    duda "ja nawet jeszcze nie zacząłem, chociaż dobra czas to cenna waluta"
+                    duda "naczelny wodzu proszę zaczynać"
+
+                    show rydz_ryzyk neutral at center
+                    show duda neutral at right
+
+                    rydz_ryzyk "Dobrze, awięc"
+                    rydz_ryzyk "Macieju Łuszczu"
+                    rydz_ryzyk "ten oto miecz"
+                    rydz_ryzyk "wykuty na zamówienie samego Andrzeja Leppera"
+                    rydz_ryzyk "popełniliśmy nim jego samobójstwo"
+                    rydz_ryzyk "był naszą najlepszą bronią"
+                    rydz_ryzyk "niechaj od tego okresu czasu dnia dzisiejszego służy on tobie tak jak służył nam"
+
+                    $ miecz_swietlny = 1
+
+                    "{i}*Miecz Świetlny został dodany do ekwipunku*{/i}"
+
+                    luszcz "no nareszcie, gorsze czekanie niż na NFZecie"
+                    luszcz "dobra dzięki czy coś, ja lęcę"
+            
+            hide luszcz
+            hide rydz_ryzyk
+            hide duda
+            if rynek == 1:
+                jump rynek2
+            if sloneczna == 1:
+                jump sloneczna2 
+            if alejka == 1:
+                jump alejka2 
+            if parking == 1:
+                jump parking2
+            if wolbromska == 1:
+                jump wolbromska2
+            if bohaterow_wrzesnia == 1:
+                jump bohaterow_wrzesnia2 
+            if lipowa == 1:
+                jump lipowa2 
+            if granica == 1:
+                jump granica2
