@@ -322,6 +322,8 @@ label postacie:
 
     define mac = Character("Maciek Maciak", color="#ff0000")
 
+    define bilbo = Character("Bilbo", color="#105e1a")
+
 label pozycje:
     transform haczyki:
         xalign 0.79
@@ -883,6 +885,7 @@ label social_links:
     default lilith_social_link = 0
     default yusuke_social_link = 0
     default drukarka3d_social_link = 0
+    default bilbo_social_link = 0
 
 
 label start:

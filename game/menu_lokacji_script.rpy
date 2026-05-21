@@ -601,6 +601,24 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
+                
+                "{b}🚏 Przystanek (10min) | 24/7 {/b}":
+                    if bilbo_social_link == 0:       
+                        if timer >= 360 and timer <= 1190 or timer >= 1800 and timer <= 2630 or timer >= 3240 and timer <= 4070 or timer >= 4680 and timer <= 5510 or timer >= 6120 and timer <= 6950 or timer >= 7560 and timer <= 8390 or timer >= 9000 and timer <= 9830 or timer >= 10440 and timer <= 11270:
+                            luszcz "Widzę w oddali jakiegoś ziomka w łachmanach i z gołymi stopami"
+                            luszcz "Wygląda jakby czegoś szókał… może uda mi się mu pomuc"
+                            play sound "audio/sfx/traveling.mp3"
+                            scene bg black with fade
+                            $ timer += 10
+                            jump bilbo2
+                        else:
+                            play sound "audio/sfx/traveling.mp3"
+                            scene bg black with fade
+                            $ timer += 10
+                            jump bilbo1
+                    else:
+                        luszcz "Nie ma tu nic do roboty"
+                        jump sloneczna2
 
 
     label alejka:
