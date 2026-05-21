@@ -989,9 +989,69 @@ label kazuma3:
                     kazuma "aaaaaa krew jest wszędzie aaaa!!!"
 
                     luszcz "Kamzuma!!!!"
-                    luszcz "Mósimy cię zabrać do lekaża!!"
+                    if gotka_social_link > 10 or gotka_social_link < 10:
+                        luszcz "Mósimy cię zabrać do lekaża!!"
 
-                    kazuma "No… kurcze rzeczywiście…"
+                        kazuma "No… kurcze rzeczywiście…"
+                    else:
+                        luszcz "Mósimy cię zabrać do leka..."
+
+                        kazuma "..?"
+
+                        luszcz "Właśnie sobie przypomniałem że jedyny lekarz w Skale nie żyje..."
+
+                        kazuma "..."
+
+                        luszcz "No cóż, przynajmniej zakopię Cię w jakimś ładnym miejscu"
+
+                        kazuma "😢"
+
+                        play sound "audio/sfx/traveling.mp3" 
+                        scene bg black with fade
+                        play music "audio/music/natura.mp3"
+                        $ rynek = 0
+                        $ sloneczna = 0
+                        $ alejka = 0
+                        $ parking = 0
+                        $ wolbromska = 0
+                        $ bohaterow_wrzesnia = 0
+                        $ lipowa = 1
+                        $ granica = 0
+
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            scene bg cmentarz_zydowski with fade
+                        else:
+                            scene bg cmentarz_zydowski_noc with fade
+
+                        show luszcz neutral at center
+                        $ kazuma_social_link = 100
+                        $ kazuma_wybory = 10
+                        luszcz "Ehhhh, spoczywaj w pokoju przyjacielu!"
+                        luszcz "Tutaj powinno być Ci dobrze"
+                        luszcz "Choć wiem, ze nie byłeś żydem, to jednak twoja smykałka do interesów łączyła Cię z nimi bardziej niż z jakimkolwiek innym narodem!"
+                        luszcz "Sayonara"
+
+                        hide luszcz
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        if rynek == 1:
+                            jump rynek
+                        if sloneczna == 1:
+                            jump sloneczna 
+                        if alejka == 1:
+                            jump alejka 
+                        if parking == 1:
+                            jump parking
+                        if wolbromska == 1:
+                            jump wolbromska
+                        if bohaterow_wrzesnia == 1:
+                            jump bohaterow_wrzesnia 
+                        if lipowa == 1:
+                            jump lipowa 
+                        if granica == 1:
+                            jump granica
 
                     jump gotka7
                 

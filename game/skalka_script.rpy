@@ -36,7 +36,10 @@ label skalka:
         "{i}.{/i}"
         "{i}.{/i}"
         "{i}.{/i}"
-        jump gotka6
+        if gotka_social_link > 10 or gotka_social_link < 10:
+            jump gotka6
+        else:
+            "SECRET ENDING"
 
     label skalka2:
         scene bg start with fade

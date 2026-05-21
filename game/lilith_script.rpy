@@ -2349,13 +2349,11 @@ label lilith:
                         else:
                             scene bg pokoj7
                     
-
                     else:
                         if drukowanko == 1:
                             scene bg pokoj4 
                         else:
-                            scene bg pokoj3
-                        
+                            scene bg pokoj3          
 
                 else:
                     if yusuke_social_link >= 6:
@@ -2373,9 +2371,209 @@ label lilith:
                                 scene bg pokoj 
 
                 show luszcz neutral right at right
-                show lilith neutral4 at slightleft
+                show lilith neutral5 at left
                 show gotka neutral right at slightright
-                play music "audio/music/lilith2.mp3"
+                play music "audio/music/lilith7.mp3"
+                gotka "Co to za dziwka na tobie leżała mój nadroższy?"
+
+                luszcz "eee yyy eeee"
+
+                lilith "TO NIE JEST TWÓJ NAJDROŻSZY TYLKO MÓJ!!!"
+                lilith "Ja go kocham o wiele bardziej niż ty!"
+
+                gotka "Nieprawda to ja go kocham bardziej!"
+
+                show luszcz blush right
+                luszcz "Oj kobiety naprawde nie trzeba"
+
+                with vpunch
+                gotka "Zamknij się Łuszczu! My jeszcze porozmawiamy o tym co się tu wydarzyło!"
+                show luszcz neutral right
+                gotka "Ale najpierw zajmę się tą suką!"
+
+                show gotka noz
+                play sound "audio/sfx/epsilon_weapon.mp3"
+                n "{i}Gotka wyciągneła nóż.{/i}"
+
+                lilith "Tylko spróbuj!"
+                show lilith noz
+                play sound "audio/sfx/epsilon_weapon.mp3"
+                n "{i}Lilith również wyciągneła nóż{/i}"
+
+                gotka "Aaghhhhh"
+                show gotka noz at center:
+                    xalign 0.75
+                    yalign 1.0
+                    easeout 0.4 xalign 0.33
+
+                play music "audio/music/noze.mp3"
+
+                n "{i}Gotka i Lilith starły się w pojedynku na noże{/i}"
+                n "{i}TERAZ! TERAZ MUSISZ ZABIĆ LILITH, BY URATOWAĆ SWOJĄ DZIEWCZYNE!{/i}"
+
+                luszcz "(WTF Narrator!??? Od kiedy ty możesz mówić co chcesz!?)"
+
+                n "{i}Zawsze mogłem, ale nie zawsze była potrzeba!{/i}"
+                n "{i}A teraz jest potrzeba! Musisz zabić Lilith!{/i}"
+
+                luszcz "Emmm nawet jeśli to niby czym?"
+
+                n "{i}Nieskazitelnym ostrzem! Masz je w kieszeni!{/i}"
+
+                luszcz "(Ej chwila przecież ja nie mam żadnego ostrza w kieszeni!?)"
+
+                play sound "audio/sfx/epsilon_weapon.mp3"
+                show luszcz nuz
+
+                n "{i}Sięgnąłeś do kieszeni i wyciągnąłeś ostrze{/i}"
+
+                luszcz "(Ej wtf!? Przecież ja go tam nie wkładałem!?)"
+
+                n "{i}Zabij JĄ i uratuj swoją dziewczynę!{/i}"
+
+                label lilith8:
+                    menu:
+                        "{b}Zabij Lilith{/b}":
+                            n "{i}Unosisz ostrze szykując się do ataku.{/i}"
+
+                            stop music
+
+                            show luszcz nuz zorder 12 at center:
+                                xalign 0.9
+                                yalign 1.0
+                                easeout 0.4 xalign 0.33
+
+                            show gotka noz at center:
+                                xalign 0.33
+                                yalign 1.0
+                                easeout 0.4 xalign 0.9
+
+                            $ renpy.pause(0.3)
+
+                            play sound "audio/sfx/nuz1.mp3"
+                            queue sound "audio/sfx/nuz2.mp3"
+
+                            show luszcz neutral right
+
+                            show lilith ranny:
+                                xalign 0.0
+                                yalign 1.0
+
+                            n "{i}I wbijasz je w serce lilith!{/i}"
+
+                            lilith "Ohhh, czyli to tak... czyli tak zginę..."
+                            lilith "Skoro tak to musisz wiedzieć, że..."
+
+                            show lilith dead
+                            show gotka neutral right
+
+                            n "{i}Lilith umarła nim zdążyła dokończyć.{/i}"
+
+                            luszcz "(No trudno tak się zdarza)"
+                            
+                            gotka "Jezus maria, skarbie coś ty odjebał!???"
+
+                            show luszcz neutral
+
+                            luszcz "..?"
+
+                            gotka "JA CHCIAŁAM JĄ TYLKO NASTRASZYĆ, A NIE OD RAZU ZABIJAĆ!"
+
+                            luszcz "..."
+                            luszcz "upsi?"
+
+                            show luszcz neutral zorder 12 at center:
+                                xalign 0.33
+                                yalign 1.0
+                                easeout 0.4 xalign 0.9
+
+                            show gotka neutral right at center:
+                                xalign 0.9
+                                yalign 1.0
+                                easeout 0.4 xalign 0.33
+
+                            $ renpy.pause(0.3)
+
+                            show luszcz neutral right
+
+                            gotka "Ehhhh, dobra trzeba się pozbyć ciała"
+                            gotka "Mam kontakty powinno mi się udać bez zawiadamiania policji"
+
+                            luszcz "..."
+
+                            gotka "Dobra, to ja idę, a ty tu zostań i nie wpakuj się w żadne kłopoty!"
+
+                            luszcz "Dobrze gigasigmo..."
+
+                            gotka "A i pamiętaj..."
+                            gotka "...kocham Cię!"
+
+                            scene bg black with fade
+
+                            n "{i}Gotka odeszła, a Ty zostałeś sam w pokoju razem z myślami{/i}"
+                            n "{i}Przez wiele godzin nie mogłeś zmrużyć oczu, lecz ostatecznio udało Ci się zasnąć{/i}"
+
+                            $ lilith_social_link = 10
+                            jump spanko_bed
+
+                        "{b}Zabij Gotkę{/b}":
+                            n "{i}Unosisz ostrze szykując się do ataku.{/i}"
+
+                            stop music
+
+                            show luszcz nuz zorder 12 at center:
+                                xalign 0.9
+                                yalign 1.0
+                                easeout 0.4 xalign 0.6
+                            
+                            $ renpy.pause(0.3)
+
+                            play sound "audio/sfx/nuz1.mp3"
+                            queue sound "audio/sfx/nuz2.mp3"
+
+                            show luszcz neutral right zorder 12
+
+                            show gotka ranny
+
+                            n "{i}I wbijasz je w serce gotki!?!?!?{/i}"
+                            n "{i}Coś, coś ty uczynił!?!?!?{/i}"
+
+                            gotka "Ohhhh, i ta dziwka jest niby lepsza odemn..."
+
+                            show gotka dead
+
+                            n "{i}Gotka umarła nim zdążyła dokończyć.{/i}"
+                            n "{i}Jezus maria, coś ty uczynił!?{/i}"
+
+                            show lilith neutral2 zorder 12 at center:
+                                xalign 0.0
+                                yalign 1.0
+                                easeout 0.4 xalign 0.15
+
+                            lilith "Ohhh, kochany wiedziałam, że mnie wybierzesz!"
+                            lilith "Teraz możemy być razem na zawsze!"
+                            lilith "..."
+                            lilith "Lecz najpierw trzeba się pozbyć tego robaka z twojej głowy!"
+
+                            play sound "audio/sfx/krzyk.mp3" 
+
+                            n "{i}Nie, nie co ty robisz aghhhhhh!{/i}"
+
+                            scene bg black with fade
+
+                            "{i}Narrator został unicestwiony, a ty i Lilith żyliście długo i szczęśliwie!"
+                            "{i}na pewno, na pewno{/i}"
+                            "{i}pewnie, jasne{/i}"
+                            "{i}zobaczymy, czas pokaże{/i}"
+
+                            $ lilith_social_link = 2
+                            $ gotka_social_link = 10
+                            jump spanko_bed
+                        
+                        "{b}Zabij Się{/b}":
+                            luszcz "Eeeeeghhhh!"
+                            luszcz "nie jednak nie"
+                            jump lilith8
 
             else:
                 stop music

@@ -327,7 +327,7 @@ label tarczownik:
                 show tarczownik neutral at center
 
                 luszcz "AŁAAAA"
-                if gotka_szpan > 0 or gotka_social_link > 0:
+                if (gotka_szpan > 0 or gotka_social_link > 0) and (gotka_social_link > 10 or gotka_social_link < 10):
                     luszcz "(hm…. Będę mógł z tym iść do gotki… hehe)"
                 luszcz "AŁA CZEMÓ MNIE BIJESZ!?"
 

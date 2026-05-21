@@ -920,7 +920,7 @@ label menu_lokacji:
                         jump walka_uliczna
                     jump rynek
                 
-                "{b}🩺 Apteka (15min) | 8-20{/b}":
+                "{b}🩺 Apteka (15min) | 8-20{/b}" if gotka_social_link > 10 or gotka_social_link < 10:
                     if timer >= 480 and timer <= 1200 or timer >= 1920 and timer <= 2640 or timer >= 3360 and timer <= 4080 or timer >= 4800 and timer <= 5520 or timer >= 6240 and timer <= 6960 or timer >= 7680 and timer <= 8400 or timer >= 9120 and timer <= 9840 or timer >= 10560 and timer <= 11280:
                         $ ado += 1
                     else:
@@ -946,6 +946,11 @@ label menu_lokacji:
                                     jump gotka2
                                 else:
                                     jump gotka1
+                
+                "{b}🩺 Apteka | ZAMKNIĘTE{/b}" if gotka_social_link == 10:
+                    "{i}Apteka jest zamknięta{/i}"
+                    jump parking2
+
 
                 "{b}🏡 Dom | 24/7{/b}": 
                     $ domx = 0        
