@@ -340,7 +340,7 @@ label spanko:
 
         luszcz "Kurwa znowu w tej Polsce"
         luszcz "Nienawidzę tego syfu, tego państwa..."
-        luszcz "Ehh dobra, czas brać się do roboty"
+
         $ gdzie_spisz = 0
 
         $ luszcz_piguly = 0
@@ -366,6 +366,11 @@ label spanko:
             if tasma_spotkanko == 1:
                 $ tasma_spotkanko = 0
 
+
+        if timer >= 8640 and timer <= 10020:
+            jump bal1
+        luszcz "Ehh dobra, czas brać się do roboty"
+        
         luszcz "Ooo rodzice zostawili mi kieszonkowe.."
 
         $ money += 3
@@ -479,6 +484,10 @@ label spanko2:
     $ gdzie_spisz = 1
     luszcz "Ała, ale mnie dupa napierdala"
     luszcz "kurwa, ała japierdole wsyztsko boli"
+
+    if timer >= 8640 and timer <= 10020:
+        jump bal1
+
     luszcz "japierdole dobra już muszę brać się do roboty..."
 
     hide luszcz
