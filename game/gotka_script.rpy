@@ -13,7 +13,10 @@ label gotka:
         gotka "To twoja pierwsza wizyta tutaj?"
 
         luszcz "(o kurcze to gotka)"
-        luszcz "(mószę to dobrze zagrać)"
+        if lilith_social_link == 2:
+            luszcz "(znaczy niby mam dziewczyne, ale...)"
+        else:
+            luszcz "(mószę to dobrze zagrać)"
         luszcz "Czy pani jest wolna?"
         luszcz "Znaczy, ma pani czas na wizytę?"
         luszcz "W sensie, czy mogę być tu przebadany?"
@@ -216,8 +219,13 @@ label gotka:
                 show luszcz neutral right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
                 luszcz "albo do gardła..."
-                luszcz "Potrzebuję gotki lekarza dziewczyny"
-                luszcz "Ona mnie naprawi"
+                if lilith_social_link == 2:
+                    luszcz "Niby mam już jedną dziewczyne..."
+                    luszcz "...ale może Bozia się nie obrazi jeśli będe miał dwie"
+                    luszcz "Gotka mnie naprawi!"
+                else:
+                    luszcz "Potrzebuję gotki lekarza dziewczyny"
+                    luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
                 luszcz "Nie będzie mogła się oprzeć mojej nieustępliwości i hot wilkołak osobowości."
 
@@ -237,6 +245,9 @@ label gotka:
                     "{b}Szpont{/b}":
                         luszcz "Erm tak robię ci szpont"
                         luszcz "Zawsze mażyłem o takiej gotce jak ty"
+
+                        if lilith_social_link == 2:
+                            luszcz "(Sorki Lilith, ale 2 to więcej niż 1)"
 
                         gotka "Dziecko drogie fajnie się bawisz ale nie będę się hajtać z dzieckiem"
                         gotka "Nie mogę cię przyjmować o najmniejsze pierdoły bo mnie jeszcze zamkną"
@@ -267,9 +278,11 @@ label gotka:
                         gotka "7) Zakaz śmiania się z żartów 67"
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
-                        gotka "10) Przestajesz myśleć o męskich siurach"
                         if wypadek3 == 2 and lilith_social_link == 1:
-                            gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                            gotka "10) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                            gotka "11) Przestajesz myśleć o męskich siurach"
+                        else:
+                            gotka "10) Przestajesz myśleć o męskich siurach"
 
                         luszcz "(cholera…)"
 
@@ -292,7 +305,10 @@ label gotka:
 
                                 scene bg klinika
 
-                                luszcz "(jupi mam dziewczyne gotke thats crazy)"
+                                if lilith_social_link == 2:
+                                    luszcz "(jupi mam kolejną dziewczyne i to w dodatku gotke thats crazy)"
+                                else:
+                                    luszcz "(jupi mam dziewczyne gotke thats crazy)"
 
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
@@ -486,8 +502,13 @@ label gotka:
                 show luszcz neutral right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
                 luszcz "albo do gardła..."
-                luszcz "Potrzebuję gotki lekarza dziewczyny"
-                luszcz "Ona mnie naprawi"
+                if lilith_social_link == 2:
+                    luszcz "Niby mam już jedną dziewczyne..."
+                    luszcz "...ale może Bozia się nie obrazi jeśli będe miał dwie"
+                    luszcz "Gotka mnie naprawi!"
+                else:
+                    luszcz "Potrzebuję gotki lekarza dziewczyny"
+                    luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
                 luszcz "Nie będzie mogła się oprzeć mojej nieustępliwości i hot wilkołak osobowości."
 
@@ -507,6 +528,9 @@ label gotka:
                     "{b}Szpont{/b}":
                         luszcz "Erm tak robię ci szpont"
                         luszcz "Zawsze mażyłem o takiej gotce jak ty"
+
+                        if lilith_social_link == 2:
+                            luszcz "(Sorki Lilith, ale 2 to więcej niż 1)"
 
                         gotka "Dziecko drogie fajnie się bawisz ale nie będę się hajtać z dzieckiem"
                         gotka "Nie mogę cię przyjmować o najmniejsze pierdoły bo mnie jeszcze zamkną"
@@ -537,9 +561,11 @@ label gotka:
                         gotka "7) Zakaz śmiania się z żartów 67"
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
-                        gotka "10) Przestajesz myśleć o męskich siurach"
                         if wypadek3 == 2 and lilith_social_link == 1:
-                            gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                            gotka "10) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                            gotka "11) Przestajesz myśleć o męskich siurach"
+                        else:
+                            gotka "10) Przestajesz myśleć o męskich siurach"
 
                         luszcz "(cholera…)"
 
@@ -562,7 +588,10 @@ label gotka:
 
                                 scene bg klinika
 
-                                luszcz "(jupi mam dziewczyne gotke thats crazy)"
+                                if lilith_social_link == 2:
+                                    luszcz "(jupi mam kolejną dziewczyne i to w dodatku gotke thats crazy)"
+                                else:
+                                    luszcz "(jupi mam dziewczyne gotke thats crazy)"
 
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
@@ -726,8 +755,13 @@ label gotka:
                 show luszcz neutral  right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
                 luszcz "albo do gardła..."
-                luszcz "Potrzebuję gotki lekarza dziewczyny"
-                luszcz "Ona mnie naprawi"
+                if lilith_social_link == 2:
+                    luszcz "Niby mam już jedną dziewczyne..."
+                    luszcz "...ale może Bozia się nie obrazi jeśli będe miał dwie"
+                    luszcz "Gotka mnie naprawi!"
+                else:
+                    luszcz "Potrzebuję gotki lekarza dziewczyny"
+                    luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
                 luszcz "Nie będzie mogła się oprzeć mojej nieustępliwości i hot wilkołak osobowości."
 
@@ -747,6 +781,9 @@ label gotka:
                     "{b}Szpont{/b}":
                         luszcz "Erm tak robię ci szpont"
                         luszcz "Zawsze mażyłem o takiej gotce jak ty"
+
+                        if lilith_social_link == 2:
+                            luszcz "(Sorki Lilith, ale 2 to więcej niż 1)"
 
                         gotka "Dziecko drogie fajnie się bawisz ale nie będę się hajtać z dzieckiem"
                         gotka "Nie mogę cię przyjmować o najmniejsze pierdoły bo mnie jeszcze zamkną"
@@ -777,9 +814,11 @@ label gotka:
                         gotka "7) Zakaz śmiania się z żartów 67"
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
-                        gotka "10) Przestajesz myśleć o męskich siurach"
                         if wypadek3 == 2 and lilith_social_link == 1:
-                            gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                            gotka "10) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                            gotka "11) Przestajesz myśleć o męskich siurach"
+                        else:
+                            gotka "10) Przestajesz myśleć o męskich siurach"
 
                         luszcz "(cholera…)"
 
@@ -802,7 +841,10 @@ label gotka:
 
                                 scene bg klinika
 
-                                luszcz "(jupi mam dziewczyne gotke thats crazy)"
+                                if lilith_social_link == 2:
+                                    luszcz "(jupi mam kolejną dziewczyne i to w dodatku gotke thats crazy)"
+                                else:
+                                    luszcz "(jupi mam dziewczyne gotke thats crazy)"
 
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
@@ -1080,8 +1122,13 @@ label gotka:
                     show luszcz neutral  right at center
                     luszcz "Sposób w jaki patrzyła mi w oczy..."
                     luszcz "albo do gardła..."
-                    luszcz "Potrzebuję gotki lekarza dziewczyny"
-                    luszcz "Ona mnie naprawi"
+                    if lilith_social_link == 2:
+                        luszcz "Niby mam już jedną dziewczyne..."
+                        luszcz "...ale może Bozia się nie obrazi jeśli będe miał dwie"
+                        luszcz "Gotka mnie naprawi!"
+                    else:
+                        luszcz "Potrzebuję gotki lekarza dziewczyny"
+                        luszcz "Ona mnie naprawi"
                     luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
                     luszcz "Nie będzie mogła się oprzeć mojej nieustępliwości i hot wilkołak osobowości."
 
@@ -1101,6 +1148,9 @@ label gotka:
                         "{b}Szpont{/b}":
                             luszcz "Erm tak robię ci szpont"
                             luszcz "Zawsze mażyłem o takiej gotce jak ty"
+
+                            if lilith_social_link == 2:
+                                luszcz "(Sorki Lilith, ale 2 to więcej niż 1)"
 
                             gotka "Dziecko drogie fajnie się bawisz ale nie będę się hajtać z dzieckiem"
                             gotka "Nie mogę cię przyjmować o najmniejsze pierdoły bo mnie jeszcze zamkną"
@@ -1131,9 +1181,11 @@ label gotka:
                             gotka "7) Zakaz śmiania się z żartów 67"
                             gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                             gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
-                            gotka "10) Przestajesz myśleć o męskich siurach"
                             if wypadek3 == 2 and lilith_social_link == 1:
-                                gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                                gotka "10) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                                gotka "11) Przestajesz myśleć o męskich siurach"
+                            else:
+                                gotka "10) Przestajesz myśleć o męskich siurach"
 
                             luszcz "(cholera…)"
 
@@ -1156,7 +1208,10 @@ label gotka:
 
                                     scene bg klinika
 
-                                    luszcz "(jupi mam dziewczyne gotke thats crazy)"
+                                    if lilith_social_link == 2:
+                                        luszcz "(jupi mam kolejną dziewczyne i to w dodatku gotke thats crazy)"
+                                    else:
+                                        luszcz "(jupi mam dziewczyne gotke thats crazy)"
 
                                     gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                     gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
@@ -1499,6 +1554,9 @@ label gotka:
                             luszcz "Erm tak robię ci szpont"
                             luszcz "Zawsze mażyłem o takiej gotce jak ty"
 
+                            if lilith_social_link == 2:
+                                luszcz "(Sorki Lilith, ale 2 to więcej niż 1)"
+
                             gotka "Dziecko drogie fajnie się bawisz ale nie będę się hajtać z dzieckiem"
                             gotka "Nie mogę cię przyjmować o najmniejsze pierdoły bo mnie jeszcze zamkną"
 
@@ -1528,9 +1586,11 @@ label gotka:
                             gotka "7) Zakaz śmiania się z żartów 67"
                             gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                             gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
-                            gotka "10) Przestajesz myśleć o męskich siurach"
                             if wypadek3 == 2 and lilith_social_link == 1:
-                                gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                                gotka "10) Nie spotykasz się już z tą lafiryndą, o której mi ostatnio mówiłeś"
+                                gotka "11) Przestajesz myśleć o męskich siurach"
+                            else:
+                                gotka "10) Przestajesz myśleć o męskich siurach"
 
                             luszcz "(cholera…)"
 
@@ -1553,7 +1613,10 @@ label gotka:
 
                                     scene bg klinika
 
-                                    luszcz "(jupi mam dziewczyne gotke thats crazy)"
+                                    if lilith_social_link == 2:
+                                        luszcz "(jupi mam kolejną dziewczyne i to w dodatku gotke thats crazy)"
+                                    else:
+                                        luszcz "(jupi mam dziewczyne gotke thats crazy)"
 
                                     gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                     gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
@@ -1789,8 +1852,13 @@ label gotka:
                 show luszcz neutral  right at center
                 luszcz "Sposób w jaki patrzyła mi w oczy..."
                 luszcz "albo do gardła..."
-                luszcz "Potrzebuję gotki lekarza dziewczyny"
-                luszcz "Ona mnie naprawi"
+                if lilith_social_link == 2:
+                    luszcz "Niby mam już jedną dziewczyne..."
+                    luszcz "...ale może Bozia się nie obrazi jeśli będe miał dwie"
+                    luszcz "Gotka mnie naprawi!"
+                else:
+                    luszcz "Potrzebuję gotki lekarza dziewczyny"
+                    luszcz "Ona mnie naprawi"
                 luszcz "Muszę ogarnąć sobie jak najwięcej powodów żeby spędzać z nią czas!!!"
                 luszcz "Nie będzie mogła się oprzeć mojej nieustępliwości i hot wilkołak osobowości."
 
@@ -1810,6 +1878,9 @@ label gotka:
                     "{b}Szpont{/b}":
                         luszcz "Erm tak robię ci szpont"
                         luszcz "Zawsze mażyłem o takiej gotce jak ty"
+
+                        if lilith_social_link == 2:
+                            luszcz "(Sorki Lilith, ale 2 to więcej niż 1)"
 
                         gotka "Dziecko drogie fajnie się bawisz ale nie będę się hajtać z dzieckiem"
                         gotka "Nie mogę cię przyjmować o najmniejsze pierdoły bo mnie jeszcze zamkną"
@@ -1840,8 +1911,8 @@ label gotka:
                         gotka "7) Zakaz śmiania się z żartów 67"
                         gotka "8) Obowiązkowo przechodzisz ze mną wszystkie yaoi visual novelki które chcę"
                         gotka "9) Jak mnie zdradzisz mogę zrobić z twoim ciałem cokolwiek co sobie zażyczę."
-                        gotka "10) Przestajesz myśleć o męskich siurach"
-                        gotka "11) Nie spotykasz się już z tą lafiryndą, o której mi dziś mówiłeś"
+                        gotka "10) Nie spotykasz się już z tą lafiryndą, o której mi dziś mówiłeś"
+                        gotka "11) Przestajesz myśleć o męskich siurach"
 
                         luszcz "(cholera…)"
 
@@ -1864,7 +1935,10 @@ label gotka:
 
                                 scene bg klinika
 
-                                luszcz "(jupi mam dziewczyne gotke thats crazy)"
+                                if lilith_social_link == 2:
+                                    luszcz "(jupi mam kolejną dziewczyne i to w dodatku gotke thats crazy)"
+                                else:
+                                    luszcz "(jupi mam dziewczyne gotke thats crazy)"
 
                                 gotka "Na razie Alfa Wilk ma ręce pełne roboty, ale na pewno znajdzie czas we wtoreczek wieczorkiem <3"
                                 gotka "Albo w sumie nie, przyjdź po południu, od razu cię wykastrujemy"
