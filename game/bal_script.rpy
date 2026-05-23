@@ -131,4 +131,9 @@ label bal:
                 jump lipowa 
             if granica == 1:
                 jump granica
+    
+    label bal2:
+        scene bg chinczyk with fade
+        show luszcz neutral at center
+        luszcz "GÓWNO 1"
 

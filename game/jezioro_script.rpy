@@ -25,7 +25,7 @@ label jezioro:
             else:
                 scene bg jezioro5
 
-            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                 $ spanko_ryby += 1
                 if spanko_ryby == 1:
                     $ spanko += 1
@@ -63,6 +63,13 @@ label jezioro:
 
             menu:
                 "{b}Łów (10min){/b}":
+                    if timer > 9780 and timer <= 9840:
+                        luszcz "Nie zdąże tego zrobić przed Balem"
+                        jump jezioro12
+                    
+                    if timer > 11237 and timer <= 11377:
+                        luszcz "Nie zdąże tego zrobić przed Referendum"
+                        jump jezioro12
                     play sound "audio/sfx/start.mp3"
                     $ timer += 10
                     if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
@@ -642,6 +649,10 @@ label jezioro:
                     jump jezioro12
                 
                 if kostka >= 73 and kostka <= 80 and fanatyk_odebrany == 0:
+                    if timer > 9730 and timer <= 9840:
+                        jump losowanko_jezioro12
+                    if timer > 11287 and timer <= 11377:
+                        jump losowanko_jezioro12
                     if timer >= 540 and timer <= 1140 or timer >= 1980 and timer <= 2580 or timer >= 3420 and timer <= 4020 or timer >= 4860 and timer <= 5460 or timer >= 6300 and timer <= 6900 or timer >= 7740 and timer <= 8340 or timer >= 9180 and timer <= 9780 or timer >= 10620 and timer <= 11220:
                         $ fanatyk_odebrany = 1
                         play sound "audio/sfx/powrot.mp3"

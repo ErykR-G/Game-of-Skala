@@ -56,6 +56,24 @@ label tarczownik:
         
         $ renpy.pause(0.5)
 
+        if timer > 9520 and timer <= 9840:
+            luszcz "Morze i bym za nim pobiegł, ale coś czuję, ze nie zdążyłbym wtedy wrócić na Bal..."
+            luszcz "No cóż, niech sobie frajer sam lata za swoim psem"
+
+            $ tarczownik_wybory = 0
+            $ tarczownik_social_link = 10
+            hide luszcz
+            jump wolbromska2
+        
+        if timer > 11047 and timer <= 11377:
+            luszcz "Morze i bym za nim pobiegł, ale coś czuję, ze nie zdążyłbym wtedy na Referendum..."
+            luszcz "No cóż, niech sobie frajer sam lata za swoim psem"
+
+            $ tarczownik_wybory = 0
+            $ tarczownik_social_link = 10
+            hide luszcz
+            jump wolbromska2
+
         luszcz "W sumie morznaby za nim pobiec"
 
         menu:

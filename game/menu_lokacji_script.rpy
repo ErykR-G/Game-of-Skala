@@ -58,7 +58,7 @@ label menu_lokacji:
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
 
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -127,63 +127,102 @@ label menu_lokacji:
                     jump rynek2
 
                 "{i}{image=a} Alejka (10min){/i}":
+                    if timer > 9810 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump rynek2
+                    
+                    if timer > 11357 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump rynek2
+
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 1
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 1
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump alejka
 
                 "{i}{image=wa} Słoneczna (10min){/i}":
+                    if timer > 9810 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump rynek2
+                    
+                    if timer > 11357 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump rynek2
+
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 1
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 1
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump sloneczna
                 
                 "{i}{image=d} Parking (10min){/i}":
+                    if timer > 11357 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump rynek2
+
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 1
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 1
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump parking
 
                 "{i}{image=sd} Bohaterów Września (10min){/i}":
+                    if timer > 9810 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump rynek2
+
+                    if timer > 11367 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump rynek2
+
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 1
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 1
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump bohaterow_wrzesnia
                 
                 "{b}🏛️ Urząd Gminy | 7-15{/b}": 
@@ -210,6 +249,13 @@ label menu_lokacji:
                                     "{b}Czy chcę wziać udział w obradach (1h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9770 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump rynek2
+                                        
+                                        if timer > 11317 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump rynek2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -225,6 +271,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Wziąć udział w obradach (1h){/b}" if burmistrz_social_link == 0:
+                                        if timer > 9770 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump rynek2
+                                        
+                                        if timer > 11317 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump rynek2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -235,6 +288,11 @@ label menu_lokacji:
                                         jump rynek2
         
                 "{b}⛪ Kościół | 7-20{/b}": 
+                    if timer > 11362 and timer <= 11377:
+                        luszcz "To już czas powstrzymać Referendum!"
+                        play sound "audio/sfx/traveling.mp3"
+                        scene bg black with fade
+                        jump ending1
                     $ kosciolx = 0
                     if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500 and timer <= 11280:
                         $ ado += 1
@@ -256,7 +314,10 @@ label menu_lokacji:
                     if timer >= 6660 and timer <= 6960:
                         $ kosciolx += 1
                         "{i}Właśnie w kościele trwa koncert Zenka Martyniuka{/i}"
-
+                    
+                    if timer > 11257 and timer <= 11377:
+                        $ kosciolx += 1
+                        "{i}Mogę już teraz pójść powstrzymać Referendum...{i}"
 
                     if kosciolx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -264,11 +325,31 @@ label menu_lokacji:
 
                     else:
                         if kosciolx == 1:
+                            if timer > 11257 and timer <= 11377:
+                                menu:
+                                    "{b}Czy chcę powstrzymać Referendum?{/b}"
+
+                                    "{b}Tak{/b}":
+                                        luszcz "To już czas powstrzymać Referendum!"
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump ending1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "jeszcze nie teraz"
+                                        jump rynek2
+
                             if kosc_social_link == 0 and koscielny_zyje == 0:
                                 menu:
                                     "{b}Czy chcę spotkać się z Kościelnym? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9800 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump rynek2
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump rynek2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -284,6 +365,9 @@ label menu_lokacji:
                                     "{b}Czy chcę wziąć udział w koncercie Zenka Martyniuka? (1h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9770 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump rynek2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -299,7 +383,19 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
+                                    "{b}Powstrzymaj Referendum{/b}" if timer > 11257 and timer <= 11377:
+                                        luszcz "To już czas powstrzymać Referendum!"
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump ending1
+
                                     "{b}Spotkaj się z Kościelnym (30min){/b}" if kosc_social_link == 0 and koscielny_zyje == 0:
+                                        if timer > 9800 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump rynek2
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump rynek2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -307,6 +403,9 @@ label menu_lokacji:
                                         jump kosc1
                                     
                                     "{b}Weź udział w koncercie Zenka Martyniuka (1h){/b}" if timer >= 6660 and timer <= 6960:
+                                        if timer > 9770 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump rynek2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -344,7 +443,7 @@ label menu_lokacji:
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -367,16 +466,17 @@ label menu_lokacji:
                 "{i}{image=sd} Rynek (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 1
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 1
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump rynek
                 
                 "{b}🏗️ Plac Budowy | 6-18 {/b}":
@@ -412,6 +512,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Burmistrzem? (3h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9580 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11187 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 180
@@ -426,6 +533,13 @@ label menu_lokacji:
                                     "{b}Czy chcę sprawdzic co wydaje te ryki? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ yplac = 1
@@ -441,6 +555,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Allozaurem? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -457,12 +578,26 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Burmistrzem (3h){/b}" if burmistrz_social_link == 1:
+                                        if timer > 9580 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11187 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 180
                                         jump burmistrz2
 
                                     "{b}Sprawdź co wydaje te ryki (15min){/b}" if allozaur_social_link == 0:
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -470,6 +605,13 @@ label menu_lokacji:
                                         jump allozaur1
                                     
                                     "{b}Spotkaj się z Allozaurem (15min){/b}" if allozaur_social_link == 1:
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -509,6 +651,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Taśmą? (1h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11307 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -523,6 +672,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Kazumą? (3h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9580 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11127 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 180
@@ -538,12 +694,26 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Taśmą (1h){/b}" if silver_sextape_social_link == 1:
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11307 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
                                         jump silver_sextape2
                                     
                                     "{b}Spotkaj się z Kazumą (3h){/b}" if kazuma_social_link == 2:
+                                        if timer > 9580 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11127 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 180
@@ -578,6 +748,13 @@ label menu_lokacji:
                                     "{b}Czy chcę dostarczyć krówkę? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -593,6 +770,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Dostarcz Krówkę (15min){/b}" if mleczarz_social_link == 1 and krowka == 1:
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump sloneczna2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump sloneczna2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -603,6 +787,15 @@ label menu_lokacji:
                                         jump sloneczna2
                 
                 "{b}🚏 Przystanek (10min) | 24/7 {/b}":
+                    if timer > 9810 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump sloneczna2
+                    
+                    if timer > 11357 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump sloneczna2
                     if bilbo_social_link == 0:       
                         if timer >= 360 and timer <= 1190 or timer >= 1800 and timer <= 2630 or timer >= 3240 and timer <= 4070 or timer >= 4680 and timer <= 5510 or timer >= 6120 and timer <= 6950 or timer >= 7560 and timer <= 8390 or timer >= 9000 and timer <= 9830 or timer >= 10440 and timer <= 11270:
                             luszcz "Widzę w oddali jakiegoś ziomka w łachmanach i z gołymi stopami"
@@ -619,7 +812,6 @@ label menu_lokacji:
                     else:
                         luszcz "Nie ma tu nic do roboty"
                         jump sloneczna2
-
 
     label alejka:
         play sound "audio/sfx/traveling.mp3" 
@@ -644,7 +836,7 @@ label menu_lokacji:
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -667,19 +859,29 @@ label menu_lokacji:
                 "{i}{image=d} Rynek (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 1
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 1
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump rynek
                 
                 "{b}🛒 Sklep Monopolowy (60min) | 6-23{/b}" if zyd_social_link == 0:
+                    if timer > 9700 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump alejka2
+                    
+                    if timer > 11247 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump alejka2
                     if timer >= 360 and timer <= 1380 or timer >= 1800 and timer <= 2820 or timer >= 3240 and timer <= 4260 or timer >= 4680 and timer <= 5700 or timer >= 6120 and timer <= 7140 or timer >= 7560 and timer <= 8580 or timer >= 9000 and timer <= 10020 or timer >= 10440 and timer <= 11460:
                         $ ado += 1
                     else:
@@ -693,6 +895,15 @@ label menu_lokacji:
                     jump zyd1
                 
                 "{b}🛒 Sklep Monopolowy (15min) | 6-23{/b}" if zyd_social_link > 0:
+                    if timer > 9805 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump alejka2
+                    
+                    if timer > 11352 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump alejka2
                     if timer >= 360 and timer <= 1380 or timer >= 1800 and timer <= 2820 or timer >= 3240 and timer <= 4260 or timer >= 4680 and timer <= 5700 or timer >= 6120 and timer <= 7140 or timer >= 7560 and timer <= 8580 or timer >= 9000 and timer <= 10020 or timer >= 10440 and timer <= 11460:
                         $ ado += 1
                     else:
@@ -731,6 +942,13 @@ label menu_lokacji:
                                     "{b}Czy chcę wziać udział w obradach (1h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump alejka2
+                                        
+                                        if timer > 11307 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump alejka2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -746,6 +964,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Wziąć udział w obradach (1h){/b}" if burmistrz_social_link == 0:
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump alejka2
+                                        
+                                        if timer > 11307 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump alejka2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -777,6 +1002,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Taśmą (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump alejka2
+                                        
+                                        if timer > 11247 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump alejka2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -792,6 +1024,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Taśmą (2h){/b}" if silver_sextape_social_link == 2:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump alejka2
+                                        
+                                        if timer > 11247 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump alejka2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -819,6 +1058,13 @@ label menu_lokacji:
                                     "{b}Czy chcę zabrać zwłoki Eminema? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump alejka2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump alejka2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -834,6 +1080,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Zabierz zwłoki eminema (15min){/b}"  if harambe_social_link == 2 and kosc_social_link == 3 and cialo == 0: 
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump alejka2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump alejka2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -871,7 +1124,7 @@ label menu_lokacji:
                 "{i}Mam dostraczyć gdzieś tutaj krówkę...{/i}"
                 jump mleczarz5
 
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -891,36 +1144,62 @@ label menu_lokacji:
             window hide
             menu:
                 "{i}{image=wa} Wolbromska (20min){/i}":
+                    if timer > 9800 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump parking2
+                    
+                    if timer > 11327 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump parking2
+
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 1
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 1
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump wolbromska
                 
                 "{i}{image=a} Rynek (10min){/i}":
+                    if timer > 9820 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump parking2
+
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 1
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 1
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump rynek
                 
                 "{b}🩺 Apteka (15min) | 8-20{/b}" if gotka_social_link > 10 or gotka_social_link < 10:
+                    if timer > 9825 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump parking2
+                    
+                    if timer > 11352 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump parking2
                     if timer >= 480 and timer <= 1200 or timer >= 1920 and timer <= 2640 or timer >= 3360 and timer <= 4080 or timer >= 4800 and timer <= 5520 or timer >= 6240 and timer <= 6960 or timer >= 7680 and timer <= 8400 or timer >= 9120 and timer <= 9840 or timer >= 10560 and timer <= 11280:
                         $ ado += 1
                     else:
@@ -951,10 +1230,14 @@ label menu_lokacji:
                     "{i}Apteka jest zamknięta{/i}"
                     jump parking2
 
-
                 "{b}🏡 Dom | 24/7{/b}": 
+                    if timer > 9825 and timer <= 9840:
+                        luszcz "Ehhhh, czas iść na ten Bal"
+                        play sound "audio/sfx/traveling.mp3"
+                        scene bg black with fade
+                        jump bal2
                     $ domx = 0        
-                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+                    if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                         $ domx += 1
                         "{i}Robię się trochę śpiący...{/i}"
 
@@ -999,6 +1282,10 @@ label menu_lokacji:
                             "{i}Pozwoliłem Kazumie ukryć się przed Urzędem Skarbowym w moim domu{/i}"
                             "{i}Powinienem z nim porozmawiać co robimy dalej...{/i}"
                             "{i}Jednakże teraz jestem na to za śpiący{/i}"
+                    
+                    if timer > 9720 and timer <= 9840:
+                        $ domx += 1
+                        "{i}Mogę już teraz iść na Bal...{i}"
 
                     if domx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
@@ -1006,7 +1293,21 @@ label menu_lokacji:
 
                     else:
                         if domx == 1:
-                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+                            if timer > 9720 and timer <= 9840:
+                                menu:
+                                    "{b}Czy chcę iść na Bal?{/b}"
+
+                                    "{b}Tak{/b}":
+                                        luszcz "Ehhhh, czas iść na ten Bal"
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump bal2
+
+                                    "{b}Nie{/b}":
+                                        luszcz "jeszcze nie teraz"
+                                        jump parking2
+
+                            if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                                 menu:
                                     "{b}Czy chcę iść spać?{/b}"
 
@@ -1024,6 +1325,12 @@ label menu_lokacji:
                                     "{b}Czy chcę pobrać memy? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9810 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1038,6 +1345,12 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Kazumą? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9825 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -1052,6 +1365,12 @@ label menu_lokacji:
                                     "{b}Czy chcę użyć drukarki 3d? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9810 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1066,6 +1385,12 @@ label menu_lokacji:
                                     "{b}Czy chcę odebrać wydrukowany miecz? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9810 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1080,6 +1405,12 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Yusuke? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9825 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -1094,6 +1425,12 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Yusuke? (3h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9660 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11187 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 180
@@ -1108,42 +1445,84 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
-                                    "{b}Idź spać{/b}" if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+                                    "{b}Idź na Bal{/b}" if timer > 9720 and timer <= 9840:
+                                        luszcz "Ehhhh, czas iść na ten Bal"
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump bal2
+
+                                    "{b}Idź spać{/b}" if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         jump spanko
                                     
-                                    "{b}Pobierz memy{/b}" if (babcia_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                    "{b}Pobierz memy (30min){/b}" if (babcia_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        if timer > 9810 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
                                         jump babcia2
 
                                     "{b}Spotkaj się z Kazumą (15min){/b}" if (kazuma_social_link == 1) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        if timer > 9825 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
                                         jump kazuma2
                                     
                                     "{b}Użyj drukarki 3d (30min){/b}" if (drukarka3d_social_link == 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        if timer > 9810 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
                                         jump drukarka3d1
                                     
                                     "{b}Odbierz wydrukowany miecz (30min){/b}" if (drukarka3d_social_link == 1 and czasd <= 0) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        if timer > 9810 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
                                         jump drukarka3d2
                                     
                                     "{b}Spotkaj się z Yusukę (15min){/b}" if (yusuke_social_link >= 1 and yusuke_social_link <= 4 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1170) or (timer >= 1800 and timer <= 2610) or (timer >= 3240 and timer <= 4050) or (timer >= 4680 and timer <= 5490) or (timer >= 6120 and timer <= 6930) or (timer >= 7560 and timer <= 8370) or (timer >= 9000 and timer <= 9810) or (timer >= 10440 and timer <= 11250)):
+                                        if timer > 9825 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
                                         jump yusuke1
                                     
                                     "{b}Spotkaj się z Yusukę (3h){/b}" if (yusuke_social_link == 5 and yusuke_timer <= timer) and ((timer >= 360 and timer <= 1140) or (timer >= 1800 and timer <= 2580) or (timer >= 3240 and timer <= 4020) or (timer >= 4680 and timer <= 5460) or (timer >= 6120 and timer <= 6900) or (timer >= 7560 and timer <= 8340) or (timer >= 9000 and timer <= 9785) or (timer >= 10440 and timer <= 11220)):
+                                        if timer > 9660 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        if timer > 11187 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         scene bg black with fade
                                         $ timer += 180
                                         jump yusuke2
@@ -1181,6 +1560,13 @@ label menu_lokacji:
                                     "{b}Czy chcę dostarczyć krówkę? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9825 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -1195,6 +1581,13 @@ label menu_lokacji:
                                     "{b}Czy chcę zobaczyć kto jest u stomatologa? (1h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9720 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        
+                                        if timer > 11247 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -1211,12 +1604,26 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Dostarcz Krówkę (15min){/b}" if mleczarz_social_link == 3 and krowka == 1:
+                                        if timer > 9825 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
                                         jump mleczarz4
                                     
                                     "{b}Zobacz kto jest u stomatologa (1h){/b}" if duda_social_link == 0:
+                                        if timer > 9720 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump parking2
+                                        
+                                        if timer > 11247 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump parking2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -1255,7 +1662,7 @@ label menu_lokacji:
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -1278,16 +1685,17 @@ label menu_lokacji:
                 "{i}{image=sd} Parking (20min){/i}":
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 1
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 1
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump parking
                 
                 "{b}🏡 Dom Toxic Pea | 20–24{/b}" if toxic_pea_social_link > 0 and toxic_pea_social_link < 10:
@@ -1353,6 +1761,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1367,6 +1782,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1381,6 +1803,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1395,6 +1824,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1409,6 +1845,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Toxic Pea? (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1424,30 +1867,65 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
                                     
                                     "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 1 and toxic_limit == 0:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
                                         jump toxic_pea1
                                     
                                     "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 2 and toxic_limit = 0:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
                                         jump toxic_pea2
                                     
                                     "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 3 and toxic_limit = 0:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
                                         jump toxic_pea3
                                     
                                     "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 4 and toxic_limit = 0:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
                                         jump toxic_pea4
                                     
                                     "{b}Spotkaj się z Toxic Pea (2h){/b}" if toxic_pea_social_link == 5 and toxic_limit = 0:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1458,6 +1936,15 @@ label menu_lokacji:
                                         jump wolbromska2
 
                 "{b}🐄 Mleczarnia (15min) | 8–16{/b}": 
+                    if timer > 9805 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump wolbromska2
+                    
+                    if timer > 11332 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump wolbromska2
                     if mleczarz_social_link == 7:
                         "{i}Mleczarz już tutaj nie pracuje{/i}"
                         "{i}Dzięki mnie mógł w spokoju przejść na emeryture{/i}"
@@ -1513,6 +2000,13 @@ label menu_lokacji:
                                     "{b}Czy chcę popełnić samobójstwo? (30min){/b}" 
 
                                     "{b}Tak{/b}":
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11217 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1528,6 +2022,13 @@ label menu_lokacji:
                                     "{b}Czy chcę pomedytować z wazonem z wężami? (30min){/b}" 
 
                                     "{b}Tak{/b}":
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11217 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1544,6 +2045,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
                                     
                                     "{b}Popełnij Samobójstwo (30min){/b}" if samobojstwo == 0:
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11217 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1551,6 +2059,13 @@ label menu_lokacji:
                                         jump skalka1
                                     
                                     "{b}Pomedytuj z wazonem z wężami (30min){/b}" if wazon_wezy == 1:
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11217 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1583,6 +2098,13 @@ label menu_lokacji:
                                     "{b}Czy chcę się spotkać z Naofumim? (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1598,6 +2120,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Naofumim (2h){/b}" if tarczownik_social_link == 1 and tarczownik_dzien == 0:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump wolbromska2
+                                        
+                                        if timer > 11227 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump wolbromska2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -1630,7 +2159,7 @@ label menu_lokacji:
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -1651,36 +2180,63 @@ label menu_lokacji:
             window hide
             menu:
                 "{i}{image=wa} Rynek (10min){/i}":
+                    if timer > 11367 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump bohaterow_wrzesnia2
+
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 1
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 1
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump rynek
 
                 "{i}{image=sa} Lipowa (10min){/i}":
+                    if timer > 9800 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump bohaterow_wrzesnia2
+                    
+                    if timer > 11357 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump bohaterow_wrzesnia2
+
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 1
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 1
+                            $ granica = 0
+                            jump walka_uliczna
                     jump lipowa
         
                 "{b}🛒 Kebab (15min) | 11–23{/b}":
+                    if timer > 9805 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump bohaterow_wrzesnia2
+                    
+                    if timer > 11362 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump bohaterow_wrzesnia2
+
                     if timer >= 660 and timer <= 1380 or timer >= 2100 and timer <= 2820 or timer >= 3540 and timer <= 4260 or timer >= 4980 and timer <= 5700 or timer >= 6420 and timer <= 7140 or timer >= 7860 and timer <= 8580 or timer >= 9300 and timer <= 10020 or timer >= 10740 and timer <= 11460:
                         $ ado += 1
                     else:
@@ -1717,6 +2273,13 @@ label menu_lokacji:
                                     "{b}Czy chcę dostarczyć krówkę? (1h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11257 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -1733,6 +2296,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
                                     
                                     "{b}Dostarcz Krówkę (1h){/b}" if mleczarz_social_link == 2 and krowka == 1:
+                                        if timer > 9700 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11257 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -1781,6 +2351,13 @@ label menu_lokacji:
                                     "{b}Czy chcę porozmawiać z seniorami? (4h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9520 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11077 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 240
@@ -1795,6 +2372,13 @@ label menu_lokacji:
                                     "{b}Czy chcę sprawdzić sytuacje w domu kultury? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1809,6 +2393,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Babcią? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1824,18 +2415,39 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z seniorami (4h){/b}" if urban_social_link == 0:
+                                        if timer > 9520 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11077 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 240
                                         jump urban1
                                     
                                     "{b}Sprawdź sytuacje w domu kultury (30min){/b}" if urban_social_link > 0 and babcia_social_link == 0 and akcja1 == 0:
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
                                         jump babcia1
                                     
                                     "{b}Spotkaj się z Babcią (30min){/b}" if babcia_social_link == 2:
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1846,6 +2458,12 @@ label menu_lokacji:
                                         jump bohaterow_wrzesnia2
 
                 "{b}⛪ Kościół | 7–20{/b}": 
+                    if timer > 11362 and timer <= 11377:
+                        luszcz "To już czas powstrzymać Referendum!"
+                        play sound "audio/sfx/traveling.mp3"
+                        scene bg black with fade
+                        jump ending1
+
                     $ kosciolx = 0
                     if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500 and timer <= 11280:
                         $ ado += 1
@@ -1868,17 +2486,41 @@ label menu_lokacji:
                         $ kosciolx += 1
                         "{i}Właśnie w kościele trwa koncert Zenka Martyniuka{/i}"
                     
+                    if timer > 11257 and timer <= 11377:
+                        $ kosciolx += 1
+                        "{i}Mogę już teraz pójść powstrzymać Referendum...{i}"
+                    
                     if kosciolx == 0:
                         "{i}Nie ma tu teraz nic do roboty{/i}"
                         jump bohaterow_wrzesnia2
 
                     else:
                         if kosciolx == 1:
+                            if timer > 11257 and timer <= 11377:
+                                menu:
+                                    "{b}Czy chcę powstrzymać Referendum?{/b}"
+
+                                    "{b}Tak{/b}":
+                                        luszcz "To już czas powstrzymać Referendum!"
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump ending1
+
+                                    "{b}Nie{/b}":
+                                        luszcz "jeszcze nie teraz"
+                                        jump rynek2
+
                             if kosc_social_link == 0 and koscielny_zyje == 0:
                                 menu:
                                     "{b}Czy chcę spotkać się z Kościelnym? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1894,6 +2536,9 @@ label menu_lokacji:
                                     "{b}Czy chcę wziąć udział w koncercie Zenka Martyniuka? (1h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -1909,7 +2554,19 @@ label menu_lokacji:
                                 menu:
                                     "{b}Co zrobić?{/b}"
 
+                                    "{b}Powstrzymaj Referendum{/b}" if timer > 11257 and timer <= 11377:
+                                        luszcz "To już czas powstrzymać Referendum!"
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        jump ending1
+
                                     "{b}Spotkaj się z Kościelnym (30min){/b}" if kosc_social_link == 0 and koscielny_zyje == 0:
+                                        if timer > 9790 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
+                                        if timer > 11347 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -1917,6 +2574,9 @@ label menu_lokacji:
                                         jump kosc1
                                     
                                     "{b}Weź udział w koncercie Zenka Martyniuka (1h){/b}" if timer >= 6660 and timer <= 6960:
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump bohaterow_wrzesnia2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -1950,7 +2610,7 @@ label menu_lokacji:
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
         
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -1973,31 +2633,43 @@ label menu_lokacji:
                 "{i}{image=wd} Bohaterów Września (10min){/i}":
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 1
-                        $ lipowa = 0
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 1
+                            $ lipowa = 0
+                            $ granica = 0
+                            jump walka_uliczna
                     jump bohaterow_wrzesnia
 
                 "{i}{image=s} Granica Skały (20min){/i}":
+                    if timer > 9770 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump lipowa2
+                    
+                    if timer > 11327 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump lipowa2
+
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 0
-                        $ granica = 1
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 0
+                            $ granica = 1
+                            jump walka_uliczna
                     jump granica
                 
                 "{b}🪦 Cmentarz | 24/7{/b}":
@@ -2059,6 +2731,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Żydem? (4h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9450 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11007 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ ycmentarz = 1
@@ -2074,6 +2753,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Żydem? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9795 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -2090,6 +2776,13 @@ label menu_lokacji:
                                         "{b}Czy chcę iść na spacer? (30min){/b}"
 
                                         "{b}Tak{/b}":
+                                            if timer > 9780 and timer <= 9840:
+                                                luszcz "Nie zdąże tego zrobić przed Balem"
+                                                jump lipowa2
+                                            
+                                            if timer > 11337 and timer <= 11377:
+                                                luszcz "Nie zdąże tego zrobić przed Referendum"
+                                                jump lipowa2
                                             play sound "audio/sfx/traveling.mp3"
                                             scene bg black with fade
                                             $ timer += 30
@@ -2106,6 +2799,13 @@ label menu_lokacji:
                                         "{b}Czy poprosić Harambe o pomoc? (30min){/b}"
 
                                         "{b}Tak{/b}":
+                                            if timer > 9780 and timer <= 9840:
+                                                luszcz "Nie zdąże tego zrobić przed Balem"
+                                                jump lipowa2
+                                            
+                                            if timer > 11337 and timer <= 11377:
+                                                luszcz "Nie zdąże tego zrobić przed Referendum"
+                                                jump lipowa2
                                             play sound "audio/sfx/traveling.mp3"
                                             scene bg black with fade
                                             $ timer += 30
@@ -2122,6 +2822,13 @@ label menu_lokacji:
                                         "{b}Czy wskrzesić Kościelnego? (1h){/b}"
 
                                         "{b}Tak{/b}":
+                                            if timer > 9750 and timer <= 9840:
+                                                luszcz "Nie zdąże tego zrobić przed Balem"
+                                                jump lipowa2
+                                            
+                                            if timer > 11307 and timer <= 11377:
+                                                luszcz "Nie zdąże tego zrobić przed Referendum"
+                                                jump lipowa2
                                             play sound "audio/sfx/traveling.mp3"
                                             scene bg black with fade
                                             $ timer += 60
@@ -2137,6 +2844,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Żydem (4h){/b}" if (zyd_social_link == 3 and lopatka == 1) and ((timer >= 360 and timer <= 960) or (timer >= 1800 and timer <= 2400) or (timer >= 3240 and timer <= 3840) or (timer >= 4680 and timer <= 5280) or (timer >= 6120 and timer <= 6720) or (timer >= 7560 and timer <= 8160) or (timer >= 9000 and timer <= 9600) or (timer >= 10440 and timer <= 11040)):
+                                        if timer > 9450 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11007 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 240
@@ -2144,6 +2858,13 @@ label menu_lokacji:
                                         jump zyd4
 
                                     "{b}Spotkaj się z Żydem (15min){/b}" if (zyd_social_link == 2) and ((timer >= 360 and timer <= 1185) or (timer >= 1800 and timer <= 2625) or (timer >= 3240 and timer <= 4065) or (timer >= 4680 and timer <= 5505) or (timer >= 6120 and timer <= 6945) or (timer >= 7560 and timer <= 8385) or (timer >= 9000 and timer <= 9825) or (timer >= 10440 and timer <= 11265)):
+                                        if timer > 9795 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -2151,6 +2872,13 @@ label menu_lokacji:
                                         jump zyd3
 
                                     "{b}Idź na spacer (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 0 or timer > 2640 and timer < 3240 and harambe_social_link == 0 or timer > 4080 and timer < 4680 and harambe_social_link == 0 or timer > 5520 and timer < 6120 and harambe_social_link == 0 or timer > 6960 and timer < 7560 and harambe_social_link == 0 or timer > 8400 and timer < 9000 and harambe_social_link == 0 or timer > 9840 and timer < 10440 and harambe_social_link == 0:
+                                        if timer > 9780 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2158,6 +2886,13 @@ label menu_lokacji:
                                         jump harambe1
                                     
                                     "{b}Poproś o pomoc Harambe (30min){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 2640 and timer < 3240 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 4080 and timer < 4680 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 5520 and timer < 6120 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 6960 and timer < 7560 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 8400 and timer < 9000 and harambe_social_link == 1 and kosc_social_link == 3 or timer > 9840 and timer < 10440 and harambe_social_link == 1 and kosc_social_link == 3:
+                                        if timer > 9780 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2165,6 +2900,13 @@ label menu_lokacji:
                                         jump kosc4
                                     
                                     "{b}Wskrześ Kościelnego (1h){/b}" if timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and glowa == 1 or timer > 1200 and timer < 1800 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 2640 and timer < 3240 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 4080 and timer < 4680 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 5520 and timer < 6120 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 6960 and timer < 7560 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 8400 and timer < 9000 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1 or timer > 9840 and timer < 10440 and harambe_social_link == 2 and kosc_social_link == 3 and ailbib == 1 and cialo == 1:
+                                        if timer > 9750 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11307 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 60
@@ -2198,6 +2940,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9780 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2213,6 +2962,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
+                                        if timer > 9780 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2256,6 +3012,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Kościelnym? (2h){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9690 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11247 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -2271,6 +3034,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Piotrkiem i Krystianem? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9780 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2286,6 +3056,13 @@ label menu_lokacji:
                                     "{b}Czy chcę dostarczyć krówkę? (15min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9795 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -2302,6 +3079,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Kościelnym (2h){/b}" if kosc_social_link == 1 and koscielny_zyje == 0:
+                                        if timer > 9690 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11247 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -2309,6 +3093,13 @@ label menu_lokacji:
                                         jump kosc2
                                     
                                     "{b}Spotkaj się z Piotrkiem i Krystianem (30min){/b}" if kibole_social_link == 1:
+                                        if timer > 9780 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11337 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2316,6 +3107,13 @@ label menu_lokacji:
                                         jump kibole2
                                     
                                     "{b}Dostarcz Krówkę (15min){/b}" if mleczarz_social_link == 5 and krowka == 1:
+                                        if timer > 9795 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump lipowa2
+                                        
+                                        if timer > 11352 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump lipowa2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 15
@@ -2406,7 +3204,7 @@ label menu_lokacji:
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
             jump kosc_smierc
 
-        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440 or timer > 11280:
+        if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
                 play music "audio/music/pole_noc.mp3"
@@ -2445,19 +3243,30 @@ label menu_lokacji:
                 "{i}{image=w} Lipowa (20min){/i}":
                     $ timer += 20
                     $ kostka = renpy.random.randint(1, 20)
-                    if kostka == 1:
-                        $ rynek = 0
-                        $ sloneczna = 0
-                        $ alejka = 0
-                        $ parking = 0
-                        $ wolbromska = 0
-                        $ bohaterow_wrzesnia = 0
-                        $ lipowa = 1
-                        $ granica = 0
-                        jump walka_uliczna
+                    if timer <= 9720 or (timer >= 10080 and timer <= 11220):
+                        if kostka == 1:
+                            $ rynek = 0
+                            $ sloneczna = 0
+                            $ alejka = 0
+                            $ parking = 0
+                            $ wolbromska = 0
+                            $ bohaterow_wrzesnia = 0
+                            $ lipowa = 1
+                            $ granica = 0
+                            jump walka_uliczna
                     jump lipowa    
                 
                 "{b}🛒 Chiński Market (15min) | 9–19{/b}":
+                    if timer > 9775 and timer <= 9840:
+                        luszcz "Bal rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli wracać do domu"
+                        jump granica2
+                    
+                    if timer > 11332 and timer <= 11377:
+                        luszcz "Referendum rozpocznie się już za niedługo"
+                        luszcz "Powinienem powoli kierować się w kierunku kościoła"
+                        jump granica2
+
                     if timer >= 540 and timer <= 1140 or timer >= 1980 and timer <= 2580 or timer >= 3420 and timer <= 4020 or timer >= 4860 and timer <= 5460 or timer >= 6300 and timer <= 6900 or timer >= 7740 and timer <= 8340 or timer >= 9180 and timer <= 9780 or timer >= 10620 and timer <= 11220:
                         $ ado += 1
                     else:
@@ -2492,6 +3301,13 @@ label menu_lokacji:
                                     "{b}Czy chcę spotkać się z Żydem? (30min){/b}"
 
                                     "{b}Tak{/b}":
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump granica2
+                                        
+                                        if timer > 11217 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump granica2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2507,6 +3323,13 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Żydem (30min){/b}" if zyd_social_link == 1:
+                                        if timer > 9760 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump granica2
+                                        
+                                        if timer > 11217 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump granica2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 30
@@ -2549,12 +3372,26 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Jerzym Urbanem (2h){/b}" if urban_social_link == 1:
+                                        if timer > 9610 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump granica2
+                                        
+                                        if timer > 11147 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump granica2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
                                         jump urban2
                                     
                                     "{b}Idź na ryby (2h){/b}":
+                                        if timer > 9610 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump granica2
+                                        
+                                        if timer > 11147 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump granica2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
@@ -2590,12 +3427,26 @@ label menu_lokacji:
                                     "{b}Co zrobić?{/b}"
 
                                     "{b}Spotkaj się z Jerzym Urbanem (2h){/b}" if urban_social_link == 1:
+                                        if timer > 9610 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump granica2
+                                        
+                                        if timer > 11147 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump granica2
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
                                         $ timer += 120
                                         jump urban2
                                     
                                     "{b}Idź na ryby (15min){/b}":
+                                        if timer > 9775 and timer <= 9840:
+                                            luszcz "Nie zdąże tego zrobić przed Balem"
+                                            jump granica2
+                                        
+                                        if timer > 11232 and timer <= 11377:
+                                            luszcz "Nie zdąże tego zrobić przed Referendum"
+                                            jump granica2
                                         $ timer += 15
                                         play sound "audio/sfx/traveling.mp3"
                                         scene bg black with fade
@@ -2612,6 +3463,13 @@ label menu_lokacji:
                                         "{b}Czy chcę iść na ryby? (15min){/b}"
 
                                         "{b}Tak{/b}":
+                                            if timer > 9775 and timer <= 9840:
+                                                luszcz "Nie zdąże tego zrobić przed Balem"
+                                                jump granica2
+                                            
+                                            if timer > 11232 and timer <= 11377:
+                                                luszcz "Nie zdąże tego zrobić przed Referendum"
+                                                jump granica2
                                             $ timer += 15
                                             play sound "audio/sfx/traveling.mp3"
                                             scene bg black with fade

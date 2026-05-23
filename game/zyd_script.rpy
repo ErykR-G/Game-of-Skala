@@ -455,31 +455,88 @@ label zyd:
                             jump granica
                 
             else:
-                luszcz "Mam pży sobie, ale robi się jurz puzino"
-                luszcz "Przyjdem z nią innego dnia"
+                if timer > 9450 and timer <= 9840:
+                    luszcz "Mam pży sobie, ale robi się jurz puzino"
+                    luszcz "Przyjdem z nią innego dnia"
 
-                zyd "oke będę czekał!"
+                    zyd "oke będę czekał!"
 
-                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-                    play music "audio/music/pole.mp3"
-                else:
-                    play music "audio/music/pole_noc.mp3"
-                if rynek == 1:
-                    jump rynek
-                if sloneczna == 1:
-                    jump sloneczna 
-                if alejka == 1:
-                    jump alejka 
-                if parking == 1:
-                    jump parking
-                if wolbromska == 1:
-                    jump wolbromska
-                if bohaterow_wrzesnia == 1:
-                    jump bohaterow_wrzesnia 
-                if lipowa == 1:
-                    jump lipowa 
-                if granica == 1:
-                    jump granica
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
+                    if rynek == 1:
+                        jump rynek
+                    if sloneczna == 1:
+                        jump sloneczna 
+                    if alejka == 1:
+                        jump alejka 
+                    if parking == 1:
+                        jump parking
+                    if wolbromska == 1:
+                        jump wolbromska
+                    if bohaterow_wrzesnia == 1:
+                        jump bohaterow_wrzesnia 
+                    if lipowa == 1:
+                        jump lipowa 
+                    if granica == 1:
+                        jump granica
+                
+                else: 
+                    if timer > 11007 and timer <= 11377:
+                        luszcz "Mam pży sobie, ale nie zdążymy jej użyć przed referendum"
+                        luszcz "Przyjdem z nią kiedyś indziej"
+                        luszcz "może"
+
+                        zyd "no cóż, tak bywa"
+
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        if rynek == 1:
+                            jump rynek
+                        if sloneczna == 1:
+                            jump sloneczna 
+                        if alejka == 1:
+                            jump alejka 
+                        if parking == 1:
+                            jump parking
+                        if wolbromska == 1:
+                            jump wolbromska
+                        if bohaterow_wrzesnia == 1:
+                            jump bohaterow_wrzesnia 
+                        if lipowa == 1:
+                            jump lipowa 
+                        if granica == 1:
+                            jump granica
+                    
+                    else:
+                        luszcz "Mam pży sobie, ale robi się jurz puzino"
+                        luszcz "Przyjdem z nią innego dnia"
+
+                        zyd "oke będę czekał!"
+
+                        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                            play music "audio/music/pole.mp3"
+                        else:
+                            play music "audio/music/pole_noc.mp3"
+                        if rynek == 1:
+                            jump rynek
+                        if sloneczna == 1:
+                            jump sloneczna 
+                        if alejka == 1:
+                            jump alejka 
+                        if parking == 1:
+                            jump parking
+                        if wolbromska == 1:
+                            jump wolbromska
+                        if bohaterow_wrzesnia == 1:
+                            jump bohaterow_wrzesnia 
+                        if lipowa == 1:
+                            jump lipowa 
+                        if granica == 1:
+                            jump granica
         
         else:
             menu:

@@ -338,6 +338,65 @@ label spanko:
 
         show luszcz neutral at center
 
+        if timer >= 10080 and timer <= 11460:
+            luszcz "Ohhh, dzisiaj wielki dzień!"
+            luszcz "dziś referendum o 21:37 w kościele!"
+            luszcz "dlatego muszę zrobić wszystko co w mojej mocy, by je powstrzymać!"
+
+            $ gdzie_spisz = 0
+
+            $ luszcz_piguly = 0
+            $ eminem_piguly = 0
+            $ urban_piguly = 0
+            $ zyd_piguly = 0
+            $ kazuma_piguly = 0
+            $ tarczownik_dzien = 0
+            $ akcja1 = 0
+            $ spanko = 0
+            $ krowko_limit = 0
+            $ toxic_limit = 0
+            $ czasd -= 1
+            $ duda_timer -= 1
+            $ nocka += 1
+            if ltite > 0:
+                $ ltite -= 1
+            if kazuma_strzal > 0:
+                $ kazuma_strzal -= 1
+            if tasma_spotkanko == 2:
+                $ tasma_spotkanko = 1
+            else: 
+                if tasma_spotkanko == 1:
+                    $ tasma_spotkanko = 0
+            
+            luszcz "Czas brać się do roboty!"
+        
+            luszcz "Ooo rodzice zostawili mi kieszonkowe.."
+
+            $ money += 3
+
+            "{i}*3 Portfele zostały dodane do ekwipunku*{/i}"
+
+            if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                play music "audio/music/pole.mp3"
+            else:
+                play music "audio/music/pole_noc.mp3"
+            if rynek == 1:
+                jump rynek
+            if sloneczna == 1:
+                jump sloneczna 
+            if alejka == 1:
+                jump alejka 
+            if parking == 1:
+                jump parking
+            if wolbromska == 1:
+                jump wolbromska
+            if bohaterow_wrzesnia == 1:
+                jump bohaterow_wrzesnia 
+            if lipowa == 1:
+                jump lipowa 
+            if granica == 1:
+                jump granica
+
         luszcz "Kurwa znowu w tej Polsce"
         luszcz "Nienawidzę tego syfu, tego państwa..."
 
@@ -488,6 +547,28 @@ label spanko2:
     if timer >= 8640 and timer <= 10020:
         jump bal1
 
+    if timer >= 10080 and timer <= 11460:
+        luszcz "japierdole dobra już muszę brać się do roboty"
+        luszcz "dziś wielki dzień, dzień referendum o 21:37 w kościele!"
+        luszcz "dlatego muszę zrobić wszystko co w mojej mocy, by je powstrzymać!"
+        hide luszcz
+
+        if rynek == 1:
+            jump rynek2
+        if sloneczna == 1:
+            jump sloneczna2 
+        if alejka == 1:
+            jump alejka2 
+        if parking == 1:
+            jump parking2
+        if wolbromska == 1:
+            jump wolbromska2
+        if bohaterow_wrzesnia == 1:
+            jump bohaterow_wrzesnia2 
+        if lipowa == 1:
+            jump lipowa2 
+        if granica == 1:
+            jump granica2
     luszcz "japierdole dobra już muszę brać się do roboty..."
 
     hide luszcz
