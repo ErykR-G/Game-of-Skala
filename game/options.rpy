@@ -18,7 +18,7 @@ init -1 python:
     
 define config.main_menu_music = "audio/music/menu.mp3"
 
-define config.name = _("Game of Skala")
+define config.name = _("Skalne Opowieści")
 
 define config.hw_video = True
 
@@ -53,7 +53,7 @@ define gui.about = _p("""
 ## dystrybucji. Musi zawierać tylko ASCII i nie może zawierać spacji, dwukropków
 ## ani średników.
 
-define build.name = "GameofSkala"
+define build.name = "Skalne_Opowieści"
 
 
 ## Dźwięki i muzyka ############################################################

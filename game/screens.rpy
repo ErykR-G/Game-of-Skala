@@ -391,6 +391,7 @@ style navigation_button_text:
 ## Służy do wyświetlania menu głównego po uruchomieniu Ren'Py
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
+default rare_title = renpy.random.randint(1, 100) <= 10
 
 screen main_menu():
 
@@ -406,17 +407,45 @@ screen main_menu():
     ## Wyrażenie "use" zawiera kolejny ekran(scenę) wewnątrz tego. Rzeczywista
     ## zawartość menu głównego znajduje się na ekranie nawigacji.
     use navigation
-
+    
     if gui.show_name:
 
-        vbox:
-            style "main_menu_vbox"
+        if rare_title:
+            on "show" action Play("music", "audio/music/menu2.mp3")
+        else:
+            on "show" action Play("music", "audio/music/menu.mp3")
 
-            text "[config.name!t]":
-                style "main_menu_title"
+        if rare_title:
 
-            text "[config.version]":
-                style "main_menu_version"
+            vbox:
+                style "main_menu_vbox"
+                xpos 0.625
+                ypos 0.265
+                xanchor 0.5
+
+                text "搖滾故事":
+                    style "main_menu_title"
+                    font "fonts/NotoSansTC-Regular.ttf"
+                    size 160
+                    color "#ebce2d"
+                    outlines [(2, "#000000", 0, 0)]
+                    xalign 0.5
+
+        else:
+
+            vbox:
+                style "main_menu_vbox"
+                xpos 0.625
+                ypos 0.25
+                xanchor 0.5
+
+                text "Skalne Opowieści":
+                    style "main_menu_title"
+                    font "fonts/DarumadropOne-Regular.ttf"
+                    size 160
+                    color "#ebce2d"
+                    outlines [(2, "#000000", 0, 0)]
+                    xalign 0.5
 
 
 style main_menu_frame is empty
