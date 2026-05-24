@@ -962,6 +962,27 @@ label lilith:
             menu:
                 "{b}Włóż ciasto do piekarnika{/b}":
                     $ ado += 1
+            
+            luszcz "Włożyłem!"
+
+            lilith "gratuluje"
+
+            luszcz "..."
+
+            lilith "..."
+
+            luszcz "..."
+
+            lilith "..."
+
+            luszcz "..."
+
+            lilith "..."
+
+            luszcz "..."
+            luszcz "To eeeee co chcesz robić podczas czekania na ciasto?"
+
+            
 
             hide luszcz 
             hide lilith 

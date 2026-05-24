@@ -161,7 +161,11 @@ label postacie:
     define rem = Character("Rem", color="#91C0F9")
     define ram = Character("Ram", color="#FFA7BA")
 
-    define akane = Character("Akane", color="#ffffff")
+    define akane = Character("Akane", color="#0a02eb")
+    define shinobu = Character("Shinobu", color="#f7d954")
+    image shinobu neutral right = Transform("shinobu neutral", xzoom=-1) 
+
+
     define kibol1 = Character("Kibol 1", color="#ffffff")
     define kibol2 = Character("Kibol 2", color="#ffffff")
 
@@ -895,6 +899,7 @@ label wybory:
     default kazuma_wybory = 0
     default duda_wybory = 0
     default yusuke_wybory = 0
+    default bilbo_wybory = 0
 
 label social_links:
     default zyd_social_link = 0
