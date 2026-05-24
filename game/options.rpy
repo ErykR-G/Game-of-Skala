@@ -162,7 +162,7 @@ default preferences.afm_time = 15
 ## Opcji tej zazwyczaj nie należy zmieniać. Jeżeli jest zmiana, to należy
 ## zastosować dosłowny ciąg, a nie wyrażenie.
 
-define config.save_directory = "GameofSkala-1767199813"
+define config.save_directory = "Skalne_Opowiesci-1767199813"
 
 
 ## Ikona #######################################################################
