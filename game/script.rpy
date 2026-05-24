@@ -32,6 +32,7 @@ default money = 3
 
 label postacie:
     define all = Character("Wszyscy", color="#6a6a6e")
+    define random1 = Character("Random", color="#4e4e8a")
     define nikt = Character("???", color="#6a6a6e")
 
     define luszcz = Character("Łuszcz", color="#1d0cbb")
@@ -51,7 +52,18 @@ label postacie:
 
     define owca = Character("Owca", color="#382a17")
 
+    define patykarz = Character("Przywódca Patykarzy", color="#f5b75b")
+    define gobliny = Character("Gobliny", color="#521414")
+    define wargowie = Character("Wargowie", color="#882345")
+    define krasnoludy = Character("Krasnoludy", color="#49237a")
+    define elfy = Character("Elfy", color="#386414")
+    define ludzie = Character("Ludzie", color="#64481f")
+
+    define salmonella = Character("Salmonella", color="#926CAA")
+
     define mleczarz = Character("Mleczarz", color="#807e7c")
+
+    define sw = Character("Skalny Wędrowiec", color="#68625c")
 
     define allozaur = Character("Allozaur", color="#0f3955")
 
@@ -67,6 +79,8 @@ label postacie:
     define rand = Character("Ktoś z widowni", color="#8a8a8a")
 
     define pies = Character("Raphtalia", color="#d87829")
+
+    define golem = Character("Golem", color="#858281")
 
     define gwiazda = Character("Gwiazda Śmierci", color="#3b3b3b")
 
@@ -197,10 +211,14 @@ label postacie:
 
     define musial = Character("Maciej Musiał", color="#bdbdbd")
 
+    define cybertruck3 = Character("Cybertruck", color="#ffffff")
+
     define tata = Character("Tata", color="#474444")
 
     define yusuke = Character("Yusuke", color="#436ee6")
     image yusuke neutral right = Transform("yusuke neutral", xzoom=-1) 
+
+    image mk neutral right = Transform("mk neutral", xzoom=-1) 
 
     define cien = Character("Ostry Cień Mgły", color="#686868")
 
@@ -318,12 +336,24 @@ label postacie:
 
     define malenkov = Character("Gieorgij Malenkow", color="#9c3ee9")
 
+    define goblin = Character("Goblin", color="#5e0101")
+
     define stalin = Character("Józef Stalin", color="#fa0000")
     image stalin duch right = Transform("stalin duch", xzoom=-1) 
 
     define mac = Character("Maciek Maciak", color="#ff0000")
 
-    define bilbo = Character("Bilbo", color="#105e1a")
+    define bilbo = Character("Bilbo", color="#473b28")
+    image bilbo neutral right = Transform("bilbo neutral", xzoom=-1)
+
+    define ailbo = Character("Ailbo", color="#b67f27")
+
+    define dilbo = Character("Dilbo", color="#105e1a")
+    image dilbo neutral right = Transform("dilbo neutral", xzoom=-1) 
+    image dilbo happy right = Transform("dilbo happy", xzoom=-1) 
+    image dilbo zly right = Transform("dilbo zly", xzoom=-1) 
+
+    define elrondo = Character("Elrondo", color="#6f8173")
 
 label pozycje:
     transform haczyki:

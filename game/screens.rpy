@@ -436,7 +436,7 @@ screen main_menu():
             vbox:
                 style "main_menu_vbox"
                 xpos 0.625
-                ypos 0.25
+                ypos 0.255
                 xanchor 0.5
 
                 text "Skalne Opowieści":
