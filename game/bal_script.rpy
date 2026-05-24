@@ -6,6 +6,10 @@ default zyd_gadka = 0
 default urban_gadka = 0
 default tarczownik_gadka = 0
 default gadka = 0
+default l1 = 0
+
+default bomba = 1
+default urban_spotkanie = 0
 
 label bal:
     label bal1:
@@ -322,6 +326,8 @@ label bal:
 
             luszcz "..."
 
+            play sound "audio/sfx/mik.mp3"
+
             shinobu "Hmmm, raz, dwa, trzy, raz, dwa trzy"
             shinobu "dobra mikrofon działa"
             shinobu "Halo, halo cwele, ruszcie swoje spasione dupska, bo za chwilę mój mistrz wygłosi przemowę!!!"
@@ -335,7 +341,7 @@ label bal:
             shinobu "no okeej"
 
             shinobu "eee to więc"
-            shinobu "Zapraszam was niezwykle serdecznie nasi szanowni goście na rozpoczęcie balu do sali baletowej, która jest na prawo od sali jadalnej, w której się zapewne znajdujecie wy spasione tłuste..."
+            shinobu "Zapraszam was niezwykle serdecznie nasi szanowni goście na rozpoczęcie balu do sali balowej, która jest na prawo od sali jadalnej, w której się zapewne znajdujecie wy spasione tłuste..."
             
             nikt "Shinobu!!!"
 
@@ -478,6 +484,7 @@ label bal:
                     luszcz "..."
 
                 if urban_sojusznik == 1:
+                    $ urban_spotkanie = 1
                     luszcz "To mów Urban co tam u Ciebie!?"
 
                     urban "Ahh w porządeczku!"
@@ -533,27 +540,21 @@ label bal:
                 scene bg bal3 with fade
                 show luszcz stol zorder 11
                 if eminem_sojusznik == 1:
-                    $ stol += 1
                     show eminem stol zorder 10
 
                 if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
-                    $ stol += 1
                     show kazuma stol zorder 9
 
                 if yusuke_social_link >= 1 and yusuke_social_link < 6:
-                    $ stol += 1
                     show yusuke stol zorder 8
 
                 if zyd_sojusznik == 1:
-                    $ stol += 1
                     show zyd stol zorder 7
 
                 if urban_sojusznik == 1:
-                    $ stol += 1
                     show urban stol zorder 6
 
                 if tarczownik_sojusznik == 1:
-                    $ stol += 1
                     show tarczownik stol zorder 5
 
                 $ renpy.music.set_volume(1.0, delay=0.3)
@@ -561,6 +562,8 @@ label bal:
                         
                 luszcz "(Emmmm zaczynają już oni te impreze czy co)"
                 luszcz "(ja już nie chcem tótaj siedźiedź)"
+
+                play sound "audio/sfx/mik.mp3"
 
                 shinobu "Hmmm, raz, dwa, trzy, raz, dwa trzy"
                 shinobu "dobra mikrofon działa"
@@ -576,7 +579,7 @@ label bal:
                 shinobu "no okeej"
 
                 shinobu "eee to więc"
-                shinobu "Zapraszam was niezwykle serdecznie nasi szanowni goście na rozpoczęcie balu do sali baletowej, która jest na prawo od sali jadalnej, w której się zapewne znajdujecie wy spasione tłuste..."
+                shinobu "Zapraszam was niezwykle serdecznie nasi szanowni goście na rozpoczęcie balu do sali balowej, która jest na prawo od sali jadalnej, w której się zapewne znajdujecie wy spasione tłuste..."
                 
                 nikt "Shinobu!!!"
 
@@ -750,6 +753,7 @@ label bal:
                         "{b}Urban{/b}" if urban_sojusznik == 1 and urban_gadka == 0:
                             $ urban_gadka = 1
                             $ gadka += 1
+                            $ urban_spotkanie = 1
                             luszcz "To mów Urban co tam u Ciebie!?"
 
                             urban "Ahh w porządeczku!"
@@ -823,27 +827,21 @@ label bal:
                     scene bg bal3 with fade
                     show luszcz stol zorder 11
                     if eminem_sojusznik == 1:
-                        $ stol += 1
                         show eminem stol zorder 10
 
                     if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
-                        $ stol += 1
                         show kazuma stol zorder 9
 
                     if yusuke_social_link >= 1 and yusuke_social_link < 6:
-                        $ stol += 1
                         show yusuke stol zorder 8
 
                     if zyd_sojusznik == 1:
-                        $ stol += 1
                         show zyd stol zorder 7
 
                     if urban_sojusznik == 1:
-                        $ stol += 1
                         show urban stol zorder 6
 
                     if tarczownik_sojusznik == 1:
-                        $ stol += 1
                         show tarczownik stol zorder 5
 
                     $ renpy.music.set_volume(1.0, delay=0.3)
@@ -851,6 +849,8 @@ label bal:
                             
                     luszcz "(Emmmm zaczynają już oni te impreze czy co)"
                     luszcz "(ja już nie chcem tótaj siedźiedź)"
+
+                    play sound "audio/sfx/mik.mp3"
 
                     shinobu "Hmmm, raz, dwa, trzy, raz, dwa trzy"
                     shinobu "dobra mikrofon działa"
@@ -866,7 +866,7 @@ label bal:
                     shinobu "no okeej"
 
                     shinobu "eee to więc"
-                    shinobu "Zapraszam was niezwykle serdecznie nasi szanowni goście na rozpoczęcie balu do sali baletowej, która jest na prawo od sali jadalnej, w której się zapewne znajdujecie wy spasione tłuste..."
+                    shinobu "Zapraszam was niezwykle serdecznie nasi szanowni goście na rozpoczęcie balu do sali balowej, która jest na prawo od sali jadalnej, w której się zapewne znajdujecie wy spasione tłuste..."
                     
                     nikt "Shinobu!!!"
 
@@ -882,5 +882,687 @@ label bal:
                     luszcz "No cóż, czas się udać na rozpoczęcie Balu!"
 
         scene bg bal4 with fade
-        ""
+        if stol == 0:
+            show luszcz bal zorder 12 at center
+        else:
+            if stol == 1:
+                show luszcz bal zorder 12 at slightleft
 
+                if eminem_sojusznik == 1:
+                    show eminem neutral zorder 5 at slightright
+
+                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+                    show kazuma neutral zorder 5 at slightright
+
+                if yusuke_social_link >= 1 and yusuke_social_link < 6:
+                    show yusuke neutral right zorder 5 at slightright
+
+                if zyd_sojusznik == 1:
+                    show zyd neutral right zorder 5 at slightright
+
+                if urban_sojusznik == 1:
+                    show urban neutral zorder 5 at slightright
+
+                if tarczownik_sojusznik == 1:
+                    show tarczownik neutral right zorder 5 at slightright
+                
+            else:
+                show luszcz bal zorder 12 at center
+                $ l1 = 0
+
+                if eminem_sojusznik == 1:
+                    $ l1 += 1
+                    show eminem neutral zorder 5 at right
+
+                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+                    if l1 == 0:
+                        show kazuma neutral zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show kazuma neutral right zorder 5 at left
+                    $ l1 += 1
+
+                if yusuke_social_link >= 1 and yusuke_social_link < 6:
+                    if l1 == 0:
+                        show yusuke neutral right zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show yusuke neutral zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show yusuke neutral right zorder 3 at slightright  
+                    $ l1 += 1
+
+                if zyd_sojusznik == 1:
+                    if l1 == 0:
+                        show zyd neutral right zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show zyd neutral zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show zyd neutral right zorder 3 at slightright
+                            else:
+                                if l1 == 3:    
+                                    show zyd neutral zorder 3 at slightleft
+                    
+                    $ l1 += 1
+
+                if urban_sojusznik == 1:
+                    if l1 == 0:
+                        show urban neutral zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show urban neutral right zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show urban neutral zorder 3 at slightright
+                            else:
+                                if l1 == 3:    
+                                    show urban neutral right zorder 3 at slightleft   
+                    $ l1 += 1
+
+                if tarczownik_sojusznik == 1:
+                    if l1 == 0:
+                        show tarczownik neutral right zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show tarczownik neutral zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show tarczownik neutral right zorder 3 at slightright
+                            else:
+                                if l1 == 3:    
+                                    show tarczownik neutral zorder 3 at slightleft
+                    $ l1 += 1
+        
+        if stol == 0:
+            luszcz "Łooo, ale duża sala"
+            luszcz "ciekawe, czy Trump, będzie miał większą..."
+            luszcz "..."
+            luszcz "..."
+            luszcz "..."
+            luszcz "zaczną bo troche nudy"
+            luszcz "..."
+            luszcz "..."
+            luszcz "..."
+            luszcz "halooo dzisiaj?"
+
+            play sound "audio/sfx/mik.mp3"
+
+            shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+            luszcz "nareszcie!"
+
+            shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+        else:
+            if stol == 1:
+                luszcz "Łooo, ale duża sala"
+                luszcz "ciekawe, czy Trump, będzie miał większą..."
+
+                if eminem_sojusznik == 1:
+                    cid "pewnie tak choć i tak ta sala robi wrażenie"
+                    cid "Mógłbym tu się bawić w eminecje w cieniu i zapraszać jakiś ważnych ludzi na spotkania czy coś"
+
+                    luszcz "Nooo to, by było cool"
+
+                    cid "edgy!"
+
+                    luszcz "Tak dokładnie to słowo chciałem użyć!"
+                    luszcz "edgy"
+
+                    cid "..."
+                    luszcz "..."
+                    luszcz "niech zaczną bo troche nudy"
+
+                    cid "real"
+
+                    luszcz "..."
+                    luszcz "..."
+                    luszcz "..."
+                    luszcz "halooo dzisiaj?"
+
+                    play sound "audio/sfx/mik.mp3"
+
+                    shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                    luszcz "nareszcie!"
+
+                    shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+                    kazuma "Ahhhh taka sala to by pokryła moje długi i to kilkaset razy..."
+                    kazuma "A gdybym coś ukradł..."
+
+                    luszcz "Kazuma! Zachowuj się!"
+
+                    kazuma "tylko głośno myślę"
+
+                    luszcz "To pomyśl o czymś innym!"
+
+                    kazuma "..."
+                    kazuma "..."
+
+                    kazuma "Długo jeszcze!?"
+
+                    luszcz "Mnie się pytasz!? Skąd mam wiedzieć!?"
+
+                    kazuma "jezu sory"
+                    kazuma "tylko zadałem pytanie"
+
+                    kazuma "..."
+                    kazuma "..."
+                    kazuma "..."
+
+                    play sound "audio/sfx/mik.mp3"
+
+                    shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                    luszcz "nareszcie!"
+
+                    shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+                if yusuke_social_link >= 1 and yusuke_social_link < 6:
+                    yusuke "Ahhh, oby potrzebował do niej artystów!"
+                    yusuke "Od razu, bym wyjechał do Ameryki!"
+
+                    luszcz "Fuj Ameryka"
+
+                    yusuke "No jest fuj to prawda"
+
+                    yusuke "Ale posiadanie własnego dzieła w Białym Domu!?!?"
+
+                    luszcz "Nie wiem czy to warte tej ceny..."
+                    luszcz "btw to się nie wydarzy, więc cała dyskusja jest bezowocna"
+
+                    yusuke "smutne"
+
+                    luszcz "smutne, ale prawdziwe"
+
+                    yusuke "..."
+
+                    luszcz "..."
+                    luszcz "Może, by zaczeli czy coś?"
+                    
+                    yusuke "true, niech już to zaczną i pozwolą mi malować"
+
+                    luszcz "Bedziesz malował przemówienie!?"
+
+                    yusuke "No tak! Przecież to taki podniosły moment!"
+
+                    luszcz "wtf, w sensie rub co chceż"
+
+                    yusuku "Dzięki mistrzu!"
+
+                    luszcz "..."
+
+                    yusuke "..."
+
+                    luszcz "halooo dzisiaj?"
+
+                    play sound "audio/sfx/mik.mp3"
+
+                    shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                    luszcz "nareszcie!"
+
+                    shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+                if zyd_sojusznik == 1:
+                    zyd "Tyle pieniędzy, tyle pieniędzy na niego pójdzie!"
+                    zyd "Ja bym je zainwestował!"
+                    zyd "A nie wydawał na takie głupoty!"
+
+                    luszcz "Dobrze gadasz, ja też"
+
+                    zyd "Przecież jak chce robić imprezy to ma już od tego wyspę!"
+
+                    luszcz "Dokładnie tak! Mega relujesz Żydzie!"
+
+                    zyd "A po za tym, a po za tym..."
+
+                    luszcz "A po za tym?"
+
+                    zyd "a po za tym mam bombę i się zaraz wysadzę w imię państwa Izrael!"
+
+                    luszcz "Jezus maria, gdzie?"
+
+                    zyd "W dupie"
+
+                    luszcz "Oddawaj ją natychmiast!"
+
+                    zyd "Przykro mi, ale jeśli będziesz chciał mnie powstrzymać to musisz to zrobić własnoręcznie!"
+
+                    luszcz "Awhhh shit!"
+
+                    $ renpy.music.set_volume(0.0, delay=0.3)
+                    scene bg black with fade
+                    $ bomba = 2
+                    "{i}Łuszczu ściągnął spodnie Żyda i wyciągnął z jego dupy bombę, a następnie ją rozbroił i włożył do swojej{/i}"
+
+                    scene bg bal4 with fade
+                    $ renpy.music.set_volume(1.0, delay=0.3)
+                    show luszcz bal zorder 12 at slightleft
+                    show zyd neutral right zorder 5 at slightright
+
+                    luszcz "Ahhh, jak dobrze"
+
+                    zyd "No mówiłem, że dobrze!"
+
+                    luszcz "Ty już lepiej nic nie mów!"
+
+                    zyd "..."
+
+                    luszcz "..."
+
+                    play sound "audio/sfx/mik.mp3"
+
+                    shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                    luszcz "nareszcie!"
+
+                    shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+                if urban_sojusznik == 1:
+                    urban "Za starego dobrego PRL my też mieliśmy takie sale!"
+                    urban "I organizowaliśmy sobie na nich bankiety"
+                    urban "A potem wchodziła tajna policja i aresztowała tych, którzy zostali uznani za wrogów"
+                    urban "No, ale jak to mówią ”Bez ryzyka nie ma zabawy”"
+
+                    luszcz "he he..."
+                    luszcz "A znasz taką gre planszową Ryzyko?"
+
+                    urban "Nie, a co?"
+
+                    luszcz "A no bo tam właśnie też się pozbywa wrogów"
+                    luszcz "i jest ryzyko"
+                    luszcz "i trzeba byc śliskim"
+
+                    urban "crazy"
+                    urban "musimy kiedyś zagrać"
+
+                    luszcz "no"
+
+                    urban "..."
+
+                    luszcz "..."
+
+                    play sound "audio/sfx/mik.mp3"
+
+                    shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                    luszcz "nareszcie!"
+
+                    shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+                if tarczownik_sojusznik == 1:
+                    tarczownik "Nie wiem skąd mam wiedzieć"
+                    tarczownik "Tak szczerze to ten cały Trump mnie gówno obchodzi!"
+
+                    luszcz "ostro"
+                    luszcz "tak kociaki lubią najbardziej"
+
+                    tarczownik "..!?"
+
+                    luszcz "nieważne"
+
+                    tarczownik "..."
+
+                    luszcz "..."
+
+                    tarczownik "..."
+
+                    luszcz "..."
+
+                    luszcz "niech zaczną bo troche nudy"
+
+                    tarczownik "no niech zaczną"
+
+                    luszcz "..."
+                    luszcz "..."
+                    luszcz "..."
+                    luszcz "halooo dzisiaj?"
+
+                    play sound "audio/sfx/mik.mp3"
+
+                    shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                    luszcz "nareszcie!"
+
+                    shinobu "wszystko działa mistrzu, zaczynajmy!"
+            
+            else:
+                luszcz "Łooo, ale duża sala"
+
+                if eminem_sojusznik == 1:
+                    cid "..."
+
+                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+                    kazuma "..."
+
+                if yusuke_social_link >= 1 and yusuke_social_link < 6:
+                    yusuke "..."
+
+                if zyd_sojusznik == 1:
+                    zyd "..."
+
+                if urban_sojusznik == 1:
+                    urban "..."
+
+                if tarczownik_sojusznik == 1:
+                    tarczownik "..."
+                
+                luszcz "(hmmmm, powinienem wybrać z kim chce pogadać)"
+                menu:
+                    "{b}Z kim pogadać?{/b}"
+
+                    "{b}Cid{/b}" if eminem_sojusznik == 1:
+                        hide yusuke
+                        hide kazuma 
+                        hide zyd
+                        hide urban 
+                        hide tarczownik 
+                        show luszcz bal at slightleft
+                        show eminem neutral at slightright
+                        luszcz "ciekawe, czy Trump, będzie miał większą salę?"
+
+                        cid "pewnie tak choć i tak ta sala robi wrażenie"
+                        cid "Mógłbym tu się bawić w eminecje w cieniu i zapraszać jakiś ważnych ludzi na spotkania czy coś"
+
+                        luszcz "Nooo to, by było cool"
+
+                        cid "edgy!"
+
+                        luszcz "Tak dokładnie to słowo chciałem użyć!"
+                        luszcz "edgy"
+
+                        cid "..."
+                        luszcz "..."
+                        luszcz "niech zaczną bo troche nudy"
+
+                        cid "real"
+
+                        luszcz "..."
+                        luszcz "..."
+                        luszcz "..."
+                        luszcz "halooo dzisiaj?"
+
+                        play sound "audio/sfx/mik.mp3"
+
+                        shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                        luszcz "nareszcie!"
+
+                        shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+                    "{b}Kazuma{/b}" if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+                        hide yusuke
+                        hide eminem 
+                        hide zyd
+                        hide urban 
+                        hide tarczownik 
+                        show luszcz bal at slightleft
+                        show kazuma neutral at slightright
+
+                        luszcz "ciekawe, czy Trump, będzie miał większą salę?"
+
+                        kazuma "Ahhhh taka sala to by pokryła moje długi i to kilkaset razy..."
+                        kazuma "A gdybym coś ukradł..."
+
+                        luszcz "Kazuma! Zachowuj się!"
+
+                        kazuma "tylko głośno myślę"
+
+                        luszcz "To pomyśl o czymś innym!"
+
+                        kazuma "..."
+                        kazuma "..."
+
+                        kazuma "Długo jeszcze!?"
+
+                        luszcz "Mnie się pytasz!? Skąd mam wiedzieć!?"
+
+                        kazuma "jezu sory"
+                        kazuma "tylko zadałem pytanie"
+
+                        kazuma "..."
+                        kazuma "..."
+                        kazuma "..."
+
+                        play sound "audio/sfx/mik.mp3"
+
+                        shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                        luszcz "nareszcie!"
+
+                        shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+                    "{b}Yusuke{/b}" if yusuke_social_link >= 1 and yusuke_social_link < 6:
+                        hide eminem
+                        hide kazuma 
+                        hide zyd
+                        hide urban 
+                        hide tarczownik 
+                        show luszcz bal at slightleft
+                        show yusuke neutral right at slightright
+
+                        luszcz "ciekawe, czy Trump, będzie miał większą salę?"
+
+                        yusuke "Ahhh, oby potrzebował do niej artystów!"
+                        yusuke "Od razu, bym wyjechał do Ameryki!"
+
+                        luszcz "Fuj Ameryka"
+
+                        yusuke "No jest fuj to prawda"
+
+                        yusuke "Ale posiadanie własnego dzieła w Białym Domu!?!?"
+
+                        luszcz "Nie wiem czy to warte tej ceny..."
+                        luszcz "btw to się nie wydarzy, więc cała dyskusja jest bezowocna"
+
+                        yusuke "smutne"
+
+                        luszcz "smutne, ale prawdziwe"
+
+                        yusuke "..."
+
+                        luszcz "..."
+                        luszcz "Może, by zaczeli czy coś?"
+                        
+                        yusuke "true, niech już to zaczną i pozwolą mi malować"
+
+                        luszcz "Bedziesz malował przemówienie!?"
+
+                        yusuke "No tak! Przecież to taki podniosły moment!"
+
+                        luszcz "wtf, w sensie rub co chceż"
+
+                        yusuku "Dzięki mistrzu!"
+
+                        luszcz "..."
+
+                        yusuke "..."
+
+                        luszcz "halooo dzisiaj?"
+
+                        play sound "audio/sfx/mik.mp3"
+
+                        shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                        luszcz "nareszcie!"
+
+                        shinobu "wszystko działa mistrzu, zaczynajmy!"
+                    
+                    "{b}Żyd{/b}" if zyd_sojusznik == 1:
+                        hide eminem
+                        hide kazuma 
+                        hide zyd
+                        hide urban 
+                        hide tarczownik 
+                        show luszcz bal at slightleft
+                        show zyd neutral right at slightright
+
+                        luszcz "ciekawe, czy Trump, będzie miał większą salę?"
+
+                        zyd "Tyle pieniędzy, tyle pieniędzy na niego pójdzie!"
+                        zyd "Ja bym je zainwestował!"
+                        zyd "A nie wydawał na takie głupoty!"
+
+                        luszcz "Dobrze gadasz, ja też"
+
+                        zyd "Przecież jak chce robić imprezy to ma już od tego wyspę!"
+
+                        luszcz "Dokładnie tak! Mega relujesz Żydzie!"
+
+                        zyd "A po za tym, a po za tym..."
+
+                        luszcz "A po za tym?"
+
+                        zyd "a po za tym mam bombę i się zaraz wysadzę w imię państwa Izrael!"
+
+                        luszcz "Jezus maria, gdzie?"
+
+                        zyd "W dupie"
+
+                        luszcz "Oddawaj ją natychmiast!"
+
+                        zyd "Przykro mi, ale jeśli będziesz chciał mnie powstrzymać to musisz to zrobić własnoręcznie!"
+
+                        luszcz "Awhhh shit!"
+
+                        $ renpy.music.set_volume(0.0, delay=0.3)
+                        scene bg black with fade
+                        $ bomba = 2
+                        "{i}Łuszczu ściągnął spodnie Żyda i wyciągnął z jego dupy bombę, a następnie ją rozbroił i włożył do swojej{/i}"
+
+                        scene bg bal4 with fade
+                        $ renpy.music.set_volume(1.0, delay=0.3)
+                        show luszcz bal zorder 12 at slightleft
+                        show zyd neutral right zorder 5 at slightright
+
+                        luszcz "Ahhh, jak dobrze"
+
+                        zyd "No mówiłem, że dobrze!"
+
+                        luszcz "Ty już lepiej nic nie mów!"
+
+                        zyd "..."
+
+                        luszcz "..."
+
+                        play sound "audio/sfx/mik.mp3"
+
+                        shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                        luszcz "nareszcie!"
+
+                        shinobu "wszystko działa mistrzu, zaczynajmy!"
+                    
+                    "{b}Urban{/b}" if urban_sojusznik == 1:
+                        hide eminem
+                        hide kazuma 
+                        hide zyd
+                        hide urban 
+                        hide tarczownik 
+                        show luszcz bal at slightleft
+                        show urban neutral at slightright
+
+                        luszcz "ciekawe, czy Trump, będzie miał większą salę?"
+
+                        urban "Za starego dobrego PRL my też mieliśmy takie sale!"
+                        urban "I organizowaliśmy sobie na nich bankiety"
+                        urban "A potem wchodziła tajna policja i aresztowała tych, którzy zostali uznani za wrogów"
+                        urban "No, ale jak to mówią ”Bez ryzyka nie ma zabawy”"
+
+                        luszcz "he he..."
+                        luszcz "A znasz taką gre planszową Ryzyko?"
+
+                        urban "Nie, a co?"
+
+                        luszcz "A no bo tam właśnie też się pozbywa wrogów"
+                        luszcz "i jest ryzyko"
+                        luszcz "i trzeba byc śliskim"
+
+                        urban "crazy"
+                        urban "musimy kiedyś zagrać"
+
+                        luszcz "no"
+
+                        urban "..."
+
+                        luszcz "..."
+
+                        if urban_spotkanie == 0:
+                            $ urban_spotkanie = 1
+                            urban "Ej mam do Ciebie sprawę."
+
+                            luszcz "Jaką?"
+
+                            urban "nie tutaj"
+                            urban "Przyjdź do kibla po 24"
+
+                            luszcz "spróbuję"
+
+                        play sound "audio/sfx/mik.mp3"
+
+                        shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                        luszcz "nareszcie!"
+
+                        shinobu "wszystko działa mistrzu, zaczynajmy!"
+                    
+                    "{b}Naofumi{/b}" if tarczownik_sojusznik == 1:
+                        hide eminem
+                        hide kazuma 
+                        hide zyd
+                        hide urban 
+                        hide tarczownik 
+                        show luszcz bal at slightleft
+                        show tarczownik neutral at slightright
+
+                        luszcz "ciekawe, czy Trump, będzie miał większą salę?"
+
+                        tarczownik "Nie wiem skąd mam wiedzieć"
+                        tarczownik "Tak szczerze to ten cały Trump mnie gówno obchodzi!"
+
+                        luszcz "ostro"
+                        luszcz "tak kociaki lubią najbardziej"
+
+                        tarczownik "..!?"
+
+                        luszcz "nieważne"
+
+                        tarczownik "..."
+
+                        luszcz "..."
+
+                        tarczownik "..."
+
+                        luszcz "..."
+
+                        luszcz "niech zaczną bo troche nudy"
+
+                        tarczownik "no niech zaczną"
+
+                        luszcz "..."
+                        luszcz "..."
+                        luszcz "..."
+                        luszcz "halooo dzisiaj?"
+
+                        play sound "audio/sfx/mik.mp3"
+
+                        shinobu "raz, dwa, trzy, raz, dwa, trzy!"
+
+                        luszcz "nareszcie!"
+
+                        shinobu "wszystko działa mistrzu, zaczynajmy!"
+
+        scene bg bal6 with fade
+        luszcz "jebać ich"
+
+        
