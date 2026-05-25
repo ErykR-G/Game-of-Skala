@@ -1971,5 +1971,22 @@ label bal:
                                         show luszcz bal at center
 
                                         luszcz "WTF? mega crazy"
+                                    
+                                    luszcz "..."
+
+                                    menu:
+                                        "{b}Co, by tu zrobić?{/b}"
+
+                                        "{b}Spotkaj się z Ambasadorem{/b}":
+                                            ""
+                                        
+                                        "{b}Spotkaj się z Gotką{/b}":
+                                            ""
+                                        
+                                        "{b}Spotkaj się z Naofumim{/b}":
+                                            ""
+                                        
+                                        "{b}Wróć do stolika{/b}":
+                                            ""
 
                                     

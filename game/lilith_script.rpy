@@ -3411,12 +3411,10 @@ label lilith:
                         jump lilith3
 
     label lilith4:
-        hide screen global_eq_key
         hide screen clock
         window hide
         $ renpy.pause(1.5)
         scene bg lilith3 with fade
-        show screen global_eq_key
         show screen clock
         play music "audio/music/lilith1.mp3"
         n "{i}Jesteś na łóżku w twoim pokoju. Na tobie jest Lilith.{/i}"
@@ -3681,12 +3679,10 @@ label lilith:
                         jump spanko_bed
 
     label lilith3:
-        hide screen global_eq_key
         hide screen clock
         window hide
         $ renpy.pause(1.5)
         scene bg lilith6 with fade
-        show screen global_eq_key
         show screen clock
         play music "audio/music/lilith7.mp3"
         n "{i}Jesteś na łóżku w twoim pokoju. Na tobie jest Lilith.{/i}"
@@ -4527,12 +4523,10 @@ label lilith:
                 jump lilith5
 
     label lilith6:
-        hide screen global_eq_key
         hide screen clock
         window hide
         $ renpy.pause(1.5)
         scene bg lilith3 with fade
-        show screen global_eq_key
         show screen clock
         play music "audio/music/lilith1.mp3"
         n "{i}Jesteś na łóżku w twoim pokoju. Na tobie jest Lilith.{/i}"
@@ -4802,12 +4796,10 @@ label lilith:
                         jump spanko_bed
 
     label lilith5:
-        hide screen global_eq_key
         hide screen clock
         window hide
         $ renpy.pause(1.5)
         scene bg lilith6 with fade
-        show screen global_eq_key
         show screen clock
         play music "audio/music/lilith7.mp3"
         n "{i}Jesteś na łóżku w twoim pokoju. Na tobie jest Lilith.{/i}"
@@ -5561,12 +5553,10 @@ label lilith:
                 jump spanko_bed
 
     label lilith7:
-        hide screen global_eq_key
         hide screen clock
         window hide
         $ renpy.pause(1.5)
         scene bg lilith3 with fade
-        show screen global_eq_key
         show screen clock
         play music "audio/music/lilith1.mp3"
         n "{i}Jesteś na łóżku w twoim pokoju. Na tobie jest Lilith.{/i}"

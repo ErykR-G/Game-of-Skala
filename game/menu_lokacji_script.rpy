@@ -3907,7 +3907,6 @@ label menu_lokacji:
                                         "{b}Nie{/b}":         
                                             jump dev4
 
-
                             "{b}Kazuma{/b}":
                                 if kazuma_sojusznik == 0:
                                     $ kazuma_sojusznik = 1
@@ -3927,7 +3926,6 @@ label menu_lokacji:
                                         "{b}Nie{/b}":         
                                             jump dev4
 
-
                             "{b}Naofumi{/b}":
                                 if tarczownik_sojusznik == 0:
                                     $ tarczownik_sojusznik = 1
@@ -3946,8 +3944,7 @@ label menu_lokacji:
                                         
                                         "{b}Nie{/b}":         
                                             jump dev4
-
-                            
+                 
                             "{b}Powrót{/b}":
                                 jump dev2
 
@@ -4375,11 +4372,378 @@ label menu_lokacji:
                                         "{b}Nie{/b}":         
                                             jump dev5
                             
+                            "{b}Powrót{/b}":
+                                jump dev2
+
                 "{b}Zbroje{/b}":
                     jump dev2
 
                 "{b}Itemy Fabularne{/b}":
-                    jump dev2
+                    label dev6:
+                        menu:
+                            "{b}Wybierz item:{/b}"
+
+                            "{b}Piernik{/b}":
+                                if piernik == 0:
+                                    $ piernik = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Piernik został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Piernik z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ piernik = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Piernik został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev6
+
+                            "{b}Łopatka{/b}":
+                                if lopatka == 0:
+                                    $ lopatka = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Łopatka została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Łopatke z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ lopatka = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Łopatka została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev6
+                            
+                            "{b}Krówka{/b}":
+                                if krowka == 0:
+                                    $ krowka = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Krówka została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Krówke z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ krowka = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Krówka została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev6
+                            
+                            "{b}Kremówka{/b}":
+                                if kremowka == 0:
+                                    $ kremowka = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Kremówka została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Kremówke z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ kremowka = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Kremówka została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev6
+                            
+                            "{b}Biblia{/b}":
+                                if biblia == 0:
+                                    $ biblia = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Biblia została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Biblie z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ biblia = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Biblia została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev6
+                            
+                            "{b}Ailbib{/b}":
+                                if ailbib == 0:
+                                    $ ailbib = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Ailbib został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Ailbib z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ ailbib = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Ailbib został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev6
+
+                            "{i}Strona 1/3 --->{/i}":
+                                jump dev7
+
+                            "{b}Powrót{/b}":
+                                jump dev2
+                    
+                    label dev7:
+                        menu:
+                            "{b}Wybierz item:{/b}"
+
+                            "{b}Wazon Węży{/b}":
+                                if wazon_wezy == 0:
+                                    $ wazon_wezy = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Wazon Węży został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Wazon Węży z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ wazon_wezy = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Wazon Węży został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev7
+
+                            "{b}Głowa Nemeczka{/b}":
+                                if glowa == 0:
+                                    $ glowa = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Głowa Nemeczka została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Głowe Nemeczka z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ glowa = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Głowa Nemeczka została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev7
+                            
+                            "{b}Kula Toxic Pea{/b}":
+                                if zielona_kula == 0:
+                                    $ zielona_kula = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Kula Toxic Pea została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Kule Toxic Pea z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ zielona_kula = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Kula Toxic Pea została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev7
+                            
+                            "{b}Rozmówki polsko-chińskie{/b}":
+                                if slownik == 0:
+                                    $ slownik = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Rozmówki polsko-chińskie zostały dodane do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Rozmówki polsko-chińskie z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ slownik = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Rozmówki polsko-chińskie zostały usunięte z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev7
+                            
+                            "{b}Kartka z Życzeniami{/b}":
+                                if kartka == 0:
+                                    $ kartka = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Kartka z Życzeniami została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Kartke z Życzeniami z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ kartka = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Kartka z Życzeniami została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev7
+
+                            "{i}<--- Strona 2/3{/i}":
+                                jump dev6
+
+                            "{i}Strona 2/3 --->{/i}":
+                                jump dev8
+                    label dev8:
+                        menu:
+                            "{b}Wybierz item:{/b}"
+
+                            "{b}Dinozaur{/b}":
+                                if dinozaur == 0:
+                                    $ dinozaur = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Dinozaur został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Dinozaura z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ dinozaur = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Dinozaur został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev8
+
+                            "{b}Ciało Eminema{/b}":
+                                if cialo == 0:
+                                    $ cialo = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Ciało Eminema zostało dodane do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Ciało Eminema z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ cialo = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Ciało Eminema zostało usunięte z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev8
+                            
+                            "{b}Tesla Cybertruck{/b}":
+                                if cybertruck == 0:
+                                    $ cybertruck = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Tesla Cybertruck została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Tesle Cybertruck z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ cybertruck = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Tesla Cybertruck została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev8
+                            
+                            "{b}Leki na Schizofrenię{/b}":
+                                if leki == 0:
+                                    $ leki = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Leki na Schizofrenię zostały dodane do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Leki na Schizofrenię z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ leki = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Leki na Schizofrenię zostały usunięte z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev8
+                            
+                            "{b}Klucz{/b}":
+                                if klucz == 0:
+                                    $ klucz = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Klucz został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Klucz z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ klucz = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Klucz został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev8
+                            
+                            "{b}Folder z Memami{/b}":
+                                if folder_memow == 0:
+                                    $ folder_memow = 1
+                                    $ ile_item_fabularne += 1
+
+                                    "{i}*Folder z Memami został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Folder z Memami z ekwipunku?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ folder_memow = 0
+                                            $ ile_item_fabularne -= 1
+                                            "{i}*Folder z Memami został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev8
+
+                            "{i}<--- Strona 3/3{/i}":
+                                jump dev7
 
                 "{b}Itemy do Walki{/b}":
                     jump dev2
