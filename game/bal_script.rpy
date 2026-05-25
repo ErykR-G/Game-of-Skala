@@ -10,6 +10,7 @@ default l1 = 0
 
 default bomba = 1
 default urban_spotkanie = 0
+default alko_lvl = 0
 
 label bal:
     label bal1:
@@ -1562,7 +1563,295 @@ label bal:
 
                         shinobu "wszystko działa mistrzu, zaczynajmy!"
 
-        scene bg bal6 with fade
-        luszcz "jebać ich"
+        scene bg bal5 with fade
+        show shinobu neutral right at center
+        shinobu "emmhmm proszę wszystkich o łaskawe zamknięcie mordy!"
 
+        nikt "!"
+
+        shinobu "no o uciszenie się, jezu to samo"
+
+        stop music
+
+        shinobu "no"
+
+        show eryk neutral at right 
+
+        eryk "zaczynajmny w takim razie"
+
+        show eryk neutral at center
+        show shinobu neutral right at left 
+
+        eryk "Szanowni Państwo!"
+        eryk "Witam was serdecznie na Balu Ambosadora Japonii w Polsce!"
+
+        play sound "audio/sfx/klask.mp3"
+
+        all "brawo, brawo, brawo"
+
+        eryk "Zorganizowanie tego Balu oraz zaproszenie na niego mieszkańców tak znakomitego miasta jak Skała stanowi dla mnie ogromny zaszczyt!"
+
+        play sound "audio/sfx/klask.mp3"
+
+        all "brawo, brawo, brawo"
+
+        eryk "Skała to świetny symbol przemiany jaką po 1989 roku przeszła Polska!"
+
+        play sound "audio/sfx/klask.mp3"
+
+        all "brawo, brawo, brawo"
+
+        eryk "Kiedyś, kurwa tu nie było nic, zero, a teraz? Teraz jest tu kasyno!"
+
+        play sound "audio/sfx/klask.mp3"
+
+        all "brawo, brawo, brawo"
+
+        luszcz "(Jezus maria, czuję się jak w Korei)"
+
+        eryk "Ale wracając do tematu"
+        eryk "Dziś na tym Balu, w tym symbolicznym miejscu jakim jest Skała, Polska i Japonia podpiszę nową umowę gospodarczą, która wzmocni gospodarki obydwu naszych wspaniałych krajów!"
+
+        play sound "audio/sfx/klask.mp3"
+
+        all "brawo, brawo, brawo"
+
+        eryk "Dlatego teraz poprosiłbym o głos premiera Polski, Donalda Tuska!"
+
+        show tusk neutral at right
+        tusk "Dziękuję Panie Ambasadorze"
+
+        show tusk neutral:
+            xalign 0.6
+            yalign 1.0
+        show eryk neutral right zorder 1 at left
+        show shinobu neutral right zorder 2:
+            xalign 0.1
+            yalign 1.0
+
+        tusk "Guten Tag wszyscy!"
+        tusk "Zebraliśmy się tutaj, aby rozpocząć całkowicie nowy rozdział w histori Polski!"
+
+        play sound "audio/sfx/cisza.mp3"
+
+        all "..."
+
+        tusk "Dzięki wynegocjowanemu przezemnie dealu z Japonią, Polska zyska, dużo zyska i nic nie straci!"
+
+        play sound "audio/sfx/cisza.mp3"
+
+        all "..."
+
+        tusk "Dlatego, prosze głosujcie na KO w kolejnych wyborach UwU"
+
+        play sound "audio/sfx/cisza.mp3"
+
+        all "..."
+
+        tusk "Dziękuję to wszystko"
+
+        hide tusk
+        show eryk neutral right zorder 1 at center
+        show shinobu neutral right zorder 2 at left
+
+        eryk "Dziękuję bardzo za te ciepłe słowa."
+        eryk "A teraz poprosiłbym prezydenta Karola Nawrockiego o zabranie głosu"
+
+        show nawrocki neutral at right
+        nawrocki "Dziękuję Panie Ambasadorze"
+
+        show nawrocki neutral:
+            xalign 0.6
+            yalign 1.0
+        show eryk neutral right zorder 1 at left
+        show shinobu neutral right zorder 2:
+            xalign 0.1
+            yalign 1.0
+
+        nawrocki "Drodzy państwo!"
+        nawrocki "Tusk niszczy Polskę i wszyscy to wiemy!"
+        nawrocki "I tak również było w przypadku tej umowy gospodarczej z Japonią!"
+
+        play sound "audio/sfx/cisza.mp3"
+
+        all "..."
+
+        nawrocki "Tusk tak naprawdę początkowo chciał zawrzeć umowę z Niemcami!"
+
+        play sound "audio/sfx/cisza.mp3"
+
+        all "..."
+
+        nawrocki "Jedynie me dzielne weto i sprawne negocjacje z Japonią pozwoliły, aby Polska zamiast ssać niemieckiego kutasa mogła ssać japońskiego!"
+
+        play sound "audio/sfx/cisza.mp3"
+
+        all "..."
+
+        nawrocki "Dziękuję to wszystko"
+
+        hide nawrocki
+        show eryk neutral right zorder 1 at center
+        show shinobu neutral right zorder 2 at left
+
+        eryk "Dziękuję bardzo panie Prezydeńcie"
+
+        eryk "Drodzy goście, wznieśmy teraz toast za nasze dwa bratnie narody i rozpocznijmy Bal!"
+
+        nikt "Dla pana szampan?"
+        
+        luszcz "kurcze eeeee"
+
+        menu:
+            "{b}Tak{/b}":
+                $ alko_lvl += 1
+                luszcz "Tak, poproszę"
+
+                nikt "proszę"
+
+                luszcz "dziękuję"
+
+                eryk "Na zdrowie!"
+
+                all "Na zdrowie!"
+
+                play sound "audio/sfx/toast.mp3"
+
+                "{i}Łuszczu wypił szampan{/i}"
+
+                eryk "Ahhh, a teraz niech rozpocznie się bal!"
+
+            
+            "{b}Tak, ale bezalkoholowy{/b}":
+                luszcz "Tak, ale bezalkoholowy"
+
+                nikt "już podaję"
+                nikt "prosze"
+
+                luszcz "dziękuję"
+
+                eryk "Na zdrowie!"
+
+                all "Na zdrowie!"
+
+                play sound "audio/sfx/toast.mp3"
+
+                "{i}Łuszczu wypił swój bezalkoholowy szampan{/i}"
+
+                eryk "Ahhh, a teraz niech rozpocznie się bal!"
+
+            "{b}Nie{/b}":
+                luszcz "Nie dziękuję"
+
+                eryk "Na zdrowie!"
+
+                all "Na zdrowie!"
+
+                play sound "audio/sfx/toast.mp3"
+
+                "{i}Łuszczu przygląda się jak inni piją szampana{/i}"
+
+                eryk "Ahhh, a teraz niech rozpocznie się bal!"
+        
+        scene bg bal4 with fade
+        play music "audio/music/polonez.mp3"
+        if stol == 0:
+            show luszcz bal zorder 12 at center
+        else:
+            if stol == 1:
+                show luszcz bal zorder 12 at slightleft
+
+                if eminem_sojusznik == 1:
+                    show eminem neutral zorder 5 at slightright
+
+                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+                    show kazuma neutral zorder 5 at slightright
+
+                if yusuke_social_link >= 1 and yusuke_social_link < 6:
+                    show yusuke neutral right zorder 5 at slightright
+
+                if zyd_sojusznik == 1:
+                    show zyd neutral right zorder 5 at slightright
+
+                if urban_sojusznik == 1:
+                    show urban neutral zorder 5 at slightright
+
+                if tarczownik_sojusznik == 1:
+                    show tarczownik neutral right zorder 5 at slightright
+                
+            else:
+                show luszcz bal zorder 12 at center
+                $ l1 = 0
+
+                if eminem_sojusznik == 1:
+                    $ l1 += 1
+                    show eminem neutral zorder 5 at right
+
+                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+                    if l1 == 0:
+                        show kazuma neutral zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show kazuma neutral right zorder 5 at left
+                    $ l1 += 1
+
+                if yusuke_social_link >= 1 and yusuke_social_link < 6:
+                    if l1 == 0:
+                        show yusuke neutral right zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show yusuke neutral zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show yusuke neutral right zorder 3 at slightright  
+                    $ l1 += 1
+
+                if zyd_sojusznik == 1:
+                    if l1 == 0:
+                        show zyd neutral right zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show zyd neutral zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show zyd neutral right zorder 3 at slightright
+                            else:
+                                if l1 == 3:    
+                                    show zyd neutral zorder 3 at slightleft
+                    
+                    $ l1 += 1
+
+                if urban_sojusznik == 1:
+                    if l1 == 0:
+                        show urban neutral zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show urban neutral right zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show urban neutral zorder 3 at slightright
+                            else:
+                                if l1 == 3:    
+                                    show urban neutral right zorder 3 at slightleft   
+                    $ l1 += 1
+
+                if tarczownik_sojusznik == 1:
+                    if l1 == 0:
+                        show tarczownik neutral right zorder 5 at right
+                    else:
+                        if l1 == 1:    
+                            show tarczownik neutral zorder 5 at left
+                        
+                        else:
+                            if l1 == 2:    
+                                show tarczownik neutral right zorder 3 at slightright
+                            else:
+                                if l1 == 3:    
+                                    show tarczownik neutral zorder 3 at slightleft
+                    $ l1 += 1
+
+        "{i}Muzyka rozpoczeła grać, a ludzie zaczeli dopierać się w pary do pierwszego tańca{/i}"
         

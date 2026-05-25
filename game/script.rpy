@@ -165,6 +165,7 @@ label postacie:
     define shinobu = Character("Shinobu", color="#f7d954")
     image shinobu neutral right = Transform("shinobu neutral", xzoom=-1) 
 
+    define eryk = Character("Eryk", color="#7e0a0a")
 
     define kibol1 = Character("Kibol 1", color="#ffffff")
     define kibol2 = Character("Kibol 2", color="#ffffff")
