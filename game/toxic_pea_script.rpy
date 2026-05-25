@@ -543,7 +543,7 @@ label toxic_pea:
             n "{i}Wyjątkowa jest woda mineralna, której Łuszczu nagle zapragnął.{/i}"
             n "{i}Sponsorowane przez Muszynianka.{/i}"
 
-            $ toxic_pea_social_link = 4
+            $ toxic_pea_social_link = 5
             $ toxic_pea_wybory = 1
             $ toxic_limit = 1
 
@@ -621,7 +621,7 @@ label toxic_pea:
 
         luszcz "Jest szansa rze będę tęsknić za tym smakiem."
 
-        $ toxic_pea_social_link = 5
+        $ toxic_pea_social_link = 6
         $ toxic_pea_wybory = 2
         $ toxic_limit = 1
 

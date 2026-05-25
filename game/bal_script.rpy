@@ -1855,4 +1855,74 @@ label bal:
                     $ l1 += 1
 
         "{i}Muzyka rozpoczeła grać, a ludzie zaczeli dopierać się w pary do pierwszego tańca{/i}"
-        
+
+        if lilith_social_link == 2 and toxic_pea_social_link >= 2 and toxic_pea_social_link < 6 and gotka_szpont == 1:
+            ""
+        else:
+            if lilith_social_link == 2 and toxic_pea_social_link >= 2 and toxic_pea_social_link < 6:
+                ""
+            else:
+                if lilith_social_link == 2 and gotka_szpont == 1:
+                    ""
+                else:
+                    if toxic_pea_social_link >= 2 and toxic_pea_social_link < 6 and gotka_szpont == 1:
+                        ""
+                    else:
+                        if lilith_social_link == 2:
+                            ""
+                        else:
+                            if toxic_pea_social_link >= 2 and toxic_pea_social_link < 6:
+                                ""
+                            else:
+                                if gotka_szpont == 1:
+                                    ""
+                                else:
+                                    luszcz "troszke siara, nie ma z kim tańczyć :("
+                                    luszcz "Emmm to ja chyba wrócę do stołu..."
+
+                                    $ timer += 15
+
+                                    shinobu "Stój gdzie stoisz patałachu!"
+
+                                    hide eminem
+                                    hide kazuma 
+                                    hide zyd
+                                    hide urban 
+                                    hide tarczownik 
+                                    show luszcz bal at slightleft
+                                    show shinobu neutral right at slighright
+
+                                    luszcz "O pani Loli."
+
+                                    shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                                    luszcz "shinobu"
+
+                                    shinobu "bardzo ładnie"
+
+                                    luszcz "..."
+
+                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                                    luszcz "emmm do mnie?"
+
+                                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z takim śmieciem jak ty"
+
+                                    luszcz "niemiłe"
+
+                                    shinobu "niemiłe, ale prawdziwe"
+
+                                    luszcz "..."
+                                    luszcz "zobaczę może przyjdę"
+
+                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                    shinobu "lepiej żebyś przyszedł!"
+
+                                    hide shinobu
+                                    show luszcz bal at center
+
+                                    if gotka_social_link >= 1 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                                        gotka "Ej Łuszczu!"
+
+                                        show luszcz bal at slightleft
+                                        show shinobu neutral right at slighright

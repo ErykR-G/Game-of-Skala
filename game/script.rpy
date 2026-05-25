@@ -1490,7 +1490,6 @@ label start:
 
                         $ ile_item += 1
                         $ woda += 1
-                        hide screen global_eq_key
                         show screen global_eq_key
 
                         cid "Włożyłem ją do twojego ekwipunku"
@@ -1516,7 +1515,6 @@ label start:
 
             $ ile_item += 1
             $ woda += 1
-            hide screen global_eq_key
             show screen global_eq_key
 
             cid "Włożyłem ją do twojego ekwipunku"

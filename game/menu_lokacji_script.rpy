@@ -3833,7 +3833,7 @@ label menu_lokacji:
 
             luszcz "dobrze, dobrze"
 
-            eryk "To jak chcesz ich użyć?"
+            eryk "To co chcesz zmienić?"
 
         else:
             scene bg devroom2
@@ -3842,13 +3842,13 @@ label menu_lokacji:
         
         label dev2:
             menu:
-                "{b}Zmiany w świecie{/b}":
+                "{b}Ogólne{/b}":
                     jump dev2
 
                 "{b}Towarzysze{/b}":
                     label dev4:
                         menu:
-                            "{b}Kogo chcesz dostać do drużyny{/b}"
+                            "{b}Wybierz członka:{/b}"
 
                             "{b}Shadow{/b}":
                                 if eminem_sojusznik == 0:
@@ -3857,8 +3857,17 @@ label menu_lokacji:
                                     "{i}*Shadow dołączył do drużyny*{/i}"
                                     jump dev2
                                 else:
-                                    "{i}Już masz tą postać w drużynie{/i}"
-                                    jump dev4
+                                    menu:
+                                        "{b}Czy chcesz usunąć Shadowa z dużyny?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ eminem_sojusznik = 0
+                                            $ liczba_sojusznikow -= 1
+                                            "{i}*Shadow opuścił drużyne*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev4
 
                             "{b}Jerzy Urban{/b}":
                                 if urban_sojusznik == 0:
@@ -3867,8 +3876,17 @@ label menu_lokacji:
                                     "{i}*Jerzy Urban dołączył do drużyny*{/i}"
                                     jump dev2
                                 else:
-                                    "{i}Już masz tą postać w drużynie{/i}"
-                                    jump dev4
+                                    menu:
+                                        "{b}Czy chcesz usunąć Jerzego Urbana z dużyny?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ urban_sojusznik = 0
+                                            $ liczba_sojusznikow -= 1
+                                            "{i}*Jerzy Urban opuścił drużyne*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev4
 
                             "{b}Żyd{/b}":
                                 if zyd_sojusznik == 0:
@@ -3877,8 +3895,18 @@ label menu_lokacji:
                                     "{i}*Żyd dołączył do drużyny*{/i}"
                                     jump dev2
                                 else:
-                                    "{i}Już masz tą postać w drużynie{/i}"
-                                    jump dev4
+                                    menu:
+                                        "{b}Czy chcesz usunąć Żyda z dużyny?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ zyd_sojusznik = 0
+                                            $ liczba_sojusznikow -= 1
+                                            "{i}*Żyd opuścił drużyne*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev4
+
 
                             "{b}Kazuma{/b}":
                                 if kazuma_sojusznik == 0:
@@ -3887,8 +3915,18 @@ label menu_lokacji:
                                     "{i}*Kazuma dołączył do drużyny*{/i}"
                                     jump dev2
                                 else:
-                                    "{i}Już masz tą postać w drużynie{/i}"
-                                    jump dev4
+                                    menu:
+                                        "{b}Czy chcesz usunąć Kazume z dużyny?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ kazuma_sojusznik = 0
+                                            $ liczba_sojusznikow -= 1
+                                            "{i}*Kazuma opuścił drużyne*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev4
+
 
                             "{b}Naofumi{/b}":
                                 if tarczownik_sojusznik == 0:
@@ -3897,15 +3935,446 @@ label menu_lokacji:
                                     "{i}*Naofumi dołączył do drużyny*{/i}"
                                     jump dev2
                                 else:
-                                    "{i}Już masz tą postać w drużynie{/i}"
-                                    jump dev4
+                                    menu:
+                                        "{b}Czy chcesz usunąć Naofumiego z dużyny?{/b}"
+
+                                        "{b}Tak{/b}":
+                                            $ tarczownik_sojusznik = 0
+                                            $ liczba_sojusznikow -= 1
+                                            "{i}*Naofumi opuścił drużyne*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev4
+
                             
                             "{b}Powrót{/b}":
                                 jump dev2
 
                 "{b}Bronie{/b}":
-                    jump dev2
+                    label dev5:
+                        menu:
+                            "{b}Wybierz broń:{/b}"
 
+                            "{b}Przepychaczka (ATK:2-4){/b}":
+                                $ chinczyk_przepychaczka -= 1
+                                if przepychaczka_liczba == 0:
+                                    $ przepychaczka_liczba += 1
+                                    if luszcz_przepychaczka == 0 and urban_przepychaczka == 0 and zyd_przepychaczka == 0 and kazuma_przepychaczka == 0 and tarczownik_przepychaczka == 0:
+                                        $ luszcz_przepychaczka = 1
+                                        $ urban_przepychaczka = 1
+                                        $ zyd_przepychaczka = 1
+                                        $ kazuma_przepychaczka = 1
+                                        $ tarczownik_przepychaczka = 1
+                                        $ eminem_przepychaczka = 1
+                                    "{i}*Przepychaczka została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Co chcesz zrobić?{/b}"
+
+                                        "{b}Dodaj przepychaczkę{/b}" if chinczyk_przepychaczka > 0:
+                                            $ chinczyk_przepychaczka -= 1
+                                            $ przepychaczka_liczba += 1
+                                            "{i}*Przepychaczka została dodana do ekwipunku*{/i}"
+                                            jump dev2
+
+                                        "{b}Usuń przepychaczki{/b}":
+                                            if luszcz_przepychaczka == 2:
+                                                $ luszcz_min_attack -= 2
+                                                $ luszcz_max_attack -= 2
+                                                $ luszcz_przepychaczka = 1
+                                                $ przepychaczka_liczba += 1
+                                                $ gitara = 2
+                                                $ luszcz_min_attack += 1
+                                                $ luszcz_max_attack += 2
+
+                                            if stop == 3:
+                                                $ urban_min_attack -= 2
+                                                $ urban_max_attack -= 2
+                                                $ urban_przepychaczka = 1
+                                                $ przepychaczka_liczba += 1
+                                                $ fuck = 3
+                                                $ urban_min_attack += 0
+                                                $ urban_max_attack += 2
+
+                                            if stop == 4:
+                                                $ zyd_min_attack -= 2
+                                                $ zyd_max_attack -= 2
+                                                $ zyd_przepychaczka = 1
+                                                $ przepychaczka_liczba += 1
+                                                $ chanuka = 4
+                                                $ zyd_min_attack += 1
+                                                $ zyd_max_attack += 3
+
+                                            if stop == 5:
+                                                $ kazuma_min_attack -= 2
+                                                $ kazuma_max_attack -= 2
+                                                $ kazuma_przepychaczka = 1
+                                                $ przepychaczka_liczba += 1
+                                                $ chunchunmaru = 5
+                                                $ kazuma_min_attack += 0
+                                                $ kazuma_max_attack += 6
+                                            
+                                            if stop == 6:
+                                                $ tarczownik_min_attack -= 2
+                                                $ tarczownik_max_attack -= 2
+                                                $ tarczownik_przepychaczka = 1
+                                                $ przepychaczka_liczba += 1
+                                                $ legendary_shield = 6
+                                                $ tarczownik_min_attack += 1
+                                                $ tarczownik_max_attack += 3
+
+                                            $ chinczyk_przepychaczka = 6
+                                            $ przepychaczka_liczba = 0
+                                            "{i}*Znak drogowy został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Powrót{/b}":         
+                                            jump dev5
+                            
+                            "{b}Znak Drogowy (ATK:1-6){/b}":
+                                if stop == 0:
+                                    $ stop = 1
+                                    "{i}*Znak drogowy został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Znak Drogowy z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if stop == 2:
+                                                $ luszcz_min_attack -= 1
+                                                $ luszcz_max_attack -= 4
+                                                $ stop = 1
+                                                $ gitara = 2
+                                                $ luszcz_min_attack += 1
+                                                $ luszcz_max_attack += 2
+
+                                            if stop == 3:
+                                                $ urban_min_attack -= 1
+                                                $ urban_max_attack -= 4
+                                                $ stop = 1
+                                                $ fuck = 3
+                                                $ urban_min_attack += 0
+                                                $ urban_max_attack += 2
+
+                                            if stop == 4:
+                                                $ zyd_min_attack -= 1
+                                                $ zyd_max_attack -= 4
+                                                $ stop = 1
+                                                $ chanuka = 4
+                                                $ zyd_min_attack += 1
+                                                $ zyd_max_attack += 3
+
+                                            if stop == 5:
+                                                $ kazuma_min_attack -= 1
+                                                $ kazuma_max_attack -= 4
+                                                $ stop = 1
+                                                $ chunchunmaru = 5
+                                                $ kazuma_min_attack += 0
+                                                $ kazuma_max_attack += 6
+                                            
+                                            if stop == 6:
+                                                $ tarczownik_min_attack -= 1
+                                                $ tarczownik_max_attack -= 4
+                                                $ stop = 1
+                                                $ legendary_shield = 6
+                                                $ tarczownik_min_attack += 1
+                                                $ tarczownik_max_attack += 3
+
+                                            $ stop = 0
+                                            "{i}*Znak drogowy został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev5
+                            
+                            "{b}Miecz Świetlny (ATK:3-4){/b}":
+                                if miecz_swietlny == 0:
+                                    $ miecz_swietlny = 1
+                                    "{i}*Miecz Świetlny został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Miecz Świetlny z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if miecz_swietlny == 2:
+                                                $ luszcz_min_attack -= 3
+                                                $ luszcz_max_attack -= 2
+                                                $ miecz_swietlny = 1
+                                                $ gitara = 2
+                                                $ luszcz_min_attack += 1
+                                                $ luszcz_max_attack += 2
+
+                                            if miecz_swietlny == 3:
+                                                $ urban_min_attack -= 3
+                                                $ urban_max_attack -= 2
+                                                $ miecz_swietlny = 1
+                                                $ fuck = 3
+                                                $ urban_min_attack += 0
+                                                $ urban_max_attack += 2
+
+                                            if miecz_swietlny == 4:
+                                                $ zyd_min_attack -= 3
+                                                $ zyd_max_attack -= 2
+                                                $ miecz_swietlny = 1
+                                                $ chanuka = 4
+                                                $ zyd_min_attack += 1
+                                                $ zyd_max_attack += 3
+
+                                            if miecz_swietlny == 5:
+                                                $ kazuma_min_attack -= 3
+                                                $ kazuma_max_attack -= 2
+                                                $ miecz_swietlny = 1
+                                                $ chunchunmaru = 5
+                                                $ kazuma_min_attack += 0
+                                                $ kazuma_max_attack += 6
+                                            
+                                            if miecz_swietlny == 6:
+                                                $ tarczownik_min_attack -= 3
+                                                $ tarczownik_max_attack -= 2
+                                                $ miecz_swietlny = 1
+                                                $ legendary_shield = 6
+                                                $ tarczownik_min_attack += 1
+                                                $ tarczownik_max_attack += 3
+
+                                            $ miecz_swietlny = 0
+                                            "{i}*Miecz Świetlny został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev5
+                                
+                            "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}":
+                                if ostrza_chaosu == 0:
+                                    $ ostrza_chaosu = 1
+                                    "{i}*Ostrza Chaosu zostały dodane do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Ostrza Chaosu z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if ostrza_chaosu == 2:
+                                                $ luszcz_min_attack -= 0
+                                                $ luszcz_max_attack -= 1
+                                                $ ostrza_chaosu = 1
+                                                $ gitara = 2
+                                                $ luszcz_min_attack += 1
+                                                $ luszcz_max_attack += 2
+
+                                            if ostrza_chaosu == 3:
+                                                $ urban_min_attack -= 0
+                                                $ urban_max_attack -= 1
+                                                $ ostrza_chaosu = 1
+                                                $ fuck = 3
+                                                $ urban_min_attack += 0
+                                                $ urban_max_attack += 2
+
+                                            if ostrza_chaosu == 4:
+                                                $ zyd_min_attack -= 0
+                                                $ zyd_max_attack -= 1
+                                                $ ostrza_chaosu = 1
+                                                $ chanuka = 4
+                                                $ zyd_min_attack += 1
+                                                $ zyd_max_attack += 3
+
+                                            if ostrza_chaosu == 5:
+                                                $ kazuma_min_attack -= 0
+                                                $ kazuma_max_attack -= 1
+                                                $ ostrza_chaosu = 1
+                                                $ chunchunmaru = 5
+                                                $ kazuma_min_attack += 0
+                                                $ kazuma_max_attack += 6
+                                            
+                                            if ostrza_chaosu == 6:
+                                                $ tarczownik_min_attack -= 0
+                                                $ tarczownik_max_attack -= 1
+                                                $ ostrza_chaosu = 1
+                                                $ legendary_shield = 6
+                                                $ tarczownik_min_attack += 1
+                                                $ tarczownik_max_attack += 3
+
+                                            $ ostrza_chaosu = 0
+                                            "{i}*Ostrza Chaosu zostały usunięte z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev5
+                            
+                            "{b}Fajny Patyk (ATK:1-5){/b}":
+                                if patyk == 0:
+                                    $ patyk = 1
+                                    "{i}*Fajny Patyk został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Fajny Patyk z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if patyk == 2:
+                                                $ luszcz_min_attack -= 1
+                                                $ luszcz_max_attack -= 3
+                                                $ patyk = 1
+                                                $ gitara = 2
+                                                $ luszcz_min_attack += 1
+                                                $ luszcz_max_attack += 2
+
+                                            if patyk == 3:
+                                                $ urban_min_attack -= 1
+                                                $ urban_max_attack -= 3
+                                                $ patyk = 1
+                                                $ fuck = 3
+                                                $ urban_min_attack += 0
+                                                $ urban_max_attack += 2
+
+                                            if patyk == 4:
+                                                $ zyd_min_attack -= 1
+                                                $ zyd_max_attack -= 3
+                                                $ patyk = 1
+                                                $ chanuka = 4
+                                                $ zyd_min_attack += 1
+                                                $ zyd_max_attack += 3
+
+                                            if patyk == 5:
+                                                $ kazuma_min_attack -= 1
+                                                $ kazuma_max_attack -= 3
+                                                $ patyk = 1
+                                                $ chunchunmaru = 5
+                                                $ kazuma_min_attack += 0
+                                                $ kazuma_max_attack += 6
+                                            
+                                            if patyk == 6:
+                                                $ tarczownik_min_attack -= 1
+                                                $ tarczownik_max_attack -= 3
+                                                $ patyk = 1
+                                                $ legendary_shield = 6
+                                                $ tarczownik_min_attack += 1
+                                                $ tarczownik_max_attack += 3
+
+                                            $ patyk = 0
+                                            "{i}*Fajny Patyk został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev5
+                            
+                            "{b}Wężowa Bazooka (ATK:1-3){/b}":
+                                if bazooka == 0:
+                                    $ bazooka = 1
+                                    "{i}*Wężowa Bazooka została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Wężową Bazooke z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if bazooka == 2:
+                                                $ luszcz_min_attack -= 1
+                                                $ luszcz_max_attack -= 1
+                                                $ bazooka = 1
+                                                $ gitara = 2
+                                                $ luszcz_min_attack += 1
+                                                $ luszcz_max_attack += 2
+
+                                            if bazooka == 3:
+                                                $ urban_min_attack -= 1
+                                                $ urban_max_attack -= 1
+                                                $ bazooka = 1
+                                                $ fuck = 3
+                                                $ urban_min_attack += 0
+                                                $ urban_max_attack += 2
+
+                                            if bazooka == 4:
+                                                $ zyd_min_attack -= 1
+                                                $ zyd_max_attack -= 1
+                                                $ bazooka = 1
+                                                $ chanuka = 4
+                                                $ zyd_min_attack += 1
+                                                $ zyd_max_attack += 3
+
+                                            if bazooka == 5:
+                                                $ kazuma_min_attack -= 1
+                                                $ kazuma_max_attack -= 1
+                                                $ bazooka = 1
+                                                $ chunchunmaru = 5
+                                                $ kazuma_min_attack += 0
+                                                $ kazuma_max_attack += 6
+                                            
+                                            if bazooka == 6:
+                                                $ tarczownik_min_attack -= 1
+                                                $ tarczownik_max_attack -= 1
+                                                $ bazooka = 1
+                                                $ legendary_shield = 6
+                                                $ tarczownik_min_attack += 1
+                                                $ tarczownik_max_attack += 3
+
+                                            $ bazooka = 0
+                                            "{i}*Wężowa Bazooka została usunięta z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev5
+                            
+                            "{b}Wydrukowany Miecz (ATK:2-5){/b}":
+                                if stop == 0:
+                                    $ stop = 1
+                                    "{i}*Wydrukowany Miecz został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Wydrukowany Miecz z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if stop == 2:
+                                                $ luszcz_min_attack -= 2
+                                                $ luszcz_max_attack -= 3
+                                                $ miecz3d = 1
+                                                $ gitara = 2
+                                                $ luszcz_min_attack += 1
+                                                $ luszcz_max_attack += 2
+
+                                            if stop == 3:
+                                                $ urban_min_attack -= 2
+                                                $ urban_max_attack -= 3
+                                                $ miecz3d = 1
+                                                $ fuck = 3
+                                                $ urban_min_attack += 0
+                                                $ urban_max_attack += 2
+
+                                            if stop == 4:
+                                                $ zyd_min_attack -= 2
+                                                $ zyd_max_attack -= 3
+                                                $ miecz3d = 1
+                                                $ chanuka = 4
+                                                $ zyd_min_attack += 1
+                                                $ zyd_max_attack += 3
+
+                                            if stop == 5:
+                                                $ kazuma_min_attack -= 2
+                                                $ kazuma_max_attack -= 3
+                                                $ miecz3d = 1
+                                                $ chunchunmaru = 5
+                                                $ kazuma_min_attack += 0
+                                                $ kazuma_max_attack += 6
+                                            
+                                            if stop == 6:
+                                                $ tarczownik_min_attack -= 2
+                                                $ tarczownik_max_attack -= 3
+                                                $ miecz3d = 1
+                                                $ legendary_shield = 6
+                                                $ tarczownik_min_attack += 1
+                                                $ tarczownik_max_attack += 3
+
+                                            $ stop = 0
+                                            "{i}*Wydrukowany Miecz został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev5
+                            
                 "{b}Zbroje{/b}":
                     jump dev2
 
@@ -3916,18 +4385,6 @@ label menu_lokacji:
                     jump dev2
                 
                 "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
-                    $ gitara = 2
-                    $ fuck = 3
-                    $ chanuka = 4
-                    $ chunchunmaru = 5
-                    $ legendary_shield = 6
-                    $ stop = 1
-                    $ miecz_swietlny = 1
-                    $ ostrza_chaosu = 1
-                    $ patyk = 1
-                    $ bazooka = 1
-                    $ miecz3d = 1
-                    $ przepychaczka_liczba = 6
                     $ klata_liczba = 6
                     $ ring = 1
                     $ vr = 1
