@@ -12,6 +12,8 @@ default bomba = 1
 default urban_spotkanie = 0
 default alko_lvl = 0
 
+define fastfade = Fade(0.35, 0.0, 0.35)
+
 label bal:
     label bal1:
         hide screen secret_choice
@@ -1756,126 +1758,437 @@ label bal:
         
         scene bg bal4 with fade
         play music "audio/music/polonez.mp3"
-        if stol == 0:
-            show luszcz bal zorder 12 at center
-        else:
-            if stol == 1:
-                show luszcz bal zorder 12 at slightleft
+        show luszcz bal at center
 
-                if eminem_sojusznik == 1:
-                    show eminem neutral zorder 5 at slightright
+        "{i}Muzyka rozpoczeła grać, a ludzie zaczeli dobierać się w pary do pierwszego tańca{/i}"
 
-                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
-                    show kazuma neutral zorder 5 at slightright
-
-                if yusuke_social_link >= 1 and yusuke_social_link < 6:
-                    show yusuke neutral right zorder 5 at slightright
-
-                if zyd_sojusznik == 1:
-                    show zyd neutral right zorder 5 at slightright
-
-                if urban_sojusznik == 1:
-                    show urban neutral zorder 5 at slightright
-
-                if tarczownik_sojusznik == 1:
-                    show tarczownik neutral right zorder 5 at slightright
-                
-            else:
-                show luszcz bal zorder 12 at center
-                $ l1 = 0
-
-                if eminem_sojusznik == 1:
-                    $ l1 += 1
-                    show eminem neutral zorder 5 at right
-
-                if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
-                    if l1 == 0:
-                        show kazuma neutral zorder 5 at right
-                    else:
-                        if l1 == 1:    
-                            show kazuma neutral right zorder 5 at left
-                    $ l1 += 1
-
-                if yusuke_social_link >= 1 and yusuke_social_link < 6:
-                    if l1 == 0:
-                        show yusuke neutral right zorder 5 at right
-                    else:
-                        if l1 == 1:    
-                            show yusuke neutral zorder 5 at left
-                        
-                        else:
-                            if l1 == 2:    
-                                show yusuke neutral right zorder 3 at slightright  
-                    $ l1 += 1
-
-                if zyd_sojusznik == 1:
-                    if l1 == 0:
-                        show zyd neutral right zorder 5 at right
-                    else:
-                        if l1 == 1:    
-                            show zyd neutral zorder 5 at left
-                        
-                        else:
-                            if l1 == 2:    
-                                show zyd neutral right zorder 3 at slightright
-                            else:
-                                if l1 == 3:    
-                                    show zyd neutral zorder 3 at slightleft
-                    
-                    $ l1 += 1
-
-                if urban_sojusznik == 1:
-                    if l1 == 0:
-                        show urban neutral zorder 5 at right
-                    else:
-                        if l1 == 1:    
-                            show urban neutral right zorder 5 at left
-                        
-                        else:
-                            if l1 == 2:    
-                                show urban neutral zorder 3 at slightright
-                            else:
-                                if l1 == 3:    
-                                    show urban neutral right zorder 3 at slightleft   
-                    $ l1 += 1
-
-                if tarczownik_sojusznik == 1:
-                    if l1 == 0:
-                        show tarczownik neutral right zorder 5 at right
-                    else:
-                        if l1 == 1:    
-                            show tarczownik neutral zorder 5 at left
-                        
-                        else:
-                            if l1 == 2:    
-                                show tarczownik neutral right zorder 3 at slightright
-                            else:
-                                if l1 == 3:    
-                                    show tarczownik neutral zorder 3 at slightleft
-                    $ l1 += 1
-
-        "{i}Muzyka rozpoczeła grać, a ludzie zaczeli dopierać się w pary do pierwszego tańca{/i}"
-
-        if lilith_social_link == 2 and toxic_pea_social_link >= 2 and toxic_pea_social_link < 6 and gotka_szpont == 1:
+        if lilith_social_link == 2 and toxic_pea_social_link >= 2 and toxic_pea_social_link < 6 and gotka_szpont == 1 and gotka_social_link < 10:
             ""
         else:
             if lilith_social_link == 2 and toxic_pea_social_link >= 2 and toxic_pea_social_link < 6:
                 ""
             else:
-                if lilith_social_link == 2 and gotka_szpont == 1:
+                if lilith_social_link == 2 and gotka_szpont == 1 and gotka_social_link < 10:
                     ""
                 else:
                     if toxic_pea_social_link >= 2 and toxic_pea_social_link < 6 and gotka_szpont == 1:
                         ""
                     else:
                         if lilith_social_link == 2:
-                            ""
+                            show luszcz bal at slightleft
+                            show lilith neutral2 right at slightright
+
+                            lilith "Zatańczymy mój kochany?"
+
+                            luszcz "Z przyjemnością!"
+                            scene bg black with fade
+                            "{i}Łuszczu i Lilith zaczęli sunąć po sali tanecznym krokiem{/i}"
+                            "{i}Ich ruchu były wykonywane z taką gracją, iż cała sala zamarła w zachwycie i zdziwieniu nad nimi{/i}"
+                            "{i}Po chwili jednak ludzie zaczeli się dołączać, a Łuszczu i Lilith mogli ich prowadzić w tańcu{/i}"
+
+                            scene bg bal4 with fade
+                            show luszcz bal at slightleft
+                            show lilith neutral3 right at slightright
+
+                            lilith "Ohhhh, to było takie cudowne Łuszczu!"
+                            lilith "Nie wiedziałam, że potrafisz tak dobrze tańczyć!"
+
+                            if duda_social_link >= 1:
+                                luszcz "Emmm nie umiem, ale pewnego razu jeden bardzo madry człowiek powiedział mi, że trzeba się uczyć wszędzie i w każdej sytuacji"
+                                luszcz "Więc kopiowałem twoje ruchy i jakoś wyszło..."
+
+                                lilith "To musiałbyć naprawdę mądry człowiek!"
+
+                            else:
+                                luszcz "Emmm no coś tam troszkę umiem"
+
+                                lilith "To było wyśmienite, musisz mieć talent!"
+
+                            luszcz "no tak"
+
+                            lilith "..."
+                            lilith "To ja wracam do naszego stolika"
+                            lilith "Idziesz ze mną?"
+
+                            luszcz "emmmm, jeszcze zobaczę"
+
+                            lilith "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                            hide lilith
+                            show luszcz bal at center
+
+                            luszcz "..."
+                            
+                            show luszcz bal at slightleft
+                            show shinobu neutral at slightright
+
+                            shinobu "O tu jesteś!"
+                            shinobu "Widziałam twój taniec i eeee wyglądał troche dziwnie, ale napewno nie był zły"
+
+                            luszcz "yyy eee dziękuje pani Loli?"
+
+                            shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                            luszcz "shinobu"
+
+                            shinobu "bardzo ładnie"
+
+                            luszcz "..."
+
+                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                            luszcz "emmm do mnie?"
+
+                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                            luszcz "niemiłe"
+
+                            shinobu "niemiłe, ale prawdziwe"
+
+                            luszcz "..."
+                            luszcz "zobaczę może przyjdę"
+
+                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                            shinobu "lepiej żebyś przyszedł!"
+
+                            hide shinobu
+                            show luszcz bal at center
+
+                            luszcz "ehhh, ciekawe o co może chodzić"
+
+                            if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                                gotka "Ej Łuszczu!"
+                                
+                                show luszcz bal at slightleft
+                                show gotka neutral right at slightright
+
+                                gotka "Masz dla mnie chwilkę?"
+
+                                luszcz "Ja!?"
+
+                                gotka "Tak, ty!"
+                                gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+
+                                luszcz "emmm zobaczę mamo, bo mam coś innego jeszcze do zrobienia"
+
+                                gotka "Dobrze, będę czekała przy toaletach"
+
+                                hide gotka
+                                show luszcz bal at center
+
+                                luszcz "crazy!"
+
+                            if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                tarczownik "O hej Łuszczu mam sprawę!"
+
+                                show luszcz bal at slightleft
+                                show tarczownik neutral at slightright
+
+                                luszcz "O co chodzi?"
+
+                                tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                luszcz "Jakiego towaru!?!?"
+
+                                tarczownik "A czy to ważne?"
+
+                                luszcz "TAK!"
+
+                                tarczownik "zobaczysz na miejscu"
+                                tarczownik "To pójdziesz ze mną?"
+
+                                luszcz "eeee zobaczę"
+
+                                tarczownik "To jak coś czekam przy toaletach."
+
+                                hide tarczownik
+                                show luszcz bal at center
+
+                                luszcz "WTF? mega crazy"
+                            
+                            luszcz "..."
+
+                            jump bal3
                         else:
                             if toxic_pea_social_link >= 2 and toxic_pea_social_link < 6:
-                                ""
+                                show luszcz bal at slightleft
+                                show toxic_pea neutral right at slightright
+
+                                toxic "Zatańczymy Macieju_Rel?"
+
+                                luszcz "Emmmm"
+                                luszcz "(Trochę to gejowe, ale chyba nie mogę wybżydzać)"
+                                luszcz "Jasne"
+
+                                scene bg black with fade
+                                "{i}Łuszczu i Toxic Pea zaczęli sunąć po sali tanecznym krokiem{/i}"
+                                "{i}Ich ruchu były wykonywane z taką gracją, iż cała sala zamarła w zachwycie nad nimi{/i}"
+                                "{i}Po chwili jednak ludzie zaczeli się dołączać, a Łuszczu i Toxic Pea mogli ich prowadzić w tańcu{/i}"
+
+                                scene bg bal4 with fade
+                                show luszcz bal at slightleft
+                                show toxic_pea neutral right at slightright
+
+                                toxic "Ohhhh, to było takie cudowne mój ty kociaku!"
+                                toxic "Nie wiedziałam, że potrafisz tak dobrze tańczyć!"
+
+                                if duda_social_link >= 1:
+                                    luszcz "Emmm nie umiem, ale pewnego razu jeden bardzo madry człowiek powiedział mi, że trzeba się uczyć wszędzie i w każdej sytuacji"
+                                    luszcz "Więc kopiowałem twoje ruchy i jakoś wyszło..."
+
+                                    toxic "To musiałbyć naprawdę mądry człowiek!"
+
+                                else:
+                                    luszcz "Emmm no coś tam troszkę umiem"
+
+                                    toxic "To było wyśmienite, musisz mieć talent!"
+                                
+                                luszcz "no tak"
+
+                                toxic "..."
+                                toxic "To ja wracam do naszego stolika stolika czy coś"
+                                toxic "Idziesz ze mną?"
+
+                                luszcz "emmmm, jeszcze zobaczę"
+
+                                toxic "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                                "{i}Toxic Pea klepnął Łuszczu w pośladek{/i}"
+
+                                hide toxic
+                                show luszcz bal at center
+
+                                luszcz "eghhh"
+                                
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
+
+                                shinobu "O tu jesteś!"
+                                shinobu "Widziałam twój taniec i eeee nie wiedziałam, że jednak gustujesz w facetach, ale no taniec napewno nie był zły"
+
+                                luszcz "yyy eee dziękuje pani Loli?"
+
+                                shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                                luszcz "shinobu"
+
+                                shinobu "bardzo ładnie"
+
+                                luszcz "..."
+
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                                luszcz "emmm do mnie?"
+
+                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                                luszcz "niemiłe"
+
+                                shinobu "niemiłe, ale prawdziwe"
+
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
+
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "lepiej żebyś przyszedł!"
+
+                                hide shinobu
+                                show luszcz bal at center
+
+                                luszcz "ehhh, ciekawe o co może chodzić"
+
+                                if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                                    gotka "Ej Łuszczu!"
+                                    
+                                    show luszcz bal at slightleft
+                                    show gotka neutral right at slightright
+
+                                    gotka "Masz dla mnie chwilkę?"
+
+                                    luszcz "Ja!?"
+
+                                    gotka "Tak, ty!"
+                                    gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+
+                                    luszcz "emmm zobaczę mamo, bo mam coś innego jeszcze do zrobienia"
+
+                                    gotka "Dobrze, będę czekała przy toaletach"
+
+                                    hide gotka
+                                    show luszcz bal at center
+
+                                    luszcz "crazy!"
+
+                                if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                    tarczownik "O hej Łuszczu mam sprawę!"
+
+                                    show luszcz bal at slightleft
+                                    show tarczownik neutral at slightright
+
+                                    luszcz "O co chodzi?"
+
+                                    tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                    tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                    luszcz "Jakiego towaru!?!?"
+
+                                    tarczownik "A czy to ważne?"
+
+                                    luszcz "TAK!"
+
+                                    tarczownik "zobaczysz na miejscu"
+                                    tarczownik "To pójdziesz ze mną?"
+
+                                    luszcz "eeee zobaczę"
+
+                                    tarczownik "To jak coś czekam przy toaletach."
+
+                                    hide tarczownik
+                                    show luszcz bal at center
+
+                                    luszcz "WTF? mega crazy"
+                                
+                                luszcz "..."
+
+                                jump bal3
                             else:
-                                if gotka_szpont == 1:
-                                    ""
+                                if gotka_szpont == 1 and gotka_social_link < 10:
+                                    show luszcz bal at slightleft
+                                    show gotka neutral right at slightright
+
+                                    gotka "Zatańczymy moja świnko morska?"
+
+                                    luszcz "Oczywiście, że tak gigasigmo!"
+                                    scene bg black with fade
+                                    "{i}Łuszczu i Gotka zaczęli sunąć po sali tanecznym krokiem{/i}"
+                                    "{i}Ich ruchu były wykonywane z taką gracją, iż cała sala zamarła w zachwycie nad nimi{/i}"
+                                    "{i}Po chwili jednak ludzie zaczeli się dołączać, a Łuszczu i Gotka mogli ich prowadzić w tańcu{/i}"
+
+                                    scene bg bal4 with fade
+                                    show luszcz bal at slightleft
+                                    show gotka neutral right at slightright
+
+                                    gotka "Ohhhh, to było takie cudowne Łuszczu!"
+                                    gotka "Nie wiedziałam, że potrafisz tak dobrze tańczyć!"
+
+                                    if duda_social_link >= 1:
+                                        luszcz "Emmm nie umiem, ale pewnego razu jeden bardzo madry człowiek powiedział mi, że trzeba się uczyć wszędzie i w każdej sytuacji"
+                                        luszcz "Więc kopiowałem twoje ruchy i jakoś wyszło..."
+
+                                        gotka "To musiałbyć naprawdę mądry człowiek!"
+
+                                    else:
+                                        luszcz "Emmm no coś tam troszkę umiem"
+
+                                        gotka "To było wyśmienite, musisz mieć talent!"
+                                    
+                                    if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                                        gotka "A właśnie Łuszczu, jest sprawa"
+                                        gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+                                        gotka "Nie wystawisz przecież swojej dziewczyny co nie?"
+
+                                        luszcz "emmm sorki jeszcze zobaczę mój alfa wilku"
+
+                                        gotka "Łuszczu!"
+
+                                        luszcz "No spróbuję, no raczej tak..."
+
+                                        gotka "To czekam przy toaletach"
+                                        gotka "Jak będziesz gotowy to przyjdź"
+
+                                        hide gotka
+                                        show luszcz bal at center
+
+                                        luszcz "ufff"
+                                    
+                                    else:
+                                        luszcz "no tak"
+
+                                        gotka "..."
+                                        gotka "To ja wracam do naszego stolika"
+                                        gotka "Idziesz ze ,mną?"
+
+                                        luszcz "emmmm, jeszcze zobaczę"
+
+                                        gotka "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                                        hide gotka
+                                        show luszcz bal at center
+
+                                        luszcz "..."
+                                    
+                                    show luszcz bal at slightleft
+                                    show shinobu neutral at slightright
+
+                                    shinobu "O tu jesteś!"
+                                    shinobu "Widziałam twój taniec i nie powiem, był niezły"
+
+                                    luszcz "Dziękuje pani Loli"
+
+                                    shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                                    luszcz "shinobu"
+
+                                    shinobu "bardzo ładnie"
+
+                                    luszcz "..."
+
+                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                                    luszcz "emmm do mnie?"
+
+                                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                                    luszcz "niemiłe"
+
+                                    shinobu "niemiłe, ale prawdziwe"
+
+                                    luszcz "..."
+                                    luszcz "zobaczę może przyjdę"
+
+                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                    shinobu "lepiej żebyś przyszedł!"
+
+                                    hide shinobu
+                                    show luszcz bal at center
+
+                                    luszcz "ehhh, ciekawe o co może chodzić"
+
+                                    if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                        tarczownik "O hej Łuszczu mam sprawę!"
+
+                                        show luszcz bal at slightleft
+                                        show tarczownik neutral at slightright
+
+                                        luszcz "O co chodzi?"
+
+                                        tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                        tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                        luszcz "Jakiego towaru!?!?"
+
+                                        tarczownik "A czy to ważne?"
+
+                                        luszcz "TAK!"
+
+                                        tarczownik "zobaczysz na miejscu"
+                                        tarczownik "To pójdziesz ze mną?"
+
+                                        luszcz "eeee zobaczę"
+
+                                        tarczownik "To jak coś czekam przy toaletach."
+
+                                        hide tarczownik
+                                        show luszcz bal at center
+
+                                        luszcz "WTF? mega crazy"
+                                    
+                                    luszcz "..."
+
+                                    jump bal3
+
+
                                 else:
                                     luszcz "troszke siara, nie ma z kim tańczyć :("
                                     luszcz "Emmm to ja chyba wrócę do stołu..."
@@ -1884,13 +2197,8 @@ label bal:
 
                                     shinobu "Stój gdzie stoisz patałachu!"
 
-                                    hide eminem
-                                    hide kazuma 
-                                    hide zyd
-                                    hide urban 
-                                    hide tarczownik 
                                     show luszcz bal at slightleft
-                                    show shinobu neutral right at slighright
+                                    show shinobu neutral at slightright
 
                                     luszcz "O pani Loli."
 
@@ -1923,9 +2231,9 @@ label bal:
 
                                     if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                                         gotka "Ej Łuszczu!"
-
+                                        
                                         show luszcz bal at slightleft
-                                        show gotka neutral right at slighright
+                                        show gotka neutral right at slightright
 
                                         gotka "Masz dla mnie chwilkę?"
 
@@ -1947,11 +2255,11 @@ label bal:
                                         tarczownik "Hej Łuszczu mam sprawę!"
 
                                         show luszcz bal at slightleft
-                                        show tarczownik neutral at slighright
+                                        show tarczownik neutral at slightright
 
                                         luszcz "O co chodzi?"
 
-                                        tarczownik "Eeeeem załatwił sobię troszkę towaru..."
+                                        tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
                                         tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
 
                                         luszcz "Jakiego towaru!?!?"
@@ -1974,19 +2282,54 @@ label bal:
                                     
                                     luszcz "..."
 
-                                    menu:
-                                        "{b}Co, by tu zrobić?{/b}"
+                                    jump bal3
+    label bal3:
+        menu:
+            "{b}Co, by tu zrobić?{/b}"
 
-                                        "{b}Spotkaj się z Ambasadorem{/b}":
-                                            ""
-                                        
-                                        "{b}Spotkaj się z Gotką{/b}":
-                                            ""
-                                        
-                                        "{b}Spotkaj się z Naofumim{/b}":
-                                            ""
-                                        
-                                        "{b}Wróć do stolika{/b}":
-                                            ""
+            "{b}Spotkaj się z Ambasadorem{/b}" if 9900 <= timer <= 9915:
+                ""
+            
+            "{b}Spotkaj się z Gotką{/b}" if 9900 <= timer <= 9915 and gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                ""
+            
+            "{b}Spotkaj się z Naofumim{/b}" if 9900 <= timer <= 9915 and tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                ""
+            
+            "{b}Wróć do stolika{/b}":
+                scene bg black with fade
+                jump bal4
 
-                                    
+    label bal4:
+        scene bg bal3 with fade
+        play music "audio/music/bal.mp3"
+        $ renpy.music.set_volume(1.0, delay=0.3)
+
+        if eminem_sojusznik == 1:
+            $ stol += 1
+            show eminem stol zorder 10
+
+        if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
+            $ stol += 1
+            show kazuma stol zorder 9
+
+        if yusuke_social_link >= 1 and yusuke_social_link < 6:
+            $ stol += 1
+            show yusuke stol zorder 8
+
+        if zyd_sojusznik == 1:
+            $ stol += 1
+            show zyd stol zorder 7
+
+        if urban_sojusznik == 1:
+            $ stol += 1
+            show urban stol zorder 6
+
+        if tarczownik_sojusznik == 1:
+            $ stol += 1
+            show tarczownik stol zorder 5
+        
+        show luszcz bal zorder 12 at left
+
+        ""
+

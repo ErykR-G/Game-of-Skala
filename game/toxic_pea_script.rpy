@@ -478,6 +478,11 @@ label toxic_pea:
                 "{b}Tak (+2 jabole){/b}":
                     luszcz2 "Eh… jak chcesz… zobaczymy."
 
+                    if jabole == 0:
+                        $ ile_item += 1
+                    $ jabole += 2
+                    "{i}*Jabole x 2 zostały dodane do ekwipunku*{/i}"
+
                 "{b}Nie{/b}":
                     luszcz2 "Eh… jak chcesz… zobaczymy."
 

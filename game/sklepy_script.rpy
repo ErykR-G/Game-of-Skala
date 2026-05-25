@@ -10,7 +10,7 @@ label sklepy_define:
     default samosamo = 0
     default chinczyk_den = 0
     default chinczyk_banany = 0
-    default chinczyk_przepychaczka = 6
+    default chinczyk_przepychaczka = 5
     default chinczyk_klata = 6
     default chinczyk_slownik = 1
 

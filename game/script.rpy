@@ -56,6 +56,12 @@ label postacie:
 
     define owca = Character("Owca", color="#382a17")
 
+    image lilith neutral1 right = Transform("lilith neutral1", xzoom=-1) 
+    image lilith neutral2 right = Transform("lilith neutral2", xzoom=-1) 
+    image lilith neutral3 right = Transform("lilith neutral3", xzoom=-1) 
+    image lilith neutral4 right = Transform("lilith neutral4", xzoom=-1) 
+    image lilith neutral5 right = Transform("lilith neutral5", xzoom=-1) 
+
     define patykarz = Character("Przywódca Patykarzy", color="#f5b75b")
     define gobliny = Character("Gobliny", color="#521414")
     define wargowie = Character("Wargowie", color="#882345")
@@ -170,6 +176,7 @@ label postacie:
     image shinobu neutral right = Transform("shinobu neutral", xzoom=-1) 
 
     define eryk = Character("Eryk", color="#7e0a0a")
+    image eryk neutral right = Transform("eryk neutral", xzoom=-1) 
 
     define kibol1 = Character("Kibol 1", color="#ffffff")
     define kibol2 = Character("Kibol 2", color="#ffffff")

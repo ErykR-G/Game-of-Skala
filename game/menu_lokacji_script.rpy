@@ -3955,7 +3955,7 @@ label menu_lokacji:
 
                             "{b}Przepychaczka (ATK:2-4){/b}":
                                 $ chinczyk_przepychaczka -= 1
-                                if przepychaczka_liczba == 0:
+                                if przepychaczka_liczba == 0 and luszcz_przepychaczka == 0 and urban_przepychaczka == 0 and zyd_przepychaczka == 0 and kazuma_przepychaczka == 0 and tarczownik_przepychaczka == 0:
                                     $ przepychaczka_liczba += 1
                                     if luszcz_przepychaczka == 0 and urban_przepychaczka == 0 and zyd_przepychaczka == 0 and kazuma_przepychaczka == 0 and tarczownik_przepychaczka == 0:
                                         $ luszcz_przepychaczka = 1
@@ -4022,7 +4022,7 @@ label menu_lokacji:
                                                 $ tarczownik_min_attack += 1
                                                 $ tarczownik_max_attack += 3
 
-                                            $ chinczyk_przepychaczka = 6
+                                            $ chinczyk_przepychaczka = 5
                                             $ przepychaczka_liczba = 0
                                             "{i}*Znak drogowy został usunięty z ekwipunku*{/i}"
                                             jump dev2
@@ -4376,7 +4376,332 @@ label menu_lokacji:
                                 jump dev2
 
                 "{b}Zbroje{/b}":
-                    jump dev2
+                    label dev9:
+                        menu:
+                            "{b}Wybierz zbroje:{/b}"
+
+                            "{b}Diamentowa Klata{/b}":
+                                $ chinczyk_klata -= 1
+                                if klata_liczba == 0 and luszcz_klata == 0 and urban_klata == 0 and zyd_klata == 0 and kazuma_klata == 0 and tarczownik_klata == 0 and eminem_klata == 0:
+                                    $ klata_liczba += 1
+                                    if luszcz_klata == 0 and urban_klata == 0 and zyd_klata == 0 and kazuma_klata == 0 and tarczownik_klata == 0 and eminem_klata == 0:
+                                        $ luszcz_klata = 1
+                                        $ urban_klata = 1
+                                        $ zyd_klata = 1
+                                        $ kazuma_klata = 1
+                                        $ tarczownik_klata = 1
+                                        $ eminem_klata = 1
+                                    "{i}*Diamentowa Klata została dodana do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Co chcesz zrobić?{/b}"
+
+                                        "{b}Dodaj Diamentową Klate{/b}" if chinczyk_klata > 0:
+                                            $ chinczyk_klata -= 1
+                                            $ klata_liczba += 1
+                                            "{i}*Diamentowa Klata została dodana do ekwipunku*{/i}"
+                                            jump dev2
+
+                                        "{b}Usuń Diamentowe Klaty{/b}":
+                                            if luszcz_klata == 2:
+                                                $ luszcz_klata = 1
+                                                $ luszcz_nic = 2
+                                                $ klata_liczba += 1
+                                                $ luszcz_hp -= 5
+
+                                            if urban_klata == 3:
+                                                $ urban_klata = 1
+                                                $ urban_nic = 3
+                                                $ klata_liczba += 1
+                                                $ urban_hp -= 5
+
+                                            if zyd_klata == 4:
+                                                $ zyd_klata = 1
+                                                $ zyd_nic = 4
+                                                $ klata_liczba += 1
+                                                $ zyd_hp -= 5
+
+                                            if kazuma_klata == 5:
+                                                $ kazuma_klata = 1
+                                                $ kazuma_nic = 5
+                                                $ klata_liczba += 1
+                                                $ kazuma_hp -= 5
+                                            
+                                            if tarczownik_klata == 6:
+                                                $ tarczownik_klata = 1
+                                                $ tarczownik_nic = 6
+                                                $ klata_liczba += 1
+                                                $ tarczownik_hp -= 5
+                                            
+                                            if eminem_klata == 7:
+                                                $ eminem_klata = 1
+                                                $ eminem_nic = 7
+                                                $ klata_liczba += 1
+                                                $ eminem_hp -= 5
+
+                                            $ chinczyk_klata = 6
+                                            $ klata_liczba = 0
+                                            "{i}*Diamentowe Klaty zostały usunięte z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Powrót{/b}":         
+                                            jump dev9
+                            
+                            "{b}Pierścień z Władców Pierścieni{/b}":
+                                if ring == 0:
+                                    $ ring = 1
+                                    "{i}*Pierścień z Władców Pierścieni został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Pierścień z Władców Pierścieni z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if ring == 2:
+                                                $ ring = 1
+                                                $ luszcz_nic = 2
+
+                                            if ring == 3:
+                                                $ ring = 1
+                                                $ urban_nic = 3
+
+                                            if ring == 4:
+                                                $ ring = 1
+                                                $ zyd_nic = 3
+
+                                            if ring == 5:
+                                                $ ring = 1
+                                                $ kazuma_nic = 5
+                                            
+                                            if ring == 6:
+                                                $ ring = 1
+                                                $ tarczownik_nic = 6
+                                            
+                                            if ring == 7:
+                                                $ ring = 1
+                                                $ eminem_nic = 7
+
+                                            $ ring = 0
+                                            "{i}*Pierścień z Władców Pierścieni został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev9
+                            
+                            "{b}VR Headset{/b}":
+                                if vr == 0:
+                                    $ vr = 1
+                                    "{i}*VR Headset został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć VR Headset z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if vr == 2:
+                                                $ vr = 1
+                                                $ luszcz_nic = 2
+
+                                            if vr == 3:
+                                                $ vr = 1
+                                                $ urban_nic = 3
+
+                                            if vr == 4:
+                                                $ vr = 1
+                                                $ zyd_nic = 3
+
+                                            if vr == 5:
+                                                $ vr = 1
+                                                $ kazuma_nic = 5
+                                            
+                                            if vr == 6:
+                                                $ vr = 1
+                                                $ tarczownik_nic = 6
+                                            
+                                            if vr == 7:
+                                                $ vr = 1
+                                                $ eminem_nic = 7
+
+                                            $ vr = 0
+                                            "{i}*VR Headset został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev9
+                            
+                            "{b}Szalik z Memów{/b}":
+                                if memy == 0:
+                                    $ memy = 1
+                                    "{i}*Szalik z Memów został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Szalik z Memów z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if memy == 2:
+                                                $ memy = 1
+                                                $ luszcz_nic = 2
+
+                                            if memy == 3:
+                                                $ memy = 1
+                                                $ urban_nic = 3
+
+                                            if memy == 4:
+                                                $ memy = 1
+                                                $ zyd_nic = 3
+
+                                            if memy == 5:
+                                                $ memy = 1
+                                                $ kazuma_nic = 5
+                                            
+                                            if memy == 6:
+                                                $ memy = 1
+                                                $ tarczownik_nic = 6
+                                            
+                                            if memy == 7:
+                                                $ memy = 1
+                                                $ eminem_nic = 7
+
+                                            $ memy = 0
+                                            "{i}*Szalik z Memów został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev9
+                            
+                            "{b}Kawałek ziemi, po której stąpał Jan Paweł 2{/b}":
+                                if ziemia == 0:
+                                    $ ziemia = 1
+                                    "{i}*Kawałek ziemi, po której stąpał Jan Paweł 2 został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Kawałek ziemi, po której stąpał Jan Paweł 2 z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if ziemia == 2:
+                                                $ ziemia = 1
+                                                $ luszcz_nic = 2
+
+                                            if ziemia == 3:
+                                                $ ziemia = 1
+                                                $ urban_nic = 3
+
+                                            if ziemia == 4:
+                                                $ ziemia = 1
+                                                $ zyd_nic = 3
+
+                                            if ziemia == 5:
+                                                $ ziemia = 1
+                                                $ kazuma_nic = 5
+                                            
+                                            if ziemia == 6:
+                                                $ ziemia = 1
+                                                $ tarczownik_nic = 6
+                                            
+                                            if ziemia == 7:
+                                                $ ziemia = 1
+                                                $ eminem_nic = 7
+
+                                            $ ziemia = 0
+                                            "{i}*Kawałek ziemi, po której stąpał Jan Paweł 2 został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev9
+                            
+                            "{b}Długie Nogi{/b}":
+                                if nogi == 0:
+                                    $ nogi = 1
+                                    "{i}*Długie Nogi zostały dodane do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Długie Nogi z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if nogi == 2:
+                                                $ nogi = 1
+                                                $ luszcz_nic = 2
+                                                $ luszcz_hp -= 10
+
+                                            if nogi == 3:
+                                                $ nogi = 1
+                                                $ urban_nic = 3
+                                                $ urban_hp -= 10
+
+                                            if nogi == 4:
+                                                $ nogi = 1
+                                                $ zyd_nic = 3
+                                                $ zyd_hp -= 10
+
+                                            if nogi == 5:
+                                                $ nogi = 1
+                                                $ kazuma_nic = 5
+                                                $ kazuma_hp -= 10
+                                            
+                                            if nogi == 6:
+                                                $ nogi = 1
+                                                $ tarczownik_nic = 6
+                                                $ tarczownik_hp -= 10
+                                            
+                                            if nogi == 7:
+                                                $ nogi = 1
+                                                $ eminem_nic = 7
+                                                $ eminem_hp -= 10
+
+                                            $ nogi = 0
+                                            "{i}*Długie Nogi zostały usunięte z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev9
+                            
+                            "{b}Złoty Człowiek{/b}":
+                                if zloty == 0:
+                                    $ zloty = 1
+                                    "{i}*Złoty Człowiek został dodany do ekwipunku*{/i}"
+                                    jump dev2
+                                else:
+                                    menu:
+                                        "{b}Czy chcesz usunąć Złotego Człowieka z ekwipunku{/b}"
+
+                                        "{b}Tak{/b}":
+                                            if zloty == 2:
+                                                $ zloty = 1
+                                                $ luszcz_nic = 2
+
+                                            if zloty == 3:
+                                                $ zloty = 1
+                                                $ urban_nic = 3
+
+                                            if zloty == 4:
+                                                $ zloty = 1
+                                                $ zyd_nic = 3
+
+                                            if zloty == 5:
+                                                $ zloty = 1
+                                                $ kazuma_nic = 5
+                                            
+                                            if zloty == 6:
+                                                $ zloty = 1
+                                                $ tarczownik_nic = 6
+                                            
+                                            if zloty == 7:
+                                                $ zloty = 1
+                                                $ eminem_nic = 7
+
+                                            $ zloty = 0
+                                            "{i}*Złoty Człowiek został usunięty z ekwipunku*{/i}"
+                                            jump dev2
+                                        
+                                        "{b}Nie{/b}":         
+                                            jump dev9
+                            
+                            "{b}Powrót{/b}":
+                                jump dev2
 
                 "{b}Itemy Fabularne{/b}":
                     label dev6:
