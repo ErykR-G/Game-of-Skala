@@ -1921,8 +1921,55 @@ label bal:
                                     hide shinobu
                                     show luszcz bal at center
 
-                                    if gotka_social_link >= 1 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                                    if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                                         gotka "Ej Łuszczu!"
 
                                         show luszcz bal at slightleft
-                                        show shinobu neutral right at slighright
+                                        show gotka neutral right at slighright
+
+                                        gotka "Masz dla mnie chwilkę?"
+
+                                        luszcz "Ja!?"
+
+                                        gotka "Tak, ty!"
+                                        gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+
+                                        luszcz "emmm zobaczę mamo, bo mam coś innego jeszcze do zrobienia"
+
+                                        gotka "Dobrze, będę czekała przy toaletach"
+
+                                        hide gotka
+                                        show luszcz bal at center
+
+                                        luszcz "crazy!"
+                                    
+                                    if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                        tarczownik "Hej Łuszczu mam sprawę!"
+
+                                        show luszcz bal at slightleft
+                                        show tarczownik neutral at slighright
+
+                                        luszcz "O co chodzi?"
+
+                                        tarczownik "Eeeeem załatwił sobię troszkę towaru..."
+                                        tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                        luszcz "Jakiego towaru!?!?"
+
+                                        tarczownik "A czy to ważne?"
+
+                                        luszcz "TAK!"
+
+                                        tarczownik "zobaczysz na miejscu"
+                                        tarczownik "To pójdziesz ze mną?"
+
+                                        luszcz "eeee zobaczę"
+
+                                        tarczownik "To jak coś czekam przy toaletach."
+
+                                        hide tarczownik
+                                        show luszcz bal at center
+
+                                        luszcz "WTF? mega crazy"
+
+                                    
