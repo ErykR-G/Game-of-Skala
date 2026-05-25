@@ -14,6 +14,7 @@ default alko_lvl = 0
 
 label bal:
     label bal1:
+        hide screen secret_choice
         if gdzie_spisz == 0:
             show luszcz neutral at slightleft
             show tata neutral at slightright

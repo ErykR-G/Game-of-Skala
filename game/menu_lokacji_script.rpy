@@ -34,6 +34,8 @@ default raem_wu = 0
 default gnoms_wu = 0
 default zul_wu = 0
 
+default devroomek = 0
+
 label menu_lokacji:
     label rynek:
         play sound "audio/sfx/traveling.mp3" 
@@ -84,48 +86,6 @@ label menu_lokacji:
         label rynek2:
             window hide
             menu:
-                "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
-                    $ liczba_sojusznikow = 6
-                    $ urban_sojusznik = 1
-                    $ zyd_sojusznik = 1
-                    $ eminem_sojusznik = 1
-                    $ kazuma_sojusznik = 1
-                    $ tarczownik_sojusznik = 1
-                    $ gitara = 2
-                    $ fuck = 3
-                    $ chanuka = 4
-                    $ chunchunmaru = 5
-                    $ legendary_shield = 6
-                    $ stop = 1
-                    $ miecz_swietlny = 1
-                    $ ostrza_chaosu = 1
-                    $ patyk = 1
-                    $ bazooka = 1
-                    $ miecz3d = 1
-                    $ przepychaczka_liczba = 6
-                    $ klata_liczba = 6
-                    $ ring = 1
-                    $ vr = 1
-                    $ memy = 1
-                    $ ziemia = 1
-                    $ nogi = 1
-                    $ zloty = 1
-                    $ piknik = 1
-                    $ cake = 1
-                    $ pills = 20
-                    $ woda = 10
-                    $ ostry = 10
-                    $ lagodny = 10
-                    $ drpepper = 10
-                    $ jabole = 10
-                    $ royal = 10
-                    $ warzywo = 10
-                    $ banany = 10
-                    $ skalka = 10
-                    $ granat = 10
-                    "MASZ HIV"
-                    jump rynek2
-
                 "{i}{image=a} Alejka (10min){/i}":
                     if timer > 9810 and timer <= 9840:
                         luszcz "Bal rozpocznie się już za niedługo"
@@ -417,6 +377,7 @@ label menu_lokacji:
                                         jump rynek2
  
     label sloneczna:
+        show screen secret_choice
         play sound "audio/sfx/traveling.mp3" 
         $ rynek = 0
         $ sloneczna = 1
@@ -453,17 +414,21 @@ label menu_lokacji:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
                     if spanko == 9:
+                        hide screen secret_choice
                         luszcz "Nie, nie dam rady"
                         jump spanko2
                     else:
                         if timer > 1620 and timer < 1980 or timer > 3060 and timer < 3420 or timer > 4500 and timer < 4860 or timer > 5940 and timer < 6300 or timer > 7380 and timer < 7740 or timer > 8820 and timer < 9180 or timer > 10260 and timer < 10620 or timer > 11700:
+                            hide screen secret_choice
                             luszcz "Nie, nie dam rady"
                             jump spanko2  
 
         label sloneczna2:
+            show screen secret_choice
             window hide
             menu:      
                 "{i}{image=sd} Rynek (10min){/i}":
+                    hide screen secret_choice
                     $ timer += 10
                     $ kostka = renpy.random.randint(1, 20)
                     if timer <= 9720 or (timer >= 10080 and timer <= 11220):
@@ -480,6 +445,7 @@ label menu_lokacji:
                     jump rynek
                 
                 "{b}🏗️ Plac Budowy | 6-18 {/b}":
+                    hide screen secret_choice
                     $ placx = 0
                     if timer >= 360 and timer <= 1080 or timer >= 1800 and timer <= 2520 or timer >= 3240 and timer <= 3960 or timer >= 4680 and timer <= 5400 or timer >= 6120 and timer <= 6840 or timer >= 7560 and timer <= 8280 or timer >= 9000 and timer <= 9720 or timer >= 10440 and timer <= 11160:
                         $ ado += 1
@@ -623,6 +589,7 @@ label menu_lokacji:
                                         jump sloneczna2
         
                 "{b}🪩 Klub Seniora GROTA | 16-22{/b}":
+                    hide screen secret_choice
                     $ klubx = 0
                     if timer >= 960 and timer <= 1320 or timer >= 2400 and timer <= 2760 or timer >= 3840 and timer <= 4200 or timer >= 5280 and timer <= 5640 or timer >= 6720 and timer <= 7080 or timer >= 8160 and timer <= 8520 or timer >= 9600 and timer <= 9960 or timer >= 11040 and timer <= 11400:
                         $ ado += 1
@@ -724,6 +691,7 @@ label menu_lokacji:
                                         jump sloneczna2
 
                 "{b}🏡 Różowy Dom | 9-19 {/b}" if mleczarz_social_link > 1 or mleczarz_social_link == 1 and krowka == 1:
+                    hide screen secret_choice
                     $ fioletowy_domx = 0
                     if timer >= 540 and timer <= 1140 or timer >= 1980 and timer <= 2580 or timer >= 3420 and timer <= 4020 or timer >= 4860 and timer <= 5460 or timer >= 6300 and timer <= 6900 or timer >= 7740 and timer <= 8340 or timer >= 9180 and timer <= 9780 or timer >= 10620 and timer <= 11220:
                         $ ado += 1
@@ -787,6 +755,7 @@ label menu_lokacji:
                                         jump sloneczna2
                 
                 "{b}🚏 Przystanek (10min) | 24/7 {/b}":
+                    hide screen secret_choice
                     if timer > 9810 and timer <= 9840:
                         luszcz "Bal rozpocznie się już za niedługo"
                         luszcz "Powinienem powoli wracać do domu"
@@ -3804,3 +3773,188 @@ label menu_lokacji:
         if granica == 1:
             jump granica
 
+    label devroom:
+        play music "audio/music/devik.mp3"
+        if devroomek == 0:
+            $ devroomek = 1
+            scene bg devroom
+            show luszcz neutral at left 
+            erykd "Teofil pracujesz?"
+
+            teofil "tak, tak pracuję"
+
+            erykd "Przecież widzę, ze nie pracujesz!"
+
+            teofil "nie to tylko lekkie komplikacje, na pewno wszystko będzie git, mamy czas"
+
+            erykd "aghhh chcesz gifa?"
+
+            teofil "Jakiego gifa?"
+            $ renpy.movie_cutscene("nse.webm")
+
+            teofil "Aaaghhh prosze nie"
+
+            erykd "No to pracuj!"
+            erykd "spójrz na Mateusza jak on pięknie pracuje!"
+
+            mateusz "praca, praca"
+
+            scene bg devroom2
+            show luszcz neutral at left 
+
+            erykd "..?"
+            erykd "Jak tyś się tu dostał?"
+
+            luszcz "Eeee znalazłem jakąś skrytkę pod drzewem więc do niej wszedłem"
+
+            scene bg devroom
+            show luszcz neutral at left 
+
+            erykd "Aghhh a mówiłem ci Teofil, że to jest zła miejscówka"
+
+            scene bg devroom2
+            show luszcz neutral at left 
+
+            erykd "Emmmm upsi?"
+
+            luszcz "A co wy tu w ogóle robicie?"
+
+            erykd "A jedynie planujemy każdy szczegół twojego życia i całego świata przedstawionego!"
+            erykd "ale to nic ważnego więc no"
+
+            luszcz "..."
+
+            erykd "Wiem! W ramach nagrody za znalezienie nas użyczymy Ci część naszych devowskich mocy"
+            erykd "Co ty na to?"
+
+            luszcz "Emmm chyba git"
+
+            erykd "A tylko pamiętaj efekt ich użycia jest nieodwracalny!"
+
+            luszcz "dobrze, dobrze"
+
+            eryk "To jak chcesz ich użyć?"
+
+        else:
+            scene bg devroom2
+            show luszcz neutral at left
+            erykd "Co cię dziś sprowadza?"
+        
+        label dev2:
+            menu:
+                "{b}Zmiany w świecie{/b}":
+                    jump dev2
+
+                "{b}Towarzysze{/b}":
+                    label dev4:
+                        menu:
+                            "{b}Kogo chcesz dostać do drużyny{/b}"
+
+                            "{b}Shadow{/b}":
+                                if eminem_sojusznik == 0:
+                                    $ eminem_sojusznik = 1
+                                    $ liczba_sojusznikow += 1
+                                    "{i}*Shadow dołączył do drużyny*{/i}"
+                                    jump dev2
+                                else:
+                                    "{i}Już masz tą postać w drużynie{/i}"
+                                    jump dev4
+
+                            "{b}Jerzy Urban{/b}":
+                                if urban_sojusznik == 0:
+                                    $ urban_sojusznik = 1
+                                    $ liczba_sojusznikow += 1
+                                    "{i}*Jerzy Urban dołączył do drużyny*{/i}"
+                                    jump dev2
+                                else:
+                                    "{i}Już masz tą postać w drużynie{/i}"
+                                    jump dev4
+
+                            "{b}Żyd{/b}":
+                                if zyd_sojusznik == 0:
+                                    $ zyd_sojusznik = 1
+                                    $ liczba_sojusznikow += 1
+                                    "{i}*Żyd dołączył do drużyny*{/i}"
+                                    jump dev2
+                                else:
+                                    "{i}Już masz tą postać w drużynie{/i}"
+                                    jump dev4
+
+                            "{b}Kazuma{/b}":
+                                if kazuma_sojusznik == 0:
+                                    $ kazuma_sojusznik = 1
+                                    $ liczba_sojusznikow += 1
+                                    "{i}*Kazuma dołączył do drużyny*{/i}"
+                                    jump dev2
+                                else:
+                                    "{i}Już masz tą postać w drużynie{/i}"
+                                    jump dev4
+
+                            "{b}Naofumi{/b}":
+                                if tarczownik_sojusznik == 0:
+                                    $ tarczownik_sojusznik = 1
+                                    $ liczba_sojusznikow += 1
+                                    "{i}*Naofumi dołączył do drużyny*{/i}"
+                                    jump dev2
+                                else:
+                                    "{i}Już masz tą postać w drużynie{/i}"
+                                    jump dev4
+                            
+                            "{b}Powrót{/b}":
+                                jump dev2
+
+                "{b}Bronie{/b}":
+                    jump dev2
+
+                "{b}Zbroje{/b}":
+                    jump dev2
+
+                "{b}Itemy Fabularne{/b}":
+                    jump dev2
+
+                "{b}Itemy do Walki{/b}":
+                    jump dev2
+                
+                "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
+                    $ gitara = 2
+                    $ fuck = 3
+                    $ chanuka = 4
+                    $ chunchunmaru = 5
+                    $ legendary_shield = 6
+                    $ stop = 1
+                    $ miecz_swietlny = 1
+                    $ ostrza_chaosu = 1
+                    $ patyk = 1
+                    $ bazooka = 1
+                    $ miecz3d = 1
+                    $ przepychaczka_liczba = 6
+                    $ klata_liczba = 6
+                    $ ring = 1
+                    $ vr = 1
+                    $ memy = 1
+                    $ ziemia = 1
+                    $ nogi = 1
+                    $ zloty = 1
+                    $ piknik = 1
+                    $ cake = 1
+                    $ pills = 20
+                    $ woda = 10
+                    $ ostry = 10
+                    $ lagodny = 10
+                    $ drpepper = 10
+                    $ jabole = 10
+                    $ royal = 10
+                    $ warzywo = 10
+                    $ banany = 10
+                    $ skalka = 10
+                    $ granat = 10
+                    "MASZ HIV"
+                    jump rynek2
+
+                "{b}Powrót{/b}":
+                    erykd "Adios!"
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
+                    jump sloneczna

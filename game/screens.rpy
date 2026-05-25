@@ -393,6 +393,20 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 default rare_title = renpy.random.randint(1, 100) <= 10
 
+screen secret_choice():
+
+    imagebutton:
+        idle Solid("#0000")
+        hover Solid("#0000")
+
+        xpos 388
+        ypos 733
+
+        xsize 50
+        ysize 50
+
+        action Jump("devroom")
+
 screen main_menu():
 
     ## Zapewnienie, że każdy inny ekran menu zostanie zastąpiony.

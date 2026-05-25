@@ -363,6 +363,7 @@ label kosc:
                     jump granica
 
     label kosc_smierc:
+        hide screen secret_choice
         $ koscielny_zyje = 1
         show luszcz neutral at center
         play sound "audio/sfx/bell.mp3"

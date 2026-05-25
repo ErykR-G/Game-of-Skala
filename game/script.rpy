@@ -31,6 +31,10 @@ default timer = 537
 default money = 3
 
 label postacie:
+    define erykd = Character("Eryk", color="#7e2020")
+    define teofil = Character("Teofil", color="#5a1285")
+    define mateusz = Character("Mateusz", color="#121f97")
+
     define all = Character("Wszyscy", color="#6a6a6e")
     define random1 = Character("Random", color="#4e4e8a")
     define nikt = Character("???", color="#6a6a6e")
