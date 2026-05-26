@@ -74,11 +74,21 @@ label postacie:
 
     define salmonella = Character("Salmonella", color="#926CAA")
 
+    define bezimienny = Character("Bezimienny", color="#11663e")
+
     define mleczarz = Character("Mleczarz", color="#807e7c")
 
     define sw = Character("Skalny Wędrowiec", color="#68625c")
 
     define allozaur = Character("Allozaur", color="#0f3955")
+
+    define placeholder = Character("Placeholder", color="#272727")
+
+    define cichociemny = Character("Cichociemny", color="#345a74")
+
+    define stasiuk = Character("Stasiuk", color="#6d2477")
+
+    define platon = Character("Platon", color="#5dafe6")
 
     define tasma = Character("Taśma", color="#919191")
     image tasma neutral right = Transform("tasma neutral", xzoom=-1) 

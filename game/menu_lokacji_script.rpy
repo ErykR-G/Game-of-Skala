@@ -35,6 +35,11 @@ default gnoms_wu = 0
 default zul_wu = 0
 
 default devroomek = 0
+default trumen1 = 0
+default trumen2 = 0
+default trumen3 = 0
+default trumen4 = 0
+default trumen5 = 0
 
 label menu_lokacji:
     label rynek:
@@ -78,8 +83,8 @@ label menu_lokacji:
                             jump spanko2  
         
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
-            $ kostka = renpy.random.randint(1, 50)
-            if kostka == 1 and kamala == 0:
+            $ kostka = renpy.random.randint(1, 100)
+            if kostka >= 1 and kostka <= 3 and kamala == 0:
                 $ kamala = 1
                 jump kamala
 
@@ -422,6 +427,12 @@ label menu_lokacji:
                             hide screen secret_choice
                             luszcz "Nie, nie dam rady"
                             jump spanko2  
+
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            $ kostka = renpy.random.randint(1, 100)
+            if kostka >= 1 and kostka <= 3 and trumen5 == 0:
+                $ trumen5 = 1
+                jump trumen5
 
         label sloneczna2:
             show screen secret_choice
@@ -822,6 +833,12 @@ label menu_lokacji:
                             luszcz "Nie, nie dam rady"
                             jump spanko2  
 
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            $ kostka = renpy.random.randint(1, 100)
+            if kostka >= 1 and kostka <= 3 and trumen3 == 0:
+                $ trumen3 = 1
+                jump trumen3
+
         label alejka2:
             window hide
             menu:      
@@ -1108,7 +1125,14 @@ label menu_lokacji:
                     else:
                         if timer > 1620 and timer < 1980 or timer > 3060 and timer < 3420 or timer > 4500 and timer < 4860 or timer > 5940 and timer < 6300 or timer > 7380 and timer < 7740 or timer > 8820 and timer < 9180 or timer > 10260 and timer < 10620 or timer > 11700:
                             luszcz "Nie, nie dam rady"
-                            jump spanko2          
+                            jump spanko2     
+
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            $ kostka = renpy.random.randint(1, 100)
+            if kostka >= 1 and kostka <= 3 and trumen2 == 0:
+                $ trumen2 = 1
+                jump trumen2
+
         label parking2:
             window hide
             menu:
@@ -2144,6 +2168,12 @@ label menu_lokacji:
                         if timer > 1620 and timer < 1980 or timer > 3060 and timer < 3420 or timer > 4500 and timer < 4860 or timer > 5940 and timer < 6300 or timer > 7380 and timer < 7740 or timer > 8820 and timer < 9180 or timer > 10260 and timer < 10620 or timer > 11700:
                             luszcz "Nie, nie dam rady"
                             jump spanko2  
+        
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            $ kostka = renpy.random.randint(1, 100)
+            if kostka >= 1 and kostka <= 3 and trumen4 == 0:
+                $ trumen4 = 1
+                jump trumen4
 
         label bohaterow_wrzesnia2:
             window hide
@@ -2595,6 +2625,12 @@ label menu_lokacji:
                         if timer > 1620 and timer < 1980 or timer > 3060 and timer < 3420 or timer > 4500 and timer < 4860 or timer > 5940 and timer < 6300 or timer > 7380 and timer < 7740 or timer > 8820 and timer < 9180 or timer > 10260 and timer < 10620 or timer > 11700:
                             luszcz "Nie, nie dam rady"
                             jump spanko2  
+
+        if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+            $ kostka = renpy.random.randint(1, 100)
+            if kostka >= 1 and kostka <= 3 and trumen1 == 0:
+                $ trumen1 = 1
+                jump trumen1
 
         label lipowa2:
             window hide
@@ -3488,6 +3524,161 @@ label menu_lokacji:
                             else:
                                 if zul_wu == 0 and gnoms_wu == 1 and raem_wu == 1:
                                     jump zul_fight
+
+    label trumen1:
+        play sound "audio/sfx/rota.mp3"
+        show luszcz neutral at slightleft
+        show cichociemny neutral2:
+            xalign 0.9
+            yalign 10.0
+            easeout 1.3 yalign 0.6
+        
+        $ renpy.pause(1.2)
+        with hpunch
+        $ renpy.pause(0.1)
+        show cichociemny neutral at slightright
+
+        luszcz "o jacie co się dzieje"
+
+        cichociemny "Macieju! wstawaj!"
+        cichociemny "Wstawaj zesrałeś się"
+        cichociemny "jesteś w tak zwanym internecie"
+
+        luszcz "że co proszę?"
+        luszcz "nie pozwolę się tak obrażać"
+
+        cichociemny "ty nawet nie istniejesz więc nie masz nic do gadania"
+
+        luszcz "doigrasz się!"
+
+        cichociemny "wątpię, nie ma tego w scenariuszu, ale masz jeszcze szanse zbudzić się z tego fraudu"
+        cichociemny "liczę na ciebie"
+
+        stop sound
+        hide cichociemny
+        show luszcz neutral at center
+
+        luszcz "????"
+        luszcz "faktycznie nie mogę mu nic zrobić"
+        luszcz "dziwne"
+
+        hide luszcz
+
+        jump lipowa2
+    
+    label trumen2:
+        show luszcz neutral at slightleft
+        show platon neutral at slightright
+        
+        platon "czy chciałby pan porozmawiać o świecie?"
+
+        luszcz "nie"
+
+        platon "ale ja nalegam"
+        platon "niech sobie pan wyobrazi, że ludzie są w jaskini i myślą, że znają świat, ale tak naprawdę widzą tylko jego odbicie i przez swoje położenie nigdy nie poznają prawdy"
+
+        luszcz "niesamowite....... jeszcze jakieś rewelację czy mogę już iść"
+
+        platon "niektórzy nie zdają sobie sprawę, że są właśnie takimi jaskiniowcami"
+
+        luszcz "hmm hmm"
+
+        platon "widzę, że nie chcesz poznać prawdy"
+        platon "więc żyj dalej w swoim zakłamaniu, że istniejesz i nikt nie kieruje twoimi poczynaniami"
+        platon "żegnam ozięble"
+        platon "BEZ RODZINKI"
+        hide platon
+        show luszcz neutral at center
+
+        luszcz "..?"
+
+        hide luszcz
+
+        jump parking2
+
+    label trumen3:
+        show luszcz neutral at slightleft
+        show bezimienny neutral at slightright
+        
+        bezimienny "Witam użytkowniku"
+
+        luszcz "Nie, nie chce odbierać żadnego iphona"
+
+        bezimienny "Co nie! ja nie o tym"
+        bezimienny "Chciałem cie tylko ostrzec, że savescamowanie niesie ze sobą ogromne konsekwecje dlatego uważaj jak z nich korzystasz"
+
+        luszcz "save co?"
+
+        bezimienny "nieważne, to nie do ciebie"
+
+        luszcz "co??"
+
+        bezimienny "gówno"
+
+        hide bezimienny
+        show luszcz neutral at center
+
+        luszcz "aha"
+
+        hide luszcz
+
+        jump alejka2
+
+    label trumen4:
+        show luszcz neutral at slightleft
+        show placeholder at slightright
+        
+        placeholder "masakra, po co komu maj"
+        placeholder "luty to był taki fajny miesiąc"
+        placeholder "najlepszy w roku"
+        placeholder "ale komuś należało na opóźnieniu tego całego cyrku"
+        placeholder "że niby po maturach itp."
+        placeholder "jeszcze teraz tylko czekać na 35 stopni i pełne słońce"
+        placeholder "i nawet w metro nie zagrał, a ma burżuj"
+
+        luszcz "jakie opóźnienie?"
+
+        placeholder "co podsłuchujesz konfidencie"
+        placeholder "z resztą to wszystko twoja wina"
+
+        hide placeholder
+        show luszcz neutral at center
+
+        luszcz "jakoś ostatnio jest coraz więcej obywateli Choroszczy na ulicach"
+
+        hide luszcz
+
+        jump bohaterow_wrzesnia2
+
+    label trumen5:
+        hide screen secret_choice
+        show luszcz neutral at slightleft
+        show stasiuk neutral at slightright
+        
+        stasiuk "Dzień dobry, a gdybyśmy się nie widzieli miłego popołudnia, wieczoru i dobranoc"
+
+        luszcz "Dzień dobry?"
+
+        stasiuk "Widzi pan było tu kiedyś pewne miejsce"
+        stasiuk "Można by wręcz powiedzieć, że była to dla mnie taka świątynia"
+        stasiuk "Mogłeś tam wziąć każde możliwe cheaty na całą grę"
+        stasiuk "Ale zabrały chuje sowieckie za granicę i nie ma już cheatów także musisz radzić sobie normalnie"
+
+        luszcz "eeee"
+        luszcz "a słyszał pan o takim miejscu jak Choroszcz?"
+
+        stasiuk "to nie ma teraz znaczenia"
+        stasiuk "Jedyne co ma teraz znaczenie to akcje jakie podejmiecie"
+
+        hide stasiuk
+        show luszcz neutral at center
+
+        luszcz "eee podejmiecie?"
+        luszcz "to ja już chyba pójdę"
+
+        hide luszcz
+
+        jump sloneczna2
 
     label kamala:
         play sound "audio/sfx/godlewska.mp3"
