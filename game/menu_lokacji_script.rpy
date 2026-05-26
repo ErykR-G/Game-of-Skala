@@ -5262,24 +5262,867 @@ label menu_lokacji:
                                 jump dev7
 
                 "{b}Itemy do Walki{/b}":
-                    jump dev2
-                
-                "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
-                    $ piknik = 1
-                    $ cake = 1
-                    $ pills = 20
-                    $ woda = 10
-                    $ ostry = 10
-                    $ lagodny = 10
-                    $ drpepper = 10
-                    $ jabole = 10
-                    $ royal = 10
-                    $ warzywo = 10
-                    $ banany = 10
-                    $ skalka = 10
-                    $ granat = 10
-                    "MASZ HIV"
-                    jump rynek2
+                    label dev10:
+                        menu:
+                            "{b}Wybierz item:{/b}"
+
+                            "{b}Piknik (+FULL HP FOR ALL){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if piknik == 0:
+                                            $ ile_item += 1
+                                        $ piknik += 1
+                                        "{i}*Piknik x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if piknik == 0:
+                                            $ ile_item += 1
+                                        $ piknik += 5
+                                        "{i}*Piknik x 5 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if piknik == 0:
+                                            $ ile_item += 1
+                                        $ piknik += 20
+                                        "{i}*Piknik x 20 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if piknik == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if piknik == 1:
+                                            $ ile_item -= 1
+                                        $ piknik -= 1
+                                        "{i}*Piknik x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if piknik == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if piknik <= 5:
+                                            $ ile_item -= 1
+                                            $ piknik = 0
+                                        else:
+                                            $ piknik -= 5
+                                        "{i}*Piknik x 5 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if piknik == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if piknik <= 20:
+                                            $ ile_item -= 1
+                                            $ piknik = 0
+                                        else:
+                                            $ piknik -= 20
+                                        "{i}*Piknik x 20 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev10
+
+                            "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if cake == 0:
+                                            $ ile_item += 1
+                                        $ cake += 1
+                                        "{i}*Ciasto Truskawkowe x 1 zostało dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if cake == 0:
+                                            $ ile_item += 1
+                                        $ cake += 5
+                                        "{i}*Ciasto Truskawkowe x 5 zostało dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if cake == 0:
+                                            $ ile_item += 1
+                                        $ cake += 20
+                                        "{i}*Ciasto Truskawkowe x 20 zostało dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if cake == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if cake == 1:
+                                            $ ile_item -= 1
+                                        $ cake -= 1
+                                        "{i}*Ciasto Truskawkowe x 1 zostało usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if cake == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if cake <= 5:
+                                            $ ile_item -= 1
+                                            $ cake = 0
+                                        else:
+                                            $ cake -= 5
+                                        "{i}*Ciasto Truskawkowe x 5 zostało usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if cake == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if cake <= 20:
+                                            $ ile_item -= 1
+                                            $ cake = 0
+                                        else:
+                                            $ cake -= 20
+                                        "{i}*Ciasto Truskawkowe x 20 zostało usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev10
+
+                            "{b}Słoik z Pigułkami (+3HP){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if pills == 0:
+                                            $ ile_item += 1
+                                        $ pills += 1
+                                        "{i}*Słoik z Pigułkami x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if pills == 0:
+                                            $ ile_item += 1
+                                        $ pills += 5
+                                        "{i}*Słoik z Pigułkami x 5 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if pills == 0:
+                                            $ ile_item += 1
+                                        $ pills += 20
+                                        "{i}*Słoik z Pigułkami x 20 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if pills == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if pills == 1:
+                                            $ ile_item -= 1
+                                        $ pills -= 1
+                                        "{i}*Słoik z Pigułkami x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if pills == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if pills <= 5:
+                                            $ ile_item -= 1
+                                            $ pills = 0
+                                        else:
+                                            $ pills -= 5
+                                        "{i}*Słoik z Pigułkami x 5 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if pills == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if pills <= 20:
+                                            $ ile_item -= 1
+                                            $ pills = 0
+                                        else:
+                                            $ pills -= 20
+                                        "{i}*Słoik z Pigułkami x 20 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev10
+
+                            "{b}Tutorialowa Woda Święcona (+6HP){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if woda == 0:
+                                            $ ile_item += 1
+                                        $ woda += 1
+                                        "{i}*Tutorialowa Woda Święcona x 1 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if woda == 0:
+                                            $ ile_item += 1
+                                        $ woda += 5
+                                        "{i}*Tutorialowa Woda Święcona x 5 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if woda == 0:
+                                            $ ile_item += 1
+                                        $ woda += 20
+                                        "{i}*Tutorialowa Woda Święcona x 20 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if woda == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if woda == 1:
+                                            $ ile_item -= 1
+                                        $ woda -= 1
+                                        "{i}*Tutorialowa Woda Święcona x 1 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if woda == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if woda <= 5:
+                                            $ ile_item -= 1
+                                            $ woda = 0
+                                        else:
+                                            $ woda -= 5
+                                        "{i}*Tutorialowa Woda Święcona x 5 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if woda == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if woda <= 20:
+                                            $ ile_item -= 1
+                                            $ woda = 0
+                                        else:
+                                            $ woda -= 20
+                                        "{i}*Tutorialowa Woda Święcona x 20 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev10
+
+                            "{b}Kebab Ostry (+3HP i +1 MAX DMG){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if ostry == 0:
+                                            $ ile_item += 1
+                                        $ ostry += 1
+                                        "{i}*Kebab Ostry x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if ostry == 0:
+                                            $ ile_item += 1
+                                        $ ostry += 5
+                                        "{i}*Kebab Ostry x 5 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if ostry == 0:
+                                            $ ile_item += 1
+                                        $ ostry += 20
+                                        "{i}*Kebab Ostry x 20 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if ostry == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if ostry == 1:
+                                            $ ile_item -= 1
+                                        $ ostry -= 1
+                                        "{i}*Kebab Ostry x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if ostry == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if ostry <= 5:
+                                            $ ile_item -= 1
+                                            $ ostry = 0
+                                        else:
+                                            $ ostry -= 5
+                                        "{i}*Kebab Ostry x 5 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if ostry == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if ostry <= 20:
+                                            $ ile_item -= 1
+                                            $ ostry = 0
+                                        else:
+                                            $ ostry -= 20
+                                        "{i}*Kebab Ostry x 20 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev10
+                            
+                            "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if lagodny == 0:
+                                            $ ile_item += 1
+                                        $ lagodny += 1
+                                        "{i}*Kebab Łagodny x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if lagodny == 0:
+                                            $ ile_item += 1
+                                        $ lagodny += 5
+                                        "{i}*Kebab Łagodny x 5 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if lagodny == 0:
+                                            $ ile_item += 1
+                                        $ lagodny += 20
+                                        "{i}*Kebab Łagodny x 20 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if lagodny == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if lagodny == 1:
+                                            $ ile_item -= 1
+                                        $ lagodny -= 1
+                                        "{i}*Kebab Łagodny x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if lagodny == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if lagodny <= 5:
+                                            $ ile_item -= 1
+                                            $ lagodny = 0
+                                        else:
+                                            $ lagodny -= 5
+                                        "{i}*Kebab Łagodny x 5 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if lagodny == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev10
+
+                                        if lagodny <= 20:
+                                            $ ile_item -= 1
+                                            $ lagodny = 0
+                                        else:
+                                            $ lagodny -= 20
+                                        "{i}*Kebab Łagodny x 20 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev10
+
+                            "{i}Strona 1/2 --->{/i}":
+                                jump dev11
+
+                            "{b}Powrót{/b}":
+                                jump dev2
+
+                    label dev11:
+                        menu:
+                            "{b}Wybierz item:{/b}"
+
+                            "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if drpepper == 0:
+                                            $ ile_item += 1
+                                        $ drpepper += 1
+                                        "{i}*Dr Pepper x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if drpepper == 0:
+                                            $ ile_item += 1
+                                        $ drpepper += 5
+                                        "{i}*Dr Pepper x 5 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if drpepper == 0:
+                                            $ ile_item += 1
+                                        $ drpepper += 20
+                                        "{i}*Dr Pepper x 20 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if drpepper == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if drpepper == 1:
+                                            $ ile_item -= 1
+                                        $ drpepper -= 1
+                                        "{i}*Dr Pepper x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if drpepper == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if drpepper <= 5:
+                                            $ ile_item -= 1
+                                            $ drpepper = 0
+                                        else:
+                                            $ drpepper -= 5
+                                        "{i}*Dr Pepper x 5 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if drpepper == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if drpepper <= 20:
+                                            $ ile_item -= 1
+                                            $ drpepper = 0
+                                        else:
+                                            $ drpepper -= 20
+                                        "{i}*Dr Pepper x 20 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev11
+
+                            "{b}Jabole (+6HP){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if jabole == 0:
+                                            $ ile_item += 1
+                                        $ jabole += 1
+                                        "{i}*Jabol x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if jabole == 0:
+                                            $ ile_item += 1
+                                        $ jabole += 5
+                                        "{i}*Jabole x 5 zostały dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if jabole == 0:
+                                            $ ile_item += 1
+                                        $ jabole += 20
+                                        "{i}*Jabole x 20 zostały dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if jabole == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if jabole == 1:
+                                            $ ile_item -= 1
+                                        $ jabole -= 1
+                                        "{i}*Jabol x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if jabole == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if jabole <= 5:
+                                            $ ile_item -= 1
+                                            $ jabole = 0
+                                        else:
+                                            $ jabole -= 5
+                                        "{i}*Jabole x 5 zostały usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if jabole == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if jabole <= 20:
+                                            $ ile_item -= 1
+                                            $ jabole = 0
+                                        else:
+                                            $ jabole -= 20
+                                        "{i}*Jabole x 20 zostały usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev11
+                            
+                            "{b}Royal Cola (+9HP){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if royal == 0:
+                                            $ ile_item += 1
+                                        $ royal += 1
+                                        "{i}*Royal Cola x 1 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if royal == 0:
+                                            $ ile_item += 1
+                                        $ royal += 5
+                                        "{i}*Royal Cola x 5 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if royal == 0:
+                                            $ ile_item += 1
+                                        $ royal += 20
+                                        "{i}*Royal Cola x 20 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if royal == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if royal == 1:
+                                            $ ile_item -= 1
+                                        $ royal -= 1
+                                        "{i}*Royal Cola x 1 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if royal == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if royal <= 5:
+                                            $ ile_item -= 1
+                                            $ royal = 0
+                                        else:
+                                            $ royal -= 5
+                                        "{i}*Royal Cola x 5 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if royal == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if royal <= 20:
+                                            $ ile_item -= 1
+                                            $ royal = 0
+                                        else:
+                                            $ royal -= 20
+                                        "{i}*Royal Cola x 20 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev11
+
+                            "{b}Warzywo skalne (+(4-7)HP){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if warzywo == 0:
+                                            $ ile_item += 1
+                                        $ warzywo += 1
+                                        "{i}*Warzywo skalne x 1 zostało dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if warzywo == 0:
+                                            $ ile_item += 1
+                                        $ warzywo += 5
+                                        "{i}*Warzywo skalne x 5 zostało dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if warzywo == 0:
+                                            $ ile_item += 1
+                                        $ warzywo += 20
+                                        "{i}*Warzywo skalne x 20 zostało dodane do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if warzywo == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if warzywo == 1:
+                                            $ ile_item -= 1
+                                        $ warzywo -= 1
+                                        "{i}*Warzywo skalne x 1 zostało usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if warzywo == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if warzywo <= 5:
+                                            $ ile_item -= 1
+                                            $ warzywo = 0
+                                        else:
+                                            $ warzywo -= 5
+                                        "{i}*Warzywo skalne x 5 zostało usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if warzywo == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if warzywo <= 20:
+                                            $ ile_item -= 1
+                                            $ warzywo = 0
+                                        else:
+                                            $ warzywo -= 20
+                                        "{i}*Warzywo skalne x 20 zostało usunięte z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev11
+
+                            "{b}Kiść bananów (+3HP FOR ALL){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if banany == 0:
+                                            $ ile_item += 1
+                                        $ banany += 1
+                                        "{i}*Kiść bananów x 1 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if banany == 0:
+                                            $ ile_item += 1
+                                        $ banany += 5
+                                        "{i}*Kiść bananów x 5 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if banany == 0:
+                                            $ ile_item += 1
+                                        $ banany += 20
+                                        "{i}*Kiść bananów x 20 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if banany == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if banany == 1:
+                                            $ ile_item -= 1
+                                        $ banany -= 1
+                                        "{i}*Kiść bananów x 1 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if banany == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if banany <= 5:
+                                            $ ile_item -= 1
+                                            $ banany = 0
+                                        else:
+                                            $ banany -= 5
+                                        "{i}*Kiść bananów x 5 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if banany == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if banany <= 20:
+                                            $ ile_item -= 1
+                                            $ banany = 0
+                                        else:
+                                            $ banany -= 20
+                                        "{i}*Kiść bananów x 20 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev11
+                            
+                            "{b}Ostra Skałka (5-8 DMG){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if skalka == 0:
+                                            $ ile_item += 1
+                                        $ skalka += 1
+                                        "{i}*Ostra Skałka x 1 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if skalka == 0:
+                                            $ ile_item += 1
+                                        $ skalka += 5
+                                        "{i}*Ostra Skałka x 5 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if skalka == 0:
+                                            $ ile_item += 1
+                                        $ skalka += 20
+                                        "{i}*Ostra Skałka x 20 została dodana do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if skalka == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if skalka == 1:
+                                            $ ile_item -= 1
+                                        $ skalka -= 1
+                                        "{i}*Ostra Skałka x 1 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if skalka == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if skalka <= 5:
+                                            $ ile_item -= 1
+                                            $ skalka = 0
+                                        else:
+                                            $ skalka -= 5
+                                        "{i}*Ostra Skałka x 5 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if skalka == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if skalka <= 20:
+                                            $ ile_item -= 1
+                                            $ skalka = 0
+                                        else:
+                                            $ skalka -= 20
+                                        "{i}*Ostra Skałka x 20 została usunięta z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev11
+                            
+                            "{b}Granat (4 DMG FOR ALL){/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        if granat == 0:
+                                            $ ile_item += 1
+                                        $ granat += 1
+                                        "{i}*Granat x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        if granat == 0:
+                                            $ ile_item += 1
+                                        $ granat += 5
+                                        "{i}*Granat x 5 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        if granat == 0:
+                                            $ ile_item += 1
+                                        $ granat += 20
+                                        "{i}*Granat x 20 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if granat == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if granat == 1:
+                                            $ ile_item -= 1
+                                        $ granat -= 1
+                                        "{i}*Granat x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if granat == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if granat <= 5:
+                                            $ ile_item -= 1
+                                            $ granat = 0
+                                        else:
+                                            $ granat -= 5
+                                        "{i}*Granat x 5 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if granat == 0:
+                                            "{i}*Nie masz tego przedmiotu w ekwipunku*{/i}"
+                                            jump dev11
+
+                                        if granat <= 20:
+                                            $ ile_item -= 1
+                                            $ granat = 0
+                                        else:
+                                            $ granat -= 20
+                                        "{i}*Granat x 20 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev11
+
+                            "{i}<--- Strona 2/2{/i}":
+                                jump dev10
 
                 "{b}Powrót{/b}":
                     erykd "Adios!"
