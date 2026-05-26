@@ -4,6 +4,7 @@ default lethalc21 = 0
 default lethalc22 = 0
 default lethalc23 = 0
 default gaz = 1
+default zly_zyd = 0
 
 
 label zyd:
@@ -51,6 +52,7 @@ label zyd:
 
         menu:
             "{b}Wynoś się stąd głupi żydzie!!!{/b}":
+                $ zly_zyd = 1
                 luszcz "Wynoś się stąd głópi żydzie!!!"
 
                 braun "Ah, ta Polska młodzież…"

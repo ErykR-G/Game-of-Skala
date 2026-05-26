@@ -4034,7 +4034,272 @@ label menu_lokacji:
         label dev2:
             menu:
                 "{b}Ogólne{/b}":
-                    jump dev2
+                    label dev12:
+                        menu:
+                            "{b}Czas{/b}":                
+                                label dev13:
+                                    menu:
+                                        "{b}Co zrobić?{/b}"
+
+                                        "{b}Dodać{/b}":
+                                            menu:
+                                                "{b}Ile?{/b}"
+
+                                                "{b}+5min{/b}":
+                                                    if timer == 11377:
+                                                        "{i}*Nie możesz ustawić czasu na późniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer + 5 > 11377:
+                                                            $ timer = 11377
+                                                        
+                                                        else:
+                                                            $ timer += 5
+
+                                                    "{i}*Dodałeś 5 minut do czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}+15min{/b}":
+                                                    if timer == 11377:
+                                                        "{i}*Nie możesz ustawić czasu na późniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer + 15 > 11377:
+                                                            $ timer = 11377
+                                                        
+                                                        else:
+                                                            $ timer += 15
+
+                                                    "{i}*Dodałeś 15 minut do czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}+1h{/b}":
+                                                    if timer == 11377:
+                                                        "{i}*Nie możesz ustawić czasu na późniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer + 60 > 11377:
+                                                            $ timer = 11377
+                                                        
+                                                        else:
+                                                            $ timer += 60
+
+                                                    "{i}*Dodałeś 1 godzinę do czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}+5h{/b}":
+                                                    if timer == 11377:
+                                                        "{i}*Nie możesz ustawić czasu na późniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer + 300 > 11377:
+                                                            $ timer = 11377
+                                                        
+                                                        else:
+                                                            $ timer += 300
+
+                                                    "{i}*Dodałeś 5 godzin do czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}+12h{/b}":
+                                                    if timer == 11377:
+                                                        "{i}*Nie możesz ustawić czasu na późniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer + 720 > 11377:
+                                                            $ timer = 11377
+                                                        
+                                                        else:
+                                                            $ timer += 720
+
+                                                    "{i}*Dodałeś 12 godzin do czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}+24h{/b}":
+                                                    if timer == 11377:
+                                                        "{i}*Nie możesz ustawić czasu na późniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer + 1440 > 11377:
+                                                            $ timer = 11377
+                                                        
+                                                        else:
+                                                            $ timer += 1440
+
+                                                    "{i}*Dodałeś 1 dobę do czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}Powrót{/b}":         
+                                                    jump dev13
+                                        
+                                        "{b}Zabrać{/b}":
+                                            menu:
+                                                "{b}Ile?{/b}"
+
+                                                "{b}-5min{/b}":
+                                                    if timer == 615:
+                                                        "{i}*Nie możesz ustawić czasu na wcześniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer - 5 < 615:
+                                                            $ timer = 615
+                                                        
+                                                        else:
+                                                            $ timer -= 5
+
+                                                    "{i}*Zabrałeś 5 minut z czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}-15min{/b}":
+                                                    if timer == 615:
+                                                        "{i}*Nie możesz ustawić czasu na wcześniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer - 15 < 615:
+                                                            $ timer = 615
+                                                        
+                                                        else:
+                                                            $ timer -= 15
+
+                                                    "{i}*Zabrałeś 15 minut z czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}-1h{/b}":
+                                                    if timer == 615:
+                                                        "{i}*Nie możesz ustawić czasu na wcześniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer - 60 < 615:
+                                                            $ timer = 615
+                                                        
+                                                        else:
+                                                            $ timer -= 60
+
+                                                    "{i}*Zabrałeś 1 godzinę z czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}-5h{/b}":
+                                                    if timer == 615:
+                                                        "{i}*Nie możesz ustawić czasu na wcześniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer - 300 < 615:
+                                                            $ timer = 615
+                                                        
+                                                        else:
+                                                            $ timer -= 300
+
+                                                    "{i}*Zabrałeś 5 godzin z czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}-12h{/b}":
+                                                    if timer == 615:
+                                                        "{i}*Nie możesz ustawić czasu na wcześniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer - 720 < 615:
+                                                            $ timer = 615
+                                                        
+                                                        else:
+                                                            $ timer -= 720
+
+                                                    "{i}*Zabrałeś 12 godzin z czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}-24h{/b}":
+                                                    if timer == 615:
+                                                        "{i}*Nie możesz ustawić czasu na wcześniejszy*{/i}"
+                                                        jump dev13
+                                                    
+                                                    else:
+                                                        if timer - 1440 < 615:
+                                                            $ timer = 615
+                                                        
+                                                        else:
+                                                            $ timer -= 1440
+
+                                                    "{i}*Zabrałeś 1 dobę z czasu gry*{/i}"
+                                                    jump dev2
+                                                
+                                                "{b}Powrót{/b}":         
+                                                    jump dev13
+                                        
+                                        "{b}Powrót{/b}":         
+                                            jump dev12
+                                                    
+                            "{b}Portfele{/b}":
+                                menu:
+                                    "{b}Ile?{/b}"
+
+                                    "{b}+1{/b}":
+                                        $ money += 1
+                                        "{i}*Portfel x 1 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+5{/b}":
+                                        $ money += 5
+                                        "{i}*Portfel x 5 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}+20{/b}":
+                                        $ money += 20
+                                        "{i}*Portfel x 20 został dodany do ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-1{/b}":
+                                        if money == 0:
+                                            "{i}*Nie masz portfeli*{/i}"
+                                            jump dev12
+
+                                        $ money -= 1
+                                        "{i}*Portfel x 1 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-5{/b}":
+                                        if money == 0:
+                                            "{i}*Nie masz portfeli*{/i}"
+                                            jump dev12
+
+                                        if money <= 5:
+                                            $ money = 0
+                                        else:
+                                            $ money -= 5
+                                        "{i}*Portfel x 5 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}-20{/b}":
+                                        if money == 0:
+                                            "{i}*Nie masz portfeli*{/i}"
+                                            jump dev12
+
+                                        if money <= 20:
+                                            $ money = 0
+                                        else:
+                                            $ money -= 20
+                                        "{i}*Portfel x 20 został usunięty z ekwipunku*{/i}"
+                                        jump dev2
+                                    
+                                    "{b}Powrót{/b}":         
+                                        jump dev12
+                            
+                            "{b}Zapomnij o tej rozmowie{/b}":
+                                $ devroomek = 0
+                                erykd "Jakiej rozmowie?"
+                                jump dev2
+
+                            "{b}Powrót{/b}":
+                                jump dev2
 
                 "{b}Towarzysze{/b}":
                     label dev4:

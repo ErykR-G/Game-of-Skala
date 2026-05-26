@@ -506,7 +506,7 @@ label bal:
                     
                     luszcz "Jaką?"
 
-                    urban "Nie tutaj, przyjdź po 24 do toalety to to obgadamy"
+                    urban "Nie tutaj, przyjdź po 1 w nocy do toalety to to obgadamy"
 
                     luszcz "Oke doke, spróbuję nie zapomnieć"
 
@@ -775,7 +775,7 @@ label bal:
                             
                             luszcz "Jaką?"
 
-                            urban "Nie tutaj, przyjdź po 24 do toalety to to obgadamy"
+                            urban "Nie tutaj, przyjdź po 1 w nocy do toalety to to obgadamy"
 
                             luszcz "Oke doke, spróbuję nie zapomnieć"
 
@@ -1508,7 +1508,7 @@ label bal:
                             luszcz "Jaką?"
 
                             urban "nie tutaj"
-                            urban "Przyjdź do kibla po 24"
+                            urban "Przyjdź do kibla po 1 w nocy"
 
                             luszcz "spróbuję"
 
@@ -4686,3 +4686,287 @@ label bal:
             easeout 0.2 xalign 0.0
 
         luszcz "Skąd znasz moje imię!?"
+
+        eryk "Dużo o tobie słyszałem Macieju"
+        eryk "Podobno nawet zaprzyjaźniłeś się z samym Grzegorzem"
+
+        luszcz "Grzegorzem?"
+
+        eryk "Braunem!"
+
+        if zly_zyd == 1:
+            luszcz "Ahhh nie no ja tam tylko z nim wypędziełem jakiegoś głupiego żyda ze sklepu"
+            luszcz "Jestem zwolenikiem liberalizmu gospodarczego więc uważam, że jeśli ktoś nie chce komuś czegoś sprzedać to ma do tego pełne prawo!"
+        
+        else:
+            luszcz "Emmmm, nie wiem czy można to nazwać przyjaźnią"
+            luszcz "Obiłem mu mordę broniąc jakiegoś żyda przed dyskriminacją i mu to troche zaimponowało."
+        
+        eryk "Oj tam, oj tam, nie umniejszaj sobie!"
+
+        luszcz "..."
+
+        eryk "A, a, a jaki on teraz jest!?"
+
+        luszcz "Eeeee Braun?"
+
+        luszcz "No nie wiem no zachowuje się jak Braun no"
+
+        eryk "..."
+
+        show shinobu neutral right:
+            xalign 0.0
+            yalign 1.0
+            easeout 0.2 xalign 0.5
+
+        show luszcz bal:
+            xalign 0.5
+            yalign 1.0
+            easeout 0.2 xalign 0.0
+
+        shinobu "Panie, powinieneś mu powiedzieć!"
+
+        eryk "Ale emmm, ale napewno?"
+
+        shinobu "Jeżeli chcesz go odzyskać to będzie potrzebował pomocy tego człowieka"
+
+        eryk "ehhh"
+
+        show luszcz bal:
+            xalign 0.0
+            yalign 1.0
+            easeout 0.2 xalign 0.5
+
+        show shinobu neutral right:
+            xalign 0.5
+            yalign 1.0
+            easeout 0.2 xalign 0.0
+        
+        eryk "Macieju, prawda jest taka, że ja jestem w związku małżeńskim z Grzegorzem!"
+
+        luszcz "chwila co!???"
+
+        if zly_zyd == 0:
+            luszcz "(hmmm choć w sumie podczas naszej walki coś o tym wspomniał)"
+        
+        eryk "Znaczy jesteśmy teorytycznie w związku małżeńskim"
+        eryk "Bo już po ślubie, gdy Grzegorz dowiedział się, że mam korzenie żydowskie i że jestem facetem zostawił mnie i przyleciał tu do Skały"
+
+        luszcz "Jezus maria, co za powalona historia"
+
+        eryk "No trochę rel"
+        eryk "Ale wracając do tematu, to mam do Ciebie ogromną prośbę"
+        eryk "Czy pomógłbyś mi przekonać Brauna do powrotu do mnie?"
+
+        menu:
+            "{b}Czy pomóc Erykowi?{/b}"
+
+            "{b}Tak{/b}":
+                luszcz "Dobrze, pomogę Ci"
+
+                eryk "Oh, dziękuję Ci Macieju"
+
+                show shinobu neutral right:
+                    xalign 0.0
+                    yalign 1.0
+                    easeout 0.2 xalign 0.5
+
+                show luszcz bal:
+                    xalign 0.5
+                    yalign 1.0
+                    easeout 0.2 xalign 0.0
+
+                shinobu "W takim razie skoro wszystko ustalone to pospieszmy się zanim Braun opuści Bal!"
+
+                luszcz "Chwila on tu jest!?"
+
+                show shinobu neutral
+
+                shinobu "Tak, użyliśmy podstępu, żeby go zwabić, ale pewnie już wie kto organizuje ten Bal"
+
+                luszcz "To w drogę!"
+
+                stop music
+                scene bg black with fade
+                scene bg bal2 with fade 
+                show luszcz bal at center
+                show shinobu neutral right at left 
+                show eryk neutral at right
+
+                luszcz "Gdzie on jest!?"
+                luszcz "..."
+                luszcz "Tam widzę go!"
+
+                scene bg bal2 with fastfade 
+                play music "audio/music/bal.mp3"
+                $ renpy.music.set_volume(0.5, delay=0.3)
+                $ timer += 15
+
+                show luszcz bal at slightleft
+                show braun neutral right at right
+
+                luszcz "Panie Braun niech pan zaczeka!"
+
+                show braun neutral 
+
+                braun "O co chodzi Łuszczu?"
+
+                show shinobu neutral right zorder 3:
+                    xalign -0.75
+                    yalign 1.0
+                    easeout 0.4 xalign 0.0
+
+                show luszcz bal zorder 5:
+                    xalign 0.25
+                    yalign 1.0
+                    easeout 0.2 xalign 0.5
+
+                show eryk neutral right zorder 4:
+                    xalign -0.5
+                    yalign 1.0
+                    easeout 0.4 xalign 0.25
+
+                braun "..."
+                braun "Muszę iść."
+
+                show braun neutral right
+
+                luszcz "Braun zaczekaj!"
+                luszcz "On się zmienił!"
+
+                show braun neutral
+
+                if zly_zyd == 1:
+                    ""
+                else:
+                    $ bralus = 1
+                    braun "ahhh czyli już wiesz?"
+
+                    luszcz "Powiedzieli mi..."
+                    luszcz "On się naprawde zmienił"
+                    luszcz "Daj mu chociaż szansę się wytłumaczyć"
+
+                    braun "..."
+
+                    braun "Gdyby ktoś inny mnie o to spytał to bym odmówił..."
+                    braun "Ale dla Ciebie Łuszczu zrobię wyjątek"
+
+                    show luszcz bal zorder 3:
+                        xalign 0.5
+                        yalign 1.0
+                        easeout 0.4 xalign 1.0
+
+                    show braun neutral zorder 5:
+                        xalign 1.0
+                        yalign 1.0
+                        easeout 0.2 xalign 0.75
+                    
+                    $ renpy.pause(0.3)
+
+                    show luszcz bal right zorder 3
+
+                    eryk "..."
+
+                    braun "..."
+
+                    eryk "proszę wróć"
+
+                    braun "nie mogę"
+                    braun "moje przekonania nie pozwalają mi być w związku z żydem"
+
+                    eryk "A jeśli bym nim nie był?"
+
+                    braun "..!?"
+                    braun "Jak to?"
+
+                    eryk "Po tym jak nas opuściłeś zacząłem starania o obywatelstwo japońskie..."
+                    eryk "i tak się stało, teraz jestem japończykiem."
+
+                    braun "naprawde!?!?!?"
+                    braun "..."
+                    braun "ale nadal jesteś mężczyzną..."
+
+                    eryk "a co do tego..."
+
+                    show eryk neutral2
+
+                    eryk "to, to też się zmieniło!"
+
+                    luszcz "(Jezus maria, co się dzieje!?)"
+
+                    braun "Ohhh, Eryk..."
+                    braun "Eryka..."
+
+                    eryk "Grzegorzu..."
+
+                    show eryk neutral3
+
+                    eryk "Czy wrócisz do mnie?"
+
+                    braun "..."
+                    braun "Tak!"
+
+                    eryk "Kocham Cię Grzegorzu!"
+                    braun "Też Cię kocham Eryko!"
+
+                    show eryk neutral4 zorder 6:
+                        xalign 0.25
+                        yalign 1.0
+                        easeout 0.5 xalign 0.40
+                    
+                    show braun neutral zorder 5:
+                        xalign 0.75
+                        yalign 1.0
+                        easeout 0.5 xalign 0.60
+                    
+                    $ renpy.pause(0.5)
+
+                    scene bg black with fade
+                    "{i}Grzegorz Braun i Eryk (Eryka?) pocałowali się{/i}"
+                    scene bg bal2 with fade
+                    show shinobu neutral right at left 
+                    show eryk neutral2 zorder 3:
+                        xalign 0.32
+                        yalign 1.0
+                    show braun neutral zorder 2:
+                        xalign 0.68
+                        yalign 1.0
+                    show luszcz bal right at right 
+
+                    braun "Idę spakować moję rzeczy skarbie"
+
+                    eryk "Dobrze kochany, będe oczekiwała twojego powrotu!"
+                    hide braun
+                    show eryk neutral2 at center
+                    luszcz "emmmm, nie wiedziałem, ze jesteś kobietą..."
+
+                    eryk "Wiedziałem, że Braun ma problem z moją płcią"
+                    eryk "Dlatego przeszedłem dla niego korektę płci"
+
+                    luszcz "..."
+                    luszcz "Musisz go bardzo kochać"
+
+                    eryk "to prawda"
+                    eryk "..."
+
+                    luszcz "..."
+                    
+                    eryk "To eeee my sobie pójdziemy"
+                    eryk "Dzięki za pomoc Macieju"
+
+                    luszcz "emmm nie ma za co"
+
+                    hide shinobu 
+                    hide eryk 
+                    show luszcz bal right at center
+
+                    luszcz "troche"
+                    luszcz "crazy"
+                    
+
+
+            "{b}Nie{/b}":
+                luszcz "Emmm nie chciałbym się mieszać w sprawy innych..."
+
+                eryk "Ehhh, no cóż rozumiem"
+
