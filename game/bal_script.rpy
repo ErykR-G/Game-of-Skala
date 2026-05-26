@@ -1763,16 +1763,2282 @@ label bal:
         "{i}Muzyka rozpoczeła grać, a ludzie zaczeli dobierać się w pary do pierwszego tańca{/i}"
 
         if lilith_social_link == 2 and toxic_pea_social_link >= 2 and toxic_pea_social_link < 6 and gotka_szpont == 1 and gotka_social_link < 10:
-            ""
+            show luszcz bal at slightleft
+            show gotka neutral right at slightright
+
+            gotka "Zatańczymy moja świnko morska?"
+
+            show lilith neutral5 at left
+            show luszcz bal right at center
+            show gotka neutral right at right
+
+            with vpunch
+            lilith "Łuszczu, co to za kobieta?"
+
+            show toxic_pea neutral at slightright
+            show gotka neutral right at right
+            show luszcz bal at center
+            show lilith neutral5 at left
+
+            toxic "EMMMMM WHAT THE SIGMA!!!!?"
+            toxic "Co to za baby Łuszczu?"
+
+            with vpunch
+            gotka "Dokładnie, Łuszczu co to za ludzie?"
+
+            luszcz "(awww fuck!)"
+
+            menu:
+                "{b}Co robić?{/b}"
+
+                "{b}Graj o pełną stawkę{/b}":
+                    luszcz "emmm, bo wiecie..."
+
+                    show luszcz bal right
+
+                    luszcz "Ja kiedyś oglądałem takie jedno animu..."
+
+                    show luszcz bal
+
+                    luszcz "i w tym animu był własnie taki wątek, że..."
+
+                    show luszcz bal right
+
+                    luszcz "chłopowi ujebało ręke i ojca, a matka stała się bardziej upośledzona niż była"
+
+                    show luszcz bal
+
+                    luszcz "i chłop miał załamkę"
+
+                    show luszcz bal right
+
+                    luszcz "i żone"
+
+                    show luszcz bal
+
+                    luszcz "ale żona była w domu"
+
+                    show luszcz bal right
+
+                    luszcz "a załamka była teraz"
+
+                    show luszcz bal
+
+                    luszcz "i wtedy do tego gościa przyszła jego 40 letnia mistrzyni, która ma tak naprawde 20 lat, bo jej rasa stażeje sie 2 razy wolniej nirz ludzie"
+
+                    show luszcz bal right
+
+                    luszcz "i ona go wyruchała na pocieszenie!"
+
+                    show luszcz bal
+
+                    luszcz "i on ją też wziął za żone!"
+
+                    show luszcz bal right
+
+                    luszcz "i od teraz miał dużą 3 osobową familje i żyli długo i szczęśliwie! KONIEC"
+
+                    show luszcz bal
+
+                    gotka "..."
+
+                    show luszcz bal right
+
+                    lilith "..."
+
+                    show luszcz bal
+
+                    toxic "..."
+
+                    luszcz "To co powiecie na taki rozszerzony trójkącik?"
+
+                    gotka "A spierdalaj z nami koniec!"
+
+                    $ gotka_social_link = 9
+                    $ gotka_wybory = 0
+                    hide gotka
+                    show toxic_pea neutral at right
+
+                    luszcz "..."
+                    show luszcz bal right 
+
+                    lilith "Z nami kurwa też, idę się zajebać"
+
+                    hide lilith
+                    $ lilith_social_link = 10
+
+                    show luszcz bal
+
+                    toxic "z nami również"
+
+                    play sound "audio/sfx/plucie.mp3"
+
+                    "{i}Toxic Pea pluje Łuszczowi na twarz obślizgłą kartką{/i}"
+
+                    toxic "spierdalaj"
+
+                    hide toxic_pea 
+                    show luszcz bal at center
+
+                    "{i}Łuszcz zdejmuje kartkę z twarzy i zaczyna ją czytać{/i}"
+
+                    luszcz "“Ja, Toxic Pea, oświadczam że podpisuję się pod agendę obywatela Skały Macieja Cwela Łuszcza. Jestem wdzięczny za jego usługi seksualne, w tym palcowanie czy seks analny oraz miauczenie w ich procesie. Ten papier może być użyty jako głos w dowolnym głosowaniu jaki Maciej Cwel Łuszcz sobie wymarzy.”"
+                    luszcz "…"
+                    luszcz "Heh, pżynajmniej chociaż tyle."
+                    luszcz "Niech ja to tylko wyczyszczę"
+
+                    "{i}*siioooooooorb*{/i}"
+
+                    luszcz "Jest szansa rze będę tęsknić za tym smakiem."
+
+                    $ toxic_pea_social_link = 6
+                    $ toxic_pea_wybory = 2
+                    $ toxic_limit = 1
+                    $ timer += 15
+                
+                    show luszcz bal at slightleft
+                    show shinobu neutral at slightright
+
+                    shinobu "Emmm halo"
+
+                    luszcz "..."
+
+                    shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+
+                    luszcz "emmm"
+                    luszcz "..."
+
+                    luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+
+                    shinobu "Shinobu się nazywam"
+
+                    luszcz "shinobu"
+
+                    shinobu "..."
+
+                    luszcz "..."
+
+                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                    luszcz "emmm do mnie?"
+
+                    shinobu "Też mnie to dziwi"
+
+                    luszcz "..."
+
+                    shinobu "..."
+
+                    luszcz "..."
+                    luszcz "zobaczę może przyjdę"
+
+                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                    shinobu "fajnie jakbyś przyszedł!"
+
+                    hide shinobu
+                    show luszcz bal at center
+
+                    luszcz "ciekawe o co może chodzić"
+
+                    if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                        tarczownik "O hej Łuszczu mam sprawę!"
+
+                        show luszcz bal at slightleft
+                        show tarczownik neutral at slightright
+
+                        luszcz "O co chodzi?"
+
+                        tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                        tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                        luszcz "Jakiego towaru!?!?"
+
+                        tarczownik "A czy to ważne?"
+
+                        luszcz "TAK!"
+
+                        tarczownik "zobaczysz na miejscu"
+                        tarczownik "To pójdziesz ze mną?"
+
+                        luszcz "eeee zobaczę"
+
+                        tarczownik "To jak coś czekam przy toaletach."
+
+                        hide tarczownik
+                        show luszcz bal at center
+
+                        luszcz "WTF? mega crazy"
+                    
+                    luszcz "..."
+
+                    jump bal3
+
+                "{b}Gotka{/b}":
+                    luszcz "Nie mam pojęcia mój ty wilku alfa"
+
+                    show luszcz bal right
+
+                    luszcz "sio, idźcie sobie, nie znam was!"
+
+                    lilith "ahh tak się bawimy?"
+                    lilith "to! to!"
+                    lilith "to idę się zabić, dowidzenia"
+
+                    hide lilith
+                    $ lilith_social_link = 10
+
+                    show luszcz bal
+
+                    toxic "spierdalaj"
+
+                    play sound "audio/sfx/plucie.mp3"
+
+                    "{i}Toxic Pea pluje Łuszczowi na twarz obślizgłą kartką{/i}"
+
+                    toxic "Nara."
+
+                    hide toxic_pea 
+                    show luszcz bal at slightleft
+                    show gotka neutral right at slightright
+
+                    "{i}Łuszcz zdejmuje kartkę z twarzy i zaczyna ją czytać{/i}"
+
+                    luszcz "(“Ja, Toxic Pea, oświadczam że podpisuję się pod agendę obywatela Skały Macieja Cwela Łuszcza. Jestem wdzięczny za jego usługi seksualne, w tym palcowanie czy seks analny oraz miauczenie w ich procesie. Ten papier może być użyty jako głos w dowolnym głosowaniu jaki Maciej Cwel Łuszcz sobie wymarzy.”)"
+                    luszcz "…"
+                    luszcz "(Heh, pżynajmniej tyle)"
+                    luszcz "(Niech ja to tylko wyczyszczę)"
+
+                    "{i}*siioooooooorb*{/i}"
+
+                    luszcz "(Jest szansa rze będę tęsknić za tym smakiem.)"
+
+                    $ toxic_pea_social_link = 6
+                    $ toxic_pea_wybory = 2
+                    $ toxic_limit = 1
+
+                    luszcz "Jezu co za wariaci"
+
+                    gotka "..."
+
+                    luszcz "No serio ja ich nie znam, przecież WTF co to w ogóle było!"
+
+                    gotka "..."
+
+                    luszcz "eee yyyyy ee TAŃCZYMY?"
+
+                    gotka "..."
+                    gotka "niech będzie"
+                    gotka "ale od teraz mam cię cały czas na oku"
+
+                    scene bg black with fade
+                    "{i}Łuszczu i Gotka dołączyli się do reszty tańczących na sali{/i}"
+                    "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                    "{i}Po chwili zmieniła się muzyka, a Łuszczu i Gotka jak najszybciej zeszli z parkietu{/i}"
+
+                    scene bg bal4 with fade
+                    $ timer += 15
+                    show luszcz bal at slightleft
+                    show gotka neutral right at slightright
+
+                    gotka "To było...!"
+                    gotka "Doprawdy żałosne, jezus maria jak można tak wszystko zjebać!"
+
+                    luszcz "Emmm no sorki no..."
+
+                    gotka "ehhh szkoda strzępić ryja"
+                    
+                    if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                        gotka "A właśnie Łuszczu, jest sprawa"
+                        gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+                        gotka "Nie wystawisz przecież MNIE, swojej dziewczyny co nie?"
+
+                        luszcz "emmm sorki jeszcze zobaczę mój alfa wilku"
+
+                        gotka "Łuszczu!"
+
+                        luszcz "No spróbuję, no raczej tak..."
+
+                        gotka "To czekam przy toaletach"
+                        gotka "Jak będziesz gotowy to przyjdź"
+
+                        hide gotka
+                        show luszcz bal at center
+
+                        luszcz "ufff"
+                    
+                    else:
+                        luszcz "..."
+
+                        gotka "..."
+                        gotka "To ja wracam do naszego stolika"
+                        gotka "Idziesz ze mną?"
+
+                        luszcz "emmmm, jeszcze zobaczę"
+
+                        gotka "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                        hide gotka
+                        show luszcz bal at center
+
+                        luszcz "..."
+                    
+                    show luszcz bal at slightleft
+                    show shinobu neutral at slightright
+
+                    shinobu "O tu jesteś!"
+                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                    luszcz "..?"
+
+                    luszcz "Co po mnie widać pani Loli?"
+
+                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                    luszcz "shinobu"
+
+                    shinobu "bardzo ładnie"
+
+                    luszcz "..."
+
+                    shinobu "..."
+
+                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                    luszcz "emmm do mnie?"
+
+                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                    luszcz "niemiłe"
+
+                    shinobu "niemiłe, ale prawdziwe"
+
+                    luszcz "..."
+                    luszcz "zobaczę może przyjdę"
+
+                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                    shinobu "lepiej żebyś przyszedł!"
+
+                    hide shinobu
+                    show luszcz bal at center
+
+                    luszcz "ehhh, ciekawe o co może chodzić"
+
+                    if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                        tarczownik "O hej Łuszczu mam sprawę!"
+
+                        show luszcz bal at slightleft
+                        show tarczownik neutral at slightright
+
+                        luszcz "O co chodzi?"
+
+                        tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                        tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                        luszcz "Jakiego towaru!?!?"
+
+                        tarczownik "A czy to ważne?"
+
+                        luszcz "TAK!"
+
+                        tarczownik "zobaczysz na miejscu"
+                        tarczownik "To pójdziesz ze mną?"
+
+                        luszcz "eeee zobaczę"
+
+                        tarczownik "To jak coś czekam przy toaletach."
+
+                        hide tarczownik
+                        show luszcz bal at center
+
+                        luszcz "WTF? mega crazy"
+                    
+                    luszcz "..."
+
+                    jump bal3
+
+                "{b}Lilith{/b}":
+                    show luszcz bal right
+
+                    luszcz "Nie wiem kim są ci ludzie!"
+
+                    show luszcz bal
+
+                    luszcz "Coś wy za jedni!?"
+                    luszcz "Sio odemnie, bo, bo"
+                    luszcz "sio"
+
+                    gotka "..!?"
+                    gotka "Czyli tak się bawimy!!!?"
+                    gotka "To wiesz co!?"
+
+                    luszcz "jajco boom (przepraszam pani gotko...)"
+
+                    gotka "..!"
+                    gotka "spierdalaj!"
+
+                    $ gotka_social_link = 9
+                    $ gotka_wybory = 0
+
+                    hide gotka
+                    show toxic_pea neutral at right
+                    toxic "dokładnie tak"
+                    toxic "spierdalaj"
+
+                    play sound "audio/sfx/plucie.mp3"
+
+                    "{i}Toxic Pea pluje Łuszczowi na twarz obślizgłą kartką{/i}"
+
+                    toxic "Nara."
+
+                    hide toxic_pea 
+                    show luszcz bal right at slightright
+                    show lilith neutral5 at slightleft
+
+                    "{i}Łuszcz zdejmuje kartkę z twarzy i zaczyna ją czytać{/i}"
+
+                    luszcz "(“Ja, Toxic Pea, oświadczam że podpisuję się pod agendę obywatela Skały Macieja Cwela Łuszcza. Jestem wdzięczny za jego usługi seksualne, w tym palcowanie czy seks analny oraz miauczenie w ich procesie. Ten papier może być użyty jako głos w dowolnym głosowaniu jaki Maciej Cwel Łuszcz sobie wymarzy.”)"
+                    luszcz "…"
+                    luszcz "(Heh, pżynajmniej tyle)"
+                    luszcz "(Niech ja to tylko wyczyszczę)"
+
+                    "{i}*siioooooooorb*{/i}"
+
+                    luszcz "(Jest szansa rze będę tęsknić za tym smakiem.)"
+
+                    $ toxic_pea_social_link = 6
+                    $ toxic_pea_wybory = 2
+                    $ toxic_limit = 1
+
+                    show luszcz bal right 
+                    luszcz "Jezu co za wariaty"
+
+                    lilith "..."
+
+                    luszcz "No serio ich nie znam, przecież WTF co to są za ludzie!"
+
+                    lilith "..."
+
+                    luszcz "To eee... tańczymy Lilith?"
+
+                    lilith "zatańczmy"
+
+                    scene bg black with fade
+                    "{i}Łuszczu i Lilith dołączyli się do reszty tańczących na sali{/i}"
+                    "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                    "{i}Po chwili zmieniła się muzyka, a Łuszczu i Lilith jak najszybciej zeszli z parkietu{/i}"
+
+                    scene bg bal4 with fade
+                    $ timer += 15
+
+                    show luszcz bal at slightleft
+                    show lilith neutral2 right at slightright
+
+                    lilith "To było...!"
+                    lilith "Tak jakby okej"
+
+                    luszcz "Emmm no sorki no nie umiem tanczyć"
+
+                    lilith "emm nie no jest okej"
+                    
+                    luszcz "..."
+
+                    lilith "..."
+                    lilith "To ja wracam do naszego stolika"
+                    lilith "Idziesz ze mną?"
+
+                    luszcz "emmmm, jeszcze zobaczę"
+
+                    lilith "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                    hide lilith
+                    show luszcz bal at center
+
+                    luszcz "..."
+                    
+                    show luszcz bal at slightleft
+                    show shinobu neutral at slightright
+
+                    shinobu "O tu jesteś!"
+                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                    luszcz "..?"
+
+                    luszcz "Co po mnie widać pani Loli?"
+
+                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                    luszcz "shinobu"
+
+                    shinobu "bardzo ładnie"
+
+                    luszcz "..."
+
+                    shinobu "..."
+
+                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                    luszcz "emmm do mnie?"
+
+                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                    luszcz "niemiłe"
+
+                    shinobu "niemiłe, ale prawdziwe"
+
+                    luszcz "..."
+                    luszcz "zobaczę może przyjdę"
+
+                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                    shinobu "lepiej żebyś przyszedł!"
+
+                    hide shinobu
+                    show luszcz bal at center
+
+                    luszcz "ehhh, ciekawe o co może chodzić"
+
+                    if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                        tarczownik "O hej Łuszczu mam sprawę!"
+
+                        show luszcz bal at slightleft
+                        show tarczownik neutral at slightright
+
+                        luszcz "O co chodzi?"
+
+                        tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                        tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                        luszcz "Jakiego towaru!?!?"
+
+                        tarczownik "A czy to ważne?"
+
+                        luszcz "TAK!"
+
+                        tarczownik "zobaczysz na miejscu"
+                        tarczownik "To pójdziesz ze mną?"
+
+                        luszcz "eeee zobaczę"
+
+                        tarczownik "To jak coś czekam przy toaletach."
+
+                        hide tarczownik
+                        show luszcz bal at center
+
+                        luszcz "WTF? mega crazy"
+                    
+                    luszcz "..."
+
+                    jump bal3
+
+                "{b}Toxic Pea{/b}":
+                    show luszcz bal
+
+                    luszcz "Nie wiem kim są te kobiety!"
+
+                    show luszcz bal right
+
+                    luszcz "Coś wy za jedne!?"
+
+                    show luszcz bal
+
+                    luszcz "Sio odemnie, bo mi chłopaka straszycie"
+
+                    show luszcz bal right
+
+                    luszcz "akysz"
+
+                    show luszcz bal
+
+                    gotka "..!?"
+                    gotka "Czyli tak się bawimy!!!?"
+                    gotka "To wiesz co!?"
+
+                    luszcz "jajco boom (przepraszam pani gotko...)"
+
+                    gotka "..!"
+                    gotka "spierdalaj!"
+
+                    $ gotka_social_link = 9
+                    $ gotka_wybory = 0
+
+                    hide gotka
+                    show toxic_pea neutral at right
+                    show luszcz bal right
+
+                    lilith "..!?"
+                    lilith "ah, czyli to tak..."
+                    lilith "Co za wstyd na całą rodzinę"
+                    lilith "Tylko moja śmierć jest w stanie zmazać tą hańbe."
+
+                    $ lilith_social_link = 10
+
+                    hide lilith
+                    show luszcz bal at slightleft
+                    show toxic_pea neutral at slightright
+
+                    toxic "..."
+
+                    luszcz "To eee... tańczymy tatusiu?"
+
+                    toxic "..."
+                    toxic "tańczymy..."
+
+                    scene bg black with fade
+                    "{i}Łuszczu i Toxic Pea dołączyli się do reszty tańczących na sali{/i}"
+                    "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                    "{i}Po chwili zmieniła się muzyka, a Łuszczu i Toxic Pea jak najszybciej zeszli z parkietu{/i}"
+
+                    scene bg bal4 with fade
+                    $ timer += 15
+
+                    show luszcz bal at slightleft
+                    show toxic_pea neutral at slightright
+
+                    toxic "To było...!"
+                    toxic "Doprawdy żałosne, jezus maria jak można tak wszystko zjebać!"
+
+                    luszcz "Emmm no sorki no..."
+
+                    toxic "ehhh szkoda strzępić ryja"
+                    
+                    luszcz "..."
+
+                    toxic "..."
+                    toxic "To ja wracam do naszego stolika"
+                    toxic "Idziesz ze mną?"
+
+                    luszcz "emmmm, jeszcze zobaczę"
+
+                    toxic "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                    hide toxic_pea
+                    show luszcz bal at center
+
+                    luszcz "..."
+                    
+                    show luszcz bal at slightleft
+                    show shinobu neutral at slightright
+
+                    shinobu "O tu jesteś!"
+                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                    luszcz "..?"
+
+                    luszcz "Co po mnie widać pani Loli?"
+
+                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                    luszcz "shinobu"
+
+                    shinobu "bardzo ładnie"
+
+                    luszcz "..."
+
+                    shinobu "..."
+
+                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                    luszcz "emmm do mnie?"
+
+                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                    luszcz "niemiłe"
+
+                    shinobu "niemiłe, ale prawdziwe"
+
+                    luszcz "..."
+                    luszcz "zobaczę może przyjdę"
+
+                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                    shinobu "lepiej żebyś przyszedł!"
+
+                    hide shinobu
+                    show luszcz bal at center
+
+                    luszcz "ehhh, ciekawe o co może chodzić"
+
+                    if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                        tarczownik "O hej Łuszczu mam sprawę!"
+
+                        show luszcz bal at slightleft
+                        show tarczownik neutral at slightright
+
+                        luszcz "O co chodzi?"
+
+                        tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                        tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                        luszcz "Jakiego towaru!?!?"
+
+                        tarczownik "A czy to ważne?"
+
+                        luszcz "TAK!"
+
+                        tarczownik "zobaczysz na miejscu"
+                        tarczownik "To pójdziesz ze mną?"
+
+                        luszcz "eeee zobaczę"
+
+                        tarczownik "To jak coś czekam przy toaletach."
+
+                        hide tarczownik
+                        show luszcz bal at center
+
+                        luszcz "WTF? mega crazy"
+                    
+                    luszcz "..."
+
+                    jump bal3
+
         else:
             if lilith_social_link == 2 and toxic_pea_social_link >= 2 and toxic_pea_social_link < 6:
-                ""
+                show luszcz bal at slightleft
+                show lilith neutral3 right at slightright
+
+                lilith "Zatańczymy mój kochany?"
+
+                show toxic_pea neutral right at left
+                show luszcz bal right at center
+                show lilith neutral2 right at right
+
+                toxic "EMMMMM WHAT THE SIGMA!!!!?"
+                toxic "Co to za baba Łuszczu?"
+
+                show luszcz bal at center
+                show lilith neutral5 right
+                with vpunch
+                lilith "Co to za nie miły facet Łuszczu!!?!?"
+
+                luszcz "(oj joj)"
+
+                menu:
+                    "{b}Co robić?{/b}"
+
+                    "{b}Graj o pełną stawkę{/b}":
+                        luszcz "emmm, bo wiecie..."
+
+                        show luszcz bal right
+
+                        luszcz "Ja kiedyś oglądałem takie jedno animu..."
+
+                        show luszcz bal
+
+                        luszcz "i w tym animu był własnie taki wątek, że..."
+
+                        show luszcz bal right
+
+                        luszcz "chłopowi ujebało ręke i ojca, a matka stała się bardziej upośledzona niż była"
+
+                        show luszcz bal
+
+                        luszcz "i chłop miał załamkę"
+
+                        show luszcz bal right
+
+                        luszcz "i żone"
+
+                        show luszcz bal
+
+                        luszcz "ale żona była w domu"
+
+                        show luszcz bal right
+
+                        luszcz "a załamka była teraz"
+
+                        show luszcz bal
+
+                        luszcz "i wtedy do tego gościa przyszła jego 40 letnia mistrzyni, która ma tak naprawde 20 lat, bo jej rasa stażeje sie 2 razy wolniej nirz ludzie"
+
+                        show luszcz bal right
+
+                        luszcz "i ona go wyruchała na pocieszenie!"
+
+                        show luszcz bal
+
+                        luszcz "i on ją też wziął za żone!"
+
+                        show luszcz bal right
+
+                        luszcz "i od teraz miał dużą 3 osobową familje i żyli długo i szczęśliwie! KONIEC"
+
+                        show luszcz bal
+
+                        lilith "..."
+
+                        show luszcz bal right
+
+                        toxic "..."
+
+                        show luszcz bal
+
+                        luszcz "To co powiecie na trójkącik?"
+
+                        lilith "Aaa aaa"
+                        lilith "A idę się zajebać"
+
+                        $ lilith_social_link = 10
+                        hide lilith
+
+                        luszcz "..."
+                        show luszcz bal right 
+
+                        toxic "NIE"
+
+                        play sound "audio/sfx/plucie.mp3"
+
+                        "{i}Toxic Pea pluje Łuszczowi na twarz obślizgłą kartką{/i}"
+
+                        toxic "spierdalaj"
+
+                        hide toxic_pea 
+                        show luszcz bal right at center
+
+                        "{i}Łuszcz zdejmuje kartkę z twarzy i zaczyna ją czytać{/i}"
+
+                        luszcz "“Ja, Toxic Pea, oświadczam że podpisuję się pod agendę obywatela Skały Macieja Cwela Łuszcza. Jestem wdzięczny za jego usługi seksualne, w tym palcowanie czy seks analny oraz miauczenie w ich procesie. Ten papier może być użyty jako głos w dowolnym głosowaniu jaki Maciej Cwel Łuszcz sobie wymarzy.”"
+                        luszcz "…"
+                        luszcz "Heh, pżynajmniej chociaż tyle."
+                        luszcz "Niech ja to tylko wyczyszczę"
+
+                        "{i}*siioooooooorb*{/i}"
+
+                        luszcz "Jest szansa rze będę tęsknić za tym smakiem."
+
+                        $ toxic_pea_social_link = 6
+                        $ toxic_pea_wybory = 2
+                        $ toxic_limit = 1
+                        $ timer += 15
+
+                        luszcz "..."
+                    
+                        show luszcz bal at slightleft
+                        show shinobu neutral at slightright
+
+                        shinobu "Emmm halo"
+
+                        luszcz "..."
+
+                        shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+
+                        luszcz "emmm"
+                        luszcz "..."
+
+                        luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+
+                        shinobu "Shinobu się nazywam"
+
+                        luszcz "shinobu"
+
+                        shinobu "..."
+
+                        luszcz "..."
+
+                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                        luszcz "emmm do mnie?"
+
+                        shinobu "Też mnie to dziwi"
+
+                        luszcz "..."
+
+                        shinobu "..."
+
+                        luszcz "..."
+                        luszcz "zobaczę może przyjdę"
+
+                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                        shinobu "fajnie jakbyś przyszedł!"
+
+                        hide shinobu
+                        show luszcz bal at center
+
+                        luszcz "ciekawe o co może chodzić"
+
+                        if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                            gotka "Ej Łuszczu!"
+                            
+                            show luszcz bal at slightleft
+                            show gotka neutral right at slightright
+
+                            gotka "Masz dla mnie chwilkę?"
+
+                            luszcz "Ja!?"
+
+                            gotka "Tak, ty!"
+                            gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+
+                            luszcz "emmm zobaczę mamo, bo mam coś innego jeszcze do zrobienia"
+
+                            gotka "Dobrze, będę czekała przy toaletach"
+
+                            hide gotka
+                            show luszcz bal at center
+
+                            luszcz "crazy timing!"
+
+                        if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                            tarczownik "O hej Łuszczu mam sprawę!"
+
+                            show luszcz bal at slightleft
+                            show tarczownik neutral at slightright
+
+                            luszcz "O co chodzi?"
+
+                            tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                            tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                            luszcz "Jakiego towaru!?!?"
+
+                            tarczownik "A czy to ważne?"
+
+                            luszcz "TAK!"
+
+                            tarczownik "zobaczysz na miejscu"
+                            tarczownik "To pójdziesz ze mną?"
+
+                            luszcz "eeee zobaczę"
+
+                            tarczownik "To jak coś czekam przy toaletach."
+
+                            hide tarczownik
+                            show luszcz bal at center
+
+                            luszcz "WTF? mega crazy"
+                        
+                        luszcz "..."
+
+                        jump bal3
+
+                    "{b}Lilith{/b}":
+                        luszcz "Nie mam pojęcia moja kochana"
+
+                        show luszcz bal right
+
+                        luszcz "sio, akysz ty, ty głupi clankerze"
+
+                        toxic "ahh tak się bawimy?"
+
+                        play sound "audio/sfx/plucie.mp3"
+
+                        "{i}Toxic Pea pluje Łuszczowi na twarz obślizgłą kartką{/i}"
+
+                        toxic "Nara."
+
+                        hide toxic_pea 
+                        show luszcz bal at slightleft
+                        show lilith neutral5 right at slightright
+
+                        "{i}Łuszcz zdejmuje kartkę z twarzy i zaczyna ją czytać{/i}"
+
+                        luszcz "(“Ja, Toxic Pea, oświadczam że podpisuję się pod agendę obywatela Skały Macieja Cwela Łuszcza. Jestem wdzięczny za jego usługi seksualne, w tym palcowanie czy seks analny oraz miauczenie w ich procesie. Ten papier może być użyty jako głos w dowolnym głosowaniu jaki Maciej Cwel Łuszcz sobie wymarzy.”)"
+                        luszcz "…"
+                        luszcz "(Heh, pżynajmniej tyle)"
+                        luszcz "(Niech ja to tylko wyczyszczę)"
+
+                        "{i}*siioooooooorb*{/i}"
+
+                        luszcz "(Jest szansa rze będę tęsknić za tym smakiem.)"
+
+                        $ toxic_pea_social_link = 6
+                        $ toxic_pea_wybory = 2
+                        $ toxic_limit = 1
+
+                        show luszcz bal 
+                        luszcz "Jezu co za wariat"
+
+                        lilith "..."
+
+                        luszcz "No serio go nie znam, przecież WTF co za człwowiek z niego!"
+
+                        lilith "..."
+
+                        luszcz "To eee... tańczymy Lilith?"
+
+                        lilith "..."
+
+                        show lilith neutral3 right
+
+                        lilith "zatańczmy"
+
+                        scene bg black with fade
+                        "{i}Łuszczu i Lilith dołączyli się do reszty tańczących na sali{/i}"
+                        "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                        "{i}Po chwili zmieniła się muzyka, a Łuszczu i Lilith jak najszybciej zeszli z parkietu{/i}"
+
+                        scene bg bal4 with fade
+                        $ timer += 15
+
+                        show luszcz bal at slightleft
+                        show lilith neutral2 right at slightright
+
+                        lilith "To było...!"
+                        lilith "Tak jakby okej"
+
+                        luszcz "Emmm no sorki no nie umiem tanczyć"
+
+                        lilith "emm nie no jest okej"
+                        
+                        luszcz "..."
+
+                        lilith "..."
+                        lilith "To ja wracam do naszego stolika"
+                        lilith "Idziesz ze mną?"
+
+                        luszcz "emmmm, jeszcze zobaczę"
+
+                        lilith "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                        hide lilith
+                        show luszcz bal at center
+
+                        luszcz "..."
+                        
+                        show luszcz bal at slightleft
+                        show shinobu neutral at slightright
+
+                        shinobu "O tu jesteś!"
+                        shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                        luszcz "..?"
+
+                        luszcz "Co po mnie widać pani Loli?"
+
+                        shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                        luszcz "shinobu"
+
+                        shinobu "bardzo ładnie"
+
+                        luszcz "..."
+
+                        shinobu "..."
+
+                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                        luszcz "emmm do mnie?"
+
+                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                        luszcz "niemiłe"
+
+                        shinobu "niemiłe, ale prawdziwe"
+
+                        luszcz "..."
+                        luszcz "zobaczę może przyjdę"
+
+                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                        shinobu "lepiej żebyś przyszedł!"
+
+                        hide shinobu
+                        show luszcz bal at center
+
+                        luszcz "ehhh, ciekawe o co może chodzić"
+
+                        if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                            gotka "Ej Łuszczu!"
+                            
+                            show luszcz bal at slightleft
+                            show gotka neutral right at slightright
+
+                            gotka "Masz dla mnie chwilkę?"
+
+                            luszcz "Ja!?"
+
+                            gotka "Tak, ty!"
+                            gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+
+                            luszcz "emmm zobaczę mamo, bo mam coś innego jeszcze do zrobienia"
+
+                            gotka "Dobrze, będę czekała przy toaletach"
+
+                            hide gotka
+                            show luszcz bal at center
+
+                            luszcz "crazy!"
+
+                        if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                            tarczownik "O hej Łuszczu mam sprawę!"
+
+                            show luszcz bal at slightleft
+                            show tarczownik neutral at slightright
+
+                            luszcz "O co chodzi?"
+
+                            tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                            tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                            luszcz "Jakiego towaru!?!?"
+
+                            tarczownik "A czy to ważne?"
+
+                            luszcz "TAK!"
+
+                            tarczownik "zobaczysz na miejscu"
+                            tarczownik "To pójdziesz ze mną?"
+
+                            luszcz "eeee zobaczę"
+
+                            tarczownik "To jak coś czekam przy toaletach."
+
+                            hide tarczownik
+                            show luszcz bal at center
+
+                            luszcz "WTF? mega crazy"
+                        
+                        luszcz "..."
+
+                        jump bal3
+
+                    "{b}Toxic Pea{/b}":
+                        show luszcz bal right
+
+                        luszcz "Nie wiem kim jest ta kobieta!"
+
+                        show luszcz bal
+
+                        luszcz "Coś ty za jedna!?"
+                        luszcz "Sio odemnie, bo mi chłopaka straszysz"
+                        luszcz "akysz"
+
+                        lilith "..!?"
+                        lilith "ah, czyli to tak..."
+                        lilith "Co za wstyd na całą rodzinę"
+                        lilith "Tylko moja śmierć jest w stanie zmazać tą hańbe."
+
+                        $ lilith_social_link = 10
+
+                        hide lilith
+                        hide toxic_pea 
+                        show luszcz bal right at slightright
+                        show toxic_pea neutral right at slightleft
+
+                        luszcz "..!?"
+
+                        toxic "..."
+
+                        show luszcz bal right at slightright
+
+                        luszcz "To eee... tańczymy tatusiu?"
+
+                        toxic "..."
+                        toxic "tańczymy..."
+
+                        scene bg black with fade
+                        "{i}Łuszczu i Toxic Pea dołączyli się do reszty tańczących na sali{/i}"
+                        "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                        "{i}Po chwili zmieniła się muzyka, a Łuszczu i Toxic Pea jak najszybciej zeszli z parkietu{/i}"
+
+                        scene bg bal4 with fade
+                        $ timer += 15
+
+                        show luszcz bal at slightleft
+                        show toxic_pea neutral at slightright
+
+                        toxic "To było...!"
+                        toxic "Doprawdy żałosne, jezus maria jak można tak wszystko zjebać!"
+
+                        luszcz "Emmm no sorki no..."
+
+                        toxic "ehhh szkoda strzępić ryja"
+                        
+                        luszcz "..."
+
+                        toxic "..."
+                        toxic "To ja wracam do naszego stolika"
+                        toxic "Idziesz ze mną?"
+
+                        luszcz "emmmm, jeszcze zobaczę"
+
+                        toxic "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                        hide toxic_pea
+                        show luszcz bal at center
+
+                        luszcz "..."
+                        
+                        show luszcz bal at slightleft
+                        show shinobu neutral at slightright
+
+                        shinobu "O tu jesteś!"
+                        shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                        luszcz "..?"
+
+                        luszcz "Co po mnie widać pani Loli?"
+
+                        shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                        luszcz "shinobu"
+
+                        shinobu "bardzo ładnie"
+
+                        luszcz "..."
+
+                        shinobu "..."
+
+                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                        luszcz "emmm do mnie?"
+
+                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                        luszcz "niemiłe"
+
+                        shinobu "niemiłe, ale prawdziwe"
+
+                        luszcz "..."
+                        luszcz "zobaczę może przyjdę"
+
+                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                        shinobu "lepiej żebyś przyszedł!"
+
+                        hide shinobu
+                        show luszcz bal at center
+
+                        luszcz "ehhh, ciekawe o co może chodzić"
+
+                        if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                            gotka "Ej Łuszczu!"
+                            
+                            show luszcz bal at slightleft
+                            show gotka neutral right at slightright
+
+                            gotka "Masz dla mnie chwilkę?"
+
+                            luszcz "Ja!?"
+
+                            gotka "Tak, ty!"
+                            gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+
+                            luszcz "emmm zobaczę mamo, bo mam coś innego jeszcze do zrobienia"
+
+                            gotka "Dobrze, będę czekała przy toaletach"
+
+                            hide gotka
+                            show luszcz bal at center
+
+                            luszcz "crazy!"
+
+                        if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                            tarczownik "O hej Łuszczu mam sprawę!"
+
+                            show luszcz bal at slightleft
+                            show tarczownik neutral at slightright
+
+                            luszcz "O co chodzi?"
+
+                            tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                            tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                            luszcz "Jakiego towaru!?!?"
+
+                            tarczownik "A czy to ważne?"
+
+                            luszcz "TAK!"
+
+                            tarczownik "zobaczysz na miejscu"
+                            tarczownik "To pójdziesz ze mną?"
+
+                            luszcz "eeee zobaczę"
+
+                            tarczownik "To jak coś czekam przy toaletach."
+
+                            hide tarczownik
+                            show luszcz bal at center
+
+                            luszcz "WTF? mega crazy"
+                        
+                        luszcz "..."
+
+                        jump bal3
+
             else:
                 if lilith_social_link == 2 and gotka_szpont == 1 and gotka_social_link < 10:
-                    ""
+                    show luszcz bal at slightleft
+                    show gotka neutral right at slightright
+
+                    gotka "Zatańczymy moja świnko morska?"
+
+                    show lilith neutral5 at left
+                    show luszcz bal right at center
+                    show gotka neutral right at right
+
+                    with vpunch
+                    toxic "Łuszczu, co to za kobieta?"
+
+                    show luszcz bal at center
+                    with vpunch
+                    gotka "Dokładnie, Łuszczu co to za kobieta?"
+
+                    luszcz "(oj joj)"
+
+                    menu:
+                        "{b}Co robić?{/b}"
+
+                        "{b}Graj o pełną stawkę{/b}":
+                            luszcz "emmm, bo wiecie..."
+
+                            show luszcz bal right
+
+                            luszcz "Ja kiedyś oglądałem takie jedno animu..."
+
+                            show luszcz bal
+
+                            luszcz "i w tym animu był własnie taki wątek, że..."
+
+                            show luszcz bal right
+
+                            luszcz "chłopowi ujebało ręke i ojca, a matka stała się bardziej upośledzona niż była"
+
+                            show luszcz bal
+
+                            luszcz "i chłop miał załamkę"
+
+                            show luszcz bal right
+
+                            luszcz "i żone"
+
+                            show luszcz bal
+
+                            luszcz "ale żona była w domu"
+
+                            show luszcz bal right
+
+                            luszcz "a załamka była teraz"
+
+                            show luszcz bal
+
+                            luszcz "i wtedy do tego gościa przyszła jego 40 letnia mistrzyni, która ma tak naprawde 20 lat, bo jej rasa stażeje sie 2 razy wolniej nirz ludzie"
+
+                            show luszcz bal right
+
+                            luszcz "i ona go wyruchała na pocieszenie!"
+
+                            show luszcz bal
+
+                            luszcz "i on ją też wziął za żone!"
+
+                            show luszcz bal right
+
+                            luszcz "i od teraz miał dużą 3 osobową familje i żyli długo i szczęśliwie! KONIEC"
+
+                            show luszcz bal
+
+                            gotka "..."
+
+                            show luszcz bal right
+
+                            lilith "..."
+
+                            show luszcz bal
+
+                            luszcz "To co powiecie na trójkącik?"
+
+                            gotka "A spierdalaj z nami koniec!"
+
+                            $ gotka_social_link = 9
+                            $ gotka_wybory = 0
+                            hide gotka
+
+                            luszcz "..."
+                            show luszcz bal right 
+
+                            lilith "Z nami kurwa też, idę się zajebać"
+
+                            hide lilith
+                            $ lilith_social_link = 10
+                            show luszcz bal right at center
+
+                            luszcz "..."
+                            luszcz "emmm, plan troszkę nie wypalił"
+
+                            $ timer += 15
+                        
+                            show luszcz bal at slightleft
+                            show shinobu neutral at slightright
+
+                            shinobu "Emmm halo"
+
+                            luszcz "..."
+
+                            shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+
+                            luszcz "emmm"
+                            luszcz "..."
+
+                            luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+
+                            shinobu "Shinobu się nazywam"
+
+                            luszcz "shinobu"
+
+                            shinobu "..."
+
+                            luszcz "..."
+
+                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                            luszcz "emmm do mnie?"
+
+                            shinobu "Też mnie to dziwi"
+
+                            luszcz "..."
+
+                            shinobu "..."
+
+                            luszcz "..."
+                            luszcz "zobaczę może przyjdę"
+
+                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                            shinobu "fajnie jakbyś przyszedł!"
+
+                            hide shinobu
+                            show luszcz bal at center
+
+                            luszcz "ciekawe o co może chodzić"
+
+                            if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                tarczownik "O hej Łuszczu mam sprawę!"
+
+                                show luszcz bal at slightleft
+                                show tarczownik neutral at slightright
+
+                                luszcz "O co chodzi?"
+
+                                tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                luszcz "Jakiego towaru!?!?"
+
+                                tarczownik "A czy to ważne?"
+
+                                luszcz "TAK!"
+
+                                tarczownik "zobaczysz na miejscu"
+                                tarczownik "To pójdziesz ze mną?"
+
+                                luszcz "eeee zobaczę"
+
+                                tarczownik "To jak coś czekam przy toaletach."
+
+                                hide tarczownik
+                                show luszcz bal at center
+
+                                luszcz "WTF? mega crazy"
+                            
+                            luszcz "..."
+
+                            jump bal3
+
+                        "{b}Gotka{/b}":
+                            luszcz "Nie mam pojęcia mój ty wilku alfa"
+
+                            show luszcz bal right
+
+                            luszcz "sio, idź sobie, nie znam Cię!"
+
+                            lilith "ahh tak się bawimy?"
+                            lilith "to! to!"
+                            lilith "to idę się zabić, dowidzenia"
+
+                            hide lilith
+                            $ lilith_social_link = 10
+                            show luszcz bal at slightleft
+                            show gotka neutral right at slightright
+
+                            show luszcz bal 
+                            luszcz "Jezu co za wariatka"
+
+                            gotka "..."
+
+                            luszcz "No serio jej nie znam, przecież WTF co to w ogóle było!"
+
+                            gotka "..."
+
+                            luszcz "eee yyyyy ee TAŃCZYMY?"
+
+                            gotka "..."
+                            gotka "niech będzie"
+                            gotka "ale od teraz mam cię cały czas na oku"
+
+                            scene bg black with fade
+                            "{i}Łuszczu i Gotka dołączyli się do reszty tańczących na sali{/i}"
+                            "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                            "{i}Po chwili zmieniła się muzyka, a Łuszczu i Gotka jak najszybciej zeszli z parkietu{/i}"
+
+                            scene bg bal4 with fade
+                            $ timer += 15
+                            show luszcz bal at slightleft
+                            show gotka neutral right at slightright
+
+                            gotka "To było...!"
+                            gotka "Doprawdy żałosne, jezus maria jak można tak wszystko zjebać!"
+
+                            luszcz "Emmm no sorki no..."
+
+                            gotka "ehhh szkoda strzępić ryja"
+                            
+                            if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                                gotka "A właśnie Łuszczu, jest sprawa"
+                                gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+                                gotka "Nie wystawisz przecież MNIE, swojej dziewczyny co nie?"
+
+                                luszcz "emmm sorki jeszcze zobaczę mój alfa wilku"
+
+                                gotka "Łuszczu!"
+
+                                luszcz "No spróbuję, no raczej tak..."
+
+                                gotka "To czekam przy toaletach"
+                                gotka "Jak będziesz gotowy to przyjdź"
+
+                                hide gotka
+                                show luszcz bal at center
+
+                                luszcz "ufff"
+                            
+                            else:
+                                luszcz "..."
+
+                                gotka "..."
+                                gotka "To ja wracam do naszego stolika"
+                                gotka "Idziesz ze mną?"
+
+                                luszcz "emmmm, jeszcze zobaczę"
+
+                                gotka "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                                hide gotka
+                                show luszcz bal at center
+
+                                luszcz "..."
+                            
+                            show luszcz bal at slightleft
+                            show shinobu neutral at slightright
+
+                            shinobu "O tu jesteś!"
+                            shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                            luszcz "..?"
+
+                            luszcz "Co po mnie widać pani Loli?"
+
+                            shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                            luszcz "shinobu"
+
+                            shinobu "bardzo ładnie"
+
+                            luszcz "..."
+
+                            shinobu "..."
+
+                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                            luszcz "emmm do mnie?"
+
+                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                            luszcz "niemiłe"
+
+                            shinobu "niemiłe, ale prawdziwe"
+
+                            luszcz "..."
+                            luszcz "zobaczę może przyjdę"
+
+                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                            shinobu "lepiej żebyś przyszedł!"
+
+                            hide shinobu
+                            show luszcz bal at center
+
+                            luszcz "ehhh, ciekawe o co może chodzić"
+
+                            if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                tarczownik "O hej Łuszczu mam sprawę!"
+
+                                show luszcz bal at slightleft
+                                show tarczownik neutral at slightright
+
+                                luszcz "O co chodzi?"
+
+                                tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                luszcz "Jakiego towaru!?!?"
+
+                                tarczownik "A czy to ważne?"
+
+                                luszcz "TAK!"
+
+                                tarczownik "zobaczysz na miejscu"
+                                tarczownik "To pójdziesz ze mną?"
+
+                                luszcz "eeee zobaczę"
+
+                                tarczownik "To jak coś czekam przy toaletach."
+
+                                hide tarczownik
+                                show luszcz bal at center
+
+                                luszcz "WTF? mega crazy"
+                            
+                            luszcz "..."
+
+                            jump bal3
+
+                        "{b}Lilith{/b}":
+                            show luszcz bal right
+
+                            luszcz "Nie wiem kim jest ta kobieta!"
+
+                            show luszcz bal
+
+                            luszcz "Coś ty za jedna!?"
+                            luszcz "Sio odemnie, bo, bo"
+                            luszcz "sio"
+
+                            gotka "..!?"
+                            gotka "Czyli tak się bawimy!!!?"
+                            gotka "To wiesz co!?"
+
+                            luszcz "jajco boom (przepraszam pani gotko...)"
+
+                            gotka "..!"
+                            gotka "spierdalaj!"
+
+                            $ gotka_social_link = 9
+                            $ gotka_wybory = 0
+
+                            hide gotka
+                            hide lilith 
+                            show luszcz bal right at slightright
+                            show lilith neutral2 at slightleft
+
+                            lilith "..."
+
+                            luszcz "To eee... tańczymy Lilith?"
+
+                            lilith "zatańczmy"
+
+                            scene bg black with fade
+                            "{i}Łuszczu i Lilith dołączyli się do reszty tańczących na sali{/i}"
+                            "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                            "{i}Po chwili zmieniła się muzyka, a Łuszczu i Lilith jak najszybciej zeszli z parkietu{/i}"
+
+                            scene bg bal4 with fade
+                            $ timer += 15
+
+                            show luszcz bal at slightleft
+                            show lilith neutral2 right at slightright
+
+                            lilith "To było...!"
+                            lilith "Tak jakby okej"
+
+                            luszcz "Emmm no sorki no nie umiem tanczyć"
+
+                            lilith "emm nie no jest okej"
+                            
+                            luszcz "..."
+
+                            lilith "..."
+                            lilith "To ja wracam do naszego stolika"
+                            lilith "Idziesz ze mną?"
+
+                            luszcz "emmmm, jeszcze zobaczę"
+
+                            lilith "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                            hide lilith
+                            show luszcz bal at center
+
+                            luszcz "..."
+                            
+                            show luszcz bal at slightleft
+                            show shinobu neutral at slightright
+
+                            shinobu "O tu jesteś!"
+                            shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                            luszcz "..?"
+
+                            luszcz "Co po mnie widać pani Loli?"
+
+                            shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                            luszcz "shinobu"
+
+                            shinobu "bardzo ładnie"
+
+                            luszcz "..."
+
+                            shinobu "..."
+
+                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                            luszcz "emmm do mnie?"
+
+                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                            luszcz "niemiłe"
+
+                            shinobu "niemiłe, ale prawdziwe"
+
+                            luszcz "..."
+                            luszcz "zobaczę może przyjdę"
+
+                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                            shinobu "lepiej żebyś przyszedł!"
+
+                            hide shinobu
+                            show luszcz bal at center
+
+                            luszcz "ehhh, ciekawe o co może chodzić"
+
+                            if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                tarczownik "O hej Łuszczu mam sprawę!"
+
+                                show luszcz bal at slightleft
+                                show tarczownik neutral at slightright
+
+                                luszcz "O co chodzi?"
+
+                                tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                luszcz "Jakiego towaru!?!?"
+
+                                tarczownik "A czy to ważne?"
+
+                                luszcz "TAK!"
+
+                                tarczownik "zobaczysz na miejscu"
+                                tarczownik "To pójdziesz ze mną?"
+
+                                luszcz "eeee zobaczę"
+
+                                tarczownik "To jak coś czekam przy toaletach."
+
+                                hide tarczownik
+                                show luszcz bal at center
+
+                                luszcz "WTF? mega crazy"
+                            
+                            luszcz "..."
+
+                            jump bal3
+
                 else:
                     if toxic_pea_social_link >= 2 and toxic_pea_social_link < 6 and gotka_szpont == 1:
-                        ""
+                        show luszcz bal at slightleft
+                        show gotka neutral right at slightright
+
+                        gotka "Zatańczymy moja świnko morska?"
+
+                        show toxic_pea neutral right at left
+                        show luszcz bal right at center
+                        show gotka neutral right at right
+
+                        toxic "EMMMMM WHAT THE SIGMA!!!!?"
+                        toxic "Co to za baba Łuszczu?"
+
+                        show luszcz bal at center
+                        with vpunch
+                        gotka "Co to za nie miły facet Łuszczu!!?!?"
+
+                        luszcz "(oj joj)"
+
+                        menu:
+                            "{b}Co robić?{/b}"
+
+                            "{b}Graj o pełną stawkę{/b}":
+                                luszcz "emmm, bo wiecie..."
+
+                                show luszcz bal right
+
+                                luszcz "Ja kiedyś oglądałem takie jedno animu..."
+
+                                show luszcz bal
+
+                                luszcz "i w tym animu był własnie taki wątek, że..."
+
+                                show luszcz bal right
+
+                                luszcz "chłopowi ujebało ręke i ojca, a matka stała się bardziej upośledzona niż była"
+
+                                show luszcz bal
+
+                                luszcz "i chłop miał załamkę"
+
+                                show luszcz bal right
+
+                                luszcz "i żone"
+
+                                show luszcz bal
+
+                                luszcz "ale żona była w domu"
+
+                                show luszcz bal right
+
+                                luszcz "a załamka była teraz"
+
+                                show luszcz bal
+
+                                luszcz "i wtedy do tego gościa przyszła jego 40 letnia mistrzyni, która ma tak naprawde 20 lat, bo jej rasa stażeje sie 2 razy wolniej nirz ludzie"
+
+                                show luszcz bal right
+
+                                luszcz "i ona go wyruchała na pocieszenie!"
+
+                                show luszcz bal
+
+                                luszcz "i on ją też wziął za żone!"
+
+                                show luszcz bal right
+
+                                luszcz "i od teraz miał dużą 3 osobową familje i żyli długo i szczęśliwie! KONIEC"
+
+                                show luszcz bal
+
+                                gotka "..."
+
+                                show luszcz bal right
+
+                                toxic "..."
+
+                                show luszcz bal
+
+                                luszcz "To co powiecie na trójkącik?"
+
+                                gotka "A spierdalaj z nami koniec!"
+
+                                $ gotka_social_link = 9
+                                $ gotka_wybory = 0
+                                hide gotka
+
+                                luszcz "..."
+                                show luszcz bal right 
+
+                                toxic "z nami również"
+
+                                play sound "audio/sfx/plucie.mp3"
+
+                                "{i}Toxic Pea pluje Łuszczowi na twarz obślizgłą kartką{/i}"
+
+                                toxic "spierdalaj"
+
+                                hide toxic_pea 
+                                show luszcz bal right at center
+
+                                "{i}Łuszcz zdejmuje kartkę z twarzy i zaczyna ją czytać{/i}"
+
+                                luszcz "“Ja, Toxic Pea, oświadczam że podpisuję się pod agendę obywatela Skały Macieja Cwela Łuszcza. Jestem wdzięczny za jego usługi seksualne, w tym palcowanie czy seks analny oraz miauczenie w ich procesie. Ten papier może być użyty jako głos w dowolnym głosowaniu jaki Maciej Cwel Łuszcz sobie wymarzy.”"
+                                luszcz "…"
+                                luszcz "Heh, pżynajmniej chociaż tyle."
+                                luszcz "Niech ja to tylko wyczyszczę"
+
+                                "{i}*siioooooooorb*{/i}"
+
+                                luszcz "Jest szansa rze będę tęsknić za tym smakiem."
+
+                                $ toxic_pea_social_link = 6
+                                $ toxic_pea_wybory = 2
+                                $ toxic_limit = 1
+                                $ timer += 15
+
+                                luszcz "..."
+                            
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
+
+                                shinobu "Emmm halo"
+
+                                luszcz "..."
+
+                                shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+
+                                luszcz "emmm"
+                                luszcz "..."
+
+                                luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+
+                                shinobu "Shinobu się nazywam"
+
+                                luszcz "shinobu"
+
+                                shinobu "..."
+
+                                luszcz "..."
+
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                                luszcz "emmm do mnie?"
+
+                                shinobu "Też mnie to dziwi"
+
+                                luszcz "..."
+
+                                shinobu "..."
+
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
+
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "fajnie jakbyś przyszedł!"
+
+                                hide shinobu
+                                show luszcz bal at center
+
+                                luszcz "ciekawe o co może chodzić"
+
+                                if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                    tarczownik "O hej Łuszczu mam sprawę!"
+
+                                    show luszcz bal at slightleft
+                                    show tarczownik neutral at slightright
+
+                                    luszcz "O co chodzi?"
+
+                                    tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                    tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                    luszcz "Jakiego towaru!?!?"
+
+                                    tarczownik "A czy to ważne?"
+
+                                    luszcz "TAK!"
+
+                                    tarczownik "zobaczysz na miejscu"
+                                    tarczownik "To pójdziesz ze mną?"
+
+                                    luszcz "eeee zobaczę"
+
+                                    tarczownik "To jak coś czekam przy toaletach."
+
+                                    hide tarczownik
+                                    show luszcz bal at center
+
+                                    luszcz "WTF? mega crazy"
+                                
+                                luszcz "..."
+
+                                jump bal3
+
+                            "{b}Gotka{/b}":
+                                luszcz "Nie mam pojęcia mój ty wilku alfa"
+
+                                show luszcz bal right
+
+                                luszcz "sio, akysz ty, ty głupi clankerze"
+
+                                toxic "ahh tak się bawimy?"
+
+                                play sound "audio/sfx/plucie.mp3"
+
+                                "{i}Toxic Pea pluje Łuszczowi na twarz obślizgłą kartką{/i}"
+
+                                toxic "Nara."
+
+                                hide toxic_pea 
+                                show luszcz bal at slightleft
+                                show gotka neutral right at slightright
+
+                                "{i}Łuszcz zdejmuje kartkę z twarzy i zaczyna ją czytać{/i}"
+
+                                luszcz "(“Ja, Toxic Pea, oświadczam że podpisuję się pod agendę obywatela Skały Macieja Cwela Łuszcza. Jestem wdzięczny za jego usługi seksualne, w tym palcowanie czy seks analny oraz miauczenie w ich procesie. Ten papier może być użyty jako głos w dowolnym głosowaniu jaki Maciej Cwel Łuszcz sobie wymarzy.”)"
+                                luszcz "…"
+                                luszcz "(Heh, pżynajmniej tyle)"
+                                luszcz "(Niech ja to tylko wyczyszczę)"
+
+                                "{i}*siioooooooorb*{/i}"
+
+                                luszcz "(Jest szansa rze będę tęsknić za tym smakiem.)"
+
+                                $ toxic_pea_social_link = 6
+                                $ toxic_pea_wybory = 2
+                                $ toxic_limit = 1
+
+                                show luszcz bal 
+                                luszcz "Jezu co za wariat"
+
+                                gotka "..."
+
+                                luszcz "No serio go nie znam, przecież WTF co za człwowiek z niego!"
+
+                                gotka "..."
+
+                                luszcz "eee yyyyy ee TAŃCZYMY?"
+
+                                gotka "..."
+                                gotka "niech będzie"
+                                gotka "ale od teraz mam cię cały czas na oku"
+
+                                scene bg black with fade
+                                "{i}Łuszczu i Gotka dołączyli się do reszty tańczących na sali{/i}"
+                                "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                                "{i}Po chwili zmieniła się muzyka, a Łuszczu i Gotka jak najszybciej zeszli z parkietu{/i}"
+
+                                scene bg bal4 with fade
+                                $ timer += 15
+                                show luszcz bal at slightleft
+                                show gotka neutral right at slightright
+
+                                gotka "To było...!"
+                                gotka "Doprawdy żałosne, jezus maria jak można tak wszystko zjebać!"
+
+                                luszcz "Emmm no sorki no..."
+
+                                gotka "ehhh szkoda strzępić ryja"
+                                
+                                if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
+                                    gotka "A właśnie Łuszczu, jest sprawa"
+                                    gotka "Potrzebuję, żebyś gdzieś ze mną poszedł"
+                                    gotka "Nie wystawisz przecież MNIE, swojej dziewczyny co nie?"
+
+                                    luszcz "emmm sorki jeszcze zobaczę mój alfa wilku"
+
+                                    gotka "Łuszczu!"
+
+                                    luszcz "No spróbuję, no raczej tak..."
+
+                                    gotka "To czekam przy toaletach"
+                                    gotka "Jak będziesz gotowy to przyjdź"
+
+                                    hide gotka
+                                    show luszcz bal at center
+
+                                    luszcz "ufff"
+                                
+                                else:
+                                    luszcz "..."
+
+                                    gotka "..."
+                                    gotka "To ja wracam do naszego stolika"
+                                    gotka "Idziesz ze mną?"
+
+                                    luszcz "emmmm, jeszcze zobaczę"
+
+                                    gotka "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                                    hide gotka
+                                    show luszcz bal at center
+
+                                    luszcz "..."
+                                
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
+
+                                shinobu "O tu jesteś!"
+                                shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                                luszcz "..?"
+
+                                luszcz "Co po mnie widać pani Loli?"
+
+                                shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                                luszcz "shinobu"
+
+                                shinobu "bardzo ładnie"
+
+                                luszcz "..."
+
+                                shinobu "..."
+
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                                luszcz "emmm do mnie?"
+
+                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                                luszcz "niemiłe"
+
+                                shinobu "niemiłe, ale prawdziwe"
+
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
+
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "lepiej żebyś przyszedł!"
+
+                                hide shinobu
+                                show luszcz bal at center
+
+                                luszcz "ehhh, ciekawe o co może chodzić"
+
+                                if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                    tarczownik "O hej Łuszczu mam sprawę!"
+
+                                    show luszcz bal at slightleft
+                                    show tarczownik neutral at slightright
+
+                                    luszcz "O co chodzi?"
+
+                                    tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                    tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                    luszcz "Jakiego towaru!?!?"
+
+                                    tarczownik "A czy to ważne?"
+
+                                    luszcz "TAK!"
+
+                                    tarczownik "zobaczysz na miejscu"
+                                    tarczownik "To pójdziesz ze mną?"
+
+                                    luszcz "eeee zobaczę"
+
+                                    tarczownik "To jak coś czekam przy toaletach."
+
+                                    hide tarczownik
+                                    show luszcz bal at center
+
+                                    luszcz "WTF? mega crazy"
+                                
+                                luszcz "..."
+
+                                jump bal3
+
+                            "{b}Toxic Pea{/b}":
+                                show luszcz bal right
+
+                                luszcz "Nie wiem kim jest ta kobieta!"
+
+                                show luszcz bal
+
+                                luszcz "Coś ty za jedna!?"
+                                luszcz "Sio odemnie, bo mi chłopaka straszysz"
+                                luszcz "akysz"
+
+                                gotka "..!?"
+                                gotka "Czyli tak się bawimy!!!?"
+                                gotka "To wiesz co!?"
+
+                                luszcz "jajco boom (przepraszam pani gotko...)"
+
+                                gotka "..!"
+                                gotka "spierdalaj!"
+
+                                $ gotka_social_link = 9
+                                $ gotka_wybory = 0
+
+                                hide gotka
+                                hide toxic_pea 
+                                show luszcz bal right at slightright
+                                show toxic_pea neutral right at slightleft
+
+                                toxic "..."
+
+                                luszcz "To eee... tańczymy tatusiu?"
+
+                                toxic "..."
+                                toxic "tańczymy..."
+
+                                scene bg black with fade
+                                "{i}Łuszczu i Toxic Pea dołączyli się do reszty tańczących na sali{/i}"
+                                "{i}Jednakże ich ruchu były wykonywane jakby od niechcenia i z odrazą{/i}"
+                                "{i}Po chwili zmieniła się muzyka, a Łuszczu i Toxic Pea jak najszybciej zeszli z parkietu{/i}"
+
+                                scene bg bal4 with fade
+                                $ timer += 15
+
+                                show luszcz bal at slightleft
+                                show toxic_pea neutral at slightright
+
+                                toxic "To było...!"
+                                toxic "Doprawdy żałosne, jezus maria jak można tak wszystko zjebać!"
+
+                                luszcz "Emmm no sorki no..."
+
+                                toxic "ehhh szkoda strzępić ryja"
+                                
+                                luszcz "..."
+
+                                toxic "..."
+                                toxic "To ja wracam do naszego stolika"
+                                toxic "Idziesz ze mną?"
+
+                                luszcz "emmmm, jeszcze zobaczę"
+
+                                toxic "Dobrze to jak coś wiesz gdzie mnie szukać"
+
+                                hide toxic_pea
+                                show luszcz bal at center
+
+                                luszcz "..."
+                                
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
+
+                                shinobu "O tu jesteś!"
+                                shinobu "Widziałam twój taniec i eeeee widać po tobie"
+
+                                luszcz "..?"
+
+                                luszcz "Co po mnie widać pani Loli?"
+
+                                shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+
+                                luszcz "shinobu"
+
+                                shinobu "bardzo ładnie"
+
+                                luszcz "..."
+
+                                shinobu "..."
+
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+
+                                luszcz "emmm do mnie?"
+
+                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+
+                                luszcz "niemiłe"
+
+                                shinobu "niemiłe, ale prawdziwe"
+
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
+
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "lepiej żebyś przyszedł!"
+
+                                hide shinobu
+                                show luszcz bal at center
+
+                                luszcz "ehhh, ciekawe o co może chodzić"
+
+                                if tarczownik_sojusznik == 1 and gotka_social_link < 10:
+                                    tarczownik "O hej Łuszczu mam sprawę!"
+
+                                    show luszcz bal at slightleft
+                                    show tarczownik neutral at slightright
+
+                                    luszcz "O co chodzi?"
+
+                                    tarczownik "Eeeeem załatwiłem sobię troszkę towaru..."
+                                    tarczownik "ale trochę boję się od kogo go dostanę i eee byłbym wdzięczny jeśli poszedłbyś ze mną..."
+
+                                    luszcz "Jakiego towaru!?!?"
+
+                                    tarczownik "A czy to ważne?"
+
+                                    luszcz "TAK!"
+
+                                    tarczownik "zobaczysz na miejscu"
+                                    tarczownik "To pójdziesz ze mną?"
+
+                                    luszcz "eeee zobaczę"
+
+                                    tarczownik "To jak coś czekam przy toaletach."
+
+                                    hide tarczownik
+                                    show luszcz bal at center
+
+                                    luszcz "WTF? mega crazy"
+                                
+                                luszcz "..."
+
+                                jump bal3
+
                     else:
                         if lilith_social_link == 2:
                             show luszcz bal at slightleft
@@ -1787,6 +4053,7 @@ label bal:
                             "{i}Po chwili jednak ludzie zaczeli się dołączać, a Łuszczu i Lilith mogli ich prowadzić w tańcu{/i}"
 
                             scene bg bal4 with fade
+                            $ timer += 15
                             show luszcz bal at slightleft
                             show lilith neutral3 right at slightright
 
@@ -1913,7 +4180,7 @@ label bal:
                         else:
                             if toxic_pea_social_link >= 2 and toxic_pea_social_link < 6:
                                 show luszcz bal at slightleft
-                                show toxic_pea neutral right at slightright
+                                show toxic_pea neutral at slightright
 
                                 toxic "Zatańczymy Macieju_Rel?"
 
@@ -1927,8 +4194,9 @@ label bal:
                                 "{i}Po chwili jednak ludzie zaczeli się dołączać, a Łuszczu i Toxic Pea mogli ich prowadzić w tańcu{/i}"
 
                                 scene bg bal4 with fade
+                                $ timer += 15
                                 show luszcz bal at slightleft
-                                show toxic_pea neutral right at slightright
+                                show toxic_pea neutral at slightright
 
                                 toxic "Ohhhh, to było takie cudowne mój ty kociaku!"
                                 toxic "Nie wiedziałam, że potrafisz tak dobrze tańczyć!"
@@ -1953,10 +4221,12 @@ label bal:
                                 luszcz "emmmm, jeszcze zobaczę"
 
                                 toxic "Dobrze to jak coś wiesz gdzie mnie szukać"
+                                
+                                show toxic_pea at center
 
                                 "{i}Toxic Pea klepnął Łuszczu w pośladek{/i}"
 
-                                hide toxic
+                                hide toxic_pea
                                 show luszcz bal at center
 
                                 luszcz "eghhh"
@@ -2066,6 +4336,7 @@ label bal:
                                     "{i}Po chwili jednak ludzie zaczeli się dołączać, a Łuszczu i Gotka mogli ich prowadzić w tańcu{/i}"
 
                                     scene bg bal4 with fade
+                                    $ timer += 15
                                     show luszcz bal at slightleft
                                     show gotka neutral right at slightright
 
@@ -2107,7 +4378,7 @@ label bal:
 
                                         gotka "..."
                                         gotka "To ja wracam do naszego stolika"
-                                        gotka "Idziesz ze ,mną?"
+                                        gotka "Idziesz ze mną?"
 
                                         luszcz "emmmm, jeszcze zobaczę"
 

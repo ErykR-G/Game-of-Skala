@@ -2589,6 +2589,7 @@ label lilith:
 
                             $ lilith_social_link = 2
                             $ gotka_social_link = 10
+                            $ gotka_wybory = 10
                             jump spanko_bed
                         
                         "{b}Zabij Się{/b}":

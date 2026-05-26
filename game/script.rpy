@@ -49,6 +49,9 @@ label postacie:
     image luszcz piernik right = Transform("luszcz piernik", xzoom=-1) 
     image luszcz ciasto right = Transform("luszcz ciasto", xzoom=-1) 
     image luszcz nuz right = Transform("luszcz nuz", xzoom=-1) 
+    image luszcz bal right = Transform("luszcz bal", xzoom=-1) 
+    
+    image toxic_pea neutral right = Transform("toxic_pea neutral", xzoom=-1)
 
     define rizzler = Character("Głos Rizzlera", color="#6357cf")
     define dentysta = Character("Głos Dentysty", color="#9691c9")

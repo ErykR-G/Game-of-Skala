@@ -5074,13 +5074,6 @@ label menu_lokacji:
                     jump dev2
                 
                 "{i}☠️ CHEATY NIE KLIKAĆ!!!!{/i}":
-                    $ klata_liczba = 6
-                    $ ring = 1
-                    $ vr = 1
-                    $ memy = 1
-                    $ ziemia = 1
-                    $ nogi = 1
-                    $ zloty = 1
                     $ piknik = 1
                     $ cake = 1
                     $ pills = 20
