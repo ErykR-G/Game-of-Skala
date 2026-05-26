@@ -375,6 +375,10 @@ label postacie:
     define bilbo = Character("Bilbo", color="#473b28")
     image bilbo neutral right = Transform("bilbo neutral", xzoom=-1)
 
+    image tusk neutral right = Transform("tusk neutral", xzoom=-1)
+    image nawrocki neutral right = Transform("nawrocki neutral", xzoom=-1)
+
+
     define ailbo = Character("Ailbo", color="#b67f27")
 
     define dilbo = Character("Dilbo", color="#105e1a")

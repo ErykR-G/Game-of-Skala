@@ -1895,49 +1895,50 @@ label bal:
                     $ toxic_pea_wybory = 2
                     $ toxic_limit = 1
                     $ timer += 15
-                
-                    show luszcz bal at slightleft
-                    show shinobu neutral at slightright
 
-                    shinobu "Emmm halo"
+                    if zyd_social_link > 0:
+                        show luszcz bal at slightleft
+                        show shinobu neutral at slightright
 
-                    luszcz "..."
+                        shinobu "Emmm halo"
 
-                    shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+                        luszcz "..."
 
-                    luszcz "emmm"
-                    luszcz "..."
+                        shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
 
-                    luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+                        luszcz "emmm"
+                        luszcz "..."
 
-                    shinobu "Shinobu się nazywam"
+                        luszcz "nieee, znaczy tak oki, dzięki pani Loli"
 
-                    luszcz "shinobu"
+                        shinobu "Shinobu się nazywam"
 
-                    shinobu "..."
+                        luszcz "shinobu"
 
-                    luszcz "..."
+                        shinobu "..."
 
-                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                        luszcz "..."
 
-                    luszcz "emmm do mnie?"
+                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                    shinobu "Też mnie to dziwi"
+                        luszcz "emmm do mnie?"
 
-                    luszcz "..."
+                        shinobu "Też mnie to dziwi"
 
-                    shinobu "..."
+                        luszcz "..."
 
-                    luszcz "..."
-                    luszcz "zobaczę może przyjdę"
+                        shinobu "..."
 
-                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                    shinobu "fajnie jakbyś przyszedł!"
+                        luszcz "..."
+                        luszcz "zobaczę może przyjdę"
 
-                    hide shinobu
-                    show luszcz bal at center
+                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                        shinobu "fajnie jakbyś przyszedł!"
 
-                    luszcz "ciekawe o co może chodzić"
+                        hide shinobu
+                        show luszcz bal at center
+
+                        luszcz "ciekawe o co może chodzić"
 
                     if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                         tarczownik "O hej Łuszczu mam sprawę!"
@@ -2081,46 +2082,47 @@ label bal:
 
                         luszcz "..."
                     
-                    show luszcz bal at slightleft
-                    show shinobu neutral at slightright
+                    if zyd_social_link > 0:
+                        show luszcz bal at slightleft
+                        show shinobu neutral at slightright
 
-                    shinobu "O tu jesteś!"
-                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                        shinobu "O tu jesteś!"
+                        shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                    luszcz "..?"
+                        luszcz "..?"
 
-                    luszcz "Co po mnie widać pani Loli?"
+                        luszcz "Co po mnie widać pani Loli?"
 
-                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                        shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                    luszcz "shinobu"
+                        luszcz "shinobu"
 
-                    shinobu "bardzo ładnie"
+                        shinobu "bardzo ładnie"
 
-                    luszcz "..."
+                        luszcz "..."
 
-                    shinobu "..."
+                        shinobu "..."
 
-                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                    luszcz "emmm do mnie?"
+                        luszcz "emmm do mnie?"
 
-                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                    luszcz "niemiłe"
+                        luszcz "niemiłe"
 
-                    shinobu "niemiłe, ale prawdziwe"
+                        shinobu "niemiłe, ale prawdziwe"
 
-                    luszcz "..."
-                    luszcz "zobaczę może przyjdę"
+                        luszcz "..."
+                        luszcz "zobaczę może przyjdę"
 
-                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                    shinobu "lepiej żebyś przyszedł!"
+                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                        shinobu "lepiej żebyś przyszedł!"
 
-                    hide shinobu
-                    show luszcz bal at center
+                        hide shinobu
+                        show luszcz bal at center
 
-                    luszcz "ehhh, ciekawe o co może chodzić"
+                        luszcz "ehhh, ciekawe o co może chodzić"
 
                     if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                         tarczownik "O hej Łuszczu mam sprawę!"
@@ -2253,47 +2255,48 @@ label bal:
                     show luszcz bal at center
 
                     luszcz "..."
-                    
-                    show luszcz bal at slightleft
-                    show shinobu neutral at slightright
+                
+                    if zyd_social_link > 0:
+                        show luszcz bal at slightleft
+                        show shinobu neutral at slightright
 
-                    shinobu "O tu jesteś!"
-                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                        shinobu "O tu jesteś!"
+                        shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                    luszcz "..?"
+                        luszcz "..?"
 
-                    luszcz "Co po mnie widać pani Loli?"
+                        luszcz "Co po mnie widać pani Loli?"
 
-                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                        shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                    luszcz "shinobu"
+                        luszcz "shinobu"
 
-                    shinobu "bardzo ładnie"
+                        shinobu "bardzo ładnie"
 
-                    luszcz "..."
+                        luszcz "..."
 
-                    shinobu "..."
+                        shinobu "..."
 
-                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                    luszcz "emmm do mnie?"
+                        luszcz "emmm do mnie?"
 
-                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                    luszcz "niemiłe"
+                        luszcz "niemiłe"
 
-                    shinobu "niemiłe, ale prawdziwe"
+                        shinobu "niemiłe, ale prawdziwe"
 
-                    luszcz "..."
-                    luszcz "zobaczę może przyjdę"
+                        luszcz "..."
+                        luszcz "zobaczę może przyjdę"
 
-                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                    shinobu "lepiej żebyś przyszedł!"
+                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                        shinobu "lepiej żebyś przyszedł!"
 
-                    hide shinobu
-                    show luszcz bal at center
+                        hide shinobu
+                        show luszcz bal at center
 
-                    luszcz "ehhh, ciekawe o co może chodzić"
+                        luszcz "ehhh, ciekawe o co może chodzić"
 
                     if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                         tarczownik "O hej Łuszczu mam sprawę!"
@@ -2414,46 +2417,47 @@ label bal:
 
                     luszcz "..."
                     
-                    show luszcz bal at slightleft
-                    show shinobu neutral at slightright
+                    if zyd_social_link > 0:
+                        show luszcz bal at slightleft
+                        show shinobu neutral at slightright
 
-                    shinobu "O tu jesteś!"
-                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                        shinobu "O tu jesteś!"
+                        shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                    luszcz "..?"
+                        luszcz "..?"
 
-                    luszcz "Co po mnie widać pani Loli?"
+                        luszcz "Co po mnie widać pani Loli?"
 
-                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                        shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                    luszcz "shinobu"
+                        luszcz "shinobu"
 
-                    shinobu "bardzo ładnie"
+                        shinobu "bardzo ładnie"
 
-                    luszcz "..."
+                        luszcz "..."
 
-                    shinobu "..."
+                        shinobu "..."
 
-                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                    luszcz "emmm do mnie?"
+                        luszcz "emmm do mnie?"
 
-                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                    luszcz "niemiłe"
+                        luszcz "niemiłe"
 
-                    shinobu "niemiłe, ale prawdziwe"
+                        shinobu "niemiłe, ale prawdziwe"
 
-                    luszcz "..."
-                    luszcz "zobaczę może przyjdę"
+                        luszcz "..."
+                        luszcz "zobaczę może przyjdę"
 
-                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                    shinobu "lepiej żebyś przyszedł!"
+                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                        shinobu "lepiej żebyś przyszedł!"
 
-                    hide shinobu
-                    show luszcz bal at center
+                        hide shinobu
+                        show luszcz bal at center
 
-                    luszcz "ehhh, ciekawe o co może chodzić"
+                        luszcz "ehhh, ciekawe o co może chodzić"
 
                     if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                         tarczownik "O hej Łuszczu mam sprawę!"
@@ -2608,49 +2612,50 @@ label bal:
                         $ timer += 15
 
                         luszcz "..."
-                    
-                        show luszcz bal at slightleft
-                        show shinobu neutral at slightright
 
-                        shinobu "Emmm halo"
+                        if zyd_social_link > 0:
+                            show luszcz bal at slightleft
+                            show shinobu neutral at slightright
 
-                        luszcz "..."
+                            shinobu "Emmm halo"
 
-                        shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+                            luszcz "..."
 
-                        luszcz "emmm"
-                        luszcz "..."
+                            shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
 
-                        luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+                            luszcz "emmm"
+                            luszcz "..."
 
-                        shinobu "Shinobu się nazywam"
+                            luszcz "nieee, znaczy tak oki, dzięki pani Loli"
 
-                        luszcz "shinobu"
+                            shinobu "Shinobu się nazywam"
 
-                        shinobu "..."
+                            luszcz "shinobu"
 
-                        luszcz "..."
+                            shinobu "..."
 
-                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                            luszcz "..."
 
-                        luszcz "emmm do mnie?"
+                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                        shinobu "Też mnie to dziwi"
+                            luszcz "emmm do mnie?"
 
-                        luszcz "..."
+                            shinobu "Też mnie to dziwi"
 
-                        shinobu "..."
+                            luszcz "..."
 
-                        luszcz "..."
-                        luszcz "zobaczę może przyjdę"
+                            shinobu "..."
 
-                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                        shinobu "fajnie jakbyś przyszedł!"
+                            luszcz "..."
+                            luszcz "zobaczę może przyjdę"
 
-                        hide shinobu
-                        show luszcz bal at center
+                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                            shinobu "fajnie jakbyś przyszedł!"
 
-                        luszcz "ciekawe o co może chodzić"
+                            hide shinobu
+                            show luszcz bal at center
+
+                            luszcz "ciekawe o co może chodzić"
 
                         if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                             gotka "Ej Łuszczu!"
@@ -2791,46 +2796,47 @@ label bal:
 
                         luszcz "..."
                         
-                        show luszcz bal at slightleft
-                        show shinobu neutral at slightright
+                        if zyd_social_link > 0:
+                            show luszcz bal at slightleft
+                            show shinobu neutral at slightright
 
-                        shinobu "O tu jesteś!"
-                        shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                            shinobu "O tu jesteś!"
+                            shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                        luszcz "..?"
+                            luszcz "..?"
 
-                        luszcz "Co po mnie widać pani Loli?"
+                            luszcz "Co po mnie widać pani Loli?"
 
-                        shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                            shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                        luszcz "shinobu"
+                            luszcz "shinobu"
 
-                        shinobu "bardzo ładnie"
+                            shinobu "bardzo ładnie"
 
-                        luszcz "..."
+                            luszcz "..."
 
-                        shinobu "..."
+                            shinobu "..."
 
-                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                        luszcz "emmm do mnie?"
+                            luszcz "emmm do mnie?"
 
-                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                        luszcz "niemiłe"
+                            luszcz "niemiłe"
 
-                        shinobu "niemiłe, ale prawdziwe"
+                            shinobu "niemiłe, ale prawdziwe"
 
-                        luszcz "..."
-                        luszcz "zobaczę może przyjdę"
+                            luszcz "..."
+                            luszcz "zobaczę może przyjdę"
 
-                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                        shinobu "lepiej żebyś przyszedł!"
+                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                            shinobu "lepiej żebyś przyszedł!"
 
-                        hide shinobu
-                        show luszcz bal at center
+                            hide shinobu
+                            show luszcz bal at center
 
-                        luszcz "ehhh, ciekawe o co może chodzić"
+                            luszcz "ehhh, ciekawe o co może chodzić"
 
                         if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                             gotka "Ej Łuszczu!"
@@ -2954,46 +2960,47 @@ label bal:
 
                         luszcz "..."
                         
-                        show luszcz bal at slightleft
-                        show shinobu neutral at slightright
+                        if zyd_social_link > 0:
+                            show luszcz bal at slightleft
+                            show shinobu neutral at slightright
 
-                        shinobu "O tu jesteś!"
-                        shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                            shinobu "O tu jesteś!"
+                            shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                        luszcz "..?"
+                            luszcz "..?"
 
-                        luszcz "Co po mnie widać pani Loli?"
+                            luszcz "Co po mnie widać pani Loli?"
 
-                        shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                            shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                        luszcz "shinobu"
+                            luszcz "shinobu"
 
-                        shinobu "bardzo ładnie"
+                            shinobu "bardzo ładnie"
 
-                        luszcz "..."
+                            luszcz "..."
 
-                        shinobu "..."
+                            shinobu "..."
 
-                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                        luszcz "emmm do mnie?"
+                            luszcz "emmm do mnie?"
 
-                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                        luszcz "niemiłe"
+                            luszcz "niemiłe"
 
-                        shinobu "niemiłe, ale prawdziwe"
+                            shinobu "niemiłe, ale prawdziwe"
 
-                        luszcz "..."
-                        luszcz "zobaczę może przyjdę"
+                            luszcz "..."
+                            luszcz "zobaczę może przyjdę"
 
-                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                        shinobu "lepiej żebyś przyszedł!"
+                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                            shinobu "lepiej żebyś przyszedł!"
 
-                        hide shinobu
-                        show luszcz bal at center
+                            hide shinobu
+                            show luszcz bal at center
 
-                        luszcz "ehhh, ciekawe o co może chodzić"
+                            luszcz "ehhh, ciekawe o co może chodzić"
 
                         if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                             gotka "Ej Łuszczu!"
@@ -3151,49 +3158,50 @@ label bal:
                             luszcz "emmm, plan troszkę nie wypalił"
 
                             $ timer += 15
-                        
-                            show luszcz bal at slightleft
-                            show shinobu neutral at slightright
 
-                            shinobu "Emmm halo"
+                            if zyd_social_link > 0:
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
 
-                            luszcz "..."
+                                shinobu "Emmm halo"
 
-                            shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+                                luszcz "..."
 
-                            luszcz "emmm"
-                            luszcz "..."
+                                shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
 
-                            luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+                                luszcz "emmm"
+                                luszcz "..."
 
-                            shinobu "Shinobu się nazywam"
+                                luszcz "nieee, znaczy tak oki, dzięki pani Loli"
 
-                            luszcz "shinobu"
+                                shinobu "Shinobu się nazywam"
 
-                            shinobu "..."
+                                luszcz "shinobu"
 
-                            luszcz "..."
+                                shinobu "..."
 
-                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                luszcz "..."
 
-                            luszcz "emmm do mnie?"
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                            shinobu "Też mnie to dziwi"
+                                luszcz "emmm do mnie?"
 
-                            luszcz "..."
+                                shinobu "Też mnie to dziwi"
 
-                            shinobu "..."
+                                luszcz "..."
 
-                            luszcz "..."
-                            luszcz "zobaczę może przyjdę"
+                                shinobu "..."
 
-                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                            shinobu "fajnie jakbyś przyszedł!"
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
 
-                            hide shinobu
-                            show luszcz bal at center
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "fajnie jakbyś przyszedł!"
 
-                            luszcz "ciekawe o co może chodzić"
+                                hide shinobu
+                                show luszcz bal at center
+
+                                luszcz "ciekawe o co może chodzić"
 
                             if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                                 tarczownik "O hej Łuszczu mam sprawę!"
@@ -3311,46 +3319,47 @@ label bal:
 
                                 luszcz "..."
                             
-                            show luszcz bal at slightleft
-                            show shinobu neutral at slightright
+                            if zyd_social_link > 0:
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
 
-                            shinobu "O tu jesteś!"
-                            shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                                shinobu "O tu jesteś!"
+                                shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                            luszcz "..?"
+                                luszcz "..?"
 
-                            luszcz "Co po mnie widać pani Loli?"
+                                luszcz "Co po mnie widać pani Loli?"
 
-                            shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                                shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                            luszcz "shinobu"
+                                luszcz "shinobu"
 
-                            shinobu "bardzo ładnie"
+                                shinobu "bardzo ładnie"
 
-                            luszcz "..."
+                                luszcz "..."
 
-                            shinobu "..."
+                                shinobu "..."
 
-                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                            luszcz "emmm do mnie?"
+                                luszcz "emmm do mnie?"
 
-                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                            luszcz "niemiłe"
+                                luszcz "niemiłe"
 
-                            shinobu "niemiłe, ale prawdziwe"
+                                shinobu "niemiłe, ale prawdziwe"
 
-                            luszcz "..."
-                            luszcz "zobaczę może przyjdę"
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
 
-                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                            shinobu "lepiej żebyś przyszedł!"
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "lepiej żebyś przyszedł!"
 
-                            hide shinobu
-                            show luszcz bal at center
+                                hide shinobu
+                                show luszcz bal at center
 
-                            luszcz "ehhh, ciekawe o co może chodzić"
+                                luszcz "ehhh, ciekawe o co może chodzić"
 
                             if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                                 tarczownik "O hej Łuszczu mam sprawę!"
@@ -3451,47 +3460,48 @@ label bal:
                             show luszcz bal at center
 
                             luszcz "..."
-                            
-                            show luszcz bal at slightleft
-                            show shinobu neutral at slightright
 
-                            shinobu "O tu jesteś!"
-                            shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                            if zyd_social_link > 0:  
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
 
-                            luszcz "..?"
+                                shinobu "O tu jesteś!"
+                                shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                            luszcz "Co po mnie widać pani Loli?"
+                                luszcz "..?"
 
-                            shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                                luszcz "Co po mnie widać pani Loli?"
 
-                            luszcz "shinobu"
+                                shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                            shinobu "bardzo ładnie"
+                                luszcz "shinobu"
 
-                            luszcz "..."
+                                shinobu "bardzo ładnie"
 
-                            shinobu "..."
+                                luszcz "..."
 
-                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                shinobu "..."
 
-                            luszcz "emmm do mnie?"
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                                luszcz "emmm do mnie?"
 
-                            luszcz "niemiłe"
+                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                            shinobu "niemiłe, ale prawdziwe"
+                                luszcz "niemiłe"
 
-                            luszcz "..."
-                            luszcz "zobaczę może przyjdę"
+                                shinobu "niemiłe, ale prawdziwe"
 
-                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                            shinobu "lepiej żebyś przyszedł!"
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
 
-                            hide shinobu
-                            show luszcz bal at center
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "lepiej żebyś przyszedł!"
 
-                            luszcz "ehhh, ciekawe o co może chodzić"
+                                hide shinobu
+                                show luszcz bal at center
+
+                                luszcz "ehhh, ciekawe o co może chodzić"
 
                             if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                                 tarczownik "O hej Łuszczu mam sprawę!"
@@ -3645,49 +3655,50 @@ label bal:
                                 $ timer += 15
 
                                 luszcz "..."
-                            
-                                show luszcz bal at slightleft
-                                show shinobu neutral at slightright
 
-                                shinobu "Emmm halo"
+                                if zyd_social_link > 0:
+                                    show luszcz bal at slightleft
+                                    show shinobu neutral at slightright
 
-                                luszcz "..."
+                                    shinobu "Emmm halo"
 
-                                shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
+                                    luszcz "..."
 
-                                luszcz "emmm"
-                                luszcz "..."
+                                    shinobu "Widziałam, widziałam tą scene i eeee wszystko okej?"
 
-                                luszcz "nieee, znaczy tak oki, dzięki pani Loli"
+                                    luszcz "emmm"
+                                    luszcz "..."
 
-                                shinobu "Shinobu się nazywam"
+                                    luszcz "nieee, znaczy tak oki, dzięki pani Loli"
 
-                                luszcz "shinobu"
+                                    shinobu "Shinobu się nazywam"
 
-                                shinobu "..."
+                                    luszcz "shinobu"
 
-                                luszcz "..."
+                                    shinobu "..."
 
-                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                    luszcz "..."
 
-                                luszcz "emmm do mnie?"
+                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                                shinobu "Też mnie to dziwi"
+                                    luszcz "emmm do mnie?"
 
-                                luszcz "..."
+                                    shinobu "Też mnie to dziwi"
 
-                                shinobu "..."
+                                    luszcz "..."
 
-                                luszcz "..."
-                                luszcz "zobaczę może przyjdę"
+                                    shinobu "..."
 
-                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                                shinobu "fajnie jakbyś przyszedł!"
+                                    luszcz "..."
+                                    luszcz "zobaczę może przyjdę"
 
-                                hide shinobu
-                                show luszcz bal at center
+                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                    shinobu "fajnie jakbyś przyszedł!"
 
-                                luszcz "ciekawe o co może chodzić"
+                                    hide shinobu
+                                    show luszcz bal at center
+
+                                    luszcz "ciekawe o co może chodzić"
 
                                 if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                                     tarczownik "O hej Łuszczu mam sprawę!"
@@ -3823,46 +3834,47 @@ label bal:
 
                                     luszcz "..."
                                 
-                                show luszcz bal at slightleft
-                                show shinobu neutral at slightright
+                                if zyd_social_link > 0:
+                                    show luszcz bal at slightleft
+                                    show shinobu neutral at slightright
 
-                                shinobu "O tu jesteś!"
-                                shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                                    shinobu "O tu jesteś!"
+                                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                                luszcz "..?"
+                                    luszcz "..?"
 
-                                luszcz "Co po mnie widać pani Loli?"
+                                    luszcz "Co po mnie widać pani Loli?"
 
-                                shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                                luszcz "shinobu"
+                                    luszcz "shinobu"
 
-                                shinobu "bardzo ładnie"
+                                    shinobu "bardzo ładnie"
 
-                                luszcz "..."
+                                    luszcz "..."
 
-                                shinobu "..."
+                                    shinobu "..."
 
-                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                                luszcz "emmm do mnie?"
+                                    luszcz "emmm do mnie?"
 
-                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                                luszcz "niemiłe"
+                                    luszcz "niemiłe"
 
-                                shinobu "niemiłe, ale prawdziwe"
+                                    shinobu "niemiłe, ale prawdziwe"
 
-                                luszcz "..."
-                                luszcz "zobaczę może przyjdę"
+                                    luszcz "..."
+                                    luszcz "zobaczę może przyjdę"
 
-                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                                shinobu "lepiej żebyś przyszedł!"
+                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                    shinobu "lepiej żebyś przyszedł!"
 
-                                hide shinobu
-                                show luszcz bal at center
+                                    hide shinobu
+                                    show luszcz bal at center
 
-                                luszcz "ehhh, ciekawe o co może chodzić"
+                                    luszcz "ehhh, ciekawe o co może chodzić"
 
                                 if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                                     tarczownik "O hej Łuszczu mam sprawę!"
@@ -3964,47 +3976,48 @@ label bal:
                                 show luszcz bal at center
 
                                 luszcz "..."
-                                
-                                show luszcz bal at slightleft
-                                show shinobu neutral at slightright
 
-                                shinobu "O tu jesteś!"
-                                shinobu "Widziałam twój taniec i eeeee widać po tobie"
+                                if zyd_social_link > 0:
+                                    show luszcz bal at slightleft
+                                    show shinobu neutral at slightright
 
-                                luszcz "..?"
+                                    shinobu "O tu jesteś!"
+                                    shinobu "Widziałam twój taniec i eeeee widać po tobie"
 
-                                luszcz "Co po mnie widać pani Loli?"
+                                    luszcz "..?"
 
-                                shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
+                                    luszcz "Co po mnie widać pani Loli?"
 
-                                luszcz "shinobu"
+                                    shinobu "Aggghhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                                shinobu "bardzo ładnie"
+                                    luszcz "shinobu"
 
-                                luszcz "..."
+                                    shinobu "bardzo ładnie"
 
-                                shinobu "..."
+                                    luszcz "..."
 
-                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                    shinobu "..."
 
-                                luszcz "emmm do mnie?"
+                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                                    luszcz "emmm do mnie?"
 
-                                luszcz "niemiłe"
+                                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                                shinobu "niemiłe, ale prawdziwe"
+                                    luszcz "niemiłe"
 
-                                luszcz "..."
-                                luszcz "zobaczę może przyjdę"
+                                    shinobu "niemiłe, ale prawdziwe"
 
-                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                                shinobu "lepiej żebyś przyszedł!"
+                                    luszcz "..."
+                                    luszcz "zobaczę może przyjdę"
 
-                                hide shinobu
-                                show luszcz bal at center
+                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                    shinobu "lepiej żebyś przyszedł!"
 
-                                luszcz "ehhh, ciekawe o co może chodzić"
+                                    hide shinobu
+                                    show luszcz bal at center
+
+                                    luszcz "ehhh, ciekawe o co może chodzić"
 
                                 if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                                     tarczownik "O hej Łuszczu mam sprawę!"
@@ -4085,43 +4098,44 @@ label bal:
                             show luszcz bal at center
 
                             luszcz "..."
-                            
-                            show luszcz bal at slightleft
-                            show shinobu neutral at slightright
 
-                            shinobu "O tu jesteś!"
-                            shinobu "Widziałam twój taniec i eeee wyglądał troche dziwnie, ale napewno nie był zły"
+                            if zyd_social_link > 0:
+                                show luszcz bal at slightleft
+                                show shinobu neutral at slightright
 
-                            luszcz "yyy eee dziękuje pani Loli?"
+                                shinobu "O tu jesteś!"
+                                shinobu "Widziałam twój taniec i eeee wyglądał troche dziwnie, ale napewno nie był zły"
 
-                            shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+                                luszcz "yyy eee dziękuje pani Loli?"
 
-                            luszcz "shinobu"
+                                shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                            shinobu "bardzo ładnie"
+                                luszcz "shinobu"
 
-                            luszcz "..."
+                                shinobu "bardzo ładnie"
 
-                            shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                luszcz "..."
 
-                            luszcz "emmm do mnie?"
+                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                            shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                                luszcz "emmm do mnie?"
 
-                            luszcz "niemiłe"
+                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                            shinobu "niemiłe, ale prawdziwe"
+                                luszcz "niemiłe"
 
-                            luszcz "..."
-                            luszcz "zobaczę może przyjdę"
+                                shinobu "niemiłe, ale prawdziwe"
 
-                            shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                            shinobu "lepiej żebyś przyszedł!"
+                                luszcz "..."
+                                luszcz "zobaczę może przyjdę"
 
-                            hide shinobu
-                            show luszcz bal at center
+                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                shinobu "lepiej żebyś przyszedł!"
 
-                            luszcz "ehhh, ciekawe o co może chodzić"
+                                hide shinobu
+                                show luszcz bal at center
+
+                                luszcz "ehhh, ciekawe o co może chodzić"
 
                             if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                                 gotka "Ej Łuszczu!"
@@ -4230,43 +4244,44 @@ label bal:
                                 show luszcz bal at center
 
                                 luszcz "eghhh"
-                                
-                                show luszcz bal at slightleft
-                                show shinobu neutral at slightright
 
-                                shinobu "O tu jesteś!"
-                                shinobu "Widziałam twój taniec i eeee nie wiedziałam, że jednak gustujesz w facetach, ale no taniec napewno nie był zły"
+                                if zyd_social_link > 0:
+                                    show luszcz bal at slightleft
+                                    show shinobu neutral at slightright
 
-                                luszcz "yyy eee dziękuje pani Loli?"
+                                    shinobu "O tu jesteś!"
+                                    shinobu "Widziałam twój taniec i eeee nie wiedziałam, że jednak gustujesz w facetach, ale no taniec napewno nie był zły"
 
-                                shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+                                    luszcz "yyy eee dziękuje pani Loli?"
 
-                                luszcz "shinobu"
+                                    shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                                shinobu "bardzo ładnie"
+                                    luszcz "shinobu"
 
-                                luszcz "..."
+                                    shinobu "bardzo ładnie"
 
-                                shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                    luszcz "..."
 
-                                luszcz "emmm do mnie?"
+                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                                shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                                    luszcz "emmm do mnie?"
 
-                                luszcz "niemiłe"
+                                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                                shinobu "niemiłe, ale prawdziwe"
+                                    luszcz "niemiłe"
 
-                                luszcz "..."
-                                luszcz "zobaczę może przyjdę"
+                                    shinobu "niemiłe, ale prawdziwe"
 
-                                shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                                shinobu "lepiej żebyś przyszedł!"
+                                    luszcz "..."
+                                    luszcz "zobaczę może przyjdę"
 
-                                hide shinobu
-                                show luszcz bal at center
+                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                    shinobu "lepiej żebyś przyszedł!"
 
-                                luszcz "ehhh, ciekawe o co może chodzić"
+                                    hide shinobu
+                                    show luszcz bal at center
+
+                                    luszcz "ehhh, ciekawe o co może chodzić"
 
                                 if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                                     gotka "Ej Łuszczu!"
@@ -4388,43 +4403,44 @@ label bal:
                                         show luszcz bal at center
 
                                         luszcz "..."
-                                    
-                                    show luszcz bal at slightleft
-                                    show shinobu neutral at slightright
 
-                                    shinobu "O tu jesteś!"
-                                    shinobu "Widziałam twój taniec i nie powiem, był niezły"
+                                    if zyd_social_link > 0:
+                                        show luszcz bal at slightleft
+                                        show shinobu neutral at slightright
 
-                                    luszcz "Dziękuje pani Loli"
+                                        shinobu "O tu jesteś!"
+                                        shinobu "Widziałam twój taniec i nie powiem, był niezły"
 
-                                    shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+                                        luszcz "Dziękuje pani Loli"
 
-                                    luszcz "shinobu"
+                                        shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                                    shinobu "bardzo ładnie"
+                                        luszcz "shinobu"
 
-                                    luszcz "..."
+                                        shinobu "bardzo ładnie"
 
-                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                        luszcz "..."
 
-                                    luszcz "emmm do mnie?"
+                                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
+                                        luszcz "emmm do mnie?"
 
-                                    luszcz "niemiłe"
+                                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z kimś takim jak ty"
 
-                                    shinobu "niemiłe, ale prawdziwe"
+                                        luszcz "niemiłe"
 
-                                    luszcz "..."
-                                    luszcz "zobaczę może przyjdę"
+                                        shinobu "niemiłe, ale prawdziwe"
 
-                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                                    shinobu "lepiej żebyś przyszedł!"
+                                        luszcz "..."
+                                        luszcz "zobaczę może przyjdę"
 
-                                    hide shinobu
-                                    show luszcz bal at center
+                                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                        shinobu "lepiej żebyś przyszedł!"
 
-                                    luszcz "ehhh, ciekawe o co może chodzić"
+                                        hide shinobu
+                                        show luszcz bal at center
+
+                                        luszcz "ehhh, ciekawe o co może chodzić"
 
                                     if tarczownik_sojusznik == 1 and gotka_social_link < 10:
                                         tarczownik "O hej Łuszczu mam sprawę!"
@@ -4466,39 +4482,40 @@ label bal:
 
                                     $ timer += 15
 
-                                    shinobu "Stój gdzie stoisz patałachu!"
+                                    if zyd_social_link > 0:
+                                        shinobu "Stój gdzie stoisz patałachu!"
 
-                                    show luszcz bal at slightleft
-                                    show shinobu neutral at slightright
+                                        show luszcz bal at slightleft
+                                        show shinobu neutral at slightright
 
-                                    luszcz "O pani Loli."
+                                        luszcz "O pani Loli."
 
-                                    shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
+                                        shinobu "Ehhhh, SHI-NO-BU, Shinobu się nazywam"
 
-                                    luszcz "shinobu"
+                                        luszcz "shinobu"
 
-                                    shinobu "bardzo ładnie"
+                                        shinobu "bardzo ładnie"
 
-                                    luszcz "..."
+                                        luszcz "..."
 
-                                    shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
+                                        shinobu "Mój Pan Cię wzywa na spotkanie. Ma do Ciebie pewną poufną sprawę."
 
-                                    luszcz "emmm do mnie?"
+                                        luszcz "emmm do mnie?"
 
-                                    shinobu "Też mnie dziwi, że mój pan chce się zadawać z takim śmieciem jak ty"
+                                        shinobu "Też mnie dziwi, że mój pan chce się zadawać z takim śmieciem jak ty"
 
-                                    luszcz "niemiłe"
+                                        luszcz "niemiłe"
 
-                                    shinobu "niemiłe, ale prawdziwe"
+                                        shinobu "niemiłe, ale prawdziwe"
 
-                                    luszcz "..."
-                                    luszcz "zobaczę może przyjdę"
+                                        luszcz "..."
+                                        luszcz "zobaczę może przyjdę"
 
-                                    shinobu "mój pan będzie w strefie ViP w sali jadalnej"
-                                    shinobu "lepiej żebyś przyszedł!"
+                                        shinobu "mój pan będzie w strefie ViP w sali jadalnej"
+                                        shinobu "lepiej żebyś przyszedł!"
 
-                                    hide shinobu
-                                    show luszcz bal at center
+                                        hide shinobu
+                                        show luszcz bal at center
 
                                     if gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                                         gotka "Ej Łuszczu!"
@@ -4554,12 +4571,14 @@ label bal:
                                     luszcz "..."
 
                                     jump bal3
+ 
     label bal3:
         menu:
             "{b}Co, by tu zrobić?{/b}"
 
             "{b}Spotkaj się z Ambasadorem{/b}" if 9900 <= timer <= 9915:
-                ""
+                luszcz "(Pójdę zobaczyć po co wzywa mnie Ambasador)"
+                jump btask1
             
             "{b}Spotkaj się z Gotką{/b}" if 9900 <= timer <= 9915 and gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                 ""
@@ -4572,35 +4591,98 @@ label bal:
                 jump bal4
 
     label bal4:
-        scene bg bal3 with fade
-        play music "audio/music/bal.mp3"
+        
+
+
+
+
+    label btask1:
+        stop music
+        scene bg black with fade
+        scene bg bal6 with fade
+        $ timer += 15
+        play music "audio/music/sonata11.mp3"
         $ renpy.music.set_volume(1.0, delay=0.3)
-
-        if eminem_sojusznik == 1:
-            $ stol += 1
-            show eminem stol zorder 10
-
-        if kazuma_social_link >= 1 and kazuma_social_link < 3 or kazuma_sojusznik == 1:
-            $ stol += 1
-            show kazuma stol zorder 9
-
-        if yusuke_social_link >= 1 and yusuke_social_link < 6:
-            $ stol += 1
-            show yusuke stol zorder 8
-
-        if zyd_sojusznik == 1:
-            $ stol += 1
-            show zyd stol zorder 7
-
-        if urban_sojusznik == 1:
-            $ stol += 1
-            show urban stol zorder 6
-
-        if tarczownik_sojusznik == 1:
-            $ stol += 1
-            show tarczownik stol zorder 5
         
         show luszcz bal zorder 12 at left
 
-        ""
+        luszcz "Emmmm to chyba tutaj..."
 
+        show shinobu neutral at center
+
+        shinobu "o przyszedłeś!"
+        shinobu "poczekaj jeszcze chwilkę, mój pan kończy własnie negocjacje"
+
+        scene bg bal6 with fastfade
+
+        show eryk neutral at right
+        show tusk neutral right at center
+        show nawrocki neutral right at left 
+
+        eryk "No to co, mamy deal?"
+
+        tusk "Mamy deal"
+        tusk "Współpraca z Panem to czysta przyjemność"
+
+        show tusk neutral right:
+            xalign 0.5
+            yalign 1.0
+            easeout 0.2 xalign 0.0
+        show nawrocki neutral right:
+            xalign 0.0
+            yalign 1.0
+            easeout 0.2 xalign 0.5
+
+        nawrocki "Nie, nie możliwość współpracy z Panem to dar od niebios"
+
+        show tusk neutral right:
+            xalign 0.0
+            yalign 1.0
+            easeout 0.2 xalign 0.5
+        show nawrocki neutral right:
+            xalign 0.5
+            yalign 1.0
+            easeout 0.2 xalign 0.0
+
+        tusk "Nein, nein możliwość rozmowy z Panem to dla mnie łaska, na którą nie zasługuję."
+
+        eryk "dobra, dobra już"
+        eryk "Macie tu umowę, podpiszcie ją i mi dostarczcie do końca balu"
+        
+        "{i}Eryk przekazuje umowę gospodarczą Tuskowi{/i}"
+
+        tusk "Tak będzie Panie Ambasadorze"
+        nawrocki "Twe życzenie mym rozkazem"
+
+        show tusk neutral:
+            xalign 0.5
+            yalign 1.0
+            easeout 0.35 xalign -0.5
+
+        show nawrocki neutral:
+            xalign 0.0
+            yalign 1.0
+            easeout 0.2 xalign -0.5
+
+        eryk "ehhh, co ja z nimi mam..."
+
+        show shinobu neutral right at center
+        show luszcz bal at left
+
+        eryk "Ohhhh Shinobu!"
+
+        shinobu "Przyprowadziłam tego o którego prosiłeś"
+
+        eryk "Witaj Macieju Łuszczu!"
+
+        show luszcz bal:
+            xalign 0.0
+            yalign 1.0
+            easeout 0.2 xalign 0.5
+
+        show shinobu neutral right:
+            xalign 0.5
+            yalign 1.0
+            easeout 0.2 xalign 0.0
+
+        luszcz "Skąd znasz moje imię!?"

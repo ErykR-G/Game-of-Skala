@@ -8011,7 +8011,6 @@ label eq:
                     "{i}Strona 1/2 --->{/i}" if strona2 > 0:
                         jump itemy_do_walki2
 
-
                     "{b}Powrót{/b}":
                         jump eq
 
