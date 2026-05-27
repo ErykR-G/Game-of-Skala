@@ -4,7 +4,6 @@
 
 init offset = -1
 
-
 ################################################################################
 ## Style
 ################################################################################
@@ -301,6 +300,14 @@ screen full_click_screen(img):
 ## Ten kod zapewnia, że ekran quick_menu jest wyświetlany w grze, gdy gracz nie
 ## ukrył jawnie interfejsu.
 init python:
+    import random
+    rare_title = False
+
+init python:
+    def roll_rare():
+        store.rare_title = (renpy.random.randint(1, 100) <= 10)
+
+init python:
     config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
@@ -318,7 +325,6 @@ style quick_button:
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
-
 
 ################################################################################
 ## Ekrany główne i menu gry
@@ -341,17 +347,27 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            if rare_title:
+                textbutton _("{font=fonts/NotoSansTC-Regular.ttf}開始{/font}"):
+                    action [SetVariable("rare_title", False), Start()]
+            else:
+                textbutton _("Start"):
+                    action [SetVariable("rare_title", False), Start()]
 
         else:
-
             textbutton _("Historia") action ShowMenu("history")
 
             textbutton _("Zapis") action ShowMenu("save")
 
-        textbutton _("Wczytaj") action ShowMenu("load")
+        if rare_title:
+            textbutton _("{font=fonts/NotoSansTC-Regular.ttf}載入{/font}") action ShowMenu("load")
+        else:
+            textbutton _("Wczytaj") action ShowMenu("load")
 
-        textbutton _("Preferencje") action ShowMenu("preferences")
+        if rare_title:
+            textbutton _("{font=fonts/NotoSansTC-Regular.ttf}偏好設定{/font}") action ShowMenu("preferences")
+        else:
+            textbutton _("Preferencje") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -361,18 +377,27 @@ screen navigation():
 
             textbutton _("Menu główne") action MainMenu()
 
-        textbutton _("Informacje") action ShowMenu("about")
+        if rare_title:
+            textbutton _("{font=fonts/NotoSansTC-Regular.ttf}資訊{/font}") action ShowMenu("about")
+        else:
+            textbutton _("Informacje") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Pomoc nie jest potrzebna ani nie dotyczy urządzeń mobilnych.
-            textbutton _("Pomoc") action ShowMenu("help")
+            if rare_title:
+                textbutton _("{font=fonts/NotoSansTC-Regular.ttf}幫助{/font}") action ShowMenu("help")
+            else:
+                textbutton _("Pomoc") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## Przycisk zamknij (quit) jest zabroniony w iOS, niepotrzebny w
             ## Androidzie i przeglądarkach.
-            textbutton _("Zamknij") action Quit(confirm=not main_menu)
+            if rare_title:
+                textbutton _("{font=fonts/NotoSansTC-Regular.ttf}關閉{/font}") action Quit(confirm=not main_menu)
+            else:
+                textbutton _("Zamknij") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -391,7 +416,6 @@ style navigation_button_text:
 ## Służy do wyświetlania menu głównego po uruchomieniu Ren'Py
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
-default rare_title = renpy.random.randint(1, 100) <= 10
 
 screen secret_choice():
 
@@ -408,11 +432,14 @@ screen secret_choice():
         action Jump("devroom")
 
 screen main_menu():
-
+    on "show" action Function(roll_rare)
     ## Zapewnienie, że każdy inny ekran menu zostanie zastąpiony.
     tag menu
 
-    add gui.main_menu_background
+    if rare_title:
+        add "gui/rare_menu.png"
+    else:
+        add "gui/main_menu.png"
 
     ## Ta pusta ramka przyciemnia menu główne.
     frame:
@@ -424,10 +451,13 @@ screen main_menu():
     
     if gui.show_name:
 
-        if rare_title:
-            on "show" action Play("music", "audio/music/menu2.mp3")
-        else:
-            on "show" action Play("music", "audio/music/menu.mp3")
+        on "show" action Function(
+            lambda: renpy.music.play(
+                "audio/music/menu2.mp3" if rare_title else "audio/music/menu.mp3",
+                loop=True
+            )
+        )
+
 
         if rare_title:
 
@@ -505,9 +535,15 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.main_menu_background
+        if rare_title:
+            add "gui/rare_menu.png"
+        else:
+            add "gui/main_menu.png"
     else:
-        add gui.game_menu_background
+        if rare_title:
+            add "gui/rare_menu.png"
+        else:
+            add "gui/main_menu.png"
 
     frame:
         style "game_menu_outer_frame"
@@ -560,10 +596,17 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Powrót"):
-        style "return_button"
+    
+    if rare_title:
+        textbutton _("{font=fonts/NotoSansTC-Regular.ttf}返回{/font}"):
+            style "return_button"
+            action Return()
 
-        action Return()
+    else:
+
+        textbutton _("Powrót"):
+            style "return_button"
+            action Return()
 
     label title
 
@@ -637,20 +680,23 @@ screen about():
 
     ## Wyrażenie use zawiera ekran game_menu wewnątrz tego. Potomek vbox jest
     ## następnie dołączany do okna widoku na ekranie menu gry.
-    use game_menu(_("Informacje"), scroll="viewport"):
+    use game_menu(
+        _("{font=fonts/NotoSansTC-Regular.ttf}資訊{/font}") if rare_title else _("Informacje"),
+        scroll="viewport"
+    ):
 
         style_prefix "about"
 
         vbox:
 
-            label "[config.name!t]"
-            text _("Wersja [config.version!t]\n")
+            label (_("{font=fonts/NotoSansTC-Regular.ttf}搖滾故事{/font}") if rare_title else "[config.name!t]")
 
             ## gui.about zazwyczaj jest ustawiony w options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Wykonano przy pomocy {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            if rare_title and gui.about_rare:
+                text "[gui.about_rare!t]\n"
+            else:
+                if gui.about:
+                    text "[gui.about!t]\n"
 
 
 style about_label is gui_label
@@ -680,9 +726,8 @@ screen save():
 screen load():
 
     tag menu
-
-    use file_slots(_("Wczytaj"))
-
+    
+    use file_slots("{font=fonts/NotoSansTC-Regular.ttf}載入{/font}" if rare_title else _("Wczytaj"))
 
 screen file_slots(title):
 
@@ -797,7 +842,10 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferencje"), scroll="viewport"):
+    use game_menu(
+        _("{font=fonts/NotoSansTC-Regular.ttf}偏好設定{/font}") if rare_title else _("Preferencje"),
+        scroll="viewport"
+    ):
 
         vbox:
 
@@ -808,16 +856,27 @@ screen preferences():
 
                     vbox:
                         style_prefix "radio"
-                        label _("Wyświetlenie")
-                        textbutton _("Okno") action Preference("display", "window")
-                        textbutton _("Pełny ekran") action Preference("display", "fullscreen")
+                        if rare_title:
+                            label _("{font=fonts/NotoSansTC-Regular.ttf}展示{/font}")
+                            textbutton _("{font=fonts/NotoSansTC-Regular.ttf}窗戶{/font}") action Preference("display", "window")
+                            textbutton _("{font=fonts/NotoSansTC-Regular.ttf}全螢幕{/font}") action Preference("display", "fullscreen")
+                        else:
+                            label _("Wyświetlenie")
+                            textbutton _("Okno") action Preference("display", "window")
+                            textbutton _("Pełny ekran") action Preference("display", "fullscreen")
 
                 vbox:
                     style_prefix "check"
-                    label _("Pomiń")
-                    textbutton _("Tekst niewidoczny") action Preference("skip", "toggle")
-                    textbutton _("Tekst po wyborze") action Preference("after choices", "toggle")
-                    textbutton _("Przejścia") action InvertSelected(Preference("transitions", "toggle"))
+                    if rare_title:
+                        label _("{font=fonts/NotoSansTC-Regular.ttf}跳過{/font}")
+                        textbutton _("{font=fonts/NotoSansTC-Regular.ttf}隱形文字{/font}") action Preference("skip", "toggle")
+                        textbutton _("{font=fonts/NotoSansTC-Regular.ttf}選擇後的文字{/font}") action Preference("after choices", "toggle")
+                        textbutton _("{font=fonts/NotoSansTC-Regular.ttf}過渡{/font}") action InvertSelected(Preference("transitions", "toggle"))
+                    else:
+                        label _("Pomiń")
+                        textbutton _("Tekst niewidoczny") action Preference("skip", "toggle")
+                        textbutton _("Tekst po wyborze") action Preference("after choices", "toggle")
+                        textbutton _("Przejścia") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Miejsce na dodatkowe vboksy typu "radio_pref" lub
                 ## "check_pref", aby dodać dodatkowe preferencje zdefiniowane
@@ -831,25 +890,38 @@ screen preferences():
 
                 vbox:
 
-                    label _("Szybkość tekstu")
+                    if rare_title:
+                        label _("{font=fonts/NotoSansTC-Regular.ttf}文字速度{/font}")
+                    else:
+                        label _("Szybkość tekstu")
 
                     bar value Preference("text speed")
 
-                    label _("Czas automatycznego przewijania")
+                    if rare_title:
+                        label _("{font=fonts/NotoSansTC-Regular.ttf}自動滾動時間{/font}")
+                    else:
+                        label _("Czas automatycznego przewijania")
 
                     bar value Preference("auto-forward time")
 
                 vbox:
 
                     if config.has_music:
-                        label _("Głośność muzyki")
-
+                        
+                        if rare_title:
+                            label _("{font=fonts/NotoSansTC-Regular.ttf}音樂音量{/font}")
+                        else:
+                            label _("Głośność muzyki")
+                        
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
-
-                        label _("Głośność dźwięku")
+                        
+                        if rare_title:
+                            label _("{font=fonts/NotoSansTC-Regular.ttf}音量{/font}")
+                        else:
+                            label _("Głośność dźwięku")
 
                         hbox:
                             bar value Preference("sound volume")
@@ -859,7 +931,11 @@ screen preferences():
 
 
                     if config.has_voice:
-                        label _("Głośność głosu")
+
+                        if rare_title:
+                            label _("{font=fonts/NotoSansTC-Regular.ttf}語音音量{/font}")
+                        else:
+                            label _("Głośność głosu")
 
                         hbox:
                             bar value Preference("voice volume")
@@ -870,9 +946,14 @@ screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Wycisz wszystko"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                        if rare_title:
+                            textbutton _("{font=fonts/NotoSansTC-Regular.ttf}將所有內容靜音{/font}"):
+                                action Preference("all mute", "toggle")
+                                style "mute_all_button"
+                        else:
+                            textbutton _("Wycisz wszystko"):
+                                action Preference("all mute", "toggle")
+                                style "mute_all_button"
 
 
 style pref_label is gui_label
@@ -1049,7 +1130,10 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Pomoc"), scroll="viewport"):
+    use game_menu(
+        _("{font=fonts/NotoSansTC-Regular.ttf}幫助{/font}") if rare_title else _("Pomoc"),
+        scroll="viewport"
+    ):
 
         style_prefix "help"
 
@@ -1058,11 +1142,20 @@ screen help():
 
             hbox:
 
-                textbutton _("Klawiatura") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mysz") action SetScreenVariable("device", "mouse")
+                if rare_title:
+                    textbutton _("{font=fonts/NotoSansTC-Regular.ttf}鍵盤{/font}") action SetScreenVariable("device", "keyboard")
+                else:
+                    textbutton _("Klawiatura") action SetScreenVariable("device", "keyboard")
+                if rare_title:
+                    textbutton _("{font=fonts/NotoSansTC-Regular.ttf}滑鼠{/font}") action SetScreenVariable("device", "mouse")
+                else:
+                    textbutton _("Mysz") action SetScreenVariable("device", "mouse")
 
                 if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+                    if rare_title:
+                        textbutton _("{font=fonts/NotoSansTC-Regular.ttf}遊戲手把{/font}") action SetScreenVariable("device", "gamepad")
+                    else:
+                        textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
             if device == "keyboard":
                 use keyboard_help
@@ -1074,105 +1167,204 @@ screen help():
 
 screen keyboard_help():
 
-    hbox:
-        label _("Wejdź na stronę")
-        text _("Rozwija dialog i aktywuje interfejs")
+    if rare_title:
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}造訪網站{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}展開對話並啟動介面{/font}")
 
-    hbox:
-        label _("Spacja")
-        text _("Rozwija dialog bez wybierania opcji.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}空間{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}無需選擇選項即可展開對話{/font}")
 
-    hbox:
-        label _("Strzałki")
-        text _("Poruszanie się po interfejsie.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}箭頭{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}瀏覽介面{/font}")
 
-    hbox:
-        label _("Ucieczka")
-        text _("Uruchomienie menu gry.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}逃脫{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}啟動遊戲選單{/font}")
 
-    hbox:
-        label _("Ctrl")
-        text _("Pomija dialog, gdy jest wciśnięty.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}控制鍵{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}按下時跳過對話{/font}")
 
-    hbox:
-        label _("Tab")
-        text _("Przełącza pomijanie dialogów.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}選項卡{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}切換跳過對話功能{/font}")
 
-    hbox:
-        label _("Strona w górę")
-        text _("Wraca do wcześniejszego dialogu.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}向上翻頁{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}回到之前的對話{/font}")
 
-    hbox:
-        label _("Strona w dół")
-        text _("Przechodzi do późniejszego dialogu.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}往下翻頁{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}進入後續對話{/font}")
 
-    hbox:
-        label "H"
-        text _("Ukrywa interfejs użytkownika.")
+        hbox:
+            label "H"
+            text _("{font=fonts/NotoSansTC-Regular.ttf}進入後續對話{/font}")
 
-    hbox:
-        label "S"
-        text _("Wykonanie zrzutu ekranu.")
+        hbox:
+            label "S"
+            text _("{font=fonts/NotoSansTC-Regular.ttf}截圖{/font}")
 
-    hbox:
-        label "V"
-        text _("Przełącza wspomaganie {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+        hbox:
+            label "V"
+            text _("{font=fonts/NotoSansTC-Regular.ttf}切換自發聲支持{/font}")
 
-    hbox:
-        label "Shift+A"
-        text _("Otwiera menu dostępności.")
+        hbox:
+            label "{font=fonts/NotoSansTC-Regular.ttf}轉移{/font}+A"
+            text _("{font=fonts/NotoSansTC-Regular.ttf}開啟輔助使用功能選單{/font}")
+    else:
+        hbox:
+            label _("Wejdź na stronę")
+            text _("Rozwija dialog i aktywuje interfejs")
+
+        hbox:
+            label _("Spacja")
+            text _("Rozwija dialog bez wybierania opcji.")
+
+        hbox:
+            label _("Strzałki")
+            text _("Poruszanie się po interfejsie.")
+
+        hbox:
+            label _("Ucieczka")
+            text _("Uruchomienie menu gry.")
+
+        hbox:
+            label _("Ctrl")
+            text _("Pomija dialog, gdy jest wciśnięty.")
+
+        hbox:
+            label _("Tab")
+            text _("Przełącza pomijanie dialogów.")
+
+        hbox:
+            label _("Strona w górę")
+            text _("Wraca do wcześniejszego dialogu.")
+
+        hbox:
+            label _("Strona w dół")
+            text _("Przechodzi do późniejszego dialogu.")
+
+        hbox:
+            label "H"
+            text _("Ukrywa interfejs użytkownika.")
+
+        hbox:
+            label "S"
+            text _("Wykonanie zrzutu ekranu.")
+
+        hbox:
+            label "V"
+            text _("Przełącza wspomaganie {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+
+        hbox:
+            label "Shift+A"
+            text _("Otwiera menu dostępności.")
 
 
 screen mouse_help():
 
-    hbox:
-        label _("Lewy przycisk")
-        text _("Rozwija dialog i aktywuje interfejs")
+    if rare_title:
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}左邊按鈕{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}展開對話並啟動介面{/font}")
 
-    hbox:
-        label _("Środkowy przycisk")
-        text _("Ukrywa interfejs użytkownika.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}中鍵{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}隱藏使用者介面{/font}")
 
-    hbox:
-        label _("Prawy przycisk")
-        text _("Uruchomienie menu gry.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}右鍵{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}正在啟動遊戲選單{/font}")
 
-    hbox:
-        label _("Kółko myszy w górę")
-        text _("Wraca do wcześniejszego dialogu.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}滑鼠滾輪向上{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}回到之前的對話{/font}")
 
-    hbox:
-        label _("Kółko myszy w dół")
-        text _("Przechodzi do późniejszego dialogu.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}滑鼠滾輪向下{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}進入後續對話{/font}")
+    
+    else:
+        hbox:
+            label _("Lewy przycisk")
+            text _("Rozwija dialog i aktywuje interfejs")
+
+        hbox:
+            label _("Środkowy przycisk")
+            text _("Ukrywa interfejs użytkownika.")
+
+        hbox:
+            label _("Prawy przycisk")
+            text _("Uruchomienie menu gry.")
+
+        hbox:
+            label _("Kółko myszy w górę")
+            text _("Wraca do wcześniejszego dialogu.")
+
+        hbox:
+            label _("Kółko myszy w dół")
+            text _("Przechodzi do późniejszego dialogu.")
 
 
 screen gamepad_help():
 
-    hbox:
-        label _("Prawy spust\nA/dolny przycisk")
-        text _("Rozwija dialog i aktywuje interfejs")
+    if rare_title:
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}右扳機{/font}\nA/{font=fonts/NotoSansTC-Regular.ttf}下按鈕{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}展開對話並啟動介面{/font}")
 
-    hbox:
-        label _("Lewy spust\nLewe ramię (L)")
-        text _("Wraca do wcześniejszego dialogu.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}左扳機\n左臂（L）{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}回到之前的對話{/font}")
 
-    hbox:
-        label _("Prawe ramię (R)")
-        text _("Przechodzi do późniejszego dialogu.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}右肩（R）{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}進入後續對話{/font}")
 
-    hbox:
-        label _("D-Pad, Gałka")
-        text _("Poruszanie się po interfejsie.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}方向鍵、搖桿{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}瀏覽介面{/font}")
 
-    hbox:
-        label _("Start, Guide, B/Right Button")
-        text _("Uruchomienie menu gry.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}開始、指南{/font}、B/{font=fonts/NotoSansTC-Regular.ttf}右按鈕{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}正在啟動遊戲選單{/font}")
 
-    hbox:
-        label _("Y/górny przycisk")
-        text _("Ukrywa interfejs użytkownika.")
+        hbox:
+            label _("{font=fonts/NotoSansTC-Regular.ttf}Y/頂部按鈕{/font}")
+            text _("{font=fonts/NotoSansTC-Regular.ttf}隱藏使用者介面{/font}")
 
-    textbutton _("Kalibracja") action GamepadCalibrate()
+        textbutton _("{font=fonts/NotoSansTC-Regular.ttf}校準{/font}") action GamepadCalibrate()
+    
+    else:
+        hbox:
+            label _("Prawy spust\nA/dolny przycisk")
+            text _("Rozwija dialog i aktywuje interfejs")
+
+        hbox:
+            label _("Lewy spust\nLewe ramię (L)")
+            text _("Wraca do wcześniejszego dialogu.")
+
+        hbox:
+            label _("Prawe ramię (R)")
+            text _("Przechodzi do późniejszego dialogu.")
+
+        hbox:
+            label _("D-Pad, Gałka")
+            text _("Poruszanie się po interfejsie.")
+
+        hbox:
+            label _("Start, Guide, B/Right Button")
+            text _("Uruchomienie menu gry.")
+
+        hbox:
+            label _("Y/górny przycisk")
+            text _("Ukrywa interfejs użytkownika.")
+
+        textbutton _("Kalibracja") action GamepadCalibrate()
 
 
 style help_button is gui_button

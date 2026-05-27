@@ -45,7 +45,7 @@ label silver_sextape:
 
                         tasma "Proszę poczekać!"
                         tasma "Ostatnie pytanko…"
-                        tasma "Czy gdybym pani zapłaciła... w miarę srogo... powiedzmy 3 💰?"
+                        tasma "Czy gdybym panu zapłaciła... w miarę srogo... powiedzmy 3 💰?"
 
                         tasma "Czy pan byłby zainteresowany wysluchaniem mojej oferty?"
                         luszcz "To jest, istotnie, dużo pieniędzy..."
@@ -375,7 +375,7 @@ label silver_sextape:
             "{b}Gwałtownie zmień kierunek jazdy{/b}":
                 tasma "AHh0- Dziękuję! dziękuję! Co za zawrot!"
             
-            "{b}Walnij drifta (ostrożnie!{/b}":
+            "{b}Walnij drifta (ostrożnie!){/b}":
                 tasma "Mmh… AHhhhahAHhhh To takie dobrwe!!"
         
         luszcz "(to chyba dobry moment…)"
@@ -518,8 +518,10 @@ label silver_sextape:
                     $ kartka = 0
                     "{i}Łuszcz wyjmuje kartkę urodzinową i daje ja taśmie{/i}"
 
-                    tasma "(((cytowanie życzeń…)))"
-                    tasma "(((cytowanie życzeń…)))"
+                    tasma "Drogi Łuszczu!"
+                    tasma "W tym wyjątkowym dniu 18-tych urodzin przyjmij najserdeczniejsze życzenia, aby Twoje życie było bogate w mądre wybory, fascynujące doświadczenia i spełnione marzenia. Żyj z odwagą w sercu, spełniaj się i uwierz, że możesz wszystko czego zapragniesz."
+                    tasma "Życzy xyz"
+                    tasma "Wysłane pocztą polską."
                     tasma "Ale to w ogóle nie jest dla niej!"
                     tasma "Ktoś wysłał to tobie! Przecież masz tu napisane debilu!"
                     tasma "Co ty sobie w ogóle myślisz! My nawet nie dożywamy osiemnastu lat!"

@@ -436,6 +436,37 @@ label spanko:
 
         "{i}*3 Portfele zostały dodane do ekwipunku*{/i}"
 
+        if timer >= 2880 and timer <= 4260:
+            show tata neutral at slightright
+            show luszcz neutral at slightleft
+            tata "Synu list do ciebie przyszedł!"
+
+            luszcz "Aghhh to pewnie powołanie do wojska"
+
+            tata "Nie wygląda"
+            tata "Ale nwm ja wracam do pracy miłego listowania"
+
+            luszcz "Dzięki"
+
+            hide tata 
+            show luszcz neutral at center
+
+            luszcz "Zobatżmy…"
+
+            n "{i}Drogi Łuszczu!{/i}"
+            n "{i}W tym wyjątkowym dniu 18-tych urodzin przyjmij najserdeczniejsze życzenia, aby Twoje życie było bogate w mądre wybory, fascynujące doświadczenia i spełnione marzenia. Żyj z odwagą w sercu, spełniaj się i uwierz, że możesz wszystko czego zapragniesz.{/i}"
+            n "{i}Życzy xyz{/i}"
+            n "{i}Wysłane pocztą polską.{/i}"
+
+            luszcz "Widać"
+
+            $ ile_item_fabularne += 1
+            $ kartka = 1
+
+            "{i}*Kartka z Życzeniami została dodana do ekwipunku*{/i}" 
+
+            luszcz "No cóż, anyway"
+
         if bralus == 1:
             luszcz "Hmmm a co to za paczka?"
 

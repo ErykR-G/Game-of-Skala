@@ -45,9 +45,9 @@ define config.version = "1.0"
 ## Tekst, który jest umieszczony na ekranie, w sekcji o grze. Umieść tekst
 ## między potrójnymi cudzysłowami i zostaw pustą linię między akapitami.
 
-define gui.about = _p("""
-""")
+define gui.about = _p("""To jest sequel/spin off kultowej gry Eryk-san wants to fly to Japan. W tej grze podróżujesz po mieście stołecznym Skała i werbujesz ludzi do pomocy w powstrzymaniu zamiarów Księdza. Ksiądz chce właczenia Skały do Krakowa co z oczywistych powodów byłoby dla niej okropne. W grze czasami prowadzimy walki w systemie wzorowanym na tym z gier z serii Persona.""")
 
+define gui.about_rare = _p("""{font=fonts/NotoSansTC-Regular.ttf}這是熱門遊戲《艾瑞克先生想飛去日本》的續作兼衍生作品。在遊戲中，你將穿梭於首都斯卡拉，招募夥伴阻止牧師的陰謀。牧師想要將斯卡拉併入克拉科夫，這顯然對他來說將是災難性的。遊戲有時會採用類似《女神異聞錄》系列的戰鬥系統{/font}""")
 
 ## Krótka nazwa gry używana dla plików wykonywalnych i katalogów w zbudowanej
 ## dystrybucji. Musi zawierać tylko ASCII i nie może zawierać spacji, dwukropków

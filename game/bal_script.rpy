@@ -11,6 +11,7 @@ default l1 = 0
 default bomba = 1
 default urban_spotkanie = 0
 default alko_lvl = 0
+default bralus = 0
 
 define fastfade = Fade(0.35, 0.0, 0.35)
 

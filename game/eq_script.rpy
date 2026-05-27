@@ -7752,7 +7752,7 @@ label eq:
                     
                     "{b}Kartka z Życzeniami{/b}" if kartkax == 1:
                         window show
-                        "{i}Kartka z Życzeniami jest fajny{/i}"
+                        "{i}Wysłane pocztą polską.{/i}"
                         window hide
 
                         jump itemy_fabularne
@@ -8106,7 +8106,7 @@ label itemy_fabularne2:
         
         "{b}Kartka z Życzeniami{/b}" if kartkax == 2:
             window show
-            "{i}Kartka z Życzeniami jest fajny{/i}"
+            "{i}Wysłane pocztą polską.{/i}"
             window hide
 
             jump itemy_fabularne
