@@ -1,4 +1,5 @@
 default gacie_ukradniete = 0
+default grzegorz = 0
 
 label kazuma:
     label kazuma1:
@@ -147,6 +148,8 @@ label kazuma:
 
         luszcz "Dobra dobra"
         luszcz "Z psami zawsze powalcze"
+
+        $ grzegorz = 1
 
         $ kazuma_sojusznik = 1
         $ liczba_sojusznikow += 1
@@ -968,6 +971,7 @@ label kazuma3:
 
             menu:
                 "{b}Zabij karalucha{/b}":
+                    $ grzegorz = 0
                     $ kazuma_social_link = 10
                     luszcz "Uwaga!"
 

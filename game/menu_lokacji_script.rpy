@@ -397,6 +397,7 @@ label menu_lokacji:
             scene bg sloneczna with fade
             if silver_sextape_social_link == 3 and ewento == 0 and tasma_spotkanko == 0:
                 $ ewento += 1
+                hide screen secret_choice
                 jump silver_sextape4
                 
         else:
@@ -404,9 +405,11 @@ label menu_lokacji:
             scene bg sloneczna_noc with fade
         
         if duda_timer == 0 and duda_miecz == 0:
+            hide screen secret_choice
             jump duda_ceremonia
         
         if timer >= 6120 and timer <= 6960 and koscielny_zyje == 0:
+            hide screen secret_choice
             jump kosc_smierc
         
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
@@ -432,6 +435,7 @@ label menu_lokacji:
             $ kostka = renpy.random.randint(1, 100)
             if kostka >= 1 and kostka <= 3 and trumen5 == 0:
                 $ trumen5 = 1
+                hide screen secret_choice
                 jump trumen5
 
         label sloneczna2:
@@ -3978,7 +3982,7 @@ label menu_lokacji:
 
             teofil "nie to tylko lekkie komplikacje, na pewno wszystko będzie git, mamy czas"
 
-            erykd "aghhh chcesz gifa?"
+            erykd "aghhh, a chcesz gifa?"
 
             teofil "Jakiego gifa?"
             $ renpy.movie_cutscene("nse.webm")

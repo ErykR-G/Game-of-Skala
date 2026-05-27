@@ -4837,7 +4837,39 @@ label bal:
                 show braun neutral
 
                 if zly_zyd == 1:
-                    ""
+                    with vpunch
+                    braun "Tego nie da się zmienić!"
+                    $ renpy.pause(0.2)
+                    show braun neutral right zorder 4:
+                        xalign 1.0
+                        yalign 1.0
+                        easeout 0.4 xalign 1.5
+                    luszcz "..."
+                    show luszcz bal right at right 
+                    show eryk neutral at center
+                    luszcz "Emmm, chyba naprawdę nie chcę Ciebie znać..."
+
+                    eryk "Ahhh wiedziałem, wiedziałem..."
+                    eryk "On jest dla mnie za dobry"
+                    eryk "To wszystko moja wina!"
+                    eryk "..."
+                    eryk "..."
+                    eryk "..."
+                    eryk "Dziękuje Macieju za chęci, ale muszę na chwile pobyć sam"
+
+                    hide eryk 
+                    show shinobu neutral right at slightleft
+                    show luszcz bal right at slightright
+                    shinobu "..."
+                    shinobu "ja, ja chyba za nim pójdę..."
+                    shinobu "to eee ja spadam"
+                    hide shinobu 
+                    show luszcz bal right at center
+
+                    luszcz "..."
+                    luszcz "nie wyszły troszke te mediacje"
+                    luszcz "..."
+
                 else:
                     $ bralus = 1
                     braun "ahhh czyli już wiesz?"
@@ -4962,11 +4994,397 @@ label bal:
 
                     luszcz "troche"
                     luszcz "crazy"
-                    
+                
+                if timer >= 9930 and timer <= 9945:
+                    tusk "Nein, nein, nein"
+
+                    luszcz "..?"
+                    show tusk neutral right at slightleft
+
+                    with hpunch
+
+                    if slownik == 1:
+                        "{i}Donald Tusk uderzył Łuszcza z bara wytrącając z jego kieszeni rozmówki polsko-chińskie{/i}"
+
+                        show tusk neutral right at left
+
+                        tusk "Ohhh, Entschuldigung. Ich werde es hochheben."
+
+                        "{i}Donald Tusk pochylił się, by podnieść rozmówki polsko-chińskie, gdy nagle zamarł w miejscu{/i}"
+
+                        tusk "Co... co to jest?"
+
+                        luszcz "Eeeee, a to jedynie moje rozmówki polsko-chiń..."
+
+                        tusk "Tak! Tego potrzebujemy!"
+
+                        if crac == 1:
+                            tusk "Młody człowieku, jak się nazy..."
+                            tusk "Ohhh, to ty..."
+
+                            luszcz "Tak to ja Panie Premierze"
+                            luszcz "Człowiek, które chciał Pan pobić w lesie!"
+
+                            tusk "..."
+                            tusk "Słuchaj młody"
+                            tusk "Okazuje się, że bardzo pilnie Ciebie potrzebuję w tym momeńcie"
+                            tusk "Dlatego co ty na to, że dam Ci z 2 portfele, a ty w zamian za to zapomnisz o wszystkim i mi pomożesz?"
+
+                            menu:
+                                "{b}Zgódź się{/b}":
+                                    luszcz "Niech będzie"
+
+                                    tusk "Dobra to masz tu jeden portfel, a drugi dostaniesz po wykonaniu zadania"
+
+                                    $ money += 1
+                                    "{i}*do ekwipunku został dodany 1 portfel*{/i}"
+
+                                    tusk "Czekam na Ciebie w sali jadalnej Vip"
+                                    tusk "Lepiej żebyś przyszedł!"
+
+                                    hide tusk
+
+                                    luszcz "wtf? co to było?"
+                                
+                                "{b}Nie zgadzaj się{/b}":
+                                    luszcz "Nie"
+
+                                    tusk "Jak to nie?"
+                                    tusk "Przecież zapłacę Ci!"
+
+                                    luszcz "Nie i huj"
+
+                                    tusk "Ahhh tak?"
+                                    tusk "TO! TO!"
+                                    tusk "to dowidzenia"
+
+                                    hide tusk
+                                    
+                                    luszcz "wtf? co to było?"
+                                
+                                "{b}Negocjuj{/b}":
+                                    luszcz "To za mało, więcej to ja dostaje kieszonkowego"
+                                    luszcz "4 portfele i ci pomoge"
+
+                                    tusk "Niech będzie"
+                                    tusk "Masz tu 2 portfele z góry"
+
+                                    $ money += 2
+                                    "{i}*do ekwipunku zostały dodane 2 portfele*{/i}"
+
+                                    tusk "A pozostałe 2 dostaniesz po robocie"
+                                    tusk "Czekam na Ciebie w sali jadalnej Vip"
+                                    tusk "Lepiej żebyś przyszedł!"
+
+                                    hide tusk
+
+                                    luszcz "wtf? co to było?"
+                        
+                        else:
+                            tusk "Młody człowieku, jak się nazywasz?"
+
+                            luszcz "Maciej Łuszcz?"
+
+                            tusk "Macieju, państwo Polskie Ciebie potrzebuje!"
+
+                            luszcz "mnie?"
+
+                            tusk "Tak Ciebie!"
+
+                            tusk "Przyjdź jak najszybciej do strefy Vip w jadalni"
+                            tusk "Mam dla ciebie misję od której zależą losy kraju!"
+
+                            hide tusk
+
+                            luszcz "wtf? co to było?"
 
 
+                    else:   
+                        "{i}Donald Tusk uderzył Łuszcza z bara{/i}"
+
+                        show tusk neutral right at left
+
+                        tusk "Ohhh, Entschuldigung. Es war nichts Besonderes."
+
+                        if crac == 1 or smolensklil == 1:
+                            luszcz "Mr. Tusk? I have a question for you."
+
+                            menu:
+                                "{b}Co zrobić?{/b}"
+
+                                "{b}Zaszantażuj Tuska{/b}":
+                                    if smolensklil == 1:
+                                        luszcz "Co robił Pan 10 kwietnia 2010 roku?"
+
+                                        tusk "Emmmm, nic niezwykłego"
+
+                                        luszcz "Panie Tusku ja wiem"
+                                        luszcz "To Pan zasadził niewidzialne brzozy, w które uderzył Tupolew!"
+
+                                        tusk "Jezus maria"
+                                        tusk "ciszej, ciszej!"
+                                        tusk "Czego chcesz? Dam ci wszystko!"
+
+                                        luszcz "Hajs"
+                                        luszcz "Dużo Hajsu!"
+
+                                        tusk "Dobra już, już daje"
+
+                                        $ money += 5
+                                        "{i}*do ekwipunku zostało dodane 5 portfeli*{/i}"
+
+                                        tusk "No to eeee ja idę i pamietaj ty o niczym nie wiesz!"
+
+                                        hide tusk
+
+                                        luszcz "kocham szantaż"
+                                    else:
+                                        if crac == 1:
+                                            luszcz "Czemu bije Pan ludzi w lesie?"
+
+                                            tusk "Awwww shit, to ty!"
+
+                                            luszcz "Tak to ja"
+
+                                            tusk "Emmm, emmm słuchaj no młody"
+                                            tusk "Każdy musi się czasami jakoś wyluzować tak?"
+
+                                            luszcz "..."
+
+                                            tusk "Dobra zapłacę ci"
+                                            tusk "2 portfele i nie ma sprawy"
+
+                                            luszcz "..."
+                                            luszcz "niech będzie"
+
+                                            $ money += 2
+                                            "{i}*do ekwipunku zostały dodane 2 portfele*{/i}"
+
+                                            tusk "No to ja idę i pamietaj ty o niczym nie wiesz!"
+
+                                            hide tusk
+
+                                            luszcz "kocham szantaż"
+
+                                "{b}Lepiej nie{/b}":
+                                    luszcz "jednak nic"
+
+                                    tusk "..?"
+
+                                    hide tusk 
+
+                                    luszcz "debil"
+
+                        else:
+                            luszcz "Ez is niet pasat"
+
+                            tusk "..?"
+
+                            hide tusk 
+
+                            luszcz "Aghhhh, wiedziałem, że powinienem bardziej uważać na niemieckim..."
+
+                if zyd_sojusznik == 1 and grzegorz == 1
             "{b}Nie{/b}":
                 luszcz "Emmm nie chciałbym się mieszać w sprawy innych..."
 
                 eryk "Ehhh, no cóż rozumiem"
+
+                eryk "W takim razie żegnaj Macieju"
+
+                luszcz "Dowidzenia, Panie Ambasadorze"
+
+                scene bg bal7 with fade
+                show luszcz neutral at center
+
+                luszcz "emmm co, by tu teraz..."
+
+                if timer >= 9930 and timer <= 9945:
+                    tusk "Nein, nein, nein"
+
+                    luszcz "..?"
+                    show tusk neutral at slightright
+
+                    with hpunch
+
+                    if slownik == 1:
+                        "{i}Donald Tusk uderzył Łuszcza z bara wytrącając z jego kieszeni rozmówki polsko-chińskie{/i}"
+
+                        show tusk neutral at right
+
+                        tusk "Ohhh, Entschuldigung. Ich werde es hochheben."
+
+                        "{i}Donald Tusk pochylił się, by podnieść rozmówki polsko-chińskie, gdy nagle zamarł w miejscu{/i}"
+
+                        tusk "Co... co to jest?"
+
+                        luszcz "Eeeee, a to jedynie moje rozmówki polsko-chiń..."
+
+                        tusk "Tak! Tego potrzebujemy!"
+
+                        if crac == 1:
+                            tusk "Młody człowieku, jak się nazy..."
+                            tusk "Ohhh, to ty..."
+
+                            luszcz "Tak to ja Panie Premierze"
+                            luszcz "Człowiek, które chciał Pan pobić w lesie!"
+
+                            tusk "..."
+                            tusk "Słuchaj młody"
+                            tusk "Okazuje się, że bardzo pilnie Ciebie potrzebuję w tym momeńcie"
+                            tusk "Dlatego co ty na to, że dam Ci z 2 portfele, a ty w zamian za to zapomnisz o wszystkim i mi pomożesz?"
+
+                            menu:
+                                "{b}Zgódź się{/b}":
+                                    luszcz "Niech będzie"
+
+                                    tusk "Dobra to masz tu jeden portfel, a drugi dostaniesz po wykonaniu zadania"
+
+                                    $ money += 1
+                                    "{i}*do ekwipunku został dodany 1 portfel*{/i}"
+
+                                    tusk "Czekam na Ciebie w sali jadalnej Vip"
+                                    tusk "Lepiej żebyś przyszedł!"
+
+                                    hide tusk
+
+                                    luszcz "wtf? co to było?"
+                                
+                                "{b}Nie zgadzaj się{/b}":
+                                    luszcz "Nie"
+
+                                    tusk "Jak to nie?"
+                                    tusk "Przecież zapłacę Ci!"
+
+                                    luszcz "Nie i huj"
+
+                                    tusk "Ahhh tak?"
+                                    tusk "TO! TO!"
+                                    tusk "to dowidzenia"
+
+                                    hide tusk
+                                    
+                                    luszcz "wtf? co to było?"
+                                
+                                "{b}Negocjuj{/b}":
+                                    luszcz "To za mało, więcej to ja dostaje kieszonkowego"
+                                    luszcz "4 portfele i ci pomoge"
+
+                                    tusk "Niech będzie"
+                                    tusk "Masz tu 2 portfele z góry"
+
+                                    $ money += 2
+                                    "{i}*do ekwipunku zostały dodane 2 portfele*{/i}"
+
+                                    tusk "A pozostałe 2 dostaniesz po robocie"
+                                    tusk "Czekam na Ciebie w sali jadalnej Vip"
+                                    tusk "Lepiej żebyś przyszedł!"
+
+                                    hide tusk
+
+                                    luszcz "wtf? co to było?"
+                        
+                        else:
+                            tusk "Młody człowieku, jak się nazywasz?"
+
+                            luszcz "Maciej Łuszcz?"
+
+                            tusk "Macieju, państwo Polskie Ciebie potrzebuje!"
+
+                            luszcz "mnie?"
+
+                            tusk "Tak Ciebie!"
+
+                            tusk "Przyjdź jak najszybciej do strefy Vip w jadalni"
+                            tusk "Mam dla ciebie misję od której zależą losy kraju!"
+
+                            hide tusk
+
+                            luszcz "wtf? co to było?"
+
+
+                    else:   
+                        "{i}Donald Tusk uderzył Łuszcza z bara{/i}"
+
+                        show tusk neutral at right
+
+                        tusk "Ohhh, Entschuldigung. Es war nichts Besonderes."
+
+                        if crac == 1 or smolensklil == 1:
+                            luszcz "Mr. Tusk? I have a question for you."
+
+                            menu:
+                                "{b}Co zrobić?{/b}"
+
+                                "{b}Zaszantażuj Tuska{/b}":
+                                    if smolensklil == 1:
+                                        luszcz "Co robił Pan 10 kwietnia 2010 roku?"
+
+                                        tusk "Emmmm, nic niezwykłego"
+
+                                        luszcz "Panie Tusku ja wiem"
+                                        luszcz "To Pan zasadził niewidzialne brzozy, w które uderzył Tupolew!"
+
+                                        tusk "Jezus maria"
+                                        tusk "ciszej, ciszej!"
+                                        tusk "Czego chcesz? Dam ci wszystko!"
+
+                                        luszcz "Hajs"
+                                        luszcz "Dużo Hajsu!"
+
+                                        tusk "Dobra już, już daje"
+
+                                        $ money += 5
+                                        "{i}*do ekwipunku zostało dodane 5 portfeli*{/i}"
+
+                                        tusk "No to eeee ja idę i pamietaj ty o niczym nie wiesz!"
+
+                                        hide tusk
+
+                                        luszcz "kocham szantaż"
+                                    else:
+                                        if crac == 1:
+                                            luszcz "Czemu bije Pan ludzi w lesie?"
+
+                                            tusk "Awwww shit, to ty!"
+
+                                            luszcz "Tak to ja"
+
+                                            tusk "Emmm, emmm słuchaj no młody"
+                                            tusk "Każdy musi się czasami jakoś wyluzować tak?"
+
+                                            luszcz "..."
+
+                                            tusk "Dobra zapłacę ci"
+                                            tusk "2 portfele i nie ma sprawy"
+
+                                            luszcz "..."
+                                            luszcz "niech będzie"
+
+                                            $ money += 2
+                                            "{i}*do ekwipunku zostały dodane 2 portfele*{/i}"
+
+                                            tusk "No to ja idę i pamietaj ty o niczym nie wiesz!"
+
+                                            hide tusk
+
+                                            luszcz "kocham szantaż"
+
+                                "{b}Lepiej nie{/b}":
+                                    luszcz "jednak nic"
+
+                                    tusk "..?"
+
+                                    hide tusk 
+
+                                    luszcz "debil"
+
+                        else:
+                            luszcz "Ez is niet pasat"
+
+                            tusk "..?"
+
+                            hide tusk 
+
+                            luszcz "Aghhhh, wiedziałem, że powinienem bardziej uważać na niemieckim..."
 

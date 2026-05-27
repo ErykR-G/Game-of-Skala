@@ -1,5 +1,7 @@
 default nie_mam = 0
 default gole_rence = 0
+default crac = 0
+
 label kibole:
     label kibole1:
         scene bg czerwony with fade
@@ -102,6 +104,7 @@ label kibole:
                     jump bohaterow_wrzesnia 
                 
                 "{b}Cracovia{/b}":
+                    $ crac = 1
                     luszcz "Cracovia"
 
                     piotrek "Tak jest!!!"

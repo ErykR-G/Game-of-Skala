@@ -4091,9 +4091,7 @@ label eq:
                             jump bron
 
                     "{b}Powrót":
-                        jump eq
-                    
-
+                        jump eq               
 
         "{b}Zbroja{/b}":
             label zbroja:
@@ -7684,70 +7682,70 @@ label eq:
                 menu:
                     "{b}Piernik{/b}" if piernikx == 1:
                         window show
-                        "{i}Piernik jest fajny{/i}"
+                        "{i}Nie, nie guziczki! Nie moje lukrowane guziczki!{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Łopatka{/b}" if lopatkax == 1:
                         window show
-                        "{i}Łopatka jest fajny{/i}"
+                        "{i}Jak język. Lata{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Krówka{/b}" if krowkax == 1:
                         window show
-                        "{i}Krówka jest fajny{/i}"
+                        "{i}Smaczna, leczy zęby{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Kremówka{/b}" if kremowkax == 1:
                         window show
-                        "{i}Kremówka jest fajny{/i}"
+                        "{i}Najlepiej smakuje po maturze{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Biblia{/b}" if bibliax == 1:
                         window show
-                        "{i}Biblia jest fajny{/i}"
+                        "{i}Szczęśliwy, kto schwyci i rozbije o skałę twoje dzieci. - Księga Psalmów 137:9{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Ailbib{/b}" if ailbibx == 1:
                         window show
-                        "{i}Ailbib jest fajny{/i}"
+                        "{i}ᒲ∷𝙹ᓵ⨅リᔑ ꖌᓭ╎ę⊣ᔑ ᓭ!¡╎ᓭᔑリᔑ ∴ ⋮ę⨅ǁꖌ⚍ ꖌ𝙹ᓭᒲ╎ℸó∴{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Wazon Węży{/b}" if wazon_wezyx == 1:
                         window show
-                        "{i}Wazon Węży jest fajny{/i}"
+                        "{i}ssssssssss{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Głowa Nemeczka{/b}" if glowax == 1:
                         window show
-                        "{i}Głowa Nemeczka jest fajny{/i}"
+                        "{i}Młoda, dorodna, dobrze leży{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Kula Toxic Pea{/b}" if zielona_kulax == 1:
                         window show
-                        "{i}Kula Toxic Pea jest fajny{/i}"
+                        "{i}Smakówa!{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Rozmówki polsko-chińskie{/b}" if slownikx == 1:
                         window show
-                        "{i}Rozmówki polsko-chińskie jest fajny{/i}"
+                        "{i}Bing Chilling!{/i}"
                         window hide
 
                         jump itemy_fabularne
@@ -7761,42 +7759,42 @@ label eq:
                     
                     "{b}Dinozaur{/b}" if dinozaurx == 1:
                         window show
-                        "{i}Dinozaur jest fajny{/i}"
+                        "{i}RAWR! słodziak{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Ciało Eminema{/b}" if cialox == 1:
                         window show
-                        "{i}Ciało Eminema jest fajny{/i}"
+                        "{i}Nie jest czarne.{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Tesla Cybertruck{/b}" if cybertruckx == 1:
                         window show
-                        "{i}Tesla Cybertruck jest fajny{/i}"
+                        "{i}Kula jej nie straszna! No chyba, że walniesz ją młotem{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Leki na Schizofrenię{/b}" if lekix == 1:
                         window show
-                        "{i}Leki na Schizofrenię jest fajny{/i}"
+                        "{i}Truskawskowe, nawet nie tak złe{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Klucz{/b}" if kluczx == 1:
                         window show
-                        "{i}Klucz jest fajny{/i}"
+                        "{i}Gambling!!!{/i}"
                         window hide
 
                         jump itemy_fabularne
                     
                     "{b}Folder z Memami{/b}" if folder_memowx == 1:
                         window show
-                        "{i}Folder z Memami jest fajny{/i}"
+                        "{i}Duży, zabawny{/i}"
                         window hide
 
                         jump itemy_fabularne
@@ -8080,28 +8078,28 @@ label itemy_fabularne2:
     menu:
         "{b}Wazon Węży{/b}" if wazon_wezyx == 2:
             window show
-            "{i}Wazon Węży jest fajny{/i}"
+            "{i}ssssssssss{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Głowa Nemeczka{/b}" if glowax == 2:
             window show
-            "{i}Głowa Nemeczka jest fajny{/i}"
+            "{i}Młoda, dorodna, dobrze leży{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Kula Toxic Pea{/b}" if zielona_kulax == 2:
             window show
-            "{i}Kula Toxic Pea jest fajny{/i}"
+            "{i}Smakówa!{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Rozmówki polsko-chińskie{/b}" if slownikx == 2:
             window show
-            "{i}Rozmówki polsko-chińskie jest fajny{/i}"
+            "{i}Bing Chilling!{/i}"
             window hide
 
             jump itemy_fabularne
@@ -8115,42 +8113,42 @@ label itemy_fabularne2:
         
         "{b}Dinozaur{/b}" if dinozaurx == 2:
             window show
-            "{i}Dinozaur jest fajny{/i}"
+            "{i}RAWR! słodziak{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Ciało Eminema{/b}" if cialox == 2:
             window show
-            "{i}Ciało Eminema jest fajny{/i}"
+            "{i}Nie jest czarne.{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Tesla Cybertruck{/b}" if cybertruckx == 2:
             window show
-            "{i}Tesla Cybertruck jest fajny{/i}"
+            "{i}Kula jej nie straszna! No chyba, że walniesz ją młotem{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Leki na Schizofrenię{/b}" if lekix == 2:
             window show
-            "{i}Leki na Schizofrenię jest fajny{/i}"
+            "{i}Truskawskowe, nawet nie tak złe{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Klucz{/b}" if kluczx == 2:
             window show
-            "{i}Klucz jest fajny{/i}"
+            "{i}Gambling!!!{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Folder z Memami{/b}" if folder_memowx == 2:
             window show
-            "{i}Folder z Memami jest fajny{/i}"
+            "{i}Duży, zabawny{/i}"
             window hide
 
             jump itemy_fabularne
@@ -8168,42 +8166,42 @@ label itemy_fabularne3:
     menu:
         "{b}Dinozaur{/b}" if dinozaurx == 3:
             window show
-            "{i}Dinozaur jest fajny{/i}"
+            "{i}RAWR! słodziak{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Ciało Eminema{/b}" if cialox == 3:
             window show
-            "{i}Ciało Eminema jest fajny{/i}"
+            "{i}Nie jest czarne.{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Tesla Cybertruck{/b}" if cybertruckx == 3:
             window show
-            "{i}Tesla Cybertruck jest fajny{/i}"
+            "{i}Kula jej nie straszna! No chyba, że walniesz ją młotem{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Leki na Schizofrenię{/b}" if lekix == 3:
             window show
-            "{i}Leki na Schizofrenię jest fajny{/i}"
+            "{i}Truskawskowe, nawet nie tak złe{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Klucz{/b}" if kluczx == 3:
             window show
-            "{i}Klucz jest fajny{/i}"
+            "{i}Gambling!!!{/i}"
             window hide
 
             jump itemy_fabularne
         
         "{b}Folder z Memami{/b}" if folder_memowx == 3:
             window show
-            "{i}Folder z Memami jest fajny{/i}"
+            "{i}Duży, zabawny{/i}"
             window hide
 
             jump itemy_fabularne
