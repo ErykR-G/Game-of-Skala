@@ -980,8 +980,14 @@ label lilith:
             lilith "..."
 
             luszcz "..."
+
             luszcz "To eeeee co chcesz robić podczas czekania na ciasto?"
 
+            lilith "PoRoZmAwIaJmY"
+
+            show bg lilith20 with fade
+
+            lilith "Jak często"
             
 
             hide luszcz 

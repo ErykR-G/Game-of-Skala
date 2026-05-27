@@ -5184,7 +5184,9 @@ label bal:
 
                             luszcz "Aghhhh, wiedziałem, że powinienem bardziej uważać na niemieckim..."
 
-                if zyd_sojusznik == 1 and grzegorz == 1
+                if zyd_sojusznik == 1 and grzegorz == 1:
+                    ""
+                    
             "{b}Nie{/b}":
                 luszcz "Emmm nie chciałbym się mieszać w sprawy innych..."
 

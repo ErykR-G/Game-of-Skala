@@ -457,6 +457,7 @@ label silver_sextape:
         jump alejka
     
     label silver_sextape4:
+        hide screen secret_choice
         show luszcz neutral at slightleft
         show tasma tasma at slightright
 
