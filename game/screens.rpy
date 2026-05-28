@@ -731,7 +731,10 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Sekcja {}"))
+    if rare_title:
+        default page_name_value = FilePageNameInputValue(pattern="{}")
+    else:
+        default page_name_value = FilePageNameInputValue(pattern=_("{}"))
 
     use game_menu(title):
 
@@ -744,14 +747,20 @@ screen file_slots(title):
             ## The page name, which can be edited by clicking on a button.
             button:
                 style "page_label"
-
-                key_events True
                 xalign 0.5
                 action page_name_value.Toggle()
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+                hbox:
+                    spacing 8
+
+                    if rare_title:
+                        text "{font=fonts/NotoSansTC-Regular.ttf}部分：{/font}" style "page_label_text_rare"
+                    else:
+                        text "Sekcja" style "page_label_text"
+
+                    input:
+                        style "page_label_text"
+                        value page_name_value
 
             ## The grid of file slots.
             grid gui.file_slot_cols gui.file_slot_rows:
@@ -773,11 +782,30 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("Pusty slot")):
-                            style "slot_time_text"
+                        if rare_title:
 
-                        text FileSaveName(slot):
-                            style "slot_name_text"
+                            text FileTime(
+                                slot,
+                                format="{font=fonts/NotoSansTC-Regular.ttf}{#file_time}%Y年%m月%d日{/font} %H:%M",
+                                empty="{font=fonts/NotoSansTC-Regular.ttf}空存檔{/font}"
+                            ):
+                                style "slot_time_text"
+                            
+                            text FileSaveName(slot):
+                                style "slot_name_text"
+
+                        else:
+
+                            # Obecny układ
+                            text FileTime(
+                                slot,
+                                format=_("{#file_time}%A, %B %d %Y, %H:%M"),
+                                empty=_("Pusty slot")
+                            ):
+                                style "slot_time_text"
+
+                            text FileSaveName(slot):
+                                style "slot_name_text"
 
                         key "save_delete" action FileDelete(slot)
 
@@ -800,7 +828,10 @@ screen file_slots(title):
 
 
 style page_label is gui_label
-style page_label_text is gui_label_text
+style page_label_text is qui_label_text
+
+style page_label_text_rare:
+    font "fonts/NotoSansTC-Regular.ttf"
 style page_button is gui_button
 style page_button_text is gui_button_text
 
