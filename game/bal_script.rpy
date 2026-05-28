@@ -1426,7 +1426,7 @@ label bal:
 
                         zyd "A po za tym, a po za tym..."
 
-                        luszcz "A po za tym?"
+                        luszcz "A po za tym!?"
 
                         zyd "a po za tym mam bombę i się zaraz wysadzę w imię państwa Izrael!"
 
@@ -5185,9 +5185,96 @@ label bal:
 
                             luszcz "Aghhhh, wiedziałem, że powinienem bardziej uważać na niemieckim..."
 
-                if zyd_sojusznik == 1 and grzegorz == 1:
-                    ""
+                if timer == 9930 and zyd_sojusznik == 1 and grzegorz == 1:
+                    zyd "Łuszczu! Łuszczu!"
+
+                    show zyd neutral at slightleft
+                    show luszcz bal right at slightright
+                    zyd "Łuszczu jest sprawa!"
+                    zyd "Potrzebuję twojej pomocy z pewną sprawą"
+
+                    luszcz "Jaką sprawą?"
+
+                    zyd "Mam interes, duży interes i potrzebuję twojej pomocy!"
+
+                    luszcz "Ahhh rozumiem potrzebujesz, żebym Ci pomógł w negocjacjach!"
+
+                    zyd "Nie, nie co ty"
+                    zyd "Potrzebuję jedynie słupa"
+
+                    luszcz "aha..."
+
+                    zyd "To co pomożesz?"
+
+                    luszcz "zobaczę"
+
+                    zyd "To jakby co czekam przy wyjściu"
+
+                    zyd "Nie zawiedź mnie!"
+
+                    hide zyd 
+                    show luszcz bal right at center
+
+                    luszcz "że co, że ja niby nie umiem negocjować!?"
+                    luszcz "ehhh mega nie miłe"
+                
+                if timer == 9930:
+                    play sound "audio/sfx/door.mp3"
+                    with hpunch
+                    "{i}Nagle usłyszałeś dźwięk otwieranych drzwi i zauważyłeś, że ktoś zszedł do piwnicy{/i}"
+                    luszcz "WTF? Ciekawe co jest w piwnicy..."
+                    luszcz "anyway"
+
+                if timer == 9945 and eminem_sojusznik == 1:
+                    cid "Łuszczu! Łuszczu!"
+
+                    show eminem neutral right at slightleft
+                    show luszcz bal right at slightright
+                    cid "Łuszczu jest turniej!"
+
+                    luszcz "turniej?"
+                    luszcz "jaki turniej?"
+
+                    cid "Turniej rycerski!"
+                    cid "Na dziedzincu będą walki!"
+
+                    luszcz "Fajnie"
+                    luszcz "Bierzesz udział?"
+
+                    cid "Chciałbym, ale nie mogę się demaskować z moją potęgą"
+
+                    luszcz "A gdybyś był pod przykrywką?"
+
+                    cid "Mysłałem o tym"
+                    cid "ale moja BRAKUJĄCA RĘKA za bardzo zdradza kim jestem!"
+
+                    luszcz "..."
+                    luszcz "sory"
+
+                    cid "..."
+                    cid "Już wiem!"
+                    cid "W ramach zadośćuczynienia ty możesz wziąć udział zamiast mnie!"
+
+                    luszcz "Emmm po co?"
                     
+                    cid "Bo to fajne jest"
+                    cid "ekscytujące"
+
+                    cid "no zobaczysz no będzie bomba!"
+
+                    luszcz "Emmm no nie wiem"
+                    luszcz "jeszcze zobaczę"
+
+                    cid "Dobra to jak coś to czekam na dziedzińcu!"
+
+                    hide eminem
+                    show luszcz bal right at center
+
+                    luszcz "skibidi gyat"
+
+                luszcz "..."
+                jump bal3
+
             "{b}Nie{/b}":
                 luszcz "Emmm nie chciałbym się mieszać w sprawy innych..."
 
@@ -5391,3 +5478,45 @@ label bal:
 
                             luszcz "Aghhhh, wiedziałem, że powinienem bardziej uważać na niemieckim..."
 
+                if timer == 9930 and zyd_sojusznik == 1 and grzegorz == 1:
+                    zyd "Łuszczu! Łuszczu!"
+
+                    show zyd neutral right at slightright
+                    show luszcz bal at slightleft
+                    zyd "Łuszczu jest sprawa!"
+                    zyd "Potrzebuję twojej pomocy z pewną sprawą"
+
+                    luszcz "Jaką sprawą?"
+
+                    zyd "Mam interes, duży interes i potrzebuję twojej pomocy!"
+
+                    luszcz "Ahhh rozumiem potrzebujesz, żebym Ci pomógł w negocjacjach!"
+
+                    zyd "Nie, nie co ty"
+                    zyd "Potrzebuję jedynie słupa"
+
+                    luszcz "aha..."
+
+                    zyd "To co pomożesz?"
+
+                    luszcz "zobaczę"
+
+                    zyd "To jakby co czekam przy wyjściu"
+
+                    zyd "Nie zawiedź mnie!"
+
+                    hide zyd 
+                    show luszcz bal at center
+
+                    luszcz "że co, że ja niby nie umiem negocjować!?"
+                    luszcz "ehhh mega nie miłe"
+                
+                if timer == 9930:
+                    play sound "audio/sfx/door.mp3"
+                    with hpunch
+                    "{i}Nagle usłyszałeś dźwięk otwieranych drzwi i zauważyłeś, że ktoś zszedł do piwnicy{/i}"
+                    luszcz "WTF? Ciekawe co jest w piwnicy..."
+                    luszcz "anyway"
+                
+                luszcz "..."
+                jump bal3
