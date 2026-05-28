@@ -4577,7 +4577,7 @@ label bal:
         menu:
             "{b}Co, by tu zrobić?{/b}"
 
-            "{b}Spotkaj się z Ambasadorem{/b}" if 9900 <= timer <= 9915:
+            "{b}Spotkaj się z Ambasadorem{/b}" if 9900 <= timer <= 9915 and zyd_social_link > 0:
                 luszcz "(Pójdę zobaczyć po co wzywa mnie Ambasador)"
                 jump btask1
             
@@ -5024,7 +5024,7 @@ label bal:
                             tusk "Ohhh, to ty..."
 
                             luszcz "Tak to ja Panie Premierze"
-                            luszcz "Człowiek, które chciał Pan pobić w lesie!"
+                            luszcz "Człowiek, którego chcial Pan pobić w lesie!"
 
                             tusk "..."
                             tusk "Słuchaj młody"
@@ -5219,7 +5219,7 @@ label bal:
                     luszcz "ehhh mega nie miłe"
                 
                 if timer == 9930:
-                    play sound "audio/sfx/door.mp3"
+                    play sound "audio/sfx/door2.mp3"
                     with hpunch
                     "{i}Nagle usłyszałeś dźwięk otwieranych drzwi i zauważyłeś, że ktoś zszedł do piwnicy{/i}"
                     luszcz "WTF? Ciekawe co jest w piwnicy..."
@@ -5241,7 +5241,7 @@ label bal:
                     luszcz "Fajnie"
                     luszcz "Bierzesz udział?"
 
-                    cid "Chciałbym, ale nie mogę się demaskować z moją potęgą"
+                    cid "Chciałbym, ale nie mogę się ujawniać z moją potęgą"
 
                     luszcz "A gdybyś był pod przykrywką?"
 
@@ -5285,7 +5285,9 @@ label bal:
                 luszcz "Dowidzenia, Panie Ambasadorze"
 
                 scene bg bal7 with fade
-                show luszcz neutral at center
+                play music "audio/music/bal.mp3"
+                $ renpy.music.set_volume(0.75, delay=0.3)
+                show luszcz bal at center
 
                 luszcz "emmm co, by tu teraz..."
 
@@ -5317,7 +5319,7 @@ label bal:
                             tusk "Ohhh, to ty..."
 
                             luszcz "Tak to ja Panie Premierze"
-                            luszcz "Człowiek, które chciał Pan pobić w lesie!"
+                            luszcz "Człowiek, którego chcial Pan pobić w lesie!"
 
                             tusk "..."
                             tusk "Słuchaj młody"
@@ -5478,7 +5480,7 @@ label bal:
 
                             luszcz "Aghhhh, wiedziałem, że powinienem bardziej uważać na niemieckim..."
 
-                if timer == 9930 and zyd_sojusznik == 1 and grzegorz == 1:
+                if timer >= 9915 and timer <= 9930 and zyd_sojusznik == 1 and grzegorz == 1:
                     zyd "Łuszczu! Łuszczu!"
 
                     show zyd neutral right at slightright
@@ -5512,7 +5514,7 @@ label bal:
                     luszcz "ehhh mega nie miłe"
                 
                 if timer == 9930:
-                    play sound "audio/sfx/door.mp3"
+                    play sound "audio/sfx/door2.mp3"
                     with hpunch
                     "{i}Nagle usłyszałeś dźwięk otwieranych drzwi i zauważyłeś, że ktoś zszedł do piwnicy{/i}"
                     luszcz "WTF? Ciekawe co jest w piwnicy..."
