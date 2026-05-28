@@ -72,6 +72,9 @@ label postacie:
     define elfy = Character("Elfy", color="#386414")
     define ludzie = Character("Ludzie", color="#64481f")
 
+    define piekarnik = Character("Piekarnik", color="#252541")
+    define piekarnik2 = Character("?Wehikuł Czasu?", color="#252541")
+
     define salmonella = Character("Salmonella", color="#926CAA")
 
     define bezimienny = Character("Bezimienny", color="#11663e")

@@ -985,10 +985,209 @@ label lilith:
 
             lilith "PoRoZmAwIaJmY"
 
-            show bg lilith20 with fade
+            play music "audio/music/lilith8.mp3"
 
-            lilith "Jak często"
-            
+            scene bg lilith20 zorder 15 with fade
+
+            lilith "Jak często myślisz o tym, by kogoś zabić?"
+
+            menu:
+                "{b}Często{/b}":
+                    luszcz "Dość często się to zdarza"
+                    luszcz "Ale to jest chyba tak jakby okej"
+                
+                "{b}Rzadko{/b}":
+                    luszcz "Od czasu do czasu się zdarza"
+                    luszcz "Ale nie zbyt często"
+                
+                "{b}Cały czas{/b}":
+                    luszcz "Myślę o tym cały czas"
+                    luszcz "Nawet teraz mam ochotę Cię zabić"
+
+                "{b}Nigdy{/b}":
+                    luszcz "Od czasu do czasu się zdarza"
+                    luszcz "Ale nie zbyt często"
+                
+            lilith "A dlaczego tego nie zrobisz?"
+            lilith "Dlaczego nie ZABIJESZ kogoś?"
+
+            menu:
+                "{b}Bo to niemoralne!{/b}":
+                    luszcz "Bo to niemoralne!"
+
+                    lilith "hmmmm, a dlaczego to jest według Ciebie niemoralne?"
+                    lilith "Moralność to jedynie dyktat wielu ludzi zmuszający podświadomie jednostke do interpretowania zdarzeń w określony sposób"
+                    lilith "Zabijanie innych ludzi może być niekorzystne z punktu widzenia grupy, lecz nie oznacza to, że musi takie być dla jednostki"
+                    lilith "Cele grupy nie muszą i bardzo często nie pokrywają się z celami jednostki"
+                    lilith "Dobrym przykładem na to była rewolucja przemysłowa podczas, której bogaci przemysłowcy zatrudniali rzeszy ludzi w swoich fabrykach za grosze"
+                    lilith "Przez grupę takie zachowanie było uważane za niemoralne, lecz dla jednostki (w tym przypadku bogatego przemysłowca), zatrudnianie ludzi za jak najmniejszą stawkę przynosiło wiele korzyści"
+                    lilith "Po przytoczeniu tego porównania zapewne stwierdzisz coś typu “No, ale przecież pracownicy mieli rację, skoro przemysłowiec miał pieniądze to powinien się nimi podzielić!”"
+                    lilith "Lecz, czy przypadkiem nie przemawia przez Ciebie moralność wykreowana przez między innymi tę rzeszę ludzi?"
+                    lilith "W wizji świata bez moralności wszyscy ludzie robią to co uważają sami za najlepsze, dzięki czemu zamiast oburzać się na niesprawiedliwość świata, ludzie są w stanie popchnąć siebie do pracy i zmienić świat na lepsze"
+                    lilith "Więc jak widać po tym przykładzie moralność jest swego rodzaju więzieniem, ograniczającym drzemiący w indywidualnych ludziach potencjał"
+                    lilith "Po części do tego zagadnienia odniósł się również Friedrich Nietzsche w swojej koncepcji nad człowieka"
+                    lilith "Według niego człowiek był i nadal jest więziony przez normy moralne stworzone przez kościół katolicki"
+                    lilith "Zamiast pozwolić mu osiągnąć jego pełny potencjał i stać się ”Übermensch”, normy moralne hamują go sprawiają, że jest słaby i nie czuje zgodności między swoim wewnętrznym ja a zewnętrznym, które prezentuje innym ludzią"
+                    lilith "O to również chodzi w cytacie „Gott ist tot” - „Bóg jest martwy”"
+                    lilith "Nietzche nie chodziło o to, że Bóg fizycznie nie żyje, lecz właśnie o to iż wykreowane przez kościół normy przestają funkcjonować przez co każdy człowiek, będzie mógł stać się namiastką Boga"
+                    lilith "Można wręcz powiedzieć, że śmierć Boga tak jak śmierć Jezusa miała zbawić ludzkość i pozwolić jej na dalszy rozwój w kierunku doskonałości!"
+
+                    lilith "Pomyśl" 
+                    scene bg kuchnia with fade
+                    show lilith neutral2 at left
+                    show luszcz neutral right at slightright
+                    lilith "Czy gdyby ten piekarnik był wehikułem czasu, dzięki któremu moglibyśmy sprawić, by normy społeczne nigdy się nie wykreowały..."
+                    lilith "To czy nasz świat nie stałby się lepszym miejscem?" 
+
+                    play music "audio/music/lilith2.mp3"
+                    show layer master:
+                        zoom 1.0
+                        xalign 0.34 yalign 0.865
+                        linear 0.0 zoom 3.4
+
+                    piekarnik "Chwila ja jestem wehikułem czasu?"
+
+                    show layer master:
+                        linear 0.1 zoom 1.0 xalign 0.5 yalign 0.5
+
+                    lilith "Nie, nie jesteś!" 
+                
+                "{b}Bo są za to konsekwencje{/b}":
+                    luszcz "Bo są za to konsekwencje"
+                    lilith "Czyli, gdyby ich nie było to byś to zrobił..?" 
+                    lilith "Interesujące..." 
+                    lilith "Czyli sam w sobie nie uważasz tego za złe" 
+                    lilith "Powstrzymuje Cię jedynie strach przed reakcją świata" 
+                    lilith "Przed więzieniem, ostracyzmem społecznym, utratą reputacji..." 
+                    lilith "A więc nie moralność" 
+                    lilith "Tylko kalkulacja" 
+                    lilith "W gruncie rzeczy większość ludzi działa właśnie w taki sposób" 
+                    lilith "Społeczeństwo stworzyło system kar i nagród" 
+                    lilith "Ludzie od dziecka są tresowani niczym zwierzęta" 
+                    lilith "Za dobre zachowanie nagroda" 
+                    lilith "Za złe kara" 
+                    lilith "Po latach przestają nawet rozróżniać własne przekonania od strachu przed karą" 
+                    lilith "Mówią „to niemoralne”, choć tak naprawdę mają na myśli „boję się konsekwencji”" 
+                    lilith "To zabawne..." 
+                    lilith "Ludzie uwielbiają uważać się za wolnych" 
+                    lilith "A jednak większość ich decyzji jest jedynie odpowiedzią na system bodźców" 
+                    lilith "Pomyśl" 
+                    scene bg kuchnia with fade
+                    show lilith neutral2 at left
+                    show luszcz neutral right at slightright
+                    lilith "Czy gdyby ten piekarnik był wehikułem czasu, dzięki któremu mógłbyś cofnąć wszystkie konsekwencje swoich akcji..."
+                    lilith "To czy nadal byłbyś tą samą osobą?" 
+
+                    play music "audio/music/lilith2.mp3"
+                    show layer master:
+                        zoom 1.0
+                        xalign 0.34 yalign 0.865
+                        linear 0.0 zoom 3.4
+
+                    piekarnik "Chwila ja jestem wehikułem czasu?"
+
+                    show layer master:
+                        linear 0.1 zoom 1.0 xalign 0.5 yalign 0.5
+
+                    lilith "Nie, nie jesteś!"
+                    
+                
+                "{b}Bo jestem na to zbyt leniwy{/b}":
+                    luszcz "Bo jestem na to zbyt leniwy"
+
+                    lilith "Hmmmm... to chyba najbardziej szczera odpowiedź z wszystkich" 
+                    lilith "Większość ludzi przypisuje swoim decyzjom wielkie idee" 
+                    lilith "Honor" 
+                    lilith "Moralność" 
+                    lilith "Sprawiedliwość" 
+                    lilith "A prawda często jest znacznie prostsza" 
+                    lilith "Ludziom zwyczajnie nie chce się zmieniać" 
+                    lilith "Nawet jeśli ich życie jest nieszczęśliwe" 
+                    lilith "Nawet jeśli codziennie cierpią" 
+                    lilith "Trwają w tym dalej" 
+                    lilith "Wiesz dlaczego?" 
+                    lilith "Bo cierpienie znane jest mniej przerażające od nieznanego" 
+                    lilith "Człowiek potrafi przyzwyczaić się praktycznie do wszystkiego" 
+                    lilith "Do samotności" 
+                    lilith "Do bólu" 
+                    lilith "Do upokorzenia" 
+                    lilith "A nawet do własnej nienawiści wobec siebie" 
+                    lilith "Zmiana wymaga wysiłku" 
+                    lilith "Ryzyka" 
+                    lilith "A umysł człowieka nienawidzi ryzyka bardziej niż czegokolwiek innego"
+                    lilith "Dlatego ludzie tak często wolą cierpieć w znany sposób niż spróbować czegoś nowego"
+                    lilith "To trochę zabawne..."
+                    lilith "Ludzkość uważa się za gatunek ambitny"
+                    lilith "Za zdobywców świata"
+                    lilith "Istoty nieustannie dążące do rozwoju"
+                    lilith "A jednak większość ludzi przez całe życie funkcjonuje według jednego schematu"
+                    lilith "Wstać"
+                    lilith "Praca"
+                    lilith "Powrót do domu"
+                    lilith "Krótka dawka dopaminy"
+                    lilith "Sen"
+                    lilith "I od nowa"
+                    lilith "Dni zlewają się w tygodnie"
+                    lilith "Tygodnie w lata"
+                    lilith "Aż w końcu człowiek orientuje się, że praktycznie całe jego życie było jedynie serią powtarzalnych czynności"
+                    lilith "Najgorsze jest jednak to..."
+                    lilith "Że większość ludzi nawet nie próbuje z tym walczyć"
+                    lilith "Nie dlatego, że nie mogą"
+                    lilith "Ale dlatego, że jest im wygodnie"
+                    lilith "..."
+                    lilith "Ludzie bardzo często mylą wygodę ze szczęściem"
+                    lilith "Myślą, że skoro nic ich aktualnie nie boli..."
+                    lilith "To znaczy, że wszystko jest w porządku"
+                    lilith "Ale brak cierpienia nie jest tym samym co szczęście"
+                    lilith "To jedynie inny stan cierpienia"
+                    lilith "Długi, rozłożony w czasie, przez co ludzią wydaje się, że nieistnieje"
+                    lilith "Prawdziwa zmiana niemal zawsze wiąże się z bólem"
+                    lilith "Bo żeby stać się kimś innym..."
+                    lilith "Trzeba częściowo zniszczyć to, kim jest się teraz"
+                    lilith "A ludzie panicznie boją się utraty własnej tożsamości"
+                    lilith "Nawet jeśli ta tożsamość ich unieszczęśliwia"
+                    lilith "Dlatego tak wiele osób nigdy nie realizuje swoich marzeń"
+                    lilith "Nie dlatego, że są niemożliwe"
+                    lilith "Tylko dlatego..."
+                    lilith "Że każdego dnia wybierają komfort teraźniejszości zamiast niepewności przyszłości"
+
+                    lilith "Pomyśl" 
+                    scene bg kuchnia with fade
+                    show lilith neutral2 at left
+                    show luszcz neutral right at slightright
+                    lilith "Czy gdyby ten piekarnik był wehikułem czasu, dzięki któremu mógłbyś przenieść się do dowolnego momentu w czasie i przestrzeni..."
+                    lilith "To czy byłbyś w stanie porzucić wszystko co znasz i udać się w nieznane Ci miejsce?" 
+
+                    play music "audio/music/lilith2.mp3"
+                    show layer master:
+                        zoom 1.0
+                        xalign 0.34 yalign 0.865
+                        linear 0.0 zoom 3.4
+
+                    piekarnik "Chwila ja jestem wehikułem czasu?"
+
+                    show layer master:
+                        linear 0.1 zoom 1.0 xalign 0.5 yalign 0.5
+
+                    lilith "Nie, nie jesteś!" 
+
+            lilith "Jesteś piekarnikiem!"
+
+            show layer master:
+                zoom 1.0
+                xalign 0.34 yalign 0.865
+                linear 0.0 zoom 3.4      
+
+            piekarnik "Ja jestem wehikułem czasu?" 
+            piekarnik "Ja jestem wehikułem czasu." 
+            piekarnik2 "Ja jestem wehikułem czasu!" 
+
+            show layer master:
+                linear 0.1 zoom 1.0 xalign 0.5 yalign 0.5
+
+            lilith "O nie, tylko nie to!" 
+            lilith "Łuszczu musisz go powstrzymać, bo innaczej nie wiadomo co się stanie z naszą czasoprzestrzenią!"
+            lilith "Musisz mu przypomnieć kim jest!"
 
             hide luszcz 
             hide lilith 
