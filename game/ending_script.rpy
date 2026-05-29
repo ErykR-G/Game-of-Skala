@@ -1,5 +1,7 @@
 label ending:
     label ending1:
-        scene bg chinczyk with fade
-        show luszcz neutral at center
-        luszcz "GÓWNO 2"
+        stop music
+        scene brak_ending with fade
+        hide screen global_eq_key
+        hide screen clock
+        $ renpy.pause(10.0)

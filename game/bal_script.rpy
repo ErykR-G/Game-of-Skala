@@ -13,6 +13,11 @@ default urban_spotkanie = 0
 default alko_lvl = 0
 default bralus = 0
 
+default btask1 = 0
+default btask2 = 0
+default btask3 = 0
+default btask4 = 0
+
 define fastfade = Fade(0.35, 0.0, 0.35)
 
 label bal:
@@ -151,6 +156,17 @@ label bal:
                 jump granica
     
     label bal2:
+        stop music
+        scene brak_bal with fade
+        hide screen global_eq_key
+        hide screen clock
+        $ renpy.pause(10.0)
+        play sound "audio/sfx/traveling.mp3"
+        scene bg black with fade
+        show screen global_eq_key
+        show screen clock
+        jump spanko
+
         $ timer = 9870
         stop music
         scene bg black with fade
@@ -4577,15 +4593,21 @@ label bal:
         menu:
             "{b}Co, by tu zrobić?{/b}"
 
-            "{b}Spotkaj się z Ambasadorem{/b}" if 9900 <= timer <= 9915 and zyd_social_link > 0:
+            "{b}Spotkaj się z Ambasadorem{/b}" if 9900 <= timer <= 9915 and zyd_social_link > 0 and btask1 == 0:
                 luszcz "(Pójdę zobaczyć po co wzywa mnie Ambasador)"
                 jump btask1
             
             "{b}Spotkaj się z Gotką{/b}" if 9900 <= timer <= 9915 and gotka_social_link >= 1 and gotka_social_link < 10 and tarczownik_social_link >= 1 and tarczownik_social_link <= 2:
                 ""
+                jump btask2
             
             "{b}Spotkaj się z Naofumim{/b}" if 9900 <= timer <= 9915 and tarczownik_sojusznik == 1 and gotka_social_link < 10:
                 ""
+                jump btask3
+            
+            "{b}Spotkaj się z Żydem{/b}" if timer >= 9915 and timer <= 9930 and zyd_sojusznik == 1 and grzegorz == 1:
+                ""
+                jump btask4
             
             "{b}Wróć do stolika{/b}":
                 scene bg black with fade
@@ -4598,6 +4620,7 @@ label bal:
 
 
     label btask1:
+        $ btask1 = 1
         stop music
         scene bg black with fade
         scene bg bal6 with fade
@@ -5522,3 +5545,96 @@ label bal:
                 
                 luszcz "..."
                 jump bal3
+    
+    label btask2:
+        $ btask2 = 1
+        $ btask3 = 1
+        stop music
+        scene bg black with fade
+        scene bg bal8 with fade
+        $ timer += 15
+        play music "audio/music/chopin.mp3"
+        $ renpy.music.set_volume(1.0, delay=0.3)
+        
+        show luszcz bal zorder 12 at center
+
+        if gotka_szpont == 1:
+            luszcz "No i gdzie jest moja Gigasigma?"
+        else:
+            luszcz "No i gdzie jest Gotka?"
+
+        show gotka neutral right at slightright
+        show luszcz bal at slightleft
+
+        gotka "O już jesteś!"
+        gotka "Klient powinien być lada chwila"
+
+        luszcz "Jaki klient?"
+
+        gotka "A właśnie, bo zapomniałam Ci powiedzieć"
+        gotka "Czasami dorabiam sobię sprzedając jakieś narkotyki po godzinach"
+        gotka "i dziś jeden klientów umówił się ze mną na zakup podczas Balu"
+
+        luszcz "Jezus maria"
+        luszcz "mogłaś, mogłaś mówić wcześniej!"
+
+        gotka "Nie bądź dziecko"
+        gotka "Każdy kupuje dragi tylko nie każdy o tym wie"
+
+        luszcz "(hmmmm, miałem kiedyś takiego nauczyciela co mówił, że telefon jest jak narkotyk, więc może to i prawda...)"
+
+        show tarczownik neutral right at left 
+        show luszcz bal at center
+        show gotka neutral right at right
+
+        tarczownik "tu tu ru tu tu"
+
+        show luszcz bal right 
+
+        luszcz "Naofumi? Co ty tu robisz!?"
+
+        tarczownik "Cssssiiiii!"
+
+        if tarczownik_social_link == 1:
+            show tarczownik neutral right at slightleft
+
+            tarczownik "Mam, mam tu pewien interes"
+
+            luszcz "emmm, a czy może ten interes zaczyna się na d a kończy na ragi?"
+
+            tarczownik "Skąd wiedziałeś!?"
+
+            show luszcz bal 
+
+            luszcz "To jest on, nasz kupiec"
+        
+        else:
+            show tarczownik neutral right at slightleft
+
+            tarczownik "Pamiętasz jak mówiłem Ci, że chcę sobie ogarnąć trochę towaru?"
+
+            luszcz "Chwila, to ty jesteś tym kupcem!?"
+
+            show luszcz bal
+
+            luszcz "To jest on, nasz kupiec"
+        
+        show gotka neutral right zorder 5 at center
+        show luszcz bal right at right 
+
+        gotka "Hmmm spodziewałam się kogoś, jakby to powiedzieć..."
+        gotka "“Bardziej Męskiego”"
+
+    label btask3:
+        ""
+
+    label btask4:
+        $ btask4 = 1
+        stop music
+        scene bg black with fade
+        scene bg bal6 with fade
+        $ timer += 15
+        play music "audio/music/sonata11.mp3"
+        $ renpy.music.set_volume(1.0, delay=0.3)
+        
+        show luszcz bal zorder 12 at left
