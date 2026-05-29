@@ -259,14 +259,14 @@ label menu_lokacji:
                         scene bg black with fade
                         jump ending1
                     $ kosciolx = 0
-                    if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500 and timer <= 11280:
+                    if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500:
                         $ ado += 1
                     else:
                         "{i}Kościół jest obecnie zamknięty{/i}"
                         "{i}Muszę przyjść tu później...{/i}"
                         jump rynek2
 
-                    if kosc_social_link == 0 and koscielny_zyje == 0:
+                    if kosc_social_link == 0 and koscielny_zyje == 0 and timer <= 11280:
                         $ kosciolx += 1
                         "{i}Mógłbym porozmawiać z tym kościelnym ze mszy…{i}"
                         "{i}Nie wydawał się taki zły, morze mogłbym przekabacić go na moją stronę...{i}"
@@ -304,7 +304,7 @@ label menu_lokacji:
                                         luszcz "jeszcze nie teraz"
                                         jump rynek2
 
-                            if kosc_social_link == 0 and koscielny_zyje == 0:
+                            if kosc_social_link == 0 and koscielny_zyje == 0 and timer <= 11280:
                                 menu:
                                     "{b}Czy chcę spotkać się z Kościelnym? (30min){/b}"
 
@@ -354,7 +354,7 @@ label menu_lokacji:
                                         scene bg black with fade
                                         jump ending1
 
-                                    "{b}Spotkaj się z Kościelnym (30min){/b}" if kosc_social_link == 0 and koscielny_zyje == 0:
+                                    "{b}Spotkaj się z Kościelnym (30min){/b}" if kosc_social_link == 0 and koscielny_zyje == 0 and timer <= 11280:
                                         if timer > 9800 and timer <= 9840:
                                             luszcz "Nie zdąże tego zrobić przed Balem"
                                             jump rynek2
@@ -2468,14 +2468,14 @@ label menu_lokacji:
                         jump ending1
 
                     $ kosciolx = 0
-                    if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500 and timer <= 11280:
+                    if timer >= 420 and timer <= 1200 or timer >= 1860 and timer <= 2640 or timer >= 3300 and timer <= 4080 or timer >= 4740 and timer <= 5520 or timer >= 6180 and timer <= 6960 or timer >= 7620 and timer <= 8400 or timer >= 9060 and timer <= 9840 or timer >= 10500:
                         $ ado += 1
                     else:
                         "{i}Kościół jest obecnie zamknięty{/i}"
                         "{i}Muszę przyjść tu później...{/i}"
                         jump bohaterow_wrzesnia2
                         
-                    if kosc_social_link == 0 and koscielny_zyje == 0:
+                    if kosc_social_link == 0 and koscielny_zyje == 0 and timer <= 11280:
                         $ kosciolx += 1
                         "{i}Mógłbym porozmawiać z tym kościelnym ze mszy…{i}"
                         "{i}Nie wydawał się taki zły, morze mogłbym przekabacić go na moją stronę...{i}"
@@ -2513,7 +2513,7 @@ label menu_lokacji:
                                         luszcz "jeszcze nie teraz"
                                         jump rynek2
 
-                            if kosc_social_link == 0 and koscielny_zyje == 0:
+                            if kosc_social_link == 0 and koscielny_zyje == 0 and timer <= 11280:
                                 menu:
                                     "{b}Czy chcę spotkać się z Kościelnym? (30min){/b}"
 
@@ -2563,7 +2563,7 @@ label menu_lokacji:
                                         scene bg black with fade
                                         jump ending1
 
-                                    "{b}Spotkaj się z Kościelnym (30min){/b}" if kosc_social_link == 0 and koscielny_zyje == 0:
+                                    "{b}Spotkaj się z Kościelnym (30min){/b}" if kosc_social_link == 0 and koscielny_zyje == 0 and timer <= 11280:
                                         if timer > 9790 and timer <= 9840:
                                             luszcz "Nie zdąże tego zrobić przed Balem"
                                             jump bohaterow_wrzesnia2

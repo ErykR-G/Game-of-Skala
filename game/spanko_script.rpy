@@ -426,7 +426,7 @@ label spanko:
                 $ tasma_spotkanko = 0
 
 
-        if timer >= 8640 and timer <= 10020:
+        if timer >= 8640 and timer <= 10020 and zapro == 0:
             jump bal1
         luszcz "Ehh dobra, czas brać się do roboty"
         
@@ -436,7 +436,7 @@ label spanko:
 
         "{i}*3 Portfele zostały dodane do ekwipunku*{/i}"
 
-        if timer >= 2880 and timer <= 4260:
+        if timer >= 2880 and timer <= 3720 and kartka == 0:
             show tata neutral at slightright
             show luszcz neutral at slightleft
             tata "Synu list do ciebie przyszedł!"
@@ -586,7 +586,7 @@ label spanko2:
     luszcz "Ała, ale mnie dupa napierdala"
     luszcz "kurwa, ała japierdole wsyztsko boli"
 
-    if timer >= 8640 and timer <= 10020:
+    if timer >= 8640 and timer <= 10020 and zapro == 0:
         jump bal1
 
     if timer >= 10080 and timer <= 11460:

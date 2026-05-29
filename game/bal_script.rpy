@@ -18,10 +18,13 @@ default btask2 = 0
 default btask3 = 0
 default btask4 = 0
 
+default zapro = 0
+
 define fastfade = Fade(0.35, 0.0, 0.35)
 
 label bal:
     label bal1:
+        $ zapro = 1
         hide screen secret_choice
         if gdzie_spisz == 0:
             show luszcz neutral at slightleft
@@ -156,10 +159,11 @@ label bal:
                 jump granica
     
     label bal2:
+        $ timer = 9960
         stop music
-        scene brak_bal with fade
         hide screen global_eq_key
         hide screen clock
+        scene brak_bal with fade
         $ renpy.pause(10.0)
         play sound "audio/sfx/traveling.mp3"
         scene bg black with fade
@@ -5623,7 +5627,7 @@ label bal:
         show luszcz bal right at right 
 
         gotka "Hmmm spodziewałam się kogoś, jakby to powiedzieć..."
-        gotka "“Bardziej Męskiego”"
+        gotka "“Bardziej umięśnionego”"
 
     label btask3:
         ""
