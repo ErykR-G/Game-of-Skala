@@ -159,18 +159,6 @@ label bal:
                 jump granica
     
     label bal2:
-        $ timer = 9960
-        stop music
-        hide screen global_eq_key
-        hide screen clock
-        scene brak_bal with fade
-        $ renpy.pause(10.0)
-        play sound "audio/sfx/traveling.mp3"
-        scene bg black with fade
-        show screen global_eq_key
-        show screen clock
-        jump spanko
-
         $ timer = 9870
         stop music
         scene bg black with fade
@@ -1625,7 +1613,8 @@ label bal:
 
         all "brawo, brawo, brawo"
 
-        eryk "Kiedyś, kurwa tu nie było nic, zero, a teraz? Teraz jest tu kasyno!"
+        eryk "Kiedyś tu nie było nic, zero, a teraz? "
+        eryk "Teraz jest tu kasyno!"
 
         play sound "audio/sfx/klask.mp3"
 
