@@ -355,9 +355,11 @@ label spanko:
             $ spanko = 0
             $ krowko_limit = 0
             $ toxic_limit = 0
+            $ czil = 0
             $ czasd -= 1
             $ duda_timer -= 1
             $ nocka += 1
+            $ czadzik = 0
             if ltite > 0:
                 $ ltite -= 1
             if kazuma_strzal > 0:
@@ -413,7 +415,9 @@ label spanko:
         $ krowko_limit = 0
         $ toxic_limit = 0
         $ czasd -= 1
+        $ czil = 0
         $ duda_timer -= 1
+        $ czadzik = 0
         $ nocka += 1
         if ltite > 0:
             $ ltite -= 1
@@ -544,11 +548,13 @@ label spanko2:
     $ tarczownik_dzien = 0
     $ akcja1 = 0
     $ spanko = 0
+    $ czil = 0
     $ krowko_limit = 0
     $ toxic_limit = 0
     $ czasd -= 1
     $ nocka += 1
     $ duda_timer -= 1
+    $ czadzik = 0
     if ltite > 0:
         $ ltite -= 1
     if kazuma_strzal > 0:

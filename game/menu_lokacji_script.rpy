@@ -71,10 +71,10 @@ label menu_lokacji:
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
                     else:
@@ -418,10 +418,10 @@ label menu_lokacji:
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         hide screen secret_choice
                         luszcz "Nie, nie dam rady"
                         jump spanko2
@@ -826,10 +826,10 @@ label menu_lokacji:
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         luszcz "Nie, nie dam rady"
                         jump spanko2      
                     else:
@@ -1120,10 +1120,10 @@ label menu_lokacji:
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
                     else:
@@ -1665,10 +1665,10 @@ label menu_lokacji:
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
                     else:
@@ -2162,10 +2162,10 @@ label menu_lokacji:
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
                     else:
@@ -2619,10 +2619,10 @@ label menu_lokacji:
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
                     else:
@@ -3216,13 +3216,14 @@ label menu_lokacji:
         if timer > 1200 and timer < 1800 or timer > 2640 and timer < 3240 or timer > 4080 and timer < 4680 or timer > 5520 and timer < 6120 or timer > 6960 and timer < 7560 or timer > 8400 and timer < 9000 or timer > 9840 and timer < 10440:
             $ spanko += 1
             if spanko == 1:
+                $ czadzik = 1
                 play music "audio/music/pole_noc.mp3"
                 luszcz "Robię się troszkę śpiący..."
             else:
-                if spanko == 5:
+                if spanko == 7:
                     luszcz "Jezu jestem mega śpiący..."
                 else:
-                    if spanko == 9:
+                    if spanko == 13:
                         luszcz "Nie, nie dam rady"
                         jump spanko2
                     else:
@@ -3930,11 +3931,6 @@ label menu_lokacji:
 
                         jump fight191
 
-
-
-
-
-    
     label after_fight191:
         scene bg zul
         play music "audio/music/zul.mp3"

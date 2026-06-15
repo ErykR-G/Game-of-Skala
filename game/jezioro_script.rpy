@@ -6,6 +6,8 @@ default zlota_odebrany = 0
 default fanatyk_odebrany = 0
 default vr_odebrany = 0
 default spanko_ryby = 0
+default czil = 0
+default czadzik = 0
 
 image segz = Movie(play="segz.webm", loop=True)
 
@@ -45,21 +47,27 @@ label jezioro:
                     $ spanko += 1
                 if spanko_ryby == 17:
                     $ spanko += 1
+                if spanko_ryby == 19:
+                    $ spanko += 1
+                if spanko_ryby == 21:
+                    $ spanko += 1
+                if spanko_ryby == 23:
+                    $ spanko += 1
+                if spanko_ryby == 25:
+                    $ spanko += 1
 
-                if spanko == 1 and spanko_ryby == 1:
+                if spanko == 1 and spanko_ryby == 1 and czadzik == 0:
+                    $ czadzik = 1
                     play music "audio/music/pole_noc.mp3"
                     luszcz "Robię się troszkę śpiący..."
                 else:
-                    if spanko == 5 and spanko_ryby == 9:
+                    if spanko == 7 and spanko_ryby > 1 and czil == 0:
+                        $ czil = 1
                         luszcz "Jezu jestem mega śpiący..."
                     else:
-                        if spanko == 9 and spanko_ryby == 17:
+                        if spanko == 13:
                             luszcz "Nie, nie dam rady"
                             jump spanko2
-                        else:
-                            if timer > 1620 and timer < 1980 or timer > 3060 and timer < 3420 or timer > 4500 and timer < 4860 or timer > 5940 and timer < 6300 or timer > 7380 and timer < 7740 or timer > 8820 and timer < 9180 or timer > 10260 and timer < 10620 or timer > 11700:
-                                luszcz "Nie, nie dam rady"
-                                jump spanko2  
 
             menu:
                 "{b}Łów (10min){/b}":

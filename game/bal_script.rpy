@@ -5865,7 +5865,7 @@ label bal:
     luszcz "Jako drugi mówca eee drużyny opozycji przedstawię teraz nasze argumenty za utworzeniem Republiki Rzymskiej."
     
     menu: 
-        "{b}Po pierwsze...{/b}"
+        "{b}Po pierwsze Republika Rzymska...{/b}"
 
         "{b}Co z horymi dziećmi?{/b}":
             ""
