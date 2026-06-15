@@ -15,7 +15,7 @@ label burmistrz:
 
         all "Ha ha ha ha, brawo panie burmistrzu"
 
-        burmistrz " A po za tym, uważam że Kartagina musi zostać zniszczona"
+        burmistrz "A po za tym, uważam że Kartagina musi zostać zniszczona"
 
         play sound "audio/sfx/cisza.mp3"
 

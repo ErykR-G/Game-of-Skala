@@ -1756,7 +1756,7 @@ label gotka:
                 luszcz "A teraz czas na mnie..."
 
             else:
-                gotka "… więc mówisz, że nagle obudziłeś się i zobaczyłeś kobietę w swoim łóżku i zamiast ją wygonić upiekliście tort?"
+                gotka "…więc mówisz, że nagle obudziłeś się i zobaczyłeś kobietę w swoim łóżku i zamiast ją wygonić upiekliście tort?"
 
                 if piernik == 1:
                     if slownik == 0:

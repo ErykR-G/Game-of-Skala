@@ -22,6 +22,10 @@ default zapro = 0
 
 define fastfade = Fade(0.35, 0.0, 0.35)
 
+default putinp = 0
+default kalachp = 0
+default maciakp = 0
+
 label bal:
     label bal1:
         $ zapro = 1
@@ -5621,13 +5625,247 @@ label bal:
     label btask3:
         ""
 
+    tata "O synu jesteś!"
+    tata "Potrzebuję Cię na chwilę"
+
+    luszcz "EHHHH, a muszę z tobą iść?"
+
+    tata "TAK!"
+    tata "Mam dla Ciebie zadanie bojowe!"
+    tata "Czekam w sali konferencyjnej"
+    tata "Nie zawiedź mnie!"
+
+    hide tata 
+
+    luszcz "kupa, siki, mocz"
+    luszcz "Tu jest w ogóle taka sala?"
+    luszcz "Ehhhh, sraka"
+
     label btask4:
         $ btask4 = 1
         stop music
         scene bg black with fade
-        scene bg bal6 with fade
+        scene bg bal9 with fade
         $ timer += 15
-        play music "audio/music/sonata11.mp3"
-        $ renpy.music.set_volume(1.0, delay=0.3)
+        play music "audio/music/bal.mp3"
+        $ renpy.music.set_volume(0.25, delay=0.3)
         
         show luszcz bal zorder 12 at left
+
+        luszcz "To chyba tutaj..."
+
+        show tata neutral at slightright
+
+        tata "O synu jesteś!"
+        tata "Przygotuj się, zaraz się zacznie!"
+
+        luszcz "Co się zacznie?"
+
+        tata "No debata oxfordzka!"
+        tata "Jesteśmy drużyną opozycji jakby co"
+        tata "A i jest nas tylko 3 więc harujesz na dwie zmiany"
+
+        nikt "Proszę o zajęcie miejsc, zaraz zaczynamy debatę!"
+
+        tata "Awwww shit to już!"
+        tata "Dobra siadaj i spróbuj się dostosować do mnie i Pana Burmistrza"
+
+        luszcz "Burmistrz jest w naszej drużynie!?"
+
+        tata "przykro mi"
+        tata "tak wyszło"
+
+        luszcz "..."
+
+        nikt "Zaczynamy!"
+
+        hide luszcz 
+        hide tata 
+        show maciak neutral at center
+
+        mac "Товарищи, мы собрались сегодня, чтобы..."
+        mac "Oj sorki zapomniałem się troszke"
+        mac "Za dużo hoia z Kałachem"
+
+        show kalach neutral at right
+
+        kalach "Ej, ej, ej prosze mnie nie pomawiać!"
+        kalach "To ty zawsze przychodziłeś do mnie do pokoju i mówiłeś..."
+        kalach "...“Kałach, kałach, zagrajmy na czerwonym seszele i fioletowym nauru na Modern Day'u!”"
+
+        show putin neutral at left
+        putin "Tak było, tym razem Kałach nie zmyśla"
+
+        mac "Aghhh, cichość poproszę!"
+        mac "Jesteśmy podczas debaty oksfordzkiej!"
+
+        kalach "..."
+        putin "..."
+
+        mac "No, więc kontynuujmy!"
+        mac "Towarzysze! Zebraliśmy się tutaj, aby przeprowadzić debatę oxfordzką na temat przyszłości polski!"
+        mac "Temat dokładnie brzmi “Sen o Polsce czy sąd nad Polską?”"
+
+        luszcz "Emmmm, a to nie powinno być tak, że temat jest tezą, a nie pytaniem?"
+
+        mac "Cicho bądź, ja tu mówię!"
+
+        mac "..."
+        mac "No więc z racji braku zasobów ludzkich, ja oraz panowie po mojej lewej i prawej będziemy zarówno prowadzącymi debatę jak i sędziami"
+
+        kalach "Witam szanownych towarzyszy!"
+
+        putin "Również witam!"
+
+        mac "Niestety braki w zasobach ludzkich sięgneły również klasy pracującej, dlatego jest was tylko po trzech w drużynach i ktoś będzie miał dwie role"
+        mac "No cóż, niestety nic z tym nie zrobimy, więc przejdźmy do przedstawiania drużyn!"
+
+        hide putin 
+        hide kalach
+
+        mac "Drużyne propozycji pokieruje Pan Mcłowicz!"
+
+        show mclowicz neutral at right
+        mclowicz "Witam Państwa!"
+        hide mclowicz 
+        mac "A drużyne opozycji pokieruje Pan Burmistrz!"
+
+        show burmistrz neutral right at left
+        burmistrz "Witam wszystkich serdecznie!"
+
+        tata "..."
+        luszcz "..."
+
+        hide burmistrz
+        mac "A więc zacznijmy debatę od mówcy pierwszego drużyny propozycji!"
+        
+        hide maciak 
+        show mclowicz neutral at center
+        mclowicz "Emghhhem, zatem Szanowny Panie Marszałku, drużyno opozycji, droga publiczności!"
+        mclowicz "My jako drużyna propozycji uważamy, iż Polska powinna być jak gulasz"
+        mclowicz "Gulasz jest potrawą, która łączy w sobie wiele składników, które razem tworzą coś wyjątkowego"
+        mclowicz "Tak jak Austro-Węgry pod panowaniem Franciszka Józefa, które łączyły w sobie wiele narodów i kultur"
+        mclowicz "Dlatego w naszych przemowach będziemy przekonywać do koncepcji odtworzenia Austro-Węgier i zreinkarnowania Franciszka Józefa!"
+        mclowicz "Dziękuję bardzo za uwagę."
+
+        hide mclowicz 
+        show maciak neutral at center
+
+        mac "Dziękuję bardzo za przemowę, teraz czas na drużyne opozycji!"
+
+        hide maciak  
+        show burmistrz neutral right at center 
+        burmistrz "Dziękuję bardzo, Szanowny Panie Marszałku, drużyno propozycji, droga publiczności!"
+        burmistrz "My jako drużyna opozycji fundamentalnie odrzucamy koncepcje odtworzenia Austro-Węgier i zreinkarnowania Franciszka Józefa!"
+        burmistrz "Uważamy, iż Polaką wcale nie żyło się tak dobrze w Austro-Węgrach!"
+        burmistrz "Była bieda i głód, a Polacy byli traktowani jak obywatele drugiej kategorii!"
+        burmistrz "Jednakże nie będziemy tylko krytykować, ale również przedstawimy naszą koncepcje na przyszłość Polski!"
+        burmistrz "Czy wiecie państwo w jakim kraju jeszcze żaden polak nie narzekał jak mu się żyje?"
+        burmistrz "Otóż to! W Republice Rzymskiej!"
+        burmistrz "Dlatego w naszych przemowach będziemy przekonywać do koncepcji przekształcenia Polski w Republicę Rzymską!"
+        burmistrz "All Hail Republic!"
+        burmistrz "A po za tym, uważam że Kartagina musi zostać zniszczona"
+
+        hide burmistrz
+        show maciak neutral at center 
+        mac "Dziękuję bardzo pierwszym mówcą obu drużyn za przemowę!" 
+        mac "Teraz przejdziemy do drugiego mówcy drużyny propozycji"
+
+        hide maciak 
+        show turek neutral at center
+
+        turek "Dziękuję za głos, Szanowny Panie Marszałku, drużyno opozycji, droga publiczności!"
+        turek "Austro-Węgry to było coś więcej niż państwo"
+        turek "To była idea!"
+        turek "Idea utworzenia państwa, w którzym wszyscy są mile widziani!"
+        turek "W którym narodowość nie ma znaczenia!"
+        turek "I czy nie takim państwem powinna stać się polska?"
+        turek "Czy to nie jest piękne?"
+
+        luszcz "(Jezus maria, co on pierdoli?)"
+        luszcz "(Może powinienem mu przeszkodzić...)"
+
+        menu: 
+            "{b}Czy podnieść rękę?{/b}"
+            
+            "{b}Tak{/b}":
+                mac "Tak Łuszczu?"
+                show luszcz bal at slightleft
+                show turek neutral at slightright
+                luszcz "Emmm, przepraszam, ale..."
+
+                menu:
+                    "{b}Co z horymi dziećmi?{/b}":
+                        $ maciakp += 1
+                        luszcz "Co z horymi dziećmi? Czy one też będą mile widziane w Austro-Węgrzech?"
+
+                        turek "smaczne"
+
+                        luszcz "..?"
+                        luszcz "..."
+                        luszcz "..!"
+                        luszcz "Okrótność!"
+
+                        "{i}Zauważyłeś uznanie w oczach Macieja Maciaka{/i}"
+
+                    "{b}Co z niepełnosprawnymi?{/b}":
+                        $ kalachp += 1
+                        luszcz "Co z niepełnosprawnymi? Czy oni też będą mile widziani?"
+
+                        turek "Emmmm, zależy jacy, bo jak upośledzeni to bardzo chętnie przyjmiemy ich do wojska, ale jeśli np. chodzą o kulach, albo nie daj allah, nie mają nóg i jeżdżą na wózku inwalidzkim to niestety, ale nie ma takiej opcji!"
+
+                        luszcz "Skandal!"
+
+                        "{i}Zauważyłeś uznanie w oczach Klejnotu Wołgi{/i}"
+
+                    "{b}Co z murzynami?{/b}":
+                        luszcz "Co z murzynami? Czy oni też będą mile widziani?"
+
+                        turek "Nie, nie murzyni mają wypierdalać!"
+                        turek "Nasze Austro-Węgry będą czyste, bez murzynów!"
+
+                        luszcz "Dziękuję to chciałem usłyszeć."
+
+                        "{i}Nikt z rzyri nie zaaragował na to pytanie...{/i}"
+
+                    "{b}Co ze zbrodniarzami wojennymi?{/b}":
+                        $ putinp += 1
+                        luszcz "Co ze zbrodniarzami wojennymi? Czy oni też będą mile widziani?"
+
+                        turek "Niestety, ale nie planujemy rozbudowy ASP więc raczej nie..."
+
+                        luszcz "Skandal!"
+
+                        "{i}Zauważyłeś uznanie w oczach Władimir Władimirowicz Putin{/i}"
+                
+                hide luszcz bal
+                show turek neutral at center
+                turek "eghemm, wracając..."
+            
+            "{b}Nie{/b}":
+                luszcz "(Lepiej się nie wychylać...)"
+    
+    turek "Czy wiecie, że nawet raz tam kiedyś na pół roku premierem Austro-Węgier został Polak?"
+    turek "Czy to nie jest cudowne!?"
+    turek "Przecież teraz rządzą wami tylko rosyjscy i niemieccy agenci pod przykrywką"
+    turek "A w takich Austro-węgrzech nie będą się musieli z tym ukrywać!"
+    turek "Zróbcie coś dobrego dla nich i wybierzcie Austro-Węgry!"
+    turek "Dziękuję."
+
+    hide turek 
+    show maciak neutral at center 
+    mac "Emmm, dziękujemy za tą przemowe i poprosimy teraz mówce drugiego drużyny opozycji"
+
+    tata "Dajesz synek, wierzę w Ciebie!"
+    
+    hide maciak 
+    show luszcz bal at center
+    luszcz "Emmmm, eeeee"
+    luszcz "Witam eee wszystkich?"
+    luszcz "Jako drugi mówca eee drużyny opozycji przedstawię teraz nasze argumenty za utworzeniem Republiki Rzymskiej."
+    
+    menu: 
+        "{b}Po pierwsze...{/b}"
+
+        "{b}Co z horymi dziećmi?{/b}":
+            ""

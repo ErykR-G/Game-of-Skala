@@ -374,6 +374,8 @@ label postacie:
     image stalin duch right = Transform("stalin duch", xzoom=-1) 
 
     define mac = Character("Maciek Maciak", color="#ff0000")
+    define kalach = Character("Kałach", color="#4d0e0e")
+    define putin = Character("Władimir Władimirowicz Putin", color="#084b2f")
 
     define bilbo = Character("Bilbo", color="#473b28")
     image bilbo neutral right = Transform("bilbo neutral", xzoom=-1)
