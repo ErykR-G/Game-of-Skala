@@ -5768,6 +5768,7 @@ label bal:
 
         hide burmistrz
         show maciak neutral at center 
+        $ timer += 15
         mac "Dziękuję bardzo pierwszym mówcą obu drużyn za przemowę!" 
         mac "Teraz przejdziemy do drugiego mówcy drużyny propozycji"
 
@@ -5867,5 +5868,116 @@ label bal:
     menu: 
         "{b}Po pierwsze Republika Rzymska...{/b}"
 
-        "{b}Co z horymi dziećmi?{/b}":
-            ""
+        "{b}...ma funkcję dyktatora{/b}":
+            $ putinp += 1
+            luszcz "Po pierwsze Republika Rzymska ma funkcję dyktatora"
+            luszcz "Na pierwszy rzut oka może się wydawać, że to nie jest nic dobrego"
+            luszcz "Ale co jeśli ktoś od małego chciał zostać dyktatorem!?"
+            luszcz "Co z takimi ludźmi!?"
+            luszcz "Czy mamy im prawnie zabronić dążenia do tego celu!?"
+            luszcz "NIE!"
+            luszcz "Państwo powinno wspierać swoich obywateli w dążeniu do ich życiowych celów!"
+            luszcz "Dlatego Polska powinna się przekształcić w Republikę Rzymską, aby stać się bardziej inkluzywna!"
+            luszcz "A po drugie!" 
+            luszcz "A pod drugie! To eeee zapomniałem"
+            luszcz "Dziękuję za uwagę czy coś"
+
+            hide luszcz
+
+            "{i}Zauważyłeś uznanie w oczach Władimir Władimirowicz Putin{/i}"
+        
+        "{b}...to gwarancja dobrobytu i pokoju{/b}":
+            $ maciakp += 1
+            luszcz "Po pierwsze Republika Rzymska to gwarancja dobrobytu i pokoju"
+            luszcz "W Republice Rzymskiej dzięki reformie braci Grakhów każdy będzie miał własne pole i chatke z gówna"
+            luszcz "A dzięki reformie Gajusza Mariusza będziemy mieć silną armie i będzie panował pokój!"
+
+            burmistrz "Emmm, actually 🤓 to reforma Gajusza Mariusza..."
+
+            luszcz "ZAMKNIJ SIĘ!"
+
+            burmistrz "..."
+
+            luszcz "A po drugie!" 
+            luszcz "A pod drugie! To eeee zapomniałem"
+            luszcz "Dziękuję za uwagę czy coś"
+
+            hide luszcz
+
+            "{i}Zauważyłeś uznanie w oczach Macieja Maciaka{/i}"
+        
+        "{b}...była pro-LGBT{/b}":
+            $ kalachp += 1
+            luszcz "Po pierwsze Republika Rzymska była pro-LGBT"
+            luszcz "I say gex to było coś normalnego, a nawet dla niektórych troche cool"
+            luszcz "Co było mega postępowe i co powinniśmy stosować również teraz"
+            luszcz "Dlatego Polska powinna się przekształcić w Republikę Rzymską, aby stać się bardziej inkluzywna!"
+            luszcz "A po drugie!" 
+            luszcz "A pod drugie! To eeee zapomniałem"
+            luszcz "Dziękuję za uwagę czy coś"
+
+            hide luszcz
+
+            "{i}Zauważyłeś uznanie w oczach rapera Ice Wollowkam{/i}"
+        
+        "{b}...szanowała konwencje Genewską{/b}":
+            luszcz "Po pierwsze Republika Rzymska szanowała konwencje Genewską"
+            luszcz "I naprzykład nie używała gazów bojowych ani min przeciwpiechotnych"
+            luszcz "I choć czasami zdarzało się jej łamanie po przez wymordowywanie całych plemion łącznie z kobietami i dziećmi to z założenia nie łamali jej"
+            luszcz "I tak właśnie powinniśmy postępować"
+            luszcz "Dlatego Polska powinna się przekształcić w Republikę Rzymską, aby stać się bardziej cywilizowana!"
+            luszcz "A po drugie!" 
+            luszcz "A pod drugie! To eeee zapomniałem"
+            luszcz "Dziękuję za uwagę czy coś"
+
+            hide luszcz
+
+            "{i}Nikt z rzyri nie zaaragował na twoją wypowiedź...{/i}"
+    
+    show maciak neutral at center 
+    $ timer += 15
+    mac "Dziękuję bardzo mówcy drugiemu drużyny opozycji"
+    mac "Teraz przejdziemy do mówcy trzeciego drużyny propozycji"
+
+    if crac == 1:
+        "{i}...{/i}"
+        "{i}...{/i}"
+        "{i}...{/i}"
+        mac "emmmm haloooo, czy jest z nami w tym pokoju trzeci mówca drużyny propozycji?"
+
+        "{i}...{/i}"
+
+        mac "Ej kapitan co z nim?"
+
+        show mclowicz neutral at slightright
+        show maciak neutral at slightleft
+
+        mclowicz "Emmm, nie wiem mówił, że będzie..."
+
+        mac "Jeśli zaraz się nie zjawi..!"
+
+        nikt "Jestem! Już jestem!"
+
+        hide mclowicz 
+        show krystian neutral at slightright
+        krystian "Przepraszam za spóźnienie, ale strasznie zachlałem i mi się godzinki poomyliły!"
+
+        show putin neutral at left
+
+        putin "Dobre picie nie jest złe"
+
+        mac "Dobra zaczynaj, bo mamy harmonogram!"
+
+        hide maciak 
+        hide putin 
+        show krystian neutral at center
+        krystian "Eghhh, emmm no więc tak"
+
+    else:
+        hide maciak 
+        show krystian neutral at center
+        krystian "Eghhh, emmm no więc tak"
+
+
+
+
