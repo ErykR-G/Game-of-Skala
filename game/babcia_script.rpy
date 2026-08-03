@@ -356,6 +356,8 @@ label babcia:
 
         luszcz "Mam!"
 
+        $ ile_item_fabularne -= 1
+        $ folder_memow = 0
 
         luszcz "Proszę, oto wszystkie memy kture posiadam."
 

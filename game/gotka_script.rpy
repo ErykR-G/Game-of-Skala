@@ -705,6 +705,7 @@ label gotka:
             if luszcz_nic == 2:
                 $ luszcz_nic = 1
             if luszcz_klata == 2:
+                $ luszcz_hp -= 5
                 $ luszcz_klata = 1
                 $ klata_liczba += 1
             if ring == 2:
@@ -718,6 +719,7 @@ label gotka:
             if zloty == 2:
                 $ zloty = 1
             
+            $ luszcz_hp += 10
             $ nogi = 2
 
             gotka "O, wreszcie się obudziłeś"

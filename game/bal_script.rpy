@@ -163,6 +163,16 @@ label bal:
                 jump granica
     
     label bal2:
+        stop music
+        hide screen global_eq_key
+        hide screen clock
+        scene brak_bal with fade
+        $ renpy.pause(10.0)
+        $ timer = 9990
+        show screen global_eq_key
+        show screen clock
+        jump spanko
+
         $ timer = 9870
         stop music
         scene bg black with fade

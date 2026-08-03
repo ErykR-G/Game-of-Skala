@@ -769,7 +769,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump sloneczna2
                 
-                "{b}🚏 Przystanek (10min) | 24/7 {/b}":
+                "{b}🚏 Zielony Przystanek (10min) | 24/7 {/b}":
                     hide screen secret_choice
                     if timer > 9810 and timer <= 9840:
                         luszcz "Bal rozpocznie się już za niedługo"
@@ -780,14 +780,71 @@ label menu_lokacji:
                         luszcz "Referendum rozpocznie się już za niedługo"
                         luszcz "Powinienem powoli kierować się w kierunku kościoła"
                         jump sloneczna2
-                    if bilbo_social_link == 0:       
+                    if bilbo_social_link == 0:        
+                            
                         if timer >= 360 and timer <= 1190 or timer >= 1800 and timer <= 2630 or timer >= 3240 and timer <= 4070 or timer >= 4680 and timer <= 5510 or timer >= 6120 and timer <= 6950 or timer >= 7560 and timer <= 8390 or timer >= 9000 and timer <= 9830 or timer >= 10440 and timer <= 11270:
-                            luszcz "Widzę w oddali jakiegoś ziomka w łachmanach i z gołymi stopami"
-                            luszcz "Wygląda jakby czegoś szókał… może uda mi się mu pomuc"
-                            play sound "audio/sfx/traveling.mp3"
-                            scene bg black with fade
-                            $ timer += 10
-                            jump bilbo2
+                            if balbo == 0:
+                                luszcz "Widzę w oddali jakiegoś ziomka w łachmanach i z gołymi stopami"
+                                luszcz "Wygląda jakby czegoś szókał… może uda mi się mu pomuc"
+                                play sound "audio/sfx/traveling.mp3"
+                                scene bg black with fade
+                                $ timer += 10
+                                jump bilbo2
+                            else:
+                                if balbo == 1:
+                                    luszcz "Na przystanku czeka Bilbo, aż ktoś go zawiezie"
+                                    if cybertruck == 1:
+                                        luszcz "Ja już zdobyłem własny samochód więc mogę mu w tym pomóc"
+                                        play sound "audio/sfx/traveling.mp3"
+                                        scene bg black with fade
+                                        $ timer += 10
+                                        jump bilbo6
+                                    
+                                    else:
+                                        luszcz "Ja niestety nie mam auta więc mu z tym nie pomogę..."
+                                        jump sloneczna2
+                                
+                                else:
+                                    if balbo == 2:
+                                        luszcz "Na przystanku czeka Bilbo, aż ktoś go zawiezie"
+                                        if timer > 9805 and timer <= 9840:
+                                            luszcz "Ja już teoretycznie zdobyłem własny samochód więc mógłbym mu w tym pomóc"
+                                            luszcz "Lecz nie teraz, teraz za późno"
+                                            luszcz "Muszę tu przyjść o wcześniejszej godzinie!"
+                                            jump sloneczna2
+                                        
+                                        else:
+                                            if timer > 11352 and timer <= 11377:
+                                                luszcz "Ja już teoretycznie zdobyłem własny samochód więc mógłbym mu w tym pomóc"
+                                                luszcz "Lecz nie teraz, teraz za późno"
+                                                luszcz "Muszę tu przyjść o wcześniejszej godzinie!"
+                                                jump sloneczna2
+                                            
+                                            else:
+                                                if timer >= 360 and timer <= 990 or timer >= 1800 and timer <= 2430 or timer >= 3240 and timer <= 3870 or timer >= 4680 and timer <= 5310 or timer >= 6120 and timer <= 6750 or timer >= 7560 and timer <= 8190 or timer >= 9000 and timer <= 9630 or timer >= 10440 and timer <= 10980:
+                                                    luszcz "Ja już zdobyłem własny samochód więc mogę mu w tym pomóc"
+
+                                                    menu:
+                                                        "{b}Czy chcę pomóc Bilbo? (5h){/b}"
+
+                                                        "{b}Tak{/b}":
+                                                            play sound "audio/sfx/traveling.mp3"
+                                                            scene bg black with fade
+                                                            $ timer += 300
+                                                            jump bilbo4
+
+                                                        "{b}Nie{/b}":
+                                                            luszcz "Nie, jeszcze nie pora na to..."
+                                                            jump sloneczna2
+                                                    
+                                                else:
+                                                    luszcz "Ja już teoretycznie zdobyłem własny samochód więc mógłbym mu w tym pomóc"
+                                                    luszcz "Lecz nie teraz, teraz za późno"
+                                                    luszcz "Muszę tu przyjść o wcześniejszej godzinie!"
+                                                    jump sloneczna2
+                                        
+                                        
+
                         else:
                             play sound "audio/sfx/traveling.mp3"
                             scene bg black with fade
@@ -1932,7 +1989,7 @@ label menu_lokacji:
                                         luszcz "Nic tu po mnie, wrócę tu kiedy indziej"
                                         jump wolbromska2
 
-                "{b}🐄 Mleczarnia (15min) | 8–16{/b}": 
+                "{b}🐄 Mleczarnia (15min) | 8–18{/b}": 
                     if timer > 9805 and timer <= 9840:
                         luszcz "Bal rozpocznie się już za niedługo"
                         luszcz "Powinienem powoli wracać do domu"
@@ -1947,7 +2004,7 @@ label menu_lokacji:
                         "{i}Dzięki mnie mógł w spokoju przejść na emeryture{/i}"
                         jump wolbromska2
                     
-                    if timer >= 480 and timer <= 960 or timer >= 1920 and timer <= 2400 or timer >= 3360 and timer <= 3840 or timer >= 4800 and timer <= 5280 or timer >= 6240 and timer <= 6720 or timer >= 7680 and timer <= 8160 or timer >= 9120 and timer <= 9600 or timer >= 10560 and timer <= 11040:
+                    if timer >= 480 and timer <= 1080 or timer >= 1920 and timer <= 2520 or timer >= 3360 and timer <= 3960 or timer >= 4800 and timer <= 5400 or timer >= 6240 and timer <= 6840 or timer >= 7680 and timer <= 8280 or timer >= 9120 and timer <= 9720 or timer >= 10560 and timer <= 11160:
                         $ ado += 1
                     else:
                         "{i}Mleczarnia jest obecnie zamknięta{/i}"

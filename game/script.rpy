@@ -817,6 +817,20 @@ label fight_stats:
     default kazuma_hp = 15
     default tarczownik_hp = 20
 
+    default luszcz_sp = 30
+    default eminem_sp = 25
+    default urban_sp = 30
+    default zyd_sp = 20
+    default kazuma_sp = 20
+    default tarczownik_sp = 25
+
+    default luszcz_sp_now = luszcz_sp
+    default eminem_sp_now = eminem_sp
+    default urban_sp_now = urban_sp
+    default zyd_sp_now = zyd_sp
+    default kazuma_sp_now = kazuma_sp
+    default tarczownik_sp_now = tarczownik_sp
+
     default luszcz_hp_now = luszcz_hp
     default eminem_hp_now = eminem_hp
     default urban_hp_now = urban_hp

@@ -3,6 +3,7 @@ default edgar = 0
 default sperma = 0
 default kaput = 0
 default macanko = 0
+default balbo = 0
 transform jump_left_arc:
     xalign 0.5
     yalign 1.0
@@ -77,6 +78,7 @@ label bilbo:
         $ config.menu_include_disabled = True
         menu:
             "{i}tak mam czym jechać i możemy to zrobić (5h){/i}" if cybertruck == 1:
+                $ balbo = 2
                 $ config.menu_include_disabled = False
                 if timer > 9805 and timer <= 9840:
                     luszcz "Ojej no chciałbym ale jóż się robi puzyno to tak średnio dziś"
@@ -111,6 +113,7 @@ label bilbo:
 
                     bilbo "Ojej na poważnie? Ale klasa"
                     bilbo "Jesteśmy ci sromotnie wdzięczni. To ja pójdę wyciągnąć brata z krzaków a ty przygotuj furę"
+                    jump bilbo5
 
                 else:
                     luszcz "Ojej no chciałbym ale jóż się robi puzyno to tak średnio dziś"
@@ -126,6 +129,7 @@ label bilbo:
                     jump sloneczna
             
             "{i}nuh uh{/i}":
+                $ balbo = 1
                 $ config.menu_include_disabled = False
                 luszcz "Nie nie biorę was nigdzie sorki"
                 bilbo "Dobra to będę tu stał cały czas aż ktoś się będzie chciał i mógł"
@@ -134,7 +138,93 @@ label bilbo:
                 else:
                     play music "audio/music/pole_noc.mp3"
                 jump sloneczna
-        
+
+    label bilbo6:
+        play music "audio/music/natura.mp3"
+        scene bg przystanek with fade
+        show luszcz neutral at slightleft
+        show bilbo neutral at slightright
+        bilbo "O wróciłeś, masz już furę?"
+
+        $ config.menu_include_disabled = True
+        menu:
+            "{i}tak mam czym jechać i możemy to zrobić (5h){/i}" if cybertruck == 1:
+                $ config.menu_include_disabled = False
+                if timer > 9805 and timer <= 9840:
+                    $ balbo = 2
+                    luszcz "Ojej no chciałbym ale jóż się robi puzyno to tak średnio dziś"
+
+                    bilbo "To jak chcesz to możesz jutro"
+
+                    luszcz "Okej pewnie jasne zobaczymy, czas pokarze"
+                    
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
+                    jump sloneczna
+                
+                if timer > 11352 and timer <= 11377:
+                    $ balbo = 2
+                    luszcz "Ojej no chciałbym ale jóż się robi puzyno to tak średnio dziś"
+
+                    bilbo "To jak chcesz to możesz jutro"
+
+                    luszcz "Okej pewnie jasne zobaczymy, czas pokarze"
+
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
+                    jump sloneczna
+
+                if timer >= 360 and timer <= 990 or timer >= 1800 and timer <= 2430 or timer >= 3240 and timer <= 3870 or timer >= 4680 and timer <= 5310 or timer >= 6120 and timer <= 6750 or timer >= 7560 and timer <= 8190 or timer >= 9000 and timer <= 9630 or timer >= 10440 and timer <= 10980:
+                    $ timer += 300
+                    $ bilbo_social_link = 1
+                    luszcz "Akurat skołowałem sobie takiego grata na kółkach może się tutaj dobrze zmarnować"
+
+                    bilbo "Ojej na poważnie? Ale klasa"
+                    bilbo "Jesteśmy ci sromotnie wdzięczni. To ja pójdę wyciągnąć brata z krzaków a ty przygotuj furę"
+                    jump bilbo5
+
+                else:
+                    $ balbo = 2
+                    luszcz "Ojej no chciałbym ale jóż się robi puzyno to tak średnio dziś"
+
+                    bilbo "To jak chcesz to możesz jutro"
+
+                    luszcz "Okej pewnie jasne zobaczymy, czas pokarze"
+
+                    if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                        play music "audio/music/pole.mp3"
+                    else:
+                        play music "audio/music/pole_noc.mp3"
+                    jump sloneczna
+            
+            "{i}Mam ale nie dam{/i}":
+                $ config.menu_include_disabled = False
+                luszcz "Nie nie biorę was nigdzie sorki"
+                bilbo "Dobra to będę tu stał cały czas aż ktoś się będzie chciał i mógł"
+                if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
+                    play music "audio/music/pole.mp3"
+                else:
+                    play music "audio/music/pole_noc.mp3"
+                jump sloneczna
+
+    label bilbo4:
+        play music "audio/music/natura.mp3"
+        scene bg przystanek with fade
+        show luszcz neutral at slightleft
+        show bilbo neutral at slightright
+        bilbo "O wróciłeś, możemy wyruszać?"
+
+        luszcz "Tak jest!!!"
+
+        bilbo "No i sigma"
+        bilbo "Jesteśmy ci sromotnie wdzięczni. To ja pójdę wyciągnąć brata z krzaków a ty przygotuj furę"
+        jump bilbo5
+                
+    label bilbo5:
         scene bg black with fade
         scene bg przystanek2 with fade
         show luszcz neutral at slightleft

@@ -111,6 +111,7 @@ label fight31:
                         $ luszcz_wybrany += 1
                         $ luszcz_fighter += 1
                         $ luszcz_hp_now = luszcz_hp
+                        $ luszcz_sp_now = luszcz_sp
                         $ luszcz_min_attack_now = luszcz_min_attack
                         $ luszcz_max_attack_now = luszcz_max_attack
                         $ luszcz_min_attack_now_true = luszcz_min_attack
@@ -140,6 +141,7 @@ label fight31:
                         $ eminem_wybrany += 1
                         $ eminem_fighter += 1
                         $ eminem_hp_now = eminem_hp
+                        $ eminem_sp_now = eminem_sp
                         $ eminem_min_attack_now = eminem_min_attack
                         $ eminem_max_attack_now = eminem_max_attack
                         $ eminem_min_attack_now_true = eminem_min_attack
@@ -169,6 +171,7 @@ label fight31:
                         $ urban_wybrany += 1
                         $ urban_fighter += 1
                         $ urban_hp_now = urban_hp
+                        $ urban_sp_now = urban_sp
                         $ urban_min_attack_now = urban_min_attack
                         $ urban_max_attack_now = urban_max_attack
                         $ urban_min_attack_now_true = urban_min_attack
@@ -198,6 +201,7 @@ label fight31:
                         $ zyd_wybrany += 1
                         $ zyd_fighter += 1
                         $ zyd_hp_now = zyd_hp
+                        $ zyd_sp_now = zyd_sp
                         $ zyd_min_attack_now = zyd_min_attack
                         $ zyd_max_attack_now = zyd_max_attack
                         $ zyd_min_attack_now_true = zyd_min_attack
@@ -227,6 +231,7 @@ label fight31:
                         $ kazuma_wybrany += 1
                         $ kazuma_fighter += 1
                         $ kazuma_hp_now = kazuma_hp
+                        $ kazuma_sp_now = kazuma_sp
                         $ kazuma_min_attack_now = kazuma_min_attack
                         $ kazuma_max_attack_now = kazuma_max_attack
                         $ kazuma_min_attack_now_true = kazuma_min_attack
@@ -256,6 +261,7 @@ label fight31:
                         $ tarczownik_wybrany += 1
                         $ tarczownik_fighter += 1
                         $ tarczownik_hp_now = tarczownik_hp
+                        $ tarczownik_sp_now = tarczownik_sp
                         $ tarczownik_min_attack_now = tarczownik_min_attack
                         $ tarczownik_max_attack_now = tarczownik_max_attack
                         $ tarczownik_min_attack_now_true = tarczownik_min_attack
@@ -288,6 +294,7 @@ label fight31:
                         $ luszcz_wybrany += 3
                         $ luszcz_fighter += 2
                         $ luszcz_hp_now = luszcz_hp
+                        $ luszcz_sp_now = luszcz_sp
                         $ luszcz_min_attack_now = luszcz_min_attack
                         $ luszcz_max_attack_now = luszcz_max_attack
                         $ luszcz_min_attack_now_true = luszcz_min_attack
@@ -317,6 +324,7 @@ label fight31:
                         $ eminem_wybrany += 3
                         $ eminem_fighter += 2
                         $ eminem_hp_now = eminem_hp
+                        $ eminem_sp_now = eminem_sp
                         $ eminem_min_attack_now = eminem_min_attack
                         $ eminem_max_attack_now = eminem_max_attack
                         $ eminem_min_attack_now_true = eminem_min_attack
@@ -346,6 +354,7 @@ label fight31:
                         $ urban_wybrany += 3
                         $ urban_fighter += 2
                         $ urban_hp_now = urban_hp
+                        $ urban_sp_now = urban_sp
                         $ urban_min_attack_now = urban_min_attack
                         $ urban_max_attack_now = urban_max_attack
                         $ urban_min_attack_now_true = urban_min_attack
@@ -375,6 +384,7 @@ label fight31:
                         $ zyd_wybrany += 3
                         $ zyd_fighter += 2
                         $ zyd_hp_now = zyd_hp
+                        $ zyd_sp_now = zyd_sp
                         $ zyd_min_attack_now = zyd_min_attack
                         $ zyd_max_attack_now = zyd_max_attack
                         $ zyd_min_attack_now_true = zyd_min_attack
@@ -404,6 +414,7 @@ label fight31:
                         $ kazuma_wybrany += 3
                         $ kazuma_fighter += 2
                         $ kazuma_hp_now = kazuma_hp
+                        $ kazuma_sp_now = kazuma_sp
                         $ kazuma_min_attack_now = kazuma_min_attack
                         $ kazuma_max_attack_now = kazuma_max_attack
                         $ kazuma_min_attack_now_true = kazuma_min_attack
@@ -449,6 +460,7 @@ label fight31:
                             $ kazuma_fighter += 1
 
                         $ tarczownik_hp_now = tarczownik_hp
+                        $ tarczownik_sp_now = tarczownik_sp
                         $ tarczownik_min_attack_now = tarczownik_min_attack
                         $ tarczownik_max_attack_now = tarczownik_max_attack
                         $ tarczownik_min_attack_now_true = tarczownik_min_attack
@@ -481,6 +493,7 @@ label fight31:
                         $ luszcz_wybrany += 2
                         $ luszcz_fighter += 3
                         $ luszcz_hp_now = luszcz_hp
+                        $ luszcz_sp_now = luszcz_sp
                         $ luszcz_min_attack_now = luszcz_min_attack
                         $ luszcz_max_attack_now = luszcz_max_attack
                         $ luszcz_min_attack_now_true = luszcz_min_attack
@@ -509,6 +522,7 @@ label fight31:
                         $ eminem_wybrany += 2
                         $ eminem_fighter += 3
                         $ eminem_hp_now = eminem_hp
+                        $ eminem_sp_now = eminem_sp
                         $ eminem_min_attack_now = eminem_min_attack
                         $ eminem_max_attack_now = eminem_max_attack
                         $ eminem_min_attack_now_true = eminem_min_attack
@@ -538,6 +552,7 @@ label fight31:
                         $ urban_wybrany += 2
                         $ urban_fighter += 3
                         $ urban_hp_now = urban_hp
+                        $ urban_sp_now = urban_sp
                         $ urban_min_attack_now = urban_min_attack
                         $ urban_max_attack_now = urban_max_attack
                         $ urban_min_attack_now_true = urban_min_attack
@@ -567,6 +582,7 @@ label fight31:
                         $ zyd_wybrany += 2
                         $ zyd_fighter += 3
                         $ zyd_hp_now = zyd_hp
+                        $ zyd_sp_now = zyd_sp
                         $ zyd_min_attack_now = zyd_min_attack
                         $ zyd_max_attack_now = zyd_max_attack
                         $ zyd_min_attack_now_true = zyd_min_attack
@@ -596,6 +612,7 @@ label fight31:
                         $ kazuma_wybrany += 2
                         $ kazuma_fighter += 3
                         $ kazuma_hp_now = kazuma_hp
+                        $ kazuma_sp_now = kazuma_sp
                         $ kazuma_min_attack_now = kazuma_min_attack
                         $ kazuma_max_attack_now = kazuma_max_attack
                         $ kazuma_min_attack_now_true = kazuma_min_attack
@@ -656,6 +673,7 @@ label fight31:
                                 $ kazuma_fighter += 1
 
                         $ tarczownik_hp_now = tarczownik_hp
+                        $ tarczownik_sp_now = tarczownik_sp
                         $ tarczownik_min_attack_now = tarczownik_min_attack
                         $ tarczownik_max_attack_now = tarczownik_max_attack
                         $ tarczownik_min_attack_now_true = tarczownik_min_attack
@@ -693,6 +711,7 @@ label fight31:
                             $ luszcz_wybrany += 1
                             $ luszcz_fighter += 1
                             $ luszcz_hp_now = luszcz_hp
+                            $ luszcz_sp_now = luszcz_sp
                             $ luszcz_min_attack_now = luszcz_min_attack
                             $ luszcz_max_attack_now = luszcz_max_attack
                             $ luszcz_min_attack_now_true = luszcz_min_attack
@@ -722,6 +741,7 @@ label fight31:
                             $ eminem_wybrany += 1
                             $ eminem_fighter += 1
                             $ eminem_hp_now = eminem_hp
+                            $ eminem_sp_now = eminem_sp
                             $ eminem_min_attack_now = eminem_min_attack
                             $ eminem_max_attack_now = eminem_max_attack
                             $ eminem_min_attack_now_true = eminem_min_attack
@@ -751,6 +771,7 @@ label fight31:
                             $ urban_wybrany += 1
                             $ urban_fighter += 1
                             $ urban_hp_now = urban_hp
+                            $ urban_sp_now = urban_sp
                             $ urban_min_attack_now = urban_min_attack
                             $ urban_max_attack_now = urban_max_attack
                             $ urban_min_attack_now_true = urban_min_attack
@@ -780,6 +801,7 @@ label fight31:
                             $ zyd_wybrany += 1
                             $ zyd_fighter += 1
                             $ zyd_hp_now = zyd_hp
+                            $ zyd_sp_now = zyd_sp
                             $ zyd_min_attack_now = zyd_min_attack
                             $ zyd_max_attack_now = zyd_max_attack
                             $ zyd_min_attack_now_true = zyd_min_attack
@@ -809,6 +831,7 @@ label fight31:
                             $ kazuma_wybrany += 1
                             $ kazuma_fighter += 1
                             $ kazuma_hp_now = kazuma_hp
+                            $ kazuma_sp_now = kazuma_sp
                             $ kazuma_min_attack_now = kazuma_min_attack
                             $ kazuma_max_attack_now = kazuma_max_attack
                             $ kazuma_min_attack_now_true = kazuma_min_attack
@@ -838,6 +861,7 @@ label fight31:
                             $ tarczownik_wybrany += 1
                             $ tarczownik_fighter += 1
                             $ tarczownik_hp_now = tarczownik_hp
+                            $ tarczownik_sp_now = tarczownik_sp
                             $ tarczownik_min_attack_now = tarczownik_min_attack
                             $ tarczownik_max_attack_now = tarczownik_max_attack 
                             $ tarczownik_min_attack_now_true = tarczownik_min_attack
@@ -870,6 +894,7 @@ label fight31:
                             $ luszcz_wybrany += 2
                             $ luszcz_fighter += 2
                             $ luszcz_hp_now = luszcz_hp
+                            $ luszcz_sp_now = luszcz_sp
                             $ luszcz_min_attack_now = luszcz_min_attack
                             $ luszcz_max_attack_now = luszcz_max_attack
                             $ luszcz_min_attack_now_true = luszcz_min_attack
@@ -899,6 +924,7 @@ label fight31:
                             $ eminem_wybrany += 2
                             $ eminem_fighter += 2
                             $ eminem_hp_now = eminem_hp
+                            $ eminem_sp_now = eminem_sp
                             $ eminem_min_attack_now = eminem_min_attack
                             $ eminem_max_attack_now = eminem_max_attack
                             $ eminem_min_attack_now_true = eminem_min_attack
@@ -928,6 +954,7 @@ label fight31:
                             $ urban_wybrany += 2
                             $ urban_fighter += 2
                             $ urban_hp_now = urban_hp
+                            $ urban_sp_now = urban_sp
                             $ urban_min_attack_now = urban_min_attack
                             $ urban_max_attack_now = urban_max_attack
                             $ urban_min_attack_now_true = urban_min_attack
@@ -957,6 +984,7 @@ label fight31:
                             $ zyd_wybrany += 2
                             $ zyd_fighter += 2
                             $ zyd_hp_now = zyd_hp
+                            $ zyd_sp_now = zyd_sp
                             $ zyd_min_attack_now = zyd_min_attack
                             $ zyd_max_attack_now = zyd_max_attack
                             $ zyd_min_attack_now_true = zyd_min_attack
@@ -986,6 +1014,7 @@ label fight31:
                             $ kazuma_wybrany += 2
                             $ kazuma_fighter += 2
                             $ kazuma_hp_now = kazuma_hp
+                            $ kazuma_sp_now = kazuma_sp
                             $ kazuma_min_attack_now = kazuma_min_attack
                             $ kazuma_max_attack_now = kazuma_max_attack
                             $ kazuma_min_attack_now_true = kazuma_min_attack
@@ -1031,6 +1060,7 @@ label fight31:
                                 $ kazuma_fighter += 1
 
                             $ tarczownik_hp_now = tarczownik_hp
+                            $ tarczownik_sp_now = tarczownik_sp
                             $ tarczownik_min_attack_now = tarczownik_min_attack
                             $ tarczownik_max_attack_now = tarczownik_max_attack
                             $ tarczownik_min_attack_now_true = tarczownik_min_attack
@@ -1063,6 +1093,7 @@ label fight31:
                     $ luszcz_wybrany += 3
                     $ luszcz_fighter += 1
                     $ luszcz_hp_now = luszcz_hp
+                    $ luszcz_sp_now = luszcz_sp
                     $ luszcz_min_attack_now = luszcz_min_attack
                     $ luszcz_max_attack_now = luszcz_max_attack
                     $ luszcz_min_attack_now_true = luszcz_min_attack
@@ -1941,6 +1972,19 @@ label fight31:
         $ yippee2_max_attack_now = yippee2_max_attack_now_true
         $ trup5_min_attack_now = trup5_min_attack_now_true
         $ trup5_max_attack_now = trup5_max_attack_now_true
+
+        $ luszcz_min_attack_now = luszcz_min_attack_now_true
+        $ luszcz_max_attack_now = luszcz_max_attack_now_true
+        $ eminem_min_attack_now = eminem_min_attack_now_true
+        $ eminem_max_attack_now = eminem_max_attack_now_true
+        $ urban_min_attack_now = urban_min_attack_now_true
+        $ urban_max_attack_now = urban_max_attack_now_true
+        $ zyd_min_attack_now = zyd_min_attack_now_true
+        $ zyd_max_attack_now = zyd_max_attack_now_true
+        $ kazuma_min_attack_now = kazuma_min_attack_now_true
+        $ kazuma_max_attack_now = kazuma_max_attack_now_true
+        $ tarczownik_min_attack_now = tarczownik_min_attack_now_true
+        $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
 
         if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 1:
             $ luszcz_min_attack_now += 1
@@ -18369,6 +18413,26 @@ label fight31:
         $ tarczownik_min_attack_now = tarczownik_min_attack_now_true
         $ tarczownik_max_attack_now = tarczownik_max_attack_now_true  
 
+        if miecz3d == 2 and luszcz_hp_now <= luszcz_hp / 2 and luszcz_fighter == 1:
+            $ luszcz_min_attack_now += 1
+            $ luszcz_max_attack_now += 2
+        
+        if miecz3d == 3 and urban_hp_now <= urban_hp / 2 and urban_fighter == 1:
+            $ urban_min_attack_now += 1
+            $ urban_max_attack_now += 2
+        
+        if miecz3d == 4 and zyd_hp_now <= zyd_hp / 2 and zyd_fighter == 1:
+            $ zyd_min_attack_now += 1
+            $ zyd_max_attack_now += 2
+        
+        if miecz3d == 5 and kazuma_hp_now <= kazuma_hp / 2 and kazuma_fighter == 1:
+            $ kazuma_min_attack_now += 1
+            $ kazuma_max_attack_now += 2
+        
+        if miecz3d == 6 and tarczownik_hp_now <= tarczownik_hp / 2 and tarczownik_fighter == 1:
+            $ tarczownik_min_attack_now += 1
+            $ tarczownik_max_attack_now += 2
+
         if yippee1_hp_now <= 0:
             jump faza_fight35    
 
@@ -21604,6 +21668,13 @@ label fight31:
                 $ kazuma_zloty_czlowiek = 0
                 $ tarczownik_zloty_czlowiek = 0
 
+                $ luszcz_sp_now = luszcz_sp
+                $ eminem_sp_now = eminem_sp
+                $ urban_sp_now = urban_sp
+                $ zyd_sp_now = zyd_sp
+                $ kazuma_sp_now = kazuma_sp
+                $ tarczownik_sp_now = tarczownik_sp
+
                 $ luszcz_hp_now = luszcz_hp
                 $ luszcz_min_attack_now = luszcz_min_attack
                 $ luszcz_max_attack_now = luszcz_max_attack
@@ -21906,6 +21977,13 @@ label fight31:
         $ zyd_drpepper = 0
         $ kazuma_drpepper = 0
         $ tarczownik_drpepper = 0
+
+        $ luszcz_sp_now = luszcz_sp
+        $ eminem_sp_now = eminem_sp
+        $ urban_sp_now = urban_sp
+        $ zyd_sp_now = zyd_sp
+        $ kazuma_sp_now = kazuma_sp
+        $ tarczownik_sp_now = tarczownik_sp
 
         $ luszcz_hp_now = luszcz_hp
         $ luszcz_min_attack_now = luszcz_min_attack
