@@ -3026,7 +3026,7 @@ label fight201:
                             menu:
                                 "{b}Dla Kogo?{/b}"
 
-                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
@@ -3036,7 +3036,7 @@ label fight201:
                                         $ luszcz_hp_now += 5
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
-                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -3056,7 +3056,7 @@ label fight201:
                                         $ eminem_hp_now += 5
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
-                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -3076,7 +3076,7 @@ label fight201:
                                         $ urban_hp_now += 5
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
-                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -3096,7 +3096,7 @@ label fight201:
                                         $ zyd_hp_now += 5
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
-                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -3116,7 +3116,227 @@ label fight201:
                                         $ kazuma_hp_now += 5
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
-                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -9452,7 +9672,7 @@ label fight201:
                             menu:
                                 "{b}Dla Kogo?{/b}"
 
-                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
@@ -9462,7 +9682,7 @@ label fight201:
                                         $ luszcz_hp_now += 5
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
-                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -9482,7 +9702,7 @@ label fight201:
                                         $ eminem_hp_now += 5
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
-                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -9502,7 +9722,7 @@ label fight201:
                                         $ urban_hp_now += 5
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
-                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -9522,7 +9742,7 @@ label fight201:
                                         $ zyd_hp_now += 5
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
-                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -9542,7 +9762,227 @@ label fight201:
                                         $ kazuma_hp_now += 5
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
-                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -13681,7 +14121,7 @@ label fight201:
                             menu:
                                 "{b}Dla Kogo?{/b}"
 
-                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1:
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
@@ -13691,7 +14131,7 @@ label fight201:
                                         $ luszcz_hp_now += 5
                                         "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                 
-                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1:
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -13711,7 +14151,7 @@ label fight201:
                                         $ eminem_hp_now += 5
                                         "{i}Shadow odzyskał 5 punktów życia{/i}"
 
-                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1:
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -13731,7 +14171,7 @@ label fight201:
                                         $ urban_hp_now += 5
                                         "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
 
-                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1:
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -13751,7 +14191,7 @@ label fight201:
                                         $ zyd_hp_now += 5
                                         "{i}Żyd odzyskał 5 punktów życia{/i}"
 
-                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1:
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
@@ -13771,7 +14211,227 @@ label fight201:
                                         $ kazuma_hp_now += 5
                                         "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                 
-                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1:
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 1:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 2:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if tarczownik_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if tarczownik_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if tarczownik_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if tarczownik_hp_now + 5 > tarczownik_hp:
+                                        $ tarczownik_hp_now = tarczownik_hp
+                                        "{i}Naofumi odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ tarczownik_hp_now += 5
+                                        "{i}Naofumi odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    if luszcz_hp_now + 5 > luszcz_hp:
+                                        $ luszcz_hp_now = luszcz_hp
+                                        "{i}Łuszcz odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ luszcz_hp_now += 5
+                                        "{i}Łuszcz odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if eminem_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if eminem_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if eminem_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if eminem_hp_now + 5 > eminem_hp:
+                                        $ eminem_hp_now = eminem_hp
+                                        "{i}Shadow odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ eminem_hp_now += 5
+                                        "{i}Shadow odzyskał 5 punktów życia{/i}"
+
+                                "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if urban_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if urban_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if urban_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if urban_hp_now + 5 > urban_hp:
+                                        $ urban_hp_now = urban_hp
+                                        "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ urban_hp_now += 5
+                                        "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
+
+                                "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if zyd_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if zyd_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if zyd_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if zyd_hp_now + 5 > zyd_hp:
+                                        $ zyd_hp_now = zyd_hp
+                                        "{i}Żyd odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ zyd_hp_now += 5
+                                        "{i}Żyd odzyskał 5 punktów życia{/i}"
+
+                                "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 3:
+                                    luszcz "Kiedyś używałem małej ale wolę duże"
+                                    play sound "audio/sfx/herbata.mp3"
+                                    hide wisnia_w_rumie
+                                    if kazuma_wybrany == 1:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
+
+                                    if kazuma_wybrany == 2:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik2  
+
+                                    if kazuma_wybrany == 3:
+                                        show wisnia_w_rumie zorder 15 at weapon_sojusznik3 
+
+                                    if kazuma_hp_now + 5 > kazuma_hp:
+                                        $ kazuma_hp_now = kazuma_hp
+                                        "{i}Kazuma odzyskał cały pasek życia{/i}"
+                                    else:
+                                        $ kazuma_hp_now += 5
+                                        "{i}Kazuma odzyskał 5 punktów życia{/i}"
+                                
+                                "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie

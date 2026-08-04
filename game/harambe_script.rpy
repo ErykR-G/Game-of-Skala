@@ -114,6 +114,4 @@ label harambe:
             jump lipowa 
         if granica == 1:
             jump granica
-
-
-
+x
