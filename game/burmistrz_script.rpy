@@ -78,6 +78,8 @@ label burmistrz:
         burmistrz "Świetnie, to przyjdź na plac budowy przy ulicy Słonecznej to ci pokaże, gdzie powstanie centrum szkolenia nowych strażaków!"
         burmistrz "Do zobaczenia na placu"
 
+        $ social_links["burmistrz"]["known"] = True
+
         hide burmistrz
         show luszcz neutral at center
 

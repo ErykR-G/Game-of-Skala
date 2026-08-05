@@ -5,6 +5,17 @@ screen global_eq_key():
     if fight_on == 0 and eq_on == 0:
         key "e" action Function(renpy.call_in_new_context, "eq")
 
+init python:
+    config.keymap["social_links"] = ["b"]
+
+
+screen keymap_social_links():
+
+    key "b" action ToggleScreen("social_links")
+
+
+init python:
+    config.overlay_screens.append("keymap_social_links")
 screen clock():
     $ day, hour, minute = get_time(timer)
 
