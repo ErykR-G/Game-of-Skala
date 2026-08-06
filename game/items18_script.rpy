@@ -191,7 +191,7 @@ label items_fight181:
                 $ ile_item -= 1
             jump faza_fight182
 
-        "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+        "{b}Ciasto Truskawkowe (+30HP LUB +10HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
 
             if luszcz_fighter == 1:
@@ -421,7 +421,7 @@ label items_fight181:
                         $ ile_item -= 1
                     jump faza_fight182
 
-        "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
+        "{b}Słoik z Pigułkami (+5HP) x [pills] {/b}" if pillsx >= 1:
             label pigulki_fight181:
                 hide chest
                 if pills == 0:
@@ -477,7 +477,7 @@ label items_fight181:
                             hide haczyki12
                             hide haczyki13
                             if luszcz_piguly <= 3:
-                                if luszcz_hp_now + 3 >= luszcz_hp:
+                                if luszcz_hp_now + 5 >= luszcz_hp:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
                                     $ luszcz_hp_now = luszcz_hp
@@ -505,7 +505,7 @@ label items_fight181:
                                         jump faza_fight182
 
                                     else:
-                                        if luszcz_hp_now + 3 >= luszcz_hp:
+                                        if luszcz_hp_now + 5 >= luszcz_hp:
                                             $ luszcz_piguly += 1
                                             $ pills -= 1
                                             $ luszcz_hp_now = luszcz_hp
@@ -515,9 +515,9 @@ label items_fight181:
                                         else:
                                             $ pills -= 1
                                             $ luszcz_piguly += 1
-                                            $ luszcz_hp_now += 3
+                                            $ luszcz_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                            "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight181
                                 
                                 else:
@@ -533,7 +533,7 @@ label items_fight181:
                                             jump faza_fight182
 
                                         else:
-                                            if luszcz_hp_now + 3 >= luszcz_hp:
+                                            if luszcz_hp_now + 5 >= luszcz_hp:
                                                 $ luszcz_piguly += 1
                                                 $ pills -= 1
                                                 $ luszcz_hp_now = luszcz_hp
@@ -543,9 +543,9 @@ label items_fight181:
                                             else:
                                                 $ pills -= 1
                                                 $ luszcz_piguly += 1
-                                                $ luszcz_hp_now += 3
+                                                $ luszcz_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight181
                                     
                                     else:
@@ -570,7 +570,7 @@ label items_fight181:
                             hide haczyki22
                             hide haczyki23
                             if eminem_piguly <= 3:
-                                if eminem_hp_now + 3 >= eminem_hp:
+                                if eminem_hp_now + 5 >= eminem_hp:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
                                     $ eminem_hp_now = eminem_hp
@@ -580,9 +580,9 @@ label items_fight181:
                                 else:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
-                                    $ eminem_hp_now += 3
+                                    $ eminem_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                    "{i}Shadow odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight181
                             
                             else:
@@ -598,7 +598,7 @@ label items_fight181:
                                         jump faza_fight182
 
                                     else:
-                                        if eminem_hp_now + 3 >= eminem_hp:
+                                        if eminem_hp_now + 5 >= eminem_hp:
                                             $ eminem_piguly += 1
                                             $ pills -= 1
                                             $ eminem_hp_now = eminem_hp
@@ -608,9 +608,9 @@ label items_fight181:
                                         else:
                                             $ pills -= 1
                                             $ eminem_piguly += 1
-                                            $ eminem_hp_now += 3
+                                            $ eminem_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                            "{i}Shadow odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight181
                                 
                                 else:
@@ -626,7 +626,7 @@ label items_fight181:
                                             jump faza_fight182
 
                                         else:
-                                            if eminem_hp_now + 3 >= eminem_hp:
+                                            if eminem_hp_now + 5 >= eminem_hp:
                                                 $ eminem_piguly += 1
                                                 $ pills -= 1
                                                 $ eminem_hp_now = eminem_hp
@@ -636,9 +636,9 @@ label items_fight181:
                                             else:
                                                 $ pills -= 1
                                                 $ eminem_piguly += 1
-                                                $ eminem_hp_now += 3
+                                                $ eminem_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                                "{i}Shadow odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight181
                                     
                                     else:
@@ -663,7 +663,7 @@ label items_fight181:
                             hide haczyki32
                             hide haczyki33           
                             if urban_piguly <= 3:
-                                if urban_hp_now + 3 >= urban_hp:
+                                if urban_hp_now + 5 >= urban_hp:
                                     $ pills -= 1
                                     $ urban_piguly += 1
                                     $ urban_hp_now = urban_hp
@@ -673,9 +673,9 @@ label items_fight181:
                                 else:
                                     $ pills -= 1
                                     $ urban_piguly += 1
-                                    $ urban_hp_now += 3
+                                    $ urban_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                    "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight181
                             
                             else:
@@ -691,7 +691,7 @@ label items_fight181:
                                         jump faza_fight182
 
                                     else:
-                                        if urban_hp_now + 3 >= urban_hp:
+                                        if urban_hp_now + 5 >= urban_hp:
                                             $ urban_piguly += 1
                                             $ pills -= 1
                                             $ urban_hp_now = urban_hp
@@ -701,9 +701,9 @@ label items_fight181:
                                         else:
                                             $ pills -= 1
                                             $ urban_piguly += 1
-                                            $ urban_hp_now += 3
+                                            $ urban_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                            "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight181
                                 
                                 else:
@@ -719,7 +719,7 @@ label items_fight181:
                                             jump faza_fight182
 
                                         else:
-                                            if urban_hp_now + 3 >= urban_hp:
+                                            if urban_hp_now + 5 >= urban_hp:
                                                 $ urban_piguly += 1
                                                 $ pills -= 1
                                                 $ urban_hp_now = urban_hp
@@ -729,9 +729,9 @@ label items_fight181:
                                             else:
                                                 $ pills -= 1
                                                 $ urban_piguly += 1
-                                                $ urban_hp_now += 3
+                                                $ urban_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight181
                                     
                                     else:
@@ -756,7 +756,7 @@ label items_fight181:
                             hide haczyki42
                             hide haczyki43           
                             if zyd_piguly <= 3:
-                                if zyd_hp_now + 3 >= zyd_hp:
+                                if zyd_hp_now + 5 >= zyd_hp:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
                                     $ zyd_hp_now = zyd_hp
@@ -766,9 +766,9 @@ label items_fight181:
                                 else:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
-                                    $ zyd_hp_now += 3
+                                    $ zyd_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                    "{i}Żyd odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight181
                             
                             else:
@@ -784,7 +784,7 @@ label items_fight181:
                                         jump faza_fight182
 
                                     else:
-                                        if zyd_hp_now + 3 >= zyd_hp:
+                                        if zyd_hp_now + 5 >= zyd_hp:
                                             $ zyd_piguly += 1
                                             $ pills -= 1
                                             $ zyd_hp_now = zyd_hp
@@ -794,9 +794,9 @@ label items_fight181:
                                         else:
                                             $ pills -= 1
                                             $ zyd_piguly += 1
-                                            $ zyd_hp_now += 3
+                                            $ zyd_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                            "{i}Żyd odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight181
                                 
                                 else:
@@ -812,7 +812,7 @@ label items_fight181:
                                             jump faza_fight182
 
                                         else:
-                                            if zyd_hp_now + 3 >= zyd_hp:
+                                            if zyd_hp_now + 5 >= zyd_hp:
                                                 $ zyd_piguly += 1
                                                 $ pills -= 1
                                                 $ zyd_hp_now = zyd_hp
@@ -822,9 +822,9 @@ label items_fight181:
                                             else:
                                                 $ pills -= 1
                                                 $ zyd_piguly += 1
-                                                $ zyd_hp_now += 3
+                                                $ zyd_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                                "{i}Żyd odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight181
                                     
                                     else:
@@ -849,7 +849,7 @@ label items_fight181:
                             hide haczyki52
                             hide haczyki53        
                             if kazuma_piguly <= 3:
-                                if kazuma_hp_now + 3 >= kazuma_hp:
+                                if kazuma_hp_now + 5 >= kazuma_hp:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
                                     $ kazuma_hp_now = kazuma_hp
@@ -859,9 +859,9 @@ label items_fight181:
                                 else:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
-                                    $ kazuma_hp_now += 3
+                                    $ kazuma_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                    "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight181
                             
                             else:
@@ -877,7 +877,7 @@ label items_fight181:
                                         jump faza_fight182
 
                                     else:
-                                        if kazuma_hp_now + 3 >= kazuma_hp:
+                                        if kazuma_hp_now + 5 >= kazuma_hp:
                                             $ kazuma_piguly += 1
                                             $ pills -= 1
                                             $ kazuma_hp_now = kazuma_hp
@@ -887,9 +887,9 @@ label items_fight181:
                                         else:
                                             $ pills -= 1
                                             $ kazuma_piguly += 1
-                                            $ kazuma_hp_now += 3
+                                            $ kazuma_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                            "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight181
                                 
                                 else:
@@ -905,7 +905,7 @@ label items_fight181:
                                             jump faza_fight182
 
                                         else:
-                                            if kazuma_hp_now + 3 >= kazuma_hp:
+                                            if kazuma_hp_now + 5 >= kazuma_hp:
                                                 $ kazuma_piguly += 1
                                                 $ pills -= 1
                                                 $ kazuma_hp_now = kazuma_hp
@@ -915,9 +915,9 @@ label items_fight181:
                                             else:
                                                 $ pills -= 1
                                                 $ kazuma_piguly += 1
-                                                $ kazuma_hp_now += 3
+                                                $ kazuma_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight181
                                     
                                     else:
@@ -1465,7 +1465,7 @@ label items_fight181:
                     hide woda
                     jump faza_fight182
             
-        "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
+        "{b}Kebab Ostry (+7HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
             hide chest
             if luszcz_fighter == 1:
                 if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -1522,18 +1522,18 @@ label items_fight181:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1553,18 +1553,18 @@ label items_fight181:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1584,18 +1584,18 @@ label items_fight181:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1615,18 +1615,18 @@ label items_fight181:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1646,18 +1646,18 @@ label items_fight181:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1677,18 +1677,18 @@ label items_fight181:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1708,18 +1708,18 @@ label items_fight181:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1739,18 +1739,18 @@ label items_fight181:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1770,18 +1770,18 @@ label items_fight181:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1801,18 +1801,18 @@ label items_fight181:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1832,18 +1832,18 @@ label items_fight181:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1863,18 +1863,18 @@ label items_fight181:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1894,18 +1894,18 @@ label items_fight181:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1925,18 +1925,18 @@ label items_fight181:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1956,18 +1956,18 @@ label items_fight181:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -1987,18 +1987,18 @@ label items_fight181:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -2018,18 +2018,18 @@ label items_fight181:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -2049,18 +2049,18 @@ label items_fight181:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -8232,7 +8232,7 @@ label items_fight183:
                 $ ile_item -= 1
             jump faza_fight183
 
-        "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+        "{b}Ciasto Truskawkowe (+30HP LUB +10HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
 
             if luszcz_fighter == 2:
@@ -8462,7 +8462,7 @@ label items_fight183:
                         $ ile_item -= 1
                     jump faza_fight183
 
-        "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
+        "{b}Słoik z Pigułkami (+5HP) x [pills] {/b}" if pillsx >= 1:
             label pigulki_fight182:
                 hide chest
                 if pills == 0:
@@ -8518,7 +8518,7 @@ label items_fight183:
                             hide haczyki12
                             hide haczyki13
                             if luszcz_piguly <= 3:
-                                if luszcz_hp_now + 3 >= luszcz_hp:
+                                if luszcz_hp_now + 5 >= luszcz_hp:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
                                     $ luszcz_hp_now = luszcz_hp
@@ -8546,7 +8546,7 @@ label items_fight183:
                                         jump faza_fight183
 
                                     else:
-                                        if luszcz_hp_now + 3 >= luszcz_hp:
+                                        if luszcz_hp_now + 5 >= luszcz_hp:
                                             $ luszcz_piguly += 1
                                             $ pills -= 1
                                             $ luszcz_hp_now = luszcz_hp
@@ -8556,9 +8556,9 @@ label items_fight183:
                                         else:
                                             $ pills -= 1
                                             $ luszcz_piguly += 1
-                                            $ luszcz_hp_now += 3
+                                            $ luszcz_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                            "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight182
                                 
                                 else:
@@ -8574,7 +8574,7 @@ label items_fight183:
                                             jump faza_fight183
 
                                         else:
-                                            if luszcz_hp_now + 3 >= luszcz_hp:
+                                            if luszcz_hp_now + 5 >= luszcz_hp:
                                                 $ luszcz_piguly += 1
                                                 $ pills -= 1
                                                 $ luszcz_hp_now = luszcz_hp
@@ -8584,9 +8584,9 @@ label items_fight183:
                                             else:
                                                 $ pills -= 1
                                                 $ luszcz_piguly += 1
-                                                $ luszcz_hp_now += 3
+                                                $ luszcz_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight182
                                     
                                     else:
@@ -8611,7 +8611,7 @@ label items_fight183:
                             hide haczyki22
                             hide haczyki23
                             if eminem_piguly <= 3:
-                                if eminem_hp_now + 3 >= eminem_hp:
+                                if eminem_hp_now + 5 >= eminem_hp:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
                                     $ eminem_hp_now = eminem_hp
@@ -8621,9 +8621,9 @@ label items_fight183:
                                 else:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
-                                    $ eminem_hp_now += 3
+                                    $ eminem_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                    "{i}Shadow odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight182
                             
                             else:
@@ -8639,7 +8639,7 @@ label items_fight183:
                                         jump faza_fight183
 
                                     else:
-                                        if eminem_hp_now + 3 >= eminem_hp:
+                                        if eminem_hp_now + 5 >= eminem_hp:
                                             $ eminem_piguly += 1
                                             $ pills -= 1
                                             $ eminem_hp_now = eminem_hp
@@ -8649,9 +8649,9 @@ label items_fight183:
                                         else:
                                             $ pills -= 1
                                             $ eminem_piguly += 1
-                                            $ eminem_hp_now += 3
+                                            $ eminem_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                            "{i}Shadow odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight182
                                 
                                 else:
@@ -8667,7 +8667,7 @@ label items_fight183:
                                             jump faza_fight183
 
                                         else:
-                                            if eminem_hp_now + 3 >= eminem_hp:
+                                            if eminem_hp_now + 5 >= eminem_hp:
                                                 $ eminem_piguly += 1
                                                 $ pills -= 1
                                                 $ eminem_hp_now = eminem_hp
@@ -8677,9 +8677,9 @@ label items_fight183:
                                             else:
                                                 $ pills -= 1
                                                 $ eminem_piguly += 1
-                                                $ eminem_hp_now += 3
+                                                $ eminem_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                                "{i}Shadow odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight182
                                     
                                     else:
@@ -8704,7 +8704,7 @@ label items_fight183:
                             hide haczyki32
                             hide haczyki33         
                             if urban_piguly <= 3:
-                                if urban_hp_now + 3 >= urban_hp:
+                                if urban_hp_now + 5 >= urban_hp:
                                     $ pills -= 1
                                     $ urban_piguly += 1
                                     $ urban_hp_now = urban_hp
@@ -8714,9 +8714,9 @@ label items_fight183:
                                 else:
                                     $ pills -= 1
                                     $ urban_piguly += 1
-                                    $ urban_hp_now += 3
+                                    $ urban_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                    "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight182
                             
                             else:
@@ -8732,7 +8732,7 @@ label items_fight183:
                                         jump faza_fight183
 
                                     else:
-                                        if urban_hp_now + 3 >= urban_hp:
+                                        if urban_hp_now + 5 >= urban_hp:
                                             $ urban_piguly += 1
                                             $ pills -= 1
                                             $ urban_hp_now = urban_hp
@@ -8742,9 +8742,9 @@ label items_fight183:
                                         else:
                                             $ pills -= 1
                                             $ urban_piguly += 1
-                                            $ urban_hp_now += 3
+                                            $ urban_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                            "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight182
                                 
                                 else:
@@ -8760,7 +8760,7 @@ label items_fight183:
                                             jump faza_fight183
 
                                         else:
-                                            if urban_hp_now + 3 >= urban_hp:
+                                            if urban_hp_now + 5 >= urban_hp:
                                                 $ urban_piguly += 1
                                                 $ pills -= 1
                                                 $ urban_hp_now = urban_hp
@@ -8770,9 +8770,9 @@ label items_fight183:
                                             else:
                                                 $ pills -= 1
                                                 $ urban_piguly += 1
-                                                $ urban_hp_now += 3
+                                                $ urban_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight182
                                     
                                     else:
@@ -8797,7 +8797,7 @@ label items_fight183:
                             hide haczyki42
                             hide haczyki43  
                             if zyd_piguly <= 3:
-                                if zyd_hp_now + 3 >= zyd_hp:
+                                if zyd_hp_now + 5 >= zyd_hp:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
                                     $ zyd_hp_now = zyd_hp
@@ -8807,9 +8807,9 @@ label items_fight183:
                                 else:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
-                                    $ zyd_hp_now += 3
+                                    $ zyd_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                    "{i}Żyd odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight182
                             
                             else:
@@ -8825,7 +8825,7 @@ label items_fight183:
                                         jump faza_fight183
 
                                     else:
-                                        if zyd_hp_now + 3 >= zyd_hp:
+                                        if zyd_hp_now + 5 >= zyd_hp:
                                             $ zyd_piguly += 1
                                             $ pills -= 1
                                             $ zyd_hp_now = zyd_hp
@@ -8835,9 +8835,9 @@ label items_fight183:
                                         else:
                                             $ pills -= 1
                                             $ zyd_piguly += 1
-                                            $ zyd_hp_now += 3
+                                            $ zyd_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                            "{i}Żyd odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight182
                                 
                                 else:
@@ -8853,7 +8853,7 @@ label items_fight183:
                                             jump faza_fight183
 
                                         else:
-                                            if zyd_hp_now + 3 >= zyd_hp:
+                                            if zyd_hp_now + 5 >= zyd_hp:
                                                 $ zyd_piguly += 1
                                                 $ pills -= 1
                                                 $ zyd_hp_now = zyd_hp
@@ -8863,9 +8863,9 @@ label items_fight183:
                                             else:
                                                 $ pills -= 1
                                                 $ zyd_piguly += 1
-                                                $ zyd_hp_now += 3
+                                                $ zyd_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                                "{i}Żyd odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight182
                                     
                                     else:
@@ -8890,7 +8890,7 @@ label items_fight183:
                             hide haczyki52
                             hide haczyki53         
                             if kazuma_piguly <= 3:
-                                if kazuma_hp_now + 3 >= kazuma_hp:
+                                if kazuma_hp_now + 5 >= kazuma_hp:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
                                     $ kazuma_hp_now = kazuma_hp
@@ -8900,9 +8900,9 @@ label items_fight183:
                                 else:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
-                                    $ kazuma_hp_now += 3
+                                    $ kazuma_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                    "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight182
                             
                             else:
@@ -8918,7 +8918,7 @@ label items_fight183:
                                         jump faza_fight183
 
                                     else:
-                                        if kazuma_hp_now + 3 >= kazuma_hp:
+                                        if kazuma_hp_now + 5 >= kazuma_hp:
                                             $ kazuma_piguly += 1
                                             $ pills -= 1
                                             $ kazuma_hp_now = kazuma_hp
@@ -8928,9 +8928,9 @@ label items_fight183:
                                         else:
                                             $ pills -= 1
                                             $ kazuma_piguly += 1
-                                            $ kazuma_hp_now += 3
+                                            $ kazuma_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                            "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight182
                                 
                                 else:
@@ -8946,7 +8946,7 @@ label items_fight183:
                                             jump faza_fight183
 
                                         else:
-                                            if kazuma_hp_now + 3 >= kazuma_hp:
+                                            if kazuma_hp_now + 5 >= kazuma_hp:
                                                 $ kazuma_piguly += 1
                                                 $ pills -= 1
                                                 $ kazuma_hp_now = kazuma_hp
@@ -8956,9 +8956,9 @@ label items_fight183:
                                             else:
                                                 $ pills -= 1
                                                 $ kazuma_piguly += 1
-                                                $ kazuma_hp_now += 3
+                                                $ kazuma_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight182
                                     
                                     else:
@@ -9506,7 +9506,7 @@ label items_fight183:
                     hide woda
                     jump faza_fight183
             
-        "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
+        "{b}Kebab Ostry (+7HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
             hide chest
             if luszcz_fighter == 2:
                 if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -9563,18 +9563,18 @@ label items_fight183:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9594,18 +9594,18 @@ label items_fight183:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9625,18 +9625,18 @@ label items_fight183:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9656,18 +9656,18 @@ label items_fight183:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9687,18 +9687,18 @@ label items_fight183:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9718,18 +9718,18 @@ label items_fight183:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9749,18 +9749,18 @@ label items_fight183:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9780,18 +9780,18 @@ label items_fight183:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9811,18 +9811,18 @@ label items_fight183:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9842,18 +9842,18 @@ label items_fight183:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9873,18 +9873,18 @@ label items_fight183:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9904,18 +9904,18 @@ label items_fight183:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9935,18 +9935,18 @@ label items_fight183:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9966,18 +9966,18 @@ label items_fight183:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -9997,18 +9997,18 @@ label items_fight183:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -10028,18 +10028,18 @@ label items_fight183:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -10059,18 +10059,18 @@ label items_fight183:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -10090,18 +10090,18 @@ label items_fight183:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -16272,7 +16272,7 @@ label items_fight185:
                 $ ile_item -= 1
             jump faza_fight184
 
-        "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+        "{b}Ciasto Truskawkowe (+30HP LUB +10HP FOR ALL) x [cake]{/b}" if cakex == 1:
             hide chest
 
             if luszcz_fighter == 3:
@@ -16502,7 +16502,7 @@ label items_fight185:
                         $ ile_item -= 1
                     jump faza_fight184
 
-        "{b}Słoik z Pigułkami (+3HP) x [pills] {/b}" if pillsx >= 1:
+        "{b}Słoik z Pigułkami (+5HP) x [pills] {/b}" if pillsx >= 1:
             label pigulki_fight183:
                 hide chest
                 if pills == 0:
@@ -16558,7 +16558,7 @@ label items_fight185:
                             hide haczyki12
                             hide haczyki13
                             if luszcz_piguly <= 3:
-                                if luszcz_hp_now + 3 >= luszcz_hp:
+                                if luszcz_hp_now + 5 >= luszcz_hp:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
                                     $ luszcz_hp_now = luszcz_hp
@@ -16586,7 +16586,7 @@ label items_fight185:
                                         jump faza_fight184
 
                                     else:
-                                        if luszcz_hp_now + 3 >= luszcz_hp:
+                                        if luszcz_hp_now + 5 >= luszcz_hp:
                                             $ luszcz_piguly += 1
                                             $ pills -= 1
                                             $ luszcz_hp_now = luszcz_hp
@@ -16596,9 +16596,9 @@ label items_fight185:
                                         else:
                                             $ pills -= 1
                                             $ luszcz_piguly += 1
-                                            $ luszcz_hp_now += 3
+                                            $ luszcz_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                            "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight183
                                 
                                 else:
@@ -16614,7 +16614,7 @@ label items_fight185:
                                             jump faza_fight184
 
                                         else:
-                                            if luszcz_hp_now + 3 >= luszcz_hp:
+                                            if luszcz_hp_now + 5 >= luszcz_hp:
                                                 $ luszcz_piguly += 1
                                                 $ pills -= 1
                                                 $ luszcz_hp_now = luszcz_hp
@@ -16624,9 +16624,9 @@ label items_fight185:
                                             else:
                                                 $ pills -= 1
                                                 $ luszcz_piguly += 1
-                                                $ luszcz_hp_now += 3
+                                                $ luszcz_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                                "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight183
                                     
                                     else:
@@ -16651,7 +16651,7 @@ label items_fight185:
                             hide haczyki22
                             hide haczyki23
                             if eminem_piguly <= 3:
-                                if eminem_hp_now + 3 >= eminem_hp:
+                                if eminem_hp_now + 5 >= eminem_hp:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
                                     $ eminem_hp_now = eminem_hp
@@ -16661,9 +16661,9 @@ label items_fight185:
                                 else:
                                     $ pills -= 1
                                     $ eminem_piguly += 1
-                                    $ eminem_hp_now += 3
+                                    $ eminem_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                    "{i}Shadow odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight183
                             
                             else:
@@ -16679,7 +16679,7 @@ label items_fight185:
                                         jump faza_fight184
 
                                     else:
-                                        if eminem_hp_now + 3 >= eminem_hp:
+                                        if eminem_hp_now + 5 >= eminem_hp:
                                             $ eminem_piguly += 1
                                             $ pills -= 1
                                             $ eminem_hp_now = eminem_hp
@@ -16689,9 +16689,9 @@ label items_fight185:
                                         else:
                                             $ pills -= 1
                                             $ eminem_piguly += 1
-                                            $ eminem_hp_now += 3
+                                            $ eminem_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                            "{i}Shadow odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight183
                                 
                                 else:
@@ -16707,7 +16707,7 @@ label items_fight185:
                                             jump faza_fight184
 
                                         else:
-                                            if eminem_hp_now + 3 >= eminem_hp:
+                                            if eminem_hp_now + 5 >= eminem_hp:
                                                 $ eminem_piguly += 1
                                                 $ pills -= 1
                                                 $ eminem_hp_now = eminem_hp
@@ -16717,9 +16717,9 @@ label items_fight185:
                                             else:
                                                 $ pills -= 1
                                                 $ eminem_piguly += 1
-                                                $ eminem_hp_now += 3
+                                                $ eminem_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Shadow odzyskał 3 punkty życia{/i}"
+                                                "{i}Shadow odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight183
                                     
                                     else:
@@ -16744,7 +16744,7 @@ label items_fight185:
                             hide haczyki32
                             hide haczyki33         
                             if urban_piguly <= 3:
-                                if urban_hp_now + 3 >= urban_hp:
+                                if urban_hp_now + 5 >= urban_hp:
                                     $ pills -= 1
                                     $ urban_piguly += 1
                                     $ urban_hp_now = urban_hp
@@ -16754,9 +16754,9 @@ label items_fight185:
                                 else:
                                     $ pills -= 1
                                     $ urban_piguly += 1
-                                    $ urban_hp_now += 3
+                                    $ urban_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                    "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight183
                             
                             else:
@@ -16772,7 +16772,7 @@ label items_fight185:
                                         jump faza_fight184
 
                                     else:
-                                        if urban_hp_now + 3 >= urban_hp:
+                                        if urban_hp_now + 5 >= urban_hp:
                                             $ urban_piguly += 1
                                             $ pills -= 1
                                             $ urban_hp_now = urban_hp
@@ -16782,9 +16782,9 @@ label items_fight185:
                                         else:
                                             $ pills -= 1
                                             $ urban_piguly += 1
-                                            $ urban_hp_now += 3
+                                            $ urban_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                            "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight183
                                 
                                 else:
@@ -16800,7 +16800,7 @@ label items_fight185:
                                             jump faza_fight184
 
                                         else:
-                                            if urban_hp_now + 3 >= urban_hp:
+                                            if urban_hp_now + 5 >= urban_hp:
                                                 $ urban_piguly += 1
                                                 $ pills -= 1
                                                 $ urban_hp_now = urban_hp
@@ -16810,9 +16810,9 @@ label items_fight185:
                                             else:
                                                 $ pills -= 1
                                                 $ urban_piguly += 1
-                                                $ urban_hp_now += 3
+                                                $ urban_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Jerzy Urban odzyskał 3 punkty życia{/i}"
+                                                "{i}Jerzy Urban odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight183
                                     
                                     else:
@@ -16837,7 +16837,7 @@ label items_fight185:
                             hide haczyki42
                             hide haczyki43         
                             if zyd_piguly <= 3:
-                                if zyd_hp_now + 3 >= zyd_hp:
+                                if zyd_hp_now + 5 >= zyd_hp:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
                                     $ zyd_hp_now = zyd_hp
@@ -16847,9 +16847,9 @@ label items_fight185:
                                 else:
                                     $ pills -= 1
                                     $ zyd_piguly += 1
-                                    $ zyd_hp_now += 3
+                                    $ zyd_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                    "{i}Żyd odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight183
                             
                             else:
@@ -16865,7 +16865,7 @@ label items_fight185:
                                         jump faza_fight184
 
                                     else:
-                                        if zyd_hp_now + 3 >= zyd_hp:
+                                        if zyd_hp_now + 5 >= zyd_hp:
                                             $ zyd_piguly += 1
                                             $ pills -= 1
                                             $ zyd_hp_now = zyd_hp
@@ -16875,9 +16875,9 @@ label items_fight185:
                                         else:
                                             $ pills -= 1
                                             $ zyd_piguly += 1
-                                            $ zyd_hp_now += 3
+                                            $ zyd_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                            "{i}Żyd odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight183
                                 
                                 else:
@@ -16893,7 +16893,7 @@ label items_fight185:
                                             jump faza_fight184
 
                                         else:
-                                            if zyd_hp_now + 3 >= zyd_hp:
+                                            if zyd_hp_now + 5 >= zyd_hp:
                                                 $ zyd_piguly += 1
                                                 $ pills -= 1
                                                 $ zyd_hp_now = zyd_hp
@@ -16903,9 +16903,9 @@ label items_fight185:
                                             else:
                                                 $ pills -= 1
                                                 $ zyd_piguly += 1
-                                                $ zyd_hp_now += 3
+                                                $ zyd_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Żyd odzyskał 3 punkty życia{/i}"
+                                                "{i}Żyd odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight183
                                     
                                     else:
@@ -16930,7 +16930,7 @@ label items_fight185:
                             hide haczyki52
                             hide haczyki53     
                             if kazuma_piguly <= 3:
-                                if kazuma_hp_now + 3 >= kazuma_hp:
+                                if kazuma_hp_now + 5 >= kazuma_hp:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
                                     $ kazuma_hp_now = kazuma_hp
@@ -16940,9 +16940,9 @@ label items_fight185:
                                 else:
                                     $ pills -= 1
                                     $ kazuma_piguly += 1
-                                    $ kazuma_hp_now += 3
+                                    $ kazuma_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                    "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight183
                             
                             else:
@@ -16958,7 +16958,7 @@ label items_fight185:
                                         jump faza_fight184
 
                                     else:
-                                        if kazuma_hp_now + 3 >= kazuma_hp:
+                                        if kazuma_hp_now + 5 >= kazuma_hp:
                                             $ kazuma_piguly += 1
                                             $ pills -= 1
                                             $ kazuma_hp_now = kazuma_hp
@@ -16968,9 +16968,9 @@ label items_fight185:
                                         else:
                                             $ pills -= 1
                                             $ kazuma_piguly += 1
-                                            $ kazuma_hp_now += 3
+                                            $ kazuma_hp_now += 5
                                             play sound "audio/sfx/lyk.mp3"
-                                            "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                            "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                             jump pigulki_fight183
                                 
                                 else:
@@ -16986,7 +16986,7 @@ label items_fight185:
                                             jump faza_fight184
 
                                         else:
-                                            if kazuma_hp_now + 3 >= kazuma_hp:
+                                            if kazuma_hp_now + 5 >= kazuma_hp:
                                                 $ kazuma_piguly += 1
                                                 $ pills -= 1
                                                 $ kazuma_hp_now = kazuma_hp
@@ -16996,9 +16996,9 @@ label items_fight185:
                                             else:
                                                 $ pills -= 1
                                                 $ kazuma_piguly += 1
-                                                $ kazuma_hp_now += 3
+                                                $ kazuma_hp_now += 5
                                                 play sound "audio/sfx/lyk.mp3"
-                                                "{i}Kazuma odzyskał 3 punkty życia{/i}"
+                                                "{i}Kazuma odzyskał 5 punktów życia{/i}"
                                                 jump pigulki_fight183
                                     
                                     else:
@@ -17546,7 +17546,7 @@ label items_fight185:
                     hide woda
                     jump faza_fight184
             
-        "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
+        "{b}Kebab Ostry (+7HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
             hide chest
             if luszcz_fighter == 3:
                 if luszcz_wybrany == 1 and luszcz_hp_now > 0:
@@ -17603,18 +17603,18 @@ label items_fight185:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17634,18 +17634,18 @@ label items_fight185:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17665,18 +17665,18 @@ label items_fight185:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17696,18 +17696,18 @@ label items_fight185:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17727,18 +17727,18 @@ label items_fight185:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17758,18 +17758,18 @@ label items_fight185:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17789,18 +17789,18 @@ label items_fight185:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17820,18 +17820,18 @@ label items_fight185:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17851,18 +17851,18 @@ label items_fight185:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17882,18 +17882,18 @@ label items_fight185:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17913,18 +17913,18 @@ label items_fight185:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17944,18 +17944,18 @@ label items_fight185:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -17975,18 +17975,18 @@ label items_fight185:
                     if luszcz_wybrany == 3 and luszcz_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if luszcz_hp_now + 3 >= luszcz_hp:
+                    if luszcz_hp_now + 7 >= luszcz_hp:
                         $ luszcz_hp_now = luszcz_hp
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Łuszcz odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ luszcz_hp_now += 3
+                        $ luszcz_hp_now += 7
                         $ luszcz_max_attack_now_true += 1
                         $ luszcz_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Łuszcz odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Łuszcz odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -18006,18 +18006,18 @@ label items_fight185:
                     if eminem_wybrany == 3 and eminem_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if eminem_hp_now + 3 >= eminem_hp:
+                    if eminem_hp_now + 7 >= eminem_hp:
                         $ eminem_hp_now = eminem_hp
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Shadow odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ eminem_hp_now += 3
+                        $ eminem_hp_now += 7
                         $ eminem_max_attack_now_true += 1
                         $ eminem_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Shadow odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Shadow odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -18037,18 +18037,18 @@ label items_fight185:
                     if urban_wybrany == 3 and urban_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if urban_hp_now + 3 >= urban_hp:
+                    if urban_hp_now + 7 >= urban_hp:
                         $ urban_hp_now = urban_hp
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Jerzy Urban odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ urban_hp_now += 3
+                        $ urban_hp_now += 7
                         $ urban_max_attack_now_true += 1
                         $ urban_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Jerzy Urban odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Jerzy Urban odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -18068,18 +18068,18 @@ label items_fight185:
                     if zyd_wybrany == 3 and zyd_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if zyd_hp_now + 3 >= zyd_hp:
+                    if zyd_hp_now + 7 >= zyd_hp:
                         $ zyd_hp_now = zyd_hp
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Żyd odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ zyd_hp_now += 3
+                        $ zyd_hp_now += 7
                         $ zyd_max_attack_now_true += 1
                         $ zyd_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Żyd odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Żyd odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -18099,18 +18099,18 @@ label items_fight185:
                     if kazuma_wybrany == 3 and kazuma_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
 
-                    if kazuma_hp_now + 3 >= kazuma_hp:
+                    if kazuma_hp_now + 7 >= kazuma_hp:
                         $ kazuma_hp_now = kazuma_hp
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Kazuma odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ kazuma_hp_now += 3
+                        $ kazuma_hp_now += 7
                         $ kazuma_max_attack_now_true += 1
                         $ kazuma_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Kazuma odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Kazuma odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:
@@ -18130,18 +18130,18 @@ label items_fight185:
                     if tarczownik_wybrany == 3 and tarczownik_hp_now > 0:
                         show ostry zorder 15 at weapon_sojusznik3
                         
-                    if tarczownik_hp_now + 3 >= tarczownik_hp:
+                    if tarczownik_hp_now + 7 >= tarczownik_hp:
                         $ tarczownik_hp_now = tarczownik_hp
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
                         "{i}Naofumi odzyskał cały pasek życia i wzmocnił o 1 maksymalny atak{/i}"
                     else:
-                        $ tarczownik_hp_now += 3
+                        $ tarczownik_hp_now += 7
                         $ tarczownik_max_attack_now_true += 1
                         $ tarczownik_max_attack_now += 1
                         play sound "audio/sfx/heal.mp3"
-                        "{i}Naofumi odzyskał 3 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
+                        "{i}Naofumi odzyskał 7 punktów życia i wzmocnił o 1 maksymalny atak{/i}"
 
                     $ ostry -= 1
                     if ostry == 0:

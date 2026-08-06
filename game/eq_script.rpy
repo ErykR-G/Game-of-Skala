@@ -7922,16 +7922,16 @@ label eq:
 
                         jump itemy_do_walki
 
-                    "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL) x [cake]{/b}" if cakex == 1:
+                    "{b}Ciasto Truskawkowe (+30HP LUB +10HP FOR ALL) x [cake]{/b}" if cakex == 1:
                         window show
-                        "{i}Ciasto truskawkowe, które upiekłeś z Lilith. Leczy +15HP jedenej osbie lub wszystkich po +5HP{/i}"
+                        "{i}Ciasto truskawkowe, które upiekłeś z Lilith. Leczy +30HP jedenej osbie lub wszystkich po +10HP{/i}"
                         window hide
 
                         jump itemy_do_walki
 
-                    "{b}Słoik z Pigułkami (+3HP){/b} x [pills]" if pillsx >= 1:
+                    "{b}Słoik z Pigułkami (+5HP){/b} x [pills]" if pillsx >= 1:
                         window show
-                        "{i}Słoik z Pigułkami, którym Lilith prawie Ciebie zabiła. Leczy +3HP od pigułki{/i}"
+                        "{i}Słoik z Pigułkami, którym Lilith prawie Ciebie zabiła. Leczy +5HP od pigułki{/i}"
                         window hide
 
                         jump itemy_do_walki
@@ -7943,9 +7943,9 @@ label eq:
 
                         jump itemy_do_walki
                     
-                    "{b}Kebab Ostry (+3HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
+                    "{b}Kebab Ostry (+7HP i +1 MAX DMG) x [ostry]{/b}" if ostryx == 1:
                         window show
-                        "{i}Na cienkim, bardzo ostry. +3HP oraz +1 MAX DMG do konca walki{/i}"
+                        "{i}Na cienkim, bardzo ostry. +7HP oraz +1 MAX DMG do konca walki{/i}"
                         window hide
 
                         jump itemy_do_walki

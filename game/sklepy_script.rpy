@@ -77,14 +77,14 @@ label sklepy:
             menu:
                 "{b}Co kupić?{/b}"
 
-                "{b}Jabole x 4 (1 💰){/b}" if monopolowy_jabole > 0 and money >= 1:
+                "{b}Jabole x 3 (1 💰){/b}" if monopolowy_jabole > 0 and money >= 1:
                     if jabole == 0:
                         $ ile_item += 1
-                    $ jabole += 4
+                    $ jabole += 3
                     $ monopolowy_jabole -= 1
                     $ money -= 1
                     play sound "audio/sfx/kupno.mp3"
-                    "{i}*Jabole x 4 zostały dodane do ekwipunku*{/i}"
+                    "{i}*Jabole x 3 zostały dodane do ekwipunku*{/i}"
                     jump sklep_monopolowy2
                 
                 "{b}DrPepper x 2 (1 💰){/b}" if monopolowy_drpepper > 0 and money >= 1:

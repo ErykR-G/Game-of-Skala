@@ -5653,7 +5653,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev10
 
-                            "{b}Ciasto Truskawkowe (+15HP LUB +5HP FOR ALL){/b}":
+                            "{b}Ciasto Truskawkowe (+30HP LUB +10HP FOR ALL){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -5718,7 +5718,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev10
 
-                            "{b}Słoik z Pigułkami (+3HP){/b}":
+                            "{b}Słoik z Pigułkami (+5HP){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -5848,7 +5848,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev10
 
-                            "{b}Kebab Ostry (+3HP i +1 MAX DMG){/b}":
+                            "{b}Kebab Ostry (+7HP i +1 MAX DMG){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -5913,7 +5913,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev10
                             
-                            "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS){/b}":
+                            "{b}Kebab Łagodny (+4HP + 2HP i 3 SP FOR 3 TURNS){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 

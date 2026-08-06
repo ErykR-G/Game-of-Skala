@@ -2813,7 +2813,7 @@ label fight171:
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items_fight171
 
-                "{b}Zaparz Herbatę{/b}":
+                "{b}Zaparz Herbatę - (6-8 SP){/b}" if luszcz_sp_now >= 6:
                     play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
@@ -2827,7 +2827,7 @@ label fight171:
                     menu:
                         "{b}Ale jaką?{/b}"
 
-                        "{b}Wiśnia z Rumem (+5HP){/b}":
+                        "{b}Wiśnia z Rumem (+5HP) - (6 SP){/b}" if luszcz_sp_now >= 6:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -2843,6 +2843,7 @@ label fight171:
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -2853,6 +2854,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -2873,6 +2875,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -2893,6 +2896,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -2913,6 +2917,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -2933,6 +2938,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -2953,6 +2959,7 @@ label fight171:
                                 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -2963,6 +2970,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -2983,6 +2991,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -3003,6 +3012,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -3023,6 +3033,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -3043,6 +3054,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -3063,6 +3075,7 @@ label fight171:
                                 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -3073,6 +3086,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -3093,6 +3107,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -3113,6 +3128,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -3133,6 +3149,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -3153,6 +3170,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -3174,8 +3192,9 @@ label fight171:
                             hide wisnia_w_rumie
                             jump faza_fight172
                             
-                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL) - (8 SP){/b}" if luszcz_sp_now >= 8:
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
+                            $ luszcz_sp_now -= 8
                             play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
@@ -3508,7 +3527,7 @@ label fight171:
                     eminem "Czas zabawy się skończył"
                     jump items_fight171
 
-                "{b}Rzut Szlamem{/b}":
+                "{b}Rzut Szlamem - (8 SP){/b}" if eminem_sp_now >= 8:
                     if eminem_wybrany == 1:
                         show slime zorder 15 at weapon_sojusznik1  
 
@@ -3523,6 +3542,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -3599,6 +3619,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -3674,6 +3695,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -4421,7 +4443,7 @@ label fight171:
                     urban "No tak było, nie zmyślam"
                     jump items_fight171
 
-                "{b}Zatrzepocz Uszami{/b}":
+                "{b}Zatrzepocz Uszami - (10 SP){/b}" if urban_sp_now >= 10:
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
 
@@ -4432,6 +4454,7 @@ label fight171:
                         show uszy zorder 15 at head_sojusznik3 
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
+                    $ urban_sp_now -= 10
                     play sound "audio/sfx/uszy.mp3" 
 
                     $ kostka = renpy.random.randint(1, 10)
@@ -5145,7 +5168,7 @@ label fight171:
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items_fight171
 
-                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and delta_pager == 0 and delta_hp_now >= 1 or pager_boom == 0 and gamma_pager == 0 and gamma_hp_now >= 1 or pager_boom == 0 and epsilon_pager == 0 and epsilon_hp_now >= 1:
+                "{b}Sprzedaj Pager - (6 SP){/b}" if zyd_sp_now >= 6 and delta_pager == 0 and delta_hp_now >= 1 or zyd_sp_now >= 6 and gamma_pager == 0 and gamma_hp_now >= 1 or zyd_sp_now >= 6 and epsilon_pager == 0 and epsilon_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
 
@@ -5160,6 +5183,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_hp_now >= 1 and delta_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ delta_pager += 1
@@ -5171,6 +5195,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ gamma_pager += 1
@@ -5182,6 +5207,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ epsilon_pager += 1
@@ -5191,8 +5217,7 @@ label fight171:
 
                             jump faza_fight172
                 
-                "{b}Wysadź Pagery{/b}" if delta_pager >= 1 and pager_boom == 0 or gamma_pager >= 1 and pager_boom == 0 or epsilon_pager >= 1 and pager_boom == 0:
-                    $ pager_boom += 1
+                "{b}Wysadź Pagery - (6 SP){/b}" if delta_pager >= 1 and zyd_sp_now >= 6 or gamma_pager >= 1 and zyd_sp_now >= 6 or epsilon_pager >= 1 and zyd_sp_now >= 6:
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
 
@@ -5203,12 +5228,16 @@ label fight171:
                         show red_button zorder 15 at weapon_sojusznik3 
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+                    $ zyd_sp_now -= 6
                     play sound "audio/sfx/boom.mp3" 
 
                     if delta_pager == 1 and gamma_pager == 1 and epsilon_pager == 1:
                         $ delta_hp_now -= 10
                         $ epsilon_hp_now -= 10
                         $ gamma_hp_now -= 10
+                        $ delta_pager = 0
+                        $ gamma_pager = 0
+                        $ epsilon_pager = 0
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
@@ -5218,6 +5247,8 @@ label fight171:
                         if delta_pager == 1 and gamma_pager == 1:
                             $ delta_hp_now -= 10
                             $ gamma_hp_now -= 10
+                            $ delta_pager = 0
+                            $ gamma_pager = 0
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
                             "{i}Delta i Gamma w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -5226,6 +5257,8 @@ label fight171:
                             if gamma_pager == 1 and epsilon_pager == 1:
                                 $ epsilon_hp_now -= 10
                                 $ gamma_hp_now -= 10
+                                $ gamma_pager = 0
+                                $ epsilon_pager = 0
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
                                 "{i}Gamma i Delta w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -5234,6 +5267,8 @@ label fight171:
                                 if delta_pager == 1 and epsilon_pager == 1:
                                     $ delta_hp_now -= 10
                                     $ epsilon_hp_now -= 10
+                                    $ delta_pager = 0
+                                    $ epsilon_pager = 0
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
                                     "{i}Delta i Epsilon w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -5241,18 +5276,21 @@ label fight171:
                                 else:
                                     if delta_pager == 1:
                                         $ delta_hp_now -= 10
+                                        $ delta_pager = 0
                                         show eksplozja1 zorder 16 at bok_wrog1
                                         "{i}Delta w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if gamma_pager == 1:
                                             $ gamma_hp_now -= 10
+                                            $ gamma_pager = 0
                                             show eksplozja2 zorder 16 at bok_wrog3
                                             "{i}Gamma w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
                                             if epsilon_pager == 1:
                                                 $ epsilon_hp_now -= 10
+                                                $ epsilon_pager = 0
                                                 show eksplozja3 zorder 16 at bok_wrog2
                                                 "{i}Epsilon w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
@@ -5924,7 +5962,7 @@ label fight171:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight171
 
-                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
+                "{b}Steal - (8 SP){/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 and kazuma_sp_now >= 8 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 and kazuma_sp_now >= 8 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 and kazuma_sp_now >= 8 or epsilon_sex == 1 and epsilon_hp_now > 0 and kazuma_sp_now >= 8 or gamma_sex == 1 and gamma_hp_now > 0 and kazuma_sp_now >= 8 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1 and kazuma_sp_now >= 8:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -5939,6 +5977,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
 
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
@@ -6016,6 +6055,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Gamma obronił się przed umiejętnością “Steal“{/i}"
@@ -6109,6 +6149,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Epsilon obronił się przed umiejętnością “Steal“{/i}"
@@ -6231,7 +6272,7 @@ label fight171:
                         hide stun9
                         jump faza_fight172 
 
-                if luszcz_hp_now <= 4 and luszcz_wybrany >= 1 or eminem_hp_now <= 4 and eminem_wybrany >= 1 or urban_hp_now <= 4 and urban_wybrany >= 1 or zyd_hp_now <= 4 and zyd_wybrany >= 1 or kazuma_hp_now <= 4 and kazuma_wybrany >= 1:
+                if luszcz_hp_now <= 7 and luszcz_wybrany >= 1 and tarczownik_sp_now >= 8 or eminem_hp_now <= 7 and eminem_wybrany >= 1 and tarczownik_sp_now >= 8 or urban_hp_now <= 7 and urban_wybrany >= 1 and tarczownik_sp_now >= 8 or zyd_hp_now <= 7 and zyd_wybrany >= 1 and tarczownik_sp_now >= 8 or kazuma_hp_now <= 7 and kazuma_wybrany >= 1 and tarczownik_sp_now >= 8:
                     $ kostka = renpy.random.randint(1, 10)
 
                     if kostka >= 4:
@@ -6241,6 +6282,7 @@ label fight171:
                         $ zyd_obrona += 1
                         $ kazuma_obrona += 1
                         $ tarczownik_obrona += 1
+                        $ tarczownik_sp_now -= 8
                         play sound "audio/sfx/air_strike_shield.mp3"
 
                         if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
@@ -6282,11 +6324,12 @@ label fight171:
 
                         jump faza_fight172
                 
-                if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1:
+                if tarczownik_hp_now <= 5 and tarczownik_weapon >= 1 and tarczownik_sp_now >= 10:
                     $ kostka = renpy.random.randint(1, 2)
 
                     if kostka == 1:
                         $ tarczownik_obrona += 2
+                        $ tarczownik_sp_now -= 10
                         play sound "audio/sfx/shield_prison.mp3"
                         if tarczownik_wybrany == 1:
                             show shield_prison zorder 18 at prison_sojusznik1
@@ -6329,13 +6372,14 @@ label fight171:
                 
                 $ kostka = renpy.random.randint(1, 10)
 
-                if kostka == 10 and tarczownik_weapon >= 1:
+                if kostka == 10 and tarczownik_weapon >= 1 and tarczownik_sp_now >= 8:
                     $ luszcz_obrona += 1
                     $ eminem_obrona += 1
                     $ urban_obrona += 1
                     $ zyd_obrona += 1
                     $ kazuma_obrona += 1
                     $ tarczownik_obrona += 1
+                    $ tarczownik_sp_now -= 8
                     play sound "audio/sfx/air_strike_shield.mp3"
 
                     if luszcz_wybrany == 1 and luszcz_hp_now >= 1 or eminem_wybrany == 1 and eminem_hp_now >= 1 or urban_wybrany == 1 and urban_hp_now >= 1 or zyd_wybrany == 1 and zyd_hp_now >= 1 or kazuma_wybrany == 1 and kazuma_hp_now >= 1 or tarczownik_wybrany == 1 and tarczownik_hp_now >= 1:
@@ -9349,7 +9393,7 @@ label fight171:
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items_fight173
 
-                "{b}Zaparz Herbatę{/b}":
+                "{b}Zaparz Herbatę - (6-8 SP){/b}" if luszcz_sp_now >= 6:
                     play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
@@ -9363,7 +9407,7 @@ label fight171:
                     menu:
                         "{b}Ale jaką?{/b}"
 
-                        "{b}Wiśnia z Rumem (+5HP){/b}":
+                        "{b}Wiśnia z Rumem (+5HP) - (6 SP){/b}" if luszcz_sp_now >= 6:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -9379,6 +9423,7 @@ label fight171:
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -9389,6 +9434,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -9409,6 +9455,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -9429,6 +9476,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -9449,6 +9497,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -9469,6 +9518,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -9489,6 +9539,7 @@ label fight171:
                                 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -9499,6 +9550,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -9519,6 +9571,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -9539,6 +9592,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -9559,6 +9613,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -9579,6 +9634,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -9599,6 +9655,7 @@ label fight171:
                                 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -9609,6 +9666,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -9629,6 +9687,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -9649,6 +9708,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -9669,6 +9729,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -9689,6 +9750,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -9710,8 +9772,9 @@ label fight171:
                             hide wisnia_w_rumie
                             jump faza_fight173
                             
-                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL) - (8 SP){/b}" if luszcz_sp_now >= 8:
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
+                            $ luszcz_sp_now -= 8
                             play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
@@ -10044,7 +10107,7 @@ label fight171:
                     eminem "Czas zabawy się skończył"
                     jump items_fight173
 
-                "{b}Rzut Szlamem{/b}":
+                "{b}Rzut Szlamem - (8 SP){/b}" if eminem_sp_now >= 8:
                     if eminem_wybrany == 1:
                         show slime zorder 15 at weapon_sojusznik1  
 
@@ -10059,6 +10122,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -10134,6 +10198,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -10208,6 +10273,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -10955,7 +11021,7 @@ label fight171:
                     urban "No tak było, nie zmyślam"
                     jump items_fight173
 
-                "{b}Zatrzepocz Uszami{/b}":
+                "{b}Zatrzepocz Uszami - (10 SP){/b}" if urban_sp_now >= 10:
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
 
@@ -10966,6 +11032,7 @@ label fight171:
                         show uszy zorder 15 at head_sojusznik3 
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
+                    $ urban_sp_now -= 10
                     play sound "audio/sfx/uszy.mp3" 
 
                     $ kostka = renpy.random.randint(1, 10)
@@ -11678,7 +11745,7 @@ label fight171:
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items_fight173
 
-                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and delta_pager == 0 and delta_hp_now >= 1 or pager_boom == 0 and gamma_pager == 0 and gamma_hp_now >= 1 or pager_boom == 0 and epsilon_pager == 0 and epsilon_hp_now >= 1:
+                "{b}Sprzedaj Pager - (6 SP){/b}" if zyd_sp_now >= 6 and delta_pager == 0 and delta_hp_now >= 1 or zyd_sp_now >= 6 and gamma_pager == 0 and gamma_hp_now >= 1 or zyd_sp_now >= 6 and epsilon_pager == 0 and epsilon_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
 
@@ -11693,6 +11760,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_hp_now >= 1 and delta_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ delta_pager += 1
@@ -11704,6 +11772,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ gamma_pager += 1
@@ -11715,6 +11784,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ epsilon_pager += 1
@@ -11724,8 +11794,7 @@ label fight171:
 
                             jump faza_fight173
                 
-                "{b}Wysadź Pagery{/b}" if delta_pager >= 1 and pager_boom == 0 or gamma_pager >= 1 and pager_boom == 0 or epsilon_pager >= 1 and pager_boom == 0:
-                    $ pager_boom += 1
+                "{b}Wysadź Pagery - (6 SP){/b}" if delta_pager >= 1 and zyd_sp_now >= 6 or gamma_pager >= 1 and zyd_sp_now >= 6 or epsilon_pager >= 1 and zyd_sp_now >= 6:
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
 
@@ -11736,12 +11805,16 @@ label fight171:
                         show red_button zorder 15 at weapon_sojusznik3 
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+                    $ zyd_sp_now -= 6
                     play sound "audio/sfx/boom.mp3" 
 
                     if delta_pager == 1 and gamma_pager == 1 and epsilon_pager == 1:
                         $ delta_hp_now -= 10
                         $ epsilon_hp_now -= 10
                         $ gamma_hp_now -= 10
+                        $ delta_pager = 0
+                        $ gamma_pager = 0
+                        $ epsilon_pager = 0
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
@@ -11751,6 +11824,8 @@ label fight171:
                         if delta_pager == 1 and gamma_pager == 1:
                             $ delta_hp_now -= 10
                             $ gamma_hp_now -= 10
+                            $ delta_pager = 0
+                            $ gamma_pager = 0
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
                             "{i}Delta i Gamma w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -11759,6 +11834,8 @@ label fight171:
                             if gamma_pager == 1 and epsilon_pager == 1:
                                 $ epsilon_hp_now -= 10
                                 $ gamma_hp_now -= 10
+                                $ gamma_pager = 0
+                                $ epsilon_pager = 0
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
                                 "{i}Gamma i Delta w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -11767,6 +11844,8 @@ label fight171:
                                 if delta_pager == 1 and epsilon_pager == 1:
                                     $ delta_hp_now -= 10
                                     $ epsilon_hp_now -= 10
+                                    $ delta_pager = 0
+                                    $ epsilon_pager = 0
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
                                     "{i}Delta i Epsilon w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -11774,18 +11853,21 @@ label fight171:
                                 else:
                                     if delta_pager == 1:
                                         $ delta_hp_now -= 10
+                                        $ delta_pager = 0
                                         show eksplozja1 zorder 16 at bok_wrog1
                                         "{i}Delta w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if gamma_pager == 1:
                                             $ gamma_hp_now -= 10
+                                            $ gamma_pager = 0
                                             show eksplozja2 zorder 16 at bok_wrog3
                                             "{i}Gamma w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
                                             if epsilon_pager == 1:
                                                 $ epsilon_hp_now -= 10
+                                                $ epsilon_pager = 0
                                                 show eksplozja3 zorder 16 at bok_wrog2
                                                 "{i}Epsilon w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
@@ -12455,7 +12537,7 @@ label fight171:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight173
 
-                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
+                "{b}Steal - (8 SP){/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 and kazuma_sp_now >= 8 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 and kazuma_sp_now >= 8 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 and kazuma_sp_now >= 8 or epsilon_sex == 1 and epsilon_hp_now > 0 and kazuma_sp_now >= 8 or gamma_sex == 1 and gamma_hp_now > 0 and kazuma_sp_now >= 8 or delta_sex == 1 and delta_hp_now > 0 and kazuma_sp_now >= 8:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -12470,6 +12552,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Delta obronił się przed umiejętnością “Steal“{/i}"
@@ -12546,6 +12629,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Gamma obronił się przed umiejętnością “Steal“{/i}"
@@ -12640,6 +12724,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Epsilon obronił się przed umiejętnością “Steal“{/i}"
@@ -13708,7 +13793,7 @@ label fight171:
                     luszcz "Umiem wyobrażać sobie ludzi w stroju ziemniaka"
                     jump items_fight175
 
-                "{b}Zaparz Herbatę{/b}":
+                "{b}Zaparz Herbatę - (6-8 SP){/b}" if luszcz_sp_now >= 6:
                     play sound "audio/sfx/herbaty.mp3"
                     if luszcz_wybrany == 1:
                         show herbaty zorder 15 at weapon_sojusznik1  
@@ -13722,7 +13807,7 @@ label fight171:
                     menu:
                         "{b}Ale jaką?{/b}"
 
-                        "{b}Wiśnia z Rumem (+5HP){/b}":
+                        "{b}Wiśnia z Rumem (+5HP) - (6 SP){/b}" if luszcz_sp_now >= 6:
                             hide herbaty
                             if luszcz_wybrany == 1:
                                 show wisnia_w_rumie zorder 15 at weapon_sojusznik1  
@@ -13738,6 +13823,7 @@ label fight171:
 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -13748,6 +13834,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -13768,6 +13855,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -13788,6 +13876,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -13808,6 +13897,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -13828,6 +13918,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 1:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -13848,6 +13939,7 @@ label fight171:
                                 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -13858,6 +13950,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -13878,6 +13971,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -13898,6 +13992,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -13918,6 +14013,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -13938,6 +14034,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 2:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -13958,6 +14055,7 @@ label fight171:
                                 
                                 "{b}Łuszcz{/b}" if luszcz_hp_now >= 1 and luszcz_wybrany >= 1 and luszcz_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     if luszcz_hp_now + 5 > luszcz_hp:
                                         $ luszcz_hp_now = luszcz_hp
@@ -13968,6 +14066,7 @@ label fight171:
                                 
                                 "{b}Shadow{/b}" if eminem_hp_now >= 1 and eminem_wybrany >= 1 and eminem_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if eminem_wybrany == 1:
@@ -13988,6 +14087,7 @@ label fight171:
 
                                 "{b}Jerzy Urban{/b}" if urban_hp_now >= 1 and urban_wybrany >= 1 and urban_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if urban_wybrany == 1:
@@ -14008,6 +14108,7 @@ label fight171:
 
                                 "{b}Żyd{/b}" if zyd_hp_now >= 1 and zyd_wybrany >= 1 and zyd_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if zyd_wybrany == 1:
@@ -14028,6 +14129,7 @@ label fight171:
 
                                 "{b}Kazuma{/b}" if kazuma_hp_now >= 1 and kazuma_wybrany >= 1 and kazuma_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if kazuma_wybrany == 1:
@@ -14048,6 +14150,7 @@ label fight171:
                                 
                                 "{b}Naofumi{/b}" if tarczownik_hp_now >= 1 and tarczownik_wybrany >= 1 and tarczownik_fighter == 3:
                                     luszcz "Kiedyś używałem małej ale wolę duże"
+                                    $ luszcz_sp_now -= 6
                                     play sound "audio/sfx/herbata.mp3"
                                     hide wisnia_w_rumie
                                     if tarczownik_wybrany == 1:
@@ -14069,8 +14172,9 @@ label fight171:
                             hide wisnia_w_rumie
                             jump faza_fight174
                             
-                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL){/b}":
+                        "{b}Hiszpańska Mandarynka (+2HP FOR ALL) - (8 SP){/b}" if luszcz_sp_now >= 8:
                             luszcz "Tak. Moja mama tylko czasami zagląda mi do buzi"
+                            $ luszcz_sp_now -= 8
                             play sound "audio/sfx/herbata.mp3"
                             hide herbaty
                             if luszcz_wybrany == 1:
@@ -14403,7 +14507,7 @@ label fight171:
                     eminem "Czas zabawy się skończył"
                     jump items_fight175
 
-                "{b}Rzut Szlamem{/b}":
+                "{b}Rzut Szlamem - (8 SP){/b}" if eminem_sp_now >= 8:
 
                     if eminem_wybrany == 1:
                         show slime zorder 15 at weapon_sojusznik1  
@@ -14419,6 +14523,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -14494,6 +14599,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -14569,6 +14675,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1:
                             eminem "Godzina przebudzenia nadeszła!"
+                            $ eminem_sp_now -= 8
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/sluz.mp3"
                                 hide slime
@@ -15316,7 +15423,7 @@ label fight171:
                     urban "No tak było, nie zmyślam"
                     jump items_fight175
 
-                "{b}Zatrzepocz Uszami{/b}":
+                "{b}Zatrzepocz Uszami - (10 SP){/b}" if urban_sp_now >= 10:
                     if urban_wybrany == 1:
                         show uszy zorder 15 at head_sojusznik1  
 
@@ -15327,6 +15434,7 @@ label fight171:
                         show uszy zorder 15 at head_sojusznik3 
                     
                     urban "Hhyyy pfff hhyyy pffff hhyyy"
+                    $ urban_sp_now -= 10
                     play sound "audio/sfx/uszy.mp3" 
 
                     $ kostka = renpy.random.randint(1, 10)
@@ -16039,7 +16147,7 @@ label fight171:
                     zyd "Chcą, abyś to my żydzi się asymilowali i przechodzili na ich religie!"
                     jump items_fight175
 
-                "{b}Sprzedaj Pager{/b}" if pager_boom == 0 and delta_pager == 0 and delta_hp_now >= 1 or pager_boom == 0 and gamma_pager == 0 and gamma_hp_now >= 1 or pager_boom == 0 and epsilon_pager == 0 and epsilon_hp_now >= 1:
+                "{b}Sprzedaj Pager - (6 SP){/b}" if zyd_sp_now >= 6 and delta_pager == 0 and delta_hp_now >= 1 or zyd_sp_now >= 6 and gamma_pager == 0 and gamma_hp_now >= 1 or zyd_sp_now >= 6 and epsilon_pager == 0 and epsilon_hp_now >= 1:
                     if zyd_wybrany == 1:
                         show pager zorder 15 at weapon_sojusznik1  
 
@@ -16054,6 +16162,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_hp_now >= 1 and delta_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ delta_pager += 1
@@ -16065,6 +16174,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_hp_now >= 1 and gamma_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ gamma_pager += 1
@@ -16076,6 +16186,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_hp_now >= 1 and epsilon_pager == 0:
                             zyd "Szalom alejchem, tanio pagery sprzedaję!"
+                            $ zyd_sp_now -= 6
                             play sound "audio/sfx/kupno.mp3" 
                             hide pager
                             $ epsilon_pager += 1
@@ -16085,8 +16196,7 @@ label fight171:
 
                             jump faza_fight174
                 
-                "{b}Wysadź Pagery{/b}" if delta_pager >= 1 and pager_boom == 0 or gamma_pager >= 1 and pager_boom == 0 or epsilon_pager >= 1 and pager_boom == 0:
-                    $ pager_boom += 1
+                "{b}Wysadź Pagery - (6 SP){/b}" if delta_pager >= 1 and zyd_sp_now >= 6 or gamma_pager >= 1 and zyd_sp_now >= 6 or epsilon_pager >= 1 and zyd_sp_now >= 6:
                     if zyd_wybrany == 1:
                         show red_button zorder 15 at weapon_sojusznik1  
 
@@ -16097,12 +16207,16 @@ label fight171:
                         show red_button zorder 15 at weapon_sojusznik3 
 
                     zyd "Posmakujcie gniewu WIELKIEGO IZRAELA!!!"
+                    $ zyd_sp_now -= 6
                     play sound "audio/sfx/boom.mp3" 
 
                     if delta_pager == 1 and gamma_pager == 1 and epsilon_pager == 1:
                         $ delta_hp_now -= 10
                         $ epsilon_hp_now -= 10
                         $ gamma_hp_now -= 10
+                        $ delta_pager = 0
+                        $ gamma_pager = 0
+                        $ epsilon_pager = 0
                         show eksplozja1 zorder 16 at bok_wrog1
                         show eksplozja3 zorder 16 at bok_wrog2
                         show eksplozja2 zorder 16 at bok_wrog3
@@ -16112,6 +16226,8 @@ label fight171:
                         if delta_pager == 1 and gamma_pager == 1:
                             $ delta_hp_now -= 10
                             $ gamma_hp_now -= 10
+                            $ delta_pager = 0
+                            $ gamma_pager = 0
                             show eksplozja1 zorder 16 at bok_wrog1
                             show eksplozja2 zorder 16 at bok_wrog3
                             "{i}Delta i Gamma w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -16120,6 +16236,8 @@ label fight171:
                             if gamma_pager == 1 and epsilon_pager == 1:
                                 $ epsilon_hp_now -= 10
                                 $ gamma_hp_now -= 10
+                                $ gamma_pager = 0
+                                $ epsilon_pager = 0
                                 show eksplozja3 zorder 16 at bok_wrog2
                                 show eksplozja2 zorder 16 at bok_wrog3
                                 "{i}Gamma i Delta w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -16128,6 +16246,8 @@ label fight171:
                                 if delta_pager == 1 and epsilon_pager == 1:
                                     $ delta_hp_now -= 10
                                     $ epsilon_hp_now -= 10
+                                    $ delta_pager = 0
+                                    $ epsilon_pager = 0
                                     show eksplozja1 zorder 16 at bok_wrog1
                                     show eksplozja3 zorder 16 at bok_wrog2
                                     "{i}Delta i Epsilon w wyniku ekspolzji Pagerów stracili po 10HP{/i}"
@@ -16135,18 +16255,21 @@ label fight171:
                                 else:
                                     if delta_pager == 1:
                                         $ delta_hp_now -= 10
+                                        $ delta_pager = 0
                                         show eksplozja1 zorder 16 at bok_wrog1
                                         "{i}Delta w wyniku ekspolzji Pageru stracił 10HP{/i}"
                                             
                                     else:
                                         if gamma_pager == 1:
                                             $ gamma_hp_now -= 10
+                                            $ gamma_pager = 0
                                             show eksplozja2 zorder 16 at bok_wrog3
                                             "{i}Gamma w wyniku ekspolzji Pageru stracił 10HP{/i}"
 
                                         else:
                                             if epsilon_pager == 1:
                                                 $ epsilon_hp_now -= 10
+                                                $ epsilon_pager = 0
                                                 show eksplozja3 zorder 16 at bok_wrog2
                                                 "{i}Epsilon w wyniku ekspolzji Pageru stracił 10HP{/i}"
                     
@@ -16816,7 +16939,7 @@ label fight171:
                     kazuma "Jestem zwolennikiem prawdziwej równości płci"
                     jump items_fight175
 
-                "{b}Steal{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0:
+                "{b}Steal - (8 SP){/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 and kazuma_sp_now >= 8 or gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 and kazuma_sp_now >= 8 or epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 and kazuma_sp_now >= 8 or epsilon_sex == 1 and epsilon_hp_now > 0 and kazuma_sp_now >= 8 or gamma_sex == 1 and gamma_hp_now > 0 and kazuma_sp_now >= 8 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1 and kazuma_sp_now >= 8:
                     if kazuma_wybrany == 1:
                         show chwyta zorder 16 at weapon_sojusznik1  
 
@@ -16831,6 +16954,7 @@ label fight171:
 
                         "{b}Delta{/b}" if delta_sex == 0 and delta_weapon >= 1 and delta_hp_now > 0 or delta_sex == 1 and delta_hp_now > 0 and delta_majty == 1:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if delta_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Delta obronił się przed umiejętnością “Steal“{/i}"
@@ -16907,6 +17031,7 @@ label fight171:
 
                         "{b}Gamma{/b}" if gamma_sex == 0 and gamma_weapon >= 1 and gamma_hp_now > 0 or gamma_sex == 1 and gamma_hp_now > 0:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if gamma_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Gamma obronił się przed umiejętnością “Steal“{/i}"
@@ -17000,6 +17125,7 @@ label fight171:
 
                         "{b}Epsilon{/b}" if epsilon_sex == 0 and epsilon_weapon >= 1 and epsilon_hp_now > 0 or epsilon_sex == 1 and epsilon_hp_now > 0:
                             kazuma "Steal!"
+                            $ kazuma_sp_now -= 8
                             if epsilon_obrona >= 1:
                                 play sound "audio/sfx/stel.mp3"
                                 "{i}Epsilon obronił się przed umiejętnością “Steal“{/i}"

@@ -817,12 +817,12 @@ label fight_stats:
     default kazuma_hp = 15
     default tarczownik_hp = 20
 
-    default luszcz_sp = 30
-    default eminem_sp = 25
-    default urban_sp = 30
-    default zyd_sp = 20
-    default kazuma_sp = 20
-    default tarczownik_sp = 25
+    default luszcz_sp = 50
+    default eminem_sp = 40
+    default urban_sp = 50
+    default zyd_sp = 30
+    default kazuma_sp = 30
+    default tarczownik_sp = 40
 
     default luszcz_sp_now = luszcz_sp
     default eminem_sp_now = eminem_sp
@@ -1256,7 +1256,7 @@ label start:
 
         $ renpy.pause(0.5)
 
-        scene bg rynek
+        scene bg run1
         if timer >= 360 and timer <= 1200 or timer >= 1800 and timer <= 2640 or timer >= 3240 and timer <= 4080 or timer >= 4680 and timer <= 5520 or timer >= 6120 and timer <= 6960 or timer >= 7560 and timer <= 8400 or timer >= 9000 and timer <= 9840 or timer >= 10440 and timer <= 11280:
             play music "audio/music/pole.mp3"
         else:
@@ -1278,12 +1278,12 @@ label start:
                     luszcz "{i}Muszę dopaść drania!{/i}"
                     jump bieg1
                     
-                '{b}Idź naprzód{/b}':
-                    luszcz "{i}Ziomo pobiegł prosto!{/i}"
-
-                '{b}Idź w prawo{/b}':
+                '{b}Idź prosto{/b}':
                     luszcz "{i}Muszę dopaść drania!{/i}"
                     jump bieg1
+                    
+                '{b}Idź w prawo{/b}':
+                    luszcz "{i}Ziomo pobiegł w prawo!{/i}"
 
 
         show luszcz neutral:
@@ -1291,7 +1291,7 @@ label start:
 
         $ renpy.pause(0.5)
 
-        scene bg rynek2
+        scene bg run2
         $ timer += 5
 
         show luszcz neutral at center:
@@ -1308,7 +1308,7 @@ label start:
                 '{b}Idź w lewo{/b}':
                     luszcz "{i}Ziomo pobiegł w lewo!{/i}"
                     
-                '{b}Idź naprzód{/b}':
+                '{b}Idź prosto{/b}':
                     luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
                     jump bieg2
 
@@ -1316,15 +1316,16 @@ label start:
                     luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
                     jump bieg2
         
-        show luszcz neutral:
+        show luszcz neutral right:
             linear 0.5 xalign -0.5
 
         $ renpy.pause(0.5)
 
-        scene bg alejka2
+        scene bg run3
         $ timer += 5
 
-        show luszcz neutral at center:
+        
+        show luszcz neutral right at center:
             xalign 1.5
             yalign 1.0
             easeout 0.6 xalign 0.5
@@ -1332,6 +1333,92 @@ label start:
         $ renpy.pause(0.5)
 
         label bieg3:
+            menu:
+                "{b}Gdzie teraz?{/b}"
+
+                '{b}Idź w lewo{/b}':
+                    luszcz "{i}Ziomo pobiegł w lewo!{/i}"
+                    
+                '{b}Idź prosto{/b}':
+                    luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
+                    jump bieg3
+
+                '{b}Idź w prawo{/b}':
+                    luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
+                    jump bieg3
+        
+        show luszcz neutral right:
+            linear 0.5 xalign -0.5
+
+        $ renpy.pause(0.5)
+
+        scene bg run4
+        $ timer += 5
+
+        show luszcz neutral right at center:
+            xalign 1.5
+            yalign 1.0
+            easeout 0.6 xalign 0.5
+
+        $ renpy.pause(0.5)
+
+        label bieg4:
+            menu:
+                "{b}Gdzie teraz?{/b}"
+                    
+                '{b}Idź prosto{/b}':
+                    luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
+                    jump bieg4
+
+                '{b}Idź w prawo{/b}':
+                    luszcz "{i}Ziomo pobiegł w prawo!{/i}"
+        
+        show luszcz neutral:
+            linear 0.5 xalign 1.5
+
+        $ renpy.pause(0.5)
+
+        scene bg run5
+        $ timer += 5
+
+        show luszcz neutral at center:
+            xalign -0.5
+            yalign 1.0
+            easeout 0.6 xalign 0.5
+
+        $ renpy.pause(0.5)
+
+        label bieg5:
+            menu:
+                "{b}Gdzie teraz?{/b}"
+
+                '{b}Idź w lewo{/b}':
+                    luszcz "{i}Ziomo pobiegł w lewo!{/i}"
+                    
+                '{b}Idź prosto{/b}':
+                    luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
+                    jump bieg5
+
+                '{b}Idź w prawo{/b}':
+                    luszcz "{i}Potrzebuję swojej satysfakcji!{/i}"
+                    jump bieg5
+        
+        show luszcz neutral right:
+            linear 0.5 xalign -0.5
+
+        $ renpy.pause(0.5)
+
+        scene bg alejka2
+        $ timer += 5
+
+        show luszcz neutral right at center:
+            xalign 1.5
+            yalign 1.0
+            easeout 0.6 xalign 0.5
+
+        $ renpy.pause(0.5)
+
+        label bieg6:
             menu:
                 "{b}Co zrobić?{/b}"
 
@@ -1343,7 +1430,7 @@ label start:
                     
                 "{b}Może lepiej nie{/b}":
                     luszcz "{i}Nie ma tak że nie{/i}"
-                    jump bieg3
+                    jump bieg6
 
         show eminem cien at slightright
 
