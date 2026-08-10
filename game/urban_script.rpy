@@ -196,6 +196,7 @@ label urban:
             if urban_klata == 3:
                 $ urban_klata = 1
                 $ klata_liczba += 1
+                $ urban_hp -= 7
             if ring == 3:
                 $ ring = 1
             if vr == 3:
@@ -206,6 +207,9 @@ label urban:
                 $ ziemia = 1
             if zloty == 3:
                 $ zloty = 1
+            if nogi == 3:
+                $ nogi = 1
+                $ urban_hp -= 15
             
             if urban_przepychaczka == 3:
                 $ urban_min_attack -= 2
@@ -533,6 +537,7 @@ label urban:
                         if urban_klata == 3:
                             $ urban_klata = 1
                             $ klata_liczba += 1
+                            $ urban_hp -= 7
                         if ring == 3:
                             $ ring = 1
                         if vr == 3:
@@ -543,6 +548,9 @@ label urban:
                             $ ziemia = 1
                         if zloty == 3:
                             $ zloty = 1
+                        if nogi == 3:
+                            $ nogi = 1
+                            $ urban_hp -= 15
                         
                         if urban_przepychaczka == 3:
                             $ urban_min_attack -= 2

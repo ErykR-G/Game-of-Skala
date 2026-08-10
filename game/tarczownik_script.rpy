@@ -499,6 +499,7 @@ label tarczownik:
                     if tarczownik_klata == 6:
                         $ tarczownik_klata = 1
                         $ klata_liczba += 1
+                        $ tarczownik_hp -= 7
                     if ring == 6:
                         $ ring = 1
                     if vr == 6:
@@ -509,7 +510,10 @@ label tarczownik:
                         $ ziemia = 1
                     if zloty == 6:
                         $ zloty = 1
-                    
+                    if nogi == 6:
+                        $ nogi = 1
+                        $ tarczownik_hp -= 15
+
                     if tarczownik_przepychaczka == 6:
                         $ tarczownik_min_attack -= 2
                         $ tarczownik_max_attack -= 2

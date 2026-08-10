@@ -163,6 +163,7 @@ label kazuma:
         if kazuma_klata == 5:
             $ kazuma_klata = 1
             $ klata_liczba += 1
+            $ kazuma_hp -= 7
         if ring == 5:
             $ ring = 1
         if vr == 5:
@@ -173,6 +174,9 @@ label kazuma:
             $ ziemia = 1
         if zloty == 5:
             $ zloty = 1
+        if nogi == 5:
+            $ nogi = 1
+            $ kazuma_hp -= 15
         
         if kazuma_przepychaczka == 5:
             $ kazuma_min_attack -= 2
@@ -1307,6 +1311,7 @@ label kazuma3:
                         if kazuma_klata == 5:
                             $ kazuma_klata = 1
                             $ klata_liczba += 1
+                            $ kazuma_hp -= 7
                         if ring == 5:
                             $ ring = 1
                         if vr == 5:
@@ -1317,6 +1322,9 @@ label kazuma3:
                             $ ziemia = 1
                         if zloty == 5:
                             $ zloty = 1
+                        if nogi == 5:
+                            $ nogi = 1
+                            $ kazuma_hp -= 15
                         
                         if kazuma_przepychaczka == 5:
                             $ kazuma_min_attack -= 2

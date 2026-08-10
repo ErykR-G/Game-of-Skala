@@ -4921,37 +4921,37 @@ label menu_lokacji:
                                                 $ luszcz_klata = 1
                                                 $ luszcz_nic = 2
                                                 $ klata_liczba += 1
-                                                $ luszcz_hp -= 5
+                                                $ luszcz_hp -= 7
 
                                             if urban_klata == 3:
                                                 $ urban_klata = 1
                                                 $ urban_nic = 3
                                                 $ klata_liczba += 1
-                                                $ urban_hp -= 5
+                                                $ urban_hp -= 7
 
                                             if zyd_klata == 4:
                                                 $ zyd_klata = 1
                                                 $ zyd_nic = 4
                                                 $ klata_liczba += 1
-                                                $ zyd_hp -= 5
+                                                $ zyd_hp -= 7
 
                                             if kazuma_klata == 5:
                                                 $ kazuma_klata = 1
                                                 $ kazuma_nic = 5
                                                 $ klata_liczba += 1
-                                                $ kazuma_hp -= 5
+                                                $ kazuma_hp -= 7
                                             
                                             if tarczownik_klata == 6:
                                                 $ tarczownik_klata = 1
                                                 $ tarczownik_nic = 6
                                                 $ klata_liczba += 1
-                                                $ tarczownik_hp -= 5
+                                                $ tarczownik_hp -= 7
                                             
                                             if eminem_klata == 7:
                                                 $ eminem_klata = 1
                                                 $ eminem_nic = 7
                                                 $ klata_liczba += 1
-                                                $ eminem_hp -= 5
+                                                $ eminem_hp -= 7
 
                                             $ chinczyk_klata = 6
                                             $ klata_liczba = 0
@@ -5138,32 +5138,32 @@ label menu_lokacji:
                                             if nogi == 2:
                                                 $ nogi = 1
                                                 $ luszcz_nic = 2
-                                                $ luszcz_hp -= 10
+                                                $ luszcz_hp -= 15
 
                                             if nogi == 3:
                                                 $ nogi = 1
                                                 $ urban_nic = 3
-                                                $ urban_hp -= 10
+                                                $ urban_hp -= 15
 
                                             if nogi == 4:
                                                 $ nogi = 1
                                                 $ zyd_nic = 3
-                                                $ zyd_hp -= 10
+                                                $ zyd_hp -= 15
 
                                             if nogi == 5:
                                                 $ nogi = 1
                                                 $ kazuma_nic = 5
-                                                $ kazuma_hp -= 10
+                                                $ kazuma_hp -= 15
                                             
                                             if nogi == 6:
                                                 $ nogi = 1
                                                 $ tarczownik_nic = 6
-                                                $ tarczownik_hp -= 10
+                                                $ tarczownik_hp -= 15
                                             
                                             if nogi == 7:
                                                 $ nogi = 1
                                                 $ eminem_nic = 7
-                                                $ eminem_hp -= 10
+                                                $ eminem_hp -= 15
 
                                             $ nogi = 0
                                             "{i}*Długie Nogi zostały usunięte z ekwipunku*{/i}"
@@ -5913,7 +5913,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev10
                             
-                            "{b}Kebab Łagodny (+4HP + 2HP i 3 SP FOR 3 TURNS){/b}":
+                            "{b}Kebab Łagodny (+4HP + 2HP i 2 SP FOR 3 TURNS){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -5988,7 +5988,7 @@ label menu_lokacji:
                         menu:
                             "{b}Wybierz item:{/b}"
 
-                            "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK){/b}":
+                            "{b}Dr Pepper (+6HP i MAX DMG NEXT ATTACK){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -6053,7 +6053,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev11
 
-                            "{b}Jabole (+6HP){/b}":
+                            "{b}Jabole (+8HP){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -6118,7 +6118,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev11
                             
-                            "{b}Royal Cola (+9HP){/b}":
+                            "{b}Royal Cola (+8 SP){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -6183,7 +6183,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev11
 
-                            "{b}Warzywo skalne (+(4-7)HP){/b}":
+                            "{b}Warzywo skalne (+(6-11)HP){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -6248,7 +6248,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev11
 
-                            "{b}Kiść bananów (+3HP FOR ALL){/b}":
+                            "{b}Kiść bananów (+5HP FOR ALL){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 
@@ -6313,7 +6313,7 @@ label menu_lokacji:
                                     "{b}Powrót{/b}":         
                                         jump dev11
                             
-                            "{b}Ostra Skałka (5-8 DMG){/b}":
+                            "{b}Ostra Skałka (7-12 DMG){/b}":
                                 menu:
                                     "{b}Ile?{/b}"
 

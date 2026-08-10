@@ -1791,152 +1791,335 @@ label fight01:
             jump przegranko_fight01
 
         if luszcz_lagodny == 1:
-            if luszcz_hp_now + 1 < luszcz_hp:
-                $ luszcz_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if luszcz_hp_now + 2 <= luszcz_hp:
+                $ luszcz_hp_now += 2
+            else:
+                if luszcz_hp_now + 1 <= luszcz_hp:
+                    $ luszcz_hp_now += 1
+
+            if luszcz_sp_now + 2 <= luszcz_sp:
+                $ luszcz_sp_now += 2
+            else:
+                if luszcz_sp_now + 1 <= luszcz_sp:
+                    $ luszcz_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Łuszcz odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
+
 
             $ luszcz_lagodny -= 1
             hide plamka1
 
         if luszcz_lagodny == 2:
-            if luszcz_hp_now + 1 < luszcz_hp:
-                $ luszcz_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if luszcz_hp_now + 2 <= luszcz_hp:
+                $ luszcz_hp_now += 2
+            else:
+                if luszcz_hp_now + 1 <= luszcz_hp:
+                    $ luszcz_hp_now += 1
+
+            if luszcz_sp_now + 2 <= luszcz_sp:
+                $ luszcz_sp_now += 2
+            else:
+                if luszcz_sp_now + 1 <= luszcz_sp:
+                    $ luszcz_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Łuszcz odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
+
 
             $ luszcz_lagodny -= 1
 
         if luszcz_lagodny == 3:
-            if luszcz_hp_now + 1 < luszcz_hp:
-                $ luszcz_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Łuszcz odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if luszcz_hp_now + 2 <= luszcz_hp:
+                $ luszcz_hp_now += 2
+            else:
+                if luszcz_hp_now + 1 <= luszcz_hp:
+                    $ luszcz_hp_now += 1
+
+            if luszcz_sp_now + 2 <= luszcz_sp:
+                $ luszcz_sp_now += 2
+            else:
+                if luszcz_sp_now + 1 <= luszcz_sp:
+                    $ luszcz_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Łuszcz odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
+
 
             $ luszcz_lagodny -= 1
 
         if eminem_lagodny == 1:
-            if eminem_hp_now + 1 < eminem_hp:
-                $ eminem_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if eminem_hp_now + 2 <= eminem_hp:
+                $ eminem_hp_now += 2
+            else:
+                if eminem_hp_now + 1 <= eminem_hp:
+                    $ eminem_hp_now += 1
+
+            if eminem_sp_now + 2 <= eminem_sp:
+                $ eminem_sp_now += 2
+            else:
+                if eminem_sp_now + 1 <= eminem_sp:
+                    $ eminem_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Shadow odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ eminem_lagodny -= 1
             hide plamka2
 
         if eminem_lagodny == 2:
-            if eminem_hp_now + 1 < eminem_hp:
-                $ eminem_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if eminem_hp_now + 2 <= eminem_hp:
+                $ eminem_hp_now += 2
+            else:
+                if eminem_hp_now + 1 <= eminem_hp:
+                    $ eminem_hp_now += 1
+
+            if eminem_sp_now + 2 <= eminem_sp:
+                $ eminem_sp_now += 2
+            else:
+                if eminem_sp_now + 1 <= eminem_sp:
+                    $ eminem_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Shadow odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ eminem_lagodny -= 1
 
         if eminem_lagodny == 3:
-            if eminem_hp_now + 1 < eminem_hp:
-                $ eminem_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Shadow odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if eminem_hp_now + 2 <= eminem_hp:
+                $ eminem_hp_now += 2
+            else:
+                if eminem_hp_now + 1 <= eminem_hp:
+                    $ eminem_hp_now += 1
+
+            if eminem_sp_now + 2 <= eminem_sp:
+                $ eminem_sp_now += 2
+            else:
+                if eminem_sp_now + 1 <= eminem_sp:
+                    $ eminem_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Shadow odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ eminem_lagodny -= 1
         
         if urban_lagodny == 1:
-            if urban_hp_now + 1 < urban_hp:
-                $ urban_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if urban_hp_now + 2 <= urban_hp:
+                $ urban_hp_now += 2
+            else:
+                if urban_hp_now + 1 <= urban_hp:
+                    $ urban_hp_now += 1
+
+            if urban_sp_now + 2 <= urban_sp:
+                $ urban_sp_now += 2
+            else:
+                if urban_sp_now + 1 <= urban_sp:
+                    $ urban_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Jerzy Urban odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ urban_lagodny -= 1
             hide plamka3
 
         if urban_lagodny == 2:
-            if urban_hp_now + 1 < urban_hp:
-                $ urban_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if urban_hp_now + 2 <= urban_hp:
+                $ urban_hp_now += 2
+            else:
+                if urban_hp_now + 1 <= urban_hp:
+                    $ urban_hp_now += 1
+
+            if urban_sp_now + 2 <= urban_sp:
+                $ urban_sp_now += 2
+            else:
+                if urban_sp_now + 1 <= urban_sp:
+                    $ urban_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Jerzy Urban odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ urban_lagodny -= 1
 
         if urban_lagodny == 3:
-            if urban_hp_now + 1 < urban_hp:
-                $ urban_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Jerzy Urban odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if urban_hp_now + 2 <= urban_hp:
+                $ urban_hp_now += 2
+            else:
+                if urban_hp_now + 1 <= urban_hp:
+                    $ urban_hp_now += 1
+
+            if urban_sp_now + 2 <= urban_sp:
+                $ urban_sp_now += 2
+            else:
+                if urban_sp_now + 1 <= urban_sp:
+                    $ urban_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Jerzy Urban odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ urban_lagodny -= 1
         
         if zyd_lagodny == 1:
-            if zyd_hp_now + 1 < zyd_hp:
-                $ zyd_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if zyd_hp_now + 2 <= zyd_hp:
+                $ zyd_hp_now += 2
+            else:
+                if zyd_hp_now + 1 <= zyd_hp:
+                    $ zyd_hp_now += 1
+
+            if zyd_sp_now + 2 <= zyd_sp:
+                $ zyd_sp_now += 2
+            else:
+                if zyd_sp_now + 1 <= zyd_sp:
+                    $ zyd_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Żyd odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ zyd_lagodny -= 1
             hide plamka4
 
         if zyd_lagodny == 2:
-            if zyd_hp_now + 1 < zyd_hp:
-                $ zyd_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if zyd_hp_now + 2 <= zyd_hp:
+                $ zyd_hp_now += 2
+            else:
+                if zyd_hp_now + 1 <= zyd_hp:
+                    $ zyd_hp_now += 1
+
+            if zyd_sp_now + 2 <= zyd_sp:
+                $ zyd_sp_now += 2
+            else:
+                if zyd_sp_now + 1 <= zyd_sp:
+                    $ zyd_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Żyd odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ zyd_lagodny -= 1
 
         if zyd_lagodny == 3:
-            if zyd_hp_now + 1 < zyd_hp:
-                $ zyd_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Żyd odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if zyd_hp_now + 2 <= zyd_hp:
+                $ zyd_hp_now += 2
+            else:
+                if zyd_hp_now + 1 <= zyd_hp:
+                    $ zyd_hp_now += 1
+
+            if zyd_sp_now + 2 <= zyd_sp:
+                $ zyd_sp_now += 2
+            else:
+                if zyd_sp_now + 1 <= zyd_sp:
+                    $ zyd_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Żyd odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ zyd_lagodny -= 1
     
         if kazuma_lagodny == 1:
-            if kazuma_hp_now + 1 < kazuma_hp:
-                $ kazuma_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if kazuma_hp_now + 2 <= kazuma_hp:
+                $ kazuma_hp_now += 2
+            else:
+                if kazuma_hp_now + 1 <= kazuma_hp:
+                    $ kazuma_hp_now += 1
+
+            if kazuma_sp_now + 2 <= kazuma_sp:
+                $ kazuma_sp_now += 2
+            else:
+                if kazuma_sp_now + 1 <= kazuma_sp:
+                    $ kazuma_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Kazuma odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ kazuma_lagodny -= 1
             hide plamka5
 
         if kazuma_lagodny == 2:
-            if kazuma_hp_now + 1 < kazuma_hp:
-                $ kazuma_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if kazuma_hp_now + 2 <= kazuma_hp:
+                $ kazuma_hp_now += 2
+            else:
+                if kazuma_hp_now + 1 <= kazuma_hp:
+                    $ kazuma_hp_now += 1
+
+            if kazuma_sp_now + 2 <= kazuma_sp:
+                $ kazuma_sp_now += 2
+            else:
+                if kazuma_sp_now + 1 <= kazuma_sp:
+                    $ kazuma_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Kazuma odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ kazuma_lagodny -= 1
 
         if kazuma_lagodny == 3:
-            if kazuma_hp_now + 1 < kazuma_hp:
-                $ kazuma_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Kazuma odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if kazuma_hp_now + 2 <= kazuma_hp:
+                $ kazuma_hp_now += 2
+            else:
+                if kazuma_hp_now + 1 <= kazuma_hp:
+                    $ kazuma_hp_now += 1
+
+            if kazuma_sp_now + 2 <= kazuma_sp:
+                $ kazuma_sp_now += 2
+            else:
+                if kazuma_sp_now + 1 <= kazuma_sp:
+                    $ kazuma_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Kazuma odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ kazuma_lagodny -= 1
         
         if tarczownik_lagodny == 1:
-            if tarczownik_hp_now + 1 >= tarczownik_hp:
-                $ tarczownik_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if tarczownik_hp_now + 2 <= tarczownik_hp:
+                $ tarczownik_hp_now += 2
+            else:
+                if tarczownik_hp_now + 1 <= tarczownik_hp:
+                    $ tarczownik_hp_now += 1
+
+            if tarczownik_sp_now + 2 <= tarczownik_sp:
+                $ tarczownik_sp_now += 2
+            else:
+                if tarczownik_sp_now + 1 <= tarczownik_sp:
+                    $ tarczownik_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Naofumi odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ tarczownik_lagodny -= 1
             hide plamka6
 
         if tarczownik_lagodny == 2:
-            if tarczownik_hp_now + 1 < tarczownik_hp:
-                $ tarczownik_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if tarczownik_hp_now + 2 <= tarczownik_hp:
+                $ tarczownik_hp_now += 2
+            else:
+                if tarczownik_hp_now + 1 <= tarczownik_hp:
+                    $ tarczownik_hp_now += 1
+
+            if tarczownik_sp_now + 2 <= tarczownik_sp:
+                $ tarczownik_sp_now += 2
+            else:
+                if tarczownik_sp_now + 1 <= tarczownik_sp:
+                    $ tarczownik_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Naofumi odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ tarczownik_lagodny -= 1
 
         if tarczownik_lagodny == 3:
-            if tarczownik_hp_now + 1 < tarczownik_hp:
-                $ tarczownik_hp_now += 1
-                play sound "audio/sfx/heal.mp3"
-                "{i}Naofumi odzyskuje 1 punkt życia dzięki zjedzeniu łagodnego kebaba{/i}"
+            if tarczownik_hp_now + 2 <= tarczownik_hp:
+                $ tarczownik_hp_now += 2
+            else:
+                if tarczownik_hp_now + 1 <= tarczownik_hp:
+                    $ tarczownik_hp_now += 1
+
+            if tarczownik_sp_now + 2 <= tarczownik_sp:
+                $ tarczownik_sp_now += 2
+            else:
+                if tarczownik_sp_now + 1 <= tarczownik_sp:
+                    $ tarczownik_sp_now += 1
+            
+            play sound "audio/sfx/heal.mp3"
+            "{i}Naofumi odzyskuje 2 punkty życia i 2 punkty staminy dzięki zjedzeniu łagodnego kebaba{/i}"
 
             $ tarczownik_lagodny -= 1
         

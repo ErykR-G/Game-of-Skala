@@ -169,7 +169,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 2
@@ -269,7 +269,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 2
@@ -371,7 +371,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 4
@@ -469,7 +469,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 3
                                     $ luszcz_max_attack -= 2
@@ -523,7 +523,7 @@ label eq:
                     
                     "{b}Łuszcz: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if luszcz_sojusznik == 1 and ostrza_chaosu == 2:
                         window show
-                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                         window hide
 
                         if gitara == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or stop == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
@@ -677,7 +677,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 3
@@ -775,7 +775,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 1
                                     $ luszcz_max_attack -= 1
@@ -873,7 +873,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ luszcz_min_attack -= 2
                                     $ luszcz_max_attack -= 3
@@ -970,7 +970,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ urban_min_attack -= 0
                                     $ urban_max_attack -= 2
@@ -1070,7 +1070,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ urban_min_attack -= 2
                                     $ urban_max_attack -= 2
@@ -1172,7 +1172,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 4
@@ -1270,7 +1270,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ urban_min_attack -= 3
                                     $ urban_max_attack -= 2
@@ -1324,7 +1324,7 @@ label eq:
                     
                     "{b}Jerzy Urban: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if urban_sojusznik == 1 and ostrza_chaosu == 3:
                         window show
-                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                         window hide
 
                         if fuck == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or stop == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
@@ -1478,7 +1478,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 3
@@ -1576,7 +1576,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ urban_min_attack -= 1
                                     $ urban_max_attack -= 1
@@ -1674,7 +1674,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ urban_min_attack -= 2
                                     $ urban_max_attack -= 3
@@ -1762,7 +1762,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 3
@@ -1862,7 +1862,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 2
                                     $ zyd_max_attack -= 2
@@ -1964,7 +1964,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 4
@@ -2062,7 +2062,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 3
                                     $ zyd_max_attack -= 2
@@ -2116,7 +2116,7 @@ label eq:
                     
                     "{b}Żyd: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if zyd_sojusznik == 1 and ostrza_chaosu == 4:
                         window show
-                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                         window hide
 
                         if chanuka == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or stop == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
@@ -2270,7 +2270,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 3
@@ -2368,7 +2368,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 1
                                     $ zyd_max_attack -= 1
@@ -2466,7 +2466,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ zyd_min_attack -= 2
                                     $ zyd_max_attack -= 3
@@ -2554,7 +2554,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 0
                                     $ kazuma_max_attack -= 6
@@ -2654,7 +2654,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 2
                                     $ kazuma_max_attack -= 2
@@ -2756,7 +2756,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 4
@@ -2854,7 +2854,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 3
                                     $ kazuma_max_attack -= 2
@@ -2908,7 +2908,7 @@ label eq:
                     
                     "{b}Kazuma: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if kazuma_sojusznik == 1 and ostrza_chaosu == 5:
                         window show
-                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                         window hide
 
                         if chunchunmaru == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or stop == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
@@ -3062,7 +3062,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 3
@@ -3160,7 +3160,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 1
                                     $ kazuma_max_attack -= 1
@@ -3258,7 +3258,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ kazuma_min_attack -= 2
                                     $ kazuma_max_attack -= 3
@@ -3346,7 +3346,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 3
@@ -3446,7 +3446,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 2
                                     $ tarczownik_max_attack -= 2
@@ -3548,7 +3548,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 4
@@ -3646,7 +3646,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 3
                                     $ tarczownik_max_attack -= 2
@@ -3700,7 +3700,7 @@ label eq:
                     
                     "{b}Naofumi: Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if tarczownik_sojusznik == 1 and ostrza_chaosu == 6:
                         window show
-                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                        "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                         window hide
 
                         if legendary_shield == 1 or przepychaczka_liczba >= 1 or miecz_swietlny == 1 or stop == 1 or patyk == 1 or bazooka == 1 or miecz3d == 1:
@@ -3854,7 +3854,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 3
@@ -3952,7 +3952,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 1
                                     $ tarczownik_max_attack -= 1
@@ -4050,7 +4050,7 @@ label eq:
                                 
                                 "{b}Ostrza Chaosu (ATK:0-3 FOR ALL){/b}" if ostrza_chaosu == 1:
                                     window show
-                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Poza głównym atakiem zadają wszystkim po 0-1dmg. Gdy przeciwnik jest jeden, +1 min dmg.{/i}"
+                                    "{b}(ATK:0-3 FOR ALL){/b}\n{i}O bogowie, wojna xdxd lol. Zadaje atak obszarowy wszystkim przeciwniką.{/i}"
                                     window hide
                                     $ tarczownik_min_attack -= 2
                                     $ tarczownik_max_attack -= 3
@@ -4101,12 +4101,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ luszcz_nic = 1
                                     $ luszcz_klata = 2
                                     $ klata_liczba -= 1
-                                    $ luszcz_hp += 5
+                                    $ luszcz_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4143,11 +4143,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ luszcz_nic = 1
                                     $ nogi = 2
-                                    $ luszcz_hp += 10
+                                    $ luszcz_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4166,7 +4166,7 @@ label eq:
                     
                     "{b}Łuszcz (HP:[luszcz_hp]): Diamentowa Klata{/b}" if luszcz_sojusznik == 1 and luszcz_klata == 2:
                         window show
-                        "{i}Moje klejnoty. +5HP{/i}"
+                        "{i}Moje klejnoty. +7HP{/i}"
                         window hide
                         if luszcz_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
@@ -4177,7 +4177,7 @@ label eq:
                                     $ luszcz_klata = 1
                                     $ ring = 2
                                     $ klata_liczba += 1
-                                    $ luszcz_hp -= 5
+                                    $ luszcz_hp -= 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -4187,7 +4187,7 @@ label eq:
                                     $ luszcz_klata = 1
                                     $ vr = 2
                                     $ klata_liczba += 1
-                                    $ luszcz_hp -= 5
+                                    $ luszcz_hp -= 7
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -4197,7 +4197,7 @@ label eq:
                                     $ luszcz_klata = 1
                                     $ memy = 2
                                     $ klata_liczba += 1
-                                    $ luszcz_hp -= 5
+                                    $ luszcz_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -4207,18 +4207,18 @@ label eq:
                                     $ luszcz_klata = 1
                                     $ ziemia = 2
                                     $ klata_liczba += 1
-                                    $ luszcz_hp -= 5
+                                    $ luszcz_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ luszcz_klata = 1
                                     $ nogi = 2
                                     $ klata_liczba += 1
-                                    $ luszcz_hp -= 5
-                                    $ luszcz_hp += 10
+                                    $ luszcz_hp -= 7
+                                    $ luszcz_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4228,14 +4228,14 @@ label eq:
                                     $ luszcz_klata = 1
                                     $ zloty = 2
                                     $ klata_liczba += 1
-                                    $ luszcz_hp -= 5
+                                    $ luszcz_hp -= 7
                                     jump zbroja
 
                                 "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
                                     $ luszcz_klata = 1
                                     $ luszcz_nic = 2
                                     $ klata_liczba += 1
-                                    $ luszcz_hp -= 5
+                                    $ luszcz_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -4252,12 +4252,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ luszcz_klata = 2
                                     $ klata_liczba -= 1
-                                    $ luszcz_hp += 5
+                                    $ luszcz_hp += 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -4286,11 +4286,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ nogi = 2
-                                    $ luszcz_hp += 10
+                                    $ luszcz_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4320,12 +4320,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ luszcz_klata = 2
                                     $ klata_liczba -= 1
-                                    $ luszcz_hp += 5
+                                    $ luszcz_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4354,11 +4354,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ nogi = 2
-                                    $ luszcz_hp += 10
+                                    $ luszcz_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4388,12 +4388,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ luszcz_klata = 2
                                     $ klata_liczba -= 1
-                                    $ luszcz_hp += 5
+                                    $ luszcz_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4422,11 +4422,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ nogi = 2
-                                    $ luszcz_hp += 10
+                                    $ luszcz_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4456,12 +4456,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ luszcz_klata = 2
                                     $ klata_liczba -= 1
-                                    $ luszcz_hp += 5
+                                    $ luszcz_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4490,11 +4490,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ nogi = 2
-                                    $ luszcz_hp += 10
+                                    $ luszcz_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4518,19 +4518,19 @@ label eq:
                     
                     "{b}Łuszcz (HP:[luszcz_hp]): Długie Nogi{/b}" if luszcz_sojusznik == 1 and nogi == 2:
                         window show
-                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                         window hide
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or luszcz_nic == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ nogi = 1
                                     $ luszcz_klata = 2
                                     $ klata_liczba -= 1
-                                    $ luszcz_hp -= 10
-                                    $ luszcz_hp += 5
+                                    $ luszcz_hp -= 15
+                                    $ luszcz_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4539,7 +4539,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ring = 2
-                                    $ luszcz_hp -= 10
+                                    $ luszcz_hp -= 15
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -4548,7 +4548,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ vr = 2
-                                    $ luszcz_hp -= 10
+                                    $ luszcz_hp -= 15
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -4557,7 +4557,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ memy = 2
-                                    $ luszcz_hp -= 10
+                                    $ luszcz_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -4566,7 +4566,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ziemia = 2
-                                    $ luszcz_hp -= 10
+                                    $ luszcz_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4575,13 +4575,13 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ zloty = 2
-                                    $ luszcz_hp -= 10
+                                    $ luszcz_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
                                     $ nogi = 1
                                     $ luszcz_nic = 2
-                                    $ luszcz_hp -= 10
+                                    $ luszcz_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -4598,12 +4598,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ luszcz_klata = 2
                                     $ klata_liczba -= 1
-                                    $ luszcz_hp += 5
+                                    $ luszcz_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4640,11 +4640,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ nogi = 2
-                                    $ luszcz_hp += 10
+                                    $ luszcz_hp += 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if luszcz_nic == 1:
@@ -4669,12 +4669,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ eminem_nic = 1
                                     $ eminem_klata = 7
                                     $ klata_liczba -= 1
-                                    $ eminem_hp += 5
+                                    $ eminem_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4711,11 +4711,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ eminem_nic = 1
                                     $ nogi = 7
-                                    $ eminem_hp += 10
+                                    $ eminem_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4734,7 +4734,7 @@ label eq:
                     
                     "{b}Shadow (HP:[eminem_hp]): Diamentowa Klata{/b}" if eminem_sojusznik == 1 and eminem_klata == 7:
                         window show
-                        "{i}Moje klejnoty. +5HP{/i}"
+                        "{i}Moje klejnoty. +7HP{/i}"
                         window hide
                         if eminem_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
@@ -4745,7 +4745,7 @@ label eq:
                                     $ eminem_klata = 1
                                     $ ring = 7
                                     $ klata_liczba += 1
-                                    $ eminem_hp -= 5
+                                    $ eminem_hp -= 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -4755,7 +4755,7 @@ label eq:
                                     $ eminem_klata = 1
                                     $ vr = 7
                                     $ klata_liczba += 1
-                                    $ eminem_hp -= 5
+                                    $ eminem_hp -= 7
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -4765,7 +4765,7 @@ label eq:
                                     $ eminem_klata = 1
                                     $ memy = 7
                                     $ klata_liczba += 1
-                                    $ eminem_hp -= 5
+                                    $ eminem_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -4775,18 +4775,18 @@ label eq:
                                     $ eminem_klata = 1
                                     $ ziemia = 7
                                     $ klata_liczba += 1
-                                    $ eminem_hp -= 5
+                                    $ eminem_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ eminem_klata = 1
                                     $ nogi = 7
                                     $ klata_liczba += 1
-                                    $ eminem_hp -= 5
-                                    $ eminem_hp += 10
+                                    $ eminem_hp -= 7
+                                    $ eminem_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4796,14 +4796,14 @@ label eq:
                                     $ eminem_klata = 1
                                     $ zloty = 7
                                     $ klata_liczba += 1
-                                    $ eminem_hp -= 5
+                                    $ eminem_hp -= 7
                                     jump zbroja
 
                                 "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
                                     $ eminem_klata = 1
                                     $ eminem_nic = 7
                                     $ klata_liczba += 1
-                                    $ eminem_hp -= 5
+                                    $ eminem_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -4820,12 +4820,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ eminem_klata = 7
                                     $ klata_liczba -= 1
-                                    $ eminem_hp += 5
+                                    $ eminem_hp += 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -4854,11 +4854,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ nogi = 7
-                                    $ eminem_hp += 10
+                                    $ eminem_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4888,12 +4888,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ eminem_klata = 7
                                     $ klata_liczba -= 1
-                                    $ eminem_hp += 5
+                                    $ eminem_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4922,11 +4922,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ nogi = 7
-                                    $ eminem_hp += 10
+                                    $ eminem_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -4956,12 +4956,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ eminem_klata = 7
                                     $ klata_liczba -= 1
-                                    $ eminem_hp += 5
+                                    $ eminem_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -4990,11 +4990,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ nogi = 7
-                                    $ eminem_hp += 10
+                                    $ eminem_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5024,12 +5024,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ eminem_klata = 7
                                     $ klata_liczba -= 1
-                                    $ eminem_hp += 5
+                                    $ eminem_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5058,11 +5058,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ nogi = 7
-                                    $ eminem_hp += 10
+                                    $ eminem_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5086,19 +5086,19 @@ label eq:
                     
                     "{b}Shadow (HP:[eminem_hp]): Długie Nogi{/b}" if eminem_sojusznik == 1 and nogi == 7:
                         window show
-                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                         window hide
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or eminem_nic == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ nogi = 1
                                     $ eminem_klata = 7
                                     $ klata_liczba -= 1
-                                    $ eminem_hp -= 10
-                                    $ eminem_hp += 5
+                                    $ eminem_hp -= 15
+                                    $ eminem_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5107,7 +5107,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ring = 7
-                                    $ eminem_hp -= 10
+                                    $ eminem_hp -= 15
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -5116,7 +5116,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ vr = 7
-                                    $ eminem_hp -= 10
+                                    $ eminem_hp -= 15
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -5125,7 +5125,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ memy = 7
-                                    $ eminem_hp -= 10
+                                    $ eminem_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -5134,7 +5134,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ziemia = 7
-                                    $ eminem_hp -= 10
+                                    $ eminem_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5149,7 +5149,7 @@ label eq:
                                 "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
                                     $ nogi = 1
                                     $ eminem_nic = 7
-                                    $ eminem_hp -= 10
+                                    $ eminem_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -5166,12 +5166,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ eminem_klata = 7
                                     $ klata_liczba -= 1
-                                    $ eminem_hp += 5
+                                    $ eminem_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5208,11 +5208,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ nogi = 7
-                                    $ eminem_hp += 10
+                                    $ eminem_hp += 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if eminem_nic == 1:
@@ -5237,12 +5237,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ urban_nic = 1
                                     $ urban_klata = 3
                                     $ klata_liczba -= 1
-                                    $ urban_hp += 5
+                                    $ urban_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5279,11 +5279,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ urban_nic = 1
                                     $ nogi = 3
-                                    $ urban_hp += 10
+                                    $ urban_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5302,7 +5302,7 @@ label eq:
                     
                     "{b}Jerzy Urban (HP:[urban_hp]): Diamentowa Klata{/b}" if urban_sojusznik == 1 and urban_klata == 3:
                         window show
-                        "{i}Moje klejnoty. +5HP{/i}"
+                        "{i}Moje klejnoty. +7HP{/i}"
                         window hide
                         if urban_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
@@ -5313,7 +5313,7 @@ label eq:
                                     $ urban_klata = 1
                                     $ ring = 3
                                     $ klata_liczba += 1
-                                    $ urban_hp -= 5
+                                    $ urban_hp -= 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -5323,7 +5323,7 @@ label eq:
                                     $ urban_klata = 1
                                     $ vr = 3
                                     $ klata_liczba += 1
-                                    $ urban_hp -= 5
+                                    $ urban_hp -= 7
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -5333,7 +5333,7 @@ label eq:
                                     $ urban_klata = 1
                                     $ memy = 3
                                     $ klata_liczba += 1
-                                    $ urban_hp -= 5
+                                    $ urban_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -5343,18 +5343,18 @@ label eq:
                                     $ urban_klata = 1
                                     $ ziemia = 3
                                     $ klata_liczba += 1
-                                    $ urban_hp -= 5
+                                    $ urban_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ urban_klata = 1
                                     $ nogi = 3
                                     $ klata_liczba += 1
-                                    $ urban_hp -= 5
-                                    $ urban_hp += 10
+                                    $ urban_hp -= 7
+                                    $ urban_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5364,14 +5364,14 @@ label eq:
                                     $ urban_klata = 1
                                     $ zloty = 3
                                     $ klata_liczba += 1
-                                    $ urban_hp -= 5
+                                    $ urban_hp -= 7
                                     jump zbroja
 
                                 "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
                                     $ urban_klata = 1
                                     $ urban_nic = 3
                                     $ klata_liczba += 1
-                                    $ urban_hp -= 5
+                                    $ urban_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -5388,12 +5388,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ urban_klata = 3
                                     $ klata_liczba -= 1
-                                    $ urban_hp += 5
+                                    $ urban_hp += 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -5422,11 +5422,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ nogi = 3
-                                    $ urban_hp += 10
+                                    $ urban_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5456,12 +5456,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ urban_klata = 3
                                     $ klata_liczba -= 1
-                                    $ urban_hp += 5
+                                    $ urban_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5490,11 +5490,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ nogi = 3
-                                    $ urban_hp += 10
+                                    $ urban_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5524,12 +5524,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ urban_klata = 3
                                     $ klata_liczba -= 1
-                                    $ urban_hp += 5
+                                    $ urban_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5558,11 +5558,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ nogi = 3
-                                    $ urban_hp += 10
+                                    $ urban_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5592,12 +5592,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ urban_klata = 3
                                     $ klata_liczba -= 1
-                                    $ urban_hp += 5
+                                    $ urban_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5626,11 +5626,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ nogi = 3
-                                    $ urban_hp += 10
+                                    $ urban_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5654,19 +5654,19 @@ label eq:
                     
                     "{b}Jerzy Urban (HP:[urban_hp]): Długie Nogi{/b}" if urban_sojusznik == 1 and nogi == 3:
                         window show
-                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                         window hide
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or urban_nic == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ nogi = 1
                                     $ urban_klata = 3
                                     $ klata_liczba -= 1
-                                    $ urban_hp -= 10
-                                    $ urban_hp += 5
+                                    $ urban_hp -= 15
+                                    $ urban_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5675,7 +5675,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ring = 3
-                                    $ urban_hp -= 10
+                                    $ urban_hp -= 15
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -5684,7 +5684,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ vr = 3
-                                    $ urban_hp -= 10
+                                    $ urban_hp -= 15
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -5693,7 +5693,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ memy = 3
-                                    $ urban_hp -= 10
+                                    $ urban_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -5702,7 +5702,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ziemia = 3
-                                    $ urban_hp -= 10
+                                    $ urban_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5711,13 +5711,13 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ zloty = 3
-                                    $ urban_hp -= 10
+                                    $ urban_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
                                     $ nogi = 1
                                     $ urban_nic = 3
-                                    $ urban_hp -= 10
+                                    $ urban_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -5734,12 +5734,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ urban_klata = 3
                                     $ klata_liczba -= 1
-                                    $ urban_hp += 5
+                                    $ urban_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5776,11 +5776,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ nogi = 3
-                                    $ urban_hp += 10
+                                    $ urban_hp += 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if urban_nic == 1:
@@ -5806,12 +5806,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ zyd_nic = 1
                                     $ zyd_klata = 4
                                     $ klata_liczba -= 1
-                                    $ zyd_hp += 5
+                                    $ zyd_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -5848,11 +5848,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zyd_nic = 1
                                     $ nogi = 4
-                                    $ zyd_hp += 10
+                                    $ zyd_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5871,7 +5871,7 @@ label eq:
                     
                     "{b}Żyd (HP:[zyd_hp]): Diamentowa Klata{/b}" if zyd_sojusznik == 1 and zyd_klata == 4:
                         window show
-                        "{i}Moje klejnoty. +5HP{/i}"
+                        "{i}Moje klejnoty. +7HP{/i}"
                         window hide
                         if zyd_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
@@ -5882,7 +5882,7 @@ label eq:
                                     $ zyd_klata = 1
                                     $ ring = 4
                                     $ klata_liczba += 1
-                                    $ zyd_hp -= 5
+                                    $ zyd_hp -= 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -5892,7 +5892,7 @@ label eq:
                                     $ zyd_klata = 1
                                     $ vr = 4
                                     $ klata_liczba += 1
-                                    $ zyd_hp -= 5
+                                    $ zyd_hp -= 7
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -5902,7 +5902,7 @@ label eq:
                                     $ zyd_klata = 1
                                     $ memy = 4
                                     $ klata_liczba += 1
-                                    $ zyd_hp -= 5
+                                    $ zyd_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -5912,18 +5912,18 @@ label eq:
                                     $ zyd_klata = 1
                                     $ ziemia = 4
                                     $ klata_liczba += 1
-                                    $ zyd_hp -= 5
+                                    $ zyd_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zyd_klata = 1
                                     $ nogi = 4
                                     $ klata_liczba += 1
-                                    $ zyd_hp -= 5
-                                    $ zyd_hp += 10
+                                    $ zyd_hp -= 7
+                                    $ zyd_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -5933,14 +5933,14 @@ label eq:
                                     $ zyd_klata = 1
                                     $ zloty = 4
                                     $ klata_liczba += 1
-                                    $ zyd_hp -= 5
+                                    $ zyd_hp -= 7
                                     jump zbroja
 
                                 "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
                                     $ zyd_klata = 1
                                     $ zyd_nic = 4
                                     $ klata_liczba += 1
-                                    $ zyd_hp -= 5
+                                    $ zyd_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -5957,12 +5957,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ zyd_klata = 4
                                     $ klata_liczba -= 1
-                                    $ zyd_hp += 5
+                                    $ zyd_hp += 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -5991,11 +5991,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ nogi = 4
-                                    $ zyd_hp += 10
+                                    $ zyd_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6025,12 +6025,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ zyd_klata = 4
                                     $ klata_liczba -= 1
-                                    $ zyd_hp += 5
+                                    $ zyd_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6059,11 +6059,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ nogi = 4
-                                    $ zyd_hp += 10
+                                    $ zyd_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6093,12 +6093,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ zyd_klata = 4
                                     $ klata_liczba -= 1
-                                    $ zyd_hp += 5
+                                    $ zyd_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6127,11 +6127,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ nogi = 4
-                                    $ zyd_hp += 10
+                                    $ zyd_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6161,12 +6161,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ zyd_klata = 4
                                     $ klata_liczba -= 1
-                                    $ zyd_hp += 5
+                                    $ zyd_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6195,11 +6195,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ nogi = 4
-                                    $ zyd_hp += 10
+                                    $ zyd_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6223,19 +6223,19 @@ label eq:
                     
                     "{b}Żyd (HP:[zyd_hp]): Długie Nogi{/b}" if zyd_sojusznik == 1 and nogi == 4:
                         window show
-                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                         window hide
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or zyd_nic == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ nogi = 1
                                     $ zyd_klata = 4
                                     $ klata_liczba -= 1
-                                    $ zyd_hp -= 10
-                                    $ zyd_hp += 5
+                                    $ zyd_hp -= 15
+                                    $ zyd_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6244,7 +6244,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ring = 4
-                                    $ zyd_hp -= 10
+                                    $ zyd_hp -= 15
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -6253,7 +6253,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ vr = 4
-                                    $ zyd_hp -= 10
+                                    $ zyd_hp -= 15
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -6262,7 +6262,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ memy = 4
-                                    $ zyd_hp -= 10
+                                    $ zyd_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -6271,7 +6271,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ziemia = 4
-                                    $ zyd_hp -= 10
+                                    $ zyd_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6280,13 +6280,13 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ zloty = 4
-                                    $ zyd_hp -= 10
+                                    $ zyd_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
                                     $ nogi = 1
                                     $ zyd_nic = 4
-                                    $ zyd_hp -= 10
+                                    $ zyd_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -6303,12 +6303,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ zyd_klata = 4
                                     $ klata_liczba -= 1
-                                    $ zyd_hp += 5
+                                    $ zyd_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6345,11 +6345,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ nogi = 4
-                                    $ zyd_hp += 10
+                                    $ zyd_hp += 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if zyd_nic == 1:
@@ -6372,12 +6372,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ kazuma_nic = 1
                                     $ kazuma_klata = 5
                                     $ klata_liczba -= 1
-                                    $ kazuma_hp += 5
+                                    $ kazuma_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6414,11 +6414,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ kazuma_nic = 1
                                     $ nogi = 5
-                                    $ kazuma_hp += 10
+                                    $ kazuma_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6437,7 +6437,7 @@ label eq:
                     
                     "{b}Kazuma (HP:[kazuma_hp]): Diamentowa Klata{/b}" if kazuma_sojusznik == 1 and kazuma_klata == 5:
                         window show
-                        "{i}Moje klejnoty. +5HP{/i}"
+                        "{i}Moje klejnoty. +7HP{/i}"
                         window hide
                         if kazuma_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
@@ -6448,7 +6448,7 @@ label eq:
                                     $ kazuma_klata = 1
                                     $ ring = 5
                                     $ klata_liczba += 1
-                                    $ kazuma_hp -= 5
+                                    $ kazuma_hp -= 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -6458,7 +6458,7 @@ label eq:
                                     $ kazuma_klata = 1
                                     $ vr = 5
                                     $ klata_liczba += 1
-                                    $ kazuma_hp -= 5
+                                    $ kazuma_hp -= 7
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -6468,7 +6468,7 @@ label eq:
                                     $ kazuma_klata = 1
                                     $ memy = 5
                                     $ klata_liczba += 1
-                                    $ kazuma_hp -= 5
+                                    $ kazuma_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -6478,18 +6478,18 @@ label eq:
                                     $ kazuma_klata = 1
                                     $ ziemia = 5
                                     $ klata_liczba += 1
-                                    $ kazuma_hp -= 5
+                                    $ kazuma_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ kazuma_klata = 1
                                     $ nogi = 5
                                     $ klata_liczba += 1
-                                    $ kazuma_hp -= 5
-                                    $ kazuma_hp += 10
+                                    $ kazuma_hp -= 7
+                                    $ kazuma_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6499,14 +6499,14 @@ label eq:
                                     $ kazuma_klata = 1
                                     $ zloty = 5
                                     $ klata_liczba += 1
-                                    $ kazuma_hp -= 5
+                                    $ kazuma_hp -= 7
                                     jump zbroja
 
                                 "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
                                     $ kazuma_klata = 1
                                     $ kazuma_nic = 5
                                     $ klata_liczba += 1
-                                    $ kazuma_hp -= 5
+                                    $ kazuma_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -6523,12 +6523,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ kazuma_klata = 5
                                     $ klata_liczba -= 1
-                                    $ kazuma_hp += 5
+                                    $ kazuma_hp += 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -6557,11 +6557,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ nogi = 5
-                                    $ kazuma_hp += 10
+                                    $ kazuma_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6591,12 +6591,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ kazuma_klata = 5
                                     $ klata_liczba -= 1
-                                    $ kazuma_hp += 5
+                                    $ kazuma_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6625,11 +6625,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ nogi = 5
-                                    $ kazuma_hp += 10
+                                    $ kazuma_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6659,12 +6659,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ kazuma_klata = 5
                                     $ klata_liczba -= 1
-                                    $ kazuma_hp += 5
+                                    $ kazuma_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6693,11 +6693,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ nogi = 5
-                                    $ kazuma_hp += 10
+                                    $ kazuma_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6727,12 +6727,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ kazuma_klata = 5
                                     $ klata_liczba -= 1
-                                    $ kazuma_hp += 5
+                                    $ kazuma_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6761,11 +6761,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ nogi = 5
-                                    $ kazuma_hp += 10
+                                    $ kazuma_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6789,19 +6789,19 @@ label eq:
                     
                     "{b}Kazuma (HP:[kazuma_hp]): Długie Nogi{/b}" if kazuma_sojusznik == 1 and nogi == 5:
                         window show
-                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                         window hide
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or kazuma_nic == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ nogi = 1
                                     $ kazuma_klata = 5
                                     $ klata_liczba -= 1
-                                    $ kazuma_hp -= 10
-                                    $ kazuma_hp += 5
+                                    $ kazuma_hp -= 15
+                                    $ kazuma_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6810,7 +6810,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ring = 5
-                                    $ kazuma_hp -= 10
+                                    $ kazuma_hp -= 15
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -6819,7 +6819,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ vr = 5
-                                    $ kazuma_hp -= 10
+                                    $ kazuma_hp -= 15
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -6828,7 +6828,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ memy = 5
-                                    $ kazuma_hp -= 10
+                                    $ kazuma_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -6837,7 +6837,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ziemia = 5
-                                    $ kazuma_hp -= 10
+                                    $ kazuma_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -6846,13 +6846,13 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ zloty = 5
-                                    $ kazuma_hp -= 10
+                                    $ kazuma_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
                                     $ nogi = 1
                                     $ kazuma_nic = 5
-                                    $ kazuma_hp -= 10
+                                    $ kazuma_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -6869,12 +6869,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ kazuma_klata = 5
                                     $ klata_liczba -= 1
-                                    $ kazuma_hp += 5
+                                    $ kazuma_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6911,11 +6911,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ nogi = 5
-                                    $ kazuma_hp += 10
+                                    $ kazuma_hp += 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if kazuma_nic == 1:
@@ -6940,12 +6940,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ tarczownik_nic = 1
                                     $ tarczownik_klata = 6
                                     $ klata_liczba -= 1
-                                    $ tarczownik_hp += 5
+                                    $ tarczownik_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -6982,11 +6982,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ tarczownik_nic = 1
                                     $ nogi = 6
-                                    $ tarczownik_hp += 10
+                                    $ tarczownik_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -7005,7 +7005,7 @@ label eq:
                     
                     "{b}Naofumi (HP:[tarczownik_hp]): Diamentowa Klata{/b}" if tarczownik_sojusznik == 1 and tarczownik_klata == 6:
                         window show
-                        "{i}Moje klejnoty. +5HP{/i}"
+                        "{i}Moje klejnoty. +7HP{/i}"
                         window hide
                         if tarczownik_nic == 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or nogi == 1 or zloty == 1:
                             menu:         
@@ -7016,7 +7016,7 @@ label eq:
                                     $ tarczownik_klata = 1
                                     $ ring = 6
                                     $ klata_liczba += 1
-                                    $ tarczownik_hp -= 5
+                                    $ tarczownik_hp -= 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -7026,7 +7026,7 @@ label eq:
                                     $ tarczownik_klata = 1
                                     $ vr = 6
                                     $ klata_liczba += 1
-                                    $ tarczownik_hp -= 5
+                                    $ tarczownik_hp -= 7
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -7036,7 +7036,7 @@ label eq:
                                     $ tarczownik_klata = 1
                                     $ memy = 6
                                     $ klata_liczba += 1
-                                    $ tarczownik_hp -= 5
+                                    $ tarczownik_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -7046,18 +7046,18 @@ label eq:
                                     $ tarczownik_klata = 1
                                     $ ziemia = 6
                                     $ klata_liczba += 1
-                                    $ tarczownik_hp -= 5
+                                    $ tarczownik_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ tarczownik_klata = 1
                                     $ nogi = 6
                                     $ klata_liczba += 1
-                                    $ tarczownik_hp -= 5
-                                    $ tarczownik_hp += 10
+                                    $ tarczownik_hp -= 7
+                                    $ tarczownik_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -7067,14 +7067,14 @@ label eq:
                                     $ tarczownik_klata = 1
                                     $ zloty = 6
                                     $ klata_liczba += 1
-                                    $ tarczownik_hp -= 5
+                                    $ tarczownik_hp -= 7
                                     jump zbroja
 
                                 "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
                                     $ tarczownik_klata = 1
                                     $ tarczownik_nic = 6
                                     $ klata_liczba += 1
-                                    $ tarczownik_hp -= 5
+                                    $ tarczownik_hp -= 7
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -7091,12 +7091,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ tarczownik_klata = 6
                                     $ klata_liczba -= 1
-                                    $ tarczownik_hp += 5
+                                    $ tarczownik_hp += 7
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -7125,11 +7125,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ring = 1
                                     $ nogi = 6
-                                    $ tarczownik_hp += 10
+                                    $ tarczownik_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -7159,12 +7159,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ tarczownik_klata = 6
                                     $ klata_liczba -= 1
-                                    $ tarczownik_hp += 5
+                                    $ tarczownik_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -7193,11 +7193,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ vr = 1
                                     $ nogi = 6
-                                    $ tarczownik_hp += 10
+                                    $ tarczownik_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -7227,12 +7227,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ tarczownik_klata = 6
                                     $ klata_liczba -= 1
-                                    $ tarczownik_hp += 5
+                                    $ tarczownik_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -7261,11 +7261,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ memy = 1
                                     $ nogi = 6
-                                    $ tarczownik_hp += 10
+                                    $ tarczownik_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -7295,12 +7295,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ tarczownik_klata = 6
                                     $ klata_liczba -= 1
-                                    $ tarczownik_hp += 5
+                                    $ tarczownik_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -7329,11 +7329,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ ziemia = 1
                                     $ nogi = 6
-                                    $ tarczownik_hp += 10
+                                    $ tarczownik_hp += 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -7357,19 +7357,19 @@ label eq:
                     
                     "{b}Naofumi (HP:[tarczownik_hp]): Długie Nogi{/b}" if tarczownik_sojusznik == 1 and nogi == 6:
                         window show
-                        "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                        "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                         window hide
                         if klata_liczba >= 1 or ring == 1 or vr == 1 or memy == 1 or ziemia == 1 or tarczownik_nic == 1 or zloty == 1:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ nogi = 1
                                     $ tarczownik_klata = 6
                                     $ klata_liczba -= 1
-                                    $ tarczownik_hp -= 10
-                                    $ tarczownik_hp += 5
+                                    $ tarczownik_hp -= 15
+                                    $ tarczownik_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -7378,7 +7378,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ring = 6
-                                    $ tarczownik_hp -= 10
+                                    $ tarczownik_hp -= 15
                                     jump zbroja
                                 
                                 "{b}VR Headset{/b}" if vr == 1:
@@ -7387,7 +7387,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ vr = 6
-                                    $ tarczownik_hp -= 10
+                                    $ tarczownik_hp -= 15
                                     jump zbroja
 
                                 "{b}Szalik z Memów{/b}" if memy == 1:
@@ -7396,7 +7396,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ memy = 6
-                                    $ tarczownik_hp -= 10
+                                    $ tarczownik_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Kawałek ziemi, po której stąpał Jan Paweł 2" if ziemia == 1:
@@ -7405,7 +7405,7 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ ziemia = 6
-                                    $ tarczownik_hp -= 10
+                                    $ tarczownik_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Złoty Człowiek{/b}" if zloty == 1:
@@ -7414,13 +7414,13 @@ label eq:
                                     window hide
                                     $ nogi = 1
                                     $ zloty = 6
-                                    $ tarczownik_hp -= 10
+                                    $ tarczownik_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
                                     $ nogi = 1
                                     $ tarczownik_nic = 6
-                                    $ tarczownik_hp -= 10
+                                    $ tarczownik_hp -= 15
                                     jump zbroja
                                 
                                 "{b}Powrót":
@@ -7437,12 +7437,12 @@ label eq:
                             menu:         
                                 "{b}Diamentowa Klata{/b}" if klata_liczba >= 1:
                                     window show
-                                    "{i}Moje klejnoty. +5HP{/i}"
+                                    "{i}Moje klejnoty. +7HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ tarczownik_klata = 6
                                     $ klata_liczba -= 1
-                                    $ tarczownik_hp += 5
+                                    $ tarczownik_hp += 7
                                     jump zbroja
                                 
                                 "{b}Pierścień z Władców Pierścieni{/b}" if ring == 1:
@@ -7479,11 +7479,11 @@ label eq:
                                 
                                 "{b}Długie Nogi{/b}" if nogi == 1:
                                     window show
-                                    "{i}Wysoki chłopak. Szybki. +10HP{/i}"
+                                    "{i}Wysoki chłopak. Szybki. +15HP{/i}"
                                     window hide
                                     $ zloty = 1
                                     $ nogi = 6
-                                    $ tarczownik_hp += 10
+                                    $ tarczownik_hp += 15
                                     jump zbroja
                                 
                                 "{b}Zdejmij Zbroję{/b}" if tarczownik_nic == 1:
@@ -7950,51 +7950,51 @@ label eq:
 
                         jump itemy_do_walki
                     
-                    "{b}Kebab Łagodny (+4HP i + 1HP FOR 3 TURNS) x [lagodny]{/b}" if lagodnyx == 1:
+                    "{b}Kebab Łagodny (+4HP + 2HP i 2 SP FOR 3 TURNS) x [lagodny]{/b}" if lagodnyx == 1:
                         window show
-                        "{i}Pod grubym, trochę łagodny. +4HP oraz +1HP przez 3 tury{/i}"
+                        "{i}Pod grubym, trochę łagodny. +4HP oraz +2HP i +2 SP przez 3 tury{/i}"
                         window hide
 
                         jump itemy_do_walki
                     
-                    "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 1:
+                    "{b}Dr Pepper (+6HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 1:
                         window show
-                        "{i}Ulubiony napój Eryka R-G. +2HP oraz następny atak zadaje możliwie najwięcej obrażeń{/i}"
+                        "{i}Ulubiony napój Eryka R-G. +6HP oraz następny atak zadaje możliwie najwięcej obrażeń{/i}"
                         window hide
 
                         jump itemy_do_walki
                     
-                    "{b}Jabole (+6HP) x [jabole]{/b}" if jabolex == 1:
+                    "{b}Jabole (+8HP) x [jabole]{/b}" if jabolex == 1:
                         window show
-                        "{i}Tylko anioły nie płaczą na dniu cebuli (TheMontaże). +6hp oraz następny atak zadaje możliwie najmniej obrażeń{/i}"
+                        "{i}Tylko anioły nie płaczą na dniu cebuli (TheMontaże). +8HP oraz następny atak zadaje możliwie najmniej obrażeń{/i}"
                         window hide
 
                         jump itemy_do_walki
                     
-                    "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 1:
+                    "{b}Royal Cola (+8 SP) x [royal]{/b}" if royalx == 1:
                         window show
-                        "{i}Ulubiony napój Macieja Ł. +9HP{/i}"
+                        "{i}Ulubiony napój Macieja Ł. +8 SP{/i}"
                         window hide
 
                         jump itemy_do_walki
                     
-                    "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 1:
+                    "{b}Warzywo skalne (+(6-11)HP) x [warzywo]{/b}" if warzywox == 1:
                         window show
-                        "{i}warzywko rosnące tylko w Skale. +4-7HP{/i}"
+                        "{i}warzywko rosnące tylko w Skale. +6-11HP{/i}"
                         window hide
 
                         jump itemy_do_walki
                     
-                    "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 1:
+                    "{b}Kiść bananów (+5HP FOR ALL) x [banany]{/b}" if bananyx == 1:
                         window show
-                        "{i}Uuuu uuu aaaaaa aa aaaaaaa uu u u aaaa. +3HP dla całej drużyny{/i}"
+                        "{i}Uuuu uuu aaaaaa aa aaaaaaa uu u u aaaa. +5HP dla całej drużyny{/i}"
                         window hide
 
                         jump itemy_do_walki
                     
-                    "{b}Ostra Skałka (5-8 DMG) x [skalka]{/b}" if skalkax == 1:
+                    "{b}Ostra Skałka (7-12 DMG) x [skalka]{/b}" if skalkax == 1:
                         window show
-                        "{i}Prosto ze skały ze skały. Zadaje 5-8 DMG{/i}"
+                        "{i}Prosto ze skały ze skały. Zadaje 7-12 DMG{/i}"
                         window hide
 
                         jump itemy_do_walki
@@ -8022,44 +8022,44 @@ label eq:
 
 label itemy_do_walki2:
     menu:
-        "{b}Dr Pepper (+2HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 2:
+        "{b}Dr Pepper (+6HP i MAX DMG NEXT ATTACK) x [drpepper]{/b}" if drpepperx == 2:
             window show
-            "{i}Ulubiony napój Eryka R-G. +2HP oraz następny atak zadaje możliwie najwięcej obrażeń{/i}"
+            "{i}Ulubiony napój Eryka R-G. +6HP oraz następny atak zadaje możliwie najwięcej obrażeń{/i}"
             window hide
 
             jump itemy_do_walki2
                     
-        "{b}Jabole (+6HP) x [jabole]{/b}" if jabolex == 2:
+        "{b}Jabole (+8HP) x [jabole]{/b}" if jabolex == 2:
             window show
-            "{i}Tylko anioły nie płaczą na dniu cebuli (TheMontaże). +6HP oraz następny atak zadaje możliwie najmniej obrażeń{/i}"
+            "{i}Tylko anioły nie płaczą na dniu cebuli (TheMontaże). +8HP oraz następny atak zadaje możliwie najmniej obrażeń{/i}"
             window hide
 
             jump itemy_do_walki2
                     
-        "{b}Royal Cola (+9HP) x [royal]{/b}" if royalx == 2:
+        "{b}Royal Cola (+8 SP) x [royal]{/b}" if royalx == 2:
             window show
-            "{i}Ulubiony napój Macieja Ł. +9HP{/i}"
+            "{i}Ulubiony napój Macieja Ł. +8 SP{/i}"
             window hide
 
             jump itemy_do_walki2
                     
-        "{b}Warzywo skalne (+(4-7)HP) x [warzywo]{/b}" if warzywox == 2:
+        "{b}Warzywo skalne (+(6-11)HP) x [warzywo]{/b}" if warzywox == 2:
             window show
-            "{i}warzywko rosnące tylko w Skale. +4-7HP{/i}"
+            "{i}warzywko rosnące tylko w Skale. +6-11HP{/i}"
             window hide
 
             jump itemy_do_walki2
                     
-        "{b}Kiść bananów (+3HP FOR ALL) x [banany]{/b}" if bananyx == 2:
+        "{b}Kiść bananów (+5HP FOR ALL) x [banany]{/b}" if bananyx == 2:
             window show
-            "{i}Uuuu uuu aaaaaa aa aaaaaaa uu u u aaaa. +3HP dla całej drużyny{/i}"
+            "{i}Uuuu uuu aaaaaa aa aaaaaaa uu u u aaaa. +5HP dla całej drużyny{/i}"
             window hide
 
             jump itemy_do_walki2
                     
-        "{b}Ostra Skałka (5-8 DMG) x [skalka]{/b}" if skalkax == 2:
+        "{b}Ostra Skałka (7-12 DMG) x [skalka]{/b}" if skalkax == 2:
             window show
-            "{i}Prosto ze skały ze skały. Zadaje 5-8 DMG{/i}"
+            "{i}Prosto ze skały ze skały. Zadaje 7-12 DMG{/i}"
             window hide
 
             jump itemy_do_walki2

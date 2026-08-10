@@ -117,6 +117,7 @@ label zyd:
             if zyd_klata == 4:
                 $ zyd_klata = 1
                 $ klata_liczba += 1
+                $ zyd_hp -= 7
             if ring == 4:
                 $ ring = 1
             if vr == 4:
@@ -127,6 +128,9 @@ label zyd:
                 $ ziemia = 1
             if zloty == 4:
                 $ zloty = 1
+            if nogi == 4:
+                $ nogi = 1
+                $ zyd_hp -= 15
             
             if zyd_przepychaczka == 4:
                 $ zyd_min_attack -= 2
@@ -955,6 +959,82 @@ label zyd:
                 show czarny neutral at slightright
                 $ zyd_sojusznik = 0
                 $ liczba_sojusznikow -= 1
+
+                $ zyd_nic = 4
+                if zyd_klata == 4:
+                    $ zyd_klata = 1
+                    $ klata_liczba += 1
+                    $ zyd_hp -= 7
+                if ring == 4:
+                    $ ring = 1
+                if vr == 4:
+                    $ vr = 1
+                if memy == 4:
+                    $ memy = 1
+                if ziemia == 4:
+                    $ ziemia = 1
+                if zloty == 4:
+                    $ zloty = 1
+                if nogi == 4:
+                    $ nogi = 1
+                    $ zyd_hp -= 15
+                    
+                if zyd_przepychaczka == 4:
+                    $ zyd_min_attack -= 2
+                    $ zyd_max_attack -= 2
+                    $ zyd_przepychaczka = 1
+                    $ przepychaczka_liczba += 1
+                    $ chanuka = 4
+                    $ zyd_min_attack += 1
+                    $ zyd_max_attack += 3
+                
+                if stop == 4:
+                    $ zyd_min_attack -= 1
+                    $ zyd_max_attack -= 4
+                    $ stop = 1
+                    $ chanuka = 4
+                    $ zyd_min_attack += 1
+                    $ zyd_max_attack += 3
+
+                if miecz_swietlny == 4:
+                    $ zyd_min_attack -= 3
+                    $ zyd_max_attack -= 2
+                    $ miecz_swietlny = 1
+                    $ chanuka = 4
+                    $ zyd_min_attack += 1
+                    $ zyd_max_attack += 3
+                
+                if ostrza_chaosu == 4:
+                    $ zyd_min_attack -= 0
+                    $ zyd_max_attack -= 1
+                    $ ostrza_chaosu = 1
+                    $ chanuka = 4
+                    $ zyd_min_attack += 1
+                    $ zyd_max_attack += 3
+                
+                if patyk == 4:
+                    $ zyd_min_attack -= 1
+                    $ zyd_max_attack -= 3
+                    $ patyk = 1
+                    $ chanuka = 4
+                    $ zyd_min_attack += 1
+                    $ zyd_max_attack += 3
+                
+                if bazooka == 4:
+                    $ zyd_min_attack -= 1
+                    $ zyd_max_attack -= 1
+                    $ bazooka = 1
+                    $ chanuka = 4
+                    $ zyd_min_attack += 1
+                    $ zyd_max_attack += 3
+                
+                if miecz3d == 4:
+                    $ zyd_min_attack -= 2
+                    $ zyd_max_attack -= 3
+                    $ miecz3d = 1
+                    $ chanuka = 4
+                    $ zyd_min_attack += 1
+                    $ zyd_max_attack += 3
 
                 zyd "Czuję pulsującą nienawiść wobec tego czegoś"
 
