@@ -415,9 +415,9 @@ label items_fight111:
                                 else:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
-                                    $ luszcz_hp_now += 3
+                                    $ luszcz_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                    "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight111
                             
                             else:
@@ -7530,9 +7530,9 @@ label items_fight113:
                                 else:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
-                                    $ luszcz_hp_now += 3
+                                    $ luszcz_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                    "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight112
                             
                             else:
@@ -14644,9 +14644,9 @@ label items_fight115:
                                 else:
                                     $ pills -= 1
                                     $ luszcz_piguly += 1
-                                    $ luszcz_hp_now += 3
+                                    $ luszcz_hp_now += 5
                                     play sound "audio/sfx/lyk.mp3"
-                                    "{i}Łuszcz odzyskał 3 punkty życia{/i}"
+                                    "{i}Łuszcz odzyskał 5 punktów życia{/i}"
                                     jump pigulki_fight113
                             
                             else:
