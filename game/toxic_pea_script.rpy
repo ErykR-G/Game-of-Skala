@@ -29,6 +29,26 @@ label toxic_pea:
         toxic "Nie, nie ma teraz czasu na rozmowy."
         toxic "Broń w dłoń i do boju!"
 
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
+
         jump fight101
         label after_fight101:
             play music "audio/music/toxic2.mp3"
@@ -146,6 +166,26 @@ label toxic_pea:
 
         toxic "Wreszcie się ukazałeś, Maciek_Rel!"
         toxic "Chodź, dziś są jacyś pojebani!"
+
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
 
         jump fight131
         label after_fight131:
@@ -309,6 +349,26 @@ label toxic_pea:
         toxic "Podoba mi się twoja dedykacja."
         toxic "To co, do roboty!"
 
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
+
         jump fight141
         label after_fight141:
             play music "audio/music/toxic2.mp3"
@@ -432,6 +492,26 @@ label toxic_pea:
         toxic "O!"
         toxic "CZEKAJCIE, PRZYSZŁO WSPARCIE!"
         toxic "EJ DAWAJ TU SZYBKO, MAMY KURWA GIGANTY!"
+
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
 
         jump fight151
         label after_fight151:

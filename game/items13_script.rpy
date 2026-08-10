@@ -340,7 +340,7 @@ label items_fight131:
                             $ tarczownik_hp_now += 10
                             
                     play sound "audio/sfx/heal.mp3" 
-                    "{i}Wszystkie postacie odzyskały po 10 punktów życia{/i}"
+                    "{i}Wszyscy sojusznicy odzyskali po 10 punktów życia{/i}"
                     hide cake1
                     hide cake2
                     hide cake3
@@ -7324,47 +7324,47 @@ label items_fight133:
                     show cake_full zorder 15 at weapon_sojusznik3
 
             menu:
-                "{b}Zjeść sam? (+15HP){/b}":
+                "{b}Zjeść sam? (+30HP){/b}":
                     play sound "audio/sfx/heal.mp3" 
                     if luszcz_fighter == 2:
-                        if luszcz_hp_now + 15 >= luszcz_hp:
+                        if luszcz_hp_now + 30 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
                         else:
-                            $ luszcz_hp_now += 5
-                            "{i}Łuszcz odzyskał 15 punktów życia{/i}"
+                            $ luszcz_hp_now += 30
+                            "{i}Łuszcz odzyskał 30 punktów życia{/i}"
                             
                     if eminem_fighter == 2:
-                        if eminem_hp_now + 15 >= eminem_hp:
+                        if eminem_hp_now + 30 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                             "{i}Shadow odzyskał cały pasek życia{/i}"
                         else:
-                            $ eminem_hp_now += 5
-                            "{i}Shadow odzyskał 15 punktów życia{/i}"
+                            $ eminem_hp_now += 30
+                            "{i}Shadow odzyskał 30 punktów życia{/i}"
                             
                     if urban_fighter == 2:
-                        if urban_hp_now + 15 >= urban_hp:
+                        if urban_hp_now + 30 >= urban_hp:
                             $ urban_hp_now = urban_hp
                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
                         else:
-                            $ urban_hp_now += 5
-                            "{i}Jerzy Urban odzyskał 15 punktów życia{/i}"
+                            $ urban_hp_now += 30
+                            "{i}Jerzy Urban odzyskał 30 punktów życia{/i}"
                             
                     if zyd_fighter == 2:
-                        if zyd_hp_now + 15 >= zyd_hp:
+                        if zyd_hp_now + 30 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                             "{i}Żyd odzyskał cały pasek życia{/i}"
                         else:
-                            $ zyd_hp_now += 5
-                            "{i}Żyd odzyskał 15 punktów życia{/i}"
+                            $ zyd_hp_now += 30
+                            "{i}Żyd odzyskał 30 punktów życia{/i}"
                             
                     if kazuma_fighter == 2:
-                        if kazuma_hp_now + 15 >= kazuma_hp:
+                        if kazuma_hp_now + 30 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                             "{i}Kazuma odzyskał cały pasek życia{/i}"
                         else:
-                            $ kazuma_hp_now += 5
-                            "{i}Kazuma odzyskał 15 punktów życia{/i}"
+                            $ kazuma_hp_now += 30
+                            "{i}Kazuma odzyskał 30 punktów życia{/i}"
                             
                     hide cake_full
                     $ cake -= 1
@@ -7453,7 +7453,7 @@ label items_fight133:
                             $ tarczownik_hp_now += 10
                             
                     play sound "audio/sfx/heal.mp3" 
-                    "{i}Wszystkie postacie odzyskały po 10 punktów życia{/i}"
+                    "{i}Wszyscy sojusznicy odzyskali po 10 punktów życia{/i}"
                     hide cake1
                     hide cake2
                     hide cake3
@@ -14438,47 +14438,47 @@ label items_fight135:
                     show cake_full zorder 15 at weapon_sojusznik3
 
             menu:
-                "{b}Zjeść sam? (+15HP){/b}":
+                "{b}Zjeść sam? (+30HP){/b}":
                     play sound "audio/sfx/heal.mp3" 
                     if luszcz_fighter == 3:
-                        if luszcz_hp_now + 15 >= luszcz_hp:
+                        if luszcz_hp_now + 30 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
                         else:
-                            $ luszcz_hp_now += 5
-                            "{i}Łuszcz odzyskał 15 punktów życia{/i}"
+                            $ luszcz_hp_now += 30
+                            "{i}Łuszcz odzyskał 30 punktów życia{/i}"
                             
                     if eminem_fighter == 3:
-                        if eminem_hp_now + 15 >= eminem_hp:
+                        if eminem_hp_now + 30 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                             "{i}Shadow odzyskał cały pasek życia{/i}"
                         else:
-                            $ eminem_hp_now += 5
-                            "{i}Shadow odzyskał 15 punktów życia{/i}"
+                            $ eminem_hp_now += 30
+                            "{i}Shadow odzyskał 30 punktów życia{/i}"
                             
                     if urban_fighter == 3:
-                        if urban_hp_now + 15 >= urban_hp:
+                        if urban_hp_now + 30 >= urban_hp:
                             $ urban_hp_now = urban_hp
                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
                         else:
-                            $ urban_hp_now += 5
-                            "{i}Jerzy Urban odzyskał 15 punktów życia{/i}"
+                            $ urban_hp_now += 30
+                            "{i}Jerzy Urban odzyskał 30 punktów życia{/i}"
                             
                     if zyd_fighter == 3:
-                        if zyd_hp_now + 15 >= zyd_hp:
+                        if zyd_hp_now + 30 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                             "{i}Żyd odzyskał cały pasek życia{/i}"
                         else:
-                            $ zyd_hp_now += 5
-                            "{i}Żyd odzyskał 15 punktów życia{/i}"
+                            $ zyd_hp_now += 30
+                            "{i}Żyd odzyskał 30 punktów życia{/i}"
                             
                     if kazuma_fighter == 3:
-                        if kazuma_hp_now + 15 >= kazuma_hp:
+                        if kazuma_hp_now + 30 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                             "{i}Kazuma odzyskał cały pasek życia{/i}"
                         else:
-                            $ kazuma_hp_now += 5
-                            "{i}Kazuma odzyskał 15 punktów życia{/i}"
+                            $ kazuma_hp_now += 30
+                            "{i}Kazuma odzyskał 30 punktów życia{/i}"
                             
                     hide cake_full
                     $ cake -= 1
@@ -14567,7 +14567,7 @@ label items_fight135:
                             $ tarczownik_hp_now += 10
                             
                     play sound "audio/sfx/heal.mp3" 
-                    "{i}Wszystkie postacie odzyskały po 10 punktów życia{/i}"
+                    "{i}Wszyscy sojusznicy odzyskali po 10 punktów życia{/i}"
                     hide cake1
                     hide cake2
                     hide cake3

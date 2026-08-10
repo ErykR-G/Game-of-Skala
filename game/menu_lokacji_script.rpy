@@ -3786,6 +3786,26 @@ label menu_lokacji:
         rem "Siostrzyczko, siostrzyczko tego osobnika nie stać nawet na to by się przyznać"
         ram "Rem, Rem chyba sami będziemy musieli nauczyć tego śmiecia manier"
 
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
+
         jump fight51
 
     label after_fight51:
@@ -3847,6 +3867,26 @@ label menu_lokacji:
             yalign 1.0
         play sound "audio/sfx/gnomowo.mp3"
         gnom "You've been gnomed!"
+
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
 
         jump fight61
 
@@ -3941,6 +3981,26 @@ label menu_lokacji:
 
                         zul "o ty kurwa dziadzie!"
 
+                        $ spiknik = piknik
+                        $ scake = cake
+                        $ spills = pills
+                        $ swoda = woda
+                        $ sostry = ostry
+                        $ slagodny = lagodny
+                        $ sdrpepper = drpepper
+                        $ sjabole = jabole
+                        $ sroyal = royal
+                        $ swarzywo = warzywo
+                        $ sbanany = banany
+                        $ sskalka = skalka
+                        $ sgranat = granat
+                        $ sluszcz_piguly = luszcz_piguly
+                        $ seminem_piguly = eminem_piguly
+                        $ surban_piguly = urban_piguly
+                        $ szyd_piguly = zyd_piguly
+                        $ skazuma_piguly = kazuma_piguly
+                        $ sile_item = ile_item
+
                         jump fight191
 
             "{b}Nie dam{/b}":
@@ -3985,6 +4045,26 @@ label menu_lokacji:
                         luszcz "Mówiłem, że nie dam"
 
                         zul "o ty kurwa dziadzie!"
+
+                        $ spiknik = piknik
+                        $ scake = cake
+                        $ spills = pills
+                        $ swoda = woda
+                        $ sostry = ostry
+                        $ slagodny = lagodny
+                        $ sdrpepper = drpepper
+                        $ sjabole = jabole
+                        $ sroyal = royal
+                        $ swarzywo = warzywo
+                        $ sbanany = banany
+                        $ sskalka = skalka
+                        $ sgranat = granat
+                        $ sluszcz_piguly = luszcz_piguly
+                        $ seminem_piguly = eminem_piguly
+                        $ surban_piguly = urban_piguly
+                        $ szyd_piguly = zyd_piguly
+                        $ skazuma_piguly = kazuma_piguly
+                        $ sile_item = ile_item
 
                         jump fight191
 

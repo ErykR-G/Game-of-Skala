@@ -154,6 +154,26 @@ label kazuma:
         $ kazuma_sojusznik = 1
         $ liczba_sojusznikow += 1
 
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
+
         jump fight161
 
     label after_fight161:
@@ -1203,6 +1223,26 @@ label kazuma3:
                         gamma "Po moim trupie!"
                         gamma "Jeśli chcecie je dostać, najpierw musicie się przedrzeć przeze mnie!"
 
+                        $ spiknik = piknik
+                        $ scake = cake
+                        $ spills = pills
+                        $ swoda = woda
+                        $ sostry = ostry
+                        $ slagodny = lagodny
+                        $ sdrpepper = drpepper
+                        $ sjabole = jabole
+                        $ sroyal = royal
+                        $ swarzywo = warzywo
+                        $ sbanany = banany
+                        $ sskalka = skalka
+                        $ sgranat = granat
+                        $ sluszcz_piguly = luszcz_piguly
+                        $ seminem_piguly = eminem_piguly
+                        $ surban_piguly = urban_piguly
+                        $ szyd_piguly = zyd_piguly
+                        $ skazuma_piguly = kazuma_piguly
+                        $ sile_item = ile_item
+
                         jump fight171
                     
                     else:
@@ -1301,6 +1341,26 @@ label kazuma3:
 
                         $ kazuma_sojusznik = 1
                         $ liczba_sojusznikow += 1
+
+                        $ spiknik = piknik
+                        $ scake = cake
+                        $ spills = pills
+                        $ swoda = woda
+                        $ sostry = ostry
+                        $ slagodny = lagodny
+                        $ sdrpepper = drpepper
+                        $ sjabole = jabole
+                        $ sroyal = royal
+                        $ swarzywo = warzywo
+                        $ sbanany = banany
+                        $ sskalka = skalka
+                        $ sgranat = granat
+                        $ sluszcz_piguly = luszcz_piguly
+                        $ seminem_piguly = eminem_piguly
+                        $ surban_piguly = urban_piguly
+                        $ szyd_piguly = zyd_piguly
+                        $ skazuma_piguly = kazuma_piguly
+                        $ sile_item = ile_item
 
                         jump fight171
                     

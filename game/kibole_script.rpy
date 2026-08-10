@@ -169,6 +169,26 @@ label kibole:
 
                             krystian "no to dawaj"
 
+                            $ spiknik = piknik
+                            $ scake = cake
+                            $ spills = pills
+                            $ swoda = woda
+                            $ sostry = ostry
+                            $ slagodny = lagodny
+                            $ sdrpepper = drpepper
+                            $ sjabole = jabole
+                            $ sroyal = royal
+                            $ swarzywo = warzywo
+                            $ sbanany = banany
+                            $ sskalka = skalka
+                            $ sgranat = granat
+                            $ sluszcz_piguly = luszcz_piguly
+                            $ seminem_piguly = eminem_piguly
+                            $ surban_piguly = urban_piguly
+                            $ szyd_piguly = zyd_piguly
+                            $ skazuma_piguly = kazuma_piguly
+                            $ sile_item = ile_item
+
                             jump fight121
 
                         "{b}Nie{/b}":
@@ -176,6 +196,26 @@ label kibole:
                             luszcz "W dupie mam wasze gejowskie zasady, bez sprzetu nie ma zabawy i huj Cie obchodzi ile na ile sie klepiemy"
 
                             krystian "Taa? to spierdalaj"
+
+                            $ spiknik = piknik
+                            $ scake = cake
+                            $ spills = pills
+                            $ swoda = woda
+                            $ sostry = ostry
+                            $ slagodny = lagodny
+                            $ sdrpepper = drpepper
+                            $ sjabole = jabole
+                            $ sroyal = royal
+                            $ swarzywo = warzywo
+                            $ sbanany = banany
+                            $ sskalka = skalka
+                            $ sgranat = granat
+                            $ sluszcz_piguly = luszcz_piguly
+                            $ seminem_piguly = eminem_piguly
+                            $ surban_piguly = urban_piguly
+                            $ szyd_piguly = zyd_piguly
+                            $ skazuma_piguly = kazuma_piguly
+                            $ sile_item = ile_item
 
                             jump fight121
 

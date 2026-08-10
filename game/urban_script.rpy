@@ -186,6 +186,26 @@ label urban:
         $ liczba_sojusznikow += 1
         $ akcja1 = 1
 
+        $ spiknik = piknik
+        $ scake = cake
+        $ spills = pills
+        $ swoda = woda
+        $ sostry = ostry
+        $ slagodny = lagodny
+        $ sdrpepper = drpepper
+        $ sjabole = jabole
+        $ sroyal = royal
+        $ swarzywo = warzywo
+        $ sbanany = banany
+        $ sskalka = skalka
+        $ sgranat = granat
+        $ sluszcz_piguly = luszcz_piguly
+        $ seminem_piguly = eminem_piguly
+        $ surban_piguly = urban_piguly
+        $ szyd_piguly = zyd_piguly
+        $ skazuma_piguly = kazuma_piguly
+        $ sile_item = ile_item
+
         jump fight91
 
         label after_fight91:
@@ -490,6 +510,26 @@ label urban:
 
                 luszcz "simierć wrogom ojczyzny!!!"
 
+                $ spiknik = piknik
+                $ scake = cake
+                $ spills = pills
+                $ swoda = woda
+                $ sostry = ostry
+                $ slagodny = lagodny
+                $ sdrpepper = drpepper
+                $ sjabole = jabole
+                $ sroyal = royal
+                $ swarzywo = warzywo
+                $ sbanany = banany
+                $ sskalka = skalka
+                $ sgranat = granat
+                $ sluszcz_piguly = luszcz_piguly
+                $ seminem_piguly = eminem_piguly
+                $ surban_piguly = urban_piguly
+                $ szyd_piguly = zyd_piguly
+                $ skazuma_piguly = kazuma_piguly
+                $ sile_item = ile_item
+
                 jump fight111
 
             "{b}no dobra{/b}":
@@ -521,6 +561,26 @@ label urban:
 
                 $ urban_sojusznik = 1
                 $ liczba_sojusznikow += 1
+
+                $ spiknik = piknik
+                $ scake = cake
+                $ spills = pills
+                $ swoda = woda
+                $ sostry = ostry
+                $ slagodny = lagodny
+                $ sdrpepper = drpepper
+                $ sjabole = jabole
+                $ sroyal = royal
+                $ swarzywo = warzywo
+                $ sbanany = banany
+                $ sskalka = skalka
+                $ sgranat = granat
+                $ sluszcz_piguly = luszcz_piguly
+                $ seminem_piguly = eminem_piguly
+                $ surban_piguly = urban_piguly
+                $ szyd_piguly = zyd_piguly
+                $ skazuma_piguly = kazuma_piguly
+                $ sile_item = ile_item
 
                 jump fight111
 

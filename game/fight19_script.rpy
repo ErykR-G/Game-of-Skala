@@ -23581,6 +23581,25 @@ label fight191:
                 if zul_jabole == 0:
                     $ zul_jabole = 1
                 play sound "audio/sfx/return.mp3"
+                $ piknik = spiknik
+                $ cake = scake
+                $ pills = spills
+                $ woda = swoda
+                $ ostry = sostry
+                $ lagodny = slagodny
+                $ drpepper = sdrpepper
+                $ jabole = sjabole
+                $ royal = sroyal
+                $ warzywo = swarzywo
+                $ banany = sbanany
+                $ skalka = sskalka
+                $ granat = sgranat
+                $ luszcz_piguly = sluszcz_piguly
+                $ eminem_piguly = seminem_piguly
+                $ urban_piguly = surban_piguly
+                $ zyd_piguly = szyd_piguly
+                $ kazuma_piguly = skazuma_piguly
+                $ ile_item = sile_item
                 jump fight191
 
             "{b}Pomiń Walkę{/b}" if fight191_przegranko >= 3:

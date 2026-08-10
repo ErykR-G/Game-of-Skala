@@ -72,6 +72,27 @@ label items:
     default skalka = 0
     default granat = 0
 
+    default sile_item = 0
+
+    default spiknik = 0
+    default scake = 0
+    default spills = 0
+    default swoda = 0
+    default sostry = 0
+    default slagodny = 0
+    default sdrpepper = 0
+    default sjabole = 0
+    default sroyal = 0
+    default swarzywo = 0
+    default sbanany = 0
+    default sskalka = 0
+    default sgranat = 0
+    default sluszcz_piguly = 0
+    default seminem_piguly = 0
+    default surban_piguly = 0
+    default szyd_piguly = 0
+    default skazuma_piguly = 0
+
 label items_fabularne:
     default ile_item_fabularne = 0
     default stronaf1 = 0   

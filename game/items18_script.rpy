@@ -408,7 +408,7 @@ label items_fight181:
                             $ tarczownik_hp_now += 10
                             
                     play sound "audio/sfx/heal.mp3" 
-                    "{i}Wszystkie postacie odzyskały po 10 punktów życia{/i}"
+                    "{i}Wszyscy sojusznicy odzyskali po 10 punktów życia{/i}"
                     hide cake1
                     hide cake2
                     hide cake3
@@ -8276,67 +8276,67 @@ label items_fight183:
                     show cake_full zorder 15 at weapon_sojusznik3
 
             menu:
-                "{b}Zjeść sam? (+15HP){/b}":
+                "{b}Zjeść sam? (+30HP){/b}":
                     play sound "audio/sfx/heal.mp3" 
                     if luszcz_fighter == 2:
                         $ luszcz_haczyki = 0
                         hide haczyki11
                         hide haczyki12
                         hide haczyki13
-                        if luszcz_hp_now + 15 >= luszcz_hp:
+                        if luszcz_hp_now + 30 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
                         else:
-                            $ luszcz_hp_now += 5
-                            "{i}Łuszcz odzyskał 15 punktów życia{/i}"
+                            $ luszcz_hp_now += 30
+                            "{i}Łuszcz odzyskał 30 punktów życia{/i}"
                             
                     if eminem_fighter == 2:
                         $ eminem_haczyki = 0
                         hide haczyki21
                         hide haczyki22
                         hide haczyki23
-                        if eminem_hp_now + 15 >= eminem_hp:
+                        if eminem_hp_now + 30 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                             "{i}Shadow odzyskał cały pasek życia{/i}"
                         else:
-                            $ eminem_hp_now += 5
-                            "{i}Shadow odzyskał 15 punktów życia{/i}"
+                            $ eminem_hp_now += 30
+                            "{i}Shadow odzyskał 30 punktów życia{/i}"
                             
                     if urban_fighter == 2:
                         $ urban_haczyki = 0
                         hide haczyki31
                         hide haczyki32
                         hide haczyki33
-                        if urban_hp_now + 15 >= urban_hp:
+                        if urban_hp_now + 30 >= urban_hp:
                             $ urban_hp_now = urban_hp
                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
                         else:
-                            $ urban_hp_now += 5
-                            "{i}Jerzy Urban odzyskał 15 punktów życia{/i}"
+                            $ urban_hp_now += 30
+                            "{i}Jerzy Urban odzyskał 30 punktów życia{/i}"
                             
                     if zyd_fighter == 2:
                         $ zyd_haczyki = 0
                         hide haczyki41
                         hide haczyki42
                         hide haczyki43
-                        if zyd_hp_now + 15 >= zyd_hp:
+                        if zyd_hp_now + 30 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                             "{i}Żyd odzyskał cały pasek życia{/i}"
                         else:
-                            $ zyd_hp_now += 5
-                            "{i}Żyd odzyskał 15 punktów życia{/i}"
+                            $ zyd_hp_now += 30
+                            "{i}Żyd odzyskał 30 punktów życia{/i}"
                             
                     if kazuma_fighter == 2:
                         $ kazuma_haczyki = 0
                         hide haczyki51
                         hide haczyki52
                         hide haczyki53
-                        if kazuma_hp_now + 15 >= kazuma_hp:
+                        if kazuma_hp_now + 30 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                             "{i}Kazuma odzyskał cały pasek życia{/i}"
                         else:
-                            $ kazuma_hp_now += 5
-                            "{i}Kazuma odzyskał 15 punktów życia{/i}"
+                            $ kazuma_hp_now += 30
+                            "{i}Kazuma odzyskał 30 punktów życia{/i}"
                             
                     hide cake_full
                     $ cake -= 1
@@ -8344,7 +8344,7 @@ label items_fight183:
                         $ ile_item -= 1
                     jump faza_fight183
 
-                "{b}Pokroić? (+5HP FOR ALL){/b}":
+                "{b}Pokroić? (+10HP FOR ALL){/b}":
                     hide cake_full
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show cake1 zorder 15 at weapon_sojusznik1
@@ -8393,63 +8393,63 @@ label items_fight183:
                         hide haczyki11
                         hide haczyki12
                         hide haczyki13
-                        if luszcz_hp_now + 5 >= luszcz_hp:
+                        if luszcz_hp_now + 10 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                         else:
-                            $ luszcz_hp_now += 5
+                            $ luszcz_hp_now += 10
 
                     if eminem_hp_now > 0 and eminem_wybrany > 0:
                         $ eminem_haczyki = 0
                         hide haczyki21
                         hide haczyki22
                         hide haczyki23
-                        if eminem_hp_now + 5 >= eminem_hp:
+                        if eminem_hp_now + 10 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                         else:
-                            $ eminem_hp_now += 5
+                            $ eminem_hp_now += 10
                                 
                     if urban_hp_now > 0 and urban_wybrany > 0:
                         $ urban_haczyki = 0
                         hide haczyki31
                         hide haczyki32
                         hide haczyki33
-                        if urban_hp_now + 5 >= urban_hp:
+                        if urban_hp_now + 10 >= urban_hp:
                             $ urban_hp_now = urban_hp
                         else:
-                            $ urban_hp_now += 5
+                            $ urban_hp_now += 10
 
                     if zyd_hp_now > 0 and zyd_wybrany > 0:
                         $ zyd_haczyki = 0
                         hide haczyki41
                         hide haczyki42
                         hide haczyki43
-                        if zyd_hp_now + 5 >= zyd_hp:
+                        if zyd_hp_now + 10 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                         else:
-                            $ zyd_hp_now += 5
+                            $ zyd_hp_now += 10
 
                     if kazuma_hp_now > 0 and kazuma_wybrany > 0:
                         $ kazuma_haczyki = 0
                         hide haczyki51
                         hide haczyki52
                         hide haczyki53
-                        if kazuma_hp_now + 5 >= kazuma_hp:
+                        if kazuma_hp_now + 10 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                         else:
-                            $ kazuma_hp_now += 5
+                            $ kazuma_hp_now += 10
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
                         $ tarczownik_haczyki = 0
                         hide haczyki61
                         hide haczyki62
                         hide haczyki63
-                        if tarczownik_hp_now + 5 >= tarczownik_hp:
+                        if tarczownik_hp_now + 10 >= tarczownik_hp:
                             $ tarczownik_hp_now = tarczownik_hp
                         else:
-                            $ tarczownik_hp_now += 5
+                            $ tarczownik_hp_now += 10
                             
                     play sound "audio/sfx/heal.mp3" 
-                    "{i}Wszystkie postacie odzyskały po 5 punktów życia{/i}"
+                    "{i}Wszyscy sojusznicy odzyskali po 10 punktów życia{/i}"
                     hide cake1
                     hide cake2
                     hide cake3
@@ -16316,67 +16316,67 @@ label items_fight185:
                     show cake_full zorder 15 at weapon_sojusznik3
 
             menu:
-                "{b}Zjeść sam? (+15HP){/b}":
+                "{b}Zjeść sam? (+30HP){/b}":
                     play sound "audio/sfx/heal.mp3" 
                     if luszcz_fighter == 3:
                         $ luszcz_haczyki = 0
                         hide haczyki11
                         hide haczyki12
                         hide haczyki13
-                        if luszcz_hp_now + 15 >= luszcz_hp:
+                        if luszcz_hp_now + 30 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                             "{i}Łuszcz odzyskał cały pasek życia{/i}"
                         else:
-                            $ luszcz_hp_now += 5
-                            "{i}Łuszcz odzyskał 15 punktów życia{/i}"
+                            $ luszcz_hp_now += 30
+                            "{i}Łuszcz odzyskał 30 punktów życia{/i}"
                             
                     if eminem_fighter == 3:
                         $ eminem_haczyki = 0
                         hide haczyki21
                         hide haczyki22
                         hide haczyki23
-                        if eminem_hp_now + 15 >= eminem_hp:
+                        if eminem_hp_now + 30 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                             "{i}Shadow odzyskał cały pasek życia{/i}"
                         else:
-                            $ eminem_hp_now += 5
-                            "{i}Shadow odzyskał 15 punktów życia{/i}"
+                            $ eminem_hp_now += 30
+                            "{i}Shadow odzyskał 30 punktów życia{/i}"
                             
                     if urban_fighter == 3:
                         $ urban_haczyki = 0
                         hide haczyki31
                         hide haczyki32
                         hide haczyki33
-                        if urban_hp_now + 15 >= urban_hp:
+                        if urban_hp_now + 30 >= urban_hp:
                             $ urban_hp_now = urban_hp
                             "{i}Jerzy Urban odzyskał cały pasek życia{/i}"
                         else:
-                            $ urban_hp_now += 5
-                            "{i}Jerzy Urban odzyskał 15 punktów życia{/i}"
+                            $ urban_hp_now += 30
+                            "{i}Jerzy Urban odzyskał 30 punktów życia{/i}"
                             
                     if zyd_fighter == 3:
                         $ zyd_haczyki = 0
                         hide haczyki41
                         hide haczyki42
                         hide haczyki43
-                        if zyd_hp_now + 15 >= zyd_hp:
+                        if zyd_hp_now + 30 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                             "{i}Żyd odzyskał cały pasek życia{/i}"
                         else:
-                            $ zyd_hp_now += 5
-                            "{i}Żyd odzyskał 15 punktów życia{/i}"
+                            $ zyd_hp_now += 30
+                            "{i}Żyd odzyskał 30 punktów życia{/i}"
                             
                     if kazuma_fighter == 3:
                         $ kazuma_haczyki = 0
                         hide haczyki51
                         hide haczyki52
                         hide haczyki53
-                        if kazuma_hp_now + 15 >= kazuma_hp:
+                        if kazuma_hp_now + 30 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                             "{i}Kazuma odzyskał cały pasek życia{/i}"
                         else:
-                            $ kazuma_hp_now += 5
-                            "{i}Kazuma odzyskał 15 punktów życia{/i}"
+                            $ kazuma_hp_now += 30
+                            "{i}Kazuma odzyskał 30 punktów życia{/i}"
                             
                     hide cake_full
                     $ cake -= 1
@@ -16384,7 +16384,7 @@ label items_fight185:
                         $ ile_item -= 1
                     jump faza_fight184
 
-                "{b}Pokroić? (+5HP FOR ALL){/b}":
+                "{b}Pokroić? (+10HP FOR ALL){/b}":
                     hide cake_full
                     if luszcz_wybrany == 1 and luszcz_hp_now > 0:
                         show cake1 zorder 15 at weapon_sojusznik1
@@ -16433,63 +16433,63 @@ label items_fight185:
                         hide haczyki11
                         hide haczyki12
                         hide haczyki13
-                        if luszcz_hp_now + 5 >= luszcz_hp:
+                        if luszcz_hp_now + 10 >= luszcz_hp:
                             $ luszcz_hp_now = luszcz_hp
                         else:
-                            $ luszcz_hp_now += 5
+                            $ luszcz_hp_now += 10
 
                     if eminem_hp_now > 0 and eminem_wybrany > 0:
                         $ eminem_haczyki = 0
                         hide haczyki21
                         hide haczyki22
                         hide haczyki23
-                        if eminem_hp_now + 5 >= eminem_hp:
+                        if eminem_hp_now + 10 >= eminem_hp:
                             $ eminem_hp_now = eminem_hp
                         else:
-                            $ eminem_hp_now += 5
-                                
+                            $ eminem_hp_now += 10
+
                     if urban_hp_now > 0 and urban_wybrany > 0:
                         $ urban_haczyki = 0
                         hide haczyki31
                         hide haczyki32
                         hide haczyki33
-                        if urban_hp_now + 5 >= urban_hp:
+                        if urban_hp_now + 10 >= urban_hp:
                             $ urban_hp_now = urban_hp
                         else:
-                            $ urban_hp_now += 5
+                            $ urban_hp_now += 10
 
                     if zyd_hp_now > 0 and zyd_wybrany > 0:
                         $ zyd_haczyki = 0
                         hide haczyki41
                         hide haczyki42
                         hide haczyki43
-                        if zyd_hp_now + 5 >= zyd_hp:
+                        if zyd_hp_now + 10 >= zyd_hp:
                             $ zyd_hp_now = zyd_hp
                         else:
-                            $ zyd_hp_now += 5
+                            $ zyd_hp_now += 10
 
                     if kazuma_hp_now > 0 and kazuma_wybrany > 0:
                         $ kazuma_haczyki = 0
                         hide haczyki51
                         hide haczyki52
                         hide haczyki53
-                        if kazuma_hp_now + 5 >= kazuma_hp:
+                        if kazuma_hp_now + 10 >= kazuma_hp:
                             $ kazuma_hp_now = kazuma_hp
                         else:
-                            $ kazuma_hp_now += 5
+                            $ kazuma_hp_now += 10
 
                     if tarczownik_hp_now > 0 and tarczownik_wybrany > 0:
                         $ tarczownik_haczyki = 0
                         hide haczyki61
                         hide haczyki62
                         hide haczyki63
-                        if tarczownik_hp_now + 5 >= tarczownik_hp:
+                        if tarczownik_hp_now + 10 >= tarczownik_hp:
                             $ tarczownik_hp_now = tarczownik_hp
                         else:
-                            $ tarczownik_hp_now += 5
+                            $ tarczownik_hp_now += 10
                             
                     play sound "audio/sfx/heal.mp3" 
-                    "{i}Wszystkie postacie odzyskały po 5 punktów życia{/i}"
+                    "{i}Wszyscy sojusznicy odzyskali po 10 punktów życia{/i}"
                     hide cake1
                     hide cake2
                     hide cake3
